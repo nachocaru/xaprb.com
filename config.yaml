@@ -1,0 +1,14 @@
+---
+baseurl: "http://www.xaprb.com/"
+title: "Xaprb"
+params:
+    author: "Baron Schwartz"
+    subtitle: "Stay Curious!"
+    disqus_shortname: "xaprb"
+    ga_account: "0xdeadbeef"
+    twitter: "@xaprb"
+    domain: "xaprb.com"
+indexes:
+    tag: "tags"
+    category: "categories"
+...
