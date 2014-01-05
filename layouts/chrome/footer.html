@@ -1,16 +1,19 @@
-<footer>
-  <div>
-    <p>
-    &copy; {{ .Site.Params.author }};
-    <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons Attribution">some rights reserved</a>; 
-    layout based on a Hugo theme from <a href="http://spf13.com/">Steve Francia</a>.
-    </p>
-  </div>
-</footer>
+<!-- chrome/footer.html -->
+    <footer>
+        <div class="widewrapper copyright">
+            <div class="container">
+              &copy; Baron Schwartz. Powered by <a href="http://hugo.spf13.com">Hugo</a>.
+            </div>
+        </div>
+    </footer>
+    
+    <script src="static/js/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="static/js/vendor/modernizr/modernizr.js"></script>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ .Params.ga_account }}']);
+  _gaq.push(['_setAccount', '0xdeadbeef']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -25,5 +28,6 @@
 fitText(document.getElementById('title'), 1)
 
 </script>
+
 </body>
 </html>

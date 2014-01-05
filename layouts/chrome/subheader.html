@@ -1,9 +1,24 @@
-<header id="header">
-    <figure>
-      <a href="/" border=0 id="logolink"><div class="icon-spf13-3" id="logo"> </div></a>
-    </figure>
-    <div id="byline">by {{ .Site.Params.author }}</div>
-    <nav id="nav">
-    {{ template "chrome/nav.html" . }}
-    </nav>
-</header>
+    <header>
+        <div class="widewrapper masthead">
+            <div class="container">
+                <a href="index.html" id="logo">
+                    <i class="fa fa-key fa-3x"></i> {{ .Site.Params.author }}
+                </a>
+
+                <div id="mobile-nav-toggle" class="pull-right">
+                    <a href="#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
+                        <i class="icon-reorder"></i>
+                    </a>
+                </div>
+
+                <nav class="pull-right tales-nav">
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav nav-pills navbar-nav">
+                            <li> <a href="/about/">About</a> </li>
+                        </ul>
+                    </div>
+                </nav>        
+
+            </div>
+        </div>
+    </header>

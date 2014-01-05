@@ -1,16 +1,8 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html class="no-js">
 <head>
-    <meta charset="utf-8">
-
-    {{ template "chrome/meta.html" . }}
-
-    <base href="{{ .Site.BaseUrl }}">
-    <title>{{ .Site.Title }}</title>
-    <link rel="canonical" href="{{ .Permalink }}">
-    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-
-    {{ template "chrome/head_includes.html" . }}
+    {{ template "chrome/head.html" . }}
 </head>
 <body lang="en">
 
