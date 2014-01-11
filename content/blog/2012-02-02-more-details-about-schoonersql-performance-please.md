@@ -1,5 +1,6 @@
 ---
 title: More details about SchoonerSQL performance, please!
+date: "2012-02-02"
 permalink: /2012/02/02/more-details-about-schoonersql-performance-please/
 categories:
   - SQL

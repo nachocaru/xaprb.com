@@ -1,5 +1,6 @@
 ---
 title: Aspersa gets a user manual
+date: "2010-09-22"
 permalink: /2010/09/22/aspersa-gets-a-user-manual/
 categories:
   - Aspersa

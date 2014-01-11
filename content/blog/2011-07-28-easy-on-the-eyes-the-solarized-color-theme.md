@@ -1,5 +1,6 @@
 ---
 title: "Easy on the eyes: the solarized color theme"
+date: "2011-07-28"
 permalink: /2011/07/28/easy-on-the-eyes-the-solarized-color-theme/
 categories:
   - Desktop

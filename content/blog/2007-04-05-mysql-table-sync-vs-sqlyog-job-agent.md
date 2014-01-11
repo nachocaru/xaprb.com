@@ -1,5 +1,6 @@
 ---
 title: MySQL Table Sync vs. SQLyog Job Agent
+date: "2007-04-05"
 permalink: /2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
 description:
   - "Benchmarks show MySQL Table Sync is faster than SQLyog Job Agent in comparing and synchronizing data in MySQL tables.  SQLyog Job Agent's checksum algorithm has theoretical weaknesses."
@@ -83,7 +84,7 @@ Finally, string concatenation of base-ten digits discards the most significant d
 
 Rohit responded to my concern:
 
-> Yes, there are chances of collisions. I did the math 3 years back(when I had designed the algo.). I donâ€™t remember exact details, but the chances of collision are extremely rare. Of course, it is not as good as a "pure" MD5. In the last 3 years of selling this (a vast majority of our 8000+ paid customers use it), we have not encountered any cases where collisions have been an issue.
+> Yes, there are chances of collisions. I did the math 3 years back(when I had designed the algo.). I don't remember exact details, but the chances of collision are extremely rare. Of course, it is not as good as a "pure" MD5. In the last 3 years of selling this (a vast majority of our 8000+ paid customers use it), we have not encountered any cases where collisions have been an issue.
 
 I believe collisions would be undetectable, but I don't really know how SJA works inside (tangent: I keep wondering if there's a way to use something like the accounting trick of differences divisible by nine to help see which rows are bad without doing so many grouped queries). Perhaps there is a way to know when there has been a collision. In any case, I checked the tables with [MySQL Table Checksum][2] after syncing, and they were correctly synced.
 

@@ -7,6 +7,7 @@ title: MySQL Toolkit version 1254 released
   <p>Honestly, I hope MySQL's tools make this pair of tools obsolete in the future, but until then, they're a good way to dump and reload data at higher speeds.  <a href="http://www.paragon-cs.com/wordpress/?p=52">Keith Murphy did some measurements on parallel dump and restore speeds.</a></p>
   
   <p>Read on for the full changelog.</p>
+date: "2007-11-12"
 permalink: /2007/11/12/mysql-toolkit-version-1254-released/
 description:
   - >

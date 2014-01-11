@@ -1,5 +1,6 @@
 ---
 title: Official website launched for High Performance MySQL
+date: "2008-05-30"
 permalink: /2008/05/30/official-website-launched-for-high-performance-mysql/
 description:
   - A new website!

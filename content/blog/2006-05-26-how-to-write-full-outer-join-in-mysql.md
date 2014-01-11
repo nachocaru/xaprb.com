@@ -1,5 +1,6 @@
 ---
 title: How to simulate FULL OUTER JOIN in MySQL
+date: "2006-05-26"
 permalink: /2006/05/26/how-to-write-full-outer-join-in-mysql/
 description:
   - "Shows how to emulate FULL OUTER JOIN with a mutex table when the RDBMS doesn't support FULL OUTER JOIN."

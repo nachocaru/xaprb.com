@@ -7,6 +7,7 @@ title: Maatkit version 1417 released
   <p>This is the long-awaited "Baron worked on table sync" release.  Hooray!</p>
   
   <p>Please read the full blog post for important (very important!) information.</p>
+date: "2007-12-07"
 permalink: /2007/12/07/maatkit-version-1417-released/
 description:
   - mk-table-sync is out!

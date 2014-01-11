@@ -1,5 +1,6 @@
 ---
 title: BoFs and lightning talks at the MySQL conference
+date: "2012-03-09"
 permalink: /2012/03/09/bofs-and-lightning-talks-at-the-mysql-conference/
 categories:
   - Conferences

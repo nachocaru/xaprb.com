@@ -1,5 +1,6 @@
 ---
 title: More on measuring IO latency
+date: "2011-05-24"
 permalink: /2011/05/24/more-on-measuring-io-latency/
 categories:
   - SQL

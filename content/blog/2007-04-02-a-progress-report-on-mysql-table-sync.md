@@ -1,5 +1,6 @@
 ---
 title: A progress report on MySQL Table Sync
+date: "2007-04-02"
 permalink: /2007/04/02/a-progress-report-on-mysql-table-sync/
 description:
   - >

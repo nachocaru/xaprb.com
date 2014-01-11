@@ -1,5 +1,6 @@
 ---
 title: Another great MySQL 5.6 milestone release
+date: "2012-04-10"
 permalink: /2012/04/10/another-great-mysql-5-6-milestone-release/
 categories:
   - SQL

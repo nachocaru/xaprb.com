@@ -1,5 +1,6 @@
 ---
 title: Introducing MySQL Slave Delay
+date: "2007-08-04"
 permalink: /2007/08/04/introducing-mysql-slave-delay/
 description:
   - >

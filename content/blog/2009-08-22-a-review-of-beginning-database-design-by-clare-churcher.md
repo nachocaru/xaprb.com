@@ -1,5 +1,6 @@
 ---
 title: A Review of Beginning Database Design by Clare Churcher
+date: "2009-08-22"
 permalink: /2009/08/22/a-review-of-beginning-database-design-by-clare-churcher/
 categories:
   - PostgreSQL

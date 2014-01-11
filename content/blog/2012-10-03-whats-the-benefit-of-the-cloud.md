@@ -1,5 +1,6 @@
 ---
 title: "What's the benefit of the cloud?"
+date: "2012-10-03"
 permalink: /2012/10/03/whats-the-benefit-of-the-cloud/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: A better way to build Cacti templates
+date: "2010-05-25"
 permalink: /2010/05/25/a-better-way-to-build-cacti-templates/
 categories:
   - Cacti

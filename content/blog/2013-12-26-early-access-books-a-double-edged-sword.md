@@ -1,5 +1,6 @@
 ---
 title: "Early-access books: a double-edged sword"
+date: "2013-12-26"
 permalink: /2013/12/26/early-access-books-a-double-edged-sword/
 categories:
   - Commentary

@@ -5,6 +5,7 @@ title: Maatkit version 1579 released
   <p>I'm finally feeling like the table sync tool is getting in good shape!</p>
   
   <p>Changelog etc is in the full article.</p>
+date: "2007-12-27"
 permalink: /2007/12/27/maatkit-version-1579-released/
 description:
   - mk-table-sync has a fast new synchronization algorithm

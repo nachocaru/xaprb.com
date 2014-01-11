@@ -1,5 +1,6 @@
 ---
 title: "Why IS NULL doesn't always work in MySQL"
+date: "2007-05-31"
 permalink: /2007/05/31/why-is-null-doesnt-always-work-in-mysql/
 description:
   - "Explains how MySQL's AUTO_INCREMENT feature, combined with Access compatibility, can give bizarre results sometimes."

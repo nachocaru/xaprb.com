@@ -1,5 +1,6 @@
 ---
 title: What is your favorite database design book?
+date: "2008-04-01"
 permalink: /2008/04/01/what-is-your-favorite-database-design-book/
 description:
   - "What's the best book on database design for non-geeks?"

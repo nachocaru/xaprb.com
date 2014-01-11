@@ -1,5 +1,6 @@
 ---
 title: A review of Forecasting Oracle Performance by Craig Shallahamer
+date: "2010-05-01"
 permalink: /2010/05/01/a-review-of-forecasting-oracle-performance-by-craig-shallahamer/
 categories:
   - Review

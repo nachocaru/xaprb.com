@@ -1,5 +1,6 @@
 ---
 title: When to ignore perfectly good advice
+date: "2012-12-20"
 permalink: /2012/12/20/when-to-ignore-perfectly-good-advice/
 categories:
   - Coding

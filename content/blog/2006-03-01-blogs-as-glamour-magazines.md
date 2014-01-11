@@ -1,6 +1,7 @@
 ---
 title: Blogs as glamour magazines
   <p>I wrote previously about <a href="/blog/2006/02/08/ie-blog-is-a-great-experience/">IE blog's excellent quality</a>.  Unfortunately, there's bad news to report, too.  I've been noticing some trends in web design blogs.  Many have a similar style to glamour magazines.  While many elements of glamour magazines are <em>not</em> echoed in these blogs, to the extent they are, I think it detracts from them quite a bit.</p>
+date: "2006-03-01"
 permalink: /2006/03/01/blogs-as-glamour-magazines/
 description:
   - Compares the current overload of trashy blog content to glamour magazines.
@@ -40,7 +41,7 @@ I wish it weren't true, but glamour magazines are often written better than blog
   </p>
 </blockquote>
 
-Amusingly, the author misspelled "definitely" as "definately" a few paragraphs later. I corrected this in a comment, which never got approved by the moderator &#8212; but minutes later, the spelling was fixed. Subsequent posts have been just as bad, with jewels like "truely" (twice in a couple of sentences!), "guarenteed," "an equalâ€™s sign," "brining" (should be "bringing"), "effected" (instead of "affected" &#8212; there is a difference), run-on sentences, and so forth. Glamour magazines, for all their faults, generally seem to be proofread!
+Amusingly, the author misspelled "definitely" as "definately" a few paragraphs later. I corrected this in a comment, which never got approved by the moderator &#8212; but minutes later, the spelling was fixed. Subsequent posts have been just as bad, with jewels like "truely" (twice in a couple of sentences!), "guarenteed," "an equal's sign," "brining" (should be "bringing"), "effected" (instead of "affected" &#8212; there is a difference), run-on sentences, and so forth. Glamour magazines, for all their faults, generally seem to be proofread!
 
 ### The future
 

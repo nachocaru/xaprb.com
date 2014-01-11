@@ -1,5 +1,6 @@
 ---
 title: Too many blog posts
+date: "2011-04-20"
 permalink: /2011/04/20/too-many-blog-posts/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: Why MySQL says the server is not configured as a slave
+date: "2007-08-01"
 permalink: /2007/08/01/why-mysql-server-not-configured-as-slave/
 description:
   - "Explains the most common causes of MySQL's ERROR 1200 (HY000): The server is not configured as slave."

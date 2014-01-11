@@ -1,5 +1,6 @@
 ---
 title: "Don't forget about SHOW PROFILES"
+date: "2009-05-31"
 permalink: /2009/05/31/dont-forget-about-show-profiles/
 categories:
   - SQL

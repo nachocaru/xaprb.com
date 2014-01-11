@@ -1,5 +1,6 @@
 ---
 title: My favorite wiki is Dokuwiki
+date: "2009-03-31"
 permalink: /2009/03/31/my-favorite-wiki-is-dokuwiki/
 categories:
   - Commentary

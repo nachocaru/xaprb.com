@@ -1,5 +1,6 @@
 ---
 title: Three free MySQL webinars
+date: "2012-02-07"
 permalink: /2012/02/07/three-free-mysql-webinars/
 categories:
   - SQL

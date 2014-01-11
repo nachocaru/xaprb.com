@@ -1,5 +1,6 @@
 ---
 title: Why you should not use BIT columns in MySQL
+date: "2006-04-11"
 permalink: /2006/04/11/bit-values-in-mysql/
 description:
   - "Explains how MySQL implements BIT types differently in different versions, shows how version 5's BIT data type is dangerous, and documents a serious bug in MySQL 5.x."

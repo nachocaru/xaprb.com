@@ -1,5 +1,6 @@
 ---
 title: Recap of CPOSC 2009, plus slides
+date: "2009-10-18"
 permalink: /2009/10/18/recap-of-cposc-2009-plus-slides/
 categories:
   - Conferences

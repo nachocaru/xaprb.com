@@ -1,5 +1,6 @@
 ---
 title: Is MySQL 5.1 really a better 5.0?
+date: "2008-12-11"
 permalink: /2008/12/11/is-mysql-51-really-a-better-50/
 categories:
   - Commentary

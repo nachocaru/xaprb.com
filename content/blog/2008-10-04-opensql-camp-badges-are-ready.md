@@ -1,5 +1,6 @@
 ---
 title: OpenSQL Camp badges are ready
+date: "2008-10-04"
 permalink: /2008/10/04/opensql-camp-badges-are-ready/
 categories:
   - OpenSQL Camp

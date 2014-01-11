@@ -1,5 +1,6 @@
 ---
 title: CAPTCHAs without images, part 2
+date: "2006-05-29"
 permalink: /2006/05/29/captchas-without-images-part-2/
 description:
   - >

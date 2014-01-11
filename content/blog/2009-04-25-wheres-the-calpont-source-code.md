@@ -1,5 +1,6 @@
 ---
 title: "Where's the Calpont source code?"
+date: "2009-04-25"
 permalink: /2009/04/25/wheres-the-calpont-source-code/
 categories:
   - Conferences

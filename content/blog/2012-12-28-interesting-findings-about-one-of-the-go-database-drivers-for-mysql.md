@@ -1,5 +1,6 @@
 ---
 title: Interesting findings about one of the Go database drivers for MySQL
+date: "2012-12-28"
 permalink: /2012/12/28/interesting-findings-about-one-of-the-go-database-drivers-for-mysql/
 categories:
   - SQL

@@ -6,6 +6,7 @@ title: MySQL Conference and Expo 2007, Day 1
   <p>I'll also be involved in at least three sessions at the conference, and I describe them.</p>
   
   <p>If you're interested in short overviews of the sessions I attend, keep watching for my articles.  I will give you each session's major ideas instead of writing stream-of-thought notes.  You can look at the presenter's slides for more.</p>
+date: "2007-04-23"
 permalink: /2007/04/23/mysql-conference-and-expo-2007-day-1/
 description:
   - Notes on day 1 at the MySQL Conference and Expo 2007

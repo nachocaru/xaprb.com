@@ -1,5 +1,6 @@
 ---
 title: Two Perl documentation time-savers
+date: "2007-05-17"
 permalink: /2007/05/17/two-perl-documentation-time-savers/
 description:
   - >

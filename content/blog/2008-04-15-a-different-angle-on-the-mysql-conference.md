@@ -1,5 +1,6 @@
 ---
 title: A different angle on the MySQL Conference
+date: "2008-04-15"
 permalink: /2008/04/15/a-different-angle-on-the-mysql-conference/
 description:
   - A look at the contents of the shoulder bag at MySQL Conference and Expo 2008

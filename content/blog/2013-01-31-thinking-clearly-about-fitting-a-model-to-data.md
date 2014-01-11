@@ -1,5 +1,6 @@
 ---
 title: Thinking clearly about fitting a model to data
+date: "2013-01-31"
 permalink: /2013/01/31/thinking-clearly-about-fitting-a-model-to-data/
 categories:
   - Modeling

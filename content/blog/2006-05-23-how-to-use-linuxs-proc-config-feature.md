@@ -1,5 +1,6 @@
 ---
 title: "How to use Linux's CONFIG_IKCONFIG_PROC feature"
+date: "2006-05-23"
 permalink: /2006/05/23/how-to-use-linuxs-proc-config-feature/
 ---
 This article gives an overview of the Linux kernel's `CONFIG_IKCONFIG_PROC` feature, which stores in the kernel the config file used to build it.

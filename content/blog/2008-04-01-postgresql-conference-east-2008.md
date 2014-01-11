@@ -1,5 +1,6 @@
 ---
 title: PostgreSQL Conference East 2008
+date: "2008-04-01"
 permalink: /2008/04/01/postgresql-conference-east-2008/
 description:
   - >

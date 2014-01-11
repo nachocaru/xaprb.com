@@ -1,5 +1,6 @@
 ---
 title: How to find missing values in a sequence with SQL
+date: "2005-12-06"
 permalink: /2005/12/06/find-missing-numbers-in-a-sequence-with-sql/
 ---
 Sometimes it is important to know which values in a sequence are missing, either to find unused values so they can be used, or to find "holes" in the data. In this article I'll show you how to find missing values, how to find the start and end of ranges of missing values, and how to optimize the queries for best performance.

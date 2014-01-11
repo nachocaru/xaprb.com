@@ -1,5 +1,6 @@
 ---
 title: Congrats to New Relic
+date: "2011-05-17"
 permalink: /2011/05/17/congrats-to-new-relic/
 categories:
   - Tools

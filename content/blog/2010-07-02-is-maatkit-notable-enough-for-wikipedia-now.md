@@ -1,5 +1,6 @@
 ---
 title: Is Maatkit notable enough for Wikipedia now?
+date: "2010-07-02"
 permalink: /2010/07/02/is-maatkit-notable-enough-for-wikipedia-now/
 categories:
   - Maatkit

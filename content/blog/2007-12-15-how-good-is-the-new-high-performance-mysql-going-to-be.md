@@ -5,6 +5,7 @@ title: How good is the new High Performance MySQL going to be?
   <blockquote cite="http://twitter.com/sheeri/statuses/485576042"><p>I gotta hand it to Peter, Vadim, Arjen, and Baron. They know how to write a book!</p></blockquote>
   
   <p>And now I must begin a solid weekend of revisions... wish me luck!</p>
+date: "2007-12-15"
 permalink: /2007/12/15/how-good-is-the-new-high-performance-mysql-going-to-be/
 description:
   - High Performance MySQL Second Edition will be a very good book.

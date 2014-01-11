@@ -1,5 +1,6 @@
 ---
 title: High Performance MySQL Second Edition goes to press!
+date: "2008-06-06"
 permalink: /2008/06/06/high-performance-mysql-second-edition-goes-to-press/
 description:
   - Buy one for your pet snake, too!

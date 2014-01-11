@@ -1,5 +1,6 @@
 ---
 title: "Don't use future reserved words as identifiers in JavaScript"
+date: "2005-12-23"
 permalink: /2005/12/23/future-reserved-words/
 ---
 Just a quick note: I found recently that some browsers don't complain when I use future reserved words as identifiers in JavaScript. Specifically, I used `char` as a variable name, and no Windows browser had a problem with it &#8212; but when I tested on Mac, both Safari and Firefox complained. Apparently there are differences in JavaScript implementation between the Windows and Mac versions of Firefox 1.5!

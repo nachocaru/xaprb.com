@@ -1,5 +1,6 @@
 ---
 title: How to unit-test code that interacts with a database
+date: "2008-08-19"
 permalink: /2008/08/19/how-to-unit-test-code-that-interacts-with-a-database/
 description:
   - How to unit test a database

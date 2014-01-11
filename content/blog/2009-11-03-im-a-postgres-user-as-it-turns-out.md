@@ -1,5 +1,6 @@
 ---
 title: "I'm a Postgres user, as it turns out"
+date: "2009-11-03"
 permalink: /2009/11/03/im-a-postgres-user-as-it-turns-out/
 categories:
   - PostgreSQL

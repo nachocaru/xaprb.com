@@ -5,6 +5,7 @@ title: Stock images are too popular
   <p><img src='http://www.xaprb.com/blog/wp-content/uploads/2008/03/business_group_meeting.jpg' alt='Business Group Meeting' /></p>
   
   <p>(Photo credit: istockphoto.com)</p>
+date: "2008-03-27"
 permalink: /2008/03/27/stock-images-are-too-popular/
 description:
   - "Why vacuous stock is bad, and why it's even worse not to get exclusive rights to important images."

@@ -1,14 +1,10 @@
 ---
 title: A review of SecoBackup Amazon S3 backups for MySQL
+date: "2009-03-07"
 permalink: /2009/03/07/a-review-of-secobackup-amazon-s3-backups-for-mysql/
 categories:
   - SQL
   - Tools
-tags:
-  - backups
-  - MySQL
-  - mysqldump
-  - SecoBackup
 ---
 After I wrote about [things you need to know about MySQL backups][1], a customer contacted me and asked me what I know about [SecoBackup][2] for MySQL. I see it has a very low cost and Percona has Amazon accounts for testing purposes, so I quickly downloaded s3sql\_2.2.0.1-2.01\_i386.deb, installed it, configured it, and gave it a whirl.
 
@@ -20,7 +16,7 @@ And so I expected to see it using mysqldump. I tried a backup, and indeed I saw 
 
 In any case, mysqldump might be a fine way to take a backup, for some people, but I need to see what command-line parameters it's using before I can determine. So I hacked around for a while, got it to take a backup of my default instance, and eventually found out how to get the parameters it used to dump the data. Here are the parameters:
 
-&#8211;opt &#8211;extended-insert &#8211;single-transaction &#8211;default-character-set=utf8 &#8211;create-options
+`--opt --extended-insert --single-transaction --default-character-set=utf8 --create-options`
 
 I also turned on the log to my mysql instance and examined it afterwards to find out more about what this software really does to the database. I didn't see anything unusual.
 
@@ -30,7 +26,7 @@ So having done that, how does SecoBackup stack up against my list of ten things 
 2.  What technique is used for the backup? Is it mysqldump or a custom product that does something similar? Is it a filesystem copy? **Answer: mysqldump.**
 3.  Does the backup system understand that *you cannot back up InnoDB by simply copying its files*? **Answer: It doesn't do file copies.**
 4.  Does the backup use FLUSH TABLES, LOCK TABLES, or FLUSH TABLES WITH READ LOCK? These all interrupt processing. **Answer: None of the above.**
-5.  What other effects are there on MySQL? Iâ€™ve seen systems that do a RESET MASTER, which immediately breaks replication. Are there any FLUSH commands at all, like FLUSH LOGS? **Answer: None of the above.**
+5.  What other effects are there on MySQL? I've seen systems that do a RESET MASTER, which immediately breaks replication. Are there any FLUSH commands at all, like FLUSH LOGS? **Answer: None of the above.**
 6.  How does the system guarantee that you can perform point-in-time recovery? **Answer: It does not. It doesn't capture the binary log positions.**
 7.  How does the system guarantee consistency with the binary log, InnoDB logs, and replication? **Answer: It does not. It doesn't capture the binary log positions.**
 8.  Can you use the system to set up new MySQL replication slaves? How? **Answer: No. It does not capture the master log positions.**
@@ -39,7 +35,7 @@ So having done that, how does SecoBackup stack up against my list of ten things 
 
 And then there's the other question someone asked in the comments on the original article: how long does it take to restore the backup? The answer is, for big databases it's going to take A Very Long Time. This is another reason why mysqldump is unusable for backing up large databases.
 
-Overall I'm not all that impressed with the quality of the software; I crashed it a number of times trying to set things up and take backups, and it does sort of naive things like print output without a trailing linebreak so the terminal gets messed up. But whether it's a good choice really depends, I think, on your data. (Naturally.) It seems like it's pretty convenient, but even if they fixed the problems and added &#8211;master-data to the mysqldump options, it would absolutely not work for a lot of the systems I work on. Even if you could back up some of those servers with mysqldump, it would take way too long to restore.
+Overall I'm not all that impressed with the quality of the software; I crashed it a number of times trying to set things up and take backups, and it does sort of naive things like print output without a trailing linebreak so the terminal gets messed up. But whether it's a good choice really depends, I think, on your data. (Naturally.) It seems like it's pretty convenient, but even if they fixed the problems and added --master-data to the mysqldump options, it would absolutely not work for a lot of the systems I work on. Even if you could back up some of those servers with mysqldump, it would take way too long to restore.
 
 But here is the most important thing: It is neither Open Source nor Free Software, and I had to download it and try it out to find out that it uses mysqldump rather than some other technique. Nowhere on their website does SecoBackup mention that they take backups via mysqldump. That's basic information that I would like to see right up front. Any backup system should disclose how it works.
 

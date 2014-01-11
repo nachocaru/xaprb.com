@@ -3,6 +3,7 @@ title: Priorities are a project risk
   <p>If you have to prioritize projects (and you do), you are sacrificing one thing for another.  What happens when that starts to work against itself?  What happens when you can't just put the highest priority project on top?  Can you imagine your priorities looking like this?</p>
   
   <p style="text-align:center"><img src="/articles/images/cards.jpg" alt="Playing cards demonstrating circular priorities" width="158" height="156" /></p>
+date: "2006-02-26"
 permalink: /2006/02/26/priorities-are-a-project-risk/
 ---
 If you have to prioritize projects (and you do), you are sacrificing one thing for another. What happens when that starts to work against itself? What happens when you can't just put the highest priority project on top? Can you imagine your priorities looking like this?

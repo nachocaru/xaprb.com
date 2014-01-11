@@ -1,5 +1,6 @@
 ---
 title: SQL Server 2000 date and time puzzler
+date: "2005-12-04"
 permalink: /2005/12/04/sql-server-2000-date-and-time-puzzler/
 ---
 This article explains how comparing DATETIME and SMALLDATETIME values in SQL Server 2000 can introduce subtle bugs. I recently ran into a puzzling situation, which *seemed* like a bug in SQL Server 2000, but was in fact my fault. Even my sharpest colleagues were stumped. In fact, it turned out to be a fairly simple mistake.

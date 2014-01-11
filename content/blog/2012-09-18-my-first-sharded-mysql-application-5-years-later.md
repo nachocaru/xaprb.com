@@ -1,5 +1,6 @@
 ---
 title: My first sharded MySQL application, 5 years later
+date: "2012-09-18"
 permalink: /2012/09/18/my-first-sharded-mysql-application-5-years-later/
 categories:
   - SQL

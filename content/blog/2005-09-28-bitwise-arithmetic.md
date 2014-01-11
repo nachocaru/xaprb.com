@@ -2,6 +2,7 @@
 title: Tips and tricks for bitwise arithmetic
   This is a collection of useful tips and tricks for bitwise arithmetic, useful in
   any programming language, for accomplishing a variety of tasks.
+date: "2005-09-28"
 permalink: /2005/09/28/bitwise-arithmetic/
 ---
 Bitwise arithmetic can be very useful, and not just for C and graphics programmers, but for all types of programming tasks. Those who use it frequently enough become fluent. Here I present a few tips. As I think of more, I will add them here.

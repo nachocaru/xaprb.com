@@ -1,5 +1,6 @@
 ---
 title: Review of Perl Best Practices
+date: "2008-04-01"
 permalink: /2008/04/01/review-of-perl-best-practices/
 description:
   - Perl Best Practices is an essential Perl book that you should not be without.

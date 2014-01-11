@@ -1,5 +1,6 @@
 ---
 title: "I'm a MySQL Conference and Expo advocate again"
+date: "2009-02-06"
 permalink: /2009/02/06/im-a-mysql-conference-and-expo-advocate-again/
 categories:
   - Conferences

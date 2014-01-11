@@ -1,5 +1,6 @@
 ---
 title: Is agent-based or agentless monitoring best?
+date: "2008-08-21"
 permalink: /2008/08/21/is-agent-based-or-agentless-monitoring-best/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: Version 1.1.8 of Better Cacti Templates released
+date: "2011-01-22"
 permalink: /2011/01/22/version-1-1-8-of-better-cacti-templates-released/
 categories:
   - Cacti

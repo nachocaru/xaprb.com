@@ -1,5 +1,6 @@
 ---
 title: "Planned change in Maatkit &#038; Aspersa development"
+date: "2011-07-06"
 permalink: /2011/07/06/planned-change-in-maatkit-aspersa-development/
 categories:
   - Aspersa

@@ -1,5 +1,6 @@
 ---
 title: "A look at innotop's new features"
+date: "2007-01-16"
 permalink: /2007/01/16/a-look-at-innotops-new-features/
 description:
   - A quick overview of the new features in innotop 1.3.0

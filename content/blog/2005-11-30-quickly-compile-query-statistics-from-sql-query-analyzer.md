@@ -1,5 +1,6 @@
 ---
 title: How to analyze statistics from SQL Query Analyzer
+date: "2005-11-30"
 permalink: /2005/11/30/quickly-compile-query-statistics-from-sql-query-analyzer/
 ---
 Microsoft SQL Query Analyzer prints out statistics as text, and it can be tough to wade through it all. Here is an `awk` script for quickly analyzing those statistics.

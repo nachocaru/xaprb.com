@@ -1,5 +1,6 @@
 ---
 title: How is the MariaDB Knowledge Base licensed?
+date: "2013-12-16"
 permalink: /2013/12/16/how-is-the-mariadb-knowledge-base-licensed/
 categories:
   - SQL

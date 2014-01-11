@@ -1,5 +1,6 @@
 ---
 title: Maatkit version 3329 released
+date: "2009-03-31"
 permalink: /2009/03/31/maatkit-version-3329-released/
 categories:
   - Maatkit

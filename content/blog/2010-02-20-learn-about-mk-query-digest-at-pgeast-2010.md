@@ -1,5 +1,6 @@
 ---
 title: Learn about mk-query-digest at PgEast 2010
+date: "2010-02-20"
 permalink: /2010/02/20/learn-about-mk-query-digest-at-pgeast-2010/
 categories:
   - Conferences

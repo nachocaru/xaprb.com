@@ -1,5 +1,6 @@
 ---
 title: Interest building in Percona XtraDB Cluster
+date: "2012-04-26"
 permalink: /2012/04/26/interest-building-in-percona-xtradb-cluster/
 categories:
   - SQL

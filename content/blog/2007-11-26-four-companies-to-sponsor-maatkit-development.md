@@ -59,6 +59,7 @@ title: Four companies to sponsor Maatkit development
   <p>I'm grateful for the sponsorship, but I think the real winners are the MySQL community, who have benefited a lot from Maatkit.  It has made a lot of hard things easier and impossible things possible.  If you're one of those who benefits from Free Software, I encourage you to patronize the businesses that believe in and support it.  Four fine examples are listed above!  Not coincidentally, all of them are the <em>creme de la creme</em> in their respective fields.</p>
   
   <p>Finally, a quick journalistic note: I pre-approved this post with representatives from the companies I mentioned, because I respect their right to represent themselves as they wish, but the words are mine, not theirs.</p>
+date: "2007-11-26"
 permalink: /2007/11/26/four-companies-to-sponsor-maatkit-development/
 description:
   - >

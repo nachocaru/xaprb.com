@@ -1,6 +1,7 @@
 ---
 title: 3 ways to maintain rollup tables in SQL
   <p>At both my current and previous employer I've been involved in designing and maintaining aggregate, or "rollup" tables for advertising traffic data.  I have learned several methods of propagating changes from the atomic data through to its aggregations.  This article discusses these methods, how to implement them, and their pros and cons.</p>
+date: "2006-07-19"
 permalink: /2006/07/19/3-ways-to-maintain-rollup-tables-in-sql/
 description:
   - Compares three methods for keeping rollup tables in sync with their source data.

@@ -1,5 +1,6 @@
 ---
 title: Detecting MySQL server problems automatically
+date: "2012-09-06"
 permalink: /2012/09/06/detecting-mysql-server-problems-automatically/
 categories:
   - SQL

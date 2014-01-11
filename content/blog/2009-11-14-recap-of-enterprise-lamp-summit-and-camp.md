@@ -1,5 +1,6 @@
 ---
 title: Recap of Enterprise LAMP Summit and Camp
+date: "2009-11-14"
 permalink: /2009/11/14/recap-of-enterprise-lamp-summit-and-camp/
 categories:
   - Conferences

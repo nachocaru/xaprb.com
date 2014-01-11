@@ -1,5 +1,6 @@
 ---
 title: New translations of High Performance MySQL
+date: "2013-03-31"
 permalink: /2013/03/31/new-translations-of-high-performance-mysql/
 categories:
   - PostgreSQL

@@ -1,5 +1,6 @@
 ---
 title: What TokuDB might mean for MongoDB
+date: "2013-04-29"
 permalink: /2013/04/29/what-tokudb-might-mean-for-mongodb/
 categories:
   - MongoDB

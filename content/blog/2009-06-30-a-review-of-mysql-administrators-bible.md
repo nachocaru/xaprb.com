@@ -1,5 +1,6 @@
 ---
 title: "A review of MySQL Administrator's Bible"
+date: "2009-06-30"
 permalink: /2009/06/30/a-review-of-mysql-administrators-bible/
 categories:
   - Review

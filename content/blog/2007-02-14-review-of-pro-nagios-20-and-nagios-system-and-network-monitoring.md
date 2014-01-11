@@ -1,8 +1,9 @@
 ---
 title: Review of Pro Nagios 2.0 and Nagios System and Network Monitoring
+date: "2007-02-14"
 permalink: /2007/02/14/review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/
 description:
-  - 'Wolfgang Barthâ€™s Nagios System and Network Monitoring is very good.  James Turnbullâ€™s Pro Nagios 2.0 is hard to read and use.'
+  - 'Wolfgang Barth's Nagios System and Network Monitoring is very good.  James Turnbull's Pro Nagios 2.0 is hard to read and use.'
 ---
 Last week I read two books on Nagios. I found one easy to use and the other difficult.
 

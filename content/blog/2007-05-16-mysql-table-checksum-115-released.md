@@ -1,5 +1,6 @@
 ---
 title: MySQL Table Checksum 1.1.5 released
+date: "2007-05-16"
 permalink: /2007/05/16/mysql-table-checksum-115-released/
 description:
   - >

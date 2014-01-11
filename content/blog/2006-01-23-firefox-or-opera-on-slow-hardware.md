@@ -1,5 +1,6 @@
 ---
 title: Firefox vs. Opera on slow hardware
+date: "2006-01-23"
 permalink: /2006/01/23/firefox-or-opera-on-slow-hardware/
 description:
   - Discusses performance issues modern browsers have with old hardware.

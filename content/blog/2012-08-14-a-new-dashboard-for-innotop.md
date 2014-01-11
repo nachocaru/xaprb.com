@@ -1,5 +1,6 @@
 ---
 title: A new dashboard for innotop
+date: "2012-08-14"
 permalink: /2012/08/14/a-new-dashboard-for-innotop/
 categories:
   - Innotop

@@ -1,5 +1,6 @@
 ---
 title: Copyright statement, privacy policy and terms of use
+date: "2005-12-01"
 permalink: /2005/12/01/copyright-privacy-terms/
 ---
 ### Copyright Statement

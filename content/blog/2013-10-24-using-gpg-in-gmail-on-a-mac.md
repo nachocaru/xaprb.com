@@ -1,5 +1,6 @@
 ---
 title: Using GPG in Gmail on a Mac
+date: "2013-10-24"
 permalink: /2013/10/24/using-gpg-in-gmail-on-a-mac/
 categories:
   - Desktop

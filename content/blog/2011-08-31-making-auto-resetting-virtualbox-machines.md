@@ -1,5 +1,6 @@
 ---
 title: Making auto-resetting VirtualBox machines
+date: "2011-08-31"
 permalink: /2011/08/31/making-auto-resetting-virtualbox-machines/
 categories:
   - Desktop

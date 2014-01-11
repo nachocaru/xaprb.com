@@ -1,5 +1,6 @@
 ---
 title: How to avoid imprecise DECIMAL math in MySQL
+date: "2006-03-08"
 permalink: /2006/03/08/decimal-math-in-mysql/
 description:
   - >

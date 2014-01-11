@@ -1,5 +1,6 @@
 ---
 title: The history of OpenSQL Camp
+date: "2010-04-18"
 permalink: /2010/04/18/the-history-of-opensql-camp/
 categories:
   - Commentary

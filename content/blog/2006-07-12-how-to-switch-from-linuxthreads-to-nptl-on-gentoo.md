@@ -1,5 +1,6 @@
 ---
 title: How to switch from linuxthreads to NPTL on Gentoo
+date: "2006-07-12"
 permalink: /2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/
 description:
   - >

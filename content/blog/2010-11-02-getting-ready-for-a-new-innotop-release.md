@@ -1,5 +1,6 @@
 ---
 title: Getting ready for a new innotop release
+date: "2010-11-02"
 permalink: /2010/11/02/getting-ready-for-a-new-innotop-release/
 categories:
   - Innotop

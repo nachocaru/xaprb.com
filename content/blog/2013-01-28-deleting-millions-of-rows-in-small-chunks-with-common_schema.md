@@ -1,5 +1,6 @@
 ---
 title: Deleting millions of rows in small chunks with common_schema
+date: "2013-01-28"
 permalink: /2013/01/28/deleting-millions-of-rows-in-small-chunks-with-common_schema/
 categories:
   - SQL

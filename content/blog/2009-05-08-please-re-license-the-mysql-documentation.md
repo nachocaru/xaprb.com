@@ -1,5 +1,6 @@
 ---
 title: Please re-license the MySQL documentation
+date: "2009-05-08"
 permalink: /2009/05/08/please-re-license-the-mysql-documentation/
 categories:
   - Commentary

@@ -1,5 +1,6 @@
 ---
 title: JavaScript date formatting benchmarks
+date: "2006-05-14"
 permalink: /2006/05/14/javascript-date-formatting-benchmarks/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: Should Velocity videos be free?
+date: "2013-10-24"
 permalink: /2013/10/24/should-velocity-videos-be-free/
 categories:
   - Conferences

@@ -1,5 +1,6 @@
 ---
 title: "The new hotness in open-core: InnoDB"
+date: "2010-07-02"
 permalink: /2010/07/02/the-new-hotness-in-open-core-innodb/
 categories:
   - Commentary

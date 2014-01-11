@@ -1,5 +1,6 @@
 ---
 title: What I want to see at Percona Live
+date: "2011-10-19"
 permalink: /2011/10/19/what-i-want-to-see-at-percona-live/
 categories:
   - SQL

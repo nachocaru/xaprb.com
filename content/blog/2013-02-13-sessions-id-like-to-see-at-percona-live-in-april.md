@@ -1,5 +1,6 @@
 ---
 title: "Sessions I'd like to see at Percona Live in April"
+date: "2013-02-13"
 permalink: /2013/02/13/sessions-id-like-to-see-at-percona-live-in-april/
 categories:
   - Conferences

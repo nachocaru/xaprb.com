@@ -1,5 +1,6 @@
 ---
 title: "A review of O'Reilly's SQL Hacks"
+date: "2007-01-02"
 permalink: /2007/01/02/a-review-of-oreillys-sql-hacks/
 description:
   - "I give this O'Reilly book 3 out of 5 stars for good content, but poor editing and reviewing."

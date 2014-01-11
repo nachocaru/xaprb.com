@@ -20,6 +20,7 @@ title: Role-based access control in SQL, part 2
   scalability are important design goals.  I'll end with a brief explanation of
   how I've used this system to make my own web applications simpler and more
   secure.</p>
+date: "2006-08-18"
 permalink: /2006/08/18/role-based-access-control-in-sql-part-2/
 description:
   - >

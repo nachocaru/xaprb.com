@@ -11,7 +11,7 @@ In the earlier article, I wrote
 
 <blockquote cite="/blog/2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/">
   <p>
-    The solution is not to alias the tables. Itâ€™s less convenient, but itâ€™s the only thing to do sometimes.
+    The solution is not to alias the tables. It's less convenient, but it's the only thing to do sometimes.
   </p>
 </blockquote>
 

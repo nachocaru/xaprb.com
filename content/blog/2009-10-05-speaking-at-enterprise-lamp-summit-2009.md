@@ -1,5 +1,6 @@
 ---
 title: Speaking at Enterprise LAMP Summit 2009
+date: "2009-10-05"
 permalink: /2009/10/05/speaking-at-enterprise-lamp-summit-2009/
 categories:
   - Conferences

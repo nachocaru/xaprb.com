@@ -1,6 +1,7 @@
 ---
 title: JavaScript formatting library update
   <p>This is a quick update on the state of my <a href="http://www.xaprb.comhttp://www.xaprb.com/blog/2005/12/20/javascript-date-parsing/">JavaScript date formatting libraries</a> and date chooser, and <a href="/blog/2006/01/05/javascript-number-formatting/">JavaScript number formatting library</a>.  It's been a while since I wrote them, and as you can tell my interests have turned to many other things, but thet remain the <a href="http://www.xaprb.com/blog/2006/05/14/javascript-date-formatting-benchmarks/">best JavaScript formatting and parsing libraries</a> I've seen.</p>
+date: "2007-06-25"
 permalink: /2007/06/25/javascript-formatting-library-update/
 description:
   - High performance JavaScript date and number parsing and formatting libraries.

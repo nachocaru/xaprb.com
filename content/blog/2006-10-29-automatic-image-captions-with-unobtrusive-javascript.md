@@ -1,5 +1,6 @@
 ---
 title: Automatic image captions with unobtrusive JavaScript
+date: "2006-10-29"
 permalink: /2006/10/29/automatic-image-captions-with-unobtrusive-javascript/
 description:
   - |

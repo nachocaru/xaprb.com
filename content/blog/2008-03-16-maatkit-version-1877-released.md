@@ -135,6 +135,7 @@ title: Maatkit version 1877 released
      * Added --setvars option (bug #1904689, bug #1911371).
      * Added --charset option (bug #1877548).
   </pre>
+date: "2008-03-16"
 permalink: /2008/03/16/maatkit-version-1877-released/
 description:
   - >

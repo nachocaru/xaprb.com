@@ -1,5 +1,6 @@
 ---
 title: How to escalate privileges in MySQL
+date: "2006-05-31"
 permalink: /2006/05/31/how-to-escalate-privileges-in-mysql/
 description:
   - Explains why the common advice on how to add a MySQL user is a security problem.

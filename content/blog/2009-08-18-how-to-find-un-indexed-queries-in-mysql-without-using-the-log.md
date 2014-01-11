@@ -1,5 +1,6 @@
 ---
 title: How to find un-indexed queries in MySQL, without using the log
+date: "2009-08-18"
 permalink: /2009/08/18/how-to-find-un-indexed-queries-in-mysql-without-using-the-log/
 categories:
   - Maatkit

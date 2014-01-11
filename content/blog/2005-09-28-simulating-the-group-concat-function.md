@@ -1,5 +1,6 @@
 ---
 title: How to simulate the GROUP_CONCAT function
+date: "2005-09-28"
 permalink: /2005/09/28/simulating-the-group-concat-function/
 description:
   - 'Shows how to simulate GROUP_CONCAT in earlier versions of MySQL.  Plus, tips for MS SQL Server.'

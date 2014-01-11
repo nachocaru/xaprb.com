@@ -1,5 +1,6 @@
 ---
 title: How to change the default database in MySQL
+date: "2008-10-11"
 permalink: /2008/10/11/how-to-change-the-default-database-in-mysql/
 categories:
   - SQL

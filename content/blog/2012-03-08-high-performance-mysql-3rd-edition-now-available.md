@@ -1,5 +1,6 @@
 ---
 title: High Performance MySQL 3rd edition now available
+date: "2012-03-08"
 permalink: /2012/03/08/high-performance-mysql-3rd-edition-now-available/
 categories:
   - High Performance MySQL

@@ -1,5 +1,6 @@
 ---
 title: How to auto-mount removable devices in GNU/Linux
+date: "2006-05-20"
 permalink: /2006/05/20/how-to-auto-mount-removable-devices-in-gnulinux/
 description:
   - "It's easy to get removable devices mounted automatically in GNU/Linux without hassle, hacking, or installing huge desktop environments."

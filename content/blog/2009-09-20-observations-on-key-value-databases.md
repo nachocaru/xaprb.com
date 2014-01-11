@@ -1,5 +1,6 @@
 ---
 title: Observations on key-value databases
+date: "2009-09-20"
 permalink: /2009/09/20/observations-on-key-value-databases/
 categories:
   - SQL

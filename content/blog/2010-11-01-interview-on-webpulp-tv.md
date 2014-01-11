@@ -1,5 +1,6 @@
 ---
 title: Interview on webpulp.tv
+date: "2010-11-01"
 permalink: /2010/11/01/interview-on-webpulp-tv/
 categories:
   - SQL

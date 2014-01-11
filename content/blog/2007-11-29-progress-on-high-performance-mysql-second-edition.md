@@ -17,6 +17,7 @@ title: Progress on High Performance MySQL, Second Edition
   </ul>
   
   <p>Well, I've run out of my allotted thirty minutes of blogging!  Back to the salt mines!  Just kidding...  I'm actually off to the climbing gym soon to get my mind off it.</p>
+date: "2007-11-29"
 permalink: /2007/11/29/progress-on-high-performance-mysql-second-edition/
 description:
   - >

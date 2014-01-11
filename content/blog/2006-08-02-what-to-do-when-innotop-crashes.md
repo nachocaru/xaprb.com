@@ -1,5 +1,6 @@
 ---
 title: What to do when innotop crashes
+date: "2006-08-02"
 permalink: /2006/08/02/what-to-do-when-innotop-crashes/
 description:
   - Explains how to submit a bug report for the innotop InnoDB and MySQL monitor.

@@ -1,5 +1,6 @@
 ---
 title: Where do you use Maatkit in real life?
+date: "2009-01-13"
 permalink: /2009/01/13/where-do-you-use-maatkit-in-real-life/
 categories:
   - Maatkit

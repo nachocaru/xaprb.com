@@ -1,5 +1,6 @@
 ---
 title: Upcoming innotop features
+date: "2006-12-13"
 permalink: /2006/12/13/upcoming-innotop-features/
 description:
   - "List of new innotop features I'm working on."

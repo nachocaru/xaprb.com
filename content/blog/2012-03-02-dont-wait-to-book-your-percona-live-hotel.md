@@ -1,5 +1,6 @@
 ---
 title: "Don't wait to book your Percona Live hotel"
+date: "2012-03-02"
 permalink: /2012/03/02/dont-wait-to-book-your-percona-live-hotel/
 categories:
   - SQL

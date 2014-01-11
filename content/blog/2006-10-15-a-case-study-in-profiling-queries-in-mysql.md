@@ -1,5 +1,6 @@
 ---
 title: A case study in profiling queries in MySQL
+date: "2006-10-15"
 permalink: /2006/10/15/a-case-study-in-profiling-queries-in-mysql/
 description:
   - >

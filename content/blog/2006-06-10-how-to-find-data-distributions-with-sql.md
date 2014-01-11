@@ -1,6 +1,7 @@
 ---
 title: How to find data distributions with SQL
   <p>In an earlier article I wrote about <a href="http://www.xaprb.com/blog/2005/09/28/grouping-data-with-catch-all-ranks/">grouping data into ranks with a catch-all bucket</a>.  In this article I'll show you how to group the data into variable-sized buckets any way you please.</p>
+date: "2006-06-10"
 permalink: /2006/06/10/how-to-find-data-distributions-with-sql/
 description:
   - >

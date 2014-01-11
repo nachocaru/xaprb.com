@@ -5,6 +5,7 @@ title: Progress on Maatkit bounty, part 4
   <p>It's good that I'm doing this.  I found that mk-heartbeat suddenly doesn't work on my Ubuntu 7.10 laptop.  It goes into infinite sleep.  Can anyone repro this and/or diagnose?  The same code works fine on my Gentoo servers at work.</p>
   
   <p>Hopefully I'll be able to release something very soon.  Release early/often is fine, but "knowingly release brokenness" isn't in my code of conduct :)</p>
+date: "2007-12-06"
 permalink: /2007/12/06/progress-on-maatkit-bounty-part-4/
 description:
   - Why is mk-heartbeat sleeping infinitely?

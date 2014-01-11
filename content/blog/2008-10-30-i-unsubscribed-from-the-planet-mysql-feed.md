@@ -1,5 +1,6 @@
 ---
 title: I unsubscribed from the Planet MySQL feed
+date: "2008-10-30"
 permalink: /2008/10/30/i-unsubscribed-from-the-planet-mysql-feed/
 categories:
   - SQL

@@ -1,6 +1,7 @@
 ---
 title: Introducing MySQL Parallel Dump
   <p>A while ago <a href="http://www.mysqlperformanceblog.com/2007/05/22/wishes-for-mysqldump/">Peter Zaitsev wrote about his wishes for mysqldump</a>.  These included multi-threaded dumps and "safe" dumps that would wait for a server to restart if it crashed, then keep dumping other tables.  I've had sketches of this done for a while, but during this week I fleshed it out while writing about <a href="http://www.xaprb.com/blog/2007/09/19/high-performance-mysql-second-edition-backup-and-recovery/">backup and recovery for our upcoming book</a>.</p>
+date: "2007-09-30"
 permalink: /2007/09/30/introducing-mysql-parallel-dump/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: How to check MySQL replication integrity continually
+date: "2008-10-04"
 permalink: /2008/10/04/how-to-check-mysql-replication-integrity-continually/
 categories:
   - Maatkit

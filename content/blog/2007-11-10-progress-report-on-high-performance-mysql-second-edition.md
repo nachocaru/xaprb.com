@@ -1,5 +1,6 @@
 ---
 title: Progress report on High Performance MySQL, Second Edition
+date: "2007-11-10"
 permalink: /2007/11/10/progress-report-on-high-performance-mysql-second-edition/
 description:
   - 'Status report on High Performance MySQL, Second Edition: Security, benchmarks, profiling, tuning, server status, indexing, query optimization, schema optimization'

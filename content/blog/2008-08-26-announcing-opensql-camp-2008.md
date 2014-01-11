@@ -1,5 +1,6 @@
 ---
 title: Announcing OpenSQL Camp 2008
+date: "2008-08-26"
 permalink: /2008/08/26/announcing-opensql-camp-2008/
 categories:
   - OpenSQL Camp

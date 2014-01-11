@@ -1,5 +1,6 @@
 ---
 title: It happened again
+date: "2013-09-27"
 permalink: /2013/09/27/it-happened-again/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: Drizzle is a MySQL Technology Incubator?
+date: "2009-04-21"
 permalink: /2009/04/21/drizzle-is-a-mysql-technology-incubator/
 categories:
   - Conferences

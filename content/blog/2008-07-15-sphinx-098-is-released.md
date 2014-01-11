@@ -1,5 +1,6 @@
 ---
 title: Sphinx 0.9.8 is released!
+date: "2008-07-15"
 permalink: /2008/07/15/sphinx-098-is-released/
 tags:
   - Andrew Aksyonoff

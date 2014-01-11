@@ -1,5 +1,6 @@
 ---
 title: How to get your submission rejected from the MySQL conference
+date: "2010-10-13"
 permalink: /2010/10/13/how-to-get-your-submission-rejected-from-the-mysql-conference/
 categories:
   - Conferences

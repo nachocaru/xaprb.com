@@ -1,5 +1,6 @@
 ---
 title: A tip when upgrading mysql-cacti-templates
+date: "2009-10-15"
 permalink: /2009/10/15/a-tip-when-upgrading-mysql-cacti-templates/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: Binary log checksums in MySQL 5.6
+date: "2012-09-30"
 permalink: /2012/09/30/binary-log-checksums-in-mysql-5-6/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: A review of The Art of Capacity Planning by John Allspaw
+date: "2009-10-24"
 permalink: /2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/
 categories:
   - Review

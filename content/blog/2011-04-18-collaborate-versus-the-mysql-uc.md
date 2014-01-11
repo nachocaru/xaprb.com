@@ -1,5 +1,6 @@
 ---
 title: Collaborate versus the MySQL UC
+date: "2011-04-18"
 permalink: /2011/04/18/collaborate-versus-the-mysql-uc/
 categories:
   - Conferences

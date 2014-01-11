@@ -1,5 +1,6 @@
 ---
 title: "ASP.NET's Profile DB schema"
+date: "2006-01-08"
 permalink: /2006/01/08/aspnet-profile-schema/
 description:
   - "This article and its comments discuss how ASP.NET's Profile feature is designed and how to use it."

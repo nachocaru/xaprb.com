@@ -14,6 +14,7 @@ title: Maatkit version 1753 released
     <p>(Not actual results.  Your mileage may vary.  Closed course, professional driver.  Do not attempt).</p>
     
     <p>Nothing else in this release is very exciting.  I just wanted to get the bug fixes out there.</p>
+date: "2008-02-10"
 permalink: /2008/02/10/maatkit-version-1753-released/
 description:
   - mk-heartbeat can now check many slaves at once.

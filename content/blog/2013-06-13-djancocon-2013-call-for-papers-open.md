@@ -1,5 +1,6 @@
 ---
 title: Djancocon 2013 call for papers open
+date: "2013-06-13"
 permalink: /2013/06/13/djancocon-2013-call-for-papers-open/
 categories:
   - SQL

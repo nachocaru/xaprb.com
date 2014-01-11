@@ -1,5 +1,6 @@
 ---
 title: All measurements are wrong
+date: "2010-10-02"
 permalink: /2010/10/02/all-measurements-are-wrong/
 categories:
   - Coding

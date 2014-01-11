@@ -1,5 +1,6 @@
 ---
 title: How to simulate the SQL ROW_NUMBER function
+date: "2005-09-27"
 permalink: /2005/09/27/simulating-the-sql-row_number-function/
 tags:
   - Ranked data

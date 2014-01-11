@@ -1,5 +1,6 @@
 ---
 title: Debugging metadata locking in MySQL 5.5
+date: "2012-08-28"
 permalink: /2012/08/28/debugging-metadata-locking-in-mysql-5-5/
 categories:
   - SQL

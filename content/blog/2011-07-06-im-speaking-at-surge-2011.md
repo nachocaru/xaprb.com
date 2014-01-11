@@ -1,5 +1,6 @@
 ---
 title: "I'm speaking at Surge 2011"
+date: "2011-07-06"
 permalink: /2011/07/06/im-speaking-at-surge-2011/
 categories:
   - Conferences

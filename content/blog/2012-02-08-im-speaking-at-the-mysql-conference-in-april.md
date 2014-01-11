@@ -1,5 +1,6 @@
 ---
 title: "I'm speaking at the MySQL conference in April"
+date: "2012-02-08"
 permalink: /2012/02/08/im-speaking-at-the-mysql-conference-in-april/
 categories:
   - SQL

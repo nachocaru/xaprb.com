@@ -1,5 +1,6 @@
 ---
 title: Ignoring, laughing, fighting, winning
+date: "2010-04-29"
 permalink: /2010/04/29/ignoring-laughing-fighting-winning/
 categories:
   - Commentary

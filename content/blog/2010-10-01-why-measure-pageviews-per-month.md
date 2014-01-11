@@ -1,5 +1,6 @@
 ---
 title: Why measure pageviews per month?
+date: "2010-10-01"
 permalink: /2010/10/01/why-measure-pageviews-per-month/
 categories:
   - World Wide Web

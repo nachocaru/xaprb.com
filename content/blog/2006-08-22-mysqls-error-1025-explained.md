@@ -1,5 +1,6 @@
 ---
 title: "MySQL's ERROR 1025 explained"
+date: "2006-08-22"
 permalink: /2006/08/22/mysqls-error-1025-explained/
 description:
   - |

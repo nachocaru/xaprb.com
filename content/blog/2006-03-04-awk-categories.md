@@ -1,5 +1,6 @@
 ---
 title: How to flatten hierarchies with awk
+date: "2006-03-04"
 permalink: /2006/03/04/awk-categories/
 description:
   - Explains how to use awk to quickly flatten or denormalize hierarchical data.

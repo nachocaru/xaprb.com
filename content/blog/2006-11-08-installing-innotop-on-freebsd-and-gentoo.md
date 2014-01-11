@@ -1,5 +1,6 @@
 ---
 title: Installing innotop on FreeBSD and Gentoo
+date: "2006-11-08"
 permalink: /2006/11/08/installing-innotop-on-freebsd-and-gentoo/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: My recipe for more enjoyable presentations
+date: "2013-07-02"
 permalink: /2013/07/02/my-recipe-for-more-enjoyable-presentations/
 categories:
   - Conferences

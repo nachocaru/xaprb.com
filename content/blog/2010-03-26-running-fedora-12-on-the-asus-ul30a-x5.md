@@ -1,5 +1,6 @@
 ---
 title: Running Fedora 12 on the ASUS UL30A-X5
+date: "2010-03-26"
 permalink: /2010/03/26/running-fedora-12-on-the-asus-ul30a-x5/
 categories:
   - Review

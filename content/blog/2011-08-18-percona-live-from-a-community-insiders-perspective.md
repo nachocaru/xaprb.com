@@ -1,5 +1,6 @@
 ---
 title: "Percona Live from a community insider's perspective"
+date: "2011-08-18"
 permalink: /2011/08/18/percona-live-from-a-community-insiders-perspective/
 categories:
   - Conferences

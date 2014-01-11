@@ -1,5 +1,6 @@
 ---
 title: Thoughts on the new PERFORMANCE_SCHEMA in MySQL
+date: "2009-02-08"
 permalink: /2009/02/08/thoughts-on-the-new-performance_schema-in-mysql/
 categories:
   - SQL
@@ -17,7 +18,7 @@ If the implementation turns out to be as good as the initial swing at it looks, 
 A few questions and comments, though.
 
 *   Why has this not been public? You put four years of work into this without any community input? What a shame.
-*   Mark says "Thereâ€™s no stats for InnoDB yet, though I canâ€™t see that lasting for long." I can. Why don't you see InnoDB being slow to add support for it?
+*   Mark says "There's no stats for InnoDB yet, though I can't see that lasting for long." I can. Why don't you see InnoDB being slow to add support for it?
 *   What version is this intended for? 6.x is kind of vague after four years of work.
 *   Information by itself is no use unless you can act on it. I predict that a lot of neglected bug reports will get revisited if this information can be brought to bear on it. I also predict that if implemented fully, this will show people where the hot spots in their server are; and yet they'll be unable to fix them.
 

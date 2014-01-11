@@ -1,5 +1,6 @@
 ---
 title: How to re-index a large database table
+date: "2006-06-14"
 permalink: /2006/06/14/how-to-re-index-a-large-database-table/
 description:
   - "Gives concrete strategies for re-indexing a table when it's too large to alter through the usual means."

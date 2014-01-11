@@ -1,5 +1,6 @@
 ---
 title: How MySQL really executes a query
+date: "2009-04-01"
 permalink: /2009/04/01/how-mysql-really-executes-a-query/
 categories:
   - PostgreSQL

@@ -1,5 +1,6 @@
 ---
 title: Comparison of table sync algorithms
+date: "2007-03-30"
 permalink: /2007/03/30/comparison-of-table-sync-algorithms/
 description:
   - >

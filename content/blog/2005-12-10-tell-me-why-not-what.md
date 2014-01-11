@@ -1,5 +1,6 @@
 ---
 title: "How to write good comments: say why, not what"
+date: "2005-12-10"
 permalink: /2005/12/10/tell-me-why-not-what/
 ---
 I have [written before][1] about badly commented code, but I've recently encountered two examples of code that warns someone of something bad, then never tells them what it is. This is a great reason to write comments that say why, not what &#8212; my first rule of thumb when commenting code.

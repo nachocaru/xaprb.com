@@ -1,5 +1,6 @@
 ---
 title: Updated spam controls
+date: "2013-02-18"
 permalink: /2013/02/18/updated-spam-controls/
 categories:
   - About

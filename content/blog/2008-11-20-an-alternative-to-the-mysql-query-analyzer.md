@@ -1,5 +1,6 @@
 ---
 title: An alternative to the MySQL Query Analyzer
+date: "2008-11-20"
 permalink: /2008/11/20/an-alternative-to-the-mysql-query-analyzer/
 categories:
   - SQL

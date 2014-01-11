@@ -1,5 +1,6 @@
 ---
 title: What kind of High Availability do you need?
+date: "2011-05-15"
 permalink: /2011/05/15/what-kind-of-high-availability-do-you-need/
 categories:
   - SQL

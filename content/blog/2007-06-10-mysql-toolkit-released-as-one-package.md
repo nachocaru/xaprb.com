@@ -1,5 +1,6 @@
 ---
 title: MySQL Toolkit released as one package
+date: "2007-06-10"
 permalink: /2007/06/10/mysql-toolkit-released-as-one-package/
 description:
   - MySQL Toolkit is now released as a single package.

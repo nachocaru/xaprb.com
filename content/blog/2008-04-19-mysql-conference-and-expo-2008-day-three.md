@@ -1,5 +1,6 @@
 ---
 title: MySQL Conference and Expo 2008, Day Three
+date: "2008-04-19"
 permalink: /2008/04/19/mysql-conference-and-expo-2008-day-three/
 description:
   - The talks I attended at MySQL Conference and Expo 2008

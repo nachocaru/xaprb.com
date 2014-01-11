@@ -1,5 +1,6 @@
 ---
 title: JavaScript date parsing and formatting, Part 1
+date: "2005-12-12"
 permalink: /2005/12/12/javascript-closures-for-runtime-efficiency/
 ---
 <p style="border:solid red 1px; background:yellow">

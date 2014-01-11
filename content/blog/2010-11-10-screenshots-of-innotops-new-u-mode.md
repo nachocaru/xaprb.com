@@ -1,5 +1,6 @@
 ---
 title: "Screenshots of innotop's new U mode"
+date: "2010-11-10"
 permalink: /2010/11/10/screenshots-of-innotops-new-u-mode/
 categories:
   - Innotop

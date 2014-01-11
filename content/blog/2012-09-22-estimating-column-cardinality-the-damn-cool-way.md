@@ -1,5 +1,6 @@
 ---
 title: Estimating column cardinality the damn cool way
+date: "2012-09-22"
 permalink: /2012/09/22/estimating-column-cardinality-the-damn-cool-way/
 categories:
   - SQL

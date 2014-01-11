@@ -1,5 +1,6 @@
 ---
 title: Maatkit version 2979 released
+date: "2009-02-01"
 permalink: /2009/02/01/maatkit-version-2979-released/
 categories:
   - SQL

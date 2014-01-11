@@ -1,5 +1,6 @@
 ---
 title: Archive strategies for OLTP servers, Part 3
+date: "2007-06-15"
 permalink: /2007/06/15/archive-strategies-for-oltp-servers-part-3/
 description:
   - 'Last in a series on OLTP archiving: how to move the data, unarchive, and notes and links related to database archiving'

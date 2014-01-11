@@ -1,5 +1,6 @@
 ---
 title: Introducing MySQL Visual Explain
+date: "2007-07-29"
 permalink: /2007/07/29/introducing-mysql-visual-explain/
 description:
   - >

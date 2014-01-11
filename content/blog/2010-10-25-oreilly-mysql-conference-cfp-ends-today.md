@@ -1,5 +1,6 @@
 ---
 title: "O'Reilly MySQL Conference CfP ends today"
+date: "2010-10-25"
 permalink: /2010/10/25/oreilly-mysql-conference-cfp-ends-today/
 categories:
   - Conferences

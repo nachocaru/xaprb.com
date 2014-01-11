@@ -1,5 +1,6 @@
 ---
 title: The partitioning improvement that almost was
+date: "2011-03-22"
 permalink: /2011/03/22/the-partitioning-improvement-that-almost-was/
 categories:
   - SQL

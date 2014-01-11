@@ -1,5 +1,6 @@
 ---
 title: Why does InnoDB create two indexes per foreign key?
+date: "2006-07-27"
 permalink: /2006/07/27/why-does-innodb-create-two-indexes-per-foreign-key/
 description:
   - >

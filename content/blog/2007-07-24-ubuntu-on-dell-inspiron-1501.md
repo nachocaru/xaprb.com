@@ -3,6 +3,7 @@ title: Ubuntu on Dell Inspiron 1501
   <p>I recently bought a Dell Inspiron 1501, which I got a great deal on thanks to the fine people at <a href="http://www.dealnews.com/">DealNews</a>.  The base system was $449 shipped, and I chose to upgrade the processor to dual AMD64s.  But I didn't buy the system that came with Ubuntu pre-installed; for whatever reason, the one that came with Windows offered a special discount (normally the Windows tax for otherwise identical machines appears to be around $150, and I'm certainly not going to run Windows).</p>
   
   <p>Therefore, I was not sure Ubuntu would support all the hardware.  It's the same story it's been for as long as I've been using computers: hardware manufacturers withhold specifications from the Free Software world, so there is always a chance something will be a trouble.  The good news is, I've only noticed two very minor incompatibilities out of the box.</p>
+date: "2007-07-24"
 permalink: /2007/07/24/ubuntu-on-dell-inspiron-1501/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: A post-conference tradition
+date: "2012-04-19"
 permalink: /2012/04/19/a-post-conference-tradition/
 categories:
   - SQL

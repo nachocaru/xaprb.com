@@ -1,5 +1,6 @@
 ---
 title: How to leave a program running after you log out
+date: "2008-08-01"
 permalink: /2008/08/01/how-to-leave-a-program-running-after-you-log-out/
 description:
   - "Explains how to run a program in the background so it doesn't exit when you disconnect."

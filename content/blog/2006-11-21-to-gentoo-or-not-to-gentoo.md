@@ -1,5 +1,6 @@
 ---
 title: To Gentoo or not to Gentoo?
+date: "2006-11-21"
 permalink: /2006/11/21/to-gentoo-or-not-to-gentoo/
 description:
   - "Why I don't use Gentoo myself anymore.  It's too hard to update and maintain, not fast enough, and I'm not confident of the builds."

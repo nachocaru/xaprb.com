@@ -1,5 +1,6 @@
 ---
 title: MySQL and PostgreSQL cross-links
+date: "2011-02-03"
 permalink: /2011/02/03/mysql-and-postgresql-cross-links/
 categories:
   - PostgreSQL

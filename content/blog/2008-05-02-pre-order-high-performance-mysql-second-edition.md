@@ -1,5 +1,6 @@
 ---
 title: Pre-Order High Performance MySQL Second Edition
+date: "2008-05-02"
 permalink: /2008/05/02/pre-order-high-performance-mysql-second-edition/
 categories:
   - High Performance MySQL

@@ -1,5 +1,6 @@
 ---
 title: Maatkit version 1508 released
+date: "2007-12-16"
 permalink: /2007/12/16/maatkit-version-1508-released/
 description:
   - Minor bug fixes for Maatkit

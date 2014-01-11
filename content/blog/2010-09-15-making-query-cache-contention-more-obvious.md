@@ -1,5 +1,6 @@
 ---
 title: Making query cache contention more obvious
+date: "2010-09-15"
 permalink: /2010/09/15/making-query-cache-contention-more-obvious/
 categories:
   - SQL

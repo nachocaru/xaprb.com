@@ -1,5 +1,6 @@
 ---
 title: JavaScript combo box
+date: "2005-09-29"
 permalink: /2005/09/29/javascript-combo-box/
 ---
 <p style="border:solid red 1px; background:yellow">

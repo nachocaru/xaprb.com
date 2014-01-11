@@ -1,5 +1,6 @@
 ---
 title: Bash parameter expansion cheatsheet
+date: "2007-03-29"
 permalink: /2007/03/29/bash-parameter-expansion-cheatsheet/
 description:
   - >

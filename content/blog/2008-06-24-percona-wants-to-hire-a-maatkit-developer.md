@@ -1,5 +1,6 @@
 ---
 title: Percona wants to hire a Maatkit developer
+date: "2008-06-24"
 permalink: /2008/06/24/percona-wants-to-hire-a-maatkit-developer/
 categories:
   - Maatkit

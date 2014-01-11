@@ -1,5 +1,6 @@
 ---
 title: A new home for innotop in the new year
+date: "2007-01-06"
 permalink: /2007/01/06/a-new-home-for-innotop-in-the-new-year/
 description:
   - I need your help making the best MySQL monitor better.

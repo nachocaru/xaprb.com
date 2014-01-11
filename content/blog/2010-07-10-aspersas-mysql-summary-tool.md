@@ -1,5 +1,6 @@
 ---
 title: "Aspersa's mysql-summary tool"
+date: "2010-07-10"
 permalink: /2010/07/10/aspersas-mysql-summary-tool/
 categories:
   - Aspersa

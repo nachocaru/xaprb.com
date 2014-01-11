@@ -1,5 +1,6 @@
 ---
 title: MySQL Toolkit version 989 released
+date: "2007-10-03"
 permalink: /2007/10/03/mysql-toolkit-version-989-released/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: Seeking input on a badness score for query execution
+date: "2009-06-26"
 permalink: /2009/06/26/seeking-input-on-a-badness-score-for-query-execution/
 categories:
   - Maatkit

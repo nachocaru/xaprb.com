@@ -1,5 +1,6 @@
 ---
 title: "What's the value of a Computer Science education?"
+date: "2013-03-05"
 permalink: /2013/03/05/whats-the-value-of-a-computer-science-education/
 categories:
   - Commentary

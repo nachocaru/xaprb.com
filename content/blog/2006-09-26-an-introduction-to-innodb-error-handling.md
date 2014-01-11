@@ -1,5 +1,6 @@
 ---
 title: An introduction to InnoDB error handling
+date: "2006-09-26"
 permalink: /2006/09/26/an-introduction-to-innodb-error-handling/
 description:
   - >

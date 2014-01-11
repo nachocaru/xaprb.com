@@ -1,5 +1,6 @@
 ---
 title: How to format numbers in JavaScript flexibly and efficiently
+date: "2006-01-05"
 permalink: /2006/01/05/javascript-number-formatting/
 description:
   - A JavaScript library for efficient, infinitely flexible number formatting.

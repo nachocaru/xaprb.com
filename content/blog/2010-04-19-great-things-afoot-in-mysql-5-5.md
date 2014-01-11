@@ -1,5 +1,6 @@
 ---
 title: Great things afoot in MySQL 5.5
+date: "2010-04-19"
 permalink: /2010/04/19/great-things-afoot-in-mysql-5-5/
 categories:
   - SQL

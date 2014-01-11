@@ -1,5 +1,6 @@
 ---
 title: OpenSQL Camp Boston 2010
+date: "2010-06-25"
 permalink: /2010/06/25/opensql-camp-boston-2010/
 categories:
   - Conferences

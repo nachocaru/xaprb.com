@@ -1,5 +1,6 @@
 ---
 title: Like it or not, it is the MySQL Conference and Expo
+date: "2008-04-23"
 permalink: /2008/04/23/like-it-or-not-it-is-the-mysql-conference-and-expo/
 categories:
   - Commentary

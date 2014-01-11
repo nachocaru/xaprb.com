@@ -1,5 +1,6 @@
 ---
 title: innotop is available from openSUSE buildservice
+date: "2007-08-31"
 permalink: /2007/08/31/innotop-is-available-from-opensuse-buildservice/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: The unexpected consequences of SELinux
+date: "2008-10-16"
 permalink: /2008/10/16/the-unexpected-consequences-of-selinux/
 categories:
   - SQL

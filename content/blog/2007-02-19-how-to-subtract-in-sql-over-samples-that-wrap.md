@@ -1,5 +1,6 @@
 ---
 title: How to subtract in SQL over samples that wrap
+date: "2007-02-19"
 permalink: /2007/02/19/how-to-subtract-in-sql-over-samples-that-wrap/
 description:
   - >

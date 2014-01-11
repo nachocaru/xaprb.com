@@ -1,5 +1,6 @@
 ---
 title: Version 1.1.7 of Better Cacti Templates released
+date: "2010-04-20"
 permalink: /2010/04/20/version-1-1-7-of-better-cacti-templates-released/
 categories:
   - PHP

@@ -1,5 +1,6 @@
 ---
 title: How VoltDB does transaction ordering and replication
+date: "2011-02-15"
 permalink: /2011/02/15/how-voltdb-does-transaction-ordering-and-replication/
 categories:
   - SQL

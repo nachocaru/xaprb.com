@@ -1,5 +1,6 @@
 ---
 title: Archive strategies for OLTP servers, Part 1
+date: "2007-06-13"
 permalink: /2007/06/13/archive-strategies-for-oltp-servers-part-1/
 description:
   - Examines motivations and requirements for designing archiving strategies

@@ -1,5 +1,6 @@
 ---
 title: Stopping spam on Google Groups
+date: "2009-09-13"
 permalink: /2009/09/13/stopping-spam-on-google-groups/
 categories:
   - World Wide Web

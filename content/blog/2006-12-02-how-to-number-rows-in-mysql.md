@@ -1,5 +1,6 @@
 ---
 title: How to number rows in MySQL
+date: "2006-12-02"
 permalink: /2006/12/02/how-to-number-rows-in-mysql/
 description:
   - >

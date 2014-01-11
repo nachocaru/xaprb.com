@@ -1,5 +1,6 @@
 ---
 title: "Pop quiz: when will a filesystem copy be an incomplete backup?"
+date: "2010-09-25"
 permalink: /2010/09/25/pop-quiz-when-will-a-filesystem-copy-be-an-incomplete-backup/
 categories:
   - SQL

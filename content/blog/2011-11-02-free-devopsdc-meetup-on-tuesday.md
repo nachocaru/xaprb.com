@@ -1,5 +1,6 @@
 ---
 title: Free DevOpsDC meetup on Tuesday
+date: "2011-11-02"
 permalink: /2011/11/02/free-devopsdc-meetup-on-tuesday/
 categories:
   - SQL

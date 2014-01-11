@@ -1,5 +1,6 @@
 ---
 title: A review of Guerrilla Capacity Planning by Neil Gunther
+date: "2010-07-06"
 permalink: /2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/
 categories:
   - Review

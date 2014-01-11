@@ -1,5 +1,6 @@
 ---
 title: What are your favorite PostgreSQL performance resources?
+date: "2008-12-13"
 permalink: /2008/12/13/what-are-your-favorite-postgresql-performance-resources/
 categories:
   - PostgreSQL

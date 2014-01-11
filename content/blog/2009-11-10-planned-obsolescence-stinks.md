@@ -1,5 +1,6 @@
 ---
 title: Planned obsolescence stinks
+date: "2009-11-10"
 permalink: /2009/11/10/planned-obsolescence-stinks/
 categories:
   - Commentary

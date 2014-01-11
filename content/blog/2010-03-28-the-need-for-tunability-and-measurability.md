@@ -1,5 +1,6 @@
 ---
 title: The need for tunability and measurability
+date: "2010-03-28"
 permalink: /2010/03/28/the-need-for-tunability-and-measurability/
 categories:
   - PostgreSQL

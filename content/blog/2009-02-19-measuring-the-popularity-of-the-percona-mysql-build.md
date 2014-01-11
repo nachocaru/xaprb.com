@@ -1,5 +1,6 @@
 ---
 title: Measuring the popularity of the Percona MySQL build
+date: "2009-02-19"
 permalink: /2009/02/19/measuring-the-popularity-of-the-percona-mysql-build/
 categories:
   - SQL

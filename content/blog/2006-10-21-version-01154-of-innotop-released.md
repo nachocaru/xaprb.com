@@ -1,5 +1,6 @@
 ---
 title: Version 0.1.154 of innotop released
+date: "2006-10-21"
 permalink: /2006/10/21/version-01154-of-innotop-released/
 description:
   - Notes on upgrades to the innotop MySQL and InnoDB monitor.

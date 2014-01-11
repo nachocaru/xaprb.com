@@ -1,5 +1,6 @@
 ---
 title: GnuCash to MySQL export script
+date: "2006-03-12"
 permalink: /2006/03/12/gnucash-to-mysql-export-script/
 description:
   - 'A Perl script for exporting GnuCash data into a relational database for analysis.  Includes instructions and analysis queries.'

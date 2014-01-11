@@ -1,5 +1,6 @@
 ---
 title: A clarification on mk-slave-prefetch
+date: "2011-08-21"
 permalink: /2011/08/21/a-clarification-on-mk-slave-prefetch/
 categories:
   - Maatkit

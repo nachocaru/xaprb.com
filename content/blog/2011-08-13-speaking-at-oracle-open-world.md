@@ -1,5 +1,6 @@
 ---
 title: Speaking at Oracle Open World
+date: "2011-08-13"
 permalink: /2011/08/13/speaking-at-oracle-open-world/
 categories:
   - Conferences

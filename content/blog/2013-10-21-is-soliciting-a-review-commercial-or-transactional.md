@@ -1,5 +1,6 @@
 ---
 title: Is soliciting a review commercial or transactional?
+date: "2013-10-21"
 permalink: /2013/10/21/is-soliciting-a-review-commercial-or-transactional/
 categories:
   - Commentary

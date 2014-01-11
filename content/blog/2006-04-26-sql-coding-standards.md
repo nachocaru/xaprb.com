@@ -1,5 +1,6 @@
 ---
 title: My personal SQL coding standards
+date: "2006-04-26"
 permalink: /2006/04/26/sql-coding-standards/
 description:
   - Describes and explains my own SQL coding style.

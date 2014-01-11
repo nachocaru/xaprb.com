@@ -7,6 +7,7 @@ title: MySQL Toolkit version 1011 released
   <p>I don't have a timeline for when I'll write the corresponding restore utility, but the answer is probably "soon."  This is very much a need-driven project.  To begin with, I'm replacing a dump system that didn't allow point-in-time recovery.  Now I've got the data I need for point-in-time recovery, but if I have to do that it'll be a manual job until I write the restore utility.</p>
   
   <p>I am very focused on recovery, not backup, as you'll see if you buy the second edition of High Performance MySQL :-)  I'm just solving my needs in the order of urgency: one must have a backup to do a restoration.  I generally don't like the "urgent, fix now" approach!  (For various reasons I won't get into, I am not able to use <a href="http://www.zmanda.com/">ZRM</a>, but I would ordinarily recommend it over rolling your own solution).</p>
+date: "2007-10-05"
 permalink: /2007/10/05/mysql-toolkit-version-1011-released/
 description:
   - >

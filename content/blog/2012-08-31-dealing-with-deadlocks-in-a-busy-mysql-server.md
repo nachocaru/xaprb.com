@@ -1,5 +1,6 @@
 ---
 title: Dealing with deadlocks in a busy MySQL server
+date: "2012-08-31"
 permalink: /2012/08/31/dealing-with-deadlocks-in-a-busy-mysql-server/
 categories:
   - SQL

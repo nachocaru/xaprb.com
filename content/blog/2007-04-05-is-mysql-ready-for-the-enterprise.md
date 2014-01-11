@@ -1,6 +1,7 @@
 ---
 title: Three updated tools in MySQL Toolkit
   <p>I've just released three updates to tools in <a href="http://sourceforge.net/projects/mysqltoolkit">MySQL Toolkit</a>.  The updated programs are MySQL Query Profiler (major new features and helper script), MySQL Table Sync (bug fixes, documentation, features), and MySQL Table Checksum (minor sanity check enhancement).</p>
+date: "2007-04-05"
 permalink: /2007/04/05/is-mysql-ready-for-the-enterprise/
 description:
   - >

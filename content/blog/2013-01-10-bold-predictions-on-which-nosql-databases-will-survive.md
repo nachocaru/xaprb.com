@@ -1,5 +1,6 @@
 ---
 title: Bold predictions on which NoSQL databases will survive
+date: "2013-01-10"
 permalink: /2013/01/10/bold-predictions-on-which-nosql-databases-will-survive/
 categories:
   - SQL

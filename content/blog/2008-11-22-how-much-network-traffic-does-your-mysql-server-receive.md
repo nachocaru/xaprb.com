@@ -1,5 +1,6 @@
 ---
 title: How much network traffic does your MySQL server receive?
+date: "2008-11-22"
 permalink: /2008/11/22/how-much-network-traffic-does-your-mysql-server-receive/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: How to read the clipboard from JavaScript
+date: "2005-10-21"
 permalink: /2005/10/21/read-the-clipboard-from-javascript/
 description:
   - "Explains how to read the system clipboard's contents with JavaScript in Internet Explorer."

@@ -1,5 +1,6 @@
 ---
 title: Benchmarks for DATE operations in MySQL
+date: "2006-06-12"
 permalink: /2006/06/12/benchmarks-for-date-operations-in-mysql/
 description:
   - >

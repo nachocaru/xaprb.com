@@ -1,5 +1,6 @@
 ---
 title: The Ma.gnolia data might not be permanently lost
+date: "2009-02-19"
 permalink: /2009/02/19/the-magnolia-data-might-not-be-permanently-lost/
 categories:
   - SQL

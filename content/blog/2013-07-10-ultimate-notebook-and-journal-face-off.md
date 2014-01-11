@@ -1,5 +1,6 @@
 ---
 title: Ultimate notebook and journal face-off
+date: "2013-07-10"
 permalink: /2013/07/10/ultimate-notebook-and-journal-face-off/
 categories:
   - Commentary

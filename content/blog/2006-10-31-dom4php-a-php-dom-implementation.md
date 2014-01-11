@@ -1,5 +1,6 @@
 ---
 title: A PHP implementation of the XML DOM
+date: "2006-10-31"
 permalink: /2006/10/31/dom4php-a-php-dom-implementation/
 description:
   - >

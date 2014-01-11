@@ -7,6 +7,7 @@ title: How to measure MySQL slave lag accurately
   <p>It's a really smart approach.  And you can daemonize it, and it'll keep a file up-to-date with running averages (by default it averages the last one, five and fifteen minutes, but of course you can choose that).  Now your monitoring scripts can be as simple as "cat /var/log/slave-delay" or some such.</p>
   
   <p>It's not a hard tool to write, and I suspect lots of people have done it, but I bet that between Jeremy, whoever worked on it at Six Apart, and me, we've produced a pretty good version of the tool.  It's part of the <a href="http://mysqltoolkit.sourceforge.net/">MySQL Toolkit</a>, and <a href="http://mysqltoolkit.sourceforge.net/doc/mysql-heartbeat.html">the full manual is online</a>.</p>
+date: "2007-09-30"
 permalink: /2007/09/30/how-to-measure-mysql-slave-lag-accurately/
 description:
   - >

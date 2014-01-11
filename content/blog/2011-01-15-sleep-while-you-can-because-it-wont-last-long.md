@@ -1,5 +1,6 @@
 ---
 title: "Sleep while you can, because it won't last long"
+date: "2011-01-15"
 permalink: /2011/01/15/sleep-while-you-can-because-it-wont-last-long/
 categories:
   - SQL

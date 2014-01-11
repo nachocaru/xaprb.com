@@ -1,5 +1,6 @@
 ---
 title: "What does MariaDB's user feedback feature report?"
+date: "2011-12-03"
 permalink: /2011/12/03/what-does-mariadbs-user-feedback-feature-report/
 categories:
   - MariaDB

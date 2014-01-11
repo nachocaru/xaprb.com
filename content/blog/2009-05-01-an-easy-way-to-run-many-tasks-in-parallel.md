@@ -1,5 +1,6 @@
 ---
 title: An easy way to run many tasks in parallel
+date: "2009-05-01"
 permalink: /2009/05/01/an-easy-way-to-run-many-tasks-in-parallel/
 categories:
   - GNU/Linux

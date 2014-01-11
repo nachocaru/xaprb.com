@@ -1,5 +1,6 @@
 ---
 title: I re-subscribed to Planet MySQL
+date: "2008-11-11"
 permalink: /2008/11/11/i-re-subscribed-to-planet-mysql/
 categories:
   - SQL

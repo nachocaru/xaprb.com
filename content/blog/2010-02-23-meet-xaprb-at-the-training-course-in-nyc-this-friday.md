@@ -1,5 +1,6 @@
 ---
 title: Meet Xaprb at the training course in NYC this Friday
+date: "2010-02-23"
 permalink: /2010/02/23/meet-xaprb-at-the-training-course-in-nyc-this-friday/
 categories:
   - SQL

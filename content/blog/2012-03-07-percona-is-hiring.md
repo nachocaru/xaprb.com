@@ -1,5 +1,6 @@
 ---
 title: Percona is hiring
+date: "2012-03-07"
 permalink: /2012/03/07/percona-is-hiring/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: How to train Thunderbird to detect junk mail
+date: "2006-04-03"
 permalink: /2006/04/03/thunderbird-junk-mail-howto/
 description:
   - "Explains how to configure Thunderbird's junk mail filter so it works well."

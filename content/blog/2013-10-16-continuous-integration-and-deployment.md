@@ -1,5 +1,6 @@
 ---
 title: Continuous integration and deployment
+date: "2013-10-16"
 permalink: /2013/10/16/continuous-integration-and-deployment/
 categories:
   - Coding

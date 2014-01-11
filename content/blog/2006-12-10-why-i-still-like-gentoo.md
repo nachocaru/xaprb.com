@@ -1,5 +1,6 @@
 ---
 title: Why I (still) like Gentoo
+date: "2006-12-10"
 permalink: /2006/12/10/why-i-still-like-gentoo/
 description:
   - >

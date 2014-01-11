@@ -1,5 +1,6 @@
 ---
 title: When documentation is code
+date: "2011-11-07"
 permalink: /2011/11/07/when-documentation-is-code/
 categories:
   - SQL

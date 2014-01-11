@@ -1,5 +1,6 @@
 ---
 title: Automatically detecting abnormal behavior in MySQL
+date: "2011-12-01"
 permalink: /2011/12/01/automatically-detecting-abnormal-behavior-in-mysql/
 categories:
   - SQL

@@ -5,6 +5,7 @@ title: How triggers affect ROWCOUNT and IDENTITY in SQL Server 2000
   <p><img src="/articles/images/rowcount.png" width="215" height="136" alt="Silly rowcount/identity graphic" /></p>
   
   <p>Getting the last <code>IDENTITY</code> value is not as straightforward though.</p>
+date: "2005-12-23"
 permalink: /2005/12/23/rowcount-and-identity/
 description:
   - >

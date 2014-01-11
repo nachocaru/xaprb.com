@@ -1,5 +1,6 @@
 ---
 title: IE blog is a great experience
+date: "2006-02-08"
 permalink: /2006/02/08/ie-blog-is-a-great-experience/
 ---
 Have you noticed how consistent the terminology, tone and style are on the [IE blog][1]? Clearly, a lot of work is going into making this blog as good as possible at promoting the work the IE team is doing on the new browser. It remains to be seen how the browser itself evolves, but I think there is a lot to learn from studying the IE blog.
@@ -16,7 +17,7 @@ Just one example: the consistent focus on how IE6 is not a "great experience" an
   </p>
 </blockquote>
 
-> ### IE7 Printing: An Experience You Wonâ€™t Want To Miss
+> ### IE7 Printing: An Experience You Won't Want To Miss
 > 
 > In my previous post, I gave a glimpse of what to come in IE7 and printing. Now that the Beta 2 Preview build is publicly available I like to walk you through all the additions we added to printing and print preview. Internal studies showed that printing is the second most used feature after navigation in a browser and traditionally has not seen the respect it deserves.
 > 

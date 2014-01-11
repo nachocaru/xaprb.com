@@ -1,5 +1,6 @@
 ---
 title: Introducing MySQL Duplicate Key Checker
+date: "2007-03-01"
 permalink: /2007/03/01/introducing-mysql-duplicate-key-checker/
 description:
   - >

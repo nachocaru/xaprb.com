@@ -1,6 +1,7 @@
 ---
 title: "MySQL Table Sync bounty: let's do it!"
   <p>A little while ago I offered to take time off work and improve <a href="http://mysqltoolkit.sourceforge.net/">MySQL Table Sync</a>.  I've gotten a very positive response to that, with several organizations offering to contribute to the bounty, so I'll go ahead and commit to doing this.  Read on for the details.</p>
+date: "2007-10-31"
 permalink: /2007/10/31/mysql-table-sync-bounty-lets-do-it/
 description:
   - "I'm accepting sponsorship for MySQL Table Sync features."

@@ -1,5 +1,6 @@
 ---
 title: How to write MySQL conditional comments
+date: "2007-05-22"
 permalink: /2007/05/22/how-to-write-mysql-conditional-comments/
 description:
   - How to read, interpret and write MySQL version-specific conditional comments

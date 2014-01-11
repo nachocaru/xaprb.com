@@ -1,6 +1,7 @@
 ---
 title: How to get your session accepted to MySQL Conference 2008
   <p>I'm on the select board of elite people who were duped into reviewing proposals for the upcoming <a href="http://www.mysqlconf.com/">MySQL Conference and Expo 2008</a>, and I'm here to tell you how to get your proposal accepted.  Aside from bribing me with chocolate, that is.</p>
+date: "2007-10-05"
 permalink: /2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/
 description:
   - I am a session reviewer for MySQL Conference and Expo 2008

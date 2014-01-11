@@ -1,5 +1,6 @@
 ---
 title: Room discounts about to expire for MySQL conference!
+date: "2012-03-14"
 permalink: /2012/03/14/room-discounts-about-to-expire-for-mysql-conference/
 categories:
   - SQL

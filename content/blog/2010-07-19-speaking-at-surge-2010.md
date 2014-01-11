@@ -1,5 +1,6 @@
 ---
 title: Speaking at Surge 2010
+date: "2010-07-19"
 permalink: /2010/07/19/speaking-at-surge-2010/
 categories:
   - Conferences

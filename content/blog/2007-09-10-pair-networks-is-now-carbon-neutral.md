@@ -1,5 +1,6 @@
 ---
 title: pair Networks is now carbon-neutral
+date: "2007-09-10"
 permalink: /2007/09/10/pair-networks-is-now-carbon-neutral/
 description:
   - pair Networks, an outstanding hosting provider, is now carbon-neutral.

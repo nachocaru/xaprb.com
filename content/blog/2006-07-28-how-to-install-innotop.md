@@ -1,5 +1,6 @@
 ---
 title: How to install innotop
+date: "2006-07-28"
 permalink: /2006/07/28/how-to-install-innotop/
 description:
   - Installation instructions for the innotop MySQL and InnoDB monitoring tool.

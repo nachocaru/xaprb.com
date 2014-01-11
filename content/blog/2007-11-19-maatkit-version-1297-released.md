@@ -19,6 +19,7 @@ title: Maatkit version 1297 released
   * Code assumed backtick quoting, broke on SQL_MODE=ANSI (bug #1813030). 
   * There were many potential bugs with database and table name quoting. 
   * Child exit status errors could be masked by subsequent successes.</pre>
+date: "2007-11-19"
 permalink: /2007/11/19/maatkit-version-1297-released/
 description:
   - >

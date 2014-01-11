@@ -1,5 +1,6 @@
 ---
 title: Open-source database developer mailing lists
+date: "2009-03-19"
 permalink: /2009/03/19/open-source-database-developer-mailing-lists/
 categories:
   - Commentary

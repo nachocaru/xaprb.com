@@ -1,5 +1,6 @@
 ---
 title: Immutability, MVCC, and garbage collection
+date: "2013-12-28"
 permalink: /2013/12/28/immutability-mvcc-and-garbage-collection/
 dsq_needs_sync:
   - 1

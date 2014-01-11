@@ -1,5 +1,6 @@
 ---
 title: "Free webinar: non-blocking MySQL schema changes"
+date: "2012-05-01"
 permalink: /2012/05/01/free-webinar-non-blocking-mysql-schema-changes/
 categories:
   - SQL

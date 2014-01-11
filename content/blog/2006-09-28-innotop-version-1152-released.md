@@ -1,6 +1,7 @@
 ---
 title: Innotop version 1.152 released
   <p>Version 0.1.152 of <a href="http://www.xaprb.com/innotop/">innotop</a> is a small maintenance and bug-fix release.  I found some more ways to make it deal with garbage input without crashing.  Of course, that means it's harder to find errors because it doesn't complain and let me know they exist, but that's what you are for :-)</p>
+date: "2006-09-28"
 permalink: /2006/09/28/innotop-version-1152-released/
 description:
   - >

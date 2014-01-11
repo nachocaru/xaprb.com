@@ -1,5 +1,6 @@
 ---
 title: "MySQL's FEDERATED storage engine: Part 1"
+date: "2007-01-29"
 permalink: /2007/01/29/mysqls-federated-storage-engine-part-1/
 description:
   - "A detailed examination and explanation of how MySQL's FEDERATED storage engine really works."

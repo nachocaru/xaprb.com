@@ -3,6 +3,7 @@ title: How MySQL replication got out of sync
   <p>I created <a href="http://mysqltoolkit.sourceforge.net/">MySQL Table Checksum</a> because I was certain replication slaves were slowly drifting out of sync with their masters, and there was no way to prove it.   Once I could prove it, I was able to show that replication gets out of sync for lots of people, lots of times.  (If you really want to hear war stories, you should probably talk to one of the MySQL support staff or consulting team members; I'm sure they see this a lot more than I do).</p>
   
   <p>I finally figured out what was causing one of my most persistent and annoying out-of-sync scenarios.  It turns out to be nothing earth-shaking; it's just an easy-to-overlook limitation of statement-based replication.  You could call it a bug, but as far as I can see, there's no way to fix it with statement-based replication.  (I'd love to be proven wrong).  Read on for the details.</p>
+date: "2007-11-08"
 permalink: /2007/11/08/how-mysql-replication-got-out-of-sync/
 description:
   - Why MySQL replication gets out of sync on the slave

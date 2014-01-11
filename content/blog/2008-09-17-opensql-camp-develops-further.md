@@ -1,5 +1,6 @@
 ---
 title: OpenSQL Camp develops further
+date: "2008-09-17"
 permalink: /2008/09/17/opensql-camp-develops-further/
 categories:
   - OpenSQL Camp

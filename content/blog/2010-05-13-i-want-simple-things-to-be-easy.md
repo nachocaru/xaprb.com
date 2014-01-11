@@ -1,5 +1,6 @@
 ---
 title: I want simple things to be easy
+date: "2010-05-13"
 permalink: /2010/05/13/i-want-simple-things-to-be-easy/
 categories:
   - SQL

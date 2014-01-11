@@ -1,5 +1,6 @@
 ---
 title: "Efficient alternatives to Microsoft SQL Server's openxml"
+date: "2005-11-15"
 permalink: /2005/11/15/use-microsoft-sql-servers-openxml-sparingly/
 ---
 Microsoft SQL Server's `openxml` function is highly CPU-intensive. This article demonstrates more efficient alternatives to `openxml`.

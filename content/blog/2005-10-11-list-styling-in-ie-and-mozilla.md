@@ -1,5 +1,6 @@
 ---
 title: How to style HTML lists consistently in all browsers
+date: "2005-10-11"
 permalink: /2005/10/11/list-styling-in-ie-and-mozilla/
 ---
 IE's and Mozilla's ordered and unordered lists are rendered similarly by default, but the way the list is indented is opposite in the two browsers. Understanding how to style lists correctly is key to avoiding unexpected ugliness. In this article, I explain how UL and OL are styled by default, how to re-style them so they behave consistently, and uncover an incompatibility that cannot be fixed.

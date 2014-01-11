@@ -1,5 +1,6 @@
 ---
 title: JavaScript date chooser
+date: "2005-09-29"
 permalink: /2005/09/29/javascript-date-chooser/
 ---
 <p style="border:solid red 1px; background:yellow">

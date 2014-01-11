@@ -1,5 +1,6 @@
 ---
 title: Postmodern databases
+date: "2010-06-12"
 permalink: /2010/06/12/postmodern-databases/
 categories:
   - Commentary

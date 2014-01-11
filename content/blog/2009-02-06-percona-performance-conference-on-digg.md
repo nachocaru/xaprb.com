@@ -1,5 +1,6 @@
 ---
 title: Percona Performance Conference on Digg
+date: "2009-02-06"
 permalink: /2009/02/06/percona-performance-conference-on-digg/
 categories:
   - Conferences

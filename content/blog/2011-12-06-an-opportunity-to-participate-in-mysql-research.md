@@ -1,5 +1,6 @@
 ---
 title: An opportunity to participate in MySQL research
+date: "2011-12-06"
 permalink: /2011/12/06/an-opportunity-to-participate-in-mysql-research/
 categories:
   - SQL

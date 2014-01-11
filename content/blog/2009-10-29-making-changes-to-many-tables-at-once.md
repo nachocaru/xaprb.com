@@ -1,5 +1,6 @@
 ---
 title: Making changes to many tables at once
+date: "2009-10-29"
 permalink: /2009/10/29/making-changes-to-many-tables-at-once/
 categories:
   - Maatkit

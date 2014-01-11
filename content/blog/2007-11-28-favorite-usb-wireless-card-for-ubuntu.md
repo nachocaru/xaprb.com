@@ -1,5 +1,6 @@
 ---
 title: Favorite USB wireless card for Ubuntu?
+date: "2007-11-28"
 permalink: /2007/11/28/favorite-usb-wireless-card-for-ubuntu/
 tags:
   - ubuntu

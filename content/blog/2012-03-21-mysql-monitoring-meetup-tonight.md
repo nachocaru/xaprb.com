@@ -1,5 +1,6 @@
 ---
 title: MySQL monitoring meetup tonight!
+date: "2012-03-21"
 permalink: /2012/03/21/mysql-monitoring-meetup-tonight/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: Kickfire is not SSD-based
+date: "2008-04-09"
 permalink: /2008/04/09/kickfire-is-not-ssd-based/
 description:
   - Debunking a few myths about Kickfire, and my relationship with them.

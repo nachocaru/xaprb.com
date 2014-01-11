@@ -1,5 +1,6 @@
 ---
 title: How to calculate table checksums in MySQL
+date: "2007-01-25"
 permalink: /2007/01/25/how-to-calculate-table-checksums-in-mysql/
 description:
   - >

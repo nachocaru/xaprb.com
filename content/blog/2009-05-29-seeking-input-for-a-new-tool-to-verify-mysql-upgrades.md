@@ -1,5 +1,6 @@
 ---
 title: Seeking input for a new tool to verify MySQL upgrades
+date: "2009-05-29"
 permalink: /2009/05/29/seeking-input-for-a-new-tool-to-verify-mysql-upgrades/
 categories:
   - Maatkit

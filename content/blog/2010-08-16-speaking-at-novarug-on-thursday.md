@@ -1,5 +1,6 @@
 ---
 title: Speaking at NovaRUG on Thursday
+date: "2010-08-16"
 permalink: /2010/08/16/speaking-at-novarug-on-thursday/
 categories:
   - Conferences

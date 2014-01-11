@@ -5,6 +5,7 @@ title: Maatkit on Ohloh
   <p>It also estimates 8 person-years of work have gone into the project, and says that at $55,000/year it would cost $450,702 to write the code as it currently exists, which is kind of funny.  It took me a whole lot less than 8 years to write.  (Perhaps this is why that salary strikes me as unrealistic).</p>
   
   <p>It has a couple of other interesting things, like a visual timeline of source control commits, analysis of licenses it finds in the code, analysis of programming languages, and so on.  Really pretty neat overall.</p>
+date: "2007-12-08"
 permalink: /2007/12/08/maatkit-on-ohloh/
 description:
   - Maatkit is on Ohloh.

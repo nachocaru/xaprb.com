@@ -7,6 +7,7 @@ title: Remember to sign up for MySQL Conference and Expo!
   <p>I was also on the voting committee for the proposals, so I've read them all.  I really believe this event is worth every penny.  (Of course, as a speaker, it doesn't cost me... but I digress).</p>
   
   <p>While you're there you should also plan to get certified, also at a significant savings.  This is a great career move, and there are sessions that will help you prepare.  There's a critical shortage of people who really know how to use MySQL. I must admit, I'm not even certified!  But I'll be taking the certification exams too.</p>
+date: "2008-02-22"
 permalink: /2008/02/22/remember-to-sign-up-for-mysql-conference-and-expo/
 tags:
   - certification

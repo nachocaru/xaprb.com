@@ -1,5 +1,6 @@
 ---
 title: Model-view-controller considered harmful
+date: "2013-04-17"
 permalink: /2013/04/17/model-view-controller-considered-harmful/
 categories:
   - Coding

@@ -1,5 +1,6 @@
 ---
 title: innotop 1.4.2 released
+date: "2007-05-03"
 permalink: /2007/05/03/innotop-142-released/
 description:
   - >

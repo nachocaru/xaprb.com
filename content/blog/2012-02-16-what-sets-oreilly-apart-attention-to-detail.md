@@ -1,5 +1,6 @@
 ---
 title: "What sets O'Reilly apart: attention to detail"
+date: "2012-02-16"
 permalink: /2012/02/16/what-sets-oreilly-apart-attention-to-detail/
 categories:
   - High Performance MySQL

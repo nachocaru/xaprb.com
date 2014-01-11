@@ -1,5 +1,6 @@
 ---
 title: Ubuntu 8.10 rocks my Inspiron 1501
+date: "2008-11-01"
 permalink: /2008/11/01/ubuntu-810-rocks-my-inspiron-1501/
 categories:
   - Desktop

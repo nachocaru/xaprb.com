@@ -1,5 +1,6 @@
 ---
 title: Percona Toolkit gripes welcome
+date: "2012-04-17"
 permalink: /2012/04/17/percona-toolkit-gripes-welcome/
 categories:
   - SQL

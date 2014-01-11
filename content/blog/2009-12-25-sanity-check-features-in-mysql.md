@@ -1,5 +1,6 @@
 ---
 title: Sanity-check features in MySQL
+date: "2009-12-25"
 permalink: /2009/12/25/sanity-check-features-in-mysql/
 categories:
   - SQL

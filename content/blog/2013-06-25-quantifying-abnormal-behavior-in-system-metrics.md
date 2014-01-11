@@ -1,5 +1,6 @@
 ---
 title: Quantifying Abnormal Behavior in System Metrics
+date: "2013-06-25"
 permalink: /2013/06/25/quantifying-abnormal-behavior-in-system-metrics/
 categories:
   - Conferences

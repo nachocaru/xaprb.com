@@ -1,5 +1,6 @@
 ---
 title: "A growing trend: InnoDB mutex contention"
+date: "2010-03-04"
 permalink: /2010/03/04/a-growing-trend-innodb-mutex-contention/
 categories:
   - SQL

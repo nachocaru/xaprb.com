@@ -1,5 +1,6 @@
 ---
 title: Reacting to small variations in response time
+date: "2010-05-26"
 permalink: /2010/05/26/reacting-to-small-variations-in-response-time/
 categories:
   - Aspersa

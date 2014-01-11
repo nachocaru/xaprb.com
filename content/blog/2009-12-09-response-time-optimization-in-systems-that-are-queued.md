@@ -1,5 +1,6 @@
 ---
 title: Response-time optimization in systems that are queued
+date: "2009-12-09"
 permalink: /2009/12/09/response-time-optimization-in-systems-that-are-queued/
 categories:
   - SQL

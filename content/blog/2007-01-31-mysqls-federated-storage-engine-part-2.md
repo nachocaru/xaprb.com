@@ -4,6 +4,7 @@ title: "MySQL's FEDERATED storage engine: Part 2"
   <code>FEDERATED</code> storage engine by running a bunch of queries with the
   general query log enabled on the remote server.  In this article I take a higher-level view.  I summarize my findings from the first article, then
   give my thoughts on the engine's strengths and weaknesses.</p>
+date: "2007-01-31"
 permalink: /2007/01/31/mysqls-federated-storage-engine-part-2/
 description:
   - "An overview of the FEDERATED storage engine's strengths, weaknesses, and uses."

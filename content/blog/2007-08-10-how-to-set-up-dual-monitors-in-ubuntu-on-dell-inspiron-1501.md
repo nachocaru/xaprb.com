@@ -1,5 +1,6 @@
 ---
 title: How to set up dual monitors in Ubuntu on Dell Inspiron 1501
+date: "2007-08-10"
 permalink: /2007/08/10/how-to-set-up-dual-monitors-in-ubuntu-on-dell-inspiron-1501/
 description:
   - >

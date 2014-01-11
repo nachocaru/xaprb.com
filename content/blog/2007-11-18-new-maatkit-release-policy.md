@@ -7,6 +7,7 @@ title: New Maatkit release policy
   <p>This will also make it easier for me to manage the name change, but that's just an extra incentive; I've been considering this for a while.</p>
   
   <p>By the way, Sourceforge indicated it would take up to a couple of days to finish the project's rename, but it took only a few minutes.  Lots of broken links; I've asked for a permanent redirect from the old URLs to the new.</p>
+date: "2007-11-18"
 permalink: /2007/11/18/new-maatkit-release-policy/
 description:
   - Maatkit will be released as a single package in the future.

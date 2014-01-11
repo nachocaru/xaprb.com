@@ -1,5 +1,6 @@
 ---
 title: Aspersa, a new opensource toolkit
+date: "2010-04-21"
 permalink: /2010/04/21/aspersa-a-new-opensource-toolkit/
 categories:
   - Aspersa

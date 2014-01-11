@@ -1,5 +1,6 @@
 ---
 title: MySQL Toolkit version 1204 released
+date: "2007-11-04"
 permalink: /2007/11/04/mysql-toolkit-version-1204-released/
 description:
   - MySQL Toolkit gets tests.

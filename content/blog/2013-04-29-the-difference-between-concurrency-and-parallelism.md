@@ -1,5 +1,6 @@
 ---
 title: The difference between concurrency and parallelism
+date: "2013-04-29"
 permalink: /2013/04/29/the-difference-between-concurrency-and-parallelism/
 categories:
   - Coding

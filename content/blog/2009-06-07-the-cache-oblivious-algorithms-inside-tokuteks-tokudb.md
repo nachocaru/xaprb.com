@@ -1,5 +1,6 @@
 ---
 title: "The cache-oblivious algorithms inside Tokutek's TokuDB"
+date: "2009-06-07"
 permalink: /2009/06/07/the-cache-oblivious-algorithms-inside-tokuteks-tokudb/
 categories:
   - SQL

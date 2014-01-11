@@ -1,5 +1,6 @@
 ---
 title: Optimal performance out of the box!
+date: "2010-05-12"
 permalink: /2010/05/12/optimal-performance-out-of-the-box/
 categories:
   - PostgreSQL

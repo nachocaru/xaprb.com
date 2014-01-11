@@ -1,5 +1,6 @@
 ---
 title: "A close look at New Relic's scalability chart"
+date: "2013-01-07"
 permalink: /2013/01/07/a-close-look-at-new-relics-scalability-chart/
 categories:
   - Scalability

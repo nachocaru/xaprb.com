@@ -1,5 +1,6 @@
 ---
 title: A summary of changes in MySQL 5.6
+date: "2012-08-21"
 permalink: /2012/08/21/a-summary-of-changes-in-mysql-5-6/
 categories:
   - SQL

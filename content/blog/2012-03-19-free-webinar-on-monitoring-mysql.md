@@ -1,5 +1,6 @@
 ---
 title: Free webinar on monitoring MySQL
+date: "2012-03-19"
 permalink: /2012/03/19/free-webinar-on-monitoring-mysql/
 categories:
   - SQL

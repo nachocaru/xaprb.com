@@ -1,5 +1,6 @@
 ---
 title: Have you tested pt-online-schema-change?
+date: "2012-05-22"
 permalink: /2012/05/22/have-you-tested-pt-online-schema-change/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: I have joined Percona
+date: "2008-03-26"
 permalink: /2008/03/26/i-have-joined-percona/
 description:
   - "I'm joining Percona as a high-performance MySQL consultant"

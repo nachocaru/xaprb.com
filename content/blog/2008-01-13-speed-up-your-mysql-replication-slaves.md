@@ -5,6 +5,7 @@ title: Speed up your MySQL replication slaves
   <p>In the meantime, I've got a pretty sophisticated implementation of Paul's idea just sitting around, unused.  I haven't released it for the same reasons Paul didn't release his: I'm afraid it might do more harm than good.</p>
   
   <p>However, if you'd like the code, send me an email at [baron at this domain] and I'll share the code with you.  In return, I would like you to tell me about your hardware and your workload, and to do at least some rudimentary benchmarks to show whether it works or not on your workload.  If I find that this is beneficial for some people, I may go ahead and release the code as part of Maatkit.</p>
+date: "2008-01-13"
 permalink: /2008/01/13/speed-up-your-mysql-replication-slaves/
 tags:
   - MySQL

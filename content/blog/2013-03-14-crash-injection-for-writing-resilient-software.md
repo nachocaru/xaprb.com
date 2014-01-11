@@ -1,5 +1,6 @@
 ---
 title: Crash injection for writing resilient software
+date: "2013-03-14"
 permalink: /2013/03/14/crash-injection-for-writing-resilient-software/
 categories:
   - SQL

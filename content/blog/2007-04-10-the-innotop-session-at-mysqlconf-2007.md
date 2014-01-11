@@ -11,6 +11,7 @@ title: The innotop session at MySQLConf 2007
   <p>By the way, though I originally designed innotop to monitor InnoDB, it goes far beyond that now.  It has a lot to offer everyone, not just InnoDB users.</p>
   
   <p>I hope to see you there.</p>
+date: "2007-04-10"
 permalink: /2007/04/10/the-innotop-session-at-mysqlconf-2007/
 description:
   - "I'm presenting a session on using innotop at MySQL Conference and Expo 2007."

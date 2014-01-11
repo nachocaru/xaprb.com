@@ -1,5 +1,6 @@
 ---
 title: How to optimize subqueries and joins in MySQL
+date: "2006-04-30"
 permalink: /2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
 ---
 I have written before about using joins instead of subqueries, especially for `NOT IN` queries, which can usually be rewritten as [exclusion joins][1] &#8212; sometimes with huge efficiency gains. In this article I'll look more closely at the performance characteristics of a few queries I've optimized in MySQL 5.0.3. I'll also show you some tricks you can use to get MySQL to optimize queries better when you know it's being inefficient.

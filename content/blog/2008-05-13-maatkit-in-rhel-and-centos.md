@@ -1,5 +1,6 @@
 ---
 title: Maatkit in RHEL and CentOS
+date: "2008-05-13"
 permalink: /2008/05/13/maatkit-in-rhel-and-centos/
 description:
   - Do you want Maatkit to get into the CentOS-Extras repository?

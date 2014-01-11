@@ -1,5 +1,6 @@
 ---
 title: Thanks Oracle for the ACE Award
+date: "2011-08-01"
 permalink: /2011/08/01/thanks-oracle-for-the-ace-award/
 categories:
   - SQL

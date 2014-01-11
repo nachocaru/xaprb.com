@@ -1,5 +1,6 @@
 ---
 title: How to select from an update target in MySQL
+date: "2006-06-23"
 permalink: /2006/06/23/how-to-select-from-an-update-target-in-mysql/
 description:
   - Explains how to specify a target table for update in the FROM clause in MySQL.

@@ -1,5 +1,6 @@
 ---
 title: The little-known Maatkit man page
+date: "2010-06-19"
 permalink: /2010/06/19/the-little-known-maatkit-man-page/
 categories:
   - Maatkit

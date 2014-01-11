@@ -1,5 +1,6 @@
 ---
 title: How MySQL decides to AUTO_INCREMENT a value
+date: "2006-04-23"
 permalink: /2006/04/23/explicit-inserts-into-auto_increment-columns-in-mysql/
 description:
   - >

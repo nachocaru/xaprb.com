@@ -1,5 +1,6 @@
 ---
 title: How I hacked the HP Media Vault to support OGG and FLAC files
+date: "2008-08-02"
 permalink: /2008/08/02/how-i-hacked-the-hp-media-vault-to-support-ogg-and-flac-files/
 description:
   - How to upgrade Firefly on the HP Media Vault to support OGG and FLAC music files

@@ -1,5 +1,6 @@
 ---
 title: Failure scenarios and solutions in master-master replication
+date: "2009-08-30"
 permalink: /2009/08/30/failure-scenarios-and-solutions-in-master-master-replication/
 categories:
   - SQL

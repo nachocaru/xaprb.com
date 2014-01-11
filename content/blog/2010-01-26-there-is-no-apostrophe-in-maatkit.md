@@ -1,5 +1,6 @@
 ---
 title: There is no apostrophe in Maatkit
+date: "2010-01-26"
 permalink: /2010/01/26/there-is-no-apostrophe-in-maatkit/
 categories:
   - Maatkit

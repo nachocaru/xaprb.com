@@ -1,5 +1,6 @@
 ---
 title: How to add paragraph spacing in Google Docs
+date: "2009-06-21"
 permalink: /2009/06/21/how-to-add-paragraph-spacing-in-google-docs/
 categories:
   - World Wide Web

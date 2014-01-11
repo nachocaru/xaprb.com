@@ -5,6 +5,7 @@ title: Going to PostgreSQL Conference East
   <p>And no, I'm not an expert in PostgreSQL as I am in MySQL, but I have always held it in very high esteem.  I am not going to try to spread the MySQL-ness into the PostgreSQL camp :-)</p>
   
   <p>See you there.</p>
+date: "2008-03-29"
 permalink: /2008/03/29/going-to-postgresql-conference-east/
 description:
   - "I'm going to PostgreSQL Conference East."

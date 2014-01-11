@@ -1,5 +1,6 @@
 ---
 title: Innovation Nation Shakes IT Up
+date: "2011-08-23"
 permalink: /2011/08/23/innovation-nation-shakes-it-up/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: MySQL Query Profiler
+date: "2006-10-18"
 permalink: /2006/10/18/mysql-query-profiler/
 description:
   - 'MySQL Query Profiler is a free tool that measures query performance and formats it clearly.  It captures dozens of performance metrics.'

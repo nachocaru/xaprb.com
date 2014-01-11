@@ -1,5 +1,6 @@
 ---
 title: High Performance MySQL is going to press, again
+date: "2008-07-15"
 permalink: /2008/07/15/high-performance-mysql-is-going-to-press-again/
 categories:
   - High Performance MySQL

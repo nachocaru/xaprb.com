@@ -1,5 +1,6 @@
 ---
 title: "A challenge: partition a character set in MySQL"
+date: "2007-06-11"
 permalink: /2007/06/11/a-challenge-partition-a-character-set-in-mysql/
 description:
   - 'A challenge: find endpoints of ranges that will partition a character column into subsets of approximately X rows'

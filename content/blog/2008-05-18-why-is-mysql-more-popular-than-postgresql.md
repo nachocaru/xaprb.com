@@ -1,5 +1,6 @@
 ---
 title: Why is MySQL more popular than PostgreSQL?
+date: "2008-05-18"
 permalink: /2008/05/18/why-is-mysql-more-popular-than-postgresql/
 description:
   - >

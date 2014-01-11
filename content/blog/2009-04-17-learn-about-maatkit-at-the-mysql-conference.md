@@ -1,5 +1,6 @@
 ---
 title: Learn about Maatkit at the MySQL Conference
+date: "2009-04-17"
 permalink: /2009/04/17/learn-about-maatkit-at-the-mysql-conference/
 categories:
   - Conferences

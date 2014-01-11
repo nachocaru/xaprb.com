@@ -1,5 +1,6 @@
 ---
 title: When to use surrogate keys in InnoDB tables
+date: "2006-05-10"
 permalink: /2006/05/10/when-to-avoid-and-when-to-use-surrogate-keys-in-innodb-tables/
 description:
   - >

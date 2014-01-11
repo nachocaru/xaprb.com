@@ -5,6 +5,7 @@ title: MySQL Conference and Expo 2007, Day 2
   <p>In my second day at the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo 2007</a>, I attended keynotes, several sessions, and three BoF (Birds of a Feather) sessions.  This article is about these sessions.  Again, I'll focus on the Big Ideas and let you read other people's blog posts for the small details.</p>
   
   <br style="clear:both" />
+date: "2007-04-25"
 permalink: /2007/04/25/mysql-conference-and-expo-2007-day-2/
 description:
   - Overview of my second day at the MySQL Conference and Expo 2007.

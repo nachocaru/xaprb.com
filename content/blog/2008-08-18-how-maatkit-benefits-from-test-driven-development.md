@@ -1,5 +1,6 @@
 ---
 title: How Maatkit benefits from test-driven development
+date: "2008-08-18"
 permalink: /2008/08/18/how-maatkit-benefits-from-test-driven-development/
 categories:
   - Coding

@@ -1,5 +1,6 @@
 ---
 title: Maatkit version 1709 released
+date: "2008-01-24"
 permalink: /2008/01/24/maatkit-version-1709-released/
 tags:
   - archiving

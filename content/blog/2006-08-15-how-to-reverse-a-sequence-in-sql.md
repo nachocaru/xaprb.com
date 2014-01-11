@@ -3,6 +3,7 @@ title: How to reverse a sequence in SQL
   <p>I wrote an article a while back about <a href="http://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/">how to order updates in MySQL so you don't violate a unique index</a>.  I said I'd write another article on how to swap numbers in a sequence with a unique index.  This is that article, but I'm going to make it a little more generic: how to reverse a (possibly ordered) sequence.</p>
   
   <p>I've been thinking about this for a while, wondering if there's a way I can do it in-place in one statement (I like to pile challenge upon difficulty).  I've thought of a number of techniques, some using one statement, some using more, some that won't work on MySQL, some that will.</p>
+date: "2006-08-15"
 permalink: /2006/08/15/how-to-reverse-a-sequence-in-sql/
 description:
   - Describes a variety of ways to reverse a sequence of numbers in SQL.

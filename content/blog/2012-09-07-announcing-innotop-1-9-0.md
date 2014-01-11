@@ -1,5 +1,6 @@
 ---
 title: Announcing innotop 1.9.0
+date: "2012-09-07"
 permalink: /2012/09/07/announcing-innotop-1-9-0/
 categories:
   - Innotop

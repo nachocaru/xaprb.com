@@ -1,5 +1,6 @@
 ---
 title: My unorthodox CAPTCHA blocked thousands of spam comments every week
+date: "2007-05-28"
 permalink: /2007/05/28/my-unorthodox-captcha-blocked-thousands-of-spam-comments-every-week/
 description:
   - >

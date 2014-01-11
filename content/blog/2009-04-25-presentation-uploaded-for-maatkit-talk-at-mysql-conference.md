@@ -1,5 +1,6 @@
 ---
 title: Presentation uploaded for Maatkit talk at MySQL Conference
+date: "2009-04-25"
 permalink: /2009/04/25/presentation-uploaded-for-maatkit-talk-at-mysql-conference/
 categories:
   - Conferences

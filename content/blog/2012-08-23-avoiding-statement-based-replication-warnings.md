@@ -1,5 +1,6 @@
 ---
 title: Avoiding statement-based replication warnings
+date: "2012-08-23"
 permalink: /2012/08/23/avoiding-statement-based-replication-warnings/
 categories:
   - SQL

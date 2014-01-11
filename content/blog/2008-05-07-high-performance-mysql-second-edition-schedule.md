@@ -1,5 +1,6 @@
 ---
 title: High Performance MySQL Second Edition Schedule
+date: "2008-05-07"
 permalink: /2008/05/07/high-performance-mysql-second-edition-schedule/
 description:
   - Schedule and page count for High Performance MySQL Second Edition

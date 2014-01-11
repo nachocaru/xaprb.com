@@ -1,5 +1,6 @@
 ---
 title: Wishing I could be at ODTUG
+date: "2010-05-07"
 permalink: /2010/05/07/wishing-i-could-be-at-odtug/
 categories:
   - Conferences

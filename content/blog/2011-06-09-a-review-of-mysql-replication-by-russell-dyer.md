@@ -1,5 +1,6 @@
 ---
 title: A review of MySQL Replication by Russell Dyer
+date: "2011-06-09"
 permalink: /2011/06/09/a-review-of-mysql-replication-by-russell-dyer/
 categories:
   - Review

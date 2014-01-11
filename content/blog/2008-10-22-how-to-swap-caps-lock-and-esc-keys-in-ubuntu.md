@@ -1,5 +1,6 @@
 ---
 title: How to swap Caps-lock and Esc keys in Ubuntu
+date: "2008-10-22"
 permalink: /2008/10/22/how-to-swap-caps-lock-and-esc-keys-in-ubuntu/
 categories:
   - Coding

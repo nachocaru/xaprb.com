@@ -3,6 +3,7 @@ title: MySQL Toolkit version 815 released
   <p>I've just released changes to all tools in MySQL Toolkit.  The biggest changes are in MySQL Table Sync, which I'm beginning to give sane defaults and options to.  Some of the changes are incompatible (but that's what you get with MySQL Table Sync, which is still very rough).  I also found and fixed some bugs with MySQL Visual Explain.  Thanks to everyone who submitted bug reports.</p>
   
   <p>Note, the formatting overflow in MySQL Query Profiler was not a security vulnerability.  It was simply an issue with a Perl formatting code that displayed numbers as hash marks when they got big enough.</p>
+date: "2007-08-24"
 permalink: /2007/08/24/mysql-toolkit-version-815-released/
 description:
   - >

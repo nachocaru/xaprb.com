@@ -1,5 +1,6 @@
 ---
 title: Get out of your comfort zone
+date: "2013-10-25"
 permalink: /2013/10/25/get-out-of-your-comfort-zone/
 categories:
   - Commentary

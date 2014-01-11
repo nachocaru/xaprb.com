@@ -1,5 +1,6 @@
 ---
 title: Secure your accounts and devices
+date: "2013-12-18"
 permalink: /2013/12/18/secure-your-accounts-and-devices/
 categories:
   - Security

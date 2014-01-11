@@ -1,5 +1,6 @@
 ---
 title: "Poor man's mytop"
+date: "2011-02-17"
 permalink: /2011/02/17/poor-mans-mytop/
 categories:
   - Innotop

@@ -1,5 +1,6 @@
 ---
 title: How to gather statistics at regular intervals
+date: "2011-03-18"
 permalink: /2011/03/18/how-to-gather-statistics-at-regular-intervals/
 categories:
   - Coding

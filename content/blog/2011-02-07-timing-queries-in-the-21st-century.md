@@ -1,5 +1,6 @@
 ---
 title: Timing queries in the 21st century
+date: "2011-02-07"
 permalink: /2011/02/07/timing-queries-in-the-21st-century/
 categories:
   - SQL

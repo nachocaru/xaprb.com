@@ -1,5 +1,6 @@
 ---
 title: How to implement a queue in SQL
+date: "2007-01-11"
 permalink: /2007/01/11/how-to-implement-a-queue-in-sql/
 description:
   - 'Explains how to create a FIFO queue in SQL which grows to a fixed size, then deletes old entries.</p>'

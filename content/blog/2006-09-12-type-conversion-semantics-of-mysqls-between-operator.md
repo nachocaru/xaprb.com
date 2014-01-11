@@ -1,5 +1,6 @@
 ---
 title: "Type conversion semantics of MySQL's BETWEEN operator"
+date: "2006-09-12"
 permalink: /2006/09/12/type-conversion-semantics-of-mysqls-between-operator/
 description:
   - "Explains how the confusing, undocumented type conversion semantics of MySQL's BETWEEN operator can cause bizarre results.  It is better to avoid BETWEEN unless all operands are of the same type."
@@ -39,7 +40,7 @@ I'm guessing, though I'm not sure, that `BETWEEN` must convert all three operand
 
 <blockquote cite="http://dev.mysql.com/doc/refman/5.0/en/comparison-operators.html">
   <p>
-    If expr is greater than or equal to min and expr is less than or equal to max, BETWEEN returns 1, otherwise it returns 0. This is equivalent to the expression (min <= expr AND expr <= max) if all the arguments are of the same type. Otherwise type conversion takes place according to the rules described in Section 12.1.2, â€œType Conversion in Expression Evaluationâ€, but applied to all the three arguments.
+    If expr is greater than or equal to min and expr is less than or equal to max, BETWEEN returns 1, otherwise it returns 0. This is equivalent to the expression (min <= expr AND expr <= max) if all the arguments are of the same type. Otherwise type conversion takes place according to the rules described in Section 12.1.2, 'Type Conversion in Expression Evaluation', but applied to all the three arguments.
   </p>
 </blockquote>
 

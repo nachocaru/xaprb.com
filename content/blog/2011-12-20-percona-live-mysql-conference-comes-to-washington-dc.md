@@ -1,5 +1,6 @@
 ---
 title: Percona Live MySQL Conference comes to Washington DC
+date: "2011-12-20"
 permalink: /2011/12/20/percona-live-mysql-conference-comes-to-washington-dc/
 categories:
   - Conferences

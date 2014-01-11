@@ -1,5 +1,6 @@
 ---
 title: Drizzle stops the rain
+date: "2008-08-21"
 permalink: /2008/08/21/drizzle-stops-the-rain/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: A lightweight MySQL sandbox script
+date: "2012-08-20"
 permalink: /2012/08/20/a-lightweight-mysql-sandbox-script/
 categories:
   - SQL

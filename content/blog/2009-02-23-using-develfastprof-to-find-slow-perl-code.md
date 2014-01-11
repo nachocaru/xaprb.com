@@ -1,5 +1,6 @@
 ---
 title: Using Devel::FastProf to find slow Perl code
+date: "2009-02-23"
 permalink: /2009/02/23/using-develfastprof-to-find-slow-perl-code/
 categories:
   - Coding

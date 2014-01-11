@@ -1,6 +1,7 @@
 ---
 title: Growth limits of open-source vis-a-vis MySQL Toolkit
   <p><a href="http://opensourcestrategies.blogspot.com/2007/10/limits-of-open-source.html">Si Chen wrote recently about the growth limits of open-source projects</a>.  He points out that as a project becomes larger, it gets harder to maintain.  I can only agree.  As the <a href="http://mysqltoolkit.sourceforge.net">MySQL Toolkit</a> project has grown, it's become significantly more work to maintain, document, and enhance.</p>
+date: "2007-11-05"
 permalink: /2007/11/05/growth-limits-of-open-source-vis-a-vis-mysql-toolkit/
 description:
   - >

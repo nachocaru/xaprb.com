@@ -1,5 +1,6 @@
 ---
 title: Three steps to stopping blog comment spam
+date: "2008-10-11"
 permalink: /2008/10/11/three-steps-to-stopping-blog-comment-spam/
 categories:
   - SQL
@@ -19,7 +20,7 @@ Today I get just a few spam comments a month. I have a three-part recipe that ha
 Here it is:
 
 1.  [Akismet][1]. Akismet is very, very good at detecting spam and putting it into the moderation queue. It rarely has a false positive or false negative. All you have to do is sign up for a WordPress account (takes 15 seconds) so you get an Akismet API key.
-2.  [WP-Gatekeeper][2]. This lets you add a simple question-answer, like a CAPTCHA but without obnoxious accessibility problems or unreadable images. Even the biggest sites on the web use unreadable CAPTCHAs, and it drives me nuts. See [Yes, Iâ€™m Human. No, I Canâ€™t Decode YouTube Captchas.][3]
+2.  [WP-Gatekeeper][2]. This lets you add a simple question-answer, like a CAPTCHA but without obnoxious accessibility problems or unreadable images. Even the biggest sites on the web use unreadable CAPTCHAs, and it drives me nuts. See [Yes, I'm Human. No, I Can't Decode YouTube Captchas.][3]
 3.  [Bad Behavior][4] is the keystone in the arch. It actually denies access to the site, based on the request's HTTP headers and other metadata.
 
 This trio of plugins, all of which are very simple to install and configure, mean that very few spam-bot requests ever reach the site. The remaining requests are easily quarantined into the moderation queue if they are spam.

@@ -1,5 +1,6 @@
 ---
 title: MyISAM quote of the day
+date: "2009-06-18"
 permalink: /2009/06/18/myisam-quote-of-the-day/
 categories:
   - SQL

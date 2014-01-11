@@ -1,5 +1,6 @@
 ---
 title: What is it like to write a technical book?
+date: "2008-06-15"
 permalink: /2008/06/15/what-is-it-like-to-write-a-technical-book/
 tags:
   - Andy Oram

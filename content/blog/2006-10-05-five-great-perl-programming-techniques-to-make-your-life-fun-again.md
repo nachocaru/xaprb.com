@@ -1,5 +1,6 @@
 ---
 title: Five great Perl programming techniques to make your life fun again
+date: "2006-10-05"
 permalink: /2006/10/05/five-great-perl-programming-techniques-to-make-your-life-fun-again/
 description:
   - "I demonstrate 5 ways to cut repetition and program declaratively.  It's fun and it's a better way to code."

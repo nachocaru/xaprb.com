@@ -1,5 +1,6 @@
 ---
 title: Javascript date parsing and formatting, Part 2
+date: "2005-12-20"
 permalink: /2005/12/20/javascript-date-parsing/
 ---
 <p style="border:solid red 1px; background:yellow">

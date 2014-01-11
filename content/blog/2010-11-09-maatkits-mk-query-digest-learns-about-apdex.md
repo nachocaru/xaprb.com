@@ -1,5 +1,6 @@
 ---
 title: "Maatkit's mk-query-digest learns about Apdex"
+date: "2010-11-09"
 permalink: /2010/11/09/maatkits-mk-query-digest-learns-about-apdex/
 categories:
   - Maatkit

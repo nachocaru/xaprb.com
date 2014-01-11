@@ -1,5 +1,6 @@
 ---
 title: Two examples of Sphinx search at work
+date: "2010-11-11"
 permalink: /2010/11/11/two-examples-of-sphinx-search-at-work/
 categories:
   - Open Source

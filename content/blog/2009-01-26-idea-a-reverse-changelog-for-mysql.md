@@ -1,5 +1,6 @@
 ---
 title: "Idea: a reverse changelog for MySQL"
+date: "2009-01-26"
 permalink: /2009/01/26/idea-a-reverse-changelog-for-mysql/
 categories:
   - SQL

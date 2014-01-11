@@ -1,5 +1,6 @@
 ---
 title: How to write unit tests for ease of refactoring
+date: "2006-05-16"
 permalink: /2006/05/16/how-to-refactor-without-rewriting-unit-tests/
 description:
   - >

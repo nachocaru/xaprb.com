@@ -1,5 +1,6 @@
 ---
 title: "How to read Linux's /proc/diskstats easily"
+date: "2010-05-14"
 permalink: /2010/05/14/how-to-read-linuxs-procdiskstats-easily/
 categories:
   - GNU/Linux

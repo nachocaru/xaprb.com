@@ -1,5 +1,6 @@
 ---
 title: Google Test Automation Conference, Day 1
+date: "2007-08-24"
 permalink: /2007/08/24/google-test-automation-conference-day-1/
 description:
   - >

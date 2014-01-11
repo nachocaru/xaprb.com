@@ -1,5 +1,6 @@
 ---
 title: News on MySQL Cacti Templates
+date: "2009-02-09"
 permalink: /2009/02/09/news-on-mysql-cacti-templates/
 categories:
   - SQL

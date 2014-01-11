@@ -1,6 +1,7 @@
 ---
 title: Why you should take microformats seriously
   <p><a href="http://microformats.org">Microformats</a> are getting some attention from the group of people who are clueful about the semantic web, but some people are not yet convinced they're useful.  While microformats aren't as robust and complex as some more fully-featured technologies, some apparent limitations are actually possible to overcome, but with different methods than might be expected.  In this article I'll address some common concerns about microformats, and explain how they are either solvable or already solved.</p>
+date: "2006-08-30"
 permalink: /2006/08/30/why-you-should-take-microformats-seriously/
 description:
   - "Microformats lack a doctype to discover, validate and version the instances, but HTML 4 actually provides a mechanism to add doctypes when they're needed."
@@ -51,7 +52,7 @@ In my opinion, the microformat work is going in the right direction &#8212; it j
 
 <blockquote cite="http://www.tbray.org/ongoing/When/200x/2004/09/18/WS-Oppo">
   <p>
-    Iâ€™m deeply suspicious of â€œstandardsâ€ built by committees in advance of industry experience&#8230;
+    I'm deeply suspicious of 'standards' built by committees in advance of industry experience&#8230;
   </p>
 </blockquote>
 

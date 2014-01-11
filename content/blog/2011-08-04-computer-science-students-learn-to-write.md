@@ -1,5 +1,6 @@
 ---
 title: Computer Science students, learn to write!
+date: "2011-08-04"
 permalink: /2011/08/04/computer-science-students-learn-to-write/
 categories:
   - Commentary

@@ -1,5 +1,6 @@
 ---
 title: How to update a GCC profile on Gentoo
+date: "2006-06-07"
 permalink: /2006/06/07/how-to-update-a-gcc-profile-on-gentoo/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: MySQL 5.1.33, now with 4 secret bugs
+date: "2009-04-09"
 permalink: /2009/04/09/mysql-5133-now-with-4-secret-bugs/
 categories:
   - Open Source

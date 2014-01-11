@@ -1,5 +1,6 @@
 ---
 title: Archive strategies for OLTP servers, Part 2
+date: "2007-06-14"
 permalink: /2007/06/14/archive-strategies-for-oltp-servers-part-2/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: Not a good day to blog anything serious
+date: "2010-04-01"
 permalink: /2010/04/01/not-a-good-day-to-blog-anything-serious/
 categories:
   - SQL

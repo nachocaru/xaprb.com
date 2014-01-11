@@ -1,5 +1,6 @@
 ---
 title: How I keep track of notes
+date: "2010-07-03"
 permalink: /2010/07/03/how-i-keep-track-of-notes/
 categories:
   - Commentary

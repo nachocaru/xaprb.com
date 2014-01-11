@@ -1,5 +1,6 @@
 ---
 title: How to give locking hints in MySQL
+date: "2006-08-05"
 permalink: /2006/08/05/how-to-give-locking-hints-in-mysql/
 description:
   - 'Explains how to control the locks a query will acquire in MySQL.  Useful for SQL Server developers trying to learn MySQL.'

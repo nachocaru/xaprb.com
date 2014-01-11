@@ -1,5 +1,6 @@
 ---
 title: Who needs better email search for Thunderbird?
+date: "2009-01-29"
 permalink: /2009/01/29/who-needs-better-email-search-for-thunderbird/
 categories:
   - Desktop

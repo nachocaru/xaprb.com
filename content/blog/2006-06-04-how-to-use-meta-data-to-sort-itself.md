@@ -1,5 +1,6 @@
 ---
 title: How to use meta-data to sort itself
+date: "2006-06-04"
 permalink: /2006/06/04/how-to-use-meta-data-to-sort-itself/
 description:
   - >

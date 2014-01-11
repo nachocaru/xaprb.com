@@ -11,6 +11,7 @@ title: Henceforth, I dub thee GLAMP
   <p>GNU matters.  A lot.  You may not think so, but if it ceased to exist, you'd find out.  That applies equally even if you don't think you are a Free Software user.  You have no idea how much you rely on Free Software in your daily life.  And <a href="http://www.fsf.org/">the GNU project</a> has been and continues to be a keystone in that arch of freedom.</p>
   
   <p>Thanks to <a href="http://krow.livejournal.com/583459.html">MySQL's Brian Aker for snapping me out of my LAMP carelessness</a>.</p>
+date: "2008-02-21"
 permalink: /2008/02/21/henceforth-i-dub-thee-glamp/
 description:
   - "So you think you use the LAMP stack?  You're wrong: LAMP is incapable of even booting."

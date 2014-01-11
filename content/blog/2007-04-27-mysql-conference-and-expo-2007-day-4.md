@@ -5,6 +5,7 @@ title: MySQL Conference and Expo 2007, Day 4
   <p>In my fourth day at the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo 2007</a>, I attended several great sessions, starting with my own.</p>
   
   <br style="clear:both" />
+date: "2007-04-27"
 permalink: /2007/04/27/mysql-conference-and-expo-2007-day-4/
 description:
   - What happened in the last day of the 2007 MySQL Conference and Expo

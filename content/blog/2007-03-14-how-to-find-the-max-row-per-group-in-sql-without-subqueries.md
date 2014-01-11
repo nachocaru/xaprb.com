@@ -1,5 +1,6 @@
 ---
 title: How to find the max row per group in SQL without subqueries
+date: "2007-03-14"
 permalink: /2007/03/14/how-to-find-the-max-row-per-group-in-sql-without-subqueries/
 description:
   - Shows how to find the top rows per group in SQL without subqueries.

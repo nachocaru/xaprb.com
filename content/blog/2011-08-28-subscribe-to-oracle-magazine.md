@@ -1,5 +1,6 @@
 ---
 title: Subscribe to Oracle Magazine
+date: "2011-08-28"
 permalink: /2011/08/28/subscribe-to-oracle-magazine/
 categories:
   - Oracle

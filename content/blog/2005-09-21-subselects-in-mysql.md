@@ -1,5 +1,6 @@
 ---
 title: How to write subqueries without using subqueries in SQL
+date: "2005-09-21"
 permalink: /2005/09/21/subselects-in-mysql/
 categories: Database
 ---
@@ -27,9 +28,9 @@ create table bulk_checkout (
     qty int
 );</pre>
 
-These tables represent a very simplified version of an inventory system I maintain. Items are entered individually where possible, and tagged with their ID number; tents, bikes etc are entered individually, with a quantity of 1. There are also items that we donâ€™t count separately, such as AA batteries. These are entered together as a single item, and given a quantity of 30, for example.
+These tables represent a very simplified version of an inventory system I maintain. Items are entered individually where possible, and tagged with their ID number; tents, bikes etc are entered individually, with a quantity of 1. There are also items that we don't count separately, such as AA batteries. These are entered together as a single item, and given a quantity of 30, for example.
 
-When we check items out, we either check out a certain item, say item #47, or we check out X items of category Y. For example, 15 AA batteries would be checked out as qty 15 of category â€œMiscâ€. We check out a specific item by updating its `checkedout` column, but we check out in bulk by inserting into `bulk_checkout`.
+When we check items out, we either check out a certain item, say item #47, or we check out X items of category Y. For example, 15 AA batteries would be checked out as qty 15 of category 'Misc'. We check out a specific item by updating its `checkedout` column, but we check out in bulk by inserting into `bulk_checkout`.
 
 ### How I'd write the query with subqueries
 
@@ -70,7 +71,7 @@ from category
   left outer join bulk_checkout
     on bulk_checkout.cat = category.uid</pre>
 
-It will not work because the joins may cause rows to appear more than once in the result set, which will cause them to be counted too many times in the sums. For instance, if there are two entries in `bulk_checkout` for category 1, every row in `item` for category 1 will be duplicated, and the `qty` will be twice too large. You may think you can divide by `count(*)`, or take averages, or do some other such magic, but I donâ€™t think there is a way to do so. Leave a comment if you find a way to do it!
+It will not work because the joins may cause rows to appear more than once in the result set, which will cause them to be counted too many times in the sums. For instance, if there are two entries in `bulk_checkout` for category 1, every row in `item` for category 1 will be duplicated, and the `qty` will be twice too large. You may think you can divide by `count(*)`, or take averages, or do some other such magic, but I don't think there is a way to do so. Leave a comment if you find a way to do it!
 
 Why is this? The subselects need to be independent, so rows in bulk`_checkout` and `item` must not have any effect on each other (via the join) as discussed above.
 
@@ -90,7 +91,7 @@ from category
     on bulk_checkout.cat = category.uid and i = 1
 group by category.title</pre>
 
-Iâ€™m not saying subqueries should be rewritten like this. If your RDBMS supports them, subqueries can simplify and clarify queries, and may improve query performance (if youâ€™re using them as you should). The mutex technique actually results in 50% null values on the right-hand side, which hurts performance. There is also another table in the join, which depending on the query plan chosen will cause twice the probing, inner looping, or hashing (because it has two rows). There is also grouping, which requires sorting (bad), and coalescing, (negligible).
+I'm not saying subqueries should be rewritten like this. If your RDBMS supports them, subqueries can simplify and clarify queries, and may improve query performance (if you're using them as you should). The mutex technique actually results in 50% null values on the right-hand side, which hurts performance. There is also another table in the join, which depending on the query plan chosen will cause twice the probing, inner looping, or hashing (because it has two rows). There is also grouping, which requires sorting (bad), and coalescing, (negligible).
 
 I tried this idea on Microsoft SQL Server with `set statistics io on`, and examined the query plan and performance on a small data set. The query plan is straightforward in either case, but using mutex joins resulted in more logical reads, the expected result. I do not have statistics on the performance on MySQL.
 

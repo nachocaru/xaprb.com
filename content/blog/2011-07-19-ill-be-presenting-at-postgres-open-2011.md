@@ -1,5 +1,6 @@
 ---
 title: "I'll be presenting at Postgres Open 2011"
+date: "2011-07-19"
 permalink: /2011/07/19/ill-be-presenting-at-postgres-open-2011/
 categories:
   - Conferences

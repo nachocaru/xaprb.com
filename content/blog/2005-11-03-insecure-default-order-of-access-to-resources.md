@@ -1,5 +1,6 @@
 ---
 title: How to exploit an insecure order of access to resources
+date: "2005-11-03"
 permalink: /2005/11/03/insecure-default-order-of-access-to-resources/
 ---
 When gaining access to resources, such as loading a DLL or invoking a program, beware of default order of access. Insecure defaults can result in using the wrong resource. I find this particularly a problem on the Microsoft platform. Here are two cases where the Microsoft approach, designed to "make it easy," ends up making it insecure instead.

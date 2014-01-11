@@ -1,5 +1,6 @@
 ---
 title: How to install innotop on Microsoft Windows
+date: "2006-11-11"
 permalink: /2006/11/11/how-to-install-innotop-on-microsoft-windows/
 ---
 I recently tested [innotop][1] on Microsoft Windows. There was one slight glitch, but I changed a couple lines of code, and now it runs out of the box under ActivePerl. Version 0.1.156 contains those changes for Windows compatibility.

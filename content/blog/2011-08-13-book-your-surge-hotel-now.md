@@ -1,5 +1,6 @@
 ---
 title: Book your Surge hotel now
+date: "2011-08-13"
 permalink: /2011/08/13/book-your-surge-hotel-now/
 categories:
   - Conferences

@@ -1,5 +1,6 @@
 ---
 title: "What's wrong with MMM?"
+date: "2011-05-04"
 permalink: /2011/05/04/whats-wrong-with-mmm/
 categories:
   - Coding

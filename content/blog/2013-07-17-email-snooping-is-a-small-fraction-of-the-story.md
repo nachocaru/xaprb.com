@@ -1,5 +1,6 @@
 ---
 title: Email snooping is a small fraction of the story
+date: "2013-07-17"
 permalink: /2013/07/17/email-snooping-is-a-small-fraction-of-the-story/
 categories:
   - Commentary

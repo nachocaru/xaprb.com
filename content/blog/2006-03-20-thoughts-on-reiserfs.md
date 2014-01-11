@@ -2,6 +2,7 @@
 title: Thoughts on ReiserFS
   |
     <p>I recently watched a video of Hans Reiser's presentation on ReiserFS, a journalling filesystem.  It piqued my curiosity, so I visited the <a href="http://www.namesys.com/">ReiserFS website</a> to read more about the filesystem.  I ended up un-learning some things I thought I knew, and had some thoughts to share on ReiserFS in general.</p>
+date: "2006-03-20"
 permalink: /2006/03/20/thoughts-on-reiserfs/
 description:
   - Discussion of the aspects of ReiserFS version 4 that interest me most.

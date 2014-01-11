@@ -1,5 +1,6 @@
 ---
 title: PostgreSQL adds windowing functions and common table expressions
+date: "2009-01-21"
 permalink: /2009/01/21/postgresql-adds-windowing-functions-and-common-table-expressions/
 categories:
   - PostgreSQL

@@ -1,5 +1,6 @@
 ---
 title: innotop version 1.0 released
+date: "2007-01-07"
 permalink: /2007/01/07/innotop-version-10-released/
 description:
   - >

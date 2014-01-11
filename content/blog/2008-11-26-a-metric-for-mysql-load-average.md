@@ -1,5 +1,6 @@
 ---
 title: A metric for MySQL load average
+date: "2008-11-26"
 permalink: /2008/11/26/a-metric-for-mysql-load-average/
 categories:
   - SQL

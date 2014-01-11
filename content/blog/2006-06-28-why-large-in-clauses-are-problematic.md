@@ -1,5 +1,6 @@
 ---
 title: Why large IN clauses are problematic
+date: "2006-06-28"
 permalink: /2006/06/28/why-large-in-clauses-are-problematic/
 description:
   - >

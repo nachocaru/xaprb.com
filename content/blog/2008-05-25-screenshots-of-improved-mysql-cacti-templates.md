@@ -1,5 +1,6 @@
 ---
 title: Screenshots of improved MySQL Cacti templates
+date: "2008-05-25"
 permalink: /2008/05/25/screenshots-of-improved-mysql-cacti-templates/
 description:
   - Examples of the graphs produced by the improved MySQL templates for Cacti.

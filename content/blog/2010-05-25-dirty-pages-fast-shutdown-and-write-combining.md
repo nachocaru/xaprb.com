@@ -1,5 +1,6 @@
 ---
 title: Dirty pages, fast shutdown, and write combining
+date: "2010-05-25"
 permalink: /2010/05/25/dirty-pages-fast-shutdown-and-write-combining/
 categories:
   - SQL

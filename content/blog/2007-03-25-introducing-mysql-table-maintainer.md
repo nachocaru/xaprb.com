@@ -1,5 +1,6 @@
 ---
 title: Introducing MySQL Table Maintainer
+date: "2007-03-25"
 permalink: /2007/03/25/introducing-mysql-table-maintainer/
 description:
   - >

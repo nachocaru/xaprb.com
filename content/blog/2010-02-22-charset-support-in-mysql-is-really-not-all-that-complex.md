@@ -1,5 +1,6 @@
 ---
 title: Charset support in MySQL is really not all that complex
+date: "2010-02-22"
 permalink: /2010/02/22/charset-support-in-mysql-is-really-not-all-that-complex/
 categories:
   - SQL

@@ -1,5 +1,6 @@
 ---
 title: MySQL manual gets improved searching
+date: "2008-07-28"
 permalink: /2008/07/28/mysql-manual-gets-improved-searching/
 categories:
   - SQL

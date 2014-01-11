@@ -1,5 +1,6 @@
 ---
 title: Not if, but when
+date: "2012-01-09"
 permalink: /2012/01/09/not-if-but-when/
 categories:
   - SQL

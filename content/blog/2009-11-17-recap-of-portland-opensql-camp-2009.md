@@ -1,5 +1,6 @@
 ---
 title: Recap of Portland OpenSQL Camp 2009
+date: "2009-11-17"
 permalink: /2009/11/17/recap-of-portland-opensql-camp-2009/
 categories:
   - Conferences

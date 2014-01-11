@@ -1,5 +1,6 @@
 ---
 title: The manager-programmer face-off over NoSQL
+date: "2010-05-10"
 permalink: /2010/05/10/the-manager-programmer-face-off-over-nosql/
 categories:
   - Commentary

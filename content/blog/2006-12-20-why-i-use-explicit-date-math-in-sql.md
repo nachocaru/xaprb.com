@@ -1,5 +1,6 @@
 ---
 title: Why I use explicit date math in SQL
+date: "2006-12-20"
 permalink: /2006/12/20/why-i-use-explicit-date-math-in-sql/
 description:
   - >

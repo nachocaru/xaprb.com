@@ -1,5 +1,6 @@
 ---
 title: The state of MySQL client libraries
+date: "2012-12-26"
 permalink: /2012/12/26/the-state-of-mysql-client-libraries/
 categories:
   - Drizzle

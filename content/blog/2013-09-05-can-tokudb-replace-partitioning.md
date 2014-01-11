@@ -1,5 +1,6 @@
 ---
 title: Can TokuDB replace partitioning?
+date: "2013-09-05"
 permalink: /2013/09/05/can-tokudb-replace-partitioning/
 categories:
   - SQL

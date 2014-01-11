@@ -1,5 +1,6 @@
 ---
 title: Version 1.1.3 of improved Cacti graphs for MySQL released
+date: "2009-10-24"
 permalink: /2009/10/24/version-1-1-3-of-improved-cacti-graphs-for-mysql-released/
 categories:
   - PHP

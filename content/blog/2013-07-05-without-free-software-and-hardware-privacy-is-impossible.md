@@ -1,5 +1,6 @@
 ---
 title: Without free software and hardware, privacy is impossible
+date: "2013-07-05"
 permalink: /2013/07/05/without-free-software-and-hardware-privacy-is-impossible/
 categories:
   - Commentary

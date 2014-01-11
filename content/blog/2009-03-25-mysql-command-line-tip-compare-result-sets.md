@@ -1,5 +1,6 @@
 ---
 title: "MySQL command-line tip: compare result sets"
+date: "2009-03-25"
 permalink: /2009/03/25/mysql-command-line-tip-compare-result-sets/
 categories:
   - SQL

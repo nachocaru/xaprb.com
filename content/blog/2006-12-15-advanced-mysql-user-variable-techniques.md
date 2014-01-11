@@ -2,6 +2,7 @@
 title: Advanced MySQL user variable techniques
   <p>MySQL's user variables have interesting properties that enable the useful techniques I wrote about in recent articles.  One property is that you can read from and assign to a user variable simultaneously, because an assignment can be an r-value (the 
   result of the assignment is the final value of the variable).  Another property, which sometimes causes confusing behavior, is un-intuitive evaluation time.  In this post I'll show you how to make sure your variables get updated at the time they're used, instead of potentially reading and updating them at different stages of query execution.  This technique enables a whole new range of applications for user variables.  As a bonus, it also avoids extra columns of output created by variable manipulations.</p>
+date: "2006-12-15"
 permalink: /2006/12/15/advanced-mysql-user-variable-techniques/
 description:
   - >

@@ -1,5 +1,6 @@
 ---
 title: Progress on Maatkit bounty, part 3
+date: "2007-12-06"
 permalink: /2007/12/06/progress-on-maatkit-bounty-part-3/
 description:
   - mk-table-checksum is a brand new beast!

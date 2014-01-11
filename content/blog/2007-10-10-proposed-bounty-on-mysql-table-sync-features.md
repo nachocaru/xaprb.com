@@ -22,6 +22,7 @@ title: Proposed bounty on MySQL Table Sync features
   </ul>
   
   <p>Alternatively, if someone wants to do it and just contribute the code to the project, I'd be delighted.  I doubt that will happen, though, and there'd still be a lot of work in it for me, so I think it's probably more realistic that I will do it.</p>
+date: "2007-10-10"
 permalink: /2007/10/10/proposed-bounty-on-mysql-table-sync-features/
 description:
   - >

@@ -5,6 +5,7 @@ title: Slides for the innotop workshop at MySQL Conference and Expo 2007
   <p>The slides for my <a href="http://sourceforge.net/projects/innotop">innotop</a> presentation at the recent <a href="http://www.mysqlconf.com/">MySQL Conference</a> have been posted, along with other presenter's slides, on the <a href="http://conferences.oreillynet.com/pub/w/54/presentations.html">conference presentations</a> page.  Love that stock photography!</p>
   
   <br style="clear:both" />
+date: "2007-05-05"
 permalink: /2007/05/05/slides-for-the-innotop-workshop-at-mysql-conference-and-expo-2007/
 description:
   - Slides for the innotop workshop are now available.

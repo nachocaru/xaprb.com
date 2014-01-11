@@ -7,6 +7,7 @@ title: MySQL Conference and Expo 2007, Day 3
   <p>Today I attended by a decent margin the best sessions I've been at all week.  If you don't think they're saving the best for last, come to my <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213">tutorial and demo on monitoring MySQL and InnoDB with innotop</a> tomorrow and see!</p>
   
   <p>Just two quick notes: I am recording the sessions I attend on my iRiver when possible, and will post the audio for download after I get home.  Also, you can click on the headings of each of the talks; I have linked them to the session description.</p>
+date: "2007-04-26"
 permalink: /2007/04/26/mysql-conference-and-expo-2007-day-3/
 tags:
   - mysqlconf07

@@ -1,5 +1,6 @@
 ---
 title: mk-query-digest now supports Postgres logs
+date: "2010-02-20"
 permalink: /2010/02/20/mk-query-digest-now-supports-postgres-logs/
 categories:
   - Coding

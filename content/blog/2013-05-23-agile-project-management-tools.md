@@ -1,5 +1,6 @@
 ---
 title: Agile project management tools
+date: "2013-05-23"
 permalink: /2013/05/23/agile-project-management-tools/
 categories:
   - Coding

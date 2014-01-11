@@ -1,5 +1,6 @@
 ---
 title: "My sessions at the O'Reilly MySQL Conference 2011"
+date: "2011-01-29"
 permalink: /2011/01/29/my-sessions-at-the-oreilly-mysql-conference-2011/
 categories:
   - Aspersa

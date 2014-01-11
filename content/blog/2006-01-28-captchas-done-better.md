@@ -1,5 +1,6 @@
 ---
 title: How to implement CAPTCHAs without images
+date: "2006-01-28"
 permalink: /2006/01/28/captchas-done-better/
 description:
   - Demonstrates how to implement usable, accessible CAPTCHAS without images.

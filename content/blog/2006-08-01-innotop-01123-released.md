@@ -3,6 +3,7 @@ title: Version 0.1.123 of innotop released
   <p>I've made several improvements to the <code>innotop</code> InnoDB and MySQL monitor, and it's ready to get from the <a href="http://www.xaprb.com/innotop/">innotop homepage</a>.</p>
   
   <p>As usual, it's a combination of bug fixes, new features, and enhancements to existing features.</p>
+date: "2006-08-01"
 permalink: /2006/08/01/innotop-01123-released/
 description:
   - Lists the changes in version 0.1.123 of the innotop InnoDB and MySQL monitor.

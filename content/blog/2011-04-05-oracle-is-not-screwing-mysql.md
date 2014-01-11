@@ -1,5 +1,6 @@
 ---
 title: Oracle is not screwing MySQL
+date: "2011-04-05"
 permalink: /2011/04/05/oracle-is-not-screwing-mysql/
 categories:
   - Commentary

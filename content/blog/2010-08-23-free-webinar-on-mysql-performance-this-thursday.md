@@ -1,5 +1,6 @@
 ---
 title: Free webinar on MySQL performance this Thursday
+date: "2010-08-23"
 permalink: /2010/08/23/free-webinar-on-mysql-performance-this-thursday/
 categories:
   - Conferences

@@ -1,5 +1,6 @@
 ---
 title: Maatkit version 1674 released
+date: "2008-01-05"
 permalink: /2008/01/05/maatkit-version-1674-released/
 description:
   - Another one bites the dust!

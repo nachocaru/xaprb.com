@@ -1,5 +1,6 @@
 ---
 title: "Measuring free space in InnoDB's global tablespace"
+date: "2012-09-07"
 permalink: /2012/09/07/measuring-free-space-in-innodbs-global-tablespace/
 categories:
   - SQL

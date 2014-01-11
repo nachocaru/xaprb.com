@@ -1,5 +1,6 @@
 ---
 title: MySQL 5.6 adds connection attributes
+date: "2013-01-23"
 permalink: /2013/01/23/mysql-5-6-adds-connection-attributes/
 categories:
   - SQL

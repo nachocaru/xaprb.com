@@ -1,5 +1,6 @@
 ---
 title: The MySQL init-script mess
+date: "2012-04-24"
 permalink: /2012/04/24/the-mysql-init-script-mess/
 categories:
   - SQL

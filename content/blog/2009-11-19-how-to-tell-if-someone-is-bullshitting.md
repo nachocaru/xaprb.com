@@ -1,5 +1,6 @@
 ---
 title: How to tell if someone is bullshitting
+date: "2009-11-19"
 permalink: /2009/11/19/how-to-tell-if-someone-is-bullshitting/
 categories:
   - Commentary

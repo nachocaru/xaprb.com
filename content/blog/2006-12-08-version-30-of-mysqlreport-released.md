@@ -1,5 +1,6 @@
 ---
 title: Version 3.0 of mysqlreport released
+date: "2006-12-08"
 permalink: /2006/12/08/version-30-of-mysqlreport-released/
 description:
   - 'mysqlreport version 3.0 adds output about InnoDB.  A good addition to a good tool.'

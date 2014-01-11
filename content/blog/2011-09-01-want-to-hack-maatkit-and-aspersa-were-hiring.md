@@ -1,5 +1,6 @@
 ---
 title: "Want to hack Maatkit and Aspersa? We're hiring"
+date: "2011-09-01"
 permalink: /2011/09/01/want-to-hack-maatkit-and-aspersa-were-hiring/
 categories:
   - Aspersa

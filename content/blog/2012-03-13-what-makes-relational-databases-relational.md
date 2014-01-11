@@ -1,5 +1,6 @@
 ---
 title: What makes relational databases relational?
+date: "2012-03-13"
 permalink: /2012/03/13/what-makes-relational-databases-relational/
 categories:
   - PostgreSQL

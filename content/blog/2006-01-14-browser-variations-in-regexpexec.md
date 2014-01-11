@@ -1,5 +1,6 @@
 ---
 title: Browser variations in RegExp.exec()
+date: "2006-01-14"
 permalink: /2006/01/14/browser-variations-in-regexpexec/
 description:
   - >

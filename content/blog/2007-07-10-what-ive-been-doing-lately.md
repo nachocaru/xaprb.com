@@ -9,6 +9,7 @@ title: "What I've been doing lately"
   <p>Someday, maybe even soon, I might finish some of my 60+ drafts, such as "how to implement event listeners and notification in MySQL."  But I think the other projects I'm working on are much more important and beneficial to many more people, so I have prioritized them.</p>
   
   <p>I had a slight glitch with my <a href="/blog/donate/">Amazon wishlist</a>.  I was on vacation and when I came back, I saw about half a dozen things purchased from it, but I haven't received any of them (thank you, whoever you are!).  I didn't really understand how the wish list worked, so I didn't know I needed to specify a shipping address.  I assumed Amazon would send them to my primary shipping address.  Well, apparently that didn't work, and in the meantime I also realized Amazon was sending mail somewhere I couldn't receive it, so I'm not sure what is really going on.  I've specified an address now, and I'm hoping that takes care of it.</p>
+date: "2007-07-10"
 permalink: /2007/07/10/what-ive-been-doing-lately/
 description:
   - "Why I haven't been blogging about the same kinds of things recently."

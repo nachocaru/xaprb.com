@@ -1,5 +1,6 @@
 ---
 title: When systems scale better than linearly
+date: "2011-10-06"
 permalink: /2011/10/06/when-systems-scale-better-than-linearly/
 categories:
   - PostgreSQL

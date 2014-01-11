@@ -1,5 +1,6 @@
 ---
 title: Solving repetitive strain injury from typing
+date: "2012-11-02"
 permalink: /2012/11/02/solving-repetitive-strain-injury-from-typing/
 categories:
   - Health

@@ -1,5 +1,6 @@
 ---
 title: Subtleties in the Universal Scalability Law
+date: "2011-04-16"
 permalink: /2011/04/16/subtleties-in-the-universal-scalability-law/
 categories:
   - Scalability

@@ -1,5 +1,6 @@
 ---
 title: MySQL Archiver can now archive each row to a different table
+date: "2007-11-05"
 permalink: /2007/11/05/mysql-archiver-can-now-archive-each-row-to-a-different-table/
 description:
   - MySQL Archiver can now archive each row to a different destination table.

@@ -1,5 +1,6 @@
 ---
 title: Two subtle bugs in OUTER JOIN queries
+date: "2010-08-02"
 permalink: /2010/08/02/two-subtle-bugs-in-outer-join-queries/
 categories:
   - Maatkit

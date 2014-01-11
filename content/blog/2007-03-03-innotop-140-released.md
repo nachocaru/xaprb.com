@@ -1,5 +1,6 @@
 ---
 title: innotop 1.4.0 released
+date: "2007-03-03"
 permalink: /2007/03/03/innotop-140-released/
 description:
   - The stable version 1.4.0 of innotop has major enhancements and new features.

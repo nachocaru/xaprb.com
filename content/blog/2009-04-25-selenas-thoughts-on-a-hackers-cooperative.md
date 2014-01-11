@@ -1,5 +1,6 @@
 ---
 title: "Selena's thoughts on a hacker's cooperative"
+date: "2009-04-25"
 permalink: /2009/04/25/selenas-thoughts-on-a-hackers-cooperative/
 categories:
   - Commentary

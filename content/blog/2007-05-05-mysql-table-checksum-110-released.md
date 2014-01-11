@@ -3,6 +3,7 @@ title: MySQL Table Checksum 1.1.0 released
   <p>MySQL Table Checksum 1.1.0 adds many improvements, but the most important is a new way to ensure slaves have the same data as their master.  Instead of checksumming the slave and the master, it can now insert the checksum results directly on the master via an INSERT.. SELECT statement.  This statement will replicate to the slave, where a simple query can find tables that differ from the master.  This makes a consistent, lock-free checksum trivially easy.</p>
   
   <p>There are also many other feature improvements and bug fixes, compatibility with MySQL 3.23.2 through 6.0-alpha, and finally I've gotten the documentation finished to my satisfaction.</p>
+date: "2007-05-05"
 permalink: /2007/05/05/mysql-table-checksum-110-released/
 description:
   - >

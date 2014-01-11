@@ -1,5 +1,6 @@
 ---
 title: "Speaking at Strata NYC: Making Big Data Small"
+date: "2013-08-18"
 permalink: /2013/08/18/speaking-at-strata-nyc-making-big-data-small/
 categories:
   - Conferences

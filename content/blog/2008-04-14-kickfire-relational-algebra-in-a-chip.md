@@ -1,5 +1,6 @@
 ---
 title: "Kickfire: relational algebra in a chip"
+date: "2008-04-14"
 permalink: /2008/04/14/kickfire-relational-algebra-in-a-chip/
 description:
   - "Kickfire's TPC-H benchmarks are out now, and this post examines Kickfire's architecture and capabilities."

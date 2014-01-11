@@ -3,6 +3,7 @@ title: How to display an HTML table as a folder tree
   <p>XHTML tables provide several elements to group and structure data, including <a href="http://www.w3.org/TR/REC-html40/struct/tables.html#rowgroups">row groups</a> (<code>thead</code>, <code>tbody</code>, and <code>tfoot</code>).  Styling row groups with CSS can make data relationships visually obvious.  One familiar way to group data visually is with Explorer-style folder icons.</p>
   
   <div style="text-align:center"><img src="/articles/images/folder-view-slug.png" alt="Data grouped as a folder view" height="85" width="218" /></div>
+date: "2006-01-10"
 permalink: /2006/01/10/grouping-data-visually-with-row-groups/
 description:
   - >

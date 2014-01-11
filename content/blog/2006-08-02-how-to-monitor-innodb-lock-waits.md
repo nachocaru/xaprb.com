@@ -1,5 +1,6 @@
 ---
 title: How to monitor InnoDB lock waits
+date: "2006-08-02"
 permalink: /2006/08/02/how-to-monitor-innodb-lock-waits/
 description:
   - >

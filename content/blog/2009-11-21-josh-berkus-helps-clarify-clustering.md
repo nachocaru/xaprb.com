@@ -1,5 +1,6 @@
 ---
 title: Josh Berkus helps clarify clustering
+date: "2009-11-21"
 permalink: /2009/11/21/josh-berkus-helps-clarify-clustering/
 categories:
   - PostgreSQL

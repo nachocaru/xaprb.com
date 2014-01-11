@@ -7,6 +7,7 @@ title: Maatkit version 1314 released
   
   <p>This release fixes several minor bugs.  It also renames all the tools
   to avoid trademark violation.</p>
+date: "2007-11-26"
 permalink: /2007/11/26/maatkit-version-1314-released/
 description:
   - Maatkit rename is now complete.

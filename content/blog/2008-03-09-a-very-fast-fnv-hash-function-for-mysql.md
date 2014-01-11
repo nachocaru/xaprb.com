@@ -2,6 +2,7 @@
 title: A very fast FNV hash function for MySQL
   |
     <p>I wrote a User-Defined Function that implements the <a href="http://isthe.com/chongo/tech/comp/fnv/">FNV (Fowler-Voll-No)</a> hash function for MySQL.  I'm <a href="http://www.radwin.org/michael/blog/2007/03/mysql_user_defined_functio.html">not the first person to do this</a> -- in fact, I was inspired by the <a href="http://code.google.com/p/google-mysql-tools/">Google patches for MySQL</a>.  But my implementation is a little bit different from most, in a very important way that leads directly to much higher performance, especially suited for the Maatkit tools.</p>
+date: "2008-03-09"
 permalink: /2008/03/09/a-very-fast-fnv-hash-function-for-mysql/
 description:
   - You can speed up Maatkit by installing a faster hash function I created.

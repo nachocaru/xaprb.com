@@ -1,5 +1,6 @@
 ---
 title: JavaScript Number Formatting Library v1.3 released
+date: "2007-07-15"
 permalink: /2007/07/15/javascript-number-formatting-library-v13-released/
 description:
   - >

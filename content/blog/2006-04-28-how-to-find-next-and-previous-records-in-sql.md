@@ -1,5 +1,6 @@
 ---
 title: How to find next and previous records in SQL
+date: "2006-04-28"
 permalink: /2006/04/28/how-to-find-next-and-previous-records-in-sql/
 description:
   - "How to find 'next' and 'previous' records in a sequence with a single SQL statement and no subqueries or unions.  Works on MySQL 3.23."

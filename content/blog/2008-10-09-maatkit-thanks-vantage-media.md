@@ -1,5 +1,6 @@
 ---
 title: Maatkit thanks Vantage Media
+date: "2008-10-09"
 permalink: /2008/10/09/maatkit-thanks-vantage-media/
 categories:
   - Maatkit

@@ -1,5 +1,6 @@
 ---
 title: Why is PostgreSQL getting dramatically more patches?
+date: "2008-05-22"
 permalink: /2008/05/22/why-is-postgresql-getting-dramatically-more-patches/
 categories:
   - Commentary

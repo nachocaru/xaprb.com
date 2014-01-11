@@ -1,5 +1,6 @@
 ---
 title: mk-query-digest now understands HTTP
+date: "2009-11-14"
 permalink: /2009/11/14/mk-query-digest-now-understands-http/
 categories:
   - Maatkit

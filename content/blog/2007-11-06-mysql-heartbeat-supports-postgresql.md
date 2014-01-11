@@ -5,6 +5,7 @@ title: MySQL Heartbeat supports PostgreSQL
   <pre>mysql-heartbeat [options] --dbidriver=Pg</pre>
   
   <p>Most of the tools in the MySQL Toolkit are very MySQL-specific.  This one just happened to be an exception, and I'm happy it's useful for more than the original purpose.</p>
+date: "2007-11-06"
 permalink: /2007/11/06/mysql-heartbeat-supports-postgresql/
 description:
   - MySQL Heartbeat measures Slony-I replication lag for PostgreSQL too.

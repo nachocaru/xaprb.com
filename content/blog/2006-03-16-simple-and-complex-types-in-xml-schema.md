@@ -1,5 +1,6 @@
 ---
 title: Simple and complex types in XML Schema
+date: "2006-03-16"
 permalink: /2006/03/16/simple-and-complex-types-in-xml-schema/
 description:
   - >

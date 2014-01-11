@@ -3,6 +3,7 @@ title: MySQL Toolkit distribution 620 released
   <p>MySQL Toolkit distribution 620 updates documentation and test suites, includes some major bug fixes and functionality changes, and adds one new tool to the toolkit.  This article is mostly a changelog, with some added notes.</p>
   
   <p>Many of the tools have matured and I just needed to make the documentation top-notch, but there's still a lot to be done on the crucial checksumming and syncing tools.  Time is in short supply for me right now, though.  In fact, I actually finished this release on June 22, but wasn't able to release it till just tonight!</p>
+date: "2007-07-05"
 permalink: /2007/07/05/mysql-toolkit-distribution-620-released/
 description:
   - >

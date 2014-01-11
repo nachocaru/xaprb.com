@@ -1,5 +1,6 @@
 ---
 title: High Performance MySQL is here!
+date: "2008-06-20"
 permalink: /2008/06/20/high-performance-mysql-is-here/
 categories:
   - High Performance MySQL

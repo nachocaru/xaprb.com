@@ -1,5 +1,6 @@
 ---
 title: How fast is MySQL replication?
+date: "2007-10-23"
 permalink: /2007/10/23/how-fast-is-mysql-replication/
 description:
   - >
