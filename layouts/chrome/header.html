@@ -2,17 +2,56 @@
 <html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
     <meta charset="utf-8">
+    
+    <base href="{{ .Site.BaseUrl }}">
+    <link rel="canonical" href="{{ .Permalink }}">
 
-    {{ template "chrome/head.html" . }}
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- open graph -->
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="{{ .Description }}"/>
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }} "/>
+    <meta property="og:site_name" content="{{ .Site.Title }}"/>
+    <meta property="og:image" content="" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="" />
+    <meta property="og:image:height" content="" />
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}"/>
+    <meta property="article:modified_time" content="{{ .Date.Format "2006-01-02" }}"/>
+    <!--Twitter Cards-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="{{ .Site.Params.Twitter }}">
+    <meta name="twitter:title" content="{{ .Title }} | { .Site.Title }}">
+    <meta name="twitter:creator" content="{{ .Site.Params.Twitter }}">
+    <meta name="twitter:description" content="{{ .Description }}">
+    <meta name="twitter:image:src" content="">
+    <meta name="twitter:domain" content="{{ .Site.Params.Domain }}">
 
     <base href="{{ .Site.BaseUrl }}">
-    <title> {{ .Title }} | {{ .Site.Title }} </title>
     <link rel="canonical" href="{{ .Permalink }}">
+    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="static/css/vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="static/css/vendor/bootstrap/bootstrap-theme.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600|PT+Serif:400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/styles-bluered.css" id="theme-styles">
+
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="css/ie8.css">        
+        <script src="js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+    <![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+
     {{ if .RSSlink }}<link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}" />{{ end }}
 
-    {{ template "chrome/head_includes.html" . }}
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 </head>
 <body lang="en">
 
