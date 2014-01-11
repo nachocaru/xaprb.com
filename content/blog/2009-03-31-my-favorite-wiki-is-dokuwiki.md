@@ -4,7 +4,7 @@ date: "2009-03-31"
 permalink: /2009/03/31/my-favorite-wiki-is-dokuwiki/
 categories:
   - Commentary
-  - World Wide Web
+  - Web
 ---
 I really like [Dokuwiki][1]. I remember looking at it many years ago (even then, there were way too many wikis) but for some reason my company or project at the time didn't choose it. Maybe this was the company that decided Sharepoint was better, I don't remember. (They never did understand why a collection of Word documents was inferior to a wiki.)
 

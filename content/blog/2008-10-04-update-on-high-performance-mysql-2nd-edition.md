@@ -3,7 +3,7 @@ title: Update on High Performance MySQL, 2nd Edition
 date: "2008-10-04"
 permalink: /2008/10/04/update-on-high-performance-mysql-2nd-edition/
 categories:
-  - High Performance MySQL
+  - Writing
 ---
 I just thought I'd drop a line about [our book][1]. Sales appear to be doing well still: the book is still at Amazon sales rank 3,213 and seems to hold pretty steady there. A lot of people have discovered it and are recommending it &#8212; [including members of MySQL's professional services team][2]. There are several positive reviews on Amazon (though if you like the book, a few more wouldn't hurt either). I've been hearing pretty much nothing but good things about it. So, all in all I am very happy about it.
 

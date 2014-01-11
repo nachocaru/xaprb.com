@@ -3,8 +3,8 @@ title: A review of Guerrilla Capacity Planning by Neil Gunther
 date: "2010-07-06"
 permalink: /2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/
 categories:
-  - Review
-  - SQL
+  - Databases
+  - Reviews
 ---
 <div id="attachment_1949" class="wp-caption alignleft" style="width: 163px">
   <a href="http://www.amazon.com/Guerrilla-Capacity-Planning-Tactical-Applications/dp/3540261389?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/07/guerrilla_capacity_planning.jpg" alt="Guerrilla Capacity Planning" title="Guerrilla Capacity Planning" width="153" height="231" class="size-full wp-image-1949" /></a><p class="wp-caption-text">

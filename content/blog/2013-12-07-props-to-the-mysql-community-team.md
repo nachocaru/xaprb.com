@@ -3,7 +3,7 @@ title: Props to the MySQL Community Team
 date: "2013-12-07"
 permalink: /2013/12/07/props-to-the-mysql-community-team/
 categories:
-  - SQL
+  - Databases
 ---
 Enough negativity sometimes gets slung around that it's easy to forget how much good is going on. I want to give a public thumbs-up to the great job the MySQL community team, especially Morgan Tocker, is doing. I don't remember *ever* having so much good interaction with this team, not even in the "good old days": 
 *   Advance notice of things they're thinking about doing (deprecating, changing, adding, etc) 

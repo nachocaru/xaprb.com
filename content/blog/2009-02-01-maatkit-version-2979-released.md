@@ -3,7 +3,7 @@ title: Maatkit version 2979 released
 date: "2009-02-01"
 permalink: /2009/02/01/maatkit-version-2979-released/
 categories:
-  - SQL
+  - Databases
 ---
 Our monthly [Maatkit][1] release is [ready to download][2], on time as we've gotten into the habit of doing every month. There have been a LOT of changes. One thing to note: mk-log-parser is now renamed as [mk-query-digest][3]. There is too much else to write about, and things are in very rapid flux. Just [read the documentation][4]!
 

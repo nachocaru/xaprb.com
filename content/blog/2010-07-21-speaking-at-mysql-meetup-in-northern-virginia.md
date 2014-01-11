@@ -4,7 +4,7 @@ date: "2010-07-21"
 permalink: /2010/07/21/speaking-at-mysql-meetup-in-northern-virginia/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 The closest thing I know of to a "Northern Virginia MySQL Meetup" is the [Sterling Database Data Solutions Group][1]. I got in touch with the organizer and [we scheduled a meeting next Wednesday July 28th][2]. I'll be presenting, and so will someone from Fusion-IO, a solid-state storage vendor. This is on short notice, so tell your friends about it! It would be great to grow a strong monthly meetup presence in this area.
 

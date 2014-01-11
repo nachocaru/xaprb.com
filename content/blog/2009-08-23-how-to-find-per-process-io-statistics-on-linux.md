@@ -3,11 +3,9 @@ title: How to find per-process I/O statistics on Linux
 date: "2009-08-23"
 permalink: /2009/08/23/how-to-find-per-process-io-statistics-on-linux/
 categories:
-  - GNU/Linux
-  - PostgreSQL
-  - SQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Open Source
+  - Operations
 ---
 Newer Linux kernels have per-process I/O accounting and you can use the iotop tool to find out what's performing I/O, but in many cases I'm trying to find the source of an I/O problem in an older kernel. I found sort of a hack-ish way to do that today, while trying to figure out why a system was basically unresponsive.
 

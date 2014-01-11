@@ -3,9 +3,9 @@ title: Version 1.1.6 of Better Cacti Templates released
 date: "2010-01-10"
 permalink: /2010/01/10/version-1-1-6-of-better-cacti-templates-released/
 categories:
-  - PHP
-  - SQL
-  - Sys Admin
+  - Databases
+  - Operations
+  - Programming
 ---
 I've released version 1.1.6 of the [Better Cacti Templates][1] project. This release includes a bunch of bug fixes (but not all of them!) and two new sets of graphs. One set is for disk I/O on GNU/Linux, and the other is a new set of templates for OpenVZ. I'm looking for feedback on both of those. This release also has a bunch of code-level features: much better test coverage (hooray!), and a refactored ss\_get\_by_ssh.php that makes it much easier to create new graphs and templates. The SSH-based templates also take advantage of the same caching as the MySQL templates, which makes them a lot more efficient.
 

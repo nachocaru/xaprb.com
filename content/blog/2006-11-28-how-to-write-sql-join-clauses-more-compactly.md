@@ -2,6 +2,8 @@
 title: How to write SQL JOIN clauses more compactly
 date: "2006-11-28"
 permalink: /2006/11/28/how-to-write-sql-join-clauses-more-compactly/
+categories:
+  - Databases
 ---
 Here's a way to write join clauses so they are more compact, more readable, and less confusing.
 

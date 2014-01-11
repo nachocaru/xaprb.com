@@ -2,6 +2,8 @@
 title: How to find next and previous records in SQL
 date: "2006-04-28"
 permalink: /2006/04/28/how-to-find-next-and-previous-records-in-sql/
+categories:
+  - Databases
 ---
 In this article I'll show you how to find the "next" and "previous" records (define these terms any way you like) in a set of records. My solution uses no subqueries or unions, so it works on old versions of MySQL, and returns both the next and the previous records in a single efficient query.
 

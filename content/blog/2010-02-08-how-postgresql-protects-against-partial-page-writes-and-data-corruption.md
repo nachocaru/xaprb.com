@@ -1,7 +1,6 @@
 ---
 title: How PostgreSQL protects against partial page writes and data corruption
 permalink: >
-categories:
 ---
 I explored two interesting topics today while learning more about Postgres.
 

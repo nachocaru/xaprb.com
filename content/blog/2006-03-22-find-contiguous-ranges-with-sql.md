@@ -2,6 +2,8 @@
 title: How to find contiguous ranges with SQL
 date: "2006-03-22"
 permalink: /2006/03/22/find-contiguous-ranges-with-sql/
+categories:
+  - Databases
 ---
 In an earlier article I discussed how to [find missing members in a sequence with SQL][1]. In this article I'll do the reverse: demonstrate how to find the start and end point of each contiguous range.
 

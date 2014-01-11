@@ -3,8 +3,8 @@ title: "MySQL challenge: LIMIT rows accessed, not rows returned"
 date: "2008-06-28"
 permalink: /2008/06/28/mysql-challenge-limit-rows-accessed-not-rows-returned/
 categories:
-  - Coding
-  - SQL
+  - Databases
+  - Programming
 ---
 Dear reader, this is a challenge. How's your MySQL prowess? You know about LIMIT: it cuts off the results at the specified number.
 

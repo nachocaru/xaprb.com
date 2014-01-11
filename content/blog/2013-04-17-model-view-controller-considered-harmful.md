@@ -3,9 +3,9 @@ title: Model-view-controller considered harmful
 date: "2013-04-17"
 permalink: /2013/04/17/model-view-controller-considered-harmful/
 categories:
-  - Coding
   - Commentary
-  - World Wide Web
+  - Programming
+  - Web
 ---
 In 2001 I created a PHP 4 web application framework from scratch as the backbone of a sophisticated application. Back then frameworks weren't cool. Smarty templates were the hotness.
 

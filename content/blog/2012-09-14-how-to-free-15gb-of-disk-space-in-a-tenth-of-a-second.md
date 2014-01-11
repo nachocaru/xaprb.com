@@ -3,7 +3,7 @@ title: How to free 15GB of disk space in a tenth of a second
 date: "2012-09-14"
 permalink: /2012/09/14/how-to-free-15gb-of-disk-space-in-a-tenth-of-a-second/
 categories:
-  - SQL
+  - Databases
 ---
 One of the MySQL servers I help manage was encountering some problems with a full data directory. It was a bit mysterious, because we couldn't find any files to account for the increased usage. Here are some things we checked:
 

@@ -3,7 +3,7 @@ title: "MySQL's release process works"
 date: "2013-04-25"
 permalink: /2013/04/25/mysqls-release-process-works/
 categories:
-  - SQL
+  - Databases
 ---
 Years ago I complained bitterly about [MySQL's backwards development and release model][1], which made guinea pigs out of the paying customers. I think I'd be remiss if I didn't say [it's been fixed for years][2]. And it's really fixed right in my opinion &#8212; much better than what I proposed.
 

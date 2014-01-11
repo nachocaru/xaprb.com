@@ -2,6 +2,8 @@
 title: Progress on High Performance MySQL Backup and Recovery chapter
 date: "2007-10-02"
 permalink: /2007/10/02/progress-on-high-performance-mysql-backup-and-recovery-chapter/
+categories:
+  - Databases
 ---
 I wrote a couple weeks ago about my work on the [Backup and Recovery chapter for High Performance MySQL, 2nd Edition][1]. Thanks for your comments and suggestions, and thanks to those of you who helped me over email as well.
 

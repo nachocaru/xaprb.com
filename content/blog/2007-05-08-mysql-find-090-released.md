@@ -2,6 +2,8 @@
 title: MySQL Find 0.9.0 released
 date: "2007-05-08"
 permalink: /2007/05/08/mysql-find-090-released/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Find</a>

@@ -3,7 +3,7 @@ title: Why MySQL replication is better than mysqlbinlog for recovery
 date: "2010-09-04"
 permalink: /2010/09/04/why-mysql-replication-is-better-than-mysqlbinlog-for-recovery/
 categories:
-  - SQL
+  - Databases
 ---
 You have a backup, and you have the binary logs between that backup and now. You need to do point-in-time recovery (PITR) for some reason. What do you do? The traditional answer is "restore the backup and then use mysqlbinlog to apply the binary logs." But there's a much better way to do it.
 

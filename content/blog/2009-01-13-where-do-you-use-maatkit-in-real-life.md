@@ -3,8 +3,8 @@ title: Where do you use Maatkit in real life?
 date: "2009-01-13"
 permalink: /2009/01/13/where-do-you-use-maatkit-in-real-life/
 categories:
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 I note that [Maatkit has been deemed unworthy to mention on Wikipedia][1]. Someone emailed me the deletion log today:
 

@@ -4,8 +4,8 @@ date: "2009-04-25"
 permalink: /2009/04/25/presentation-uploaded-for-maatkit-talk-at-mysql-conference/
 categories:
   - Conferences
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 The slides for [my session on Maatkit at the MySQL Conference][1] are uploaded. They should appear on the [speaker presentation files page][2], but I have heard that it can take a few days. Please let me know if they're not there by May 1, 2009.
 

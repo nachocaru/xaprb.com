@@ -3,7 +3,7 @@ title: Percona Live CFP closing soon!
 date: "2012-10-10"
 permalink: /2012/10/10/percona-live-cfp-closing-soon/
 categories:
-  - SQL
+  - Databases
 ---
 If you haven't submitted your proposals for [April's Percona Live MySQL conference][1] (the big annual one in Santa Clara California), now's the time: the CFP closes in a couple of days!
 

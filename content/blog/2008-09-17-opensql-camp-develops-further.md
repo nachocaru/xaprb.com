@@ -3,8 +3,8 @@ title: OpenSQL Camp develops further
 date: "2008-09-17"
 permalink: /2008/09/17/opensql-camp-develops-further/
 categories:
-  - OpenSQL Camp
-  - SQL
+  - Conferences
+  - Databases
 ---
 If you thought the activity around planning [OpenSQL Camp 2008][1] had slacked off, it's only because I'm both moving to a new house and traveling for business, so I haven't blogged about it. In reality I'm not (and shouldn't be!) the main driving force behind this event, so my lack of blogging doesn't reflect anything about it, really.
 

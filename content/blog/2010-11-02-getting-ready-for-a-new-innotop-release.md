@@ -3,8 +3,8 @@ title: Getting ready for a new innotop release
 date: "2010-11-02"
 permalink: /2010/11/02/getting-ready-for-a-new-innotop-release/
 categories:
-  - Innotop
-  - SQL
+  - Databases
+  - Open Source
 ---
 It's been ages since we've had an update to [innotop][1], or at least, it's been a while since the changes were bundled up and released officially. Barring any bug reports against the [trunk code][2], I'm about ready to release more than a year's worth of improvements to it:
 

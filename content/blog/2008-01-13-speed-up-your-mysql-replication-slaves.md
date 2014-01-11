@@ -2,6 +2,8 @@
 title: Speed up your MySQL replication slaves
 date: "2008-01-13"
 permalink: /2008/01/13/speed-up-your-mysql-replication-slaves/
+categories:
+  - Databases
 ---
 Paul Tuckfield of YouTube has spoken about how he sped up his slaves by pre-fetching the slave's relay logs. I wrote an implementation of this, tried it on my workload, and it didn't speed them up. (I didn't expect it to; I don't have the right workload). I had a few email exchanges with Paul and some other experts on the topic and we agreed my workload isn't going to benefit from the pre-fetching.
 

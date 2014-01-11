@@ -3,8 +3,8 @@ title: "Screenshots of innotop's new U mode"
 date: "2010-11-10"
 permalink: /2010/11/10/screenshots-of-innotops-new-u-mode/
 categories:
-  - Innotop
-  - SQL
+  - Databases
+  - Open Source
 ---
 I've started [an HTML manual for innotop][1], a "top" clone for MySQL. It includes [screenshots][2]. Right now I only have screenshots for the new U mode, which demonstrates how the [User Statistics enhancements in Percona Server][3] can show you which tables and indexes are most used.
 

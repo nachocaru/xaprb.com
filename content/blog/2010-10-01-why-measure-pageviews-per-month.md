@@ -3,7 +3,7 @@ title: Why measure pageviews per month?
 date: "2010-10-01"
 permalink: /2010/10/01/why-measure-pageviews-per-month/
 categories:
-  - World Wide Web
+  - Web
 ---
 I don't get why companies talk about how many pageviews they get per month. Maybe it is a handy metric when thinking about revenue, but when thinking about performance, it's not a convenient way to measure.
 

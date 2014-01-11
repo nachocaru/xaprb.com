@@ -2,6 +2,8 @@
 title: MySQL Conference and Expo 2007, Day 1
 date: "2007-04-23"
 permalink: /2007/04/23/mysql-conference-and-expo-2007-day-1/
+categories:
+  - Databases
 ---
 [<img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" />][1] 
 In my first day at the [MySQL Conference and Expo 2007][1], I attended the [Scaling and High Availability Architectures][2] tutorial in the morning, and [Real-world MySQL Performance Tuning][3] in the afternoon. This is a brief article on each session's Big Ideas, and a short blurb about the conference overall so far.

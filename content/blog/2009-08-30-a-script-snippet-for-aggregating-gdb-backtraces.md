@@ -3,9 +3,8 @@ title: A script snippet for aggregating GDB backtraces
 date: "2009-08-30"
 permalink: /2009/08/30/a-script-snippet-for-aggregating-gdb-backtraces/
 categories:
-  - Maatkit
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 **Note: the bt-aggregate tool has been deprecated and replaced by the [pmp][1] tool, which can do all that and more.**
 

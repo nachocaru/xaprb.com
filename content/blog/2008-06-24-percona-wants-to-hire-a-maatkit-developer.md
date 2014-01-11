@@ -3,10 +3,9 @@ title: Percona wants to hire a Maatkit developer
 date: "2008-06-24"
 permalink: /2008/06/24/percona-wants-to-hire-a-maatkit-developer/
 categories:
-  - Maatkit
-  - Perl
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
+  - Programming
 ---
 [Percona is looking to hire someone][1] to develop [Maatkit][2], among other things.
 

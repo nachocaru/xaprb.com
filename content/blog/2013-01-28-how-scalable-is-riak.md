@@ -3,8 +3,8 @@ title: How scalable is Riak?
 date: "2013-01-28"
 permalink: /2013/01/28/how-scalable-is-riak/
 categories:
-  - Riak
-  - Scalability
+  - Databases
+  - Performance
 ---
 I'm reading a little bit about Riak, and was curious about performance and scalability. The only benchmark I found that allowed me to assess scalability was [this one from Joyent][1]. Of course, they say scalability is linear (everyone says that without knowing what it means) but the results are clearly not a straight line. So how scalable is it, really?
 

@@ -2,6 +2,9 @@
 title: innotop version 1.0 released
 date: "2007-01-07"
 permalink: /2007/01/07/innotop-version-10-released/
+categories:
+  - Databases
+  - Open Source
 ---
 <p>I've made the 1.0 release I promised yesterday, and it is available for download on the <a href="http://code.google.com/p/innotop/">innotop project homepage</a>.  I'm now working on version 1.3, which is will become 1.4, which is on the road to version 2.0.  I've added a project roadmap for versions 1.4, 1.6, 1.8 and 2.0.</p>
 

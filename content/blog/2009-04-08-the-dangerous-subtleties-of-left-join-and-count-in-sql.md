@@ -3,8 +3,8 @@ title: The dangerous subtleties of LEFT JOIN and COUNT() in SQL
 date: "2009-04-08"
 permalink: /2009/04/08/the-dangerous-subtleties-of-left-join-and-count-in-sql/
 categories:
-  - Coding
-  - SQL
+  - Databases
+  - Programming
 ---
 I want to show you two very expensive SQL idioms that almost everyone uses. These are not query optimization problems &#8212; they are *financially* expensive patterns of SQL.
 

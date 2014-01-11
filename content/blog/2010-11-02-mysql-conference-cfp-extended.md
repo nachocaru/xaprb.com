@@ -4,8 +4,7 @@ date: "2010-11-02"
 permalink: /2010/11/02/mysql-conference-cfp-extended/
 categories:
   - Conferences
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 I don't think this was widely publicized, but the [Call for Proposals for the MySQL (and beyond) conference][1] was extended a few days. It'll be open through November 3rd.
 

@@ -1,6 +1,8 @@
 ---
 title: "High Performance MySQL, Second Edition: Replication, Scaling and High Availability"
 permalink:  /2007/10/18/high-performance-mysql-second-edition-replication-scaling-and-high-availability/
+categories:
+  - Databases
 ---
 Continuing in the tradition, which I hope has been as helpful to you as it has been to me, I'm opening the floor for suggestions on chapter 9 of the upcoming High Performance MySQL, Second Edition. Unlike the other chapters for which I've listed outlines, this one isn't substantially written yet. It's in detailed outline form at this point (a tactic that has worked very well for us so far &#8212; I'll write about that someday).
 

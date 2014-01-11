@@ -2,6 +2,9 @@
 title: Version 1.6.0 of the innotop monitor for MySQL released
 date: "2007-11-09"
 permalink: /2007/11/09/version-160-of-the-innotop-monitor-for-mysql-released/
+categories:
+  - Databases
+  - Open Source
 ---
 <p class="download">
   <a href="http://code.google.com/p/innotop/">Download innotop</a>

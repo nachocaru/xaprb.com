@@ -3,9 +3,9 @@ title: A review of The Art of Capacity Planning by John Allspaw
 date: "2009-10-24"
 permalink: /2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/
 categories:
-  - Review
-  - SQL
-  - Sys Admin
+  - Databases
+  - Operations
+  - Reviews
 ---
 <div id="attachment_1376" class="wp-caption alignleft" style="width: 190px">
   <a href="http://www.amazon.com/Art-Capacity-Planning-Scaling-Resources/dp/0596518579/?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2009/10/Art-Capacity-Planning.gif" alt="The Art of Capacity Planning" title="The Art of Capacity Planning" width="180" height="236" class="size-full wp-image-1376" /></a><p class="wp-caption-text">

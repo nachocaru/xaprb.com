@@ -2,6 +2,8 @@
 title: "MySQL's FEDERATED storage engine: Part 1"
 date: "2007-01-29"
 permalink: /2007/01/29/mysqls-federated-storage-engine-part-1/
+categories:
+  - Databases
 ---
 [MySQL's `FEDERATED` storage engine][1] is a fascinating example of the flexibility gained by abstracting the storage engine layer away from the rest of the server. `FEDERATED` tables allow you to access a table on another server as though it exists on the local server. However, the manual doesn't say much about how it really works, MySQL's only developer article about it is [vague and unrealistic][2], and there are more questions than answers on the net about the engine's features and behavior. This series of articles will help you understand the engine and its uses. This first article demonstrates its behavior with a series of experimental queries.
 

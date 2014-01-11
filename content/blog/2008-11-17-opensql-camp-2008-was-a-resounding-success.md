@@ -3,8 +3,8 @@ title: OpenSQL Camp 2008 was a resounding success
 date: "2008-11-17"
 permalink: /2008/11/17/opensql-camp-2008-was-a-resounding-success/
 categories:
-  - OpenSQL Camp
-  - SQL
+  - Conferences
+  - Databases
 ---
 In my opinion, [OpenSQL Camp 2008][1] was a great success. ([Give your opinion][2] too.) I have to spend the next couple of days catching up on other things that have gotten delayed, but will try to write more about the experience later. In the meantime, I want to give a heartfelt thanks to all the people who helped before and during the event &#8212; there was a lot of work to be done and people Just Did It. Also, thanks to the [speakers][3] and [sponsors][4]! Most but not all of the sponsors made it onto the printed sponsor banner:
 

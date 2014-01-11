@@ -2,6 +2,8 @@
 title: How to understand SQL joins
 date: "2005-10-03"
 permalink: /2005/10/03/understanding-sql-joins/
+categories:
+  - Databases
 ---
 I have noticed many people do not understand SQL joins, even after somewhat successfully using them for a time. Joins are key to understanding SQL. This article explains what joins really are and what they really do.
 

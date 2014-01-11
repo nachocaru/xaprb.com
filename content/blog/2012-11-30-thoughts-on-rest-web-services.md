@@ -3,9 +3,7 @@ title: Thoughts on REST web services
 date: "2012-11-30"
 permalink: /2012/11/30/thoughts-on-rest-web-services/
 categories:
-  - Internet
-  - World Wide Web
-  - XML
+  - Web
 ---
 I usually keep pretty quiet on things that are controversial, and goodness knows you can start a holy war fast with any comments about REST web services. But I've been thinking and working on these things for years &#8212; REST for over a year, SOAP and friends since 2003 &#8212; and maybe my opinions will be interesting to someone.
 

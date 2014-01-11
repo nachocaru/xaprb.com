@@ -3,8 +3,8 @@ title: Announcing innotop 1.9.0
 date: "2012-09-07"
 permalink: /2012/09/07/announcing-innotop-1-9-0/
 categories:
-  - Innotop
-  - SQL
+  - Databases
+  - Open Source
 ---
 I've just released [innotop][1] version 1.9.0. This version fixes a lot of bugs, makes the tool work better when monitoring dozens of MySQL servers, and adds two new modes: a Health Dashboard and an InnoDB Blockers/Blocked mode.
 

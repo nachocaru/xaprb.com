@@ -4,7 +4,7 @@ date: "2010-02-04"
 permalink: /2010/02/04/infinidb-gets-the-release-process-right/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 InfiniDB has [a sensible Enterprise/Community release process][1], which seems similar to what [I suggested for MySQL][2]. Its simplicity also stands in stark contrast to [MySQL's new release policy][3], which is hard to understand and has been [confusing people][4].
 

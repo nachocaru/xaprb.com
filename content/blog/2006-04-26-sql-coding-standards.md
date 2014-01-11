@@ -2,6 +2,8 @@
 title: My personal SQL coding standards
 date: "2006-04-26"
 permalink: /2006/04/26/sql-coding-standards/
+categories:
+  - Databases
 ---
 Coding standards are a Good Thing. Unfortunately, most organizations don't have much in the way of SQL coding standards, and there aren't many automated tools to help. As a result, I believe SQL is often less consistently written than many other languages. Here are my suggestions.
 

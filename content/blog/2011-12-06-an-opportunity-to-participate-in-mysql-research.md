@@ -3,7 +3,7 @@ title: An opportunity to participate in MySQL research
 date: "2011-12-06"
 permalink: /2011/12/06/an-opportunity-to-participate-in-mysql-research/
 categories:
-  - SQL
+  - Databases
 ---
 I'm researching algorithms for automatic fault detection in MySQL (see [my previous post][1] for context). I need real-world data samples to test the algorithm. Can you help by sending me a bit of data from your production server?
 

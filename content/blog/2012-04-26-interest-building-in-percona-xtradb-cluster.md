@@ -3,7 +3,7 @@ title: Interest building in Percona XtraDB Cluster
 date: "2012-04-26"
 permalink: /2012/04/26/interest-building-in-percona-xtradb-cluster/
 categories:
-  - SQL
+  - Databases
 ---
 In the last few weeks I've been caught off guard by the number of people who've told me they have been evaluating Percona XtraDB Cluster ([link][1]), and even more surprised at the projects they're considering it for. Yesterday alone I spoke to several people who have been evaluating it for large, mission-critical enterprise deployments. Some new, some to replace existing systems that use standard MySQL replication. What was interesting is that some people said they've been putting it through its paces for months &#8212; before we even released it as GA.
 

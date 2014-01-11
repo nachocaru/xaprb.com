@@ -4,8 +4,7 @@ date: "2009-06-21"
 permalink: /2009/06/21/recap-of-southeast-linux-fest-2009/
 categories:
   - Conferences
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 Last weekend, my brother and I attended [SELF 2009][1]. A few thoughts on it:
 

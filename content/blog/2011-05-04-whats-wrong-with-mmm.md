@@ -3,10 +3,10 @@ title: "What's wrong with MMM?"
 date: "2011-05-04"
 permalink: /2011/05/04/whats-wrong-with-mmm/
 categories:
-  - Coding
+  - Databases
   - High Availability
-  - SQL
-  - Tools
+  - Open Source
+  - Programming
 ---
 I am not a fan of the MMM tool for managing MySQL replication. This is a topic of vigorous debate among different people, and even within Percona not everyone feels the same way, which is why I'm posting it here instead of on an official Percona blog. There is room for legitimate differences of opinion, and my opinion is just my opinion. Nonetheless, I think it's important to share, because a lot of people think of MMM as a high availability tool, and that's not a decision to take lightly. At some point I just have to step off the treadmill and write a blog post to create awareness of what I see as a really bad situation that needs to be stopped.
 

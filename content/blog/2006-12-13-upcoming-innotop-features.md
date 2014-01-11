@@ -2,6 +2,9 @@
 title: Upcoming innotop features
 date: "2006-12-13"
 permalink: /2006/12/13/upcoming-innotop-features/
+categories:
+  - Databases
+  - Open Source
 ---
 It's been a while since I released an update to the [innotop][1] InnoDB and MySQL monitor, but I have not been idle. I'm currently working hard to add major new features and functionality. Here's a quick list of what's coming, much of which is done already but still slightly broken:
 

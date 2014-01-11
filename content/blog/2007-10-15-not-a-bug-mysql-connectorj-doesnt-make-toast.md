@@ -2,6 +2,8 @@
 title: "Not a bug: MySQL Connector/J doesn't make toast"
 date: "2007-10-15"
 permalink: /2007/10/15/not-a-bug-mysql-connectorj-doesnt-make-toast/
+categories:
+  - Databases
 ---
 I was just searching for something and found this [MySQL bug report][1]:
 

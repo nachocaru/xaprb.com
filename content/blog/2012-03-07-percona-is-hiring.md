@@ -3,7 +3,7 @@ title: Percona is hiring
 date: "2012-03-07"
 permalink: /2012/03/07/percona-is-hiring/
 categories:
-  - SQL
+  - Databases
 ---
 Thinking about a new career? Percona is hiring for a [variety of positions][1]. Sales, server engineering, training, consulting, support, and occasionally other things too.
 

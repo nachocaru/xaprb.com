@@ -3,7 +3,7 @@ title: "Knowing when it's lose-lose"
 date: "2012-04-03"
 permalink: /2012/04/03/knowing-when-its-lose-lose/
 categories:
-  - SQL
+  - Databases
 ---
 I've been a consultant for over five years now and I'm just beginning to learn some basic things. One of them is how to spot a lose-lose customer relationship. I say I'm just beginning because I continue to find new lose-lose scenarios that I don't see coming.
 

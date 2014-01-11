@@ -3,7 +3,7 @@ title: "Measuring free space in InnoDB's global tablespace"
 date: "2012-09-07"
 permalink: /2012/09/07/measuring-free-space-in-innodbs-global-tablespace/
 categories:
-  - SQL
+  - Databases
 ---
 With `innodb_file_per_table=1`, InnoDB places every table's data and indexes in a separate `.ibd` file, but there is still a "global" system tablespace, stored by default in a file named `ibdata1`. This contains some of each table's data, such as the undo log and insert buffer. If it is fixed-size, you can fill it up and crash the server, as I've mentioned in a few recent blog posts.
 

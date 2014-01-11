@@ -2,6 +2,8 @@
 title: MySQL Table Checksum 1.1.9 released
 date: "2007-07-10"
 permalink: /2007/07/10/mysql-table-checksum-119-released/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>

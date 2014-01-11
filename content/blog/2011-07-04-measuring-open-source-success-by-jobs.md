@@ -4,9 +4,7 @@ date: "2011-07-04"
 permalink: /2011/07/04/measuring-open-source-success-by-jobs/
 categories:
   - Commentary
-  - Drizzle
-  - MariaDB
-  - SQL
+  - Databases
 ---
 It's notoriously hard to measure the usage of open-source software. Software that's open-source or free can be redistributed far and wide, so the original creators have no idea how many times it's installed, deployed, or distributed. As a proxy, we often use downloads, but that's woefully inadequate.
 

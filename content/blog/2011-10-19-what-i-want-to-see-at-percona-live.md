@@ -3,7 +3,7 @@ title: What I want to see at Percona Live
 date: "2011-10-19"
 permalink: /2011/10/19/what-i-want-to-see-at-percona-live/
 categories:
-  - SQL
+  - Databases
 ---
 For me, next week's Percona Live is a lot like other events: I know I will be busy meeting and greeting and helping unpack boxes and so forth, but I'll also be talking and attending other talks. With [five concurrent tracks][1], it's tough to decide. This is roughly the equivalent of the MySQL conference every year, which has more tracks, but historically it's been easy to cross off some talks as sales pitches. Not so with this event! Here's what I want to see the most:
 

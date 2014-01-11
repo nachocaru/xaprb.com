@@ -3,9 +3,9 @@ title: How to digitize records with Ubuntu, a USB Turntable and Audacity
 date: "2008-08-30"
 permalink: /2008/08/30/how-to-digitize-records-with-ubuntu-a-usb-turntable-and-audacity/
 categories:
-  - GNU/Linux
   - Music
-  - Review
+  - Open Source
+  - Reviews
 ---
 <p>I've been digitizing my LP collection recently and thought I'd share a quick howto, since I haven't seen a good complete tutorial on the whole process online.  Hopefully this will show up on Google and people can find it.</p>
 

@@ -2,6 +2,8 @@
 title: How to measure MySQL slave lag accurately
 date: "2007-09-30"
 permalink: /2007/09/30/how-to-measure-mysql-slave-lag-accurately/
+categories:
+  - Databases
 ---
 [Kevin Burton][1] wrote recently about [why `SHOW SLAVE STATUS` is really not a good way to monitor how far behind your slave servers are][2], and how [slave network timeouts can mess up the slave lag][3]. I'd like to chime in and say this is exactly why I thought [Jeremy Cole][4]'s [MySQL Heartbeat][5] script was such a natural fit for the MySQL Toolkit. It measures slave lag in a "show me the money" way: it looks for the *effects* of up-to-date replication, rather than asking the slave how far behind it thinks it is.
 

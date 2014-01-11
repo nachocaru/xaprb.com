@@ -4,7 +4,7 @@ date: "2009-10-05"
 permalink: /2009/10/05/speaking-at-enterprise-lamp-summit-2009/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 <p style="float:right">
   <a href="http://enterpriselamp.org/summit/" target="_blank"><img src="http://enterpriselamp.org/wp-content/badges/summitspeaker.jpg" alt="Enterprise LAMP" /></a>

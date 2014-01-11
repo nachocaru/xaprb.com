@@ -2,6 +2,8 @@
 title: How to calculate table checksums in MySQL
 date: "2007-01-25"
 permalink: /2007/01/25/how-to-calculate-table-checksums-in-mysql/
+categories:
+  - Databases
 ---
 MySQL has <del datetime="2007-05-04T20:28:30+00:00">no built-in functionality to calculate a table's checksum in any storage engine but MyISAM</del> (*this is not true; I read the manual wrong, but it doesn't eliminate the usefulness of the technique in this article*). Table checksums can confirm that two tables are identical &#8212; useful to verify a slave server is in sync with its master (see my article on [reliable MySQL replication][1] for more). Fortunately, it's easy to calculate a checksum on non-MyISAM tables with user variables. This technique works on any storage engine with any version of MySQL, doesn't require the `BLACKHOLE` storage engine, and avoids locks caused by `INSERT... SELECT` on InnoDB tables.
 

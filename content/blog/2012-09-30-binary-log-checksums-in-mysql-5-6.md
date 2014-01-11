@@ -3,7 +3,7 @@ title: Binary log checksums in MySQL 5.6
 date: "2012-09-30"
 permalink: /2012/09/30/binary-log-checksums-in-mysql-5-6/
 categories:
-  - SQL
+  - Databases
 ---
 MySQL 5.6 will have "[checksums in the binary log][1]," which can be variously described, but one phrase I've heard a few times is, loosely, that it helps ensure replication integrity. This isn't specific enough to make it clear what it does, and when I've talked about pt-table-checksum and its purpose (for example, on webinars), people often ask whether pt-table-checksum will be obsoleted by replication checksums in MySQL 5.6. The answer is no, they do completely different things. But it's kind of confusing, a bit like [semi-synchronous replication][2] in that regard.
 

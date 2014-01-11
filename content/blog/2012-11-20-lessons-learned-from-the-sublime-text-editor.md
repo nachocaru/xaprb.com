@@ -3,9 +3,9 @@ title: Lessons learned from the Sublime Text editor
 date: "2012-11-20"
 permalink: /2012/11/20/lessons-learned-from-the-sublime-text-editor/
 categories:
-  - Coding
   - Desktop
-  - Tools
+  - Open Source
+  - Programming
 ---
 Terminal-based, keystroke-driven editors are enormously powerful, and I still haven't seen anything more powerful than Vim. I'm a longtime Vim user, and although I'm not the world's foremost jaw-dropping expert on Vim, I would call myself an advanced power user at the very least, and probably a true expert. Still, I have maintained a relationship with GUI text editors over the years, too. An editor that has an insertion point for a cursor, and "native" mouse interaction, has an appeal I've never quite shaken. I've used (and been highly productive with) Kate, GEdit, Notepad++, Visual Studio, and many others. I have *purchased licenses* for Textpad, Textmate, and most recently [Sublime Text 2][1].
 

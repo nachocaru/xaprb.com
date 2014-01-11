@@ -3,8 +3,8 @@ title: High Performance MySQL Third Edition pre-order available
 date: "2012-01-13"
 permalink: /2012/01/13/high-performance-mysql-third-edition-pre-order-available/
 categories:
-  - High Performance MySQL
-  - SQL
+  - Databases
+  - Writing
 ---
 You can pre-order the new edition of High Performance MySQL now on [Amazon][1] or via [O'Reilly's website][2].
 

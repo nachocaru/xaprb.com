@@ -3,7 +3,7 @@ title: Adaptive fault detection in MySQL servers
 date: "2012-10-02"
 permalink: /2012/10/02/adaptive-fault-detection-in-mysql-servers/
 categories:
-  - SQL
+  - Databases
 ---
 I've just finished presenting my work on adaptive fault detection at [Surge][1] and [Percona Live NYC][2]. My slides are embedded below.
 

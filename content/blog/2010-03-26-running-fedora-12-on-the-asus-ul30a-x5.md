@@ -3,7 +3,7 @@ title: Running Fedora 12 on the ASUS UL30A-X5
 date: "2010-03-26"
 permalink: /2010/03/26/running-fedora-12-on-the-asus-ul30a-x5/
 categories:
-  - Review
+  - Reviews
 ---
 <div id="attachment_1694" class="wp-caption alignleft" style="width: 310px"><a href="http://www.amazon.com/dp/B002P3KMVC?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/03/ASUS-UL30A-X5-300x255.jpg" alt="ASUS-UL30A-X5" title="ASUS-UL30A-X5" width="300" height="255" class="size-medium wp-image-1694" /></a><p class="wp-caption-text">ASUS-UL30A-X5</p></div><p>I've had an <a href="http://www.amazon.com/dp/B002P3KMVC?tag=xaprb-20">ASUS-UL30A-X5</a> for about two weeks now.  This is the nicest laptop I've ever owned (and I was a laptop owner before that was cool).  I'm absolutely thrilled.</p>
 

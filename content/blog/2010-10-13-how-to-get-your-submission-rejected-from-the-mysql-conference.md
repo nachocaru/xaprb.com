@@ -4,8 +4,7 @@ date: "2010-10-13"
 permalink: /2010/10/13/how-to-get-your-submission-rejected-from-the-mysql-conference/
 categories:
   - Conferences
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 I've written before about how to get accepted to the [conference][1]. We want great technical submissions in a broad variety of topics, for databases well beyond MySQL. I wanted to post a quick list of things that come to my mind as good ways to get voted down or rejected out of hand. In general, I can put it this way: you are being peer-reviewed by presenters and industry experts. You need to write your proposal for the committee as well as for attendees. Lightly edited copy-and-paste from real examples:
 

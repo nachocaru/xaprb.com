@@ -3,7 +3,7 @@ title: Slides for my talk at DevIgnition
 date: "2012-12-17"
 permalink: /2012/12/17/slides-for-my-talk-at-devignition/
 categories:
-  - SQL
+  - Databases
 ---
 I spoke last Friday at [DevIgnition][1] about what's coming in the MySQL 5.6 release. My slides are embedded below.
 

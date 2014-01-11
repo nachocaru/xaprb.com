@@ -2,6 +2,8 @@
 title: "Coming soon: High Performance MySQL, Second Edition"
 date: "2007-08-30"
 permalink: /2007/08/30/coming-soon-high-performance-mysql-second-edition/
+categories:
+  - Databases
 ---
 We've begun writing the second edition of the now-classic [High Performance MySQL][1]. "We" means co-authors [Arjen Lentz][2] (formerly of MySQL), Baron Schwartz (that's me), and [Vadim Tkachenko and Peter Zaitzev][3], both formerly of MySQL's high-performance team and now partners at [Percona][4], a high-performance MySQL consultancy firm and host of the popular [MySQL Performance Blog][3]. Neither of the first edition's authors ([Jeremy Zawodny][5] and [Derek Balling][6]) is working on this project, but they're with us in spirit, I think. [O'Reilly][7] is still the publisher, and [Andy Oram][8] is still the editor.
 

@@ -3,8 +3,8 @@ title: How to set up host interface networking for VirtualBox on Ubuntu
 date: "2008-11-05"
 permalink: /2008/11/05/how-to-set-up-host-interface-networking-for-virtualbox-on-ubuntu/
 categories:
-  - GNU/Linux
-  - SQL
+  - Databases
+  - Open Source
 ---
 [VirtualBox][1] is really nice, but if you're like me, maybe you found the networking confusing. There are three ways to do it, as explained by the manual, and the best way is with host interfaces, which don't have limitations like the inability to ping and so on. I found what I think is a pretty good way to set up host interface networking.
 

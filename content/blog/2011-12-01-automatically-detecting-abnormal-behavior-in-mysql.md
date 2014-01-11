@@ -3,7 +3,7 @@ title: Automatically detecting abnormal behavior in MySQL
 date: "2011-12-01"
 permalink: /2011/12/01/automatically-detecting-abnormal-behavior-in-mysql/
 categories:
-  - SQL
+  - Databases
 ---
 Over the course of years, I have observed that the three most sensitive indicators of MySQL having a server lockup are the queries per second, number of connections, and number of queries running. Here is a chart of those three on a production system. Find the bad spot:
 

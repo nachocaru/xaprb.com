@@ -1,7 +1,6 @@
 ---
 title: >
 permalink: >
-categories:
 ---
 <p style="float:left">
 </p>

@@ -4,8 +4,7 @@ date: "2010-04-29"
 permalink: /2010/04/29/ignoring-laughing-fighting-winning/
 categories:
   - Commentary
-  - Drizzle
-  - SQL
+  - Databases
 ---
 A now-famous quote that I probably don't need to attribute: "First they ignore you, then they laugh at you, then they fight you, then you win."
 

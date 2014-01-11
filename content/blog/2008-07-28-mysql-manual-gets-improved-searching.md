@@ -3,7 +3,7 @@ title: MySQL manual gets improved searching
 date: "2008-07-28"
 permalink: /2008/07/28/mysql-manual-gets-improved-searching/
 categories:
-  - SQL
+  - Databases
 ---
 Hooray! The [MySQL reference manual][1] has a new search system. It now uses a [Google Appliance][2] and the results should be a lot better. The old system was not very helpful. It used to break config variables into multiple words and search on them individually and give a billion results I didn't care about. I've just tried to search for some things like key\_buffer\_size and got results I think are very useful.
 

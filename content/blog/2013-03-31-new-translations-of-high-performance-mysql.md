@@ -3,8 +3,7 @@ title: New translations of High Performance MySQL
 date: "2013-03-31"
 permalink: /2013/03/31/new-translations-of-high-performance-mysql/
 categories:
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 [High Performance MySQL, 3rd Edition][1] has been selling very well. It's translated into many languages. O'Reilly sends me a hard-copy of the translations, and I have a whole section on my bookshelf dedicated to them. It's really satisfying to look at it.
 

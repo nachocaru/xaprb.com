@@ -3,7 +3,7 @@ title: The MySQL init-script mess
 date: "2012-04-24"
 permalink: /2012/04/24/the-mysql-init-script-mess/
 categories:
-  - SQL
+  - Databases
 ---
 I don't think there is a single good-quality MySQL init script for a Unix-like operating system. On Windows, there is the service facility, and I used to write Windows services. Based on that, I believe Windows has a pretty good claim to better reliability for start/stop services with MySQL.
 

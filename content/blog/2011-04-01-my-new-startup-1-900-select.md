@@ -3,7 +3,7 @@ title: "My new startup: 1-900-SELECT"
 date: "2011-04-01"
 permalink: /2011/04/01/my-new-startup-1-900-select/
 categories:
-  - SQL
+  - Databases
 ---
 Working at Percona has taught me to love being disruptive and creating innovative pricing models. In particular, their pay-as-you-go pricing in 15-minute increments, plus the ability to go from first contact to having them logged in and working in a few minutes with just a credit card, has been game-changing. I've always wanted to take that to the next level and create a new business, offering MySQL services with a radically simple pricing model.
 

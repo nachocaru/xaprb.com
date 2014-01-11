@@ -4,8 +4,8 @@ date: "2011-10-06"
 permalink: /2011/10/06/fundamental-performance-and-scalability-instrumentation/
 categories:
   - Conferences
-  - PostgreSQL
-  - Scalability
+  - Databases
+  - Performance
 ---
 This post is a followup to some promises I made at Postgres Open.
 

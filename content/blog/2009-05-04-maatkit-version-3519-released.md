@@ -3,10 +3,10 @@ title: Maatkit version 3519 released
 date: "2009-05-04"
 permalink: /2009/05/04/maatkit-version-3519-released/
 categories:
-  - Maatkit
-  - Perl
-  - SQL
-  - Sys Admin
+  - Databases
+  - Open Source
+  - Operations
+  - Programming
 ---
 [Maatkit][1] version 3519 is [ready for download][2]. **There are a lot of changes in this release, many of which are incompatible with previous releases**. There are also a lot of important new features. Read on for the details.
 

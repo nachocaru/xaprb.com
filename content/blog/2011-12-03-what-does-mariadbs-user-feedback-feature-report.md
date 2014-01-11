@@ -3,8 +3,7 @@ title: "What does MariaDB's user feedback feature report?"
 date: "2011-12-03"
 permalink: /2011/12/03/what-does-mariadbs-user-feedback-feature-report/
 categories:
-  - MariaDB
-  - SQL
+  - Databases
 ---
 I was curious what information MariaDB's ["phone home" user feedback plugin][1] sends. (It works on more than just MariaDB, by the way.)
 

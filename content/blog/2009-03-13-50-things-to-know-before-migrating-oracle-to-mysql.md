@@ -5,7 +5,7 @@ permalink: /2009/03/13/50-things-to-know-before-migrating-oracle-to-mysql/
 tinyurl:
   - http://tinyurl.com/oracle-to-mysql
 categories:
-  - SQL
+  - Databases
 ---
 A while back I was at a seminar on migrating database applications to MySQL. A lot of the attendees were Oracle users. Based on their questions, comments and conversations during lunch, I made the following list of things Oracle users need to know about migrating to MySQL. Most of these are "gotchas" that would be contraindications or require some thought about a workaround.
 

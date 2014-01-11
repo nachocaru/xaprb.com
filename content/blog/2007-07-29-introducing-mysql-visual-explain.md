@@ -2,6 +2,8 @@
 title: Introducing MySQL Visual Explain
 date: "2007-07-29"
 permalink: /2007/07/29/introducing-mysql-visual-explain/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Visual Explain</a>

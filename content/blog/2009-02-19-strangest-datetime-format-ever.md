@@ -3,7 +3,7 @@ title: Strangest datetime format ever
 date: "2009-02-19"
 permalink: /2009/02/19/strangest-datetime-format-ever/
 categories:
-  - SQL
+  - Databases
 ---
 I've seen a lot of silly non-standard datetime formats, but this one beats them:
 

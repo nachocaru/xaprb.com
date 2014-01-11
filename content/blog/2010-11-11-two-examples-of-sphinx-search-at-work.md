@@ -3,8 +3,8 @@ title: Two examples of Sphinx search at work
 date: "2010-11-11"
 permalink: /2010/11/11/two-examples-of-sphinx-search-at-work/
 categories:
+  - Databases
   - Open Source
-  - Sphinx
 ---
 [Sphinx][1] is an amazing piece of software. Andrew Aksyonoff is an amazing guy, too. But aside from Andrew's many talents, and Sphinx's awesomeness, I wanted to list two related examples of how Sphinx makes the world a better place. Both examples are implemented as open-source software from [Ivinco][2], a company founded by a group of people I used to work with.
 

@@ -2,6 +2,8 @@
 title: Introducing MySQL Table Maintainer
 date: "2007-03-25"
 permalink: /2007/03/25/introducing-mysql-table-maintainer/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Maintainer</a>

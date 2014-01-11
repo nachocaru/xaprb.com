@@ -3,8 +3,8 @@ title: When to ignore perfectly good advice
 date: "2012-12-20"
 permalink: /2012/12/20/when-to-ignore-perfectly-good-advice/
 categories:
-  - Coding
   - Commentary
+  - Programming
 ---
 A couple of months ago I bent the ear of a friend whose opinion I really respect. She's a totally sharp engineer who actively writes code for a living as well as managing large teams. She's held top-level technical roles at some large and extremely respectable companies. In short, her perspective and experience is very valuable.
 

@@ -2,6 +2,8 @@
 title: High Performance MySQL 2nd Edition gets revised and translated
 date: "2008-08-02"
 permalink: /2008/08/02/high-performance-mysql-2nd-edition-gets-revised-and-translated/
+categories:
+  - Databases
 ---
 Just thought I'd update you. We got quite a few good errata from readers, and I took a couple weekends and went through the book with a fine-toothed comb, catching typos and subtle errors that crept in at some point (TPC benchmarks were labeled as TCP benchmarks &#8212; did you catch that one?). I marked up my book and mailed it to O'Reilly, who went well above and beyond what they normally do for errata. Normally, once a book is in print they will fix only serious technical errors. They fixed everything, even going as far as rearranging page breaks and moving figures to improve readability.
 

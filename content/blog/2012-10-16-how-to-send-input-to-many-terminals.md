@@ -3,9 +3,9 @@ title: How to send input to many terminals
 date: "2012-10-16"
 permalink: /2012/10/16/how-to-send-input-to-many-terminals/
 categories:
-  - SQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Open Source
+  - Operations
 ---
 Do you ever find yourself wanting to open several terminal windows and send the same commands to all of them? I've had this need many times, and I've never found a completely satisfactory solution. I've also known a lot of people who've written various sets of scripts to help them accomplish such tasks.
 

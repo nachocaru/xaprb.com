@@ -2,6 +2,9 @@
 title: Maatkit version 1314 released
 date: "2007-11-26"
 permalink: /2007/11/26/maatkit-version-1314-released/
+categories:
+  - Databases
+  - Open Source
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

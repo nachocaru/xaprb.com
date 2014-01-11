@@ -3,8 +3,8 @@ title: How scalable is your database?
 date: "2013-02-24"
 permalink: /2013/02/24/how-scalable-is-your-database/
 categories:
-  - Scalability
-  - SQL
+  - Databases
+  - Performance
 ---
 Most of the time, when people say "scalability" they mean any of dozens of things. Most of the time, when I say it I mean [exactly one precisely defined thing][1]. However, I don't claim that's the only correct use of "scalability." There is another, in particular, that I think is very important to understand: the inherent limitations of the system. This second one doesn't have a single mathematical definition, but it's vital nonetheless.
 

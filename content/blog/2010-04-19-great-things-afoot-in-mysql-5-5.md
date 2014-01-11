@@ -3,7 +3,7 @@ title: Great things afoot in MySQL 5.5
 date: "2010-04-19"
 permalink: /2010/04/19/great-things-afoot-in-mysql-5-5/
 categories:
-  - SQL
+  - Databases
 ---
 I haven't been blogging much about the changes in MySQL for a while. But the MySQL and InnoDB engineers have been doing a ton of work over the last couple years, and now it's seeing the light of day, so it's time to offer words of congratulations and appreciation about that.
 

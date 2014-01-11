@@ -4,7 +4,7 @@ date: "2009-04-25"
 permalink: /2009/04/25/wheres-the-calpont-source-code/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 As you may have noticed, [Calpont][1] [has been][2] [advertising themselves][3] as an open-source storage engine for MySQL. And yet there is no source code.
 

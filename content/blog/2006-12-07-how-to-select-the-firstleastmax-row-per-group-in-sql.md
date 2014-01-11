@@ -3,7 +3,7 @@ title: How to select the first/least/max row per group in SQL
 date: "2006-12-07"
 permalink: /2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
 categories:
-  - SQL
+  - Databases
 ---
 Here are some common SQL problems, all of which have related solutions: how do I find the most recent log entry for each program? How do I find the most popular item from each category? How do I find the top score for each player? In general, these types of "select the extreme from each group" queries can be solved with the same techniques. I'll explain how to do that in this article, including the harder problem of selecting the top N entries, not just the top 1.
 

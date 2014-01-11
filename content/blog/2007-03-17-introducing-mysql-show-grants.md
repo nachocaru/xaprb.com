@@ -2,6 +2,9 @@
 title: "Introducing MySQL Toolkit's Show Grants tool"
 date: "2007-03-17"
 permalink: /2007/03/17/introducing-mysql-show-grants/
+categories:
+  - Databases
+  - Open Source
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Show Grants</a>

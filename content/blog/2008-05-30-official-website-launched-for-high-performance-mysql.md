@@ -2,6 +2,8 @@
 title: Official website launched for High Performance MySQL
 date: "2008-05-30"
 permalink: /2008/05/30/official-website-launched-for-high-performance-mysql/
+categories:
+  - Databases
 ---
 In preparation for the book's launch next month, I've created a website for it: [High Performance MySQL][1]. You may notice that the URL isn't the same as the site for the first edition. It proved to be difficult to transfer that domain. If we accomplish it later on, I'll set up a redirect.
 

@@ -4,8 +4,8 @@ date: "2011-10-06"
 permalink: /2011/10/06/surge-2011-slides-recap/
 categories:
   - Conferences
-  - Scalability
-  - SQL
+  - Databases
+  - Performance
 ---
 This year's [Surge][1] conference was a great sophomore event to follow up last year's inaugural conference. A lot of very smart people were there, and the hallway track was great.
 

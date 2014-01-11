@@ -4,8 +4,7 @@ date: "2009-03-19"
 permalink: /2009/03/19/open-source-database-developer-mailing-lists/
 categories:
   - Commentary
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 What's going on at your favorite open-source database developer mailing list? Non-scientific memory of what I've been seeing lately:
 

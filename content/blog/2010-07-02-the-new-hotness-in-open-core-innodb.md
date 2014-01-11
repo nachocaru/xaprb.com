@@ -4,9 +4,9 @@ date: "2010-07-02"
 permalink: /2010/07/02/the-new-hotness-in-open-core-innodb/
 categories:
   - Commentary
+  - Databases
+  - MySQL
   - Open Source
-  - Oracle
-  - SQL
 ---
 There's lots of buzz lately about the so-called ["open-core" business model of Marten Mickos's new employer][1]. But this is nothing new. Depending on how you define it, InnoDB is "open-core," and has been for a long time. The InnoDB Hot Backup (ibbackup) tool was always closed-source. Did anyone ever cry foul and claim that this made InnoDB itself not open-source, or accuse Innobase / Oracle of masquerading as open-source? I don't recall that happening, although sometimes people got suspicious about [the interplay between the backup tool and the storage engine][2]. Generally, though, the people I know who use InnoDB Hot Backup have no gripes about paying for it.
 

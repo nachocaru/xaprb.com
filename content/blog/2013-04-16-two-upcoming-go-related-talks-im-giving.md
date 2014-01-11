@@ -3,9 +3,8 @@ title: "Two upcoming Go-related talks I'm giving"
 date: "2013-04-16"
 permalink: /2013/04/16/two-upcoming-go-related-talks-im-giving/
 categories:
-  - Coding
   - Conferences
-  - Go
+  - Programming
 ---
 I'm scheduled to talk about Go a couple times in the upcoming weeks.
 

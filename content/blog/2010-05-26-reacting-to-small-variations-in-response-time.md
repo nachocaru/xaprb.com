@@ -3,9 +3,8 @@ title: Reacting to small variations in response time
 date: "2010-05-26"
 permalink: /2010/05/26/reacting-to-small-variations-in-response-time/
 categories:
-  - Aspersa
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 I wrote recently about [early detection for MySQL performance problems][1]. If your server is having micro-fluctuations in performance, it's important to know, because very soon they will turn much worse. What can you do about this?
 

@@ -2,6 +2,8 @@
 title: "MySQL Table Sync bounty: let's do it!"
 date: "2007-10-31"
 permalink: /2007/10/31/mysql-table-sync-bounty-lets-do-it/
+categories:
+  - Databases
 ---
 A little while ago I offered to take time off work and improve [MySQL Table Sync][1]. I've gotten a very positive response to that, with several organizations offering to contribute to the bounty, so I'll go ahead and commit to doing this.
 

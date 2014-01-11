@@ -3,7 +3,7 @@ title: "What sets O'Reilly apart: attention to detail"
 date: "2012-02-16"
 permalink: /2012/02/16/what-sets-oreilly-apart-attention-to-detail/
 categories:
-  - High Performance MySQL
+  - Writing
 ---
 O'Reilly isn't the only excellent tech publisher, but they're the one whose books most consistently give me pleasure to read. After going through the process of writing two books with them, one of the things that's struck me is how much they invest into the thankless tasks such as indexing, proofreading, and copyediting their authors' work.
 

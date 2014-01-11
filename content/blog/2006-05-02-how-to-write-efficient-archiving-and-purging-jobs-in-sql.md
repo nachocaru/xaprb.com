@@ -2,6 +2,8 @@
 title: How to write efficient archiving and purging jobs in SQL
 date: "2006-05-02"
 permalink: /2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+categories:
+  - Databases
 ---
 Sometimes it's a terrible idea to do set-based operations in SQL. There are real-world constraints, especially in heavily used OLTP or large databases, that require doing things a tiny bit at a time. In this article I'll show you how to write a job that can purge data from a huge table without impacting critical processes, filling up the transaction log, or causing deadlocks.
 

@@ -3,7 +3,7 @@ title: Measuring the popularity of the Percona MySQL build
 date: "2009-02-19"
 permalink: /2009/02/19/measuring-the-popularity-of-the-percona-mysql-build/
 categories:
-  - SQL
+  - Databases
 ---
 I have a Google Alert on "percona". (And many other things &#8212; great way to keep tabs on competitors, what people are saying about you, etc.)
 

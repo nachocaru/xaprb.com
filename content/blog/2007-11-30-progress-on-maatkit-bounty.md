@@ -2,6 +2,9 @@
 title: Progress on Maatkit bounty
 date: "2007-11-30"
 permalink: /2007/11/30/progress-on-maatkit-bounty/
+categories:
+  - Databases
+  - Open Source
 ---
 My [initial plans][1] got waylaid! I didn't pull out the checksumming code first, because the code wasn't at all as I remembered it. Instead, I began writing code to handle the more abstract problem of accepting two sets of rows, finding the differences, and doing something with them. I'm ending up with a little more complicated system than I thought I would. However, it's also significantly simpler in some ways. Instead of just passing references to subroutines to use as callbacks, I'm object-ifying the entire synchronization concept.
 

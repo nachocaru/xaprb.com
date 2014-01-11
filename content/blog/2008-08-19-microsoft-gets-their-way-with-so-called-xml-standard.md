@@ -4,7 +4,7 @@ date: "2008-08-19"
 permalink: /2008/08/19/microsoft-gets-their-way-with-so-called-xml-standard/
 categories:
   - Commentary
-  - XML
+  - Web
 ---
 It has all played itself out according to Microsoft's wishes. They have railroaded through a [so-called standard for document representation][1], gotten it rubber-stamped by so-called standards bodies, and fought their way past all the [objections of sensible people and companies][2]. In the process, lots of [developing nations have been steamrolled][3], too. Shame, shame, shame.
 

@@ -5,7 +5,7 @@ permalink: /2013/12/28/immutability-mvcc-and-garbage-collection/
 dsq_needs_sync:
   - 1
 categories:
-  - SQL
+  - Databases
 ---
 Not too long ago I attended a talk about a database called Datomic. My overall impressions of Datomic were pretty negative, but this blog post isn't about that. This is about one of the things the speaker referenced a lot: immutability and its benefits. I hope to illustrate, if only sketchily, why a lot of sophisticated databases are actually leaps and bounds beyond the simplistic design of such immutable databases. This is in direct contradiction to what proponents of Datomic-like systems would have you believe; they'd tell you that their immutable database implementations are *advanced*. Reality is not so clear-cut. 
 ### Datomic and Immutability

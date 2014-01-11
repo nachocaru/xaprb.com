@@ -2,6 +2,8 @@
 title: How to simulate FULL OUTER JOIN in MySQL
 date: "2006-05-26"
 permalink: /2006/05/26/how-to-write-full-outer-join-in-mysql/
+categories:
+  - Databases
 ---
 In this article I'll show several ways to emulate a `FULL OUTER` join on a RDBMS that doesn't support it, as is the case with even the most recent versions of MySQL. This useful query is surprisingly tricky to get right.
 

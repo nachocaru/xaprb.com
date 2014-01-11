@@ -2,6 +2,9 @@
 title: A new home for innotop in the new year
 date: "2007-01-06"
 permalink: /2007/01/06/a-new-home-for-innotop-in-the-new-year/
+categories:
+  - Databases
+  - Open Source
 ---
 A couple of weeks ago I submitted a request to open a new project on Sourceforge for the innotop MySQL and InnoDB monitor. I want to make it easier for others to collaborate, especially package maintainers. Yesterday I got word of its approval. I have done a quick-and-dirty import of the source code into its new home, and I'm now continuing work on the next major version, which I've been working on for about six weeks. This post is about Sourceforge, what I've gotten done, and also to ask for your help.
 

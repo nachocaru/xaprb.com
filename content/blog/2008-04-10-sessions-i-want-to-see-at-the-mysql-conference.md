@@ -2,6 +2,8 @@
 title: Sessions I want to see at the MySQL Conference
 date: "2008-04-10"
 permalink: /2008/04/10/sessions-i-want-to-see-at-the-mysql-conference/
+categories:
+  - Databases
 ---
 This year's conference has a great lineup. As usual, with 8 sessions concurrently, it's impossible to pick which ones I want to see. However, I did learn a few things from last year's conference, which I think will help me get more out of it this time.
 

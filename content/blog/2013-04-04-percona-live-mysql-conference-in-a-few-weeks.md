@@ -3,7 +3,7 @@ title: Percona Live MySQL Conference in a few weeks!
 date: "2013-04-04"
 permalink: /2013/04/04/percona-live-mysql-conference-in-a-few-weeks/
 categories:
-  - SQL
+  - Databases
 ---
 I'm really looking forward to [Percona Live][1] this year. I will be there, along with Kyle Redinger, my co-founder at [VividCortex][2]. I feel that this year the conference has come full circle. 2007 was my first year at the conference, and it was amazing. This year is tremendously exciting for me because it feels like we're back on the 2007 trajectory.
 

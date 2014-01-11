@@ -3,7 +3,7 @@ title: MySQL replication breaks single-threaded limitation?
 date: "2009-04-17"
 permalink: /2009/04/17/mysql-replication-breaks-single-threaded-limitation/
 categories:
-  - SQL
+  - Databases
 ---
 It's a feature preview with many limitations, but [this is still good news][1]. This has been a pretty severe performance limitation for replication in MySQL, which has prompted many a [workaround][2].
 

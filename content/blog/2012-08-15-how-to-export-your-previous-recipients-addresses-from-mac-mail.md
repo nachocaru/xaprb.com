@@ -3,7 +3,7 @@ title: How to export your Previous Recipients addresses from Mac Mail
 date: "2012-08-15"
 permalink: /2012/08/15/how-to-export-your-previous-recipients-addresses-from-mac-mail/
 categories:
-  - SQL
+  - Databases
 ---
 Mail's Mail.app keeps a list of recent recipients, but it doesn't let you export them to a file. You could do as some others on the Internet have suggested and grep the file of addresses for everything that looks like an email address, or you could work with your system instead of against it!
 

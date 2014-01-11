@@ -4,7 +4,7 @@ date: "2010-05-10"
 permalink: /2010/05/10/the-manager-programmer-face-off-over-nosql/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 A lot of conversations with a few different people I respect (no links, sorry) have coalesced some thoughts about these newly popular "non-relational" datastores. I wanted to point out an aspect I'm not sure is very clear in the hot-topic department. This is about what happens when managers learn that their developers or operations team have installed some new technology in their systems without them knowing it.
 

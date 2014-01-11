@@ -5,8 +5,7 @@ permalink: /2010/04/18/the-history-of-opensql-camp/
 categories:
   - Commentary
   - Conferences
-  - OpenSQL Camp
-  - SQL
+  - Databases
 ---
 I got a couple of questions and comments about [OpenSQL Camp][1] in the past week, and I thought it would be worth noting down the history, because I think there is some difference in perception and memory about this series of events. The following is only my point of view.
 

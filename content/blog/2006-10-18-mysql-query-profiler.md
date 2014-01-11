@@ -2,6 +2,8 @@
 title: MySQL Query Profiler
 date: "2006-10-18"
 permalink: /2006/10/18/mysql-query-profiler/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://www.maatkit.org/">Download MySQL Query Profiler</a>

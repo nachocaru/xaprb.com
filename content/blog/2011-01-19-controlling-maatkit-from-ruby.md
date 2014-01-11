@@ -3,7 +3,7 @@ title: Controlling Maatkit from Ruby
 date: "2011-01-19"
 permalink: /2011/01/19/controlling-maatkit-from-ruby/
 categories:
-  - Maatkit
+  - Open Source
 ---
 There is a [Ruby interface to Maatkit][1] that looks like a handy [idiomatic way to script Maatkit tools][2].
 

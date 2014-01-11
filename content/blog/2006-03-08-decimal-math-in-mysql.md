@@ -2,6 +2,8 @@
 title: How to avoid imprecise DECIMAL math in MySQL
 date: "2006-03-08"
 permalink: /2006/03/08/decimal-math-in-mysql/
+categories:
+  - Databases
 ---
 MySQL versions 4.1 and below use imprecise math in operations with `DECIMAL` data, which is supposed to be precise (that's the whole point). There is no real solution to the problem, though there are workarounds. There is also at least one genuine bug in MySQL related to this problem. In this article I'll explain the problems, demonstrate them in action, and show you how to work around them.
 

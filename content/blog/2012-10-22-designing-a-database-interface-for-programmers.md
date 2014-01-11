@@ -3,8 +3,8 @@ title: Designing a database interface for programmers
 date: "2012-10-22"
 permalink: /2012/10/22/designing-a-database-interface-for-programmers/
 categories:
-  - Go
-  - SQL
+  - Databases
+  - Programming
 ---
 How do you connect to and converse with your database of choice (MySQL, in my case)? Chances are it's largely formed by the programming language you choose. I've worked with a variety of programming languages. Anytime I begin learning a new one, I am reminded again that there's more than one way to skin a cat.
 

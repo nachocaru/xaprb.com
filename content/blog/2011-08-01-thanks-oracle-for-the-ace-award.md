@@ -3,7 +3,7 @@ title: Thanks Oracle for the ACE Award
 date: "2011-08-01"
 permalink: /2011/08/01/thanks-oracle-for-the-ace-award/
 categories:
-  - SQL
+  - Databases
 ---
 Keith Larson (Oracle's MySQL Community Manager) [nominated me to become an Oracle ACE][1]. Thank you Oracle &#8212; it feels very good to receive this [award][2].
 

@@ -3,7 +3,7 @@ title: If yoda you were, SQL you would invent
 date: "2013-02-01"
 permalink: /2013/02/01/if-yoda-you-were-sql-you-would-invent/
 categories:
-  - SQL
+  - Databases
 ---
 SQL is such a bizarre language. It is all backwards. Consider:
 

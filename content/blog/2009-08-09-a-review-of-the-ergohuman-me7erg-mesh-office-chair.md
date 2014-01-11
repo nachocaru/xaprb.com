@@ -3,8 +3,8 @@ title: A review of the Ergohuman ME7ERG Mesh Office Chair
 date: "2009-08-09"
 permalink: /2009/08/09/a-review-of-the-ergohuman-me7erg-mesh-office-chair/
 categories:
-  - Review
-  - Tools
+  - Open Source
+  - Reviews
 ---
 <div class="wp-caption alignleft" style="width: 290px">
   <a href="http://www.amazon.com/Ergohuman-Executive-Chair-With-Headrest/dp/B0014DPL9C?tag=xaprb-20"><img alt="Ergohuman Executive Chair With Headrest" src="http://ecx.images-amazon.com/images/I/417fbThbMhL._SL500_AA280_.jpg" title="ME7ERG" width="280" height="280" /></a><p class="wp-caption-text">

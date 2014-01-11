@@ -4,7 +4,7 @@ date: "2010-01-05"
 permalink: /2010/01/05/switching-from-ubuntu-to-fedora-and-thunderbird-to-claws-mail/
 categories:
   - Desktop
-  - GNU/Linux
+  - Open Source
 ---
 This weekend I backed up all my data, repartitioned my hard drive, and re-installed. I needed to do this because the only thing I had on the laptop was Ubuntu, and sadly, the reality is sometimes my clients use things that require me to use Windows (and sometimes a virtual machine won't solve that). So now I'm dual-booting Windows. I think the last time I did that was sometime before 2001, so I've regressed 9 years.
 

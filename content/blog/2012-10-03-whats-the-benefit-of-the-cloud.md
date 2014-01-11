@@ -3,7 +3,7 @@ title: "What's the benefit of the cloud?"
 date: "2012-10-03"
 permalink: /2012/10/03/whats-the-benefit-of-the-cloud/
 categories:
-  - SQL
+  - Databases
 ---
 Given that [most people don't know what the cloud is][1], I guess we shouldn't be surprised that most people can't articulate the benefits of cloud computing clearly. I commonly hear "Scalability!" "Easy provisioning!" "Flexibility!" and so on. Of course, all of these are benefits you can get without the cloud. [Theo][2] says it pretty well, so I won't belabor that point.
 

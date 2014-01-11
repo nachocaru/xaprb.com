@@ -3,9 +3,9 @@ title: Making Maatkit more Open Source one step at a time
 date: "2009-03-08"
 permalink: /2009/03/08/making-maatkit-more-open-source-one-step-at-a-time/
 categories:
-  - Coding
+  - Databases
   - Open Source
-  - SQL
+  - Programming
 ---
 If you've been holding out for that golden opportunity, now's a great time to get involved in [Maatkit][1].
 

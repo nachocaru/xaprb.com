@@ -3,7 +3,7 @@ title: Introduction to VividCortex
 date: "2013-04-23"
 permalink: /2013/04/23/introduction-to-vividcortex/
 categories:
-  - SQL
+  - Databases
 ---
 We're ironing out a kink that's preventing Planet MySQL from aggregating VividCortex's blog feed, so while that's in progress, I'll post a quick note on what we're up to at [VividCortex][1], for the Planet MySQL readers.
 

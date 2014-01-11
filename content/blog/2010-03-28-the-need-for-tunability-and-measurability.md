@@ -3,8 +3,7 @@ title: The need for tunability and measurability
 date: "2010-03-28"
 permalink: /2010/03/28/the-need-for-tunability-and-measurability/
 categories:
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 To program is human, to instrument is divine. Complex systems that will support a heavy workload will eventually have to be tuned for it. There are two prerequisites for tuning: tunability, and measurability.
 

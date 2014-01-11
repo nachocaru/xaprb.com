@@ -2,6 +2,9 @@
 title: innotop 1.3.5 released
 date: "2007-02-03"
 permalink: /2007/02/03/innotop-135-released/
+categories:
+  - Databases
+  - Open Source
 ---
 innotop 1.3.5 is the latest release of the [increasingly popular MySQL and InnoDB monitor][1]. I recommend everyone upgrade to this release. Aside from incomplete documentation, it's close to a stable 1.4 release (I'm counting on you to find the bugs!). There are many significant new features since version 1.3, which make it more powerful and easier to use. Here's what's new:
 

@@ -3,8 +3,8 @@ title: Maatkit thanks Vantage Media
 date: "2008-10-09"
 permalink: /2008/10/09/maatkit-thanks-vantage-media/
 categories:
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 I just wrote about how [Maatkit has gotten some new features][1] for helping people make sure their slaves have an exact copy of the master's data. This work was largely sponsored by one of [Percona][2]'s customers, whose name I have permission to mention: [Vantage Media][3].
 

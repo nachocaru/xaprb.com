@@ -3,8 +3,8 @@ title: A clarification on mk-slave-prefetch
 date: "2011-08-21"
 permalink: /2011/08/21/a-clarification-on-mk-slave-prefetch/
 categories:
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 It seems to be a popular misconception that mk-slave-prefetch is designed to keep a MySQL replica server "warm" and ready to serve production traffic in case the master is demoted or fails. **This is not what mk-slave-prefetch does**. It's related, and easy to confuse, but its purpose is different.
 

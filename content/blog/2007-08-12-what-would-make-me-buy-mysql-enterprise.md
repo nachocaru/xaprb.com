@@ -2,6 +2,8 @@
 title: What would make me buy MySQL Enterprise?
 date: "2007-08-12"
 permalink: /2007/08/12/what-would-make-me-buy-mysql-enterprise/
+categories:
+  - Databases
 ---
 MySQL AB's [recent changes to the Community/Enterprise split][1] have made people go as far as calling the split a failure. I don't think it's working well either, but it could be fixed. Here's what I think would make Enterprise a compelling offer.
 

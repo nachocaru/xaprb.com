@@ -3,7 +3,7 @@ title: How to write a SQL exclusion join
 date: "2005-09-23"
 permalink: /2005/09/23/how-to-write-a-sql-exclusion-join/
 categories:
-  - SQL
+  - Databases
 ---
 There is usually more than one way to write a given query, but not all ways are created equal. Some mathematically equivalent queries can have drastically different performance. This article examines one of the motivations for inventing `LEFT OUTER` join and including it in the SQL standard: improved performance through exclusion joins.
 

@@ -4,7 +4,7 @@ date: "2013-02-13"
 permalink: /2013/02/13/sessions-id-like-to-see-at-percona-live-in-april/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 I'm really looking forward to this year's [Percona Live MySQL Conference][1]. This is always THE event of the year for me in the MySQL conference circuit. It's also the first year I haven't been a speaker! I've been a speaker since 2007 but this year things were too uncertain for me to submit a proposal in time.
 

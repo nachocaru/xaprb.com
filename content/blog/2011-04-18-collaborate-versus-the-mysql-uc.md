@@ -4,8 +4,8 @@ date: "2011-04-18"
 permalink: /2011/04/18/collaborate-versus-the-mysql-uc/
 categories:
   - Conferences
+  - Databases
   - Open Source
-  - SQL
 ---
 I split my time last week between the IOUG's Collaborate conference in Orlando, Florida and O'Reilly's MySQL Conference &#038; Expo in California. The contrast was stark. For me as a MySQLer, Collaborate was a dud. On the other hand, the MySQL conference O'Reilly puts on is superb. It is vital to MySQL as a project and as a community, and it follows that it's vital to MySQL's business success. Oracle needs to participate to make it a success in the future.
 

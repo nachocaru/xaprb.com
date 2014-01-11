@@ -3,7 +3,7 @@ title: "The cache-oblivious algorithms inside Tokutek's TokuDB"
 date: "2009-06-07"
 permalink: /2009/06/07/the-cache-oblivious-algorithms-inside-tokuteks-tokudb/
 categories:
-  - SQL
+  - Databases
 ---
 [Tokutek][1] have said they are working towards explaining their indexing algorithms. I spoke to some of the Tokutek people over the last 14 months or so about this, although I didn't really start to pay attention until the beginning of the year. While Vadim, Peter and I were writing [our blog post on TokuDB][2], I asked them to provide scholarly references, and they did, but warned me it would be dense reading, in part because it's so academic. Mark Callaghan also told me he had gotten them to walk him through the math behind their indexing algorithm and found it hard.
 

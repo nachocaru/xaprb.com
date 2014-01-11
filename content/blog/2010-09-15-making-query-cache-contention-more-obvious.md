@@ -3,7 +3,7 @@ title: Making query cache contention more obvious
 date: "2010-09-15"
 permalink: /2010/09/15/making-query-cache-contention-more-obvious/
 categories:
-  - SQL
+  - Databases
 ---
 The [newest release of Percona Server][1] includes a trivial change that I think will be extremely valuable. This is the addition of a new thread state, "Waiting on query cache mutex." Fixing the query cache to make it scalable is hard. Fixing the server to report when the query cache is a bottleneck is not hard. It has historically been very difficult for users to diagnose what's wrong with their server when the query cache is locking it intermittently. Now it will be trivial: they will look at SHOW PROCESSLIST and the evidence will be unmistakable.
 

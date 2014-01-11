@@ -3,10 +3,9 @@ title: Maatkit version 3119 released
 date: "2009-03-01"
 permalink: /2009/03/01/maatkit-version-3119-released/
 categories:
-  - Maatkit
-  - Perl
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
+  - Programming
 ---
 Your monthly cup of [Maatkit][1] is brewed and ready to drink. You can [download it from the Google Code project][2].
 

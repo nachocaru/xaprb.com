@@ -4,7 +4,7 @@ date: "2009-04-04"
 permalink: /2009/04/04/postgresql-conference-east-2009-day-two/
 categories:
   - Conferences
-  - PostgreSQL
+  - Databases
 ---
 I missed Friday and part of Saturday, but I was at [PostgreSQL Conference East 2009][1] for part of Saturday (and will be for part of Sunday too.) A brief recap of the talks I attended:
 

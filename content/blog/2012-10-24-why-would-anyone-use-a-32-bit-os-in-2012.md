@@ -3,7 +3,7 @@ title: Why would anyone use a 32-bit OS in 2012?
 date: "2012-10-24"
 permalink: /2012/10/24/why-would-anyone-use-a-32-bit-os-in-2012/
 categories:
-  - SQL
+  - Databases
 ---
 I've been browsing some mailing lists and so on (it doesn't matter which ones) and came across the Great 32-Bit Debate afresh. The debate always starts with someone saying "I need 32-bit support" or "this doesn't work on 32-bit systems," and someone else raising an objection to that, saying that nobody uses 32-bit systems anymore and anyone who does is doing something wrong.
 

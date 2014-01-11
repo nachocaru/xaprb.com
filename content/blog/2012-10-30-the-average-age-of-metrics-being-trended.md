@@ -3,7 +3,7 @@ title: The average age of metrics being trended
 date: "2012-10-30"
 permalink: /2012/10/30/the-average-age-of-metrics-being-trended/
 categories:
-  - SQL
+  - Databases
 ---
 Last night I wrote about [trending data with a moving average][1], and then after I went to bed, I realized I made a mistake on the chart I showed. I calculated &alpha; for the exponentially weighted moving average so that the average age of metrics approaches 60 samples as time approaches infinity, and I plotted that on the same chart with a 60-sample simple moving average.
 

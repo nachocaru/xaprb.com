@@ -2,6 +2,8 @@
 title: A case study in profiling queries in MySQL
 date: "2006-10-15"
 permalink: /2006/10/15/a-case-study-in-profiling-queries-in-mysql/
+categories:
+  - Databases
 ---
 This is the second in a series of articles on profiling queries in MySQL. In this article I'll demonstrate the technique I described in the [first article][1].
 

@@ -2,6 +2,8 @@
 title: Why you should not use BIT columns in MySQL
 date: "2006-04-11"
 permalink: /2006/04/11/bit-values-in-mysql/
+categories:
+  - Databases
 ---
 MySQL implements the `BIT` data type differently in different versions, and the behavior is not what one might expect. In this article I'll explain how MySQL's behavior has changed over time, what strange things can happen as a result, and how to understand and work around display issues. I'll tell you about a serious bug I've found, and discuss differences in the `BIT` data type between MySQL and Microsoft SQL Server.
 

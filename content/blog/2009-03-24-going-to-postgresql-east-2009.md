@@ -4,7 +4,7 @@ date: "2009-03-24"
 permalink: /2009/03/24/going-to-postgresql-east-2009/
 categories:
   - Conferences
-  - PostgreSQL
+  - Databases
 ---
 I've made plans to attend part of Saturday and part of Sunday at [PostgreSQL Conference East 2009][1]. I wish I could be there the whole time. Anyway I'm just thrilled that I'll get to see people again, and meet new people I didn't get to meet before.
 

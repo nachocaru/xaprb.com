@@ -3,7 +3,7 @@ title: "Breaking news: MySQL saves baby seals"
 date: "2011-03-28"
 permalink: /2011/03/28/breaking-news-mysql-saves-baby-seals/
 categories:
-  - SQL
+  - Databases
 ---
 <img src="http://www.xaprb.com/blog/wp-content/uploads/2011/03/baby-seal.jpg" alt="" title="baby-seal" width="600" height="468" /> 
 This is a test to see if people will vote this down on Planet MySQL. If you'll vote down some of the posts that have gotten negative marks recently, like Allan Packer saying that he's still working on Sparc supercluster, or Drizzle going GA, or Percona Server and XtraBackup being available on Solaris, or mk-query-digest filter how-tos, or TokuDB announcing online add of columns, or XtraBackup Manager, or using WordPress on Drizzle, well&#8230;

@@ -2,6 +2,8 @@
 title: How to scale writes with master-master replication in MySQL
 date: "2008-08-06"
 permalink: /2008/08/06/how-to-scale-writes-with-master-master-replication-in-mysql/
+categories:
+  - Databases
 ---
 This post is SEO bait for people trying to scale MySQL's write capacity by writing to both servers in master-master replication. The short answer: you can't do it. It's impossible.
 

@@ -2,6 +2,8 @@
 title: Going to PostgreSQL Conference East
 date: "2008-03-29"
 permalink: /2008/03/29/going-to-postgresql-conference-east/
+categories:
+  - Databases
 ---
 I'm heading out to [PostgreSQL Conference East][1] in a few hours. Alas, I missed the first day but I'll be there all day tomorrow. I hope to learn, meet people, and generally participate in goodness.
 

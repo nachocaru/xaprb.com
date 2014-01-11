@@ -3,10 +3,9 @@ title: "How to read Linux's /proc/diskstats easily"
 date: "2010-05-14"
 permalink: /2010/05/14/how-to-read-linuxs-procdiskstats-easily/
 categories:
-  - GNU/Linux
-  - SQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Open Source
+  - Operations
 ---
 These days I spend more time looking at /proc/diskstats than I do at iostat. The problem with iostat is that it lumps reads and writes together, and I want to see them separately. That's really important on a database server (e.g. MySQL performance analysis).
 

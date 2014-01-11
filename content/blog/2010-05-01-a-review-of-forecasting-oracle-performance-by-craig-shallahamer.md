@@ -3,8 +3,8 @@ title: A review of Forecasting Oracle Performance by Craig Shallahamer
 date: "2010-05-01"
 permalink: /2010/05/01/a-review-of-forecasting-oracle-performance-by-craig-shallahamer/
 categories:
-  - Review
-  - SQL
+  - Databases
+  - Reviews
 ---
 <div id="attachment_1797" class="wp-caption alignleft" style="width: 135px">
   <a href="http://www.amazon.com/Forecasting-Oracle-Performance-Craig-Shallahamer/dp/1590598024?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/05/forecasting_oracle_performance.gif" alt="Forecasting Oracle Performance" title="Forecasting Oracle  Performance" width="125" height="168" class="size-full wp-image-1797" /></a><p class="wp-caption-text">

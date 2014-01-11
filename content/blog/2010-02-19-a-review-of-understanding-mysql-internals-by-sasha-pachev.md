@@ -3,8 +3,8 @@ title: A review of Understanding MySQL Internals by Sasha Pachev
 date: "2010-02-19"
 permalink: /2010/02/19/a-review-of-understanding-mysql-internals-by-sasha-pachev/
 categories:
-  - Review
-  - SQL
+  - Databases
+  - Reviews
 ---
 <div id="attachment_1629" class="wp-caption alignleft" style="width: 190px">
   <a href="http://www.amazon.com/Understanding-MySQL-Internals-Sasha-Pachev/dp/0596009577?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/02/understanding-mysql-internals.gif" alt="Understanding MySQL Internals" title="Understanding MySQL Internals" width="180" height="236" class="size-full wp-image-1629" /></a><p class="wp-caption-text">

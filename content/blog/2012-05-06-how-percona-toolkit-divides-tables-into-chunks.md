@@ -3,7 +3,7 @@ title: How Percona Toolkit divides tables into chunks
 date: "2012-05-06"
 permalink: /2012/05/06/how-percona-toolkit-divides-tables-into-chunks/
 categories:
-  - SQL
+  - Databases
 ---
 The tools we've redesigned in Percona Toolkit recently have moved away from a legacy technique for operating on small numbers of rows at a time, towards a more reliable and predictable method. We call the old version "chunking" and the new version "nibbling." Many other MySQL tools I've seen either operate on entire tables, or use the "chunking" technique and are exposed to the problems it creates. I'll compare the two briefly to explain the differences.
 

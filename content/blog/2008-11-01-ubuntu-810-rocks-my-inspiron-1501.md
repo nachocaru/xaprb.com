@@ -4,7 +4,7 @@ date: "2008-11-01"
 permalink: /2008/11/01/ubuntu-810-rocks-my-inspiron-1501/
 categories:
   - Desktop
-  - GNU/Linux
+  - Open Source
 ---
 I'm really really happy about [Ubuntu 8.10][1] because it lets me stop kicking myself so much for buying a Dell Inspiron 1501. This little laptop was the el-cheapo option for me, found via [dealnews.com][2]. I was going to buy the virtually identical one that came with Ubuntu installed, but then Dell offered a deal on the 1501, which had Windows Vista, and I caved in to the allure of saving about $200.
 

@@ -3,10 +3,10 @@ title: A better way to build Cacti templates
 date: "2010-05-25"
 permalink: /2010/05/25/a-better-way-to-build-cacti-templates/
 categories:
-  - Cacti
-  - SQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Monitoring
+  - Open Source
+  - Operations
 ---
 The traditional way to build Cacti templates is through the Cacti web interface. This is an *enormous* amount of work, and the result is generally not very consistent or good quality. The process is too error-prone. You can export the templates as XML, but they tend to have problems such as version incompatibilities with other Cacti installations, and it's hard to adapt them for user preferences such as different graph image sizes and polling intervals.
 

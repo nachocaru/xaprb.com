@@ -3,8 +3,8 @@ title: High Performance MySQL, Third Edition
 date: "2011-09-14"
 permalink: /2011/09/14/high-performance-mysql-third-edition/
 categories:
-  - High Performance MySQL
-  - SQL
+  - Databases
+  - Writing
 ---
 I have just signed the contract for High Performance MySQL, Third Edition. The third edition will include major updates and new content in these areas:
 

@@ -2,6 +2,8 @@
 title: How to group data in SQL with a catch-all bucket
 date: "2005-09-28"
 permalink: /2005/09/28/grouping-data-with-catch-all-ranks/
+categories:
+  - Databases
 ---
 In this article I'll show you how to group data into defined buckets, putting everything that doesn't fit into the defined buckets into a catch-all bucket.
 

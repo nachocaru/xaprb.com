@@ -3,8 +3,7 @@ title: A gentle introduction to CouchDB for relational practitioners
 date: "2010-09-07"
 permalink: /2010/09/07/a-gentle-introduction-to-couchdb-for-relational-practitioners/
 categories:
-  - CouchDB
-  - SQL
+  - Databases
 ---
 CouchDB is a document-oriented database written in Erlang that addresses a particular "sweet spot" in data storage and retrieval needs. This blog post is an introduction to CouchDB for those of us who have a relational database background.
 

@@ -3,7 +3,7 @@ title: A lightweight MySQL sandbox script
 date: "2012-08-20"
 permalink: /2012/08/20/a-lightweight-mysql-sandbox-script/
 categories:
-  - SQL
+  - Databases
 ---
 For a long time I've been maintaining a set of scripts inspired by [Giuseppe Maxia's MySQL Sandbox][1], which is a Swiss Army Knife for starting and stopping server instances for jobs such as testing, development, trying out a new version, and so on. My scripts are unpublished, until now. I've just kept them in my Dropbox's `bin` folder, which I add to my $PATH.
 

@@ -3,7 +3,7 @@ title: How to add paragraph spacing in Google Docs
 date: "2009-06-21"
 permalink: /2009/06/21/how-to-add-paragraph-spacing-in-google-docs/
 categories:
-  - World Wide Web
+  - Web
 ---
 I'm using [Google Docs][1] for a project I'm working on right now, and I ran into a problem with spacing. There appears to be no way to get spacing between paragraphs. You can control spacing between lines, but that's not the same thing. Actually, it's quite easy. You just have to know how Google Docs works.
 

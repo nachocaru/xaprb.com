@@ -3,10 +3,10 @@ title: Version 1.1.8 of Better Cacti Templates released
 date: "2011-01-22"
 permalink: /2011/01/22/version-1-1-8-of-better-cacti-templates-released/
 categories:
-  - Cacti
-  - PHP
-  - SQL
-  - Sys Admin
+  - Databases
+  - Monitoring
+  - Operations
+  - Programming
 ---
 I've released version 1.1.8 of the [Better Cacti Templates][1] project. This release includes a bunch of bug fixes and several important new graphs. There are [graphs][2] for the new [response-time statistics exposed in Percona Server][3], and a new set of graphs for [MongoDB][4].
 

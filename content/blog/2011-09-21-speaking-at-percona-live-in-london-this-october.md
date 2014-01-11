@@ -4,7 +4,7 @@ date: "2011-09-21"
 permalink: /2011/09/21/speaking-at-percona-live-in-london-this-october/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 Two of my proposals for [Percona Live London on October 24-25][1] have been approved! Yes, I really had to propose them and get them approved like everyone else, although as I'm sure you can imagine, I had a good chance at being accepted :-) Not all of my talks were accepted, though.
 

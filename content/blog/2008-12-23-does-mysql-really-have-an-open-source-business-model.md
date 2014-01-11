@@ -4,7 +4,7 @@ date: "2008-12-23"
 permalink: /2008/12/23/does-mysql-really-have-an-open-source-business-model/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 I've been thinking about the business of what's variously come to be called commercial open-source and enterprise open-source. I'm interested in the gestalt &#8212; the product, development processes, marketing, licensing and so on.
 

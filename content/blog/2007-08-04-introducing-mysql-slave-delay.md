@@ -2,6 +2,8 @@
 title: Introducing MySQL Slave Delay
 date: "2007-08-04"
 permalink: /2007/08/04/introducing-mysql-slave-delay/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Slave Delay</a>

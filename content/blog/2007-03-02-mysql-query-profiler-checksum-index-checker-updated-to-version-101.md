@@ -2,6 +2,8 @@
 title: MySQL Query Profiler, Checksum, Index Checker updated to version 1.0.1
 date: "2007-03-02"
 permalink: /2007/03/02/mysql-query-profiler-checksum-index-checker-updated-to-version-101/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>

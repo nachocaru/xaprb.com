@@ -3,7 +3,7 @@ title: Another great MySQL 5.6 milestone release
 date: "2012-04-10"
 permalink: /2012/04/10/another-great-mysql-5-6-milestone-release/
 categories:
-  - SQL
+  - Databases
 ---
 Oracle has released another [huge batch of improvements][1] to MySQL slated for MySQL 5.6. The pace of innovation in MySQL is accelerating rapidly and the improvements are impressive. I have not read all of the blog posts thoroughly yet, but I've skimmed and it looks fantastic.
 

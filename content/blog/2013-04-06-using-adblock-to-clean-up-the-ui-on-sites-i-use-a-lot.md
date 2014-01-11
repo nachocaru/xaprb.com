@@ -3,7 +3,7 @@ title: Using AdBlock to clean up the UI on sites I use a lot
 date: "2013-04-06"
 permalink: /2013/04/06/using-adblock-to-clean-up-the-ui-on-sites-i-use-a-lot/
 categories:
-  - World Wide Web
+  - Web
 ---
 I use LinkedIn a lot. I also use various Google properties a lot. Both of them have a bunch of distracting and annoying UI features that just get in my way. I know Google and LinkedIn have a vested interest in catching my attention and trying to get me to use their products in the ways that will make them the most money, but as a user, I don't care what they want. I care what I want.
 

@@ -2,6 +2,8 @@
 title: "Type conversion semantics of MySQL's BETWEEN operator"
 date: "2006-09-12"
 permalink: /2006/09/12/type-conversion-semantics-of-mysqls-between-operator/
+categories:
+  - Databases
 ---
 I got bitten by an implicit type conversion with MySQL recently. This article is about avoiding implicit type conversions, and the weird places you might find them.
 

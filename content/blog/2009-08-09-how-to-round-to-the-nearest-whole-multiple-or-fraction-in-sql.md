@@ -3,9 +3,8 @@ title: How to round to the nearest whole multiple or fraction in SQL
 date: "2009-08-09"
 permalink: /2009/08/09/how-to-round-to-the-nearest-whole-multiple-or-fraction-in-sql/
 categories:
-  - Coding
-  - PostgreSQL
-  - SQL
+  - Databases
+  - Programming
 ---
 Every once in a while, I find myself needing to round a number up to the nearest even power of 10, or round a time interval to the nearest quarter of an hour, or something like that. This is actually quite simple, but for some reason I always find myself confused about how to do it. I have to reason it out all over again, instead of just remembering how to do it. Perhaps writing this blog post will help me remember next time.
 

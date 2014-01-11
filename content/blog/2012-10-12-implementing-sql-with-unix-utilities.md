@@ -3,7 +3,7 @@ title: Implementing SQL with Unix utilities
 date: "2012-10-12"
 permalink: /2012/10/12/implementing-sql-with-unix-utilities/
 categories:
-  - SQL
+  - Databases
 ---
 As I've become a better shell programmer over the last year or two, I've been surprised to discover some tools I didn't know about. It eventually dawned on me, as I did more and more brute-force processing of large datasets, as well as some of the more delicate things that went into Aspersa -> Percona Toolkit, that many tasks I used to do with SQL and spreadsheets can be accomplished easily with well-structured text files and Unix utilities. And they don't require loading data into a database or spreadsheet (the latter of which almost always performs terribly).
 

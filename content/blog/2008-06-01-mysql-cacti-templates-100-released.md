@@ -3,8 +3,8 @@ title: MySQL Cacti templates 1.0.0 released
 date: "2008-06-01"
 permalink: /2008/06/01/mysql-cacti-templates-100-released/
 categories:
-  - SQL
-  - Sys Admin
+  - Databases
+  - Operations
 ---
 I just uploaded the 1.0.0 release of my [MySQL templates for Cacti][1]. Now there's an actual download under the Downloads tab. I solved a number of issues in this release. The changelog:
 

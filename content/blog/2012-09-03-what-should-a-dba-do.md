@@ -3,7 +3,7 @@ title: What should a DBA do?
 date: "2012-09-03"
 permalink: /2012/09/03/what-should-a-dba-do/
 categories:
-  - SQL
+  - Databases
 ---
 I was thinking recently about what a DBA does, and decided to blog about what I think a DBA could/should do. Most DBAs I know are mired in day-to-day firefighting and time-consuming tedium. This forces them to operate in reactive mode (because they don't have enough time to "get caught up"), and keeps them from more valuable things they *could* be doing. Here's my short and incomplete list:
 

@@ -2,6 +2,8 @@
 title: Progress on High Performance MySQL, Second Edition
 date: "2007-11-29"
 permalink: /2007/11/29/progress-on-high-performance-mysql-second-edition/
+categories:
+  - Databases
 ---
 It's been a while since I said anything about the progress on the book. That doesn't mean we are not still working on it, though.
 

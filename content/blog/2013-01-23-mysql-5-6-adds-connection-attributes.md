@@ -3,7 +3,7 @@ title: MySQL 5.6 adds connection attributes
 date: "2013-01-23"
 permalink: /2013/01/23/mysql-5-6-adds-connection-attributes/
 categories:
-  - SQL
+  - Databases
 ---
 I enjoyed being able to add metadata to a connection in Microsoft SQL Server. I'd annotate my connections so that a DBA could learn a little bit by inspecting it. For example, what was its purpose, and from which application did it originate? The employer where I did this wasn't perfect at managing their database user accounts and so forth, and there were many servers with hundreds of databases on each server, so this was a good way to provide some extra hints.
 

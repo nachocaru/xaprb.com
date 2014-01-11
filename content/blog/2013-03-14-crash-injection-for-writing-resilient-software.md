@@ -3,7 +3,7 @@ title: Crash injection for writing resilient software
 date: "2013-03-14"
 permalink: /2013/03/14/crash-injection-for-writing-resilient-software/
 categories:
-  - SQL
+  - Databases
 ---
 I am currently finishing some features to make a program highly resilient to occasional crashing bugs. A particular function was found to crash on queries of the form `WHERE x IN(NULL)`, and that crashed the entire program. Now we have a framework for intelligently recovering from arbitrary crashes. I will write more on this in the future, because I think it's a very interesting thing to share.
 

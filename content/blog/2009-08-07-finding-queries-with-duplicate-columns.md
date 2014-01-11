@@ -3,8 +3,8 @@ title: Finding queries with duplicate columns
 date: "2009-08-07"
 permalink: /2009/08/07/finding-queries-with-duplicate-columns/
 categories:
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 A while ago I wrote about a [tool to help make upgrades safer][1]. Since then, we have gotten several people to help sponsor development on this tool, and a few of our customers are using it to help find problems before they upgrade their systems.
 

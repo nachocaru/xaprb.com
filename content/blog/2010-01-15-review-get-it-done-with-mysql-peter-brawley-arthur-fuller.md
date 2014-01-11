@@ -3,8 +3,8 @@ title: "A review of Get it Done with MySQL 5&#038;6 by Peter Brawley and Arthur 
 date: "2010-01-15"
 permalink: /2010/01/15/review-get-it-done-with-mysql-peter-brawley-arthur-fuller/
 categories:
-  - Review
-  - SQL
+  - Databases
+  - Reviews
 ---
 <div id="attachment_1585" class="wp-caption alignleft" style="width: 160px">
   <a href="http://www.artfulsoftware.com/"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/01/get_it_done_with_mysql-150x150.png" alt="Get it Done with MySQL 5&6" title="Get it Done with MySQL 5&6" width="150" height="150" class="size-thumbnail wp-image-1585" /></a><p class="wp-caption-text">

@@ -3,7 +3,7 @@ title: Detecting MySQL server problems automatically
 date: "2012-09-06"
 permalink: /2012/09/06/detecting-mysql-server-problems-automatically/
 categories:
-  - SQL
+  - Databases
 ---
 I [previously blogged about][1] work I was doing on automatically finding problems in a MySQL server, with no hardcoded thresholds or predetermined indicators of what is "bad behavior." I had to pause my studies on that for a while, due to time constraints. I've recently been able to resume and I'm happy to report that I'm making good progress.
 

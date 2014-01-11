@@ -2,6 +2,8 @@
 title: Introducing MySQL Deadlock Logger
 date: "2007-03-08"
 permalink: /2007/03/08/introducing-mysql-deadlock-logger/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">MySQL Deadlock Logger</a>

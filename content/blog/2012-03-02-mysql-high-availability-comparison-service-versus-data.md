@@ -3,7 +3,7 @@ title: "MySQL high availability comparison: service versus data"
 date: "2012-03-02"
 permalink: /2012/03/02/mysql-high-availability-comparison-service-versus-data/
 categories:
-  - SQL
+  - Databases
 ---
 When people ask me about high availability, I often suggest that it's helpful to understand whether you're most interested in service availability, data availability, or both. Of course, you want both &#8212; but if cost is an object, you may end up relaxing your requirements.
 

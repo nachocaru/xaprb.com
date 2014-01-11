@@ -3,11 +3,10 @@ title: Maatkit version 2325 released
 date: "2008-09-19"
 permalink: /2008/09/19/maatkit-version-2325-released/
 categories:
-  - Maatkit
-  - Perl
-  - SQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Open Source
+  - Operations
+  - Programming
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

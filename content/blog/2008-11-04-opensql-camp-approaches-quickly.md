@@ -3,8 +3,8 @@ title: OpenSQL Camp approaches quickly
 date: "2008-11-04"
 permalink: /2008/11/04/opensql-camp-approaches-quickly/
 categories:
-  - OpenSQL Camp
-  - SQL
+  - Conferences
+  - Databases
 ---
 The soft registration deadline for [OpenSQL Camp 2008][1] has passed now; [you can still attend][2], but you won't be counted into meals and t-shirts. Meanwhile, we have 90 registered attendees, and a [truly impressive set of sessions][3] from [heavy hitters in the database world][4]. This conference is turning into the event I always wanted to attend.
 

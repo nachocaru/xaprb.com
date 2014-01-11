@@ -3,8 +3,7 @@ title: What TokuDB might mean for MongoDB
 date: "2013-04-29"
 permalink: /2013/04/29/what-tokudb-might-mean-for-mongodb/
 categories:
-  - MongoDB
-  - SQL
+  - Databases
 ---
 Last week [Tokutek][1] [announced][2] that they're open-sourcing their TokuDB storage engine for MySQL. If you're not familiar with TokuDB, it's an ACID-compliant storage engine with a high-performance index technology known as fractal tree indexing. Fractal trees have a number of nice characteristics, but perhaps the most interesting is that they deliver consistently high performance under varying conditions, such as when data grows much larger than memory or is updated frequently. B-tree indexes tend to get fragmented over time, and exhibit a performance cliff when data doesn't fit in memory anymore.
 

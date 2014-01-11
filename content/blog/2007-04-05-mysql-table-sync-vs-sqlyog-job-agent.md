@@ -2,6 +2,8 @@
 title: MySQL Table Sync vs. SQLyog Job Agent
 date: "2007-04-05"
 permalink: /2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
+categories:
+  - Databases
 ---
 When I wrote my first article on [algorithms to compare and synchronize data between MySQL tables][1], Webyog's Rohit Nadhani left a comment on the article mentioning the SQLyog Job Agent, which has a similar function. Although I have been developing [MySQL Table Sync][2] essentially in isolation, I have been meaning to give SQLyog Job Agent a try. I recently did so, and then followed that up with an email conversation with Rohit. This article is about my experience using the SQLyog Job Agent from the command line, some thoughts on the algorithm as best I can deduce it, and benchmark results against MySQL Table Sync.
 

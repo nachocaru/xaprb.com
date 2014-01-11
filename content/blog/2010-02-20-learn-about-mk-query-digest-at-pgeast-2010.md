@@ -4,9 +4,8 @@ date: "2010-02-20"
 permalink: /2010/02/20/learn-about-mk-query-digest-at-pgeast-2010/
 categories:
   - Conferences
-  - Maatkit
-  - PostgreSQL
-  - SQL
+  - Databases
+  - Open Source
 ---
 I'll be attending [PgEast][1] this year, as I've done for the last couple of years, and this year I'll also be speaking. The topic is [query analysis with mk-query-digest][2]. The official description of my talk is as follows:
 

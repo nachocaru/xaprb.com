@@ -2,6 +2,9 @@
 title: Version 1.5.2 of the innotop MySQL monitor released
 date: "2007-09-18"
 permalink: /2007/09/18/version-152-of-the-innotop-mysql-monitor-released/
+categories:
+  - Databases
+  - Open Source
 ---
 <p class="download">
   <a href="http://code.google.com/p/innotop">Download innotop</a>

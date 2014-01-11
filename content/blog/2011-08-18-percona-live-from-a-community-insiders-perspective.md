@@ -4,7 +4,7 @@ date: "2011-08-18"
 permalink: /2011/08/18/percona-live-from-a-community-insiders-perspective/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 I am writing this on my blog because I want to take the Percona hat off (partially) and wear my community hat a bit. My loyalty was to the MySQL community long before I was involved with Percona.
 

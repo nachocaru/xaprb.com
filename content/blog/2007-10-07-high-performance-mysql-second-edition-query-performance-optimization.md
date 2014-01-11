@@ -1,6 +1,8 @@
 ---
 title: "High Performance MySQL, Second Edition: Query Performance Optimization"
 permalink:  /2007/10/07/high-performance-mysql-second-edition-query-performance-optimization/
+categories:
+  - Databases
 ---
 Your comments on the [Advanced MySQL Features][1] chapter were great. A lot of the questions I got (in the comments and via email) about chapter 6 are really addressed in chapter 5, "Query Performance Optimization," so I'm posting its outline too. I have the same questions: are there things you'd like to see us cover? Do you have any favorite techniques you'd like to see us include? Any other comments or questions?
 

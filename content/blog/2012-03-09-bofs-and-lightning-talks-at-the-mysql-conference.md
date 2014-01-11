@@ -4,7 +4,7 @@ date: "2012-03-09"
 permalink: /2012/03/09/bofs-and-lightning-talks-at-the-mysql-conference/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 We're running Birds of a Feather (BoF) sessions and lightning talks this year at the MySQL conference, similarly to previous years. You can help by submitting proposals ASAP. The deadline is Monday, and it is a *hard* deadline.
 

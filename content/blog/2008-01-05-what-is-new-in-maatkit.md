@@ -2,6 +2,9 @@
 title: What is new in Maatkit
 date: "2008-01-05"
 permalink: /2008/01/05/what-is-new-in-maatkit/
+categories:
+  - Databases
+  - Open Source
 ---
 My posts lately have been mostly progress reports and release notices. That's because we're in the home stretch on the book, and I don't have much spare time. However, a lot has also been changing with Maatkit, and I wanted to take some time to write about it properly. I'll just write about each tool in no particular order.
 

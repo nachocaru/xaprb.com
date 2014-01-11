@@ -3,7 +3,7 @@ title: A summary of changes in MySQL 5.6
 date: "2012-08-21"
 permalink: /2012/08/21/a-summary-of-changes-in-mysql-5-6/
 categories:
-  - SQL
+  - Databases
 ---
 I decided to take another look at MySQL 5.6, and realized that I've forgotten how many changes this version will have. Each milestone has many improvements, and there have been many milestones, so my memory of the older ones grows hazy. 
 The [Fine Manual][1] has the details, but here is my attempt at a quick (and probably incomplete and inaccurate) summary. I've emphasized a few changes that will make life significantly better for me. 

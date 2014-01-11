@@ -3,9 +3,8 @@ title: The state of MySQL client libraries
 date: "2012-12-26"
 permalink: /2012/12/26/the-state-of-mysql-client-libraries/
 categories:
-  - Drizzle
+  - Databases
   - Open Source
-  - SQL
 ---
 Those who've been around the MySQL world are probably aware of the much-discussed topics of GPL licensing, dual licensing, and in particular, licensing of the client libraries (also called connectors or drivers) and the [FOSS exception][1] to that licensing. This is newly relevant with the announcement of a permissively-licensed MySQL-compatible client library for MariaDB.
 

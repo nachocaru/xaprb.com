@@ -2,6 +2,9 @@
 title: "A look at innotop's new features"
 date: "2007-01-16"
 permalink: /2007/01/16/a-look-at-innotops-new-features/
+categories:
+  - Databases
+  - Open Source
 ---
 I just made a snapshot of the development branch of the [innotop][1] MySQL and InnoDB monitor, and released it as version 1.3.0. This code will eventually become version 1.4. Here's what's new.
 

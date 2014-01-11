@@ -4,8 +4,7 @@ date: "2012-01-16"
 permalink: /2012/01/16/organize-to-resist-sopa-in-dc/
 categories:
   - Commentary
-  - Internet
-  - World Wide Web
+  - Web
 ---
 If you're in the DC area, there's an emergency meeting of the DC Tech Meetup to get involved in [advocating against SOPA and PIPA][1] legislation.
 

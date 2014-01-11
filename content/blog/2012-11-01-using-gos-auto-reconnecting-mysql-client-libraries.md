@@ -3,7 +3,7 @@ title: "Using Go's auto-reconnecting MySQL client libraries"
 date: "2012-11-01"
 permalink: /2012/11/01/using-gos-auto-reconnecting-mysql-client-libraries/
 categories:
-  - SQL
+  - Databases
 ---
 I've been doing a little bit of programming in Go recently, and really enjoying it. It's an awesome language with really solid libraries. It reminds me a lot of the .NET framework in that it's well-thought-out, but the Go language itself is a lot smaller, less formal, and a lot more expressive than I ever found C# to be. And that's saying a lot &#8212; C# was my previous favorite language, along with the occasional Java, C++, Python, JavaScript, and &#8212; gasp &#8212; Visual Basic 6. Go beats them all.
 

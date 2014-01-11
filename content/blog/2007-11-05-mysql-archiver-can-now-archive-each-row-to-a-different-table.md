@@ -2,6 +2,8 @@
 title: MySQL Archiver can now archive each row to a different table
 date: "2007-11-05"
 permalink: /2007/11/05/mysql-archiver-can-now-archive-each-row-to-a-different-table/
+categories:
+  - Databases
 ---
 One of the enhancements I added to [MySQL Archiver in the recent release][1] was listed innocently in the changelog as "Destination plugins can now rewrite the INSERT statement." Not very exciting or informative, huh? Keep reading.
 

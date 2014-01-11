@@ -4,8 +4,8 @@ date: "2009-04-11"
 permalink: /2009/04/11/sessions-of-interest-at-mysql-conference-and-expo-2009/
 categories:
   - Conferences
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 I haven't really decided my schedule yet during the [conference][1], but I thought I'd mention these sessions that look interesting to me.
 

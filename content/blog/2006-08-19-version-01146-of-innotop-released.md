@@ -2,6 +2,9 @@
 title: Version 0.1.146 of innotop released
 date: "2006-08-19"
 permalink: /2006/08/19/version-01146-of-innotop-released/
+categories:
+  - Databases
+  - Open Source
 ---
 I've released version 0.1.146 of the innotop MySQL and InnoDB monitor. You can [download innotop from its homepage][1].
 

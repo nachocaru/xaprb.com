@@ -4,9 +4,8 @@ date: "2010-02-22"
 permalink: /2010/02/22/cary-millsap-thinking-clearly-about-performance/
 categories:
   - Commentary
-  - Maatkit
-  - PostgreSQL
-  - SQL
+  - Databases
+  - Open Source
 ---
 [Cary Millsap][1] has a [concise, readable paper on performance][2]. Anyone involved in database performance optimization should read it. Cary's writing has heavily influenced the [mk-query-digest][3] tool for analyzing MySQL/PostgreSQL/Memcached/HTTP query performance, and I think you'll get a lot more from mk-query-digest if you read this paper &#8212; and you should also read his book, [reviewed here][4]. It's one of the top books on my [Essential Books List][5].
 

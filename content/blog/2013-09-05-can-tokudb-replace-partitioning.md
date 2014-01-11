@@ -3,7 +3,7 @@ title: Can TokuDB replace partitioning?
 date: "2013-09-05"
 permalink: /2013/09/05/can-tokudb-replace-partitioning/
 categories:
-  - SQL
+  - Databases
 ---
 I've been considering using TokuDB for a large dataset, primarily because of its high compression. The data is append-only, never updated, rarely read, and purged after a configurable time. 
 I use partitions to drop old data a day at a time. It's much more efficient than deleting rows, and it lets me avoid indexing the data on the time dimension. Partitioning serves as a crude form of indexing, as well as helping purge old data. 

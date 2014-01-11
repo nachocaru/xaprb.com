@@ -4,7 +4,7 @@ date: "2011-03-31"
 permalink: /2011/03/31/big-data-is-how-big-exactly/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 I see that "Big Data" has become the new buzzword with a spike of hype around it. Everyone's jumping on it. Companies are eager to promote their products as "Big Data," just as they were eager to be associated with Web 2.0, Service-Oriented Architectures, and all the rest. Predictably, there's basically zero agreement on what it means.
 

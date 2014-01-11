@@ -2,6 +2,8 @@
 title: How to write a UNION in SQL without using UNION
 date: "2005-09-22"
 permalink: /2005/09/22/union-in-mysql/
+categories:
+  - Databases
 ---
 MySQL does not support UNION prior to version 4.0.0, but it is possible to write a `UNION` with a [mutex table][1] and `LEFT OUTER JOIN`. As an example, `UNION` these tables together:
 

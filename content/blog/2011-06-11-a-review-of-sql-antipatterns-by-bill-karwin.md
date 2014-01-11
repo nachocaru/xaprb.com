@@ -3,8 +3,8 @@ title: A review of SQL Antipatterns by Bill Karwin
 date: "2011-06-11"
 permalink: /2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/
 categories:
-  - Review
-  - SQL
+  - Databases
+  - Reviews
 ---
 [<img style="float:left; margin-right:10px" src="http://www.xaprb.com/blog/wp-content/uploads/2011/06/bksqla_xlargecover.jpg" alt="" title="SQL Antipatterns" width="190" height="228" class="alignleft size-full wp-image-2372" />][1] [SQL Antipatterns][1], by Bill Karwin, Pragmatic Bookshelf, 2010. About 300 pages. Here's a [link to the publisher's site][2].
 

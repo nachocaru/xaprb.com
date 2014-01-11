@@ -2,6 +2,8 @@
 title: MySQL Conference and Expo 2008, Day Three
 date: "2008-04-19"
 permalink: /2008/04/19/mysql-conference-and-expo-2008-day-three/
+categories:
+  - Databases
 ---
 Here's a rundown of Thursday (day 3) of the MySQL Conference and Expo. This day's sessions were much more interesting to me than Wednesday's, and in fact I wanted to go to several of them in a single time slot a couple of times.
 

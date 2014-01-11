@@ -5,7 +5,7 @@ permalink: /2009/02/06/towards-more-diversity-of-speakers-at-mysql-conference-an
 categories:
   - Commentary
   - Conferences
-  - SQL
+  - Databases
 ---
 We (Percona) just [announced our Percona Performance Conference][1], and I wanted to tell you a little more about what we hope to accomplish with this conference. Let me show you some simple math that anyone can do.
 

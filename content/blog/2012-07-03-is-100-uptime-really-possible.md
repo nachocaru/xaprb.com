@@ -3,7 +3,7 @@ title: Is 100% uptime really possible?
 date: "2012-07-03"
 permalink: /2012/07/03/is-100-uptime-really-possible/
 categories:
-  - SQL
+  - Databases
 ---
 This post isn't about NuoDB, although it was prompted by the phrase "100% uptime" that I've seen them use a few times. I want to suggest that people think slightly differently about uptime and availability.
 

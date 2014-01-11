@@ -2,6 +2,8 @@
 title: GnuCash to MySQL export script
 date: "2006-03-12"
 permalink: /2006/03/12/gnucash-to-mysql-export-script/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="/gnucash2mysql/">Download gnucash2mysql and queries</a>

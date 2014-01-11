@@ -3,7 +3,7 @@ title: "Idea: a reverse changelog for MySQL"
 date: "2009-01-26"
 permalink: /2009/01/26/idea-a-reverse-changelog-for-mysql/
 categories:
-  - SQL
+  - Databases
 ---
 Most software changelogs list what's changed and what bugs are fixed during each upgrade. But when you're evaluating an upgrade, what you're typically concerned about is slightly different &#8212; it's a combination of what's changed and what might have broken. The fixed bugs aren't as important for most people, who are either using a workaround or aren't using the software. What people ask is "what do I have to change in my application, and/or make sure I'm not going to run afoul of, in order to use this new version?"
 

@@ -2,6 +2,8 @@
 title: Introducing MySQL Parallel Restore
 date: "2007-10-15"
 permalink: /2007/10/15/introducing-mysql-parallel-restore/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>

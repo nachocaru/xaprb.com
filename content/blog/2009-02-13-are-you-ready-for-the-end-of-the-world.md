@@ -3,7 +3,7 @@ title: Are you ready for the end of the world?
 date: "2009-02-13"
 permalink: /2009/02/13/are-you-ready-for-the-end-of-the-world/
 categories:
-  - SQL
+  - Databases
 ---
 Have you prepared yourself?
 

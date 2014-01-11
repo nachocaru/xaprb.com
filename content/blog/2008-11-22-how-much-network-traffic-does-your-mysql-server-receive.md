@@ -3,7 +3,7 @@ title: How much network traffic does your MySQL server receive?
 date: "2008-11-22"
 permalink: /2008/11/22/how-much-network-traffic-does-your-mysql-server-receive/
 categories:
-  - SQL
+  - Databases
 ---
 This is a quick informal poll. I'd like to know how much network traffic your server receives (not sends), in bytes per second. Give both avg and max if you have them. I'm especially interested in hearing about big, heavily loaded systems.
 

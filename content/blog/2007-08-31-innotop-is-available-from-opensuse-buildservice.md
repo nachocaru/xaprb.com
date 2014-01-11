@@ -2,6 +2,9 @@
 title: innotop is available from openSUSE buildservice
 date: "2007-08-31"
 permalink: /2007/08/31/innotop-is-available-from-opensuse-buildservice/
+categories:
+  - Databases
+  - Open Source
 ---
 RPM packages for [innotop][1], a flexible and powerful MySQL and InnoDB monitor I wrote, are now available through the [openSUSE buildservice][2], which builds RPMS on several platforms:
 

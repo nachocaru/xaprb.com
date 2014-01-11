@@ -2,6 +2,8 @@
 title: Screenshots of improved MySQL Cacti templates
 date: "2008-05-25"
 permalink: /2008/05/25/screenshots-of-improved-mysql-cacti-templates/
+categories:
+  - Databases
 ---
 <p>I finally have some images to show you what my <a href="http://code.google.com/p/mysql-cacti-templates/">improved Cacti templates</a> look like.</p>
 

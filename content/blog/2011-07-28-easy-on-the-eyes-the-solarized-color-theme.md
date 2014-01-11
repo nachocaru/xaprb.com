@@ -4,8 +4,8 @@ date: "2011-07-28"
 permalink: /2011/07/28/easy-on-the-eyes-the-solarized-color-theme/
 categories:
   - Desktop
-  - GNU/Linux
-  - Sys Admin
+  - Open Source
+  - Operations
 ---
 I recently set up the [solarized][1] color theme for my terminal emulator. I've been meaning to do this for a while, but procrastinated. However, I finally got really frustrated with the colors I get from "ls" sometimes &#8212; I use a dark terminal with light fonts, and the directory listings in particular can become invisible, with dark blue on black.
 

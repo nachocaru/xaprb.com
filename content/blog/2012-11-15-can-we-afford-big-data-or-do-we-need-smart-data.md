@@ -4,7 +4,7 @@ date: "2012-11-15"
 permalink: /2012/11/15/can-we-afford-big-data-or-do-we-need-smart-data/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 With the Big Data craze that's sweeping the world of technology right now, I often ask myself whether we're deficit-spending, so to speak, with our data consumption habits. I've seen repeated examples of being unwilling to get rid of data, even though it's unused and nobody can think of a future use for it. At the same time, much Big Data processing I've seen is brute-force and costly: hitting a not-very-valuable nut with a giant, expensive sledgehammer. I think the combination of these two problems represents a giant opportunity, and I'm going to call the solution Smart Data for lack of a better word.
 

@@ -3,9 +3,8 @@ title: "Apsersa's summary tool supports Adaptec and MegaRAID controllers"
 date: "2010-05-16"
 permalink: /2010/05/16/apsersas-summary-tool-supports-adaptec-and-megaraid-controllers/
 categories:
-  - Aspersa
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 I spent a little time yesterday doing some things with the "summary" tool from [Aspersa][1]. I added support for summarizing status and configuration of Adaptec and LSI MegaRAID controllers. I also figured out how to write a test suite for Bash scripts, so most major parts of the tool are fully tested now. I learned a lot more sed and awk this weekend.
 

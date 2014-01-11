@@ -3,8 +3,8 @@ title: Pre-Order High Performance MySQL Second Edition
 date: "2008-05-02"
 permalink: /2008/05/02/pre-order-high-performance-mysql-second-edition/
 categories:
-  - High Performance MySQL
-  - SQL
+  - Databases
+  - Writing
 ---
 [<img style="float:right" src='http://www.xaprb.com/blog/wp-content/uploads/2008/05/high_performance_mysql.jpg' alt='High Performance MySQL' />][1]
 

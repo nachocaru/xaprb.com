@@ -2,6 +2,9 @@
 title: MySQL Toolkit version 1011 released
 date: "2007-10-05"
 permalink: /2007/10/05/mysql-toolkit-version-1011-released/
+categories:
+  - Databases
+  - Open Source
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>

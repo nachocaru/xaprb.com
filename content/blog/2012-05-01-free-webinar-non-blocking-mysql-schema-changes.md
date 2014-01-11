@@ -3,7 +3,7 @@ title: "Free webinar: non-blocking MySQL schema changes"
 date: "2012-05-01"
 permalink: /2012/05/01/free-webinar-non-blocking-mysql-schema-changes/
 categories:
-  - SQL
+  - Databases
 ---
 Please join me tomorrow (Wednesday) for a webinar about the new version of [pt-online-schema-change][1], Percona Toolkit's tool for performing nonblocking ALTER TABLE operations. [Registration][2] is free. I will explain how the tool works and cover some typical use scenarios. This might be helpful if you're trying to decide whether the tool is right for you. I am also planning to leave plenty of time for questions!
 

@@ -2,6 +2,8 @@
 title: Introducing MySQL Table Checksum
 date: "2007-02-26"
 permalink: /2007/02/26/introducing-mysql-table-checksum/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Get MySQL Table Checksum</a>

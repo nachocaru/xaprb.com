@@ -3,7 +3,7 @@ title: Dump and reload InnoDB buffer pool in MySQL 5.6
 date: "2012-09-18"
 permalink: /2012/09/18/dump-and-reload-innodb-buffer-pool-in-mysql-5-6/
 categories:
-  - SQL
+  - Databases
 ---
 After [Gavin Towey's recent blog post][1] about Percona Server's buffer pool dump locking the server for the duration of the operation, I thought I should re-examine MySQL 5.6&#8242;s implementation of a similar feature. When InnoDB engineers first announced the feature, I didn't think it was complete enough to serve a DBA's needs fully.
 

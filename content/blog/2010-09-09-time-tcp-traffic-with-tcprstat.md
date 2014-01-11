@@ -3,9 +3,9 @@ title: Time TCP traffic with tcprstat
 date: "2010-09-09"
 permalink: /2010/09/09/time-tcp-traffic-with-tcprstat/
 categories:
-  - PostgreSQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Open Source
+  - Operations
 ---
 I just realized that I didn't publicize this in the Postgres world, or anywhere but the MySQL blogosphere for that matter. Some folks at my company have released a generic TCP-response-time tool. Very useful for monitoring, benchmarks, historical metrics, and so on. It's kind of like iostat, but for TCP traffic, and fully focused on time, not traffic size. Performance == time and tasks, and this is a lightweight way to measure that data. I wrote an introductory blog post [here][1], and the documentation is [here][2].
 

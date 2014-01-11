@@ -4,7 +4,7 @@ date: "2011-04-21"
 permalink: /2011/04/21/the-drawbacks-of-shortlinks/
 categories:
   - Commentary
-  - World Wide Web
+  - Web
 ---
 These days it seems that people would rather generate a shortlink than use a real link, even when it's not much shorter. It's hip, after all. (Peter actually caught me doing this. It was for a link that used to be long but was shortened recently so a shortlink isn't needed anymore. I did it to continue a habit, not for hipness.)
 

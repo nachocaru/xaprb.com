@@ -4,8 +4,8 @@ date: "2010-06-30"
 permalink: /2010/06/30/how-i-keep-track-of-tasks/
 categories:
   - Commentary
-  - Sys Admin
-  - Tools
+  - Open Source
+  - Operations
 ---
 I use a super-simple system for keeping track of tasks that are mine personally to manage. I use issue-tracking systems for software projects and consulting work, but there is still a bunch of work-related and personal work that I need to make sure I don't forget.
 

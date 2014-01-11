@@ -3,8 +3,8 @@ title: Tis a gift to be simple
 date: "2010-05-12"
 permalink: /2010/05/12/tis-a-gift-to-be-simple/
 categories:
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 I was just reading up on the [syntax for index hints in MySQL][1], and noticed this:
 

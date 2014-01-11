@@ -3,7 +3,7 @@ title: My favorite features in MySQL 5.6
 date: "2012-02-28"
 permalink: /2012/02/28/my-favorite-features-in-mysql-5-6/
 categories:
-  - SQL
+  - Databases
 ---
 MySQL 5.6 is going to have a lot of [improvements][1]. I want to mention a few things I think are uniquely valuable for a large set of typical MySQL users.
 

@@ -3,8 +3,7 @@ title: "My wishlist for SQL: the UNTIL clause"
 date: "2010-01-22"
 permalink: /2010/01/22/my-wishlist-for-sql-the-until-clause/
 categories:
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 I'd like an UNTIL clause, please. I'd use it sort of like LIMIT in MySQL and PostgreSQL, except that it would define when to stop <del datetime="2010-01-23T16:18:53+00:00">returning</del> looking for rows, instead of defining how many to return. Example:
 

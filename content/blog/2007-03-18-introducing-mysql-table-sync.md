@@ -2,6 +2,8 @@
 title: Introducing MySQL Table Sync
 date: "2007-03-18"
 permalink: /2007/03/18/introducing-mysql-table-sync/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Sync</a>

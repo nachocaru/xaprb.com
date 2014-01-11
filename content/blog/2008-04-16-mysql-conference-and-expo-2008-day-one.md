@@ -2,6 +2,8 @@
 title: MySQL Conference and Expo 2008, Day One
 date: "2008-04-16"
 permalink: /2008/04/16/mysql-conference-and-expo-2008-day-one/
+categories:
+  - Databases
 ---
 Today is the first day at the conference (aside from the tutorials, which were yesterday). Here's what I went to:
 

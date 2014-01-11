@@ -4,9 +4,7 @@ date: "2009-08-29"
 permalink: /2009/08/29/opensql-camp-events-in-2009/
 categories:
   - Conferences
-  - OpenSQL Camp
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 There are two [OpenSQL Camp][1] events in 2009. This is a conference about any and all open-source databases. The slogan of the inaugural event was "of, by, and for the community."
 

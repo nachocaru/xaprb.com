@@ -2,6 +2,8 @@
 title: MySQL Conference and Expo 2007, Day 3
 date: "2007-04-26"
 permalink: /2007/04/26/mysql-conference-and-expo-2007-day-3/
+categories:
+  - Databases
 ---
 [<img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" />][1] 
 In my third day at the [MySQL Conference and Expo 2007][1], I again attended keynotes and sessions, one of which I participated in. This evening I had dinner with a fellow community member and arrived late to the Quiz Show, even though I was supposed to be on one of the teams! I blame it on the restaurant, because they took too long to figure out what I meant when I said "kÃ¶nnen wir einen Hubschrauber essen heute abend?"

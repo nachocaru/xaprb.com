@@ -3,7 +3,7 @@ title: "What's a good benchmark?"
 date: "2011-05-10"
 permalink: /2011/05/10/whats-a-good-benchmark/
 categories:
-  - SQL
+  - Databases
 ---
 Vadim has taught me that valid benchmarks are both simple and complex. Simple, because the basic principles are few; complex, because the devil is in the details and it's a lot of work to satisfy the basic requirements. I'll give the simple version here.
 

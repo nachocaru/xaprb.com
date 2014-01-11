@@ -3,9 +3,8 @@ title: "Warning: upgrade MySQL without testing at your own risk"
 date: "2009-08-08"
 permalink: /2009/08/08/warning-upgrade-mysql-without-testing-at-your-own-risk/
 categories:
-  - Maatkit
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 Do you test your application systematically when you upgrade or reconfigure your database server? You should! Here's a real (anonymized) story of what happens if you don't.
 

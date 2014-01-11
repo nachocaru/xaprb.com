@@ -3,7 +3,7 @@ title: OpenSQL Camp badges are ready
 date: "2008-10-04"
 permalink: /2008/10/04/opensql-camp-badges-are-ready/
 categories:
-  - OpenSQL Camp
+  - Conferences
 ---
 Want to promote OpenSQL Camp 2008? Use one of the sweet badges shown on this page. A big thank-you to [Fixpert][1] for the logo and badges!
 

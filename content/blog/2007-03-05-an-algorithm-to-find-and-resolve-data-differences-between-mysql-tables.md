@@ -1,6 +1,8 @@
 ---
 title: An algorithm to find and resolve data differences between MySQL tables
 permalink: >
+categories:
+  - Databases
 ---
 I've been designing an algorithm to resolve data differences between MySQL tables, specifically so I can 'patch' a replication slave that has gotten slightly out of sync without completely re-initializing it. I intend to create a tool that can identify which rows are different and bring them into sync. I would like your thoughts on this.
 

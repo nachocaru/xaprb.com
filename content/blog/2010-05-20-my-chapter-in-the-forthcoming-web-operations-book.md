@@ -3,8 +3,8 @@ title: My chapter in the forthcoming Web Operations book
 date: "2010-05-20"
 permalink: /2010/05/20/my-chapter-in-the-forthcoming-web-operations-book/
 categories:
-  - Review
-  - SQL
+  - Databases
+  - Reviews
 ---
 <div id="attachment_1864" class="wp-caption alignleft" style="width: 190px">
   <a href="http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/05/web_operations.gif" alt="Web Operations" title="Web Operations" width="180" height="236" class="size-full wp-image-1864" /></a><p class="wp-caption-text">

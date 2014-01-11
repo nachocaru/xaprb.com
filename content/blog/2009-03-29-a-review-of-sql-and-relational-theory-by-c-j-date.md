@@ -3,9 +3,9 @@ title: A review of SQL and Relational Theory by C. J. Date
 date: "2009-03-29"
 permalink: /2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/
 categories:
-  - Coding
-  - Review
-  - SQL
+  - Databases
+  - Programming
+  - Reviews
 ---
 <div class="wp-caption alignleft" style="width: 190px">
   <a href="http://www.amazon.com/SQL-Relational-Theory-Write-Accurate/dp/0596523068?tag=xaprb-20"><img alt="SQL and Relational Theory" src="http://oreilly.com/catalog/covers/9780596523060_cat.gif" title="SQL and Relational Theory" width="180" height="236" /></a><p class="wp-caption-text">

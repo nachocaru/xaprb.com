@@ -4,8 +4,7 @@ date: "2009-04-17"
 permalink: /2009/04/17/sessions-of-interest-at-the-percona-performance-conference/
 categories:
   - Conferences
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 Having written about what I think is cool about the upcoming MySQL Conference and the MySQL Camp, now I want to finish up with what I'd like to see at the [Percona Performance Conference][1]. Just to recap, this is a conference we created to serve those who want to learn about performance &#8212; not "learn about MySQL," not "learn about database performance," just learn about performance, period.
 

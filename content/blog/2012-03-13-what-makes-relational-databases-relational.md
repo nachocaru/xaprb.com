@@ -3,8 +3,7 @@ title: What makes relational databases relational?
 date: "2012-03-13"
 permalink: /2012/03/13/what-makes-relational-databases-relational/
 categories:
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 Do you know why relational databases are called relational? I commonly see explanations such as this:
 

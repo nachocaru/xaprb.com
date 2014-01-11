@@ -4,7 +4,7 @@ date: "2011-09-19"
 permalink: /2011/09/19/well-done-postgres-open/
 categories:
   - Conferences
-  - PostgreSQL
+  - Databases
 ---
 I thought that [Postgres Open 2011][1] was very well done. I liked the content, the location, and most especially the atmosphere, which felt much more welcoming than some PostgreSQL conferences I've attended. This last point bears repeating: I'd exceeded my tolerance for trash talk about MySQL at other conferences, and this event made me feel valued again. I believe that the leaders and organizers set the tone, so I think that Selena and the committee deserve a lot of credit and thanks for the warm atmosphere.
 

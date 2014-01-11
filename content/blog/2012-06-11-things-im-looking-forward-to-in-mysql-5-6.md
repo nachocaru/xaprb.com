@@ -3,7 +3,7 @@ title: "Things I'm looking forward to in MySQL 5.6"
 date: "2012-06-11"
 permalink: /2012/06/11/things-im-looking-forward-to-in-mysql-5-6/
 categories:
-  - SQL
+  - Databases
 ---
 As a tool author, I really look forward to working with MySQL 5.6. Many of the improvements will make life significantly easier for Percona Toolkit.
 

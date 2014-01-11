@@ -3,8 +3,8 @@ title: High Performance MySQL 3rd edition now available
 date: "2012-03-08"
 permalink: /2012/03/08/high-performance-mysql-3rd-edition-now-available/
 categories:
-  - High Performance MySQL
-  - SQL
+  - Databases
+  - Writing
 ---
 The [third edition][1] is now available in ePub, Mobi, and PDF formats. Print format should be available early next week.
 

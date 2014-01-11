@@ -4,7 +4,7 @@ date: "2011-04-15"
 permalink: /2011/04/15/slides-for-my-mysql-conference-talks-are-online/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 The slides for my talks at the O'Reilly MySQL Conference and Expo [are posted][1].
 

@@ -2,6 +2,8 @@
 title: "SHOW COLUMN TYPES: A hidden MySQL treat?"
 date: "2006-09-19"
 permalink: /2006/09/19/show-column-types-a-hidden-mysql-treat/
+categories:
+  - Databases
 ---
 I was poking around in the MySQL source code, namely in sql/sql_yacc.yy, and found a hidden treat: there's a `SHOW COLUMN TYPES` command. It's fun to read source code!
 

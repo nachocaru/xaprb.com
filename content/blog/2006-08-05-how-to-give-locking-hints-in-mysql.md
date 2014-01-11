@@ -2,6 +2,8 @@
 title: How to give locking hints in MySQL
 date: "2006-08-05"
 permalink: /2006/08/05/how-to-give-locking-hints-in-mysql/
+categories:
+  - Databases
 ---
 I worked with Microsoft SQL Server 2000 at my previous employer, and was accustomed to explicitly defining the locking mode I wanted, by providing lock hints on queries. MySQL gives less control over locking, but there are ways to control the type of locks a query will acquire. This article explores those techniques.
 

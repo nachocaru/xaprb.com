@@ -4,7 +4,7 @@ date: "2013-10-13"
 permalink: /2013/10/13/more-notebooks-and-journals/
 categories:
   - Commentary
-  - Gadgets
+  - Hardware
 ---
 Something interesting happened after I published my [ultimate notebook and journal face-off][1] blog post a couple of months ago. I received an email from a company called [Grandluxe][2], asking if I'd like to receive some stationery products in hopes that if I liked them, I'd write a review on them. I had never heard of them before, but they've been making paper products for 68 years, and apparently are trying to break out of the Asian market into international territory. 
 I agreed, and they sent me quite a large box of notebooks. They also sent me their full product line catalog. So you could say that, as a notebook nerd, I'm in heaven! 

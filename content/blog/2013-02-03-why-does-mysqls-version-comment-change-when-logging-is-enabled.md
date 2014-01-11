@@ -3,7 +3,7 @@ title: "Why does MySQL's version comment change when logging is enabled?"
 date: "2013-02-03"
 permalink: /2013/02/03/why-does-mysqls-version-comment-change-when-logging-is-enabled/
 categories:
-  - SQL
+  - Databases
 ---
 I wonder if the MySQL archaeologists out there would be willing to unearth some (presumably ancient) history for me. Why does the logging configuration merit special mention in the version_comment variable?
 

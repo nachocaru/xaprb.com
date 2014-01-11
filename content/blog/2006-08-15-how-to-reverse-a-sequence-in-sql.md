@@ -2,6 +2,8 @@
 title: How to reverse a sequence in SQL
 date: "2006-08-15"
 permalink: /2006/08/15/how-to-reverse-a-sequence-in-sql/
+categories:
+  - Databases
 ---
 I wrote an article a while back about [how to order updates in MySQL so you don't violate a unique index][1]. I said I'd write another article on how to swap numbers in a sequence with a unique index. This is that article, but I'm going to make it a little more generic: how to reverse a (possibly ordered) sequence.
 

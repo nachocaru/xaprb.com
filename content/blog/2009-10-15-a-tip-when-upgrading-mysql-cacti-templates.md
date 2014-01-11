@@ -3,7 +3,7 @@ title: A tip when upgrading mysql-cacti-templates
 date: "2009-10-15"
 permalink: /2009/10/15/a-tip-when-upgrading-mysql-cacti-templates/
 categories:
-  - SQL
+  - Databases
 ---
 A client recently asked me to fix some Cacti graphs that had broken after upgrading [the Cacti templates I wrote for MySQL][1]. The symptoms were weird; I'm not sure I understand fully what happened, but some of the graphs were OK and some had only part of the data they were supposed to. Some graphs would have one data element as usual, and others would be nan (not a number).
 

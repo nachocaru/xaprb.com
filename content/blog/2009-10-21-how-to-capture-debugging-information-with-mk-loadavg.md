@@ -3,11 +3,10 @@ title: How to capture debugging information with mk-loadavg
 date: "2009-10-21"
 permalink: /2009/10/21/how-to-capture-debugging-information-with-mk-loadavg/
 categories:
-  - Maatkit
-  - Perl
-  - SQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Open Source
+  - Operations
+  - Programming
 ---
 [Maatkit's][1] [`mk-loadavg`][2] tool is a helpful way to gather information about infrequent conditions on your database server (or any other server, really). We wrote it at Percona to help with those repeated cases of things like "every two weeks, my database stops processing queries for 30 seconds, but it's not locked up and during this time there is nothing happening." That's pretty much impossible to catch in action, and these conditions can take months to resolve without the aid of good tools.
 

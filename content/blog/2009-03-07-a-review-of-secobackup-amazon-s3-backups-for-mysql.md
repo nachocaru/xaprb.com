@@ -3,8 +3,8 @@ title: A review of SecoBackup Amazon S3 backups for MySQL
 date: "2009-03-07"
 permalink: /2009/03/07/a-review-of-secobackup-amazon-s3-backups-for-mysql/
 categories:
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 After I wrote about [things you need to know about MySQL backups][1], a customer contacted me and asked me what I know about [SecoBackup][2] for MySQL. I see it has a very low cost and Percona has Amazon accounts for testing purposes, so I quickly downloaded s3sql\_2.2.0.1-2.01\_i386.deb, installed it, configured it, and gave it a whirl.
 

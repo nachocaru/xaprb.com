@@ -3,8 +3,8 @@ title: The unexpected consequences of SELinux
 date: "2008-10-16"
 permalink: /2008/10/16/the-unexpected-consequences-of-selinux/
 categories:
-  - SQL
-  - Sys Admin
+  - Databases
+  - Operations
 ---
 I've been working with a client recently who has [SELinux][1] on his servers.Â  It has been quite a struggle sometimes.
 

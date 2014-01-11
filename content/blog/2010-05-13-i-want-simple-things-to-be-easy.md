@@ -3,7 +3,7 @@ title: I want simple things to be easy
 date: "2010-05-13"
 permalink: /2010/05/13/i-want-simple-things-to-be-easy/
 categories:
-  - SQL
+  - Databases
 ---
 I like to write tools that make hard things easy, when possible. By and large, MySQL is easy and simple. But some simple things are too hard with MySQL. I want to change that, at least for the things that matter the most to me, and which I think I know how to fix.
 

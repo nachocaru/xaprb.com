@@ -3,9 +3,8 @@ title: "New Maatkit tool: mk-table-usage"
 date: "2011-05-10"
 permalink: /2011/05/10/new-maatkit-tool-mk-table-usage/
 categories:
-  - Maatkit
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 This month's [Maatkit][1] release includes a new tool that's kind of an old tool at the same time. We wrote it a couple years ago for a client who has a very large set of tables and many queries and developers, and wants the database's schema and queries to self-document for data-flow analysis purposes. At the time, it was called mk-table-access and was rather limited &#8212; just a few lines of code wrapped around some existing modules, with an output format that wasn't generic enough to be broadly useful. Thus we didn't release it with Maatkit. We recently changed the name to mk-table-usage (to match mk-index-usage), included it in the Maatkit suite of tools, and enhanced the functionality a lot.
 

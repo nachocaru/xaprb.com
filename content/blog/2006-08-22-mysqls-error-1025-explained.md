@@ -2,6 +2,8 @@
 title: "MySQL's ERROR 1025 explained"
 date: "2006-08-22"
 permalink: /2006/08/22/mysqls-error-1025-explained/
+categories:
+  - Databases
 ---
 MySQL issues a cryptic error message, "Error on rename," when you try to alter a table in such a way that it would break a foreign key constraint:
 

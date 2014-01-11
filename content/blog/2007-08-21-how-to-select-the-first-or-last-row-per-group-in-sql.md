@@ -2,6 +2,8 @@
 title: How to select the first or last row per group in SQL
 date: "2007-08-21"
 permalink: /2007/08/21/how-to-select-the-first-or-last-row-per-group-in-sql/
+categories:
+  - Databases
 ---
 There is no "first" or "last" aggregate function in SQL. Sometimes you can use `MIN()` or `MAX()`, but often that won't work either. There are a couple of ways to solve this vexing non-relational problem. Read on to find out how.
 

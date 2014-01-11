@@ -3,8 +3,7 @@ title: Sending the query to the data
 date: "2013-09-13"
 permalink: /2013/09/13/sending-the-query-to-the-data/
 categories:
-  - Cassandra
-  - SQL
+  - Databases
 ---
 It's common wisdom that large-scale database systems require distributing the data across machines. But what seems to be missing in a lot of discussions is distributing the query processing too. By this I mean the actual computation that's performed on the data. 
 I just had a conversation with Peter Zaitsev yesterday that helped make concrete some thoughts I've been having about Cassandra for a while. Because Cassandra doesn't allow you to really do any computation in the data (aggregating, evaluating expressions, and so on), if you're going to use it for truly Big data, you're going to fetch enormous amounts of data across the network. Sure, you're distributing the storage and retrieval across many machines &#8212; but you're locating your data far from your processing. You have a distant low-level key-value store, in essence, and you have to write a database wrapper on top of it if you're going to use it for anything non-trivial. 

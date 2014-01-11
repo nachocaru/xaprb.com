@@ -4,7 +4,7 @@ date: "2013-08-01"
 permalink: /2013/08/01/using-encryption-youre-suspicious/
 categories:
   - Commentary
-  - World Wide Web
+  - Web
 ---
 Yesterday more details on the NSA's secret and illegal monitoring activities were [revealed][1]. (Yes, the NSA revealed some things themselves, but as far as I can tell, that was only a conciliatory effort and didn't actually reveal more details &#8212; just more talk.)
 

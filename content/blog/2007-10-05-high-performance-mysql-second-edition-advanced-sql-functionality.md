@@ -2,6 +2,8 @@
 title: "High Performance MySQL, Second Edition: Advanced SQL Functionality"
 date: "2007-10-05"
 permalink: /2007/10/05/high-performance-mysql-second-edition-advanced-sql-functionality/
+categories:
+  - Databases
 ---
 Work continues apace on [High Performance MySQL, Second Edition][1] (the link leads to the chapter outline). I'm working now on Chapter 6, Advanced SQL Functionality, and thought I'd solicit input on it. Are there things you'd like to see us cover? Do you have any favorite techniques you'd like to see us include? Feel free to leave feedback in the comments. The chapter is already significantly done, with 26 pages written, but the ink's not on paper yet, so there's still time to correct omissions!
 

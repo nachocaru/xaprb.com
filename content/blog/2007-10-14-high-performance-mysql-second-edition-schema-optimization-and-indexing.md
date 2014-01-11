@@ -1,6 +1,8 @@
 ---
 title: "High Performance MySQL, Second Edition: Schema Optimization and Indexing"
 permalink: >
+categories:
+  - Databases
 ---
 I've been trying to [circle back][1] and clean up things I left for later in several chapters of High Performance MySQL, second edition. This includes a lot of material in chapter 4, Schema Optimization and Indexing. At some point I'll write more about the process of writing this book, and what we've done well and what we've learned to do better, but for right now I wanted to complete the picture of what material we have on schema, index, and query optimization. The last two chapters I've written about ([Query Performance Optimization][2] and [Advanced MySQL Features][3]) have generated lots of feed back along the lines of "don't forget X!" to which I'm obliged to reply "It's in a different chapter."
 

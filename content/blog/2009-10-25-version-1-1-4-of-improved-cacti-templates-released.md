@@ -3,9 +3,9 @@ title: Version 1.1.4 of improved Cacti templates released
 date: "2009-10-25"
 permalink: /2009/10/25/version-1-1-4-of-improved-cacti-templates-released/
 categories:
-  - PHP
-  - SQL
-  - Sys Admin
+  - Databases
+  - Operations
+  - Programming
 ---
 I've released version 1.1.4 of my [improved Cacti templates][1]. Unlike the prior release, which was solely bug fixes, this one includes new graphs in the MySQL template. Some of the graphs are of data that's exposed in standard MySQL versions, but some of it is available only in [Percona's high-performance builds of the MySQL database server][2]. If you don't have a Percona build, those graphs will just contain nothing, but there is no detrimental effect.
 

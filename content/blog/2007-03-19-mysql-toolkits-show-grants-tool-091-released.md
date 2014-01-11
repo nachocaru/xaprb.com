@@ -2,6 +2,9 @@
 title: "MySQL Toolkit's Show Grants tool 0.9.1 released"
 date: "2007-03-19"
 permalink: /2007/03/19/mysql-toolkits-show-grants-tool-091-released/
+categories:
+  - Databases
+  - Open Source
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Show Grants</a>

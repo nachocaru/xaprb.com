@@ -3,9 +3,8 @@ title: How to add a wiki homepage, sidebar, and TOC in Google Code
 date: "2009-07-01"
 permalink: /2009/07/01/how-to-add-a-wiki-homepage-sidebar-and-toc-in-google-code/
 categories:
-  - Maatkit
   - Open Source
-  - World Wide Web
+  - Web
 ---
 I just adore Google Code. But the default wiki view (a list of pages, sorted by last-modified) is lacking something. Fortunately, it's fixable. Here's the before:
 

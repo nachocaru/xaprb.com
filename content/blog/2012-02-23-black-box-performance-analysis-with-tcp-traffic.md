@@ -3,10 +3,9 @@ title: Black-Box Performance Analysis with TCP Traffic
 date: "2012-02-23"
 permalink: /2012/02/23/black-box-performance-analysis-with-tcp-traffic/
 categories:
-  - Percona Toolkit
-  - PostgreSQL
-  - Scalability
-  - SQL
+  - Databases
+  - Open Source
+  - Performance
 ---
 This is a cross-post from the [MySQL Performance Blog][1]. I thought it would be interesting to users of PostgreSQL, Redis, Memcached, and $system-of-interest as well.
 

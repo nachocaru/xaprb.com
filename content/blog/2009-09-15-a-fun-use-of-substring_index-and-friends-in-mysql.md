@@ -3,7 +3,7 @@ title: A fun use of SUBSTRING_INDEX and friends in MySQL
 date: "2009-09-15"
 permalink: /2009/09/15/a-fun-use-of-substring_index-and-friends-in-mysql/
 categories:
-  - SQL
+  - Databases
 ---
 I used to develop with MySQL, and those were the golden days. These days I don't write queries so much. But yesterday I needed to answer this question: are there any issues in our issue-tracking system that meet the following criteria?
 

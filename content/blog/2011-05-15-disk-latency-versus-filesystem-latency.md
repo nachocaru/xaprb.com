@@ -3,9 +3,9 @@ title: Disk latency versus filesystem latency
 date: "2011-05-15"
 permalink: /2011/05/15/disk-latency-versus-filesystem-latency/
 categories:
-  - SQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Open Source
+  - Operations
 ---
 Brendan Gregg has a very good ongoing series of blog posts about the importance of measuring latency at the layer that's appropriate for the question you are trying to answer. If you're wondering whether I/O latency is a problem for MySQL, you need to measure I/O latency at the filesystem layer, not the disk layer. There are a lot of factors to consider. To quote from his latest post: 
 > This isn’t really a problem with iostat(1M) – it’s a great tool for system administrators to understand the usage of their resources. But the applications are far, far away from the disks – and have a complex file system in-between. For application analysis, iostat(1M) may provide clues that disks could be causing issues, but you really want to measure at the file system level to directly associate latency with the application, and to be inclusive of other file system latency issues.

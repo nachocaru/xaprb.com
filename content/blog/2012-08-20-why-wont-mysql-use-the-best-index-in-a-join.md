@@ -3,7 +3,7 @@ title: "Why won't MySQL use the best index in a join?"
 date: "2012-08-20"
 permalink: /2012/08/20/why-wont-mysql-use-the-best-index-in-a-join/
 categories:
-  - SQL
+  - Databases
 ---
 Someone recently asked me why the wrong index was being used for a JOIN, making the query run very slowly. We ran EXPLAIN and saw this abridged output:
 

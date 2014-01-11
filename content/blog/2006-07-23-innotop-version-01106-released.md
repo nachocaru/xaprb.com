@@ -2,6 +2,9 @@
 title: Version 0.1.106 of innotop MySQL/InnoDB monitor released
 date: "2006-07-23"
 permalink: /2006/07/23/innotop-version-01106-released/
+categories:
+  - Databases
+  - Open Source
 ---
 I've just improved `innotop` substantially, and released version 0.1.106 ([download innotop here][1]), and I'm also preparing a series of articles on how to use it for real, practical things. I'd like to know what you think of it, what problems you have, what features you want. It would be a huge help if you'd start it, toggle through its modes, and give me your feedback.
 

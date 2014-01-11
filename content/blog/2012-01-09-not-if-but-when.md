@@ -3,7 +3,7 @@ title: Not if, but when
 date: "2012-01-09"
 permalink: /2012/01/09/not-if-but-when/
 categories:
-  - SQL
+  - Databases
 ---
 As a MySQL  consultant, I spend a lot of time talking with people about their backups. More specifically, we talk a lot about recovery. I had an interesting incident myself, which illustrates some of the things that are bound to happen as time passes. 
 First, let me explain how I do my personal backups. I have a series of external hard drives, which are fully encrypted, as is my computer's hard drive. I maintain a full mirror of my computer's hard drive on these external hard drives. I occasionally switch the hard drives out, and carry one or more of them to a bank's safe deposit box. I try to do this once a week, but sometimes it isn't quite that often. 

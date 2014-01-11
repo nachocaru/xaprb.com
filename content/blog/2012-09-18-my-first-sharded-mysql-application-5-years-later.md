@@ -3,7 +3,7 @@ title: My first sharded MySQL application, 5 years later
 date: "2012-09-18"
 permalink: /2012/09/18/my-first-sharded-mysql-application-5-years-later/
 categories:
-  - SQL
+  - Databases
 ---
 High Performance MySQL has a long discussion on "sharding," examining many options and their benefits and drawbacks. What does sharding look like in the real world?
 

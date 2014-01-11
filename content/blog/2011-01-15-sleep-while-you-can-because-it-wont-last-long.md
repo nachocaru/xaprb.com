@@ -3,7 +3,7 @@ title: "Sleep while you can, because it won't last long"
 date: "2011-01-15"
 permalink: /2011/01/15/sleep-while-you-can-because-it-wont-last-long/
 categories:
-  - SQL
+  - Databases
 ---
 I read a recent blog post about the coming extinction of MySQL bloggers with concern. The post plotted the blogging activity of Planet MySQL bloggers and fit a polynomial curve to it: <div id="attachment_2150" class="wp-caption aligncenter" style="width: 642px">
   <img class="size-full wp-image-2150" title="Blogging Activity" src="http://www.xaprb.com/blog/wp-content/uploads/2011/01/blogging-activity.png" alt="Blogging Activity" width="632" height="385" /><p class="wp-caption-text">

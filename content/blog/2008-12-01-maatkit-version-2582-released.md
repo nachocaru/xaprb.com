@@ -3,9 +3,9 @@ title: Maatkit version 2582 released
 date: "2008-12-01"
 permalink: /2008/12/01/maatkit-version-2582-released/
 categories:
-  - Maatkit
-  - Perl
-  - SQL
+  - Databases
+  - Open Source
+  - Programming
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

@@ -3,8 +3,7 @@ title: MySQL and PostgreSQL cross-links
 date: "2011-02-03"
 permalink: /2011/02/03/mysql-and-postgresql-cross-links/
 categories:
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 A couple of extremely informative recent blog posts have gone to either Planet MySQL or Planet PostgreSQL, but not both, and I think everyone on both aggregators who cares about database internals should be interested in them. Here they are:
 

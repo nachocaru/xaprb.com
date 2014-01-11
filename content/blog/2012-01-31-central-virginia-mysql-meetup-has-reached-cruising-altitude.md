@@ -3,7 +3,7 @@ title: Central Virginia MySQL Meetup has reached cruising altitude
 date: "2012-01-31"
 permalink: /2012/01/31/central-virginia-mysql-meetup-has-reached-cruising-altitude/
 categories:
-  - SQL
+  - Databases
 ---
 The first [Central Virginia MySQL Meetup][1] was a nice little howdy-do, and as a test flight, I think it showed that the bird can get off the ground quite nicely. So, with the generous help of our meeting host [Meddius][2], we're going to do it regularly on the 3rd Wednesday of every month. The next event is already scheduled &#8212; I will be talking about [high availability options for MySQL][3].
 

@@ -1,7 +1,6 @@
 ---
 title: A review of PostgreSQL 9 Administration Cookbook by Riggs and Krosing
 permalink: >
-categories:
 ---
 [<img style="float:left; padding-right:10px" src="http://www.xaprb.com/blog/wp-content/uploads/2011/06/postgreql-administration-cookbook.jpg" alt="" title="postgreql-administration-cookbook" width="200" height="247" class="alignleft size-full wp-image-2351" />][1]
 

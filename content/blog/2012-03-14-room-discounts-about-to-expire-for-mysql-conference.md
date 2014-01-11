@@ -3,7 +3,7 @@ title: Room discounts about to expire for MySQL conference!
 date: "2012-03-14"
 permalink: /2012/03/14/room-discounts-about-to-expire-for-mysql-conference/
 categories:
-  - SQL
+  - Databases
 ---
 My earlier blog post was wrong, our block of rooms for the [conference][1] is still available past the 12th of March. However, there are apparently zero rooms available in the Hyatt other than our reserved block, and our block discount will expire soon (I'm a little hazy on the exact details, because I thought it was the 12th). What I have been told in no uncertain terms is this: "**If you know anyone who plans to attend the conference and needs a hotel room, they should book IMMEDIATELY in our room block or they will not be able to get a room in the Hyatt either at a reasonable rate or at all.**"
 

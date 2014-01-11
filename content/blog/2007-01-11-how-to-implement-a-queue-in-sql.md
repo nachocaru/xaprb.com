@@ -2,6 +2,8 @@
 title: How to implement a queue in SQL
 date: "2007-01-11"
 permalink: /2007/01/11/how-to-implement-a-queue-in-sql/
+categories:
+  - Databases
 ---
 This article explains how to create a fixed-size FIFO (first-in, first-out) queue in SQL, where rows added after a threshold will cause the oldest row to be deleted. There are several ways to do this, but `MERGE` on Oracle and DB2, and MySQL's non-standard extensions to SQL, make an elegant solution easy.
 

@@ -4,8 +4,8 @@ date: "2013-05-24"
 permalink: /2013/05/24/a-great-talk-on-go-concurrency-patterns/
 categories:
   - Conferences
-  - Go
-  - SQL
+  - Databases
+  - Programming
 ---
 This [35-minute video][1] from the recent Google I/O conference explains how to use Go's concurrency primitives &#8212; goroutines, channels, and the `select` statement &#8212; to do things elegantly, correctly, and safely in a few lines of Go, which would otherwise turn your brain into a pretzel in most programming languages.
 

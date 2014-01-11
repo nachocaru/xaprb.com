@@ -3,8 +3,8 @@ title: A review of MySQL Replication by Russell Dyer
 date: "2011-06-09"
 permalink: /2011/06/09/a-review-of-mysql-replication-by-russell-dyer/
 categories:
-  - Review
-  - SQL
+  - Databases
+  - Reviews
 ---
 [<img src="http://www.xaprb.com/blog/wp-content/uploads/2011/06/mysql_replication_front_cover_sm.jpg" alt="" style="float:left" title="mysql_replication_front_cover_sm" width="200" height="313" class="alignleft size-full wp-image-2360" />][1] [MySQL Replication][1] by Russell Dyer, Silent Killdeer, 2010. About 180 pages.
 

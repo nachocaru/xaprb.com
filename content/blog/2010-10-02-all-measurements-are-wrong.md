@@ -3,7 +3,7 @@ title: All measurements are wrong
 date: "2010-10-02"
 permalink: /2010/10/02/all-measurements-are-wrong/
 categories:
-  - Coding
+  - Programming
 ---
 I had the privilege to meet [Neil Gunther][1] and listen to him speak this week at [Surge][2]. During his talk, he brought up the point that all measurements are wrong by definition. I thought I knew what he meant, but I was stuck with tunnel vision about floating-point precision and such. I had it all wrong. The real answer is obvious and simple.
 

@@ -4,7 +4,7 @@ date: "2013-03-08"
 permalink: /2013/03/08/upcoming-events-of-interest-for-mysqlers/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 Here is a collection of upcoming events that are interesting to me as a MySQL user (in some cases because I'm speaking). I think some of them are must-see events. I am sure I am missing a lot of events, but some of these are only publicized in specific channels, and I wanted to mention them here to help spread the word.
 

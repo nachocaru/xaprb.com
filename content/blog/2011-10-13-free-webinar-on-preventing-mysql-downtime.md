@@ -3,7 +3,7 @@ title: Free webinar on preventing MySQL downtime
 date: "2011-10-13"
 permalink: /2011/10/13/free-webinar-on-preventing-mysql-downtime/
 categories:
-  - SQL
+  - Databases
 ---
 I'll be presenting a free one-hour webinar on preventing downtime in production MySQL servers, in conjunction with the ODTUG. It is scheduled on Thursday, November 10, 2011 3:00 PM &#8211; 4:00 PM EST, and you can [register for free][1].
 

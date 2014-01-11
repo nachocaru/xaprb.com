@@ -4,8 +4,8 @@ date: "2009-10-05"
 permalink: /2009/10/05/speaking-at-cposc-2009/
 categories:
   - Conferences
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 <p style="float:right">
   <a href="http://cposc.org/" target="_blank"><img src="http://www.xaprb.com/blog/wp-content/uploads/2009/10/cposc_speaker.jpg" alt="CPOSC 2009" /></a>

@@ -3,9 +3,8 @@ title: Google Code rocks my world
 date: "2008-11-23"
 permalink: /2008/11/23/google-code-rocks-my-world/
 categories:
-  - Coding
-  - Maatkit
-  - Tools
+  - Open Source
+  - Programming
 ---
 [Google Code][1] just rocks. It is clean, sparse, elegant, and it has all the functionality I need. Its template-driven issue tracking system (totally flexible and totally easy to flex!), niceties like cross-references between issues and Subversion revisions, simple but completely adequate Wiki, and nice download system are the bomb. And the code reviews and ability to comment on revisions are super nice. Oh, and it's really nice that the data is stored in a place I feel pretty sure is safe.
 

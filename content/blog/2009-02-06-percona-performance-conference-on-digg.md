@@ -4,7 +4,7 @@ date: "2009-02-06"
 permalink: /2009/02/06/percona-performance-conference-on-digg/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 Our [Percona Performance Conference][1] is [making the rounds on Digg][2]. Is it bad form to ask for people to vote for it? &#8230;. ok then I won't.
 

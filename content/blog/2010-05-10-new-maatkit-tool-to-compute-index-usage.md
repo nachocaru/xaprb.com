@@ -3,12 +3,10 @@ title: New Maatkit tool to compute index usage
 date: "2010-05-10"
 permalink: /2010/05/10/new-maatkit-tool-to-compute-index-usage/
 categories:
-  - Coding
-  - Maatkit
-  - Perl
-  - SQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Open Source
+  - Operations
+  - Programming
 ---
 In a couple of recent consulting cases, I needed a tool to analyze how a log of queries accesses indexes and tables in the database, specifically, to find out which indexes are not used. I initially hacked together something similar to [Daniel Nichter's mysqlidxchk][1], but using the framework provided by Maatkit, which gave me a pretty good start right out of the box. This was useful in the very tight time constraints I was under, but was not a complete solution. Alas, I could not use anything like [Percona's enhancements for finding unused indexes][2].
 

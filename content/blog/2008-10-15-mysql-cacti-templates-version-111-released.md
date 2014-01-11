@@ -3,8 +3,8 @@ title: MySQL Cacti templates version 1.1.1 released
 date: "2008-10-15"
 permalink: /2008/10/15/mysql-cacti-templates-version-111-released/
 categories:
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 I've released version 1.1.1 of the [MySQL Cacti templates][1] I develop. The new templates work around more Cacti limitations, including the limitation on the length of the data returned from the poller script. There's also a new graph and many other niceties since the last release.
 

@@ -3,8 +3,8 @@ title: "It's not just database servers"
 date: "2012-11-13"
 permalink: /2012/11/13/its-not-just-database-servers/
 categories:
-  - Coding
   - Commentary
+  - Programming
 ---
 Better performance is important in everything, not just MySQL. I don't want to wait for my text editor to open a file or perform syntax highlighting. I don't want to wait for my version control system to compute diffs or update my copy of the code with other peoples' changes. I don't want to wait for my code to compile. I don't want to wait, period.
 

@@ -3,7 +3,7 @@ title: "MySQL isn't limited to nested-loop joins"
 date: "2013-10-01"
 permalink: /2013/10/01/mysql-isnt-limited-to-nested-loop-joins/
 categories:
-  - SQL
+  - Databases
 ---
 I have followed the "Use the Index, Luke!" blog for a while. Today Marcus [wrote][1] that (I'll paraphrase) MongoDB disgraces NoSQL the same way that MySQL disgraces SQL. I agree with a lot of this, actually, although I'm not sure I'd put it so strongly. People often like products for good reasons, and to think that legions of developers are stupid or ill-educated is suspect, in my opinion. 
 But that wasn't what I meant to write about. I wanted to point out something about the blog post that's a little outdated. He wrote, and this time I'll quote, "MySQL is rather poor at joining because is only supports nested loops joins. Most other SQL database implement the hash join and sort/merge join algorithms too." 

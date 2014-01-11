@@ -3,8 +3,8 @@ title: An alternative to the MySQL Query Analyzer
 date: "2008-11-20"
 permalink: /2008/11/20/an-alternative-to-the-mysql-query-analyzer/
 categories:
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 MySQL just released their new [MySQL Query Analyzer][1] (link to a trial), and recently wrote up [an interview with Mark Matthews about it][2]. If you haven't read that article, go ahead and do it. I have not used this software, but I fully believe its functionality is quite nice.
 

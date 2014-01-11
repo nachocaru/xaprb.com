@@ -3,7 +3,7 @@ title: An exciting week for InnoDB and MySQL
 date: "2011-07-26"
 permalink: /2011/07/26/an-exciting-week-for-innodb-and-mysql/
 categories:
-  - SQL
+  - Databases
 ---
 Congratulations and thanks to Monty Program on the release of [MariaDB 5.3][1]! This looks like a great release. (I haven't had a chance to try it yet.) I really welcome the query optimizer improvements; the list of changes is huge. There are a lot of fixes for problems I've seen for years. And there's group commit, and high-resolution date/time types, and lots more.
 

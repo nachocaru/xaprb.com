@@ -4,7 +4,7 @@ date: "2012-04-08"
 permalink: /2012/04/08/sessions-i-want-to-see-at-mysql-conference-2012/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 In case you [live under a rock][1], the [MySQL conference][2] starts on Tuesday. There are 8 concurrent tracks of content. Aside from [my own][3] talks, here are the sessions I would most like to see.
 

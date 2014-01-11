@@ -2,6 +2,8 @@
 title: How to delete duplicate rows with SQL
 date: "2006-10-11"
 permalink: /2006/10/11/how-to-delete-duplicate-rows-with-sql/
+categories:
+  - Databases
 ---
 The comments on my article [how to find duplicate rows with SQL][1] made me realize I was simplifying things too much. In particular, I really glossed over the "how to delete duplicate rows" section, which I should have explained in more detail. I hope this article will remedy the omissions.
 

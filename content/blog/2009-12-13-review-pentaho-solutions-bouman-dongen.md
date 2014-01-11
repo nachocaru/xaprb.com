@@ -3,8 +3,8 @@ title: A review of Pentaho Solutions by Roland Bouman and Jos van Dongen
 date: "2009-12-13"
 permalink: /2009/12/13/review-pentaho-solutions-bouman-dongen/
 categories:
-  - Review
-  - SQL
+  - Databases
+  - Reviews
 ---
 <div id="attachment_1477" class="wp-caption alignleft" style="width: 250px">
   <a href="http://www.amazon.com/Pentaho-Solutions-Business-Intelligence-Warehousing/dp/0470484322?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2009/12/pentaho-solutions.jpg" alt="Pentaho Solutions" title="Pentaho Solutions" width="240" height="240" class="size-full wp-image-1477" /></a><p class="wp-caption-text">

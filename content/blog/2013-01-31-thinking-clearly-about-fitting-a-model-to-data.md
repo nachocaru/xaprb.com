@@ -3,7 +3,7 @@ title: Thinking clearly about fitting a model to data
 date: "2013-01-31"
 permalink: /2013/01/31/thinking-clearly-about-fitting-a-model-to-data/
 categories:
-  - Modeling
+  - Architecture
 ---
 I have often seen people fitting curves to sets of data without first understanding whether that is appropriate. I once even [used this blog][1] to criticize someone for doing that.
 

@@ -2,6 +2,9 @@
 title: The innotop MySQL and InnoDB monitor
 date: "2006-07-02"
 permalink: /2006/07/02/innotop-mysql-innodb-monitor/
+categories:
+  - Databases
+  - Open Source
 ---
 
 <p>MySQL and InnoDB expose lots of information about their internals, but it's hard to gather it all into one place and make sense of it.  I've written a tool to do that, and you are free to download and use it.  This article introduces <code>innotop</code>, a powerful text-mode MySQL and InnoDB monitoring tool.  It has lots of features, is  fast and configurable, and it's easy to use.</p>

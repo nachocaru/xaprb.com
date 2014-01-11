@@ -3,8 +3,8 @@ title: Announcing OpenSQL Camp 2008
 date: "2008-08-26"
 permalink: /2008/08/26/announcing-opensql-camp-2008/
 categories:
-  - OpenSQL Camp
-  - SQL
+  - Conferences
+  - Databases
 ---
 Along with some others, I have arranged a conference for open-source database users and developers.
 

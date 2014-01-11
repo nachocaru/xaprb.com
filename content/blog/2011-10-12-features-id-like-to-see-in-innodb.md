@@ -3,7 +3,7 @@ title: "Features I'd like to see in InnoDB"
 date: "2011-10-12"
 permalink: /2011/10/12/features-id-like-to-see-in-innodb/
 categories:
-  - SQL
+  - Databases
 ---
 I had some conversations with a few people at Oracle Open World about features that would be beneficial in InnoDB. They encouraged me to blog my thoughts, so I am.
 

@@ -2,6 +2,9 @@
 title: Progress on Maatkit bounty, part 2
 date: "2007-12-03"
 permalink: /2007/12/03/progress-on-maatkit-bounty-part-2/
+categories:
+  - Databases
+  - Open Source
 ---
 Ironically, the [Stream][1] algorithm I wrote as the simplest possible syncing algorithm does what the [much more efficient algorithm I wrote some time ago][2] can't do: sync a table without a primary key, as long as there are no duplicate rows. In fact, it's so dumb, it will happily sync any table, even if there are no indexes.
 

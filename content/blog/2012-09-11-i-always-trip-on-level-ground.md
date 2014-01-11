@@ -3,7 +3,7 @@ title: I always trip on level ground
 date: "2012-09-11"
 permalink: /2012/09/11/i-always-trip-on-level-ground/
 categories:
-  - SQL
+  - Databases
 ---
 On the lighter side: I've always had trouble with mysqldump's expected syntax. You know, as the author of a book and all that, you might think I can get this to work. But pretty much every time I run this tool, it humiliates me. Witness:
 

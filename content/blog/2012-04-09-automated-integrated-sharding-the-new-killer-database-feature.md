@@ -3,7 +3,7 @@ title: "Automated, integrated sharding &#8212; the new killer database feature"
 date: "2012-04-09"
 permalink: /2012/04/09/automated-integrated-sharding-the-new-killer-database-feature/
 categories:
-  - SQL
+  - Databases
 ---
 MySQL became wildly successful in part because it had built-in, simple replication. Sure, it had lots of interesting failure scenarios and was not great at first &#8212; it is much better these days &#8212; but it was nevertheless successful because there was a single, out-of-the-box, not-very-complex way to do replication. I have opined many times before that this was one of the killer features missing from PostgreSQL. I think that can large explain why MySQL became more popular more quickly.
 

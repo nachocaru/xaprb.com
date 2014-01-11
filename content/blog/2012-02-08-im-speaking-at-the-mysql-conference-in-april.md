@@ -3,7 +3,7 @@ title: "I'm speaking at the MySQL conference in April"
 date: "2012-02-08"
 permalink: /2012/02/08/im-speaking-at-the-mysql-conference-in-april/
 categories:
-  - SQL
+  - Databases
 ---
 It might surprise you to hear this, but I had no idea whether my talks would be accepted. The committee decided on that, and neither I nor anyone else at Percona is on the committee. In any case, I'll be giving some [tutorials][1] again this year, and two of my talks have been accepted: [Measuring Scalability and Performance With TCP][2] and [Diagnosing intermittent performance problems][3].
 

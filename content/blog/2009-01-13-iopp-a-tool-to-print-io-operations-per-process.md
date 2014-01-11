@@ -3,10 +3,8 @@ title: "iopp: a tool to print I/O operations per-process"
 date: "2009-01-13"
 permalink: /2009/01/13/iopp-a-tool-to-print-io-operations-per-process/
 categories:
-  - GNU/Linux
-  - PostgreSQL
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 Mark Wong's entry titled "[Following up a couple questions from the presentation at PSU on January 8, 2009][1]" just caught my eye:
 

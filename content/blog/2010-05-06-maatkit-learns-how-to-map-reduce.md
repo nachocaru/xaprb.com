@@ -3,10 +3,9 @@ title: Maatkit learns how to map-reduce
 date: "2010-05-06"
 permalink: /2010/05/06/maatkit-learns-how-to-map-reduce/
 categories:
-  - Maatkit
-  - Perl
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
+  - Programming
 ---
 The May release of Maatkit included a new feature in mk-query-digest. This allows you to process queries in many pieces, write out intermediate results, and then combine the pieces in a separate step. Maybe it's not exactly map-reduce, but it makes a good headline.
 

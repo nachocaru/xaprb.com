@@ -3,7 +3,7 @@ title: Shenandoah Ruby Users Group Monthly Meetup
 date: "2012-03-26"
 permalink: /2012/03/26/shenandoah-ruby-users-group-monthly-meetup/
 categories:
-  - SQL
+  - Databases
 ---
 I'll be speaking at the [Shenandoah Ruby Users Group Monthly Meetup][1] tomorrow in Harrisonburg, Virginia. The topic is "Seven Things To Know About MySQL Performance." See you there!
 

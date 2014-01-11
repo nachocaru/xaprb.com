@@ -3,10 +3,10 @@ title: Using the Nook Color as a full-featured Android tablet
 date: "2011-06-04"
 permalink: /2011/06/04/using-the-nook-color-as-a-full-featured-android-tablet/
 categories:
-  - Gadgets
-  - Internet
+  - Hardware
   - Open Source
-  - Review
+  - Reviews
+  - Web
 ---
 I bought a [Barnes and Noble Nook Color][1] e-book reader and ripped out the Nook software, replacing it with the [CyanogenMod][2] distribution of the Android OS. It's really, really nice hardware, and CyanogenMod (CM) is really, really nice software. I love them both, and my regular readers will remember that I'm *not a gadget guy*. Read on for more.
 

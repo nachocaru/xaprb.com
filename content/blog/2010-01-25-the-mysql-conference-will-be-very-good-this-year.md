@@ -4,7 +4,7 @@ date: "2010-01-25"
 permalink: /2010/01/25/the-mysql-conference-will-be-very-good-this-year/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 I'm on the voting committee of the [MySQL Conference][1] this year. I was on the same committee in 2008. This year's submissions are awesome. Much different from previous years, for whatever reason.
 

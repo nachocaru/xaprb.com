@@ -3,7 +3,7 @@ title: Blogs that are good resources for MySQL users
 date: "2010-10-22"
 permalink: /2010/10/22/blogs-that-are-good-resources-for-mysql-users/
 categories:
-  - SQL
+  - Databases
 ---
 I keep a file of notes, one per line, for reference. The real reason is for source material if I ever write a 3rd edition of High Performance MySQL, but hardly a day goes by that I don't look something up. At the very top, I have a section that I want to share with you. It's a list of URLs that are invaluable sources of information and insight.
 

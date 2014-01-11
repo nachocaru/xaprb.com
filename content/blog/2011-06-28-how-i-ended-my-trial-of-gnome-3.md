@@ -5,8 +5,8 @@ permalink: /2011/06/28/how-i-ended-my-trial-of-gnome-3/
 categories:
   - Commentary
   - Desktop
-  - GNU/Linux
-  - Review
+  - Open Source
+  - Reviews
 ---
 tl;dr version: I like XFCE better than Gnome 3.
 

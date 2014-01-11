@@ -4,7 +4,7 @@ date: "2011-04-05"
 permalink: /2011/04/05/oracle-is-not-screwing-mysql/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 People keep asking me "what is going to happen to MySQL now that Oracle has screwed MySQL?" I bluntly disagree that any such thing has happened. This blog post is just my personal view and does not reflect my employer's opinion, but Oracle might have *saved* MySQL from what I can see. There is no evidence that supports the hysterical doomsday theories. (Witness MySQL 5.5, probably the best MySQL release in history. Not exactly what I'd call "screwing.")
 

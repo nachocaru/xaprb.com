@@ -3,7 +3,7 @@ title: SHOW PROCESSLIST in MySQL 5.6
 date: "2012-10-11"
 permalink: /2012/10/11/show-processlist-in-mysql-5-6/
 categories:
-  - SQL
+  - Databases
 ---
 Mark Leith [writes][1] that it's time to say goodbye to SHOW PROCESSLIST in MySQL 5.6, and use the Performance Schema replacement for it instead, because the older tools cause some blocking, and the Performance Schema replacement is completely non-blocking.
 

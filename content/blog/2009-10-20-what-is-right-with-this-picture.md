@@ -3,7 +3,7 @@ title: What is right with this picture?
 date: "2009-10-20"
 permalink: /2009/10/20/what-is-right-with-this-picture/
 categories:
-  - Coding
+  - Programming
 ---
 Do you know what this is?
 

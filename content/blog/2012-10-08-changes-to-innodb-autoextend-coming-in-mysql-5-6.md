@@ -3,7 +3,7 @@ title: Changes to InnoDB autoextend coming in MySQL 5.6
 date: "2012-10-08"
 permalink: /2012/10/08/changes-to-innodb-autoextend-coming-in-mysql-5-6/
 categories:
-  - SQL
+  - Databases
 ---
 I was looking through James Day's post on [upcoming changes to MySQL configuration defaults][1] in version 5.6, and one caught my eye in particular: `innodb_autoextend_increment` changes from 8 to 64MB, and now affects `*.ibd` files.
 

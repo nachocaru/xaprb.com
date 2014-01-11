@@ -3,7 +3,7 @@ title: "Staying out of MySQL's danger zone"
 date: "2012-09-04"
 permalink: /2012/09/04/staying-out-of-mysqls-danger-zone/
 categories:
-  - SQL
+  - Databases
 ---
 MySQL is a great database server. It has lots of flaws, but if you work with its strong points and try to minimize its weaknesses, it works fantastically well for a lot of use cases. Unfortunately, if you bang on its weak points, sometimes you get hit by falling bricks.
 

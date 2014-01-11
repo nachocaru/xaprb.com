@@ -4,7 +4,7 @@ date: "2010-04-10"
 permalink: /2010/04/10/brian-aker-20gb-doesnt-fit-on-a-single-server/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 [Brian][1] got [interviewed by O'Relly][2] recently, and part of it quoted him as saying this:
 

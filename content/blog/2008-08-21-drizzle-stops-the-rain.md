@@ -3,7 +3,7 @@ title: Drizzle stops the rain
 date: "2008-08-21"
 permalink: /2008/08/21/drizzle-stops-the-rain/
 categories:
-  - SQL
+  - Databases
 ---
 I've been following the [Drizzle][1] project with some interest. There's a lot to like about it. But you know what I like most about the project?
 

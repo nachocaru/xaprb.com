@@ -3,7 +3,7 @@ title: The difference between a unique index and primary key in MySQL
 date: "2009-09-12"
 permalink: /2009/09/12/the-difference-between-a-unique-index-and-primary-key-in-mysql/
 categories:
-  - SQL
+  - Databases
 ---
 There's a really important difference between a unique index (MySQL's answer to a "unique constraint") and a primary key in MySQL. Please take a look at this:
 

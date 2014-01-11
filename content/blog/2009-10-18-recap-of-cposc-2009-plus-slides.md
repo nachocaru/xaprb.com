@@ -4,9 +4,8 @@ date: "2009-10-18"
 permalink: /2009/10/18/recap-of-cposc-2009-plus-slides/
 categories:
   - Conferences
-  - Maatkit
+  - Databases
   - Open Source
-  - SQL
 ---
 Yesterday I attended [CPOSC 2009][1]. The conference was great. It was very well run, and I liked the sessions. I would definitely attend this conference again, and will recommend that Percona sponsor it next year. I attended the following talks:
 

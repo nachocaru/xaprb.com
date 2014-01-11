@@ -2,6 +2,9 @@
 title: innotop version 1.4.3 released
 date: "2007-07-15"
 permalink: /2007/07/15/innotop-version-143-released/
+categories:
+  - Databases
+  - Open Source
 ---
 <p class="download">
   <a href="http://code.google.com/p/innotop/">Download innotop</a>

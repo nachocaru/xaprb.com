@@ -3,9 +3,9 @@ title: Maatkit version 4334 released
 date: "2009-08-03"
 permalink: /2009/08/03/maatkit-version-4334-released/
 categories:
-  - Perl
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
+  - Programming
 ---
 [Maatkit version 4334 is ready for download][1]. I see that I missed posting a release announcement about last month's release of Maatkit. I'll try to cover the important bits about the last two releases here. Daniel has been posting the release announcements to the mailing list recently, so I'll do a bit of copy and paste of what he said too.
 

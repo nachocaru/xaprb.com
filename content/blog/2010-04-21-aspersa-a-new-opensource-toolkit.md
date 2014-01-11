@@ -3,11 +3,9 @@ title: Aspersa, a new opensource toolkit
 date: "2010-04-21"
 permalink: /2010/04/21/aspersa-a-new-opensource-toolkit/
 categories:
-  - Aspersa
+  - Databases
   - Open Source
-  - SQL
-  - Sys Admin
-  - Tools
+  - Operations
 ---
 Some of the utilities we were adding to [Maatkit][1] really did not belong there. Yes, this included some of the functionality in the now-retired mk-audit tool. We really learned a lesson about what it's possible to support, design, spec, code, and test in a single tool.
 

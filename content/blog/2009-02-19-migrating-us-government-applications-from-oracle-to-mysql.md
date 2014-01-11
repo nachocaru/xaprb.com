@@ -4,7 +4,7 @@ date: "2009-02-19"
 permalink: /2009/02/19/migrating-us-government-applications-from-oracle-to-mysql/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 I just returned from a [MySQL Federal Migration Boot Camp][1], jointly presented by Carahsoft and Sun/MySQL. It was a half-day seminar on the topic of migrating applications to MySQL, targeted to the US Government sector. Specifically, most of the audience seemed to be running Oracle, though there were some users of other systems (Microsoft SQL Server, Sybase, Informix, etc).
 

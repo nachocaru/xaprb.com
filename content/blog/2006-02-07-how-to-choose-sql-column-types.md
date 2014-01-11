@@ -2,6 +2,8 @@
 title: "How to choose SQL column types: a case study"
 date: "2006-02-07"
 permalink: /2006/02/07/how-to-choose-sql-column-types/
+categories:
+  - Databases
 ---
 There are at least two important factors to consider when choosing a column type for a <acronym title="Relational database query language">SQL</acronym> database table: technical requirements and semantics. The choice can be confusing, but it is important to get it right. I've seen it done both ways and it's sometimes hard to tell what's wrong &#8212; it just feels wrong. In this article I will explain how to spot these mistakes, and more importantly, how to explain the mistake clearly to others.
 

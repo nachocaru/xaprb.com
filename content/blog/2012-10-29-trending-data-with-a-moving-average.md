@@ -3,7 +3,7 @@ title: Trending data with a moving average
 date: "2012-10-29"
 permalink: /2012/10/29/trending-data-with-a-moving-average/
 categories:
-  - SQL
+  - Databases
 ---
 In my recent talk at Surge and Percona Live about adaptive fault detection ([slides][1]), I claimed that hardcoded thresholds for alerting about error conditions are usually best to avoid in favor of dynamic or adaptive thresholds. (I actually went much further than that and said that it's possible to detect faults with great confidence in many systems like MySQL, without setting any thresholds at all.)
 

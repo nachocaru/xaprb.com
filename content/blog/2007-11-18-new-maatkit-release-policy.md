@@ -2,6 +2,9 @@
 title: New Maatkit release policy
 date: "2007-11-18"
 permalink: /2007/11/18/new-maatkit-release-policy/
+categories:
+  - Databases
+  - Open Source
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

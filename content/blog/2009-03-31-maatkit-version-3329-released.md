@@ -3,10 +3,9 @@ title: Maatkit version 3329 released
 date: "2009-03-31"
 permalink: /2009/03/31/maatkit-version-3329-released/
 categories:
-  - Maatkit
-  - Perl
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
+  - Programming
 ---
 [Maatkit][1] version 3329 has been released, as per our usual monthly release cycle.
 

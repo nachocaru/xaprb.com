@@ -3,7 +3,7 @@ title: How is the MariaDB Knowledge Base licensed?
 date: "2013-12-16"
 permalink: /2013/12/16/how-is-the-mariadb-knowledge-base-licensed/
 categories:
-  - SQL
+  - Databases
 ---
 I clicked around for a few moments but didn't immediately see a license mentioned for the MariaDB knowledgebase. As far as I know, the MySQL documentation is not licensed in a way that would allow copying or derivative works, but at least some of the MariaDB Knowledge Base seems to be pretty similar to the corresponding MySQL documentation. See for example LOAD DATA LOCAL INFILE: [MariaDB][1], [MySQL][2]. 
 Oracle's MySQL documentation has a licensing [notice][3] that states: 

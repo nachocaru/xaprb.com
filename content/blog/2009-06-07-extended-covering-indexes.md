@@ -3,7 +3,7 @@ title: Extended covering indexes
 date: "2009-06-07"
 permalink: /2009/06/07/extended-covering-indexes/
 categories:
-  - SQL
+  - Databases
 ---
 As you can probably guess, I'm catching up on reading my blogs. I've just read with interest about [TokuDB's multiple clustering indexes][1]. It's kind of an obvious thought, once someone has pointed it out to you. I've only been around products that insist there can be Only One clustered index (and then there's [ScaleDB][2], who say "think differently already").
 

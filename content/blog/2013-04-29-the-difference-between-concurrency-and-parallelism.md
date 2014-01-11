@@ -3,8 +3,7 @@ title: The difference between concurrency and parallelism
 date: "2013-04-29"
 permalink: /2013/04/29/the-difference-between-concurrency-and-parallelism/
 categories:
-  - Coding
-  - Go
+  - Programming
 ---
 This confuses lots of people, including most recently Todd Hoff of HighScalability fame, who wrote in last week's [summary][1] post,
 

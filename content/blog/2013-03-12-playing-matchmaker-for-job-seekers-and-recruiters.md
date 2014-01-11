@@ -4,7 +4,7 @@ date: "2013-03-12"
 permalink: /2013/03/12/playing-matchmaker-for-job-seekers-and-recruiters/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 One of the most rewarding things you can do is help someone get a great job or hire a great person for the position they need to fill. I have traveled a lot, written books, done a bunch of consulting, and spoken widely on MySQL, other databases, open source, and so forth. I've gotten to know a lot of people, some I'd call good friends, and many of them are leading large organizations. I think this is both a privilege and a serious responsibility.
 

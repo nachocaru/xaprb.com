@@ -3,7 +3,7 @@ title: Estimating column cardinality the damn cool way
 date: "2012-09-22"
 permalink: /2012/09/22/estimating-column-cardinality-the-damn-cool-way/
 categories:
-  - SQL
+  - Databases
 ---
 Have you seen [Damn Cool Algorithms: Cardinality Estimation][1] yet? If not, take a few minutes and read through it. Now, what if we try using that approach instead of COUNT(DISTINCT) in MySQL to see how many distinct values there are in a column?
 

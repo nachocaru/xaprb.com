@@ -3,7 +3,7 @@ title: Dealing with deadlocks in a busy MySQL server
 date: "2012-08-31"
 permalink: /2012/08/31/dealing-with-deadlocks-in-a-busy-mysql-server/
 categories:
-  - SQL
+  - Databases
 ---
 The servers I help manage have a lot of deadlocks, especially around a few central tables that are important to many business functions. The queries against them are complex, and they crunch a lot of data in some cases. As a result, we have long-running transactions that often deadlock against others, and there are even many short-running jobs that touch only a single row at a time that can't get their work done sometimes.
 

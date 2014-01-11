@@ -2,6 +2,8 @@
 title: How to simulate optional parameters in SQL
 date: "2005-12-11"
 permalink: /2005/12/11/optional-parameters-in-the-where-clause/
+categories:
+  - Databases
 ---
 This article explains how to write `WHERE` clauses that accept optional parameters, reducing the need for separate queries. I have seen a lot of SQL code where the `SELECT` is duplicated many times, but the `WHERE` clause is different in each one, and only one will execute. It's easy to factor out the differences in the `WHERE` clause. For example, consider the following code, assuming two optional parameters to the query:
 

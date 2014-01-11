@@ -4,7 +4,7 @@ date: "2013-03-04"
 permalink: /2013/03/04/seeing-things-from-the-users-point-of-view/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 I was discussing how to avoid surprising users and someone pointed out that what seems intuitive and rational to one person is often complete insanity for others. The mental gap between a developer and a user can often be a chasm far too wide to cross. Of all the bug reports I've filed against MySQL, [here][1] is my all-time favorite:
 

@@ -3,7 +3,7 @@ title: "WordPress and MySQL's strict mode"
 date: "2013-03-15"
 permalink: /2013/03/15/wordpress-and-mysqls-strict-mode/
 categories:
-  - SQL
+  - Databases
 ---
 I really don't like [running my database in "I Love Garbage" mode][1], so I set the following SQL_MODE:
 

@@ -3,7 +3,7 @@ title: What SYSDATE is it?
 date: "2011-10-11"
 permalink: /2011/10/11/what-sysdate-is-it/
 categories:
-  - SQL
+  - Databases
 ---
 I was looking into the history about why SYSDATE() and NOW() behave differently in MySQL, and it looks like in 4.0 and 4.1 they used to be the same. But as of MySQL 5.0, SYSDATE() was changed to emulate Oracle's behavior, that is, it returns the time as of the function execution, not as of the statement start.
 

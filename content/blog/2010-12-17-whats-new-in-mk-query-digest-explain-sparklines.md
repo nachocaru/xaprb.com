@@ -3,7 +3,7 @@ title: "What's new in mk-query-digest: EXPLAIN sparklines"
 date: "2010-12-17"
 permalink: /2010/12/17/whats-new-in-mk-query-digest-explain-sparklines/
 categories:
-  - SQL
+  - Databases
 ---
 This month's [Maatkit][1] release has some nice new features and improvements to mk-query-digest. There is one that deserves its own blog post: EXPLAIN sparklines.
 

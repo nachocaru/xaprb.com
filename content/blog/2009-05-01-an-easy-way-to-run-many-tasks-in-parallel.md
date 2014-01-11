@@ -3,9 +3,8 @@ title: An easy way to run many tasks in parallel
 date: "2009-05-01"
 permalink: /2009/05/01/an-easy-way-to-run-many-tasks-in-parallel/
 categories:
-  - GNU/Linux
-  - Sys Admin
-  - Tools
+  - Open Source
+  - Operations
 ---
 [Domas Mituzas][1] mentioned this recently. It's so cool I just have to write about it. Here's an easy command to fork off a bunch of jobs in parallel: xargs.
 

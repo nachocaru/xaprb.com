@@ -3,10 +3,8 @@ title: Keeping docs and program options in sync
 date: "2011-02-02"
 permalink: /2011/02/02/keeping-docs-and-program-options-in-sync/
 categories:
-  - Aspersa
-  - Coding
-  - Maatkit
-  - Perl
+  - Open Source
+  - Programming
 ---
 One of my pet peeves is when documentation is wrong. Another pet peeve is keeping documentation right. Crack open a source tarball for many programs and you'll see a chunk of text that gets printed out when you use the &#8211;help option, and elsewhere in the program's source code you'll see the definitions of the command-line options. Maintaining a program like this is miserable. Using it is bad, too. I can name a lot of programs that say one thing and do another.
 

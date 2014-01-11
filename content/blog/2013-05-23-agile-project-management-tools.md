@@ -3,7 +3,7 @@ title: Agile project management tools
 date: "2013-05-23"
 permalink: /2013/05/23/agile-project-management-tools/
 categories:
-  - Coding
+  - Programming
 ---
 Wow, talk about an industry that's overcrowded with look-alike me-too products. Online agile project management tools are a dime a dozen, which makes me think that they are probably all very similar and probably don't solve most people's needs. I've observed that when this is true, nearly-indistinguishable tools get reinvented, until the burden of evaluating the options is greater than the burden of just building yet another one, thus perpetuating the cycle.
 

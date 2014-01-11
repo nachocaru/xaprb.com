@@ -4,8 +4,7 @@ date: "2008-04-23"
 permalink: /2008/04/23/like-it-or-not-it-is-the-mysql-conference-and-expo/
 categories:
   - Commentary
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 The conference that many of us just went to is called the [MySQL Conference and Expo][1], but a lot of people don't call it that. They call it by the name it had in 2006 and earlier: MySQL User's Conference. In fact, some people say (or blog) that they dislike the new name and they're going to call it the old name, because [... insert reason here...].
 

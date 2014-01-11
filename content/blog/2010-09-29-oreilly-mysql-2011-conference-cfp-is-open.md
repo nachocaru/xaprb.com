@@ -4,7 +4,7 @@ date: "2010-09-29"
 permalink: /2010/09/29/oreilly-mysql-2011-conference-cfp-is-open/
 categories:
   - Conferences
-  - SQL
+  - Databases
 ---
 Some people seem unclear about whether there will be a 2011 MySQL conference from O'Reilly. [There most definitely will be, and the CfP is open][1]. We are looking for speakers. I'm on the speaker selection committee again this year for the Nth time, and my advice from [past][2] [years][3] still stands. This year we're also looking for a greater diversity of database products, including other relational databases, NoSQL databases, and ancillary technologies.
 

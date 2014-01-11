@@ -3,8 +3,8 @@ title: "New in mk-query-digest: variance-to-mean ratio"
 date: "2011-01-11"
 permalink: /2011/01/11/new-in-mk-query-digest-variance-to-mean-ratio/
 categories:
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 This isn't actually new &#8212; it has been out for a few releases. The [mk-query-digest][1] tool from Maatkit now outputs information about each class of queries' variance-to-mean ratio. The new output goes in a couple of places, including perhaps most usefully the "profile" report. Here's an example from a real MySQL system:
 

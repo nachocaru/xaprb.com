@@ -5,7 +5,7 @@ permalink: /2010/06/12/postmodern-databases/
 categories:
   - Commentary
   - Conferences
-  - SQL
+  - Databases
 ---
 [Dr. Richard Hipp][1] gave a talk at [Southeast Linux Fest][2] today on choosing an open-source database. He thinks that NoSQL is not a very good name for the new databases we're seeing these days, so he proposed a new name: postmodern databases. Why postmodern?
 

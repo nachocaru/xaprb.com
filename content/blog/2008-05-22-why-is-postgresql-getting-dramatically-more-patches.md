@@ -4,8 +4,7 @@ date: "2008-05-22"
 permalink: /2008/05/22/why-is-postgresql-getting-dramatically-more-patches/
 categories:
   - Commentary
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 [Bruce Momjian says][1]
 

@@ -2,6 +2,8 @@
 title: How I built the NOW_USEC() UDF for MySQL
 date: "2007-10-30"
 permalink: /2007/10/30/how-i-built-the-now_usec-udf-for-mysql/
+categories:
+  - Databases
 ---
 Last week I wrote about my efforts to [measure MySQL's replication speed precisely][1]. The most important ingredient in that recipe was the [user-defined function][2] to get the system time with microsecond precision. This post is about that function, which turned out to be surprisingly easy to write.
 

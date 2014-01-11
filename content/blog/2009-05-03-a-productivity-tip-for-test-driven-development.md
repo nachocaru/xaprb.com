@@ -3,8 +3,7 @@ title: A productivity tip for test-driven development
 date: "2009-05-03"
 permalink: /2009/05/03/a-productivity-tip-for-test-driven-development/
 categories:
-  - Coding
-  - Perl
+  - Programming
 ---
 If you code by writing tests that fail, and then fixing the tests by writing the code, then you might find yourself switching to a terminal, running the test, ad nauseum. Part 1 of my tip is to run the test in a loop that takes a single keystroke to trigger:
 

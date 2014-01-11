@@ -2,6 +2,8 @@
 title: MySQL Heartbeat supports PostgreSQL
 date: "2007-11-06"
 permalink: /2007/11/06/mysql-heartbeat-supports-postgresql/
+categories:
+  - Databases
 ---
 Thanks to a patch Dane Miller submitted, MySQL Heartbeat can now be used to monitor Slony-I replication lag for PostgreSQL. It works identically: it updates a record on the master and looks for it on the slave. You just have to specify the database driver on the command-line:
 

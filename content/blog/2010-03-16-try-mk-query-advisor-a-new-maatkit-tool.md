@@ -3,9 +3,8 @@ title: Try mk-query-advisor, a new Maatkit tool
 date: "2010-03-16"
 permalink: /2010/03/16/try-mk-query-advisor-a-new-maatkit-tool/
 categories:
-  - Maatkit
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 [We][1] have an early draft of a new tool available for you to use and test. It uses heuristics to find problems in SQL. Please use it and give feedback! Here's how:
 

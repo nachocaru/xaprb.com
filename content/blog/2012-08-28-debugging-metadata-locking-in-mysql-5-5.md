@@ -3,7 +3,7 @@ title: Debugging metadata locking in MySQL 5.5
 date: "2012-08-28"
 permalink: /2012/08/28/debugging-metadata-locking-in-mysql-5-5/
 categories:
-  - SQL
+  - Databases
 ---
 MySQL 5.1 added a long-needed feature: INFORMATION_SCHEMA tables for inspecting locks held and waited-for inside of InnoDB. With this addition, it became possible to [figure out who is blocking whom][1].
 

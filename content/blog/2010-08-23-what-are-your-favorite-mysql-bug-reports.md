@@ -3,7 +3,7 @@ title: What are your favorite MySQL bug reports?
 date: "2010-08-23"
 permalink: /2010/08/23/what-are-your-favorite-mysql-bug-reports/
 categories:
-  - SQL
+  - Databases
 ---
 Bug reports can be fun. They can also be terrible. Either way they can be entertaining. On the Drizzle IRC channel today I saw a couple references to MySQL bug reports: [it is stop working][1] and [Does not make toast][2] (which reminds me of the [Mozilla bug report about the kitchen sink][3]). Got any other favourites<sup>1</sup>?
 

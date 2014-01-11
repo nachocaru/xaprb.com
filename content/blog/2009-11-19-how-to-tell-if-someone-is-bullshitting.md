@@ -4,8 +4,7 @@ date: "2009-11-19"
 permalink: /2009/11/19/how-to-tell-if-someone-is-bullshitting/
 categories:
   - Commentary
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 Ever been around a group of people discussing some technology and heard Cool-Whip phrases like this?
 

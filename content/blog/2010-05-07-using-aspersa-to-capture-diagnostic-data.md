@@ -3,10 +3,9 @@ title: Using Aspersa to capture diagnostic data
 date: "2010-05-07"
 permalink: /2010/05/07/using-aspersa-to-capture-diagnostic-data/
 categories:
-  - Aspersa
-  - SQL
-  - Sys Admin
-  - Tools
+  - Databases
+  - Open Source
+  - Operations
 ---
 I frequently encounter MySQL servers with intermittent problems that don't happen when I'm watching the server. Gathering good diagnostic data when the problem happens is a must. [Aspersa][1] includes two utilities to make this easier.
 

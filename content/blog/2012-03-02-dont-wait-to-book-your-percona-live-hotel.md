@@ -3,7 +3,7 @@ title: "Don't wait to book your Percona Live hotel"
 date: "2012-03-02"
 permalink: /2012/03/02/dont-wait-to-book-your-percona-live-hotel/
 categories:
-  - SQL
+  - Databases
 ---
 If you haven't booked your [hotel room][1] yet, you should do it ASAP. The hotel is going to raise their rates at the same time the early-bird conference rate expires. This is a coincidence: **Percona has no control over hotel prices.** (There is a group discount rate, but we don't call the shots on that.)
 

@@ -3,7 +3,7 @@ title: Optimizing IN() queries against a compound index
 date: "2012-08-22"
 permalink: /2012/08/22/optimizing-in-queries-against-a-compound-index/
 categories:
-  - SQL
+  - Databases
 ---
 Unfortunately, MySQL 5.5 doesn't generate a very good query execution plan for IN() queries against a compound (multi-column) index, such as the following query that should be able to use the 2-column primary key:
 

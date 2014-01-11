@@ -3,7 +3,7 @@ title: Sanity-check features in MySQL
 date: "2009-12-25"
 permalink: /2009/12/25/sanity-check-features-in-mysql/
 categories:
-  - SQL
+  - Databases
 ---
 MySQL has a couple of sanity-check features to help keep you from doing dumb things.
 

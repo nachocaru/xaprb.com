@@ -2,6 +2,8 @@
 title: How to find duplicate and redundant indexes in MySQL
 date: "2006-08-28"
 permalink: /2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/
+categories:
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download (part of Maatkit)</a>

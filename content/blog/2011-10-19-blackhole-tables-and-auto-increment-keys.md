@@ -3,7 +3,7 @@ title: Blackhole tables and auto-increment keys
 date: "2011-10-19"
 permalink: /2011/10/19/blackhole-tables-and-auto-increment-keys/
 categories:
-  - SQL
+  - Databases
 ---
 Blackhole tables are often used on a so-called "relay slave" where some operation needs to happen but no data needs to exist. This used to have [a bug][1] that prevented AUTO_INCREMENT columns from propagating the right values through replication, but that was fixed. It turns out there's [another bug][2], though, that has the same effect. This one is caused when there is an INSERT into a Blackhole table, where the source data is SELECT-ed from another Blackhole table.
 

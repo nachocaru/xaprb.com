@@ -4,8 +4,8 @@ date: "2012-02-15"
 permalink: /2012/02/15/get-a-free-copy-of-high-performance-mysql-3rd-edition/
 categories:
   - Conferences
-  - High Performance MySQL
-  - SQL
+  - Databases
+  - Writing
 ---
 Want a free copy of [High Performance MySQL, Third Edition][1]? If you [register][2] before the early-bird pricing expires for the [MySQL Conference in April][3], and use the discount code PL-Book, you'll get to take a free copy home from the conference!
 

@@ -3,8 +3,8 @@ title: A new dashboard for innotop
 date: "2012-08-14"
 permalink: /2012/08/14/a-new-dashboard-for-innotop/
 categories:
-  - Innotop
-  - SQL
+  - Databases
+  - Open Source
 ---
 I'm using innotop again every day, for the first time in a few years. I found that I didn't like the tool that the younger and less experienced version of me created. It is very flexible and has the ability to surface a lot of information about MySQL, but not all on one screen. I wanted a "single pane of glass" health dashboard for the servers I'm monitoring, instead of having to look on various screens for important bits of information.
 

@@ -4,7 +4,7 @@ date: "2013-07-10"
 permalink: /2013/07/10/ultimate-notebook-and-journal-face-off/
 categories:
   - Commentary
-  - Review
+  - Reviews
 ---
 If you're like me, you spend so much time typing on a computer that a good notebook or journal is one of life's finer pleasures. I've kept a diary of my personal life for close to 30 years now, and I have a shelf full of journals. I've found a great many that I enjoy writing in, and choosing a different one each time is part of the fun.
 

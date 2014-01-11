@@ -3,8 +3,8 @@ title: I unsubscribed from the Planet MySQL feed
 date: "2008-10-30"
 permalink: /2008/10/30/i-unsubscribed-from-the-planet-mysql-feed/
 categories:
-  - SQL
-  - World Wide Web
+  - Databases
+  - Web
 ---
 Now why would I do that, especially when my blog is syndicated through it?
 

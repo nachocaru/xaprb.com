@@ -3,7 +3,7 @@ title: More details about SchoonerSQL performance, please!
 date: "2012-02-02"
 permalink: /2012/02/02/more-details-about-schoonersql-performance-please/
 categories:
-  - SQL
+  - Databases
 ---
 Schooner has a [blog post][1] showing that one node of their product beats 9 nodes of Clustrix's in throughput. But this reduces everything to a single number, and that's not everything that matters. If you've looked at [Vadim's white paper][2] about Clustrix's (paid-for) performance evaluation with Percona, you see there is a lot of detail about how consistent the throughput and response time are.
 

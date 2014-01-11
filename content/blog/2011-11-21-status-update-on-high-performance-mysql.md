@@ -3,8 +3,8 @@ title: Status update on High Performance MySQL
 date: "2011-11-21"
 permalink: /2011/11/21/status-update-on-high-performance-mysql/
 categories:
-  - High Performance MySQL
-  - SQL
+  - Databases
+  - Writing
 ---
 The third edition is nearly done. I've committed first drafts of all chapters, and all but one appendix. I need to do the last appendix and then rewrite the preface, which is a few days of work at my current pace. After that, it's the usual tech review, copyediting, updates to figures, etc &#8212; and then it's off to production.
 

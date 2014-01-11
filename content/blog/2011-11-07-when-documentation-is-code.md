@@ -3,7 +3,7 @@ title: When documentation is code
 date: "2011-11-07"
 permalink: /2011/11/07/when-documentation-is-code/
 categories:
-  - SQL
+  - Databases
 ---
 One of the things I think we did right with Maatkit (and now with Percona Toolkit) is making the documentation part of the code itself. So much redundancy and wrong documentation has been eliminated by making the tool actually read its own documentation when it starts up. As an example, the default value of the &#8211;shorten option is defined in the documentation (it's Perldoc) like this:
 

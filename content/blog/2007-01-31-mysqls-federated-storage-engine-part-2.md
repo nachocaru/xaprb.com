@@ -2,6 +2,8 @@
 title: "MySQL's FEDERATED storage engine: Part 2"
 date: "2007-01-31"
 permalink: /2007/01/31/mysqls-federated-storage-engine-part-2/
+categories:
+  - Databases
 ---
 In part 1 of this series I examined the [behavior of MySQL's `FEDERATED` storage engine][1] by running queries with the general query log enabled on the remote server. In this article I take a higher-level view. I summarize my findings from the first article, then give my thoughts on the engine's strengths and weaknesses.
 

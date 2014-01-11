@@ -3,7 +3,7 @@ title: Three free MySQL webinars
 date: "2012-02-07"
 permalink: /2012/02/07/three-free-mysql-webinars/
 categories:
-  - SQL
+  - Databases
 ---
 I'm scheduled to deliver several free MySQL webinars via [Percona][1] and [ODTUG][2] in the upcoming weeks. I hope you can join me:
 

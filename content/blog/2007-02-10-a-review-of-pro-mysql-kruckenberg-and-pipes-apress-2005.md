@@ -2,6 +2,8 @@
 title: A review of Pro MySQL (Kruckenberg and Pipes, Apress 2005)
 date: "2007-02-10"
 permalink: /2007/02/10/a-review-of-pro-mysql-kruckenberg-and-pipes-apress-2005/
+categories:
+  - Databases
 ---
 Pro MySQL, by [Mike Kruckenberg][1] and [Jay Pipes][2], covers advanced MySQL topics, especially focusing on optimization and internals. I give it a solid 4 stars.
 

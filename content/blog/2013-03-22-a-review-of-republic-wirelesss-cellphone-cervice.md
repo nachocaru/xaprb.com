@@ -4,7 +4,7 @@ date: "2013-03-22"
 permalink: /2013/03/22/a-review-of-republic-wirelesss-cellphone-cervice/
 categories:
   - Commentary
-  - Review
+  - Reviews
 ---
 I've been trying out Republic Wireless, a startup that offers very inexpensive wireless service: $19 for unlimited talk, text, and data. In a nutshell: they resell Sprint's network, and you agree to connect to wifi as much as possible; they use the Internet instead of the cell network when you're on wifi. I thought for $19/month it wouldn't hurt to give it a try. After several months, my experience has been that it isn't worth using at all, no matter how cheap it is.
 

@@ -3,7 +3,7 @@ title: Bold predictions on which NoSQL databases will survive
 date: "2013-01-10"
 permalink: /2013/01/10/bold-predictions-on-which-nosql-databases-will-survive/
 categories:
-  - SQL
+  - Databases
 ---
 In case you've been [living under a rock][1] for the last 5 years, the NoSQL movement has changed. There was a time when everyone &#8212; EVERYONE &#8212; was dumping on relational databases, and MySQL in particular. Nonsense like "SQL itself is inherently unscalable" routinely came out of the mouths of otherwise usually sensible people. But that's cooled off a little bit, thank heavens.
 

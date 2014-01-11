@@ -3,7 +3,7 @@ title: Interesting findings about one of the Go database drivers for MySQL
 date: "2012-12-28"
 permalink: /2012/12/28/interesting-findings-about-one-of-the-go-database-drivers-for-mysql/
 categories:
-  - SQL
+  - Databases
 ---
 Moral of the upcoming story: when your systems rely on someone else's software, make sure you test it thoroughly to understand how it works.
 

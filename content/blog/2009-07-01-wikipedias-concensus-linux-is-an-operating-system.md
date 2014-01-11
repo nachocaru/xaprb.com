@@ -4,8 +4,8 @@ date: "2009-07-01"
 permalink: /2009/07/01/wikipedias-concensus-linux-is-an-operating-system/
 categories:
   - Commentary
-  - GNU/Linux
-  - World Wide Web
+  - Open Source
+  - Web
 ---
 My brother sent me these thoughts, slightly edited:
 

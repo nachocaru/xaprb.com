@@ -4,7 +4,7 @@ date: "2009-05-26"
 permalink: /2009/05/26/how-to-make-thunderbird-download-new-imap-messages/
 categories:
   - Desktop
-  - GNU/Linux
+  - Open Source
 ---
 One of the minor things I've noticed when I use Thunderbird on my IMAP accounts is that it doesn't download IMAP messages until I click on them. Then I have to wait until I can see the message. I have heard that this is supposed to be fixed in Thunderbird 3, and I tried it but a lot of the extensions I need aren't compatible with it.
 

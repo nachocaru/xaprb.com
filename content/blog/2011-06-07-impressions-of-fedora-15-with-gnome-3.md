@@ -4,8 +4,8 @@ date: "2011-06-07"
 permalink: /2011/06/07/impressions-of-fedora-15-with-gnome-3/
 categories:
   - Desktop
-  - GNU/Linux
-  - Review
+  - Open Source
+  - Reviews
 ---
 I finally upgraded from Fedora 13 to Fedora 15 on my beloved [ASUS-UL30A-X5][1]. It includes the new Gnome 3, with the "Gnome Shell" interface. It's quite different from anything else I've used, and you can read lots of positive and negative impressions around the web.
 

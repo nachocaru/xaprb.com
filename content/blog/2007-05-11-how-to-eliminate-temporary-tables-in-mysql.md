@@ -2,6 +2,8 @@
 title: How to eliminate temporary tables in MySQL
 date: "2007-05-11"
 permalink: /2007/05/11/how-to-eliminate-temporary-tables-in-mysql/
+categories:
+  - Databases
 ---
 I've written before about [how to make MySQL replication reliable][1]. One thing I think you need to do to make statement-based replication reliable is eliminate temporary tables. I found an elegant way to replace temporary tables with real tables in the systems I maintain. This article explains how.
 

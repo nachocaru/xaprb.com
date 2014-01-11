@@ -3,8 +3,8 @@ title: Catching erroneous queries, without MySQL proxy
 date: "2009-11-01"
 permalink: /2009/11/01/catching-erroneous-queries-without-mysql-proxy/
 categories:
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 MySQL Proxy is a really neat tool. I remember a few years back when I first saw Jan talking about it. Back in those days it was significantly different than it is now, but the concept remains the same: direct your database traffic through a man-in-the-middle. [Chris Calender's post on capturing erroneous queries with MySQL Proxy][1] shows one use for Proxy. But wait. MySQL Proxy is just inspecting the MySQL protocol. And unless you're using it for something else too, having a man in the middle to catch errors is like standing in the middle of the street and blocking traffic to count the cars on the street. Why don't you stand on the sidewalk to count the cars instead?
 

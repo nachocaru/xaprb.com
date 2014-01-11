@@ -2,6 +2,8 @@
 title: Progress report on High Performance MySQL, Second Edition
 date: "2007-11-10"
 permalink: /2007/11/10/progress-report-on-high-performance-mysql-second-edition/
+categories:
+  - Databases
 ---
 It's been a while since I've written about progress on the book. I actually stopped working on it as much at the beginning of the month, because on October 31st I managed to finish a first draft of the last big chapter (Scaling and High Availability)! Now I'm back to full-time work at my employer, and I'm working on the book in the evenings and weekends only.
 

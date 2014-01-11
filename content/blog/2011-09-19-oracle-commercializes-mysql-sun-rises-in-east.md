@@ -4,7 +4,7 @@ date: "2011-09-19"
 permalink: /2011/09/19/oracle-commercializes-mysql-sun-rises-in-east/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 I've never objected to someone making money from MySQL. I've only expressed disappointment that they [weren't doing it effectively enough][1]. As I have predicted many times, Oracle is good at this. Oracle is the number one reason I didn't start a new career in some other database a few years ago. Oracle is making MySQL more successful not only for Oracle, but also for the users, the community, and the competition.
 

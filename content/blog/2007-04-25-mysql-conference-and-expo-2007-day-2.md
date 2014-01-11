@@ -2,6 +2,8 @@
 title: MySQL Conference and Expo 2007, Day 2
 date: "2007-04-25"
 permalink: /2007/04/25/mysql-conference-and-expo-2007-day-2/
+categories:
+  - Databases
 ---
 [<img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" />][1] 
 In my second day at the [MySQL Conference and Expo 2007][1], I attended keynotes, several sessions, and three BoF (Birds of a Feather) sessions. This article is about these sessions. Again, I'll focus on the Big Ideas and let you read other people's blog posts for the small details.

@@ -3,7 +3,7 @@ title: Improved Cacti monitoring templates for MySQL
 date: "2008-04-27"
 permalink: /2008/04/27/improved-cacti-monitoring-templates-for-mysql/
 categories:
-  - SQL
+  - Databases
 ---
 <p class="download">
   <a href="http://code.google.com/p/mysql-cacti-templates/">Download MySQL Cacti templates</a>

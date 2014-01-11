@@ -2,6 +2,8 @@
 title: How to write flexible INSERT and UPDATE statements in MySQL
 date: "2006-02-21"
 permalink: /2006/02/21/flexible-insert-and-update-in-mysql/
+categories:
+  - Databases
 ---
 MySQL provides several variations on `INSERT` and `UPDATE` to allow inserting and updating exactly the desired data. These features provide a lot of power and flexibility, making MySQL significantly more capable than it otherwise might be. In this article I'll give an overview of each feature, help you understand how to choose among them, and point out some things to watch out for.
 

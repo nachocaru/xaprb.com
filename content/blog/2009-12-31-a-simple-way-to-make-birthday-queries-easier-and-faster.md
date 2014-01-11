@@ -3,8 +3,7 @@ title: A simple way to make birthday queries easier and faster
 date: "2009-12-31"
 permalink: /2009/12/31/a-simple-way-to-make-birthday-queries-easier-and-faster/
 categories:
-  - PostgreSQL
-  - SQL
+  - Databases
 ---
 It's New Year's Eve, a date that should strike terror into the hearts of many, because tomorrow a bunch of their queries are going to fail.
 

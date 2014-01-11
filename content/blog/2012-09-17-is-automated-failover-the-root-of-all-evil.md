@@ -3,7 +3,7 @@ title: Is automated failover the root of all evil?
 date: "2012-09-17"
 permalink: /2012/09/17/is-automated-failover-the-root-of-all-evil/
 categories:
-  - SQL
+  - Databases
 ---
 Github's recent [post-mortem][1] is well worth reading. They had a series of interrelated failures that caused their MySQL servers to become unavailable. The money quote:
 

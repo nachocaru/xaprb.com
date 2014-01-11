@@ -3,7 +3,7 @@ title: The partitioning improvement that almost was
 date: "2011-03-22"
 permalink: /2011/03/22/the-partitioning-improvement-that-almost-was/
 categories:
-  - SQL
+  - Databases
 ---
 Today I was looking for the ALTER TABLE EXCHANGE PARTITION feature for a customer, and it looks like it did not get included into MySQL 5.5, although [there is a hint of it in the documentation index][1], and you can find quite a few blog posts and presentations about it. The command simply throws a syntax error:
 

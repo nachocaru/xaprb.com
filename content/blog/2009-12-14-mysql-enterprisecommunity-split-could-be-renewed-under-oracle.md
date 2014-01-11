@@ -4,7 +4,7 @@ date: "2009-12-14"
 permalink: /2009/12/14/mysql-enterprisecommunity-split-could-be-renewed-under-oracle/
 categories:
   - Commentary
-  - SQL
+  - Databases
 ---
 One of MySQL's notable projects was splitting the product into two editions: Enterprise Edition and Community Edition. This move [alienated][1] many in the community, and failed to create meaningful differentiation on either side, even with a team of people beating the community bushes for "contributions." The net differentiation was ultimately Jeremy Cole's `SHOW PROFILES` functionality, which made Community *better* than Enterprise. Sun put less effort into making this split work, and eventually they [abandoned][2] it.
 

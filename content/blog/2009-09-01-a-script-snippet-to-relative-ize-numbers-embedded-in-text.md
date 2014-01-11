@@ -3,8 +3,8 @@ title: A script snippet to relative-ize numbers embedded in text
 date: "2009-09-01"
 permalink: /2009/09/01/a-script-snippet-to-relative-ize-numbers-embedded-in-text/
 categories:
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
 ---
 A lot of times I'm looking at several time-series samples of numbers embedded in free-form text, and I want to know how the numbers change over time. For example, two samples of SHOW INNODB STATUS piped through `grep wait` might contain the following:
 

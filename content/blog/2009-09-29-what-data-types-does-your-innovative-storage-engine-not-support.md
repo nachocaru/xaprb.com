@@ -3,7 +3,7 @@ title: What data types does your innovative storage engine NOT support?
 date: "2009-09-29"
 permalink: /2009/09/29/what-data-types-does-your-innovative-storage-engine-not-support/
 categories:
-  - SQL
+  - Databases
 ---
 I've been investigating a few different storage engines for MySQL lately, and something I've noticed is that they all list what they support, but they generally don't say what they don't support. For example, Infobright's documentation shows [a list of every data type supported][1]. What's missing? Hmm, I don't see BLOB, BIT, ENUM, SET&#8230; it's kind of hard to tell. The same thing is true of the list of functions that are optimized inside Infobright's own code instead of at the server layer. I can see what's optimized, but I can't see whether FUNC_WHATEVER() is optimized without scanning the page &#8212; and there's no list of un-optimized functions.
 

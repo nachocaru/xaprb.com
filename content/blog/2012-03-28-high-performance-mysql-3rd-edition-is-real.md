@@ -3,7 +3,7 @@ title: High Performance MySQL 3rd Edition is real!
 date: "2012-03-28"
 permalink: /2012/03/28/high-performance-mysql-3rd-edition-is-real/
 categories:
-  - SQL
+  - Databases
 ---
 O'Reilly authors get 10 copies of their own books for free, and my copies of the third edition of High Performance MySQL arrived yesterday. Now it's official! It feels nice to actually hold it in my hand.
 

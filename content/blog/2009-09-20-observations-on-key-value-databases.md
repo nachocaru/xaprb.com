@@ -3,7 +3,7 @@ title: Observations on key-value databases
 date: "2009-09-20"
 permalink: /2009/09/20/observations-on-key-value-databases/
 categories:
-  - SQL
+  - Databases
 ---
 Key-value databases are catching fire these days. Memcached, Redis, Cassandra, Keyspace, Tokyo Tyrant, and a handful of others are surging in popularity, judging by the contents of my feed reader.
 

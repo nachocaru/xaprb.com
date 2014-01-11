@@ -4,7 +4,7 @@ date: "2009-02-21"
 permalink: /2009/02/21/an-invitation-to-postgresql-community-members/
 categories:
   - Conferences
-  - PostgreSQL
+  - Databases
 ---
 I'm not sure this has been publicized much in the PostgreSQL world yet, but the [Percona Performance Conference][1] is not a MySQL-centric event. We're hoping for good sessions on PostgreSQL and lots of other topics. So this is an invitation &#8212; come attend, and submit sessions.
 

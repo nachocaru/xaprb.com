@@ -3,10 +3,9 @@ title: innotop version 1.8.0 released
 date: "2010-11-06"
 permalink: /2010/11/06/innotop-version-1-8-0-released/
 categories:
-  - Innotop
-  - Perl
-  - SQL
-  - Tools
+  - Databases
+  - Open Source
+  - Programming
 ---
 I've just uploaded the [new release of innotop to Google Code][1]. Short version of the changelog: works on MySQL 5.1 with the InnoDB plugin; more efficient; supports Percona/MariaDB [USER_STATISTICS][2] data; fixes a bunch of small annoying bugs.
 

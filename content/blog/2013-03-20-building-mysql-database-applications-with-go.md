@@ -3,9 +3,8 @@ title: Building MySQL Database Applications with Go
 date: "2013-03-20"
 permalink: /2013/03/20/building-mysql-database-applications-with-go/
 categories:
-  - Coding
-  - Go
-  - SQL
+  - Databases
+  - Programming
 ---
 Last night at the [Golang-DC meetup][1] I spoke about building (MySQL) database applications with Go. The meetup was well attended and people were very enthusiastic about Go. I spent a few minutes talking about Go in general, how [VividCortex][2] uses Go (we've built our agents, API servers, and all backend processes with Go), why we like it, some of the nice things it enables like making it easy to build very [resilient programs][3], and then I gave the presentation, which I've embedded below.
 

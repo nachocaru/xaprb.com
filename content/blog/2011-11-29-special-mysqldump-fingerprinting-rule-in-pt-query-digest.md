@@ -3,8 +3,8 @@ title: Special mysqldump fingerprinting rule in pt-query-digest
 date: "2011-11-29"
 permalink: /2011/11/29/special-mysqldump-fingerprinting-rule-in-pt-query-digest/
 categories:
-  - Percona Toolkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 The pt-query-digest tool has a number of special cases that affect how it "fingerprints" queries when it groups similar queries together to produce an aggregated report over the group. One of these is a special rule for queries that appear to come from mysqldump, of the following form:
 

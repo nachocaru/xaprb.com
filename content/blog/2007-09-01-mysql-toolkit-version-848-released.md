@@ -2,6 +2,9 @@
 title: MySQL Toolkit version 848 released
 date: "2007-09-01"
 permalink: /2007/09/01/mysql-toolkit-version-848-released/
+categories:
+  - Databases
+  - Open Source
 ---
 
 This release of MySQL Toolkit fixes some minor bugs and adds new functionality to four of the tools. Some of the changes I made were in response to feedback I got at the recent MySQL Camp. I'm still working on some of the feature requests, such as daemon-izing certain tools.

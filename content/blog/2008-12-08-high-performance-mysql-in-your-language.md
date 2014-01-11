@@ -3,8 +3,8 @@ title: High Performance MySQL in your language
 date: "2008-12-08"
 permalink: /2008/12/08/high-performance-mysql-in-your-language/
 categories:
-  - High Performance MySQL
-  - SQL
+  - Databases
+  - Writing
 ---
 [O'Reilly][1] tells me that translation rights for our book, [High Performance MySQL Second Edition][2] have been purchased in the following languages:
 

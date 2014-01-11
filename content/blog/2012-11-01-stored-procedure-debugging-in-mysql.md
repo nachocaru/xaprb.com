@@ -3,7 +3,7 @@ title: Stored procedure debugging in MySQL
 date: "2012-11-01"
 permalink: /2012/11/01/stored-procedure-debugging-in-mysql/
 categories:
-  - SQL
+  - Databases
 ---
 I was just skimming through the latest "Meet the Experts" podcast from Oracle, whose topic is [debugging stored routines in MySQL][1]. The tl;dr (tl;dl?) version is if you're working with Windows and .NET, you can install a Visual Studio plugin that lets you debug stored routines in the server via the .NET connection libraries. That's pretty nice, for those who are using that platform. The podcast is only a few minutes, so if you're interested, by all means listen to it, or take a look at the [documentation][2].
 

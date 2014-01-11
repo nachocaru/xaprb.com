@@ -3,8 +3,8 @@ title: How to gather statistics at regular intervals
 date: "2011-03-18"
 permalink: /2011/03/18/how-to-gather-statistics-at-regular-intervals/
 categories:
-  - Coding
-  - Sys Admin
+  - Operations
+  - Programming
 ---
 I gather a lot of statistics such as performance data. Sometimes I have multiple things going on a system and I want to be able to align and compare the resulting data from multiple processes later. That means they need to be aligned on time intervals. Here is a naive way to gather stats at intervals:
 

@@ -3,7 +3,7 @@ title: "S**t sales engineers say"
 date: "2013-12-07"
 permalink: /2013/12/07/st-sales-engineers-say/
 categories:
-  - SQL
+  - Databases
 ---
 Here's a trip down memory lane. I was just cleaning out some stuff and I found some notes I took from a hilarious MySQL seminar a few years back. I won't say when or where, to protect the guilty.[1] 
 I found it so absurd that I had to write down what I was witnessing. Enough time has passed that we can probably all laugh about this now. Times and people have changed. 

@@ -3,8 +3,8 @@ title: Maatkit version 2442 released
 date: "2008-10-18"
 permalink: /2008/10/18/maatkit-version-2442-released/
 categories:
-  - Maatkit
-  - SQL
+  - Databases
+  - Open Source
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

@@ -3,7 +3,7 @@ title: "Handling MySQL's warnings in Go code"
 date: "2012-12-23"
 permalink: /2012/12/23/handling-mysqls-warnings-in-go-code/
 categories:
-  - SQL
+  - Databases
 ---
 I was just bitten by failing to catch a MySQL warning. It's the old familiar tune: I inserted 100 characters into a VARCHAR(50) and it didn't throw an error*. Of course, then subsequent SELECT statements didn't find the value I inserted.
 

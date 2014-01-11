@@ -2,6 +2,8 @@
 title: Send your employees to the MySQL Conference
 date: "2008-03-06"
 permalink: /2008/03/06/send-your-employees-to-the-mysql-conference/
+categories:
+  - Databases
 ---
 A lot of people contact me asking if I'm looking for a job. (I have an unanswered email in my inbox right now.) People are looking desperately for qualified, knowledgeable MySQL professionals. There's a critical shortage of people who can admin MySQL moderately well, much less at the guru level.
 

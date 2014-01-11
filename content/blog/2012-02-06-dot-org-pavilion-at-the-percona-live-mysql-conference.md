@@ -3,7 +3,7 @@ title: Dot-Org Pavilion at the Percona Live MySQL Conference
 date: "2012-02-06"
 permalink: /2012/02/06/dot-org-pavilion-at-the-percona-live-mysql-conference/
 categories:
-  - SQL
+  - Databases
 ---
 Are you involved with an open-source project that's interesting to MySQL users, such as Nginx, PHPMyAdmin, Drupal, Jenkins, PHP, and so on? Percona just published the application form for dot-org groups to have a [free expo hall booth][1] in the Percona Live MySQL Conference in April. ** Please submit your applications now, and tell your friends about this**, because a) the schedule for applying is very short, and b) space is limited.
 

@@ -3,7 +3,7 @@ title: How often should you use OPTIMIZE TABLE?
 date: "2010-02-07"
 permalink: /2010/02/07/how-often-should-you-use-optimize-table/
 categories:
-  - SQL
+  - Databases
 ---
 Many times I've heard people advise on "best practices" for a MySQL database. This often includes routine maintenance, such as "you should run OPTIMIZE TABLE on all of your InnoDB tables once a week to defragment them for better performance."
 

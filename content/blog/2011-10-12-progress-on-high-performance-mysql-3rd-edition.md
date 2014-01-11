@@ -3,8 +3,8 @@ title: Progress on High Performance MySQL 3rd Edition
 date: "2011-10-12"
 permalink: /2011/10/12/progress-on-high-performance-mysql-3rd-edition/
 categories:
-  - High Performance MySQL
-  - SQL
+  - Databases
+  - Writing
 ---
 A few people have asked me how it's going, so I thought I'd just share it with everyone. Things are going great. I'm writing much more quickly than I thought I would be, and as a result I'm finding I have time to do more changes than I thought I could, which makes me happy. I should be finished drafting the chapters by the end of the year.
 

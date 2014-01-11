@@ -3,7 +3,7 @@ title: Some pt-table-checksum FAQs
 date: "2012-02-09"
 permalink: /2012/02/09/some-pt-table-checksum-faqs/
 categories:
-  - SQL
+  - Databases
 ---
 After the recent update to pt-table-checksum, I've seen a few FAQs about it.
 

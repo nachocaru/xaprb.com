@@ -2,6 +2,9 @@
 title: The innotop session at MySQLConf 2007
 date: "2007-04-10"
 permalink: /2007/04/10/the-innotop-session-at-mysqlconf-2007/
+categories:
+  - Databases
+  - Open Source
 ---
 [<img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" />][1] I'll present a session on the [innotop MySQL and InnoDB monitoring tool][2] at [2007 MySQL Conference and Expo][1] in a couple of weeks.
 
