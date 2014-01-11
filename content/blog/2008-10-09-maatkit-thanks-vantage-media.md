@@ -9,7 +9,7 @@ categories:
 tags:
   - Vantage Media
 ---
-I just wrote about how [Maatkit has gotten some new features][1] for helping people make sure their slaves have an exact copy of the master&#8217;s data. This work was largely sponsored by one of [Percona][2]&#8216;s customers, whose name I have permission to mention: [Vantage Media][3].
+I just wrote about how [Maatkit has gotten some new features][1] for helping people make sure their slaves have an exact copy of the master's data. This work was largely sponsored by one of [Percona][2]'s customers, whose name I have permission to mention: [Vantage Media][3].
 
 [<img src="http://www.vantagemedia.com/images/logo.gif" alt="Vantage Media" width="260" height="45" />][3]
 

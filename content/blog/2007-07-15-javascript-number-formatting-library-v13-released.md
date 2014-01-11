@@ -21,7 +21,7 @@ tags:
   <a href="/articles/number-functions.zip">Download Number Formatting Library</a>
 </p>
 
-I&#8217;ve updated my JavaScript Number Formatting Library to version 1.3. This release adds the ability to customize how not-a-number (NaN), positive infinity and negative infinity are formatted. All you need to do is set the appropriate constant in `Number.prototype`:
+I've updated my JavaScript Number Formatting Library to version 1.3. This release adds the ability to customize how not-a-number (NaN), positive infinity and negative infinity are formatted. All you need to do is set the appropriate constant in `Number.prototype`:
 
 *   `Number.prototype.NaN`
 *   `Number.prototype.posInfinity`

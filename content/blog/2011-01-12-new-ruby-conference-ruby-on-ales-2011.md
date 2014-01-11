@@ -9,6 +9,6 @@ categories:
 tags:
   - Ruby
 ---
-This looks like fun: [Ruby on Ales][1]. It&#8217;s March 24-25, 2011 in Bend Oregon (USA), and the tag line is Ruby, snow, and beer. Does it get any better than this?
+This looks like fun: [Ruby on Ales][1]. It's March 24-25, 2011 in Bend Oregon (USA), and the tag line is Ruby, snow, and beer. Does it get any better than this?
 
  [1]: http://ruby.onales.com/

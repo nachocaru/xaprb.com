@@ -10,11 +10,11 @@ categories:
 tags:
   - New Relic
 ---
-I wrote recently about [early detection for MySQL performance problems][1]. If your server is having micro-fluctuations in performance, it&#8217;s important to know, because very soon they will turn much worse. What can you do about this?
+I wrote recently about [early detection for MySQL performance problems][1]. If your server is having micro-fluctuations in performance, it's important to know, because very soon they will turn much worse. What can you do about this?
 
-The most important thing is not to guess at what&#8217;s happening, but to measure instead. I have seen these problems from DNS, the binary log, failing hardware, the query cache, the table cache, the thread cache, and a variety of InnoDB edge cases. Guessing at the problem is very dangerous; you need diagnostic data. But it is often quite hard to catch a problem in action when you can only observe it in hindsight, and it happens only for a few seconds once or twice a week. This blog post is about how to detect small variations in performance, especially when it is most difficult to observe them.
+The most important thing is not to guess at what's happening, but to measure instead. I have seen these problems from DNS, the binary log, failing hardware, the query cache, the table cache, the thread cache, and a variety of InnoDB edge cases. Guessing at the problem is very dangerous; you need diagnostic data. But it is often quite hard to catch a problem in action when you can only observe it in hindsight, and it happens only for a few seconds once or twice a week. This blog post is about how to detect small variations in performance, especially when it is most difficult to observe them.
 
-Sometimes it&#8217;s actually quite easy, so let&#8217;s look at the easy cases first. Over time I have built up a collection of tricks and [tools][2] for catching a problem in action. The process of catching and diagnosing a lightning-fast performance problem looks like the following:
+Sometimes it's actually quite easy, so let's look at the easy cases first. Over time I have built up a collection of tricks and [tools][2] for catching a problem in action. The process of catching and diagnosing a lightning-fast performance problem looks like the following:
 
 1.  Determine the symptoms of the problem.
 2.  Determine how to observe the symptoms reliably and quickly.
@@ -22,24 +22,24 @@ Sometimes it&#8217;s actually quite easy, so let&#8217;s look at the easy cases 
 4.  Set up tools or processes to do the above.
 5.  Sift the collected data and diagnose.
 
-This is 95% about figuring out how to observe the problem and gathering the data, and 5% about actually diagnosing. If you don&#8217;t get the 95% right, you&#8217;ll gather too little or too much data, or you&#8217;ll capture it at the wrong time. Your job is hard enough; you won&#8217;t be successful if you simply gather gigs of data for weeks at a time. You need to be as precise as you can. Here are some examples:
+This is 95% about figuring out how to observe the problem and gathering the data, and 5% about actually diagnosing. If you don't get the 95% right, you'll gather too little or too much data, or you'll capture it at the wrong time. Your job is hard enough; you won't be successful if you simply gather gigs of data for weeks at a time. You need to be as precise as you can. Here are some examples:
 
-1.  There are normally very few connections to the server, but sometimes I start getting &#8220;Error: max_connections exceeded&#8221; or similar. *Solution: observe Threads\_connected from SHOW GLOBAL STATUS and react when it grows too large, or when you cannot log in to query Threads\_connected.*
+1.  There are normally very few connections to the server, but sometimes I start getting "Error: max_connections exceeded" or similar. *Solution: observe Threads\_connected from SHOW GLOBAL STATUS and react when it grows too large, or when you cannot log in to query Threads\_connected.*
 2.  There are normally very few queries running, but we have a connection pool (and thus Threads_connected is constant). During the freezes, hundreds of queries show up in SHOW PROCESSLIST. *Solution: observe Threads_running from SHOW GLOBAL STATUS and react when it grows too large.*
 
 You get the point. Find a simple metric and figure out how to capture it &#8212; usually this is possible with a little bit of bash, awk, and grep. You might need to look for something specific in SHOW INNODB STATUS, for example, such as a large number of transactions in LOCK WAIT status.
 
-But sometimes it&#8217;s much harder. What if you simply can&#8217;t observe the problem internally to MySQL? This does happen, especially when nothing changes except for response time. This was the case in the customer&#8217;s system that I discussed in the &#8220;predicting performance problems&#8221; blog post linked above. Every single metric provided by MySQL itself stayed constant during the mini-freezes. The problem is that you can&#8217;t get information on response time from within MySQL.
+But sometimes it's much harder. What if you simply can't observe the problem internally to MySQL? This does happen, especially when nothing changes except for response time. This was the case in the customer's system that I discussed in the "predicting performance problems" blog post linked above. Every single metric provided by MySQL itself stayed constant during the mini-freezes. The problem is that you can't get information on response time from within MySQL.
 
-I ended up writing tools to help with this, of course. I&#8217;ll show the results below.
+I ended up writing tools to help with this, of course. I'll show the results below.
 
-If fluctuations in response time are the problem, then the way to observe it is to measure response time. This requires some care, because you don&#8217;t want false positives, and a lot of my ideas were obviously vulnerable to false positives. I could cross them off right away. I can&#8217;t trigger on unusually large or small numbers of queries, for example, because those just happen as the workload fluctuates through the day, and random user behavior naturally introduces variations too.
+If fluctuations in response time are the problem, then the way to observe it is to measure response time. This requires some care, because you don't want false positives, and a lot of my ideas were obviously vulnerable to false positives. I could cross them off right away. I can't trigger on unusually large or small numbers of queries, for example, because those just happen as the workload fluctuates through the day, and random user behavior naturally introduces variations too.
 
-I ended up writing a tool to tail the slow query log file, which I set to zero so it captured all queries with microsecond precision. Once per second, MySQL writes out the current timestamp to the log file, so when I see that marker, I know that a second&#8217;s worth of queries has passed by. I aggregate the last second&#8217;s worth of queries (count, total time, average time) and print out a line.
+I ended up writing a tool to tail the slow query log file, which I set to zero so it captured all queries with microsecond precision. Once per second, MySQL writes out the current timestamp to the log file, so when I see that marker, I know that a second's worth of queries has passed by. I aggregate the last second's worth of queries (count, total time, average time) and print out a line.
 
-This in itself does not provide a good way to know when something unusual is happening, but it gives the foundation for it. I took it slightly further: I kept a sliding window of the last 60 1-second averages, and took the standard deviation of those. If the current second&#8217;s average response time deviates significantly from the average response time over the last 60 seconds, then something is wrong. &#8220;Significant&#8221; is pretty easy to measure with standard deviations, so that&#8217;s where the real magic comes in. Let&#8217;s see some samples of this.
+This in itself does not provide a good way to know when something unusual is happening, but it gives the foundation for it. I took it slightly further: I kept a sliding window of the last 60 1-second averages, and took the standard deviation of those. If the current second's average response time deviates significantly from the average response time over the last 60 seconds, then something is wrong. "Significant" is pretty easy to measure with standard deviations, so that's where the real magic comes in. Let's see some samples of this.
 
-First, here&#8217;s a bit of the slow query log chopped into 1-second segments and aggregated:
+First, here's a bit of the slow query log chopped into 1-second segments and aggregated:
 
 `<pre>
            Time        Total  Count          Avg    1-Min Avg  1-Min StDev        Sigma
@@ -59,15 +59,15 @@ First, here&#8217;s a bit of the slow query log chopped into 1-second segments a
 </pre>` 
 The columns mean the following:
 
-*   Time is the timestamp of this second&#8217;s stats.
+*   Time is the timestamp of this second's stats.
 *   Total is the total response time within the sample, in seconds.
 *   Count is how many queries were in that sample.
 *   Avg is just the mean response time (Total / Count).
 *   1-Min Avg is the one-minute moving average of response time.
 *   1-Min StDev is the standard deviation of the average response times for each of the previous 60 seconds.
-*   Sigma is the difference between this second&#8217;s average response time and the 1-Min Avg, in standard deviations.
+*   Sigma is the difference between this second's average response time and the 1-Min Avg, in standard deviations.
 
-As you can see, most of the time the deviation between this second&#8217;s average and the last minute&#8217;s average is quite low. But when there&#8217;s a meaningful fluctuation in performance, that changes pretty clearly. Here&#8217;s a sample with a blip at 18:09:30:
+As you can see, most of the time the deviation between this second's average and the last minute's average is quite low. But when there's a meaningful fluctuation in performance, that changes pretty clearly. Here's a sample with a blip at 18:09:30:
 
 `<pre>
            Time        Total  Count          Avg    1-Min Avg  1-Min StDev        Sigma
@@ -81,7 +81,7 @@ As you can see, most of the time the deviation between this second&#8217;s avera
 100519 18:09:33     0.345033   2044     0.000169     0.000163     0.007133     0.000815
 100519 18:09:34     0.289663   1793     0.000162     0.000163     0.007148     0.000255
 </pre>` 
-That was a fast one! It flew by too quickly to do much about. But it was also not a very large deviation, and could have been a false positive. In any case, I highly doubt that we would have caught anything meaningful by triggering a stats-collection process just then. Let&#8217;s keep looking.
+That was a fast one! It flew by too quickly to do much about. But it was also not a very large deviation, and could have been a false positive. In any case, I highly doubt that we would have caught anything meaningful by triggering a stats-collection process just then. Let's keep looking.
 
 `<pre>
            Time        Total  Count          Avg    1-Min Avg  1-Min StDev        Sigma
@@ -99,7 +99,7 @@ That was a fast one! It flew by too quickly to do much about. But it was also no
 100519 18:10:18     0.325617   2240     0.000145     0.000255     0.024491     0.004460
 100519 18:10:19     0.243101   1538     0.000158     0.000255     0.024510     0.003966
 </pre>` 
-Another relatively short blip but a bit longer. The mean response time really didn&#8217;t deviate as much as my client was complaining about &#8212; they were showing me New Relic transaction traces with 50-second waits. Maybe I could have caught something here, but I doubt that it&#8217;d be enough to separate the signal from the noise. Still, at this point you can clearly see how sensitive this technique is. The deviation in average response varies from a few thousandths of a sigma to a few hundredths. Let&#8217;s keep looking for something more dramatic to use as a trigger:
+Another relatively short blip but a bit longer. The mean response time really didn't deviate as much as my client was complaining about &#8212; they were showing me New Relic transaction traces with 50-second waits. Maybe I could have caught something here, but I doubt that it'd be enough to separate the signal from the noise. Still, at this point you can clearly see how sensitive this technique is. The deviation in average response varies from a few thousandths of a sigma to a few hundredths. Let's keep looking for something more dramatic to use as a trigger:
 
 `<pre>
            Time        Total  Count          Avg    1-Min Avg  1-Min StDev        Sigma
@@ -126,13 +126,13 @@ Another relatively short blip but a bit longer. The mean response time really di
 100519 18:11:17    47.602524     34     1.400074     0.003094     0.278776     5.011118
 100519 18:11:18     0.016022     84     0.000191     0.003180     0.282795     0.010570
 </pre>` 
-We totally hit pay dirt here. This period in the log corresponded exactly to one of the visible spikes in New Relic. There were extremely long queries in the log, and throughput dropped to the floor &#8212; for an extended time. In the far right-hand column, Sigma is in the double digits. More experience showed me that on this particular client&#8217;s workload, anything above 0.3 Sigma is a reliable indicator of a real performance problem. If that condition becomes true, then it&#8217;s time to gather diagnostic data for a while. This is resistant to false positives from things like the occasional one-off long-running query.
+We totally hit pay dirt here. This period in the log corresponded exactly to one of the visible spikes in New Relic. There were extremely long queries in the log, and throughput dropped to the floor &#8212; for an extended time. In the far right-hand column, Sigma is in the double digits. More experience showed me that on this particular client's workload, anything above 0.3 Sigma is a reliable indicator of a real performance problem. If that condition becomes true, then it's time to gather diagnostic data for a while. This is resistant to false positives from things like the occasional one-off long-running query.
 
-After building this tool &#8212; maybe 30 minutes of work or so &#8212; I can see that I could have used other metrics instead. The number of queries per second (throughput) varies, just as response time does. And I probably could go back to the database and start watching Handler_ counters, or similar things like Innodb\_rows\_read, with the same technique. I wasn&#8217;t able to see those things as possibilities because of the overwhelming amount of information to sift through before (and I still don&#8217;t really know that they&#8217;re going to show spikes and notches the same way, I&#8217;m just speculating; they might be really noisy and unreliable). However, focusing on response time is an accurate metric, because response time is what actually matters. Handler counters and rows-read counters are secondary effects that can lie, and there is never anything wrong with focusing on primary sources. Looking at secondary things is far too likely to present you with unreliable information, and you end up on wild goose chases that consume huge amounts of your client&#8217;s time.
+After building this tool &#8212; maybe 30 minutes of work or so &#8212; I can see that I could have used other metrics instead. The number of queries per second (throughput) varies, just as response time does. And I probably could go back to the database and start watching Handler_ counters, or similar things like Innodb\_rows\_read, with the same technique. I wasn't able to see those things as possibilities because of the overwhelming amount of information to sift through before (and I still don't really know that they're going to show spikes and notches the same way, I'm just speculating; they might be really noisy and unreliable). However, focusing on response time is an accurate metric, because response time is what actually matters. Handler counters and rows-read counters are secondary effects that can lie, and there is never anything wrong with focusing on primary sources. Looking at secondary things is far too likely to present you with unreliable information, and you end up on wild goose chases that consume huge amounts of your client's time.
 
-The tool I wrote for this task is crude, and not formally tested, but it&#8217;s a great proof of concept. I think the next step is probably going to be something like revamping mk-loadavg (and probably renaming it!) to be able to capture load metrics and variations in a more flexible and meaningful way.
+The tool I wrote for this task is crude, and not formally tested, but it's a great proof of concept. I think the next step is probably going to be something like revamping mk-loadavg (and probably renaming it!) to be able to capture load metrics and variations in a more flexible and meaningful way.
 
-The end result on this case is at least two problems, by the way (we&#8217;re still working on it). One was [DNS flakiness][3]. The server was not configured with skip\_name\_resolve, and when DNS stopped working for a short period, everything stopped working. After clearing that up, many but not all of the spikes in response time went away, and permitted me to see that InnoDB is also having trouble. It is actually quite common for multiple things to be going badly on a server, which makes a disciplined approach all the more important. Trial and error is a disaster in cases like these. Peter and I wrote a brief [whitepaper][4] about our approach, by the way. You might find it helpful if you are also facing complex performance problems.
+The end result on this case is at least two problems, by the way (we're still working on it). One was [DNS flakiness][3]. The server was not configured with skip\_name\_resolve, and when DNS stopped working for a short period, everything stopped working. After clearing that up, many but not all of the spikes in response time went away, and permitted me to see that InnoDB is also having trouble. It is actually quite common for multiple things to be going badly on a server, which makes a disciplined approach all the more important. Trial and error is a disaster in cases like these. Peter and I wrote a brief [whitepaper][4] about our approach, by the way. You might find it helpful if you are also facing complex performance problems.
 
  [1]: http://www.mysqlperformanceblog.com/2010/05/18/is-your-servers-performance-about-to-degrade/
  [2]: http://code.google.com/p/aspersa/

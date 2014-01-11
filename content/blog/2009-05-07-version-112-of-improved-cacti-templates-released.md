@@ -14,9 +14,9 @@ tags:
   - MySQL
   - Nginx
 ---
-I&#8217;ve packaged up and released version 1.1.2 of the [Cacti templates I&#8217;ve written for MySQL, Apache, memcached, nginx etc][1].
+I've packaged up and released version 1.1.2 of the [Cacti templates I've written for MySQL, Apache, memcached, nginx etc][1].
 
-Anyone who would like to help write documentation (or do anything else, for that matter) is welcomed to participate. I&#8217;ll give commit access at the drop of a hat.
+Anyone who would like to help write documentation (or do anything else, for that matter) is welcomed to participate. I'll give commit access at the drop of a hat.
 
 Changelog:
 

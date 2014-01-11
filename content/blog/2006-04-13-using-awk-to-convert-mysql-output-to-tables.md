@@ -10,9 +10,9 @@ description:
     Shows two ways to pipe the output from the MySQL client into programs that
     convert it to HTML tables.
 ---
-In this article I&#8217;ll explain how to control the output of the `mysql` client program and feed it to another program to transform the results as desired. I often transform output into HTML tables for these blog articles &#8212; at least, I do when I&#8217;m not being lazy.
+In this article I'll explain how to control the output of the `mysql` client program and feed it to another program to transform the results as desired. I often transform output into HTML tables for these blog articles &#8212; at least, I do when I'm not being lazy.
 
-The `mysql` command-line program can accept a command and print the results directly to STDOUT. The default output behavior differs depending on where its input comes from. When the input comes via STDIN, the output is tab-separated values. When the input comes via the `-e` or `--execute` options, or when the `-t` option is specified, the output is in &#8220;tabular&#8221; format, with borders drawn by pipes, dashes and plus characters.
+The `mysql` command-line program can accept a command and print the results directly to STDOUT. The default output behavior differs depending on where its input comes from. When the input comes via STDIN, the output is tab-separated values. When the input comes via the `-e` or `--execute` options, or when the `-t` option is specified, the output is in "tabular" format, with borders drawn by pipes, dashes and plus characters.
 
 Results can also be printed vertically, as they are when an interactive command is terminated with `\G` instead of a semicolon. The command-line option for this format is `-E` or `--vertical`.
 
@@ -22,7 +22,7 @@ I usually select results in non-tabular format and feed them to `awk` to turn th
 
 The result is formatted into HTML rows and columns, and all I need to do is wrap it in a set of `<table>` tags.
 
-I sometimes use Perl, too. Here&#8217;s a script I&#8217;ve saved in my `PATH` so I can pipe results into it:
+I sometimes use Perl, too. Here's a script I've saved in my `PATH` so I can pipe results into it:
 
 <pre>#!/usr/bin/perl
 use strict;

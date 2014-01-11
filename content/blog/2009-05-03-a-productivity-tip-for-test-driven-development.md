@@ -19,4 +19,4 @@ Part 2 of my tip is to make it really easy to drop into the debugger if you want
 
 <pre>$ while read line; do clear; perl $line MyTestScript.t; done</pre>
 
-Now instead of pressing Enter, you can type &#8220;-d&#8221; and press Enter. Presto, you&#8217;re in the debugger. This also works for any language that has a built-in debugger. Of course, you can also pass any other arguments you want, such as enabling profiling.
+Now instead of pressing Enter, you can type "-d" and press Enter. Presto, you're in the debugger. This also works for any language that has a built-in debugger. Of course, you can also pass any other arguments you want, such as enabling profiling.

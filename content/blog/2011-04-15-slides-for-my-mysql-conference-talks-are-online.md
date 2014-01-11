@@ -7,6 +7,6 @@ categories:
   - Conferences
   - SQL
 ---
-The slides for my talks at the O&#8217;Reilly MySQL Conference and Expo [are posted][1].
+The slides for my talks at the O'Reilly MySQL Conference and Expo [are posted][1].
 
  [1]: http://www.percona.com/about-us/presentations/2011/

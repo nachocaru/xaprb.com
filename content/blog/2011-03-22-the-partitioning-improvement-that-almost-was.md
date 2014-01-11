@@ -12,7 +12,7 @@ Today I was looking for the ALTER TABLE EXCHANGE PARTITION feature for a custome
 
 The [worklog][2] is still open, although a related bug report it mentions is closed and pushed into trunk. (It confused me for a moment until I realized that what was pushed into trunk, and released in 5.5, was TRUNCATE PARTITION support.)
 
-Here&#8217;s hoping this gets included in a future release &#8212; this is a great feature that can make partitions much more amenable to operational tasks such as moving data from one partitioned table to another, or exporting a partition to a table, then exporting the table with xtrabackup and importing it onto another server.
+Here's hoping this gets included in a future release &#8212; this is a great feature that can make partitions much more amenable to operational tasks such as moving data from one partitioned table to another, or exporting a partition to a table, then exporting the table with xtrabackup and importing it onto another server.
 
  [1]: http://dev.mysql.com/doc/refman/5.5/en/dynindex-statement.html
  [2]: http://forge.mysql.com/worklog/task.php?id=4445

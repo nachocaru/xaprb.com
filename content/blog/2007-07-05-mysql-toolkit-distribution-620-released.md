@@ -24,7 +24,7 @@ tags:
 
 MySQL Toolkit distribution 620 updates documentation and test suites, includes some major bug fixes and functionality changes, and adds one new tool to the toolkit. This article is mostly a changelog, with some added notes.
 
-Many of the tools have matured and I just needed to make the documentation top-notch, but there&#8217;s still a lot to be done on the crucial checksumming and syncing tools. Time is in short supply for me right now, though. In fact, I actually finished this release on June 22, but wasn&#8217;t able to release it till just tonight!
+Many of the tools have matured and I just needed to make the documentation top-notch, but there's still a lot to be done on the crucial checksumming and syncing tools. Time is in short supply for me right now, though. In fact, I actually finished this release on June 22, but wasn't able to release it till just tonight!
 
 Documentation is now maintained online at the [MySQL Toolkit][1] website, by the way.
 
@@ -86,9 +86,9 @@ It ended up helping me avoid re-snapshotting a slave with a ton of data, so it w
 
 ### mysql-table-checksum and mysql-checksum-filter
 
-This version fixes some badly optimized chunking queries. As I have mentioned in the past, the chunking behavior is preliminary and subject to change. This is still true, but this release is much smarter than the previous release! I have also fleshed out some methods of doing chunking on real-valued columns (float, decimal, and even character). I don&#8217;t know when I&#8217;ll get a chance to code, test, and release that.
+This version fixes some badly optimized chunking queries. As I have mentioned in the past, the chunking behavior is preliminary and subject to change. This is still true, but this release is much smarter than the previous release! I have also fleshed out some methods of doing chunking on real-valued columns (float, decimal, and even character). I don't know when I'll get a chance to code, test, and release that.
 
-Even though much remains to be done, MySQL Table Checksum is still a great way to check that your slaves have the same data as the master. (In fact, it&#8217;s the only way I know of &#8212; and [MySQL employees themselves recommend MySQL Table Checksum][3]).
+Even though much remains to be done, MySQL Table Checksum is still a great way to check that your slaves have the same data as the master. (In fact, it's the only way I know of &#8212; and [MySQL employees themselves recommend MySQL Table Checksum][3]).
 
 Version 1.1.8
 
@@ -102,7 +102,7 @@ Changes
 
 Incompatible changes
 
-*   Added required &#8216;boundaries&#8217; column to checksum table for &#8211;replicate.
+*   Added required 'boundaries' column to checksum table for &#8211;replicate.
 
 Bugs fixed
 

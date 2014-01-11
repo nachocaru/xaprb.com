@@ -1,11 +1,11 @@
 ---
-title: 'How to use Linux&#8217;s CONFIG_IKCONFIG_PROC feature'
+title: 'How to use Linux's CONFIG_IKCONFIG_PROC feature'
 author: Baron Schwartz
 excerpt: "<p>This article gives an overview of the Linux kernel's CONFIG_IKCONFIG_PROC feature, which stores in the kernel the config file used to build it.</p>"
 layout: post
 permalink: /2006/05/23/how-to-use-linuxs-proc-config-feature/
 ---
-This article gives an overview of the Linux kernel&#8217;s `CONFIG_IKCONFIG_PROC` feature, which stores in the kernel the config file used to build it.
+This article gives an overview of the Linux kernel's `CONFIG_IKCONFIG_PROC` feature, which stores in the kernel the config file used to build it.
 
 ### What it is
 
@@ -33,6 +33,6 @@ If I have a working kernel but lost the config file I used to build it, I can bo
 
 <pre>zcat /proc/config.gz &gt; somefile</pre>
 
-One place I&#8217;ve found this helpful is when building a kernel on a system I don&#8217;t know well. I can boot a live CD, for example the Gentoo live CD, and steal its configuration as a starting point. This doesn&#8217;t always work perfectly, but it&#8217;s easier than starting from scratch, in my opinion.
+One place I've found this helpful is when building a kernel on a system I don't know well. I can boot a live CD, for example the Gentoo live CD, and steal its configuration as a starting point. This doesn't always work perfectly, but it's easier than starting from scratch, in my opinion.
 
 By the way, in this and all articles on this blog, I draw a distinction between Linux and the operating system. Linux is a kernel, not an operating system. GNU utilities constitute the rest of the operating system, which is why I use the term GNU/Linux when referring to the operating system as a whole.

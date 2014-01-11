@@ -24,17 +24,17 @@ tags:
 
 Thanks again to all the great [sponsors][1] for my week of work on the kit!
 
-This is the long-awaited &#8220;Baron worked on table sync&#8221; release. Hooray!
+This is the long-awaited "Baron worked on table sync" release. Hooray!
 
-I have resolved all of the issues I was facing in getting a release out the door. I now have individual test suites on all the programs in the kit (some of them trivial, some not) as well as a comprehensive unit test suite on the shared code. This is properly integrated into the Makefile, so it won&#8217;t let me release when a test is broken. Yay!
+I have resolved all of the issues I was facing in getting a release out the door. I now have individual test suites on all the programs in the kit (some of them trivial, some not) as well as a comprehensive unit test suite on the shared code. This is properly integrated into the Makefile, so it won't let me release when a test is broken. Yay!
 
 I also found and solved a number of other issues, mostly minor, with other tools in the kit. Yippee!
 
-But before we all celebrate too much, I want to say a word of caution: `mk-table-sync` is rebuilt from the ground up. That means I probably busted a bunch of things. One thing I know I broke: performance. It has two sync algorithms &#8212; Stream and Chunk &#8212; and Stream is not high performance, but Chunk can&#8217;t always be used. I personally advise you to run the tool with the `--test` option and make sure the table you&#8217;re syncing will not use the Stream algorithm if it is large. And if you are doubtful about bugs, as I am, you would do well not to touch the `--execute` option for critical data. Instead, use `--print` and save the output in a file, inspect the file, and then feed the file into `mysql`.
+But before we all celebrate too much, I want to say a word of caution: `mk-table-sync` is rebuilt from the ground up. That means I probably busted a bunch of things. One thing I know I broke: performance. It has two sync algorithms &#8212; Stream and Chunk &#8212; and Stream is not high performance, but Chunk can't always be used. I personally advise you to run the tool with the `--test` option and make sure the table you're syncing will not use the Stream algorithm if it is large. And if you are doubtful about bugs, as I am, you would do well not to touch the `--execute` option for critical data. Instead, use `--print` and save the output in a file, inspect the file, and then feed the file into `mysql`.
 
-Also, please be aware that I threw away the old tool&#8217;s 99 useless, confusing command-line options and started over. Some of them are similar. Some of them are the same but now mean different things. In other words, assuming backwards compatibility is probably not a good idea! Don&#8217;t just upgrade and drop this tool in place (in case you had cron jobs running it, for example).
+Also, please be aware that I threw away the old tool's 99 useless, confusing command-line options and started over. Some of them are similar. Some of them are the same but now mean different things. In other words, assuming backwards compatibility is probably not a good idea! Don't just upgrade and drop this tool in place (in case you had cron jobs running it, for example).
 
-Performance will come back, better than ever. I promise. But for now, please help me find bugs, and report them via [the project&#8217;s Sourceforge bug tracker][2]. Also, I would like to encourage you to post in the project&#8217;s forums and/or mailing lists instead of blog comments (unless you just have comments) so they are easy for others to find. (No one will search my blog for help on this toolkit, I feel sure).
+Performance will come back, better than ever. I promise. But for now, please help me find bugs, and report them via [the project's Sourceforge bug tracker][2]. Also, I would like to encourage you to post in the project's forums and/or mailing lists instead of blog comments (unless you just have comments) so they are easy for others to find. (No one will search my blog for help on this toolkit, I feel sure).
 
 Changelog:
 

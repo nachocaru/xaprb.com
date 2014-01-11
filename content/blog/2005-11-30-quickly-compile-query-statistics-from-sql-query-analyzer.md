@@ -9,7 +9,7 @@ Microsoft SQL Query Analyzer prints out statistics as text, and it can be tough 
 
 ### Analyzing the stats
 
-First, remember you can use SQL Server Profiler to measure your query&#8217;s performance. Profiler is a very powerful tool, and everyone writing queries should be familiar with it.
+First, remember you can use SQL Server Profiler to measure your query's performance. Profiler is a very powerful tool, and everyone writing queries should be familiar with it.
 
 For one-off queries, though, it may be faster to simply turn on the desired statistics and run the query, then grab the output and analyze it directly. Here is one quick way to analyze the output caused by `set statistics io on` and `set statistics time on`: use `awk`!
 
@@ -36,7 +36,7 @@ END {
 
 Now follow these steps to sum the statistics for easy consumption:
 
-*   get [awk][1], if you don&#8217;t have it
+*   get [awk][1], if you don't have it
 *   turn on the desired statistics
 *   execute your query
 *   switch from the results tab to the messages tab, and copy the messages to the clipboard

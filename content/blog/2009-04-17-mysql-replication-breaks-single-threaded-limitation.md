@@ -9,9 +9,9 @@ tags:
   - MySQL
   - replication
 ---
-It&#8217;s a feature preview with many limitations, but [this is still good news][1]. This has been a pretty severe performance limitation for replication in MySQL, which has prompted many a [workaround][2].
+It's a feature preview with many limitations, but [this is still good news][1]. This has been a pretty severe performance limitation for replication in MySQL, which has prompted many a [workaround][2].
 
-Interestingly, the feature preview is based on MySQL 5.1, which has recently seemed to be getting some [significant][3] [changes][4] even though it&#8217;s a GA release. Does this signal a change to MySQL&#8217;s release cycle, which has sometimes been characterized as too long? More good news?
+Interestingly, the feature preview is based on MySQL 5.1, which has recently seemed to be getting some [significant][3] [changes][4] even though it's a GA release. Does this signal a change to MySQL's release cycle, which has sometimes been characterized as too long? More good news?
 
  [1]: http://larsthalmann.blogspot.com/2009/04/feature-preview-multi-threaded-slave.html
  [2]: http://www.maatkit.org/doc/mk-slave-prefetch.html

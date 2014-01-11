@@ -11,7 +11,7 @@ tags:
   - primary key
   - unique index
 ---
-There&#8217;s a really important difference between a unique index (MySQL&#8217;s answer to a &#8220;unique constraint&#8221;) and a primary key in MySQL. Please take a look at this:
+There's a really important difference between a unique index (MySQL's answer to a "unique constraint") and a primary key in MySQL. Please take a look at this:
 
 ``<pre>CREATE TABLE `t` (
   `a` int,
@@ -39,6 +39,6 @@ Wrong. Our arch-enemy `NULL` [messes things up][1] again:
   </p>
 </blockquote>
 
-MySQL doesn&#8217;t let you define a primary key over nullable columns, for this reason. This is as of version 4.0, I believe &#8212; I recall that in version 3.23 there was nothing special about a primary key; it was just a unique non-nullable index named PRIMARY.
+MySQL doesn't let you define a primary key over nullable columns, for this reason. This is as of version 4.0, I believe &#8212; I recall that in version 3.23 there was nothing special about a primary key; it was just a unique non-nullable index named PRIMARY.
 
  [1]: http://dev.mysql.com/doc/en/create-index.html

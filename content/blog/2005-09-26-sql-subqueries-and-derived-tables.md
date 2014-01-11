@@ -17,7 +17,7 @@ Here is the actual production from the SQL grammar:
 
 > <pre>&lt;derived table&gt; ::= &lt;table subquery&gt;</pre>
 
-This makes it clear that &#8220;derived table&#8221; is a much more general term than is commonly used by many, especially those familiar with Microsoft SQL Server. Those folks typically mean a subquery in the FROM clause. The real meaning is &#8220;the result of a table subquery.&#8221;
+This makes it clear that "derived table" is a much more general term than is commonly used by many, especially those familiar with Microsoft SQL Server. Those folks typically mean a subquery in the FROM clause. The real meaning is "the result of a table subquery."
 
 There are actually three types of subquery: scalar, row, and table. Here is the subquery definition:
 

@@ -8,9 +8,9 @@ categories:
   - MariaDB
   - SQL
 ---
-You used to use [mk-query-digest][1] to aggregate and report on MySQL&#8217;s slow query log. Then it got the ability to grab query events from polling SHOW PROCESSLIST. Next we thought, really, how hard can it be to implement the libmysql wire protocol, so we can sniff TCP packets? &#8230; it&#8217;s hard, but not that hard as it turns out. But why stop there, why not implement memcached protocol too? I think you can see where this is headed.
+You used to use [mk-query-digest][1] to aggregate and report on MySQL's slow query log. Then it got the ability to grab query events from polling SHOW PROCESSLIST. Next we thought, really, how hard can it be to implement the libmysql wire protocol, so we can sniff TCP packets? &#8230; it's hard, but not that hard as it turns out. But why stop there, why not implement memcached protocol too? I think you can see where this is headed.
 
-So now mk-query-digest is a tool that can understand and &#8220;do stuff with&#8221; a variety of query/response types of information. The latest is HTTP. HTTP traffic is just a query-response flow of events, perfectly suitable for response-time analysis. Example:
+So now mk-query-digest is a tool that can understand and "do stuff with" a variety of query/response types of information. The latest is HTTP. HTTP traffic is just a query-response flow of events, perfectly suitable for response-time analysis. Example:
 
 `<pre>baron@kanga:~$ mk-query-digest sample-http.txt --type http
 # 1.6s user time, 100ms system time, 14.20M rss, 17.07M vsz
@@ -55,7 +55,7 @@ get www.mysqlperformanceblog.com/feed/\G
 #    7 0x4D4095C546E65CD4     0.1959  7.5%     1   0.1959 GET www.mysqlperformanceblog.com/2008/11/26/
 #    8 0x49CC22FAC68CD475     0.1906  7.3%     1   0.1906 GET /favicon.ico
 </pre>` 
-This is suitable for lots of things. We&#8217;re trying to look at the most useful protocols, because the variety of inputs is really unlimited; we could implement almost anything that fits into the notion of query and response. For example, the [memcached protocol is becoming something of a lingua franca][2] for a lot of different systems, so there&#8217;s a big value-add. HTTP has been used a long time as a transport layer for REST, SOAP, and so on (CouchDB anyone?). Valid, and interesting, suggestions are Sphinx, PostgreSQL, and Gearman. (Please [offer to sponsor][3] any that you want to see.)
+This is suitable for lots of things. We're trying to look at the most useful protocols, because the variety of inputs is really unlimited; we could implement almost anything that fits into the notion of query and response. For example, the [memcached protocol is becoming something of a lingua franca][2] for a lot of different systems, so there's a big value-add. HTTP has been used a long time as a transport layer for REST, SOAP, and so on (CouchDB anyone?). Valid, and interesting, suggestions are Sphinx, PostgreSQL, and Gearman. (Please [offer to sponsor][3] any that you want to see.)
 
 Back to HTTP: implementing it gives an easy way to measure website response time, including useful things like 95th percentile goodness. And from there, you can drill down into the performance of the work done for these requests. If you want to get really fancy, you can even capture some samples of netstat at the same time as you tcpdump traffic for HTTP, memcached, and MySQL &#8212; so you can blame database queries and memcached requests on specific HTTP requests!
 

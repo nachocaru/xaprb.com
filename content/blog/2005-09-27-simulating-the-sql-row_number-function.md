@@ -9,7 +9,7 @@ tags:
 ---
 If your RDBMS does not support the ROW\_NUMBER function, it is still possible to write some queries without it. ROW\_NUMBER operates over a partition of the result set, and returns a number for each row in a partition (it is possible to specify numbering schemes besides consecutive integers).
 
-Ranking and windowing functions are available in Microsoft SQL Server 2005, and are part of the newer SQL standards. I expect it will be some time before MySQL implements them. I don&#8217;t know about other systems such as PostgreSQL and Firebird. It has been a long time since I worked with Oracle, so I&#8217;m unsure about it, and viewing the Oracle documentation requires an account I&#8217;m unwilling to create.
+Ranking and windowing functions are available in Microsoft SQL Server 2005, and are part of the newer SQL standards. I expect it will be some time before MySQL implements them. I don't know about other systems such as PostgreSQL and Firebird. It has been a long time since I worked with Oracle, so I'm unsure about it, and viewing the Oracle documentation requires an account I'm unwilling to create.
 
 ### An easy solution
 
@@ -56,7 +56,7 @@ group by l.type, l.variety;
 | pear   | bradford   |   2 |
 +--------+------------+-----+</pre>
 
-Here I&#8217;ve partitioned the data by the `type` column, so there are four partitions (apple, cherry, orange, pear). Notice the `num` column starts at 1 for each partition and counts upward.
+Here I've partitioned the data by the `type` column, so there are four partitions (apple, cherry, orange, pear). Notice the `num` column starts at 1 for each partition and counts upward.
 
 The drawback to this solution is the LEFT OUTER JOIN with the >= in the join condition. This effectively makes the join a CROSS JOIN, which is inefficient (O(n<sup>2</sup>)). It may be a good idea to avoid this except on small data sets.
 

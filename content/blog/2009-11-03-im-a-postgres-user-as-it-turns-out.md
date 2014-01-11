@@ -1,5 +1,5 @@
 ---
-title: 'I&#8217;m a Postgres user, as it turns out'
+title: 'I'm a Postgres user, as it turns out'
 author: Baron Schwartz
 layout: post
 permalink: /2009/11/03/im-a-postgres-user-as-it-turns-out/
@@ -44,6 +44,6 @@ Query OK, 1 row affected (0.00 sec)
 mysql> use postgres
 Database changed
 </pre>` 
-So now I&#8217;m using Postgres. I still feel like I&#8217;m missing something, though. It feels a lot like reading [XKCD][1] comics. Where&#8217;s the tooltip?
+So now I'm using Postgres. I still feel like I'm missing something, though. It feels a lot like reading [XKCD][1] comics. Where's the tooltip?
 
  [1]: http://xkcd.com/

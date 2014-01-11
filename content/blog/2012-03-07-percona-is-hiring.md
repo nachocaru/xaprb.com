@@ -8,6 +8,6 @@ categories:
 ---
 Thinking about a new career? Percona is hiring for a [variety of positions][1]. Sales, server engineering, training, consulting, support, and occasionally other things too.
 
-It&#8217;s a great place to work. I&#8217;m totally biased, but it&#8217;s still a great place to work.
+It's a great place to work. I'm totally biased, but it's still a great place to work.
 
  [1]: http://www.percona.com/about-us/careers/open-positions/

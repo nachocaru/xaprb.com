@@ -7,7 +7,7 @@ categories:
   - Commentary
   - SQL
 ---
-I&#8217;ve never objected to someone making money from MySQL. I&#8217;ve only expressed disappointment that they [weren&#8217;t doing it effectively enough][1]. As I have predicted many times, Oracle is good at this. Oracle is the number one reason I didn&#8217;t start a new career in some other database a few years ago. Oracle is making MySQL more successful not only for Oracle, but also for the users, the community, and the competition.
+I've never objected to someone making money from MySQL. I've only expressed disappointment that they [weren't doing it effectively enough][1]. As I have predicted many times, Oracle is good at this. Oracle is the number one reason I didn't start a new career in some other database a few years ago. Oracle is making MySQL more successful not only for Oracle, but also for the users, the community, and the competition.
 
 I am glad that Oracle is offering more [pay-only extensions][2] to the server in a way that creates opportunities for others to do the same, and I look forward to even more of them in the future.
 

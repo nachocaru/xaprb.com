@@ -8,7 +8,7 @@ categories:
   - SQL
   - Tools
 ---
-Do you test your application systematically when you upgrade or reconfigure your database server? You should! Here&#8217;s a real (anonymized) story of what happens if you don&#8217;t.
+Do you test your application systematically when you upgrade or reconfigure your database server? You should! Here's a real (anonymized) story of what happens if you don't.
 
 > When we upgraded to 5.0.62 (from 5.0.27 and 5.0.45), our code broke for queries like this:
 > 
@@ -19,7 +19,7 @@ WHERE day = FROM_UNIXTIME(1222889772);`
 > 
 > This resulted in an outage and revenue loss to the company.
 
-Daniel and I (mostly Daniel) continue to improve [mk-upgrade][2] to make it easy and inexpensive to find these kinds of scenarios *before* they bite you. Don&#8217;t get caught with your pants down &#8212; next time you make *any* major change to your database server (upgrade, configuration change, switching to InnoDB&#8230;) follow at least this bare-minimum process:
+Daniel and I (mostly Daniel) continue to improve [mk-upgrade][2] to make it easy and inexpensive to find these kinds of scenarios *before* they bite you. Don't get caught with your pants down &#8212; next time you make *any* major change to your database server (upgrade, configuration change, switching to InnoDB&#8230;) follow at least this bare-minimum process:
 
 *   collect all queries run against the server for a sufficient time
 *   get a snapshot of your data

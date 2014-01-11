@@ -5,13 +5,13 @@ layout: post
 permalink: /2005/09/21/subselects-in-mysql/
 categories: Database
 ---
-Some queries that seemingly require the use of subqueries in the FROM clause (commonly called [derived tables][1]) can be written without them. This is useful for earlier versions of MySQL, which do not support subqueries. In this article I&#8217;ll explain how to get the effect of subqueries without actually using them.
+Some queries that seemingly require the use of subqueries in the FROM clause (commonly called [derived tables][1]) can be written without them. This is useful for earlier versions of MySQL, which do not support subqueries. In this article I'll explain how to get the effect of subqueries without actually using them.
 
-The basic principle that makes this work is this: a subquery in the FROM clause really works like an anonymous view, and can be accomplished as joins to base tables, *as long as the joins don&#8217;t interact*.
+The basic principle that makes this work is this: a subquery in the FROM clause really works like an anonymous view, and can be accomplished as joins to base tables, *as long as the joins don't interact*.
 
 ### Introduction
 
-I&#8217;ll demonstrate how to add a sum across two grouped subqueries with a single grouped select. The three example tables are as follows:
+I'll demonstrate how to add a sum across two grouped subqueries with a single grouped select. The three example tables are as follows:
 
 <pre>create table category (
     uid int primary key,
@@ -33,7 +33,7 @@ These tables represent a very simplified version of an inventory system I mainta
 
 When we check items out, we either check out a certain item, say item #47, or we check out X items of category Y. For example, 15 AA batteries would be checked out as qty 15 of category â€œMiscâ€. We check out a specific item by updating its `checkedout` column, but we check out in bulk by inserting into `bulk_checkout`.
 
-### How I&#8217;d write the query with subqueries
+### How I'd write the query with subqueries
 
 The example query is a summary of item count and checked-out count, grouped by category. Here is how I would write this query with subqueries:
 
@@ -78,7 +78,7 @@ Why is this? The subselects need to be independent, so rows in bulk`_checkout` a
 
 ### A solution
 
-I need a way to join to both tables in one query, while having the effect of two queries that each join only to one of them. How is this possible? I can think of only one way: join on some mutually exclusive values, so rows from one table aren&#8217;t mixed with rows from the other table. A [mutex table][2] is the only answer I am aware of. Here is the query written with the mutex table:
+I need a way to join to both tables in one query, while having the effect of two queries that each join only to one of them. How is this possible? I can think of only one way: join on some mutually exclusive values, so rows from one table aren't mixed with rows from the other table. A [mutex table][2] is the only answer I am aware of. Here is the query written with the mutex table:
 
 <pre>select category.title, sum(it.qty) as qty,
   sum(

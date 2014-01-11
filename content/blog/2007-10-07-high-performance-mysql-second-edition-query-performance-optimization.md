@@ -16,13 +16,13 @@ tags:
   - optimization
   - SQL
 ---
-Your comments on the [Advanced MySQL Features][1] chapter were great. A lot of the questions I got (in the comments and via email) about chapter 6 are really addressed in chapter 5, &#8220;Query Performance Optimization,&#8221; so I&#8217;m posting its outline too. I have the same questions: are there things you&#8217;d like to see us cover? Do you have any favorite techniques you&#8217;d like to see us include? Any other comments or questions?
+Your comments on the [Advanced MySQL Features][1] chapter were great. A lot of the questions I got (in the comments and via email) about chapter 6 are really addressed in chapter 5, "Query Performance Optimization," so I'm posting its outline too. I have the same questions: are there things you'd like to see us cover? Do you have any favorite techniques you'd like to see us include? Any other comments or questions?
 
-A bit of basic chapter information: It&#8217;s currently 45 pages and very nearly a first draft, I think. The outline might be subject to change if we decide to rearrange the material, which actually might help in some places. As I pulled out the headings for this article, I noticed that some of the sections are just **huge**, and might benefit from being divided up a little bit more. But that&#8217;s all going to come out in the wash; the focus right now is getting the material down in some order that makes sense, and making sure it&#8217;s clear, concise, and correct.
+A bit of basic chapter information: It's currently 45 pages and very nearly a first draft, I think. The outline might be subject to change if we decide to rearrange the material, which actually might help in some places. As I pulled out the headings for this article, I noticed that some of the sections are just **huge**, and might benefit from being divided up a little bit more. But that's all going to come out in the wash; the focus right now is getting the material down in some order that makes sense, and making sure it's clear, concise, and correct.
 
 [**Update**: I got curious how the page count in OpenOffice.org will translate to the page count on paper, so I opened one of the chapters from the first edition and it looks like every 10 pages in OpenOffice.org will be about 11 pages on paper. So this chapter really ought to be about 50 pages on paper].
 
-Here&#8217;s the chapter outline:
+Here's the chapter outline:
 
 <pre>[Intro]
 Slow Query Basics: Optimize Data Access

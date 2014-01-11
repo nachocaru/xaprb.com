@@ -15,7 +15,7 @@ The newest release of Maatkit contains mk-audit bug fixes, lots of [new features
 
 <!--more-->
 
-Here&#8217;s the changelog:
+Here's the changelog:
 
 <pre>Changelog for mk-audit:
 

@@ -16,7 +16,7 @@ Sometimes there are funny communication styles between people who are geographic
 > Q: Is it OK for me to buy quad-core servers?  
 > A: The old man walks slow but carries much, whilst the young boy runs without a care.
 
-Okay, okay maybe I wasn&#8217;t very clear in my message, and maybe it was just a little bit Confucian. Here&#8217;s what I actually said:
+Okay, okay maybe I wasn't very clear in my message, and maybe it was just a little bit Confucian. Here's what I actually said:
 
 > Xaprb: 8 cores may be OK for some workloads  
 > Xaprb: high-concurrency, not so good  

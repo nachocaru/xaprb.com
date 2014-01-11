@@ -11,12 +11,12 @@ tags:
   - Heuristics
   - MySQL
 ---
-[We][1] have an early draft of a new tool available for you to use and test. It uses heuristics to find problems in SQL. Please use it and give feedback! Here&#8217;s how:
+[We][1] have an early draft of a new tool available for you to use and test. It uses heuristics to find problems in SQL. Please use it and give feedback! Here's how:
 
 `<pre>$ wget http://www.maatkit.org/trunk/mk-query-advisor
 $ perl mk-query-advisor /var/log/mysql/slow.log
 </pre>` 
-By default it consumes a log file in MySQL&#8217;s slow query log format, but it can also parse the general-log format, and if you have any other kind of log you can feed it through mk-query-digest to transform the log into something it can recognize. Tell me if you&#8217;d be able to spot the mixture of join styles and use of leading % wildcards in the following query without help:
+By default it consumes a log file in MySQL's slow query log format, but it can also parse the general-log format, and if you have any other kind of log you can feed it through mk-query-digest to transform the log into something it can recognize. Tell me if you'd be able to spot the mixture of join styles and use of leading % wildcards in the following query without help:
 
 ``<pre>
 # Query ID 0x643E813A9ABDA151 at byte 2001701
@@ -52,9 +52,9 @@ SELECT `rhubarb_series_title`.`id`, `rhubarb_series_title`.`series_id`,
 `rhubarb_series_title`.`series_id` = `rhubarb_series`.`id` AND
 `rhubarb_series`.`poster_id` = `auth_user`.`id`
 </pre>`` 
-Yes, that&#8217;s a real query, slightly obfuscated.
+Yes, that's a real query, slightly obfuscated.
 
-If you find bugs, [report them][2]. If you find a &#8220;bad query&#8221; that doesn&#8217;t trigger any heuristic, [report that too][2]. We&#8217;re only getting started, but I feel sure that this tool will become a sort of best-practices advisor as we make it more capable. The Google Code issue tracker has [a full initial spec][3], and [the wiki has a roadmap][4].
+If you find bugs, [report them][2]. If you find a "bad query" that doesn't trigger any heuristic, [report that too][2]. We're only getting started, but I feel sure that this tool will become a sort of best-practices advisor as we make it more capable. The Google Code issue tracker has [a full initial spec][3], and [the wiki has a roadmap][4].
 
  [1]: http://www.maatkit.org/
  [2]: http://code.google.com/p/maatkit/issues/list

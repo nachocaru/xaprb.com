@@ -15,7 +15,7 @@ tags:
 ---
 This article explains how to do subtraction in SQL over samples that wrap back to zero when they exceed a boundary.
 
-A reader wrote in with a question about how to find how much traffic has passed through a network interface. The reader has a script that samples the interface&#8217;s statistics and stores them in a database. The statistics wrap back around when they exceed the maximum size of an integer, so it&#8217;s not a strictly increasing sequence. The question, paraphrased, is &#8220;how can I find out how much traffic has gone through the interface in any given time period?&#8221;
+A reader wrote in with a question about how to find how much traffic has passed through a network interface. The reader has a script that samples the interface's statistics and stores them in a database. The statistics wrap back around when they exceed the maximum size of an integer, so it's not a strictly increasing sequence. The question, paraphrased, is "how can I find out how much traffic has gone through the interface in any given time period?"
 
 A key assumption is that the counter never wraps back to zero more than once between samples. If it does, all hope is lost.
 
@@ -48,21 +48,21 @@ select * from samples;
 
 ### How much traffic?
 
-A manual calculation is easier than it looks, and solving this by hand is the key to solving it in SQL. You don&#8217;t have to do a bunch of nasty math, like subtracting 982 from 163 (that&#8217;s already too hard for me). You just have to notice where the counter wraps. You can find these places by seeing where the number decreases from one sample to the next. In the example, the counter wraps twice: from 900 to 230, and from 982 to 163. Here&#8217;s the data, graphed with wraps &#8220;unrolled.&#8221;
+A manual calculation is easier than it looks, and solving this by hand is the key to solving it in SQL. You don't have to do a bunch of nasty math, like subtracting 982 from 163 (that's already too hard for me). You just have to notice where the counter wraps. You can find these places by seeing where the number decreases from one sample to the next. In the example, the counter wraps twice: from 900 to 230, and from 982 to 163. Here's the data, graphed with wraps "unrolled."
 
 <img src="/articles/images/samples-that-wrap.png" width="450" height="400" alt="Graph of sample data" />
 
-There are several ways to proceed from here. One way is to calculate the traffic as 1,000 times the number of wraps. Then you just do a little math to &#8220;clean up the edges:&#8221; subtract the first number in the sequence, and then add the last number. This gives (2 * 1000) &#8211; 100 + 600, which is 2500.
+There are several ways to proceed from here. One way is to calculate the traffic as 1,000 times the number of wraps. Then you just do a little math to "clean up the edges:" subtract the first number in the sequence, and then add the last number. This gives (2 * 1000) &#8211; 100 + 600, which is 2500.
 
 Another approach is to go row by row, summing the differences from the previous row and the last row. When the counter wraps, you add 1000 before taking the difference. This math gives the same answer. This is a lot harder to do by hand.
 
-Either technique works given an arbitrary start and end point in the sequence. Now let&#8217;s see how to do these in SQL.
+Either technique works given an arbitrary start and end point in the sequence. Now let's see how to do these in SQL.
 
-### Problem: find the &#8220;previous&#8221; row
+### Problem: find the "previous" row
 
-While these methods seem easy to humans, they resist many relational solutions because of the notion of &#8220;previous row.&#8221; SQL is set-oriented, and doesn&#8217;t do iterative row-by-row data manipulation. If you try to do this by grouping each strictly increasing set of data together and using aggregate functions like `SUM`, you&#8217;ll have trouble. You need the values from the &#8220;previous set&#8221; to do that, and that doesn&#8217;t work like you might want it to.
+While these methods seem easy to humans, they resist many relational solutions because of the notion of "previous row." SQL is set-oriented, and doesn't do iterative row-by-row data manipulation. If you try to do this by grouping each strictly increasing set of data together and using aggregate functions like `SUM`, you'll have trouble. You need the values from the "previous set" to do that, and that doesn't work like you might want it to.
 
-However, it&#8217;s not that hard to get the current and last row matched up side-by-side so you can operate upon them within the context of a single row:
+However, it's not that hard to get the current and last row matched up side-by-side so you can operate upon them within the context of a single row:
 
 <pre>select cur.num, cur.bytes, prev.bytes as prev_bytes
 from samples as cur
@@ -79,11 +79,11 @@ from samples as cur
 |   7 |   600 |        163 | 
 +-----+-------+------------+</pre>
 
-Once you think of &#8220;previous&#8221; in SQL terms, it becomes easy. Armed with this tool, we are ready to take on the queries.
+Once you think of "previous" in SQL terms, it becomes easy. Armed with this tool, we are ready to take on the queries.
 
 ### Technique 1: count wraps and clean up the edges
 
-Now that we&#8217;ve figured out how to find the &#8220;previous row,&#8221; how can we express the &#8220;count wraps and clean up edges&#8221; algorithm in SQL? Brace yourself:
+Now that we've figured out how to find the "previous row," how can we express the "count wraps and clean up edges" algorithm in SQL? Brace yourself:
 
 <pre>select 1000 * sum(t1.wraps) - t2.start + o.bytes as total
 from samples as o

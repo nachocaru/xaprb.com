@@ -29,13 +29,13 @@ tags:
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>
 </p>
 
-This release fixes several bugs introduced in the last release as I replaced untested code with tested code &#8212; how ironic! Actually, I knew that was virtually guaranteed to happen. Anyway, all the bugs you&#8217;ve helped me find are now fixed. I also fixed a long-standing bug in MySQL Table Sync, which I am otherwise trying to touch as little as possible for the time being. (Remember to contribute to the [bounty][1], and get your employer to contribute as well, so I can do some real work on it in the next month or so!)
+This release fixes several bugs introduced in the last release as I replaced untested code with tested code &#8212; how ironic! Actually, I knew that was virtually guaranteed to happen. Anyway, all the bugs you've helped me find are now fixed. I also fixed a long-standing bug in MySQL Table Sync, which I am otherwise trying to touch as little as possible for the time being. (Remember to contribute to the [bounty][1], and get your employer to contribute as well, so I can do some real work on it in the next month or so!)
 
-The other big news is that the parallel dump and restore tools are now 1.0.0 because I consider them feature-complete. I have put the most work into tab-separated dumps. These two tools can do something MySQL AB&#8217;s tools can&#8217;t currently do: restore data before creating triggers (when doing tab-delimited dumps). That&#8217;s an obvious requirement for loading data when tables have triggers. If you create the triggers before loading the data, you&#8217;re practically guaranteed to end up with different data than was dumped. The tools now dump and reload both triggers and views. As long as you&#8217;re dumping the mysql database, I think they should be able to completely duplicate a server (my initial goal was just data, not routines/triggers/views/etc).
+The other big news is that the parallel dump and restore tools are now 1.0.0 because I consider them feature-complete. I have put the most work into tab-separated dumps. These two tools can do something MySQL AB's tools can't currently do: restore data before creating triggers (when doing tab-delimited dumps). That's an obvious requirement for loading data when tables have triggers. If you create the triggers before loading the data, you're practically guaranteed to end up with different data than was dumped. The tools now dump and reload both triggers and views. As long as you're dumping the mysql database, I think they should be able to completely duplicate a server (my initial goal was just data, not routines/triggers/views/etc).
 
-Honestly, I hope MySQL&#8217;s tools make this pair of tools obsolete in the future, but until then, they&#8217;re a good way to dump and reload data at higher speeds. [Keith Murphy did some measurements on parallel dump and restore speeds.][2]
+Honestly, I hope MySQL's tools make this pair of tools obsolete in the future, but until then, they're a good way to dump and reload data at higher speeds. [Keith Murphy did some measurements on parallel dump and restore speeds.][2]
 
-Here&#8217;s the full changelog:
+Here's the full changelog:
 
 <pre>Changelog for mysql-archiver:
 

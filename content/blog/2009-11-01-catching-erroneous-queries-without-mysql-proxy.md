@@ -9,28 +9,28 @@ categories:
 tags:
   - MySQL Proxy
 ---
-MySQL Proxy is a really neat tool. I remember a few years back when I first saw Jan talking about it. Back in those days it was significantly different than it is now, but the concept remains the same: direct your database traffic through a man-in-the-middle. [Chris Calender&#8217;s post on capturing erroneous queries with MySQL Proxy][1] shows one use for Proxy. But wait. MySQL Proxy is just inspecting the MySQL protocol. And unless you&#8217;re using it for something else too, having a man in the middle to catch errors is like standing in the middle of the street and blocking traffic to count the cars on the street. Why don&#8217;t you stand on the sidewalk to count the cars instead?
+MySQL Proxy is a really neat tool. I remember a few years back when I first saw Jan talking about it. Back in those days it was significantly different than it is now, but the concept remains the same: direct your database traffic through a man-in-the-middle. [Chris Calender's post on capturing erroneous queries with MySQL Proxy][1] shows one use for Proxy. But wait. MySQL Proxy is just inspecting the MySQL protocol. And unless you're using it for something else too, having a man in the middle to catch errors is like standing in the middle of the street and blocking traffic to count the cars on the street. Why don't you stand on the sidewalk to count the cars instead?
 
 ### Observing without interrupting
 
-Maybe we can use tcpdump. If you search Google you&#8217;ll see lots of examples of using tcpdump and grep to extract queries from the MySQL protocol. These examples usually fall on their face when there are multi-line queries, or the compressed protocol is in use, but here there&#8217;s another problem: the error flag is just a field in the protocol, and that&#8217;s not very easy to inspect with grep. I&#8217;m not sure it&#8217;s even reasonably possible.
+Maybe we can use tcpdump. If you search Google you'll see lots of examples of using tcpdump and grep to extract queries from the MySQL protocol. These examples usually fall on their face when there are multi-line queries, or the compressed protocol is in use, but here there's another problem: the error flag is just a field in the protocol, and that's not very easy to inspect with grep. I'm not sure it's even reasonably possible.
 
 Maatkit to the rescue! The mk-query-digest tool can understand the protocol and we can then filter and manipulate however we wish. As usual, begin by downloading it:
 
 `<pre>wget http://www.maatkit.org/get/mk-query-digest</pre>` 
-Next, let&#8217;s set it up to observe the traffic so we can see what&#8217;s happening on the server.
+Next, let's set it up to observe the traffic so we can see what's happening on the server.
 
 `<pre>tcpdump -i lo port 3306 -s 65535 -xnq -tttt \
    | perl mk-query-digest --type tcpdump</pre>` 
-That&#8217;ll capture traffic on port 3306 and push it into mk-query-digest, which defaults to aggregating and reporting on queries. But what we really want to do with that traffic is filter out all the traffic that doesn&#8217;t have errors. This is a one-liner, but I&#8217;ll take a detour to show you how to fish instead of just giving you the fish.
+That'll capture traffic on port 3306 and push it into mk-query-digest, which defaults to aggregating and reporting on queries. But what we really want to do with that traffic is filter out all the traffic that doesn't have errors. This is a one-liner, but I'll take a detour to show you how to fish instead of just giving you the fish.
 
 ### Writing mk-query-digest filters
 
-You can filter and transform query events any way you wish with the `--filter` command-line option. To do this, you have to know the structure of a query event, as seen by mk-query-digest. This is really easy; let&#8217;s create a filter that simply prints the event itself with Perl&#8217;s built-in Data::Dumper module, so we can see it:
+You can filter and transform query events any way you wish with the `--filter` command-line option. To do this, you have to know the structure of a query event, as seen by mk-query-digest. This is really easy; let's create a filter that simply prints the event itself with Perl's built-in Data::Dumper module, so we can see it:
 
 `<pre>tcpdump -i lo port 3306 -s 65535 -xnq -tttt \
    | perl mk-query-digest --type tcpdump --filter 'print Dumper $event'</pre>` 
-I&#8217;ll test this by leaving it running in one terminal, and running a malformed query, such as &#8216;SELECT&#8217; without any FROM, in another terminal:
+I'll test this by leaving it running in one terminal, and running a malformed query, such as 'SELECT' without any FROM, in another terminal:
 
 `<pre>mysql> select;
 ERROR 1064 (42000): You have an error in your SQL syntax...
@@ -58,7 +58,7 @@ Good enough for me. When I did this, mk-query-digest printed the following:
   user => undef
 };
 </pre>` 
-So the $event is a hash with an entry called Error_no. (There is a comprehensive reference to the structure of a query event in the Maatkit wiki, but I often find this technique faster than looking up the reference.) Now we&#8217;re ready to build a filter that&#8217;ll snag queries with errors, and print them out in slow-query-log format. Due to an [oddity][2] of the way the Error_no is reported for queries that do NOT have an error, I need to explicitly filter by queries that don&#8217;t say &#8220;none&#8221;. The final filter code, with a little sanity check to prevent crashing if it&#8217;s ever undefined, is just:
+So the $event is a hash with an entry called Error_no. (There is a comprehensive reference to the structure of a query event in the Maatkit wiki, but I often find this technique faster than looking up the reference.) Now we're ready to build a filter that'll snag queries with errors, and print them out in slow-query-log format. Due to an [oddity][2] of the way the Error_no is reported for queries that do NOT have an error, I need to explicitly filter by queries that don't say "none". The final filter code, with a little sanity check to prevent crashing if it's ever undefined, is just:
 
 `--filter '($event->{Error_no} ||"") ne "none"'`
 
@@ -73,7 +73,7 @@ tcpdump -i lo port 3306 -s 65535 -xnq -tttt \
    | perl mk-query-digest --type tcpdump \
      --filter '($event->{Error_no} || "") ne "none"' --print
 </pre>` 
-If I now run a bunch of queries, some with errors, I&#8217;ll see those with errors get printed out. Let&#8217;s try:
+If I now run a bunch of queries, some with errors, I'll see those with errors get printed out. Let's try:
 
 `<pre>
 mysql> select 1; select current_date; select; set global nono=1;select 1;

@@ -1,5 +1,5 @@
 ---
-title: 'Aspersa&#8217;s mysql-summary tool'
+title: 'Aspersa's mysql-summary tool'
 author: Baron Schwartz
 layout: post
 permalink: /2010/07/10/aspersas-mysql-summary-tool/
@@ -9,7 +9,7 @@ categories:
   - SQL
   - Tools
 ---
-For those of you who miss what [Maatkit][1]&#8216;s mk-audit tool (now retired) gave you, there&#8217;s a pair of tools in [Aspersa][2] that more than replaces it. [I wrote previously about the summary tool][3]. I don&#8217;t think I have mentioned the mysql-summary tool. It has been under development for a while, and at this point it has quite a lot of functionality. You can see a [sample of the output on its manual page][4].
+For those of you who miss what [Maatkit][1]'s mk-audit tool (now retired) gave you, there's a pair of tools in [Aspersa][2] that more than replaces it. [I wrote previously about the summary tool][3]. I don't think I have mentioned the mysql-summary tool. It has been under development for a while, and at this point it has quite a lot of functionality. You can see a [sample of the output on its manual page][4].
 
  [1]: http://www.maatkit.org/
  [2]: http://code.google.com/p/aspersa/

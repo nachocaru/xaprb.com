@@ -17,19 +17,19 @@ I installed it under ActivePerl 5.8.8 build 819:
 
 I also watched another person run it under ActivePerl 5.8.7.
 
-That&#8217;s it. Here is a screenshot of innotop on Windows XP:
+That's it. Here is a screenshot of innotop on Windows XP:
 
 [<img src="/innotop/thumb-innotop-windows-T-mode.png" width="400" height="218" alt="innotop no Windows XP" />][4]
 
 ### Differences under Windows
 
-If you have term-ansicolor , it is disabled because Windows terminals don&#8217;t like the formatting characters. That makes the display a bit less compact, but such is life.
+If you have term-ansicolor , it is disabled because Windows terminals don't like the formatting characters. That makes the display a bit less compact, but such is life.
 
 If you have any experience with other ways to run innotop under Windows (cygwin?), please let me know.
 
-My next project is to take a number of samples of `SHOW INNODB STATUS `from MySQL running under Windows and make sure they&#8217;re parsed correctly. I&#8217;ve read the source, but reading the source doesn&#8217;t mean I&#8217;ve done it right. (Update: yep, I did it right).
+My next project is to take a number of samples of `SHOW INNODB STATUS `from MySQL running under Windows and make sure they're parsed correctly. I've read the source, but reading the source doesn't mean I've done it right. (Update: yep, I did it right).
 
-**Update**: version 0.1.159 has additional fixes. A new Windows-specific configuration variable, `max_height`, defines how high the viewable window area is. Otherwise innotop can&#8217;t figure out how much space it has to work with. I also fixed the code to work with MySQL 5.1&#8242;s new `SHOW ENGINE` output (there is an extra column in the output).
+**Update**: version 0.1.159 has additional fixes. A new Windows-specific configuration variable, `max_height`, defines how high the viewable window area is. Otherwise innotop can't figure out how much space it has to work with. I also fixed the code to work with MySQL 5.1&#8242;s new `SHOW ENGINE` output (there is an extra column in the output).
 
 **Update 2006-11-14**: version 0.1.160 has more Windows compatibility. An astute Perl hacker showed me how to get ANSI formatting codes to work in a Windows console, which allows bold and highlighted text and a more compact display (so you can get more on the screen). To get this to work, just install Win32::Console::ANSI. Yay!
 

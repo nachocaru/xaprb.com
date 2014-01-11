@@ -6,7 +6,7 @@ layout: post
 permalink: /2005/09/29/javascript-date-chooser/
 ---
 <p style="border:solid red 1px; background:yellow">
-  If you have questions or comments or bugs report, or a change to make, be sure to use the project&#8217;s new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>
+  If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>
 </p>
 
 <p class="download">
@@ -17,7 +17,7 @@ I wrote this date chooser because the ones I could find on the Internet were cru
 
 I made a [demo][1] so you can see it in action.
 
-This code uses some code from my [article about date formatting and parsing via dynamic code generation][2], to implement a date-formatting syntax similar to [PHP&#8217;s `date` function][3].
+This code uses some code from my [article about date formatting and parsing via dynamic code generation][2], to implement a date-formatting syntax similar to [PHP's `date` function][3].
 
 The script depends upon [date-functions.js][4], [datechooser.js][5], [select-free.css][6], and [datechooser.css][7].
 
@@ -29,7 +29,7 @@ To create a date-chooser on your HTML document, follow these steps:
 2.  Wrap `select-free.css` in a conditional comment for IE, as in the demo.
 3.  Create a form, a `div` to hold the date chooser, a form field to hold the results, and an image to trigger showing and hiding the chooser, as below.
 
-Here&#8217;s some sample code:
+Here's some sample code:
 
 <pre>&lt;input id="dob" name="dob" size="10" maxlength="10" type="text"/&gt;&lt;img src="/files/calendar.gif" onclick="showChooser(this, 'dob', 'chooserSpan', 1950, 2010, 'Y-m-d', false);"/&gt;
 &lt;div id="chooserSpan" class="dateChooser select-free" style="display: none; visibility: hidden; width: 160px;"&gt;

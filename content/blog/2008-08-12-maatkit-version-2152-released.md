@@ -20,11 +20,11 @@ tags:
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
 </p>
 
-[Maatkit][1] version 2152 is ready for download. This release is also known as the &#8220;is this project really alive?&#8221; release. We thought we should delay until [MySQL released a new Community Server version][2]. Just kidding &#8212; it has nothing to do with that.
+[Maatkit][1] version 2152 is ready for download. This release is also known as the "is this project really alive?" release. We thought we should delay until [MySQL released a new Community Server version][2]. Just kidding &#8212; it has nothing to do with that.
 
 <!--more-->
 
-This release is also very significant in that it&#8217;s the first one that has large code contributions by someone other than myself. As you may know, [Percona][3] (my employer) has hired the [very talented Daniel Nichter, author of mysqlreport and other goodies][4], to help with Maatkit. So far it is a match made in heaven, and Daniel did most of the coding for this release.
+This release is also very significant in that it's the first one that has large code contributions by someone other than myself. As you may know, [Percona][3] (my employer) has hired the [very talented Daniel Nichter, author of mysqlreport and other goodies][4], to help with Maatkit. So far it is a match made in heaven, and Daniel did most of the coding for this release.
 
 This is also our first release since [Ask][5] helped me move the project (thank you Ask!) to Google Code. That means you finally get a decent interface for entering issues, etc, etc. The only thing remaining on Sourceforge at this point is the online documentation, which I will probably move to maatkit.org soon. But more importantly, it means the developers have a decent interface for issues, etc etc. [Sourceforge is just a bloody nightmare &#8212; their site keeps getting harder and harder to use][6], both as a developer and as a user. It had gotten to the point where simply adding the files to the site for download would take me hours. I tried to automate it, in true Perl fashion, but their make-a-release forms resisted my every effort. I cannot say what a relief it is to have usable project hosting that gets out of my way and lets me work. A double thanks to Ask for pushing me over the edge on this &#8212; it had been on my mind a long time. And thanks to Google, too, for a great project management interface.
 
@@ -32,7 +32,7 @@ Also note that the Sourceforge forums and mailing lists are dead. Google Groups 
 
 Keep reporting those bugs and feature requests!
 
-As you might expect, the changelog for such a long release cycle is, er, large. There&#8217;s a lot of new stuff here. I&#8217;d like to highlight the new features in mk-parallel-dump and mk-parallel-restore &#8212; which I just used to reduce a job that would have taken weeks down to mere days &#8212; and a lot of new code in mk-table-sync, as well as the up-and-coming mk-audit, which is in release-early/often mode.
+As you might expect, the changelog for such a long release cycle is, er, large. There's a lot of new stuff here. I'd like to highlight the new features in mk-parallel-dump and mk-parallel-restore &#8212; which I just used to reduce a job that would have taken weeks down to mere days &#8212; and a lot of new code in mk-table-sync, as well as the up-and-coming mk-audit, which is in release-early/often mode.
 
 <pre>Changelog for mk-archiver:
 

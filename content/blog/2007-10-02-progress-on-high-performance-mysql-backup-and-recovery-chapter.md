@@ -22,7 +22,7 @@ tags:
 ---
 I wrote a couple weeks ago about my work on the [Backup and Recovery chapter for High Performance MySQL, 2nd Edition][1]. Thanks for your comments and suggestions, and thanks to those of you who helped me over email as well.
 
-I&#8217;ve had several questions about what is included in the chapter, so I thought I&#8217;d post the outline as it stands now:
+I've had several questions about what is included in the chapter, so I thought I'd post the outline as it stands now:
 
 <pre>[Introduction]
 It's All About Recovery
@@ -72,12 +72,12 @@ Backup Tools
   Comparison of Backup Tools
 Scripting Backups</pre>
 
-Whew! Even with such a detailed outline, it&#8217;s hard to tell how much material is in there (it could be all headings and no text, right?). To give you a rough idea, it&#8217;s 32 pages in OpenOffice.org. In fact, I&#8217;d say the places that are the least in-depth are &#8220;Why Backups?&#8221; and the last two sections. As I wrote, I became conscious that a lot of these topics are not specific to MySQL, and there are other books specifically about backup that you should read. My focus for this book, I decided, should be on High Performance MySQL Backup and Recovery.
+Whew! Even with such a detailed outline, it's hard to tell how much material is in there (it could be all headings and no text, right?). To give you a rough idea, it's 32 pages in OpenOffice.org. In fact, I'd say the places that are the least in-depth are "Why Backups?" and the last two sections. As I wrote, I became conscious that a lot of these topics are not specific to MySQL, and there are other books specifically about backup that you should read. My focus for this book, I decided, should be on High Performance MySQL Backup and Recovery.
 
-That&#8217;s why I went into such significant detail. For example, the section on copying files across the network is not fluff. It&#8217;s benchmarks of file copy methods. And in the section on loading SQL dumps, I show you how to use `sed` to extract the CREATE TABLE statement for one table out of a huge all-tables dump without decompressing the file and opening it with a text editor (just in case you were silly enough to dump everything into one monolithic file). At present I&#8217;d say this chapter has at least four or five times more material than its counterpart in the first edition.
+That's why I went into such significant detail. For example, the section on copying files across the network is not fluff. It's benchmarks of file copy methods. And in the section on loading SQL dumps, I show you how to use `sed` to extract the CREATE TABLE statement for one table out of a huge all-tables dump without decompressing the file and opening it with a text editor (just in case you were silly enough to dump everything into one monolithic file). At present I'd say this chapter has at least four or five times more material than its counterpart in the first edition.
 
 A side effect of working on this chapter is that it motivated me to finish the work I had half-done on parallel dumps (see my most recent few posts for more on this). All good stuff.
 
-I&#8217;ll post &#8220;further updates as events warrant.&#8221;
+I'll post "further updates as events warrant."
 
  [1]: http://www.xaprb.com/blog/2007/09/19/high-performance-mysql-second-edition-backup-and-recovery/

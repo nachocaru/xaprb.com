@@ -17,7 +17,7 @@ tags:
 ---
 **Note: the bt-aggregate tool has been deprecated and replaced by the [pmp][1] tool, which can do all that and more.**
 
-A short time ago in a galaxy nearby, [Domas Mituzas wrote about contention profiling with GDB stack traces][2]. Mark Callaghan found the technique useful, and contributed an awk script (in the comments) to aggregate stack traces and identify which things are blocking most threads. I&#8217;ve used it myself a time or five. But I&#8217;ve found myself wanting it to be fancier, for various reasons. So I wrote [a little utility that can aggregate and pretty-print backtraces][3]. It can handle unresolved symbols, and aggregate by only the first N lines of the stack trace. Here&#8217;s an example of a mysqld instance that&#8217;s really, really frozen up:
+A short time ago in a galaxy nearby, [Domas Mituzas wrote about contention profiling with GDB stack traces][2]. Mark Callaghan found the technique useful, and contributed an awk script (in the comments) to aggregate stack traces and identify which things are blocking most threads. I've used it myself a time or five. But I've found myself wanting it to be fancier, for various reasons. So I wrote [a little utility that can aggregate and pretty-print backtraces][3]. It can handle unresolved symbols, and aggregate by only the first N lines of the stack trace. Here's an example of a mysqld instance that's really, really frozen up:
 
 `<pre>bt-aggregate -4 samples/backtrace.txt | head -n12
 2396 threads with the following stack trace:

@@ -19,9 +19,9 @@ tags:
   <a href="http://code.google.com/p/innotop/">Download innotop</a>
 </p>
 
-The 1.5.2 release of innotop contained two bugs, one very minor. The other was a crash because of the new functionality that aggregates results across many connections. I fixed them and released version 1.6.0, which I consider stable and ready for everyone to use. (My version naming convention for innotop is that even-numbered minor versions are for production use; odd-numbered, such as 1.5.2, are the development branch. That&#8217;s why I release them under the innotop-devel package).
+The 1.5.2 release of innotop contained two bugs, one very minor. The other was a crash because of the new functionality that aggregates results across many connections. I fixed them and released version 1.6.0, which I consider stable and ready for everyone to use. (My version naming convention for innotop is that even-numbered minor versions are for production use; odd-numbered, such as 1.5.2, are the development branch. That's why I release them under the innotop-devel package).
 
-What&#8217;s ahead for innotop 1.8? Here&#8217;s my current road map, some of which is already done:
+What's ahead for innotop 1.8? Here's my current road map, some of which is already done:
 
 <pre>Features for version 1.8:
 
@@ -52,4 +52,4 @@ http://dammit.lt/2007/06/23/mysql-40-google-edition/
 * Tentative: Add support for pager if you want to see more than fits on screen.
 * Tentative: Documentation and built-in help (get help on a key from help screen).</pre>
 
-I wrote that roadmap a while ago. I don&#8217;t get much feedback on desired features, for the most part (maybe innotop already has too many features?). These are just things I either want to do very badly, such as write a test suite, or think would be nifty or fun, such as adding a pager. Your input is welcome.
+I wrote that roadmap a while ago. I don't get much feedback on desired features, for the most part (maybe innotop already has too many features?). These are just things I either want to do very badly, such as write a test suite, or think would be nifty or fun, such as adding a pager. Your input is welcome.

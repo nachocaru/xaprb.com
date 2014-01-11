@@ -14,9 +14,9 @@ tags:
   - replication
   - STONITH
 ---
-I&#8217;ve been thinking recently about the failure scenarios of MySQL replication clusters, such as master-master pairs or master-master-with-slaves. There are a few tools that are designed to help manage failover and load balancing in such clusters, by moving virtual IP addresses around. The ones I&#8217;m familiar with don&#8217;t always do the right thing when an irregularity is detected. I&#8217;ve been debating what the best way to do replication clustering with automatic failover really is.
+I've been thinking recently about the failure scenarios of MySQL replication clusters, such as master-master pairs or master-master-with-slaves. There are a few tools that are designed to help manage failover and load balancing in such clusters, by moving virtual IP addresses around. The ones I'm familiar with don't always do the right thing when an irregularity is detected. I've been debating what the best way to do replication clustering with automatic failover really is.
 
-I&#8217;d like to hear your thoughts on the following question: what types of scenarios require what kind of response from such a tool?
+I'd like to hear your thoughts on the following question: what types of scenarios require what kind of response from such a tool?
 
 I can think of a number of failures. Let me give just a few simple examples in a master-master pair:
 
@@ -29,4 +29,4 @@ Problem: The writable master is completely unreachable
 Problem: The writable master is reachable but unresponsive due to overload-induced swapping
 :   Do nothing. Moving the load to another server will cause cascading failures.
 
-I don&#8217;t want to bias the jury, so I&#8217;ll stop there and ask you to contribute your failure scenarios and what you think the correct action should be.
+I don't want to bias the jury, so I'll stop there and ask you to contribute your failure scenarios and what you think the correct action should be.

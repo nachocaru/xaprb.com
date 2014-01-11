@@ -1,5 +1,5 @@
 ---
-title: 'I&#8217;ve been interviewed in the NoCOUG Journal'
+title: 'I've been interviewed in the NoCOUG Journal'
 author: Baron Schwartz
 layout: post
 permalink: /2012/02/16/ive-been-interviewed-in-the-nocoug-journal/
@@ -9,7 +9,7 @@ tags:
   - Iggy Fernandez
   - NoCOUG
 ---
-The [Northern California Oracle Users Group (NoCOUG)][1] just published an interview with me in their journal. It&#8217;s titled &#8220;A Whole New World of MySQL&#8221;. You can read it in the [full journal (PDF)][2], or on [Iggy Fernandez&#8217;s blog][3]. The full journal is well worth a read; there&#8217;s a lot of good information.
+The [Northern California Oracle Users Group (NoCOUG)][1] just published an interview with me in their journal. It's titled "A Whole New World of MySQL". You can read it in the [full journal (PDF)][2], or on [Iggy Fernandez's blog][3]. The full journal is well worth a read; there's a lot of good information.
 
 Thanks to Iggy for such a thought-provoking interview, and for inviting me to participate!
 

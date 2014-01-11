@@ -1,5 +1,5 @@
 ---
-title: 'Why won&#8217;t MySQL use the best index in a join?'
+title: 'Why won't MySQL use the best index in a join?'
 author: Baron Schwartz
 layout: post
 permalink: /2012/08/20/why-wont-mysql-use-the-best-index-in-a-join/
@@ -40,9 +40,9 @@ As you can see, the `url` index looks like it should be a better index for the q
 
 ``<pre>select 1 AS `1` from... on...
   (`m`.`url` = <strong>convert(`u`.`url` using utf8)</strong>)))...</pre>`` 
-Now it&#8217;s easy to see that the index can&#8217;t be used because of a character set mismatch. The &#8216;m&#8217; table indeed has a different character set and collation:
+Now it's easy to see that the index can't be used because of a character set mismatch. The 'm' table indeed has a different character set and collation:
 
 ``<pre>CREATE TABLE `m` (
   `url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8</pre>`` 
-The easiest solution in this case was to change the &#8216;m&#8217; table&#8217;s definition, because it is a scratch table used as part of an import process.
+The easiest solution in this case was to change the 'm' table's definition, because it is a scratch table used as part of an import process.

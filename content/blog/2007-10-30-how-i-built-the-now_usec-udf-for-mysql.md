@@ -18,11 +18,11 @@ tags:
   - ubuntu
   - User Defined Functions
 ---
-Last week I wrote about my efforts to [measure MySQL&#8217;s replication speed precisely][1]. The most important ingredient in that recipe was the [user-defined function][2] to get the system time with microsecond precision. This post is about that function, which turned out to be surprisingly easy to write.
+Last week I wrote about my efforts to [measure MySQL's replication speed precisely][1]. The most important ingredient in that recipe was the [user-defined function][2] to get the system time with microsecond precision. This post is about that function, which turned out to be surprisingly easy to write.
 
-The [manual section on user-defined functions][2] provides very good instructions on how they work and how to build them. But just for the record, on Ubuntu 7.04 on an AMD64 machine, all I had to do was install the libmysqlclient15-dev package, and I was then able to compile the UDF with no further ado. Also for the record, [MySQL header files have some dependencies they shouldn&#8217;t][3] that break building against a downloaded tarball. So don&#8217;t be surprised if you have troubles building against anything but Ubuntu&#8217;s provided header files.
+The [manual section on user-defined functions][2] provides very good instructions on how they work and how to build them. But just for the record, on Ubuntu 7.04 on an AMD64 machine, all I had to do was install the libmysqlclient15-dev package, and I was then able to compile the UDF with no further ado. Also for the record, [MySQL header files have some dependencies they shouldn't][3] that break building against a downloaded tarball. So don't be surprised if you have troubles building against anything but Ubuntu's provided header files.
 
-Here&#8217;s the source, which I basically cribbed from a NOW_MSEC() function I saw in a bug report somewhere. Really, there&#8217;s not much to it besides the basic skeleton of a UDF, with a few lines to actually get the system time. And I actually believe if I took another ten minutes to learn about strftime(), there&#8217;s probably no need to do it in two steps; I could probably do the whole thing with one strftime() call and save a little memory and time. But that&#8217;s what I get for copying and pasting code of unknown quality:
+Here's the source, which I basically cribbed from a NOW_MSEC() function I saw in a bug report somewhere. Really, there's not much to it besides the basic skeleton of a UDF, with a few lines to actually get the system time. And I actually believe if I took another ten minutes to learn about strftime(), there's probably no need to do it in two steps; I could probably do the whole thing with one strftime() call and save a little memory and time. But that's what I get for copying and pasting code of unknown quality:
 
 <pre>#include &lt;my_global.h&gt;
 #include &lt;my_sys.h&gt;

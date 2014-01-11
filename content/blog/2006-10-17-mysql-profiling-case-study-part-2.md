@@ -12,17 +12,17 @@ description:
   <a href="/mysql-query-profiler/">Download MySQL Query Profiler</a>
 </p>
 
-This is the third in a series of articles on profiling queries in MySQL (the second of two demonstrations of profiling techniques, but the third article overall). In this article I&#8217;ll present the same example as in the [second article][1], but use a different approach to show details I didn&#8217;t include.
+This is the third in a series of articles on profiling queries in MySQL (the second of two demonstrations of profiling techniques, but the third article overall). In this article I'll present the same example as in the [second article][1], but use a different approach to show details I didn't include.
 
-An astute reader&#8217;s comment reinforced my vague unease at my second article. In hindsight, I see I got distracted trying to choose an interesting example that&#8217;s not too hard to present in one article, yet has enough depth to usefully demonstrate the technique. It&#8217;s harder than I thought it would be. In real life I&#8217;ve learned from dozens of cases, and cramming everything into one example is probably not possible. In any case, I&#8217;m going to approach the same query from a different angle in this article, so you get a more complete picture.
+An astute reader's comment reinforced my vague unease at my second article. In hindsight, I see I got distracted trying to choose an interesting example that's not too hard to present in one article, yet has enough depth to usefully demonstrate the technique. It's harder than I thought it would be. In real life I've learned from dozens of cases, and cramming everything into one example is probably not possible. In any case, I'm going to approach the same query from a different angle in this article, so you get a more complete picture.
 
 ### Method and results
 
-For the tests in this article, I restarted MySQL, then ran the query twice against the first table. The first run was &#8216;cold&#8217; &#8212; no data or indexes had been read into memory yet. The second was &#8216;warm&#8217; and should perform just as it did the last time I profiled. I measured both runs and found what I expected. So far, so good.
+For the tests in this article, I restarted MySQL, then ran the query twice against the first table. The first run was 'cold' &#8212; no data or indexes had been read into memory yet. The second was 'warm' and should perform just as it did the last time I profiled. I measured both runs and found what I expected. So far, so good.
 
 Then something really surprising happened. I had dropped the tables I used in the second article, and re-created them the same way for this article, but the queries against the redesigned table (clustered date-first, to optimize queries on a date range) performed almost identically to the queries against the table with a surrogate key. What happened?
 
-I&#8217;m not sure, actually. For some reason, MySQL&#8217;s optimizer decided to use the `client` index, which is the same strategy as it used on the initial table design &#8212; in fact, the query plan was identical. I double-checked all the data and table structures to be sure, re-analyzed the table, and tried again; no dice. It still wanted to use a sub-optimal query plan! In the end, I rewrote the query with `FORCE INDEX` to make it use the primary key instead of the `client` index, and got good performance as I expected. If anyone has insight as to why this non-repeatable result happened, please leave a comment.
+I'm not sure, actually. For some reason, MySQL's optimizer decided to use the `client` index, which is the same strategy as it used on the initial table design &#8212; in fact, the query plan was identical. I double-checked all the data and table structures to be sure, re-analyzed the table, and tried again; no dice. It still wanted to use a sub-optimal query plan! In the end, I rewrote the query with `FORCE INDEX` to make it use the primary key instead of the `client` index, and got good performance as I expected. If anyone has insight as to why this non-repeatable result happened, please leave a comment.
 
 Here are all three sets of numbers. The three sets are the query against the initial table design, the redesigned table, and the redesigned table with `FORCE INDEX`. As I said, I ran each query twice: once cold, once warm.
 
@@ -650,7 +650,7 @@ Here are all three sets of numbers. The three sets are the query against the ini
 
 ### Analysis
 
-You can see the queries that use the `client` index perform almost identically to each other. They use the same query plan, build the same temporary table, and so on. The main difference is there&#8217;s a different amount of data in the table and indexes after the redesign:
+You can see the queries that use the `client` index perform almost identically to each other. They use the same query plan, build the same temporary table, and so on. The main difference is there's a different amount of data in the table and indexes after the redesign:
 
 <table class="borders collapsed compact">
   <caption>Data and Index Size</caption> <tr>
@@ -695,9 +695,9 @@ You can see the queries that use the `client` index perform almost identically t
   </tr>
 </table>
 
-Using the surrogate key is less space-efficient in this case, so the redesigned table is smaller. However, each index is smaller in the table with the surrogate key, because the primary key is not as wide. If I had to guess, I wouldn&#8217;t know whether this would result in more or less data being read, which is why I don&#8217;t guess, I measure. It turns out InnoDB reads the same number of rows, but they fit in fewer pages after re-indexing, so it reads a couple hundred fewer pages. Still, either of the queries using the `client` index reads about 40 MiB of data, whether it&#8217;s run cold or warm.
+Using the surrogate key is less space-efficient in this case, so the redesigned table is smaller. However, each index is smaller in the table with the surrogate key, because the primary key is not as wide. If I had to guess, I wouldn't know whether this would result in more or less data being read, which is why I don't guess, I measure. It turns out InnoDB reads the same number of rows, but they fit in fewer pages after re-indexing, so it reads a couple hundred fewer pages. Still, either of the queries using the `client` index reads about 40 MiB of data, whether it's run cold or warm.
 
-The query that scans a range of the primary key reads 1.28 MiB cold, and zero when it&#8217;s warm &#8212; 82 page reads instead of thousands. It also makes many fewer requests to the buffer pool. And yet, it reads about 60% the number of rows. It&#8217;s just that these rows are contiguous within the table, and therefore much more efficient to read. It only makes two index reads, which is great. I assume these two are to find the beginning of the date range in the primary key. After that it just scans every row till it finds the end, which is why `Handler_read_rnd` is high &#8212; 31,000 in fact, which is the number of rows in the date range:
+The query that scans a range of the primary key reads 1.28 MiB cold, and zero when it's warm &#8212; 82 page reads instead of thousands. It also makes many fewer requests to the buffer pool. And yet, it reads about 60% the number of rows. It's just that these rows are contiguous within the table, and therefore much more efficient to read. It only makes two index reads, which is great. I assume these two are to find the beginning of the date range in the primary key. After that it just scans every row till it finds the end, which is why `Handler_read_rnd` is high &#8212; 31,000 in fact, which is the number of rows in the date range:
 
 <pre>select count(*) from tracking
 where day between '2007-01-01' and '2007-01-31';
@@ -710,7 +710,7 @@ where day between '2007-01-01' and '2007-01-31';
 
 This is one less than the number of rows InnoDB reports reading. I believe this is because InnoDB read an extra row, the one past the end of the date range, to determine where to stop scanning.
 
-Finally, here are the Last\_query\_cost variables again. As before, the query optimizer thinks the clustered index scan is more expensive, but it&#8217;s wrong.
+Finally, here are the Last\_query\_cost variables again. As before, the query optimizer thinks the clustered index scan is more expensive, but it's wrong.
 
 <table class="borders collapsed compact">
   <caption>Query Cost</caption> <tr>
@@ -744,9 +744,9 @@ Finally, here are the Last\_query\_cost variables again. As before, the query op
 
 ### Conclusion
 
-This article measured the differences between running the query cold, and running it with the server warmed up and the data already in memory. I think this actually accentuates the second table design&#8217;s improved query performance, because even when it needs to read data and indexes from the disk, it doesn&#8217;t have to read as much data. I think I&#8217;ve explored the full depth of this example now.
+This article measured the differences between running the query cold, and running it with the server warmed up and the data already in memory. I think this actually accentuates the second table design's improved query performance, because even when it needs to read data and indexes from the disk, it doesn't have to read as much data. I think I've explored the full depth of this example now.
 
-Thanks for the feedback, and keep those comments coming! I&#8217;m by no means the expert on all this, so I hope you&#8217;ll teach me what you know. I&#8217;m still putting the finishing touches on a tool to profile queries easily, and will post an article on that shortly.
+Thanks for the feedback, and keep those comments coming! I'm by no means the expert on all this, so I hope you'll teach me what you know. I'm still putting the finishing touches on a tool to profile queries easily, and will post an article on that shortly.
 
 In the meantime, you can [subscribe via e-mail or feeds][2] to be notified when I do.
 

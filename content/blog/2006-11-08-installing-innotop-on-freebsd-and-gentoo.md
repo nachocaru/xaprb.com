@@ -24,9 +24,9 @@ You can track the status of the PR at [ports/104722: New port: databases/innotop
 
 ### innotop ebuilds for Gentoo
 
-I&#8217;ve had an [open request to add innotop on the Gentoo bug system][3] for a long time, and it appears to have stagnated, but you can [download ebuilds for innotop][4] anyway. Since I&#8217;m no Gentoo developer, please do give feedback if you have any.
+I've had an [open request to add innotop on the Gentoo bug system][3] for a long time, and it appears to have stagnated, but you can [download ebuilds for innotop][4] anyway. Since I'm no Gentoo developer, please do give feedback if you have any.
 
-Since the Gentoo bug doesn&#8217;t seem to be getting any attention, I&#8217;ve also opened an [innotop new-ebuild bug report with the fine folks at breakmygentoo][5]. This might result in innotop being included in their Portage overlay.
+Since the Gentoo bug doesn't seem to be getting any attention, I've also opened an [innotop new-ebuild bug report with the fine folks at breakmygentoo][5]. This might result in innotop being included in their Portage overlay.
 
 **Edit** One of the Gentoo developers saw this post and added innotop to the main Portage tree! Thank you! Gentoo users can now install innotop like this:
 

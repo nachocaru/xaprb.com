@@ -20,9 +20,9 @@ tags:
 
 Version 1.4.3 of the innotop MySQL and InnoDB monitor is out. This release fixes some minor bugs and feature annoyances, and at last innotop has thorough documentation, available online!
 
-### What&#8217;s new
+### What's new
 
-Here&#8217;s what&#8217;s new:
+Here's what's new:
 
 *   Added standard &#8211;version command-line option
 *   Changed colors to cyan instead of blue; more visible on dark terminals.
@@ -35,14 +35,14 @@ Here&#8217;s what&#8217;s new:
 Bugs fixed:
 
 *   innotop crashed in W mode when InnoDB status data was truncated.
-*   innotop didn&#8217;t display errors in tables if debug was enabled.
-*   The colored() subroutine wasn&#8217;t being created in non-interactive mode.
-*   Don&#8217;t prompt to save password except the first time.
+*   innotop didn't display errors in tables if debug was enabled.
+*   The colored() subroutine wasn't being created in non-interactive mode.
+*   Don't prompt to save password except the first time.
 
-### What&#8217;s next
+### What's next
 
-I don&#8217;t know how much time I&#8217;ll get to put into this in the coming months, but there&#8217;s already a lot of half-finished functionality in the Subversion repository, including the ability to write innotop plugins. If you&#8217;re interested, the code is in the trunk and in various branches.
+I don't know how much time I'll get to put into this in the coming months, but there's already a lot of half-finished functionality in the Subversion repository, including the ability to write innotop plugins. If you're interested, the code is in the trunk and in various branches.
 
-Hopefully I&#8217;ll get time to work on some of that before the year is out.
+Hopefully I'll get time to work on some of that before the year is out.
 
  [1]: http://code.google.com/p/innotop/documentation/

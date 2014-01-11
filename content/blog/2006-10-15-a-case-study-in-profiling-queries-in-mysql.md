@@ -9,9 +9,9 @@ description:
     The second article in a series on MySQL query profiling. Demonstrates the
     technique I explained in the first article.
 ---
-This is the second in a series of articles on profiling queries in MySQL. In this article I&#8217;ll demonstrate the technique I described in the [first article][1].
+This is the second in a series of articles on profiling queries in MySQL. In this article I'll demonstrate the technique I described in the [first article][1].
 
-I&#8217;m using 5.0.22-Debian_0ubuntu6.06.2-log for my tests.
+I'm using 5.0.22-Debian_0ubuntu6.06.2-log for my tests.
 
 ### Example: re-index a table and measure the performance gain
 

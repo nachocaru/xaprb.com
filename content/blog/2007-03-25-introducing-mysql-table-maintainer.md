@@ -13,20 +13,20 @@ description:
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Maintainer</a>
 </p>
 
-MySQL Table Maintainer is a new utility to help you run table maintenance commands (ANALYZE, CHECK, OPTIMIZE, REPAIR) on your MySQL tables. It&#8217;s part of the MySQL toolkit.
+MySQL Table Maintainer is a new utility to help you run table maintenance commands (ANALYZE, CHECK, OPTIMIZE, REPAIR) on your MySQL tables. It's part of the MySQL toolkit.
 
 ### Overview
 
-This tool is designed to help you run maintenance commands on your MySQL tables. There is a MySQL-provided tool ([myisamchk][1]) that fills some of the same purposes, but there are important advantages to doing it with SQL commands instead. Unlike using myisamchk, you don&#8217;t have to ensure this tool has exclusive access to the tables! Plus, MySQL Table Maintainer gives you lots of options, such as the ability to
+This tool is designed to help you run maintenance commands on your MySQL tables. There is a MySQL-provided tool ([myisamchk][1]) that fills some of the same purposes, but there are important advantages to doing it with SQL commands instead. Unlike using myisamchk, you don't have to ensure this tool has exclusive access to the tables! Plus, MySQL Table Maintainer gives you lots of options, such as the ability to
 
 *   Check first, then repair if anything is wrong
 *   Check tables before optimizing them, and skip if they have problems
 *   Do tables based on storage engine, size, age, time since last checking/optimizing etc&#8230; am I missing anything?
-*   Compact repeated output, and add table status information to help you understand what&#8217;s happening
+*   Compact repeated output, and add table status information to help you understand what's happening
 *   Prevent or allow the statements to go into the binlog so they get executed on slave servers
-*   Do (or don&#8217;t do) views as well
+*   Do (or don't do) views as well
 
-Here&#8217;s sample output:
+Here's sample output:
 
 <pre>$ mysql-table-maintainer -ac
 DATABASE TABLE                   ENGINE    SIZE   ROWS OP       TYPE     CNT TIME MSG
@@ -77,11 +77,11 @@ There are also implications for fulltext indexes and so on. Of course there are 
 
 ### It sure is handy
 
-I wrote this tool because one of my employer&#8217;s replicated InnoDB clusters was looking a little fragmented, probably because of archiving. It took a couple evenings to write the tool, but yesterday I connected to the office and ran it with the &#8211;checkoptimize option. We got great results. As I suspected, the tables were fragmented, and the heavily archived tables shrunk by 25% or more. As a bonus, we now have a lot more free space in that InnoDB tablespace.
+I wrote this tool because one of my employer's replicated InnoDB clusters was looking a little fragmented, probably because of archiving. It took a couple evenings to write the tool, but yesterday I connected to the office and ran it with the &#8211;checkoptimize option. We got great results. As I suspected, the tables were fragmented, and the heavily archived tables shrunk by 25% or more. As a bonus, we now have a lot more free space in that InnoDB tablespace.
 
 ### About MySQL Toolkit
 
-[MySQL Toolkit][2] is a set of essential tools for MySQL users, developers and administrators. The project&#8217;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as `awk` and `sed`. Other tools in the toolkit include a table checksummer and a duplicate key checker.
+[MySQL Toolkit][2] is a set of essential tools for MySQL users, developers and administrators. The project's goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as `awk` and `sed`. Other tools in the toolkit include a table checksummer and a duplicate key checker.
 
  [1]: http://dev.mysql.com/doc/refman/5.0/en/myisamchk.html
  [2]: http://code.google.com/p/maatkit

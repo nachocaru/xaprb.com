@@ -16,13 +16,13 @@ tags:
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
 </p>
 
-There&#8217;s a new release with a lot of goodies &#8212; speed, efficiency, user-friendliness, and new features. In particular some of [Percona&#8217;s][1] clients have sponsored features for things they need such as the ability to more frequently verify that slaves are in sync with their masters. If you need features, please ask Percona about it.
+There's a new release with a lot of goodies &#8212; speed, efficiency, user-friendliness, and new features. In particular some of [Percona's][1] clients have sponsored features for things they need such as the ability to more frequently verify that slaves are in sync with their masters. If you need features, please ask Percona about it.
 
 [Daniel Nichter][2] has written most of the code for this release. Having a dedicated developer is really moving the project forward. Thanks Daniel!
 
-If you check the issues list on the project&#8217;s website you&#8217;ll see we have some ambitious plans for the project, mostly driven by real-world needs from Percona&#8217;s clients, many of whom run very large data centers and such. It makes me really happy that Maatkit is solving serious problems for which no other solution exists.
+If you check the issues list on the project's website you'll see we have some ambitious plans for the project, mostly driven by real-world needs from Percona's clients, many of whom run very large data centers and such. It makes me really happy that Maatkit is solving serious problems for which no other solution exists.
 
-Here&#8217;s the changelog:
+Here's the changelog:
 
 <!--more-->
 

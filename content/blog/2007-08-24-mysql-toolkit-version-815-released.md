@@ -20,11 +20,11 @@ tags:
   <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>
 </p>
 
-I&#8217;ve just released changes to all tools in MySQL Toolkit. The biggest changes are in MySQL Table Sync, which I&#8217;m beginning to give sane defaults and options to. Some of the changes are incompatible (but that&#8217;s what you get with MySQL Table Sync, which is still very rough). I also found and fixed some bugs with MySQL Visual Explain. Thanks to everyone who submitted bug reports.
+I've just released changes to all tools in MySQL Toolkit. The biggest changes are in MySQL Table Sync, which I'm beginning to give sane defaults and options to. Some of the changes are incompatible (but that's what you get with MySQL Table Sync, which is still very rough). I also found and fixed some bugs with MySQL Visual Explain. Thanks to everyone who submitted bug reports.
 
 Note, the formatting overflow in MySQL Query Profiler was not a security vulnerability. It was simply an issue with a Perl formatting code that displayed numbers as hash marks when they got big enough.
 
-Here&#8217;s the whole changelog:
+Here's the whole changelog:
 
 <pre>Changelog for mysql-archiver:
 

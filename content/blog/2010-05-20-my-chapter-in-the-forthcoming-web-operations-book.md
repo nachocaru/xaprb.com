@@ -13,13 +13,13 @@ categories:
   </p>
 </div>
 
-[Web Operations][1]. By John Allspaw and Jesse Robbins, O&#8217;Reilly 2010. (Here&#8217;s [a link to the publisher&#8217;s site][2]).
+[Web Operations][1]. By John Allspaw and Jesse Robbins, O'Reilly 2010. (Here's [a link to the publisher's site][2]).
 
-This book is due out in about a month. It is part of O&#8217;Reilly&#8217;s Beautiful series, which you might know through [Beautiful Code][3]. This one&#8217;s about web ops, of course. There are a dozen contributors, including some of my favorites such as Theo Schlossnagle, whose [Scalable Internet Architectures][4] is on my (quite short) list of [essential books][5]. And then there&#8217;s a chapter from me.
+This book is due out in about a month. It is part of O'Reilly's Beautiful series, which you might know through [Beautiful Code][3]. This one's about web ops, of course. There are a dozen contributors, including some of my favorites such as Theo Schlossnagle, whose [Scalable Internet Architectures][4] is on my (quite short) list of [essential books][5]. And then there's a chapter from me.
 
-My chapter is 32 pages on choosing a relational database architecture for a web application, which of course is slanted towards MySQL, where my expertise lies. I do not discuss fads or cool new things; I write about what the majority of web applications truly need, and how that maps to choices in architecture and technology for the database backend. I focus a lot on how to build a database backend that supports the application&#8217;s operational requirements, in keeping with the theme of the book. This is a much simpler topic than it&#8217;s often made into. I hope you&#8217;ll find it useful.
+My chapter is 32 pages on choosing a relational database architecture for a web application, which of course is slanted towards MySQL, where my expertise lies. I do not discuss fads or cool new things; I write about what the majority of web applications truly need, and how that maps to choices in architecture and technology for the database backend. I focus a lot on how to build a database backend that supports the application's operational requirements, in keeping with the theme of the book. This is a much simpler topic than it's often made into. I hope you'll find it useful.
 
-When I get a dead-tree copy of the rest of the book, I&#8217;ll review it. I can&#8217;t read books on my computer. But with authors like John, Jesse, Theo, and the others involved, I am pretty confident this one will be worth adding to your library. By the way, the royalties go to a charity, as with all the Beautiful books.
+When I get a dead-tree copy of the rest of the book, I'll review it. I can't read books on my computer. But with authors like John, Jesse, Theo, and the others involved, I am pretty confident this one will be worth adding to your library. By the way, the royalties go to a charity, as with all the Beautiful books.
 
  [1]: http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20
  [2]: http://oreilly.com/catalog/0636920000136

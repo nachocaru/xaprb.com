@@ -15,4 +15,4 @@ Seen in #maatkit on Freenode:
 
 > I never realized just how terrible recovering MyISAM from a crash can be
 
-Sad but true &#8212; it can be pretty painful. This is one of the reasons I pretty much recommend InnoDB (okay, okay, XtraDB) for most data unless it&#8217;s read-only.
+Sad but true &#8212; it can be pretty painful. This is one of the reasons I pretty much recommend InnoDB (okay, okay, XtraDB) for most data unless it's read-only.

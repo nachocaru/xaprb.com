@@ -7,13 +7,13 @@ permalink: /2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
 description:
   - "Benchmarks show MySQL Table Sync is faster than SQLyog Job Agent in comparing and synchronizing data in MySQL tables.  SQLyog Job Agent's checksum algorithm has theoretical weaknesses."
 ---
-When I wrote my first article on [algorithms to compare and synchronize data between MySQL tables][1], Webyog&#8217;s Rohit Nadhani left a comment on the article mentioning the SQLyog Job Agent, which has a similar function. Although I have been developing [MySQL Table Sync][2] essentially in isolation, I have been meaning to give SQLyog Job Agent a try. I recently did so, and then followed that up with an email conversation with Rohit. This article is about my experience using the SQLyog Job Agent from the command line, some thoughts on the algorithm as best I can deduce it, and benchmark results against MySQL Table Sync.
+When I wrote my first article on [algorithms to compare and synchronize data between MySQL tables][1], Webyog's Rohit Nadhani left a comment on the article mentioning the SQLyog Job Agent, which has a similar function. Although I have been developing [MySQL Table Sync][2] essentially in isolation, I have been meaning to give SQLyog Job Agent a try. I recently did so, and then followed that up with an email conversation with Rohit. This article is about my experience using the SQLyog Job Agent from the command line, some thoughts on the algorithm as best I can deduce it, and benchmark results against MySQL Table Sync.
 
 ### Description of SQLyog Job Agent
 
-[SQLyog Job Agent (SJA)][3] is part of the SQLyog suite of tools. It is not designed as a stand-alone command-line tool, but is meant to execute jobs created by the SQLyog GUI tool. I have not yet tried the GUI, as I&#8217;m mostly a command-line user. (However, I know many people who use the GUI tool every day).
+[SQLyog Job Agent (SJA)][3] is part of the SQLyog suite of tools. It is not designed as a stand-alone command-line tool, but is meant to execute jobs created by the SQLyog GUI tool. I have not yet tried the GUI, as I'm mostly a command-line user. (However, I know many people who use the GUI tool every day).
 
-Since the jobs SJA executes are created by the GUI, there&#8217;s not much documentation for the command-line tool. It has no help output, but it wasn&#8217;t hard to create a sync .xml file by examining the included samples.
+Since the jobs SJA executes are created by the GUI, there's not much documentation for the command-line tool. It has no help output, but it wasn't hard to create a sync .xml file by examining the included samples.
 
 There is no changelog for SJA alone, but Rohit pointed me to the [FAQ entry for SQLyog][4] overall. The earliest mention I can find is October of 2003.
 
@@ -29,17 +29,17 @@ I downloaded version 5.27 of SJA on April 2, noticed some potential issues with 
 
 There can still be problems even with the new order of operations, and I saw strange behavior in the sync jobs I ran. For example, to sync a table that was merely missing 500 rows, it was deleting 103 rows and then inserting 603, instead of just inserting 500. I asked Rohit about this, and he confirmed it was a bug that was fixed in version 5.28:
 
-> This algorithm was introduced for a very small period of time to handle &#8220;live&#8221; changes on a source table during sync of that table. Now we have changed it to update/delete/update. Update includes both INSERTs and UPDATEs. You should download 5.28 and try.
+> This algorithm was introduced for a very small period of time to handle "live" changes on a source table during sync of that table. Now we have changed it to update/delete/update. Update includes both INSERTs and UPDATEs. You should download 5.28 and try.
 > 
-> The extra phase for update is required only if you choose to delete &#8220;Extra rows from the target&#8221;. Consider this situation: After updating the target in Phase-I, we want to find out extra rows in the target. During this period, a source row changes. The target assumes that this data is &#8220;extra&#8221; and delete it from itself. So you might land up with an &#8220;non-synced&#8221; dataset most of the times in a live database.
+> The extra phase for update is required only if you choose to delete "Extra rows from the target". Consider this situation: After updating the target in Phase-I, we want to find out extra rows in the target. During this period, a source row changes. The target assumes that this data is "extra" and delete it from itself. So you might land up with an "non-synced" dataset most of the times in a live database.
 
-I must have downloaded 5.27 only a few hours before 5.28 was available. In any case, I re-downloaded (it&#8217;s just over 1MB &#8212; not large) and as Rohit promised, the issues I saw were gone.
+I must have downloaded 5.27 only a few hours before 5.28 was available. In any case, I re-downloaded (it's just over 1MB &#8212; not large) and as Rohit promised, the issues I saw were gone.
 
 I also mentioned some other minor things I saw in the query log output, such as possibly redundant queries, and Rohit indicated those would be fixed in the next version.
 
-### SQLyog Job Agent&#8217;s sync algorithm
+### SQLyog Job Agent's sync algorithm
 
-I would never reverse engineer a closed-source application, but peeking in the query log is fair game! I found most queries fairly straightforward. SJA finds differences with checksum queries, which appear to be inspired by [Giuseppe Maxia&#8217;s work on remote database comparison in 2004][5]. Here&#8217;s a typical query, abbreviated to fit on the page:
+I would never reverse engineer a closed-source application, but peeking in the query log is fair game! I found most queries fairly straightforward. SJA finds differences with checksum queries, which appear to be inspired by [Giuseppe Maxia's work on remote database comparison in 2004][5]. Here's a typical query, abbreviated to fit on the page:
 
 <pre>select  left(concat(IF(`col1`&lt;0,'-','+'), lpad(abs(`col1`),9,'0')),4),
    concat(
@@ -64,7 +64,7 @@ Here are the first few rows resulting from that query on my test data set:
 | +368 | 1054403046550107382218321910460918668291081851629911 |     489 | 368027560 | 
 +------+------------------------------------------------------+---------+-----------+</pre>
 
-As SJA finds differences between the tables, it adds `WHERE` clauses to the checksum query, narrowing the range of rows by limiting the upper and lower boundaries of the rows that are being checksummed. Here&#8217;s a typical `WHERE` clause:
+As SJA finds differences between the tables, it adds `WHERE` clauses to the checksum query, narrowing the range of rows by limiting the upper and lower boundaries of the rows that are being checksummed. Here's a typical `WHERE` clause:
 
 <pre>where   `col1` >= 219000000 and `col1` &lt; 220000000</pre>
 

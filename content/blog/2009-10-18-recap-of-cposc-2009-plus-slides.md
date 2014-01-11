@@ -28,9 +28,9 @@ Yesterday I attended [CPOSC 2009][1]. The conference was great. It was very well
 *   Jump Start Django: The Web Framework for Perfectionists with Deadlines (Rob Yates)
 *   Watching and Manipulating Your Network Traffic (Josiah Ritchie)
 
-And then of course I gave my own talk on [Maatkit][2] ([slides][3]). I didn&#8217;t follow the slides. I took a quick poll of who was interested in learning about making an open-source project that can support a full-time employee, and nobody was, so I skipped that and talked about what the tools can do.
+And then of course I gave my own talk on [Maatkit][2] ([slides][3]). I didn't follow the slides. I took a quick poll of who was interested in learning about making an open-source project that can support a full-time employee, and nobody was, so I skipped that and talked about what the tools can do.
 
-In meta-news, it seemed that a lot of people already knew about Maatkit, and Percona&#8217;s name and open-source software (high-performance versions of the MySQL database server, XtraDB storage engine) seemed pretty well known too. Someone asked if Percona can support a MySQL Cluster project that has stalled with another vendor, and I was happy to say we can. Several people complimented Percona&#8217;s training, which is really a compliment to Morgan Tocker.
+In meta-news, it seemed that a lot of people already knew about Maatkit, and Percona's name and open-source software (high-performance versions of the MySQL database server, XtraDB storage engine) seemed pretty well known too. Someone asked if Percona can support a MySQL Cluster project that has stalled with another vendor, and I was happy to say we can. Several people complimented Percona's training, which is really a compliment to Morgan Tocker.
 
  [1]: http://www.cposc.org/
  [2]: http://www.maatkit.org/

@@ -20,17 +20,17 @@ tags:
   - SQL Mode
   - user defined variables
 ---
-There is no &#8220;first&#8221; or &#8220;last&#8221; aggregate function in SQL. Sometimes you can use `MIN()` or `MAX()`, but often that won&#8217;t work either. There are a couple of ways to solve this vexing non-relational problem. Read on to find out how.
+There is no "first" or "last" aggregate function in SQL. Sometimes you can use `MIN()` or `MAX()`, but often that won't work either. There are a couple of ways to solve this vexing non-relational problem. Read on to find out how.
 
-First, let&#8217;s be clear: I am posing a very non-relational problem. This is not about the minimum, maximum, top, most, least or any other relationally valid extreme in the group. It&#8217;s the first or last, in whatever order the rows happen to come. And we all know rows aren&#8217;t ordered &#8212; in theory. But in practice they are, and sometimes you need the first or last row in a group.
+First, let's be clear: I am posing a very non-relational problem. This is not about the minimum, maximum, top, most, least or any other relationally valid extreme in the group. It's the first or last, in whatever order the rows happen to come. And we all know rows aren't ordered &#8212; in theory. But in practice they are, and sometimes you need the first or last row in a group.
 
-If you have a question this article doesn&#8217;t answer, you might like to read [how to select the first/least/max row per group in SQL][1] and [how to find the maximum row per group in SQL without subqueries][2].
+If you have a question this article doesn't answer, you might like to read [how to select the first/least/max row per group in SQL][1] and [how to find the maximum row per group in SQL without subqueries][2].
 
 ### A MySQL user-variable solution
 
-I&#8217;ll show a MySQL-specific solution with one of the queries I developed for [MySQL Table Checksum][3].
+I'll show a MySQL-specific solution with one of the queries I developed for [MySQL Table Checksum][3].
 
-Here&#8217;s the idea: crush an entire table down to a single checksum value by checksumming each row, mushing it together with the previous row&#8217;s checksum, and then checksumming the result again. It&#8217;s fairly easy to do this, but it&#8217;s hard to get the final result in one statement. This is necessary to use the statement in an `INSERT .. SELECT`, which I needed to do.
+Here's the idea: crush an entire table down to a single checksum value by checksumming each row, mushing it together with the previous row's checksum, and then checksumming the result again. It's fairly easy to do this, but it's hard to get the final result in one statement. This is necessary to use the statement in an `INSERT .. SELECT`, which I needed to do.
 
 An example might clarify:
 
@@ -56,7 +56,7 @@ select variety, @crc := md5(concat(@crc, md5(variety))) from fruit;
 | pear    | ec98fe57833bbd91790ebc7ccf84c7e9        | 
 +---------+-----------------------------------------+</pre>
 
-I want the &#8220;last&#8221; value of `@crc` after the statement is done processing. How can I do this? The solution I found is to use a counter variable. I&#8217;ll demonstrate:
+I want the "last" value of `@crc` after the statement is done processing. How can I do this? The solution I found is to use a counter variable. I'll demonstrate:
 
 <pre>set @crc := '', @cnt := 0;
 
@@ -73,7 +73,7 @@ from fruit;
 | pear    |    4 | ec98fe57833bbd91790ebc7ccf84c7e9 | 
 +---------+------+----------------------------------+</pre>
 
-The counter variable might make you want to write something like `HAVING cnt = MAX(cnt)`, but that won&#8217;t work (try it!). Instead, I prefixed the checksum with the count so the last row is the stringwise maximum:
+The counter variable might make you want to write something like `HAVING cnt = MAX(cnt)`, but that won't work (try it!). Instead, I prefixed the checksum with the count so the last row is the stringwise maximum:
 
 <pre>select variety,
    @crc := concat(lpad(@cnt := @cnt + 1, 10, '0'),
@@ -89,7 +89,7 @@ from fruit;
 +---------+--------------------------------------------+
 </pre>
 
-You can see I also left-padded the count so a lexical sort will agree with a numeric sort, and so I can predict how many extra characters I&#8217;ll need to remove to get back the original value. Now I can use the `MAX()` function to select the last row, and simply lop off the leftmost ten digits (I use the `RIGHT()` function for convenience, but generally you want to use `SUBSTRING()`):
+You can see I also left-padded the count so a lexical sort will agree with a numeric sort, and so I can predict how many extra characters I'll need to remove to get back the original value. Now I can use the `MAX()` function to select the last row, and simply lop off the leftmost ten digits (I use the `RIGHT()` function for convenience, but generally you want to use `SUBSTRING()`):
 
 <pre>select right(max(
    @crc := concat(lpad(@cnt := @cnt + 1, 10, '0'),
@@ -102,17 +102,17 @@ from fruit;
 | ec98fe57833bbd91790ebc7ccf84c7e9 | 
 +----------------------------------+</pre>
 
-*Et voila*, I got the last value in the group. By the way, this will work with ONLY\_FULL\_GROUP_BY in the server&#8217;s [SQL mode][4].
+*Et voila*, I got the last value in the group. By the way, this will work with ONLY\_FULL\_GROUP_BY in the server's [SQL mode][4].
 
 ### Other methods
 
-My solution relies on a MySQL user variable to do the counting, but there are many ways to number rows in SQL: you could [simulate the ROW_NUMBER() function][5], for instance, or use techniques mentioned in the comments on [how to number rows in MySQL][6] (one of the comments shows a particularly clever solution with subqueries, but I didn&#8217;t want to use it because MySQL doesn&#8217;t support subqueries in older versions). Any of these should work one way or another. Of course, if you are using a product such as Microsoft SQL server 2005, which actually has the ROW_NUMBER() function, you can use that!
+My solution relies on a MySQL user variable to do the counting, but there are many ways to number rows in SQL: you could [simulate the ROW_NUMBER() function][5], for instance, or use techniques mentioned in the comments on [how to number rows in MySQL][6] (one of the comments shows a particularly clever solution with subqueries, but I didn't want to use it because MySQL doesn't support subqueries in older versions). Any of these should work one way or another. Of course, if you are using a product such as Microsoft SQL server 2005, which actually has the ROW_NUMBER() function, you can use that!
 
 ### Conclusion
 
-Finding the first or last row is a bit unintuitive, and it&#8217;s definitely non-relational, but sometimes it&#8217;s what you need. The technique I demonstrated in this article is easily adaptable to many kinds of queries. I hope it helped you!
+Finding the first or last row is a bit unintuitive, and it's definitely non-relational, but sometimes it's what you need. The technique I demonstrated in this article is easily adaptable to many kinds of queries. I hope it helped you!
 
-If this article didn&#8217;t solve your problem, please read these before posting questions to the comments: [how to select the first/least/max row per group in SQL][1] and [how to find the maximum row per group in SQL without subqueries][2].
+If this article didn't solve your problem, please read these before posting questions to the comments: [how to select the first/least/max row per group in SQL][1] and [how to find the maximum row per group in SQL without subqueries][2].
 
  [1]: /blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
  [2]: /blog/2007/03/14/how-to-find-the-max-row-per-group-in-sql-without-subqueries/

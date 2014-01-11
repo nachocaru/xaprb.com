@@ -1,5 +1,5 @@
 ---
-title: 'MySQL&#8217;s FEDERATED storage engine: Part 1'
+title: 'MySQL's FEDERATED storage engine: Part 1'
 author: Baron Schwartz
 excerpt: "<p>MySQL's <code>FEDERATED</code> storage engine is a fascinating example of the flexibility gained by abstracting the storage engine layer away from the rest of the server.  <code>FEDERATED</code> tables allow you to access a table on another server as though it exists on the local server.  However, the manual doesn't say much about how it really works.  This article peeks under the hood of the <code>FEDERATED</code> storage engine.</p>"
 layout: post
@@ -7,15 +7,15 @@ permalink: /2007/01/29/mysqls-federated-storage-engine-part-1/
 description:
   - "A detailed examination and explanation of how MySQL's FEDERATED storage engine really works."
 ---
-[MySQL&#8217;s `FEDERATED` storage engine][1] is a fascinating example of the flexibility gained by abstracting the storage engine layer away from the rest of the server. `FEDERATED` tables allow you to access a table on another server as though it exists on the local server. However, the manual doesn&#8217;t say much about how it really works, MySQL&#8217;s only developer article about it is [vague and unrealistic][2], and there are more questions than answers on the net about the engine&#8217;s features and behavior. This series of articles will help you understand the engine and its uses. This first article demonstrates its behavior with a series of experimental queries.
+[MySQL's `FEDERATED` storage engine][1] is a fascinating example of the flexibility gained by abstracting the storage engine layer away from the rest of the server. `FEDERATED` tables allow you to access a table on another server as though it exists on the local server. However, the manual doesn't say much about how it really works, MySQL's only developer article about it is [vague and unrealistic][2], and there are more questions than answers on the net about the engine's features and behavior. This series of articles will help you understand the engine and its uses. This first article demonstrates its behavior with a series of experimental queries.
 
-At the end of this article, you will have a clear picture of how the storage engine accesses data on the remote server. In the next article I give a [summary of the `FEDERATED` engine&#8217;s strengths and weaknesses][3], and what it&#8217;s most useful for.
+At the end of this article, you will have a clear picture of how the storage engine accesses data on the remote server. In the next article I give a [summary of the `FEDERATED` engine's strengths and weaknesses][3], and what it's most useful for.
 
 Note: Recently I seem to be accidentally writing about some similar topics as Giuseppe Maxia! Maybe we were separated at birth? I wrote this series before noticing that Giuseppe has written the [MySQL Federated Tables Missing Manual][4]. We cover a lot of different material, so you should read his article, too.
 
 ### Setup
 
-The remote server I&#8217;m using is 5.0.27 on Windows; the local server is 5.0.24a on Ubuntu. On the remote server, I created the following table:
+The remote server I'm using is 5.0.27 on Windows; the local server is 5.0.24a on Ubuntu. On the remote server, I created the following table:
 
 <pre>create table fed_remote(
    i int not null primary key,
@@ -26,13 +26,13 @@ insert into fed_remote(i, j)
 
 ### Creating the federated tables on the local server
 
-According the the manual, the local table has to be created exactly the same as the remote table. However, this turns out not to be quite true. Indexes don&#8217;t need to match. `NULL`ability doesn&#8217;t need to match. Data types don&#8217;t need to match. Umm&#8230; column order doesn&#8217;t need to match! Wait a second, you don&#8217;t even have to have the same columns &#8212; and you can mis-name the columns! You can even create a local table with one column *based on a remote table with two columns*. For that matter, you can give the local table three columns, and when you `SELECT` from the table, the columns which have no data on the remote server simply get filled in with default values!
+According the the manual, the local table has to be created exactly the same as the remote table. However, this turns out not to be quite true. Indexes don't need to match. `NULL`ability doesn't need to match. Data types don't need to match. Umm&#8230; column order doesn't need to match! Wait a second, you don't even have to have the same columns &#8212; and you can mis-name the columns! You can even create a local table with one column *based on a remote table with two columns*. For that matter, you can give the local table three columns, and when you `SELECT` from the table, the columns which have no data on the remote server simply get filled in with default values!
 
 As I experimented with different options to the `CREATE TABLE`, I began to suspect that the columns are strictly positional. For example, if I create a table with only the `j` column and then select the data from it, I get the data from the `i` column on the remote server.
 
-I think it&#8217;s safe to say the rules are a little unclear at this point. You should probably not rely on any of what I just wrote remaining true forever. I&#8217;d probably see something different if I tried this on the latest development code, too.
+I think it's safe to say the rules are a little unclear at this point. You should probably not rely on any of what I just wrote remaining true forever. I'd probably see something different if I tried this on the latest development code, too.
 
-Here&#8217;s what happens when you create a federated table. To get this data, I enabled the general query log on the remote machine. By the way, I omit the usual status messages about rows affected and so forth, as they mimic exactly what you get from any other storage engine:
+Here's what happens when you create a federated table. To get this data, I enabled the general query log on the remote machine. By the way, I omit the usual status messages about rows affected and so forth, as they mimic exactly what you get from any other storage engine:
 
 <pre>-- Local:
 
@@ -49,27 +49,27 @@ CREATE TABLE fed_local (
 8 Query       SELECT *  FROM `fed_remote` WHERE  1=0
 8 Quit</pre>
 
-You can see that the statement opened a connection and then closed it on the remote server. This doesn&#8217;t happen for every query against the table, just for the `CREATE`. A small clarification to the manual: the remote table must exist before *creating* the local table, not before *accessing* it.
+You can see that the statement opened a connection and then closed it on the remote server. This doesn't happen for every query against the table, just for the `CREATE`. A small clarification to the manual: the remote table must exist before *creating* the local table, not before *accessing* it.
 
 ### Connections to the remote server
 
 As you see above, when I issued the `CREATE TABLE`, the local server made a normal client connection to the remote server, which issued a query apparently just to check that the table exists and the user has permission to access it.
 
-After this, the first access to the table opens a new connection, which stays open forever and services future requests. This is just a normal client connection, which shows up in the process list. If you kill it on the remote server and then issue another query on the local server, you get &#8220;ERROR 1030 (HY000): Got error 1 from storage engine.&#8221; If you then issue another query, the connection is re-established.
+After this, the first access to the table opens a new connection, which stays open forever and services future requests. This is just a normal client connection, which shows up in the process list. If you kill it on the remote server and then issue another query on the local server, you get "ERROR 1030 (HY000): Got error 1 from storage engine." If you then issue another query, the connection is re-established.
 
-More connections will be opened in some cases, as you&#8217;ll see below.
+More connections will be opened in some cases, as you'll see below.
 
 Connections are standard client connections, which means they are subject to normal rules about inactivity timeouts and other options on the remote server.
 
 ### How data is fetched from the remote server
 
-According to the manual, the storage engine opens a client connection to the remote server and then does `SELECT * FROM tbl_name` on the remote server. This might make you think the storage engine fetches the entire contents of the data and caches it locally, but that&#8217;s not the case, as you&#8217;ll see below. The data is fetched a row at a time, and all columns are included every time, whether they are all needed or not. This is a missed optimization in my opinion. It transfers unnecessary data and defeats covering indexes, for one thing. However, I assume it&#8217;s done because the local copy of the fetched row has to be re-constituted into an entire row in memory.
+According to the manual, the storage engine opens a client connection to the remote server and then does `SELECT * FROM tbl_name` on the remote server. This might make you think the storage engine fetches the entire contents of the data and caches it locally, but that's not the case, as you'll see below. The data is fetched a row at a time, and all columns are included every time, whether they are all needed or not. This is a missed optimization in my opinion. It transfers unnecessary data and defeats covering indexes, for one thing. However, I assume it's done because the local copy of the fetched row has to be re-constituted into an entire row in memory.
 
-Perhaps it&#8217;d be more efficient to fetch only the needed columns, then populate the missing columns with `NULL`s. I haven&#8217;t looked at the code, so don&#8217;t give my opinion too much weight!
+Perhaps it'd be more efficient to fetch only the needed columns, then populate the missing columns with `NULL`s. I haven't looked at the code, so don't give my opinion too much weight!
 
 ### Some simple queries
 
-Let&#8217;s look at a query or two:
+Let's look at a query or two:
 
 <pre>-- Local:
 
@@ -91,7 +91,7 @@ select i from fed_local;
 9 Query       SHOW TABLE STATUS LIKE 'fed_remote'
 9 Query       SELECT `i`, `j` FROM `fed_remote`</pre>
 
-As I said already, every column is always fetched from the remote server, whether it&#8217;s needed or not.
+As I said already, every column is always fetched from the remote server, whether it's needed or not.
 
 <pre>-- Local:
 
@@ -102,7 +102,7 @@ select i from fed_local where i = 1;
 9 Query       SHOW TABLE STATUS LIKE 'fed_remote'
 9 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)</pre>
 
-Nothing surprising here, so I&#8217;ll try something more complicated:
+Nothing surprising here, so I'll try something more complicated:
 
 <pre>-- Local:
 
@@ -116,9 +116,9 @@ select i from fed_local where i = (select min(i) from fed_local);
 18 Query       SELECT `i`, `j` FROM `fed_remote`
  9 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)</pre>
 
-Very interesting! It opened a new connection, scanned the whole table, and then plugged the value 1 into the `WHERE` clause. I&#8217;m not terribly surprised by the table scan (obviously the aggregate query can&#8217;t be pushed through as-is, since the row that results isn&#8217;t in the local table&#8217;s row format and therefore isn&#8217;t compatible with the handler), but I&#8217;m surprised by the new connection. I suppose if it opens the table more than once in a query, it has to create a new connection. Does it re-use that newly opened connection? It turns out it does; if I re-issue the query, connections 9 and 18 are used again (Brian Aker wrote about [connection caching for the `FEDERATED` engine][5], if you want to know how it works).
+Very interesting! It opened a new connection, scanned the whole table, and then plugged the value 1 into the `WHERE` clause. I'm not terribly surprised by the table scan (obviously the aggregate query can't be pushed through as-is, since the row that results isn't in the local table's row format and therefore isn't compatible with the handler), but I'm surprised by the new connection. I suppose if it opens the table more than once in a query, it has to create a new connection. Does it re-use that newly opened connection? It turns out it does; if I re-issue the query, connections 9 and 18 are used again (Brian Aker wrote about [connection caching for the `FEDERATED` engine][5], if you want to know how it works).
 
-Here&#8217;s a nasty cross join, which I guess will open the table three times:
+Here's a nasty cross join, which I guess will open the table three times:
 
 <pre>-- Local:
 
@@ -134,13 +134,13 @@ select * from fed_local as f0, fed_local as f1, fed_local as f2;
  9 Query       SELECT `i`, `j` FROM `fed_remote`
 19 Query       SELECT `i`, `j` FROM `fed_remote`</pre>
 
-I guessed right. I&#8217;ll leave this for a moment and discuss some other things I found out.
+I guessed right. I'll leave this for a moment and discuss some other things I found out.
 
 ### Remote data is not cached at all
 
-Rows retrieved from the remote storage don&#8217;t seem to be cached even for an instant. For example, if you issue a join against a remote table where the local table contains repeated data, the matching rows will be fetched over and over again from the remote table. One consequence is that if something updates the remote table while this is happening, you will see an inconsistent view of it, even within a single query.
+Rows retrieved from the remote storage don't seem to be cached even for an instant. For example, if you issue a join against a remote table where the local table contains repeated data, the matching rows will be fetched over and over again from the remote table. One consequence is that if something updates the remote table while this is happening, you will see an inconsistent view of it, even within a single query.
 
-Here&#8217;s an example:
+Here's an example:
 
 <pre>-- Local:
 
@@ -158,7 +158,7 @@ SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)
 SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 2)
 SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)</pre>
 
-This is a bit surprising. However, if I inserted `(1), (1), (2)` into the table, there&#8217;s one less call to the remote server:
+This is a bit surprising. However, if I inserted `(1), (1), (2)` into the table, there's one less call to the remote server:
 
 <pre>-- Local:
 
@@ -175,7 +175,7 @@ SHOW TABLE STATUS LIKE 'fed_remote'
 SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)
 SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 2)</pre>
 
-I don&#8217;t know what to say about this, except it strikes me as non-optimal. I think either transforming the remote query into a `WHERE... IN()`, or putting the returned rows into a hashtable to avoid repeated queries to the remote server, might be better. As it stands, not caching the returned data even for the duration of a single query is both inefficient and a little scary.
+I don't know what to say about this, except it strikes me as non-optimal. I think either transforming the remote query into a `WHERE... IN()`, or putting the returned rows into a hashtable to avoid repeated queries to the remote server, might be better. As it stands, not caching the returned data even for the duration of a single query is both inefficient and a little scary.
 
 ### What about IN() queries?
 

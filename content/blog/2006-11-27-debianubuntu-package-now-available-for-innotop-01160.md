@@ -11,7 +11,7 @@ A kind soul has contributed a Debian/Ubuntu package for the [innotop MySQL and I
 
 You can find the package in the [source directory][2]. Sebastien wrote me that he tested it on Ubuntu Dapper Drake, and I just verified that it works on Edgy Eft.
 
-Since I use Ubuntu on my own machine now, I may integrate this into my build process for future releases of innotop. But for right now, at least there&#8217;s another installation option.
+Since I use Ubuntu on my own machine now, I may integrate this into my build process for future releases of innotop. But for right now, at least there's another installation option.
 
  [1]: http://www.xaprb.com/innotop/
  [2]: /innotop/src

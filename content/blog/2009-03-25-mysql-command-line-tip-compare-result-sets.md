@@ -9,7 +9,7 @@ categories:
 tags:
   - MySQL
 ---
-Here&#8217;s a quick productivity tip: when optimizing queries by rewriting them to different forms that should return the same results, you can verify that you get the same results by taking a checksum of them.
+Here's a quick productivity tip: when optimizing queries by rewriting them to different forms that should return the same results, you can verify that you get the same results by taking a checksum of them.
 
 Just set your pager to `md5sum`:
 

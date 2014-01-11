@@ -12,7 +12,7 @@ tags:
   - UNION
   - user defined variables
 ---
-The other day I was explaining options to someone who wanted to know about [archiving data in MySQL][1]. &#8220;So,&#8221; he said, &#8220;I might have to code my app to look for the data in two places?&#8221; The disadvantage of this is that his app might be more complex. Another disadvantage is that it might take two queries &#8212; if you look for a user in the usual location and it&#8217;s not there, you have to look for it elsewhere.
+The other day I was explaining options to someone who wanted to know about [archiving data in MySQL][1]. "So," he said, "I might have to code my app to look for the data in two places?" The disadvantage of this is that his app might be more complex. Another disadvantage is that it might take two queries &#8212; if you look for a user in the usual location and it's not there, you have to look for it elsewhere.
 
 One way to deal with this, as long as the archived data is on the same server, is a UNION.
 
@@ -20,13 +20,13 @@ One way to deal with this, as long as the archived data is on the same server, i
 union all
 select user_id from user_archive where user_id = 123;</pre>
 
-The benefit is that you don&#8217;t have to issue two queries. That saves network round trips, and makes your code shorter. But it has a disadvantage, too: you&#8217;re still querying the archive table when you don&#8217;t need to. Does this matter? Yes, it does. Your archive table may be very large and slow &#8212; perhaps stored on a big slow hard drive, perhaps on a SAN &#8212; and just peeking at it is kind of expensive in some cases.
+The benefit is that you don't have to issue two queries. That saves network round trips, and makes your code shorter. But it has a disadvantage, too: you're still querying the archive table when you don't need to. Does this matter? Yes, it does. Your archive table may be very large and slow &#8212; perhaps stored on a big slow hard drive, perhaps on a SAN &#8212; and just peeking at it is kind of expensive in some cases.
 
-Something occurred to me a couple of weeks ago: why not write a UNION that stops executing as soon as one part of it finds a row? Then you can UNION to your heart&#8217;s content and not incur the overhead of that second lookup unless you need it. For lack of a better term, I&#8217;m calling this a lazy UNION.
+Something occurred to me a couple of weeks ago: why not write a UNION that stops executing as soon as one part of it finds a row? Then you can UNION to your heart's content and not incur the overhead of that second lookup unless you need it. For lack of a better term, I'm calling this a lazy UNION.
 
-My idea here is to use a user variable. If the first part of the UNION finds a row, it sets the variable. The second part has the variable in its WHERE clause, and won&#8217;t execute if the variable has been set by the first part. To make the whole thing self-contained, I&#8217;m adding a third part of the UNION, which will always execute but never return any rows; it will set the variable back to its initial state of NULL.
+My idea here is to use a user variable. If the first part of the UNION finds a row, it sets the variable. The second part has the variable in its WHERE clause, and won't execute if the variable has been set by the first part. To make the whole thing self-contained, I'm adding a third part of the UNION, which will always execute but never return any rows; it will set the variable back to its initial state of NULL.
 
-Here&#8217;s a complete example:
+Here's a complete example:
 
 <pre>drop table if exists user, user_archive;
 create table user(user_id int not null primary key);
@@ -66,6 +66,6 @@ You can play around with it and verify that indeed, the second part of the UNION
 +---------+--------------+
 1 row in set (0.00 sec)</pre>
 
-I have not benchmarked this. My gut feeling is that whether it&#8217;s beneficial is going to depend on your workload. But it&#8217;s a fun little hack I thought I&#8217;d share with you. By the way, there&#8217;s no reason you have to stop at two; you could add any number of queries to the UNION.
+I have not benchmarked this. My gut feeling is that whether it's beneficial is going to depend on your workload. But it's a fun little hack I thought I'd share with you. By the way, there's no reason you have to stop at two; you could add any number of queries to the UNION.
 
  [1]: http://www.xaprb.com/blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/

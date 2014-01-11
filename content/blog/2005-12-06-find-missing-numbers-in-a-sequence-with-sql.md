@@ -5,13 +5,13 @@ excerpt: '<p>This article explains how to find missing values in a sequence, how
 layout: post
 permalink: /2005/12/06/find-missing-numbers-in-a-sequence-with-sql/
 ---
-Sometimes it is important to know which values in a sequence are missing, either to find unused values so they can be used, or to find &#8220;holes&#8221; in the data. In this article I&#8217;ll show you how to find missing values, how to find the start and end of ranges of missing values, and how to optimize the queries for best performance.
+Sometimes it is important to know which values in a sequence are missing, either to find unused values so they can be used, or to find "holes" in the data. In this article I'll show you how to find missing values, how to find the start and end of ranges of missing values, and how to optimize the queries for best performance.
 
 ### Exclusion joins
 
-Possibly the most efficient technique, depending upon the application, is to use an [exclusion join][1] against a list of all legal values (for example, an [integers table][2]). For instance, at my current employer we assign a unique tracking ID to certain bits of data. For reasons lost in the mist of time, we use three-character combinations of letters and numbers. It&#8217;s effectively a base-36 number system. It is not the most efficient thing to work with in SQL! Since there is no magical built-in way to get the database to assign the next unused value in the sequence, we keep a table with all 36<sup>3</sup> legal values, and do an exclusion join against the list of legal values. This is an acceptable way to find the next values, but of course it&#8217;s nowhere near optimal; when transactional consistency is needed, we have to lock tables up and do an expensive query. An identity (auto_increment) column would be preferable.
+Possibly the most efficient technique, depending upon the application, is to use an [exclusion join][1] against a list of all legal values (for example, an [integers table][2]). For instance, at my current employer we assign a unique tracking ID to certain bits of data. For reasons lost in the mist of time, we use three-character combinations of letters and numbers. It's effectively a base-36 number system. It is not the most efficient thing to work with in SQL! Since there is no magical built-in way to get the database to assign the next unused value in the sequence, we keep a table with all 36<sup>3</sup> legal values, and do an exclusion join against the list of legal values. This is an acceptable way to find the next values, but of course it's nowhere near optimal; when transactional consistency is needed, we have to lock tables up and do an expensive query. An identity (auto_increment) column would be preferable.
 
-Putting three-character codes behind and assuming you want to analyze some existing data for holes without creating lists of legal values, it is possible to find missing values in a sequence by matching it against itself. For example, I am helping someone design a database to store information about gravestones. The original data was hand-entered into a spreadsheet, with a single column to keep track of gravestone numbers. There are duplicate and missing values in the sequence, both of which can indicate data problems, so it&#8217;s highly desirable to find and fix them. After importing the spreadsheets verbatim into a staging table, I ran a number of analyses to find data problems before transforming the data into the final tables.
+Putting three-character codes behind and assuming you want to analyze some existing data for holes without creating lists of legal values, it is possible to find missing values in a sequence by matching it against itself. For example, I am helping someone design a database to store information about gravestones. The original data was hand-entered into a spreadsheet, with a single column to keep track of gravestone numbers. There are duplicate and missing values in the sequence, both of which can indicate data problems, so it's highly desirable to find and fix them. After importing the spreadsheets verbatim into a staging table, I ran a number of analyses to find data problems before transforming the data into the final tables.
 
 ### The setup
 
@@ -54,7 +54,7 @@ Finding duplicate numbers is easy:
 group by id
 having count(*) > 1;</pre>
 
-In this case there are no duplicates, since I&#8217;m not concentrating on that in this post (finding duplicates is straightforward enough that I hope you can see how it&#8217;s done). I had to scratch my head for a second to find missing numbers in the sequence, though. Here is my first shot at it:
+In this case there are no duplicates, since I'm not concentrating on that in this post (finding duplicates is straightforward enough that I hope you can see how it's done). I had to scratch my head for a second to find missing numbers in the sequence, though. Here is my first shot at it:
 
 <pre>select l.id + 1 as start
 from sequence as l
@@ -91,7 +91,7 @@ The idea is to exclusion join against the same sequence, but shifted by one posi
 
 ### Find ranges of missing values with subqueries
 
-The above query identifies the start of ranges of missing numbers, but not the end. It also gives a false positive for 21, which is a missing number because it&#8217;s off the end of the whole sequence. I wanted to solve both problems. After squinting at it a while, I realized I could solve this problem with a correlated subquery, as follows:
+The above query identifies the start of ranges of missing numbers, but not the end. It also gives a false positive for 21, which is a missing number because it's off the end of the whole sequence. I wanted to solve both problems. After squinting at it a while, I realized I could solve this problem with a correlated subquery, as follows:
 
 <pre>select start, stop from (
   select m.id + 1 as start,
@@ -102,7 +102,7 @@ The above query identifies the start of ranges of missing numbers, but not the e
 ) as x
 where stop is not null;</pre>
 
-The final `WHERE` clause makes sure the upper end of the sequence isn&#8217;t counted as a hole. This can be written several ways, some of them without wrapping the whole thing in a subquery (for example, `where r.id is null and r < (select max(id) from sequence)`), but it suits me fine as it is. Here is the result:
+The final `WHERE` clause makes sure the upper end of the sequence isn't counted as a hole. This can be written several ways, some of them without wrapping the whole thing in a subquery (for example, `where r.id is null and r < (select max(id) from sequence)`), but it suits me fine as it is. Here is the result:
 
 <table class="borders collapsed">
   <tr>
@@ -136,7 +136,7 @@ The final `WHERE` clause makes sure the upper end of the sequence isn&#8217;t co
   </tr>
 </table>
 
-If the sequence is a another data type, such as dates or letters of the alphabet, it is often possible to use some other functions to get the &#8220;next&#8221; value in the sequence in the join condition. For example, if the `id` column is `CHAR(1)`, here is a query for MySQL:
+If the sequence is a another data type, such as dates or letters of the alphabet, it is often possible to use some other functions to get the "next" value in the sequence in the join condition. For example, if the `id` column is `CHAR(1)`, here is a query for MySQL:
 
 <pre>insert into sequence(id) values
     ('a'), ('b'), ('c'), ('e'),
@@ -151,7 +151,7 @@ select start, stop from (
 ) as x
 where stop &lt;&gt; '';</pre>
 
-It&#8217;s necessary to change the final `WHERE` clause to `stop <> ''` because `CHAR()` skips `NULL`s, converting `CHAR(NULL)` to the empty string. Here is the result:
+It's necessary to change the final `WHERE` clause to `stop <> ''` because `CHAR()` skips `NULL`s, converting `CHAR(NULL)` to the empty string. Here is the result:
 
 <table class="borders collapsed">
   <tr>
@@ -187,7 +187,7 @@ It&#8217;s necessary to change the final `WHERE` clause to `stop <> ''` because 
 
 ### Performance analysis: rewriting without subqueries
 
-I don&#8217;t like correlated subqueries. In fact, I avoid subqueries if at all possible. Correlated subqueries are especially bad because, depending on the query optimizer, they may force the RDBMS to build a temporary table and probe into it for *each value* in the left-most table, which is O(n<sup>2</sup>). It dawned on me that the query could be written as [left joins][1]:
+I don't like correlated subqueries. In fact, I avoid subqueries if at all possible. Correlated subqueries are especially bad because, depending on the query optimizer, they may force the RDBMS to build a temporary table and probe into it for *each value* in the left-most table, which is O(n<sup>2</sup>). It dawned on me that the query could be written as [left joins][1]:
 
 <pre>select l.id + 1 as start, min(fr.id) - 1 as stop
 from sequence as l
@@ -270,7 +270,7 @@ Of course, this is hardly, if at all, better. The `<` in the join condition make
   </tr>
 </table>
 
-SQL Server actually optimized the first query significantly better, which highlights one of my favorite principles: **always measure performance**, and never try to &#8220;optimize by eye!&#8221; Here are the numbers (see my article about [using awk to sum up query statistics][3]):
+SQL Server actually optimized the first query significantly better, which highlights one of my favorite principles: **always measure performance**, and never try to "optimize by eye!" Here are the numbers (see my article about [using awk to sum up query statistics][3]):
 
 <pre>-- query one --
 Scans:                  9
@@ -288,7 +288,7 @@ Read-ahead reads:       0
 CPU time:              60 ms
 Elapsed time:         148 ms</pre>
 
-MySQL&#8217;s results did not vary as much; the execution time was .8% faster on the first query, and the `EXPLAIN` result showed that the second query caused &#8216;Range checked for each record&#8217;. The two query plans were actually very different, according to `EXPLAIN`.
+MySQL's results did not vary as much; the execution time was .8% faster on the first query, and the `EXPLAIN` result showed that the second query caused 'Range checked for each record'. The two query plans were actually very different, according to `EXPLAIN`.
 
  [1]: /blog/2005/09/23/how-to-write-a-sql-exclusion-join/
  [2]: /blog/2005/12/07/the-integers-table/

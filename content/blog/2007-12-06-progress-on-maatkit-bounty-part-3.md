@@ -15,29 +15,29 @@ tags:
   - synchronization
   - Test Driven Development
 ---
-This is the last day I&#8217;m taking off work to hack on mk-table-sync, and I thought it was time for (yet another) progress report. Here&#8217;s what I have done so far:
+This is the last day I'm taking off work to hack on mk-table-sync, and I thought it was time for (yet another) progress report. Here's what I have done so far:
 
-*   All the code, except for a tiny bit of &#8220;glue&#8221; and &#8220;setup&#8221; code, is in modules.
+*   All the code, except for a tiny bit of "glue" and "setup" code, is in modules.
 *   Lots more tests for the modules.
-*   A new sync algorithm (I still haven&#8217;t rewritten the top-down and bottom-up, which are designed for network efficiency more than MySQL efficiency, and are very complicated). This algorithm is called &#8220;Chunk&#8221; and is based on the chunking module I&#8217;m re-using from two of the other tools. This allows syncing the table a bit at a time to avoid locking it so much.
+*   A new sync algorithm (I still haven't rewritten the top-down and bottom-up, which are designed for network efficiency more than MySQL efficiency, and are very complicated). This algorithm is called "Chunk" and is based on the chunking module I'm re-using from two of the other tools. This allows syncing the table a bit at a time to avoid locking it so much.
 *   The tool chooses its own parameters, including choosing the sync algorithm automatically by examining indexes.
 *   Proper exit codes, as well as several other smaller issues requested via bug reports.
-*   The tool now syncs entire servers. That is, you don&#8217;t have to specify a table. It&#8217;ll find all the tables and just sync them.
+*   The tool now syncs entire servers. That is, you don't have to specify a table. It'll find all the tables and just sync them.
 *   The tool can sync many servers. You give it five servers, it will treat the first as the source, and sync every table in the source to each of the four remaining servers in turn.
-*   It can work via replication. It can discover a master&#8217;s slaves via SHOW SLAVE HOSTS and sync each slave to the master. You can also point it at a slave and it&#8217;ll discover the master, connect to it, and sync the slave to the master.
-*   It integrates with mk-table-checksum&#8217;s results. If you&#8217;ve given the &#8211;replicate option to mk-table-checksum, the slave&#8217;s results are stored in a table. It can read that table and sync anything marked as different. This can be combined with sync-to-master and auto-discover-slaves functionality.
-*   Lots of other bugs and problems are gone simply because I&#8217;m using the modules I wrote for other tools. This includes issues with table parsing, identifier quoting, etc etc. As an aside, I have to roll my own for almost everything, because I can&#8217;t rely on things like DBI&#8217;s `quote_identifier()` function &#8212; it does not work in earlier versions, which are amazingly common in the real world.
+*   It can work via replication. It can discover a master's slaves via SHOW SLAVE HOSTS and sync each slave to the master. You can also point it at a slave and it'll discover the master, connect to it, and sync the slave to the master.
+*   It integrates with mk-table-checksum's results. If you've given the &#8211;replicate option to mk-table-checksum, the slave's results are stored in a table. It can read that table and sync anything marked as different. This can be combined with sync-to-master and auto-discover-slaves functionality.
+*   Lots of other bugs and problems are gone simply because I'm using the modules I wrote for other tools. This includes issues with table parsing, identifier quoting, etc etc. As an aside, I have to roll my own for almost everything, because I can't rely on things like DBI's `quote_identifier()` function &#8212; it does not work in earlier versions, which are amazingly common in the real world.
 
-Whew! So what isn&#8217;t done yet?
+Whew! So what isn't done yet?
 
 *   Bi-directional syncing.
 *   The Nibble sync algorithm. It will be preferred over Chunk and can be used in more cases.
 *   Documentation.
-*   Full support for wide characters. (This is non-trivial in Perl. I need to research it. A partial solution might not be hard, but I&#8217;m worried about the versions included in, for example, RHEL 3, which is very widely used.)
+*   Full support for wide characters. (This is non-trivial in Perl. I need to research it. A partial solution might not be hard, but I'm worried about the versions included in, for example, RHEL 3, which is very widely used.)
 *   Updating other tools to work right with the changes to shared code.
 *   Locking and transaction code. The tool will ultimately use FOR UPDATE/LOCK IN SHARE MODE automatically on InnoDB tables instead of locking them, for example.
 
-Here&#8217;s a sample of what it can do, using a replication sandbox I set up with Giuseppe&#8217;s [MySQL Sandbox][1]. The sandbox contains a copy of the Sakila sample database. I&#8217;ll just mangle a few films on the slaves:
+Here's a sample of what it can do, using a replication sandbox I set up with Giuseppe's [MySQL Sandbox][1]. The sandbox contains a copy of the Sakila sample database. I'll just mangle a few films on the slaves:
 
 <pre>baron@kanga:~$ cd rsandbox_5_0_45/
 baron@kanga:~/rsandbox_5_0_45$ ./s1
@@ -65,12 +65,12 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 slave2 [localhost] {msandbox} ((none)) &gt; Bye</pre>
 
-OK, now I&#8217;ve messed up the first 12 films on one slave, and the first 1 on another. I could just go ahead and sync them right away, but first I&#8217;ll do a table checksum to demonstrate that functionality:
+OK, now I've messed up the first 12 films on one slave, and the first 1 on another. I could just go ahead and sync them right away, but first I'll do a table checksum to demonstrate that functionality:
 
 <pre>baron@kanga:~/rsandbox_5_0_45$ mk-table-checksum --replicate=test.checksum --port=16045 127.0.0.1 -q
 </pre>
 
-And now I&#8217;ll tell the sync tool to go fix the differences the checksum revealed:
+And now I'll tell the sync tool to go fix the differences the checksum revealed:
 
 <pre>baron@kanga:~/rsandbox_5_0_45$ mk-table-sync  --replicate=test.checksum h=127.0.0.1,P=16045 -vx
 # Syncing P=16046,h=127.0.0.1
@@ -84,9 +84,9 @@ And now I&#8217;ll tell the sync tool to go fix the differences the checksum rev
 baron@kanga:~/rsandbox_5_0_45$ 
 </pre>
 
-Pretty easy, huh? Take a look at the output: the first thing it did was fix the 12 films I changed. `sakila.film` has a trigger that updates `sakila.film_text`, so that table got changed too. The checksum tool caught this difference, but the differences were gone by the time the sync tool examined them, again due to the trigger. On the second slave, no differences were found at all, because the changes to the first slave were made on the master, automatically fixing the second slave. (This won&#8217;t always be the case, but it worked in this example).
+Pretty easy, huh? Take a look at the output: the first thing it did was fix the 12 films I changed. `sakila.film` has a trigger that updates `sakila.film_text`, so that table got changed too. The checksum tool caught this difference, but the differences were gone by the time the sync tool examined them, again due to the trigger. On the second slave, no differences were found at all, because the changes to the first slave were made on the master, automatically fixing the second slave. (This won't always be the case, but it worked in this example).
 
-While I&#8217;d love to continue building the perfect beast, I&#8217;m going to have to call it quits around noon today and start cleaning up, writing the documentation, and getting ready to release the code. I&#8217;m not sure how much I&#8217;ll finish in that time.
+While I'd love to continue building the perfect beast, I'm going to have to call it quits around noon today and start cleaning up, writing the documentation, and getting ready to release the code. I'm not sure how much I'll finish in that time.
 
 By the way, anyone who wants to is welcome to get the code from the [Maatkit][2] SVN repository! I never make a big deal out of that because I generally assume people want to run released code, but SVN is there if you want it&#8230;
 

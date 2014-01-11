@@ -10,17 +10,17 @@ categories:
   - Sys Admin
   - Tools
 ---
-[Maatkit&#8217;s][1] [`mk-loadavg`][2] tool is a helpful way to gather information about infrequent conditions on your database server (or any other server, really). We wrote it at Percona to help with those repeated cases of things like &#8220;every two weeks, my database stops processing queries for 30 seconds, but it&#8217;s not locked up and during this time there is nothing happening.&#8221; That&#8217;s pretty much impossible to catch in action, and these conditions can take months to resolve without the aid of good tools.
+[Maatkit's][1] [`mk-loadavg`][2] tool is a helpful way to gather information about infrequent conditions on your database server (or any other server, really). We wrote it at Percona to help with those repeated cases of things like "every two weeks, my database stops processing queries for 30 seconds, but it's not locked up and during this time there is nothing happening." That's pretty much impossible to catch in action, and these conditions can take months to resolve without the aid of good tools.
 
-In this blog post I&#8217;ll illustrate a very simple usage of `mk-loadavg` to help in solving a much smaller problem: find out what is happening on the database server during periods of CPU spikes that happen every so often.
+In this blog post I'll illustrate a very simple usage of `mk-loadavg` to help in solving a much smaller problem: find out what is happening on the database server during periods of CPU spikes that happen every so often.
 
 First, set everything up.
 
-1.  Start a screen session: `screen -S loadmonitoring`. If you don&#8217;t have screen, you can run mk-loadavg as a daemon, but it&#8217;s much better to use screen in my opinion.
-2.  Get `mk-loadavg`. For purposes of this blog post, I&#8217;m going to get the latest trunk code, because I know a bug or two has been fixed since the last release. `wget http://www.maatkit.org/trunk/mk-loadavg`
+1.  Start a screen session: `screen -S loadmonitoring`. If you don't have screen, you can run mk-loadavg as a daemon, but it's much better to use screen in my opinion.
+2.  Get `mk-loadavg`. For purposes of this blog post, I'm going to get the latest trunk code, because I know a bug or two has been fixed since the last release. `wget http://www.maatkit.org/trunk/mk-loadavg`
 3.  Create a directory to hold the collected information in files. `mkdir collected`
 
-Next let&#8217;s set up a script that `mk-loadavg` can use to gather some information when it detects a high CPU condition. Save the contents of this script as &#8220;collect-stats.sh&#8221;. The script will gather about 30 seconds worth of statistics. It uses a simple sentinel file `/tmp/gatherinfo` to prevent multiple occurrences from gathering statistics at the same time. (This is intentionally simple for demo purposes.)
+Next let's set up a script that `mk-loadavg` can use to gather some information when it detects a high CPU condition. Save the contents of this script as "collect-stats.sh". The script will gather about 30 seconds worth of statistics. It uses a simple sentinel file `/tmp/gatherinfo` to prevent multiple occurrences from gathering statistics at the same time. (This is intentionally simple for demo purposes.)
 
 ``<pre>
 #!/bin/bash
@@ -40,7 +40,7 @@ ps -eaf >> collected/$d-ps 2>&1 &
 mysql -e 'show innodb status\G show full processlist\G' >> collected/$d-innodbstatus 2>&1 &
 rm /tmp/gatherinfo
 </pre>`` 
-Now make the script executable: `chmod +x collect-stats.sh`. At this point we&#8217;re ready to start working. Let&#8217;s fire the stats-collection script when the system&#8217;s user CPU goes above 40%.<cod>
+Now make the script executable: `chmod +x collect-stats.sh`. At this point we're ready to start working. Let's fire the stats-collection script when the system's user CPU goes above 40%.<cod>
 
 <pre>perl mk-loadavg --watch "Server:vmstat:us:>:40" --interval 1 --execute collect-stats.sh
 </pre></code> 

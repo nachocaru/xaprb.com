@@ -13,7 +13,7 @@ tags:
   <a href="http://enterpriselamp.org/summit/" target="_blank"><img src="http://enterpriselamp.org/wp-content/badges/summitspeaker.jpg" alt="Enterprise LAMP" /></a>
 </p>
 
-I am speaking at [Enterprise LAMP][1] [Summit 2009][2] (and also should be speaking at the [Camp][3] the next day, but I see the schedule isn&#8217;t quite updated yet). My talk at the Summit will *not* be on the future landscape of MySQL &#8212; that&#8217;s a mistake. My talk&#8217;s title isn&#8217;t finalized yet.
+I am speaking at [Enterprise LAMP][1] [Summit 2009][2] (and also should be speaking at the [Camp][3] the next day, but I see the schedule isn't quite updated yet). My talk at the Summit will *not* be on the future landscape of MySQL &#8212; that's a mistake. My talk's title isn't finalized yet.
 
 This conference is the first weekend in November, in the Nashville area. I hope to see you there!
 

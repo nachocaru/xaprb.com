@@ -71,6 +71,6 @@ This article compares the relative speed of extracting the date part of a value 
   </tr>
 </table>
 
-I don&#8217;t know why it&#8217;s faster to use `LEFT()` than `DATE()`. I would assume the reverse to be true, but clearly it&#8217;s not, at least on the systems I&#8217;ve tested.
+I don't know why it's faster to use `LEFT()` than `DATE()`. I would assume the reverse to be true, but clearly it's not, at least on the systems I've tested.
 
 The time for `MIN()` is one or two milliseconds faster than `MAX()`, probably because the values are sequential and only one assignment is performed, whereas the `MAX()` query must perform two million assignments.

@@ -14,7 +14,7 @@ The basic idea for rounding to whole multiples is to divide the number, losing p
 
 This actually works for any programming language, not just SQL. But I find myself doing it in SQL most often.
 
-Here&#8217;s an example of how to turn a year into a decade:
+Here's an example of how to turn a year into a decade:
 
     mysql> SELECT FLOOR(YEAR(NOW()) / 10) * 10 AS decade;
     +--------+
@@ -23,7 +23,7 @@ Here&#8217;s an example of how to turn a year into a decade:
     |   2000 | 
     +--------+
 
-There are other ways to do this, of course. In this case, since the original year is expressed in decimal notation, and we are rounding down to the nearest power of 10, we could simply take the leftmost three digits and add a zero. But that wouldn&#8217;t work if we were trying to &#8220;snap&#8221; to the nearest five-year interval. The technique I showed above does:
+There are other ways to do this, of course. In this case, since the original year is expressed in decimal notation, and we are rounding down to the nearest power of 10, we could simply take the leftmost three digits and add a zero. But that wouldn't work if we were trying to "snap" to the nearest five-year interval. The technique I showed above does:
 
     mysql> SELECT FLOOR(YEAR(NOW()) / 5) * 5 AS half_decade;
     +-------------+
@@ -32,7 +32,7 @@ There are other ways to do this, of course. In this case, since the original yea
     |        2005 | 
     +-------------+
 
-Let&#8217;s suppose we want to take an arbitrary number, and round it to the nearest 1/8th. In this case, we need to divide by 1/8 and then multiply by 1/8 again to get to the nearest fraction, because dividing by eight and multiplying by eight would actually get us to the nearest even power of eight. I&#8217;ll just select random numbers between zero and 100 from one of the system tables to illustrate:
+Let's suppose we want to take an arbitrary number, and round it to the nearest 1/8th. In this case, we need to divide by 1/8 and then multiply by 1/8 again to get to the nearest fraction, because dividing by eight and multiplying by eight would actually get us to the nearest even power of eight. I'll just select random numbers between zero and 100 from one of the system tables to illustrate:
 
     mysql> SELECT ROUND((RAND() * 100) / .125) * .125 AS nearest_eighth
          > FROM mysql.help_topic LIMIT 10;
@@ -70,4 +70,4 @@ Of course, 1/8 is an easy number to write out in decimal: .125. It would not be 
     |      10.0000 | 
     +--------------+
 
-I hope this was useful to you. I&#8217;m betting I&#8217;ll be referring back to it myself the next time I need to round a number to the nearest fraction or whole multiple of some other number.
+I hope this was useful to you. I'm betting I'll be referring back to it myself the next time I need to round a number to the nearest fraction or whole multiple of some other number.

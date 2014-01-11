@@ -12,19 +12,19 @@ tags:
   - MySQL Query Analyzer
   - Percona
 ---
-MySQL just released their new [MySQL Query Analyzer][1] (link to a trial), and recently wrote up [an interview with Mark Matthews about it][2]. If you haven&#8217;t read that article, go ahead and do it. I have not used this software, but I fully believe its functionality is quite nice.
+MySQL just released their new [MySQL Query Analyzer][1] (link to a trial), and recently wrote up [an interview with Mark Matthews about it][2]. If you haven't read that article, go ahead and do it. I have not used this software, but I fully believe its functionality is quite nice.
 
-But there is at least one alternative, which has been available for a long time. That is the [Percona patch-set][3], plus analysis tools such as [mysqlsla][4] or [Maatkit&#8217;s query analysis tools][5]. This is a compelling alternative, if you can live without a point-and-click interface.
+But there is at least one alternative, which has been available for a long time. That is the [Percona patch-set][3], plus analysis tools such as [mysqlsla][4] or [Maatkit's query analysis tools][5]. This is a compelling alternative, if you can live without a point-and-click interface.
 
-Percona&#8217;s patches put the metrics-gathering where it should be: in the server. That&#8217;s why Percona&#8217;s builds are able to measure a lot of statistics that a Proxy-based solution can&#8217;t capture. This information is not possible to get outside of the server. For example, you cannot use the MySQL Query Analyzer to measure the I/O caused by a query. Externally to the server, about all you can do is time queries and measure their size. Percona&#8217;s patches have no such limitations; they measure and expose an ever-richening set of meta-data about queries.
+Percona's patches put the metrics-gathering where it should be: in the server. That's why Percona's builds are able to measure a lot of statistics that a Proxy-based solution can't capture. This information is not possible to get outside of the server. For example, you cannot use the MySQL Query Analyzer to measure the I/O caused by a query. Externally to the server, about all you can do is time queries and measure their size. Percona's patches have no such limitations; they measure and expose an ever-richening set of meta-data about queries.
 
-Guessing is not enough. You need to be able to measure what your queries are doing. The MySQL Query Analyzer&#8217;s way to know which queries cause I/O usage is to &#8220;&#8230;graph I/O usage on the system as a whole, and when you see a spike in I/O you can see what queries were running at the time.&#8221; So you&#8217;re essentially reduced to lining up graphs, picking time intervals, running EXPLAIN and guessing. If you use Percona&#8217;s patches, you can measure directly which queries cause I/O.
+Guessing is not enough. You need to be able to measure what your queries are doing. The MySQL Query Analyzer's way to know which queries cause I/O usage is to "&#8230;graph I/O usage on the system as a whole, and when you see a spike in I/O you can see what queries were running at the time." So you're essentially reduced to lining up graphs, picking time intervals, running EXPLAIN and guessing. If you use Percona's patches, you can measure directly which queries cause I/O.
 
-The article claims that &#8220;&#8230;With MySQL Query Analyzer we are watching from the sideline and capturing things that the MySQL server does not give you,&#8221; but the irony is that since Proxy-based solutions are outside the MySQL server, they actually can&#8217;t measure things the server already exposes internally. While would be possible to do so by running SHOW STATUS after each query, ask [Mark Callaghan][6] what he thinks of that idea.
+The article claims that "&#8230;With MySQL Query Analyzer we are watching from the sideline and capturing things that the MySQL server does not give you," but the irony is that since Proxy-based solutions are outside the MySQL server, they actually can't measure things the server already exposes internally. While would be possible to do so by running SHOW STATUS after each query, ask [Mark Callaghan][6] what he thinks of that idea.
 
-If you&#8217;ve ever administered Microsoft SQL Server, you know what kind of insight you can get into a running server. Other databases have similar functionality. MySQL has decided not to build metrics into the server, and is now trying to build it outside the server &#8212; an effort that&#8217;s ultimately doomed to failure because the information is only available inside.
+If you've ever administered Microsoft SQL Server, you know what kind of insight you can get into a running server. Other databases have similar functionality. MySQL has decided not to build metrics into the server, and is now trying to build it outside the server &#8212; an effort that's ultimately doomed to failure because the information is only available inside.
 
-Let&#8217;s see a feature comparison. I&#8217;ve chosen features that were promoted in the tech article linked above, plus key features I know are in the Percona patches:
+Let's see a feature comparison. I've chosen features that were promoted in the tech article linked above, plus key features I know are in the Percona patches:
 
 | &nbsp;                                                                                   | Percona patches&nbsp;&nbsp;           | MySQL Query Analyzer                  |
 | ---------------------------------------------------------------------------------------- | ------------------------------------- | ------------------------------------- |
@@ -82,15 +82,15 @@ Stay tuned. More is coming.
 ### Footnotes
 
 <p id="footnote1">
-  [1] From the article: &#8220;You basically have to redirect your application to connect to the Proxy port.&#8221;
+  [1] From the article: "You basically have to redirect your application to connect to the Proxy port."
 </p>
 
 <p id="footnote2">
-  [2] The slave SQL thread&#8217;s utilization is the amount of time it stays busy. This is different from measuring the queries the slave SQL thread executes. The Percona patches can do both; MySQL Query Analyzer does neither, since replication doesn&#8217;t go through a proxy. Both are extremely useful in <a href="http://www.mysqlperformanceblog.com/2008/10/08/three-ways-to-know-when-a-mysql-slave-is-about-to-start-lagging/">predicting and measuring a replication slave&#8217;s workload</a>.
+  [2] The slave SQL thread's utilization is the amount of time it stays busy. This is different from measuring the queries the slave SQL thread executes. The Percona patches can do both; MySQL Query Analyzer does neither, since replication doesn't go through a proxy. Both are extremely useful in <a href="http://www.mysqlperformanceblog.com/2008/10/08/three-ways-to-know-when-a-mysql-slave-is-about-to-start-lagging/">predicting and measuring a replication slave's workload</a>.
 </p>
 
 <p id="footnote3">
-  [3] Aggregating queries and then filtering by table isn&#8217;t the same thing as measuring how many Handler operations are performed against the table. The Percona patches include SHOW TABLE_STATISTICS, SHOW INDEX_STATISTICS, and SHOW USER_STATISTICS, which are functionality ported from Google&#8217;s patches. These let you know exactly how much work is done. This is what I call per-object statistics.
+  [3] Aggregating queries and then filtering by table isn't the same thing as measuring how many Handler operations are performed against the table. The Percona patches include SHOW TABLE_STATISTICS, SHOW INDEX_STATISTICS, and SHOW USER_STATISTICS, which are functionality ported from Google's patches. These let you know exactly how much work is done. This is what I call per-object statistics.
 </p>
 
  [1]: http://www.mysql.com/trials/enterprise

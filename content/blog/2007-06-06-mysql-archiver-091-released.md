@@ -30,15 +30,15 @@ I think the result is a good tool that does a lot of work for you:
 *   It handles transactions, lock timeouts and deadlocks.
 *   It writes archived data to a file in the same format `LOAD DATA INFILE` uses by default.
 
-It has a lot of options and functionality, so I won&#8217;t go into it too much here. I also have several ideas I want to implement in the future, but I want to see what the community thinks of what I&#8217;ve done so far before I work on it too much more.
+It has a lot of options and functionality, so I won't go into it too much here. I also have several ideas I want to implement in the future, but I want to see what the community thinks of what I've done so far before I work on it too much more.
 
-Despite the improvements, the basic approach remains the same: it finds the first row(s), and then on subsequent queries, it continues from where it left off, rather than scanning the whole table from the start. This makes it efficient to archive in small &#8220;nibbles,&#8221; which avoids contention with OLTP queries.
+Despite the improvements, the basic approach remains the same: it finds the first row(s), and then on subsequent queries, it continues from where it left off, rather than scanning the whole table from the start. This makes it efficient to archive in small "nibbles," which avoids contention with OLTP queries.
 
-I&#8217;ve put almost 30 extra-curricular hours into this recently. Most of the time has gone into making sure every different type of archiving job my employer needs to run can be generated as efficiently as possible with a minimum of fuss, such as a simple command-line option or two. I&#8217;m eager to hear what you think of it, whether it meets your needs, and how it can be improved. And I&#8217;m glad I&#8217;ve finally gotten it done after all this time!
+I've put almost 30 extra-curricular hours into this recently. Most of the time has gone into making sure every different type of archiving job my employer needs to run can be generated as efficiently as possible with a minimum of fuss, such as a simple command-line option or two. I'm eager to hear what you think of it, whether it meets your needs, and how it can be improved. And I'm glad I've finally gotten it done after all this time!
 
 ### About MySQL Toolkit
 
-[MySQL Toolkit][2] is a set of essential tools for MySQL users, developers and administrators. The project&#8217;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as `awk` and `sed`.
+[MySQL Toolkit][2] is a set of essential tools for MySQL users, developers and administrators. The project's goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as `awk` and `sed`.
 
  [1]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
  [2]: http://code.google.com/p/maatkit

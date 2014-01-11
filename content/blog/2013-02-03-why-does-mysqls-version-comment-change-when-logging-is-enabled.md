@@ -1,5 +1,5 @@
 ---
-title: 'Why does MySQL&#8217;s version comment change when logging is enabled?'
+title: 'Why does MySQL's version comment change when logging is enabled?'
 author: Baron Schwartz
 layout: post
 permalink: /2013/02/03/why-does-mysqls-version-comment-change-when-logging-is-enabled/
@@ -15,4 +15,4 @@ The more I think about this, the more bizarre it seems. I enabled logging. The v
     Version: '5.6.7-rc-log'
     
 
-I assume there&#8217;s a good story behind this somewhere. I&#8217;m thinking a priest, a rabbi, and Monty walk into a bar, and black vodka is probably involved at some point too :-)
+I assume there's a good story behind this somewhere. I'm thinking a priest, a rabbi, and Monty walk into a bar, and black vodka is probably involved at some point too :-)

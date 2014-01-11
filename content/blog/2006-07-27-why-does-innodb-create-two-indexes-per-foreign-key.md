@@ -9,25 +9,25 @@ description:
     Explains why an InnoDB foreign key requires indexes in both the parent and child
     table.
 ---
-If you&#8217;ve ever created [foreign keys on an InnoDB table][1], you&#8217;ll see it automatically creates indexes, if none exists, on the referenced columns in the parent table, and also in the foreign key columns in the child table. This article explains why both are needed.
+If you've ever created [foreign keys on an InnoDB table][1], you'll see it automatically creates indexes, if none exists, on the referenced columns in the parent table, and also in the foreign key columns in the child table. This article explains why both are needed.
 
 ### Why index the parent table?
 
-When a row is inserted or updated in the child table, the parent table must be searched for a row whose referenced values match the values in the foreign key columns. To make this efficient, it&#8217;s necessary to have a usable index on those columns in the parent table.
+When a row is inserted or updated in the child table, the parent table must be searched for a row whose referenced values match the values in the foreign key columns. To make this efficient, it's necessary to have a usable index on those columns in the parent table.
 
-By &#8220;usable&#8221; I mean an index where the columns are either a leftmost prefix or a full cover of the foreign key columns.
+By "usable" I mean an index where the columns are either a leftmost prefix or a full cover of the foreign key columns.
 
 ### Why index the child table?
 
-Foreign key checking goes both directions. When a row in the parent table is updated or deleted, any rows in the child table that depend on it must be checked to make sure they&#8217;re not invalidated (or, in the case of a `CASCADE`, to find them to take the `CASCADE` action upon them). Again, the only efficient way to do this is to use an index.
+Foreign key checking goes both directions. When a row in the parent table is updated or deleted, any rows in the child table that depend on it must be checked to make sure they're not invalidated (or, in the case of a `CASCADE`, to find them to take the `CASCADE` action upon them). Again, the only efficient way to do this is to use an index.
 
-You can see that the checking always uses indexes by examining the output of `SHOW INNODB STATUS` and looking at the `LATEST FOREIGN KEY ERROR` section. If there&#8217;s an error there, you will always see information about two indexes (though it may not always be obvious, since the code that creates this output has to handle a variety of different errors).
+You can see that the checking always uses indexes by examining the output of `SHOW INNODB STATUS` and looking at the `LATEST FOREIGN KEY ERROR` section. If there's an error there, you will always see information about two indexes (though it may not always be obvious, since the code that creates this output has to handle a variety of different errors).
 
-By the way, I seem to remember seeing some comments in the InnoDB source code that say indexes are not created automatically, but I can&#8217;t find them now. In any case, if this was true once, it is no longer true.
+By the way, I seem to remember seeing some comments in the InnoDB source code that say indexes are not created automatically, but I can't find them now. In any case, if this was true once, it is no longer true.
 
 ### A useful tool
 
-The `<a href="/blog/2006/07/02/innotop-mysql-innodb-monitor/">innotop</a>` tool can format and display the `LATEST FOREIGN KEY ERROR` output for easy reading. I check our systems for foreign key violations regularly. Here is a sample of `innotop`&#8216;s output for a violation I deliberately manufactured for this article:
+The `<a href="/blog/2006/07/02/innotop-mysql-innodb-monitor/">innotop</a>` tool can format and display the `LATEST FOREIGN KEY ERROR` output for easy reading. I check our systems for foreign key violations regularly. Here is a sample of `innotop`'s output for a violation I deliberately manufactured for this article:
 
 <pre>Reason: Foreign key constraint fails for table `test/table_2`:
 

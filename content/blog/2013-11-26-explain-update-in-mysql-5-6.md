@@ -20,7 +20,7 @@ possible_keys: NULL
          rows: 51
         Extra: Using where
 </pre>` 
-The EXPLAIN output makes it seem like a perfectly fine query, but it&#8217;s a full table scan. If I do the old trick of rewriting it to a SELECT I see that: `<pre>
+The EXPLAIN output makes it seem like a perfectly fine query, but it's a full table scan. If I do the old trick of rewriting it to a SELECT I see that: `<pre>
 *************************** 1. row ***************************
            id: 1
   select_type: SIMPLE

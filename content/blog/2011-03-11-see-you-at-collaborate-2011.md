@@ -8,7 +8,7 @@ categories:
   - Oracle
   - SQL
 ---
-I&#8217;ll be speaking at [IOUG&#8217;s Collaborate][1] conference in Florida the week of April 10-14. My session is called [MySQL Performance Basics][2]. For those who know MySQL, this won&#8217;t be exciting, but if you&#8217;re new to it, I hope it will be a good orientation to what you should focus on and ignore.
+I'll be speaking at [IOUG's Collaborate][1] conference in Florida the week of April 10-14. My session is called [MySQL Performance Basics][2]. For those who know MySQL, this won't be exciting, but if you're new to it, I hope it will be a good orientation to what you should focus on and ignore.
 
 Sheeri Cabral posted a good round-up of [the MySQL talks at Collaborate][3] on the PalominoDB blog.
 

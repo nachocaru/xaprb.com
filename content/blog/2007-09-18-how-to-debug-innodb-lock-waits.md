@@ -22,7 +22,7 @@ This article shows you how to use a little-known InnoDB feature to find out what
 
 ### Background
 
-One of the most common complaints I&#8217;ve heard from DBAs used to other database servers is &#8220;I can&#8217;t find out who holds the locks that are blocking all these connections and making them time out.&#8221; I feel your pain. Before I helped scale my employer&#8217;s systems to deal with larger volumes of data, InnoDB lock contention was a serious issue. And as far as I knew, you couldn&#8217;t find out who was holding locks. I knew you could see who was *waiting for locks to be granted*; that&#8217;s easy. You just run `SHOW INNODB STATUS` and look for the following text:
+One of the most common complaints I've heard from DBAs used to other database servers is "I can't find out who holds the locks that are blocking all these connections and making them time out." I feel your pain. Before I helped scale my employer's systems to deal with larger volumes of data, InnoDB lock contention was a serious issue. And as far as I knew, you couldn't find out who was holding locks. I knew you could see who was *waiting for locks to be granted*; that's easy. You just run `SHOW INNODB STATUS` and look for the following text:
 
 <pre>------------
 TRANSACTIONS
@@ -41,7 +41,7 @@ select * from t1 for update
 RECORD LOCKS space id 9 page no 3 n bits 72 index `PRIMARY` of table `test/t1` trx id 0 4873 lock_mode X waiting
 ...</pre>
 
-That&#8217;s fine, but who holds the lock? I thought there was no way to find that out.
+That's fine, but who holds the lock? I thought there was no way to find that out.
 
 ### InnoDB Lock Monitor
 
@@ -49,9 +49,9 @@ Until I learned about the <a href="http://dev.mysql.com/doc/en/innodb-monitor.ht
 
 <pre>CREATE TABLE innodb_lock_monitor(a int) ENGINE=INNODB;</pre>
 
-It&#8217;s quite an ugly hack, but it turns out the table name is actually &#8220;magical.&#8221; It&#8217;s a special table name that tells InnoDB to start the lock monitor. You can stop it by dropping the table again.
+It's quite an ugly hack, but it turns out the table name is actually "magical." It's a special table name that tells InnoDB to start the lock monitor. You can stop it by dropping the table again.
 
-This little-noticed feature makes InnoDB print out a slightly modified version of what you see with `SHOW INNODB STATUS`. The &#8220;slight modification&#8221; is to print out not only the locks the transaction waits for, but also those it *holds*. For example, here&#8217;s the transaction that holds the locks:
+This little-noticed feature makes InnoDB print out a slightly modified version of what you see with `SHOW INNODB STATUS`. The "slight modification" is to print out not only the locks the transaction waits for, but also those it *holds*. For example, here's the transaction that holds the locks:
 
 <pre>---TRANSACTION 0 4872, ACTIVE 32 sec, process no 7142, OS thread id 1141287232
 2 lock struct(s), heap size 368
@@ -64,17 +64,17 @@ Record lock, heap no 1 PHYSICAL RECORD: n_fields 1; compact format; info bits 0
 Record lock, heap no 2 PHYSICAL RECORD: n_fields 3; compact format; info bits 0
  0: len 4; hex 80000001; asc     ;; 1: len 6; hex 000000000d35; asc      5;; 2: len 7; hex 800000002d0110; asc     -  ;;</pre>
 
-That&#8217;s fine, but there are, ah, limitations. As the manual says, InnoDB periodically prints out this text &#8212; essentially spewing InnoDB&#8217;s guts &#8212; to its standard output. This gets redirected to the server error log in any sane installation. Who&#8217;s looking there? And it gets printed out at long intervals, which seems to be about every 16 seconds on the machines I use.
+That's fine, but there are, ah, limitations. As the manual says, InnoDB periodically prints out this text &#8212; essentially spewing InnoDB's guts &#8212; to its standard output. This gets redirected to the server error log in any sane installation. Who's looking there? And it gets printed out at long intervals, which seems to be about every 16 seconds on the machines I use.
 
-Plus, if you&#8217;ve looked at the result, you&#8217;ll understand this is not something you want to search through manually looking for data. The output can be absolutely huge. What DBA wants to pore over thousands of hex-dumped rows from the table just to answer the question &#8220;who holds that lock?&#8221;
+Plus, if you've looked at the result, you'll understand this is not something you want to search through manually looking for data. The output can be absolutely huge. What DBA wants to pore over thousands of hex-dumped rows from the table just to answer the question "who holds that lock?"
 
-All in all, this is not very convenient (yep, I know that&#8217;s an understatement).
+All in all, this is not very convenient (yep, I know that's an understatement).
 
 ### Slightly more convenient
 
-What&#8217;s a little more convenient than combing through all that text by hand is writing a program to parse InnoDB&#8217;s status output. You don&#8217;t have to, though. That&#8217;s what I wrote innotop to do. And I&#8217;ve just released version 1.5.2, which at long last has the ability to watch a log file as well as connecting to server(s).
+What's a little more convenient than combing through all that text by hand is writing a program to parse InnoDB's status output. You don't have to, though. That's what I wrote innotop to do. And I've just released version 1.5.2, which at long last has the ability to watch a log file as well as connecting to server(s).
 
-Here&#8217;s how this works: you start innotop, and press the L key to switch to Lock mode. This replaces the old Lock Wait mode, which was only able to monitor the InnoDB lock waits you see in the normal output of `SHOW INNODB STATUS`.
+Here's how this works: you start innotop, and press the L key to switch to Lock mode. This replaces the old Lock Wait mode, which was only able to monitor the InnoDB lock waits you see in the normal output of `SHOW INNODB STATUS`.
 
 This mode shows you something like the following:
 
@@ -86,21 +86,21 @@ file  12  RECORD        1  00:10   00:10  X     test  t1     PRIMARY
 file  11  TABLE         0  00:00   00:25  IX    test  t1
 file  11  RECORD        0  00:00   00:25  X     test  t1     PRIMARY</pre>
 
-That&#8217;s helpful! I can see the locks held and waited for in a nice tabular format. It&#8217;s pretty easy to see connection 11 is blocking connection 12.
+That's helpful! I can see the locks held and waited for in a nice tabular format. It's pretty easy to see connection 11 is blocking connection 12.
 
-This is still pretty inconvenient, though. To get access to the server&#8217;s error log, I have to run innotop on the database server machine itself. Is there a better way?
+This is still pretty inconvenient, though. To get access to the server's error log, I have to run innotop on the database server machine itself. Is there a better way?
 
 ### Even better
 
-There is, in fact, but I discovered it completely by accident. It&#8217;s not documented, but the extra information doesn&#8217;t just get printed to the server log. It also shows up in `SHOW INNODB STATUS`! Now that&#8217;s a nice surprise. It means innotop can get lock information from a normal connection instead of monitoring a log file.
+There is, in fact, but I discovered it completely by accident. It's not documented, but the extra information doesn't just get printed to the server log. It also shows up in `SHOW INNODB STATUS`! Now that's a nice surprise. It means innotop can get lock information from a normal connection instead of monitoring a log file.
 
-After discovering this, I immediately added some more features to innotop. There are now hot-keys in L mode to enable and disable the lock monitor. Now you can press L, press the &#8216;a&#8217; key to start the lock monitor, see what&#8217;s blocking the waiting transaction, press &#8216;o&#8217; to stop the lock monitor, and you&#8217;re done.
+After discovering this, I immediately added some more features to innotop. There are now hot-keys in L mode to enable and disable the lock monitor. Now you can press L, press the 'a' key to start the lock monitor, see what's blocking the waiting transaction, press 'o' to stop the lock monitor, and you're done.
 
 ### Best yet
 
-I&#8217;m sure you InnoDB administrators already recognize what an improvement this is over the options you previously had (essentially, you didn&#8217;t have any). There&#8217;s still a long way to go, though. Locks could be in the `INFORMATION_SCHEMA` or in a `SHOW LOCKS` command. I won&#8217;t speculate on why they aren&#8217;t already.
+I'm sure you InnoDB administrators already recognize what an improvement this is over the options you previously had (essentially, you didn't have any). There's still a long way to go, though. Locks could be in the `INFORMATION_SCHEMA` or in a `SHOW LOCKS` command. I won't speculate on why they aren't already.
 
-Of course, the upcoming Falcon storage engine already has better features for debugging lock contention than this. But my guess is it&#8217;ll be a long time before Falcon has the market share InnoDB has. All things considered, InnoDB is a pretty nice piece of software.
+Of course, the upcoming Falcon storage engine already has better features for debugging lock contention than this. But my guess is it'll be a long time before Falcon has the market share InnoDB has. All things considered, InnoDB is a pretty nice piece of software.
 
 ### Conclusion
 

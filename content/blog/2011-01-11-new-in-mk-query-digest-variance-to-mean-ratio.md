@@ -11,7 +11,7 @@ tags:
   - Method R
   - Robyn Sands
 ---
-This isn&#8217;t actually new &#8212; it has been out for a few releases. The [mk-query-digest][1] tool from Maatkit now outputs information about each class of queries&#8217; variance-to-mean ratio. The new output goes in a couple of places, including perhaps most usefully the &#8220;profile&#8221; report. Here&#8217;s an example from a real MySQL system:
+This isn't actually new &#8212; it has been out for a few releases. The [mk-query-digest][1] tool from Maatkit now outputs information about each class of queries' variance-to-mean ratio. The new output goes in a couple of places, including perhaps most usefully the "profile" report. Here's an example from a real MySQL system:
 
 <pre># Profile
 # Rank Query ID           Response time    Calls R/Call Apdx V/M   Item
@@ -23,13 +23,13 @@ This isn&#8217;t actually new &#8212; it has been out for a few releases. The [m
 # MISC 0xMISC               560.7556  3.4% 23930 0.0234   NS   0.0 &lt;17 ITEMS&gt;
 </pre>
 
-The variance-to-mean ratio is placed in the V/M column. It is the ratio of the query response time&#8217;s variance to the mean, for that class of queries. It also appears in the detailed output for the queries in the rest of the report.
+The variance-to-mean ratio is placed in the V/M column. It is the ratio of the query response time's variance to the mean, for that class of queries. It also appears in the detailed output for the queries in the rest of the report.
 
-What is this useful for? It is a dimensionless number that shows how variable a query&#8217;s response time is. The dimensionless number is better than a number such as the standard deviation of response time, because it places fast and slow queries on equal footing; when looking at standard deviation, you really need to compare it to typical execution time to see if there&#8217;s a problem. (A fast query that varies by a tenth of a second is highly variable. A query that usually runs hours and varies only by a tenth of a second is unbelievably consistent.)
+What is this useful for? It is a dimensionless number that shows how variable a query's response time is. The dimensionless number is better than a number such as the standard deviation of response time, because it places fast and slow queries on equal footing; when looking at standard deviation, you really need to compare it to typical execution time to see if there's a problem. (A fast query that varies by a tenth of a second is highly variable. A query that usually runs hours and varies only by a tenth of a second is unbelievably consistent.)
 
-A query with a highly variable response time is interesting not only because it is providing unpredictable performance, but because it often means that the query is either a perpetrator or victim of bad interactions with other queries, and possibly that it accesses a larger working set of data than fits in the server&#8217;s caches, so it makes unpredictable random disk accesses. That&#8217;s a fancy way of saying that this query might have a high potential for improvement.
+A query with a highly variable response time is interesting not only because it is providing unpredictable performance, but because it often means that the query is either a perpetrator or victim of bad interactions with other queries, and possibly that it accesses a larger working set of data than fits in the server's caches, so it makes unpredictable random disk accesses. That's a fancy way of saying that this query might have a high potential for improvement.
 
-To see what I mean, let&#8217;s look at the detailed report for one of the queries whose V/M ratio was 0.21:
+To see what I mean, let's look at the detailed report for one of the queries whose V/M ratio was 0.21:
 
 <pre># Query 1: 24.28 QPS, 3.50x concurrency, ID 0xBFCF8E3F293F6466 at byte 5590079
 # This item is included in the report because it matches --limit.
@@ -56,9 +56,9 @@ To see what I mean, let&#8217;s look at the detailed report for one of the queri
 SELECT ... FROM ... WHERE (col1 = 87041469) AND (col2 = 1138714082) LIMIT 1\G
 </pre>
 
-You can see from the Query_time distribution that this query often executes in the hundreds of microseconds, but also frequently in the hundreds of milliseconds. I redacted some details to protect client data, but this query is a primary-key lookup on an extremely large table. I&#8217;ll hazard a guess here: when the data is in memory, it runs in hundreds of microseconds; and when it has to hid the disk, it takes tens to hundreds of milliseconds.
+You can see from the Query_time distribution that this query often executes in the hundreds of microseconds, but also frequently in the hundreds of milliseconds. I redacted some details to protect client data, but this query is a primary-key lookup on an extremely large table. I'll hazard a guess here: when the data is in memory, it runs in hundreds of microseconds; and when it has to hid the disk, it takes tens to hundreds of milliseconds.
 
-More of the math and theory behind this useful metric of query response time variability is available from [Robyn Sands&#8217; article via Method R corporation][2]. Thanks to Cary Millsap, who directed my attention to the V/M ratio in the first place.
+More of the math and theory behind this useful metric of query response time variability is available from [Robyn Sands' article via Method R corporation][2]. Thanks to Cary Millsap, who directed my attention to the V/M ratio in the first place.
 
  [1]: http://www.maatkit.org/doc/mk-query-digest.html
  [2]: http://method-r.com/downloads/doc_details/39-an-industrial-engineers-approach-to-managing-oracle-databases-robyn-sands

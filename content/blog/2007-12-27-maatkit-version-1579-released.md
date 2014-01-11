@@ -19,9 +19,9 @@ tags:
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
 </p>
 
-This release contains bug fixes and new features. The biggest new feature, in my opinion, is a new sync algorithm for mk-table-sync. Now you can sync any table with an index more efficiently than previously. This is the return of the speed I promised earlier. (Though I haven&#8217;t yet benchmarked it; I am very short on time these days. Your benchmarks and other contributions are welcome).
+This release contains bug fixes and new features. The biggest new feature, in my opinion, is a new sync algorithm for mk-table-sync. Now you can sync any table with an index more efficiently than previously. This is the return of the speed I promised earlier. (Though I haven't yet benchmarked it; I am very short on time these days. Your benchmarks and other contributions are welcome).
 
-I&#8217;m finally feeling like the table sync tool is getting in good shape!
+I'm finally feeling like the table sync tool is getting in good shape!
 
 Let me know what you think, and of course, if you have questions or bug reports, please use the Sourceforge forums, bug tracker, etc so others can benefit too.
 

@@ -9,7 +9,7 @@ permalink: /2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/
 description:
   - Explains how to avoid problems with multi-table cross-database deletes in MySQL.
 ---
-Sometimes multi-table deletes fail in MySQL with a message about an unknown table. In this article I&#8217;ll explain the exact combination of circumstances that cause it to happen.
+Sometimes multi-table deletes fail in MySQL with a message about an unknown table. In this article I'll explain the exact combination of circumstances that cause it to happen.
 
 First, the symptoms:
 
@@ -30,8 +30,8 @@ According the the MySQL documentation,
   </p>
 </blockquote>
 
-That&#8217;s correct, but it might not seem right. If the tables are fully qualified by database and table name, but are in the current database, it works. If I switch to another database and run the same statement, it won&#8217;t work.
+That's correct, but it might not seem right. If the tables are fully qualified by database and table name, but are in the current database, it works. If I switch to another database and run the same statement, it won't work.
 
-This bit me when I was scripting out a large procedure running from a Perl script that doesn&#8217;t specify a database. I scripted it while I was connected and had a database specified. Then I ran it, and it bombed out when it got to the delete statement.
+This bit me when I was scripting out a large procedure running from a Perl script that doesn't specify a database. I scripted it while I was connected and had a database specified. Then I ran it, and it bombed out when it got to the delete statement.
 
-The solution is not to alias the tables. It&#8217;s less convenient, but it&#8217;s the only thing to do sometimes.
+The solution is not to alias the tables. It's less convenient, but it's the only thing to do sometimes.

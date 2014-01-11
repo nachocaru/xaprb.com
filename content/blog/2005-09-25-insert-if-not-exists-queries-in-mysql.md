@@ -5,7 +5,7 @@ excerpt: "<p>If necessary, INSERT IF NOT EXISTS queries can be written in a sing
 layout: post
 permalink: /2005/09/25/insert-if-not-exists-queries-in-mysql/
 ---
-If necessary, INSERT IF NOT EXISTS queries can be written in a single atomic statement, eliminating the need for a transaction, and without violating standards. In this article I&#8217;ll explain several ways to write such queries in a platform-independent way.
+If necessary, INSERT IF NOT EXISTS queries can be written in a single atomic statement, eliminating the need for a transaction, and without violating standards. In this article I'll explain several ways to write such queries in a platform-independent way.
 
 ### Motivation
 
@@ -13,9 +13,9 @@ Suppose a table of urls has a unique index on the url:
 
 <pre>create table urls(url varchar(200) primary key);</pre>
 
-Now suppose I want to insert a row in a single statement, without using a transaction, and I only want the row to get inserted if the url isn&#8217;t already in the table. I don&#8217;t want any warnings or errors. I just want to issue a normal `INSERT` statement and know the url is now in the table.
+Now suppose I want to insert a row in a single statement, without using a transaction, and I only want the row to get inserted if the url isn't already in the table. I don't want any warnings or errors. I just want to issue a normal `INSERT` statement and know the url is now in the table.
 
-Standard SQL provides no means of doing this. There&#8217;s no syntax like this:
+Standard SQL provides no means of doing this. There's no syntax like this:
 
 <pre>insert if not exists into url(url) values(...)</pre>
 
@@ -66,7 +66,7 @@ from mutex
 where mutex.i = 1
 group by urls.url;</pre>
 
-If this article was useful to you, you should [subscribe][2] to stay current with my upcoming articles. It&#8217;s free and convenient.
+If this article was useful to you, you should [subscribe][2] to stay current with my upcoming articles. It's free and convenient.
 
 **Edit 2006-02-26** See also my article on using this and other techniques to do [flexible INSERT and UPDATE statements in MySQL][3].
 

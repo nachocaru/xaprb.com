@@ -1,5 +1,5 @@
 ---
-title: 'Type conversion semantics of MySQL&#8217;s BETWEEN operator'
+title: 'Type conversion semantics of MySQL's BETWEEN operator'
 author: Baron Schwartz
 excerpt: '<p>I got bitten by an implicit type conversion with MySQL recently.  This article is about avoiding implicit type conversions, and the weird places you might find them.</p>'
 layout: post
@@ -11,9 +11,9 @@ I got bitten by an implicit type conversion with MySQL recently. This article is
 
 ### Introduction
 
-Here&#8217;s the setup: I was trying to select every day in the current month. Have you read my article about how [stringifying dates is faster than comparing them as dates][1]? At the time I wrote this query, I was experimenting with such things after seeing my co-workers do it a lot, for example, taking the left ten characters of a `timestamp` column to get the date part of it. As a result, I took a shortcut to find the beginning of the month: I selected the left seven characters of a `date` column.
+Here's the setup: I was trying to select every day in the current month. Have you read my article about how [stringifying dates is faster than comparing them as dates][1]? At the time I wrote this query, I was experimenting with such things after seeing my co-workers do it a lot, for example, taking the left ten characters of a `timestamp` column to get the date part of it. As a result, I took a shortcut to find the beginning of the month: I selected the left seven characters of a `date` column.
 
-In many queries this would be OK, but in my particular query it caused trouble. Here&#8217;s a test suite so you can follow along:
+In many queries this would be OK, but in my particular query it caused trouble. Here's a test suite so you can follow along:
 
 <pre>create table date_test(d date primary key);
 

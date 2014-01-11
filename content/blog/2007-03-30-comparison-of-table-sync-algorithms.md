@@ -9,19 +9,19 @@ description:
     Benchmark results for top-down and bottom-up algorithms to synchronize remote
     MySQL tables.
 ---
-I&#8217;ve been working on [how to efficiently compare and synchronize data between two tables on different MySQL servers][1]. I&#8217;ve also been working on a tool, sort of like [rsync for database tables][2], which implements both algorithms. I [profiled][2] it to see how well the comparison algorithms work on real data. This article is about the results.
+I've been working on [how to efficiently compare and synchronize data between two tables on different MySQL servers][1]. I've also been working on a tool, sort of like [rsync for database tables][2], which implements both algorithms. I [profiled][2] it to see how well the comparison algorithms work on real data. This article is about the results.
 
 ### The data and profiling results
 
-I used a sample of real data from a production database. It&#8217;s fairly simple &#8212; just a bunch of numbers and timestamps, 13 columns in all. The primary key is an integer, and there is a secondary index on another two columns, which makes it a good candidate for a three-stage drilldown via the top-down algorithm. There are exactly 50,000 rows in the sample I used, and the indexes and data come to just over 8MB in an InnoDB table.
+I used a sample of real data from a production database. It's fairly simple &#8212; just a bunch of numbers and timestamps, 13 columns in all. The primary key is an integer, and there is a secondary index on another two columns, which makes it a good candidate for a three-stage drilldown via the top-down algorithm. There are exactly 50,000 rows in the sample I used, and the indexes and data come to just over 8MB in an InnoDB table.
 
 For the tests, I created two copies of the data on the same server, and then changed one of the tables in four different ways. I deleted five rows randomly, 500 rows randomly, and where col2=60, which is 11,424 rows. Finally, I randomly incremented col6 in one row. These are the kinds of data corruptions I see on this table in production.
 
-I ran these tests on a Dell Inspiron 5000 laptop with a 500MHz processor from 1999. Don&#8217;t pay attention to the absolute numbers, as I&#8217;m sure you will not be serving data from a laptop whose circuitry starts to screech when it displays an animated cursor (yes, that does happen&#8230;).
+I ran these tests on a Dell Inspiron 5000 laptop with a 500MHz processor from 1999. Don't pay attention to the absolute numbers, as I'm sure you will not be serving data from a laptop whose circuitry starts to screech when it displays an animated cursor (yes, that does happen&#8230;).
 
 You can [download the test data and the profiling results (1.4MB)][3] if you wish.
 
-The following table shows some key statistics from the profiling. &#8216;td&#8217; stands for top-down and &#8216;bu&#8217; stands for bottom-up, which are the two algorithms I&#8217;m comparing here.
+The following table shows some key statistics from the profiling. 'td' stands for top-down and 'bu' stands for bottom-up, which are the two algorithms I'm comparing here.
 
 <table class="borders collapsed">
   <tr>
@@ -419,15 +419,15 @@ The following table shows some key statistics from the profiling. &#8216;td&#821
 
 ### Analysis
 
-In most cases, the top-down algorithm outperforms the bottom-up. The case where it doesn&#8217;t is if there&#8217;s a lot of corruption scattered randomly through the table. It is especially good at detecting the large chunk of missing rows in the third test &#8212; it terminates in just a few queries instead of eleven thousand. This is as I predicted several weeks ago.
+In most cases, the top-down algorithm outperforms the bottom-up. The case where it doesn't is if there's a lot of corruption scattered randomly through the table. It is especially good at detecting the large chunk of missing rows in the third test &#8212; it terminates in just a few queries instead of eleven thousand. This is as I predicted several weeks ago.
 
-The top-down approach is a fair amount faster than the bottom-up on this data, and as long as only a small number of rows are bad, ought to issue a comparable number of queries. It ends up causing fewer reads than bottom-up also. Surprisingly, it&#8217;s actually more network-efficient when the number of corrupt rows increases; in the case where 500 rows are bad, it moves about half as much data over the network as bottom-up. I attribute this to it being able to use the drill-down and tree-pruning strategies to good advantage. Or, if you look at it another way, the bottom-up algorithm tends to have fairly predictable costs, while the top-down costs vary depending on the nature of the corruption.
+The top-down approach is a fair amount faster than the bottom-up on this data, and as long as only a small number of rows are bad, ought to issue a comparable number of queries. It ends up causing fewer reads than bottom-up also. Surprisingly, it's actually more network-efficient when the number of corrupt rows increases; in the case where 500 rows are bad, it moves about half as much data over the network as bottom-up. I attribute this to it being able to use the drill-down and tree-pruning strategies to good advantage. Or, if you look at it another way, the bottom-up algorithm tends to have fairly predictable costs, while the top-down costs vary depending on the nature of the corruption.
 
-There is one caveat. I have benchmarked the &#8220;find differences&#8221; aspect of the tool here, but the tool is written to fetch the bad rows over the network in anticipation of fixing them. That&#8217;s why the top-down algorithm fetches 1.5 MB over the network in the third test. It actually only needs to fetch a few kB over the network to find the differences; the 1.5 MB is it retrieving the rows it will need to insert to sync the second table. The same note applies to the number of rows read.
+There is one caveat. I have benchmarked the "find differences" aspect of the tool here, but the tool is written to fetch the bad rows over the network in anticipation of fixing them. That's why the top-down algorithm fetches 1.5 MB over the network in the third test. It actually only needs to fetch a few kB over the network to find the differences; the 1.5 MB is it retrieving the rows it will need to insert to sync the second table. The same note applies to the number of rows read.
 
 ### Conclusions
 
-These results are encouraging. They tell me that I&#8217;ve designed a good algorithm for fixing slaves that drift, and they reinforced my belief that the two algorithms are highly effective for different scenarios.
+These results are encouraging. They tell me that I've designed a good algorithm for fixing slaves that drift, and they reinforced my belief that the two algorithms are highly effective for different scenarios.
 
  [1]: /blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
  [2]: http://code.google.com/p/maatkit

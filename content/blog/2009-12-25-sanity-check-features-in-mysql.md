@@ -13,7 +13,7 @@ MySQL has a couple of sanity-check features to help keep you from doing dumb thi
 *   [max\_join\_size][1] is a configuration option for the mysqld server program. It throws an error if you write a query that the optimizer estimates will examine more than this number of rows.
 *   [&#8211;safe-updates][2] is a command-line option to the mysql client program. It throws an error if you write an UPDATE or DELETE without a) a WHERE clause that refers to an indexed column or b) a LIMIT clause. It also sets the max\_join\_size and select_limit variables.
 
-The &#8211;safe-updates mysql client option actually sets three variables server-side. Let&#8217;s see the effects. First, the defaults:
+The &#8211;safe-updates mysql client option actually sets three variables server-side. Let's see the effects. First, the defaults:
 
 `<pre>
 $ mysql -e 'select @@sql_safe_updates, @@sql_select_limit, @@sql_max_join_size\G'
@@ -44,7 +44,7 @@ ERROR 1175 (HY000): You are using safe update mode and you tried to update a tab
 mysql> delete from t where a = 5;
 Query OK, 0 rows affected (0.01 sec)
 </pre>` 
-Alas, you can&#8217;t set sql\_select\_limit or sql\_safe\_updates through the server configuration file (my.cnf or my.ini) directly. But you can do that through the [init_connect][3] directive.
+Alas, you can't set sql\_select\_limit or sql\_safe\_updates through the server configuration file (my.cnf or my.ini) directly. But you can do that through the [init_connect][3] directive.
 
  [1]: http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html#sysvar_max_join_size
  [2]: http://mysql.openmirrors.org/doc/refman/5.1/en/safe-updates.html

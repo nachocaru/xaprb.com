@@ -21,15 +21,15 @@ tags:
 ---
 Very fast, as it turns out.
 
-While writing the chapter on replication for the upcoming second edition of High Performance MySQL, I decided to do a little test and measure replication speed more accurately than I&#8217;ve seen others do before. The first edition of the book measured replication speed by inserting on the master and polling on the slave. [Giuseppe Maxia later followed up on that by improving the polling process][1], and found events typically replicated within a half a millisecond.
+While writing the chapter on replication for the upcoming second edition of High Performance MySQL, I decided to do a little test and measure replication speed more accurately than I've seen others do before. The first edition of the book measured replication speed by inserting on the master and polling on the slave. [Giuseppe Maxia later followed up on that by improving the polling process][1], and found events typically replicated within a half a millisecond.
 
 Polling can only get you so far; the extra overhead caused by polling skews the measurements (even if you [poll smartly][2]). I wanted to see if I could do this without polling the slave for results. It turned out to be easier than I thought it would be.
 
-All I had to do was write a [MySQL User-Defined Function][3] that returns the system time to microsecond precision. I&#8217;ll write another post about that later; in this post I want to talk about the results.
+All I had to do was write a [MySQL User-Defined Function][3] that returns the system time to microsecond precision. I'll write another post about that later; in this post I want to talk about the results.
 
 ### The setup
 
-After writing and installing the function, I tested it. Note that it&#8217;s non-deterministic, so you get different results even when you call it twice in the same query:
+After writing and installing the function, I tested it. Note that it's non-deterministic, so you get different results even when you call it twice in the same query:
 
 <pre>SELECT NOW_USEC(), NOW_USEC(); 
 +----------------------------+----------------------------+ 
@@ -38,7 +38,7 @@ After writing and installing the function, I tested it. Note that it&#8217;s non
 | 2007-10-23 10:41:10.743917 | 2007-10-23 10:41:10.743934 | 
 +----------------------------+----------------------------+ </pre>
 
-The rest is easy. I set up two MySQL instances on the same server (because there&#8217;s no way the clocks on two separate machines will be synced to the microsecond), and made one of them the master of the other. On the master,
+The rest is easy. I set up two MySQL instances on the same server (because there's no way the clocks on two separate machines will be synced to the microsecond), and made one of them the master of the other. On the master,
 
 <pre>CREATE TABLE test.lag_test( 
    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
@@ -92,9 +92,9 @@ ORDER BY msec_lag;
 |  24.3000 |        1 | 
 +----------+----------+</pre>
 
-Not all that bad, eh? It looks to me like MySQL can replicate most small queries in *200 to 300 microseconds*(!!!). Of course, the speed is bounded by a) how long it takes to transfer the binary log event across the network and b) how fast the query executes. In this case, both are very fast, showing that MySQL doesn&#8217;t add much overhead of its own to the replication process.
+Not all that bad, eh? It looks to me like MySQL can replicate most small queries in *200 to 300 microseconds*(!!!). Of course, the speed is bounded by a) how long it takes to transfer the binary log event across the network and b) how fast the query executes. In this case, both are very fast, showing that MySQL doesn't add much overhead of its own to the replication process.
 
-If anyone knows of a way to measure the delay between the event being logged in the master&#8217;s binary log, and the event being logged in the slave&#8217;s relay log, I&#8217;d be interested in seeing the results. I&#8217;m guessing it&#8217;s practically instantaneous for small events like this, and most of the lag is in reading, parsing, and executing the SQL.
+If anyone knows of a way to measure the delay between the event being logged in the master's binary log, and the event being logged in the slave's relay log, I'd be interested in seeing the results. I'm guessing it's practically instantaneous for small events like this, and most of the lag is in reading, parsing, and executing the SQL.
 
  [1]: http://datacharmer.blogspot.com/2006/04/measuring-replication-speed.html
  [2]: http://www.xaprb.com/blog/2006/05/04/how-to-make-a-program-choose-an-optimal-polling-interval/

@@ -8,7 +8,7 @@ permalink: >
 description:
   - Explains how to use aliases in multi-table cross-database deletes on MySQL.
 ---
-In an earlier article I explored the finer points of [multi-table, cross-database deletes in MySQL][1], but I didn&#8217;t get it quite right. This article explains the subtleties I&#8217;ve discovered since then. This is more complex than the MySQL manual documents.
+In an earlier article I explored the finer points of [multi-table, cross-database deletes in MySQL][1], but I didn't get it quite right. This article explains the subtleties I've discovered since then. This is more complex than the MySQL manual documents.
 
 In the earlier article, I wrote
 
@@ -18,7 +18,7 @@ In the earlier article, I wrote
   </p>
 </blockquote>
 
-Now I find it *is* possible to alias the tables, with certain restrictions. Apparently the way you name the target of the `DELETE`, and the way you first declare the aliases in the `FROM` clause, must match exactly. Then it&#8217;s possible to do these deletes without fully qualifying the tables everywhere, and without having a current database selected.
+Now I find it *is* possible to alias the tables, with certain restrictions. Apparently the way you name the target of the `DELETE`, and the way you first declare the aliases in the `FROM` clause, must match exactly. Then it's possible to do these deletes without fully qualifying the tables everywhere, and without having a current database selected.
 
 For example, suppose you want to delete rows from `apples`, when they match in a join to `oranges`. The tables are in different databases. The following will not work:
 
@@ -33,7 +33,7 @@ The error is because `apples` is aliased to `a`. If you try to name `a` in the `
    from <strong>db1.apples as a</strong>
       inner join db2.oranges as o on o.price = a.price;</pre>
 
-Now you&#8217;ve named the tables identically in both places, so it works. It&#8217;s as though you have to re-alias the table in the `DELETE` clause. The optional `AS` keyword may be omitted in one or both places you declare an alias, so even this form will work:
+Now you've named the tables identically in both places, so it works. It's as though you have to re-alias the table in the `DELETE` clause. The optional `AS` keyword may be omitted in one or both places you declare an alias, so even this form will work:
 
 <pre>delete <strong>db1.apples a</strong>
    from <strong>db1.apples as a</strong>

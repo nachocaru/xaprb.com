@@ -5,7 +5,7 @@ excerpt: '<p>A simple shell script that recursively finds and merges files that 
 layout: post
 permalink: /2005/09/22/interactive-directory-merging/
 ---
-Hereâ€™s an &#8216;interactive&#8217; directory merging tool that doesn&#8217;t require GUI libraries, printer subsystems, and so forth. It is useful when you want to do things the easy way, at a terminal, without taking your hands off your keyboard. And it works on systems where you don&#8217;t have access to install things yourself, such as a shared webhosting server.
+Hereâ€™s an 'interactive' directory merging tool that doesn't require GUI libraries, printer subsystems, and so forth. It is useful when you want to do things the easy way, at a terminal, without taking your hands off your keyboard. And it works on systems where you don't have access to install things yourself, such as a shared webhosting server.
 
 <pre>#!/bin/bash
 echo "#!/bin/bash" > /tmp/mergedir

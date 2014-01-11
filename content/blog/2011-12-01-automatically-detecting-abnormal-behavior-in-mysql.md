@@ -10,8 +10,8 @@ Over the course of years, I have observed that the three most sensitive indicato
 
 [<img src="http://www.xaprb.com/blog/wp-content/uploads/2011/12/qps-connections-running.png" alt="" title="qps-connections-running" width="513" height="324" class="size-full wp-image-2541" />][1]
 
-I am currently working on developing an automated system that detects abnormal behavior in these three metrics, but doesn&#8217;t require any a priori inputs or thresholds, e.g. you don&#8217;t have to tell it &#8220;more than X is bad.&#8221; (It could be that during a low period of the day, X is different than during the peak load.)
+I am currently working on developing an automated system that detects abnormal behavior in these three metrics, but doesn't require any a priori inputs or thresholds, e.g. you don't have to tell it "more than X is bad." (It could be that during a low period of the day, X is different than during the peak load.)
 
-It turns out that this is hard to do reliably, without a lot of false positives and without false negatives (not triggering during an incident). If there is existing literature on the mathematical techniques to do this, I&#8217;d be interested in not reinventing the wheel. Does anyone have references to share?
+It turns out that this is hard to do reliably, without a lot of false positives and without false negatives (not triggering during an incident). If there is existing literature on the mathematical techniques to do this, I'd be interested in not reinventing the wheel. Does anyone have references to share?
 
  [1]: http://www.xaprb.com/blog/wp-content/uploads/2011/12/qps-connections-running.png

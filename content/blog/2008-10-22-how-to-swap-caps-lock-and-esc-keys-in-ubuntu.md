@@ -13,7 +13,7 @@ tags:
   - ubuntu
   - Vim
 ---
-Here&#8217;s a productivity tip that has saved me countless work while typing. Swap your Caps-lock and Escape keys. If you&#8217;re like most people, you use Caps-lock virtually never, and Escape quite a lot. Especially if you&#8217;re a programmer who happens to use [the best text editor, Vim][1]. Read on to learn how to do this.
+Here's a productivity tip that has saved me countless work while typing. Swap your Caps-lock and Escape keys. If you're like most people, you use Caps-lock virtually never, and Escape quite a lot. Especially if you're a programmer who happens to use [the best text editor, Vim][1]. Read on to learn how to do this.
 
 <!--more-->
 
@@ -25,13 +25,13 @@ keysym Escape = Caps_Lock
 keysym Caps_Lock = Escape
 add Lock = Caps_Lock'</pre>
 
-Step two is to make this run every time you log in. Open up System-Preferences-Settings. Click the Add button to add a new entry to the additional startup programs list. In the &#8220;name&#8221; box, enter &#8220;xmodmap&#8221; or something else descriptive. In the Command box, enter &#8220;/usr/bin/xmodmap /home/[user]/.xmodmaprc&#8221;, where [user] is your username.
+Step two is to make this run every time you log in. Open up System-Preferences-Settings. Click the Add button to add a new entry to the additional startup programs list. In the "name" box, enter "xmodmap" or something else descriptive. In the Command box, enter "/usr/bin/xmodmap /home/[user]/.xmodmaprc", where [user] is your username.
 
-And now get used to being able to hit Escape without reaching for it. If you like this, you might also be interested in using the [Dvorak][2] keyboard &#8212; I can type on either Dvorak or QWERTY, but Dvorak has saved me from something approaching total paralysis of the hands, so it&#8217;s worth checking into also.
+And now get used to being able to hit Escape without reaching for it. If you like this, you might also be interested in using the [Dvorak][2] keyboard &#8212; I can type on either Dvorak or QWERTY, but Dvorak has saved me from something approaching total paralysis of the hands, so it's worth checking into also.
 
 As your reward for reading this far,
 
-> Q: what&#8217;s the integral of 1/cabin?
+> Q: what's the integral of 1/cabin?
 > 
 > A1: Natural Log Cabin
 > 

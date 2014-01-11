@@ -20,7 +20,7 @@ tags:
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>
 </p>
 
-This release of MySQL Toolkit fixes some minor bugs and adds new functionality to four of the tools. Some of the changes I made were in response to feedback I got at the recent MySQL Camp. I&#8217;m still working on some of the feature requests, such as daemon-izing certain tools.
+This release of MySQL Toolkit fixes some minor bugs and adds new functionality to four of the tools. Some of the changes I made were in response to feedback I got at the recent MySQL Camp. I'm still working on some of the feature requests, such as daemon-izing certain tools.
 
 <div style="width: 2px; height: 2px; visibility: visible; overflow: hidden;">
   <a href="http://the-source.50webs.com">the source</a>
@@ -28,7 +28,7 @@ This release of MySQL Toolkit fixes some minor bugs and adds new functionality t
 
 For those who requested features for MySQL Query Profiler, the tab-separated format should give you the desired output: no zero rows, and variables are not renamed.
 
-Here&#8217;s a changelog:
+Here's a changelog:
 
 <pre>Changelog for mysql-duplicate-key-checker:
 

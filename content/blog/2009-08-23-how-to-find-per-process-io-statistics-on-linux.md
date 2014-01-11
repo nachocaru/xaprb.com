@@ -10,11 +10,11 @@ categories:
   - Sys Admin
   - Tools
 ---
-Newer Linux kernels have per-process I/O accounting and you can use the iotop tool to find out what&#8217;s performing I/O, but in many cases I&#8217;m trying to find the source of an I/O problem in an older kernel. I found sort of a hack-ish way to do that today, while trying to figure out why a system was basically unresponsive.
+Newer Linux kernels have per-process I/O accounting and you can use the iotop tool to find out what's performing I/O, but in many cases I'm trying to find the source of an I/O problem in an older kernel. I found sort of a hack-ish way to do that today, while trying to figure out why a system was basically unresponsive.
 
 I found [a post on Stack Overflow][1] that showed a way you can get per process I/O statistics from the kernel even in older kernels. I adapted this to my needs, and wrote a little script.
 
-Here&#8217;s how you use it. First, get it:
+Here's how you use it. First, get it:
 
 <pre>wget http://aspersa.googlecode.com/svn/trunk/iodump
 </pre>

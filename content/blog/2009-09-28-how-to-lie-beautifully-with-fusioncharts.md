@@ -23,7 +23,7 @@ Gotta love those three-dimensional charts. They sure are shiny! Look at this:
 
 This is a screenshot of [FusionCharts graphs][1]. But wait, on closer inspection: 5 and 7 are the same height? 6 is exactly twice as tall as 2?
 
-Pseudo-three-dimensional charts are the bane of my existence. [Tufte][2] would definitely not approve. (If you don&#8217;t have [The Visual Display of Quantitative Information][2], you should really get it and give it a read.)
+Pseudo-three-dimensional charts are the bane of my existence. [Tufte][2] would definitely not approve. (If you don't have [The Visual Display of Quantitative Information][2], you should really get it and give it a read.)
 
  [1]: http://www.fusioncharts.com/
  [2]: http://www.amazon.com/Visual-Display-Quantitative-Information-2nd/dp/0961392142?tag=xaprb-20

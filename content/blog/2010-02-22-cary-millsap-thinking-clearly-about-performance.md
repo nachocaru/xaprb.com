@@ -12,7 +12,7 @@ tags:
   - Cary Millsap
   - performance
 ---
-[Cary Millsap][1] has a [concise, readable paper on performance][2]. Anyone involved in database performance optimization should read it. Cary&#8217;s writing has heavily influenced the [mk-query-digest][3] tool for analyzing MySQL/PostgreSQL/Memcached/HTTP query performance, and I think you&#8217;ll get a lot more from mk-query-digest if you read this paper &#8212; and you should also read his book, [reviewed here][4]. It&#8217;s one of the top books on my [Essential Books List][5].
+[Cary Millsap][1] has a [concise, readable paper on performance][2]. Anyone involved in database performance optimization should read it. Cary's writing has heavily influenced the [mk-query-digest][3] tool for analyzing MySQL/PostgreSQL/Memcached/HTTP query performance, and I think you'll get a lot more from mk-query-digest if you read this paper &#8212; and you should also read his book, [reviewed here][4]. It's one of the top books on my [Essential Books List][5].
 
  [1]: http://method-r.com/
  [2]: http://method-r.com/downloads/doc_details/44-thinking-clearly-about-performance

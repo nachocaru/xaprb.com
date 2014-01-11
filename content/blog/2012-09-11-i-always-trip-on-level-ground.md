@@ -6,7 +6,7 @@ permalink: /2012/09/11/i-always-trip-on-level-ground/
 categories:
   - SQL
 ---
-On the lighter side: I&#8217;ve always had trouble with mysqldump&#8217;s expected syntax. You know, as the author of a book and all that, you might think I can get this to work. But pretty much every time I run this tool, it humiliates me. Witness:
+On the lighter side: I've always had trouble with mysqldump's expected syntax. You know, as the author of a book and all that, you might think I can get this to work. But pretty much every time I run this tool, it humiliates me. Witness:
 
     
     $ mysqldump --host localhost --password secr3t --all-databases

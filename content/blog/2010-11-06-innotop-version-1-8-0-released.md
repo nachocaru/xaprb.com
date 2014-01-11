@@ -9,7 +9,7 @@ categories:
   - SQL
   - Tools
 ---
-I&#8217;ve just uploaded the [new release of innotop to Google Code][1]. Short version of the changelog: works on MySQL 5.1 with the InnoDB plugin; more efficient; supports Percona/MariaDB [USER_STATISTICS][2] data; fixes a bunch of small annoying bugs.
+I've just uploaded the [new release of innotop to Google Code][1]. Short version of the changelog: works on MySQL 5.1 with the InnoDB plugin; more efficient; supports Percona/MariaDB [USER_STATISTICS][2] data; fixes a bunch of small annoying bugs.
 
 Longer version:
 

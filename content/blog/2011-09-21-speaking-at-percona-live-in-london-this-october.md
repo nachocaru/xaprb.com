@@ -7,9 +7,9 @@ categories:
   - Conferences
   - SQL
 ---
-Two of my proposals for [Percona Live London on October 24-25][1] have been approved! Yes, I really had to propose them and get them approved like everyone else, although as I&#8217;m sure you can imagine, I had a good chance at being accepted :-) Not all of my talks were accepted, though.
+Two of my proposals for [Percona Live London on October 24-25][1] have been approved! Yes, I really had to propose them and get them approved like everyone else, although as I'm sure you can imagine, I had a good chance at being accepted :-) Not all of my talks were accepted, though.
 
-I&#8217;ll be presenting [a half-day tutorial][2] on how to get great results when troubleshooting MySQL problems, and a [conference session][3] on how to use TCP packet headers to measure and analyze a surprising variety of aspects of MySQL performance and scalability.
+I'll be presenting [a half-day tutorial][2] on how to get great results when troubleshooting MySQL problems, and a [conference session][3] on how to use TCP packet headers to measure and analyze a surprising variety of aspects of MySQL performance and scalability.
 
 The [early-bird pricing discount][1] has been extended until the 28th! And the links in this blog post will enable a special discount code at registration to shave another 40 pounds off the ticket price.
 

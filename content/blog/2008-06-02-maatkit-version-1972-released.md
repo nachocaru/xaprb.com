@@ -14,13 +14,13 @@ tags:
   <a href="http://code.google.com/p/maatkit">Download Maatkit</a>
 </p>
 
-Before I tell you what&#8217;s new, let me tell you how cool I think it would be if Maatkit were voted [Sourceforge.net project of the year][1]. Just something to think about :-) I suggest the &#8220;Best Tool or Utility for SysAdmins&#8221; category. You can actually click the Back button and nominate it for several categories. Not that anyone would do that, of course.
+Before I tell you what's new, let me tell you how cool I think it would be if Maatkit were voted [Sourceforge.net project of the year][1]. Just something to think about :-) I suggest the "Best Tool or Utility for SysAdmins" category. You can actually click the Back button and nominate it for several categories. Not that anyone would do that, of course.
 
-Also, if anyone wants to jump in and help out with bug fixes and new features, please, by all means. Maatkit is a true open-source project as well as being Free Software. If you can follow coding conventions and understand Perl, I&#8217;m a very benevolent dictator and would gladly grant commit rights. As it turns out, since I&#8217;ve joined Percona I&#8217;m interested in a whole different set of things, and a lot of the itches I was scratching with Maatkit before are no longer mine to scratch. Some of my direct motivation to improve Maatkit is therefore reduced. (To those of you who have sent me gifts from my [wishlist][2], thank you, I really appreciate it. My latest is the score to Crimson Tide, which is just fastastic.)
+Also, if anyone wants to jump in and help out with bug fixes and new features, please, by all means. Maatkit is a true open-source project as well as being Free Software. If you can follow coding conventions and understand Perl, I'm a very benevolent dictator and would gladly grant commit rights. As it turns out, since I've joined Percona I'm interested in a whole different set of things, and a lot of the itches I was scratching with Maatkit before are no longer mine to scratch. Some of my direct motivation to improve Maatkit is therefore reduced. (To those of you who have sent me gifts from my [wishlist][2], thank you, I really appreciate it. My latest is the score to Crimson Tide, which is just fastastic.)
 
-This release is a bugfix and maintenance release. Many of the changes are minor tweaks to shared code. I&#8217;ve also partially moved to a new documentation system that will ensure the embedded documentation is authoritative and accurate.
+This release is a bugfix and maintenance release. Many of the changes are minor tweaks to shared code. I've also partially moved to a new documentation system that will ensure the embedded documentation is authoritative and accurate.
 
-Here&#8217;s the change log:
+Here's the change log:
 
 <pre>Changelog for mk-archiver:
 

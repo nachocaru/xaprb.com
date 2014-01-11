@@ -13,7 +13,7 @@ SQL is a functional language. Try to think of a SELECT statement as a function. 
 
 A join is a SELECT statement with multiple data sources. The data streams from those sources into your cog icon, and a single stream flows out again. A SELECT statement always has one and only one output. (Why? Think of a function&#8230; think back to your math classes). Joins are functions that perform matching between data streams. The matching is necessary to merge the multiple input streams into a single output.
 
-Let&#8217;s look at two tables of data, `apples` and `oranges`.
+Let's look at two tables of data, `apples` and `oranges`.
 
 <table class="borders collapsed">
   <caption>apples</caption> <tr>

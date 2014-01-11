@@ -15,7 +15,7 @@ tags:
   - Podcast
   - Sun
 ---
-I did an interview with [Barton George from Sun][1] while I was at the conference last week. [Barton has now posted the interview][2]. If you&#8217;re quick, you can listen to it before I do.
+I did an interview with [Barton George from Sun][1] while I was at the conference last week. [Barton has now posted the interview][2]. If you're quick, you can listen to it before I do.
 
 Topics: everything and anything, including Maatkit and PostgreSQL.
 

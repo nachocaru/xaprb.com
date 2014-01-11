@@ -7,7 +7,7 @@ categories:
   - Innotop
   - SQL
 ---
-It&#8217;s been ages since we&#8217;ve had an update to [innotop][1], or at least, it&#8217;s been a while since the changes were bundled up and released officially. Barring any bug reports against the [trunk code][2], I&#8217;m about ready to release more than a year&#8217;s worth of improvements to it:
+It's been ages since we've had an update to [innotop][1], or at least, it's been a while since the changes were bundled up and released officially. Barring any bug reports against the [trunk code][2], I'm about ready to release more than a year's worth of improvements to it:
 
 `<pre>   Changes:
    * Don't re-fetch SHOW VARIABLES every iteration; it's too slow on many hosts.

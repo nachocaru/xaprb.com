@@ -11,7 +11,7 @@ description:
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
 </p>
 
-This release fixes a few bugs, adds minor features, and adds some debugging support to shared code. I&#8217;m working on the Nibble sync algorithm for mk-table-sync, and someone has found a few more bugs with mk-parallel-dump, but those might take me a while to complete.
+This release fixes a few bugs, adds minor features, and adds some debugging support to shared code. I'm working on the Nibble sync algorithm for mk-table-sync, and someone has found a few more bugs with mk-parallel-dump, but those might take me a while to complete.
 
 <pre>Changelog for mk-archiver:
 

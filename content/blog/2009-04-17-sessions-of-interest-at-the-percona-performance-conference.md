@@ -25,9 +25,9 @@ tags:
   - Prasad Chakka
   - Theo Schlossnagle
 ---
-Having written about what I think is cool about the upcoming MySQL Conference and the MySQL Camp, now I want to finish up with what I&#8217;d like to see at the [Percona Performance Conference][1]. Just to recap, this is a conference we created to serve those who want to learn about performance &#8212; not &#8220;learn about MySQL,&#8221; not &#8220;learn about database performance,&#8221; just learn about performance, period.
+Having written about what I think is cool about the upcoming MySQL Conference and the MySQL Camp, now I want to finish up with what I'd like to see at the [Percona Performance Conference][1]. Just to recap, this is a conference we created to serve those who want to learn about performance &#8212; not "learn about MySQL," not "learn about database performance," just learn about performance, period.
 
-I want to see *everything*. I think this is going to be the single best conference I&#8217;ve ever been to. Even the way the conference is organized is exciting. For example, it&#8217;s running from early morning till late at night, nonstop. The sessions are also (mostly) only 25 minutes. This means if you decide a session isn&#8217;t all that interesting, you didn&#8217;t spend much time on it, and you don&#8217;t have long to wait for the next one.
+I want to see *everything*. I think this is going to be the single best conference I've ever been to. Even the way the conference is organized is exciting. For example, it's running from early morning till late at night, nonstop. The sessions are also (mostly) only 25 minutes. This means if you decide a session isn't all that interesting, you didn't spend much time on it, and you don't have long to wait for the next one.
 
 So here is a small sample of the sessions:
 
@@ -36,7 +36,7 @@ So here is a small sample of the sessions:
 *   Hive: Distributed Data Warehousing with Hadoop (Ashish Thusoo and Prasad Chakka, Facebook)
 *   High Performance Erlang (Jan Henry Nystrom)
 
-These are not just people who&#8217;ve learned about something and want to talk at you. These are the inventors, the originators, the gurus. It is truly the who&#8217;s who, and that&#8217;s just a few of them. If you aren&#8217;t familiar with those names, Google them and see. And after that, why not Google Theo Schlossnagle, Eric Burton, Monty Widenius, Andrew Aksyonoff, and a few others.
+These are not just people who've learned about something and want to talk at you. These are the inventors, the originators, the gurus. It is truly the who's who, and that's just a few of them. If you aren't familiar with those names, Google them and see. And after that, why not Google Theo Schlossnagle, Eric Burton, Monty Widenius, Andrew Aksyonoff, and a few others.
 
 I hope to see you there. Bring your business cards and introduce yourself to me!
 

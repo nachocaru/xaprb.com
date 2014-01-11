@@ -6,9 +6,9 @@ permalink: /2011/12/06/an-opportunity-to-participate-in-mysql-research/
 categories:
   - SQL
 ---
-I&#8217;m researching algorithms for automatic fault detection in MySQL (see [my previous post][1] for context). I need real-world data samples to test the algorithm. Can you help by sending me a bit of data from your production server?
+I'm researching algorithms for automatic fault detection in MySQL (see [my previous post][1] for context). I need real-world data samples to test the algorithm. Can you help by sending me a bit of data from your production server?
 
-The end goal is an open-source tool that will be a standard part of a typical MySQL installation. The problem I&#8217;m trying to solve for all MySQL users is this: something went wrong, what was it? Most of the time there&#8217;s no way to answer that; you have to set up a set of tools and hope you capture enough information to diagnose the problem next time. We need a tool that just runs all the time even when you don&#8217;t think anything is going to go wrong.
+The end goal is an open-source tool that will be a standard part of a typical MySQL installation. The problem I'm trying to solve for all MySQL users is this: something went wrong, what was it? Most of the time there's no way to answer that; you have to set up a set of tools and hope you capture enough information to diagnose the problem next time. We need a tool that just runs all the time even when you don't think anything is going to go wrong.
 
 You can help build this tool. I need samples from a wide variety of healthy and sick servers, both heavily and lightly loaded. I need samples that are between a few hours and a week or so long. Here is a script that will gather what I need:
 
@@ -32,6 +32,6 @@ The output should look something like this:
  1151   134     7
  1240   135     7
  1000   135     7</pre>` 
-Please save this output to a file, and contact me at moc.brpax@norab (reversed) if you would like to offer a dataset for us to test on. If you need any help setting up the data collection, you can use the same email. I&#8217;d also appreciate if you&#8217;d help spread the word about this via Twitter or other means. Thanks very much!
+Please save this output to a file, and contact me at moc.brpax@norab (reversed) if you would like to offer a dataset for us to test on. If you need any help setting up the data collection, you can use the same email. I'd also appreciate if you'd help spread the word about this via Twitter or other means. Thanks very much!
 
  [1]: http://www.xaprb.com/blog/2011/12/01/automatically-detecting-abnormal-behavior-in-mysql/ "Automatically detecting abnormal behavior in MySQL"

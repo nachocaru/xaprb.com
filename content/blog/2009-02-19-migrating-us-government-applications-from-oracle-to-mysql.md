@@ -14,7 +14,7 @@ tags:
 ---
 I just returned from a [MySQL Federal Migration Boot Camp][1], jointly presented by Carahsoft and Sun/MySQL. It was a half-day seminar on the topic of migrating applications to MySQL, targeted to the US Government sector. Specifically, most of the audience seemed to be running Oracle, though there were some users of other systems (Microsoft SQL Server, Sybase, Informix, etc).
 
-[Ronald Bradford][2] presented the whole thing. I thought he did a great job giving a fair and balanced look at topics such as what types of applications are good candidates for migration, what gotchas you might encounter, etc. I&#8217;m sure someone looking at migrating in earnest would benefit from a whole day&#8217;s discussion (or a more focused engagement with a consultant), but I thought it was a great way to help people figure out whether they should dig deeper or just stay where they are.
+[Ronald Bradford][2] presented the whole thing. I thought he did a great job giving a fair and balanced look at topics such as what types of applications are good candidates for migration, what gotchas you might encounter, etc. I'm sure someone looking at migrating in earnest would benefit from a whole day's discussion (or a more focused engagement with a consultant), but I thought it was a great way to help people figure out whether they should dig deeper or just stay where they are.
 
 Here are samples of the questions I heard:
 
@@ -39,21 +39,21 @@ Here are samples of the questions I heard:
 *   Are there any workarounds for the blocking nature of ALTER TABLE? What about in MySQL Cluster?
 *   Is MySQL Cluster shared-everything or shared-nothing?
 *   Oracle makes it tedious to keep up with patches. Is MySQL Enterprise easier? Can I get alerts about them? Are they all aggregated together?
-*   I&#8217;m on the Community version and I have an Enterprise subscription. Do I have to upgrade to the Enterprise version of MySQL Server?
+*   I'm on the Community version and I have an Enterprise subscription. Do I have to upgrade to the Enterprise version of MySQL Server?
 *   If I have a third-party SNMP monitoring tool, can MySQL Enterprise send SNMP traps to it?
 *   Does MySQL Enterprise Gold include replication functionality?
 
-I spoke to some people for a while afterwards. Some of them are MySQL Enterprise customers already and indicated that they&#8217;re actually not using their subscriptions. I asked them whether that&#8217;s important to them, and what is really a value for them; do they mind paying for it if they don&#8217;t use it? Maybe they just see a [MySQL support contract as an insurance policy?][3] (a few heads nodded yes). I asked people what they value in a support or consulting contract. Generally, I think what I heard can be boiled down to the following:
+I spoke to some people for a while afterwards. Some of them are MySQL Enterprise customers already and indicated that they're actually not using their subscriptions. I asked them whether that's important to them, and what is really a value for them; do they mind paying for it if they don't use it? Maybe they just see a [MySQL support contract as an insurance policy?][3] (a few heads nodded yes). I asked people what they value in a support or consulting contract. Generally, I think what I heard can be boiled down to the following:
 
-*   They want someone who stands behind the software they&#8217;ve installed, regardless of where that comes from.
-*   They don&#8217;t like paying for things they don&#8217;t use.
+*   They want someone who stands behind the software they've installed, regardless of where that comes from.
+*   They don't like paying for things they don't use.
 *   One person said she finds it easier to search the manual for answers than to open a support ticket.
 
 This is not scientific. This is a sample size of just a handful of people.
 
-Afterwards there was a buffet lunch, which was tasty and had a lot of vegetarian options. I traded a few business cards and talked with a couple of people about topics like how you can design MySQL to replace Oracle RAC, which I believe is not a good way to approach MySQL. Maybe I&#8217;ll write more about that separately.
+Afterwards there was a buffet lunch, which was tasty and had a lot of vegetarian options. I traded a few business cards and talked with a couple of people about topics like how you can design MySQL to replace Oracle RAC, which I believe is not a good way to approach MySQL. Maybe I'll write more about that separately.
 
-The sales presence during Ronald&#8217;s talk was very supportive &#8212; &#8220;we&#8217;re here if you have questions&#8221; &#8212; and not intrusive. At the very end, one of the sales people showed two slides about MySQL Enterprise, for a total of about 3 minutes, and explained their pricing model. However, from what I heard people say, there is some disconnect &#8212; the sales people think it&#8217;s very simple pricing, but everyone is confused about it. At least 5 people asked me to explain it, but I&#8217;m not sure why. I explained to a few curious people how [Percona&#8217;s pricing models][4] work.
+The sales presence during Ronald's talk was very supportive &#8212; "we're here if you have questions" &#8212; and not intrusive. At the very end, one of the sales people showed two slides about MySQL Enterprise, for a total of about 3 minutes, and explained their pricing model. However, from what I heard people say, there is some disconnect &#8212; the sales people think it's very simple pricing, but everyone is confused about it. At least 5 people asked me to explain it, but I'm not sure why. I explained to a few curious people how [Percona's pricing models][4] work.
 
 Kudos to Ronald for a balanced and fair look at migration, and thanks to MySQL and Carahsoft for sponsoring the event!
 

@@ -22,7 +22,7 @@ tags:
   - OGG
   - Rhythmbox
 ---
-Let me begin by saying &#8220;I am so not a gadget guy.&#8221; I don&#8217;t have an iPhone. Heck, I didn&#8217;t have a cellphone at all until April when I joined Percona as a consultant. I don&#8217;t ooh and aah over other people&#8217;s gadgets most of the time. I don&#8217;t have, you know, that kind of envy. I&#8217;m sure you see where this is going: I got a gadget and I think it&#8217;s really cool.
+Let me begin by saying "I am so not a gadget guy." I don't have an iPhone. Heck, I didn't have a cellphone at all until April when I joined Percona as a consultant. I don't ooh and aah over other people's gadgets most of the time. I don't have, you know, that kind of envy. I'm sure you see where this is going: I got a gadget and I think it's really cool.
 
 Anyway, my wife and I have a bunch of computers (desktops and laptops) and we had been feeling the pain for a long time: the files were only on one computer, and we wanted them available. I built a file server and then realized that it was going to be really expensive in terms of power alone, so I went back to USB drives for backups, and kept thinking about it.
 

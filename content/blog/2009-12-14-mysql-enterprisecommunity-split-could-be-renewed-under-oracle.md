@@ -11,9 +11,9 @@ tags:
   - MySQL Enterprise
   - Oracle
 ---
-One of MySQL&#8217;s notable projects was splitting the product into two editions: Enterprise Edition and Community Edition. This move [alienated][1] many in the community, and failed to create meaningful differentiation on either side, even with a team of people beating the community bushes for &#8220;contributions.&#8221; The net differentiation was ultimately Jeremy Cole&#8217;s `SHOW PROFILES` functionality, which made Community *better* than Enterprise. Sun put less effort into making this split work, and eventually they [abandoned][2] it.
+One of MySQL's notable projects was splitting the product into two editions: Enterprise Edition and Community Edition. This move [alienated][1] many in the community, and failed to create meaningful differentiation on either side, even with a team of people beating the community bushes for "contributions." The net differentiation was ultimately Jeremy Cole's `SHOW PROFILES` functionality, which made Community *better* than Enterprise. Sun put less effort into making this split work, and eventually they [abandoned][2] it.
 
-But that could change under Oracle&#8217;s stewardship. Oracle&#8217;s [promises to maintain a GPL version][3] don&#8217;t preclude it, and the fact that they thought it worth mentioning explicitly seems significant. Here&#8217;s a quote from the press release:
+But that could change under Oracle's stewardship. Oracle's [promises to maintain a GPL version][3] don't preclude it, and the fact that they thought it worth mentioning explicitly seems significant. Here's a quote from the press release:
 
 <blockquote cite="http://www.marketwire.com/press-release/Oracle-Corporation-NASDAQ-ORCL-1090000.html">
   <p>
@@ -21,9 +21,9 @@ But that could change under Oracle&#8217;s stewardship. Oracle&#8217;s [promises
   </p>
 </blockquote>
 
-This manages to sound generous, but a) the second sentence is simply what&#8217;s required by law as a consequence of the first sentence, and b) there has been no MySQL Enterprise/Community split for quite a while. So although this press release seems to say that Oracle would be maintaining the status quo, I am not sure that impression is supported by the facts.
+This manages to sound generous, but a) the second sentence is simply what's required by law as a consequence of the first sentence, and b) there has been no MySQL Enterprise/Community split for quite a while. So although this press release seems to say that Oracle would be maintaining the status quo, I am not sure that impression is supported by the facts.
 
-I&#8217;ve always said that [the split didn&#8217;t have to be a business failure][4]. I think Oracle could be quite capable of making this work where MySQL couldn&#8217;t and Sun decided to stop trying.
+I've always said that [the split didn't have to be a business failure][4]. I think Oracle could be quite capable of making this work where MySQL couldn't and Sun decided to stop trying.
 
 A renewed commitment to the split could re-alienate many in the community. It might also result in a closed-source Enterprise Edition of MySQL, a tactic that MySQL themselves tried but abandoned.
 

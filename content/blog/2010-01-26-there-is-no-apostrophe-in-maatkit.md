@@ -7,8 +7,8 @@ categories:
   - Maatkit
   - SQL
 ---
-Yes, [Maatkit][1]&#8216;s name was inspired by Ma&#8217;at, which has an apostrophe. But there is NO apostrophe in the name of the popular toolkit for MySQL users.
+Yes, [Maatkit][1]'s name was inspired by Ma'at, which has an apostrophe. But there is NO apostrophe in the name of the popular toolkit for MySQL users.
 
-I&#8217;m just sayin&#8217;.
+I'm just sayin'.
 
  [1]: http://www.maatkit.org/

@@ -8,7 +8,7 @@ categories:
   - SQL
   - Sys Admin
 ---
-I&#8217;ve released version 1.1.5 of my [improved Cacti templates][1] for MySQL and other components of a LAMP application. This is a pure bug-fix release. One of the bug fixes prevents spikes in graphs, but requires you to rebuild your RRD files. There are [upgrade instructions][2] on the project wiki for this and all releases. Use the [project issue tracker][3] to view and report issues, and use the [project mailing list][4] to discuss the templates and scripts.
+I've released version 1.1.5 of my [improved Cacti templates][1] for MySQL and other components of a LAMP application. This is a pure bug-fix release. One of the bug fixes prevents spikes in graphs, but requires you to rebuild your RRD files. There are [upgrade instructions][2] on the project wiki for this and all releases. Use the [project issue tracker][3] to view and report issues, and use the [project mailing list][4] to discuss the templates and scripts.
 
 The full changelog follows:
 

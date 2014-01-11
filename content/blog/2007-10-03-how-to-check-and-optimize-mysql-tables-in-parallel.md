@@ -17,20 +17,20 @@ tags:
   - optimization
   - SQL
 ---
-I wanted to point out something that might not be obvious from the name: MySQL Parallel Dump can be used as a generic wrapper to discover tables and databases, and fork off worker processes to do something to them in parallel. That &#8220;something&#8221; can easily be invoking `mysqlcheck` &#8212; or any other program. This makes it really easy for you to do multi-threaded whatever-you-need-to-do on MySQL tables. Here&#8217;s how:
+I wanted to point out something that might not be obvious from the name: MySQL Parallel Dump can be used as a generic wrapper to discover tables and databases, and fork off worker processes to do something to them in parallel. That "something" can easily be invoking `mysqlcheck` &#8212; or any other program. This makes it really easy for you to do multi-threaded whatever-you-need-to-do on MySQL tables. Here's how:
 
 <pre>mysql-parallel-dump [options] -- 'mysqlcheck --optimize %D %N'</pre>
 
 There are several things going on here:
 
-1.  You&#8217;re running `mysql-parallel-dump` with all the ordinary options. Some of them are really specific to dumping data, but not all that many &#8212; most of the options are about choosing which databases to include and exclude, and so on.
-2.  You&#8217;re adding a double dash `--` to make it stop processing any further options.
+1.  You're running `mysql-parallel-dump` with all the ordinary options. Some of them are really specific to dumping data, but not all that many &#8212; most of the options are about choosing which databases to include and exclude, and so on.
+2.  You're adding a double dash `--` to make it stop processing any further options.
 3.  The rest of the arguments are being treated as a system command, but&#8230; 
 4.  Not before interpolating the database and table name into them. The %D and %N are a little macro language. There are some other macros too &#8212; see the documentation.
 
 The net effect is to loop through all the tables and run `OPTIMIZE TABLE` on them.
 
-MySQL Parallel Dump takes responsibility for noticing the exit status of the system command, keeping track of times, and reporting it all when it&#8217;s done. And its functionality for working on sets of things is also generic. You could easily create a table of &#8220;optimization jobs&#8221; and point it at that table, perhaps using the `--age` option, and it would obediently do what the table&#8217;s contents specify:
+MySQL Parallel Dump takes responsibility for noticing the exit status of the system command, keeping track of times, and reporting it all when it's done. And its functionality for working on sets of things is also generic. You could easily create a table of "optimization jobs" and point it at that table, perhaps using the `--age` option, and it would obediently do what the table's contents specify:
 
 <pre>mysql> select setname, db, tbl from test.opti_job;
 +-----------+--------+------------+

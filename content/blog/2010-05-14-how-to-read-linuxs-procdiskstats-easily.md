@@ -1,5 +1,5 @@
 ---
-title: 'How to read Linux&#8217;s /proc/diskstats easily'
+title: 'How to read Linux's /proc/diskstats easily'
 author: Baron Schwartz
 layout: post
 permalink: /2010/05/14/how-to-read-linuxs-procdiskstats-easily/
@@ -11,15 +11,15 @@ categories:
 tags:
   - iostat
 ---
-These days I spend more time looking at /proc/diskstats than I do at iostat. The problem with iostat is that it lumps reads and writes together, and I want to see them separately. That&#8217;s really important on a database server (e.g. MySQL performance analysis).
+These days I spend more time looking at /proc/diskstats than I do at iostat. The problem with iostat is that it lumps reads and writes together, and I want to see them separately. That's really important on a database server (e.g. MySQL performance analysis).
 
-It&#8217;s not easy to read /proc/diskstats by looking at them, though. So I usually do the following to get a nice readable table:
+It's not easy to read /proc/diskstats by looking at them, though. So I usually do the following to get a nice readable table:
 
 *   Grep out the device I want to examine.
-*   Push that through &#8220;rel&#8221; from the Aspersa project.
-*   Add column headers, then format it with &#8220;align&#8221; from the same project.
+*   Push that through "rel" from the Aspersa project.
+*   Add column headers, then format it with "align" from the same project.
 
-Here&#8217;s a recipe. You might want to refer to the [kernel iostat documentation][1] too.
+Here's a recipe. You might want to refer to the [kernel iostat documentation][1] too.
 
 `<pre>
 wget http://aspersa.googlecode.com/svn/trunk/rel

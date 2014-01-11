@@ -10,7 +10,7 @@ description:
     Improvements to version 0.1.106 of the innotop InnoDB and MySQL monitor include
     bug fixes, more features, and many small enhancements.
 ---
-I&#8217;ve just improved `innotop` substantially, and released version 0.1.106 ([download innotop here][1]), and I&#8217;m also preparing a series of articles on how to use it for real, practical things. I&#8217;d like to know what you think of it, what problems you have, what features you want. It would be a huge help if you&#8217;d start it, toggle through its modes, and give me your feedback.
+I've just improved `innotop` substantially, and released version 0.1.106 ([download innotop here][1]), and I'm also preparing a series of articles on how to use it for real, practical things. I'd like to know what you think of it, what problems you have, what features you want. It would be a huge help if you'd start it, toggle through its modes, and give me your feedback.
 
 Enhancements in version 0.1.106 include:
 
@@ -26,6 +26,6 @@ Enhancements in version 0.1.106 include:
 10. Let display-optimized-query display multiple notes.
 11. Lots of small improvements, such as showing more info in statusbar.
 
-That&#8217;s only a partial list, but those are the major things I&#8217;ve improved. I hope you enjoy it, and stay tuned for articles on how to use it.
+That's only a partial list, but those are the major things I've improved. I hope you enjoy it, and stay tuned for articles on how to use it.
 
  [1]: http://www.xaprb.com/innotop/

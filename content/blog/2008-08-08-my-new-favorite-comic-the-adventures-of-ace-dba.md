@@ -10,7 +10,7 @@ tags:
   - humor
   - Oracle
 ---
-I follow only a few comics in my feed reader: [Get Fuzzy][1], [Dilbert][2], [XKCD][3], and now [The Adventures of Ace, DBA][4]. It&#8217;s kind of XKCD-ish, only it&#8217;s about Oracle and it doesn&#8217;t have the extra punch line when you hover your mouse over the picture. And it&#8217;s proof that a DBMS (even one I don&#8217;t use) can be pretty damn funny.
+I follow only a few comics in my feed reader: [Get Fuzzy][1], [Dilbert][2], [XKCD][3], and now [The Adventures of Ace, DBA][4]. It's kind of XKCD-ish, only it's about Oracle and it doesn't have the extra punch line when you hover your mouse over the picture. And it's proof that a DBMS (even one I don't use) can be pretty damn funny.
 
  [1]: http://www.comics.com/comics/getfuzzy/
  [2]: http://www.dilbert.com/

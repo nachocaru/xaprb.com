@@ -11,6 +11,6 @@ tags:
   - Giuseppe Maxia
   - Lenz Grimmer
 ---
-I&#8217;m happy that Lenz Grimmer and Giuseppe Maxia have organized [an OpenSQL Camp event in Germany in August][1]. Hooray!
+I'm happy that Lenz Grimmer and Giuseppe Maxia have organized [an OpenSQL Camp event in Germany in August][1]. Hooray!
 
  [1]: http://opensqlcamp.org/Events/2009/

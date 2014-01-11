@@ -10,7 +10,7 @@ tags:
   - Cacti
   - MySQL
 ---
-I&#8217;ve just released version 1.1.3 of the [Cacti templates I wrote for MySQL][1]. This is a bug-fix release only, and affects only ss\_get\_mysql\_stats.php. To upgrade from the previous release, upgrade ss\_get\_mysql\_stats.php. Don&#8217;t forget to save and restore your configuration options, if any. (Note that there is a feature to help with this: you can keep configuration options in ss\_get\_mysql\_stats.php.cnf to avoid making them in ss\_get\_mysql\_stats.php.)
+I've just released version 1.1.3 of the [Cacti templates I wrote for MySQL][1]. This is a bug-fix release only, and affects only ss\_get\_mysql\_stats.php. To upgrade from the previous release, upgrade ss\_get\_mysql\_stats.php. Don't forget to save and restore your configuration options, if any. (Note that there is a feature to help with this: you can keep configuration options in ss\_get\_mysql\_stats.php.cnf to avoid making them in ss\_get\_mysql\_stats.php.)
 
 Next up: actual template changes! More graphs!
 

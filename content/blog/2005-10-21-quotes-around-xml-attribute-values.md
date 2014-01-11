@@ -18,7 +18,7 @@ In plain English: an attribute consists of
     *   an entity reference
 *   the same character that was used to begin the attribute (double or single quote)
 
-What&#8217;s most interesting about this to me is that a < is forbidden inside attribute values, but a > is not. I always assumed both were illegal.
+What's most interesting about this to me is that a < is forbidden inside attribute values, but a > is not. I always assumed both were illegal.
 
 This is why I love reading specs. The XML spec is a great example of clear and terse writing. There is no chance for confusion when reading the productions themselves! Any secondary source can only obscure the matter, in my opinion.
 

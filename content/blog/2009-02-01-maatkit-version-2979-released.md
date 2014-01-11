@@ -6,9 +6,9 @@ permalink: /2009/02/01/maatkit-version-2979-released/
 categories:
   - SQL
 ---
-Our monthly [Maatkit][1] release is [ready to download][2], on time as we&#8217;ve gotten into the habit of doing every month. There have been a LOT of changes. One thing to note: mk-log-parser is now renamed as [mk-query-digest][3]. There is too much else to write about, and things are in very rapid flux. Just [read the documentation][4]!
+Our monthly [Maatkit][1] release is [ready to download][2], on time as we've gotten into the habit of doing every month. There have been a LOT of changes. One thing to note: mk-log-parser is now renamed as [mk-query-digest][3]. There is too much else to write about, and things are in very rapid flux. Just [read the documentation][4]!
 
-If you don&#8217;t see [your bug fixed or feature request implemented][5] below, now&#8217;s a great time to sponsor the features you need. Percona&#8217;s business is growing quickly and the need for excellent tools for us and our clients is very high. That means other people&#8217;s requests just get lower priority unless there&#8217;s money to pay the developer&#8217;s paycheck with.
+If you don't see [your bug fixed or feature request implemented][5] below, now's a great time to sponsor the features you need. Percona's business is growing quickly and the need for excellent tools for us and our clients is very high. That means other people's requests just get lower priority unless there's money to pay the developer's paycheck with.
 
 A big, big thanks to [EngineYard][6], [Vantage Media][7] and [Kongregate][8], who sponsored the features they needed in Maatkit this month.
 

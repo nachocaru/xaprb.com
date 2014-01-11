@@ -29,7 +29,7 @@ tags:
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
 </p>
 
-This release contains minor bug fixes and new features. Besides the little bug fixes, there&#8217;s a fun new feature in mk-heartbeat: it can auto-discover slaves recursively, and show the replication delay on all of them, to wit:
+This release contains minor bug fixes and new features. Besides the little bug fixes, there's a fun new feature in mk-heartbeat: it can auto-discover slaves recursively, and show the replication delay on all of them, to wit:
 
 <pre>baron@keywest ~ $ mk-heartbeat --check --host master -D rkdb --recurse 10
 master 0

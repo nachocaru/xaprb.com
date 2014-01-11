@@ -10,9 +10,9 @@ tags:
   - Downtime
   - Oracle Open World
 ---
-I&#8217;ll be presenting at [Oracle Open World][1] on the causes of downtime in MySQL, and how to prevent it. This is a research-based session that presents an easy-to-digest post-mortem of hundreds of emergency issues filed by Percona customers. The real causes and types of downtime surprised me quite a bit, and the preventions run counter to a lot of conventional wisdom. I&#8217;ll just give a preview by saying that you should consider it a top priority to monitor how full your disks are! On the other hand, despite the fact that every monitoring tool in existence shows the binary log cache hit rate, not a single emergency in Percona history has ever been attributed to that.
+I'll be presenting at [Oracle Open World][1] on the causes of downtime in MySQL, and how to prevent it. This is a research-based session that presents an easy-to-digest post-mortem of hundreds of emergency issues filed by Percona customers. The real causes and types of downtime surprised me quite a bit, and the preventions run counter to a lot of conventional wisdom. I'll just give a preview by saying that you should consider it a top priority to monitor how full your disks are! On the other hand, despite the fact that every monitoring tool in existence shows the binary log cache hit rate, not a single emergency in Percona history has ever been attributed to that.
 
-The agenda at OOW is mind-bogglingly huge ([see Dave Stokes&#8217;s blog post][2], so here are the full official details of my session:
+The agenda at OOW is mind-bogglingly huge ([see Dave Stokes's blog post][2], so here are the full official details of my session:
 
 *   Session ID: 09304
 *   Session Title: What Causes Downtime in MySQL, and How Can You Prevent It?

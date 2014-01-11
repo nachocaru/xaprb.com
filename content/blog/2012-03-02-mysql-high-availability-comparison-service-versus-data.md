@@ -6,13 +6,13 @@ permalink: /2012/03/02/mysql-high-availability-comparison-service-versus-data/
 categories:
   - SQL
 ---
-When people ask me about high availability, I often suggest that it&#8217;s helpful to understand whether you&#8217;re most interested in service availability, data availability, or both. Of course, you want both &#8212; but if cost is an object, you may end up relaxing your requirements.
+When people ask me about high availability, I often suggest that it's helpful to understand whether you're most interested in service availability, data availability, or both. Of course, you want both &#8212; but if cost is an object, you may end up relaxing your requirements.
 
-The typical example of an application that needs service availability but doesn&#8217;t have strong data availability requirements is something that&#8217;s ad-supported. Who cares if the last few comments on funny cat photos are lost? What&#8217;s important is that the users can see the photos, and the ads next to them.
+The typical example of an application that needs service availability but doesn't have strong data availability requirements is something that's ad-supported. Who cares if the last few comments on funny cat photos are lost? What's important is that the users can see the photos, and the ads next to them.
 
-On the other hand, if you&#8217;re selling something, it&#8217;s a big deal to lose records about orders or payments. In this case, if you can&#8217;t have both kinds of availability, you might prefer downtime over data loss.
+On the other hand, if you're selling something, it's a big deal to lose records about orders or payments. In this case, if you can't have both kinds of availability, you might prefer downtime over data loss.
 
-Here&#8217;s a quick comparison of some MySQL high availability technologies. All opinions are mine alone:
+Here's a quick comparison of some MySQL high availability technologies. All opinions are mine alone:
 
 <table>
   <tr>
@@ -129,4 +129,4 @@ Here&#8217;s a quick comparison of some MySQL high availability technologies. Al
   </tr>
 </table>
 
-In a lot of cases the answer should really be &#8220;it depends.&#8221; For example, depending on how you set it up, the amount of service downtime you&#8217;ll experience during a DRBD failover can be quite long or quite short, due to factors such as the need to warm up the MySQL server before it&#8217;s actually usable. Hopefully this (admittedly broad-brush) overview is helpful in understanding the possibilities.
+In a lot of cases the answer should really be "it depends." For example, depending on how you set it up, the amount of service downtime you'll experience during a DRBD failover can be quite long or quite short, due to factors such as the need to warm up the MySQL server before it's actually usable. Hopefully this (admittedly broad-brush) overview is helpful in understanding the possibilities.

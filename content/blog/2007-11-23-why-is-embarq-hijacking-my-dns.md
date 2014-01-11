@@ -16,15 +16,15 @@ tags:
   - Toggl
   - Verizon
 ---
-<p>Isn&#8217;t this the same thing that happened a few years ago with ICANN or Verisign or one of those big names?  (strangely, I can&#8217;t find relevant search results about this!).</p>
+<p>Isn't this the same thing that happened a few years ago with ICANN or Verisign or one of those big names?  (strangely, I can't find relevant search results about this!).</p>
 
-<p>I clicked on my toolbar shortcut for <a href="http://www.toggl.com/">Toggl</a> and my Embarq DSL service redirected me to a search-results page instead of telling my browser the truth.  This makes me <em>mad</em>.  The core layers of the Internet are designed the way they are <strong>for a reason</strong> and I don&#8217;t want to &#8220;opt out&#8221; of a stupid DNS hijacking stunt I never opted into.</p>
+<p>I clicked on my toolbar shortcut for <a href="http://www.toggl.com/">Toggl</a> and my Embarq DSL service redirected me to a search-results page instead of telling my browser the truth.  This makes me <em>mad</em>.  The core layers of the Internet are designed the way they are <strong>for a reason</strong> and I don't want to "opt out" of a stupid DNS hijacking stunt I never opted into.</p>
 
-<p>Here&#8217;s a screenshot of what happens when I type in any old non-existent (or, in Toggl&#8217;s case, timing-out) domain name.</p>
+<p>Here's a screenshot of what happens when I type in any old non-existent (or, in Toggl's case, timing-out) domain name.</p>
 
 <p><a href='http://www.xaprb.com/blog/wp-content/uploads/2007/11/embarq-sysbench.png' title='Embarq screwing with my DNS'><img src='http://www.xaprb.com/blog/wp-content/uploads/2007/11/embarq-sysbench.thumbnail.png' alt='Embarq screwing with my DNS' /></a></p>
 
-<p>And here&#8217;s what happens when I do a DNS lookup:</p>
+<p>And here's what happens when I do a DNS lookup:</p>
 
 <pre>baron@kanga:~$ dig www.toggl.com
 

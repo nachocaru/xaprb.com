@@ -15,11 +15,11 @@ Significant changes in this version include some bug fixes to mk-duplicate-key-c
 
 Interesting and significant things to mention this month:
 
-*   Thanks to a corporation who sponsored development on certain tools (I haven&#8217;t gotten permission to mention their name.)
+*   Thanks to a corporation who sponsored development on certain tools (I haven't gotten permission to mention their name.)
 *   The efforts to be more inclusive and participatory (e.g. more truly open-source) have really paid off, and personally I find it very gratifying to see the discussions on the mailing list. And new project members have contributed code and very useful advice! Thanks, and hooray!
 *   The project wiki is reorganized and much better to use now.
 
-Here&#8217;s the changelog:
+Here's the changelog:
 
 <pre>Changelog for mk-archiver:
 

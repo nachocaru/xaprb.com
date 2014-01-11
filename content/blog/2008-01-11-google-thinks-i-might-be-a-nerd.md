@@ -13,7 +13,7 @@ tags:
   - Google
   - humor
 ---
-&#8230; I&#8217;m almost insulted! Look at this!
+&#8230; I'm almost insulted! Look at this!
 
 ![Google image search for ERD][1]
 

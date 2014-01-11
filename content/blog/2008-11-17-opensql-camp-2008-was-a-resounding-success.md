@@ -15,7 +15,7 @@ In my opinion, [OpenSQL Camp 2008][1] was a great success. ([Give your opinion][
   </p>
 </div>
 
-If your logo isn&#8217;t here, [please add yourself to the sponsors page on the website][4].
+If your logo isn't here, [please add yourself to the sponsors page on the website][4].
 
  [1]: http://www.opensqlcamp.org/index.php?title=Events/2008/
  [2]: http://www.opensqlcamp.org/index.php?title=Events/2008/Feedback

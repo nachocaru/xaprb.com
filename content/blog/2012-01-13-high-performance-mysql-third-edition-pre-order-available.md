@@ -7,9 +7,9 @@ categories:
   - High Performance MySQL
   - SQL
 ---
-You can pre-order the new edition of High Performance MySQL now on [Amazon][1] or via [O&#8217;Reilly&#8217;s website][2].
+You can pre-order the new edition of High Performance MySQL now on [Amazon][1] or via [O'Reilly's website][2].
 
-Eric Bergen called the second edition &#8220;[the best MySQL book on the planet][3]&#8220;. What will the third edition be called? The best in the solar system? This reminds me of a joke, supposed to be a true story: three pizza restaurants next to each other had signs saying &#8220;best pizza in town,&#8221; &#8220;best pizza in the world,&#8221; and &#8220;best pizza on this block.&#8221;
+Eric Bergen called the second edition "[the best MySQL book on the planet][3]". What will the third edition be called? The best in the solar system? This reminds me of a joke, supposed to be a true story: three pizza restaurants next to each other had signs saying "best pizza in town," "best pizza in the world," and "best pizza on this block."
 
  [1]: http://www.amazon.com/High-Performance-MySQL-Optimization-Replication/dp/1449314287/?tag=xaprb-20
  [2]: http://shop.oreilly.com/product/0636920022343.do

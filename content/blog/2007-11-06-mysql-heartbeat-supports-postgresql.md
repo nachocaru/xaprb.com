@@ -23,4 +23,4 @@ Thanks to a patch Dane Miller submitted, MySQL Heartbeat can now be used to moni
 
 <pre>mysql-heartbeat [options] --dbidriver=Pg</pre>
 
-Most of the tools in the MySQL Toolkit are very MySQL-specific. This one just happened to be an exception, and I&#8217;m happy it&#8217;s useful for more than the original purpose.
+Most of the tools in the MySQL Toolkit are very MySQL-specific. This one just happened to be an exception, and I'm happy it's useful for more than the original purpose.

@@ -6,17 +6,17 @@ permalink: /2013/04/23/introduction-to-vividcortex/
 categories:
   - SQL
 ---
-We&#8217;re ironing out a kink that&#8217;s preventing Planet MySQL from aggregating VividCortex&#8217;s blog feed, so while that&#8217;s in progress, I&#8217;ll post a quick note on what we&#8217;re up to at [VividCortex][1], for the Planet MySQL readers.
+We're ironing out a kink that's preventing Planet MySQL from aggregating VividCortex's blog feed, so while that's in progress, I'll post a quick note on what we're up to at [VividCortex][1], for the Planet MySQL readers.
 
-VividCortex is a monitoring and analysis product for MySQL, provided as Software-As-A-Service, with agents that run in your systems and report back to our APIs. The agents are super-efficient and non-obtrusive (you&#8217;ve probably noticed my posts about Go recently). They gather high-resolution data about your systems and our web application helps you make sense of it.
+VividCortex is a monitoring and analysis product for MySQL, provided as Software-As-A-Service, with agents that run in your systems and report back to our APIs. The agents are super-efficient and non-obtrusive (you've probably noticed my posts about Go recently). They gather high-resolution data about your systems and our web application helps you make sense of it.
 
-VividCortex is shockingly easy to install &#8212; if you&#8217;re slow at the keyboard, it takes 30 seconds. In less than a minute you can get insight into what your MySQL servers are doing. We are in closed beta right now, with a long waiting list. We&#8217;re working with a small set of alpha customers to get the product ready for an open beta.
+VividCortex is shockingly easy to install &#8212; if you're slow at the keyboard, it takes 30 seconds. In less than a minute you can get insight into what your MySQL servers are doing. We are in closed beta right now, with a long waiting list. We're working with a small set of alpha customers to get the product ready for an open beta.
 
-Our technology and UI focus around four key areas: easy observability of all of your systems (including very large numbers of servers), fluidly browsing and inspecting to swiftly drill into areas of interest, advanced and highly accurate problem detection, and problem diagnosis. In all of these areas we&#8217;re truly breaking new ground, unlike anything you can get from legacy monitoring systems, whether commercial or opensource. (Can you think of any existing product that can actually diagnose problems for you?)
+Our technology and UI focus around four key areas: easy observability of all of your systems (including very large numbers of servers), fluidly browsing and inspecting to swiftly drill into areas of interest, advanced and highly accurate problem detection, and problem diagnosis. In all of these areas we're truly breaking new ground, unlike anything you can get from legacy monitoring systems, whether commercial or opensource. (Can you think of any existing product that can actually diagnose problems for you?)
 
-One of the enabling technologies is a new kind of fault detection algorithm. We&#8217;ve written a [series][2] [of][3] [blog][4] [posts][5] [on][6] this explaining why it&#8217;s needed and how it works.
+One of the enabling technologies is a new kind of fault detection algorithm. We've written a [series][2] [of][3] [blog][4] [posts][5] [on][6] this explaining why it's needed and how it works.
 
-Feel free to ask me more questions, [sign up for our beta][7], or grab me in the halls at the [Percona Live MySQL Conference and Expo][8]. I&#8217;d be glad to tell you more.
+Feel free to ask me more questions, [sign up for our beta][7], or grab me in the halls at the [Percona Live MySQL Conference and Expo][8]. I'd be glad to tell you more.
 
  [1]: https://vividcortex.com/
  [2]: https://vividcortex.com/blog/2013/04/08/why-you-should-almost-never-alert-on-thresholds/

@@ -13,7 +13,7 @@ tags:
   - JMX
   - redis
 ---
-I&#8217;ve released version 1.1.7 of the [Better Cacti Templates][1] project. This release includes a bunch of bug fixes, some new graphs for MySQL, and two new sets of graphs, for Redis graphing and for JMX graphing.
+I've released version 1.1.7 of the [Better Cacti Templates][1] project. This release includes a bunch of bug fixes, some new graphs for MySQL, and two new sets of graphs, for Redis graphing and for JMX graphing.
 
 There are [upgrade instructions][2] on the project wiki for this and all releases. There is also a comprehensive tutorial on [how to create your own graphs and templates][3] with this project. Use the [project issue tracker][4] to view and report issues, and use the [project mailing list][5] to discuss the templates and scripts.
 

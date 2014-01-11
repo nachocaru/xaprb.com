@@ -8,7 +8,7 @@ permalink: /2006/05/24/subscribe/
 
 <h3>RSS feeds</h3>
 
-<p>If you don&#8217;t use <a href="http://en.wikipedia.org/wiki/RSS_(protocol)">RSS</a>, I encourage you to try it.  It&#8217;s the best thing since sliced bread.  I tried a few feed readers, and eventually settled on Google Reader.  It works for me, but your mileage may vary.</p>
+<p>If you don't use <a href="http://en.wikipedia.org/wiki/RSS_(protocol)">RSS</a>, I encourage you to try it.  It's the best thing since sliced bread.  I tried a few feed readers, and eventually settled on Google Reader.  It works for me, but your mileage may vary.</p>
 
 <p>Here are some quick links you can use to subscribe:</p>
 
@@ -28,6 +28,6 @@ permalink: /2006/05/24/subscribe/
 
 <p>I use FeedBlitz to syndicate my content via email.  If you <a href="http://www.feedblitz.com/f/?Sub=63017">subscribe via FeedBlitz</a>, you should know that <strong>I am not sending you email</strong>.  I do not get your email address and email you.  I provide the feed to FeedBlitz, and you ask them to email you.  I just want to clarify that, in case you have questions about privacy and unsubscribing.</p>
 
-<h3>Tell me how I&#8217;m doing</h3>
+<h3>Tell me how I'm doing</h3>
 
-<p>If there&#8217;s a way this blog can be more useful or convenient to you, please let me know.  You can send me mail at <script type="text/javascript">document.write(author_email)</script> anytime.  Or, just leave a comment on a post.</p>
+<p>If there's a way this blog can be more useful or convenient to you, please let me know.  You can send me mail at <script type="text/javascript">document.write(author_email)</script> anytime.  Or, just leave a comment on a post.</p>

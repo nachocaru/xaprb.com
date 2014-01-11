@@ -6,7 +6,7 @@ permalink: /2012/02/07/three-free-mysql-webinars/
 categories:
   - SQL
 ---
-I&#8217;m scheduled to deliver several free MySQL webinars via [Percona][1] and [ODTUG][2] in the upcoming weeks. I hope you can join me:
+I'm scheduled to deliver several free MySQL webinars via [Percona][1] and [ODTUG][2] in the upcoming weeks. I hope you can join me:
 
 *   February 16 &#8211; [Verifying Replication Integrity with Percona Toolkit][3] via ODTUG.
 *   February 22 &#8211; [EXPLAIN Demystified][4] via Percona.

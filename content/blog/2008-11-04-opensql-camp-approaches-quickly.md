@@ -7,7 +7,7 @@ categories:
   - OpenSQL Camp
   - SQL
 ---
-The soft registration deadline for [OpenSQL Camp 2008][1] has passed now; [you can still attend][2], but you won&#8217;t be counted into meals and t-shirts. Meanwhile, we have 90 registered attendees, and a [truly impressive set of sessions][3] from [heavy hitters in the database world][4]. This conference is turning into the event I always wanted to attend.
+The soft registration deadline for [OpenSQL Camp 2008][1] has passed now; [you can still attend][2], but you won't be counted into meals and t-shirts. Meanwhile, we have 90 registered attendees, and a [truly impressive set of sessions][3] from [heavy hitters in the database world][4]. This conference is turning into the event I always wanted to attend.
 
 A big thanks to [Sheeri][5] and others who kept the wheels turning while I was traveling recently.
 

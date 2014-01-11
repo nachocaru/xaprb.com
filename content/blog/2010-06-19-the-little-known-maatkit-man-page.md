@@ -7,7 +7,7 @@ categories:
   - Maatkit
   - SQL
 ---
-The Maatkit toolkit for MySQL has a lot of functionality that&#8217;s common across the tools. It&#8217;s not a good idea to document this in each tool&#8217;s man page, of course. So there is an overall [maatkit man page][1]. It explains concepts such as configuration file syntax. [This and all the other Maatkit man pages are online][2].
+The Maatkit toolkit for MySQL has a lot of functionality that's common across the tools. It's not a good idea to document this in each tool's man page, of course. So there is an overall [maatkit man page][1]. It explains concepts such as configuration file syntax. [This and all the other Maatkit man pages are online][2].
 
  [1]: http://www.maatkit.org/doc/maatkit.html
  [2]: http://www.maatkit.org/doc/

@@ -12,6 +12,6 @@ tags:
 ---
 Just thought it was worth pointing out that [Percona Xtrabackup][1] is not just for XtraDB. It works great for InnoDB tables, too.
 
-So if mysqldump can&#8217;t handle it anymore, LVM snapshots kill your server and you don&#8217;t want to buy proprietary backup software, you might take a look at Xtrabackup.
+So if mysqldump can't handle it anymore, LVM snapshots kill your server and you don't want to buy proprietary backup software, you might take a look at Xtrabackup.
 
  [1]: https://launchpad.net/percona-xtrabackup

@@ -29,7 +29,7 @@ insert into #offer (startdate, enddate) values (@start, @end)</pre>
 
 ### The query and explanation
 
-Here&#8217;s the query:
+Here's the query:
 
 <pre>select * from #offer
     where @now between isnull(startdate, @now) and isnull(enddate, @now)</pre>
@@ -38,20 +38,20 @@ The table contains special offers, whose start/end date can be either specified 
 
 This is actually correct behavior, and the reason has to do with the semantics of `ISNULL`. The `ISNULL` return type is the data type of its first argument &#8212; in this case, a `SMALLDATETIME`. So when the column is `NULL`, `@now` gets cast to `SMALLDATETIME`, losing precision down to the minute.
 
-To illustrate, let&#8217;s evaluate the query by hand, using one of the excluded rows, for example the one with both date columns `NULL`. Supposing `@now's` value is `'2005-12-02 08:55:42.807'`, the `WHERE` clause becomes
+To illustrate, let's evaluate the query by hand, using one of the excluded rows, for example the one with both date columns `NULL`. Supposing `@now's` value is `'2005-12-02 08:55:42.807'`, the `WHERE` clause becomes
 
 <pre>where '2005-12-02 08:55:42.807' between '2005-12-02 08:56:00' and '2005-12-02 08:56:00'</pre>
 
-Obviously that clause is false, so the row won&#8217;t get included in the results.
+Obviously that clause is false, so the row won't get included in the results.
 
 The moral of the story is **use matching data types**. Implicit conversions can really bite you in the back.
 
 ### `ISNULL` and `COALESCE`
 
-`COALESCE` doesn&#8217;t cause this same behavior, because it converts all arguments to the same datatype, and the implicit conversion between `SMALLDATETIME` and `DATETIME` is to greater precision, not less. That&#8217;s a subtle difference between `ISNULL` and `COALESCE`. 
+`COALESCE` doesn't cause this same behavior, because it converts all arguments to the same datatype, and the implicit conversion between `SMALLDATETIME` and `DATETIME` is to greater precision, not less. That's a subtle difference between `ISNULL` and `COALESCE`. 
 ### Indexing problems
 
-Something else is wrong with the query. The `ISNULL` function will defeat the query optimizer&#8217;s ability to use any indexes that might exist on the date columns, causing a table scan. It is less human-readable, but better for the query optimizer, to write the `WHERE` clause as a compound boolean statement:
+Something else is wrong with the query. The `ISNULL` function will defeat the query optimizer's ability to use any indexes that might exist on the date columns, causing a table scan. It is less human-readable, but better for the query optimizer, to write the `WHERE` clause as a compound boolean statement:
 
 <pre>... where (startdate is null or startdate &lt;= @now)
     and (enddate is null or enddate &gt;= @now)</pre>

@@ -14,7 +14,7 @@ tags:
   - log analysis
   - PostgreSQL
 ---
-Maatkit does more than just MySQL. I&#8217;ve just committed a new version of [mk-query-digest, a powerful log analysis tool][1], with support for Posgtres logs, in both syslog and stderr format. I&#8217;m hoping that people will give this a spin in the real world. I have lots of test cases, but that&#8217;s never enough; I&#8217;m looking for people to crunch their logs and let me know if anything breaks.
+Maatkit does more than just MySQL. I've just committed a new version of [mk-query-digest, a powerful log analysis tool][1], with support for Posgtres logs, in both syslog and stderr format. I'm hoping that people will give this a spin in the real world. I have lots of test cases, but that's never enough; I'm looking for people to crunch their logs and let me know if anything breaks.
 
 A brief tutorial:
 
@@ -28,7 +28,7 @@ $ perl mk-query-digest --type pglog /path/to/log/file
 # Learn about it (search for the string "pglog")
 $ perldoc mk-query-digest
 </pre>` 
-I&#8217;m going to close comments on this blog post so I don&#8217;t get bug reports in the comments. If you have feedback, please post it to the [Maatkit mailing list][2], or the [Maatkit issue tracker][3]. Or reply to the thread I just started on the Postgres mailing list.
+I'm going to close comments on this blog post so I don't get bug reports in the comments. If you have feedback, please post it to the [Maatkit mailing list][2], or the [Maatkit issue tracker][3]. Or reply to the thread I just started on the Postgres mailing list.
 
  [1]: http://www.maatkit.org/doc/mk-query-digest.html
  [2]: http://groups.google.com/group/maatkit-discuss

@@ -8,4 +8,4 @@ categories:
 tags:
   - MySQL
 ---
-Dear Lazyweb, quick question: once I&#8217;ve `USE`-ed a database in MySQL, how can I un-`USE` it so I have no default database? Is it even possible?
+Dear Lazyweb, quick question: once I've `USE`-ed a database in MySQL, how can I un-`USE` it so I have no default database? Is it even possible?

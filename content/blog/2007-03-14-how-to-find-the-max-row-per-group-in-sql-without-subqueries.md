@@ -15,13 +15,13 @@ Like many SQL problems, the key to understanding the solution is to *rephrase th
 
 This is exactly the same problem as in my earlier article on [how to select the first/least/max row per group in SQL][1]. The only difference is subqueries are disallowed.
 
-I love finding ways to do things without subqueries, even if I don&#8217;t have to. My first article on this blog was about [how to write subqueries in the FROM clause without using subqueries][2]. These tricks can occasionally be useful in very early versions of MySQL, which I still work with (I recently completed a consulting job where the only database available is MySQL 3.23).
+I love finding ways to do things without subqueries, even if I don't have to. My first article on this blog was about [how to write subqueries in the FROM clause without using subqueries][2]. These tricks can occasionally be useful in very early versions of MySQL, which I still work with (I recently completed a consulting job where the only database available is MySQL 3.23).
 
-My first thought on this problem was to use a [mutex table][3], another blast from the past. It would work, but it&#8217;s not the best way to do it.
+My first thought on this problem was to use a [mutex table][3], another blast from the past. It would work, but it's not the best way to do it.
 
 ### The solution
 
-Let&#8217;s say you have a table of people, and you want to find the youngest of each gender. Here&#8217;s the table:
+Let's say you have a table of people, and you want to find the youngest of each gender. Here's the table:
 
 <table class="borders collapsed compact">
   <tr>
@@ -123,10 +123,10 @@ Let&#8217;s say you have a table of people, and you want to find the youngest of
   </tr>
 </table>
 
-The problem is easy if I rephrase it as &#8220;find all people where **there is no younger person** of the same gender.&#8221; That&#8217;s easy to write as a join and translate into an [exclusion join][4]:
+The problem is easy if I rephrase it as "find all people where **there is no younger person** of the same gender." That's easy to write as a join and translate into an [exclusion join][4]:
 
 *   Find all people &#8212; easy.
-*   And for each person, find all younger people of the same gender &#8212; okay, join on gender and &#8220;age less than.&#8221;
+*   And for each person, find all younger people of the same gender &#8212; okay, join on gender and "age less than."
 *   Discard each row where there is a younger person &#8212; change the join to an exclusion join.
 
 Here are the first two bullet points in SQL:
@@ -150,7 +150,7 @@ from person as young
 |   13 | kay   | f      |   11 | 
 +------+-------+--------+------+</pre>
 
-Look at the rightmost column. There are `NULL`s only in rows where there&#8217;s **no younger person** of the same gender. Now it&#8217;s easy to &#8220;cross out&#8221; the other rows with the `WHERE` clause, and we&#8217;re done:
+Look at the rightmost column. There are `NULL`s only in rows where there's **no younger person** of the same gender. Now it's easy to "cross out" the other rows with the `WHERE` clause, and we're done:
 
 <pre>select young.*
 from person as young
@@ -167,11 +167,11 @@ where younger.age is null;
 
 ### How efficient is it?
 
-As long as you have appropriate indexes on the table, this might not be as inefficient as you&#8217;d think. It&#8217;s theoretically a cross join, yes, but in reality if there&#8217;s a good index it&#8217;s only a repeated cross join on subsets of the data. In other words, you need a (gender, age) index on this table. Gender isn&#8217;t a very good example to use for this, because it will never be very selective, but if you only have a few rows per group and you have a leftmost index on the grouping column, it should work fine.
+As long as you have appropriate indexes on the table, this might not be as inefficient as you'd think. It's theoretically a cross join, yes, but in reality if there's a good index it's only a repeated cross join on subsets of the data. In other words, you need a (gender, age) index on this table. Gender isn't a very good example to use for this, because it will never be very selective, but if you only have a few rows per group and you have a leftmost index on the grouping column, it should work fine.
 
 ### Conclusion
 
-As with so many other SQL challenges, if you re-phrase the question, it&#8217;s easy to select the maximum or minimum row per group without subqueries. The key is to understand what you want, and to be able to word the problem in a way that translates from English to SQL.
+As with so many other SQL challenges, if you re-phrase the question, it's easy to select the maximum or minimum row per group without subqueries. The key is to understand what you want, and to be able to word the problem in a way that translates from English to SQL.
 
  [1]: /blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
  [2]: /blog/2005/09/21/subselects-in-mysql/

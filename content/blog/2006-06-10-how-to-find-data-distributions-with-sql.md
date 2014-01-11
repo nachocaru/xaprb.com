@@ -10,9 +10,9 @@ description:
     Demonstrates how to put data into variable-sized bins for analyzing its
     distribution.
 ---
-In an earlier article I wrote about [grouping data into ranks with a catch-all bucket][1]. In this article I&#8217;ll show you how to group the data into variable-sized buckets any way you please.
+In an earlier article I wrote about [grouping data into ranks with a catch-all bucket][1]. In this article I'll show you how to group the data into variable-sized buckets any way you please.
 
-This query came up when a business partner asked me to send over the distribution of some hierarchical data. It&#8217;s the same category/subcategory/item data as in my article about [optimizing joins and subqueries][2]. The partner wanted to know, broadly speaking, &#8220;how many subcategories have very small and very large numbers of items&#8221;.
+This query came up when a business partner asked me to send over the distribution of some hierarchical data. It's the same category/subcategory/item data as in my article about [optimizing joins and subqueries][2]. The partner wanted to know, broadly speaking, "how many subcategories have very small and very large numbers of items".
 
 I could have done a simple query:
 
@@ -139,7 +139,7 @@ The results look roughly like this:
   </tr>
 </table>
 
-The distribution is clearly biased towards single-item categories, with the occasional huge category. Part of the goal was to rewrite our grouping algorithm to chunk things together in groups of 20 to 80 (depending on a variety of complex factors I won&#8217;t explain here). This query helped us get a realistic picture before and after the algorithm change.
+The distribution is clearly biased towards single-item categories, with the occasional huge category. Part of the goal was to rewrite our grouping algorithm to chunk things together in groups of 20 to 80 (depending on a variety of complex factors I won't explain here). This query helped us get a realistic picture before and after the algorithm change.
 
  [1]: /blog/2005/09/28/grouping-data-with-catch-all-ranks/
  [2]: /blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/

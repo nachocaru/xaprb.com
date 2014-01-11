@@ -15,7 +15,7 @@ tags:
   - mysqlconf07
 ---
 [<img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/210x60.jpg" width="210" height="60" alt="Speaker at MySQLConf 2007" />][1] 
-The slides for my [innotop][2] presentation at the recent [MySQL Conference][1] have been posted, along with other presenter&#8217;s slides, on the [conference presentations][3] page. Love that stock photography!
+The slides for my [innotop][2] presentation at the recent [MySQL Conference][1] have been posted, along with other presenter's slides, on the [conference presentations][3] page. Love that stock photography!
 
 <br style="clear:both" />
 

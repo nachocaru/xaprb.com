@@ -10,7 +10,7 @@ tags:
   - MySQL
   - upgrade
 ---
-I&#8217;ve had several customers in the last week or so who need a way to verify that their application will work well after an upgrade. I&#8217;m seeking input on [a new tool to help with MySQL upgrades][1]. Please add comments, either here or on the [bug report][1], or on [the mailing list topic][2].
+I've had several customers in the last week or so who need a way to verify that their application will work well after an upgrade. I'm seeking input on [a new tool to help with MySQL upgrades][1]. Please add comments, either here or on the [bug report][1], or on [the mailing list topic][2].
 
 If someone wants to sponsor this work, that would also be welcomed.
 

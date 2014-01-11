@@ -9,13 +9,13 @@ tags:
   - MySQL
   - Open Source
 ---
-The title of [MySQL&#8217;s website][1] states that they are the world&#8217;s most popular open-source database. This is false; MySQL is not an open-source database. That assertion is a fact, not an opinion.
+The title of [MySQL's website][1] states that they are the world's most popular open-source database. This is false; MySQL is not an open-source database. That assertion is a fact, not an opinion.
 
-MySQL is [Free Software][2], licensed under the GNU GPL. People frequently use the two phrases &#8220;Free Software&#8221; and &#8220;Open Source Software&#8221; as synonyms, but there are very large, very important differences.
+MySQL is [Free Software][2], licensed under the GNU GPL. People frequently use the two phrases "Free Software" and "Open Source Software" as synonyms, but there are very large, very important differences.
 
 ### The difference between Free and Open Source
 
-Open Source is much more of a development methodology than a philosophical standpoint. The first thing on the [Open Source Initiative&#8217;s website][3] is this introduction:
+Open Source is much more of a development methodology than a philosophical standpoint. The first thing on the [Open Source Initiative's website][3] is this introduction:
 
 <blockquote cite="http://www.opensource.org/">
   <p>
@@ -23,19 +23,19 @@ Open Source is much more of a development methodology than a philosophical stand
   </p>
 </blockquote>
 
-In contrast, Free Software is not about development practices at all. You can develop Free Software any way you like; what makes it Free is the license. Free Software is about protection of rights and freedoms. It is a moral and ethical platform. The promise of Free Software is quite different from &#8220;better quality, higher reliability&#8230;&#8221; Free Software is not about quality or reliability.
+In contrast, Free Software is not about development practices at all. You can develop Free Software any way you like; what makes it Free is the license. Free Software is about protection of rights and freedoms. It is a moral and ethical platform. The promise of Free Software is quite different from "better quality, higher reliability&#8230;" Free Software is not about quality or reliability.
 
 So why is MySQL not Open Source? Simple. Sun/MySQL uses a closed development model. Nobody can get code in from the outside without accepting a [Contributor License Agreement (CLA)][4] which requires surrendering important rights, including ownership of the code. Sun/MySQL controls the code absolutely and maintains ownership of it. And even people who have signed the CLA report their patches stagnating &#8212; often for years &#8212; and still not being accepted into the source. This is not Open Source.
 
-Open Source software is usually maintained, owned, and controlled by a decentralized network of peers. This is exactly the opposite of MySQL. You cannot get more opposite. The differences are often summarized as [the cathedral versus the bazaar][5]. I&#8217;m not sure this analogy always holds or is always useful and accurate, but it&#8217;s a helpful piece of common vocabulary.
+Open Source software is usually maintained, owned, and controlled by a decentralized network of peers. This is exactly the opposite of MySQL. You cannot get more opposite. The differences are often summarized as [the cathedral versus the bazaar][5]. I'm not sure this analogy always holds or is always useful and accurate, but it's a helpful piece of common vocabulary.
 
 ### Why this matters
 
-This matters because both Freedom and an open development model are necessary to an empowered, enlightened, free society. Licensing isn&#8217;t the only thing that matters: ownership matters, too. So does control.
+This matters because both Freedom and an open development model are necessary to an empowered, enlightened, free society. Licensing isn't the only thing that matters: ownership matters, too. So does control.
 
-[Google&#8217;s patches to MySQL][6] are a good example of excellent code with many simple, highly useful features that have not been included into the official MySQL distribution. And there are no signs of that changing, as far as I can see.
+[Google's patches to MySQL][6] are a good example of excellent code with many simple, highly useful features that have not been included into the official MySQL distribution. And there are no signs of that changing, as far as I can see.
 
-I&#8217;m not the only one who notices this. Here&#8217;s [another quote][7]:
+I'm not the only one who notices this. Here's [another quote][7]:
 
 <blockquote cite="http://blogs.the451group.com/opensource/2008/04/24/finding-the-right-balance-mysql%e2%80%99s-changing-development-model/">
   <p>

@@ -17,13 +17,13 @@ tags:
 [<img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" />][1] 
 In my fourth day at the [MySQL Conference and Expo 2007][1], I attended several great sessions, starting with my own.
 
-If you&#8217;re wondering why this is a day late, it&#8217;s because the conference ended in the late afternoon, and they almost immediately &#8212; within a half-hour or so &#8211; removed the free wireless Internet access in the hotel. That was uncool.
+If you're wondering why this is a day late, it's because the conference ended in the late afternoon, and they almost immediately &#8212; within a half-hour or so &#8211; removed the free wireless Internet access in the hotel. That was uncool.
 
 ### Keynotes etc
 
-I skipped the opening keynotes to polish off last-minute changes to innotop and my presentation. I was sort of interested in the keynotes, but by this time I had begun to understand that the keynotes are often as much about sponsorship as about disseminating great ideas. I didn&#8217;t see Eben Moglen on the schedule again.
+I skipped the opening keynotes to polish off last-minute changes to innotop and my presentation. I was sort of interested in the keynotes, but by this time I had begun to understand that the keynotes are often as much about sponsorship as about disseminating great ideas. I didn't see Eben Moglen on the schedule again.
 
-Here&#8217;s the lunch menu:
+Here's the lunch menu:
 
 *   Sun-dried tomato and onion salad with Balsamic reduction
 *   Napa cheese board with marinated rosemary and garlic
@@ -43,37 +43,37 @@ Seriously.
 
 ### [The innotop workshop][2]
 
-This was my own session. Pre-show entertainment was provided via the sound system by my iRiver. It was Mark Knopfler&#8217;s album Shangri-La.
+This was my own session. Pre-show entertainment was provided via the sound system by my iRiver. It was Mark Knopfler's album Shangri-La.
 
-I stepped through a little history and an overview of [innotop][3]&#8216;s features, then went into more advanced functions, demonstrating its SQL-like ability to compile expressions into subroutines and let you easily write formulas to monitor whatever you want. I showed how to sort, filter, colorize and otherwise customize any display. There are many features I didn&#8217;t get into because they&#8217;re either too geeky or not fully baked yet, but I did show how to add and delete columns from tables.
+I stepped through a little history and an overview of [innotop][3]'s features, then went into more advanced functions, demonstrating its SQL-like ability to compile expressions into subroutines and let you easily write formulas to monitor whatever you want. I showed how to sort, filter, colorize and otherwise customize any display. There are many features I didn't get into because they're either too geeky or not fully baked yet, but I did show how to add and delete columns from tables.
 
-In the second part of the hour I demonstrated some more advanced things you can do, such as watching InnoDB&#8217;s undo log entry count to see how much work your transactions have done. If you know how many rows a transaction will affect, this is a good way to see how close to completion it is.
+In the second part of the hour I demonstrated some more advanced things you can do, such as watching InnoDB's undo log entry count to see how much work your transactions have done. If you know how many rows a transaction will affect, this is a good way to see how close to completion it is.
 
 I had only one slight problem as I discovered a bug in the quick-filters functionality I promised to write and demo. This is what live demos are for, no?
 
-There were quite a few people in the room, but it wasn&#8217;t packed (packed would have been upwards of 100 I think; I maybe had 50 or so). But, it&#8217;s quality not quantity, right? Quality is when Heikki Tuuri himself (the man who created InnoDB) attends. He taught me a few things I didn&#8217;t know, too.
+There were quite a few people in the room, but it wasn't packed (packed would have been upwards of 100 I think; I maybe had 50 or so). But, it's quality not quantity, right? Quality is when Heikki Tuuri himself (the man who created InnoDB) attends. He taught me a few things I didn't know, too.
 
 The best part of the session was the feedback and suggestions I got.
 
-I also spent a few moments at the end of the talk to mention <a href="http://code.google.com/p/maatkit">MySQL Table Checksum and MySQL Table Sync</a>, which can be useful for efficiently detecting and repairing when a slave server is out of sync with its master. As far as I know I&#8217;m the only person who&#8217;s written good tools for this purpose.
+I also spent a few moments at the end of the talk to mention <a href="http://code.google.com/p/maatkit">MySQL Table Checksum and MySQL Table Sync</a>, which can be useful for efficiently detecting and repairing when a slave server is out of sync with its master. As far as I know I'm the only person who's written good tools for this purpose.
 
 The new version of innotop will be in theaters near you as release 1.4.2 in a few days.
 
 Incidentally, I got to meet Rohit Nadhani from [webyog][4], who wrote the [SQLYog Job Agent I benchmarked against MySQL Table Sync][5] recently. I saw a demo of their new monitoring tool, MONyog. It looks really impressive, but I will try it out some more and let you know. A well-known MySQL user asked in my session if there could be any chance of innotop becoming an interactive web application. The answer is no. But take a look at MONyog.
 
-Rohit said they plan to integrate some of the data from SHOW INNODB STATUS in future releases. He looked terrified and said &#8220;oh, no!&#8221; when I told him I had to read the InnoDB source code to figure out some of the SHOW INNODB STATUS parsing. To anyone who wants to parse it &#8212; my advice is &#8220;rip off my Perl code. It&#8217;s GPL and I have an enormous test suite.&#8221; This will save you a huge amount of work.
+Rohit said they plan to integrate some of the data from SHOW INNODB STATUS in future releases. He looked terrified and said "oh, no!" when I told him I had to read the InnoDB source code to figure out some of the SHOW INNODB STATUS parsing. To anyone who wants to parse it &#8212; my advice is "rip off my Perl code. It's GPL and I have an enormous test suite." This will save you a huge amount of work.
 
-On a related topic, I got a chance to ask the NitroEDB developers the license on the NitroEDB storage engine for MySQL. The answer was how much it cost, which is A Lot. &#8220;Price isn&#8217;t license,&#8221; I pointed out. &#8220;What about GPLing it?&#8221; The answer to that was &#8220;It&#8217;s millions of lines of Modula-2. If you think you can do anything with that, we&#8217;ll GPL it.&#8221;
+On a related topic, I got a chance to ask the NitroEDB developers the license on the NitroEDB storage engine for MySQL. The answer was how much it cost, which is A Lot. "Price isn't license," I pointed out. "What about GPLing it?" The answer to that was "It's millions of lines of Modula-2. If you think you can do anything with that, we'll GPL it."
 
-It&#8217;s a shame I didn&#8217;t get this remark on the record. It doesn&#8217;t matter what the language is, Free is Free. Heck, I&#8217;m in the middle of a textbook on compiler design right now, so I&#8217;ve been reading a lot of Modula-2 lately. Give it to me in Elbonian, I don&#8217;t care. Interestingly, for about $200 you can apparently get the source code from the Department of Defense up to a certain point. I&#8217;m sure that would at least enable learning about some of the indexing algorithms.
+It's a shame I didn't get this remark on the record. It doesn't matter what the language is, Free is Free. Heck, I'm in the middle of a textbook on compiler design right now, so I've been reading a lot of Modula-2 lately. Give it to me in Elbonian, I don't care. Interestingly, for about $200 you can apparently get the source code from the Department of Defense up to a certain point. I'm sure that would at least enable learning about some of the indexing algorithms.
 
-I didn&#8217;t have a ready response at the time, so I cracked a joke about converting it into Perl and left for the next session.
+I didn't have a ready response at the time, so I cracked a joke about converting it into Perl and left for the next session.
 
-### [What Happens After You&#8217;re Scalable: Capacity Planning for LAMP][6]
+### [What Happens After You're Scalable: Capacity Planning for LAMP][6]
 
-This session was very good. It was by a Flickr engineer, and focused on how to plan for capacity. I would say the Big Idea here was **don&#8217;t try to calculate demand, just measure and extrapolate.** Another might be **don&#8217;t fall into the trap of tweaking another few percent of performance,** just take what you have as a given and make sure you can scale effortlessly.
+This session was very good. It was by a Flickr engineer, and focused on how to plan for capacity. I would say the Big Idea here was **don't try to calculate demand, just measure and extrapolate.** Another might be **don't fall into the trap of tweaking another few percent of performance,** just take what you have as a given and make sure you can scale effortlessly.
 
-I&#8217;m sorry I didn&#8217;t take extensive notes on this one. I would say the slides are well worth reading through, though.
+I'm sorry I didn't take extensive notes on this one. I would say the slides are well worth reading through, though.
 
 ### [InnoDB Performance Optimization][7]
 
@@ -83,21 +83,21 @@ Here are a few of the topics Peter and Heikki covered:
 
 *   Application design is the biggest factor in InnoDB performance.
 *   Use transactions, but use them smartly.
-*   Don&#8217;t use LOCK TABLES with InnoDB.
+*   Don't use LOCK TABLES with InnoDB.
 *   Use clustered indexes to your advantage. Understand how secondary indexes work as a consequence, and understand how clustered indexes interact with locking and isolation levels.
 *   Know how updates, the hash index, and the query cache interact with InnoDB.
 *   Understand automatic clustering keys and how keys might be promoted to clustered status.
 *   Learn about row versions and purging, and how they interact with the READ COMMITTED isolation level.
 
-Heikki quote of the week: when Peter said &#8220;SELECT FOR UPDATE cannot use a covering index because it must access the primary key to place locks,&#8221; Heikki said &#8220;this is self-evident,&#8221; which made my day.
+Heikki quote of the week: when Peter said "SELECT FOR UPDATE cannot use a covering index because it must access the primary key to place locks," Heikki said "this is self-evident," which made my day.
 
-By the way, one interesting thing I learned from Heikki is how to pronounce InnoDB. He says &#8220;in-no-db&#8221; not &#8220;eye-no-db&#8221; or &#8220;ee-no-db.&#8221;
+By the way, one interesting thing I learned from Heikki is how to pronounce InnoDB. He says "in-no-db" not "eye-no-db" or "ee-no-db."
 
 I only stayed for the first part of this session, because I wanted to catch the Data Warehousing talk running at the same time.
 
 ### [High Performance Data Warehousing with MySQL: Tricks and Tips from the Field][8]
 
-Brian Miezejevski (it&#8217;s spelled just like it sounds, if you&#8217;re Polish) gave this talk. The focus was on **how to use MySQL to build very large data warehouses that you can query, backup and maintain efficiently.** Brian has a lot of experience in this area, including working with data warehouses over a dozen terabytes in size.
+Brian Miezejevski (it's spelled just like it sounds, if you're Polish) gave this talk. The focus was on **how to use MySQL to build very large data warehouses that you can query, backup and maintain efficiently.** Brian has a lot of experience in this area, including working with data warehouses over a dozen terabytes in size.
 
 The main practice he espoused was **partition, partition, partition.** When you get into large data volumes, everything you do needs to be done a partition at a time; it is not practical to do *any* kind of operation on tables with hundreds of millions of rows, so you have to split them up somehow. Load, backup, archive and purge a partition at a time.
 
@@ -105,9 +105,9 @@ Partitioning can be done many different ways, but the primary way in production-
 
 Another technique is simply to use many tables and access them via UNION queries or views. Of course upcoming releases have genuine partitioned tables, which will be even better.
 
-Brian talked for a few minutes about real-time data warehousing where you need to continuously streaming data into very large tables. It is impractical to do this with MyISAM if you have to do any UPDATE or DELETE queries at all (concurrent INSERT queries can run as long as they are appending to the table). For high concurrency, you need to use InnoDB. I asked about the possibility of making all partitions MyISAM under MERGE except for the &#8220;live&#8221; partition and then creating a UNION ALL view over them. Brian said he hadn&#8217;t tried it but it sounded like a good idea to him. He came back to this later and said he&#8217;d probably load by time slice in this fashion, then alter the &#8220;live&#8221; table to MyISAM and put it into the MERGE periodically.
+Brian talked for a few minutes about real-time data warehousing where you need to continuously streaming data into very large tables. It is impractical to do this with MyISAM if you have to do any UPDATE or DELETE queries at all (concurrent INSERT queries can run as long as they are appending to the table). For high concurrency, you need to use InnoDB. I asked about the possibility of making all partitions MyISAM under MERGE except for the "live" partition and then creating a UNION ALL view over them. Brian said he hadn't tried it but it sounded like a good idea to him. He came back to this later and said he'd probably load by time slice in this fashion, then alter the "live" table to MyISAM and put it into the MERGE periodically.
 
-The data warehousing Holy Grail is to use all hash joins for joining fact and dimension tables, but MySQL doesn&#8217;t (yet) support hash joins. However, you can simulate it with MEMORY tables, which have HASH indexes. You have to do some tricks like keeping a disk (MyISAM) and memory table updated together, and loading the memory tables automatically on server start, but apparently this is a really good technique. Your joins then take the general form
+The data warehousing Holy Grail is to use all hash joins for joining fact and dimension tables, but MySQL doesn't (yet) support hash joins. However, you can simulate it with MEMORY tables, which have HASH indexes. You have to do some tricks like keeping a disk (MyISAM) and memory table updated together, and loading the memory tables automatically on server start, but apparently this is a really good technique. Your joins then take the general form
 
 <pre>SELECT ..
 FROM (
@@ -117,19 +117,19 @@ GROUP ...</pre>
 
 The effect is similar to a hash join.
 
-Brian spoke for a few minutes about NitroEDB (amazing indexing and aggregate performance) and InfoBright (extremely high compression) for data warehousing. But of MySQL&#8217;s own storage engines, the preferred solution is still MyISAM.
+Brian spoke for a few minutes about NitroEDB (amazing indexing and aggregate performance) and InfoBright (extremely high compression) for data warehousing. But of MySQL's own storage engines, the preferred solution is still MyISAM.
 
 Other topics included how to back up really large data sets and how to build aggregates with ON DUPLICATE KEY UPDATE. Brian also mentioned the critical tuning parameters for large data sets and talked about the need to monitor slow queries and certain server status values to understand when performance changes so you have some advance warning when you hit some kind of performance ceiling.
 
 ### Closing Keynote
 
-The closing keynote was by one of the engineers who created [Yahoo! Pipes][9], which in my opinion is the beginning of the semantic Web&#8217;s promise becoming reality. It&#8217;s built on MySQL and Perl among other things, of course. The demo was pretty neat, but the neater thing yet is you can go do it yourself just as easily.
+The closing keynote was by one of the engineers who created [Yahoo! Pipes][9], which in my opinion is the beginning of the semantic Web's promise becoming reality. It's built on MySQL and Perl among other things, of course. The demo was pretty neat, but the neater thing yet is you can go do it yourself just as easily.
 
-I had an elevator conversation with someone afterwards about a Pipes storage engine for MySQL. As cool as Pipes is, MySQL&#8217;s storage engine architecture is no less cool. It just might take a little more imagination to see it.
+I had an elevator conversation with someone afterwards about a Pipes storage engine for MySQL. As cool as Pipes is, MySQL's storage engine architecture is no less cool. It just might take a little more imagination to see it.
 
 ### Next
 
-I too have some cool things in the works, including a whole new way to ensure slave servers stay in sync. I need to recover from my sleep deficit, snuggle with my wife and dog, and then I&#8217;ll get back to you.
+I too have some cool things in the works, including a whole new way to ensure slave servers stay in sync. I need to recover from my sleep deficit, snuggle with my wife and dog, and then I'll get back to you.
 
  [1]: http://www.mysqlconf.com/
  [2]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213

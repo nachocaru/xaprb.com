@@ -12,7 +12,7 @@ tags:
   - MySQL
   - Oracle
 ---
-A while back I was at a seminar on migrating database applications to MySQL. A lot of the attendees were Oracle users. Based on their questions, comments and conversations during lunch, I made the following list of things Oracle users need to know about migrating to MySQL. Most of these are &#8220;gotchas&#8221; that would be contraindications or require some thought about a workaround.
+A while back I was at a seminar on migrating database applications to MySQL. A lot of the attendees were Oracle users. Based on their questions, comments and conversations during lunch, I made the following list of things Oracle users need to know about migrating to MySQL. Most of these are "gotchas" that would be contraindications or require some thought about a workaround.
 
 Note: *this is not meant to be MySQL-bashing.* Some of these limitations are going to be fixed in future versions of MySQL, but they generally apply to current GA version 5.1. Some things are possible to achieve by choosing one particular way to use the server, at the exclusion of other things (e.g. Cluster rules out foreign keys, spatial data types rules out transactions). I am posting this list at the request of some Oracle DBAs who asked me to produce it for them.
 
@@ -27,7 +27,7 @@ Note: *this is not meant to be MySQL-bashing.* Some of these limitations are goi
 9.  Stored procedures and triggers are limited.
 10. <del datetime="2010-07-28T17:36:15+00:00">Vertical scalability is poor.</del> No longer true; with Percona XtraDB or MySQL 5.5 (unreleased) you get excellent scalability
 11. There is zero MPP support.
-12. SMP is supported, but <del datetime="2010-07-28T17:36:15+00:00">MySQL doesn&#8217;t scale well to more than 4 or 8 cores/CPUs</del>. No longer true; with Percona XtraDB or MySQL 5.5 (unreleased) you get excellent scalability
+12. SMP is supported, but <del datetime="2010-07-28T17:36:15+00:00">MySQL doesn't scale well to more than 4 or 8 cores/CPUs</del>. No longer true; with Percona XtraDB or MySQL 5.5 (unreleased) you get excellent scalability
 13. There is no fractional-second storage type for times, dates, or intervals.
 14. The language used to write stored procedures, triggers, scheduled events, and stored functions is very limited.
 15. There is no roll-back recovery. There is only roll-forward recovery.
@@ -39,8 +39,8 @@ Note: *this is not meant to be MySQL-bashing.* Some of these limitations are goi
 21. Most queries can use only a single index per table; some multi-index query plans exist in certain cases, but the cost is usually underestimated by the query optimizer, and they are often slower than a table scan.
 22. There are no bitmap indexes. Each storage engine supports different types of indexes. Most engines support B-Tree indexes.
 23. There are fewer and less sophisticated tools for administration.
-24. There is no IDE and debugger that approaches the level of sophistication you may be accustomed to. You&#8217;ll probably be writing your stored procedures in a text editor and debugging them by adding statements that insert rows into a table called debug_log.
-25. Each table can have a different storage backend (&#8220;storage engine&#8221;).
+24. There is no IDE and debugger that approaches the level of sophistication you may be accustomed to. You'll probably be writing your stored procedures in a text editor and debugging them by adding statements that insert rows into a table called debug_log.
+25. Each table can have a different storage backend ("storage engine").
 26. Each storage engine can have widely varying behavior, features, and properties.
 27. Foreign keys are not supported in most storage engines.
 28. The default storage engine is non-transactional and corrupts easily.
@@ -51,7 +51,7 @@ Note: *this is not meant to be MySQL-bashing.* Some of these limitations are goi
 33. There are no resource controls. A completely unprivileged user can effortlessly run the server out of memory and crash it, or use up all CPU resources.
 34. There are no integrated or add-on business intelligence, OLAP cube, etc packages.
 35. There is nothing analogous to Grid Control.
-36. There is nothing even remotely like RAC. If you are asking &#8220;How do I build RAC with MySQL,&#8221; you are asking the wrong question.
+36. There is nothing even remotely like RAC. If you are asking "How do I build RAC with MySQL," you are asking the wrong question.
 37. There are no user-defined types or domains.
 38. The number of joins per query is limited to 61.
 39. MySQL supports a smaller subset of SQL syntax. There are no recursive queries, common table expressions, or windowing functions. There are a few extensions to SQL that are somewhat analogous to MERGE and similar features, but are very simplistic in comparison.

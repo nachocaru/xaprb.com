@@ -7,20 +7,20 @@ categories:
   - Conferences
   - SQL
 ---
-Here is a collection of upcoming events that are interesting to me as a MySQL user (in some cases because I&#8217;m speaking). I think some of them are must-see events. I am sure I am missing a lot of events, but some of these are only publicized in specific channels, and I wanted to mention them here to help spread the word.
+Here is a collection of upcoming events that are interesting to me as a MySQL user (in some cases because I'm speaking). I think some of them are must-see events. I am sure I am missing a lot of events, but some of these are only publicized in specific channels, and I wanted to mention them here to help spread the word.
 
 ### Upcoming Meetups
 
-This coming Thursday, Charlottesville&#8217;s Neon Guild tech group will [co-host a Meetup with a noted Kanban expert][1].
+This coming Thursday, Charlottesville's Neon Guild tech group will [co-host a Meetup with a noted Kanban expert][1].
 
-I&#8217;m joining two Meetups soon to talk about building database (MySQL) applications with the Go programming language:
+I'm joining two Meetups soon to talk about building database (MySQL) applications with the Go programming language:
 
 *   [Wednesday, March 13, 2013 in Charlottesville Virginia][2]
 *   [Tuesday, March 19, 2013 in Alexandria, Virginia][3]
 
 ### Upcoming Conferences
 
-*   [Percona Live MySQL Conference and Expo 2013][4] in Santa Clara, CA April 22-25, 2013. This is **the** annual MySQL conference. I&#8217;m not speaking this year, but&#8230;
+*   [Percona Live MySQL Conference and Expo 2013][4] in Santa Clara, CA April 22-25, 2013. This is **the** annual MySQL conference. I'm not speaking this year, but&#8230;
 *   [Velocity Web Performance And Operations Conference][5] June 18-20, Santa Clara, CA. This is an amazing event that brings together the best and brightest people who are building the future of the Internet. I am speaking on [quantifying system normality][6].
 
 ### Upcoming Call For Proposals

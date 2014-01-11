@@ -1,7 +1,6 @@
 ---
-title: 'Why CAPTCHAs don&#8217;t work well'
+title: "Why CAPTCHAs don't work well"
 author: Baron Schwartz
-excerpt: '<p>CAPTCHAs are images designed to ensure a human is using a service, denying access to screen-scrapers and abusive script kiddies.  Unfortunately they create usability and accessibility problems, and can be circumvented.  This article shows examples of CAPTCHAs that cannot be used at all.</p>'
 layout: post
 permalink: /2005/11/03/captchas-are-a-terrible-thing/
 ---
@@ -13,7 +12,7 @@ permalink: /2005/11/03/captchas-are-a-terrible-thing/
 4.  [more CAPTCHA inacessibility discussion][5]
 5.  [we can do better than CAPTCHAs][6]
 
-Yahoo! Mail recently presented me with CAPTCHAs before they&#8217;d even let me send an email. The messaging on the page said it was to prevent spam. Their software may have decided I was likely a spammer based on the message, because I&#8217;ve never gotten CAPTCHAs before or since from them. Another possibility is that I was randomly selected for a test. In any case the images were almost completely unreadable. It took me three tries to get through, and I&#8217;m a computer programmer &#8212; I&#8217;d think I would be better able to pass a CAPTCHA than an average user. Here are the images, in the order I saw them:
+Yahoo! Mail recently presented me with CAPTCHAs before they'd even let me send an email. The messaging on the page said it was to prevent spam. Their software may have decided I was likely a spammer based on the message, because I've never gotten CAPTCHAs before or since from them. Another possibility is that I was randomly selected for a test. In any case the images were almost completely unreadable. It took me three tries to get through, and I'm a computer programmer &#8212; I'd think I would be better able to pass a CAPTCHA than an average user. Here are the images, in the order I saw them:
 
 <img src="/articles/images/captcha1.jpg" height="80" width="290" alt="CAPTCHA 1 from Yahoo! Mail" />
 
@@ -23,7 +22,7 @@ Yahoo! Mail recently presented me with CAPTCHAs before they&#8217;d even let me 
 
 I still have no idea what the first two are. Please, if you are considering using a CAPTCHA on your website, think again.
 
-**Edit** Yahoo! Mail replied to my complaints and told me they only show CAPTCHAs when their software detects someone trying to send spam. Unfortunately, their response also indicated they don&#8217;t &#8220;get it&#8221; about usability, and my comments will probably never make it beyond a customer service moron. I was really hoping someone in management would site up and take notice, but I guess that won&#8217;t happen.
+**Edit** Yahoo! Mail replied to my complaints and told me they only show CAPTCHAs when their software detects someone trying to send spam. Unfortunately, their response also indicated they don't "get it" about usability, and my comments will probably never make it beyond a customer service moron. I was really hoping someone in management would site up and take notice, but I guess that won't happen.
 
  [1]: http://www.captcha.net/
  [2]: http://en.wikipedia.org/wiki/Captcha

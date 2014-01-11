@@ -6,7 +6,7 @@ permalink: /2012/08/22/optimizing-in-queries-against-a-compound-index/
 categories:
   - SQL
 ---
-Unfortunately, MySQL 5.5 doesn&#8217;t generate a very good query execution plan for IN() queries against a compound (multi-column) index, such as the following query that should be able to use the 2-column primary key:
+Unfortunately, MySQL 5.5 doesn't generate a very good query execution plan for IN() queries against a compound (multi-column) index, such as the following query that should be able to use the 2-column primary key:
 
 `<pre>
 explain select * from tbl1

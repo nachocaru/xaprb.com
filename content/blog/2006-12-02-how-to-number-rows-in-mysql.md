@@ -18,9 +18,9 @@ I wrote before about a generic, cross-platform way to simulate the SQL `ROW_NUMB
 
 ### Background
 
-Please see my previous article on [how to simulate the `ROW_NUMBER()`][1] function for the background. I&#8217;ll use the same table structure and data in this article.
+Please see my previous article on [how to simulate the `ROW_NUMBER()`][1] function for the background. I'll use the same table structure and data in this article.
 
-Unfortunately, that&#8217;s a quadratic algorithm, so it&#8217;s not something I&#8217;d do much (though I once did it over small sets of data in SQL Server 2000 at a jobsite).
+Unfortunately, that's a quadratic algorithm, so it's not something I'd do much (though I once did it over small sets of data in SQL Server 2000 at a jobsite).
 
 ### A more efficient method
 
@@ -50,18 +50,18 @@ from fruits;
 | pear   | bradford   |          2 | pear   | 
 +--------+------------+------------+--------+</pre>
 
-How does that work? I&#8217;m restarting the row number each time the `type` column changes, by keeping track of the value it had in the last row. And I&#8217;m simultaneously incrementing and selecting the row number in each row.
+How does that work? I'm restarting the row number each time the `type` column changes, by keeping track of the value it had in the last row. And I'm simultaneously incrementing and selecting the row number in each row.
 
-The spurious `dummy` column has to be there, but if your version of MySQL supports it, you can use a subquery in the `FROM` clause to eliminate columns you don&#8217;t want in the results.
+The spurious `dummy` column has to be there, but if your version of MySQL supports it, you can use a subquery in the `FROM` clause to eliminate columns you don't want in the results.
 
 ### Efficiency
 
-All I&#8217;m doing is maintaining a bit of extra memory and performing a few small comparisons and assignments for each row, so this technique is very efficient. 
+All I'm doing is maintaining a bit of extra memory and performing a few small comparisons and assignments for each row, so this technique is very efficient. 
 ### Playing with fire
 
-You can refer to the generated `row_number` column in a `HAVING` or `GROUP BY` clause, but don&#8217;t burn your fingers. This technique is very much like playing with fire. The result of assigning to a variable and using it in the same statement (in the `HAVING`, for example) depends on the query plan the server chooses, the phase of the moon, and probably other things too. Before you use this technique, you should read and understand the [section on user-defined variables in the MySQL Manual][2], and decide whether it&#8217;s safe for your query.
+You can refer to the generated `row_number` column in a `HAVING` or `GROUP BY` clause, but don't burn your fingers. This technique is very much like playing with fire. The result of assigning to a variable and using it in the same statement (in the `HAVING`, for example) depends on the query plan the server chooses, the phase of the moon, and probably other things too. Before you use this technique, you should read and understand the [section on user-defined variables in the MySQL Manual][2], and decide whether it's safe for your query.
 
-Now that you&#8217;ve read that section of the manual, particularly the part about the aliased expression, you should understand why the following query might be a safer paradigm when using the result in the `HAVING` clause, even though it produces another dummy column:
+Now that you've read that section of the manual, particularly the part about the aliased expression, you should understand why the following query might be a safer paradigm when using the result in the `HAVING` clause, even though it produces another dummy column:
 
 <pre>set @type = '';
 set @num  = 1;
@@ -85,7 +85,7 @@ having row_number = 1;
 | pear   | bartlett |       1 | pear    | 1          | 
 +--------+----------+---------+---------+------------+</pre>
 
-(If I&#8217;m wrong about that, somebody please correct me).
+(If I'm wrong about that, somebody please correct me).
 
 A safer technique is to use a subquery in the `FROM` clause. This will cause the results to be materialized in a temporary table behind the scenes. It might be less efficient for some uses, though:
 
@@ -111,7 +111,7 @@ where row_number = 1;
 
 ### Conclusion
 
-This is an efficient, flexible way to generate and use row numbers in MySQL. I&#8217;ll leave it to you to find uses for it for right now, but I&#8217;m going to show you at least one application for this in an upcoming article.
+This is an efficient, flexible way to generate and use row numbers in MySQL. I'll leave it to you to find uses for it for right now, but I'm going to show you at least one application for this in an upcoming article.
 
  [1]: /blog/2005/09/27/simulating-the-sql-row_number-function/
  [2]: http://dev.mysql.com/doc/refman/5.0/en/user-variables.html

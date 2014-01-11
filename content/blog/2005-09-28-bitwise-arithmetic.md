@@ -19,16 +19,16 @@ if (number & mask == mask) // good!</pre>
 
 ### Let the compiler optimize
 
-When you care about performance and want a 1/0 value indicating whether a (compile-time constant) bit is set, don&#8217;t write conditional logic. Conditional logic ends up being branches and jumps in the final instruction set, and this is a severe performance hit. Branches and jumps cause the processor to have to speculate about what instructions are in the future, interfering with pipelining and pre-fetching of memory. It might seem trivial, but it&#8217;s not; all the memory access can be avoided (huge saving!) and the pipeline can stay full. Instead, write your test like this:
+When you care about performance and want a 1/0 value indicating whether a (compile-time constant) bit is set, don't write conditional logic. Conditional logic ends up being branches and jumps in the final instruction set, and this is a severe performance hit. Branches and jumps cause the processor to have to speculate about what instructions are in the future, interfering with pipelining and pre-fetching of memory. It might seem trivial, but it's not; all the memory access can be avoided (huge saving!) and the pipeline can stay full. Instead, write your test like this:
 
 <pre>bitset = (number & bit) / bit;</pre>
 
-Why is this optimal? The compiler is smart enough to recognize you are dividing by a constant multiple of two, and can emit a `shift` instruction, so your actual instruction ends up being very cheap indeed, with no need for branching. If you&#8217;re writing it in SQL, this is also much better than using a CASE statement:
+Why is this optimal? The compiler is smart enough to recognize you are dividing by a constant multiple of two, and can emit a `shift` instruction, so your actual instruction ends up being very cheap indeed, with no need for branching. If you're writing it in SQL, this is also much better than using a CASE statement:
 
 <pre>set @bitset = case when @number & @bit &lt;> 0 then 1 else 0 end; -- bad!
 set @bitset = (@number & @bit) / @bit; -- good!</pre>
 
-The CASE statement is to be avoided because it&#8217;s essentially a function call.
+The CASE statement is to be avoided because it's essentially a function call.
 
 ### Switching two values
 
@@ -56,7 +56,7 @@ select @a, @b;
 
 ### Multiply by 1/0 instead of using a conditional
 
-This isn&#8217;t strictly bitwise arithmetic, it&#8217;s about using the power of true and false. This tip is especially useful in SQL. It comes up often when I&#8217;m writing a query to use valid values and ignore invalid ones, especially in updates from a grouped set of data. For example, suppose I want to calculate whether orders are valid in one query, then find the total value of valid orders, total value of all orders, count of items on valid orders, and count of items on all orders in a single query. The first query will be something that ends up setting a 1 or 0 value in a column, something like `update order set valid = 1 where...`. The second query could now look something like the following:
+This isn't strictly bitwise arithmetic, it's about using the power of true and false. This tip is especially useful in SQL. It comes up often when I'm writing a query to use valid values and ignore invalid ones, especially in updates from a grouped set of data. For example, suppose I want to calculate whether orders are valid in one query, then find the total value of valid orders, total value of all orders, count of items on valid orders, and count of items on all orders in a single query. The first query will be something that ends up setting a 1 or 0 value in a column, something like `update order set valid = 1 where...`. The second query could now look something like the following:
 
 <pre>select
    sum(case when o.valid = 1 then i.value else 0 end) as valid_value,
@@ -78,7 +78,7 @@ from orders as o
    inner join ordered_items as i on i.order = o.order_id
 group by o.order_id</pre>
 
-To negate the logic, use bitwise `XOR`. For example, suppose I have a table of aggregated sales data that&#8217;s over-normalized to include a 1/0 flag in the primary key:
+To negate the logic, use bitwise `XOR`. For example, suppose I have a table of aggregated sales data that's over-normalized to include a 1/0 flag in the primary key:
 
 <pre>create table salesdata (
    day date not null,

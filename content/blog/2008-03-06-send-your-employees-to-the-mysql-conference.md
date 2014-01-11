@@ -20,19 +20,19 @@ tags:
   - Proven Scaling
   - Pythian
 ---
-A lot of people contact me asking if I&#8217;m looking for a job. (I have an unanswered email in my inbox right now.) People are looking desperately for qualified, knowledgeable MySQL professionals. There&#8217;s a critical shortage of people who can admin MySQL moderately well, much less at the guru level.
+A lot of people contact me asking if I'm looking for a job. (I have an unanswered email in my inbox right now.) People are looking desperately for qualified, knowledgeable MySQL professionals. There's a critical shortage of people who can admin MySQL moderately well, much less at the guru level.
 
-If you are one of the many who are trying to hire a MySQL DBA, you should send your employees to the [MySQL Conference and Expo][1]. Not just this year &#8212; every year. Train a smart person instead of trying to hire someone who&#8217;s ready to go now.
+If you are one of the many who are trying to hire a MySQL DBA, you should send your employees to the [MySQL Conference and Expo][1]. Not just this year &#8212; every year. Train a smart person instead of trying to hire someone who's ready to go now.
 
-This is the unfortunate reality: MySQL&#8217;s popularity has caused demand to far exceed supply. That&#8217;s what happens when a great disruptive innovation takes hold.
+This is the unfortunate reality: MySQL's popularity has caused demand to far exceed supply. That's what happens when a great disruptive innovation takes hold.
 
 What do you do in the meantime?
 
-If you just need a little help, hire a part-time DBA and get some consulting help. Without endorsing them directly, may I suggest [Percona][2], [Pythian][3], [Proven Scaling][4] or [OpenQuery][5]? You can also get support from MySQL, but the barrier to entry is higher because they&#8217;re trying to court larger organizations who need more help. But if your needs are large enough, that can make a lot of sense too.
+If you just need a little help, hire a part-time DBA and get some consulting help. Without endorsing them directly, may I suggest [Percona][2], [Pythian][3], [Proven Scaling][4] or [OpenQuery][5]? You can also get support from MySQL, but the barrier to entry is higher because they're trying to court larger organizations who need more help. But if your needs are large enough, that can make a lot of sense too.
 
-Another thing you can do is send your employees to training, or get someone to come on-site and train. The companies I just mentioned can do this. So can [The Learning Tree][6]. (I&#8217;ve taken a Learning Tree course on MS SQL server and found it well worth my time, though I don&#8217;t know what it cost because my employer paid for it.)
+Another thing you can do is send your employees to training, or get someone to come on-site and train. The companies I just mentioned can do this. So can [The Learning Tree][6]. (I've taken a Learning Tree course on MS SQL server and found it well worth my time, though I don't know what it cost because my employer paid for it.)
 
-I don&#8217;t get any kickbacks for these suggestions, by the way. And everything I say here is my opinion, not facts.
+I don't get any kickbacks for these suggestions, by the way. And everything I say here is my opinion, not facts.
 
 Make sure you approach your smart, motivated employees now &#8212; as in, this week &#8212; about going to the conference. As [Jay Pipes writes, the sessions are great and many of the tutorials are selling out][7]. I can vouch for what he said about standing-room-only crowds. At some of the sessions last year, it was hard to get **out** of the rooms, much less into them.
 

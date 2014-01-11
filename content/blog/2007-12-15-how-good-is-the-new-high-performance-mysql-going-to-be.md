@@ -15,7 +15,7 @@ tags:
   - MySQL
   - Sheeri Kritzer Cabral
 ---
-Well, if my perfectionist nature were allowed to run free, and if Peter et al&#8217;s encyclopedic knowledge were somehow all transferred to paper, the second edition of High Performance MySQL would end up being the perfect encyclopedia of MySQL performance. But as it is, you&#8217;re apparently going to have to settle for &#8220;very good.&#8221; This [quote][1] by Sheeri Kritzer Cabral, one of our tech reviewers, really made my day:
+Well, if my perfectionist nature were allowed to run free, and if Peter et al's encyclopedic knowledge were somehow all transferred to paper, the second edition of High Performance MySQL would end up being the perfect encyclopedia of MySQL performance. But as it is, you're apparently going to have to settle for "very good." This [quote][1] by Sheeri Kritzer Cabral, one of our tech reviewers, really made my day:
 
 <blockquote cite="http://twitter.com/sheeri/statuses/485576042">
   <p>

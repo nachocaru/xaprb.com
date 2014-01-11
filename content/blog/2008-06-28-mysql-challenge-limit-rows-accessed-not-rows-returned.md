@@ -11,7 +11,7 @@ tags:
   - MySQL
   - user defined variables
 ---
-Dear reader, this is a challenge. How&#8217;s your MySQL prowess? You know about LIMIT: it cuts off the results at the specified number.
+Dear reader, this is a challenge. How's your MySQL prowess? You know about LIMIT: it cuts off the results at the specified number.
 
 <pre>mysql&gts; select actor_id from sakila.actor where actor_id % 5 = 0 limit 5;
 +----------+
@@ -25,9 +25,9 @@ Dear reader, this is a challenge. How&#8217;s your MySQL prowess? You know about
 +----------+
 5 rows in set (0.00 sec)</pre>
 
-But that query actually accessed 25 rows. What if I want to say &#8220;return up to 5 rows, but don&#8217;t read any more than 20 rows to find them?&#8221;
+But that query actually accessed 25 rows. What if I want to say "return up to 5 rows, but don't read any more than 20 rows to find them?"
 
-Right now I&#8217;ve got the following:
+Right now I've got the following:
 
 <pre>mysql&gt; select actor_id, @rows
     -&gt; from actor, (select @rows := 0) as x where
@@ -46,8 +46,8 @@ Right now I&#8217;ve got the following:
 
 The derived table subquery `x` is only there to initialize the user variable at the beginning of the query.
 
-This appears to work, but it doesn&#8217;t. If you profile this with SHOW STATUS, you see that it reads every row in the table (Handler\_read\_next = 200). This is actually worse, not better, than just LIMIT.
+This appears to work, but it doesn't. If you profile this with SHOW STATUS, you see that it reads every row in the table (Handler\_read\_next = 200). This is actually worse, not better, than just LIMIT.
 
 Any ideas?
 
-I&#8217;ve got a few. But I don&#8217;t like them for various reasons. Extra props for really efficient solutions that don&#8217;t involve subqueries (so it&#8217;ll work on pre-4.0) or things that add extra overhead (subqueries, for example). I guess you probably see the direction I want to go with this &#8212; I don&#8217;t want to use subqueries.
+I've got a few. But I don't like them for various reasons. Extra props for really efficient solutions that don't involve subqueries (so it'll work on pre-4.0) or things that add extra overhead (subqueries, for example). I guess you probably see the direction I want to go with this &#8212; I don't want to use subqueries.

@@ -12,7 +12,7 @@ tags:
   - MySQL
   - Zach Urlocker
 ---
-[Zack Urlocker says MySQL 5.1 has zero bugs][1]. He may have been misquoted, or quoted out of context, but there it is. I&#8217;ll quote enough of it that you can&#8217;t take it out of context twice:
+[Zack Urlocker says MySQL 5.1 has zero bugs][1]. He may have been misquoted, or quoted out of context, but there it is. I'll quote enough of it that you can't take it out of context twice:
 
 <blockquote cite="http://www.eweek.com/c/a/Database/CEO-Calls-MySQLs-the-Ferrari-of-Databases/">
   <p>
@@ -20,7 +20,7 @@ tags:
   </p>
   
   <p>
-    &#8220;Now we can admit it, but this version is much improved over 5.0, which we weren&#8217;t totally happy with,&#8221; Mickos confided.
+    "Now we can admit it, but this version is much improved over 5.0, which we weren't totally happy with," Mickos confided.
   </p>
   
   <p>
@@ -28,13 +28,13 @@ tags:
   </p>
   
   <p>
-    &#8220;This version now has zero bugs,&#8221; Urlocker told eWEEK.
+    "This version now has zero bugs," Urlocker told eWEEK.
   </p>
 </blockquote>
 
 You can check for yourself at the [MySQL bug statistics][2] page.
 
-Of course it&#8217;s not true. But what did Zack really say, I wonder?
+Of course it's not true. But what did Zack really say, I wonder?
 
  [1]: http://www.eweek.com/c/a/Database/CEO-Calls-MySQLs-the-Ferrari-of-Databases/
  [2]: http://bugs.mysql.com/bugstats.php

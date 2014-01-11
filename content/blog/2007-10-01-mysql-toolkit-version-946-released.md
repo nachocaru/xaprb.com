@@ -23,7 +23,7 @@ This release of MySQL Toolkit adds a new tool, fixes some minor bugs, and adds n
 
 ### New tool: MySQL Parallel Dump
 
-I wrote an [introduction to MySQL Parallel Dump][1] yesterday. It&#8217;s a much smarter way to dump your data if you have a lot of it, and it&#8217;s actually a very usable lightweight multi-threaded backup tool (it can do most dump-oriented backup jobs without a wrapper script, in my opinion).
+I wrote an [introduction to MySQL Parallel Dump][1] yesterday. It's a much smarter way to dump your data if you have a lot of it, and it's actually a very usable lightweight multi-threaded backup tool (it can do most dump-oriented backup jobs without a wrapper script, in my opinion).
 
 ### Changelog
 

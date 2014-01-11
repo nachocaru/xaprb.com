@@ -11,7 +11,7 @@ tags:
   - monitoring
   - MySQL
 ---
-I just uploaded the 1.0.0 release of my [MySQL templates for Cacti][1]. Now there&#8217;s an actual download under the Downloads tab. I solved a number of issues in this release. The changelog:
+I just uploaded the 1.0.0 release of my [MySQL templates for Cacti][1]. Now there's an actual download under the Downloads tab. I solved a number of issues in this release. The changelog:
 
 <pre>2008-06-01: version 1.0.0
 

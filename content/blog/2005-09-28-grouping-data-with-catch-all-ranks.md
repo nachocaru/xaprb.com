@@ -5,9 +5,9 @@ excerpt: "<p>In this article I'll show you how to group data into defined bucket
 layout: post
 permalink: /2005/09/28/grouping-data-with-catch-all-ranks/
 ---
-In this article I&#8217;ll show you how to group data into defined buckets, putting everything that doesn&#8217;t fit into the defined buckets into a catch-all bucket.
+In this article I'll show you how to group data into defined buckets, putting everything that doesn't fit into the defined buckets into a catch-all bucket.
 
-For example, suppose my data is online ads, and I store each ad&#8217;s current position in an integer column. The ads compete against ads from other advertisers, and the top bidder gets position 1. I want to count how many ads are in positions 1 through 5, with 6 through infinity lumped together. The results should look something like the following:
+For example, suppose my data is online ads, and I store each ad's current position in an integer column. The ads compete against ads from other advertisers, and the top bidder gets position 1. I want to count how many ads are in positions 1 through 5, with 6 through infinity lumped together. The results should look something like the following:
 
 <table class="borders collapsed">
   <caption>Ranked Ads</caption> <tr>
@@ -102,7 +102,7 @@ insert into ad (rank)
 
 ### The queries
 
-Here&#8217;s a query for Microsoft SQL Server:
+Here's a query for Microsoft SQL Server:
 
 <pre>select
     case when rank &lt;= 5 then rank
@@ -214,7 +214,7 @@ Your results will vary because of the `RAND()` function.
 
 ### Shortening the code for readability
 
-In MySQL, it&#8217;s possible to make the query a bit shorter by referring to the result&#8217;s `rank` column in the `GROUP BY` and `ORDER BY` clauses. This only works if the column is aliased to a different name than it has in the table. Aliasing a column in the result set to the same name as a column in the base table will confuse MySQL. For example, this works fine:
+In MySQL, it's possible to make the query a bit shorter by referring to the result's `rank` column in the `GROUP BY` and `ORDER BY` clauses. This only works if the column is aliased to a different name than it has in the table. Aliasing a column in the result set to the same name as a column in the base table will confuse MySQL. For example, this works fine:
 
 <pre>select
     case when rank &lt;= 5 then rank
@@ -225,7 +225,7 @@ from ad
 group by bucket
 order by bucket</pre>
 
-This, however, doesn&#8217;t:
+This, however, doesn't:
 
 <pre>select
     case when rank &lt;= 5 then rank

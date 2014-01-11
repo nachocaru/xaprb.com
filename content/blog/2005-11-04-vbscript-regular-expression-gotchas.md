@@ -9,12 +9,12 @@ VBScript regular expressions are slightly troublesome, though they certainly hel
 
 ### Undocumented and incorrect behavior
 
-1.  The documentation is incomplete. The RegExp object has an undocumented property, `Multiline`, which affects pattern matching using the `.` metacharacter. This property&#8217;s default value is `False`, so `.` matches every character except a newline by default. When `Multiline` is `True`, the meaning of the `.` metacharacter is different; it then matches every character including a newline. This is the same behavior you will find in other languages, such as Perl and .NET.
+1.  The documentation is incomplete. The RegExp object has an undocumented property, `Multiline`, which affects pattern matching using the `.` metacharacter. This property's default value is `False`, so `.` matches every character except a newline by default. When `Multiline` is `True`, the meaning of the `.` metacharacter is different; it then matches every character including a newline. This is the same behavior you will find in other languages, such as Perl and .NET.
 2.  Backslashed special characters do not work correctly inside brackets. For example, it ought to be possible to match across newlines with the patterns `[.\n]*` and `[.\s]*`, but this prevents the pattern from matching anything at all, even when no newlines are involved.
 
 ### How to avoid memory leaks
 
-There is a [memory-leak bug][1] which has been reported elsewhere on the Internet. An expression with more than 10 subexpressions in `Global` mode can leak memory. To avoid this bug, don&#8217;t use a pattern with more than 10 subexpressions if the object&#8217;s `Global` property is set to `True`.
+There is a [memory-leak bug][1] which has been reported elsewhere on the Internet. An expression with more than 10 subexpressions in `Global` mode can leak memory. To avoid this bug, don't use a pattern with more than 10 subexpressions if the object's `Global` property is set to `True`.
 
 ### Documentation links
 

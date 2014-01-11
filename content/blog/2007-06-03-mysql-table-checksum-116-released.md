@@ -16,9 +16,9 @@ description:
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Checksum</a>
 </p>
 
-MySQL Table Checksum 1.1.6 enhances chunking, adds features and fixes bugs. The chunking functionality is where I continue to put most of my effort. **This release&#8217;s behavior is incompatible with the last release**, and it will probably change again in the future.
+MySQL Table Checksum 1.1.6 enhances chunking, adds features and fixes bugs. The chunking functionality is where I continue to put most of my effort. **This release's behavior is incompatible with the last release**, and it will probably change again in the future.
 
-Thanks to everyone who has been helping me chase down bugs, including one user who sent me a major patch! It&#8217;s a great feeling to get a patch.
+Thanks to everyone who has been helping me chase down bugs, including one user who sent me a major patch! It's a great feeling to get a patch.
 
 ### Changes
 
@@ -38,7 +38,7 @@ Changes:
 Bugs fixed:
 
 *   There was a race condition between listing and checksumming tables.
-*   Perl&#8217;s auto-vivify hashes could cause all tables to be skipped after the first VIEW.
+*   Perl's auto-vivify hashes could cause all tables to be skipped after the first VIEW.
 *   Some DBIs did not consider ? inside a comment to be a placeholder.
 *   Systems that return nothing from CHECKSUM TABLE crashed mysql-table-checksum.
 *   &#8211;askpass did not print a newline after reading password.
@@ -48,6 +48,6 @@ Bugs fixed:
 
 ### About MySQL Toolkit
 
-[MySQL Toolkit][1] is a set of essential tools for MySQL users, developers and administrators. The project&#8217;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as `awk` and `sed`.
+[MySQL Toolkit][1] is a set of essential tools for MySQL users, developers and administrators. The project's goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as `awk` and `sed`.
 
  [1]: http://code.google.com/p/maatkit

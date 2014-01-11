@@ -9,15 +9,15 @@ description:
     Explains how meta-data can store meta-data about itself, which can then be
     applied to itself and the real data.
 ---
-I&#8217;m a big fan of meta-data stored in the database. I love having a table that records arbitrary data about data. In fact, such a table can even be used to store meta-data about itself. In this article I&#8217;ll explain how to use meta-data to define a sort order for both itself and the data to which it&#8217;s related.
+I'm a big fan of meta-data stored in the database. I love having a table that records arbitrary data about data. In fact, such a table can even be used to store meta-data about itself. In this article I'll explain how to use meta-data to define a sort order for both itself and the data to which it's related.
 
-I&#8217;ve mentioned an online cemetery database several times. One of the great things about this project is it doesn&#8217;t need custom-designed interfaces for every view on the data; the interfaces can be automatically generated. This was simple until the customer wanted the fields to be ordered a certain way. Since the interfaces are automatically generated from the meta-data, I hadn&#8217;t built that feature in.
+I've mentioned an online cemetery database several times. One of the great things about this project is it doesn't need custom-designed interfaces for every view on the data; the interfaces can be automatically generated. This was simple until the customer wanted the fields to be ordered a certain way. Since the interfaces are automatically generated from the meta-data, I hadn't built that feature in.
 
 After bit of thought, I found a way to do it easily.
 
 ### The setup
 
-Here&#8217;s the table schema for the meta-data:
+Here's the table schema for the meta-data:
 
 <pre>create table meta (
    t varchar(50) not null, -- table
@@ -29,7 +29,7 @@ Here&#8217;s the table schema for the meta-data:
 
 ### Defining a sort order
 
-I knew I wanted entries in this table to define a sort order. For the `marker` table, for instance, I&#8217;d need entries that looked like this:
+I knew I wanted entries in this table to define a sort order. For the `marker` table, for instance, I'd need entries that looked like this:
 
 <table class="borders collapsed">
   <tr>
@@ -93,11 +93,11 @@ I knew I wanted entries in this table to define a sort order. For the `marker` t
   </tr>
 </table>
 
-That data would sort the marker&#8217;s width first, followed by the height, and so forth.
+That data would sort the marker's width first, followed by the height, and so forth.
 
-So far, so good. The only complicating factor was the customer wanted certain fields first, others all the way at the end, and the rest she didn&#8217;t care about. To ease maintenance, I decided to leave the columns in the middle to fall where they may, so I needed my sorting technique to work correctly when sort order isn&#8217;t specified.
+So far, so good. The only complicating factor was the customer wanted certain fields first, others all the way at the end, and the rest she didn't care about. To ease maintenance, I decided to leave the columns in the middle to fall where they may, so I needed my sorting technique to work correctly when sort order isn't specified.
 
-I decided no table is likely to have more than a couple dozen columns, so I built in a &#8220;default&#8221; sort value of 50, and allowed pulling fields to the front with low numbers, or pushing them to the end with high numbers (up to 99). The resulting data looks like this:
+I decided no table is likely to have more than a couple dozen columns, so I built in a "default" sort value of 50, and allowed pulling fields to the front with low numbers, or pushing them to the end with high numbers (up to 99). The resulting data looks like this:
 
 <table class="borders collapsed">
   <tr>
@@ -193,13 +193,13 @@ I decided no table is likely to have more than a couple dozen columns, so I buil
 
 ### Getting the data
 
-I wanted my interface-building query to retrieve all meta-data about the desired table, already sorted in the defined order (I don&#8217;t like to sort things in code; that&#8217;s what databases are for). The query to fetch the meta-data *without* the ordering is pretty simple:
+I wanted my interface-building query to retrieve all meta-data about the desired table, already sorted in the defined order (I don't like to sort things in code; that's what databases are for). The query to fetch the meta-data *without* the ordering is pretty simple:
 
 <pre>select m.*
 from meta as m
 where m.t = 'marker'</pre>
 
-To add the ordering, I have to join the meta table to the &#8220;sort&#8221; subset of itself. To make sure all the meta-data is included in the results even if it has no defined sort order, I use a left join. Since there&#8217;s a left join, the &#8220;default&#8221; sort position of 50 is implemented with a `COALESCE`, and to make string data sort as though it&#8217;s numeric, I left-padded everything with zeroes to a width of 2 characters:
+To add the ordering, I have to join the meta table to the "sort" subset of itself. To make sure all the meta-data is included in the results even if it has no defined sort order, I use a left join. Since there's a left join, the "default" sort position of 50 is implemented with a `COALESCE`, and to make string data sort as though it's numeric, I left-padded everything with zeroes to a width of 2 characters:
 
 <pre>select m.*
 from meta as m

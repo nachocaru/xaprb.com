@@ -15,9 +15,9 @@ tags:
   - MySQL
   - PostgreSQL
 ---
-I&#8217;m heading out to [PostgreSQL Conference East][1] in a few hours. Alas, I missed the first day but I&#8217;ll be there all day tomorrow. I hope to learn, meet people, and generally participate in goodness.
+I'm heading out to [PostgreSQL Conference East][1] in a few hours. Alas, I missed the first day but I'll be there all day tomorrow. I hope to learn, meet people, and generally participate in goodness.
 
-And no, I&#8217;m not an expert in PostgreSQL as I am in MySQL, but I have always held it in very high esteem. I am not going to try to spread the MySQL-ness into the PostgreSQL camp :-)
+And no, I'm not an expert in PostgreSQL as I am in MySQL, but I have always held it in very high esteem. I am not going to try to spread the MySQL-ness into the PostgreSQL camp :-)
 
 See you there.
 

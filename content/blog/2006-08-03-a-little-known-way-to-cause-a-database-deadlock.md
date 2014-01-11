@@ -10,19 +10,19 @@ permalink: /2006/08/03/a-little-known-way-to-cause-a-database-deadlock/
 description:
   - 'Explains how the direction transactions are moving can cause them to deadlock.  Deep technical discussion of InnoDB deadlocks, including a tutorial on reading monitor text and using innotop to make the job easy.'
 ---
-A &#8220;little-known way,&#8221; I claim, and yet it happens all the time &#8212; precisely because it&#8217;s little-known. Experts will quickly recognize where I&#8217;m going to go with this article, but I hope many others in my audience will understand deadlocks more deeply after reading it. I&#8217;ll use MySQL and InnoDB for illustration purposes, but the scenario this article describes (dramatic music, please!) could happen to you, too! And probably will someday, unless you&#8217;re one of the elite few (ok, enough drama) who know how to avoid it.
+A "little-known way," I claim, and yet it happens all the time &#8212; precisely because it's little-known. Experts will quickly recognize where I'm going to go with this article, but I hope many others in my audience will understand deadlocks more deeply after reading it. I'll use MySQL and InnoDB for illustration purposes, but the scenario this article describes (dramatic music, please!) could happen to you, too! And probably will someday, unless you're one of the elite few (ok, enough drama) who know how to avoid it.
 
-In this article I&#8217;ll briefly introduce deadlocks, give an example of one that happened at my employer recently, analyze and explain it, and then disclose the secret way to <del datetime="2006-08-04T00:11:58+00:00">avoid</del> cause such deadlocks. Then I&#8217;ll show you how to reproduce the deadlock and dive into the gory details of what goes on internally with InnoDB. I&#8217;ll also demonstrate how [innotop][1] can make this type of debugging a lot easier.
+In this article I'll briefly introduce deadlocks, give an example of one that happened at my employer recently, analyze and explain it, and then disclose the secret way to <del datetime="2006-08-04T00:11:58+00:00">avoid</del> cause such deadlocks. Then I'll show you how to reproduce the deadlock and dive into the gory details of what goes on internally with InnoDB. I'll also demonstrate how [innotop][1] can make this type of debugging a lot easier.
 
 ### Introduction
 
-First, a quick refresher: a deadlock happens when two or more transactions each hold exclusive access to something the other wants. To proceed, one of them has to yield. Since queries are only concerned with what they&#8217;re doing, and like to imagine they have exclusive access to the entire database, they don&#8217;t notice when they are deadlocked. Something external must check for deadlocks by looking for certain necessary and sufficient conditions (which you can look up in a textbook; I won&#8217;t bore you), choosing a victim, and rolling one of the transactions back.
+First, a quick refresher: a deadlock happens when two or more transactions each hold exclusive access to something the other wants. To proceed, one of them has to yield. Since queries are only concerned with what they're doing, and like to imagine they have exclusive access to the entire database, they don't notice when they are deadlocked. Something external must check for deadlocks by looking for certain necessary and sufficient conditions (which you can look up in a textbook; I won't bore you), choosing a victim, and rolling one of the transactions back.
 
-In short, a deadlock is a cycle of &#8220;I&#8217;ve got this, you have to gimme that before I&#8217;ll let go of mine&#8221; locks. Thinking of it as a cycle is more than just a metaphor; detecting a cycle is how the RDBMS detects a deadlock. And it&#8217;s an extremely useful thing to learn to visualize, as you&#8217;ll see in a bit, because it helps you anticipate situations in your design and queries where a deadlock could occur.
+In short, a deadlock is a cycle of "I've got this, you have to gimme that before I'll let go of mine" locks. Thinking of it as a cycle is more than just a metaphor; detecting a cycle is how the RDBMS detects a deadlock. And it's an extremely useful thing to learn to visualize, as you'll see in a bit, because it helps you anticipate situations in your design and queries where a deadlock could occur.
 
 ### A recent example
 
-Here&#8217;s a recent example of a deadlock at my current employer:
+Here's a recent example of a deadlock at my current employer:
 
 Transaction 1 was [aggregating an atomic traffic data table][2] with a query like the following:
 
@@ -37,13 +37,13 @@ Transaction 2 was inserting into that same table:
 <pre>insert into ad_data(day, ad_id, client, clicks, cost)
    values('2006-08-01', 5, 1, 50, 500);</pre>
 
-Boom! They deadlocked. Now, why would that happen? Shouldn&#8217;t one of them just wait for whoever got there first?
+Boom! They deadlocked. Now, why would that happen? Shouldn't one of them just wait for whoever got there first?
 
-Here&#8217;s a relevant detail: the table&#8217;s primary key is on `(day, ad_id)`. Can you guess what was happening? Hint: it&#8217;s a trick question. I haven&#8217;t told you enough yet, though you may still be able to guess.
+Here's a relevant detail: the table's primary key is on `(day, ad_id)`. Can you guess what was happening? Hint: it's a trick question. I haven't told you enough yet, though you may still be able to guess.
 
 ### The full details
 
-OK, I&#8217;ll tell you. I didn&#8217;t give you full details about Transaction 2. I didn&#8217;t tell you that in addition to the row it was trying to insert for `ad_id` 5, it had previously inserted a row for `ad_id` 7:
+OK, I'll tell you. I didn't give you full details about Transaction 2. I didn't tell you that in addition to the row it was trying to insert for `ad_id` 5, it had previously inserted a row for `ad_id` 7:
 
 <pre>insert into ad_data(day, ad_id, client, clicks, cost)
    values('2006-08-01', 7, 1, 70, 700);</pre>
@@ -52,29 +52,29 @@ To help you understand how this situation caused a deadlock, consider the follow
 
 By contrast, Transaction 2 was *probing into the index* with a new row, trying to find where to put it. And when it found the spot, between `ad_id` 4 and 6, it tried to insert it in the gap.
 
-Here&#8217;s the deadlock: Transaction 1 had already *scanned past that point*, locking every row along the way. If it hadn&#8217;t, of course, Transaction 2 would have been able to insert the new row, and there&#8217;d be no deadlock. Additionally, we can deduce that Transaction 1 had scanned all the way to the (newly inserted) row for `ad_id` 7, and stopped there. If it hadn&#8217;t, it wouldn&#8217;t be waiting for anything, and again there would be no deadlock.
+Here's the deadlock: Transaction 1 had already *scanned past that point*, locking every row along the way. If it hadn't, of course, Transaction 2 would have been able to insert the new row, and there'd be no deadlock. Additionally, we can deduce that Transaction 1 had scanned all the way to the (newly inserted) row for `ad_id` 7, and stopped there. If it hadn't, it wouldn't be waiting for anything, and again there would be no deadlock.
 
-Transaction 1&#8242;s locks cannot allow Transaction 2 to insert the new row. If that row were inserted, Transaction 1&#8242;s sum of the data would be wrong. That&#8217;s where the deadlock really comes from.
+Transaction 1&#8242;s locks cannot allow Transaction 2 to insert the new row. If that row were inserted, Transaction 1&#8242;s sum of the data would be wrong. That's where the deadlock really comes from.
 
-Here&#8217;s a picture of the situation. Start reading at the bottom right, then go to the top left, then to the top right:
+Here's a picture of the situation. Start reading at the bottom right, then go to the top left, then to the top right:
 
 <img src="/articles/images/deadlock.png" width="400" height="102" alt="deadlock" />
 
 ### The big important point
 
-Now we come to the important stuff, the reason I wrote this article: those transactions are working in opposite directions. Transaction 1 is working downwards through the table. Transaction 2 is working upwards. If you think about it, that&#8217;s sort of cyclical, right? There&#8217;s your little-known way to cause a deadlock: get two transactions working in opposite directions. That&#8217;s the real secret.
+Now we come to the important stuff, the reason I wrote this article: those transactions are working in opposite directions. Transaction 1 is working downwards through the table. Transaction 2 is working upwards. If you think about it, that's sort of cyclical, right? There's your little-known way to cause a deadlock: get two transactions working in opposite directions. That's the real secret.
 
 This brings me to the corollary: **many deadlocks can be avoided by working in primary key order**. If Transaction 2 had done that, Transaction 1 would have had to wait at the lowest `ad_id` for which Transaction 2 had a lock, leaving the higher ranges open for Transaction 2 to work on.
 
-Another solution for avoiding this deadlock is to have Transaction 2 commit after every single insert, but that&#8217;s not efficient and probably not desirable, if it wants an entire set of data to either succeed or fail.
+Another solution for avoiding this deadlock is to have Transaction 2 commit after every single insert, but that's not efficient and probably not desirable, if it wants an entire set of data to either succeed or fail.
 
-Regardless, if someone gives you advice not to insert in primary key order because of tree re-balancing, don&#8217;t pay attention. It is much less expensive to re-balance a B-tree than to physically re-order rows on disk (you may get this advice because inserting in order is worst-case for a balanced tree, forcing the most re-balancings; but a B-tree can be re-balanced with very little work, so it&#8217;s really a false economy).
+Regardless, if someone gives you advice not to insert in primary key order because of tree re-balancing, don't pay attention. It is much less expensive to re-balance a B-tree than to physically re-order rows on disk (you may get this advice because inserting in order is worst-case for a balanced tree, forcing the most re-balancings; but a B-tree can be re-balanced with very little work, so it's really a false economy).
 
 ### Further analysis
 
-This deadlock was actually not that obvious to debug. It showed up in the output of `SHOW ENGINE INNODB STATUS` and took a little thought to understand, because it wasn&#8217;t immediately obvious that the `INSERT` query had previously done inserts. However, with a little insight into the situation, it&#8217;s not too bad to debug. It especially helps if you have tools to format the data nicely.
+This deadlock was actually not that obvious to debug. It showed up in the output of `SHOW ENGINE INNODB STATUS` and took a little thought to understand, because it wasn't immediately obvious that the `INSERT` query had previously done inserts. However, with a little insight into the situation, it's not too bad to debug. It especially helps if you have tools to format the data nicely.
 
-I&#8217;ll deliberately cause this deadlock so you can see what the InnoDB monitor output looks like. Here&#8217;s the setup:
+I'll deliberately cause this deadlock so you can see what the InnoDB monitor output looks like. Here's the setup:
 
 <pre>create table ad_data(
    day date not null,
@@ -115,7 +115,7 @@ insert into ad_data(day, ad_id, client, clicks, cost)
    values
    ('2006-08-01', 5, 1, 50, 500);</pre>
 
-I just did this, and Transaction 1 was chosen as the victim. I&#8217;m not sure if that&#8217;s deterministic or not; does anyone know? I&#8217;d have to get into the InnoDB code to find out. Regardless, after doing that, here&#8217;s the relevant output of `SHOW ENGINE INNODB STATUS`:
+I just did this, and Transaction 1 was chosen as the victim. I'm not sure if that's deterministic or not; does anyone know? I'd have to get into the InnoDB code to find out. Regardless, after doing that, here's the relevant output of `SHOW ENGINE INNODB STATUS`:
 
 <pre>------------------------
 LATEST DETECTED DEADLOCK
@@ -156,15 +156,15 @@ Record lock, heap no 6 PHYSICAL RECORD: n_fields 7; compact format; info bits 0
 
 *** WE ROLL BACK TRANSACTION (1)</pre>
 
-That&#8217;s fairly verbose, because it prints information about the locks it was waiting for and holding, but that&#8217;s exactly what you need to figure out what was really going on. Notice how you can see Transaction 1 waiting for exactly the same lock Transaction 2 holds. Notice also Transaction 2 locks the &#8220;rec but not gap&#8221; on that lock. That means it locks the record, as opposed to the [gap before the record][3]. You can read more about this in the MySQL manual &#8212; the entire section on InnoDB transactional model is recommended reading.
+That's fairly verbose, because it prints information about the locks it was waiting for and holding, but that's exactly what you need to figure out what was really going on. Notice how you can see Transaction 1 waiting for exactly the same lock Transaction 2 holds. Notice also Transaction 2 locks the "rec but not gap" on that lock. That means it locks the record, as opposed to the [gap before the record][3]. You can read more about this in the MySQL manual &#8212; the entire section on InnoDB transactional model is recommended reading.
 
-Finally, notice how Transaction 2&#8242;s waited-for lock is trying to lock the gap before the record, with intention to insert. That&#8217;s what finally caused the deadlock.
+Finally, notice how Transaction 2&#8242;s waited-for lock is trying to lock the gap before the record, with intention to insert. That's what finally caused the deadlock.
 
-If you&#8217;re having a hard time &#8220;noticing&#8221; the &#8220;obvious&#8221; things I&#8217;m pointing out in that cryptic mess, read on. There is hope&#8230;
+If you're having a hard time "noticing" the "obvious" things I'm pointing out in that cryptic mess, read on. There is hope&#8230;
 
 ### Everything is better with innotop
 
-As much fun as it is to squint at debugging text, it&#8217;s a lot faster and easier to do this with [innotop][4]. Just look at this screenshot and you&#8217;ll see what I mean. You can click through for a full-size view.
+As much fun as it is to squint at debugging text, it's a lot faster and easier to do this with [innotop][4]. Just look at this screenshot and you'll see what I mean. You can click through for a full-size view.
 
 [<img src="/innotop/thumb-innotop-secret-deadlock.png" width="200" height="119" alt="innotop screenshot" />][5]
 
@@ -172,15 +172,15 @@ At the top of the display is a line of information about the deadlock date and t
 
 Just below that is a table of locks held and waited for. This is where I concentrate my attention. I can see which transaction had what locks on what indexes. I can see Transaction 2 holding a lock on a record in heap 7, which Transaction 1 is waiting for. And finally, I can see Transaction 2 waiting for the gap before the record in heap 6, declaring its intent to insert into that gap.
 
-The &#8220;heap number&#8221; is really the record number, as far as I can tell (can anyone verify this? I&#8217;m still not clear on it even after reading about page structure in the [InnoDB internals manual][6]).
+The "heap number" is really the record number, as far as I can tell (can anyone verify this? I'm still not clear on it even after reading about page structure in the [InnoDB internals manual][6]).
 
 At the very end of the display is the query text each transaction was executing, which is handy for obvious reasons.
 
-All in one screen of nicely formatted text! That&#8217;s so much faster and easier to understand than slogging through the InnoDB monitor output.
+All in one screen of nicely formatted text! That's so much faster and easier to understand than slogging through the InnoDB monitor output.
 
 ### Summary
 
-You&#8217;ve covered a lot of material by reading this far. You&#8217;ve gone from the basics of deadlocks to a specific scenario, how to avoid deadlocks caused by transactions working in opposite directions, looked deep into InnoDB&#8217;s internals, and learned how innotop can make your life easier by compressing and formatting the output of the InnoDB monitor. I hope you found this article useful. If you did, you should [subscribe][7] to this blog to conveniently keep up with my upcoming articles.
+You've covered a lot of material by reading this far. You've gone from the basics of deadlocks to a specific scenario, how to avoid deadlocks caused by transactions working in opposite directions, looked deep into InnoDB's internals, and learned how innotop can make your life easier by compressing and formatting the output of the InnoDB monitor. I hope you found this article useful. If you did, you should [subscribe][7] to this blog to conveniently keep up with my upcoming articles.
 
  [1]: http://www.xaprb.com/innotop/
  [2]: /blog/2006/07/19/3-ways-to-maintain-rollup-tables-in-sql/

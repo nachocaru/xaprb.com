@@ -5,15 +5,15 @@ excerpt: '<p>This article explains how to use CSS to specify data type meta-data
 layout: post
 permalink: /2006/01/02/tables-and-data-part-1/
 ---
-I don&#8217;t know how spreadsheets do it internally, but at least from a user&#8217;s perspective, they derive the default cell format from the type of data in the cell. For example, if I enter a number into a cell, the spreadsheet will right-align it. It will format dates and times according to cultural conventions, and will recognize other data types as well. This is the right way to do it, because the formatting conveys information about the data. Right-aligned numbers are numeric, not textual.
+I don't know how spreadsheets do it internally, but at least from a user's perspective, they derive the default cell format from the type of data in the cell. For example, if I enter a number into a cell, the spreadsheet will right-align it. It will format dates and times according to cultural conventions, and will recognize other data types as well. This is the right way to do it, because the formatting conveys information about the data. Right-aligned numbers are numeric, not textual.
 
 Now switch from spreadsheets to HTML. I have a table with sales data rolled up by day for a week. How do I format it? Do I right-align the numbers, format them with dollar signs and two decimal places, and display negative numbers in red? Do I left-align the days? Or do I just specify the first column as date and the second as currency?
 
-I could do either, but I think it&#8217;s better to go the second route, and let CSS control the formatting. It&#8217;s possible to control simple presentation with just CSS and the [HTML `class` attribute][1], the [general-purpose method for adding processing data to HTML elements][2]. I might want more advanced formatting (rearranging the data itself), and in that case I&#8217;d need some help from JavaScript. I&#8217;ll demonstrate all that and more in this series of articles. Let&#8217;s dive in:
+I could do either, but I think it's better to go the second route, and let CSS control the formatting. It's possible to control simple presentation with just CSS and the [HTML `class` attribute][1], the [general-purpose method for adding processing data to HTML elements][2]. I might want more advanced formatting (rearranging the data itself), and in that case I'd need some help from JavaScript. I'll demonstrate all that and more in this series of articles. Let's dive in:
 
 ### The foundation
 
-To set the stage, here&#8217;s some sample data, which I&#8217;ll use throughout this series of articles:
+To set the stage, here's some sample data, which I'll use throughout this series of articles:
 
 <table id="table1" class="cleanHeaders elbowroom">
   <caption>Weekly Sales Stats</caption> <tr>
@@ -77,27 +77,27 @@ To set the stage, here&#8217;s some sample data, which I&#8217;ll use throughout
   </tr>
 </table>
 
-Aside from an alarming trend in the numbers (quick! Get me the VP of Marketing!), this table is pretty uninteresting and hard to read, especially since the numbers aren&#8217;t formatted consistently (they represent the values accurately, but not legibly). A sample row looks like this:
+Aside from an alarming trend in the numbers (quick! Get me the VP of Marketing!), this table is pretty uninteresting and hard to read, especially since the numbers aren't formatted consistently (they represent the values accurately, but not legibly). A sample row looks like this:
 
 <pre>&lt;tr&gt;&lt;td&gt;2005-01-05&lt;/td&gt;&lt;td&gt;-82.58&lt;/td&gt;&lt;/tr&gt;</pre>
 
-I used standard formats for the data. The dates are in ISO8601 standard format, and the numbers are just plain&#8230; numbers. No fanciness here. That&#8217;s intentional, because I want it to be easy for a program to use in a future article (you&#8217;ll see, it will get pretty complex).
+I used standard formats for the data. The dates are in ISO8601 standard format, and the numbers are just plain&#8230; numbers. No fanciness here. That's intentional, because I want it to be easy for a program to use in a future article (you'll see, it will get pretty complex).
 
 ### First steps: formatting, type vs. value
 
-The most immediate benefit comes from specifying visual formatting for the values, to convey information about what they are. I can&#8217;t think of anything special to do with the dates (visually at least &#8212; adding a `date` class will still convey semantic information), but the numbers can be right-aligned and negative numbers can be red. How can I make negative numbers red? I could add a few classes to the `TD`, for example `class="number currency negative"`.
+The most immediate benefit comes from specifying visual formatting for the values, to convey information about what they are. I can't think of anything special to do with the dates (visually at least &#8212; adding a `date` class will still convey semantic information), but the numbers can be right-aligned and negative numbers can be red. How can I make negative numbers red? I could add a few classes to the `TD`, for example `class="number currency negative"`.
 
-Does that `negative` belong there? I don&#8217;t think it does. I&#8217;m a data guy, and I don&#8217;t do hand-coding if I can get a program to do it for me, so I naturally assume the table is generated dynamically and the CSS classes are specified in a template. The CSS will vary by data *type*, and perhaps specify a desired *formatting* based on the data type, but will not vary by the data&#8217;s actual *value*. I think it&#8217;s crucial to distinguish between types, presentational styles, and values.
+Does that `negative` belong there? I don't think it does. I'm a data guy, and I don't do hand-coding if I can get a program to do it for me, so I naturally assume the table is generated dynamically and the CSS classes are specified in a template. The CSS will vary by data *type*, and perhaps specify a desired *formatting* based on the data type, but will not vary by the data's actual *value*. I think it's crucial to distinguish between types, presentational styles, and values.
 
 *   `number` is a data type.
 *   `currency` is both a presentational instruction and a sub-type of the `number` data type.
-*   `negative` is neither type nor presentational &#8212; it&#8217;s dependent on the data value, not the type or the author&#8217;s formatting preference. It doesn&#8217;t belong there.
+*   `negative` is neither type nor presentational &#8212; it's dependent on the data value, not the type or the author's formatting preference. It doesn't belong there.
 
-To keep the type/presentation/value separation clear, I won&#8217;t mark negative numbers up differently. I&#8217;ll just add some classes to the `TD` elements to indicate my data type and formatting preferences.
+To keep the type/presentation/value separation clear, I won't mark negative numbers up differently. I'll just add some classes to the `TD` elements to indicate my data type and formatting preferences.
 
 ### CSS class name conventions
 
-I used `class="currency"` above as an example, but I&#8217;m going to use certain class name conventions to help organize the CSS classes. I&#8217;ll use the prefix `dt-` to indicate &#8220;data type,&#8221; and `dst-` to mean &#8220;data subtype.&#8221; Here are the values I&#8217;ll use:
+I used `class="currency"` above as an example, but I'm going to use certain class name conventions to help organize the CSS classes. I'll use the prefix `dt-` to indicate "data type," and `dst-` to mean "data subtype." Here are the values I'll use:
 
 <table class="cleanHeaders elbowroom">
   <tr>
@@ -185,31 +185,31 @@ I used `class="currency"` above as an example, but I&#8217;m going to use certai
   </tr>
 </table>
 
-I can think of many other variations, but [I&#8217;ll invent them when I need them][3]. The sample row now looks like this:
+I can think of many other variations, but [I'll invent them when I need them][3]. The sample row now looks like this:
 
 <pre>&lt;tr&gt;
     &lt;td class="dt-datetime dst-date"&gt;2005-01-05&lt;/td&gt;
     &lt;td class="dt-number dst-currency dst-USD"&gt;-82.58&lt;/td&gt;
 &lt;/tr&gt;</pre>
 
-That&#8217;s as far as I&#8217;ll take it with plain CSS at this point &#8212; I&#8217;m happy with the markup. It is structural and semantic, but not presentational; the CSS will handle that later.
+That's as far as I'll take it with plain CSS at this point &#8212; I'm happy with the markup. It is structural and semantic, but not presentational; the CSS will handle that later.
 
 ### Future possibilities
 
-I could push the limits a bit, but the techniques I&#8217;d have to use are either not widely supported or not part of current standards. However, some will very likely be widely implemented in the future, so they are interesting enough that I want to discuss and demonstrate the possibilities:
+I could push the limits a bit, but the techniques I'd have to use are either not widely supported or not part of current standards. However, some will very likely be widely implemented in the future, so they are interesting enough that I want to discuss and demonstrate the possibilities:
 
-*   Align cells along a string. No browser, as far as I know, currently supports this &#8212; and that&#8217;s understandable because it would be really hard and the spec has some problems &#8212; but the CSS 2.1 spec says you could theoretically [line numbers up along the decimal point][4]. In my opinion, this won&#8217;t happen in the forseeable future, so I&#8217;ll just mention it in passing and forget about it.
-*   Use the `:before` pseudo-element to add the currency sign before currency values, according to the currency type. This won&#8217;t work in IE.
-*   Change the formatting based on the value itself. With some limitations, this works well. For example, add parentheses around negative numbers. This requires matching some part of the data in the stylesheet, which isn&#8217;t currently possible. There is a workaround though, which will be very useful for other purposes too: use the `abbr` attribute to hold a copy of the value. Then the CSS can match the attribute value. CSS 2.1 allows only very limited matching (see [section 5.8.1][5]), but CSS3 will probably allow more options (see [section 6.3][6]), most importantly the substring matching selectors. For example, it would be possible to style numeric data beginning with &#8220;-&#8221; differently &#8212; perhaps making it red, perhaps using `before:` and `after` to add parentheses. Currency values that don&#8217;t end in a decimal place and exactly two zeros could be fixed up. Even though the attribute matching is still pretty limited, it would allow a lot of flexibility &#8212; and you know how web programmers are. Some bright kid is sure to figure out ways to combine all sorts of technologies and make it sing and dance.
+*   Align cells along a string. No browser, as far as I know, currently supports this &#8212; and that's understandable because it would be really hard and the spec has some problems &#8212; but the CSS 2.1 spec says you could theoretically [line numbers up along the decimal point][4]. In my opinion, this won't happen in the forseeable future, so I'll just mention it in passing and forget about it.
+*   Use the `:before` pseudo-element to add the currency sign before currency values, according to the currency type. This won't work in IE.
+*   Change the formatting based on the value itself. With some limitations, this works well. For example, add parentheses around negative numbers. This requires matching some part of the data in the stylesheet, which isn't currently possible. There is a workaround though, which will be very useful for other purposes too: use the `abbr` attribute to hold a copy of the value. Then the CSS can match the attribute value. CSS 2.1 allows only very limited matching (see [section 5.8.1][5]), but CSS3 will probably allow more options (see [section 6.3][6]), most importantly the substring matching selectors. For example, it would be possible to style numeric data beginning with "-" differently &#8212; perhaps making it red, perhaps using `before:` and `after` to add parentheses. Currency values that don't end in a decimal place and exactly two zeros could be fixed up. Even though the attribute matching is still pretty limited, it would allow a lot of flexibility &#8212; and you know how web programmers are. Some bright kid is sure to figure out ways to combine all sorts of technologies and make it sing and dance.
 *   If the application is not HTML, but is some other variant, such as XHTML or just XML, other technologies such as XSLT and XPath can do far more complex processing.
 
-These techniques could change the actual value the user sees, which brings up a related issue: am I lying about the data if I change the displayed value? In my opinion, no, I&#8217;m just showing the user one particular *view* of the data. The document contains the same data no matter what the browser displays. There are many views on a single bit of data, and making the view independent of the data is a good thing. There&#8217;s precedent for this practice even in HTML and CSS &#8212; `text-transform` is an obvious example. In other technologies, it&#8217;s taken for granted that the user never sees raw data, only views of it. Heck, even a browser is just one view of an HTML document!
+These techniques could change the actual value the user sees, which brings up a related issue: am I lying about the data if I change the displayed value? In my opinion, no, I'm just showing the user one particular *view* of the data. The document contains the same data no matter what the browser displays. There are many views on a single bit of data, and making the view independent of the data is a good thing. There's precedent for this practice even in HTML and CSS &#8212; `text-transform` is an obvious example. In other technologies, it's taken for granted that the user never sees raw data, only views of it. Heck, even a browser is just one view of an HTML document!
 
-Even though many of these techniques aren&#8217;t well supported, some of them are. Here is a [demo][7] so you can see all of the above &#8212; both supported and unsupported &#8212; in action. Let me know what you think!
+Even though many of these techniques aren't well supported, some of them are. Here is a [demo][7] so you can see all of the above &#8212; both supported and unsupported &#8212; in action. Let me know what you think!
 
 ### Upcoming work
 
-That&#8217;s all for now. In upcoming articles, several threads (JavaScript, date and number formatting, CSS, tables) are going to start converging, and I&#8217;ll introduce a lot more material. You&#8217;ll see how to add load-time processing to your tables, apply predefined and user-defined format strings by naming them in the CSS, get around the row/column multiple-hierarchy problem so you don&#8217;t have to specify the classes on every single row or cell separately, allow users to really choose their preferred view of the data, and maybe even more. Stay tuned!
+That's all for now. In upcoming articles, several threads (JavaScript, date and number formatting, CSS, tables) are going to start converging, and I'll introduce a lot more material. You'll see how to add load-time processing to your tables, apply predefined and user-defined format strings by naming them in the CSS, get around the row/column multiple-hierarchy problem so you don't have to specify the classes on every single row or cell separately, allow users to really choose their preferred view of the data, and maybe even more. Stay tuned!
 
  [1]: http://www.w3.org/TR/html4/struct/global.html#adef-class
  [2]: http://www.w3.org/TR/html4/struct/global.html#h-7.5.2

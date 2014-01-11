@@ -10,7 +10,7 @@ tags:
   - humor
   - InnoDB
 ---
-If you&#8217;re like me, you&#8217;ve gotten tired of writing endless test cases for parsers that can understand the thousands of variations of text output by SHOW INNODB STATUS. I&#8217;ve decided to solve this issue once and for all by patching MySQL and InnoDB to output XML, the universal markup format, so tools can understand and manipulate it easily. Here&#8217;s a sample snippet:
+If you're like me, you've gotten tired of writing endless test cases for parsers that can understand the thousands of variations of text output by SHOW INNODB STATUS. I've decided to solve this issue once and for all by patching MySQL and InnoDB to output XML, the universal markup format, so tools can understand and manipulate it easily. Here's a sample snippet:
 
 `<pre><status><![CDATA[
 =====================================
@@ -19,4 +19,4 @@ If you&#8217;re like me, you&#8217;ve gotten tired of writing endless test cases
 ... text omitted, but you get the idea ...
 ]]>
 </status></pre>` 
-PS: Yes, this is a late April Fool&#8217;s joke.
+PS: Yes, this is a late April Fool's joke.

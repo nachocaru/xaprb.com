@@ -17,7 +17,7 @@ tags:
 ---
 <p>I finally have some images to show you what my <a href="http://code.google.com/p/mysql-cacti-templates/">improved Cacti templates</a> look like.</p>
 
-<p>These aren&#8217;t a perfect demo, since for example this server doesn&#8217;t have the query cache enabled, but it should show you what I&#8217;ve done.  Note, for example, that each graph is labeled  with the actual values of the images drawn on it.  You don&#8217;t have to guess what the values are by squinting at the graphs.</p>
+<p>These aren't a perfect demo, since for example this server doesn't have the query cache enabled, but it should show you what I've done.  Note, for example, that each graph is labeled  with the actual values of the images drawn on it.  You don't have to guess what the values are by squinting at the graphs.</p>
 
 <p>You can click on any image to go to a larger version.  Enjoy:</p>
 

@@ -9,4 +9,4 @@ categories:
 I see this all the time:
 
 > [product] scales linearly to hundreds of servers
-I haven&#8217;t seen a benchmark yet that&#8217;s truly a straight line. I would like to see one.
+I haven't seen a benchmark yet that's truly a straight line. I would like to see one.

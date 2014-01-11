@@ -23,7 +23,7 @@ For now you can try this:
 
 <pre>CREATE TEMPORARY TABLE typeof AS SELECT [expression] AS col;</pre>
 
-For example, let&#8217;s see what the type of CRC32 is.
+For example, let's see what the type of CRC32 is.
 
 <pre>mysql> CREATE TEMPORARY TABLE typeof AS SELECT CRC32('hello world') AS col;
 mysql> DESCRIBE typeof;

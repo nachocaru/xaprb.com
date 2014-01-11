@@ -12,11 +12,11 @@ tags:
   - graphing
   - monitoring
 ---
-I&#8217;ve released version 1.1.1 of the [MySQL Cacti templates][1] I develop. The new templates work around more Cacti limitations, including the limitation on the length of the data returned from the poller script. There&#8217;s also a new graph and many other niceties since the last release.
+I've released version 1.1.1 of the [MySQL Cacti templates][1] I develop. The new templates work around more Cacti limitations, including the limitation on the length of the data returned from the poller script. There's also a new graph and many other niceties since the last release.
 
 <!--more-->
 
-Note that there are TWO incompatible changes with the previous version of the templates. You don&#8217;t have to throw away your RRA files, you just have to delete and re-import over all the existing templates. It&#8217;s not my fault, there was no other way to work around the limitations mentioned above. Really. Have fun upgrading!
+Note that there are TWO incompatible changes with the previous version of the templates. You don't have to throw away your RRA files, you just have to delete and re-import over all the existing templates. It's not my fault, there was no other way to work around the limitations mentioned above. Really. Have fun upgrading!
 
 Version 1.1.1 is actually just a repackaging of 1.1.0.
 

@@ -22,23 +22,23 @@ tags:
   - technical review
   - writing
 ---
-Whew! I just finished a marathon of revisions. It&#8217;s been a while since I posted about our progress, so here&#8217;s an update for the curious readers.
+Whew! I just finished a marathon of revisions. It's been a while since I posted about our progress, so here's an update for the curious readers.
 
-I just finished revising the last two major chapters that [Peter Zaitsev][1] hasn&#8217;t yet reviewed. Peter has been essentially going through the chapters like a very thorough technical reviewer. He makes corrections, points out where things aren&#8217;t clear or need examples, and adds more material.
+I just finished revising the last two major chapters that [Peter Zaitsev][1] hasn't yet reviewed. Peter has been essentially going through the chapters like a very thorough technical reviewer. He makes corrections, points out where things aren't clear or need examples, and adds more material.
 
-By &#8220;finished revising,&#8221; I mean finished expanding the outline into a full chapter. We&#8217;re still working at the level of &#8220;this chapter is mostly there, but we might decide to revise it more.&#8221; We will most certainly do so in many cases. There are some chunks of material that I&#8217;ve marked TODO to put into other chapters, for example. We&#8217;re not at the level of a final draft with any chapter except the chapter on MySQL&#8217;s architecture, but we&#8217;re getting close with the others now.
+By "finished revising," I mean finished expanding the outline into a full chapter. We're still working at the level of "this chapter is mostly there, but we might decide to revise it more." We will most certainly do so in many cases. There are some chunks of material that I've marked TODO to put into other chapters, for example. We're not at the level of a final draft with any chapter except the chapter on MySQL's architecture, but we're getting close with the others now.
 
-Most of the chapters are in tech review now, and we&#8217;ve gotten a few of them back. The comments from the reviewers have been very helpful. We expanded the Replication chapter quite a bit after tech review. (And then Peter reviewed it and we expanded it even more). When the tech reviewers return comments on the other chapters, we&#8217;ll revise some more.
+Most of the chapters are in tech review now, and we've gotten a few of them back. The comments from the reviewers have been very helpful. We expanded the Replication chapter quite a bit after tech review. (And then Peter reviewed it and we expanded it even more). When the tech reviewers return comments on the other chapters, we'll revise some more.
 
-We&#8217;re up to 529 pages in OpenOffice.org now. At my calculated ratio of 1 page = 1.1 pages in print, that&#8217;s about 582 pages in print. And that&#8217;s not counting the Replication chapter, which doesn&#8217;t have all of its illustrations yet. I predicted we&#8217;d break 500 pages; we might get close to 600. These are very, very densely written, too. No offense to the first edition, but the tone is quite different; much less light-hearted banter, much more compressed information. Peter is a walking encyclopedia, and never seems to run out of details we really ought to include because they&#8217;re important (and they are).
+We're up to 529 pages in OpenOffice.org now. At my calculated ratio of 1 page = 1.1 pages in print, that's about 582 pages in print. And that's not counting the Replication chapter, which doesn't have all of its illustrations yet. I predicted we'd break 500 pages; we might get close to 600. These are very, very densely written, too. No offense to the first edition, but the tone is quite different; much less light-hearted banter, much more compressed information. Peter is a walking encyclopedia, and never seems to run out of details we really ought to include because they're important (and they are).
 
-We may, or may not, go to production in the next few weeks. Regardless, I think we&#8217;re still on track to have the book on shelves by the [MySQL Conference &#038; Expo][2] in April. Look for me there. I&#8217;ll be easy to find: I&#8217;ll be the tall guy with a permanent silly grin. (You&#8217;d grin too if you finished writing a book that&#8217;s been this much work!)
+We may, or may not, go to production in the next few weeks. Regardless, I think we're still on track to have the book on shelves by the [MySQL Conference &#038; Expo][2] in April. Look for me there. I'll be easy to find: I'll be the tall guy with a permanent silly grin. (You'd grin too if you finished writing a book that's been this much work!)
 
-I&#8217;ve posted rough outlines for many of the other chapters. The two Peter and I just finished working on are the Scaling/HA/Load-Balancing/Failover chapter, and the Application-Level Optimization chapter. The Scaling/HA chapter is pretty long and very involved, and goes into a lot of detail on scaling in particular, especially horizontal scaling via sharding. (We use &#8220;sharding&#8221; because it&#8217;s less confusing than calling it &#8220;partitioning,&#8221; which already means too many different things in databases).
+I've posted rough outlines for many of the other chapters. The two Peter and I just finished working on are the Scaling/HA/Load-Balancing/Failover chapter, and the Application-Level Optimization chapter. The Scaling/HA chapter is pretty long and very involved, and goes into a lot of detail on scaling in particular, especially horizontal scaling via sharding. (We use "sharding" because it's less confusing than calling it "partitioning," which already means too many different things in databases).
 
-The Application-Level Optimization chapter is a little shorter. It&#8217;s mostly about caching strategies, how to make a web server run well, and so on. These aren&#8217;t what the book focuses on directly, but you can either help or hurt the database server a lot with your application design. Our goal here is to help people avoid the common mistakes.
+The Application-Level Optimization chapter is a little shorter. It's mostly about caching strategies, how to make a web server run well, and so on. These aren't what the book focuses on directly, but you can either help or hurt the database server a lot with your application design. Our goal here is to help people avoid the common mistakes.
 
-For the curious, here&#8217;s the current outline for these two chapters:
+For the curious, here's the current outline for these two chapters:
 
 <pre>Scaling and High Availability
   Terminology
@@ -91,7 +91,7 @@ For the curious, here&#8217;s the current outline for these two chapters:
       Handling Failover in the Application
 </pre>
 
-And here&#8217;s the outline for the Application-Level Optimization chapter:
+And here's the outline for the Application-Level Optimization chapter:
 
 <pre>Application-Level Optimization
   Application Performance Overview
@@ -109,9 +109,9 @@ And here&#8217;s the outline for the Application-Level Optimization chapter:
   Extending MySQL
   Alternatives to MySQL</pre>
 
-The thing that makes me the happiest right now is that we&#8217;re clearly going to make it. For a while, there was just so much work left to do that it was impossible to estimate how much. (Ask my wife: I was wrong many times when she asked how long it would take me to finish a chapter). I also didn&#8217;t know how much revision would be necessary, which is very scary; revising takes about four times as long as writing a first draft, by my reckoning. At this point, the remaining work is much smaller, and much easier to estimate. And now I no longer flip-flop daily between &#8220;I think we can, I think we can&#8221; and &#8220;please don&#8217;t ask, because I don&#8217;t know and I want a vacation.&#8221;
+The thing that makes me the happiest right now is that we're clearly going to make it. For a while, there was just so much work left to do that it was impossible to estimate how much. (Ask my wife: I was wrong many times when she asked how long it would take me to finish a chapter). I also didn't know how much revision would be necessary, which is very scary; revising takes about four times as long as writing a first draft, by my reckoning. At this point, the remaining work is much smaller, and much easier to estimate. And now I no longer flip-flop daily between "I think we can, I think we can" and "please don't ask, because I don't know and I want a vacation."
 
-Subversion shows me that Peter has the Security chapter locked right now. This one is not a huge one, and [Arjen Lentz][3] has already reviewed it as well, so I don&#8217;t expect it to be a huge amount of work to revise. After that, it&#8217;s minor chapters and appendices. (We might actually convert the chapters on Server Status and Tools into appendices, since they got cannibalized when we realized their material fit better elsewhere. They also don&#8217;t have a very chapter-ish feel; they feel more like appendices). We&#8217;ve added a few more appendices, including one on EXPLAIN and one on debugging server and storage-engine locking problems. These are all great reference material.
+Subversion shows me that Peter has the Security chapter locked right now. This one is not a huge one, and [Arjen Lentz][3] has already reviewed it as well, so I don't expect it to be a huge amount of work to revise. After that, it's minor chapters and appendices. (We might actually convert the chapters on Server Status and Tools into appendices, since they got cannibalized when we realized their material fit better elsewhere. They also don't have a very chapter-ish feel; they feel more like appendices). We've added a few more appendices, including one on EXPLAIN and one on debugging server and storage-engine locking problems. These are all great reference material.
 
 See you at the conference in April!
 

@@ -17,13 +17,13 @@ tags:
   - slave corruption
   - SQL
 ---
-I created [MySQL Table Checksum][1] because I was certain replication slaves were slowly drifting out of sync with their masters, and there was no way to prove it. Once I could prove it, I was able to show that replication gets out of sync for lots of people, lots of times. (If you really want to hear war stories, you should probably talk to one of the MySQL support staff or consulting team members; I&#8217;m sure they see this a lot more than I do).
+I created [MySQL Table Checksum][1] because I was certain replication slaves were slowly drifting out of sync with their masters, and there was no way to prove it. Once I could prove it, I was able to show that replication gets out of sync for lots of people, lots of times. (If you really want to hear war stories, you should probably talk to one of the MySQL support staff or consulting team members; I'm sure they see this a lot more than I do).
 
-I finally figured out what was causing one of my most persistent and annoying out-of-sync scenarios. It turns out to be nothing earth-shaking; it&#8217;s just an easy-to-overlook limitation of statement-based replication. You could call it a bug, but as far as I can see, there&#8217;s no way to fix it with statement-based replication. (I&#8217;d love to be proven wrong). Read on for the details.
+I finally figured out what was causing one of my most persistent and annoying out-of-sync scenarios. It turns out to be nothing earth-shaking; it's just an easy-to-overlook limitation of statement-based replication. You could call it a bug, but as far as I can see, there's no way to fix it with statement-based replication. (I'd love to be proven wrong). Read on for the details.
 
 ### The setup
 
-Here&#8217;s the table I saw getting out of sync, usually within hours of being synced:
+Here's the table I saw getting out of sync, usually within hours of being synced:
 
 <pre>CREATE TABLE `workpriority` (
   `client` smallint(5) unsigned NOT NULL,
@@ -35,7 +35,7 @@ Here&#8217;s the table I saw getting out of sync, usually within hours of being 
   KEY `processor` (`processor`,`priority`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1</pre>
 
-This table is essentially a queue of work that needs to be done, along with the priority of each item (`workunit` refers to another table, where the application retrieves the work to do). Applications work against this table in parallel. They run an `UPDATE` statement to claim some work for themselves, then fetch the rows the statement affected. To avoid any race conditions, the &#8220;token&#8221; is the result of the `CONNECTION_ID()` function. Here&#8217;s the statement:
+This table is essentially a queue of work that needs to be done, along with the priority of each item (`workunit` refers to another table, where the application retrieves the work to do). Applications work against this table in parallel. They run an `UPDATE` statement to claim some work for themselves, then fetch the rows the statement affected. To avoid any race conditions, the "token" is the result of the `CONNECTION_ID()` function. Here's the statement:
 
 <pre>update workpriority as p
    inner join (
@@ -55,21 +55,21 @@ Now the application can find out what work it claimed with a simple `SELECT` wit
 
 ### The problem
 
-The problem seemed to be that some binary log events were not getting replayed on the slave. This table accumulated extra rows on the slaves, as though the DELETE statements weren&#8217;t getting to the slaves. To test this, I compared the logs and determined that it&#8217;s not a logging issue; the binary log events are getting to the slave and replaying just fine. I can see them in the slave&#8217;s relay log and in the slave&#8217;s binary log (I have `log_slave_updates` enabled).
+The problem seemed to be that some binary log events were not getting replayed on the slave. This table accumulated extra rows on the slaves, as though the DELETE statements weren't getting to the slaves. To test this, I compared the logs and determined that it's not a logging issue; the binary log events are getting to the slave and replaying just fine. I can see them in the slave's relay log and in the slave's binary log (I have `log_slave_updates` enabled).
 
-So if that&#8217;s not the problem, what is?
+So if that's not the problem, what is?
 
 ### The bug
 
-I already showed you the bug. If you didn&#8217;t see it, well, neither did I &#8212; for a year.
+I already showed you the bug. If you didn't see it, well, neither did I &#8212; for a year.
 
-If you still don&#8217;t see it, here&#8217;s a hint: the slaves get out of sync in totally different ways. In other words, the slaves don&#8217;t even match each other after a little while.
+If you still don't see it, here's a hint: the slaves get out of sync in totally different ways. In other words, the slaves don't even match each other after a little while.
 
-The problem is that `ORDER BY... LIMIT` is non-deterministic. If several rows are tied for priority, the slaves might (and do!) order them differently than the master did. Then the the `UPDATE` statement claims different rows on the slaves. Some rows that have been claimed on the master are still marked as 0 on the slave. Then they don&#8217;t get deleted by the DELETE statement. I was able to confirm this by running a script that does a checksum on this table every few minutes, then as soon as it finds differences dumps the whole table on both the master and the slave. I was able to find some rows that the application hadn&#8217;t deleted yet. Sure enough, some of them weren&#8217;t claimed on the slave.
+The problem is that `ORDER BY... LIMIT` is non-deterministic. If several rows are tied for priority, the slaves might (and do!) order them differently than the master did. Then the the `UPDATE` statement claims different rows on the slaves. Some rows that have been claimed on the master are still marked as 0 on the slave. Then they don't get deleted by the DELETE statement. I was able to confirm this by running a script that does a checksum on this table every few minutes, then as soon as it finds differences dumps the whole table on both the master and the slave. I was able to find some rows that the application hadn't deleted yet. Sure enough, some of them weren't claimed on the slave.
 
 ### The fix
 
-Very simple: resolve the ties. The query now causes a filesort because it can&#8217;t use the index to sort, but it&#8217;s not that big a table and this query doesn&#8217;t run that often. Here&#8217;s the fixed query:
+Very simple: resolve the ties. The query now causes a filesort because it can't use the index to sort, but it's not that big a table and this query doesn't run that often. Here's the fixed query:
 
 <pre>update workpriority as p
    inner join (
@@ -81,6 +81,6 @@ Very simple: resolve the ties. The query now causes a filesort because it can&#8
    ) as chosen using(client, workunit)
    set p.processor = $cxn_id;</pre>
 
-This limitation of statement-based replication is so basic and simple, and I&#8217;ve known about it for a long time, but it&#8217;s so innocuously hidden in plain sight that it took me forever to see it.
+This limitation of statement-based replication is so basic and simple, and I've known about it for a long time, but it's so innocuously hidden in plain sight that it took me forever to see it.
 
  [1]: http://code.google.com/p/maatkit/

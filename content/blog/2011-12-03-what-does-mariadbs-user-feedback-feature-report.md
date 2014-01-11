@@ -1,5 +1,5 @@
 ---
-title: 'What does MariaDB&#8217;s user feedback feature report?'
+title: 'What does MariaDB's user feedback feature report?'
 author: Baron Schwartz
 layout: post
 permalink: /2011/12/03/what-does-mariadbs-user-feedback-feature-report/
@@ -7,9 +7,9 @@ categories:
   - MariaDB
   - SQL
 ---
-I was curious what information MariaDB&#8217;s [&#8220;phone home&#8221; user feedback plugin][1] sends. (It works on more than just MariaDB, by the way.)
+I was curious what information MariaDB's ["phone home" user feedback plugin][1] sends. (It works on more than just MariaDB, by the way.)
 
-It&#8217;s easy enough to find out: just load the plugin, then select from the INFORMATION_SCHEMA.FEEDBACK table. This returns a lot of rows that are obviously the status counters and variables, as well as the plugins loaded in the server. A quick exclusion join will eliminate those, and the result on my laptop is this:
+It's easy enough to find out: just load the plugin, then select from the INFORMATION_SCHEMA.FEEDBACK table. This returns a lot of rows that are obviously the status counters and variables, as well as the plugins loaded in the server. A quick exclusion join will eliminate those, and the result on my laptop is this:
 
 `<pre>select f.* from feedback as f
    left outer join global_variables as v on f.variable_name = v.variable_name
@@ -28,7 +28,7 @@ where s.variable_name is null and v.variable_name is null and p.plugin_name is n
 | Uname_distribution | fedora: Fedora release 15 (Lovelock) |
 +--------------------+--------------------------------------+
 </pre>` 
-This actually isn&#8217;t all, though. If you check the output of SHOW VARIABLES you&#8217;ll see an extra few rows, one of which is this:
+This actually isn't all, though. If you check the output of SHOW VARIABLES you'll see an extra few rows, one of which is this:
 
 `<pre>+---------------------+------------------------------+
 | Variable_name       | Value                        |
@@ -36,6 +36,6 @@ This actually isn&#8217;t all, though. If you check the output of SHOW VARIABLES
 | feedback_server_uid | xlGYjFKJ0ivpSWAktGglpEgVTq8= |
 +---------------------+------------------------------+
 </pre>` 
-I&#8217;ll have to look into how that&#8217;s calculated. It might be useful.
+I'll have to look into how that's calculated. It might be useful.
 
  [1]: http://kb.askmonty.org/en/user-feedback-plugin
