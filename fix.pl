@@ -52,14 +52,17 @@ my %cat_for= (
 
 $skip = 0;
 my %cats;
+my $type = [];
 my %pats = (
    'Maatkit' => ['Open Source', 'Databases'],
+   'MySQL Toolkit' => ['Open Source', 'Databases'],
+   'aspersa|innotop' => ['Open Source', 'Databases'],
 );
 while (<>) {
     if ( !$skip ) {
        foreach my $pat (keys %pats) {
-          if (m/$pat/ ){
-             $type = $pats{$pat};
+          if (m/$pat/i ){
+             push @$type, @{$pats{$pat}};
           }
        }
         if ( $seen_cats && m/^\s+- (.*$)/ ) {
@@ -84,10 +87,8 @@ while (<>) {
                  }
                  $cats{$_}++ foreach @$type;
               }
-              else {
-                 foreach my $cat (sort keys %cats) {
-                    print "  - $cat\n";
-                 }
+              foreach my $cat (sort keys %cats) {
+                 print "  - $cat\n";
               }
 
               $skip++;
