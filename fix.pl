@@ -1,6 +1,5 @@
 use English qw(-no_match_vars);
 
-
 my %cat_for= (
     'About '                 => 'About',
     'About'                  => 'About',
@@ -71,9 +70,12 @@ while (<>) {
              push @$type, @{$pats{$pat}};
           }
        }
-        if ( $seen_cats && m/^\s+- (.*$)/ ) {
-           $newcat = $cat_for{$1};
-           die "@ARGV, $1" unless $newcat;
+        if ( $seen_cats && m/^\s+- (.*)/ ) {
+           $cat = $1;
+           $cat =~ s/^\s+//g;
+           $cat =~ s/\s+$//g;
+           $newcat = $cat_for{$cat};
+           die "$ARGV[0], $cat" unless $newcat;
            $cats{$newcat}++;
            next;
         }
@@ -84,7 +86,6 @@ while (<>) {
         if (m/---/){
            $dashes++;
            if ($dashes == 2) {
-                 print "categories:\n";
               if (!$seen_cats) {
                  if (!$type) {
                     print;
@@ -93,6 +94,7 @@ while (<>) {
                  }
                  $cats{$_}++ foreach @$type;
               }
+              print "categories:\n" if %cats;
               foreach my $cat (sort keys %cats) {
                  print "  - $cat\n";
               }
