@@ -1,5 +1,5 @@
 ---
-title: 'Sessions I'd like to see at Percona Live in April'
+title: "Sessions I'd like to see at Percona Live in April"
 author: Baron Schwartz
 layout: post
 permalink: /2013/02/13/sessions-id-like-to-see-at-percona-live-in-april/

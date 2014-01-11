@@ -1,5 +1,5 @@
 ---
-title: 'High Performance MySQL, Second Edition: Query Performance Optimization'
+title: "High Performance MySQL, Second Edition: Query Performance Optimization"
 author: Baron Schwartz
 excerpt: |
   <p>Your comments on the <a href="http://www.xaprb.com/blog/2007/10/05/high-performance-mysql-second-edition-advanced-sql-functionality/">Advanced MySQL Features</a> chapter were great.  A lot of the questions I got (in the comments and via email) about chapter 6 are really addressed in chapter 5, "Query Performance Optimization," so I'm posting its outline too.  I have the same questions:  are there things you'd like to see us cover?  Do you have any favorite techniques you'd like to see us include?  Any other comments or questions?</p>

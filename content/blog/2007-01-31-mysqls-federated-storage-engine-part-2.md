@@ -1,5 +1,5 @@
 ---
-title: 'MySQL's FEDERATED storage engine: Part 2'
+title: "MySQL's FEDERATED storage engine: Part 2"
 author: Baron Schwartz
 excerpt: |
   <p>In part 1 of this series I examined the behavior of MySQL's

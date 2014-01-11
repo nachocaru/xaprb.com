@@ -1,5 +1,5 @@
 ---
-title: 'It's not just database servers'
+title: "It's not just database servers"
 author: Baron Schwartz
 layout: post
 permalink: /2012/11/13/its-not-just-database-servers/

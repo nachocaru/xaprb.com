@@ -1,5 +1,5 @@
 ---
-title: 'How to tune MySQL's sort_buffer_size'
+title: "How to tune MySQL's sort_buffer_size"
 author: Baron Schwartz
 layout: post
 permalink: /2010/05/09/how-to-tune-mysqls-sort_buffer_size/

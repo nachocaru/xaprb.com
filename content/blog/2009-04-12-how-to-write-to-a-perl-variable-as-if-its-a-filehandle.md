@@ -1,5 +1,5 @@
 ---
-title: 'How to write to a Perl variable as if it's a filehandle'
+title: "How to write to a Perl variable as if it's a filehandle"
 author: Baron Schwartz
 layout: post
 permalink: /2009/04/12/how-to-write-to-a-perl-variable-as-if-its-a-filehandle/

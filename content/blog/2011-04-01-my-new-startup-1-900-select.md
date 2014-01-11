@@ -1,5 +1,5 @@
 ---
-title: 'My new startup: 1-900-SELECT'
+title: "My new startup: 1-900-SELECT"
 author: Baron Schwartz
 layout: post
 permalink: /2011/04/01/my-new-startup-1-900-select/

@@ -1,5 +1,5 @@
 ---
-title: 'Life as a consultant: my crooked arm for a pillow'
+title: "Life as a consultant: my crooked arm for a pillow"
 author: Baron Schwartz
 layout: post
 permalink: /2008/09/03/life-as-a-consultant-my-crooked-arm-for-a-pillow/

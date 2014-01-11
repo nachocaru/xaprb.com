@@ -1,5 +1,5 @@
 ---
-title: 'Not a bug: MySQL Connector/J doesn't make toast'
+title: "Not a bug: MySQL Connector/J doesn't make toast"
 author: Baron Schwartz
 excerpt: |
   <p>I was just searching for something and found this <a href="http://bugs.mysql.com/bug.php?id=2">MySQL bug report</a>:</p>

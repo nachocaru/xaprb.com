@@ -1,5 +1,5 @@
 ---
-title: 'S**t sales engineers say'
+title: "S**t sales engineers say"
 author: Baron Schwartz
 layout: post
 permalink: /2013/12/07/st-sales-engineers-say/

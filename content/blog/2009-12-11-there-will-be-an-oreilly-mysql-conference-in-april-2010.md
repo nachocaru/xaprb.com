@@ -1,5 +1,5 @@
 ---
-title: 'There will be an O'Reilly MySQL Conference in April 2010'
+title: "There will be an O'Reilly MySQL Conference in April 2010"
 author: Baron Schwartz
 layout: post
 permalink: /2009/12/11/there-will-be-an-oreilly-mysql-conference-in-april-2010/

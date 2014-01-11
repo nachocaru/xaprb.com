@@ -1,5 +1,5 @@
 ---
-title: 'I'm a Postgres user, as it turns out'
+title: "I'm a Postgres user, as it turns out"
 author: Baron Schwartz
 layout: post
 permalink: /2009/11/03/im-a-postgres-user-as-it-turns-out/

@@ -1,5 +1,5 @@
 ---
-title: 'What I've been doing lately'
+title: "What I've been doing lately"
 author: Baron Schwartz
 excerpt: |
   <p>I haven't been blogging about the things I used to -- how-tos and technical hacks -- because I've been working quite hard on <a href="http://mysqltoolkit.sourceforge.net/">MySQL Toolkit</a> and, believe it or not, <a href="http://innotop.sourceforge.net/projects/innotop/">innotop</a>.  I've made it possible to write innotop plugins, which have been very useful to our team at work, and I'm working on documentation.  Plugins won't make it into the upcoming release; it'll just be bug fixes and documentation.  These projects have taken up most of my free time.</p>

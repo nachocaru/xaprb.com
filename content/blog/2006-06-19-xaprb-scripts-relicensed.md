@@ -1,5 +1,5 @@
 ---
-title: 'Announcement: Xaprb scripts are re-licensed'
+title: "Announcement: Xaprb scripts are re-licensed"
 author: Baron Schwartz
 excerpt: '<p>I have re-licensed some of my scripts under the LGPL, which means you can use them as part of other non-GPL software.</p>'
 layout: post

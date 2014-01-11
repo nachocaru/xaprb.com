@@ -1,5 +1,5 @@
 ---
-title: 'What are MySQL's deleted temp files?'
+title: "What are MySQL's deleted temp files?"
 author: Baron Schwartz
 layout: post
 permalink: /2012/09/12/what-are-mysqls-deleted-temp-files/

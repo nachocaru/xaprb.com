@@ -1,5 +1,5 @@
 ---
-title: 'I've been interviewed in the NoCOUG Journal'
+title: "I've been interviewed in the NoCOUG Journal"
 author: Baron Schwartz
 layout: post
 permalink: /2012/02/16/ive-been-interviewed-in-the-nocoug-journal/

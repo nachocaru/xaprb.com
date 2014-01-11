@@ -1,5 +1,5 @@
 ---
-title: 'Features I'd like to see in InnoDB'
+title: "Features I'd like to see in InnoDB"
 author: Baron Schwartz
 layout: post
 permalink: /2011/10/12/features-id-like-to-see-in-innodb/

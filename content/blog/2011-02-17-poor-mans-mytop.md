@@ -1,5 +1,5 @@
 ---
-title: 'Poor man's mytop'
+title: "Poor man's mytop"
 author: Baron Schwartz
 layout: post
 permalink: /2011/02/17/poor-mans-mytop/

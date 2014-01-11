@@ -1,5 +1,5 @@
 ---
-title: 'My new favorite comic: The Adventures of Ace, DBA'
+title: "My new favorite comic: The Adventures of Ace, DBA"
 author: Baron Schwartz
 layout: post
 permalink: /2008/08/08/my-new-favorite-comic-the-adventures-of-ace-dba/

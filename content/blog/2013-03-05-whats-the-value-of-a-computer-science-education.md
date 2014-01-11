@@ -1,5 +1,5 @@
 ---
-title: 'What's the value of a Computer Science education?'
+title: "What's the value of a Computer Science education?"
 author: Baron Schwartz
 layout: post
 permalink: /2013/03/05/whats-the-value-of-a-computer-science-education/

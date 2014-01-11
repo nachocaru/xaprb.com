@@ -1,5 +1,5 @@
 ---
-title: 'What's your opinion of High Performance MySQL?'
+title: "What's your opinion of High Performance MySQL?"
 author: Baron Schwartz
 layout: post
 permalink: /2012/09/05/whats-your-opinion-of-high-performance-mysql/

@@ -1,5 +1,5 @@
 ---
-title: 'Tables and data part 1: CSS and data types'
+title: "Tables and data part 1: CSS and data types"
 author: Baron Schwartz
 excerpt: '<p>This article explains how to use CSS to specify data type meta-data in a way any processing application can use.</p>'
 layout: post

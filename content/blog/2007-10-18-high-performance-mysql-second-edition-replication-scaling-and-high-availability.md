@@ -1,5 +1,5 @@
 ---
-title: 'High Performance MySQL, Second Edition: Replication, Scaling and High Availability'
+title: "High Performance MySQL, Second Edition: Replication, Scaling and High Availability"
 author: Baron Schwartz
 excerpt: |
   <p>Continuing in the tradition, which I hope has been as helpful to you as it has been to me, I'm opening the floor for suggestions on chapter 9 of the upcoming High Performance MySQL, Second Edition.  Unlike the other chapters for which I've listed outlines, this one isn't substantially written yet.  It's in detailed outline form at this point (a tactic that has worked very well for us so far -- I'll write about that someday).</p>

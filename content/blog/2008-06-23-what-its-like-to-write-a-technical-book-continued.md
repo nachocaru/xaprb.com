@@ -1,5 +1,5 @@
 ---
-title: 'What it's like to write a technical book, continued'
+title: "What it's like to write a technical book, continued"
 author: Baron Schwartz
 layout: post
 permalink: /2008/06/23/what-its-like-to-write-a-technical-book-continued/

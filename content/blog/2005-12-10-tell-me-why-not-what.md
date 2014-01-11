@@ -1,5 +1,5 @@
 ---
-title: 'How to write good comments: say why, not what'
+title: "How to write good comments: say why, not what"
 author: Baron Schwartz
 excerpt: '<p>This article uses two examples of bad comments to explain my rule of thumb for good commenting style: comments should say why, not what.</p>'
 layout: post

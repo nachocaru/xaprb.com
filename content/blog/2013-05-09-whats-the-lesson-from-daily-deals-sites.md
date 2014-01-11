@@ -1,5 +1,5 @@
 ---
-title: 'What's the lesson from daily deals sites?'
+title: "What's the lesson from daily deals sites?"
 author: Baron Schwartz
 layout: post
 permalink: /2013/05/09/whats-the-lesson-from-daily-deals-sites/

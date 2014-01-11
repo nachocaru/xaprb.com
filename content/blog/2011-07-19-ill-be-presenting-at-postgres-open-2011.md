@@ -1,5 +1,5 @@
 ---
-title: 'I'll be presenting at Postgres Open 2011'
+title: "I'll be presenting at Postgres Open 2011"
 author: Baron Schwartz
 layout: post
 permalink: /2011/07/19/ill-be-presenting-at-postgres-open-2011/

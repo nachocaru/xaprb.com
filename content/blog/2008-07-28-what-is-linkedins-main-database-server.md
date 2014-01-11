@@ -1,5 +1,5 @@
 ---
-title: 'What is LinkedIn's main database server?'
+title: "What is LinkedIn's main database server?"
 author: Baron Schwartz
 layout: post
 permalink: /2008/07/28/what-is-linkedins-main-database-server/

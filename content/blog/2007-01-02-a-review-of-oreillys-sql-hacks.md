@@ -1,5 +1,5 @@
 ---
-title: 'A review of O'Reilly's SQL Hacks'
+title: "A review of O'Reilly's SQL Hacks"
 author: Baron Schwartz
 excerpt: "<p>I recently read O'Reilly's SQL Hacks book.  It's an interesting and rewarding mixture of tips and tricks for novice to expert users.  I give it 3 out of 5 stars.  Here's why.</p>"
 layout: post

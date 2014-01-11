@@ -1,5 +1,5 @@
 ---
-title: 'Apsersa's summary tool supports Adaptec and MegaRAID controllers'
+title: "Apsersa's summary tool supports Adaptec and MegaRAID controllers"
 author: Baron Schwartz
 layout: post
 permalink: /2010/05/16/apsersas-summary-tool-supports-adaptec-and-megaraid-controllers/

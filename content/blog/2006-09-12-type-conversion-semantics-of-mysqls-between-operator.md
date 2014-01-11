@@ -1,5 +1,5 @@
 ---
-title: 'Type conversion semantics of MySQL's BETWEEN operator'
+title: "Type conversion semantics of MySQL's BETWEEN operator"
 author: Baron Schwartz
 excerpt: '<p>I got bitten by an implicit type conversion with MySQL recently.  This article is about avoiding implicit type conversions, and the weird places you might find them.</p>'
 layout: post

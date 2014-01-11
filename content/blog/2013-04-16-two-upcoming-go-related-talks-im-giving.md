@@ -1,5 +1,5 @@
 ---
-title: 'Two upcoming Go-related talks I'm giving'
+title: "Two upcoming Go-related talks I'm giving"
 author: Baron Schwartz
 layout: post
 permalink: /2013/04/16/two-upcoming-go-related-talks-im-giving/

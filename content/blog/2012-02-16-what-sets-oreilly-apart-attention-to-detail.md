@@ -1,5 +1,5 @@
 ---
-title: 'What sets O'Reilly apart: attention to detail'
+title: "What sets O'Reilly apart: attention to detail"
 author: Baron Schwartz
 layout: post
 permalink: /2012/02/16/what-sets-oreilly-apart-attention-to-detail/

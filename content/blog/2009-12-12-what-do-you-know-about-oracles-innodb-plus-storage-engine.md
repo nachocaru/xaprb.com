@@ -1,5 +1,5 @@
 ---
-title: 'What do you know about Oracle's InnoDB+ storage engine?'
+title: "What do you know about Oracle's InnoDB+ storage engine?"
 author: Baron Schwartz
 layout: post
 permalink: /2009/12/12/what-do-you-know-about-oracles-innodb-plus-storage-engine/

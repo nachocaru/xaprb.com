@@ -1,5 +1,5 @@
 ---
-title: 'How to coordinate distributed work with MySQL's GET_LOCK'
+title: "How to coordinate distributed work with MySQL's GET_LOCK"
 author: Baron Schwartz
 excerpt: "<p>This article explains how I replaced file-based methods to ensure only one running instance of a program with MySQL's <code>GET_LOCK</code> function.  The result is mutual exclusivity that works in a distributed environment, and it's dead simple to implement.</p>"
 layout: post

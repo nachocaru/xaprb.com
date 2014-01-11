@@ -1,5 +1,5 @@
 ---
-title: 'Why I'm not an ACM member'
+title: "Why I'm not an ACM member"
 author: Baron Schwartz
 layout: post
 permalink: /2012/05/29/why-im-not-an-acm-member/

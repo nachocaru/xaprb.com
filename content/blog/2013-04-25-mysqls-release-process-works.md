@@ -1,5 +1,5 @@
 ---
-title: 'MySQL's release process works'
+title: "MySQL's release process works"
 author: Baron Schwartz
 layout: post
 permalink: /2013/04/25/mysqls-release-process-works/

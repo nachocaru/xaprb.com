@@ -1,5 +1,5 @@
 ---
-title: 'ASP.NET's Profile DB schema'
+title: "ASP.NET's Profile DB schema"
 author: Baron Schwartz
 excerpt: "<p>ASP.NET has built-in functionality to store profile information about a user.  Unfortunately, the DB table schema isn't in first normal form.  Because of this, the profile feature is somewhat inflexible for some uses, unless you write a custom provider.</p>"
 layout: post

@@ -1,5 +1,5 @@
 ---
-title: 'Free MySQL webinar: zero-downtime schema changes'
+title: "Free MySQL webinar: zero-downtime schema changes"
 author: Baron Schwartz
 layout: post
 permalink: /2012/07/17/free-mysql-webinar-zero-downtime-schema-changes/

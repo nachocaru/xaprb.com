@@ -1,5 +1,5 @@
 ---
-title: 'Breaking news: MySQL saves baby seals'
+title: "Breaking news: MySQL saves baby seals"
 author: Baron Schwartz
 layout: post
 permalink: /2011/03/28/breaking-news-mysql-saves-baby-seals/

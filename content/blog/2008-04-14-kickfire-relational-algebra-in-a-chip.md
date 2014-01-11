@@ -1,5 +1,5 @@
 ---
-title: 'Kickfire: relational algebra in a chip'
+title: "Kickfire: relational algebra in a chip"
 author: Baron Schwartz
 layout: post
 permalink: /2008/04/14/kickfire-relational-algebra-in-a-chip/

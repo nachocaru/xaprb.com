@@ -1,5 +1,5 @@
 ---
-title: 'Features I'd like to see in MySQL: CTEs'
+title: "Features I'd like to see in MySQL: CTEs"
 author: Baron Schwartz
 layout: post
 permalink: /2013/09/09/features-id-like-to-see-in-mysql-ctes/

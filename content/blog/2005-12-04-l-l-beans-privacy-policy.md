@@ -1,5 +1,5 @@
 ---
-title: 'L. L. Bean's privacy policy'
+title: "L. L. Bean's privacy policy"
 author: Baron Schwartz
 excerpt: "<p>L. L. Bean got me all excited by telling me they handled my private data the right way before I even asked them to.  Unfortunately it wasn't really true.</p>"
 layout: post

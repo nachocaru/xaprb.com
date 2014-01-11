@@ -1,5 +1,5 @@
 ---
-title: 'Handling MySQL's warnings in Go code'
+title: "Handling MySQL's warnings in Go code"
 author: Baron Schwartz
 layout: post
 permalink: /2012/12/23/handling-mysqls-warnings-in-go-code/

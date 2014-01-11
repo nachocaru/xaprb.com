@@ -1,5 +1,5 @@
 ---
-title: 'Why won't MySQL use the best index in a join?'
+title: "Why won't MySQL use the best index in a join?"
 author: Baron Schwartz
 layout: post
 permalink: /2012/08/20/why-wont-mysql-use-the-best-index-in-a-join/

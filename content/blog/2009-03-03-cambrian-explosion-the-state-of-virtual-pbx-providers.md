@@ -1,5 +1,5 @@
 ---
-title: 'Cambrian explosion: the state of virtual PBX providers'
+title: "Cambrian explosion: the state of virtual PBX providers"
 author: Baron Schwartz
 layout: post
 permalink: /2009/03/03/cambrian-explosion-the-state-of-virtual-pbx-providers/

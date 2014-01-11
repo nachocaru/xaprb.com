@@ -1,5 +1,5 @@
 ---
-title: 'Why IS NULL doesn't always work in MySQL'
+title: "Why IS NULL doesn't always work in MySQL"
 author: Baron Schwartz
 excerpt: '<p>How can a query like "SELECT * FROM tbl WHERE col IS NULL" return a row where the column has a (non-NULL) value?  Read on to find out.</p>'
 layout: post

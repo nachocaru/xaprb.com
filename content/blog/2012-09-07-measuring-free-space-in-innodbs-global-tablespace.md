@@ -1,5 +1,5 @@
 ---
-title: 'Measuring free space in InnoDB's global tablespace'
+title: "Measuring free space in InnoDB's global tablespace"
 author: Baron Schwartz
 layout: post
 permalink: /2012/09/07/measuring-free-space-in-innodbs-global-tablespace/

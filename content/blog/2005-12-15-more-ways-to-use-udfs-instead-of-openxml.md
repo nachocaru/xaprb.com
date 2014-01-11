@@ -1,5 +1,5 @@
 ---
-title: 'More alternatives to <code>openxml</code>'
+title: "More alternatives to <code>openxml</code>"
 author: Baron Schwartz
 excerpt: '<p>Here are some alternate usage scenarios for the UDF I wrote to avoid <code>openxml</code> in SQL Server 2000.</p>'
 layout: post

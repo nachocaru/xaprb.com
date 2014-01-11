@@ -1,5 +1,5 @@
 ---
-title: 'MySQL command-line tip: compare result sets'
+title: "MySQL command-line tip: compare result sets"
 author: Baron Schwartz
 layout: post
 permalink: /2009/03/25/mysql-command-line-tip-compare-result-sets/

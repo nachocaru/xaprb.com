@@ -1,5 +1,5 @@
 ---
-title: 'Are you sure you're reading the second edition of High Performance MySQL?'
+title: "Are you sure you're reading the second edition of High Performance MySQL?"
 author: Baron Schwartz
 layout: post
 permalink: >

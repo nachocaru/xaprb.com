@@ -1,5 +1,5 @@
 ---
-title: 'What does MariaDB's user feedback feature report?'
+title: "What does MariaDB's user feedback feature report?"
 author: Baron Schwartz
 layout: post
 permalink: /2011/12/03/what-does-mariadbs-user-feedback-feature-report/

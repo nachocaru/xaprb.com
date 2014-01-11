@@ -1,5 +1,5 @@
 ---
-title: 'Using encryption? You're suspicious'
+title: "Using encryption? You're suspicious"
 author: Baron Schwartz
 layout: post
 permalink: /2013/08/01/using-encryption-youre-suspicious/

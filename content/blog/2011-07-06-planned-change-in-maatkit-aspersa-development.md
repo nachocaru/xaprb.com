@@ -1,5 +1,5 @@
 ---
-title: 'Planned change in Maatkit &#038; Aspersa development'
+title: "Planned change in Maatkit &#038; Aspersa development"
 author: Baron Schwartz
 layout: post
 permalink: /2011/07/06/planned-change-in-maatkit-aspersa-development/

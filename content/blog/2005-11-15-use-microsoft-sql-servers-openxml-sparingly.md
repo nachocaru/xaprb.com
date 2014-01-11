@@ -1,5 +1,5 @@
 ---
-title: 'Efficient alternatives to Microsoft SQL Server's openxml'
+title: "Efficient alternatives to Microsoft SQL Server's openxml"
 author: Baron Schwartz
 excerpt: "<p>Microsoft SQL Server's <code>openxml</code> function is highly CPU-intensive.  This article demonstrates more efficient alternatives to <code>openxml</code>.</p>"
 layout: post

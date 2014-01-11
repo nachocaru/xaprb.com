@@ -1,5 +1,5 @@
 ---
-title: 'Things I'm looking forward to in MySQL 5.6'
+title: "Things I'm looking forward to in MySQL 5.6"
 author: Baron Schwartz
 layout: post
 permalink: /2012/06/11/things-im-looking-forward-to-in-mysql-5-6/

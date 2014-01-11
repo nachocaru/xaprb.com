@@ -1,5 +1,5 @@
 ---
-title: 'High Performance MySQL, Second Edition: Schema Optimization and Indexing'
+title: "High Performance MySQL, Second Edition: Schema Optimization and Indexing"
 author: Baron Schwartz
 excerpt: |
   <p>I've been trying to <a href="http://www.fixpert.com/web-design/dont-circle-back/">circle back</a> and clean up things I left for later in several chapters of High Performance MySQL, second edition.  This includes a lot of material in chapter 4, Schema Optimization and Indexing.  At some point I'll write more about the process of writing this book, and what we've done well and what we've learned to do better, but for right now I wanted to complete the picture of what material we have on schema, index, and query optimization.  The last two chapters I've written about (<a href="http://www.xaprb.com/blog/2007/10/07/high-performance-mysql-second-edition-query-performance-optimization/">Query Performance Optimization</a> and <a href="http://www.xaprb.com/blog/2007/10/05/high-performance-mysql-second-edition-advanced-sql-functionality/">Advanced MySQL Features</a>) have generated lots of feed back along the lines of "don't forget X!" to which I'm obliged to reply "It's in a different chapter."</p>

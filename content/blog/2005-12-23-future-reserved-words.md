@@ -1,5 +1,5 @@
 ---
-title: 'Don't use future reserved words as identifiers in JavaScript'
+title: "Don't use future reserved words as identifiers in JavaScript"
 author: Baron Schwartz
 excerpt: '<p>This article explains how to avoid unforeseen errors in JavaScript due to using reserved words as identifiers.</p>'
 layout: post

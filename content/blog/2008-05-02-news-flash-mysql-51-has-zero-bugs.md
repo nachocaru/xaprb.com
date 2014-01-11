@@ -1,5 +1,5 @@
 ---
-title: 'News flash: MySQL 5.1 has zero bugs'
+title: "News flash: MySQL 5.1 has zero bugs"
 author: Baron Schwartz
 layout: post
 permalink: /2008/05/02/news-flash-mysql-51-has-zero-bugs/

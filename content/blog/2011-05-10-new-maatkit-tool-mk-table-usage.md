@@ -1,5 +1,5 @@
 ---
-title: 'New Maatkit tool: mk-table-usage'
+title: "New Maatkit tool: mk-table-usage"
 author: Baron Schwartz
 layout: post
 permalink: /2011/05/10/new-maatkit-tool-mk-table-usage/

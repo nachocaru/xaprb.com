@@ -1,5 +1,5 @@
 ---
-title: 'What's the benefit of the cloud?'
+title: "What's the benefit of the cloud?"
 author: Baron Schwartz
 layout: post
 permalink: /2012/10/03/whats-the-benefit-of-the-cloud/

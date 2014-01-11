@@ -1,5 +1,5 @@
 ---
-title: 'The new hotness in open-core: InnoDB'
+title: "The new hotness in open-core: InnoDB"
 author: Baron Schwartz
 layout: post
 permalink: /2010/07/02/the-new-hotness-in-open-core-innodb/

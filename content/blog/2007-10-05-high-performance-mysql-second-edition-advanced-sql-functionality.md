@@ -1,5 +1,5 @@
 ---
-title: 'High Performance MySQL, Second Edition: Advanced SQL Functionality'
+title: "High Performance MySQL, Second Edition: Advanced SQL Functionality"
 author: Baron Schwartz
 excerpt: |
   <p>Work continues apace on <a href="http://www.xaprb.com/blog/2007/08/30/coming-soon-high-performance-mysql-second-edition/">High Performance MySQL, Second Edition</a> (the link leads to the chapter outline).  I'm working now on Chapter 6, Advanced SQL Functionality, and thought I'd solicit input on it.  Are there things you'd like to see us cover?  Do you have any favorite techniques you'd like to see us include?  Feel free to leave feedback in the comments.  The chapter is already significantly done, with 26 pages written, but the ink's not on paper yet, so there's still time to correct omissions!</p>

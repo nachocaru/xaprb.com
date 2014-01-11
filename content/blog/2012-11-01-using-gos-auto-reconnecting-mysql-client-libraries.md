@@ -1,5 +1,5 @@
 ---
-title: 'Using Go's auto-reconnecting MySQL client libraries'
+title: "Using Go's auto-reconnecting MySQL client libraries"
 author: Baron Schwartz
 layout: post
 permalink: /2012/11/01/using-gos-auto-reconnecting-mysql-client-libraries/

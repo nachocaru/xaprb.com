@@ -1,5 +1,5 @@
 ---
-title: 'Introducing MySQL Toolkit's Show Grants tool'
+title: "Introducing MySQL Toolkit's Show Grants tool"
 author: Baron Schwartz
 excerpt: "<p>MySQL Toolkit's Show Grants tool makes it easy to extract grants from a MySQL server in canonical form. You can use it to replicate grants between servers, diff grants, and avoid spurious changesets in version control systems.</p>"
 layout: post

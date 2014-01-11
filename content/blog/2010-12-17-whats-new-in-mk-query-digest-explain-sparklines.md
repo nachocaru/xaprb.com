@@ -1,5 +1,5 @@
 ---
-title: 'What's new in mk-query-digest: EXPLAIN sparklines'
+title: "What's new in mk-query-digest: EXPLAIN sparklines"
 author: Baron Schwartz
 layout: post
 permalink: /2010/12/17/whats-new-in-mk-query-digest-explain-sparklines/

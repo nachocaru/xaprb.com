@@ -1,5 +1,5 @@
 ---
-title: 'NoSQL doesn't mean non-relational'
+title: "NoSQL doesn't mean non-relational"
 author: Baron Schwartz
 layout: post
 permalink: /2010/03/08/nosql-doesnt-mean-non-relational/

@@ -1,5 +1,5 @@
 ---
-title: 'Cary Millsap: Thinking Clearly about Performance'
+title: "Cary Millsap: Thinking Clearly about Performance"
 author: Baron Schwartz
 layout: post
 permalink: /2010/02/22/cary-millsap-thinking-clearly-about-performance/

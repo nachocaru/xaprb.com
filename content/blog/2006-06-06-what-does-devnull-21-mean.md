@@ -1,5 +1,5 @@
 ---
-title: 'What does "> /dev/null 2>&#038;1&#8243; mean?'
+title: "What does "> /dev/null 2>&#038;1&#8243; mean?"
 author: Baron Schwartz
 excerpt: "<p>I remember being confused for a very long time about the trailing garbage in commands I saw in Unix systems, especially while watching compilers do their work.  Nobody I asked could tell me what the funny greater-thans, ampersands and numbers after the commands meant, and search engines never turned up anything but examples of it being used without explanation.  In this article I'll explain those weird commands.</p>"
 layout: post

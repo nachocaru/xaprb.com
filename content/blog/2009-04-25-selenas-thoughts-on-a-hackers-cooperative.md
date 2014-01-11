@@ -1,5 +1,5 @@
 ---
-title: 'Selena's thoughts on a hacker's cooperative'
+title: "Selena's thoughts on a hacker's cooperative"
 author: Baron Schwartz
 layout: post
 permalink: /2009/04/25/selenas-thoughts-on-a-hackers-cooperative/

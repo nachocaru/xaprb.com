@@ -1,5 +1,5 @@
 ---
-title: 'Don't change a constant variable'
+title: "Don't change a constant variable"
 author: Baron Schwartz
 excerpt: '<p>If a variable is declared as constant, it should never change.  If it needs to be changed, something is wrong.</p>'
 layout: post

@@ -1,5 +1,5 @@
 ---
-title: 'A growing trend: InnoDB mutex contention'
+title: "A growing trend: InnoDB mutex contention"
 author: Baron Schwartz
 layout: post
 permalink: /2010/03/04/a-growing-trend-innodb-mutex-contention/

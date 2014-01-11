@@ -1,5 +1,5 @@
 ---
-title: 'Windows XP's built-in unzipping functionality is not trustworthy'
+title: "Windows XP's built-in unzipping functionality is not trustworthy"
 author: Baron Schwartz
 excerpt: "<p>Window's XP's integrated ZIP functionality is not trustworthy.  You should not rely on it to correctly unzip or show the contents of archives.</p>"
 layout: post

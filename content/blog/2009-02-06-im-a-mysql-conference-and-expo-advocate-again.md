@@ -1,5 +1,5 @@
 ---
-title: 'I'm a MySQL Conference and Expo advocate again'
+title: "I'm a MySQL Conference and Expo advocate again"
 author: Baron Schwartz
 layout: post
 permalink: /2009/02/06/im-a-mysql-conference-and-expo-advocate-again/

@@ -1,5 +1,5 @@
 ---
-title: 'I'll be speaking at the O'Reilly MySQL Conference 2010'
+title: "I'll be speaking at the O'Reilly MySQL Conference 2010"
 author: Baron Schwartz
 layout: post
 permalink: /2010/02/20/ill-be-speaking-at-the-oreilly-mysql-conference-2010/

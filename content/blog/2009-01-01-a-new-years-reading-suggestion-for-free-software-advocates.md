@@ -1,5 +1,5 @@
 ---
-title: 'A New Year's reading suggestion for Free Software advocates'
+title: "A New Year's reading suggestion for Free Software advocates"
 author: Baron Schwartz
 layout: post
 permalink: /2009/01/01/a-new-years-reading-suggestion-for-free-software-advocates/
