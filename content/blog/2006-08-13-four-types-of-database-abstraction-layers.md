@@ -1,6 +1,5 @@
 ---
 title: Four types of database abstraction layers
-  <p>Quite a few people have chimed in on a recent discussion about PHP, MySQL, database abstraction layers, and performance.  I think enough viewpoints have been covered that I don't need to comment, but one question I don't see answered is "what are the qualities of a good SQL abstraction layer?"  I think it's a very interesting -- and complicated -- question.  As it turns out, the term has several meanings, and I think it's important to understand them.  In this article I explain one way to categorize different types of database abstraction layers, the goals for each, and some useful success criteria.</p>
 date: "2006-08-13"
 permalink: /2006/08/13/four-types-of-database-abstraction-layers/
 description:

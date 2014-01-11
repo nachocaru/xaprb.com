@@ -1,6 +1,5 @@
 ---
 title: "What's the best way to choose graph colors?"
-  <p>I have an issue I hope someone can help me with.  I am generating <a href="http://oss.oetiker.ch/rrdtool/">RRDtool</a> graphs (for <a href="http://www.cacti.org/">Cacti</a> monitoring templates for MySQL, which I'll release soon) that have up to 11 different metrics on them.  With that many lines or areas on a graph, it becomes very hard to pick colors that are easy to see and easy to distinguish from each other.  What's a good way to choose such colors?  Is there a way to do it automatically -- is there a formal method that will produce good results?</p>
 date: "2008-03-22"
 permalink: /2008/03/22/whats-the-best-way-to-choose-graph-colors/
 description:

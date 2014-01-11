@@ -1,10 +1,7 @@
 ---
 title: A review of PostgreSQL 9 Administration Cookbook by Riggs and Krosing
 permalink: >
-  /2011/06/08/a-review-of-postgresql-9-administration-cookbook-by-riggs-and-krosing/
 categories:
-  - PostgreSQL
-  - Review
 ---
 [<img style="float:left; padding-right:10px" src="http://www.xaprb.com/blog/wp-content/uploads/2011/06/postgreql-administration-cookbook.jpg" alt="" title="postgreql-administration-cookbook" width="200" height="247" class="alignleft size-full wp-image-2351" />][1]
 
@@ -20,6 +17,3 @@ On the negative side, I can only remark that the cookbook format in general isn'
 
 Overall worth picking up, unless you're quite knowledgeable about PostgreSQL already, in which case I wouldn't expect you to learn much from this book.
 
- [1]: http://www.amazon.com/PostgreSQL-Admin-Cookbook-Simon-Riggs/dp/1849510288?tag=xaprb-20
- [2]: http://www.packtpub.com/postgresql-9-admin-cookbook/book
- [3]: http://www.xaprb.com/blog/2011/02/13/a-review-of-postgresql-9-0-high-performance-by-gregory-smith/

@@ -1,7 +1,5 @@
 ---
 title: How to use foreign key cascades in MySQL
-  |
-    <p>A friend of mine recently asked me to show him how to enable cascading deletes between tables in MySQL.  Cascading updates and deletes can be turned on between tables related with foreign keys in many <abbr title="Relational Database Management System">RDBMS</abbr>s.  Though they can be convenient for some purposes, they can have unexpected side effects, and can be very confusing and dangerous at times.  In this article I'll discuss some of the ways cascades can do invisible things, and show you one place they can be very handy too.</p>
 date: "2006-04-07"
 permalink: /2006/04/07/foreign-key-cascades-in-mysql/
 description:

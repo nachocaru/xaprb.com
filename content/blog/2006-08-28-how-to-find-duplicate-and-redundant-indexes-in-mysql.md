@@ -1,6 +1,5 @@
 ---
 title: How to find duplicate and redundant indexes in MySQL
-  <p>Peter Zaitsev over at the excellent <a href="http://www.mysqlperformanceblog.com/">MySQL Performance Blog</a> recently wrote an article on <a href="http://www.mysqlperformanceblog.com/2006/08/17/duplicate-indexes-and-redundant-indexes/">duplicated and redundant indexes</a> -- any indexes which cover exactly the same columns as another index, or cover a leftmost prefix of another index.  While there are subtleties, such as FULLTEXT indexes not being the same as non-FULLTEXT, for the most part this is sufficient criteria to raise possible duplicates to a DBA's attention.  I opened my big mouth in the comments and said I could write a quick Perl script to discover possible offenders in just a few lines of code.  Once I did that, I had to do it and give you the script.  Here it is.</p>
 date: "2006-08-28"
 permalink: /2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/
 description:

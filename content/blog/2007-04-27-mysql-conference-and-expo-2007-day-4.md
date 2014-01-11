@@ -1,16 +1,7 @@
 ---
 title: MySQL Conference and Expo 2007, Day 4
-  <p><a href="http://www.mysqlconf.com/"><img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" /></a>
-  
-  <p>In my fourth day at the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo 2007</a>, I attended several great sessions, starting with my own.</p>
-  
-  <br style="clear:both" />
 date: "2007-04-27"
 permalink: /2007/04/27/mysql-conference-and-expo-2007-day-4/
-description:
-  - What happened in the last day of the 2007 MySQL Conference and Expo
-tags:
-  - mysqlconf07
 ---
 [<img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" />][1] 
 In my fourth day at the [MySQL Conference and Expo 2007][1], I attended several great sessions, starting with my own.

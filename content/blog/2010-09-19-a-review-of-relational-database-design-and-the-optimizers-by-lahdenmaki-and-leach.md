@@ -1,28 +1,10 @@
 ---
 title: >
-  A review of Relational Database Design and the Optimizers by Lahdenmaki and
-  Leach
 permalink: >
-  /2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/
 categories:
-  - PostgreSQL
-  - Review
-  - SQL
 tags:
-  - Clustered indexes
-  - Covering indexes
-  - Index-Only Queries
-  - indexes
-  - indexing
-  - Mike Leach
-  - Tapio Lahdenmaki
 ---
 <p style="float:left">
-  <div id="attachment_2019" class="wp-caption alignleft" style="width: 190px">
-    <a href="http://www.amazon.com/dp/0471719994/?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/09/relational-index-design-optimizers.jpg" alt="Relational Database Index Design and the Optimizers" title="Relational Database Index Design and the Optimizers" width="180" height="287" class="size-full wp-image-2019" /></a><p class="wp-caption-text">
-      Relational Database Index Design and the Optimizers
-    </p>
-  </div>
 </p>
 
 [Relational Database Index Design and the Optimizers][1]. By Tapio Lahdenmaki and Mike Leach, Wiley 2005. (Here's [a link to the publisher's site][2]).
@@ -37,6 +19,3 @@ There are a few things I'll point out so it doesn't seem like an unqualified end
 
 <sup>&dagger;</sup> Note that although PostgreSQL does not yet support index-only queries, which is a major focus of the book, the various cost models apply equally well. One must simply account for the cost of the table access, and not assume that the index is the only thing that's touched by the query. In general, you're going to need to know the internals of your database server to apply this book's wisdom.
 
- [1]: http://www.amazon.com/dp/0471719994?tag=xaprb-20
- [2]: http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471719994.html
- [3]: http://www.xaprb.com/blog/essential-books/

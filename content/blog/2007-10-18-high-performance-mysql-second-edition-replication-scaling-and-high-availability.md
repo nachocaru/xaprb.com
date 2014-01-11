@@ -1,25 +1,6 @@
 ---
 title: "High Performance MySQL, Second Edition: Replication, Scaling and High Availability"
-  <p>Continuing in the tradition, which I hope has been as helpful to you as it has been to me, I'm opening the floor for suggestions on chapter 9 of the upcoming High Performance MySQL, Second Edition.  Unlike the other chapters for which I've listed outlines, this one isn't substantially written yet.  It's in detailed outline form at this point (a tactic that has worked very well for us so far -- I'll write about that someday).</p>
-  
-  <p>I'm trying to get feedback much earlier in this chapter's lifecycle, for several reasons.  Two of the most important are that this is one of the first chapters I've had a chance to really take from scratch, and the chapters I haven't written from scratch have been harder to organize, as you've probably seen from the last few outlines I posted.  There's a lot of value in working top-down on this deep encyclopedia-style material.</p>
-  
-  <p>Read on for the outline and more thoughts I just can't keep to myself.</p>
-permalink: >
-  /2007/10/18/high-performance-mysql-second-edition-replication-scaling-and-high-availability/
-description:
-  - >
-    Chapter 9 of High Performance MySQL, Second Edition, is about replication,
-    scaling, and high availability, including failover, load balancing, and more.
-tags:
-  - clustering
-  - failover
-  - High Availability
-  - load balancing
-  - MySQL
-  - replication
-  - scaling
-  - SQL
+permalink:  /2007/10/18/high-performance-mysql-second-edition-replication-scaling-and-high-availability/
 ---
 Continuing in the tradition, which I hope has been as helpful to you as it has been to me, I'm opening the floor for suggestions on chapter 9 of the upcoming High Performance MySQL, Second Edition. Unlike the other chapters for which I've listed outlines, this one isn't substantially written yet. It's in detailed outline form at this point (a tactic that has worked very well for us so far &#8212; I'll write about that someday).
 
@@ -38,8 +19,6 @@ Replication Problems and Solutions
 The Future of MySQL Replication
 Scaling MySQL Horizontally
 Clustering with MySQL
-   MySQL Cluster
-   Other Clustering Solutions
 Load Balancing</pre>
 
 Just a few notes. These sections are top-level, and will likely be split into many sub-sections like other chapter outlines I've posted. A typical section has a couple dozen bullet-points in it, at a high level of granularity, such as "Using DRBD for log replication only." I think we'll also add in a separate section on fail-over and fail-back, but that's not in the outline as of right now (what do you think belongs in it?).

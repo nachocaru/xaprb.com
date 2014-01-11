@@ -1,8 +1,5 @@
 ---
 title: Send your employees to the MySQL Conference
-  <p>A lot of people contact me asking if I'm looking for a job.  (I have an unanswered email in my inbox right now.)  People are looking desperately for qualified, knowledgeable MySQL professionals.  There's a critical shortage of people who can admin MySQL moderately well, much less at the guru level.</p>
-  
-  <p>If you are one of the many who are trying to hire a MySQL DBA, you should send your employees to the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo</a>.  Not just this year -- every year.  Train a smart person instead of trying to hire someone who's ready to go now.</p>
 date: "2008-03-06"
 permalink: /2008/03/06/send-your-employees-to-the-mysql-conference/
 description:

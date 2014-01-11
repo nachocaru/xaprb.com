@@ -1,8 +1,5 @@
 ---
 title: Version 0.1.132 of innotop released
-  <p>I've released another version of the innotop MySQL and InnoDB monitor.  As always, you can <a href="http://www.xaprb.com/innotop/">download innotop from its homepage</a>.</p>
-  
-  <p>It's worth upgrading to this version not only because of the new features, but also because it should handle more special cases without crashing.  Of course, if it does crash, I appreciate your help fixing it; see <a href="http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/">this article about what information I need</a>.</p>
 date: "2006-08-10"
 permalink: /2006/08/10/version-01132-of-innotop-released/
 description:

@@ -2,14 +2,7 @@
 title: innotop 1.5.0 released
 date: "2007-09-10"
 permalink: /2007/09/10/innotop-150-released/
-description:
-  - Version 1.5.0 of the innotop MySQL and InnoDB monitor is released.
-tags:
-  - monitoring
-  - MySQL
-  - SQL
 ---
-<p class="download"><a href="http://code.google.com/p/innotop/">Download innotop</a></p>
 
 <p>Version 1.5.0 of the innotop MySQL and InnoDB monitor is out.  This release is the first in the unstable 1.5.0 branch, which will eventually become the stable 1.6 branch.  I'm beginning to merge the various branches I've made to support some of our needs at my employer.  This first release adds some major new features and prepares for some other large improvements and new features.</p>
 

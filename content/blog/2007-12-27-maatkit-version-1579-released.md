@@ -1,10 +1,5 @@
 ---
 title: Maatkit version 1579 released
-  <p>This release contains bug fixes and new features.  The biggest new feature, in my opinion, is a new sync algorithm for mk-table-sync.  Now you can sync any table with an index more efficiently than previously.  This is the return of the speed I promised earlier.  (Though I haven't yet benchmarked it; I am very short on time these days.  Your benchmarks and other contributions are welcome).</p>
-  
-  <p>I'm finally feeling like the table sync tool is getting in good shape!</p>
-  
-  <p>Changelog etc is in the full article.</p>
 date: "2007-12-27"
 permalink: /2007/12/27/maatkit-version-1579-released/
 description:

@@ -1,10 +1,5 @@
 ---
 title: Going to PostgreSQL Conference East
-  <p>I'm heading out to <a href="http://postgresqlconference.org/">PostgreSQL Conference East</a> in a few hours.  Alas, I missed the first day but I'll be there all day tomorrow.  I hope to learn, meet people, and generally participate in goodness.</p>
-  
-  <p>And no, I'm not an expert in PostgreSQL as I am in MySQL, but I have always held it in very high esteem.  I am not going to try to spread the MySQL-ness into the PostgreSQL camp :-)</p>
-  
-  <p>See you there.</p>
 date: "2008-03-29"
 permalink: /2008/03/29/going-to-postgresql-conference-east/
 description:

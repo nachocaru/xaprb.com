@@ -1,7 +1,5 @@
 ---
 title: Tips and tricks for bitwise arithmetic
-  This is a collection of useful tips and tricks for bitwise arithmetic, useful in
-  any programming language, for accomplishing a variety of tasks.
 date: "2005-09-28"
 permalink: /2005/09/28/bitwise-arithmetic/
 ---

@@ -1,6 +1,5 @@
 ---
 title: So you think your code is in version control?
-  <p>"My code is all in version control," Joe said proudly.  "Everything is versioned.  I'll never lose any work."  But then he lost some "other" code he didn't realize was critical.  This article is about how to find and safeguard all the hidden code you don't know your business relies on.</p>
 date: "2006-07-09"
 permalink: /2006/07/09/so-you-think-your-code-is-in-version-control/
 description:

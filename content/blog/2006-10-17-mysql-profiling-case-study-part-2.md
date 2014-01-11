@@ -1,6 +1,5 @@
 ---
 title: MySQL profiling case study, part 2
-  <p>This is the third in a series of articles on profiling queries in MySQL (the second of two demonstrations of profiling techniques, but the third article overall).  In this article I'll present the same example as in the <a href="/blog/2006/10/15/a-case-study-in-profiling-queries-in-mysql/">second article</a>, but use a different approach to show details I didn't include.</p>
 date: "2006-10-17"
 permalink: /2006/10/17/mysql-profiling-case-study-part-2/
 description:

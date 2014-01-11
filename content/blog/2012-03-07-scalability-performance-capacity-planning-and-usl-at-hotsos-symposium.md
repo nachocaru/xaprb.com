@@ -1,9 +1,7 @@
 ---
 title: Scalability, performance, capacity planning and USL at Hotsos Symposium
 permalink: >
-  /2012/03/07/scalability-performance-capacity-planning-and-usl-at-hotsos-symposium/
 categories:
-  - SQL
 ---
 I presented at this year's [Hotsos Symposium][1]. I am searching for a claim to specialness, and I think it may be that I am the first Hotsos presenter who's specifically focused on MySQL. True? I don't know, but I'll run with it for now.
 
@@ -17,9 +15,3 @@ My techniques are based on models and approaches that [Neil Gunther][4] develope
 
 After the day's sessions ended, I ended up talking to Neil for a while. He explained and clarified a lot of things I didn't understand about his work, such as the relationship between repairman queueing and the Universal Scalability Law. He also saw through a variety of my misconceptions and set me straight. Apparently I need to attend one of his training classes. We followed this by eating dinner and sharing a bottle of wine until late in the evening, and Neil wouldn't let me pay in the end. A most enjoyable meal and conversation. Next time it's on me!
 
- [1]: hotsos.com/sym12.html
- [2]: http://www.percona.com/about-us/mysql-white-paper/mysql-performance-analysis-with-percona-toolkit-and-tcp-ip-network-traffic/
- [3]: www.percona.com/live/mysql-conference-2012/
- [4]: http://www.perfdynamics.com/
- [5]: http://perfdynamics.blogspot.com/2011/08/q-q-plots-for-multi-modal-performance.html
- [6]: http://perfdynamics.blogspot.com

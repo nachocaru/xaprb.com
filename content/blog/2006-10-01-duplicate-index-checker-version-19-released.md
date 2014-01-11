@@ -1,6 +1,5 @@
 ---
 title: Duplicate index checker version 1.9 released
-  <p>I've made more improvements to the <a href="http://www.xaprb.com/duplicate-index-checker/">duplicate index checker</a>.  I addressed a MySQL bug <a href="http://rpbouman.blogspot.com/">Roland Bouman</a> mentioned to me, added more tests to the suite, and made changes so it considers more types of indexes now (HASH, BTREE, SPATIAL).  I made no changes to the foreign key checking.</p>
 date: "2006-10-01"
 permalink: /2006/10/01/duplicate-index-checker-version-19-released/
 description:

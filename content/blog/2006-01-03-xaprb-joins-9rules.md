@@ -1,6 +1,5 @@
 ---
 title: Xaprb joins 9rules
-  <p>Xaprb is now part of the <a href="http://9rules.com">9rules</a> network.  It's an honor and a pleasure.</p>
 date: "2006-01-03"
 permalink: /2006/01/03/xaprb-joins-9rules/
 ---

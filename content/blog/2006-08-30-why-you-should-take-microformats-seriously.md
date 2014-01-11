@@ -1,6 +1,5 @@
 ---
 title: Why you should take microformats seriously
-  <p><a href="http://microformats.org">Microformats</a> are getting some attention from the group of people who are clueful about the semantic web, but some people are not yet convinced they're useful.  While microformats aren't as robust and complex as some more fully-featured technologies, some apparent limitations are actually possible to overcome, but with different methods than might be expected.  In this article I'll address some common concerns about microformats, and explain how they are either solvable or already solved.</p>
 date: "2006-08-30"
 permalink: /2006/08/30/why-you-should-take-microformats-seriously/
 description:

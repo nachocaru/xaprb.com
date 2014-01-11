@@ -1,10 +1,5 @@
 ---
 title: MySQL Toolkit is now Maatkit
-  <p>I am so lucky I married an archaeologist.</p>
-  
-  <p>Choosing a new name for MySQL Toolkit has been a hassle.  I wanted to avoid a literal name, such as, um, MySQL Toolkit.  Short is good.  And so on, and so on.  All the while, the Phoenix/Firebird/Firefox naming debacle was in my thoughts.  I only want to do this once.</p>
-  
-  <p>Read on for a fun lesson in Egyptian mythology, courtesy of my wife!</p>
 date: "2007-11-18"
 permalink: /2007/11/18/mysql-toolkit-is-now-maatkit/
 description:

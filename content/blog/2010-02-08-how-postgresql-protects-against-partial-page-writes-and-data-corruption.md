@@ -1,18 +1,8 @@
 ---
 title: How PostgreSQL protects against partial page writes and data corruption
 permalink: >
-  /2010/02/08/how-postgresql-protects-against-partial-page-writes-and-data-corruption/
 categories:
-  - PostgreSQL
-  - SQL
 tags:
-  - checkpoint
-  - checksums
-  - CRC32
-  - InnoDB
-  - MySQL
-  - recovery
-  - wal
 ---
 I explored two interesting topics today while learning more about Postgres.
 
@@ -21,13 +11,6 @@ I explored two interesting topics today while learning more about Postgres.
 PostgreSQL's partial page write protection is configured by the following setting, which defaults to "on":
 
 <blockquote cite="http://www.postgresql.org/docs/8.3/static/runtime-config-wal.html#GUC-FULL-PAGE-WRITES">
-  <p>
-    full_page_writes (boolean)
-  </p>
-  
-  <p>
-    When this parameter is on, the PostgreSQL server writes the entire content of each disk page to WAL during the first modification of that page after a checkpoint&#8230; Storing the full page image guarantees that the page can be correctly restored, but at a price in increasing the amount of data that must be written to WAL. (Because WAL replay always starts from a checkpoint, it is sufficient to do this during the first change of each page after a checkpoint. Therefore, one way to reduce the cost of full-page writes is to increase the checkpoint interval parameters.)
-  </p>
 </blockquote>
 
 Trying to reduce the cost of full-page writes by increasing the checkpoint interval highlights a compromise. If you decrease the interval, then you'll be writing full pages to the WAL quite often. This should in theory lead to surges in the number of bytes written to the WAL, immediately following each checkpoint. As pages are revisited over time for further changes, the number of bytes written should taper off gradually until the next checkpoint. Hopefully someone who knows more can confirm this. Does anyone graph the number of bytes written to their WAL? That would be a nice illustration to see how dramatic this surging is.
@@ -46,5 +29,3 @@ However, as far as I can understand, the answer for detecting data corruption in
 
 What happens when a page is corrupt? It probably depends on where the corruption is. If a few bytes of the user's data is changed, then I assume you could just get different data out of the database than you inserted into it. But if non-user data is corrupted then do you get bizarre behavior, or do you get a crash or error? I need to learn more about PostgreSQL's data file layout to understand this. Imagining (I haven't verified this) that a page has a pointer to the next page, what happens if that pointer is flipped to refer to some other page, say, a page from a different table? If TABLE1 and TABLE2 have identical structures but different data, could SELECT * FROM TABLE1 suddenly start showing rows from TABLE2 partway through the results? Again I need to learn more about this.
 
- [1]: http://wiki.postgresql.org/wiki/Todo#Write-Ahead_Log
- [2]: http://doxygen.postgresql.org/xlog_8c-source.html#l00567

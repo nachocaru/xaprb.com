@@ -1,12 +1,5 @@
 ---
 title: Maatkit version 1314 released
-  <p><a href="http://maatkit.sourceforge.net/">Maatkit</a> (formerly MySQL Toolkit) contains essential command-line
-  utilities for MySQL, such as a table checksum tool and query profiler.
-  It provides missing features such as checking slaves for data
-  consistency, with emphasis on quality and scriptability.</p>
-  
-  <p>This release fixes several minor bugs.  It also renames all the tools
-  to avoid trademark violation.</p>
 date: "2007-11-26"
 permalink: /2007/11/26/maatkit-version-1314-released/
 description:

@@ -1,25 +1,5 @@
 ---
 title: Role-based access control in SQL, part 2
-  <p>This is my second article on how to build a role-based access control
-  system in SQL.  In the first article I gave a high-level overview of access
-  control systems in general, especially in the web-application context, and
-  talked about how some are implemented.   I introduced the problems I designed
-  my system to solve, and gave a roadmap for where this series of articles will
-  end.  I finished that article with a sketch of some basics to provide
-  row-level read, write, and delete access control.</p>
-  
-  <p>This article picks up where I left off.  I want to revisit some things I
-  swept under the rug in the first article, because I didn't want to throw all
-  the complexity in at once.  I'll explain my current system's full
-  functionality, which includes roles, type checking, table-level and
-  set-level privileges, and more.  I will show you the design in great detail,
-  and give working examples and ready-to-run SQL queries.  I'll also explore
-  ideas for extending or restricting functionality, because your
-  application isn't likely to be the same as mine.  I'll discuss possible
-  optimizations, because performance and
-  scalability are important design goals.  I'll end with a brief explanation of
-  how I've used this system to make my own web applications simpler and more
-  secure.</p>
 date: "2006-08-18"
 permalink: /2006/08/18/role-based-access-control-in-sql-part-2/
 description:

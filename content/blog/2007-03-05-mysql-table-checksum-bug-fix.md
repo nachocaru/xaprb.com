@@ -1,6 +1,5 @@
 ---
 title: MySQL Table Checksum bug fix
-  <p>I somehow introduced a syntax error into <a href="http://sourceforge.net/projects/mysqltoolkit">MySQL Table Checksum</a> in the 1.0.1 release and didn't notice till just now.  I've replaced the file in the Sourceforge release, but it may take a few hours for it to propagate to all mirrors.  My apologies.</p>
 date: "2007-03-05"
 permalink: /2007/03/05/mysql-table-checksum-bug-fix/
 description:

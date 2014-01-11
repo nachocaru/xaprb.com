@@ -1,14 +1,7 @@
 ---
 title: How to deliberately cause a deadlock in MySQL
-  <p>Why would you ever want to deliberately cause a deadlock?  Sometimes a very large deadlock in MySQL will fill the output of <code>SHOW ENGINE INNODB STATUS</code> until it truncates, so you can't see information about transactions, log and I/O, buffers, and so forth.  I know only two solutions to this problem: 1) restart MySQL and 2) cause a small deadlock so the <code>LAST DETECTED DEADLOCK</code> section shrinks to an acceptable size.  In this article I'll show you how to cause a small deadlock, and how to use <a href="http://www.xaprb.com/innotop/">innotop</a> to do it more easily.</p>
-  
-  <p>This article is part of a series on how to use <a href="http://www.xaprb.com/innotop/">innotop</a> to make your life easier.</p>
 date: "2006-08-08"
 permalink: /2006/08/08/how-to-deliberately-cause-a-deadlock-in-mysql/
-description:
-  - >
-    Explains how and why to create a very small deadlock in MySQL, so you can see
-    the full output of SHOW ENGINE INNODB STATUS.
 ---
 Why would you ever want to deliberately cause a deadlock? Sometimes a very large deadlock in MySQL will fill the output of `SHOW ENGINE INNODB STATUS` until it truncates, so you can't see information about transactions, log and I/O, buffers, and so forth. I know only two solutions to this problem: 1) restart MySQL and 2) cause a small deadlock so the `LAST DETECTED DEADLOCK` section shrinks to an acceptable size. In this article I'll show you how to cause a small deadlock, and how to use [innotop][1] to do it more easily.
 

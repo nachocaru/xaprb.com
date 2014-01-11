@@ -2,14 +2,7 @@
 title: MySQL Conference and Expo 2007 Audio
 date: "2007-04-28"
 permalink: /2007/04/28/mysql-conference-and-expo-2007-audio/
-description:
-  - Ogg Vorbis audio files of the MySQL Conference and Expo 2007
-tags:
-  - mysqlconf07
 ---
-<p class="download">
-  <a href="/presentations/mysqlconf2007">Download Ogg Vorbis Files</a>
-</p>
 
 I recorded many of the sessions I attended at the conference. You can [download the audio files in Ogg Vorbis format][1] here. These files will not stay up forever &#8212; I will probably remove them after a few weeks.
 

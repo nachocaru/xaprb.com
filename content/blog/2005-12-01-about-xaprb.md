@@ -1,8 +1,5 @@
 ---
 title: Why you need to read this blog
-  <p>You need to read this blog because it can help you become a better software engineer.</p>
-  
-  <p>It's your chance to learn by watching a professional software engineer work.  <a href="/blog/subscribe/">Subscribe</a> and read about the challenges I encounter every day in my work, and how I find creative solutions.</p>
 date: "2005-12-01"
 permalink: /2005/12/01/about-xaprb/
 description:

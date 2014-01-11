@@ -1,10 +1,7 @@
 ---
 title: "Are you sure you're reading the second edition of High Performance MySQL?"
 permalink: >
-  /2008/07/17/are-you-sure-youre-reading-the-second-edition-of-high-performance-mysql/
 categories:
-  - High Performance MySQL
-  - SQL
 ---
 I have been getting a lot of comments and errata from people who seem to be mistakenly buying the first edition and believing it's the second edition. A lot of the blame for this probably rests with Amazon, who did not distinguish between the two editions at all until the editor and I (among others) leaned on them persistently for about 6 weeks. I think some people are buying the second edition and getting the first edition.
 
@@ -18,4 +15,3 @@ I feel like a Microsoft Anti-Piracy Minion "educating" you about how to verify t
 
 If you ordered the second edition and got the first edition, Amazon should send you a new book free of charge. If they're really making the mistake that they seem to be, I predict they'll fix it when it starts costing them money.
 
- [1]: http://www.xaprb.com/blog/wp-content/uploads/2008/07/high_performance_mysql_second_edition_cover1.jpg

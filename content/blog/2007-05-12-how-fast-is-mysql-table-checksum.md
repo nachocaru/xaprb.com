@@ -1,6 +1,5 @@
 ---
 title: How fast is MySQL Table Checksum?
-  <p>A few people have asked me how fast <a href="http://sourceforge.net/projects/mysqltoolkit/">MySQL Table Checksum</a> is.  As with so many other things, it depends.  This article shows how long it takes to checksum real data on a production server I help manage, which might give you a rough idea of how long it'll take on your servers.</p>
 date: "2007-05-12"
 permalink: /2007/05/12/how-fast-is-mysql-table-checksum/
 description:

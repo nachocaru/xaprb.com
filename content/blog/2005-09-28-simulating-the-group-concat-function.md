@@ -2,8 +2,6 @@
 title: How to simulate the GROUP_CONCAT function
 date: "2005-09-28"
 permalink: /2005/09/28/simulating-the-group-concat-function/
-description:
-  - 'Shows how to simulate GROUP_CONCAT in earlier versions of MySQL.  Plus, tips for MS SQL Server.'
 ---
 MySQL 4.1 adds a number of new aggregate functions, among them [GROUP_CONCAT][1]. Earlier versions require you to build and compile the function as a C++ extension, which I'm told is easy. However, that is usually not possible in a shared hosting environment.
 

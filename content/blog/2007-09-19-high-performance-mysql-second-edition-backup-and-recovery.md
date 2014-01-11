@@ -1,18 +1,7 @@
 ---
 title: "High Performance MySQL, Second Edition: Backup and Recovery"
-  <p>Progress on High Performance MySQL, Second Edition is coming along nicely.  You have probably noticed the lack of epic multi-part articles on this blog lately -- that's because I'm spending most of my spare time on the book.  At this point, we have significant work done on some of the hardest chapters, like Schema Optimization and Query Optimization.  I've been deep in the guts of those hard optimization chapters for a while now, so I decided to venture into lighter territory: Backup and Recovery, which is one of the few chapters we planned to "revise and expand" from the first edition, rather than completely writing from scratch.  I'd love to hear your thoughts and wishes -- click through to the full article for more details on the chapter and how it's shaping up.</p>
 date: "2007-09-19"
 permalink: /2007/09/19/high-performance-mysql-second-edition-backup-and-recovery/
-description:
-  - >
-    High Performance MySQL, Second Edition covers backup and restoration in greater
-    depth.
-tags:
-  - backup
-  - data warehousing
-  - High Performance MySQL
-  - MySQL
-  - recovery
 ---
 Progress on High Performance MySQL, Second Edition is coming along nicely. You have probably noticed the lack of epic multi-part articles on this blog lately &#8212; that's because I'm spending most of my spare time on the book. At this point, we have significant work done on some of the hardest chapters, like Schema Optimization and Query Optimization. I've been deep in the guts of those hard optimization chapters for a while now, so I decided to venture into lighter territory: Backup and Recovery, which is one of the few chapters we planned to "revise and expand" from the first edition, rather than completely writing from scratch.
 

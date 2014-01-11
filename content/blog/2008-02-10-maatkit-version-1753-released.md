@@ -1,19 +1,5 @@
 ---
 title: Maatkit version 1753 released
-  |
-    <p class="download"><a href="http://maatkit.sourceforge.net/">Download Maatkit</a></p>
-    
-    <p>This release contains minor bug fixes and new features.  Besides the little bug fixes, there's a fun new feature in mk-heartbeat: it can auto-discover slaves recursively, and show the replication delay on all of them, to wit:</p>
-    
-    <pre>baron@keywest ~ $ mk-heartbeat --check --host master -D rkdb --recurse 10
-    master 0
-    slave1 1
-    slave2 1
-    slave3 4</pre>
-    
-    <p>(Not actual results.  Your mileage may vary.  Closed course, professional driver.  Do not attempt).</p>
-    
-    <p>Nothing else in this release is very exciting.  I just wanted to get the bug fixes out there.</p>
 date: "2008-02-10"
 permalink: /2008/02/10/maatkit-version-1753-released/
 description:

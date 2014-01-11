@@ -1,14 +1,7 @@
 ---
 title: "How to find out who is locking a table  in MySQL"
-  <p>MySQL is adding more tools to monitor its internals with every new release, but one thing it still lacks is a way to find out who is locking what, and therefore which transactions block which other ones.  This is such a vital feature that I'm considering writing my own patch to the source!  Still, it is possible, to a limited extent, to find out who's locking resources.  In this article I'll explain how you can do that.</p>
-  
-  <p>This article is the second in a series on how to use the <code>innotop</code> MySQL and InnoDB monitor.</p>
 date: "2006-07-31"
 permalink: /2006/07/31/how-to-analyze-innodb-mysql-locks/
-description:
-  - >
-    Explains how to use the innotop MySQL and InnoDB monitor to find what is locking
-    a table.
 ---
 MySQL is adding more tools to monitor its internals with every new release, but one thing it still lacks is a way to find out who is locking what, and therefore which transactions block which other ones. This is such a vital feature that I'm considering writing my own patch to the source! Still, it is possible, to a limited extent, to find out who's locking resources. In this article I'll explain how you can do that.
 

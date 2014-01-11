@@ -1,10 +1,7 @@
 ---
 title: "I'm going to the upcoming MySQL Camp"
-  <p>I've bought plane tickets to the upcoming <a href="http://mysqlcamp.org/">MySQL Camp</a> in November.  This is looking like a very fun time, with lots of community members, MySQL employees, and Google developers attending.  It's an "un-conference," which means there is no set schedule, and it's up to us to make out of the event whatever we wish it to be.  If you've been reading my articles or using my tools, is there anything you'd like me to present on?  I'd be happy to do it.</p>
 date: "2006-09-21"
 permalink: /2006/09/21/im-going-to-the-upcoming-mysql-camp/
-description:
-  - "I'll attend the first MySQL Camp.  I'm looking for ideas for a presentation."
 ---
 I've bought plane tickets to the upcoming [MySQL Camp][1] in November. This is looking like a very fun time, with lots of community members, MySQL employees, and Google developers attending. It's an "un-conference," which means there is no set schedule, and it's up to us to make out of the event whatever we wish it to be. If you've been reading my articles or using my tools, is there anything you'd like me to present on? I'd be happy to do it.
 

@@ -2,8 +2,6 @@
 title: How to simulate the SQL ROW_NUMBER function
 date: "2005-09-27"
 permalink: /2005/09/27/simulating-the-sql-row_number-function/
-tags:
-  - Ranked data
 ---
 If your RDBMS does not support the ROW\_NUMBER function, it is still possible to write some queries without it. ROW\_NUMBER operates over a partition of the result set, and returns a number for each row in a partition (it is possible to specify numbering schemes besides consecutive integers).
 

@@ -1,6 +1,5 @@
 ---
 title: Why NULL never compares false to anything in SQL
-  <p>One of the most common questions SQL beginners have is why <code>NULL</code> values "don't work right" in <code>WHERE</code> clauses.  In this article I'll explain it in a way I hope will make sense and be easy to remember.</p>
 date: "2006-05-18"
 permalink: /2006/05/18/why-null-never-compares-false-to-anything-in-sql/
 description:

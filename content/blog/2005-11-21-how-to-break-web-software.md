@@ -1,6 +1,5 @@
 ---
 title: How to Break Web Software
-  <p>I recently helped review <a href="http://www.amazon.com/gp/product/0321369440"><i>How to Break Web Software : Functional and Security Testing of Web Applications and Web Services</i></a>.  Here's why I think it's worth reading if you're a web professional.</p>
 date: "2005-11-21"
 permalink: /2005/11/21/how-to-break-web-software/
 ---

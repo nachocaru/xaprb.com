@@ -1,16 +1,7 @@
 ---
 title: MySQL Conference and Expo 2007, Day 3
-  <p><a href="http://www.mysqlconf.com/"><img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" /></a>
-  
-  <p>In my third day at the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo 2007</a>, I again attended keynotes and sessions, one of which I participated in.  This evening I had dinner with a fellow community member and arrived late to the Quiz Show, even though I was supposed to be on one of the teams!  I blame it on the restaurant, because they took too long to figure out what I meant when I said "kÃ¶nnen wir einen Hubschrauber essen heute abend?"</p>
-  
-  <p>Today I attended by a decent margin the best sessions I've been at all week.  If you don't think they're saving the best for last, come to my <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213">tutorial and demo on monitoring MySQL and InnoDB with innotop</a> tomorrow and see!</p>
-  
-  <p>Just two quick notes: I am recording the sessions I attend on my iRiver when possible, and will post the audio for download after I get home.  Also, you can click on the headings of each of the talks; I have linked them to the session description.</p>
 date: "2007-04-26"
 permalink: /2007/04/26/mysql-conference-and-expo-2007-day-3/
-tags:
-  - mysqlconf07
 ---
 [<img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" />][1] 
 In my third day at the [MySQL Conference and Expo 2007][1], I again attended keynotes and sessions, one of which I participated in. This evening I had dinner with a fellow community member and arrived late to the Quiz Show, even though I was supposed to be on one of the teams! I blame it on the restaurant, because they took too long to figure out what I meant when I said "kÃ¶nnen wir einen Hubschrauber essen heute abend?"

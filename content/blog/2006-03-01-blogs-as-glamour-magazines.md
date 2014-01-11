@@ -1,6 +1,5 @@
 ---
 title: Blogs as glamour magazines
-  <p>I wrote previously about <a href="/blog/2006/02/08/ie-blog-is-a-great-experience/">IE blog's excellent quality</a>.  Unfortunately, there's bad news to report, too.  I've been noticing some trends in web design blogs.  Many have a similar style to glamour magazines.  While many elements of glamour magazines are <em>not</em> echoed in these blogs, to the extent they are, I think it detracts from them quite a bit.</p>
 date: "2006-03-01"
 permalink: /2006/03/01/blogs-as-glamour-magazines/
 description:

@@ -1,10 +1,5 @@
 ---
 title: My presentations at the 2008 MySQL Conference and Expo
-  <p>
-  <a href="http://en.oreilly.com/mysql2008/">
-  <img src="http://en.oreilly.com/mysql2008/public/asset/asset/561" width="120" height="240"  border="0"  alt="MySQL Conference & Expo 2008" title="MySQL Conference & Expo 2008"  style="float: right" /></a>
-  
-  I'll be attending the <a href="http://en.oreilly.com/mysql2008/">2008 MySQL Conference and Expo</a> again this year, and I'm looking forward to hearing some great sessions, meeting new and old friends, and giving sessions myself.  As a proposal reviewer, I looked at and voted on 250+ proposals for sessions and tutorials for this conference.  There are going to be some great sessions and tutorials.</p>
 date: "2008-01-25"
 permalink: /2008/01/25/my-presentations-at-the-2008-mysql-conference-and-expo/
 tags:
