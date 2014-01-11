@@ -2,17 +2,6 @@
 title: Maatkit in RHEL and CentOS
 date: "2008-05-13"
 permalink: /2008/05/13/maatkit-in-rhel-and-centos/
-description:
-  - Do you want Maatkit to get into the CentOS-Extras repository?
-categories:
-  - GNU/Linux
-  - Maatkit
-  - Perl
-  - SQL
-tags:
-  - CentOS
-  - Karanbir Singh
-  - RHEL
 ---
 **Update: ** Karanbir says "Just one thing to keep in mind is that we dont want too many people using it from the Testing repository &#8211; we only need enough feedback to move it from testing to stable ( and to be honest, there are already 8 people who have said yes it works &#8211; so move to stable should happen within the next 24 &#8211; 48 hrs ). Once the package is in stable, users on CentOS4 and 5 wont need to do anything more than just 'yum install maatkit' and it will install for them."
 

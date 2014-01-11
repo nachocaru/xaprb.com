@@ -2,9 +2,6 @@
 title: Automatic image captions with unobtrusive JavaScript
 date: "2006-10-29"
 permalink: /2006/10/29/automatic-image-captions-with-unobtrusive-javascript/
-description:
-  - |
-    Adding "captions" to images is a common bad practice in web design.  It's much better to do it with semantic markup and unobtrusive JavaScript.  This article shows you how.
 ---
 <p class="demo">
   <a href="/articles/automatic-image-captions.html">View the Demo</a>

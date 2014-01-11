@@ -2,13 +2,6 @@
 title: High Performance MySQL Second Edition Schedule
 date: "2008-05-07"
 permalink: /2008/05/07/high-performance-mysql-second-edition-schedule/
-description:
-  - Schedule and page count for High Performance MySQL Second Edition
-categories:
-  - High Performance MySQL
-  - SQL
-tags:
-  - MySQL
 ---
 I just got the rest of the production schedule from the publisher, plus the PDF files for quality control, for our [upcoming book][1]. (Now I have to proofreeed the whole book!) This is the first time I've seen the entire production schedule. The book is supposed to go to the printer in the first week of June. I don't know what the on-the-shelf date will be, but I think very shortly after that. The publisher has promised that it'll physically be on sale at [Velocity][2].
 

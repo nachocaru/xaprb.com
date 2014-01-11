@@ -2,10 +2,6 @@
 title: Introducing MySQL Table Sync
 date: "2007-03-18"
 permalink: /2007/03/18/introducing-mysql-table-sync/
-description:
-  - >
-    MySQL Table Sync efficiently finds and resolves data differences between two
-    MySQL tables, which may be on different servers.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Sync</a>

@@ -2,22 +2,6 @@
 title: Google Test Automation Conference, Day 1
 date: "2007-08-24"
 permalink: /2007/08/24/google-test-automation-conference-day-1/
-description:
-  - >
-    The Google Test Automation Conference (GTAC 2007) in Manhattan, New York is
-    okay, but not great.
-tags:
-  - Adam Porter
-  - Agile Programming
-  - Allen Hutchison
-  - Atif Memon
-  - Automation
-  - Extreme Programming
-  - GTAC
-  - MySQL
-  - Simon Stewart
-  - Skoll
-  - Testing
 ---
 I'm attending the [Google Test Automation Conference (GTAC 2007)][1] in Manhattan, New York right now. It's a two-day event hosted by Google, with mostly non-Google speakers.
 

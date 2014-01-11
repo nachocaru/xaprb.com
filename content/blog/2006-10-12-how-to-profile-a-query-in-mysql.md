@@ -2,10 +2,6 @@
 title: How to profile a query in MySQL
 date: "2006-10-12"
 permalink: /2006/10/12/how-to-profile-a-query-in-mysql/
-description:
-  - >
-    This article shows you how to go far beyond timing and running EXPLAIN when
-    profiling and optimizing queries on MySQL.
 ---
 <p class="download">
   <a href="http://www.maatkit.org/">Download MySQL Query Profiler</a>

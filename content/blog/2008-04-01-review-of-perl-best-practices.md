@@ -2,13 +2,6 @@
 title: Review of Perl Best Practices
 date: "2008-04-01"
 permalink: /2008/04/01/review-of-perl-best-practices/
-description:
-  - Perl Best Practices is an essential Perl book that you should not be without.
-tags:
-  - Best Practices
-  - coding standards
-  - Damian Conway
-  - readability
 ---
 [<img src="http://www.oreilly.com/catalog/covers/0596001738_cat.gif" style="float:right" width="180" height="236" />][1]In my opinion, every Perl programmer needs at least these two books: the [Camel][2], and the [Dog (Perl Best Practices)][1].
 

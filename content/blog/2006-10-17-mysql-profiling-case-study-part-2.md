@@ -2,8 +2,6 @@
 title: MySQL profiling case study, part 2
 date: "2006-10-17"
 permalink: /2006/10/17/mysql-profiling-case-study-part-2/
-description:
-  - 'A follow-up on my first profiling case study.  Shows more details of cold versus warm performance measurements.'
 ---
 <p class="download">
   <a href="/mysql-query-profiler/">Download MySQL Query Profiler</a>

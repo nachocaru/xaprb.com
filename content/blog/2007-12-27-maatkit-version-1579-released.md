@@ -2,11 +2,6 @@
 title: Maatkit version 1579 released
 date: "2007-12-27"
 permalink: /2007/12/27/maatkit-version-1579-released/
-description:
-  - mk-table-sync has a fast new synchronization algorithm
-tags:
-  - MySQL
-  - synchronization
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

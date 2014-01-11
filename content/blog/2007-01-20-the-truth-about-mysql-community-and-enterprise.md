@@ -2,8 +2,6 @@
 title: The truth about MySQL Community and Enterprise
 date: "2007-01-20"
 permalink: /2007/01/20/the-truth-about-mysql-community-and-enterprise/
-description:
-  - The real truth about the MySQL Community/Enterprise split
 ---
 Late in 2006 MySQL decided to move to a split distribution model, Community and Enterprise. A lot has (apparently) changed since then, yet nothing has really changed since then. These things remain true:
 

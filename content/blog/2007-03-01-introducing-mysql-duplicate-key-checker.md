@@ -2,10 +2,6 @@
 title: Introducing MySQL Duplicate Key Checker
 date: "2007-03-01"
 permalink: /2007/03/01/introducing-mysql-duplicate-key-checker/
-description:
-  - >
-    A powerful, scriptable tool to check MySQL tables for duplicate or redundant
-    indexes and foreign keys
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Get MySQL Duplicate Key Checker</a>

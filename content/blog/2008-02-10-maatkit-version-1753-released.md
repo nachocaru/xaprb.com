@@ -2,12 +2,6 @@
 title: Maatkit version 1753 released
 date: "2008-02-10"
 permalink: /2008/02/10/maatkit-version-1753-released/
-description:
-  - mk-heartbeat can now check many slaves at once.
-tags:
-  - MySQL
-  - replication
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

@@ -2,20 +2,6 @@
 title: Four companies to sponsor Maatkit development
 date: "2007-11-26"
 permalink: /2007/11/26/four-companies-to-sponsor-maatkit-development/
-description:
-  - >
-    MySQL AB, Blue Ridge Internetworks, Percona and the Rimm-Kaufman Group are
-    sponsoring Maatkit development.
-tags:
-  - Alan Rimm Kaufman
-  - Jay Pipes
-  - Jeff Cornejo
-  - Marten Mickos
-  - MySQL
-  - Percona
-  - Peter Zaitsev
-  - SQL
-  - Vadim Tkachenko
 ---
 A while ago I asked for people and/or organizations to sponsor development on [Maatkit (formerly MySQL Toolkit)][1] so I could take a week off work and improve the Table Sync tool. [I asked for $2500 USD][2], but several companies have graciously offered to cover that and then some.
 

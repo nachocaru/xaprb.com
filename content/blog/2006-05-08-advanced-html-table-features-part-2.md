@@ -2,8 +2,6 @@
 title: Advanced HTML table features, Part 2
 date: "2006-05-08"
 permalink: /2006/05/08/advanced-html-table-features-part-2/
-description:
-  - "Explains how HTML's AXIS attribute allows an author to encode multi-dimensional data into two-dimensional tables, and to encode relational data into hierarchical tables."
 ---
 This is the second article in a two-part series on understanding and using advanced features in HTML tables. In the first part I explained a few of the simpler features. In this article I'll explain how the `axis` attribute allows an author to encode *multi*-dimensional data into *two*-dimensional tables, and to encode *relational* data into *hierarchical* tables.
 

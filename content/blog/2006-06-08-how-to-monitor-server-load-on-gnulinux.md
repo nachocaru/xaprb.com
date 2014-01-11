@@ -2,10 +2,6 @@
 title: How to monitor server load on GNU/Linux
 date: "2006-06-08"
 permalink: /2006/06/08/how-to-monitor-server-load-on-gnulinux/
-description:
-  - >
-    Discusses and compares six methods and 12 tools to monitor server load and
-    performance.
 ---
 This article introduces six methods and 12 tools for monitoring system load, performance and related information on GNU/Linux and similar systems. I've seen many articles that mention one or two of these tools, but none that discusses and compares all the ones I find useful.
 

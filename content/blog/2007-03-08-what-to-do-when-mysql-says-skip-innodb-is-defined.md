@@ -2,8 +2,6 @@
 title: What to do when MySQL says skip-innodb is defined
 date: "2007-03-08"
 permalink: /2007/03/08/what-to-do-when-mysql-says-skip-innodb-is-defined/
-description:
-  - "Explains why MySQL says skip-innodb is defined when it's not."
 ---
 Are you seeing a MySQL error that says InnoDB support isn't enabled, even though it is? This article explains why it happens and how to fix it.
 

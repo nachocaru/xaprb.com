@@ -2,10 +2,6 @@
 title: innotop 1.4.2 released
 date: "2007-05-03"
 permalink: /2007/05/03/innotop-142-released/
-description:
-  - >
-    The innotop MySQL and InnoDB monitor can monitor transactions, locks, queries,
-    mutexes and semaphores, tables, and much more
 ---
 <p class="download">
   <a href="http://code.google.com/p/innotop">Download innotop</a>

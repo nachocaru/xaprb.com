@@ -2,10 +2,6 @@
 title: Introducing MySQL Deadlock Logger
 date: "2007-03-08"
 permalink: /2007/03/08/introducing-mysql-deadlock-logger/
-description:
-  - >
-    MySQL Deadlock Logger extracts and stores the latest InnoDB deadlock in a MySQL
-    table for analysis.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">MySQL Deadlock Logger</a>

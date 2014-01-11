@@ -2,15 +2,6 @@
 title: MySQL Archiver 0.9.1 released
 date: "2007-06-06"
 permalink: /2007/06/06/mysql-archiver-091-released/
-description:
-  - "MySQL archiver's unique algorithm efficiently archives data from a table to a file and/or another table without interfering with other queries."
-tags:
-  - archiving
-  - data warehousing
-  - MySQL
-  - mysqltoolkit
-  - sourceforge
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Archiver</a>

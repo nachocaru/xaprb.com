@@ -2,8 +2,6 @@
 title: MySQL Table Sync 0.9.3 released
 date: "2007-05-17"
 permalink: /2007/05/17/mysql-table-sync-093-released/
-description:
-  - MySQL Table Sync can now work on a small part of very large tables.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Sync</a>

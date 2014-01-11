@@ -2,11 +2,6 @@
 title: Going to PostgreSQL Conference East
 date: "2008-03-29"
 permalink: /2008/03/29/going-to-postgresql-conference-east/
-description:
-  - "I'm going to PostgreSQL Conference East."
-tags:
-  - MySQL
-  - PostgreSQL
 ---
 I'm heading out to [PostgreSQL Conference East][1] in a few hours. Alas, I missed the first day but I'll be there all day tomorrow. I hope to learn, meet people, and generally participate in goodness.
 

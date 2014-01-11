@@ -2,10 +2,6 @@
 title: Bash parameter expansion cheatsheet
 date: "2007-03-29"
 permalink: /2007/03/29/bash-parameter-expansion-cheatsheet/
-description:
-  - >
-    A bash parameter expansion cheet sheet for quick reference to shell parameter
-    syntax.
 ---
 <p class="download">
   <a href="/articles/bash-parameter-expansion-cheatsheet.pdf">Download Bash Cheatsheet</a>

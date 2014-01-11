@@ -2,23 +2,6 @@
 title: More progress on High Performance MySQL, Second Edition
 date: "2008-01-12"
 permalink: /2008/01/12/more-progress-on-high-performance-mysql-second-edition/
-description:
-  - High Performance MySQL, second edition, is an awesome book.
-tags:
-  - Arjen Lentz
-  - High Availability
-  - load balancing
-  - MySQL
-  - OpenOffice.org
-  - optimization
-  - performance
-  - Peter Zaitsev
-  - replication
-  - scaling
-  - sharding
-  - SQL
-  - technical review
-  - writing
 ---
 Whew! I just finished a marathon of revisions. It's been a while since I posted about our progress, so here's an update for the curious readers.
 

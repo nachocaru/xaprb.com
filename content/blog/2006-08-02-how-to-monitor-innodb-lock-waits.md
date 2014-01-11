@@ -2,10 +2,6 @@
 title: How to monitor InnoDB lock waits
 date: "2006-08-02"
 permalink: /2006/08/02/how-to-monitor-innodb-lock-waits/
-description:
-  - >
-    Shows how the innotop MySQL and InnoDB monitor makes it easy to identify where
-    lock waits are coming from.
 ---
 This is one in a series of articles on how to use the [innotop][1] MySQL and InnoDB monitor. In this article I show how `innotop` can display locks that are causing a transaction to wait.
 

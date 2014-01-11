@@ -2,19 +2,6 @@
 title: MySQL Toolkit version 1254 released
 date: "2007-11-12"
 permalink: /2007/11/12/mysql-toolkit-version-1254-released/
-description:
-  - >
-    MySQL Parallel Dump and MySQL Parallel Restore are feature-complete and ready
-    for general use
-  - >
-    MySQL Parallel Dump and MySQL Parallel Restore are feature-complete and ready
-    for general use
-tags:
-  - backups
-  - data recovery
-  - MySQL
-  - parallel dump
-  - SQL
 ---
 
 This release fixes several bugs introduced in the last release as I replaced untested code with tested code &#8212; how ironic! Actually, I knew that was virtually guaranteed to happen. Anyway, all the bugs you've helped me find are now fixed. I also fixed a long-standing bug in MySQL Table Sync, which I am otherwise trying to touch as little as possible for the time being. (Remember to contribute to the [bounty][1], and get your employer to contribute as well, so I can do some real work on it in the next month or so!)

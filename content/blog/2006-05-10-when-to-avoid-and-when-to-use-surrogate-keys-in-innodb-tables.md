@@ -2,10 +2,6 @@
 title: When to use surrogate keys in InnoDB tables
 date: "2006-05-10"
 permalink: /2006/05/10/when-to-avoid-and-when-to-use-surrogate-keys-in-innodb-tables/
-description:
-  - >
-    Explains why InnoDB tables are a special case in MySQL, and how that impacts
-    indexes and choice of primary key.
 ---
 InnoDB is a special case among MySQL storage engines because they have clustered indexes, which means surrogate keys have to be treated differently in InnoDB. This article gives a quick overview of clustered indexes, and explains why they make it even more important to do careful analysis before making decisions about surrogate keys on InnoDB tables.
 

@@ -2,17 +2,6 @@
 title: Introducing MySQL Visual Explain
 date: "2007-07-29"
 permalink: /2007/07/29/introducing-mysql-visual-explain/
-description:
-  - >
-    MySQL Visual Explain transforms EXPLAIN output into a graphical tree view of the
-    query execution plan.
-tags:
-  - execution plan
-  - explain
-  - MySQL
-  - mysqltoolkit
-  - recursion
-  - Timour Katchaounov
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Visual Explain</a>

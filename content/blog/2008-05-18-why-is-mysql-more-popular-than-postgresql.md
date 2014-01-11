@@ -2,18 +2,6 @@
 title: Why is MySQL more popular than PostgreSQL?
 date: "2008-05-18"
 permalink: /2008/05/18/why-is-mysql-more-popular-than-postgresql/
-description:
-  - >
-    Replication and in-place upgrades (binary compatibility) are pain points when
-    switching from MySQL to PostgreSQL.
-categories:
-  - Commentary
-  - PostgreSQL
-  - SQL
-tags:
-  - MySQL
-  - replication
-  - upgrades
 ---
 There is much discussion of why [MySQL][1] is more widely adopted than [PostgreSQL][2]. The discussion I've heard is mostly among the PostgreSQL community members, who believe their favorite database server is better in many ways, and are sometimes puzzled why people would choose an inferior product.
 

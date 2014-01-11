@@ -2,23 +2,6 @@
 title: MySQL Conference and Expo 2008, Day Three
 date: "2008-04-19"
 permalink: /2008/04/19/mysql-conference-and-expo-2008-day-three/
-description:
-  - The talks I attended at MySQL Conference and Expo 2008
-categories:
-  - SQL
-tags:
-  - Dathan Pattishall
-  - Farhan Mashraqi
-  - GET_LOCK
-  - InnoDB
-  - Lucene
-  - Maatkit
-  - Mark Callaghan
-  - memcached
-  - myisam
-  - mysqluc2008
-  - Paul McCullagh
-  - pbxt
 ---
 Here's a rundown of Thursday (day 3) of the MySQL Conference and Expo. This day's sessions were much more interesting to me than Wednesday's, and in fact I wanted to go to several of them in a single time slot a couple of times.
 

@@ -2,14 +2,6 @@
 title: A very fast FNV hash function for MySQL
 date: "2008-03-09"
 permalink: /2008/03/09/a-very-fast-fnv-hash-function-for-mysql/
-description:
-  - You can speed up Maatkit by installing a faster hash function I created.
-tags:
-  - checksumming
-  - FNV
-  - hashing
-  - MySQL
-  - MySQL Google Patches
 ---
 I wrote a User-Defined Function that implements the [FNV (Fowler-Voll-No)][1] hash function for MySQL. I'm [not the first person to do this][2] &#8212; in fact, I was inspired by the [Google patches for MySQL][3]. But my implementation is a little bit different from most, in a very important way that leads directly to much higher performance, especially suited for the Maatkit tools.
 

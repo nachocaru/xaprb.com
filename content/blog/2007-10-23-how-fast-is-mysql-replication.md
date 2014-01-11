@@ -2,20 +2,6 @@
 title: How fast is MySQL replication?
 date: "2007-10-23"
 permalink: /2007/10/23/how-fast-is-mysql-replication/
-description:
-  - >
-    This post shows the results of measuring MySQL replication speed with
-    microsecond precision.
-tags:
-  - Federated storage engine
-  - Giuseppe Maxia
-  - logging
-  - MySQL
-  - MySQL slave lag
-  - polling
-  - replication
-  - SQL
-  - User Defined Functions
 ---
 Very fast, as it turns out.
 

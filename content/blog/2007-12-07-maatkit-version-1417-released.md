@@ -2,12 +2,6 @@
 title: Maatkit version 1417 released
 date: "2007-12-07"
 permalink: /2007/12/07/maatkit-version-1417-released/
-description:
-  - mk-table-sync is out!
-tags:
-  - MySQL
-  - SQL
-  - synchronization
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

@@ -2,12 +2,6 @@
 title: Maatkit version 1972 released
 date: "2008-06-02"
 permalink: /2008/06/02/maatkit-version-1972-released/
-description:
-  - 'Maatkit: shiny, new, and still only half done!'
-tags:
-  - Community Choice Awards
-  - MySQL
-  - Sourceforge.net
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download Maatkit</a>

@@ -2,8 +2,6 @@
 title: Five great Perl programming techniques to make your life fun again
 date: "2006-10-05"
 permalink: /2006/10/05/five-great-perl-programming-techniques-to-make-your-life-fun-again/
-description:
-  - "I demonstrate 5 ways to cut repetition and program declaratively.  It's fun and it's a better way to code."
 ---
 If you're a programmer, you know the difference between a beginner and a master is the ability to write succinct code that does a great deal with very little work. If you can do this, you can easily raise your productivity and the quality of your work by an order of magnitude. Much more importantly, you can have a lot more fun writing code. Read on to learn how.
 

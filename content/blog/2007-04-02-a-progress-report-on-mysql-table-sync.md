@@ -2,11 +2,6 @@
 title: A progress report on MySQL Table Sync
 date: "2007-04-02"
 permalink: /2007/04/02/a-progress-report-on-mysql-table-sync/
-description:
-  - >
-    A progress report on the mysql-table-sync tool, which efficiently compares two
-    MySQL tables on different servers, finds differences in the data and resolves
-    them.
 ---
 I wrote an article late last week about [benchmark results for the two table-synchronization algorithms][1] I've been implementing for the [MySQL Table Sync][2] tool. I've spent some time developing a test suite for the tool, and learned some really interesting things about the general problem of synchronizing tables.
 

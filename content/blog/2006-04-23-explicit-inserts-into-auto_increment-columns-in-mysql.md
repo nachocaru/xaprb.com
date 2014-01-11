@@ -2,10 +2,6 @@
 title: How MySQL decides to AUTO_INCREMENT a value
 date: "2006-04-23"
 permalink: /2006/04/23/explicit-inserts-into-auto_increment-columns-in-mysql/
-description:
-  - >
-    Explains how MySQL decides whether to generate an AUTO_INCREMENT value for a
-    row, and how to avoid the confusing behavior that results.
 ---
 It is possible to explicitly insert values into an `AUTO_INCREMENT` in MySQL, but sometimes these inserts cause confusing behavior. In this article I'll explain that behavior.
 

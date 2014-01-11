@@ -2,18 +2,6 @@
 title: MySQL Toolkit is now Maatkit
 date: "2007-11-18"
 permalink: /2007/11/18/mysql-toolkit-is-now-maatkit/
-description:
-  - MySQL Toolkit is now Maatkit.
-tags:
-  - Dvorak
-  - Egypt
-  - egyptian_god
-  - Maat
-  - Maatkit
-  - MySQL
-  - mythology
-  - SQL
-  - Thoth
 ---
 <p>I am so lucky I married an archaeologist.</p>
 

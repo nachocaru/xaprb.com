@@ -2,18 +2,6 @@
 title: A different angle on the MySQL Conference
 date: "2008-04-15"
 permalink: /2008/04/15/a-different-angle-on-the-mysql-conference/
-description:
-  - A look at the contents of the shoulder bag at MySQL Conference and Expo 2008
-categories:
-  - GNU/Linux
-  - High Performance MySQL
-  - SQL
-tags:
-  - Kickfire
-  - Marketing
-  - MySQL
-  - mysqluc2008
-  - Zmanda
 ---
 There are quite a few business angles you might see only if you're here at the conference, and you won't get from blogs. For example, let's take a look at the contents of the shoulder bags they hand out with your registration. (This is only a partial list.)
 

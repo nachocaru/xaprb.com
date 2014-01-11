@@ -2,12 +2,6 @@
 title: Progress on Maatkit bounty, part 4
 date: "2007-12-06"
 permalink: /2007/12/06/progress-on-maatkit-bounty-part-4/
-description:
-  - Why is mk-heartbeat sleeping infinitely?
-tags:
-  - MySQL
-  - Perl
-  - replication
 ---
 &#8230; I didn't get two-way sync done, and I didn't get the Nibble algorithm done. That much I expected. But I also didn't get the current work released tonight because I'm paranoid about breaking things. I'm trying to go through all the tools and write at least a basic test for them to be sure they can do the simplest "unit of work" (such as mk-find running and printing out that it finds the mysql.columns_priv table).
 

@@ -2,19 +2,6 @@
 title: "Kickfire: relational algebra in a chip"
 date: "2008-04-14"
 permalink: /2008/04/14/kickfire-relational-algebra-in-a-chip/
-description:
-  - "Kickfire's TPC-H benchmarks are out now, and this post examines Kickfire's architecture and capabilities."
-categories:
-  - SQL
-tags:
-  - ARIES
-  - column store
-  - data warehousing
-  - Kickfire
-  - MySQL
-  - Ravi Krishnamurthy
-  - stream processing
-  - TPC H
 ---
 I spent the day Thursday with some of Kickfire's engineers at their headquarters. In this article, I'd like to go over a little of the system's architecture and some other details.
 

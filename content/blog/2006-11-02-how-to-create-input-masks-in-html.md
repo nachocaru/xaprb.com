@@ -2,8 +2,6 @@
 title: How to create input masks in HTML
 date: "2006-11-02"
 permalink: /2006/11/02/how-to-create-input-masks-in-html/
-description:
-  - A simple, free way to add input masks to your HTML form fields.
 ---
 <p class="download">
   <a href="/html-input-mask/src/">Download HTML Input Mask</a>

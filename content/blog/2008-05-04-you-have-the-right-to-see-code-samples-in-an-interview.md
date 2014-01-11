@@ -2,16 +2,6 @@
 title: You have the right to see code samples in an interview
 date: "2008-05-04"
 permalink: /2008/05/04/you-have-the-right-to-see-code-samples-in-an-interview/
-description:
-  - "Assuming things about a potential employer's code is stupid and will land you a bad job."
-categories:
-  - Coding
-  - Perl
-tags:
-  - code quality
-  - interviewing
-  - Joel Spolsky
-  - Perl
 ---
 Joel Spolsky writes about [12 steps to better code][1], and elsewhere about how [candidates should write code in interviews][2].
 

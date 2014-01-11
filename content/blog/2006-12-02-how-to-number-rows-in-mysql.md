@@ -2,15 +2,6 @@
 title: How to number rows in MySQL
 date: "2006-12-02"
 permalink: /2006/12/02/how-to-number-rows-in-mysql/
-description:
-  - >
-    An efficient MySQL-specific method to number each row in a group with user
-    variables.
-tags:
-  - MySQL
-  - Ranked data
-  - SQL
-  - user defined variables
 ---
 I wrote before about a generic, cross-platform way to simulate the SQL `ROW_NUMBER()` function in any RDBMS. There is a much more efficient way to do this on MySQL with user variables.
 

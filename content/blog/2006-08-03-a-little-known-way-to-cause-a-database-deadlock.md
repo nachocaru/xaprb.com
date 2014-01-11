@@ -2,8 +2,6 @@
 title: A little-known way to cause a database deadlock
 date: "2006-08-03"
 permalink: /2006/08/03/a-little-known-way-to-cause-a-database-deadlock/
-description:
-  - 'Explains how the direction transactions are moving can cause them to deadlock.  Deep technical discussion of InnoDB deadlocks, including a tutorial on reading monitor text and using innotop to make the job easy.'
 ---
 A "little-known way," I claim, and yet it happens all the time &#8212; precisely because it's little-known. Experts will quickly recognize where I'm going to go with this article, but I hope many others in my audience will understand deadlocks more deeply after reading it. I'll use MySQL and InnoDB for illustration purposes, but the scenario this article describes (dramatic music, please!) could happen to you, too! And probably will someday, unless you're one of the elite few (ok, enough drama) who know how to avoid it.
 

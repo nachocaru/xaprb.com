@@ -2,10 +2,6 @@
 title: MySQL Table Checksum 1.1.6 released
 date: "2007-06-03"
 permalink: /2007/06/03/mysql-table-checksum-116-released/
-description:
-  - >
-    MySQL Table Checksum helps you check master and slave servers for replication
-    consistency.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Checksum</a>

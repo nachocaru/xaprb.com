@@ -2,8 +2,6 @@
 title: How to escalate privileges in MySQL
 date: "2006-05-31"
 permalink: /2006/05/31/how-to-escalate-privileges-in-mysql/
-description:
-  - Explains why the common advice on how to add a MySQL user is a security problem.
 ---
 In MySQL, privileges are stored in tables in the `mysql` database, so if I have `UPDATE` privileges to that database, it's easy to update my own privileges. For an example of what the desired privileges should be, run the following query:
 

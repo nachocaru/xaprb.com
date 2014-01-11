@@ -2,8 +2,6 @@
 title: How to avoid unique index violations on updates in MySQL
 date: "2006-06-16"
 permalink: /2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/
-description:
-  - 'Some legitimate updates can fail because of a bug in MySQL.  This article shows how to work around it.'
 ---
 There is a [bug in MySQL that causes an `UPDATE` to fail with a unique index violation][1], even though the statement doesn't create duplicate values. In this article I'll explain when this bug can happen, and how to work around it.
 

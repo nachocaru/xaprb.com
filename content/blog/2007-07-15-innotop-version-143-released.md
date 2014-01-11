@@ -2,15 +2,6 @@
 title: innotop version 1.4.3 released
 date: "2007-07-15"
 permalink: /2007/07/15/innotop-version-143-released/
-description:
-  - The new release of innotop fixes minor bugs and adds complete documentation
-tags:
-  - InnoDB
-  - Innotop
-  - monitoring
-  - MySQL
-  - mytop
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/innotop/">Download innotop</a>

@@ -2,16 +2,6 @@
 title: Maatkit t-shirts are here
 date: "2008-04-14"
 permalink: /2008/04/14/maatkit-t-shirts-are-here/
-description:
-  - Get your beautiful Maatkit t-shirts at the MySQL Conference
-categories:
-  - Maatkit
-  - SQL
-tags:
-  - Harrison Fisk
-  - Jay Pipes
-  - Maatkit
-  - MySQL
 ---
 [<img style="float:right" src='http://www.xaprb.com/blog/wp-content/uploads/2008/04/maatkit.jpg' alt='Maatkit' />][1]
 

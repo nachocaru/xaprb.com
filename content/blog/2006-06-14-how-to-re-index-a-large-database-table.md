@@ -2,8 +2,6 @@
 title: How to re-index a large database table
 date: "2006-06-14"
 permalink: /2006/06/14/how-to-re-index-a-large-database-table/
-description:
-  - "Gives concrete strategies for re-indexing a table when it's too large to alter through the usual means."
 ---
 In recent articles I explained how I've [optimized queries against large datasets][1] at my current employer, and how I've written [efficient archiving and purging jobs][2] to trim the tables down to a manageable size. This article explains how I re-indexed some of those tables without taking the server offline.
 

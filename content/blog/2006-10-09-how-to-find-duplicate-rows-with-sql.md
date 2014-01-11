@@ -2,8 +2,6 @@
 title: How to find duplicate rows with SQL
 date: "2006-10-09"
 permalink: /2006/10/09/how-to-find-duplicate-rows-with-sql/
-description:
-  - 'Shows how to find and delete duplicated rows in a database table with SQL.   Also discusses advanced techniques.'
 ---
 This article shows how to find duplicated rows in a database table. This is a very common beginner question. The basic technique is straightforward. I'll also show some variations, such as how to find "duplicates in two columns" (a recent question on the #mysql IRC channel).
 

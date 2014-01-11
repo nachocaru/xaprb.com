@@ -2,15 +2,6 @@
 title: Maatkit version 1674 released
 date: "2008-01-05"
 permalink: /2008/01/05/maatkit-version-1674-released/
-description:
-  - Another one bites the dust!
-tags:
-  - backups
-  - MySQL
-  - replication
-  - SQL
-  - synchronization
-  - UDF
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

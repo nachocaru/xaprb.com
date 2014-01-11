@@ -2,16 +2,6 @@
 title: MySQL Toolkit version 946 released
 date: "2007-10-01"
 permalink: /2007/10/01/mysql-toolkit-version-946-released/
-description:
-  - >
-    This release of MySQL Toolkit adds a new new parallel dump tool for
-    multi-threaded backups.
-tags:
-  - backups
-  - MySQL
-  - parallel dump
-  - replication
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>

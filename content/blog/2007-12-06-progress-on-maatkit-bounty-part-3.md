@@ -2,16 +2,6 @@
 title: Progress on Maatkit bounty, part 3
 date: "2007-12-06"
 permalink: /2007/12/06/progress-on-maatkit-bounty-part-3/
-description:
-  - mk-table-checksum is a brand new beast!
-tags:
-  - checksum
-  - Giuseppe Maxia
-  - MySQL
-  - replication
-  - SQL
-  - synchronization
-  - Test Driven Development
 ---
 This is the last day I'm taking off work to hack on mk-table-sync, and I thought it was time for (yet another) progress report. Here's what I have done so far:
 

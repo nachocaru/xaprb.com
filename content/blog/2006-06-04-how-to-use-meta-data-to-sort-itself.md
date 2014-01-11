@@ -2,10 +2,6 @@
 title: How to use meta-data to sort itself
 date: "2006-06-04"
 permalink: /2006/06/04/how-to-use-meta-data-to-sort-itself/
-description:
-  - >
-    Explains how meta-data can store meta-data about itself, which can then be
-    applied to itself and the real data.
 ---
 I'm a big fan of meta-data stored in the database. I love having a table that records arbitrary data about data. In fact, such a table can even be used to store meta-data about itself. In this article I'll explain how to use meta-data to define a sort order for both itself and the data to which it's related.
 

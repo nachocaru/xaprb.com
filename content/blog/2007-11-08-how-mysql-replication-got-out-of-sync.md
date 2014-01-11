@@ -2,15 +2,6 @@
 title: How MySQL replication got out of sync
 date: "2007-11-08"
 permalink: /2007/11/08/how-mysql-replication-got-out-of-sync/
-description:
-  - Why MySQL replication gets out of sync on the slave
-tags:
-  - checksums
-  - MySQL
-  - queue
-  - replication
-  - slave corruption
-  - SQL
 ---
 I created [MySQL Table Checksum][1] because I was certain replication slaves were slowly drifting out of sync with their masters, and there was no way to prove it. Once I could prove it, I was able to show that replication gets out of sync for lots of people, lots of times. (If you really want to hear war stories, you should probably talk to one of the MySQL support staff or consulting team members; I'm sure they see this a lot more than I do).
 

@@ -2,10 +2,6 @@
 title: How we enabled threading in MySQL
 date: "2006-07-16"
 permalink: /2006/07/16/how-we-enabled-threading-in-mysql/
-description:
-  - >
-    Explains how we isolated the cause of MySQL multi-processing instead of
-    multi-threading, and fixed it, lowering CPU utilization.
 ---
 MySQL on GNU/Linux appears to be able to either run multiple processes, or one process and multiple threads. We've noticed a significant CPU penalty for multiple processes, probably from the context switching overhead. The trouble was, one of our servers wouldn't use threads; it wanted to use multiple processes. This article explains how we got it to use threads instead.
 

@@ -2,8 +2,6 @@
 title: Why multi-table cross-database deletes fail in MySQL
 date: "2006-05-12"
 permalink: /2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/
-description:
-  - Explains how to avoid problems with multi-table cross-database deletes in MySQL.
 ---
 Sometimes multi-table deletes fail in MySQL with a message about an unknown table. In this article I'll explain the exact combination of circumstances that cause it to happen.
 

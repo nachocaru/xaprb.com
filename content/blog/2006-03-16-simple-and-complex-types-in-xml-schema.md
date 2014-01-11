@@ -2,10 +2,6 @@
 title: Simple and complex types in XML Schema
 date: "2006-03-16"
 permalink: /2006/03/16/simple-and-complex-types-in-xml-schema/
-description:
-  - >
-    Explains the difference between simple and complex element types, and element
-    and content types in XML Schema.
 ---
 If you've worked much with XML Schema, or tried to read a schema, you've probably run into markup that refers to simple and complex types. These terms can be confusing. In this article I'll explain what they mean in simple terminology, and point you to resources that can help you learn more.
 

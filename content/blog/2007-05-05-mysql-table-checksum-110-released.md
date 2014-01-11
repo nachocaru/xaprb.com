@@ -2,10 +2,6 @@
 title: MySQL Table Checksum 1.1.0 released
 date: "2007-05-05"
 permalink: /2007/05/05/mysql-table-checksum-110-released/
-description:
-  - >
-    MySQL Table Checksum is the best way to verify your slaves are in sync with the
-    master.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Checksum</a>

@@ -2,14 +2,6 @@
 title: Introducing MySQL Parallel Restore
 date: "2007-10-15"
 permalink: /2007/10/15/introducing-mysql-parallel-restore/
-description:
-  - MySQL Parallel Restore loads files in parallel into MySQL
-tags:
-  - backups
-  - data recovery
-  - MySQL
-  - parallel dump
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>

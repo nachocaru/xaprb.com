@@ -2,21 +2,6 @@
 title: Stock images are too popular
 date: "2008-03-27"
 permalink: /2008/03/27/stock-images-are-too-popular/
-description:
-  - "Why vacuous stock is bad, and why it's even worse not to get exclusive rights to important images."
-tags:
-  - Head First Design Patterns
-  - images
-  - LSI Megaraid
-  - MySQL
-  - MySQL Certification
-  - MySQL Cluster
-  - OReilly
-  - stock
-  - stock photos
-  - Title Nine
-  - Vagisil
-  - xTuple
 ---
 <p>I have an ingrained (possibly even genetic) aversion to stock images.  Actually, not all stock: just the vacuous kind.  You know what I mean: like  the  politically-correct, gender-balanced, racially-balanced, age-diverse ones where people are all smiling and pointing at a computer screen you can't see.  Ugh!</p>
 

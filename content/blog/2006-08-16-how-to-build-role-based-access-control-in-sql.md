@@ -2,10 +2,6 @@
 title: How to build role-based access control in SQL
 date: "2006-08-16"
 permalink: /2006/08/16/how-to-build-role-based-access-control-in-sql/
-description:
-  - >
-    How to use SQL to build efficient, powerful role-based access control (RBAC and
-    ACL) into your application with row-level granularity.
 ---
 The posts I've been reading and writing recently have reminded me how Object-Relational Mapping (ORM) systems make it fun and convenient to interact with databases. For some of the reasons they're a developer's favorite, they can be a database administrator's nightmare (think surrogate keys). But designing tables with a consistent set of columns has its benefits. Just because the columns are meta-data that have no intrinsic **meaning** doesn't mean they have no **value**. In this series of articles I'll show you several ways to use such "meaningless" meta-data to enable powerful, efficient application-level role-based access control (RBAC) in the database, with a focus on web applications, though you could do this for any application.
 

@@ -2,19 +2,6 @@
 title: "A challenge: partition a character set in MySQL"
 date: "2007-06-11"
 permalink: /2007/06/11/a-challenge-partition-a-character-set-in-mysql/
-description:
-  - 'A challenge: find endpoints of ranges that will partition a character column into subsets of approximately X rows'
-tags:
-  - algorithm
-  - challenge
-  - character_data
-  - checksum
-  - Coding
-  - divide_and_conquer
-  - MySQL
-  - mysqltoolkit
-  - partition
-  - SQL
 ---
 How good are your SQL and/or general coding skills? I have a specific challenge I'd like your help solving. I am not sure it's possible, but I'd love to be proven wrong.
 

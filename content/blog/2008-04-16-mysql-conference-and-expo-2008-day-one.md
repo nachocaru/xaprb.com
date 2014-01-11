@@ -2,29 +2,6 @@
 title: MySQL Conference and Expo 2008, Day One
 date: "2008-04-16"
 permalink: /2008/04/16/mysql-conference-and-expo-2008-day-one/
-description:
-  - The first day of MySQL Conference and Expo was a great success.
-categories:
-  - Maatkit
-  - PostgreSQL
-  - SQL
-tags:
-  - Beat Vontobel
-  - benchmarks
-  - InnoDB
-  - Lars Thalmann
-  - Mats Kindahl
-  - mysqluc2008
-  - Paul McCullagh
-  - pbxt
-  - Percona
-  - Peter Zaitsev
-  - replication
-  - Sergey Petrunia
-  - Sphinx
-  - Su Doku
-  - The Blob
-  - Vadim Tkachenko
 ---
 Today is the first day at the conference (aside from the tutorials, which were yesterday). Here's what I went to:
 

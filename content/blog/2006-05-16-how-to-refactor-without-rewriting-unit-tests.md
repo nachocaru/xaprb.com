@@ -2,10 +2,6 @@
 title: How to write unit tests for ease of refactoring
 date: "2006-05-16"
 permalink: /2006/05/16/how-to-refactor-without-rewriting-unit-tests/
-description:
-  - >
-    Explains why testing behavior, not implementation, can help avoid the need to
-    change unit tests when the implementation changes.
 ---
 Unit testing can help make code much more flexible by giving an unambigous, yes-or-no answer about whether the code is right. In this article I'll explain an important principle for making unit tests most useful for refactoring: **Test the behavior, not the implementation**.
 

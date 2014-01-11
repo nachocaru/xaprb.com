@@ -2,8 +2,6 @@
 title: JavaScript regular expression toolkit
 date: "2006-01-18"
 permalink: /2006/01/18/regular-expression-toolkit/
-description:
-  - 'A tool for building JavaScript regular expressions.  Displays results graphically for easy comprehension.'
 ---
 I have created a web page that matches regular expressions against arbitrary input text and displays the results graphically, so you can take some sample text and build regular expressions the easy way, with immediate feedback about what matches and where, where you have errors, and more.
 

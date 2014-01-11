@@ -2,8 +2,6 @@
 title: Introducing MySQL Table Checksum
 date: "2007-02-26"
 permalink: /2007/02/26/introducing-mysql-table-checksum/
-description:
-  - 'MySQL Table Checksum is a tool to do fast parallel table checksums across many MySQL servers.  It can verify slaves are identical to the master.'
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Get MySQL Table Checksum</a>

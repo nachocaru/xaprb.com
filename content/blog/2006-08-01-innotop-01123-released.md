@@ -2,8 +2,6 @@
 title: Version 0.1.123 of innotop released
 date: "2006-08-01"
 permalink: /2006/08/01/innotop-01123-released/
-description:
-  - Lists the changes in version 0.1.123 of the innotop InnoDB and MySQL monitor.
 ---
 I've made several improvements to the `innotop` InnoDB and MySQL monitor, and it's ready to get from the [innotop homepage][1].
 

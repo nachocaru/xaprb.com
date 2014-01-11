@@ -2,14 +2,6 @@
 title: Maatkit version 1877 released
 date: "2008-03-16"
 permalink: /2008/03/16/maatkit-version-1877-released/
-description:
-  - >
-    This Maatkit release can help you find your MySQL replication slaves and move
-    them around the replication hierarchy.
-tags:
-  - MySQL
-  - replication
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

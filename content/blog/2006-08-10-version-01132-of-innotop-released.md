@@ -2,8 +2,6 @@
 title: Version 0.1.132 of innotop released
 date: "2006-08-10"
 permalink: /2006/08/10/version-01132-of-innotop-released/
-description:
-  - A new version of the innotop MySQL and InnoDB monitor is available.
 ---
 I've released another version of the innotop MySQL and InnoDB monitor. As always, you can [download innotop from its homepage][1].
 

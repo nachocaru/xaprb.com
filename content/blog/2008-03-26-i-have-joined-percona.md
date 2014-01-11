@@ -2,13 +2,6 @@
 title: I have joined Percona
 date: "2008-03-26"
 permalink: /2008/03/26/i-have-joined-percona/
-description:
-  - "I'm joining Percona as a high-performance MySQL consultant"
-tags:
-  - Alan Rimm Kaufman
-  - MySQL
-  - Percona
-  - Rimm Kaufman Group
 ---
 Effective April 1, I will join [Percona][1] full-time as a consultant. I'll be helping people build high-performance applications with MySQL, but I'll also be continuing to develop and improve tools such as [Maatkit][2].
 

@@ -2,10 +2,6 @@
 title: MySQL Table Checksum 1.1.9 released
 date: "2007-07-10"
 permalink: /2007/07/10/mysql-table-checksum-119-released/
-description:
-  - The new release of MySQL Toolkit contains improvements to MySQL Table Checksum
-tags:
-  - mysql checksum replication
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>

@@ -2,15 +2,6 @@
 title: Henceforth, I dub thee GLAMP
 date: "2008-02-21"
 permalink: /2008/02/21/henceforth-i-dub-thee-glamp/
-description:
-  - "So you think you use the LAMP stack?  You're wrong: LAMP is incapable of even booting."
-tags:
-  - Brian Aker
-  - Free Software
-  - GNU
-  - Linux
-  - Richard Stallman
-  - University of Virginia
 ---
 I've decided to start replacing L with GL in acronyms where L supposedly stands for Linux.
 

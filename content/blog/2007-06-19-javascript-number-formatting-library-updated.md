@@ -2,20 +2,6 @@
 title: JavaScript number-formatting library updated
 date: "2007-06-19"
 permalink: /2007/06/19/javascript-number-formatting-library-updated/
-description:
-  - >
-    This version of my powerful, flexible, efficient JavaScript number-formatting
-    library fixes a zero-padding bug with negative numbers.
-tags:
-  - formatting
-  - format_strings
-  - Javascript
-  - library
-  - number formatting
-  - numberformat
-  - numbers
-  - parsing
-  - unit testing
 ---
 <p class="download">
   <a href="/articles/number-functions.zip">Download number-functions</a>

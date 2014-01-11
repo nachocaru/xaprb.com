@@ -2,8 +2,6 @@
 title: "How to coordinate distributed work with MySQL's GET_LOCK"
 date: "2006-07-26"
 permalink: /2006/07/26/how-to-coordinate-distributed-work-with-mysqls-get_lock/
-description:
-  - "Explains how to use MySQL's GET_LOCK function to  ensure mutually exclusive access to any resource in a distributed environment."
 ---
 This article explains how I replaced file-based methods to ensure only one running instance of a program with MySQL's `GET_LOCK` function. The result is mutual exclusivity that works in a distributed environment, and it's dead simple to implement.
 

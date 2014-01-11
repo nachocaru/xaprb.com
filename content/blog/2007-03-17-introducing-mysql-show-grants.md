@@ -2,10 +2,6 @@
 title: "Introducing MySQL Toolkit's Show Grants tool"
 date: "2007-03-17"
 permalink: /2007/03/17/introducing-mysql-show-grants/
-description:
-  - >
-    MySQL Show Grants makes it easy to extract, compare, canonicalize, diff and
-    replicate MySQL grants between servers.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Show Grants</a>

@@ -2,10 +2,6 @@
 title: How to avoid many-to-one problems in SQL
 date: "2006-03-11"
 permalink: /2006/03/11/many-to-one-problems-in-sql/
-description:
-  - >
-    Shows how to avoid situations where SQL statements can map many rows to one row,
-    producing undefined results.
 ---
 It's been a while since I've posted an abstract, theoretical article on a fine point of SQL. Today I want to bring your attention to two ways in which an RDBMS can allow you to do something that has no well-defined result. These involve queries where several values are eligible, but only one is chosen &#8212; and chosen in an undefined manner. I'll show you the two blunders, tell you when they might occur, and explain how to avoid them.
 

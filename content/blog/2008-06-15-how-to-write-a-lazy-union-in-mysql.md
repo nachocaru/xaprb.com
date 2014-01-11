@@ -2,14 +2,6 @@
 title: How to write a lazy UNION in MySQL
 date: "2008-06-15"
 permalink: /2008/06/15/how-to-write-a-lazy-union-in-mysql/
-description:
-  - A lazy UNION stops executing as soon as one part of it finds a row.
-tags:
-  - archiving
-  - data archiving
-  - MySQL
-  - UNION
-  - user defined variables
 ---
 The other day I was explaining options to someone who wanted to know about [archiving data in MySQL][1]. "So," he said, "I might have to code my app to look for the data in two places?" The disadvantage of this is that his app might be more complex. Another disadvantage is that it might take two queries &#8212; if you look for a user in the usual location and it's not there, you have to look for it elsewhere.
 

@@ -2,25 +2,6 @@
 title: PostgreSQL Conference East 2008
 date: "2008-04-01"
 permalink: /2008/04/01/postgresql-conference-east-2008/
-description:
-  - >
-    PostgreSQL Conference East 2008 was a great chance for me to learn about
-    Postgres and meet people.
-tags:
-  - Bruce Momjian
-  - conference
-  - EnterpriseDB
-  - Hibernate
-  - Joshua Drake
-  - Lewis Cunningham
-  - Magnus Hagander
-  - MySQL
-  - Nikolay Samokhvalov
-  - pgconference08
-  - PostgreSQL
-  - Robert Treat
-  - Selena Deckelmann
-  - XML
 ---
 [<img src="http://www.postgresql.org/layout/images/hdr_left.png" width="230" height="80" alt="PostgreSQL" style="float:right" />][1]As a I wrote a couple of days ago, I went to the second day of [PostgreSQL Conference East 2008][2] last Sunday. I had a good time and really enjoyed meeting everyone, listening, learning, and occasionally talking. I asked a number of fearless-newbie questions that paid off handsomely: people were very willing to humor me. I also left with a beautiful t-shirt, mug, and bag combo thanks to [EnterpriseDB][3]. The bag has already been put to use for a grocery shopping trip.
 

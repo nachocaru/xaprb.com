@@ -2,13 +2,6 @@
 title: High Performance MySQL Second Edition goes to press!
 date: "2008-06-06"
 permalink: /2008/06/06/high-performance-mysql-second-edition-goes-to-press/
-description:
-  - Buy one for your pet snake, too!
-categories:
-  - High Performance MySQL
-  - SQL
-tags:
-  - Publishing
 ---
 Today [High Performance MySQL, Second Edition][1] went to press. I've been working with the production team over the last couple of weeks, proofreading and checking the index and working with the artist who re-drew the illustrations.
 

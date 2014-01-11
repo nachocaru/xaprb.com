@@ -2,10 +2,6 @@
 title: Why I use explicit date math in SQL
 date: "2006-12-20"
 permalink: /2006/12/20/why-i-use-explicit-date-math-in-sql/
-description:
-  - >
-    Why it is better to explicitly use built-in date functions in SQL instead of
-    relying on overloaded operators.
 ---
 I sometimes see advice to do SQL date operations with the + and &#8211; operators on platforms where they are overloaded for date types. I try to avoid that, because it can give unexpected results. I prefer to explicitly use the built-in date/time functions. I'll show you an example where the operators cause problems, but the functions do the right thing.
 

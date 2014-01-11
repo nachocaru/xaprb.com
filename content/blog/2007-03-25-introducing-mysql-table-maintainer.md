@@ -2,10 +2,6 @@
 title: Introducing MySQL Table Maintainer
 date: "2007-03-25"
 permalink: /2007/03/25/introducing-mysql-table-maintainer/
-description:
-  - >
-    MySQL Table Maintainer makes it convenient to run complex maintenance jobs, such
-    as ANALYZE, CHECK, OPTIMIZE and REPAIR.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Maintainer</a>

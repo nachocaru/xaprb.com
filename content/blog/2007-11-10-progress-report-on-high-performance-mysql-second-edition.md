@@ -2,25 +2,6 @@
 title: Progress report on High Performance MySQL, Second Edition
 date: "2007-11-10"
 permalink: /2007/11/10/progress-report-on-high-performance-mysql-second-edition/
-description:
-  - 'Status report on High Performance MySQL, Second Edition: Security, benchmarks, profiling, tuning, server status, indexing, query optimization, schema optimization'
-tags:
-  - benchmarks
-  - High Availability
-  - High Performance MySQL
-  - indexing
-  - MySQL
-  - optimization
-  - Peter Zaitsev
-  - privileges
-  - profiling
-  - query optimization
-  - scaling
-  - schema optimization
-  - security
-  - server status
-  - SQL
-  - tuning
 ---
 It's been a while since I've written about progress on the book. I actually stopped working on it as much at the beginning of the month, because on October 31st I managed to finish a first draft of the last big chapter (Scaling and High Availability)! Now I'm back to full-time work at my employer, and I'm working on the book in the evenings and weekends only.
 

@@ -2,16 +2,6 @@
 title: Introducing MySQL Slave Delay
 date: "2007-08-04"
 permalink: /2007/08/04/introducing-mysql-slave-delay/
-description:
-  - >
-    MySQL Slave Delay makes a replication slave lag behind its master for quick
-    disaster recovery without resorting to backups.
-tags:
-  - delay
-  - MySQL
-  - replication
-  - Sergey Zhuravlev
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Slave Delay</a>

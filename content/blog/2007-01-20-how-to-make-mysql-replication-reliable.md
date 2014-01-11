@@ -2,10 +2,6 @@
 title: How to make MySQL replication reliable
 date: "2007-01-20"
 permalink: /2007/01/20/how-to-make-mysql-replication-reliable/
-description:
-  - >
-    Explains how to design systems so replication will run smoothly and disaster
-    recovery will be as easy as possible.
 ---
 MySQL statement-based replication is widely discussed, but I haven't seen much about how to design a replication setup for low downtime and easy administration. Statement-based replication has inherent shortcomings experienced MySQL users know to avoid, but rarely write about. This article explains how to avoid problems, help your slaves stay in sync with the master, and recover from disasters more quickly.
 

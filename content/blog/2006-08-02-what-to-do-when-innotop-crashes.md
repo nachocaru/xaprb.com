@@ -2,8 +2,6 @@
 title: What to do when innotop crashes
 date: "2006-08-02"
 permalink: /2006/08/02/what-to-do-when-innotop-crashes/
-description:
-  - Explains how to submit a bug report for the innotop InnoDB and MySQL monitor.
 ---
 A couple of people have written in reporting [`innotop`][1] crashes. Unfortunately I don't have access to enough variations of operating systems and MySQL versions to test everything myself, but if you're able to help by sending me a bug report when `innotop` crashes, I'm willing to work on fixing it! I hope soon I'll have a much larger test suite, and am grateful for your help with that. This article explains what information I need to reproduce and debug crashes.
 

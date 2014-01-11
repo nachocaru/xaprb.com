@@ -2,18 +2,6 @@
 title: JavaScript Number Formatting Library v1.3 released
 date: "2007-07-15"
 permalink: /2007/07/15/javascript-number-formatting-library-v13-released/
-description:
-  - >
-    The powerful and efficient JavaScript number formatting library now lets you
-    customize how special numbers display.
-tags:
-  - format strings
-  - formatting
-  - Javascript
-  - library
-  - number formatting
-  - numberformat
-  - parsing
 ---
 <p class="download">
   <a href="/articles/number-functions.zip">Download Number Formatting Library</a>

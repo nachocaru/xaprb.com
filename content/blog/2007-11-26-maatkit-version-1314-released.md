@@ -2,12 +2,6 @@
 title: Maatkit version 1314 released
 date: "2007-11-26"
 permalink: /2007/11/26/maatkit-version-1314-released/
-description:
-  - Maatkit rename is now complete.
-tags:
-  - MySQL
-  - MySQL Toolkit
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

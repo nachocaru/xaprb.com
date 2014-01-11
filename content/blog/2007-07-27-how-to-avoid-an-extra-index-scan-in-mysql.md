@@ -2,18 +2,6 @@
 title: How to avoid an extra index scan in MySQL
 date: "2007-07-27"
 permalink: /2007/07/27/how-to-avoid-an-extra-index-scan-in-mysql/
-description:
-  - >
-    Specifying indexed columns as NOT NULL whenever possible lets MySQL avoid an
-    extra index scan for certain queries.
-tags:
-  - explain
-  - join strategy
-  - MySQL
-  - 'null'
-  - query plan
-  - sakila
-  - SQL
 ---
 Is your MySQL server doing an extra index scan on queries that need to check a key for matches or NULL? It's easy for this to happen accidentally, but it's also easy to fix, especially in MySQL 5.0 and up. Here's how.
 

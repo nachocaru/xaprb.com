@@ -2,8 +2,6 @@
 title: High Performance MySQL 2nd Edition is in production
 date: "2008-03-19"
 permalink: /2008/03/19/high-performance-mysql-2nd-edition-is-in-production/
-description:
-  - High Performance MySQL, Second Edition will be in print in June.
 ---
 Just a quick note to say we have reached the production stage of the book project. Production is the process of transforming our OpenOffice.org files into the final page layout using a professional typesetting program.
 

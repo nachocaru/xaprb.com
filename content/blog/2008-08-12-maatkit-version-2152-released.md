@@ -2,18 +2,6 @@
 title: Maatkit version 2152 released
 date: "2008-08-12"
 permalink: /2008/08/12/maatkit-version-2152-released/
-description:
-  - Maatkit is now hosted on Google Code.
-categories:
-  - Maatkit
-  - Perl
-  - SQL
-tags:
-  - Ask Bjorn Hansen
-  - Daniel Nichter
-  - Google Code
-  - Percona
-  - sourceforge
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

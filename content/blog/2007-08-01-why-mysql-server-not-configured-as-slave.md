@@ -2,16 +2,6 @@
 title: Why MySQL says the server is not configured as a slave
 date: "2007-08-01"
 permalink: /2007/08/01/why-mysql-server-not-configured-as-slave/
-description:
-  - "Explains the most common causes of MySQL's ERROR 1200 (HY000): The server is not configured as slave."
-tags:
-  - configuration
-  - master
-  - MySQL
-  - replication
-  - slave
-  - SQL
-  - troubleshooting
 ---
 Is MySQL giving you the error message "ERROR 1200 (HY000): The server is not configured as slave; fix in config file or with CHANGE MASTER TO" when you try to run START SLAVE? There are a few simple troubleshooting steps to take, but I always forget what to do. This article is to help me remember in the future!
 

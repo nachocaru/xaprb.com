@@ -2,8 +2,6 @@
 title: Excel vs. OpenOffice.org Calc in number formatting
 date: "2005-12-30"
 permalink: /2005/12/30/excel-calc-number-formatting/
-description:
-  - "This article explains undocumented features in Microsoft Excel's number formatting specification."
 ---
 I was playing with custom format strings in Excel recently and noticed something odd. The number of digits to the left of the decimal place seemed to vary bizarrely when using custom format strings for exponential notation, in ways that contradict the documentation. OpenOffice.org doesn't exhibit the same wackiness. Which spreadsheet formats numbers more sanely?
 

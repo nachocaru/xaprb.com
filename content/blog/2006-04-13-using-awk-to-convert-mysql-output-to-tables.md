@@ -2,10 +2,6 @@
 title: How to convert MySQL output to HTML tables
 date: "2006-04-13"
 permalink: /2006/04/13/using-awk-to-convert-mysql-output-to-tables/
-description:
-  - >
-    Shows two ways to pipe the output from the MySQL client into programs that
-    convert it to HTML tables.
 ---
 In this article I'll explain how to control the output of the `mysql` client program and feed it to another program to transform the results as desired. I often transform output into HTML tables for these blog articles &#8212; at least, I do when I'm not being lazy.
 

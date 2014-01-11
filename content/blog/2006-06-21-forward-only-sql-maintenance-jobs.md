@@ -2,10 +2,6 @@
 title: How to do efficient forward-only SQL maintenance jobs
 date: "2006-06-21"
 permalink: /2006/06/21/forward-only-sql-maintenance-jobs/
-description:
-  - >
-    Explains how to create a forward-only SQL "bookmark" so maintenance jobs never
-    backtrack.
 ---
 I've recently written about techniques for [archiving, purging][1], and [re-indexing][2] huge database tables. These techniques exploit both data structure and usage patterns. In this article I'll develop that theme further, and explain how to write more efficient non-backtracking maintenance jobs when the update and insertion patterns permit.
 

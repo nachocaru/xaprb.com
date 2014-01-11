@@ -2,17 +2,6 @@
 title: How to emulate the TYPEOF() function in MySQL
 date: "2008-08-13"
 permalink: /2008/08/13/how-to-emulate-the-typeof-function-in-mysql/
-description:
-  - >
-    Shows how to programmatically determine the type of an arbitrary expression in
-    MySQL.
-  - >
-    Shows how to programmatically determine the type of an arbitrary expression in
-    MySQL.
-tags:
-  - data types
-  - MySQL
-  - TYPEOF()
 ---
 Want to know the type of an arbitrary expression in MySQL? Someday in the far far future in version 7.1, you might be able to with the [TYPEOF()][1] function.
 

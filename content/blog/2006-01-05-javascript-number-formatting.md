@@ -2,15 +2,6 @@
 title: How to format numbers in JavaScript flexibly and efficiently
 date: "2006-01-05"
 permalink: /2006/01/05/javascript-number-formatting/
-description:
-  - A JavaScript library for efficient, infinitely flexible number formatting.
-tags:
-  - formatting
-  - format_strings
-  - Javascript
-  - library
-  - numberformat
-  - parsing
 ---
 <p style="border:solid red 1px; background:yellow">
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>

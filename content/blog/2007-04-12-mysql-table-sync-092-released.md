@@ -2,10 +2,6 @@
 title: MySQL Table Sync 0.9.2 released
 date: "2007-04-12"
 permalink: /2007/04/12/mysql-table-sync-092-released/
-description:
-  - >
-    The 0.9.2 release of MySQL Table Sync fixes several bugs and adds more
-    documentation.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Sync</a>

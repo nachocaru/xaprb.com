@@ -2,10 +2,6 @@
 title: How to track what owns a MySQL connection
 date: "2006-07-23"
 permalink: /2006/07/23/how-to-track-what-owns-a-mysql-connection/
-description:
-  - >
-    Explains how to find the name and UNIX process ID of the program that owns a
-    MySQL connection, given a connection ID.
 ---
 MySQL doesn't yet provide good tools for some troubleshooting tasks. Fortunately, there is some low-hanging fruit you can pluck. One example is a tool to record who owns a MySQL database connection, so long-running transactions can be traced back to the source. This article demonstrates an easy way to solve that problem.
 

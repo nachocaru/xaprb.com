@@ -2,10 +2,6 @@
 title: A PHP implementation of the XML DOM
 date: "2006-10-31"
 permalink: /2006/10/31/dom4php-a-php-dom-implementation/
-description:
-  - >
-    dom4php is a PHP 4 library for manipulating XML documents via the DOM without
-    any external dependencies.
 ---
 <p class="download">
   <a href="/dom4php/">Download dom4php</a>

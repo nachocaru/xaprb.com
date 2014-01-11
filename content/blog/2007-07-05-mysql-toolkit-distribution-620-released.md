@@ -2,16 +2,6 @@
 title: MySQL Toolkit distribution 620 released
 date: "2007-07-05"
 permalink: /2007/07/05/mysql-toolkit-distribution-620-released/
-description:
-  - >
-    The new release of the MySQL Toolkit includes bug fixes, documentation, and one
-    new tool.
-tags:
-  - checksum
-  - MySQL
-  - mysqltoolkit
-  - replication
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>

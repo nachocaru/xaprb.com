@@ -2,17 +2,6 @@
 title: JavaScript formatting library update
 date: "2007-06-25"
 permalink: /2007/06/25/javascript-formatting-library-update/
-description:
-  - High performance JavaScript date and number parsing and formatting libraries.
-tags:
-  - daloradius
-  - date formatting
-  - date parsing
-  - extjs
-  - html
-  - Javascript
-  - Liran Tal
-  - number formatting
 ---
 This is a quick update on the state of my [JavaScript date formatting libraries][1] and date chooser, and [JavaScript number formatting library][2]. It's been a while since I wrote them, and as you can tell my interests have turned to many other things, but thet remain the [best JavaScript formatting and parsing libraries][3] I've seen.
 

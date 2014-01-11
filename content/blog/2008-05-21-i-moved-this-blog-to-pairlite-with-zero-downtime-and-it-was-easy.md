@@ -2,20 +2,6 @@
 title: I moved this blog to pairLite with zero downtime, and it was easy
 date: "2008-05-21"
 permalink: /2008/05/21/i-moved-this-blog-to-pairlite-with-zero-downtime-and-it-was-easy/
-description:
-  - Hiring an expert can be the biggest money saver ever.
-categories:
-  - SQL
-  - Sys Admin
-tags:
-  - backups
-  - BRIWorks
-  - Embarq
-  - hosting
-  - MySQL
-  - pair Networks
-  - pairLite
-  - WordPress
 ---
 Did you notice that I moved this blog from [pair Networks][1] to [pairLite hosting][2]?
 

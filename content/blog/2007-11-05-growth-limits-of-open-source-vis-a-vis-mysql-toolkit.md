@@ -2,20 +2,6 @@
 title: Growth limits of open-source vis-a-vis MySQL Toolkit
 date: "2007-11-05"
 permalink: /2007/11/05/growth-limits-of-open-source-vis-a-vis-mysql-toolkit/
-description:
-  - >
-    Growing an open-source project is a challenge that separates good and bad very
-    clearly.
-tags:
-  - Kurt Vonnegut
-  - MySQL
-  - Perl
-  - Si Chen
-  - sourceforge
-  - SQL
-  - Test Driven Development
-  - unit testing
-  - Zmanda
 ---
 [Si Chen wrote recently about the growth limits of open-source projects][1]. He points out that as a project becomes larger, it gets harder to maintain. I can only agree. As the [MySQL Toolkit][2] project has grown, it's become significantly more work to maintain, document, and enhance. (This is why I'm asking you to [sponsor me for a week off my regular job to work on MySQL Table Sync][3], by the way. Please toss some money in the hat.)
 

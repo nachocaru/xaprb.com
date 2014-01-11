@@ -2,18 +2,6 @@
 title: MySQL Toolkit version 675 released
 date: "2007-07-20"
 permalink: /2007/07/20/mysql-toolkit-version-675-released/
-description:
-  - >
-    The new release of MySQL Toolkit contains enhanced functionality and some bug
-    fixes.
-tags:
-  - archiving
-  - checksum
-  - MySQL
-  - mysqltoolkit
-  - purging
-  - replication
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>

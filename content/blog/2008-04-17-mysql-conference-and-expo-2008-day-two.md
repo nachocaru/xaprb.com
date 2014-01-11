@@ -2,24 +2,6 @@
 title: MySQL Conference and Expo 2008, Day Two
 date: "2008-04-17"
 permalink: /2008/04/17/mysql-conference-and-expo-2008-day-two/
-description:
-  - >
-    Day two of the conference had less interesting sessions but lots of good
-    interactions
-categories:
-  - SQL
-tags:
-  - Brian Aker
-  - EnterpriseDB
-  - Falcon
-  - Grazr
-  - Maatkit
-  - Maria
-  - mysqluc2008
-  - Patrick Galbraith
-  - Percona
-  - query cache
-  - Tokutek
 ---
 Day two of the conference was a little disappointing, as far as sessions went. There were several time blocks where I simply wasn't interested in any of the sessions. Instead, I went to the expo hall and tried to pry straight answers out of sly salespeople. Here's what I attended.
 

@@ -2,10 +2,6 @@
 title: How to understand key length limitations in MySQL
 date: "2006-04-17"
 permalink: /2006/04/17/max-key-length-in-mysql/
-description:
-  - >
-    Explains why MySQL may refuse to create keys on columns shorter than the maximum
-    key length.
 ---
 Suppose I try to create a table with a primary key that's varchar(500), and MySQL complains the key length is longer than the maximum of 1000 bytes. 500 is less than 1000. What's happening? In this article I'll explain why I, not MySQL, am wrong. Plus, I'll show you a tasty (yet apparently harmless) bug in MySQL.
 

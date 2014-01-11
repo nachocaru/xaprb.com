@@ -2,11 +2,6 @@
 title: How to monitor MySQL status and variables with innotop
 date: "2006-08-12"
 permalink: /2006/08/12/how-to-monitor-mysql-status-and-variables-with-innotop/
-description:
-  - >
-    Explains how the innotop MySQL and InnoDB monitor makes it easy to interpret the
-    values from SHOW STATUS and SHOW VARIABLES, unlike the old-fashioned ways of
-    doing this.
 ---
 This is one in a series of articles on how to use [innotop][1], a MySQL and InnoDB monitor. In this article I'll explain how innotop can make it much easier to collect useful information from `SHOW STATUS` and `SHOW VARIABLES` into one place. There are three modes in innotop that do this in different ways, so one of them may meet your needs.
 

@@ -2,8 +2,6 @@
 title: Version 0.1.149 of innotop released
 date: "2006-09-05"
 permalink: /2006/09/05/version-01149-of-innotop-released/
-description:
-  - 'After months of development, innotop is stable, reliable, and ready for you to use every day.  I think.'
 ---
 Version 0.1.149 of the innotop MySQL and InnoDB monitor is a major upgrade. As of this version I'm declaring innotop "stable," meaning I've put some work into making it deal with unexpected input. It should be very resistant to any sort of crash now. You can [download innotop from its homepage][1].
 

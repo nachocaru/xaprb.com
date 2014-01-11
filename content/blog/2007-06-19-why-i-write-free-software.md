@@ -2,16 +2,6 @@
 title: Why I write Free Software
 date: "2007-06-19"
 permalink: /2007/06/19/why-i-write-free-software/
-description:
-  - Why I release innotop and MySQL Toolkit as Free Software.
-tags:
-  - Brian Aker
-  - Don Marti
-  - FLOSS
-  - Free Software
-  - Innotop
-  - MySQL
-  - mysqltoolkit
 ---
 [Brian Aker][1] was a [recent guest on the LinuxCast podcast][2] with Don Marti. Brian has some interesting thoughts in this podcast and elsewhere on his blog, on motivations for writing Free and/or Open Source software. Here's why I do it myself.
 

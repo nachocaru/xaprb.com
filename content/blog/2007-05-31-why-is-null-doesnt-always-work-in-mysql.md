@@ -2,8 +2,6 @@
 title: "Why IS NULL doesn't always work in MySQL"
 date: "2007-05-31"
 permalink: /2007/05/31/why-is-null-doesnt-always-work-in-mysql/
-description:
-  - "Explains how MySQL's AUTO_INCREMENT feature, combined with Access compatibility, can give bizarre results sometimes."
 ---
 How can a query like "SELECT * FROM tbl WHERE col IS NULL" return a row where the column has a (non-NULL) value? Read on to find out.
 

@@ -2,17 +2,6 @@
 title: How to get your session accepted to MySQL Conference 2008
 date: "2007-10-05"
 permalink: /2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/
-description:
-  - I am a session reviewer for MySQL Conference and Expo 2008
-tags:
-  - Beat Vontobel
-  - Conferences
-  - Jay Pipes
-  - MySQL
-  - mysqlconf2008
-  - mysqluc2008
-  - Petr Chardin
-  - SQL
 ---
 I'm on the select board of elite people who were duped into reviewing proposals for the upcoming [MySQL Conference and Expo 2008][1], and I'm here to tell you how to get your proposal accepted. Aside from bribing me with chocolate, that is.
 

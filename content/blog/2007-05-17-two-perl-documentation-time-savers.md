@@ -2,10 +2,6 @@
 title: Two Perl documentation time-savers
 date: "2007-05-17"
 permalink: /2007/05/17/two-perl-documentation-time-savers/
-description:
-  - >
-    Perldoc, the Perl documentation program, can access built-in functions and find
-    FAQ entries instantly
 ---
 If you are a Perl developer and you only think of perldoc as the command that formats embedded POD (Plain Old Documentation) and lets you read it like a man page, you're missing two huge time-savers this versatile command can give you.
 

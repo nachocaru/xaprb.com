@@ -2,10 +2,6 @@
 title: MySQL Query Profiler 1.0.0 released
 date: "2007-03-01"
 permalink: /2007/03/01/mysql-query-profiler-100-released/
-description:
-  - >
-    MySQL Query Profiler is the only tool that measures the work MySQL really does
-    to execute your queries.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Query Profiler</a>

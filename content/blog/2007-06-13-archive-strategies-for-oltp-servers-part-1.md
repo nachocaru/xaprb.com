@@ -2,16 +2,6 @@
 title: Archive strategies for OLTP servers, Part 1
 date: "2007-06-13"
 permalink: /2007/06/13/archive-strategies-for-oltp-servers-part-1/
-description:
-  - Examines motivations and requirements for designing archiving strategies
-tags:
-  - archiving
-  - data archiving
-  - MySQL
-  - olap
-  - oltp
-  - scaling
-  - SQL
 ---
 In May 2005, I wrote a widely-referenced article about [how to efficiently archive and/or purge data from online transaction processing (OLTP) database servers][1]. That article focused on how to write efficient archiving SQL. In this article I'll discuss archiving strategy, not tactics. OLTP servers tend to have complex schemas, which makes it important and sometimes difficult to design a good archiving strategy.
 

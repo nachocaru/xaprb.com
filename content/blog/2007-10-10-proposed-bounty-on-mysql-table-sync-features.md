@@ -2,16 +2,6 @@
 title: Proposed bounty on MySQL Table Sync features
 date: "2007-10-10"
 permalink: /2007/10/10/proposed-bounty-on-mysql-table-sync-features/
-description:
-  - >
-    I am considering asking for a bounty on MySQL Table Sync so I can afford to take
-    off work and finish outstanding bugs and feature requests.
-tags:
-  - MySQL
-  - replication
-  - SQL
-  - sync
-  - synchronization
 ---
 I am considering taking some time off work to concentrate deeply on [MySQL Table Sync][1], which has been getting usage in very large companies whose names we all know. There are a lot of bugs and feature requests outstanding for it. It is overly complex, needs a lot of work, and I can't do it in one-hour or even three-hour chunks. I need to focus on it. I'm considering asking for a bounty of $2500 USD for this. Please let me know what you think of this; it seems to be a successful way to sponsor development on some other projects, like Vim.
 

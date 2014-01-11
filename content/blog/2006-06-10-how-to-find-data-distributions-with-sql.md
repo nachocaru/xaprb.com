@@ -2,10 +2,6 @@
 title: How to find data distributions with SQL
 date: "2006-06-10"
 permalink: /2006/06/10/how-to-find-data-distributions-with-sql/
-description:
-  - >
-    Demonstrates how to put data into variable-sized bins for analyzing its
-    distribution.
 ---
 In an earlier article I wrote about [grouping data into ranks with a catch-all bucket][1]. In this article I'll show you how to group the data into variable-sized buckets any way you please.
 

@@ -2,8 +2,6 @@
 title: Why NULL never compares false to anything in SQL
 date: "2006-05-18"
 permalink: /2006/05/18/why-null-never-compares-false-to-anything-in-sql/
-description:
-  - 'A tutorial for understanding NULL values in SQL.  Explains why NULL is neither equal or unequal to anything, and a way to think about NULL that makes it easy to write queries correctly.'
 ---
 One of the most common questions SQL beginners have is why `NULL` values "don't work right" in `WHERE` clauses. In this article I'll explain it in a way I hope will make sense and be easy to remember.
 

@@ -2,10 +2,6 @@
 title: MySQL Table Checksum 1.1.5 released
 date: "2007-05-16"
 permalink: /2007/05/16/mysql-table-checksum-115-released/
-description:
-  - >
-    MySQL Table Checksum 1.1.5 adds the ability to checksum tables in chunks and
-    sleep between checksums
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Table Checksum</a>

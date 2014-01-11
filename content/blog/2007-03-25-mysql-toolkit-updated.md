@@ -2,8 +2,6 @@
 title: MySQL Toolkit updated
 date: "2007-03-25"
 permalink: /2007/03/25/mysql-toolkit-updated/
-description:
-  - "I've updated all the tools in the MySQL Toolkit with major and minor changes."
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>

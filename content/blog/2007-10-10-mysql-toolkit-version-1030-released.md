@@ -2,14 +2,6 @@
 title: MySQL Toolkit version 1030 released
 date: "2007-10-10"
 permalink: /2007/10/10/mysql-toolkit-version-1030-released/
-description:
-  - This release fixes MySQL Parallel Dump bugs.
-tags:
-  - backups
-  - data recovery
-  - MySQL
-  - parallel dump
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>

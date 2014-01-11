@@ -2,21 +2,6 @@
 title: How to notify event listeners in MySQL
 date: "2007-08-29"
 permalink: /2007/08/29/how-to-notify-event-listeners-in-mysql/
-description:
-  - >
-    How to create a producer/consumer queue in MySQL, with notifications to the
-    listening consumer when the producer inserts into the queue.
-tags:
-  - consumer
-  - events
-  - listener
-  - locking
-  - MySQL
-  - notification
-  - polling
-  - producer
-  - queue
-  - SQL
 ---
 A high-performance application that has producers and consumers of some resource, such as a queue of messages, needs an efficient way to notify the consumers when the producer has inserted into the queue. Polling the queue for changes is not a good option. MySQL's `GET_LOCK()` and `RELEASE_LOCK()` functions can provide both mutual exclusivity and notifications.
 

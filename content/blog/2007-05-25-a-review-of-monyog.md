@@ -2,10 +2,6 @@
 title: A review of MONyog
 date: "2007-05-25"
 permalink: /2007/05/25/a-review-of-monyog/
-description:
-  - >
-    The MONyog MySQL monitoring tool is agentless and lightweight, easy to use and
-    customize, but not Free Software.
 ---
 <p>This is a review of Webyog's <a href="http://www.webyog.com/">MONyog</a> MySQL monitoring tool.  The product is still in beta and has some rough edges, but holds promise.  Its design includes some interesting architectural decisions I think will help distinguish it from MySQL's own Monitoring and Advisory Service.</p>
 

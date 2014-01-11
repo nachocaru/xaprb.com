@@ -1,7 +1,6 @@
 ---
 title: If you only learn one thing about database transactions, it should be this
 permalink: >
-description:
 ---
 I've been writing a lot of articles about locks, deadlocks, and transactions recently, and it occurs to me I've neglected to mention the single most important thing to know. If you only learn one thing about transactions in database systems, you should learn this, and learn it thoroughly &#8212; burn it into your brain permanently, if possible.
 

@@ -2,10 +2,6 @@
 title: Role-based access control in SQL, part 2
 date: "2006-08-18"
 permalink: /2006/08/18/role-based-access-control-in-sql-part-2/
-description:
-  - >
-    Explains how to build a fast, flexible role-based access control system (ACL)
-    with a SQL database, suitable for web and other applications.
 ---
 This is my second article on how to build a role-based access control system in SQL. In the first article I gave a high-level overview of access control systems in general, especially in the web-application context, and talked about how some ACLs are implemented. I introduced the problems I designed my system to solve, and gave a roadmap for where this series of articles will end. I finished that article with a sketch of some basics to provide row-level read, write, and delete access control.
 

@@ -2,8 +2,6 @@
 title: How fast is MySQL Table Checksum?
 date: "2007-05-12"
 permalink: /2007/05/12/how-fast-is-mysql-table-checksum/
-description:
-  - 'Benchmarks reveal my checksum algorithms are nearly as fast as CHECKSUM TABLE and much more useful.  They are a little slower than COUNT(*) on an InnoDB table.'
 ---
 A few people have asked me how fast [MySQL Table Checksum][1] is. As with so many other things, it depends. This article shows how long it takes to checksum real data on a production server I help manage, which might give you a rough idea of how long it'll take on your servers.
 

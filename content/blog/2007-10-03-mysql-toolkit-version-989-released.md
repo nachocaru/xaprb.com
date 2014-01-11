@@ -2,17 +2,6 @@
 title: MySQL Toolkit version 989 released
 date: "2007-10-03"
 permalink: /2007/10/03/mysql-toolkit-version-989-released/
-description:
-  - >
-    MySQL Parallel Dump can dump a single table simultaneously into chunks for
-    multi-threaded dumping and loading
-tags:
-  - backups
-  - MySQL
-  - parallel dump
-  - replication
-  - SQL
-  - transactions
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>

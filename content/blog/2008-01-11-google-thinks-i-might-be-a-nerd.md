@@ -2,15 +2,6 @@
 title: Google thinks I might be a nerd
 date: "2008-01-11"
 permalink: /2008/01/11/google-thinks-i-might-be-a-nerd/
-description:
-  - >
-    Google suggested nerd when I did an image search for an entity-relationship
-    diagram, or ERD
-tags:
-  - entity relationship diagram
-  - ERD
-  - Google
-  - humor
 ---
 &#8230; I'm almost insulted! Look at this!
 

@@ -2,16 +2,6 @@
 title: MySQL Toolkit version 896 released
 date: "2007-09-20"
 permalink: /2007/09/20/mysql-toolkit-version-896-released/
-description:
-  - "MySQL Heartbeat is a tool to monitor replication lag even when the slave isn't running."
-tags:
-  - Jeremy Cole
-  - monitoring
-  - MySQL
-  - Proven Scaling
-  - replication
-  - Six Apart
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>

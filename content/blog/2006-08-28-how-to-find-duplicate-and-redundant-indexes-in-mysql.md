@@ -2,10 +2,6 @@
 title: How to find duplicate and redundant indexes in MySQL
 date: "2006-08-28"
 permalink: /2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/
-description:
-  - >
-    A Perl script to identify possible duplicate or redundant indexes on MySQL
-    tables.
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download (part of Maatkit)</a>

@@ -2,18 +2,6 @@
 title: Progress on High Performance MySQL, Second Edition
 date: "2007-11-29"
 permalink: /2007/11/29/progress-on-high-performance-mysql-second-edition/
-description:
-  - >
-    High Performance MySQL, second edition, is not dead, no matter what you might
-    have heard.
-tags:
-  - Andrew Aksyonoff
-  - Andy Oram
-  - MySQL
-  - Peter Zaitsev
-  - Sphinx
-  - SQL
-  - Vadim Tkachenko
 ---
 It's been a while since I said anything about the progress on the book. That doesn't mean we are not still working on it, though.
 

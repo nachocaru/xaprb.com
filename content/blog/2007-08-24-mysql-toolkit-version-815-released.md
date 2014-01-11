@@ -2,14 +2,6 @@
 title: MySQL Toolkit version 815 released
 date: "2007-08-24"
 permalink: /2007/08/24/mysql-toolkit-version-815-released/
-description:
-  - >
-    A new release of the toolkit with mostly minor updates, and incremental
-    foot-dragging on MySQL Table Sync while I put off really improving it.
-tags:
-  - MySQL
-  - mysqltoolkit
-  - SQL
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>

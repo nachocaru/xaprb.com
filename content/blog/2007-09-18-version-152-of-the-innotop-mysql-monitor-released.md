@@ -2,15 +2,6 @@
 title: Version 1.5.2 of the innotop MySQL monitor released
 date: "2007-09-18"
 permalink: /2007/09/18/version-152-of-the-innotop-mysql-monitor-released/
-description:
-  - innotop shows you what locks each transaction holds.
-tags:
-  - InnoDB
-  - Innotop
-  - monitoring
-  - MySQL
-  - SQL
-  - transactions
 ---
 <p class="download">
   <a href="http://code.google.com/p/innotop">Download innotop</a>
