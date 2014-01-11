@@ -1,3 +1,6 @@
+use English qw(-no_match_vars);
+
+
 my %cat_for= (
     'About '                 => 'About',
     'About'                  => 'About',
@@ -53,11 +56,14 @@ my %cat_for= (
 $skip = 0;
 my %cats;
 my $type = [];
+
 my %pats = (
    'Maatkit' => ['Open Source', 'Databases'],
    'MySQL Toolkit' => ['Open Source', 'Databases'],
    'aspersa|innotop' => ['Open Source', 'Databases'],
+   'SQL' => ['Databases'],
 );
+
 while (<>) {
     if ( !$skip ) {
        foreach my $pat (keys %pats) {
@@ -67,7 +73,7 @@ while (<>) {
        }
         if ( $seen_cats && m/^\s+- (.*$)/ ) {
            $newcat = $cat_for{$1};
-           die $1 unless $newcat;
+           die "@ARGV, $1" unless $newcat;
            $cats{$newcat}++;
            next;
         }
