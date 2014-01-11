@@ -4,16 +4,6 @@ date: "2009-02-04"
 permalink: /2009/02/04/gratitude-for-a-consistent-focus-on-value/
 categories:
   - Commentary
-tags:
-  - Alan Rimm Kaufman
-  - Business
-  - Ethics
-  - Gratitude
-  - Inspiration
-  - Peter Zaitsev
-  - The Rimm Kaufman Group
-  - Vadim Tkachenko
-  - Yvon Chouinard
 ---
 I've been going through some old stuff that got thrown into a big cardboard box during my move in September. In particular there are a lot of papers from my desk &#8212; old notes I'd scratched down, legal pads full of notes taken during phone conversations, and so on.
 

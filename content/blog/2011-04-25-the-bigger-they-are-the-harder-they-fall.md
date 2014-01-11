@@ -4,9 +4,6 @@ date: "2011-04-25"
 permalink: /2011/04/25/the-bigger-they-are-the-harder-they-fall/
 categories:
   - Commentary
-tags:
-  - Cloud Computing
-  - rant
 ---
 I see that a lot of people just don't get it when they start talking about high availability, redundancy, failover, etc. This is probably not going to change, but maybe I can try anyway.
 

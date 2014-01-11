@@ -6,8 +6,6 @@ categories:
   - Conferences
   - OpenSQL Camp
   - SQL
-tags:
-  - Sheeri Kritzer Cabral
 ---
 Sheeri and others are organizing another incarnation of [OpenSQL Camp in October in Boston][1]. You ought to go! It's relevant to MySQL, PostgreSQL, SQLite, and lots of the newer generation of databases &#8212; MongoDB, Cassandra, and so on.
 

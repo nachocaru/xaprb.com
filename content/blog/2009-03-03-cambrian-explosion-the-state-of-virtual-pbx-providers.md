@@ -5,10 +5,6 @@ permalink: /2009/03/03/cambrian-explosion-the-state-of-virtual-pbx-providers/
 categories:
   - Commentary
   - Internet
-tags:
-  - Internet
-  - telephone
-  - Virtual PBX
 ---
 My employer has been looking for a company who can provide us with phone service designed for a decentralized, virtual-office consulting and support workforce, and after extensive surveying of the options, *every single one* comes up short on features, quality, or support. You can have one or sometimes two, but not all three, and we don't really see signs of it getting better. There's a real race to the bottom in this industry. We've had to get creative to make things work. (It is working, but I'll get to that later.)
 

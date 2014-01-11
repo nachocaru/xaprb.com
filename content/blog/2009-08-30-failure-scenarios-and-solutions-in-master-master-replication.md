@@ -4,14 +4,6 @@ date: "2009-08-30"
 permalink: /2009/08/30/failure-scenarios-and-solutions-in-master-master-replication/
 categories:
   - SQL
-tags:
-  - clustering
-  - failover
-  - fencing
-  - MMM
-  - MySQL
-  - replication
-  - STONITH
 ---
 I've been thinking recently about the failure scenarios of MySQL replication clusters, such as master-master pairs or master-master-with-slaves. There are a few tools that are designed to help manage failover and load balancing in such clusters, by moving virtual IP addresses around. The ones I'm familiar with don't always do the right thing when an irregularity is detected. I've been debating what the best way to do replication clustering with automatic failover really is.
 

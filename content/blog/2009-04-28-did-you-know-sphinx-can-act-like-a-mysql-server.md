@@ -4,10 +4,6 @@ date: "2009-04-28"
 permalink: /2009/04/28/did-you-know-sphinx-can-act-like-a-mysql-server/
 categories:
   - SQL
-tags:
-  - Andrew Aksyonoff
-  - MySQL
-  - Sphinx
 ---
 [Peter wrote about this recently][1], but I don't know if it was really clear what was going on.
 

@@ -4,8 +4,6 @@ date: "2008-12-20"
 permalink: /2008/12/20/today-i-recommended-mysql-51/
 categories:
   - SQL
-tags:
-  - MySQL
 ---
 Today I recommended that a customer begin using MySQL 5.1 for development of their new product. There is virtually no risk of doing this, and in fact, the risk of not doing so is quite material. Upgrading the database later would be silly when you could start using it now and find out how best to work with it. Notice that the single criterion I'm mentioning is risk, not features.
 

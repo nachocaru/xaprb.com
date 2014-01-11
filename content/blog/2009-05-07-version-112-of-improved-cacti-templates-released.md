@@ -6,12 +6,6 @@ categories:
   - GNU/Linux
   - PHP
   - SQL
-tags:
-  - Cacti
-  - memcached
-  - monitoring
-  - MySQL
-  - Nginx
 ---
 I've packaged up and released version 1.1.2 of the [Cacti templates I've written for MySQL, Apache, memcached, nginx etc][1].
 

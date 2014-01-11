@@ -2,8 +2,6 @@
 title: How to select the Nth greatest/least/first/last row in SQL
 date: "2008-08-08"
 permalink: /2008/08/08/how-to-select-the-nth-greatestleastfirstlast-row-in-sql/
-tags:
-  - Ranked data
 ---
 This is a continuation of my articles on [how to select the desired rows from ranked data][1]. A user recently posed a question in the comments that I thought was particularly intriguing:
 

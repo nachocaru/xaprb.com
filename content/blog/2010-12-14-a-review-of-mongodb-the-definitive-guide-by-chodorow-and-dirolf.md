@@ -5,10 +5,6 @@ permalink: /2010/12/14/a-review-of-mongodb-the-definitive-guide-by-chodorow-and-
 categories:
   - MongoDB
   - Review
-tags:
-  - Kristina Chodorow
-  - Michael Dirolf
-  - NoSQL
 ---
 <p style="float:left">
   <div id="attachment_2114" class="wp-caption alignleft" style="width: 190px">

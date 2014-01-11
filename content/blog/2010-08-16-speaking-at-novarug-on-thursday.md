@@ -5,10 +5,6 @@ permalink: /2010/08/16/speaking-at-novarug-on-thursday/
 categories:
   - Conferences
   - SQL
-tags:
-  - MySQL
-  - performance
-  - Ruby
 ---
 I'll be joining the [NovaRUG][1] (Northern Virginia Ruby Users' Group) on Thursday to talk about MySQL performance. [See their blog for the details and how to RSVP][2].
 

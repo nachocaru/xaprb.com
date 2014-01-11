@@ -6,8 +6,6 @@ categories:
   - Coding
   - Perl
   - PHP
-tags:
-  - debugging
 ---
 PHP has no built-in debugger.
 

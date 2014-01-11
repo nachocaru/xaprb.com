@@ -2,10 +2,6 @@
 title: Get Maatkit fast from the command line
 date: "2008-05-21"
 permalink: /2008/05/21/get-maatkit-fast-command-line/
-tags:
-  - Apache
-  - mod_rewrite
-  - Subversion
 ---
 I have been using Maatkit in a different way since I joined [Percona][1] as a consultant. When I'm working on a system now, it's a new, unfamiliar system &#8212; not one where I have already installed my favorite programs. And that means I want to grab my favorite productivity tools fast.
 

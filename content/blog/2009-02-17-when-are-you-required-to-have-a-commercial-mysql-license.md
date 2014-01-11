@@ -4,12 +4,6 @@ date: "2009-02-17"
 permalink: /2009/02/17/when-are-you-required-to-have-a-commercial-mysql-license/
 categories:
   - SQL
-tags:
-  - Free Software
-  - GPL
-  - licensing
-  - MySQL
-  - MySQL Enterprise
 ---
 As you may know, MySQL has a dual-licensing model. You can get the source under the [GPL version 2][1], or you can buy a commercial license.
 

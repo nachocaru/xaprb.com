@@ -4,8 +4,6 @@ date: "2011-06-11"
 permalink: /2011/06/11/vim-the-ultimate-command-line-password-manager/
 categories:
   - Desktop
-tags:
-  - Vim
 ---
 Thanks to [a comment on a recent blog post][1] where I lamented the lack of an easy-to-use password manager, I've switched from Revelation to&#8230; Vim.
 

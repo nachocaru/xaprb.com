@@ -2,11 +2,6 @@
 title: "MySQL: Free Software but not Open Source"
 date: "2008-05-14"
 permalink: /2008/05/14/mysql-free-software-but-not-open-source/
-tags:
-  - development
-  - Free Software
-  - MySQL
-  - Open Source
 ---
 The title of [MySQL's website][1] states that they are the world's most popular open-source database. This is false; MySQL is not an open-source database. That assertion is a fact, not an opinion.
 

@@ -6,13 +6,6 @@ categories:
   - Maatkit
   - SQL
   - Tools
-tags:
-  - Domas Mituzas
-  - gdb
-  - lock contention
-  - Maatkit
-  - Mark Callaghan
-  - MySQL
 ---
 **Note: the bt-aggregate tool has been deprecated and replaced by the [pmp][1] tool, which can do all that and more.**
 

@@ -5,11 +5,6 @@ permalink: /2008/10/30/i-unsubscribed-from-the-planet-mysql-feed/
 categories:
   - SQL
   - World Wide Web
-tags:
-  - Marketing
-  - MySQL
-  - RSS
-  - Yahoo Pipes
 ---
 Now why would I do that, especially when my blog is syndicated through it?
 

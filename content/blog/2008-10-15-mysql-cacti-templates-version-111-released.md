@@ -5,11 +5,6 @@ permalink: /2008/10/15/mysql-cacti-templates-version-111-released/
 categories:
   - SQL
   - Tools
-tags:
-  - Cacti
-  - Cacti templates
-  - graphing
-  - monitoring
 ---
 I've released version 1.1.1 of the [MySQL Cacti templates][1] I develop. The new templates work around more Cacti limitations, including the limitation on the length of the data returned from the poller script. There's also a new graph and many other niceties since the last release.
 

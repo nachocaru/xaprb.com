@@ -5,8 +5,6 @@ permalink: /2008/12/11/is-mysql-51-really-a-better-50/
 categories:
   - Commentary
   - SQL
-tags:
-  - MySQL
 ---
 With all the furor over MySQL 5.1 GA, its release schedule, its quality, etc etc I think a fundamental claim is being left un-examined. Lots of people are saying that if you leave out the new features in 5.1 and look only at the features that existed in 5.0, it's better quality.
 

@@ -4,13 +4,6 @@ date: "2009-05-09"
 permalink: /2009/05/09/hindsight-on-a-scalable-replacement-for-innodb/
 categories:
   - SQL
-tags:
-  - Falcon
-  - InnoDB
-  - MySQL
-  - Oracle
-  - pbxt
-  - XtraDB
 ---
 A while ago I posted about a [comment a Sun performance engineer made about a scalable replacement for InnoDB][1]. At the time, I did not believe it referred to Falcon. In hindsight, it seems even clearer that [the Sun performance experts were already working hard on InnoDB itself][2].
 

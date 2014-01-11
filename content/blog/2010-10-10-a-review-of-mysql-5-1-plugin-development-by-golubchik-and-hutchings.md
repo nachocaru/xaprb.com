@@ -4,13 +4,6 @@ date: "2010-10-10"
 permalink: /2010/10/10/a-review-of-mysql-5-1-plugin-development-by-golubchik-and-hutchings/
 categories:
   - SQL
-tags:
-  - Andrew Hutchings
-  - MariaDB
-  - MySQL
-  - Plugins
-  - Sergei Golubchik
-  - UDF
 ---
 <p style="float:left">
   <div id="attachment_2059" class="wp-caption alignleft" style="width: 135px">

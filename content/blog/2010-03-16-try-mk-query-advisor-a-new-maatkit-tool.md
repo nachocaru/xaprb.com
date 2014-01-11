@@ -6,9 +6,6 @@ categories:
   - Maatkit
   - SQL
   - Tools
-tags:
-  - Heuristics
-  - MySQL
 ---
 [We][1] have an early draft of a new tool available for you to use and test. It uses heuristics to find problems in SQL. Please use it and give feedback! Here's how:
 

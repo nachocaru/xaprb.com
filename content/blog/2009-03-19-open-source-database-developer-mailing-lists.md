@@ -6,10 +6,6 @@ categories:
   - Commentary
   - PostgreSQL
   - SQL
-tags:
-  - Drizzle
-  - MySQL
-  - Percona
 ---
 What's going on at your favorite open-source database developer mailing list? Non-scientific memory of what I've been seeing lately:
 

@@ -6,23 +6,6 @@ categories:
   - Conferences
   - PostgreSQL
   - SQL
-tags:
-  - Andrew Aksyonoff
-  - Ashish Thusoo
-  - Cary Millsap
-  - CouchDB
-  - Eric Burton
-  - Erlang
-  - Facebook
-  - Jan Henry Nystrom
-  - Jan Lenhardt
-  - Monty Widenius
-  - MySQL
-  - Oracle
-  - Percona
-  - perconaperfconf09
-  - Prasad Chakka
-  - Theo Schlossnagle
 ---
 Having written about what I think is cool about the upcoming MySQL Conference and the MySQL Camp, now I want to finish up with what I'd like to see at the [Percona Performance Conference][1]. Just to recap, this is a conference we created to serve those who want to learn about performance &#8212; not "learn about MySQL," not "learn about database performance," just learn about performance, period.
 

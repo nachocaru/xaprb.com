@@ -5,10 +5,6 @@ permalink: /2009/04/25/thank-you-for-the-mysql-54-community-release/
 categories:
   - Conferences
   - SQL
-tags:
-  - Community
-  - MySQL
-  - Sun
 ---
 MySQL 5.4 was released this week at the MySQL conference, and billed as the "community release." This seemed odd to some of us, and I heard lots of comment on it in the hallways. After all, the release was a surprise; the community didn't know it was happening.
 

@@ -5,8 +5,6 @@ permalink: /2009/06/04/writing-a-book-about-maatkit/
 categories:
   - Maatkit
   - SQL
-tags:
-  - LaTeX
 ---
 I've decided to start writing a book about [Maatkit][1]. The working title is *Using Maatkit*. The goal is to provide another angle onto the tools; the docs are quite good in my opinion, but they only say what the tools do. The book will tell you how to use the toolkit to accomplish tasks.
 

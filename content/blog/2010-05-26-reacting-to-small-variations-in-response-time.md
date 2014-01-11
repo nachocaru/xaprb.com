@@ -6,8 +6,6 @@ categories:
   - Aspersa
   - SQL
   - Tools
-tags:
-  - New Relic
 ---
 I wrote recently about [early detection for MySQL performance problems][1]. If your server is having micro-fluctuations in performance, it's important to know, because very soon they will turn much worse. What can you do about this?
 

@@ -6,11 +6,6 @@ categories:
   - CSS
   - Javascript
   - World Wide Web
-tags:
-  - Front End Optimization
-  - High Performance Websites
-  - Nail Kashapov
-  - Steve Souders
 ---
 I wanted to make readers who are web designers aware of a new resource for learning about raw performance (page load time and render time). This is the [Web Scaling Blog][1], a blog my employer started a while ago and didn't really update, but which is now starting to get some in-depth content thanks to a very smart colleague of mine, Nail Kashapov. There are a lot of practical, real-world examples of how you can dig deep into front-end performance and make your site really load fast. This is all in the interaction between the server and the browser &#8212; no backend database stuff at all.
 

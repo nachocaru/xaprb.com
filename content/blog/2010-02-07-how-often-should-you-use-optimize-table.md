@@ -4,14 +4,6 @@ date: "2010-02-07"
 permalink: /2010/02/07/how-often-should-you-use-optimize-table/
 categories:
   - SQL
-tags:
-  - Clustered indexes
-  - defragmenting
-  - fill factor
-  - InnoDB
-  - instrumentation
-  - MySQL
-  - page splits
 ---
 Many times I've heard people advise on "best practices" for a MySQL database. This often includes routine maintenance, such as "you should run OPTIMIZE TABLE on all of your InnoDB tables once a week to defragment them for better performance."
 

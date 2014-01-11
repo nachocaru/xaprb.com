@@ -5,8 +5,6 @@ permalink: /2010/04/21/would-you-trust-a-more-advanced-mysql-optimizer/
 categories:
   - Commentary
   - SQL
-tags:
-  - index_merge
 ---
 Much has been made of certain limitations of MySQL's query optimizer ("planner"). Subqueries, lack of sort-merge joins, and so on. This is not MySQL-bashing and no one should be offended. Some people have worked to make things better, and that code is in branches that were intended for future releases. But if that work were available right now, would you trust it?
 

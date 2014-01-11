@@ -5,12 +5,6 @@ permalink: /2009/04/29/what-does-an-open-source-sales-model-look-like/
 categories:
   - Commentary
   - Open Source
-tags:
-  - business model
-  - MySQL
-  - Open Source
-  - Percona
-  - sales
 ---
 At the MySQL conference, a person who used to hold an important position in an important sales organization told us something like the following: "You know, you guys at Percona are great, but you have a big problem. You don't have any $500,000 customers who only file one support incident per year. Those customers are where you can really make big money."
 

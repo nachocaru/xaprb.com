@@ -5,11 +5,6 @@ permalink: /2008/06/28/what-if-you-find-errors-in-high-performance-mysql/
 categories:
   - High Performance MySQL
   - SQL
-tags:
-  - errata
-  - printing
-  - proofreading
-  - writing
 ---
 The book is done now, right? What's next?
 

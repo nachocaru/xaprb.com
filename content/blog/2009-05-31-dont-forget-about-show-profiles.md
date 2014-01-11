@@ -4,11 +4,6 @@ date: "2009-05-31"
 permalink: /2009/05/31/dont-forget-about-show-profiles/
 categories:
   - SQL
-tags:
-  - Jeremy Cole
-  - MySQL
-  - performance
-  - replication
 ---
 It seems that a lot of people want to try to improve MySQL performance by focusing on server status counters and configuration variables. Looking at counters, and "tuning the server," is better than nothing, but only barely. You care first and foremost about **how long it takes to execute a query**, not about how many of this-and-that the server performs or about how big or small this-and-that buffer is. What you really need is timing information.
 

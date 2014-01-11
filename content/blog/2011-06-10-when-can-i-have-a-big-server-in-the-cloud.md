@@ -6,8 +6,6 @@ categories:
   - High Availability
   - Scalability
   - SQL
-tags:
-  - Cloud Computing
 ---
 I was at a conference recently talking with a Major Cloud Hosting Provider and mentioned that for database servers, I really want large instances, quite a bit larger than the largest I can get now. The lack of cloud servers with lots of memory, many *fast* cores, and fast I/O and network performance leads to premature sharding, which is costly. A large number of applications can currently run on a single real server, but would require sharding to run in any of the popular cloud providers' environments. And many of those applications aren't growing rapidly, so by the time they outgrow today's hardware we can pretty much count on simply upgrading and staying on a single machine.
 

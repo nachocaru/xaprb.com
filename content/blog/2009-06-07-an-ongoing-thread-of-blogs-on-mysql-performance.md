@@ -4,11 +4,6 @@ date: "2009-06-07"
 permalink: /2009/06/07/an-ongoing-thread-of-blogs-on-mysql-performance/
 categories:
   - SQL
-tags:
-  - DimitriK
-  - InnoDB
-  - Mark Callaghan
-  - Mikael Ronstrom
 ---
 In the last six months, things have gotten much busier in the world of MySQL performance. That is, making MySQL and InnoDB scale faster out of the box. This is a great trend and I hope it keeps going. At this point I'm fighting to find enough time to read about what people are doing; I can't keep up fast enough to actually understand the improvements. That's also good.
 

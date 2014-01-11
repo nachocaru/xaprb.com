@@ -6,10 +6,6 @@ categories:
   - Commentary
   - PostgreSQL
   - SQL
-tags:
-  - Cloud Computing
-  - Theo Schlossnagle
-  - virtualization
 ---
 A common problem I see people running into when using a cloud computing service is the trap of under-provisioning. There's a chain effect that leads to this result: 1) people don't understand how virtualization works, and therefore 2) they don't realize how much of a computing resource they're really buying, so 3) they assume they are entitled to more than they really are, and 4) they under-provision. A few other causes and effects come into play here, too. For example, the choice to use the cloud is sometimes founded on economic assumptions that frequently turn out to be wrong. The cloud service looks more economically attractive than it really is, due to under-provisioning.
 

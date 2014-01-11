@@ -4,10 +4,6 @@ date: "2011-05-15"
 permalink: /2011/05/15/what-kind-of-high-availability-do-you-need/
 categories:
   - SQL
-tags:
-  - Henrik Ingo
-  - MMM
-  - MySQL Cluster
 ---
 Henrik just wrote a good article on [different ways of achieving high availability with MySQL][1]. I was going to respond in the comments, but decided it is better not to post such a long comment there.
 

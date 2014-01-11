@@ -6,8 +6,6 @@ categories:
   - Commentary
   - GNU/Linux
   - World Wide Web
-tags:
-  - Wikipedia
 ---
 My brother sent me these thoughts, slightly edited:
 

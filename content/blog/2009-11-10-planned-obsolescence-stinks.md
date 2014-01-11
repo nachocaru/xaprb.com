@@ -4,10 +4,6 @@ date: "2009-11-10"
 permalink: /2009/11/10/planned-obsolescence-stinks/
 categories:
   - Commentary
-tags:
-  - dell
-  - dell_inspiron_1501
-  - rant
 ---
 My Dell laptop's battery died (slowly). Thinking I was being clever, I bought a replacement part from a name brand instead of Dell. That one died, too, but much more spectacularly. If I buy another battery, this time from Dell, I'll have spent more on batteries than on the laptop.
 

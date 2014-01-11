@@ -6,10 +6,6 @@ categories:
   - Maatkit
   - Open Source
   - World Wide Web
-tags:
-  - Google Code
-  - Maatkit
-  - wiki
 ---
 I just adore Google Code. But the default wiki view (a list of pages, sorted by last-modified) is lacking something. Fortunately, it's fixable. Here's the before:
 

@@ -7,9 +7,6 @@ categories:
   - Perl
   - SQL
   - Tools
-tags:
-  - Perl
-  - writing
 ---
 My post on [what it's like to write a technical book][1] was a stream-of-consciousness look at the process of writing [High Performance MySQL, Second Edition][2]. I got a lot of responses from it and learned some neat things I wouldn't have learned if I hadn't written the post. I also got a lot of questions, and [my editor wrote a response][3] too. I want to follow up on these things.
 

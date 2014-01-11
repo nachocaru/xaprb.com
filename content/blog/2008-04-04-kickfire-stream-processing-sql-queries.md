@@ -4,21 +4,6 @@ date: "2008-04-04"
 permalink: /2008/04/04/kickfire-stream-processing-sql-queries/
 categories:
   - SQL
-tags:
-  - caching
-  - Cg
-  - column store
-  - CPUs
-  - data warehousing
-  - Graphics
-  - Keith Murphy
-  - Kickfire
-  - MPP
-  - MySQL
-  - mysqluc2008
-  - pluggable storage engine
-  - QPU
-  - Von Neumann bottleneck
 ---
 Some of you have noticed [Kickfire][1], a new sponsor at this year's [MySQL Conference and Expo][2]. Like [Keith Murphy][3], I have been involved with them for a while now. This article explains the basics of how their technology is different from the current state of the art in complex queries on large amounts of data.
 

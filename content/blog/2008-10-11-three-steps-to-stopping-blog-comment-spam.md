@@ -5,9 +5,6 @@ permalink: /2008/10/11/three-steps-to-stopping-blog-comment-spam/
 categories:
   - SQL
   - World Wide Web
-tags:
-  - comment spam
-  - WordPress
 ---
 This is part knowledge share, part appeal: fellow bloggers, I'd comment a lot more on your blogs (and I want to!) if I could. Please, make it easy for me to comment &#8212; don't make me log in (I won't do it) or moderate me. I've found a solution that works really well for me; maybe it'll help you too.
 

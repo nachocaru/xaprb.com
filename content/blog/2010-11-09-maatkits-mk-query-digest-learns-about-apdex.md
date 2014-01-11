@@ -5,8 +5,6 @@ permalink: /2010/11/09/maatkits-mk-query-digest-learns-about-apdex/
 categories:
   - Maatkit
   - SQL
-tags:
-  - Apdex
 ---
 This month's [Maatkit][1] release, which just hit the download servers, contains a new feature for mk-query-digest: Apdex scores. The Apdex performance index is a *sensible* metric of how satisfactory the response time to a request is. Of all the scientific metrics I've seen, it's the most practical; and of all the practical ones I've seen, it's the most scientific.
 

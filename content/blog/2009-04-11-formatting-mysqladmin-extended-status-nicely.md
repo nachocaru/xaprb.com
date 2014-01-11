@@ -6,10 +6,6 @@ categories:
   - Coding
   - SQL
   - Tools
-tags:
-  - mext
-  - MySQL
-  - Ryan Lowe
 ---
 I always say that the ultimate MySQL tuning script is an expert human. To that end, I generally try to build tools that help a human be more productive with the raw information from MySQL. One of the things [we look at during a performance audit][1] is the MySQL status counters. It's useful to look at a) absolute values and b) several incremental snapshots. I've written a small shell script called "mext" that can make this a little easier.
 

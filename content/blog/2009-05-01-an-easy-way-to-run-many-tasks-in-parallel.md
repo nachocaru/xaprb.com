@@ -6,10 +6,6 @@ categories:
   - GNU/Linux
   - Sys Admin
   - Tools
-tags:
-  - Domas Mituzas
-  - parallelization
-  - xargs
 ---
 [Domas Mituzas][1] mentioned this recently. It's so cool I just have to write about it. Here's an easy command to fork off a bunch of jobs in parallel: xargs.
 

@@ -2,10 +2,6 @@
 title: Maatkit bounty begins tomorrow
 date: "2007-11-29"
 permalink: /2007/11/29/maatkit-bounty-begins-tomorrow/
-tags:
-  - MySQL
-  - SQL
-  - synchronization
 ---
 Tomorrow is the first of [five days I will spend working on `mk-table-sync`][1], the data synchronization tool I developed as part of [Maatkit][2]. The first thing I'll do is pull the row-checksumming code out into a module and write a unit test suite for it. I'll probably add the code to the module that does checksums for `mk-table-checksum`, since it is not all that different.
 

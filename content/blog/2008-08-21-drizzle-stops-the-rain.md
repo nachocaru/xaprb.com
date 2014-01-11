@@ -4,13 +4,6 @@ date: "2008-08-21"
 permalink: /2008/08/21/drizzle-stops-the-rain/
 categories:
   - SQL
-tags:
-  - Brian Aker
-  - Cloud Computing
-  - Creedence Clearwater Revival
-  - Drizzle
-  - Free Software
-  - MySQL
 ---
 I've been following the [Drizzle][1] project with some interest. There's a lot to like about it. But you know what I like most about the project?
 

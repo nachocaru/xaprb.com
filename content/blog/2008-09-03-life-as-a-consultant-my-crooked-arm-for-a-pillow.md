@@ -5,10 +5,6 @@ permalink: /2008/09/03/life-as-a-consultant-my-crooked-arm-for-a-pillow/
 categories:
   - Commentary
   - SQL
-tags:
-  - Confucius
-  - Consulting
-  - hardware
 ---
 Sometimes there are funny communication styles between people who are geographically distributed and working together all the time. Recently one of our team members echoed back to me some answers I gave over a chat session:
 

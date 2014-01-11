@@ -4,9 +4,6 @@ date: "2009-06-29"
 permalink: /2009/06/29/attending-the-it-management-conference/
 categories:
   - Conferences
-tags:
-  - Leadership
-  - ManageIT09
 ---
 I'll be attending the [IT Management Conference][1] later this year in New York. My proposals weren't chosen so I won't be speaking, but I wanted to attend whether I'm speaking or not. It should be a very useful conference for those in or near management or leadership positions. Email me if you want a $50 discount off the registration, by the way.
 

@@ -5,10 +5,6 @@ permalink: /2009/04/09/mysql-5133-now-with-4-secret-bugs/
 categories:
   - Open Source
   - SQL
-tags:
-  - Community
-  - MySQL
-  - Transparency
 ---
 Some unsettling things happened in MySQL in the past week or so.
 

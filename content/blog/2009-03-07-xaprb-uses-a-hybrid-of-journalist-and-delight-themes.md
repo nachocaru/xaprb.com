@@ -6,10 +6,6 @@ categories:
   - About
   - CSS
   - World Wide Web
-tags:
-  - deLight
-  - theme
-  - WordPress
 ---
 A while ago I switched my theme to Journalist (link at the very bottom of the page) because I thought it was well laid out and solidly designed -- I mean it uses sensible CSS and XHTML etc. The only thing I didn't care for was that it was a little too minimal, if anything. There are lots of themes out there that look gorgeous, but when I tested them they don't render right.
 

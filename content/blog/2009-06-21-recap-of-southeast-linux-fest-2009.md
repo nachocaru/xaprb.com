@@ -6,21 +6,6 @@ categories:
   - Conferences
   - PostgreSQL
   - SQL
-tags:
-  - Drizzle
-  - Fedora
-  - Glassfish
-  - NetBeans
-  - OpenSolaris
-  - OpenSQL Camp
-  - PostgreSQL
-  - Red Hat
-  - Richard Hipp
-  - self2009
-  - SUSE
-  - Tokyo Cabinet
-  - VirtualBox
-  - ZFS
 ---
 Last weekend, my brother and I attended [SELF 2009][1]. A few thoughts on it:
 

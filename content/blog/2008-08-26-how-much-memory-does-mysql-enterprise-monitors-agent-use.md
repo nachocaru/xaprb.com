@@ -5,11 +5,6 @@ permalink: /2008/08/26/how-much-memory-does-mysql-enterprise-monitors-agent-use/
 categories:
   - SQL
   - Tools
-tags:
-  - monitoring
-  - MONyog
-  - MySQL
-  - MySQL Enterprise Monitor
 ---
 After last week's post on [agents versus agentless monitoring systems][1], I got a lot of email. One, from a customer whose name I am not permitted to mention, sent me the following action shot (posted with permission):
 

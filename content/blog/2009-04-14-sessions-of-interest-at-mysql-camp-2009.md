@@ -5,9 +5,6 @@ permalink: /2009/04/14/sessions-of-interest-at-mysql-camp-2009/
 categories:
   - Conferences
   - SQL
-tags:
-  - MySQL
-  - MySQL Camp
 ---
 I wrote previously about what I'm looking forward to at the upcoming MySQL Conference (next week!). Now I want to write about the **free, community-organized** unconference being held concurrently, [MySQL Camp 2009][1].
 

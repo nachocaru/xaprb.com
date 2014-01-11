@@ -5,12 +5,6 @@ permalink: /2011/01/29/how-innodb-performs-a-checkpoint/
 categories:
   - PostgreSQL
   - SQL
-tags:
-  - Adaptive Flushing
-  - checkpoint
-  - InnoDB
-  - Mark Callaghan
-  - Vadim Tkachenko
 ---
 InnoDB's checkpoint algorithm is not well documented. It is too complex to explain in even a long blog post, because to understand checkpoints, you need to understand a lot of other things that InnoDB does. I hope that explaining how InnoDB does checkpoints in high-level terms, with simplifications, will be helpful. A lot of the simplifications are because I do not want to explain the complexities of how the simple rules can be tweaked for optimization purposes, while not violating the ACID guarantees they enforce.
 

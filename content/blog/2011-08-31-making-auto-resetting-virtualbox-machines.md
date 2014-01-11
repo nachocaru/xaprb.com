@@ -4,9 +4,6 @@ date: "2011-08-31"
 permalink: /2011/08/31/making-auto-resetting-virtualbox-machines/
 categories:
   - Desktop
-tags:
-  - VirtualBox
-  - Windows
 ---
 I don't know if I've said this before, but I absolutely love VirtualBox. It makes it so easy to run Windows in the cases where I have to for a client's silly Windows-only VPN software or something like that. Windows runs better inside VirtualBox than it does on bare hardware.
 

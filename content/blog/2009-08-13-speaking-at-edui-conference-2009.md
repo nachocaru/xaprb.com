@@ -5,10 +5,6 @@ permalink: /2009/08/13/speaking-at-edui-conference-2009/
 categories:
   - Conferences
   - World Wide Web
-tags:
-  - Client Side
-  - performance
-  - User Interface
 ---
 I'm going to present at the [EdUIConf conference 2009][1]. This is a conference focused in two directions: Web professionals in higher education, and higher education for web professionals. I believe it's going to be comparable to, or at least in the same vein as, some of the more popular conferences about user interface design, Web standards, and the like. (It'll also be much more affordable.)
 

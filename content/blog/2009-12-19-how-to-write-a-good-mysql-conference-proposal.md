@@ -5,10 +5,6 @@ permalink: /2009/12/19/how-to-write-a-good-mysql-conference-proposal/
 categories:
   - Conferences
   - SQL
-tags:
-  - mysqlconf
-  - mysqlconf2010
-  - mysqluc
 ---
 I'm on the [MySQL conference][1] committee again this year, so I'll be reading and voting on your session proposals. My past experience is that reading 400 session proposals is a mind-numbing job, and **I will be optimizing it to save my time**. That means I will be scanning your proposals and deciding *very quickly* how to vote. I wrote before about [how to submit a great proposal][2], but I've refined my opinion since then. Here are my suggestions:
 

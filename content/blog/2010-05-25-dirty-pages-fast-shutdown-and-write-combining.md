@@ -4,8 +4,6 @@ date: "2010-05-25"
 permalink: /2010/05/25/dirty-pages-fast-shutdown-and-write-combining/
 categories:
   - SQL
-tags:
-  - InnoDB
 ---
 One of the things that makes a traditional transactional database hard to make highly available is a relatively slow shutdown and start-up time. Applications typically delegate most or all writes to the database, which tends to run with a lot of "dirty" data in its (often large) memory. At shutdown time, the dirty memory needs to be written to disk, so the recovery routine doesn't have to run at startup. And even upon a clean startup, the database probably has to warm up, which can also take a very long time.
 

@@ -5,8 +5,6 @@ permalink: /2009/10/29/making-changes-to-many-tables-at-once/
 categories:
   - Maatkit
   - SQL
-tags:
-  - INFORMATION_SCHEMA
 ---
 As an alternative to [another recent blog post][1] that answered the question "how can I truncate all the tables in my database," I thought I'd show another way to do it, which does *not* use the INFORMATION_SCHEMA.
 

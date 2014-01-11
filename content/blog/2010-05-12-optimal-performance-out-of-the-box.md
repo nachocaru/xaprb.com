@@ -5,9 +5,6 @@ permalink: /2010/05/12/optimal-performance-out-of-the-box/
 categories:
   - PostgreSQL
   - SQL
-tags:
-  - Red Hat
-  - SQL Server
 ---
 Most database companies would be proud to say that their products perform optimally out of the box. It means they accomplished a Herculean feat of engineering. But most databases have configuration options because this is almost impossible. For example, MySQL has scores of tuning options, and it needs a lot more.
 

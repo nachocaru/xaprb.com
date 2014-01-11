@@ -6,9 +6,6 @@ categories:
   - Commentary
   - Sys Admin
   - Tools
-tags:
-  - 37Signals
-  - GTD
 ---
 This is the follow-up to my post on [how I keep track of tasks][1]. It's important for me to have a good system for keeping notes and other files organized. The problem usually turns out to be that I want them organized several different ways simultaneously: by date, by project, by person, by subject. Alas, if I keep them in files on a hard drive, I can only choose one such organizing strategy, because filesystems are a single hierarchy.
 

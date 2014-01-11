@@ -4,8 +4,6 @@ date: "2011-02-08"
 permalink: /2011/02/08/building-a-mysql-server-with-xtradb-for-speed/
 categories:
   - SQL
-tags:
-  - Percona Server
 ---
 I've seen this a handful of times: someone has trouble with their database performance, and they have heard that XtraDB is much faster than InnoDB. They build a custom-compiled server with XtraDB.
 

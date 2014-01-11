@@ -6,11 +6,6 @@ categories:
   - Commentary
   - PostgreSQL
   - SQL
-tags:
-  - Bruce Momjian
-  - Open Source development
-  - patches
-  - PostgreSQL
 ---
 [Bruce Momjian says][1]
 

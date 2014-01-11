@@ -5,15 +5,6 @@ permalink: /2009/04/25/secure-easy-cacti-graphing-without-snmp/
 categories:
   - SQL
   - Uncategorized
-tags:
-  - Apache
-  - Cacti
-  - Cacti templates
-  - GNU/Linux
-  - memcached
-  - monitoring
-  - MySQL
-  - Nginx
 ---
 [Cacti][1] is a great tool for collecting information about systems and graphing it. However, it likes to use SNMP, and SNMP is often not desirable. Instead, I often see the need for a method that is:
 

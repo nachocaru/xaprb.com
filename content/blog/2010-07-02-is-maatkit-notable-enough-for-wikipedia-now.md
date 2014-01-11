@@ -7,8 +7,6 @@ categories:
   - Open Source
   - SQL
   - Tools
-tags:
-  - Wikipedia
 ---
 The [Maatkit article on Wikipedia][1] was removed some time ago, after being [deemed not notable][2]. I believe this is no longer the case. It's hard to find a credible book published on MySQL in the last few years that doesn't mention Maatkit, there's quite a bit of blogging about it from MySQL experts and prominent community members, and the toolkit is certainly in wide use &#8212; it's important enough that notable companies are supporting its development. It's available through every major Unix-like operating system's package repository. On Debian, it's actually part of the mysql-client package, so if you install MySQL, you automatically get Maatkit too. I believe it's probably the second most important set of MySQL command-line tools; the most important, of course, is the set of client applications that is included with MySQL itself.
 

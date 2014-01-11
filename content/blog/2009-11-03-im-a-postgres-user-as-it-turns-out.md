@@ -5,10 +5,6 @@ permalink: /2009/11/03/im-a-postgres-user-as-it-turns-out/
 categories:
   - PostgreSQL
   - SQL
-tags:
-  - humor
-  - InnoDB
-  - MySQL
 ---
 Someone recently posted this to an email list as a sample of an interesting SHOW INNODB STATUS output:
 

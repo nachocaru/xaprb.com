@@ -6,8 +6,6 @@ categories:
   - Conferences
   - Desktop
   - Open Source
-tags:
-  - openoffice
 ---
 If you've used OpenOffice.org Impress to run a slideshow with your laptop plugged into an external monitor or projector, you've probably noticed that it prefers to switch the primary and secondary display, showing you the slideshow while it shows your audience the notes and preview of your next slide! This is exactly the reverse of what you want, which is to show your audience the slideshow and let you see notes, the countdown timer, and so on.
 

@@ -5,9 +5,6 @@ permalink: /2010/08/02/two-subtle-bugs-in-outer-join-queries/
 categories:
   - Maatkit
   - SQL
-tags:
-  - bugs
-  - 'null'
 ---
 OUTER JOIN queries in SQL are susceptible to two very subtle bugs that I've observed a number of times in the real world. Daniel and I have been hammering out ways to automatically detect queries that suffer from these bugs, in [a relatively new Maatkit tool called mk-query-advisor][1]. It's part of our series of advisor tools for MySQL. I wrote [a blog post about it][2] a while ago. Automated analysis of bad query patterns is a good thing to write tools to do, because catching buggy queries is hard work if you do it manually.
 

@@ -6,8 +6,6 @@ categories:
   - Aspersa
   - PostgreSQL
   - SQL
-tags:
-  - MySQL
 ---
 I've just committed some changes to [diskstats][1], an I/O analysis tool in Aspersa that's actually been in the Subversion repository for a long time, but in a barely usable fashion and with no documentation. Now it's usable and documented.
 

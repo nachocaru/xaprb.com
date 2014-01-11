@@ -4,10 +4,6 @@ date: "2009-02-09"
 permalink: /2009/02/09/news-on-mysql-cacti-templates/
 categories:
   - SQL
-tags:
-  - Cacti
-  - monitoring
-  - MySQL
 ---
 It's been a while since I've sent any news about the [MySQL Cacti Templates][1] project I started a while ago. Here's what's new:
 

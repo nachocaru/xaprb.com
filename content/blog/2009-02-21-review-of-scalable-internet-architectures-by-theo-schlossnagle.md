@@ -5,11 +5,6 @@ permalink: /2009/02/21/review-of-scalable-internet-architectures-by-theo-schloss
 categories:
   - Review
   - SQL
-tags:
-  - Scalability
-  - Scalable Internet Architectures
-  - Spread
-  - Theo Schlossnagle
 ---
 <div id="attachment_868" class="wp-caption alignleft" style="width: 250px">
   <a href="http://www.amazon.com/dp/067232699X?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2009/02/scalable_internet_architectures.jpg" alt="Scalable Internet Architectures" title="scalable_internet_architectures" width="240" height="240" class="size-full wp-image-868" /></a><p class="wp-caption-text">

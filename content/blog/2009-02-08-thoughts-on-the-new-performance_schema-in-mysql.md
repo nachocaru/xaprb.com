@@ -4,10 +4,6 @@ date: "2009-02-08"
 permalink: /2009/02/08/thoughts-on-the-new-performance_schema-in-mysql/
 categories:
   - SQL
-tags:
-  - MySQL
-  - performance
-  - PERFORMANCE_SCHEMA
 ---
 [Peter Gulutzan][1] and [Mark Leith][2] have both written about [the new PERFORMANCE_SCHEMA in MySQL][3]. I've read through the worklog, or most of it &#8212; there were some spots where Firefox seemed to start overlaying parts with other parts, quite weird. But anyway I've read as much as I can.
 

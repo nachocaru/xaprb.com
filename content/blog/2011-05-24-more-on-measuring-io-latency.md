@@ -4,12 +4,6 @@ date: "2011-05-24"
 permalink: /2011/05/24/more-on-measuring-io-latency/
 categories:
   - SQL
-tags:
-  - Brendan Gregg
-  - DTrace
-  - InnoDB
-  - Mark Leith
-  - MySQL
 ---
 To follow on to my earlier links to Brendan Gregg's blog posts on measuring I/O latency, there is [a third one discussing DTrace][1], and then a very detailed response from Mark Leith showing [how to do it with the PERFORMANCE_SCHEMA in MySQL 5.5][2].
 

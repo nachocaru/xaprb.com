@@ -6,11 +6,6 @@ categories:
   - Commentary
   - PostgreSQL
   - SQL
-tags:
-  - Community
-  - Conferences
-  - MySQL
-  - mysqluc08
 ---
 The conference that many of us just went to is called the [MySQL Conference and Expo][1], but a lot of people don't call it that. They call it by the name it had in 2006 and earlier: MySQL User's Conference. In fact, some people say (or blog) that they dislike the new name and they're going to call it the old name, because [... insert reason here...].
 

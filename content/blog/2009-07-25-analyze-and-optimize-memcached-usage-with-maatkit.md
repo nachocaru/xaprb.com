@@ -6,9 +6,6 @@ categories:
   - Maatkit
   - PostgreSQL
   - SQL
-tags:
-  - memcached
-  - Schooner
 ---
 Ryan posted [an article on the MySQL Performance Blog][1] about how to use mk-query-digest to analyze and understand your memcached usage with the same techniques you use for MySQL query analysis. This is an idea that came to me during the 2009 MySQL Conference, while talking to our friends from [Schooner, who sell a memcached appliance][2].
 

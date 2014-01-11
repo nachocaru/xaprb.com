@@ -5,10 +5,6 @@ permalink: /2008/04/19/spring-2008-issue-of-mysql-magazine/
 categories:
   - High Performance MySQL
   - SQL
-tags:
-  - Keith Murphy
-  - MySQL
-  - MySQL Magazine
 ---
 [Keith Murphy][1] and his hard-working crew have released the spring 2008 issue of [MySQL Magazine][2]. Go take a look &#8212; it includes quite a few articles on various topics, even a mention of our upcoming book ([High Performance MySQL, Second Edition][3]).
 

@@ -6,9 +6,6 @@ categories:
   - High Availability
   - Maatkit
   - SQL
-tags:
-  - delayed slave
-  - MySQL
 ---
 I was just talking to someone who backs up their MySQL servers once a day with mysqldump, and I said in a catastrophe, you're going to have to reload from a backup; that's some amount of downtime, plus up to a day of lost data.
 

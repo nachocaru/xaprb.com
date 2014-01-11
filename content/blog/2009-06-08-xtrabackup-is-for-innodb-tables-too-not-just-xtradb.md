@@ -4,10 +4,6 @@ date: "2009-06-08"
 permalink: /2009/06/08/xtrabackup-is-for-innodb-tables-too-not-just-xtradb/
 categories:
   - SQL
-tags:
-  - InnoDB
-  - Xtrabackup
-  - XtraDB
 ---
 Just thought it was worth pointing out that [Percona Xtrabackup][1] is not just for XtraDB. It works great for InnoDB tables, too.
 

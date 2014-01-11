@@ -4,11 +4,6 @@ date: "2008-07-28"
 permalink: /2008/07/28/what-is-linkedins-main-database-server/
 categories:
   - SQL
-tags:
-  - LinkedIn
-  - MySQL
-  - Oracle
-  - Sun
 ---
 Someone who should know told me that LinkedIn runs its main application on Oracle. So when I saw [the press release about MySQL being their database][1], I read carefully, and they are not very specific about exactly what MySQL is used for. Depending on how you read it, you could argue that they left open the possibility that the main application database is not MySQL, and the MySQL deal is for something peripheral.
 

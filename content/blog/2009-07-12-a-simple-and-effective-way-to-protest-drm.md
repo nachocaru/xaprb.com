@@ -4,9 +4,6 @@ date: "2009-07-12"
 permalink: /2009/07/12/a-simple-and-effective-way-to-protest-drm/
 categories:
   - Commentary
-tags:
-  - DRM
-  - Kindle Swindle
 ---
 If you don't like [DRM (Digital Restrictions Management)][1], there are lots of ways to protest it. One of the simplest and most effective is to pick a massively popular DRM'ed device, and express your dismay to the manufacturer and users. Here's an idea:
 

@@ -1,19 +1,14 @@
 $skip = 0;
 while(<>){
    if (!$skip) {
+      if ($seen_tags && m/^\S/){
+         $skip++;
+         print; next;
+      }
       if (m!^tags:!) {
          $seen_tags++;
       }
-      if (m/^---/){
-         $dashes++;
-      }
-      if (m!^description:!) {
-         $seen_d++;
-         if ($seen_d>=2){
-            $skip=1;
-         }
-      }
-      if ($seen_d && $dashes<2) {
+      if ($seen_tags) {
          next;
       } else {
          print;

@@ -5,11 +5,6 @@ permalink: /2009/01/08/restoring-from-a-mysqldump-into-tables-with-triggers/
 categories:
   - Maatkit
   - SQL
-tags:
-  - backups
-  - MySQL
-  - mysqldump
-  - triggers
 ---
 This is actually old news, but I never thought to file a bug report ([until now][1]) or say anything to anyone about it. If you use mysqldump to dump and restore a MySQL table that has INSERT triggers, you can get different data in your restored database than you had when you dumped. The problem? The tool dumps the triggers before the data, so they get added back to the table before the rows are inserted.
 

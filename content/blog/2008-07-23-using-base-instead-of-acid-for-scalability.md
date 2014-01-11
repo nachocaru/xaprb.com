@@ -5,19 +5,6 @@ permalink: /2008/07/23/using-base-instead-of-acid-for-scalability/
 categories:
   - Commentary
   - SQL
-tags:
-  - ACID
-  - ACM
-  - Andy Oram
-  - BASE
-  - CAP
-  - Continuent
-  - foreign keys
-  - MySQL
-  - replication
-  - Robert Hodges
-  - scaling
-  - transactions
 ---
 My editor [Andy Oram][1] recently sent me an [ACM article on BASE, a technique for improving scalability][2] by being willing to give up some other properties of traditional transactional systems.
 

@@ -6,8 +6,6 @@ categories:
   - Conferences
   - PostgreSQL
   - Scalability
-tags:
-  - postgresopen
 ---
 This post is a followup to some promises I made at Postgres Open.
 

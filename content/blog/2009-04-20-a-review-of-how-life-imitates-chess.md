@@ -5,10 +5,6 @@ permalink: /2009/04/20/a-review-of-how-life-imitates-chess/
 categories:
   - Commentary
   - Review
-tags:
-  - chess
-  - competition
-  - Garry Kasparov
 ---
 <p><a href="http://www.amazon.com/How-Life-Imitates-Chess-Boardroom/dp/1596913878?tag=xaprb-20"><img style="margin: 10px" src="http://www.xaprb.com/blog/wp-content/uploads/2009/04/how-life-imitates-chess.jpg" alt="" title="how-life-imitates-chess" width="120" height="187" class="alignleft size-full wp-image-1017" /><a href="http://www.amazon.com/How-Life-Imitates-Chess-Boardroom/dp/1596913878?tag=xaprb-20">How Life Imitates Chess</a>, by Garry Kasparov, 2008.  204 pages.</p>
 

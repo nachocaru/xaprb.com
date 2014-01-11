@@ -4,12 +4,6 @@ date: "2009-12-09"
 permalink: /2009/12/09/response-time-optimization-in-systems-that-are-queued/
 categories:
   - SQL
-tags:
-  - Cary Millsap
-  - Goal Driven Performance Optimization
-  - Method R
-  - Peter Zaitsev
-  - Queueing Theory
 ---
 The best overall method of performance optimization is optimization for response time. Users care about response time, not load average or cache hit ratios. The job of a system is to accept some request and do the required work, and deliver a result. The time elapsed between the request and the result is the response time.
 

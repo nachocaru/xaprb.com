@@ -4,8 +4,6 @@ date: "2009-10-25"
 permalink: /2009/10/25/what-do-the-innodb-insert-buffer-statistics-mean/
 categories:
   - SQL
-tags:
-  - InnoDB
 ---
 Ever seen this in `SHOW INNODB STATUS` and wondered what it means?
 

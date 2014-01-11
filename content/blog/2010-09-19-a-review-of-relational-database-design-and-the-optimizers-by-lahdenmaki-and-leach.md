@@ -2,7 +2,6 @@
 title: >
 permalink: >
 categories:
-tags:
 ---
 <p style="float:left">
 </p>

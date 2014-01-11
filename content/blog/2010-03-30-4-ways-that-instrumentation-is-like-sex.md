@@ -5,9 +5,6 @@ permalink: /2010/03/30/4-ways-that-instrumentation-is-like-sex/
 categories:
   - PostgreSQL
   - SQL
-tags:
-  - humor
-  - instrumentation
 ---
 In an application such as a database server, instrumentation is like sex: it's not enough to know how often things happen. You also care about how long they took, and in many cases you want to know how big they were.
 

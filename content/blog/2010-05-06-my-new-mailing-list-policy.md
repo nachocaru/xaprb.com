@@ -4,8 +4,6 @@ date: "2010-05-06"
 permalink: /2010/05/06/my-new-mailing-list-policy/
 categories:
   - Commentary
-tags:
-  - humor
 ---
 I think I'm going to adopt a policy of not replying to posts to mailing lists that end with blurbs such as the following.
 

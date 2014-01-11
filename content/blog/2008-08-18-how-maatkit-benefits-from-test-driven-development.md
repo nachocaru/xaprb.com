@@ -7,12 +7,6 @@ categories:
   - Maatkit
   - Perl
   - SQL
-tags:
-  - CRC32
-  - Daniel Nichter
-  - MySQL
-  - Test Driven Development
-  - The Rimm Kaufman Group
 ---
 Over in [Maatkit][1]-land, [Daniel Nichter][2] and I practice [test-first programming, AKA test-driven development][3]. That is, we write tests for each new feature or to catch regressions on each bug we fix. And &#8212; this is crucial &#8212; we write the tests *before* we write the code.* The tests should initially fail, which is a validation that the new code actually works and the tests actually verify this. If we don't first write a failing testcase, then our code lacks a very important guarantee: "if you break this code, then the test case will tell you so." (A test that doesn't fail when the code fails isn't worth writing.)
 

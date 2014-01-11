@@ -5,12 +5,6 @@ permalink: /2009/09/28/how-to-lie-beautifully-with-fusioncharts/
 categories:
   - Commentary
   - World Wide Web
-tags:
-  - charting
-  - Edward Tufte
-  - FusionCharts
-  - graphing
-  - Infographics
 ---
 Gotta love those three-dimensional charts. They sure are shiny! Look at this:
 

@@ -5,9 +5,6 @@ permalink: /2008/10/04/javascript-formatting-and-parsing-functions-now-on-google
 categories:
   - Coding
   - Javascript
-tags:
-  - date parsing
-  - number formatting
 ---
 It's been a while since I have updated my JavaScript formatting and parsing functions, and people have been posting comments on them. Unfortunately my interests have really turned elsewhere, and I'm not much in the world of frontend web design anymore. There's good news though: now I've made it easy for you to get the code, change the code, document it, report issues on it, and so forth. I've hosted the code at Google Code.
 

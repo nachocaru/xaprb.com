@@ -4,8 +4,6 @@ date: "2011-05-16"
 permalink: /2011/05/16/how-to-make-software-testable/
 categories:
   - Coding
-tags:
-  - Testing
 ---
 I'm going to try to explain how to make software testable in really practical terms. I won't use words like "dependency injection." Those things annoy smart programmers and make them stop listening.
 

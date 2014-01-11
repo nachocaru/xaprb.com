@@ -4,9 +4,6 @@ date: "2009-04-01"
 permalink: /2009/04/01/how-mysql-really-executes-a-query/
 categories:
   - PostgreSQL
-tags:
-  - humor
-  - MySQL
 ---
 <p style="border:1px red solid; background:yellow; font-weight: bold; padding: 2em">
   WARNING: nearly every word of this post is intentionally false. This is an <a href="http://en.wikipedia.org/wiki/April_Fools%27_Day">April Fool's joke</a>.

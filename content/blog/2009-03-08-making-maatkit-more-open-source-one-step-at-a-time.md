@@ -6,11 +6,6 @@ categories:
   - Coding
   - Open Source
   - SQL
-tags:
-  - Free Software
-  - Innotop
-  - Maatkit
-  - MySQL
 ---
 If you've been holding out for that golden opportunity, now's a great time to get involved in [Maatkit][1].
 

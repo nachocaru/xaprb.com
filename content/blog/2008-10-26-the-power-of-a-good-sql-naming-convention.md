@@ -4,11 +4,6 @@ date: "2008-10-26"
 permalink: /2008/10/26/the-power-of-a-good-sql-naming-convention/
 categories:
   - Coding
-tags:
-  - conventions
-  - orm
-  - sakila
-  - Testing
 ---
 At my previous employer, one of the early decisions that had huge payoffs later was the SQL naming conventions. A good naming convention is more than just a nicety. It lets you write programs that don't need to be told about the relationships among tables and columns.
 

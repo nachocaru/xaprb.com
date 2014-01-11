@@ -6,8 +6,6 @@ categories:
   - Commentary
   - PostgreSQL
   - SQL
-tags:
-  - MySQL
 ---
 Ever been around a group of people discussing some technology and heard Cool-Whip phrases like this?
 

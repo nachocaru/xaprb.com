@@ -8,8 +8,6 @@ categories:
   - SQL
   - Sys Admin
   - Tools
-tags:
-  - Daniel Nichter
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

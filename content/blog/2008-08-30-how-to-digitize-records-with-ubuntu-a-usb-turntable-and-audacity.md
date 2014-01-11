@@ -6,18 +6,6 @@ categories:
   - GNU/Linux
   - Music
   - Review
-tags:
-  - Audacity
-  - easyTAG
-  - FLAC
-  - HP Media Vault
-  - Ion
-  - LP Records
-  - MP3
-  - OGG
-  - Sennheiser
-  - ubuntu
-  - USB Turntable
 ---
 <p>I've been digitizing my LP collection recently and thought I'd share a quick howto, since I haven't seen a good complete tutorial on the whole process online.  Hopefully this will show up on Google and people can find it.</p>
 

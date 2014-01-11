@@ -5,8 +5,6 @@ permalink: /2009/06/26/seeking-input-on-a-badness-score-for-query-execution/
 categories:
   - Maatkit
   - SQL
-tags:
-  - MySQL
 ---
 Suppose that you're writing a new Maatkit tool ([just a random example, really][1]) and its job is to measure the difference in execution of queries. The simplest metric is execution time.
 

@@ -5,10 +5,6 @@ permalink: /2008/07/15/high-performance-mysql-is-going-to-press-again/
 categories:
   - High Performance MySQL
   - SQL
-tags:
-  - Books
-  - MySQL
-  - writing
 ---
 Apparently [High Performance MySQL, 2nd Edition][1] is selling quite well &#8212; I'm not sure exactly how well &#8212; because we're preparing for a second printing. This makes me very happy. I don't think they anticipated going back to the press for quite some time.
 

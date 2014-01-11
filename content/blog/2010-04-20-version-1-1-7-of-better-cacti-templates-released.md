@@ -6,11 +6,6 @@ categories:
   - PHP
   - SQL
   - Sys Admin
-tags:
-  - Cacti
-  - Java
-  - JMX
-  - redis
 ---
 I've released version 1.1.7 of the [Better Cacti Templates][1] project. This release includes a bunch of bug fixes, some new graphs for MySQL, and two new sets of graphs, for Redis graphing and for JMX graphing.
 

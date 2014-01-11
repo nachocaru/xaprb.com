@@ -5,11 +5,6 @@ permalink: /2008/05/23/mysql-62-is-ga-but-51-is-rc-and-60-is-alpha/
 categories:
   - Commentary
   - SQL
-tags:
-  - humor
-  - Kaj Arno
-  - MySQL
-  - MySQL Cluster
 ---
 <p>MySQL's version numbering is getting harder and harder to understand.  In fact, it's getting surreal.</p>
 

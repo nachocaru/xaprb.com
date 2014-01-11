@@ -5,12 +5,6 @@ permalink: /2008/10/09/would-tufte-approve-of-mixing-units-on-a-graph/
 categories:
   - PHP
   - SQL
-tags:
-  - Cacti
-  - Edward Tufte
-  - graphing
-  - MySQL
-  - MySQL Enterprise Monitor
 ---
 I've created a set of [Cacti templates for graphing stats about MySQL][1]. While these were based on several other people's work, there are many improvements. One of them in particular I want to bring up, and I'll go so far as to say it ought to be a "best practice" for graphing. That is, don't mix units on a graph.
 

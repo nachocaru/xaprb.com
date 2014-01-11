@@ -5,11 +5,6 @@ permalink: /2009/01/21/postgresql-adds-windowing-functions-and-common-table-expr
 categories:
   - PostgreSQL
   - SQL
-tags:
-  - common table expressions
-  - MySQL
-  - recursive queries
-  - windowing functions
 ---
 As [Hubert writes][1], [PostgreSQL 8.4 has windowing functions][2].
 

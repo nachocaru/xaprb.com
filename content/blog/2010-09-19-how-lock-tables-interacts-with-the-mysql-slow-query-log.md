@@ -4,10 +4,6 @@ date: "2010-09-19"
 permalink: /2010/09/19/how-lock-tables-interacts-with-the-mysql-slow-query-log/
 categories:
   - SQL
-tags:
-  - LOCK TABLES
-  - microslow logging
-  - slow query log
 ---
 Here's a little trivia that you might find helpful. Suppose that I have the following in the MySQL slow query log (abbreviated for clarity):
 

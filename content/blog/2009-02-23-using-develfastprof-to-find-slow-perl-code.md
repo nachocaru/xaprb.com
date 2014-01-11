@@ -5,8 +5,6 @@ permalink: /2009/02/23/using-develfastprof-to-find-slow-perl-code/
 categories:
   - Coding
   - Perl
-tags:
-  - profiling
 ---
 I've been profiling a Perl program recently with [Devel::FastProf][1], and I had a little bit of a hard time finding one of my hot spots. I had a construct like the following: 
 <pre>if ( $condition_one ) {

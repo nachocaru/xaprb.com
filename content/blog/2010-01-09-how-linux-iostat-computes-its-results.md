@@ -8,8 +8,6 @@ categories:
   - SQL
   - Sys Admin
   - Tools
-tags:
-  - iostat
 ---
 `iostat` is one of the most important tools for measuring disk performance, which of course is very relevant for database administrators, whether your chosen database is Postgres, MySQL, Oracle, or anything else that runs on GNU/Linux. Have you ever wondered where statistics like await (average wait for the request to complete) come from? If you look at the disk statistics the [Linux kernel makes available through files such as /proc/diskstats][1], you won't see await there. How does iostat compute await? For that matter, how does it compute the average queue size, service time, and utilization? This blog post will show you how that's computed.
 

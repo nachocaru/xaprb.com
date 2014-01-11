@@ -5,10 +5,6 @@ permalink: /2009/02/06/im-a-mysql-conference-and-expo-advocate-again/
 categories:
   - Conferences
   - SQL
-tags:
-  - mysqlconf2009
-  - Percona
-  - perconaperfconf09
 ---
 So far this year I've been totally silent about the [MySQL Conference and Expo 2009][1]. In the past I've been a vocal advocate of [going to the conference][2] and [sending your employees to the conference][3]. So my silence was conspicuous to me, if not to you. I've always considered myself a strong MySQL supporter and I still do.
 

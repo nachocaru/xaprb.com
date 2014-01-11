@@ -4,8 +4,6 @@ date: "2009-05-13"
 permalink: /2009/05/13/the-quiet-end-of-the-community-enterprise-split/
 categories:
   - SQL
-tags:
-  - MySQL
 ---
 Someone pointed this out to me the other day. Look at the comment on the [revision][1]:
 

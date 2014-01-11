@@ -6,9 +6,6 @@ categories:
   - Commentary
   - Maatkit
   - SQL
-tags:
-  - Diego Medina
-  - Sheeri Kritzer Cabral
 ---
 MySQL just gave me an award at this morning's keynote, along with [Sheeri Kritzer Cabral][1] (for the second year in a row!) and Diego Medina, for my code contributions to the MySQL community, specifically [Maatkit,][2] which makes it easier to make MySQL reliable, fast, and robust. It's an honor to be recognized. And while I could leave it at that, I'd like to say a word or two more.
 

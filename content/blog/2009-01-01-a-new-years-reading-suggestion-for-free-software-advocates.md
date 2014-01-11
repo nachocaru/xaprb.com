@@ -4,9 +4,6 @@ date: "2009-01-01"
 permalink: /2009/01/01/a-new-years-reading-suggestion-for-free-software-advocates/
 categories:
   - Commentary
-tags:
-  - Free Software
-  - I Pencil
 ---
 It's a new year, and [Free Software][1] is more ubiquitous and important than ever. At the same time, the work is far from over. Here's something inspiring you can read to stimulate some deep thoughts about the nature of Free Software: an essay from 1958, "[I, Pencil][2]."
 

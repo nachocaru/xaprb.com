@@ -4,11 +4,6 @@ date: "2009-06-18"
 permalink: /2009/06/18/myisam-quote-of-the-day/
 categories:
   - SQL
-tags:
-  - InnoDB
-  - myisam
-  - MySQL
-  - XtraDB
 ---
 Seen in #maatkit on Freenode:
 

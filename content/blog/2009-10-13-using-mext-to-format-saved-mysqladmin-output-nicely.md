@@ -4,8 +4,6 @@ date: "2009-10-13"
 permalink: /2009/10/13/using-mext-to-format-saved-mysqladmin-output-nicely/
 categories:
   - SQL
-tags:
-  - mext
 ---
 I wrote a while ago about how [mext][1] works &#8212; it runs "mysqladmin extended-status" and formats it nicely. But what if you want to use it to format *saved* output that you've put into a file? It's actually very easy. You can tell it what command-line to run to generate its input. By default you are probably going to tell it to run "mysqladmin ext -ri10&#8243; or something like that, but you can just as easily make it run "cat my-saved-output".
 

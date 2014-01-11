@@ -6,8 +6,6 @@ categories:
   - Conferences
   - Maatkit
   - SQL
-tags:
-  - cposc2009
 ---
 I'm going to present on [Maatkit][1] at the [CPOSC conference][2] in central Pennsylvania on Saturday, October 17th 2009. I'll give an overview of the toolkit, which is no longer an easy task in a single session. I see a number of other interesting sessions have been accepted. It looks like it'll be a good conference.
 

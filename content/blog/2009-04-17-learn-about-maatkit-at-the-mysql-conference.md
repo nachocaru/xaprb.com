@@ -6,8 +6,6 @@ categories:
   - Conferences
   - Maatkit
   - SQL
-tags:
-  - mysqlconf2009
 ---
 I'm [presenting][1] about [Maatkit][2], the toolkit I created to make life better with MySQL, at the MySQL conference next week.
 

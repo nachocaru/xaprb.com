@@ -6,12 +6,6 @@ categories:
   - Commentary
   - Conferences
   - SQL
-tags:
-  - AlsoSQL
-  - Brian Aker
-  - NoSQL
-  - Richard Hipp
-  - self2010
 ---
 [Dr. Richard Hipp][1] gave a talk at [Southeast Linux Fest][2] today on choosing an open-source database. He thinks that NoSQL is not a very good name for the new databases we're seeing these days, so he proposed a new name: postmodern databases. Why postmodern?
 

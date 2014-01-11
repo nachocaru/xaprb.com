@@ -4,13 +4,6 @@ date: "2009-01-13"
 permalink: /2009/01/13/what-is-the-scalable-replacement-for-innodb/
 categories:
   - SQL
-tags:
-  - Falcon
-  - InnoDB
-  - MrBenchmark
-  - myisam
-  - MySQL
-  - Sun
 ---
 A while back a Sun engineer posted an [article][1] claiming that the best way to scale MySQL is to shard your database in many instances on a single server, each of which runs in threads that individually have low performance. The Sun way has always been to get high throughput with high latency. And that's fine. [Others have commented on the real-world applicability][2] of this technique with MySQL, so I won't.
 

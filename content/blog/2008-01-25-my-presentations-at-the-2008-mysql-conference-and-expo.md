@@ -2,15 +2,6 @@
 title: My presentations at the 2008 MySQL Conference and Expo
 date: "2008-01-25"
 permalink: /2008/01/25/my-presentations-at-the-2008-mysql-conference-and-expo/
-tags:
-  - Beat Vontobel
-  - conference
-  - explain
-  - Jay Pipes
-  - MySQL
-  - mysqlconf2008
-  - mysqluc2008
-  - query cache
 ---
 [ <img src="http://en.oreilly.com/mysql2008/public/asset/asset/561" width="120" height="240"  border="0"  alt="MySQL Conference &#038; Expo 2008" title="MySQL Conference &#038; Expo 2008"  style="float: right" />][1] I'll be attending the [2008 MySQL Conference and Expo][1] again this year, and I'm looking forward to hearing some great sessions, meeting new and old friends, and giving sessions myself. As a proposal reviewer, I looked at and voted on 250+ proposals for sessions and tutorials for this conference. There are going to be some great sessions and tutorials.<sup>[1]</sup>
 

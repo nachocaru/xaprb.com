@@ -5,13 +5,6 @@ permalink: /2010/02/20/ill-be-speaking-at-the-oreilly-mysql-conference-2010/
 categories:
   - Conferences
   - SQL
-tags:
-  - Cacti
-  - mysqlconf
-  - mysqlconf2010
-  - mysqluc
-  - mysqluc2010
-  - Yoshinori Matsunobu
 ---
 <p style="float:right">
   <a href="http://conferences.oreilly.com/mysql"> <img src="http://assets.en.oreilly.com/1/event/36/mysql2010_speaking_badge_120x240.gif" alt="O'Reilly MySQL Conference & Expo 2010" title="O'Reilly MySQL Conference & Expo 2010" height="240" width="120" border="0" /> </a>

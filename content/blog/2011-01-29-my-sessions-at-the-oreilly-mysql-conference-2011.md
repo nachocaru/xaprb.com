@@ -8,11 +8,6 @@ categories:
   - CouchDB
   - MongoDB
   - SQL
-tags:
-  - MySQL
-  - mysqlconf
-  - mysqlconf2011
-  - mysqluc2011
 ---
 I'll be presenting several sessions at the [O'Reilly MySQL Conference & Expo 2011][1], which is April 11-14 in Santa Clara, California. I recommend this conference to anyone interested in open-source databases including MySQL, PostgreSQL, CouchDB, MongoDB, and others. There is very good coverage of a diverse list of open-source databases.
 

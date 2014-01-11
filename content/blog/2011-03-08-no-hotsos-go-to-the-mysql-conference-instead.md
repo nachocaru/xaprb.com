@@ -5,11 +5,6 @@ permalink: /2011/03/08/no-hotsos-go-to-the-mysql-conference-instead/
 categories:
   - Conferences
   - SQL
-tags:
-  - Hotsos
-  - MySQL
-  - mysqlconf2011
-  - Neil J. Gunther
 ---
 I wish I could be at the [Hotsos Symposium][1]. I would keep my mouth very tightly closed and my ears wide open, and try to learn from people who are completely out of my league about [performance analysis topics I won't grok for another decade][2] (if I'm lucky). But I just can't cram in that much travel.
 

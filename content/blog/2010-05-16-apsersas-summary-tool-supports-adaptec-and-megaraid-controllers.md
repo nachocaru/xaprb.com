@@ -6,11 +6,6 @@ categories:
   - Aspersa
   - Maatkit
   - SQL
-tags:
-  - Adaptec
-  - LSI Megaraid
-  - RAID
-  - unit testing
 ---
 I spent a little time yesterday doing some things with the "summary" tool from [Aspersa][1]. I added support for summarizing status and configuration of Adaptec and LSI MegaRAID controllers. I also figured out how to write a test suite for Bash scripts, so most major parts of the tool are fully tested now. I learned a lot more sed and awk this weekend.
 

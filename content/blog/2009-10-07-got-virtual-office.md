@@ -4,9 +4,6 @@ date: "2009-10-07"
 permalink: /2009/10/07/got-virtual-office/
 categories:
   - Commentary
-tags:
-  - humor
-  - openspace
 ---
 A friend of mine works for a company that's starting a place called [OpenSpace][1]. They did a [funny YouTube ad][2] for it. If you work from home, give it a look &#8212; it brought a smile to my face. I love the "trying to write on a whiteboard way down low" thing. That is pretty much the norm for me, because I'm tall. They are hoping for viral marketing to help OpenSpace succeed. Does this blog post count?
 

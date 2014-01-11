@@ -7,16 +7,6 @@ categories:
   - Maatkit
   - Open Source
   - SQL
-tags:
-  - Andrew Libby
-  - Brian Gorka
-  - cposc
-  - cposc2009
-  - Josiah Ritchie
-  - Morgan Tocker
-  - Rob Yates
-  - Seth Jerome
-  - Tom Clark
 ---
 Yesterday I attended [CPOSC 2009][1]. The conference was great. It was very well run, and I liked the sessions. I would definitely attend this conference again, and will recommend that Percona sponsor it next year. I attended the following talks:
 

@@ -5,9 +5,6 @@ permalink: /2009/10/24/version-1-1-3-of-improved-cacti-graphs-for-mysql-released
 categories:
   - PHP
   - SQL
-tags:
-  - Cacti
-  - MySQL
 ---
 I've just released version 1.1.3 of the [Cacti templates I wrote for MySQL][1]. This is a bug-fix release only, and affects only ss\_get\_mysql\_stats.php. To upgrade from the previous release, upgrade ss\_get\_mysql\_stats.php. Don't forget to save and restore your configuration options, if any. (Note that there is a feature to help with this: you can keep configuration options in ss\_get\_mysql\_stats.php.cnf to avoid making them in ss\_get\_mysql\_stats.php.)
 

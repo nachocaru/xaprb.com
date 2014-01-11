@@ -7,10 +7,6 @@ categories:
   - Internet
   - Open Source
   - Review
-tags:
-  - Android
-  - CyanogenMod
-  - Nook Color
 ---
 I bought a [Barnes and Noble Nook Color][1] e-book reader and ripped out the Nook software, replacing it with the [CyanogenMod][2] distribution of the Android OS. It's really, really nice hardware, and CyanogenMod (CM) is really, really nice software. I love them both, and my regular readers will remember that I'm *not a gadget guy*. Read on for more.
 

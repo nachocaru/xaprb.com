@@ -6,8 +6,6 @@ categories:
   - Coding
   - Review
   - SQL
-tags:
-  - C. J. Date
 ---
 <div class="wp-caption alignleft" style="width: 190px">
   <a href="http://www.amazon.com/SQL-Relational-Theory-Write-Accurate/dp/0596523068?tag=xaprb-20"><img alt="SQL and Relational Theory" src="http://oreilly.com/catalog/covers/9780596523060_cat.gif" title="SQL and Relational Theory" width="180" height="236" /></a><p class="wp-caption-text">

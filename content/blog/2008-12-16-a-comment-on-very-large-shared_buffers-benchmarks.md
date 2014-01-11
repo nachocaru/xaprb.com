@@ -4,8 +4,6 @@ date: "2008-12-16"
 permalink: /2008/12/16/a-comment-on-very-large-shared_buffers-benchmarks/
 categories:
   - PostgreSQL
-tags:
-  - Kenny Gorman
 ---
 I tried to post a comment to [Kenny Gorman's post on Tuning for very large shared_buffers][1] article, but it seems to have gone into the spam bucket. I was torn about whether it's worth a separate post anyway, so this tipped me over the edge.
 

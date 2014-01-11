@@ -5,11 +5,6 @@ permalink: /2011/01/02/finding-things-within-some-distance-in-sql/
 categories:
   - PostgreSQL
   - SQL
-tags:
-  - Geospatial Indexing
-  - GIS
-  - Great-Circle Formula
-  - MBR
 ---
 One of the query optimization scenarios I've seen a lot over the years is finding something within some distance from a point. For example, finding people within some distance of yourself, apartments in a radius from a postal code, and so on.
 

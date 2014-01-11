@@ -4,11 +4,6 @@ date: "2009-01-01"
 permalink: /2009/01/01/how-to-use-mysql-binlogs-to-undo-a-drop-statement/
 categories:
   - SQL
-tags:
-  - backups
-  - binary logs
-  - MySQL
-  - recovery
 ---
 This post is for people who are trying to roll back unwanted modifications to their MySQL database.
 

@@ -5,8 +5,6 @@ permalink: /2009/08/18/how-to-find-un-indexed-queries-in-mysql-without-using-the
 categories:
   - Maatkit
   - SQL
-tags:
-  - tcpdump
 ---
 You probably know that it's possible to set configuration variables to [log queries that don't use indexes to the slow query log][1] in MySQL. This is a good way to find tables that might need indexes.
 

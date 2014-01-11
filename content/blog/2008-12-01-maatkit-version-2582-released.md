@@ -6,8 +6,6 @@ categories:
   - Maatkit
   - Perl
   - SQL
-tags:
-  - microslow logging
 ---
 <p class="download">
   <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>

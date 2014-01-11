@@ -5,12 +5,6 @@ permalink: /2008/10/22/how-to-swap-caps-lock-and-esc-keys-in-ubuntu/
 categories:
   - Coding
   - Desktop
-tags:
-  - Dvorak
-  - Productivity
-  - typing
-  - ubuntu
-  - Vim
 ---
 Here's a productivity tip that has saved me countless work while typing. Swap your Caps-lock and Escape keys. If you're like most people, you use Caps-lock virtually never, and Escape quite a lot. Especially if you're a programmer who happens to use [the best text editor, Vim][1]. Read on to learn how to do this.
 

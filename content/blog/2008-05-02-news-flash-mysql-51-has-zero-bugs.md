@@ -4,12 +4,6 @@ date: "2008-05-02"
 permalink: /2008/05/02/news-flash-mysql-51-has-zero-bugs/
 categories:
   - SQL
-tags:
-  - bugs
-  - InnoDB
-  - Marten Mickos
-  - MySQL
-  - Zach Urlocker
 ---
 [Zack Urlocker says MySQL 5.1 has zero bugs][1]. He may have been misquoted, or quoted out of context, but there it is. I'll quote enough of it that you can't take it out of context twice:
 

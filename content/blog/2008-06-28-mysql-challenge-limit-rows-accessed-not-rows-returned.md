@@ -5,10 +5,6 @@ permalink: /2008/06/28/mysql-challenge-limit-rows-accessed-not-rows-returned/
 categories:
   - Coding
   - SQL
-tags:
-  - limit
-  - MySQL
-  - user defined variables
 ---
 Dear reader, this is a challenge. How's your MySQL prowess? You know about LIMIT: it cuts off the results at the specified number.
 

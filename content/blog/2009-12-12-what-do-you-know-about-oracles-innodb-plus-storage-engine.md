@@ -5,11 +5,6 @@ permalink: /2009/12/12/what-do-you-know-about-oracles-innodb-plus-storage-engine
 categories:
   - Open Source
   - SQL
-tags:
-  - InnoDB
-  - Monty Widenius
-  - MySQL
-  - Oracle
 ---
 That's right, I said InnoDB+, with a "plus" at the end. I didn't know it existed until, while following some links from [Monty's appeal to save MySQL][1], I decided to read a [Groklaw post][2] that links to [Eben Moglen's letter to the EU Commission][3], which includes this text:
 

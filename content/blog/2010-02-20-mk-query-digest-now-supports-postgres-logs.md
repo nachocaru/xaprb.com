@@ -9,9 +9,6 @@ categories:
   - PostgreSQL
   - SQL
   - Tools
-tags:
-  - log analysis
-  - PostgreSQL
 ---
 Maatkit does more than just MySQL. I've just committed a new version of [mk-query-digest, a powerful log analysis tool][1], with support for Posgtres logs, in both syslog and stderr format. I'm hoping that people will give this a spin in the real world. I have lots of test cases, but that's never enough; I'm looking for people to crunch their logs and let me know if anything breaks.
 

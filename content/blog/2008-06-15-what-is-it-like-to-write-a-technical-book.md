@@ -2,21 +2,6 @@
 title: What is it like to write a technical book?
 date: "2008-06-15"
 permalink: /2008/06/15/what-is-it-like-to-write-a-technical-book/
-tags:
-  - Andy Oram
-  - Arjen Lentz
-  - Books
-  - Jay Pipes
-  - LaTeX
-  - MySQL
-  - OpenOffice.org
-  - OReilly
-  - Peter Zaitsev
-  - Project Management
-  - TeX
-  - The Rimm Kaufman Group
-  - Vadim Tkachenko
-  - writing
 ---
 <p style="background:silver; border:1px solid black">Update, almost a year later: Take this with a grain of salt.  I wrote it after an incredible marathon of staying up most of the night for months on end.  My take on it now that I have some distance from the project is &#8212; I'd definitely work with Andy Oram and O'Reilly again, and I'd be able to make the process a lot easier for myself the second time.</p>
 

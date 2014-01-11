@@ -4,8 +4,6 @@ date: "2010-05-09"
 permalink: /2010/05/09/how-to-tune-mysqls-sort_buffer_size/
 categories:
   - SQL
-tags:
-  - sort_buffer_size
 ---
 I perpetually see something like the following:
 

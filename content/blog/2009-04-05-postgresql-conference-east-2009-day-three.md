@@ -5,9 +5,6 @@ permalink: /2009/04/05/postgresql-conference-east-2009-day-three/
 categories:
   - Conferences
   - PostgreSQL
-tags:
-  - Jignesh Shah
-  - Jonah Harris
 ---
 As I said yesterday, I was only able to attend a couple of talks at the [PostgreSQL Conference East 2009][1] this morning before leaving to catch my flight back to Virginia.
 

@@ -7,11 +7,6 @@ categories:
   - PostgreSQL
   - SQL
   - Tools
-tags:
-  - iopp
-  - Mark Wong
-  - markwkm
-  - MySQL
 ---
 Mark Wong's entry titled "[Following up a couple questions from the presentation at PSU on January 8, 2009][1]" just caught my eye:
 

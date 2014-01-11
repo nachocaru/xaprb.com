@@ -4,8 +4,6 @@ date: "2011-04-16"
 permalink: /2011/04/16/subtleties-in-the-universal-scalability-law/
 categories:
   - Scalability
-tags:
-  - Neil J. Gunther
 ---
 Those of you who've been following my recent work on modeling system scalability might be interested in this. (It's not my work, by the way. I'm just trying to ski in the wake of [Neil Gunther][1].)
 

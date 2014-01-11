@@ -5,8 +5,6 @@ permalink: /2010/04/26/why-high-availability-is-hard-with-databases/
 categories:
   - High Availability
   - SQL
-tags:
-  - MMM
 ---
 A lot of systems are relatively easy to make HA (highly available). You just slap them into a well-known HA framework such as Linux-HA and you're done. But databases are different, especially replicated databases, *especially* replicated MySQL.
 

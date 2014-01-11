@@ -10,11 +10,6 @@ categories:
   - MongoDB
   - PostgreSQL
   - SQL
-tags:
-  - mysqlconf
-  - mysqlconf2011
-  - mysqluc
-  - mysqluc2011
 ---
 [O'Reilly's 2011 edition of the MySQL conference][1] has an expanded agenda, with good representation from Postgres, CouchDB, MongoDB, and others. Take a look at [the full schedule listing][2], which is being filled out as talks are approved and the speakers verify that they'll give the session.
 

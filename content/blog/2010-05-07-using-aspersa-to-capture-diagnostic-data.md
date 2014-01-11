@@ -7,8 +7,6 @@ categories:
   - SQL
   - Sys Admin
   - Tools
-tags:
-  - gdb
 ---
 I frequently encounter MySQL servers with intermittent problems that don't happen when I'm watching the server. Gathering good diagnostic data when the problem happens is a must. [Aspersa][1] includes two utilities to make this easier.
 

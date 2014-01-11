@@ -4,10 +4,6 @@ date: "2008-11-26"
 permalink: /2008/11/26/a-metric-for-mysql-load-average/
 categories:
   - SQL
-tags:
-  - loadavg
-  - MySQL
-  - Trevor Price
 ---
 If you were to measure MySQL's "loadavg," how would you do it?
 

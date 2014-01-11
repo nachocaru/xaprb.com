@@ -7,11 +7,6 @@ categories:
   - GNU/Linux
   - PostgreSQL
   - SQL
-tags:
-  - Apache
-  - Drizzle
-  - MySQL
-  - Open Source
 ---
 As I was driving with a colleague in California a couple of weeks ago during the conference, the topic of conversation turned to the notion that Percona and the rest of the MySQL community really need the presence of a central entity that provides a recognized home for the MySQL server. The conversation went something like "I was talking to so-and-so, and he said, *you know, you guys really need Sun/MySQL, because without the mother ship, things will fall apart and your own business will fail*."
 

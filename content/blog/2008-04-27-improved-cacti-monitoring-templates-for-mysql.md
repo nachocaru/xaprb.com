@@ -4,14 +4,6 @@ date: "2008-04-27"
 permalink: /2008/04/27/improved-cacti-monitoring-templates-for-mysql/
 categories:
   - SQL
-tags:
-  - Alexey Kovyrin
-  - Cacti
-  - Cacti templates
-  - graphing
-  - monitoring
-  - MySQL
-  - Rimm Kaufman Group
 ---
 <p class="download">
   <a href="http://code.google.com/p/mysql-cacti-templates/">Download MySQL Cacti templates</a>

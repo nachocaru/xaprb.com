@@ -2,7 +2,6 @@
 title: A review of CouchDB, the Definitive Guide by Anderson, Lenhardt, and Slater
 permalink: >
 categories:
-tags:
 ---
 <p style="float:left">
 </p>

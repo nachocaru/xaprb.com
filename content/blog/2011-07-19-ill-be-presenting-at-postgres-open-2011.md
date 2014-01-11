@@ -8,8 +8,6 @@ categories:
   - Scalability
   - SQL
   - Tools
-tags:
-  - postgresopen
 ---
 I've been accepted to present at the brand-new and very exciting [Postgres Open 2011][1] about system scaling, TCP traffic, and mathematical modeling. I'm really looking forward to it &#8212; it will be my first PostgreSQL conference in a couple of years! See you there.
 

@@ -5,9 +5,6 @@ permalink: /2008/10/04/how-to-check-mysql-replication-integrity-continually/
 categories:
   - Maatkit
   - SQL
-tags:
-  - checksumming
-  - MySQL
 ---
 I have recently added some features to [Maatkit's mk-table-checksum][1] tool that can make it easy to checksum the relevant parts of your data more frequently (i.e. [continually, but not continuously][2]). This in turn makes it possible for you to find out *much* sooner if a slave becomes different from its master, and then you can take action before the differences affect more of your data.
 

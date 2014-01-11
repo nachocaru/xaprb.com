@@ -4,11 +4,6 @@ date: "2010-03-04"
 permalink: /2010/03/04/a-growing-trend-innodb-mutex-contention/
 categories:
   - SQL
-tags:
-  - Concurrency
-  - gdb
-  - InnoDB
-  - Mutex
 ---
 I've been noticing an undeniable trend in my consulting engagements in the last year or so, and when I vocalized this today, heads nodded all around me. Everyone sees a growth in the number of cases where otherwise well-optimized systems are artificially limited by InnoDB contention problems.
 

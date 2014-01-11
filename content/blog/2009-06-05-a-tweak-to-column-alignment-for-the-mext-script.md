@@ -6,8 +6,6 @@ categories:
   - Coding
   - SQL
   - Tools
-tags:
-  - mext
 ---
 I tweaked the [mext][1] script so it auto-detects the necessary column widths for each sample.
 

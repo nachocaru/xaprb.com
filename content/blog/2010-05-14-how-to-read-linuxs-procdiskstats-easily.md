@@ -7,8 +7,6 @@ categories:
   - SQL
   - Sys Admin
   - Tools
-tags:
-  - iostat
 ---
 These days I spend more time looking at /proc/diskstats than I do at iostat. The problem with iostat is that it lumps reads and writes together, and I want to see them separately. That's really important on a database server (e.g. MySQL performance analysis).
 

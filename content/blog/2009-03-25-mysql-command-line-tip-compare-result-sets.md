@@ -5,8 +5,6 @@ permalink: /2009/03/25/mysql-command-line-tip-compare-result-sets/
 categories:
   - SQL
   - Tools
-tags:
-  - MySQL
 ---
 Here's a quick productivity tip: when optimizing queries by rewriting them to different forms that should return the same results, you can verify that you get the same results by taking a checksum of them.
 

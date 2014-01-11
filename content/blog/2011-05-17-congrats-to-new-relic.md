@@ -4,8 +4,6 @@ date: "2011-05-17"
 permalink: /2011/05/17/congrats-to-new-relic/
 categories:
   - Tools
-tags:
-  - New Relic
 ---
 New Relic just [announced the release of new features][1] that track client-side (front-end) performance, including network time, DOM processing time, and total render time in the browser.
 

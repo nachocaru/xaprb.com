@@ -6,8 +6,6 @@ categories:
   - Conferences
   - PostgreSQL
   - SQL
-tags:
-  - mysqlconf
 ---
 I don't think this was widely publicized, but the [Call for Proposals for the MySQL (and beyond) conference][1] was extended a few days. It'll be open through November 3rd.
 

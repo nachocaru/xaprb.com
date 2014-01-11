@@ -6,11 +6,6 @@ categories:
   - Commentary
   - Conferences
   - SQL
-tags:
-  - MySQL
-  - mysqluc2009
-  - Percona
-  - perconaperfconf09
 ---
 We (Percona) just [announced our Percona Performance Conference][1], and I wanted to tell you a little more about what we hope to accomplish with this conference. Let me show you some simple math that anyone can do.
 

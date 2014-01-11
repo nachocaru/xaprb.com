@@ -5,8 +5,6 @@ permalink: /2010/01/09/review-cacti-network-monitoring-kundu-lavlu/
 categories:
   - Review
   - Sys Admin
-tags:
-  - Cacti
 ---
 <div id="attachment_1531" class="wp-caption alignleft" style="width: 250px">
   <a href="http://www.amazon.com/Cacti-Network-Monitoring-Ibrahim-Lavlu/dp/1847195962?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/01/cacti-network-monitoring.jpg" alt="Cacti Network Monitoring" title="Cacti Network Monitoring" width="240" height="240" class="size-full wp-image-1531" /></a><p class="wp-caption-text">

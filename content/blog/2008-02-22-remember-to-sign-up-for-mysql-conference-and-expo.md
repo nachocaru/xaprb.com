@@ -2,13 +2,6 @@
 title: Remember to sign up for MySQL Conference and Expo!
 date: "2008-02-22"
 permalink: /2008/02/22/remember-to-sign-up-for-mysql-conference-and-expo/
-tags:
-  - certification
-  - conference
-  - MySQL
-  - mysqlconf2008
-  - mysqluc08
-  - mysqluc2008
 ---
 You have only a few more days to sign up for the [MySQL Conference and Expo][1] before the early-bird discount goes away. Check out the schedule of speakers and tutorials, and sign up soon! And just in case you didn't get one from any of the other people blogging about it, you can email me for a code that's good for a 20% discount.
 

@@ -5,11 +5,6 @@ permalink: /2012/04/06/a-review-of-clojure-in-action-by-amit-rathore/
 categories:
   - Coding
   - Review
-tags:
-  - Amit Rathore
-  - Clojure
-  - LISP
-  - Manning
 ---
 <div id="attachment_2701" class="wp-caption alignleft" style="width: 210px">
   <a href="http://www.amazon.com/Clojure-Action-Amit-Rathore/dp/1935182595/?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2012/04/clojure-in-action.png" alt="" title="Clojure In Action" width="200" height="250" class="size-full wp-image-2701" /></a><p class="wp-caption-text">

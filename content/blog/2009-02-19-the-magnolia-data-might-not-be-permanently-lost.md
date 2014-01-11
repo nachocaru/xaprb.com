@@ -4,11 +4,6 @@ date: "2009-02-19"
 permalink: /2009/02/19/the-magnolia-data-might-not-be-permanently-lost/
 categories:
   - SQL
-tags:
-  - backups
-  - data recovery
-  - Ma.gnolia
-  - MySQL
 ---
 I keep [reading][1] that [Ma.gnolia's data is permanently lost][2] because "a specialist had been unable to recover any data from the corrupted hard drive." This is not in itself a reason to consider data completely lost.
 

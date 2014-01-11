@@ -4,9 +4,6 @@ date: "2009-07-11"
 permalink: /2009/07/11/one-of-the-best-blog-headlines-i-have-ever-read/
 categories:
   - Commentary
-tags:
-  - Marketing
-  - Zmanda
 ---
 Cruising through my blog reader today, and came upon this blog post from Zmanda:
 

@@ -6,13 +6,6 @@ categories:
   - Conferences
   - PostgreSQL
   - SQL
-tags:
-  - enterpriselamp
-  - Goal Driven Performance Optimization
-  - Marcus Whitney
-  - Method R
-  - MySQL
-  - Percona
 ---
 Last week I attended the [Enterprise LAMP Summit and Camp][1] in Nashville, Tennessee. I enjoyed the event and met or reconnected with a lot of great people. I was glad to be able to spend time with some folks from the Postgres community. My own sessions focused on MySQL.
 
