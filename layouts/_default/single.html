@@ -1,4 +1,3 @@
-<!-- _default/single.html -->
 {{ template "chrome/header.html" . }}
 {{ template "chrome/subheader.html" . }}
 {{ $baseurl := .Site.BaseUrl }}
@@ -13,6 +12,8 @@
                         </header>
                         <div class="body">
                           {{ .Content }}
+        {{if .Prev}}<a class="previous" href="{{.Prev.Permalink}}"> {{.Prev.Title}}</a>{{end}}
+        {{if .Next}}<a class="next" href="{{.Next.Permalink}}"> {{.Next.Title}}</a>{{end}}
                         </div>
                     </article>
                 </div>

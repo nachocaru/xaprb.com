@@ -9,6 +9,6 @@ params:
     twitter: "@xaprb"
     domain: "xaprb.com"
 indexes:
-    tag: "tags"
+    #tag: "tags"
     category: "categories"
 ...

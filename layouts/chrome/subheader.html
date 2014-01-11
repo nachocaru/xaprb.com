@@ -1,8 +1,8 @@
     <header>
         <div class="widewrapper masthead">
             <div class="container">
-                <a href="index.html" id="logo">
-                    <i class="fa fa-key fa-3x"></i> {{ .Site.Params.author }}
+                <a href="/blog/" id="logo">
+                    {{ .Site.Title }}
                 </a>
 
                 <div id="mobile-nav-toggle" class="pull-right">
@@ -14,11 +14,20 @@
                 <nav class="pull-right tales-nav">
                     <div class="collapse navbar-collapse">
                         <ul class="nav nav-pills navbar-nav">
+                            <li> <a href="/blog/">Blog</a> </li>
                             <li> <a href="/about/">About</a> </li>
                         </ul>
                     </div>
                 </nav>        
 
+            </div>
+        </div>
+
+        <div class="widewrapper subheader">
+            <div class="container">
+                <div class="tales-breadcrumb">
+                    {{ .Site.Params.subtitle }}
+                </div>
             </div>
         </div>
     </header>

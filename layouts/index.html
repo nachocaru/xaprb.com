@@ -1,22 +1,20 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html class="no-js">
-<head>
-    {{ template "chrome/head.html" . }}
-</head>
-<body lang="en">
-
+{{ template "chrome/header.html" . }}
 {{ template "chrome/subheader.html" . }}
 
-<section id="main">
-  <div>
-   <h1 id="title">{{ .Site.Params.Subtitle }}</h1>
-    {{ range first 10 .Data.Pages }}
-        {{ .Render "summary"}}
-    {{ end }}
-  </div>
-</section>
+    <div class="widewrapper main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 blog-main">
 
-<aside id="meta"> </aside>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                        	<p>You are probably looking for the <a href="/blog/">blog</a>.</p>
+                        </div>
+                    </div>
+                </div>
 
-{{ template "chrome/footer.html" }}
+{{ template "chrome/sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+{{ template "chrome/footer.html" . }}
