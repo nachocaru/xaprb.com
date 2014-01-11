@@ -1,7 +1,5 @@
 ---
 title: Maatkit learns how to map-reduce
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/06/maatkit-learns-how-to-map-reduce/
 categories:
   - Maatkit

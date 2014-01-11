@@ -1,7 +1,5 @@
 ---
 title: Optimal performance out of the box!
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/12/optimal-performance-out-of-the-box/
 categories:
   - PostgreSQL

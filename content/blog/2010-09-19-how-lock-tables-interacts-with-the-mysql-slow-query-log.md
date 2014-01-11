@@ -1,7 +1,5 @@
 ---
 title: How LOCK TABLES interacts with the MySQL slow query log
-author: Baron Schwartz
-layout: post
 permalink: /2010/09/19/how-lock-tables-interacts-with-the-mysql-slow-query-log/
 categories:
   - SQL

@@ -1,7 +1,5 @@
 ---
 title: Writing a book about Maatkit
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/04/writing-a-book-about-maatkit/
 categories:
   - Maatkit

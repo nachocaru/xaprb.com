@@ -1,7 +1,5 @@
 ---
 title: "Early-access books: a double-edged sword"
-author: Baron Schwartz
-layout: post
 permalink: /2013/12/26/early-access-books-a-double-edged-sword/
 categories:
   - Commentary

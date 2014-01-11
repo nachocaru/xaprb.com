@@ -1,9 +1,6 @@
 ---
 title: A review of MONyog
-author: Baron Schwartz
-excerpt: |
   <p>This is a review of Webyog's <a href="http://www.webyog.com/">MONyog</a> MySQL monitoring tool.  The product is still in beta and has some rough edges, but holds promise.  Its design includes some interesting architectural decisions I think will help distinguish it from MySQL's own Monitoring and Advisory Service.</p>
-layout: post
 permalink: /2007/05/25/a-review-of-monyog/
 description:
   - >

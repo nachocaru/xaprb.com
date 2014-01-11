@@ -1,7 +1,5 @@
 ---
 title: Free webinar on monitoring MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/19/free-webinar-on-monitoring-mysql/
 categories:
   - SQL

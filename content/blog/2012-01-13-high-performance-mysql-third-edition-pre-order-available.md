@@ -1,7 +1,5 @@
 ---
 title: High Performance MySQL Third Edition pre-order available
-author: Baron Schwartz
-layout: post
 permalink: /2012/01/13/high-performance-mysql-third-edition-pre-order-available/
 categories:
   - High Performance MySQL

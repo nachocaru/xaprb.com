@@ -1,7 +1,5 @@
 ---
 title: Organize to resist SOPA in DC
-author: Baron Schwartz
-layout: post
 permalink: /2012/01/16/organize-to-resist-sopa-in-dc/
 categories:
   - Commentary

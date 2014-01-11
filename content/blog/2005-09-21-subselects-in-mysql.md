@@ -1,7 +1,5 @@
 ---
 title: How to write subqueries without using subqueries in SQL
-author: Baron Schwartz
-layout: post
 permalink: /2005/09/21/subselects-in-mysql/
 categories: Database
 ---

@@ -1,8 +1,5 @@
 ---
 title: Xaprb is featured on 9rules
-author: Baron Schwartz
-excerpt: '<p>The 9rules network, a trusted filter that chooses the best content on the web, has named Xaprb as a featured blog. This means a lot to me. 9rules is a great place to go and find quality content on an Internet thatâ€™s drowning in garbage, so being featured there is no small matter.</p>'
-layout: post
 permalink: /2006/05/28/xaprb-is-featured-on-9rules/
 ---
 The [9rules network][1], a trusted filter that chooses the best content on the web, has [named Xaprb as a featured blog][2]. This means a lot to me. 9rules is a great place to go and find quality content on an Internet that's drowning in garbage, so being featured there is no small matter.

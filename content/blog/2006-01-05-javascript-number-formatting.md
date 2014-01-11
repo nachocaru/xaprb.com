@@ -1,8 +1,5 @@
 ---
 title: How to format numbers in JavaScript flexibly and efficiently
-author: Baron Schwartz
-excerpt: "<p>This article continues my series on parsing and formatting data with JavaScript, this time with numeric data.  I don't need to do number <em>parsing</em>, but <em>formatting</em> is very useful.  The technique is similar to my date formatting code -- code that writes code, using custom format specifier strings.  The result is number formatting functionality I hope will be familiar and easy to use.</p>"
-layout: post
 permalink: /2006/01/05/javascript-number-formatting/
 description:
   - A JavaScript library for efficient, infinitely flexible number formatting.

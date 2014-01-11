@@ -1,7 +1,5 @@
 ---
 title: Why building a free service can be a disservice
-author: Baron Schwartz
-layout: post
 permalink: /2013/05/18/why-building-a-free-service-can-be-a-disservice/
 categories:
   - Commentary

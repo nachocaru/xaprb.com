@@ -1,8 +1,5 @@
 ---
 title: How to write a SQL exclusion join
-author: Baron Schwartz
-excerpt: '<p>There is usually more than one way to write a given query, but not all ways are created equal.  Some mathematically equivalent queries can have drastically different performance.  This article examines the scenario for which LEFT OUTER join was actually invented: exclusion joining.</p>'
-layout: post
 permalink: /2005/09/23/how-to-write-a-sql-exclusion-join/
 description:
   - >

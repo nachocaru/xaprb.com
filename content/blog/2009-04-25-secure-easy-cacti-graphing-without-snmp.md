@@ -1,7 +1,5 @@
 ---
 title: Secure, easy Cacti graphing without SNMP
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/25/secure-easy-cacti-graphing-without-snmp/
 categories:
   - SQL

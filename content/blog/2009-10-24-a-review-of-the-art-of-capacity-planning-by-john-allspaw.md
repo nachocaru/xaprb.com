@@ -1,7 +1,5 @@
 ---
 title: A review of The Art of Capacity Planning by John Allspaw
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/
 categories:
   - Review

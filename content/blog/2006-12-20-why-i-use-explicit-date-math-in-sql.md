@@ -1,8 +1,5 @@
 ---
 title: Why I use explicit date math in SQL
-author: Baron Schwartz
-excerpt: "<p>I sometimes see advice to do SQL date operations with the + and - operators on platforms where they are overloaded for date types.  I try to avoid that, because it can give unexpected results.  I prefer to explicitly use the built-in date/time functions.  I'll show you an example where the operators cause problems, but the functions do the right thing.</p>"
-layout: post
 permalink: /2006/12/20/why-i-use-explicit-date-math-in-sql/
 description:
   - >

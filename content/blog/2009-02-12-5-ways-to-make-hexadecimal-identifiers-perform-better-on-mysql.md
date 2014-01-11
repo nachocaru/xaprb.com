@@ -1,7 +1,5 @@
 ---
 title: 5 ways to make hexadecimal identifiers perform better on MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/12/5-ways-to-make-hexadecimal-identifiers-perform-better-on-mysql/
 categories:
   - SQL

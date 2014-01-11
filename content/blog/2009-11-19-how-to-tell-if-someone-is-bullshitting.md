@@ -1,7 +1,5 @@
 ---
 title: How to tell if someone is bullshitting
-author: Baron Schwartz
-layout: post
 permalink: /2009/11/19/how-to-tell-if-someone-is-bullshitting/
 categories:
   - Commentary

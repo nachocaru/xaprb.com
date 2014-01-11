@@ -1,7 +1,5 @@
 ---
 title: Open-source database developer mailing lists
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/19/open-source-database-developer-mailing-lists/
 categories:
   - Commentary

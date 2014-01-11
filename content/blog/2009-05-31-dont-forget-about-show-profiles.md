@@ -1,7 +1,5 @@
 ---
 title: "Don't forget about SHOW PROFILES"
-author: Baron Schwartz
-layout: post
 permalink: /2009/05/31/dont-forget-about-show-profiles/
 categories:
   - SQL

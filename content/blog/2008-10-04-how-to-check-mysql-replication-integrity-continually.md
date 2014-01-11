@@ -1,7 +1,5 @@
 ---
 title: How to check MySQL replication integrity continually
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/04/how-to-check-mysql-replication-integrity-continually/
 categories:
   - Maatkit

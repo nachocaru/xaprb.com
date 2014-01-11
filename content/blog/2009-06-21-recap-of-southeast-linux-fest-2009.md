@@ -1,7 +1,5 @@
 ---
 title: Recap of Southeast Linux Fest 2009
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/21/recap-of-southeast-linux-fest-2009/
 categories:
   - Conferences

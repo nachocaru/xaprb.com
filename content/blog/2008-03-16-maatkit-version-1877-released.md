@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 1877 released
-author: Baron Schwartz
-excerpt: |
   <p class="download"><a href="http://maatkit.sourceforge.net/">Download Maatkit</a></p>
   
   <p>Maatkit contains essential command-line utilities for MySQL, such as a table checksum tool and query profiler. It provides missing features such as checking slaves for data consistency, with emphasis on quality and scriptability.</p>
@@ -137,7 +135,6 @@ excerpt: |
      * Added --setvars option (bug #1904689, bug #1911371).
      * Added --charset option (bug #1877548).
   </pre>
-layout: post
 permalink: /2008/03/16/maatkit-version-1877-released/
 description:
   - >

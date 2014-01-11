@@ -1,7 +1,5 @@
 ---
 title: How MySQL really executes a query
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/01/how-mysql-really-executes-a-query/
 categories:
   - PostgreSQL

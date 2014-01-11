@@ -1,7 +1,5 @@
 ---
 title: "Features I'd like in MySQL: windowing functions"
-author: Baron Schwartz
-layout: post
 permalink: /2013/09/10/features-id-like-in-mysql-windowing-functions/
 categories:
   - SQL

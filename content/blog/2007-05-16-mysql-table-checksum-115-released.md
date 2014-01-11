@@ -1,8 +1,5 @@
 ---
 title: MySQL Table Checksum 1.1.5 released
-author: Baron Schwartz
-excerpt: '<p>MySQL Table Checksum 1.1.5 adds a some useful features and fixes a couple of bugs.  Now you can checksum tables in chunks, and there is an option to pause between chunks as well.  This has already helped me recover a very large table that got out of sync on the slaves, and many of you have also requested this feature.</p>'
-layout: post
 permalink: /2007/05/16/mysql-table-checksum-115-released/
 description:
   - >

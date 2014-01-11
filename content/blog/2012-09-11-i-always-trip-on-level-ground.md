@@ -1,7 +1,5 @@
 ---
 title: I always trip on level ground
-author: Baron Schwartz
-layout: post
 permalink: /2012/09/11/i-always-trip-on-level-ground/
 categories:
   - SQL

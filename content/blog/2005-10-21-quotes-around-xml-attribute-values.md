@@ -1,8 +1,5 @@
 ---
 title: How to quote and encode XML attribute values
-author: Baron Schwartz
-excerpt: '<p>Attribute values in XML are usually double-quoted, but single-quotes can be used as well.  This article explains when and where you can use single and double quotes, and as a bonus, when and where you need to use entities for angle brackets.</p>'
-layout: post
 permalink: /2005/10/21/quotes-around-xml-attribute-values/
 ---
 Attribute values in XML are usually double-quoted, but single-quotes can be used as well, according to the relevant part of the [XML Spec][1]. Here is the production:

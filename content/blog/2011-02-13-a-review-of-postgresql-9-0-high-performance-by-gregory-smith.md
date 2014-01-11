@@ -1,7 +1,5 @@
 ---
 title: A review of PostgreSQL 9.0 High Performance by Gregory Smith
-author: Baron Schwartz
-layout: post
 permalink: /2011/02/13/a-review-of-postgresql-9-0-high-performance-by-gregory-smith/
 categories:
   - PostgreSQL

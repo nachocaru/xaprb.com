@@ -1,7 +1,5 @@
 ---
 title: MySQL 5.6 adds connection attributes
-author: Baron Schwartz
-layout: post
 permalink: /2013/01/23/mysql-5-6-adds-connection-attributes/
 categories:
   - SQL

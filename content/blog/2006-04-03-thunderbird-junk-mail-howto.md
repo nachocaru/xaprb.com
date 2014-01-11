@@ -1,8 +1,5 @@
 ---
 title: How to train Thunderbird to detect junk mail
-author: Baron Schwartz
-excerpt: "<p>Mozilla Thunderbird has an excellent spam filter built into it, but if you don't understand how it works, it may just frustrate you.  In this article I'll show you how to use it to its full advantage.</p>"
-layout: post
 permalink: /2006/04/03/thunderbird-junk-mail-howto/
 description:
   - "Explains how to configure Thunderbird's junk mail filter so it works well."

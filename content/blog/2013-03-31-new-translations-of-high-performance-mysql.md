@@ -1,7 +1,5 @@
 ---
 title: New translations of High Performance MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2013/03/31/new-translations-of-high-performance-mysql/
 categories:
   - PostgreSQL

@@ -1,7 +1,5 @@
 ---
 title: "Are you sure you're reading the second edition of High Performance MySQL?"
-author: Baron Schwartz
-layout: post
 permalink: >
   /2008/07/17/are-you-sure-youre-reading-the-second-edition-of-high-performance-mysql/
 categories:

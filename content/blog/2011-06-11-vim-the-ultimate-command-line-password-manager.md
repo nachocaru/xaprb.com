@@ -1,7 +1,5 @@
 ---
 title: Vim, the ultimate command-line password manager
-author: Baron Schwartz
-layout: post
 permalink: /2011/06/11/vim-the-ultimate-command-line-password-manager/
 categories:
   - Desktop

@@ -1,7 +1,5 @@
 ---
 title: InnoDB is a NoSQL database
-author: Baron Schwartz
-layout: post
 permalink: /2009/12/13/innodb-is-a-nosql-database/
 categories:
   - SQL

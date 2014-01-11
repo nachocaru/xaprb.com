@@ -1,7 +1,5 @@
 ---
 title: Response-time optimization in systems that are queued
-author: Baron Schwartz
-layout: post
 permalink: /2009/12/09/response-time-optimization-in-systems-that-are-queued/
 categories:
   - SQL

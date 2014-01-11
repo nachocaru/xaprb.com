@@ -1,7 +1,5 @@
 ---
 title: "MySQL challenge: LIMIT rows accessed, not rows returned"
-author: Baron Schwartz
-layout: post
 permalink: /2008/06/28/mysql-challenge-limit-rows-accessed-not-rows-returned/
 categories:
   - Coding

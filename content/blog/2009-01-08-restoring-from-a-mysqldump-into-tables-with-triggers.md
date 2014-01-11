@@ -1,7 +1,5 @@
 ---
 title: Restoring from a mysqldump into tables with triggers
-author: Baron Schwartz
-layout: post
 permalink: /2009/01/08/restoring-from-a-mysqldump-into-tables-with-triggers/
 categories:
   - Maatkit

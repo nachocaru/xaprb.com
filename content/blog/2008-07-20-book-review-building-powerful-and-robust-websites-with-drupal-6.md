@@ -1,7 +1,5 @@
 ---
 title: "Book Review: Building powerful and robust websites with Drupal 6"
-author: Baron Schwartz
-layout: post
 permalink: /2008/07/20/book-review-building-powerful-and-robust-websites-with-drupal-6/
 description:
   - "A review of David Mercer's Building Powerful and Robust Websites with Drupal 6"

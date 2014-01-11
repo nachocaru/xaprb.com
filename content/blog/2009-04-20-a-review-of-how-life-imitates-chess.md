@@ -1,7 +1,5 @@
 ---
 title: A review of How Life Imitates Chess
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/20/a-review-of-how-life-imitates-chess/
 categories:
   - Commentary

@@ -1,7 +1,5 @@
 ---
 title: What are your favorite PostgreSQL performance resources?
-author: Baron Schwartz
-layout: post
 permalink: /2008/12/13/what-are-your-favorite-postgresql-performance-resources/
 categories:
   - PostgreSQL

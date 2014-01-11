@@ -1,7 +1,5 @@
 ---
 title: "A review of Get it Done with MySQL 5&#038;6 by Peter Brawley and Arthur Fuller"
-author: Baron Schwartz
-layout: post
 permalink: /2010/01/15/review-get-it-done-with-mysql-peter-brawley-arthur-fuller/
 categories:
   - Review

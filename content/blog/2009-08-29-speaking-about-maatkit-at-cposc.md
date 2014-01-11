@@ -1,7 +1,5 @@
 ---
 title: Speaking about Maatkit at CPOSC
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/29/speaking-about-maatkit-at-cposc/
 categories:
   - Conferences

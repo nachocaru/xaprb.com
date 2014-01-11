@@ -1,7 +1,5 @@
 ---
 title: Speaking at EdUI Conference 2009
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/13/speaking-at-edui-conference-2009/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: Version 1.1.6 of Better Cacti Templates released
-author: Baron Schwartz
-layout: post
 permalink: /2010/01/10/version-1-1-6-of-better-cacti-templates-released/
 categories:
   - PHP

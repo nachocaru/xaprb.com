@@ -1,7 +1,5 @@
 ---
 title: High Performance MySQL Second Edition goes to press!
-author: Baron Schwartz
-layout: post
 permalink: /2008/06/06/high-performance-mysql-second-edition-goes-to-press/
 description:
   - Buy one for your pet snake, too!

@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 3519 released
-author: Baron Schwartz
-layout: post
 permalink: /2009/05/04/maatkit-version-3519-released/
 categories:
   - Maatkit

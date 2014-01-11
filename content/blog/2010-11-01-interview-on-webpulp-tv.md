@@ -1,7 +1,5 @@
 ---
 title: Interview on webpulp.tv
-author: Baron Schwartz
-layout: post
 permalink: /2010/11/01/interview-on-webpulp-tv/
 categories:
   - SQL

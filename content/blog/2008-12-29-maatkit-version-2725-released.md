@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 2725 released
-author: Baron Schwartz
-layout: post
 permalink: /2008/12/29/maatkit-version-2725-released/
 categories:
   - Maatkit

@@ -1,8 +1,5 @@
 ---
 title: Interactive directory merging
-author: Baron Schwartz
-excerpt: '<p>A simple shell script that recursively finds and merges files that differ between two directories.</p>'
-layout: post
 permalink: /2005/09/22/interactive-directory-merging/
 ---
 Hereâ€™s an 'interactive' directory merging tool that doesn't require GUI libraries, printer subsystems, and so forth. It is useful when you want to do things the easy way, at a terminal, without taking your hands off your keyboard. And it works on systems where you don't have access to install things yourself, such as a shared webhosting server.

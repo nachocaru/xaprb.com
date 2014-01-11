@@ -1,7 +1,5 @@
 ---
 title: Without free software and hardware, privacy is impossible
-author: Baron Schwartz
-layout: post
 permalink: /2013/07/05/without-free-software-and-hardware-privacy-is-impossible/
 categories:
   - Commentary

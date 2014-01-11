@@ -1,7 +1,5 @@
 ---
 title: Observations on key-value databases
-author: Baron Schwartz
-layout: post
 permalink: /2009/09/20/observations-on-key-value-databases/
 categories:
   - SQL

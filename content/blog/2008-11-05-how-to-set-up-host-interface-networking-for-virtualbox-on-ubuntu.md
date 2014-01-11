@@ -1,7 +1,5 @@
 ---
 title: How to set up host interface networking for VirtualBox on Ubuntu
-author: Baron Schwartz
-layout: post
 permalink: /2008/11/05/how-to-set-up-host-interface-networking-for-virtualbox-on-ubuntu/
 categories:
   - GNU/Linux

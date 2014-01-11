@@ -1,7 +1,5 @@
 ---
 title: Migrating US Government applications from Oracle to MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/19/migrating-us-government-applications-from-oracle-to-mysql/
 categories:
   - Conferences

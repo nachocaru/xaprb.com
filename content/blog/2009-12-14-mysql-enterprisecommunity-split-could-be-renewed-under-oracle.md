@@ -1,7 +1,5 @@
 ---
 title: MySQL Enterprise/Community split could be renewed under Oracle
-author: Baron Schwartz
-layout: post
 permalink: /2009/12/14/mysql-enterprisecommunity-split-could-be-renewed-under-oracle/
 categories:
   - Commentary

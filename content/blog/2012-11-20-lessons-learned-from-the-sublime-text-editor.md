@@ -1,7 +1,5 @@
 ---
 title: Lessons learned from the Sublime Text editor
-author: Baron Schwartz
-layout: post
 permalink: /2012/11/20/lessons-learned-from-the-sublime-text-editor/
 categories:
   - Coding

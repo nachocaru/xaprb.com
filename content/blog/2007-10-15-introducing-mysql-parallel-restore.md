@@ -1,8 +1,5 @@
 ---
 title: Introducing MySQL Parallel Restore
-author: Baron Schwartz
-excerpt: '<p>The new release of MySQL Toolkit (version 1051) updates MySQL Parallel Dump in minor ways, but more importantly, it adds MySQL Parallel Restore.  Read on for details.</p>'
-layout: post
 permalink: /2007/10/15/introducing-mysql-parallel-restore/
 description:
   - MySQL Parallel Restore loads files in parallel into MySQL

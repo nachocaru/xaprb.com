@@ -1,7 +1,5 @@
 ---
 title: Version 1.1.8 of Better Cacti Templates released
-author: Baron Schwartz
-layout: post
 permalink: /2011/01/22/version-1-1-8-of-better-cacti-templates-released/
 categories:
   - Cacti

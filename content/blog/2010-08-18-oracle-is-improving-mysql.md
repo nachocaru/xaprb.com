@@ -1,7 +1,5 @@
 ---
 title: Oracle is improving MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2010/08/18/oracle-is-improving-mysql/
 categories:
   - SQL

@@ -1,8 +1,5 @@
 ---
 title: innotop is available from openSUSE buildservice
-author: Baron Schwartz
-excerpt: '<p>RPM packages for <a href="http://innotop.sourceforge.net/">innotop</a>, a flexible and powerful MySQL and InnoDB monitor I wrote, are now available through the <a href="http://build.opensuse.org/">openSUSE buildservice</a>, which builds RPMS on several platforms.  Thanks to Lenz Grimmer, SUSE Linux, and Dr. Peter Poeml for making this happen.</p>'
-layout: post
 permalink: /2007/08/31/innotop-is-available-from-opensuse-buildservice/
 description:
   - >

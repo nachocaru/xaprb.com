@@ -1,7 +1,5 @@
 ---
 title: Awesome Postgres/MySQL cross-pollination
-author: Baron Schwartz
-layout: post
 permalink: /2010/12/06/awesome-postgresmysql-cross-pollination/
 categories:
   - Commentary

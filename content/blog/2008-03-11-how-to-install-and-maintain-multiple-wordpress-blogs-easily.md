@@ -1,9 +1,6 @@
 ---
 title: How to install and maintain multiple WordPress blogs easily
-author: Baron Schwartz
-excerpt: |
   <p>My wife has a site that needs two WordPress blog installations.  The URLs differ by a subdirectory name.  Both blogs need to be (URL-wise) subdirectories of /blog/.  They need to be completely independent of each other, yet use the same custom theme.  And there used to be just a single blog, which was <em>not</em> in a subdirectory; its permalinks must not break.  (It has nice URLs with the date and title in them, not post ID-style URLs).  And because I'm the husband, I get to maintain it, so tack "easy to maintain" onto the requirements  (it must be easy to upgrade WP in both blogs, for example).  In this article I'll show you how I did it with a single .htaccess file, a single copy of WordPress, two MySQL databases, and a single configuration file.</p>
-layout: post
 permalink: /2008/03/11/how-to-install-and-maintain-multiple-wordpress-blogs-easily/
 description:
   - Multiple WordPress blogs made easy, with backwards compatibility built in.

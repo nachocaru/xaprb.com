@@ -1,8 +1,5 @@
 ---
 title: How to write flexible INSERT and UPDATE statements in MySQL
-author: Baron Schwartz
-excerpt: "<p>MySQL provides several extensions to <code>INSERT</code> and <code>UPDATE</code> to allow inserting and updating exactly the desired data.  These features provide a lot of power and flexibility, making MySQL significantly more capable than it otherwise might be.  In this article I'll give an overview of each feature, help you understand how to choose among them, and point out some things to watch out for.</p>"
-layout: post
 permalink: /2006/02/21/flexible-insert-and-update-in-mysql/
 description:
   - >

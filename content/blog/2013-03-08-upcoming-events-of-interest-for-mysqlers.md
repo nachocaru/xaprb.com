@@ -1,7 +1,5 @@
 ---
 title: Upcoming events of interest for MySQLers
-author: Baron Schwartz
-layout: post
 permalink: /2013/03/08/upcoming-events-of-interest-for-mysqlers/
 categories:
   - Conferences

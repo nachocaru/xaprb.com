@@ -1,7 +1,5 @@
 ---
 title: "Pop quiz: how can one slave break another slave"
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/14/pop-quiz-how-can-one-slave-break-another-slave/
 categories:
   - SQL

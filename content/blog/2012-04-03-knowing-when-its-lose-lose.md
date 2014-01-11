@@ -1,7 +1,5 @@
 ---
 title: "Knowing when it's lose-lose"
-author: Baron Schwartz
-layout: post
 permalink: /2012/04/03/knowing-when-its-lose-lose/
 categories:
   - SQL

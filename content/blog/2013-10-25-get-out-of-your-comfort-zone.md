@@ -1,7 +1,5 @@
 ---
 title: Get out of your comfort zone
-author: Baron Schwartz
-layout: post
 permalink: /2013/10/25/get-out-of-your-comfort-zone/
 categories:
   - Commentary

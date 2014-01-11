@@ -1,7 +1,5 @@
 ---
 title: Vim versus Emacs
-author: Baron Schwartz
-layout: post
 permalink: /2010/03/02/vim-versus-emacs/
 categories:
   - Commentary

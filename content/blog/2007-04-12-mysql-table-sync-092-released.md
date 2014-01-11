@@ -1,11 +1,8 @@
 ---
 title: MySQL Table Sync 0.9.2 released
-author: Baron Schwartz
-excerpt: |
   <p>MySQL Table Sync 0.9.2 is a bug-fix release.  Since the last release users have reported several bugs.  I am still postponing new features until after the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo</a>, because I am focusing on <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213">the innotop session</a> I'll be presenting at the conference.</p>
   
   <p>I have also created a new mailing list on sourceforge for discussing all things MySQL Toolkit.</p>
-layout: post
 permalink: /2007/04/12/mysql-table-sync-092-released/
 description:
   - >

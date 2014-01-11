@@ -1,7 +1,5 @@
 ---
 title: Hindsight on a scalable replacement for InnoDB
-author: Baron Schwartz
-layout: post
 permalink: /2009/05/09/hindsight-on-a-scalable-replacement-for-innodb/
 categories:
   - SQL

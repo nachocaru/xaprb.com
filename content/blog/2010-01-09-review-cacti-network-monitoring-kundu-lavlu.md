@@ -2,8 +2,6 @@
 title: >
   A review of Cacti 0.8 Network Monitoring by Dinangkur Kundu and S. M. Ibrahim
   Lavlu
-author: Baron Schwartz
-layout: post
 permalink: /2010/01/09/review-cacti-network-monitoring-kundu-lavlu/
 categories:
   - Review

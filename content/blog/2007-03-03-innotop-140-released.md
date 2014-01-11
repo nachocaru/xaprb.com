@@ -1,8 +1,5 @@
 ---
 title: innotop 1.4.0 released
-author: Baron Schwartz
-excerpt: "<p>It's finally ready -- the new stable version of the innotop MySQL and InnoDB monitor.  Version 1.4.0 brings you new features and enhancements I think you'll really enjoy.</p>"
-layout: post
 permalink: /2007/03/03/innotop-140-released/
 description:
   - The stable version 1.4.0 of innotop has major enhancements and new features.

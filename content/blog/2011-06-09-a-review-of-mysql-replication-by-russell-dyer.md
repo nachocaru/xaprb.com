@@ -1,7 +1,5 @@
 ---
 title: A review of MySQL Replication by Russell Dyer
-author: Baron Schwartz
-layout: post
 permalink: /2011/06/09/a-review-of-mysql-replication-by-russell-dyer/
 categories:
   - Review

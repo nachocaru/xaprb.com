@@ -1,7 +1,5 @@
 ---
 title: Free talk on MySQL and Go at Percona MySQL University DC
-author: Baron Schwartz
-layout: post
 permalink: /2013/09/04/free-talk-on-mysql-and-go-at-percona-mysql-university-dc/
 categories:
   - SQL

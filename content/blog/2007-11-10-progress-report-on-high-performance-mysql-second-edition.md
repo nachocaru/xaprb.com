@@ -1,8 +1,5 @@
 ---
 title: Progress report on High Performance MySQL, Second Edition
-author: Baron Schwartz
-excerpt: "<p>It's been a while since I've written about progress on the book.  I actually stopped working on it as much at the beginning of the month, because on October 31(st) I managed to finish a first draft of the last big chapter!  Now I'm back to full-time work at my employer, and I'm working on the book in the evenings and weekends only.  Read on for details of what I've been working on and what's next in the pipeline.</p>"
-layout: post
 permalink: /2007/11/10/progress-report-on-high-performance-mysql-second-edition/
 description:
   - 'Status report on High Performance MySQL, Second Edition: Security, benchmarks, profiling, tuning, server status, indexing, query optimization, schema optimization'

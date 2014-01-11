@@ -1,7 +1,5 @@
 ---
 title: Four companies to sponsor Maatkit development
-author: Baron Schwartz
-excerpt: |
   <p>A while ago I asked for people and/or organizations to sponsor development on <a href="http://maatkit.sourceforge.net/">Maatkit (formerly MySQL Toolkit)</a> so I could take a week off work and improve the Table Sync tool.  <a href="http://www.xaprb.com/blog/2007/10/31/mysql-table-sync-bounty-lets-do-it/">I asked for $2500 USD</a>, but several companies have graciously offered to cover that and then some.</p>
   
   <p>I'm very happy about this, as it will allow me to dedicate a solid week to fixing bugs and adding features.  There's a lot of demand for the tools, and there are a dozen or so bug reports unresolved for the table-sync tool, which I personally want to fix as much as anyone.  So I'm very grateful for the support.</p>
@@ -61,7 +59,6 @@ excerpt: |
   <p>I'm grateful for the sponsorship, but I think the real winners are the MySQL community, who have benefited a lot from Maatkit.  It has made a lot of hard things easier and impossible things possible.  If you're one of those who benefits from Free Software, I encourage you to patronize the businesses that believe in and support it.  Four fine examples are listed above!  Not coincidentally, all of them are the <em>creme de la creme</em> in their respective fields.</p>
   
   <p>Finally, a quick journalistic note: I pre-approved this post with representatives from the companies I mentioned, because I respect their right to represent themselves as they wish, but the words are mine, not theirs.</p>
-layout: post
 permalink: /2007/11/26/four-companies-to-sponsor-maatkit-development/
 description:
   - >

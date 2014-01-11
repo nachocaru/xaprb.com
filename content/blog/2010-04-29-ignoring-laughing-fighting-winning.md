@@ -1,7 +1,5 @@
 ---
 title: Ignoring, laughing, fighting, winning
-author: Baron Schwartz
-layout: post
 permalink: /2010/04/29/ignoring-laughing-fighting-winning/
 categories:
   - Commentary

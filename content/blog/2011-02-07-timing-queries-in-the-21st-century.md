@@ -1,7 +1,5 @@
 ---
 title: Timing queries in the 21st century
-author: Baron Schwartz
-layout: post
 permalink: /2011/02/07/timing-queries-in-the-21st-century/
 categories:
   - SQL

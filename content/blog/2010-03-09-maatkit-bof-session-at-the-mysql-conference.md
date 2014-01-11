@@ -1,7 +1,5 @@
 ---
 title: Maatkit BoF session at the MySQL conference
-author: Baron Schwartz
-layout: post
 permalink: /2010/03/09/maatkit-bof-session-at-the-mysql-conference/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: Estimating column cardinality the damn cool way
-author: Baron Schwartz
-layout: post
 permalink: /2012/09/22/estimating-column-cardinality-the-damn-cool-way/
 categories:
   - SQL

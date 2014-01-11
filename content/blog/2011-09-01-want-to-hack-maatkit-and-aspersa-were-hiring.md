@@ -1,7 +1,5 @@
 ---
 title: "Want to hack Maatkit and Aspersa? We're hiring"
-author: Baron Schwartz
-layout: post
 permalink: /2011/09/01/want-to-hack-maatkit-and-aspersa-were-hiring/
 categories:
   - Aspersa

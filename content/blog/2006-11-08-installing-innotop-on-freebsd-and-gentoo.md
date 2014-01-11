@@ -1,8 +1,5 @@
 ---
 title: Installing innotop on FreeBSD and Gentoo
-author: Baron Schwartz
-excerpt: '<p>I recently got a message letting me know FreeBSD users will soon be able to install the <a href="http://www.xaprb.com/innotop/">innotop MySQL and InnoDB monitor</a> through ports.  Gentoo GNU/Linux users can find innotop in Portage.</p>'
-layout: post
 permalink: /2006/11/08/installing-innotop-on-freebsd-and-gentoo/
 description:
   - >

@@ -1,8 +1,5 @@
 ---
 title: MySQL Toolkit version 1030 released
-author: Baron Schwartz
-excerpt: '<p>This release of MySQL Toolkit updates MySQL Parallel Dump.  Together you and I found a few bugs in it (table locking, argument quoting, exit status code).  The restore utility is in progress.</p>'
-layout: post
 permalink: /2007/10/10/mysql-toolkit-version-1030-released/
 description:
   - This release fixes MySQL Parallel Dump bugs.

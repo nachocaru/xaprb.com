@@ -1,7 +1,5 @@
 ---
 title: A new dashboard for innotop
-author: Baron Schwartz
-layout: post
 permalink: /2012/08/14/a-new-dashboard-for-innotop/
 categories:
   - Innotop

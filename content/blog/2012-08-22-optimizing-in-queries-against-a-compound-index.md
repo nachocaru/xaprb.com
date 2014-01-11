@@ -1,7 +1,5 @@
 ---
 title: Optimizing IN() queries against a compound index
-author: Baron Schwartz
-layout: post
 permalink: /2012/08/22/optimizing-in-queries-against-a-compound-index/
 categories:
   - SQL

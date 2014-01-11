@@ -1,8 +1,5 @@
 ---
 title: How to implement CAPTCHAs without images
-author: Baron Schwartz
-excerpt: "<p>I've started getting a lot of spam comments, so I decided the time has come to put a simple system in place to foil the spam robots.  I'm putting my money where my mouth is and demonstrating CAPTCHAs can be done much better.</p>"
-layout: post
 permalink: /2006/01/28/captchas-done-better/
 description:
   - Demonstrates how to implement usable, accessible CAPTCHAS without images.

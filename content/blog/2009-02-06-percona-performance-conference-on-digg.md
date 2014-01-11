@@ -1,7 +1,5 @@
 ---
 title: Percona Performance Conference on Digg
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/06/percona-performance-conference-on-digg/
 categories:
   - Conferences

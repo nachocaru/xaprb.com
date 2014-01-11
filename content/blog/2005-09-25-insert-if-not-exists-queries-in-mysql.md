@@ -1,8 +1,5 @@
 ---
 title: "How to write INSERT IF NOT EXISTS queries in standard  SQL"
-author: Baron Schwartz
-excerpt: "<p>If necessary, INSERT IF NOT EXISTS queries can be written in a single atomic statement, eliminating the need for a transaction, and without violating standards.  In this article I'll explain several ways to write such queries in a platform-independent way.</p>"
-layout: post
 permalink: /2005/09/25/insert-if-not-exists-queries-in-mysql/
 ---
 If necessary, INSERT IF NOT EXISTS queries can be written in a single atomic statement, eliminating the need for a transaction, and without violating standards. In this article I'll explain several ways to write such queries in a platform-independent way.

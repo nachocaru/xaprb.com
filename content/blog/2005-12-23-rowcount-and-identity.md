@@ -1,13 +1,10 @@
 ---
 title: How triggers affect ROWCOUNT and IDENTITY in SQL Server 2000
-author: Baron Schwartz
-excerpt: |
   <p>It's safe to use <code>@@ROWCOUNT</code> in SQL Server 2000 even when there is a trigger on the base table.  The trigger will not skew your results; you'll get what you expect.</p>
   
   <p><img src="/articles/images/rowcount.png" width="215" height="136" alt="Silly rowcount/identity graphic" /></p>
   
   <p>Getting the last <code>IDENTITY</code> value is not as straightforward though.</p>
-layout: post
 permalink: /2005/12/23/rowcount-and-identity/
 description:
   - >

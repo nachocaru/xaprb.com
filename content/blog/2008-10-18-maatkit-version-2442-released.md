@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 2442 released
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/18/maatkit-version-2442-released/
 categories:
   - Maatkit

@@ -1,7 +1,5 @@
 ---
 title: Speaking at RubyNation 2012
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/23/speaking-at-rubynation-2012/
 categories:
   - SQL

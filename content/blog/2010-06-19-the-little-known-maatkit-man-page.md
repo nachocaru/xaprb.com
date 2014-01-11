@@ -1,7 +1,5 @@
 ---
 title: The little-known Maatkit man page
-author: Baron Schwartz
-layout: post
 permalink: /2010/06/19/the-little-known-maatkit-man-page/
 categories:
   - Maatkit

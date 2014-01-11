@@ -1,7 +1,5 @@
 ---
 title: What is right with this picture?
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/20/what-is-right-with-this-picture/
 categories:
   - Coding

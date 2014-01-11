@@ -1,13 +1,10 @@
 ---
 title: Things I love about Perl
-author: Baron Schwartz
-excerpt: |
   <p>I don't love everything about Perl, but I love its sense of humor, which I think probably comes from its creators' senses of humor.  From the Perl function documentation for <code>redo</code>:</p>
   
   <blockquote><p>"last", "next", or "redo" may appear within a "continue" block.  "last" and "redo" will behave as if they had been executed within the main block.  So will "next", but since it will execute a "continue" block, it may be more entertaining.</p></blockquote>
   
   <p>"Entertaining," in this context, means "if we were omniscient and looking over your shoulder while you spend a day debugging your occasional infinite loop or other bizarre behavior, we would be wildly entertained."</p>
-layout: post
 permalink: /2007/12/06/things-i-love-about-perl/
 tags:
   - Gandalf

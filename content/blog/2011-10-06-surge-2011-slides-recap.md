@@ -1,7 +1,5 @@
 ---
 title: Surge 2011 slides, recap
-author: Baron Schwartz
-layout: post
 permalink: /2011/10/06/surge-2011-slides-recap/
 categories:
   - Conferences

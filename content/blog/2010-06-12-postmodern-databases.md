@@ -1,7 +1,5 @@
 ---
 title: Postmodern databases
-author: Baron Schwartz
-layout: post
 permalink: /2010/06/12/postmodern-databases/
 categories:
   - Commentary

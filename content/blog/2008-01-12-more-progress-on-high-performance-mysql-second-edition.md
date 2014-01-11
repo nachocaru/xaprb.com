@@ -1,8 +1,5 @@
 ---
 title: More progress on High Performance MySQL, Second Edition
-author: Baron Schwartz
-excerpt: "<p>Whew!  I just finished a marathon of revisions.  It's been a while since I posted about our progress, so here's an update for the curious readers.</p>"
-layout: post
 permalink: /2008/01/12/more-progress-on-high-performance-mysql-second-edition/
 description:
   - High Performance MySQL, second edition, is an awesome book.

@@ -1,7 +1,5 @@
 ---
 title: Another great MySQL 5.6 milestone release
-author: Baron Schwartz
-layout: post
 permalink: /2012/04/10/another-great-mysql-5-6-milestone-release/
 categories:
   - SQL

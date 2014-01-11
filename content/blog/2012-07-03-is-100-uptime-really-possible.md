@@ -1,7 +1,5 @@
 ---
 title: Is 100% uptime really possible?
-author: Baron Schwartz
-layout: post
 permalink: /2012/07/03/is-100-uptime-really-possible/
 categories:
   - SQL

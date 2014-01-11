@@ -1,7 +1,5 @@
 ---
 title: MySQL conference CfP extended
-author: Baron Schwartz
-layout: post
 permalink: /2010/11/02/mysql-conference-cfp-extended/
 categories:
   - Conferences

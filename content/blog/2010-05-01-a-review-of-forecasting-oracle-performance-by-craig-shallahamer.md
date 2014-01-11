@@ -1,7 +1,5 @@
 ---
 title: A review of Forecasting Oracle Performance by Craig Shallahamer
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/01/a-review-of-forecasting-oracle-performance-by-craig-shallahamer/
 categories:
   - Review

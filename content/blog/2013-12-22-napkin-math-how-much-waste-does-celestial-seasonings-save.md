@@ -1,7 +1,5 @@
 ---
 title: "Napkin math: How much waste does Celestial Seasonings save?"
-author: Baron Schwartz
-layout: post
 permalink: /2013/12/22/napkin-math-how-much-waste-does-celestial-seasonings-save/
 categories:
   - Commentary

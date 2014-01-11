@@ -1,7 +1,5 @@
 ---
 title: When to ignore perfectly good advice
-author: Baron Schwartz
-layout: post
 permalink: /2012/12/20/when-to-ignore-perfectly-good-advice/
 categories:
   - Coding

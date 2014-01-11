@@ -1,8 +1,5 @@
 ---
 title: How to find the max row per group in SQL without subqueries
-author: Baron Schwartz
-excerpt: '<p>A while ago I wrote about how to select the first, minimum, maximum or least row per group in SQL.  This article shows how to solve this problem without subqueries.</p>'
-layout: post
 permalink: /2007/03/14/how-to-find-the-max-row-per-group-in-sql-without-subqueries/
 description:
   - Shows how to find the top rows per group in SQL without subqueries.

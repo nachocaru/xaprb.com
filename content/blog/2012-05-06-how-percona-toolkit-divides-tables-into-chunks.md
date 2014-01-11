@@ -1,7 +1,5 @@
 ---
 title: How Percona Toolkit divides tables into chunks
-author: Baron Schwartz
-layout: post
 permalink: /2012/05/06/how-percona-toolkit-divides-tables-into-chunks/
 categories:
   - SQL

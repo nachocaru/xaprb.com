@@ -1,7 +1,5 @@
 ---
 title: Percona Live CFP closing soon!
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/10/percona-live-cfp-closing-soon/
 categories:
   - SQL

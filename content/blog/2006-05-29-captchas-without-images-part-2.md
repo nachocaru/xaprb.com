@@ -1,8 +1,5 @@
 ---
 title: CAPTCHAs without images, part 2
-author: Baron Schwartz
-excerpt: '<p>In this article I explain how I upgraded my image-less CAPTCHA system to find a better balance between humans and robots.</p>'
-layout: post
 permalink: /2006/05/29/captchas-without-images-part-2/
 description:
   - >

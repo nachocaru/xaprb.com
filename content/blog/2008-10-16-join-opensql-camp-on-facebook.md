@@ -1,7 +1,5 @@
 ---
 title: Join OpenSQL Camp on Facebook
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/16/join-opensql-camp-on-facebook/
 categories:
   - OpenSQL Camp

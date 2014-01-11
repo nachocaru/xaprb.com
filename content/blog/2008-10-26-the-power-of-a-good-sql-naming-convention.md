@@ -1,7 +1,5 @@
 ---
 title: The power of a good SQL naming convention
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/26/the-power-of-a-good-sql-naming-convention/
 categories:
   - Coding

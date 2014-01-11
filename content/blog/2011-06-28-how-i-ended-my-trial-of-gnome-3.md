@@ -1,7 +1,5 @@
 ---
 title: How I ended my trial of Gnome 3
-author: Baron Schwartz
-layout: post
 permalink: /2011/06/28/how-i-ended-my-trial-of-gnome-3/
 categories:
   - Commentary

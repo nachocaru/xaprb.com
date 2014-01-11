@@ -1,7 +1,5 @@
 ---
 title: An opportunity to participate in MySQL research
-author: Baron Schwartz
-layout: post
 permalink: /2011/12/06/an-opportunity-to-participate-in-mysql-research/
 categories:
   - SQL

@@ -1,8 +1,5 @@
 ---
 title: 3 ways to write UPSERT and MERGE queries in MySQL
-author: Baron Schwartz
-excerpt: "<p>This article is a quick pointer on MySQL's three available tools for <code>UPSERT</code> (update/insert) or <code>MERGE</code> queries.</p>"
-layout: post
 permalink: /2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/
 description:
   - >

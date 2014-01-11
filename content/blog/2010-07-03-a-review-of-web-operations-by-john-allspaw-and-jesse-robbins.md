@@ -1,7 +1,5 @@
 ---
 title: A review of Web Operations by John Allspaw and Jesse Robbins
-author: Baron Schwartz
-layout: post
 permalink: /2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/
 categories:
   - Operations

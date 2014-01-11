@@ -1,7 +1,5 @@
 ---
 title: Using AdBlock to clean up the UI on sites I use a lot
-author: Baron Schwartz
-layout: post
 permalink: /2013/04/06/using-adblock-to-clean-up-the-ui-on-sites-i-use-a-lot/
 categories:
   - World Wide Web

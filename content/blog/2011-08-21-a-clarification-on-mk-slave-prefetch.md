@@ -1,7 +1,5 @@
 ---
 title: A clarification on mk-slave-prefetch
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/21/a-clarification-on-mk-slave-prefetch/
 categories:
   - Maatkit

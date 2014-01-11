@@ -1,8 +1,5 @@
 ---
 title: MySQL Table Sync vs. SQLyog Job Agent
-author: Baron Schwartz
-excerpt: "<p>When I wrote my first article on algorithms to compare and synchronize data between MySQL tables, Webyog's Rohit Nadhani left a comment on the article mentioning the SQLyog Job Agent, which has a similar function.  Although I have been developing MySQL Table Sync essentially in isolation, I have been meaning to give SQLyog Job Agent a try.  I recently did so, and then followed that up with an email conversation with Rohit.  This article is about my experience using the SQLyog Job Agent from the command line, some thoughts on the algorithm as best I can deduce it, and benchmark results against MySQL Table Sync.</p>"
-layout: post
 permalink: /2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
 description:
   - "Benchmarks show MySQL Table Sync is faster than SQLyog Job Agent in comparing and synchronizing data in MySQL tables.  SQLyog Job Agent's checksum algorithm has theoretical weaknesses."

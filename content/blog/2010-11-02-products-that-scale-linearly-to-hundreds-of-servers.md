@@ -1,7 +1,5 @@
 ---
 title: Products that scale linearly to hundreds of servers
-author: Baron Schwartz
-layout: post
 permalink: /2010/11/02/products-that-scale-linearly-to-hundreds-of-servers/
 categories:
   - SQL

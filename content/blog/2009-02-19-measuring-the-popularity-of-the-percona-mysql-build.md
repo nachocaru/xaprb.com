@@ -1,7 +1,5 @@
 ---
 title: Measuring the popularity of the Percona MySQL build
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/19/measuring-the-popularity-of-the-percona-mysql-build/
 categories:
   - SQL

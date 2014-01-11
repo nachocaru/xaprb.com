@@ -1,7 +1,5 @@
 ---
 title: "My wishlist for SQL: the UNTIL clause"
-author: Baron Schwartz
-layout: post
 permalink: /2010/01/22/my-wishlist-for-sql-the-until-clause/
 categories:
   - PostgreSQL

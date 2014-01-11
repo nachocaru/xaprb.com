@@ -1,7 +1,5 @@
 ---
 title: Where do you use Maatkit in real life?
-author: Baron Schwartz
-layout: post
 permalink: /2009/01/13/where-do-you-use-maatkit-in-real-life/
 categories:
   - Maatkit

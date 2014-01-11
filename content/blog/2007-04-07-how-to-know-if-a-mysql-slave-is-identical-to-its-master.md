@@ -1,9 +1,6 @@
 ---
 title: How to know if a MySQL slave is identical to its master
-author: Baron Schwartz
-excerpt: |
   <p>A frequently asked question about MySQL replication is "how do I know whether my slave is identical to the master?"  Until recently there hasn't been a good way to know, but now you can compare all the data in your master to the data in the slaves and get a reliable yes-or-no answer.  And you can do this online, efficiently, across many servers simultaneously.  Read on to find out how.</p>
-layout: post
 permalink: /2007/04/07/how-to-know-if-a-mysql-slave-is-identical-to-its-master/
 description:
   - A simple process to guarantee MySQL master and slave servers have the same data.

@@ -1,8 +1,5 @@
 ---
 title: How to write efficient archiving and purging jobs in SQL
-author: Baron Schwartz
-excerpt: '<p>This article explains how to write a job that can purge data from a huge table without impacting critical processes, filling up the transaction log, or causing deadlocks.</p>'
-layout: post
 permalink: /2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
 tags:
   - archiving

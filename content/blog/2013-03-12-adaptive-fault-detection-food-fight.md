@@ -1,7 +1,5 @@
 ---
 title: Adaptive Fault Detection food fight
-author: Baron Schwartz
-layout: post
 permalink: /2013/03/12/adaptive-fault-detection-food-fight/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: The average age of metrics being trended
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/30/the-average-age-of-metrics-being-trended/
 categories:
   - SQL

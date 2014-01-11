@@ -1,7 +1,5 @@
 ---
 title: Secure your accounts and devices
-author: Baron Schwartz
-layout: post
 permalink: /2013/12/18/secure-your-accounts-and-devices/
 categories:
   - Security

@@ -1,7 +1,5 @@
 ---
 title: Computer Science students, learn to write!
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/04/computer-science-students-learn-to-write/
 categories:
   - Commentary

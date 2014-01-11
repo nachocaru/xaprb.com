@@ -1,7 +1,5 @@
 ---
 title: "What's wrong with MMM?"
-author: Baron Schwartz
-layout: post
 permalink: /2011/05/04/whats-wrong-with-mmm/
 categories:
   - Coding

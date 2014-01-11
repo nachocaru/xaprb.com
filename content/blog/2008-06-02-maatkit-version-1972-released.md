@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 1972 released
-author: Baron Schwartz
-layout: post
 permalink: /2008/06/02/maatkit-version-1972-released/
 description:
   - 'Maatkit: shiny, new, and still only half done!'

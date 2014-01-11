@@ -1,7 +1,5 @@
 ---
 title: Is Maatkit notable enough for Wikipedia now?
-author: Baron Schwartz
-layout: post
 permalink: /2010/07/02/is-maatkit-notable-enough-for-wikipedia-now/
 categories:
   - Maatkit

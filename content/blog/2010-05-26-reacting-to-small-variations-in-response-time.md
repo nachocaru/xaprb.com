@@ -1,7 +1,5 @@
 ---
 title: Reacting to small variations in response time
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/26/reacting-to-small-variations-in-response-time/
 categories:
   - Aspersa

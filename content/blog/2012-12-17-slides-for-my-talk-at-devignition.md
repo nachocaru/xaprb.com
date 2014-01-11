@@ -1,7 +1,5 @@
 ---
 title: Slides for my talk at DevIgnition
-author: Baron Schwartz
-layout: post
 permalink: /2012/12/17/slides-for-my-talk-at-devignition/
 categories:
   - SQL

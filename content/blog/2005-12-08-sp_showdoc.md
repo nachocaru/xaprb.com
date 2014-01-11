@@ -1,8 +1,5 @@
 ---
 title: How to use extended properties as documentation with sp_showdoc
-author: Baron Schwartz
-excerpt: '<p>This article demonstrates a stored procedure that uses extended properties to display table and column documentation in Microsoft SQL Server.</p>'
-layout: post
 permalink: /2005/12/08/sp_showdoc/
 ---
 My current employer has created a policy for documenting database tables. When tables are created or modified, we are required to add extended properties to the tables and columns. SQL Server 2000&#8242;s extended properties are name/value pairs, which can be attached to most objects. There are a few different ways to view them:

@@ -1,7 +1,5 @@
 ---
 title: High Performance MySQL, Third Edition
-author: Baron Schwartz
-layout: post
 permalink: /2011/09/14/high-performance-mysql-third-edition/
 categories:
   - High Performance MySQL

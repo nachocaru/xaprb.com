@@ -1,8 +1,5 @@
 ---
 title: JavaScript date formatting benchmarks
-author: Baron Schwartz
-excerpt: "<p>Two earlier articles demonstrated how to parse and format dates flexibly with JavaScript.  I asserted in those articles that my approach was efficient, though I didn't provide any numbers to prove my claim.  This article compares the performance of my date-formatting library against several other date-formatting libraries I've found online.</p>"
-layout: post
 permalink: /2006/05/14/javascript-date-formatting-benchmarks/
 description:
   - >

@@ -1,8 +1,5 @@
 ---
 title: Upcoming innotop features
-author: Baron Schwartz
-excerpt: "<p>It's been a while since I released an update to innotop, but I have not been idle.  I'm currently working hard to add major new features and functionality.  Here's a quick list of what's coming.</p>"
-layout: post
 permalink: /2006/12/13/upcoming-innotop-features/
 description:
   - "List of new innotop features I'm working on."

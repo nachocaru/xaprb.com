@@ -1,7 +1,5 @@
 ---
 title: My recipe for more enjoyable presentations
-author: Baron Schwartz
-layout: post
 permalink: /2013/07/02/my-recipe-for-more-enjoyable-presentations/
 categories:
   - Conferences

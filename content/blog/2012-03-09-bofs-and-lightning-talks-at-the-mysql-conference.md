@@ -1,7 +1,5 @@
 ---
 title: BoFs and lightning talks at the MySQL conference
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/09/bofs-and-lightning-talks-at-the-mysql-conference/
 categories:
   - Conferences

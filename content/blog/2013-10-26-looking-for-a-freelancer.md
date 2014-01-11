@@ -1,7 +1,5 @@
 ---
 title: Looking for a freelancer
-author: Baron Schwartz
-layout: post
 permalink: /2013/10/26/looking-for-a-freelancer/
 categories:
   - About

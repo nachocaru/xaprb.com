@@ -1,7 +1,5 @@
 ---
 title: Eliminating duplicate users in MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2013/06/26/eliminating-duplicate-users-in-mysql/
 categories:
   - SQL

@@ -1,7 +1,5 @@
 ---
 title: Summary of beCamp 2008
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/04/summary-of-becamp-2008/
 description:
   - A summary of the sessions I went to at beCamp 2008

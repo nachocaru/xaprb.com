@@ -1,7 +1,5 @@
 ---
 title: Sessions of interest at the Percona Performance Conference
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/17/sessions-of-interest-at-the-percona-performance-conference/
 categories:
   - Conferences

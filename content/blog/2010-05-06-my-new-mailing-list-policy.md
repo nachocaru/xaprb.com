@@ -1,7 +1,5 @@
 ---
 title: My new mailing list policy
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/06/my-new-mailing-list-policy/
 categories:
   - Commentary

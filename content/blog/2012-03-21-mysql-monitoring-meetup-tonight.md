@@ -1,7 +1,5 @@
 ---
 title: MySQL monitoring meetup tonight!
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/21/mysql-monitoring-meetup-tonight/
 categories:
   - SQL

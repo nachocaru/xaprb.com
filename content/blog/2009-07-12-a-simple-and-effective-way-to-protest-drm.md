@@ -1,7 +1,5 @@
 ---
 title: A simple and effective way to protest DRM
-author: Baron Schwartz
-layout: post
 permalink: /2009/07/12/a-simple-and-effective-way-to-protest-drm/
 categories:
   - Commentary

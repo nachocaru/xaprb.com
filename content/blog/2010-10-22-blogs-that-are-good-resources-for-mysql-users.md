@@ -1,7 +1,5 @@
 ---
 title: Blogs that are good resources for MySQL users
-author: Baron Schwartz
-layout: post
 permalink: /2010/10/22/blogs-that-are-good-resources-for-mysql-users/
 categories:
   - SQL

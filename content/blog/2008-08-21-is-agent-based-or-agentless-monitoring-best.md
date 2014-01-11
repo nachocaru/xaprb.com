@@ -1,7 +1,5 @@
 ---
 title: Is agent-based or agentless monitoring best?
-author: Baron Schwartz
-layout: post
 permalink: /2008/08/21/is-agent-based-or-agentless-monitoring-best/
 description:
   - >

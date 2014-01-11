@@ -1,7 +1,5 @@
 ---
 title: A summary of changes in MySQL 5.6
-author: Baron Schwartz
-layout: post
 permalink: /2012/08/21/a-summary-of-changes-in-mysql-5-6/
 categories:
   - SQL

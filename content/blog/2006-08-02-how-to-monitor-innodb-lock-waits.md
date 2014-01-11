@@ -1,8 +1,5 @@
 ---
 title: How to monitor InnoDB lock waits
-author: Baron Schwartz
-excerpt: '<p>This is one in a series of articles on how to use the <a href="http://www.xaprb.com/innotop/">innotop</a> MySQL and InnoDB monitor.  In this article I show how <code>innotop</code> can display locks that are causing a transaction to wait.</p>'
-layout: post
 permalink: /2006/08/02/how-to-monitor-innodb-lock-waits/
 description:
   - >

@@ -1,7 +1,5 @@
 ---
 title: Stored procedure debugging in MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2012/11/01/stored-procedure-debugging-in-mysql/
 categories:
   - SQL

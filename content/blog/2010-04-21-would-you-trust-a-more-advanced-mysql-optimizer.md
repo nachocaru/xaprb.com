@@ -1,7 +1,5 @@
 ---
 title: Would you trust a more advanced MySQL optimizer?
-author: Baron Schwartz
-layout: post
 permalink: /2010/04/21/would-you-trust-a-more-advanced-mysql-optimizer/
 categories:
   - Commentary

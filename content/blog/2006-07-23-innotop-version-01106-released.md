@@ -1,9 +1,6 @@
 ---
 title: Version 0.1.106 of innotop MySQL/InnoDB monitor released
-author: Baron Schwartz
-excerpt: |
   <p>I've just improved <code>innotop</code> substantially, and released version 0.1.106 (<a href="http://www.xaprb.com/innotop/">download innotop here</a>), and I'm also preparing a series of articles on how to use it for real, practical things.  I'd like to know what you think of it, what problems you have, what features you want.  It would be a huge help if you'd start it, toggle through its modes, and give me your feedback.</p>
-layout: post
 permalink: /2006/07/23/innotop-version-01106-released/
 description:
   - >

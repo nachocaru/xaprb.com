@@ -1,7 +1,5 @@
 ---
 title: Why measure pageviews per month?
-author: Baron Schwartz
-layout: post
 permalink: /2010/10/01/why-measure-pageviews-per-month/
 categories:
   - World Wide Web

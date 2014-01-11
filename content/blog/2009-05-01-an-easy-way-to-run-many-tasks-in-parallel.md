@@ -1,7 +1,5 @@
 ---
 title: An easy way to run many tasks in parallel
-author: Baron Schwartz
-layout: post
 permalink: /2009/05/01/an-easy-way-to-run-many-tasks-in-parallel/
 categories:
   - GNU/Linux

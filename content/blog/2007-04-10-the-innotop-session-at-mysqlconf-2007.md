@@ -1,7 +1,5 @@
 ---
 title: The innotop session at MySQLConf 2007
-author: Baron Schwartz
-excerpt: |
   <p><a href="http://www.mysqlconf.com/"><img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" /></a>
   
   I'll present a session on the <a href="http://sourceforge.net/projects/innotop">innotop MySQL and InnoDB monitoring tool</a> at <a href="http://www.mysqlconf.com/">2007 MySQL Conference and Expo</a> in a couple of weeks.</p>
@@ -13,7 +11,6 @@ excerpt: |
   <p>By the way, though I originally designed innotop to monitor InnoDB, it goes far beyond that now.  It has a lot to offer everyone, not just InnoDB users.</p>
   
   <p>I hope to see you there.</p>
-layout: post
 permalink: /2007/04/10/the-innotop-session-at-mysqlconf-2007/
 description:
   - "I'm presenting a session on using innotop at MySQL Conference and Expo 2007."

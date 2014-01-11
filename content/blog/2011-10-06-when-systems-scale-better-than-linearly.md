@@ -1,7 +1,5 @@
 ---
 title: When systems scale better than linearly
-author: Baron Schwartz
-layout: post
 permalink: /2011/10/06/when-systems-scale-better-than-linearly/
 categories:
   - PostgreSQL

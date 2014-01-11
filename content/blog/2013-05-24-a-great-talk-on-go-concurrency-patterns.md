@@ -1,7 +1,5 @@
 ---
 title: A great talk on Go concurrency patterns
-author: Baron Schwartz
-layout: post
 permalink: /2013/05/24/a-great-talk-on-go-concurrency-patterns/
 categories:
   - Conferences

@@ -1,8 +1,5 @@
 ---
 title: Maatkit version 1674 released
-author: Baron Schwartz
-excerpt: "<p>This release contains bug fixes and new features.  Click through to the full article for the details.  I'll also write more about the changes in a separate article.</p>"
-layout: post
 permalink: /2008/01/05/maatkit-version-1674-released/
 description:
   - Another one bites the dust!

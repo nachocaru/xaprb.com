@@ -1,7 +1,5 @@
 ---
 title: Can we afford big data, or do we need smart data?
-author: Baron Schwartz
-layout: post
 permalink: /2012/11/15/can-we-afford-big-data-or-do-we-need-smart-data/
 categories:
   - Commentary

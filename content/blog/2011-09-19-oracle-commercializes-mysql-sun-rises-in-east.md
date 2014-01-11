@@ -1,7 +1,5 @@
 ---
 title: Oracle commercializes MySQL, sun rises in east
-author: Baron Schwartz
-layout: post
 permalink: /2011/09/19/oracle-commercializes-mysql-sun-rises-in-east/
 categories:
   - Commentary

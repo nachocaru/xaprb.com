@@ -1,7 +1,5 @@
 ---
 title: A review of Clojure In Action by Amit Rathore
-author: Baron Schwartz
-layout: post
 permalink: /2012/04/06/a-review-of-clojure-in-action-by-amit-rathore/
 categories:
   - Coding

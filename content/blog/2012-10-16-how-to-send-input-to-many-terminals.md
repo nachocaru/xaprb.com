@@ -1,7 +1,5 @@
 ---
 title: How to send input to many terminals
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/16/how-to-send-input-to-many-terminals/
 categories:
   - SQL

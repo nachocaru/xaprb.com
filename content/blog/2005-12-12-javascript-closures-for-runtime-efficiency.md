@@ -1,8 +1,5 @@
 ---
 title: JavaScript date parsing and formatting, Part 1
-author: Baron Schwartz
-excerpt: '<p>The first in a series of articles about manipulating dates with JavaScript, by writing functions that write functions for flexibility and extremely fast performance.</p>'
-layout: post
 permalink: /2005/12/12/javascript-closures-for-runtime-efficiency/
 ---
 <p style="border:solid red 1px; background:yellow">

@@ -1,7 +1,5 @@
 ---
 title: Drizzle stops the rain
-author: Baron Schwartz
-layout: post
 permalink: /2008/08/21/drizzle-stops-the-rain/
 categories:
   - SQL

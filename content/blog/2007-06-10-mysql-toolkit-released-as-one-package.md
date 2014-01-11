@@ -1,8 +1,5 @@
 ---
 title: MySQL Toolkit released as one package
-author: Baron Schwartz
-excerpt: "<p>It's finally here: a single-file download for all the tools in MySQL Toolkit.  During this process I also upgraded every package in the toolkit to a new release, combining new versioning and some simple non-functional changes with (mostly minor) changes I'd committed but not yet released.  Details are at the end of this post.</p>"
-layout: post
 permalink: /2007/06/10/mysql-toolkit-released-as-one-package/
 description:
   - MySQL Toolkit is now released as a single package.

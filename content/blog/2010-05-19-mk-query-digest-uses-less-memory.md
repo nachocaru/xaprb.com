@@ -1,7 +1,5 @@
 ---
 title: mk-query-digest uses less memory
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/19/mk-query-digest-uses-less-memory/
 categories:
   - Maatkit

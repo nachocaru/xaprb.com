@@ -1,7 +1,5 @@
 ---
 title: How Linux iostat computes its results
-author: Baron Schwartz
-layout: post
 permalink: /2010/01/09/how-linux-iostat-computes-its-results/
 categories:
   - GNU/Linux

@@ -1,7 +1,5 @@
 ---
 title: Wishing I could be at ODTUG
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/07/wishing-i-could-be-at-odtug/
 categories:
   - Conferences

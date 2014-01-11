@@ -1,7 +1,5 @@
 ---
 title: A simple way to make birthday queries easier and faster
-author: Baron Schwartz
-layout: post
 permalink: /2009/12/31/a-simple-way-to-make-birthday-queries-easier-and-faster/
 categories:
   - PostgreSQL

@@ -1,7 +1,5 @@
 ---
 title: Google thinks I might be a nerd
-author: Baron Schwartz
-layout: post
 permalink: /2008/01/11/google-thinks-i-might-be-a-nerd/
 description:
   - >

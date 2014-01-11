@@ -1,7 +1,5 @@
 ---
 title: Xaprb uses a hybrid of Journalist and deLight themes
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/07/xaprb-uses-a-hybrid-of-journalist-and-delight-themes/
 categories:
   - About

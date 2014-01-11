@@ -1,7 +1,5 @@
 ---
 title: OpenSQL Camp badges are ready
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/04/opensql-camp-badges-are-ready/
 categories:
   - OpenSQL Camp

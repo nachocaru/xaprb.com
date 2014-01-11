@@ -1,7 +1,5 @@
 ---
 title: What is the scalable replacement for InnoDB?
-author: Baron Schwartz
-layout: post
 permalink: /2009/01/13/what-is-the-scalable-replacement-for-innodb/
 categories:
   - SQL

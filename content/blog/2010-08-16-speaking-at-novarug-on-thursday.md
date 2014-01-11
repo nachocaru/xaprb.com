@@ -1,7 +1,5 @@
 ---
 title: Speaking at NovaRUG on Thursday
-author: Baron Schwartz
-layout: post
 permalink: /2010/08/16/speaking-at-novarug-on-thursday/
 categories:
   - Conferences

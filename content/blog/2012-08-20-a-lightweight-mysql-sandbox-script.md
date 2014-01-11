@@ -1,7 +1,5 @@
 ---
 title: A lightweight MySQL sandbox script
-author: Baron Schwartz
-layout: post
 permalink: /2012/08/20/a-lightweight-mysql-sandbox-script/
 categories:
   - SQL

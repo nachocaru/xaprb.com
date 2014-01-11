@@ -1,8 +1,5 @@
 ---
 title: "ASP.NET's Profile DB schema"
-author: Baron Schwartz
-excerpt: "<p>ASP.NET has built-in functionality to store profile information about a user.  Unfortunately, the DB table schema isn't in first normal form.  Because of this, the profile feature is somewhat inflexible for some uses, unless you write a custom provider.</p>"
-layout: post
 permalink: /2006/01/08/aspnet-profile-schema/
 description:
   - "This article and its comments discuss how ASP.NET's Profile feature is designed and how to use it."

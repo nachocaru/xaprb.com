@@ -1,7 +1,5 @@
 ---
 title: "Under-provisioning: the curse of the cloud"
-author: Baron Schwartz
-layout: post
 permalink: /2010/06/01/under-provisioning-the-curse-of-the-cloud/
 categories:
   - Commentary

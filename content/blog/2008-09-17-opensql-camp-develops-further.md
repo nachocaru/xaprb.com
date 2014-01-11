@@ -1,7 +1,5 @@
 ---
 title: OpenSQL Camp develops further
-author: Baron Schwartz
-layout: post
 permalink: /2008/09/17/opensql-camp-develops-further/
 categories:
   - OpenSQL Camp

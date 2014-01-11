@@ -1,7 +1,5 @@
 ---
 title: Ultimate notebook and journal face-off
-author: Baron Schwartz
-layout: post
 permalink: /2013/07/10/ultimate-notebook-and-journal-face-off/
 categories:
   - Commentary

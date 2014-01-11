@@ -1,8 +1,5 @@
 ---
 title: JavaScript date chooser
-author: Baron Schwartz
-excerpt: '<p>A simple, elegant, and free JavaScript date chooser to enhance form usability.  It just works, and people like it.</p>'
-layout: post
 permalink: /2005/09/29/javascript-date-chooser/
 ---
 <p style="border:solid red 1px; background:yellow">

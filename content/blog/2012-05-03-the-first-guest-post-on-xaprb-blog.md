@@ -1,7 +1,5 @@
 ---
 title: The first guest post on Xaprb blog
-author: Baron Schwartz
-layout: post
 permalink: /2012/05/03/the-first-guest-post-on-xaprb-blog/
 categories:
   - About

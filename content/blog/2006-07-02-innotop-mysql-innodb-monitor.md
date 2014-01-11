@@ -1,9 +1,6 @@
 ---
 title: The innotop MySQL and InnoDB monitor
-author: Baron Schwartz
-excerpt: |
   <p><img src="http://www.xaprb.com/innotop/innotop-screenshot-I-mode-thumb.png" alt="innotop screenshot" width="200" height="129" style="float:right; margin-left: 10px" />MySQL and InnoDB expose lots of information about their internals, but it's hard to gather it all into one place and make sense of it.  I've written a tool to do that, and you are free to download and use it.  This article introduces <code>innotop</code>, a powerful text-mode MySQL and InnoDB monitoring tool.  It has lots of features, is  fast and configurable, and it's easy to use.</p>
-layout: post
 permalink: /2006/07/02/innotop-mysql-innodb-monitor/
 description:
   - 'Download innotop: a powerful, free tool to monitor MySQL and InnoDB from a terminal.'

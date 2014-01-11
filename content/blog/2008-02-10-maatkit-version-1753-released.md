@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 1753 released
-author: Baron Schwartz
-excerpt: |
   |
     <p class="download"><a href="http://maatkit.sourceforge.net/">Download Maatkit</a></p>
     
@@ -16,7 +14,6 @@ excerpt: |
     <p>(Not actual results.  Your mileage may vary.  Closed course, professional driver.  Do not attempt).</p>
     
     <p>Nothing else in this release is very exciting.  I just wanted to get the bug fixes out there.</p>
-layout: post
 permalink: /2008/02/10/maatkit-version-1753-released/
 description:
   - mk-heartbeat can now check many slaves at once.

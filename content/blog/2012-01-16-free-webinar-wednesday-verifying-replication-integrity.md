@@ -1,7 +1,5 @@
 ---
 title: "Free webinar Wednesday: verifying replication integrity"
-author: Baron Schwartz
-layout: post
 permalink: /2012/01/16/free-webinar-wednesday-verifying-replication-integrity/
 categories:
   - SQL

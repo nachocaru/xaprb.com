@@ -1,7 +1,5 @@
 ---
 title: Special mysqldump fingerprinting rule in pt-query-digest
-author: Baron Schwartz
-layout: post
 permalink: /2011/11/29/special-mysqldump-fingerprinting-rule-in-pt-query-digest/
 categories:
   - Percona Toolkit

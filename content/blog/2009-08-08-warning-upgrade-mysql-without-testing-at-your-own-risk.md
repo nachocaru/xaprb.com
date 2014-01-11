@@ -1,7 +1,5 @@
 ---
 title: "Warning: upgrade MySQL without testing at your own risk"
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/08/warning-upgrade-mysql-without-testing-at-your-own-risk/
 categories:
   - Maatkit

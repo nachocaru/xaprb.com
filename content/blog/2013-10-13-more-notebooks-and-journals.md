@@ -1,7 +1,5 @@
 ---
 title: More Notebooks and Journals!
-author: Baron Schwartz
-layout: post
 permalink: /2013/10/13/more-notebooks-and-journals/
 categories:
   - Commentary

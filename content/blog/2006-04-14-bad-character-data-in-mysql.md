@@ -1,8 +1,5 @@
 ---
 title: How to find and fix invalid character data in MySQL
-author: Baron Schwartz
-excerpt: "<p>Odd characters can sometimes cause problems with character data in MySQL.  These characters are easy to accidentally import from a CSV file or other data source, but hard to detect because they don't always display correctly.  In this article I'll tell you which characters are bad, how you can get them in your database, how to avoid getting them, how to detect them when you have them, and how to get rid of them.</p>"
-layout: post
 permalink: /2006/04/14/bad-character-data-in-mysql/
 description:
   - >

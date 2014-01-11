@@ -1,8 +1,5 @@
 ---
 title: Introducing MySQL Table Checksum
-author: Baron Schwartz
-excerpt: '<p>MySQL Table Checksum is a tool to efficiently verify the contents of any MySQL table in any storage engine.  You can use it to compare tables across many servers at once.  The output is friendly and easy to use, both by eyeball and in UNIX command-line scripts.  The provided MySQL Checksum Filter helps you winnow output so you only see tables that have problems.</p>'
-layout: post
 permalink: /2007/02/26/introducing-mysql-table-checksum/
 description:
   - 'MySQL Table Checksum is a tool to do fast parallel table checksums across many MySQL servers.  It can verify slaves are identical to the master.'

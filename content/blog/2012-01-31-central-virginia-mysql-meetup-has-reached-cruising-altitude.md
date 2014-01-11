@@ -1,7 +1,5 @@
 ---
 title: Central Virginia MySQL Meetup has reached cruising altitude
-author: Baron Schwartz
-layout: post
 permalink: /2012/01/31/central-virginia-mysql-meetup-has-reached-cruising-altitude/
 categories:
   - SQL

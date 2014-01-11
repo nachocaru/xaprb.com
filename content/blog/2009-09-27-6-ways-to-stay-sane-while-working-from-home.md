@@ -1,7 +1,5 @@
 ---
 title: 6 ways to stay sane while working from home
-author: Baron Schwartz
-layout: post
 permalink: /2009/09/27/6-ways-to-stay-sane-while-working-from-home/
 categories:
   - Commentary

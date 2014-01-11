@@ -1,7 +1,5 @@
 ---
 title: How is the MariaDB Knowledge Base licensed?
-author: Baron Schwartz
-layout: post
 permalink: /2013/12/16/how-is-the-mariadb-knowledge-base-licensed/
 categories:
   - SQL

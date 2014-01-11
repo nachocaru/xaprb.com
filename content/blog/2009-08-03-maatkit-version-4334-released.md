@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 4334 released
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/03/maatkit-version-4334-released/
 categories:
   - Perl

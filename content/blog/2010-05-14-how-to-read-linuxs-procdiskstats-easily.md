@@ -1,7 +1,5 @@
 ---
 title: "How to read Linux's /proc/diskstats easily"
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/14/how-to-read-linuxs-procdiskstats-easily/
 categories:
   - GNU/Linux

@@ -1,8 +1,5 @@
 ---
 title: How to number rows in MySQL
-author: Baron Schwartz
-excerpt: '<p>I wrote before about a generic, cross-platform way to simulate the SQL <code>ROW_NUMBER()</code> function in any RDBMS.  There is a much more efficient way to do this on MySQL with user variables.</p>'
-layout: post
 permalink: /2006/12/02/how-to-number-rows-in-mysql/
 description:
   - >

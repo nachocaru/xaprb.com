@@ -1,8 +1,5 @@
 ---
 title: Automatic image captions with unobtrusive JavaScript
-author: Baron Schwartz
-excerpt: "<p>You've probably heard of unobtrusive JavaScript.  It's a simple technique that lets you create richer documents without cluttered markup or accessibility problems.  I often see link decoration and drop-shadow effects done with unobtrusive JavaScript.  How about unobtrusive image captions?  Instead of writing a caption into the page, let JavaScript do it.  In this article I'll show you how simple this can be.</p>"
-layout: post
 permalink: /2006/10/29/automatic-image-captions-with-unobtrusive-javascript/
 description:
   - |

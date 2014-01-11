@@ -1,8 +1,5 @@
 ---
 title: A comment on comments
-author: Baron Schwartz
-excerpt: "Comments are one of the most abused programming techniques.  I know I'm not the first to say this, but it bears repeating.  There are hundreds of ways to misuse comments, and very few ways to use them correctly.  In this article I'll pick on just one way to misuse them: fustian pontificating."
-layout: post
 permalink: /2005/09/28/a-comment-on-comments/
 ---
 Comments are one of the most abused programming techniques. I know I'm not the first to say this, but it bears repeating. There are hundreds of ways to misuse comments, and very few ways to use them correctly. In this article I'll pick on just one way to misuse them: fustian pontificating.

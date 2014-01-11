@@ -1,7 +1,5 @@
 ---
 title: Be bold, but not too bold
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/08/be-bold-but-not-too-bold/
 categories:
   - About

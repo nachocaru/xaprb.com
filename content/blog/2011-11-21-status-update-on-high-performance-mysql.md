@@ -1,7 +1,5 @@
 ---
 title: Status update on High Performance MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2011/11/21/status-update-on-high-performance-mysql/
 categories:
   - High Performance MySQL

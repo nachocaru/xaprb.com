@@ -1,9 +1,6 @@
 ---
 title: Xaprb joins 9rules
-author: Baron Schwartz
-excerpt: |
   <p>Xaprb is now part of the <a href="http://9rules.com">9rules</a> network.  It's an honor and a pleasure.</p>
-layout: post
 permalink: /2006/01/03/xaprb-joins-9rules/
 ---
 Xaprb is now part of the [9rules][1] network. It's an honor and a pleasure. The best part is what Mr. Scrivens said about me:

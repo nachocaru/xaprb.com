@@ -1,7 +1,5 @@
 ---
 title: Automatically detecting abnormal behavior in MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2011/12/01/automatically-detecting-abnormal-behavior-in-mysql/
 categories:
   - SQL

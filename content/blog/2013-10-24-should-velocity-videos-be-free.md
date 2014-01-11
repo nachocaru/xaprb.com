@@ -1,7 +1,5 @@
 ---
 title: Should Velocity videos be free?
-author: Baron Schwartz
-layout: post
 permalink: /2013/10/24/should-velocity-videos-be-free/
 categories:
   - Conferences

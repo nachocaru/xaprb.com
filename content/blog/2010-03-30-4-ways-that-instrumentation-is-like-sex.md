@@ -1,7 +1,5 @@
 ---
 title: 4 ways that instrumentation is like sex
-author: Baron Schwartz
-layout: post
 permalink: /2010/03/30/4-ways-that-instrumentation-is-like-sex/
 categories:
   - PostgreSQL

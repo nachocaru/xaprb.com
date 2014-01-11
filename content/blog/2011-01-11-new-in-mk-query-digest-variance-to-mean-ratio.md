@@ -1,7 +1,5 @@
 ---
 title: "New in mk-query-digest: variance-to-mean ratio"
-author: Baron Schwartz
-layout: post
 permalink: /2011/01/11/new-in-mk-query-digest-variance-to-mean-ratio/
 categories:
   - Maatkit

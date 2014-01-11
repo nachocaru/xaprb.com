@@ -1,7 +1,5 @@
 ---
 title: Why You Need to Understand Your Working Set Size
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/23/why-you-need-to-understand-your-working-set-size/
 categories:
   - SQL

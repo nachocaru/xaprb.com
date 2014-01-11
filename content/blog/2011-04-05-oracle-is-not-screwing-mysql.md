@@ -1,7 +1,5 @@
 ---
 title: Oracle is not screwing MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2011/04/05/oracle-is-not-screwing-mysql/
 categories:
   - Commentary

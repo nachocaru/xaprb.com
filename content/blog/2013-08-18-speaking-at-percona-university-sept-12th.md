@@ -1,7 +1,5 @@
 ---
 title: Speaking at Percona University Sept 12th
-author: Baron Schwartz
-layout: post
 permalink: /2013/08/18/speaking-at-percona-university-sept-12th/
 categories:
   - Conferences

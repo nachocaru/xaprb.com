@@ -1,7 +1,5 @@
 ---
 title: Tis a gift to be simple
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/12/tis-a-gift-to-be-simple/
 categories:
   - Maatkit

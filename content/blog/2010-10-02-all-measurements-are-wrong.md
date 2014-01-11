@@ -1,7 +1,5 @@
 ---
 title: All measurements are wrong
-author: Baron Schwartz
-layout: post
 permalink: /2010/10/02/all-measurements-are-wrong/
 categories:
   - Coding

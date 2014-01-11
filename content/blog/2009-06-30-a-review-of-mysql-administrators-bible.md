@@ -1,7 +1,5 @@
 ---
 title: "A review of MySQL Administrator's Bible"
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/30/a-review-of-mysql-administrators-bible/
 categories:
   - Review

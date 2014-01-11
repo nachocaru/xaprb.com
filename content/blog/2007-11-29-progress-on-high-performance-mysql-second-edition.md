@@ -1,7 +1,5 @@
 ---
 title: Progress on High Performance MySQL, Second Edition
-author: Baron Schwartz
-excerpt: |
   <p>It's been a while since I said anything about the progress on the book.  That doesn't mean we are not still working on it, though.</p>
   
   <p>As <a href="http://www.mysqlperformanceblog.com/2007/11/12/how-we-work-on-high-performance-mysql-second-edition/">Peter wrote a while ago</a>, he is basically wearing the hat of a very advanced technical reviewer at this point.  We've finished writing all the chapters from his detailed outlines.  He has worked through about half the chapters, and I'm continuing to spend my evenings and weekends and holidays (yes, nearly all my free time -- just ask my wife!) writing some new material (an appendix on <code>EXPLAIN</code>, for example), finishing unfinished things marked with TODO in the text, and revising chapters after Peter reviews them.  Vadim is working on benchmarks.  For example, he just finished some benchmarks for something I profiled with <code>SHOW STATUS</code>.  I thought that would be good enough to assert something about the performance.  Sure enough, <code>SHOW STATUS</code> says it does less work, but Vadim's benchmarks show it's slower :-)  This is why we check each other's work!</p>
@@ -19,7 +17,6 @@ excerpt: |
   </ul>
   
   <p>Well, I've run out of my allotted thirty minutes of blogging!  Back to the salt mines!  Just kidding...  I'm actually off to the climbing gym soon to get my mind off it.</p>
-layout: post
 permalink: /2007/11/29/progress-on-high-performance-mysql-second-edition/
 description:
   - >

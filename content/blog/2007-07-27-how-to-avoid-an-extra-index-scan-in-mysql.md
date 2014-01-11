@@ -1,8 +1,5 @@
 ---
 title: How to avoid an extra index scan in MySQL
-author: Baron Schwartz
-excerpt: "<p>Is your MySQL server doing an extra index scan on queries that need to check a key for matches or NULL?  It's easy for this to happen accidentally, but it's also easy to fix, especially in MySQL 5.0 and up.  Here's how.</p>"
-layout: post
 permalink: /2007/07/27/how-to-avoid-an-extra-index-scan-in-mysql/
 description:
   - >

@@ -1,7 +1,5 @@
 ---
 title: Sessions of interest at MySQL Conference and Expo 2009
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/11/sessions-of-interest-at-mysql-conference-and-expo-2009/
 categories:
   - Conferences

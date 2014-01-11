@@ -1,7 +1,5 @@
 ---
 title: "Beware of svctm in Linux's iostat"
-author: Baron Schwartz
-layout: post
 permalink: /2010/09/06/beware-of-svctm-in-linuxs-iostat/
 categories:
   - PostgreSQL

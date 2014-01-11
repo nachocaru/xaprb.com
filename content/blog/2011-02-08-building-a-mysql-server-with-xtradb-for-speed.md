@@ -1,7 +1,5 @@
 ---
 title: Building a MySQL server with XtraDB for speed
-author: Baron Schwartz
-layout: post
 permalink: /2011/02/08/building-a-mysql-server-with-xtradb-for-speed/
 categories:
   - SQL

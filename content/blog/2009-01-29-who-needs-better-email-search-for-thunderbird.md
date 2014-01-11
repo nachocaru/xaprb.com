@@ -1,7 +1,5 @@
 ---
 title: Who needs better email search for Thunderbird?
-author: Baron Schwartz
-layout: post
 permalink: /2009/01/29/who-needs-better-email-search-for-thunderbird/
 categories:
   - Desktop

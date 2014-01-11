@@ -1,7 +1,5 @@
 ---
 title: MySQL 6.2 is GA, but 5.1 is RC and 6.0 is alpha
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/23/mysql-62-is-ga-but-51-is-rc-and-60-is-alpha/
 categories:
   - Commentary

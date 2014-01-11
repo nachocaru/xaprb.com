@@ -1,7 +1,5 @@
 ---
 title: Thoughts on the new PERFORMANCE_SCHEMA in MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/08/thoughts-on-the-new-performance_schema-in-mysql/
 categories:
   - SQL

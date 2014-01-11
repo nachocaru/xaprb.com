@@ -1,8 +1,5 @@
 ---
 title: Browser variations in RegExp.exec()
-author: Baron Schwartz
-excerpt: '<p>IE6, Firefox 1.5 and Opera 8.5 handle regular expressions slightly differently.  I analyzed them and learned some interesting things about the browsers.</p>'
-layout: post
 permalink: /2006/01/14/browser-variations-in-regexpexec/
 description:
   - >

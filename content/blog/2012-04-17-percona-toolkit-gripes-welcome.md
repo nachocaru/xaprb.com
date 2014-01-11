@@ -1,7 +1,5 @@
 ---
 title: Percona Toolkit gripes welcome
-author: Baron Schwartz
-layout: post
 permalink: /2012/04/17/percona-toolkit-gripes-welcome/
 categories:
   - SQL

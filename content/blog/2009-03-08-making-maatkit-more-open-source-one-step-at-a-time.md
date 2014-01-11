@@ -1,7 +1,5 @@
 ---
 title: Making Maatkit more Open Source one step at a time
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/08/making-maatkit-more-open-source-one-step-at-a-time/
 categories:
   - Coding

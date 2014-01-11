@@ -1,7 +1,5 @@
 ---
 title: MySQL replication breaks single-threaded limitation?
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/17/mysql-replication-breaks-single-threaded-limitation/
 categories:
   - SQL

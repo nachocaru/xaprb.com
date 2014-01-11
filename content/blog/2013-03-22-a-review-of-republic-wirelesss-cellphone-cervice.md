@@ -1,7 +1,5 @@
 ---
 title: "A review of Republic Wireless's cellphone service"
-author: Baron Schwartz
-layout: post
 permalink: /2013/03/22/a-review-of-republic-wirelesss-cellphone-cervice/
 categories:
   - Commentary

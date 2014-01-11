@@ -1,7 +1,5 @@
 ---
 title: MySQL Cacti templates version 1.1.1 released
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/15/mysql-cacti-templates-version-111-released/
 categories:
   - SQL

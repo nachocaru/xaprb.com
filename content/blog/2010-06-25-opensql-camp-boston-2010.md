@@ -1,7 +1,5 @@
 ---
 title: OpenSQL Camp Boston 2010
-author: Baron Schwartz
-layout: post
 permalink: /2010/06/25/opensql-camp-boston-2010/
 categories:
   - Conferences

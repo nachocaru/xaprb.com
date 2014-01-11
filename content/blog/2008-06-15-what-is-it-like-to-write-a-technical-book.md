@@ -1,7 +1,5 @@
 ---
 title: What is it like to write a technical book?
-author: Baron Schwartz
-layout: post
 permalink: /2008/06/15/what-is-it-like-to-write-a-technical-book/
 tags:
   - Andy Oram

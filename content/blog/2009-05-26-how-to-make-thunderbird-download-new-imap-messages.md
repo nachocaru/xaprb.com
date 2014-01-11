@@ -1,7 +1,5 @@
 ---
 title: How to make Thunderbird download new IMAP messages
-author: Baron Schwartz
-layout: post
 permalink: /2009/05/26/how-to-make-thunderbird-download-new-imap-messages/
 categories:
   - Desktop

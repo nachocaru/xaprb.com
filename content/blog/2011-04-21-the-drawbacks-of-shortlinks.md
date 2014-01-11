@@ -1,7 +1,5 @@
 ---
 title: The drawbacks of shortlinks
-author: Baron Schwartz
-layout: post
 permalink: /2011/04/21/the-drawbacks-of-shortlinks/
 categories:
   - Commentary

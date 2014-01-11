@@ -1,7 +1,5 @@
 ---
 title: A script snippet to relative-ize numbers embedded in text
-author: Baron Schwartz
-layout: post
 permalink: /2009/09/01/a-script-snippet-to-relative-ize-numbers-embedded-in-text/
 categories:
   - SQL

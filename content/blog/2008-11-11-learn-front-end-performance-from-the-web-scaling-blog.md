@@ -1,7 +1,5 @@
 ---
 title: Learn front-end performance from the Web Scaling Blog
-author: Baron Schwartz
-layout: post
 permalink: /2008/11/11/learn-front-end-performance-from-the-web-scaling-blog/
 categories:
   - CSS

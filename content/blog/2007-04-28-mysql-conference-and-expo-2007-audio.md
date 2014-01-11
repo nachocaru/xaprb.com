@@ -1,8 +1,5 @@
 ---
 title: MySQL Conference and Expo 2007 Audio
-author: Baron Schwartz
-excerpt: '<p>I recorded many of the sessions I attended at the conference. You can download the audio files in Ogg Vorbis format from this article. These files will not stay up forever -- I will probably remove them after a few weeks.</p>'
-layout: post
 permalink: /2007/04/28/mysql-conference-and-expo-2007-audio/
 description:
   - Ogg Vorbis audio files of the MySQL Conference and Expo 2007

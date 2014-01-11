@@ -1,7 +1,5 @@
 ---
 title: My chapter in the forthcoming Web Operations book
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/20/my-chapter-in-the-forthcoming-web-operations-book/
 categories:
   - Review

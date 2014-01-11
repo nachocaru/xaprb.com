@@ -1,8 +1,5 @@
 ---
 title: "A review of O'Reilly's SQL Hacks"
-author: Baron Schwartz
-excerpt: "<p>I recently read O'Reilly's SQL Hacks book.  It's an interesting and rewarding mixture of tips and tricks for novice to expert users.  I give it 3 out of 5 stars.  Here's why.</p>"
-layout: post
 permalink: /2007/01/02/a-review-of-oreillys-sql-hacks/
 description:
   - "I give this O'Reilly book 3 out of 5 stars for good content, but poor editing and reviewing."

@@ -1,7 +1,5 @@
 ---
 title: New Maatkit tool to compute index usage
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/10/new-maatkit-tool-to-compute-index-usage/
 categories:
   - Coding

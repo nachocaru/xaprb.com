@@ -1,10 +1,7 @@
 ---
 title: Temporary table subtleties in MySQL
-author: Baron Schwartz
-excerpt: |
   |
     <p>Temporary tables behave very differently across various database servers.  If you're not familiar with MySQL, some things might catch you off guard.  In this article I explain some subtleties of temporary tables in MySQL and explain when you might encounter problems with them.  I also show you how the platform-specific features can sometimes be very useful indeed.</p>
-layout: post
 permalink: /2006/03/26/temporary-table-subtleties-in-mysql/
 description:
   - >

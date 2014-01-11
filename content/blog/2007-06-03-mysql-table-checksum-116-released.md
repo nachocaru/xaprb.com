@@ -1,11 +1,8 @@
 ---
 title: MySQL Table Checksum 1.1.6 released
-author: Baron Schwartz
-excerpt: |
   <p>MySQL Table Checksum 1.1.6 enhances chunking, adds features and fixes bugs.  The chunking functionality is where I continue to put most of my effort. <strong>This release's behavior is incompatible with the last release</strong>, and it will probably change again in the future.</p>
   
   <p>Thanks to everyone who has been helping me chase down bugs, including one user who sent me a major patch!  It's a great feeling to get a patch.</p>
-layout: post
 permalink: /2007/06/03/mysql-table-checksum-116-released/
 description:
   - >

@@ -1,7 +1,5 @@
 ---
 title: A gentle introduction to CouchDB for relational practitioners
-author: Baron Schwartz
-layout: post
 permalink: /2010/09/07/a-gentle-introduction-to-couchdb-for-relational-practitioners/
 categories:
   - CouchDB

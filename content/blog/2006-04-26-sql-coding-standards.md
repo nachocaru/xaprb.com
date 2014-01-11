@@ -1,8 +1,5 @@
 ---
 title: My personal SQL coding standards
-author: Baron Schwartz
-excerpt: "<p>Coding standards are a Good Thing.  Unfortunately, most organizations don't have much in the way of SQL coding standards, and there aren't many automated tools to help.  As a result, I believe SQL is often less consistently written than many other languages.  Here are my suggestions.</p>"
-layout: post
 permalink: /2006/04/26/sql-coding-standards/
 description:
   - Describes and explains my own SQL coding style.

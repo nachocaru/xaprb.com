@@ -1,7 +1,5 @@
 ---
 title: The bigger they are, the harder they fall
-author: Baron Schwartz
-layout: post
 permalink: /2011/04/25/the-bigger-they-are-the-harder-they-fall/
 categories:
   - Commentary

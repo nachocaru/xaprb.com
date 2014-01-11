@@ -1,7 +1,5 @@
 ---
 title: How to write a good MySQL conference proposal
-author: Baron Schwartz
-layout: post
 permalink: /2009/12/19/how-to-write-a-good-mysql-conference-proposal/
 categories:
   - Conferences

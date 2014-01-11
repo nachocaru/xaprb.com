@@ -1,7 +1,5 @@
 ---
 title: Black-Box Performance Analysis with TCP Traffic
-author: Baron Schwartz
-layout: post
 permalink: /2012/02/23/black-box-performance-analysis-with-tcp-traffic/
 categories:
   - Percona Toolkit

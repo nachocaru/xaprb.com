@@ -1,7 +1,5 @@
 ---
 title: "New Ruby Conference: Ruby on Ales 2011"
-author: Baron Schwartz
-layout: post
 permalink: /2011/01/12/new-ruby-conference-ruby-on-ales-2011/
 categories:
   - Conferences

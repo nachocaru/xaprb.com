@@ -1,7 +1,5 @@
 ---
 title: Too many blog posts
-author: Baron Schwartz
-layout: post
 permalink: /2011/04/20/too-many-blog-posts/
 categories:
   - SQL

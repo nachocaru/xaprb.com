@@ -1,7 +1,5 @@
 ---
 title: Thanks Oracle for the ACE Award
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/01/thanks-oracle-for-the-ace-award/
 categories:
   - SQL

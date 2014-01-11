@@ -1,7 +1,5 @@
 ---
 title: Google Code rocks my world
-author: Baron Schwartz
-layout: post
 permalink: /2008/11/23/google-code-rocks-my-world/
 categories:
   - Coding

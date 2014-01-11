@@ -1,7 +1,5 @@
 ---
 title: High Performance MySQL 3rd Edition is real!
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/28/high-performance-mysql-3rd-edition-is-real/
 categories:
   - SQL

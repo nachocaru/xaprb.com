@@ -1,7 +1,5 @@
 ---
 title: Free DevOpsDC meetup on Tuesday
-author: Baron Schwartz
-layout: post
 permalink: /2011/11/02/free-devopsdc-meetup-on-tuesday/
 categories:
   - SQL

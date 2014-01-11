@@ -1,7 +1,5 @@
 ---
 title: InfiniDB gets the release process right
-author: Baron Schwartz
-layout: post
 permalink: /2010/02/04/infinidb-gets-the-release-process-right/
 categories:
   - Commentary

@@ -1,7 +1,5 @@
 ---
 title: Making auto-resetting VirtualBox machines
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/31/making-auto-resetting-virtualbox-machines/
 categories:
   - Desktop

@@ -1,8 +1,5 @@
 ---
 title: MySQL Query Profiler 1.0.0 released
-author: Baron Schwartz
-excerpt: "<p>I've updated MySQL Query Profiler, which I consider the most important tool I've written.  It's now included as part of the MySQL Toolkit project on Sourceforge.</p>"
-layout: post
 permalink: /2007/03/01/mysql-query-profiler-100-released/
 description:
   - >

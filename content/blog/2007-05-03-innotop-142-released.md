@@ -1,8 +1,5 @@
 ---
 title: innotop 1.4.2 released
-author: Baron Schwartz
-excerpt: "<p>This release of the innotop MySQL and InnoDB monitor is a major upgrade in terms of functionality, code quality, and interface consistency.  It is the result of me working for over a month to get innotop into shape for the recent MySQL Conference and Expo.  This article is a summary of the changes and a look at what's coming next.</p>"
-layout: post
 permalink: /2007/05/03/innotop-142-released/
 description:
   - >

@@ -1,8 +1,5 @@
 ---
 title: Introducing MySQL Table Maintainer
-author: Baron Schwartz
-excerpt: "<p>MySQL Table Maintainer is a new utility to help you run table maintenance commands (ANALYZE, CHECK, OPTIMIZE, REPAIR) on your MySQL tables.  It's part of the MySQL toolkit.</p>"
-layout: post
 permalink: /2007/03/25/introducing-mysql-table-maintainer/
 description:
   - >

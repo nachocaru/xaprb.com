@@ -1,7 +1,5 @@
 ---
 title: Role-based access control in SQL, part 2
-author: Baron Schwartz
-excerpt: |
   <p>This is my second article on how to build a role-based access control
   system in SQL.  In the first article I gave a high-level overview of access
   control systems in general, especially in the web-application context, and
@@ -22,7 +20,6 @@ excerpt: |
   scalability are important design goals.  I'll end with a brief explanation of
   how I've used this system to make my own web applications simpler and more
   secure.</p>
-layout: post
 permalink: /2006/08/18/role-based-access-control-in-sql-part-2/
 description:
   - >

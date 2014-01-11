@@ -1,8 +1,5 @@
 ---
 title: innotop version 1.0 released
-author: Baron Schwartz
-excerpt: "<p>I've made the 1.0 release I promised yesterday.  I am very happy to declare innotop production-ready and stable.  In this article I talk a little bit about my plans for the future, and look back to the project's humble beginnings as a script I ran inside watch.  Check out the screenshot!  OMG!</p>"
-layout: post
 permalink: /2007/01/07/innotop-version-10-released/
 description:
   - >

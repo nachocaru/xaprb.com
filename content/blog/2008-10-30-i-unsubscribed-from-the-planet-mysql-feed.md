@@ -1,7 +1,5 @@
 ---
 title: I unsubscribed from the Planet MySQL feed
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/30/i-unsubscribed-from-the-planet-mysql-feed/
 categories:
   - SQL

@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 2582 released
-author: Baron Schwartz
-layout: post
 permalink: /2008/12/01/maatkit-version-2582-released/
 categories:
   - Maatkit

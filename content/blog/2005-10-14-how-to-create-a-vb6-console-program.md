@@ -1,8 +1,5 @@
 ---
 title: "How to  create a VB6 console program"
-author: Baron Schwartz
-excerpt: '<p>Visual Basic 6 programs can be run as console programs, if configured correctly.  This article explains how to satisfy the four basic requirements to create a useful console program in VB6.</p>'
-layout: post
 permalink: /2005/10/14/how-to-create-a-vb6-console-program/
 ---
 Visual Basic 6 programs can be run as console programs, if configured correctly. There are four basic requirements to create a useful console program in VB6:

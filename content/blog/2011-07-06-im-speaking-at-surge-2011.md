@@ -1,7 +1,5 @@
 ---
 title: "I'm speaking at Surge 2011"
-author: Baron Schwartz
-layout: post
 permalink: /2011/07/06/im-speaking-at-surge-2011/
 categories:
   - Conferences

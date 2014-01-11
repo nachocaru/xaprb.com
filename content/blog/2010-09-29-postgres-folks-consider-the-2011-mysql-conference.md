@@ -1,7 +1,5 @@
 ---
 title: Postgres folks, consider the 2011 MySQL conference
-author: Baron Schwartz
-layout: post
 permalink: /2010/09/29/postgres-folks-consider-the-2011-mysql-conference/
 categories:
   - Conferences

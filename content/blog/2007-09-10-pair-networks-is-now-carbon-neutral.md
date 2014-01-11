@@ -1,7 +1,5 @@
 ---
 title: pair Networks is now carbon-neutral
-author: Baron Schwartz
-layout: post
 permalink: /2007/09/10/pair-networks-is-now-carbon-neutral/
 description:
   - pair Networks, an outstanding hosting provider, is now carbon-neutral.

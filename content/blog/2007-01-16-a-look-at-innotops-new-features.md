@@ -1,8 +1,5 @@
 ---
 title: "A look at innotop's new features"
-author: Baron Schwartz
-excerpt: "<p>I just made a snapshot of the development branch of the innotop MySQL and InnoDB monitor, and released it as version 1.3.0.  This code will eventually become version 1.4.  Here's what's new.</p>"
-layout: post
 permalink: /2007/01/16/a-look-at-innotops-new-features/
 description:
   - A quick overview of the new features in innotop 1.3.0

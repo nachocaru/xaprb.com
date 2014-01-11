@@ -1,7 +1,5 @@
 ---
 title: Using mext to format saved mysqladmin output nicely
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/13/using-mext-to-format-saved-mysqladmin-output-nicely/
 categories:
   - SQL

@@ -1,7 +1,5 @@
 ---
 title: How I keep track of notes
-author: Baron Schwartz
-layout: post
 permalink: /2010/07/03/how-i-keep-track-of-notes/
 categories:
   - Commentary

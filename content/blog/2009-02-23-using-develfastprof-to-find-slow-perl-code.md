@@ -1,7 +1,5 @@
 ---
 title: Using Devel::FastProf to find slow Perl code
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/23/using-develfastprof-to-find-slow-perl-code/
 categories:
   - Coding

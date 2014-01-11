@@ -1,7 +1,5 @@
 ---
 title: Josh Berkus helps clarify clustering
-author: Baron Schwartz
-layout: post
 permalink: /2009/11/21/josh-berkus-helps-clarify-clustering/
 categories:
   - PostgreSQL

@@ -1,7 +1,5 @@
 ---
 title: Not if, but when
-author: Baron Schwartz
-layout: post
 permalink: /2012/01/09/not-if-but-when/
 categories:
   - SQL

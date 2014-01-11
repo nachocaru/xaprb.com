@@ -1,8 +1,5 @@
 ---
 title: Comparison of table sync algorithms
-author: Baron Schwartz
-excerpt: "<p>I've been working on how to efficiently compare and synchronize data between two tables on different MySQL servers.   I've also been working on a tool, sort of like rsync for database tables, which implements both algorithms.   I profiled it to see how well the comparison algorithms work on real data.  This article is about the results.</p>"
-layout: post
 permalink: /2007/03/30/comparison-of-table-sync-algorithms/
 description:
   - >

@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 3329 released
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/31/maatkit-version-3329-released/
 categories:
   - Maatkit

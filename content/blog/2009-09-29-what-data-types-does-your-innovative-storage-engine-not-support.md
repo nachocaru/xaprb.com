@@ -1,7 +1,5 @@
 ---
 title: What data types does your innovative storage engine NOT support?
-author: Baron Schwartz
-layout: post
 permalink: /2009/09/29/what-data-types-does-your-innovative-storage-engine-not-support/
 categories:
   - SQL

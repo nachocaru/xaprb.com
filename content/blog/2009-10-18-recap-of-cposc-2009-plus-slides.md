@@ -1,7 +1,5 @@
 ---
 title: Recap of CPOSC 2009, plus slides
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/18/recap-of-cposc-2009-plus-slides/
 categories:
   - Conferences

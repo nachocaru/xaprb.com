@@ -1,7 +1,5 @@
 ---
 title: Why no TPC benchmarks for MySQL?
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/07/why-no-tpc-benchmarks-for-mysql/
 categories:
   - SQL

@@ -1,8 +1,5 @@
 ---
 title: How to write MySQL conditional comments
-author: Baron Schwartz
-excerpt: "<p>MySQL's version-specific conditional comment syntax confused me for the longest time.  Then I learned about <code>printf</code> formatting rules, and it all became clear.  Read on if you don't already know what I mean.</p>"
-layout: post
 permalink: /2007/05/22/how-to-write-mysql-conditional-comments/
 description:
   - How to read, interpret and write MySQL version-specific conditional comments

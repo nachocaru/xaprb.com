@@ -1,7 +1,5 @@
 ---
 title: Making changes to many tables at once
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/29/making-changes-to-many-tables-at-once/
 categories:
   - Maatkit

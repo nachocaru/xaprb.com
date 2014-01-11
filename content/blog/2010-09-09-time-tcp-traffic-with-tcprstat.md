@@ -1,7 +1,5 @@
 ---
 title: Time TCP traffic with tcprstat
-author: Baron Schwartz
-layout: post
 permalink: /2010/09/09/time-tcp-traffic-with-tcprstat/
 categories:
   - PostgreSQL

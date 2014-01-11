@@ -1,9 +1,6 @@
 ---
 title: More GnuCash to MySQL tools and queries
-author: Baron Schwartz
-excerpt: |
   <p>I wrote a while ago about a program I wrote to <a href="http://www.xaprb.com/blog/2006/03/12/gnucash-to-mysql-export-script/">export GnuCash data into a MySQL database</a>, including a couple of queries against the resulting schema.  I've made some improvements since then to allow a simple overlay of my wife's expense categories onto the GnuCash hierarchy.  This article explains the improved schema, and includes some more useful tools and queries.</p>
-layout: post
 permalink: /2006/11/29/more-gnucash-to-mysql-tools-and-queries/
 description:
   - >

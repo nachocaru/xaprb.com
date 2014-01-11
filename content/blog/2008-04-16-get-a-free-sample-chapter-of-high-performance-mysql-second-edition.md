@@ -1,7 +1,5 @@
 ---
 title: Get a free sample chapter of High Performance MySQL Second Edition
-author: Baron Schwartz
-layout: post
 permalink: /2008/04/16/get-a-free-sample-chapter-of-high-performance-mysql-second-edition/
 description:
   - >

@@ -1,7 +1,5 @@
 ---
 title: High Performance MySQL 2nd Edition gets revised and translated
-author: Baron Schwartz
-layout: post
 permalink: /2008/08/02/high-performance-mysql-2nd-edition-gets-revised-and-translated/
 description:
   - It will be available in Spanish, Polish and Portuguese.

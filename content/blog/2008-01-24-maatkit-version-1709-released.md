@@ -1,8 +1,5 @@
 ---
 title: Maatkit version 1709 released
-author: Baron Schwartz
-excerpt: "<p>This release contains bug fixes and new features. It also contains a new tool: my implementation of Paul Tuckfield's relay log pipelining idea.  I have had quite a few responses to that blog post, and requests for the code.  So I'm releasing it as part of Maatkit.</p>"
-layout: post
 permalink: /2008/01/24/maatkit-version-1709-released/
 tags:
   - archiving

@@ -1,7 +1,5 @@
 ---
 title: A productivity tip for test-driven development
-author: Baron Schwartz
-layout: post
 permalink: /2009/05/03/a-productivity-tip-for-test-driven-development/
 categories:
   - Coding

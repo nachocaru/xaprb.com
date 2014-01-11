@@ -1,7 +1,5 @@
 ---
 title: Got virtual office?
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/07/got-virtual-office/
 categories:
   - Commentary

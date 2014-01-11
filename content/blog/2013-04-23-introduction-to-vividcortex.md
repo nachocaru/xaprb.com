@@ -1,7 +1,5 @@
 ---
 title: Introduction to VividCortex
-author: Baron Schwartz
-layout: post
 permalink: /2013/04/23/introduction-to-vividcortex/
 categories:
   - SQL

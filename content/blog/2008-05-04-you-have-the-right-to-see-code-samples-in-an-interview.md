@@ -1,7 +1,5 @@
 ---
 title: You have the right to see code samples in an interview
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/04/you-have-the-right-to-see-code-samples-in-an-interview/
 description:
   - "Assuming things about a potential employer's code is stupid and will land you a bad job."

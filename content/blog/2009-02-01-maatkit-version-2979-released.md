@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 2979 released
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/01/maatkit-version-2979-released/
 categories:
   - SQL

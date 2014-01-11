@@ -1,7 +1,5 @@
 ---
 title: Sphinx 0.9.8 is released!
-author: Baron Schwartz
-layout: post
 permalink: /2008/07/15/sphinx-098-is-released/
 tags:
   - Andrew Aksyonoff

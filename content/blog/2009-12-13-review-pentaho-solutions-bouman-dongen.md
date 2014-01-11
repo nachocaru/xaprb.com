@@ -1,7 +1,5 @@
 ---
 title: A review of Pentaho Solutions by Roland Bouman and Jos van Dongen
-author: Baron Schwartz
-layout: post
 permalink: /2009/12/13/review-pentaho-solutions-bouman-dongen/
 categories:
   - Review

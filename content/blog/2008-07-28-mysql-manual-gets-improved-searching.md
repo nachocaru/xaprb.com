@@ -1,7 +1,5 @@
 ---
 title: MySQL manual gets improved searching
-author: Baron Schwartz
-layout: post
 permalink: /2008/07/28/mysql-manual-gets-improved-searching/
 categories:
   - SQL

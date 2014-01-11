@@ -1,7 +1,5 @@
 ---
 title: "Aspersa's mysql-summary tool"
-author: Baron Schwartz
-layout: post
 permalink: /2010/07/10/aspersas-mysql-summary-tool/
 categories:
   - Aspersa

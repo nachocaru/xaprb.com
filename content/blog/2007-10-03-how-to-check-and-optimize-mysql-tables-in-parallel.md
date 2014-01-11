@@ -1,9 +1,6 @@
 ---
 title: How to check and optimize MySQL tables in parallel
-author: Baron Schwartz
-excerpt: |
   <p>I wanted to point out something that might not be obvious from the name: MySQL Parallel Dump can be used as a generic wrapper to discover tables and databases, and fork off worker processes to do something to them in parallel.  That "something" can easily be invoking <code>mysqlcheck</code> -- or any other program.  This makes it really easy for you to do multi-threaded whatever-you-need-to-do on MySQL tables.  Here's how.</p>
-layout: post
 permalink: /2007/10/03/how-to-check-and-optimize-mysql-tables-in-parallel/
 description:
   - >

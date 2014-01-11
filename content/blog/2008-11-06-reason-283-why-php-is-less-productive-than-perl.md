@@ -1,7 +1,5 @@
 ---
 title: "Reason #283 why PHP is less productive than Perl"
-author: Baron Schwartz
-layout: post
 permalink: /2008/11/06/reason-283-why-php-is-less-productive-than-perl/
 categories:
   - Coding

@@ -1,7 +1,5 @@
 ---
 title: Presentation uploaded for Maatkit talk at MySQL Conference
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/25/presentation-uploaded-for-maatkit-talk-at-mysql-conference/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: How to capture debugging information with mk-loadavg
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/21/how-to-capture-debugging-information-with-mk-loadavg/
 categories:
   - Maatkit

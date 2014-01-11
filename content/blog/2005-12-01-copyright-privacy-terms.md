@@ -1,8 +1,5 @@
 ---
 title: Copyright statement, privacy policy and terms of use
-author: Baron Schwartz
-excerpt: '<p>Official Xaprb copyright statement, privacy policy and terms of use</p>'
-layout: post
 permalink: /2005/12/01/copyright-privacy-terms/
 ---
 ### Copyright Statement

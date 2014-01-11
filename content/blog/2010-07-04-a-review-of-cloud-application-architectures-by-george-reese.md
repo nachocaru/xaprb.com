@@ -1,7 +1,5 @@
 ---
 title: A review of Cloud Application Architectures by George Reese
-author: Baron Schwartz
-layout: post
 permalink: /2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/
 categories:
   - Review

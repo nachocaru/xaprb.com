@@ -1,8 +1,5 @@
 ---
 title: PostgreSQL Conference East 2008
-author: Baron Schwartz
-excerpt: '<p><a href="http://www.postgresql.org"><img src="http://www.postgresql.org/layout/images/hdr_left.png" width="230" height="80" alt="PostgreSQL" style="float:right" /></a>As a I wrote a couple of days ago, I went to the second day of <a href="http://postgresqlconference.org/">PostgreSQL Conference East 2008</a> last Sunday.  I had a good time and really enjoyed meeting everyone, listening, learning, and occasionally talking.  I asked a number of fearless-newbie questions that paid off handsomely: people were very willing to humor me.</p>'
-layout: post
 permalink: /2008/04/01/postgresql-conference-east-2008/
 description:
   - >

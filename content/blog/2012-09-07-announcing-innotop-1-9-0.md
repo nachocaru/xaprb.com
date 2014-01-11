@@ -1,7 +1,5 @@
 ---
 title: Announcing innotop 1.9.0
-author: Baron Schwartz
-layout: post
 permalink: /2012/09/07/announcing-innotop-1-9-0/
 categories:
   - Innotop

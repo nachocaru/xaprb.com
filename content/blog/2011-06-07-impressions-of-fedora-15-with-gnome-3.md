@@ -1,7 +1,5 @@
 ---
 title: Impressions of Fedora 15 with Gnome 3
-author: Baron Schwartz
-layout: post
 permalink: /2011/06/07/impressions-of-fedora-15-with-gnome-3/
 categories:
   - Desktop

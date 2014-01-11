@@ -1,7 +1,5 @@
 ---
 title: Are you ready for the end of the world?
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/13/are-you-ready-for-the-end-of-the-world/
 categories:
   - SQL

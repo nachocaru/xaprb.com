@@ -1,7 +1,5 @@
 ---
 title: Subtleties in the Universal Scalability Law
-author: Baron Schwartz
-layout: post
 permalink: /2011/04/16/subtleties-in-the-universal-scalability-law/
 categories:
   - Scalability

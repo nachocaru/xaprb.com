@@ -1,7 +1,5 @@
 ---
 title: "What's a good benchmark?"
-author: Baron Schwartz
-layout: post
 permalink: /2011/05/10/whats-a-good-benchmark/
 categories:
   - SQL

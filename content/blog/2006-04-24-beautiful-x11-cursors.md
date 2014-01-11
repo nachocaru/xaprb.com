@@ -1,8 +1,5 @@
 ---
 title: How to install beautiful X11 cursors
-author: Baron Schwartz
-excerpt: "<p>X11 comes with unattractive mouse cursors, but it's trivial to replace them with other themes.  In this article I'll explain how to install mouse cursors system-wide or for a single user, and give you links to my favorite cursor themes.</p>"
-layout: post
 permalink: /2006/04/24/beautiful-x11-cursors/
 ---
 X11 comes with unattractive mouse cursors, but it's trivial to replace them with other themes. In this article I'll explain how to install mouse cursors system-wide or for a single user, and give you links to my favorite cursor themes.

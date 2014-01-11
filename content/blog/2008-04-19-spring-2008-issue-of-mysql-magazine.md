@@ -1,7 +1,5 @@
 ---
 title: Spring 2008 issue of MySQL Magazine
-author: Baron Schwartz
-layout: post
 permalink: /2008/04/19/spring-2008-issue-of-mysql-magazine/
 categories:
   - High Performance MySQL

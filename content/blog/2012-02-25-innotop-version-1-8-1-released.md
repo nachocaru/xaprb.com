@@ -1,7 +1,5 @@
 ---
 title: innotop version 1.8.1 released
-author: Baron Schwartz
-layout: post
 permalink: /2012/02/25/innotop-version-1-8-1-released/
 categories:
   - Innotop

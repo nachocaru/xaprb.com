@@ -1,7 +1,5 @@
 ---
 title: Sending the query to the data
-author: Baron Schwartz
-layout: post
 permalink: /2013/09/13/sending-the-query-to-the-data/
 categories:
   - Cassandra

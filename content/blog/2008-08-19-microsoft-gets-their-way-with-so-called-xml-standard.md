@@ -1,7 +1,5 @@
 ---
 title: Microsoft gets their way with so-called XML standard
-author: Baron Schwartz
-layout: post
 permalink: /2008/08/19/microsoft-gets-their-way-with-so-called-xml-standard/
 categories:
   - Commentary

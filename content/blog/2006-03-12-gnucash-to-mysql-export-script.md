@@ -1,8 +1,5 @@
 ---
 title: GnuCash to MySQL export script
-author: Baron Schwartz
-excerpt: "<p>It's tax season, and this year I decided to export my GnuCash data into a MySQL database for analysis.  This article is about that process, including source code for the export script and a couple of simple queries.</p>"
-layout: post
 permalink: /2006/03/12/gnucash-to-mysql-export-script/
 description:
   - 'A Perl script for exporting GnuCash data into a relational database for analysis.  Includes instructions and analysis queries.'

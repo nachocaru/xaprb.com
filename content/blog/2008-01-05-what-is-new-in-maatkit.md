@@ -1,10 +1,7 @@
 ---
 title: What is new in Maatkit
-author: Baron Schwartz
-excerpt: |
   |
     <p>My posts lately have been mostly progress reports and release notices.  That's because we're in the home stretch on the book, and I don't have much spare time.  However, a lot has also been changing with Maatkit, and I wanted to take some time to write about it properly.</p>
-layout: post
 permalink: /2008/01/05/what-is-new-in-maatkit/
 description:
   - Maatkit has a lot more functionality and speed these days.

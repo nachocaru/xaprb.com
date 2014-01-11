@@ -1,7 +1,5 @@
 ---
 title: Review of Scalable Internet Architectures by Theo Schlossnagle
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/21/review-of-scalable-internet-architectures-by-theo-schlossnagle/
 categories:
   - Review

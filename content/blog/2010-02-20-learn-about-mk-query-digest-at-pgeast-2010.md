@@ -1,7 +1,5 @@
 ---
 title: Learn about mk-query-digest at PgEast 2010
-author: Baron Schwartz
-layout: post
 permalink: /2010/02/20/learn-about-mk-query-digest-at-pgeast-2010/
 categories:
   - Conferences

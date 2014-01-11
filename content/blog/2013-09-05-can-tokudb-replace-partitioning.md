@@ -1,7 +1,5 @@
 ---
 title: Can TokuDB replace partitioning?
-author: Baron Schwartz
-layout: post
 permalink: /2013/09/05/can-tokudb-replace-partitioning/
 categories:
   - SQL

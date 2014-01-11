@@ -1,8 +1,5 @@
 ---
 title: Javascript date parsing and formatting, Part 2
-author: Baron Schwartz
-excerpt: '<p>This post builds on my earlier code to create a flexible, high-performance date-parsing library.</p>'
-layout: post
 permalink: /2005/12/20/javascript-date-parsing/
 ---
 <p style="border:solid red 1px; background:yellow">

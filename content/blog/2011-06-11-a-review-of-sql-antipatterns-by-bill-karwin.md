@@ -1,7 +1,5 @@
 ---
 title: A review of SQL Antipatterns by Bill Karwin
-author: Baron Schwartz
-layout: post
 permalink: /2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/
 categories:
   - Review

@@ -1,9 +1,6 @@
 ---
 title: How to delete duplicate rows with SQL, Part 2
-author: Baron Schwartz
-excerpt: |
   <p>By reader request, this article explains ways to remove duplicate rows when they are completely identical, and you don't have a primary key or other criterion to identify which rows to "save."</p>
-layout: post
 permalink: /2007/02/06/how-to-delete-duplicate-rows-with-sql-part-2/
 description:
   - Explains how to delete all but one completely identical duplicated SQL rows.

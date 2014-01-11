@@ -1,7 +1,5 @@
 ---
 title: What does an open source sales model look like?
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/29/what-does-an-open-source-sales-model-look-like/
 categories:
   - Commentary

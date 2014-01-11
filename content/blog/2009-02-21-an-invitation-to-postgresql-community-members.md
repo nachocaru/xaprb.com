@@ -1,7 +1,5 @@
 ---
 title: An invitation to PostgreSQL community members
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/21/an-invitation-to-postgresql-community-members/
 categories:
   - Conferences

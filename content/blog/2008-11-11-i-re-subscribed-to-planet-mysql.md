@@ -1,7 +1,5 @@
 ---
 title: I re-subscribed to Planet MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2008/11/11/i-re-subscribed-to-planet-mysql/
 categories:
   - SQL

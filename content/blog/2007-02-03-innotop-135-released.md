@@ -1,8 +1,5 @@
 ---
 title: innotop 1.3.5 released
-author: Baron Schwartz
-excerpt: "<p>innotop 1.3.5 is the latest release of the increasingly popular MySQL and InnoDB monitor.  I recommend everyone upgrade to this release.  Aside from incomplete documentation, it's close to a stable 1.4 release (I'm counting on you to find the bugs!).  There are many significant new features since version 1.3, which make it more powerful and easier to use.</p>"
-layout: post
 permalink: /2007/02/03/innotop-135-released/
 description:
   - >

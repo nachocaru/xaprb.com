@@ -1,7 +1,5 @@
 ---
 title: Why high-availability is hard with databases
-author: Baron Schwartz
-layout: post
 permalink: /2010/04/26/why-high-availability-is-hard-with-databases/
 categories:
   - High Availability

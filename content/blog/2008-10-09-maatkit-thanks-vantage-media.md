@@ -1,7 +1,5 @@
 ---
 title: Maatkit thanks Vantage Media
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/09/maatkit-thanks-vantage-media/
 categories:
   - Maatkit

@@ -1,7 +1,5 @@
 ---
 title: News on MySQL Cacti Templates
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/09/news-on-mysql-cacti-templates/
 categories:
   - SQL

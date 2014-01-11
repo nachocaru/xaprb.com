@@ -1,7 +1,5 @@
 ---
 title: How to emulate the TYPEOF() function in MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2008/08/13/how-to-emulate-the-typeof-function-in-mysql/
 description:
   - >

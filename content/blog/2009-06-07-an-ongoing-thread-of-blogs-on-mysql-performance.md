@@ -1,7 +1,5 @@
 ---
 title: An ongoing thread of blogs on MySQL performance
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/07/an-ongoing-thread-of-blogs-on-mysql-performance/
 categories:
   - SQL

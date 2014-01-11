@@ -1,8 +1,5 @@
 ---
 title: A PHP implementation of the XML DOM
-author: Baron Schwartz
-excerpt: '<p>Several years ago I wrote a pure PHP library for manipulating XML documents with the Document Object Model (DOM) in PHP 4, without external libraries such as libxml. This is often useful on shared hosting providers, where you canâ€™t get C extensions installed. The library uses PHP4â€™s built-in SAX functions, which are enabled by default. Today Iâ€™m re-releasing this library under the LGPL.</p>'
-layout: post
 permalink: /2006/10/31/dom4php-a-php-dom-implementation/
 description:
   - >

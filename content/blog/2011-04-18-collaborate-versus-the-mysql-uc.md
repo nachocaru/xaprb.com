@@ -1,7 +1,5 @@
 ---
 title: Collaborate versus the MySQL UC
-author: Baron Schwartz
-layout: post
 permalink: /2011/04/18/collaborate-versus-the-mysql-uc/
 categories:
   - Conferences

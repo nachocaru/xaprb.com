@@ -1,7 +1,5 @@
 ---
 title: Solving repetitive strain injury from typing
-author: Baron Schwartz
-layout: post
 permalink: /2012/11/02/solving-repetitive-strain-injury-from-typing/
 categories:
   - Health

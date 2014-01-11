@@ -1,7 +1,5 @@
 ---
 title: PostgreSQL Conference East 2009, Day Three
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/05/postgresql-conference-east-2009-day-three/
 categories:
   - Conferences

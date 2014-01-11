@@ -1,7 +1,5 @@
 ---
 title: Blackhole tables and auto-increment keys
-author: Baron Schwartz
-layout: post
 permalink: /2011/10/19/blackhole-tables-and-auto-increment-keys/
 categories:
   - SQL

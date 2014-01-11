@@ -1,7 +1,5 @@
 ---
 title: Why MySQL replication is better than mysqlbinlog for recovery
-author: Baron Schwartz
-layout: post
 permalink: /2010/09/04/why-mysql-replication-is-better-than-mysqlbinlog-for-recovery/
 categories:
   - SQL

@@ -1,8 +1,5 @@
 ---
 title: How to simulate the GROUP_CONCAT function
-author: Baron Schwartz
-excerpt: '<p>MySQL 4.1 adds a number of new aggregate functions, among them GROUP_CONCAT.  It is possible to get similar results from earlier versions with a local variable.  This trick also works for Microsoft SQL Server.</p>'
-layout: post
 permalink: /2005/09/28/simulating-the-group-concat-function/
 description:
   - 'Shows how to simulate GROUP_CONCAT in earlier versions of MySQL.  Plus, tips for MS SQL Server.'

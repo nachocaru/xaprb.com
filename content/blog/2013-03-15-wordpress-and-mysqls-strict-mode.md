@@ -1,7 +1,5 @@
 ---
 title: "WordPress and MySQL's strict mode"
-author: Baron Schwartz
-layout: post
 permalink: /2013/03/15/wordpress-and-mysqls-strict-mode/
 categories:
   - SQL

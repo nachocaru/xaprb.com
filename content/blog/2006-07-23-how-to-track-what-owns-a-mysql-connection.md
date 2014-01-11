@@ -1,8 +1,5 @@
 ---
 title: How to track what owns a MySQL connection
-author: Baron Schwartz
-excerpt: "<p>MySQL doesn't yet provide good tools for some troubleshooting tasks.  Fortunately, there is some low-hanging fruit you can pluck.  One example is a tool to record who owns a MySQL database connection, so long-running transactions can be traced back to the source.  This article demonstrates an easy way to solve that problem.</p>"
-layout: post
 permalink: /2006/07/23/how-to-track-what-owns-a-mysql-connection/
 description:
   - >

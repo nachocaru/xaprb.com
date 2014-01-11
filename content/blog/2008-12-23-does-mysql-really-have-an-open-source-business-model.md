@@ -1,7 +1,5 @@
 ---
 title: Does MySQL really have an open-source business model?
-author: Baron Schwartz
-layout: post
 permalink: /2008/12/23/does-mysql-really-have-an-open-source-business-model/
 categories:
   - Commentary

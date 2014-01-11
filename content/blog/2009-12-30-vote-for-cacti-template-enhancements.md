@@ -1,7 +1,5 @@
 ---
 title: Vote for Cacti template enhancements
-author: Baron Schwartz
-layout: post
 permalink: /2009/12/30/vote-for-cacti-template-enhancements/
 categories:
   - SQL

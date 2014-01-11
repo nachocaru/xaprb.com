@@ -1,7 +1,5 @@
 ---
 title: How was MySQL Connect?
-author: Baron Schwartz
-layout: post
 permalink: /2012/12/06/how-was-mysql-connect/
 categories:
   - SQL

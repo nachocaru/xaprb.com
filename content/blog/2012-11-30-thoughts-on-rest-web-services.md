@@ -1,7 +1,5 @@
 ---
 title: Thoughts on REST web services
-author: Baron Schwartz
-layout: post
 permalink: /2012/11/30/thoughts-on-rest-web-services/
 categories:
   - Internet

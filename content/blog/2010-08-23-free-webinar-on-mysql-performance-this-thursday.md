@@ -1,7 +1,5 @@
 ---
 title: Free webinar on MySQL performance this Thursday
-author: Baron Schwartz
-layout: post
 permalink: /2010/08/23/free-webinar-on-mysql-performance-this-thursday/
 categories:
   - Conferences

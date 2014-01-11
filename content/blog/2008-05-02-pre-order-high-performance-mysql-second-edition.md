@@ -1,7 +1,5 @@
 ---
 title: Pre-Order High Performance MySQL Second Edition
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/02/pre-order-high-performance-mysql-second-edition/
 categories:
   - High Performance MySQL

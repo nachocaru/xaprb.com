@@ -1,7 +1,5 @@
 ---
 title: Updated spam controls
-author: Baron Schwartz
-layout: post
 permalink: /2013/02/18/updated-spam-controls/
 categories:
   - About

@@ -1,7 +1,5 @@
 ---
 title: Learn about Maatkit at the MySQL Conference
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/17/learn-about-maatkit-at-the-mysql-conference/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: Trending data with a moving average
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/29/trending-data-with-a-moving-average/
 categories:
   - SQL

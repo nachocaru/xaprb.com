@@ -1,8 +1,5 @@
 ---
 title: How to do efficient forward-only SQL maintenance jobs
-author: Baron Schwartz
-excerpt: '<p>Iâ€™ve recently written about techniques for archiving, purging, and re-indexing huge database tables. These techniques exploit both data structure and usage patterns. In this article Iâ€™ll develop that theme further, and explain how to write more efficient non-backtracking maintenance jobs when the update and insertion patterns permit.</p>'
-layout: post
 permalink: /2006/06/21/forward-only-sql-maintenance-jobs/
 description:
   - >

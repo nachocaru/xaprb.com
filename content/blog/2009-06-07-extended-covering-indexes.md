@@ -1,7 +1,5 @@
 ---
 title: Extended covering indexes
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/07/extended-covering-indexes/
 categories:
   - SQL

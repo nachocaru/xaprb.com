@@ -1,8 +1,5 @@
 ---
 title: MySQL Toolkit version 989 released
-author: Baron Schwartz
-excerpt: '<p>MySQL Parallel Dump can now dump a single table simultaneously into many files of a user-specifed size.  This not only helps speed dumps, but it paves the way for much more efficient parallel restores.  Read on for the details.</p>'
-layout: post
 permalink: /2007/10/03/mysql-toolkit-version-989-released/
 description:
   - >

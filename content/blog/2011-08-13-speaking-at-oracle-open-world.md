@@ -1,7 +1,5 @@
 ---
 title: Speaking at Oracle Open World
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/13/speaking-at-oracle-open-world/
 categories:
   - Conferences

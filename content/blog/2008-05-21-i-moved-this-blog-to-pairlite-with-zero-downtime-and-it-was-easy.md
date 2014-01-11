@@ -1,7 +1,5 @@
 ---
 title: I moved this blog to pairLite with zero downtime, and it was easy
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/21/i-moved-this-blog-to-pairlite-with-zero-downtime-and-it-was-easy/
 description:
   - Hiring an expert can be the biggest money saver ever.

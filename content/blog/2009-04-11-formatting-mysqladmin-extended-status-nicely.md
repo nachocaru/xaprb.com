@@ -1,7 +1,5 @@
 ---
 title: Formatting mysqladmin extended-status nicely
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/11/formatting-mysqladmin-extended-status-nicely/
 categories:
   - Coding

@@ -1,9 +1,6 @@
 ---
 title: "Permit Cookies: a Firefox extension that makes cookie whitelisting easy"
-author: Baron Schwartz
-excerpt: |
   <p>I've been writing a lot lately about Perl, MySQL and so forth, and neglecting another topic that interests me: the Web.  I'm going to finish and publish some of the drafts I have on the Web before I continue with another massive database marathon.  This one is about someone who read my mind and built exactly the Firefox extension I was about to build myself: an <a href="http://addons.mozilla.org/firefox/44/">easy way to block all cookies and allow them on a case-by-case basis without nagging</a>.</p>
-layout: post
 permalink: >
   /2006/10/23/permit-cookies-a-firefox-extension-that-makes-cookie-whitelisting-easy/
 description:

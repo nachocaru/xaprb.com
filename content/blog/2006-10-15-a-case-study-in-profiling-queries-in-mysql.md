@@ -1,8 +1,5 @@
 ---
 title: A case study in profiling queries in MySQL
-author: Baron Schwartz
-excerpt: "<p>This is the second in a series of articles on profiling queries in MySQL.  In this article I'll demonstrate the technique I described in the first article.</p>"
-layout: post
 permalink: /2006/10/15/a-case-study-in-profiling-queries-in-mysql/
 description:
   - >

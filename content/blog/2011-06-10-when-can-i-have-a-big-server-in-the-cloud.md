@@ -1,7 +1,5 @@
 ---
 title: When can I have a big server in the cloud?
-author: Baron Schwartz
-layout: post
 permalink: /2011/06/10/when-can-i-have-a-big-server-in-the-cloud/
 categories:
   - High Availability

@@ -1,7 +1,5 @@
 ---
 title: Modeling scalability with the USL at concurrencies less than 1
-author: Baron Schwartz
-layout: post
 permalink: /2013/01/05/modeling-scalability-with-the-usl-at-concurrencies-less-than-1/
 categories:
   - Scalability

@@ -1,7 +1,5 @@
 ---
 title: Adaptive fault detection in MySQL servers
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/02/adaptive-fault-detection-in-mysql-servers/
 categories:
   - SQL

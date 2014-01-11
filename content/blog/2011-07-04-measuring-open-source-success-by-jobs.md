@@ -1,7 +1,5 @@
 ---
 title: Measuring open-source success by jobs
-author: Baron Schwartz
-layout: post
 permalink: /2011/07/04/measuring-open-source-success-by-jobs/
 categories:
   - Commentary

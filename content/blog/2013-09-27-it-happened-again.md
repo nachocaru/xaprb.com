@@ -1,7 +1,5 @@
 ---
 title: It happened again
-author: Baron Schwartz
-layout: post
 permalink: /2013/09/27/it-happened-again/
 categories:
   - SQL

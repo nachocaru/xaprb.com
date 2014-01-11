@@ -1,7 +1,5 @@
 ---
 title: MyISAM quote of the day
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/18/myisam-quote-of-the-day/
 categories:
   - SQL

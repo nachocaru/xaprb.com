@@ -1,7 +1,5 @@
 ---
 title: OpenSQL Camp 2009 plans announced
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/09/opensql-camp-2009-plans-announced/
 categories:
   - OpenSQL Camp

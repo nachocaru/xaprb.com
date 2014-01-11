@@ -1,8 +1,5 @@
 ---
 title: How to use ORDER BY and LIMIT on multi-table updates in MySQL
-author: Baron Schwartz
-excerpt: '<p>One of my colleagues recently redesigned a system to schedule work for programs to do, and needed to write a multiple-table <code>UPDATE</code> with <code>ORDER BY</code> and <code>LIMIT</code>, neither of which is supported for multiple-table UPDATE in MySQL.  This article explains how to do it anyway, and shows how to rewrite a first attempt for hundreds of times better performance.</p>'
-layout: post
 permalink: /2006/08/10/how-to-use-order-by-and-limit-on-multi-table-updates-in-mysql/
 description:
   - >

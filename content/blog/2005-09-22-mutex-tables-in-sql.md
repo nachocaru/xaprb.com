@@ -1,8 +1,5 @@
 ---
 title: Mutex tables in SQL
-author: Baron Schwartz
-excerpt: '<p>A "mutex" table is a clever trick that allows joining tables while keeping them independent of each other in a query.  This property allows interesting queries that are not otherwise possible.</p>'
-layout: post
 permalink: /2005/09/22/mutex-tables-in-sql/
 description:
   - 'A mutex table enables UNION, FULL JOIN,  and subqueries where they are not supported, for example on earlier versions of MySQL.'

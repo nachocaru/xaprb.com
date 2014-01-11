@@ -1,7 +1,5 @@
 ---
 title: A review of Understanding MySQL Internals by Sasha Pachev
-author: Baron Schwartz
-layout: post
 permalink: /2010/02/19/a-review-of-understanding-mysql-internals-by-sasha-pachev/
 categories:
   - Review

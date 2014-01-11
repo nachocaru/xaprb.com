@@ -1,8 +1,5 @@
 ---
 title: MySQL Find 0.9.0 released
-author: Baron Schwartz
-excerpt: "<p>If you've used the UNIX <code>find</code> command for more than a trivial find-and-print, you know how powerful it is; it's almost a miniature programming environment to find and manipulate files and directories.  What if you could do the same thing with MySQL tables and databases?  That was the inspiration for writing this tool.  I was about to write several other tools to do some MySQL administrative jobs when I realized I could generalize and make something much more useful and powerful.</p>"
-layout: post
 permalink: /2007/05/08/mysql-find-090-released/
 description:
   - >

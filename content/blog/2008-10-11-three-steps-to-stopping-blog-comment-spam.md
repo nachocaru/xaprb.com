@@ -1,7 +1,5 @@
 ---
 title: Three steps to stopping blog comment spam
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/11/three-steps-to-stopping-blog-comment-spam/
 categories:
   - SQL

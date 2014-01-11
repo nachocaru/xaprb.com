@@ -1,7 +1,5 @@
 ---
 title: Designing a database interface for programmers
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/22/designing-a-database-interface-for-programmers/
 categories:
   - Go

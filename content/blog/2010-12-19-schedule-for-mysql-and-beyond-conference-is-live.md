@@ -1,7 +1,5 @@
 ---
 title: Schedule for MySQL-and-beyond conference is live
-author: Baron Schwartz
-layout: post
 permalink: /2010/12/19/schedule-for-mysql-and-beyond-conference-is-live/
 categories:
   - Conferences

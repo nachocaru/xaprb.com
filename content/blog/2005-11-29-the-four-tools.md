@@ -1,8 +1,5 @@
 ---
 title: The four essential tools for software engineers
-author: Baron Schwartz
-excerpt: "<p>I rarely blog on other people's content, but I can't agree more strongly with this list of essential tools for software engineering</a>.</p>"
-layout: post
 permalink: /2005/11/29/the-four-tools/
 ---
 I rarely blog on other people's content, but I can't agree more strongly with this [list of essential tools for software engineering][1]:

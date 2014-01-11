@@ -1,7 +1,5 @@
 ---
 title: OpenSQL Camp events in 2009
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/29/opensql-camp-events-in-2009/
 categories:
   - Conferences

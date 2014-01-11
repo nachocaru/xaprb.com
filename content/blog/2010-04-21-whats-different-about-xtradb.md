@@ -1,7 +1,5 @@
 ---
 title: "What's different about XtraDB?"
-author: Baron Schwartz
-layout: post
 permalink: /2010/04/21/whats-different-about-xtradb/
 categories:
   - Conferences

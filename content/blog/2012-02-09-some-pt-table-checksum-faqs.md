@@ -1,7 +1,5 @@
 ---
 title: Some pt-table-checksum FAQs
-author: Baron Schwartz
-layout: post
 permalink: /2012/02/09/some-pt-table-checksum-faqs/
 categories:
   - SQL

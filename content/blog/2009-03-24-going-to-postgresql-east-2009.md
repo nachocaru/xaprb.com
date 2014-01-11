@@ -1,7 +1,5 @@
 ---
 title: Going to PostgreSQL East 2009
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/24/going-to-postgresql-east-2009/
 categories:
   - Conferences

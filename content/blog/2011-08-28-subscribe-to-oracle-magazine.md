@@ -1,7 +1,5 @@
 ---
 title: Subscribe to Oracle Magazine
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/28/subscribe-to-oracle-magazine/
 categories:
   - Oracle

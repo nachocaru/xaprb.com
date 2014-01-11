@@ -1,7 +1,5 @@
 ---
 title: Failure scenarios and solutions in master-master replication
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/30/failure-scenarios-and-solutions-in-master-master-replication/
 categories:
   - SQL

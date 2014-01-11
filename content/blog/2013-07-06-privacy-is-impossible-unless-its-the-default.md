@@ -1,7 +1,5 @@
 ---
 title: "Privacy is impossible unless it's the default"
-author: Baron Schwartz
-layout: post
 permalink: /2013/07/06/privacy-is-impossible-unless-its-the-default/
 categories:
   - Commentary

@@ -1,7 +1,5 @@
 ---
 title: Book your Surge hotel now
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/13/book-your-surge-hotel-now/
 categories:
   - Conferences

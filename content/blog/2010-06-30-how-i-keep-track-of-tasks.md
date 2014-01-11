@@ -1,7 +1,5 @@
 ---
 title: How I keep track of tasks
-author: Baron Schwartz
-layout: post
 permalink: /2010/06/30/how-i-keep-track-of-tasks/
 categories:
   - Commentary

@@ -1,7 +1,5 @@
 ---
 title: Version 1.1.3 of improved Cacti graphs for MySQL released
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/24/version-1-1-3-of-improved-cacti-graphs-for-mysql-released/
 categories:
   - PHP

@@ -1,7 +1,5 @@
 ---
 title: The state of MySQL client libraries
-author: Baron Schwartz
-layout: post
 permalink: /2012/12/26/the-state-of-mysql-client-libraries/
 categories:
   - Drizzle

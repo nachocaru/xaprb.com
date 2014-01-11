@@ -1,7 +1,5 @@
 ---
 title: Using Aspersa to capture diagnostic data
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/07/using-aspersa-to-capture-diagnostic-data/
 categories:
   - Aspersa

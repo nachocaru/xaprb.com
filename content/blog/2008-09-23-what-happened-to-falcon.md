@@ -1,7 +1,5 @@
 ---
 title: What happened to Falcon?
-author: Baron Schwartz
-layout: post
 permalink: /2008/09/23/what-happened-to-falcon/
 categories:
   - SQL

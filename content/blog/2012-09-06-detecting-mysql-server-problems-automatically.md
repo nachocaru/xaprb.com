@@ -1,7 +1,5 @@
 ---
 title: Detecting MySQL server problems automatically
-author: Baron Schwartz
-layout: post
 permalink: /2012/09/06/detecting-mysql-server-problems-automatically/
 categories:
   - SQL

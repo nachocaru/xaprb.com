@@ -1,7 +1,5 @@
 ---
 title: Improved Cacti monitoring templates for MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2008/04/27/improved-cacti-monitoring-templates-for-mysql/
 categories:
   - SQL

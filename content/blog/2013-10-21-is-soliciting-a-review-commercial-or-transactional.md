@@ -1,7 +1,5 @@
 ---
 title: Is soliciting a review commercial or transactional?
-author: Baron Schwartz
-layout: post
 permalink: /2013/10/21/is-soliciting-a-review-commercial-or-transactional/
 categories:
   - Commentary

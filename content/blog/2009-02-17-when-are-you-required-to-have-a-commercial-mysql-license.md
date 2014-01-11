@@ -1,7 +1,5 @@
 ---
 title: When are you required to have a commercial MySQL license?
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/17/when-are-you-required-to-have-a-commercial-mysql-license/
 categories:
   - SQL

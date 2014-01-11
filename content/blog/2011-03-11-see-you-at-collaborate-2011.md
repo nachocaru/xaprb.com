@@ -1,7 +1,5 @@
 ---
 title: See you at Collaborate 2011
-author: Baron Schwartz
-layout: post
 permalink: /2011/03/11/see-you-at-collaborate-2011/
 categories:
   - Conferences

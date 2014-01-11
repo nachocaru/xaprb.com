@@ -1,7 +1,5 @@
 ---
 title: What should a DBA do?
-author: Baron Schwartz
-layout: post
 permalink: /2012/09/03/what-should-a-dba-do/
 categories:
   - SQL

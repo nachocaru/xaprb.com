@@ -1,7 +1,5 @@
 ---
 title: MySQL and PostgreSQL cross-links
-author: Baron Schwartz
-layout: post
 permalink: /2011/02/03/mysql-and-postgresql-cross-links/
 categories:
   - PostgreSQL

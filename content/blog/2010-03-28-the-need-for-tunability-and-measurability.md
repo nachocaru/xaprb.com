@@ -1,7 +1,5 @@
 ---
 title: The need for tunability and measurability
-author: Baron Schwartz
-layout: post
 permalink: /2010/03/28/the-need-for-tunability-and-measurability/
 categories:
   - PostgreSQL

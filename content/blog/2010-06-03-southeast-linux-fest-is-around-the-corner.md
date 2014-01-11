@@ -1,7 +1,5 @@
 ---
 title: Southeast Linux Fest is around the corner
-author: Baron Schwartz
-layout: post
 permalink: /2010/06/03/southeast-linux-fest-is-around-the-corner/
 categories:
   - Conferences

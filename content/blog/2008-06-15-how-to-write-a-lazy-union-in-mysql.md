@@ -1,7 +1,5 @@
 ---
 title: How to write a lazy UNION in MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2008/06/15/how-to-write-a-lazy-union-in-mysql/
 description:
   - A lazy UNION stops executing as soon as one part of it finds a row.

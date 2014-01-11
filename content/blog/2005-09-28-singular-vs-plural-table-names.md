@@ -1,8 +1,5 @@
 ---
 title: Singular vs. plural table names
-author: Baron Schwartz
-excerpt: "<p>Is it better to name SQL tables with singular or plural names?  I've found that plural table names cause problems naming related objects, such as indexes and foreign keys.</p>"
-layout: post
 permalink: /2005/09/28/singular-vs-plural-table-names/
 ---
 Is it better to name SQL tables with singular or plural names? In my opinion, the most important thing to do is pick one and stick to it. Programmers will always argue about singular vs. plural, and it is possible to make a valid case for both.

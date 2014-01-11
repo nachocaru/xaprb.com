@@ -1,7 +1,5 @@
 ---
 title: Aspersa gets a user manual
-author: Baron Schwartz
-layout: post
 permalink: /2010/09/22/aspersa-gets-a-user-manual/
 categories:
   - Aspersa

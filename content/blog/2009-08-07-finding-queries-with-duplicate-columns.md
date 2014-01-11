@@ -1,7 +1,5 @@
 ---
 title: Finding queries with duplicate columns
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/07/finding-queries-with-duplicate-columns/
 categories:
   - Maatkit

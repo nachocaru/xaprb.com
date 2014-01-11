@@ -1,7 +1,5 @@
 ---
 title: Agile project management tools
-author: Baron Schwartz
-layout: post
 permalink: /2013/05/23/agile-project-management-tools/
 categories:
   - Coding

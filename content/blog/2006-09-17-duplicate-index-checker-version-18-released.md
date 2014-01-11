@@ -1,9 +1,6 @@
 ---
 title: Duplicate index checker version 1.8 released
-author: Baron Schwartz
-excerpt: |
   <p>What was a 5-minute script has become a bigger project.  I've made more improvements to the <a href="http://www.xaprb.com/blog/2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/">duplicate index checker</a>.  Soon it will require product activation and have security vulnerabilities every week.  Seriously: this is the third iteration, and <a href="http://c2.com/cgi/wiki?ThreeStrikesAndYouAutomate">three strikes and you automate</a>, so I automated.  I have a test suite now (your contributions welcome), and I addressed two shortcomings readers pointed out in comments on the original article.  You now get better foreign key checking, and FULLTEXT indexes are ignored.</p>
-layout: post
 permalink: /2006/09/17/duplicate-index-checker-version-18-released/
 description:
   - >

@@ -1,7 +1,5 @@
 ---
 title: "Determining the Universal Scalability Law's coefficient of performance"
-author: Baron Schwartz
-layout: post
 permalink: >
   /2013/01/02/determining-the-universal-scalability-laws-coefficient-of-performance/
 categories:

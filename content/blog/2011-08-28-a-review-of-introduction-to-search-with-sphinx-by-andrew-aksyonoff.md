@@ -1,7 +1,5 @@
 ---
 title: A review of Introduction to Search with Sphinx by Andrew Aksyonoff
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/28/a-review-of-introduction-to-search-with-sphinx-by-andrew-aksyonoff/
 categories:
   - Sphinx

@@ -1,7 +1,5 @@
 ---
 title: "MySQL: Free Software but not Open Source"
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/14/mysql-free-software-but-not-open-source/
 tags:
   - development

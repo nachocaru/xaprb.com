@@ -1,7 +1,5 @@
 ---
 title: Speaking at the Shenandoah Ruby Users Group
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/14/speaking-at-the-shenandoah-ruby-users-group/
 categories:
   - SQL

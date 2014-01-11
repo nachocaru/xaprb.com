@@ -1,7 +1,5 @@
 ---
 title: I want simple things to be easy
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/13/i-want-simple-things-to-be-easy/
 categories:
   - SQL

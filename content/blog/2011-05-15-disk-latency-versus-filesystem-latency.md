@@ -1,7 +1,5 @@
 ---
 title: Disk latency versus filesystem latency
-author: Baron Schwartz
-layout: post
 permalink: /2011/05/15/disk-latency-versus-filesystem-latency/
 categories:
   - SQL

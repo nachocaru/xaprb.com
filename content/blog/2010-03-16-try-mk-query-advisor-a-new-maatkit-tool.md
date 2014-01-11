@@ -1,7 +1,5 @@
 ---
 title: Try mk-query-advisor, a new Maatkit tool
-author: Baron Schwartz
-layout: post
 permalink: /2010/03/16/try-mk-query-advisor-a-new-maatkit-tool/
 categories:
   - Maatkit

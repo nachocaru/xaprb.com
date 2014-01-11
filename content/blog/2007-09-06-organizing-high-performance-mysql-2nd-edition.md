@@ -1,8 +1,5 @@
 ---
 title: Organizing High Performance MySQL, 2nd Edition
-author: Baron Schwartz
-excerpt: "<p>I mentioned earlier that I'd blog about progress on the book as we go.  It's not only progress on the book itself -- I want to write about the process of writing, because I think it's very interesting and relevant to software engineering.  I'm finding a lot of the work in writing a book comes from some of the same things that make software hard: coordinating work, deciding what should go where, and so on.</p>"
-layout: post
 permalink: /2007/09/06/organizing-high-performance-mysql-2nd-edition/
 description:
   - >

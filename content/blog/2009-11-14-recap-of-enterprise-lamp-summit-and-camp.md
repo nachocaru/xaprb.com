@@ -1,7 +1,5 @@
 ---
 title: Recap of Enterprise LAMP Summit and Camp
-author: Baron Schwartz
-layout: post
 permalink: /2009/11/14/recap-of-enterprise-lamp-summit-and-camp/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: Have you tested pt-online-schema-change?
-author: Baron Schwartz
-layout: post
 permalink: /2012/05/22/have-you-tested-pt-online-schema-change/
 categories:
   - SQL

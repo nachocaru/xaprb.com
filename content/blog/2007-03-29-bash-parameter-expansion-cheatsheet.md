@@ -1,8 +1,5 @@
 ---
 title: Bash parameter expansion cheatsheet
-author: Baron Schwartz
-excerpt: "<p>The bash shell has a powerful parameter expansion syntax, but it's complex and hard to remember.  I always forget which syntax does what, even though I use it all the time for scripts and one-off jobs.  Unfortunately, I find the man page unhelpful as a reference, so I've made a cheat sheet for myself.  Perhaps you'll find it useful too.</p>"
-layout: post
 permalink: /2007/03/29/bash-parameter-expansion-cheatsheet/
 description:
   - >

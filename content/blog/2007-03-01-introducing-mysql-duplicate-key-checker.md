@@ -1,8 +1,5 @@
 ---
 title: Introducing MySQL Duplicate Key Checker
-author: Baron Schwartz
-excerpt: "<p>I've just released MySQL Duplicate Key Checker on SourceForge.  This is a complete rewrite of a tool I initially released under a slightly different name.  It is now much more powerful and friendlier to use, especially for scripting, and has many more options.</p>"
-layout: post
 permalink: /2007/03/01/introducing-mysql-duplicate-key-checker/
 description:
   - >

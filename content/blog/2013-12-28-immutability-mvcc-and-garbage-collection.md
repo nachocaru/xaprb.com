@@ -1,7 +1,5 @@
 ---
 title: Immutability, MVCC, and garbage collection
-author: Baron Schwartz
-layout: post
 permalink: /2013/12/28/immutability-mvcc-and-garbage-collection/
 dsq_needs_sync:
   - 1

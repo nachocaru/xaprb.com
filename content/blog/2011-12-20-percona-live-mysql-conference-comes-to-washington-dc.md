@@ -1,7 +1,5 @@
 ---
 title: Percona Live MySQL Conference comes to Washington DC
-author: Baron Schwartz
-layout: post
 permalink: /2011/12/20/percona-live-mysql-conference-comes-to-washington-dc/
 categories:
   - Conferences

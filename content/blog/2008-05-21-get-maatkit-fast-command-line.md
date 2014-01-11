@@ -1,7 +1,5 @@
 ---
 title: Get Maatkit fast from the command line
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/21/get-maatkit-fast-command-line/
 tags:
   - Apache

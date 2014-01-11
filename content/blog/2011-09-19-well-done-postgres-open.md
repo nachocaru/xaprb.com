@@ -1,7 +1,5 @@
 ---
 title: Well done, Postgres Open
-author: Baron Schwartz
-layout: post
 permalink: /2011/09/19/well-done-postgres-open/
 categories:
   - Conferences

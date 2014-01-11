@@ -1,7 +1,5 @@
 ---
 title: How to use MySQL binlogs to undo a DROP statement
-author: Baron Schwartz
-layout: post
 permalink: /2009/01/01/how-to-use-mysql-binlogs-to-undo-a-drop-statement/
 categories:
   - SQL

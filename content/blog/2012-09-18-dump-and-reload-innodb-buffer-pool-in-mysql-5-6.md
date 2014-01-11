@@ -1,7 +1,5 @@
 ---
 title: Dump and reload InnoDB buffer pool in MySQL 5.6
-author: Baron Schwartz
-layout: post
 permalink: /2012/09/18/dump-and-reload-innodb-buffer-pool-in-mysql-5-6/
 categories:
   - SQL

@@ -1,9 +1,6 @@
 ---
 title: Version 0.1.146 of innotop released
-author: Baron Schwartz
-excerpt: |
   <p>I've released version 0.1.146 of the innotop MySQL and InnoDB monitor.  You can <a href="http://www.xaprb.com/innotop/">download innotop from its homepage</a>.</p>
-layout: post
 permalink: /2006/08/19/version-01146-of-innotop-released/
 description:
   - Version 0.1.146 of the innotop InnoDB and MySQL monitor is available.

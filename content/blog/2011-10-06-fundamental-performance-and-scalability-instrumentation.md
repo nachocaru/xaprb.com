@@ -1,7 +1,5 @@
 ---
 title: Fundamental performance and scalability instrumentation
-author: Baron Schwartz
-layout: post
 permalink: /2011/10/06/fundamental-performance-and-scalability-instrumentation/
 categories:
   - Conferences

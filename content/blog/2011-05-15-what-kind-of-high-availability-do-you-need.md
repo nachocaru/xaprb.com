@@ -1,7 +1,5 @@
 ---
 title: What kind of High Availability do you need?
-author: Baron Schwartz
-layout: post
 permalink: /2011/05/15/what-kind-of-high-availability-do-you-need/
 categories:
   - SQL

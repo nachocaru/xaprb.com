@@ -1,8 +1,5 @@
 ---
 title: How to install innotop
-author: Baron Schwartz
-excerpt: '<p>This is the first in a series of articles Iâ€™ll write on how to use innotop, the MySQL and InnoDB monitor Iâ€™m developing. This article explains how to install innotop.</p>'
-layout: post
 permalink: /2006/07/28/how-to-install-innotop/
 description:
   - Installation instructions for the innotop MySQL and InnoDB monitoring tool.

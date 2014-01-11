@@ -1,8 +1,5 @@
 ---
 title: What is a SQL blind insert?
-author: Baron Schwartz
-excerpt: "<p>SQL blind inserts are a common mistake, but they're easily avoided.  This article explains what blind inserts are and how to avoid them, as well as dispelling a common misconception about how to avoid them.</p>"
-layout: post
 permalink: /2006/07/07/what-is-a-sql-blind-insert/
 description:
   - >

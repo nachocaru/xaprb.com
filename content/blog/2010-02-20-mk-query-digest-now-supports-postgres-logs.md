@@ -1,7 +1,5 @@
 ---
 title: mk-query-digest now supports Postgres logs
-author: Baron Schwartz
-layout: post
 permalink: /2010/02/20/mk-query-digest-now-supports-postgres-logs/
 categories:
   - Coding

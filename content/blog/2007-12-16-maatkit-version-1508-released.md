@@ -1,8 +1,5 @@
 ---
 title: Maatkit version 1508 released
-author: Baron Schwartz
-excerpt: "<p>This release fixes a few bugs, adds minor features, and adds some debugging support to shared code.  I'm working on the Nibble sync algorithm for mk-table-sync, and someone has found a few more bugs with mk-parallel-dump, but those might take me a while to complete.</p>"
-layout: post
 permalink: /2007/12/16/maatkit-version-1508-released/
 description:
   - Minor bug fixes for Maatkit

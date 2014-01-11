@@ -1,7 +1,5 @@
 ---
 title: Strangest datetime format ever
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/19/strangest-datetime-format-ever/
 categories:
   - SQL

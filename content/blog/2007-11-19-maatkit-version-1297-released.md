@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 1297 released
-author: Baron Schwartz
-excerpt: |
   <p>Maatkit (formerly MySQL Toolkit) version 1297 contains a significant update to MySQL Table Checksum (which will be renamed soon to avoid trademark violations).  The changelog follows.  What you don't see in the changelog is <strong>the unit test suite!</strong>  I got a lot more of the code into modules that are tested and re-usable.</p>
   
   <pre>
@@ -21,7 +19,6 @@ excerpt: |
   * Code assumed backtick quoting, broke on SQL_MODE=ANSI (bug #1813030). 
   * There were many potential bugs with database and table name quoting. 
   * Child exit status errors could be masked by subsequent successes.</pre>
-layout: post
 permalink: /2007/11/19/maatkit-version-1297-released/
 description:
   - >

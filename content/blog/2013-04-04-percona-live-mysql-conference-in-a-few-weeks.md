@@ -1,7 +1,5 @@
 ---
 title: Percona Live MySQL Conference in a few weeks!
-author: Baron Schwartz
-layout: post
 permalink: /2013/04/04/percona-live-mysql-conference-in-a-few-weeks/
 categories:
   - SQL

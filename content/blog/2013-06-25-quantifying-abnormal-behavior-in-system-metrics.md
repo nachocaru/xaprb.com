@@ -1,7 +1,5 @@
 ---
 title: Quantifying Abnormal Behavior in System Metrics
-author: Baron Schwartz
-layout: post
 permalink: /2013/06/25/quantifying-abnormal-behavior-in-system-metrics/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: How scalable is Riak?
-author: Baron Schwartz
-layout: post
 permalink: /2013/01/28/how-scalable-is-riak/
 categories:
   - Riak

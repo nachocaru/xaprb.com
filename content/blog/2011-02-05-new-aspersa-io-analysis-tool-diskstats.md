@@ -1,7 +1,5 @@
 ---
 title: New Aspersa I/O analysis tool, diskstats
-author: Baron Schwartz
-layout: post
 permalink: /2011/02/05/new-aspersa-io-analysis-tool-diskstats/
 categories:
   - Aspersa

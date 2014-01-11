@@ -1,8 +1,5 @@
 ---
 title: innotop version 1.4.3 released
-author: Baron Schwartz
-excerpt: '<p>Version 1.4.3 of the innotop MySQL and InnoDB monitor is out.  This release fixes some minor bugs and feature annoyances, and at last innotop has thorough documentation, available online!</p>'
-layout: post
 permalink: /2007/07/15/innotop-version-143-released/
 description:
   - The new release of innotop fixes minor bugs and adds complete documentation

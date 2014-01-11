@@ -1,7 +1,5 @@
 ---
 title: Implementing SQL with Unix utilities
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/12/implementing-sql-with-unix-utilities/
 categories:
   - SQL

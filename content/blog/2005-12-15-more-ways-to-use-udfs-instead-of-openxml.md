@@ -1,8 +1,5 @@
 ---
 title: "More alternatives to <code>openxml</code>"
-author: Baron Schwartz
-excerpt: '<p>Here are some alternate usage scenarios for the UDF I wrote to avoid <code>openxml</code> in SQL Server 2000.</p>'
-layout: post
 permalink: /2005/12/15/more-ways-to-use-udfs-instead-of-openxml/
 ---
 Following up on my [earlier post][1], here are some alternate usage scenarios for the UDF I wrote to avoid `openxml` in SQL Server 2000.

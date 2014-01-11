@@ -1,7 +1,5 @@
 ---
 title: Learn how to achieve PCI compliance with MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2010/03/03/learn-how-to-achieve-pci-compliance-with-mysql/
 categories:
   - Conferences

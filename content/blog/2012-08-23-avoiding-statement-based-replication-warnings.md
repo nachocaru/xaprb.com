@@ -1,7 +1,5 @@
 ---
 title: Avoiding statement-based replication warnings
-author: Baron Schwartz
-layout: post
 permalink: /2012/08/23/avoiding-statement-based-replication-warnings/
 categories:
   - SQL

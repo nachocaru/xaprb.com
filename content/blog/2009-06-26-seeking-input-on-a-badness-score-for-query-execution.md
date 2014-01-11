@@ -1,7 +1,5 @@
 ---
 title: Seeking input on a badness score for query execution
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/26/seeking-input-on-a-badness-score-for-query-execution/
 categories:
   - Maatkit

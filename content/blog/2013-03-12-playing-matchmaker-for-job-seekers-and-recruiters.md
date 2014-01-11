@@ -1,7 +1,5 @@
 ---
 title: Playing matchmaker for job seekers and recruiters
-author: Baron Schwartz
-layout: post
 permalink: /2013/03/12/playing-matchmaker-for-job-seekers-and-recruiters/
 categories:
   - Commentary

@@ -1,7 +1,5 @@
 ---
 title: Using GPG in Gmail on a Mac
-author: Baron Schwartz
-layout: post
 permalink: /2013/10/24/using-gpg-in-gmail-on-a-mac/
 categories:
   - Desktop

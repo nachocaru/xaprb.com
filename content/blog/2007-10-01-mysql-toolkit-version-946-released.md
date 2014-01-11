@@ -1,8 +1,5 @@
 ---
 title: MySQL Toolkit version 946 released
-author: Baron Schwartz
-excerpt: '<p>This release of MySQL Toolkit adds a new parallel dump tool for multi-threaded backups, fixes some minor bugs, and adds new functionality to one of the helper scripts.</p>'
-layout: post
 permalink: /2007/10/01/mysql-toolkit-version-946-released/
 description:
   - >

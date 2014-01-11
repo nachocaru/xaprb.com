@@ -1,7 +1,5 @@
 ---
 title: Props to the MySQL Community Team
-author: Baron Schwartz
-layout: post
 permalink: /2013/12/07/props-to-the-mysql-community-team/
 categories:
   - SQL

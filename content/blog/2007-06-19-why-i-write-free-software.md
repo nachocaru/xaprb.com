@@ -1,9 +1,6 @@
 ---
 title: Why I write Free Software
-author: Baron Schwartz
-excerpt: |
   <p><a href="http://krow.livejournal.com/">Brian Aker</a> was a <a href="http://krow.livejournal.com/525716.html">recent guest on the LinuxCast podcast</a> with Don Marti.  Brian has some interesting thoughts in this podcast and elsewhere on his blog, on motivations for writing Free and/or Open Source software.  Here's why I do it myself.</p>
-layout: post
 permalink: /2007/06/19/why-i-write-free-software/
 description:
   - Why I release innotop and MySQL Toolkit as Free Software.

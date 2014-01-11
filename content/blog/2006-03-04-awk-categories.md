@@ -1,8 +1,5 @@
 ---
 title: How to flatten hierarchies with awk
-author: Baron Schwartz
-excerpt: "<p>Suppose you have a spreadsheet with columns of product category names and numbers.  The product hierarchy has two levels, indicated by writing top-level categories without numbers.  How do you flatten the hierarchy quickly for insertion into a relational database?  My solution is <code>awk</code>.  In this article I'll show you some sample data, demonstrate how to process and reformat it with <code>awk</code>, and explain how to avoid some basic pitfalls.</p>"
-layout: post
 permalink: /2006/03/04/awk-categories/
 description:
   - Explains how to use awk to quickly flatten or denormalize hierarchical data.

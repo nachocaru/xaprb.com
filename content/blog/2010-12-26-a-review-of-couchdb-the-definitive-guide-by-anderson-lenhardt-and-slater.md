@@ -1,7 +1,5 @@
 ---
 title: A review of CouchDB, the Definitive Guide by Anderson, Lenhardt, and Slater
-author: Baron Schwartz
-layout: post
 permalink: >
   /2010/12/26/a-review-of-couchdb-the-definitive-guide-by-anderson-lenhardt-and-slater/
 categories:

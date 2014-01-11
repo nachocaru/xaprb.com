@@ -1,7 +1,5 @@
 ---
 title: Sanity-check features in MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2009/12/25/sanity-check-features-in-mysql/
 categories:
   - SQL

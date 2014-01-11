@@ -1,8 +1,5 @@
 ---
 title: Benchmarks for DATE operations in MySQL
-author: Baron Schwartz
-excerpt: '<p>This article compares the relative speed of extracting the date part of a value in MySQL with <code>LEFT()</code> and with the <code>DATE()</code> function.</p>'
-layout: post
 permalink: /2006/06/12/benchmarks-for-date-operations-in-mysql/
 description:
   - >

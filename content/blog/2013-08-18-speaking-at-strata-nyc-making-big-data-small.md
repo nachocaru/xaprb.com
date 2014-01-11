@@ -1,7 +1,5 @@
 ---
 title: "Speaking at Strata NYC: Making Big Data Small"
-author: Baron Schwartz
-layout: post
 permalink: /2013/08/18/speaking-at-strata-nyc-making-big-data-small/
 categories:
   - Conferences

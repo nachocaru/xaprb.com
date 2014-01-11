@@ -1,7 +1,5 @@
 ---
 title: The partitioning improvement that almost was
-author: Baron Schwartz
-layout: post
 permalink: /2011/03/22/the-partitioning-improvement-that-almost-was/
 categories:
   - SQL

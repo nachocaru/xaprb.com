@@ -1,7 +1,5 @@
 ---
 title: "Seeing things from the user's point of view"
-author: Baron Schwartz
-layout: post
 permalink: /2013/03/04/seeing-things-from-the-users-point-of-view/
 categories:
   - Commentary

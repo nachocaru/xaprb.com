@@ -1,11 +1,8 @@
 ---
 title: How to sync tables in master-master MySQL replication
-author: Baron Schwartz
-excerpt: |
   <p>Suppose you have a master-master replication setup, and you know one of the tables has the wrong data.  How do you re-sync it with the other server?</p>
   
   <p><strong>Warning: don't just use any tool for this job</strong>!  You may destroy your good copy of the data.</p>
-layout: post
 permalink: /2008/02/29/how-to-sync-tables-in-master-master-mysql-replication/
 description:
   - 'There is only one correct way to sync data on a slave: change it on the master.  And only Maatkit knows how to do that.'

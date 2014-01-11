@@ -1,7 +1,5 @@
 ---
 title: Looking back at the MySQL news from last year
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/08/looking-back-at-the-mysql-news-from-last-year/
 categories:
   - SQL

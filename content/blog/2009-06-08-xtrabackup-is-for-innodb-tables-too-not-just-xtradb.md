@@ -1,7 +1,5 @@
 ---
 title: Xtrabackup is for InnoDB tables too, not just XtraDB
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/08/xtrabackup-is-for-innodb-tables-too-not-just-xtradb/
 categories:
   - SQL

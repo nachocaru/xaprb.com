@@ -1,7 +1,5 @@
 ---
 title: "Automated, integrated sharding &#8212; the new killer database feature"
-author: Baron Schwartz
-layout: post
 permalink: /2012/04/09/automated-integrated-sharding-the-new-killer-database-feature/
 categories:
   - SQL

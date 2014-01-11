@@ -1,13 +1,10 @@
 ---
 title: Stock images are too popular
-author: Baron Schwartz
-excerpt: |
   <p>I have an ingrained (possibly even genetic) aversion to stock images.  Actually, not all stock: just the vacuous kind.  You know what I mean: like  the  politically-correct, gender-balanced, racially-balanced, age-diverse ones where people are all smiling and pointing at a computer screen you can't see.  Ugh!</p>
   
   <p><img src='http://www.xaprb.com/blog/wp-content/uploads/2008/03/business_group_meeting.jpg' alt='Business Group Meeting' /></p>
   
   <p>(Photo credit: istockphoto.com)</p>
-layout: post
 permalink: /2008/03/27/stock-images-are-too-popular/
 description:
   - "Why vacuous stock is bad, and why it's even worse not to get exclusive rights to important images."

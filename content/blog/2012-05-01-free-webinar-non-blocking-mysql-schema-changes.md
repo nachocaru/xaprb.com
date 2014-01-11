@@ -1,7 +1,5 @@
 ---
 title: "Free webinar: non-blocking MySQL schema changes"
-author: Baron Schwartz
-layout: post
 permalink: /2012/05/01/free-webinar-non-blocking-mysql-schema-changes/
 categories:
   - SQL

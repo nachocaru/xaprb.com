@@ -1,7 +1,5 @@
 ---
 title: Why MySQL might not benefit from having a mother ship
-author: Baron Schwartz
-layout: post
 permalink: /2009/05/05/why-mysql-might-not-benefit-from-having-a-mother-ship/
 categories:
   - Commentary

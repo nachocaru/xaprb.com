@@ -1,7 +1,5 @@
 ---
 title: "Easy on the eyes: the solarized color theme"
-author: Baron Schwartz
-layout: post
 permalink: /2011/07/28/easy-on-the-eyes-the-solarized-color-theme/
 categories:
   - Desktop

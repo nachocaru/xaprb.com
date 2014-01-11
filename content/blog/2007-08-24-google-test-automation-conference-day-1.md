@@ -1,8 +1,5 @@
 ---
 title: Google Test Automation Conference, Day 1
-author: Baron Schwartz
-excerpt: "<p>I'm attending the Google Test Automation Conference (GTAC 2007) in Manhattan, New York right now.  It's a two-day single-track event hosted by Google, with mostly non-Google speakers.  It's okay, but not great.</p>"
-layout: post
 permalink: /2007/08/24/google-test-automation-conference-day-1/
 description:
   - >

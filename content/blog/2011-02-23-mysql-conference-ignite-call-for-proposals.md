@@ -1,7 +1,5 @@
 ---
 title: MySQL conference Ignite call for proposals
-author: Baron Schwartz
-layout: post
 permalink: /2011/02/23/mysql-conference-ignite-call-for-proposals/
 categories:
   - Conferences

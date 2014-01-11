@@ -1,7 +1,5 @@
 ---
 title: Email snooping is a small fraction of the story
-author: Baron Schwartz
-layout: post
 permalink: /2013/07/17/email-snooping-is-a-small-fraction-of-the-story/
 categories:
   - Commentary

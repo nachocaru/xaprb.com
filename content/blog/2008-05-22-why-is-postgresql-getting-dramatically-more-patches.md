@@ -1,7 +1,5 @@
 ---
 title: Why is PostgreSQL getting dramatically more patches?
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/22/why-is-postgresql-getting-dramatically-more-patches/
 categories:
   - Commentary

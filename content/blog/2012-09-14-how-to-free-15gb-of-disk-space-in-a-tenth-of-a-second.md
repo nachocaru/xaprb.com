@@ -1,7 +1,5 @@
 ---
 title: How to free 15GB of disk space in a tenth of a second
-author: Baron Schwartz
-layout: post
 permalink: /2012/09/14/how-to-free-15gb-of-disk-space-in-a-tenth-of-a-second/
 categories:
   - SQL

@@ -1,8 +1,5 @@
 ---
 title: MySQL Query Profiler
-author: Baron Schwartz
-excerpt: "<p>This is the fourth in a series of articles on profiling MySQL.  My past three articles have explained how to measure the work a query causes MySQL to do.  In this article I introduce a tool I've written to do the work for you and produce a compact, readable report of that work, with all the math already done, and the measurements labelled and grouped for ease of comprehension.  With this tool you can understand query performance at a glance.</p>"
-layout: post
 permalink: /2006/10/18/mysql-query-profiler/
 description:
   - 'MySQL Query Profiler is a free tool that measures query performance and formats it clearly.  It captures dozens of performance metrics.'

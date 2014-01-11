@@ -1,8 +1,5 @@
 ---
 title: "Don't change a constant variable"
-author: Baron Schwartz
-excerpt: '<p>If a variable is declared as constant, it should never change.  If it needs to be changed, something is wrong.</p>'
-layout: post
 permalink: /2006/01/06/easy-solutions/
 ---
 A company for whom I have done some coding advertises their years of service on their website. Every year after the New Year, someone notices the dates are out of whack, sends around an email and it has to be fixed. It's not quite hard-coded, if that's what you're thinking. It's just that the wrong thing is hard-coded in the website's configuration file, `Config.asp`:

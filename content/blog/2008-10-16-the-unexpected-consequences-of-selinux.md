@@ -1,7 +1,5 @@
 ---
 title: The unexpected consequences of SELinux
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/16/the-unexpected-consequences-of-selinux/
 categories:
   - SQL

@@ -1,7 +1,5 @@
 ---
 title: Sourceforge reintroduces persistent login cookies
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/27/sourceforge-reintroduces-persistent-login-cookies/
 categories:
   - Commentary

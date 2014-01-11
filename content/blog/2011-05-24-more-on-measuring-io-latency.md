@@ -1,7 +1,5 @@
 ---
 title: More on measuring IO latency
-author: Baron Schwartz
-layout: post
 permalink: /2011/05/24/more-on-measuring-io-latency/
 categories:
   - SQL

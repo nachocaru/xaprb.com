@@ -1,8 +1,5 @@
 ---
 title: MySQL Sandbox is the best thing since sliced bread
-author: Baron Schwartz
-excerpt: "<p>I've been preparing for my innotop session at the upcoming MySQL conference, and enlisted Giuseppe Maxia's MySQL Sandbox to help me get a bunch of MySQL servers, from 3.23.58 to 5.2.3, running on one machine.  It was super-easy and has helped me find some bugs in innotop.  I should have done this a long time ago.</p>"
-layout: post
 permalink: /2007/04/08/mysql-sandbox-is-the-best-thing-since-sliced-bread/
 description:
   - >

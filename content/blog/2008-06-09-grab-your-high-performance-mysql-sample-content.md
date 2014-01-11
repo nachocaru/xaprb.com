@@ -1,7 +1,5 @@
 ---
 title: Grab your High Performance MySQL sample content
-author: Baron Schwartz
-layout: post
 permalink: /2008/06/09/grab-your-high-performance-mysql-sample-content/
 categories:
   - High Performance MySQL

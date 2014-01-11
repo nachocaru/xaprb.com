@@ -1,7 +1,5 @@
 ---
 title: Maatkit version 1417 released
-author: Baron Schwartz
-excerpt: |
   <p class="download"><a href="http://maatkit.sourceforge.net/">Download Maatkit</a></p>
   
   <p>Thanks again to all the great <a href="http://www.xaprb.com/blog/2007/11/26/four-companies-to-sponsor-maatkit-development/">sponsors</a> for my week of work on the kit!</p>
@@ -9,7 +7,6 @@ excerpt: |
   <p>This is the long-awaited "Baron worked on table sync" release.  Hooray!</p>
   
   <p>Please read the full blog post for important (very important!) information.</p>
-layout: post
 permalink: /2007/12/07/maatkit-version-1417-released/
 description:
   - mk-table-sync is out!

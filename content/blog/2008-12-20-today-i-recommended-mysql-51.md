@@ -1,7 +1,5 @@
 ---
 title: Today I recommended MySQL 5.1
-author: Baron Schwartz
-layout: post
 permalink: /2008/12/20/today-i-recommended-mysql-51/
 categories:
   - SQL

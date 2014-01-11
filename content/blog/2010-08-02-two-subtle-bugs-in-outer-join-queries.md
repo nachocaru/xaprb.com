@@ -1,7 +1,5 @@
 ---
 title: Two subtle bugs in OUTER JOIN queries
-author: Baron Schwartz
-layout: post
 permalink: /2010/08/02/two-subtle-bugs-in-outer-join-queries/
 categories:
   - Maatkit

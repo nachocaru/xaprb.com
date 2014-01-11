@@ -1,7 +1,5 @@
 ---
 title: Innovation Nation Shakes IT Up
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/23/innovation-nation-shakes-it-up/
 categories:
   - SQL

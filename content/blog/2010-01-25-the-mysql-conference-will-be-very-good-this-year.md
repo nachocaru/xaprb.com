@@ -1,7 +1,5 @@
 ---
 title: The MySQL Conference will be very good this year
-author: Baron Schwartz
-layout: post
 permalink: /2010/01/25/the-mysql-conference-will-be-very-good-this-year/
 categories:
   - Conferences

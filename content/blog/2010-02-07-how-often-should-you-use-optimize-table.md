@@ -1,7 +1,5 @@
 ---
 title: How often should you use OPTIMIZE TABLE?
-author: Baron Schwartz
-layout: post
 permalink: /2010/02/07/how-often-should-you-use-optimize-table/
 categories:
   - SQL

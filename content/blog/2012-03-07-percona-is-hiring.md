@@ -1,7 +1,5 @@
 ---
 title: Percona is hiring
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/07/percona-is-hiring/
 categories:
   - SQL

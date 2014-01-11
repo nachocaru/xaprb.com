@@ -1,8 +1,5 @@
 ---
 title: How to create input masks in HTML
-author: Baron Schwartz
-excerpt: '<p>Have you ever wanted to apply an input mask to an HTML form field? Input masks are common in traditional GUI applications, but HTML has no such feature. This article introduces a library that adds input masks to form fields with unobtrusive JavaScript.</p>'
-layout: post
 permalink: /2006/11/02/how-to-create-input-masks-in-html/
 description:
   - A simple, free way to add input masks to your HTML form fields.

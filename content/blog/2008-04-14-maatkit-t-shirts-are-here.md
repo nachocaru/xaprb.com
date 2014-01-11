@@ -1,7 +1,5 @@
 ---
 title: Maatkit t-shirts are here
-author: Baron Schwartz
-layout: post
 permalink: /2008/04/14/maatkit-t-shirts-are-here/
 description:
   - Get your beautiful Maatkit t-shirts at the MySQL Conference

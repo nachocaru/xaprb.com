@@ -1,8 +1,5 @@
 ---
 title: How fast is MySQL replication?
-author: Baron Schwartz
-excerpt: '<p>Very fast, as it turns out.  Click through to the full article for details.</p>'
-layout: post
 permalink: /2007/10/23/how-fast-is-mysql-replication/
 description:
   - >

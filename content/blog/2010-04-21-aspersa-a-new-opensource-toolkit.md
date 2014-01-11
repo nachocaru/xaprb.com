@@ -1,7 +1,5 @@
 ---
 title: Aspersa, a new opensource toolkit
-author: Baron Schwartz
-layout: post
 permalink: /2010/04/21/aspersa-a-new-opensource-toolkit/
 categories:
   - Aspersa

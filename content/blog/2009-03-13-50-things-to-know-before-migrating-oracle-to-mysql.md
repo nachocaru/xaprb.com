@@ -1,7 +1,5 @@
 ---
 title: 50 things to know before migrating Oracle to MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/13/50-things-to-know-before-migrating-oracle-to-mysql/
 tinyurl:
   - http://tinyurl.com/oracle-to-mysql

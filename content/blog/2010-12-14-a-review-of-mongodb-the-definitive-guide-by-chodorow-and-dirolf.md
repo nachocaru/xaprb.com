@@ -1,7 +1,5 @@
 ---
 title: A review of MongoDB, the Definitive Guide by Chodorow and Dirolf
-author: Baron Schwartz
-layout: post
 permalink: /2010/12/14/a-review-of-mongodb-the-definitive-guide-by-chodorow-and-dirolf/
 categories:
   - MongoDB

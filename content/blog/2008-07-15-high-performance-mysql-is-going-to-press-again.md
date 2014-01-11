@@ -1,7 +1,5 @@
 ---
 title: High Performance MySQL is going to press, again
-author: Baron Schwartz
-layout: post
 permalink: /2008/07/15/high-performance-mysql-is-going-to-press-again/
 categories:
   - High Performance MySQL

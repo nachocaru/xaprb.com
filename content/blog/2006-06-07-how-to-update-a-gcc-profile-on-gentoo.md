@@ -1,8 +1,5 @@
 ---
 title: How to update a GCC profile on Gentoo
-author: Baron Schwartz
-excerpt: '<p>Multiple versions of <abbr title="Gnu Compiler Collection">GCC</abbr> can be installed side-by-side in a Gentoo GNU/Linux system.  This article is a quick overview of GCC profiles and how to manage them.</p>'
-layout: post
 permalink: /2006/06/07/how-to-update-a-gcc-profile-on-gentoo/
 description:
   - >

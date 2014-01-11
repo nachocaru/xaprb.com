@@ -1,7 +1,5 @@
 ---
 title: Two examples of Sphinx search at work
-author: Baron Schwartz
-layout: post
 permalink: /2010/11/11/two-examples-of-sphinx-search-at-work/
 categories:
   - Open Source

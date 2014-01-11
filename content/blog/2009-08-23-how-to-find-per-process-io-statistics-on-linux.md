@@ -1,7 +1,5 @@
 ---
 title: How to find per-process I/O statistics on Linux
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/23/how-to-find-per-process-io-statistics-on-linux/
 categories:
   - GNU/Linux

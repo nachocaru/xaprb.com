@@ -1,8 +1,5 @@
 ---
 title: A shell for a new Perl MySQL program
-author: Baron Schwartz
-excerpt: '<p>Brian Aker recently wrote about a "skeleton project" for quickly bootstrapping a development environment for a new software project. I do something similar for Perl programs that I want to connect to MySQL.</p>'
-layout: post
 permalink: /2006/12/28/a-shell-for-a-new-perl-mysql-program/
 description:
   - Use this template to quickly write a Perl program that connects to MySQL.

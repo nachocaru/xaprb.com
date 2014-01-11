@@ -1,8 +1,5 @@
 ---
 title: When to use surrogate keys in InnoDB tables
-author: Baron Schwartz
-excerpt: '<p>InnoDB is a special case among MySQL storage engines, which means surrogate keys have to be treated differently in InnoDB.  This article explains why and how to make decisions about surrogate keys in InnoDB.</p>'
-layout: post
 permalink: /2006/05/10/when-to-avoid-and-when-to-use-surrogate-keys-in-innodb-tables/
 description:
   - >

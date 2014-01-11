@@ -1,8 +1,5 @@
 ---
 title: How to delete duplicate rows with SQL
-author: Baron Schwartz
-excerpt: '<p>The comments on my article <a href="http://www.xaprb.com/blog/2006/10/09/how-to-find-duplicate-rows-with-sql/">how to find duplicate rows with SQL</a> made me realize I was simplifying things too much.  In particular, I really glossed over the "how to delete duplicate rows" section, which I should have explained in more detail.  I hope this article will remedy the omissions.</p>'
-layout: post
 permalink: /2006/10/11/how-to-delete-duplicate-rows-with-sql/
 description:
   - Explains advanced techniques for deleting duplicate rows from a database table.

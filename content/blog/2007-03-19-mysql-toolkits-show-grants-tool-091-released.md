@@ -1,8 +1,5 @@
 ---
 title: "MySQL Toolkit's Show Grants tool 0.9.1 released"
-author: Baron Schwartz
-excerpt: "<p>MySQL Toolkit's Show Grants tool can now separate grants into individual statements, convert them into REVOKE statements, and help you remove users from a server, even if your server doesn't support DROP USER.</p>"
-layout: post
 permalink: /2007/03/19/mysql-toolkits-show-grants-tool-091-released/
 description:
   - "MySQL Toolkit's Show Grants tool can now separate grants and convert them into REVOKE statements to help you remove grants and users."

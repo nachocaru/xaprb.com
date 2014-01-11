@@ -1,9 +1,6 @@
 ---
 title: An alternative to canonical URIs
-author: Baron Schwartz
-excerpt: |
   <p>There's been much discussion about canonicalizing <abbr title="Uniform Resource Identifier">URI</abbr>s for search engines and other purposes.  Here's a possibility: instead of specifying the exact canonical URI for a page, just indicate which parts of it are important.</p>
-layout: post
 permalink: /2006/06/02/an-alternative-to-canonical-uris/
 ---
 There's been much discussion about canonicalizing URIs for search engines and other purposes. Here's a possibility: instead of specifying the exact canonical URI for a page, just indicate which parts of it are important.

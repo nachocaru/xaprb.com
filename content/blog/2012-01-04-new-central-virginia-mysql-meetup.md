@@ -1,7 +1,5 @@
 ---
 title: New Central Virginia MySQL Meetup
-author: Baron Schwartz
-layout: post
 permalink: /2012/01/04/new-central-virginia-mysql-meetup/
 categories:
   - SQL

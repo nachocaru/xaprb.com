@@ -1,7 +1,5 @@
 ---
 title: A review of MySQL 5.1 Plugin Development by Golubchik and Hutchings
-author: Baron Schwartz
-layout: post
 permalink: /2010/10/10/a-review-of-mysql-5-1-plugin-development-by-golubchik-and-hutchings/
 categories:
   - SQL

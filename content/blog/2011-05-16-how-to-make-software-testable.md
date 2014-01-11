@@ -1,7 +1,5 @@
 ---
 title: How to make software testable
-author: Baron Schwartz
-layout: post
 permalink: /2011/05/16/how-to-make-software-testable/
 categories:
   - Coding

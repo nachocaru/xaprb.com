@@ -1,7 +1,5 @@
 ---
 title: "O'Reilly MySQL 2011 conference CfP is open"
-author: Baron Schwartz
-layout: post
 permalink: /2010/09/29/oreilly-mysql-2011-conference-cfp-is-open/
 categories:
   - Conferences

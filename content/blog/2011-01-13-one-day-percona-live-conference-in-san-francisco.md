@@ -1,7 +1,5 @@
 ---
 title: One-day Percona Live conference in San Francisco
-author: Baron Schwartz
-layout: post
 permalink: /2011/01/13/one-day-percona-live-conference-in-san-francisco/
 categories:
   - Conferences

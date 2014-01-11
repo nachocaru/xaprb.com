@@ -1,7 +1,5 @@
 ---
 title: Killing idle transactions to increase database uptime
-author: Baron Schwartz
-layout: post
 permalink: /2012/08/13/killing-idle-transactions-to-increase-database-uptime/
 categories:
   - SQL

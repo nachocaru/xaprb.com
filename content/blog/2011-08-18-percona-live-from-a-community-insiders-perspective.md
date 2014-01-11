@@ -1,7 +1,5 @@
 ---
 title: "Percona Live from a community insider's perspective"
-author: Baron Schwartz
-layout: post
 permalink: /2011/08/18/percona-live-from-a-community-insiders-perspective/
 categories:
   - Conferences

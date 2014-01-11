@@ -1,7 +1,5 @@
 ---
 title: The history of OpenSQL Camp
-author: Baron Schwartz
-layout: post
 permalink: /2010/04/18/the-history-of-opensql-camp/
 categories:
   - Commentary

@@ -1,7 +1,5 @@
 ---
 title: "Kickfire: stream-processing SQL queries"
-author: Baron Schwartz
-layout: post
 permalink: /2008/04/04/kickfire-stream-processing-sql-queries/
 categories:
   - SQL

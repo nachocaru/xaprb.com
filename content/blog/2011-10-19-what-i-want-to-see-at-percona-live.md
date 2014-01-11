@@ -1,7 +1,5 @@
 ---
 title: What I want to see at Percona Live
-author: Baron Schwartz
-layout: post
 permalink: /2011/10/19/what-i-want-to-see-at-percona-live/
 categories:
   - SQL

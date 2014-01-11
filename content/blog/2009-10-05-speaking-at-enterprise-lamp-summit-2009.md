@@ -1,7 +1,5 @@
 ---
 title: Speaking at Enterprise LAMP Summit 2009
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/05/speaking-at-enterprise-lamp-summit-2009/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: Please re-license the MySQL documentation
-author: Baron Schwartz
-layout: post
 permalink: /2009/05/08/please-re-license-the-mysql-documentation/
 categories:
   - Commentary

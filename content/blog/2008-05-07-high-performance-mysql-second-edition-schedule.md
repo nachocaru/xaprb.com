@@ -1,7 +1,5 @@
 ---
 title: High Performance MySQL Second Edition Schedule
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/07/high-performance-mysql-second-edition-schedule/
 description:
   - Schedule and page count for High Performance MySQL Second Edition

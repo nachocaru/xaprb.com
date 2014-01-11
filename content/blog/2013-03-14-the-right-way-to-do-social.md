@@ -1,7 +1,5 @@
 ---
 title: The right way to do social
-author: Baron Schwartz
-layout: post
 permalink: /2013/03/14/the-right-way-to-do-social/
 categories:
   - Commentary

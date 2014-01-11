@@ -1,11 +1,8 @@
 ---
 title: Credit card expiration dates should conform to standards
-author: Baron Schwartz
-excerpt: |
   <p>My credit card's expiration date is confusing.  How about yours?</p>
   
   <p style="text-align:center"><img src="/articles/images/credit-card.png" alt="expires WHEN???" height="34" width="100" /></p>
-layout: post
 permalink: /2006/01/05/credit-card-expiration-dates/
 description:
   - >

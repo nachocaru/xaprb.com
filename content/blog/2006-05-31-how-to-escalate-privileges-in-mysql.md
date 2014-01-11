@@ -1,8 +1,5 @@
 ---
 title: How to escalate privileges in MySQL
-author: Baron Schwartz
-excerpt: '<p>This article demonstrates an easy way to elevate my privileges in MySQL with default privileges.</p>'
-layout: post
 permalink: /2006/05/31/how-to-escalate-privileges-in-mysql/
 description:
   - Explains why the common advice on how to add a MySQL user is a security problem.

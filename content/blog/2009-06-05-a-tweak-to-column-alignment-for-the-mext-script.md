@@ -1,7 +1,5 @@
 ---
 title: A tweak to column alignment for the mext script
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/05/a-tweak-to-column-alignment-for-the-mext-script/
 categories:
   - Coding

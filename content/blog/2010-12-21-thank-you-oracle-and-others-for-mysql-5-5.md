@@ -1,7 +1,5 @@
 ---
 title: Thank-you Oracle and others for MySQL 5.5
-author: Baron Schwartz
-layout: post
 permalink: /2010/12/21/thank-you-oracle-and-others-for-mysql-5-5/
 categories:
   - SQL

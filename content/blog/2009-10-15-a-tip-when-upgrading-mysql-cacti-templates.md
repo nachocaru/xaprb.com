@@ -1,7 +1,5 @@
 ---
 title: A tip when upgrading mysql-cacti-templates
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/15/a-tip-when-upgrading-mysql-cacti-templates/
 categories:
   - SQL

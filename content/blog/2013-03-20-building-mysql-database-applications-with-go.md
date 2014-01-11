@@ -1,7 +1,5 @@
 ---
 title: Building MySQL Database Applications with Go
-author: Baron Schwartz
-layout: post
 permalink: /2013/03/20/building-mysql-database-applications-with-go/
 categories:
   - Coding

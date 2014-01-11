@@ -1,7 +1,5 @@
 ---
 title: Henceforth, I dub thee GLAMP
-author: Baron Schwartz
-excerpt: |
   <p>I've decided to start replacing L with GL in acronyms where L supposedly stands for Linux.</p>
   
   <p>I'm not a big user of acronyms, because I think they are exclusionist and they obscure, rather than revealing.  (This wouldn't matter if I wrote for people who already knew what I meant and agreed with me, but that's a waste of time).  However, LAMP is one that I've probably used a few times, without thinking that it is supposed to stand for Linux, Apache, MySQL, and PHP/Perl/Python.  In fact, it doesn't refer to Linux, it refers to GNU/Linux.  Therefore, it should be <acronym title="GNU/Linux, Apache, MySQL, and PHP/Perl/Python">GLAMP</acronym>.</p>
@@ -13,7 +11,6 @@ excerpt: |
   <p>GNU matters.  A lot.  You may not think so, but if it ceased to exist, you'd find out.  That applies equally even if you don't think you are a Free Software user.  You have no idea how much you rely on Free Software in your daily life.  And <a href="http://www.fsf.org/">the GNU project</a> has been and continues to be a keystone in that arch of freedom.</p>
   
   <p>Thanks to <a href="http://krow.livejournal.com/583459.html">MySQL's Brian Aker for snapping me out of my LAMP carelessness</a>.</p>
-layout: post
 permalink: /2008/02/21/henceforth-i-dub-thee-glamp/
 description:
   - "So you think you use the LAMP stack?  You're wrong: LAMP is incapable of even booting."

@@ -1,7 +1,5 @@
 ---
 title: A Review of Beginning Database Design by Clare Churcher
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/22/a-review-of-beginning-database-design-by-clare-churcher/
 categories:
   - PostgreSQL

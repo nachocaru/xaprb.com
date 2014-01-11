@@ -1,8 +1,5 @@
 ---
 title: How to subtract in SQL over samples that wrap
-author: Baron Schwartz
-excerpt: '<p><img class="left" style="float:left" src="/articles/images/samples-that-wrap-thumb.png" width="113" height="100" alt="Graph of sample data" />This article explains how to do subtraction in SQL over samples that wrap back to zero when they exceed a boundary.</p>'
-layout: post
 permalink: /2007/02/19/how-to-subtract-in-sql-over-samples-that-wrap/
 description:
   - >

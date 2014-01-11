@@ -1,7 +1,5 @@
 ---
 title: High Performance MySQL is here!
-author: Baron Schwartz
-layout: post
 permalink: /2008/06/20/high-performance-mysql-is-here/
 categories:
   - High Performance MySQL

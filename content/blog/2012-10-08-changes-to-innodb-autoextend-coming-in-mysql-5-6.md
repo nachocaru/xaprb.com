@@ -1,7 +1,5 @@
 ---
 title: Changes to InnoDB autoextend coming in MySQL 5.6
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/08/changes-to-innodb-autoextend-coming-in-mysql-5-6/
 categories:
   - SQL

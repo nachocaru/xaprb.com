@@ -1,8 +1,5 @@
 ---
 title: How to simulate the SQL ROW_NUMBER function
-author: Baron Schwartz
-excerpt: "<p>If your RDBMS does not support the ROW_NUMBER function, it is still possible to write some queries without it.  In this article I'll explain several ways to do that, and examine the performance of each.<p>"
-layout: post
 permalink: /2005/09/27/simulating-the-sql-row_number-function/
 tags:
   - Ranked data

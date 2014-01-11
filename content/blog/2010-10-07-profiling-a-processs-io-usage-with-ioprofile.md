@@ -1,7 +1,5 @@
 ---
 title: "Profiling a process's IO usage with ioprofile"
-author: Baron Schwartz
-layout: post
 permalink: /2010/10/07/profiling-a-processs-io-usage-with-ioprofile/
 categories:
   - Aspersa

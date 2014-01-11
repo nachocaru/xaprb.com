@@ -1,7 +1,5 @@
 ---
 title: How scalable is your database?
-author: Baron Schwartz
-layout: post
 permalink: /2013/02/24/how-scalable-is-your-database/
 categories:
   - Scalability

@@ -1,7 +1,5 @@
 ---
 title: What are your favorite MySQL bug reports?
-author: Baron Schwartz
-layout: post
 permalink: /2010/08/23/what-are-your-favorite-mysql-bug-reports/
 categories:
   - SQL

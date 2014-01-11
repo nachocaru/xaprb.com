@@ -1,8 +1,5 @@
 ---
 title: MySQL Toolkit version 1204 released
-author: Baron Schwartz
-excerpt: "<p>This release fixes some minor bugs.  It also adds a few major new features to several of the tools.    The command-line option and help functionality, as well as several other pieces of common functionality, has been replaced with common modules that have a test suite.  This is the first step towards a gradual rewrite to replace untested 'script' code with tested, maintainable code.</p>"
-layout: post
 permalink: /2007/11/04/mysql-toolkit-version-1204-released/
 description:
   - MySQL Toolkit gets tests.

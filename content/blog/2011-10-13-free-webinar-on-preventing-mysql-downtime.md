@@ -1,7 +1,5 @@
 ---
 title: Free webinar on preventing MySQL downtime
-author: Baron Schwartz
-layout: post
 permalink: /2011/10/13/free-webinar-on-preventing-mysql-downtime/
 categories:
   - SQL

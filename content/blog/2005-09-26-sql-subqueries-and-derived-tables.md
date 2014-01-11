@@ -1,8 +1,5 @@
 ---
 title: The difference between subqueries and derived tables in SQL
-author: Baron Schwartz
-excerpt: '<p>Many people are confused by SQL terminology, particularly by subqueries and derived tables, and use the terms incorrectly.  In fact the official terminology is defined very specifically.  It is a good idea to use the right language.</p>'
-layout: post
 permalink: /2005/09/26/sql-subqueries-and-derived-tables/
 ---
 Many people are confused by SQL terminology, particularly by subqueries and derived tables, and use the terms incorrectly. In fact the official terminology is defined very specifically. It is a good idea to use the right language. Not only does it foster clear understanding, but among people who know the difference, it helps create a good impression of competence and attention to detail.

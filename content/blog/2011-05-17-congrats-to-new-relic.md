@@ -1,7 +1,5 @@
 ---
 title: Congrats to New Relic
-author: Baron Schwartz
-layout: post
 permalink: /2011/05/17/congrats-to-new-relic/
 categories:
   - Tools

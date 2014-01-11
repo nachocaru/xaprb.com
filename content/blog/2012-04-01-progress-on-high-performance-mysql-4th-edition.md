@@ -1,7 +1,5 @@
 ---
 title: Progress on High Performance MySQL, 4th Edition
-author: Baron Schwartz
-layout: post
 permalink: /2012/04/01/progress-on-high-performance-mysql-4th-edition/
 categories:
   - SQL

@@ -1,7 +1,5 @@
 ---
 title: Scalability, performance, capacity planning and USL at Hotsos Symposium
-author: Baron Schwartz
-layout: post
 permalink: >
   /2012/03/07/scalability-performance-capacity-planning-and-usl-at-hotsos-symposium/
 categories:

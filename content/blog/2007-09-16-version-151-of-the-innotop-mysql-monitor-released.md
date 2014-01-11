@@ -1,11 +1,8 @@
 ---
 title: Version 1.5.1 of the innotop MySQL monitor released
-author: Baron Schwartz
-excerpt: |
   <p>This release is part of the unstable 1.5 branch. Its features will ultimately go into the stable 1.6 branch. You can download it from the <a href="http://sourceforge.net/project/showfiles.php?group_id=186074">innotop-devel package</a>.</p>
   
   <p>The major change is a new Command Summary' mode (switch to this mode with the 'C' key) that's similar to mytop's 'c' mode.  It shows you the relative size of variables from SHOW STATUS and SHOW VARIABLES.</p>
-layout: post
 permalink: /2007/09/16/version-151-of-the-innotop-mysql-monitor-released/
 description:
   - >

@@ -1,7 +1,5 @@
 ---
 title: innotop is back
-author: Baron Schwartz
-layout: post
 permalink: /2009/02/10/innotop-is-back/
 categories:
   - Innotop

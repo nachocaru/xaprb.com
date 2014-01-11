@@ -1,7 +1,5 @@
 ---
 title: How InnoDB performs a checkpoint
-author: Baron Schwartz
-layout: post
 permalink: /2011/01/29/how-innodb-performs-a-checkpoint/
 categories:
   - PostgreSQL

@@ -1,8 +1,5 @@
 ---
 title: JavaScript combo box
-author: Baron Schwartz
-excerpt: '<p>A simple, free, and elegant way to make a SELECT menu behave like a combo box, making forms more versatile and usable.</p>'
-layout: post
 permalink: /2005/09/29/javascript-combo-box/
 ---
 <p style="border:solid red 1px; background:yellow">

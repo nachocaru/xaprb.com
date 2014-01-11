@@ -1,7 +1,5 @@
 ---
 title: Using BASE instead of ACID for scalability
-author: Baron Schwartz
-layout: post
 permalink: /2008/07/23/using-base-instead-of-acid-for-scalability/
 categories:
   - Commentary

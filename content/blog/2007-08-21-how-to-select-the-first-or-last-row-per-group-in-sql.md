@@ -1,11 +1,8 @@
 ---
 title: How to select the first or last row per group in SQL
-author: Baron Schwartz
-excerpt: |
   <p>There is no "first" or "last" aggregate function in SQL.  Sometimes you can use <code>MIN()</code> or <code>MAX()</code>, but often that won't work either. There are a couple of ways to solve this vexing non-relational problem.</p>
   
   <p>First, let's be clear: I am posing a very non-relational problem.  This is not about the minimum, maximum, top, most, least or any other relationally valid extreme in the group.  It's the first or last, in whatever order the rows happen to come.  And we all know rows aren't ordered -- in theory.  But in practice they are, and sometimes you need the first or last row in a group.  This article shows how.</p>
-layout: post
 permalink: /2007/08/21/how-to-select-the-first-or-last-row-per-group-in-sql/
 description:
   - >

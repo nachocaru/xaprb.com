@@ -1,7 +1,5 @@
 ---
 title: Maatkit bounty begins tomorrow
-author: Baron Schwartz
-layout: post
 permalink: /2007/11/29/maatkit-bounty-begins-tomorrow/
 tags:
   - MySQL

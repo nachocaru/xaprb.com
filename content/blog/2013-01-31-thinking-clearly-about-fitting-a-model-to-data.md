@@ -1,7 +1,5 @@
 ---
 title: Thinking clearly about fitting a model to data
-author: Baron Schwartz
-layout: post
 permalink: /2013/01/31/thinking-clearly-about-fitting-a-model-to-data/
 categories:
   - Modeling

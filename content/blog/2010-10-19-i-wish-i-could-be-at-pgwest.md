@@ -1,7 +1,5 @@
 ---
 title: I wish I could be at PGWest
-author: Baron Schwartz
-layout: post
 permalink: /2010/10/19/i-wish-i-could-be-at-pgwest/
 categories:
   - Conferences

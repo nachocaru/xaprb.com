@@ -1,7 +1,5 @@
 ---
 title: How VoltDB does transaction ordering and replication
-author: Baron Schwartz
-layout: post
 permalink: /2011/02/15/how-voltdb-does-transaction-ordering-and-replication/
 categories:
   - SQL

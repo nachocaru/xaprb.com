@@ -1,7 +1,5 @@
 ---
 title: Three free MySQL webinars
-author: Baron Schwartz
-layout: post
 permalink: /2012/02/07/three-free-mysql-webinars/
 categories:
   - SQL

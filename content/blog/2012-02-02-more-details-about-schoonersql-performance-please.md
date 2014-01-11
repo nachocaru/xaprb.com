@@ -1,7 +1,5 @@
 ---
 title: More details about SchoonerSQL performance, please!
-author: Baron Schwartz
-layout: post
 permalink: /2012/02/02/more-details-about-schoonersql-performance-please/
 categories:
   - SQL

@@ -1,7 +1,5 @@
 ---
 title: "Determining the USL's coefficient of performance, part 2"
-author: Baron Schwartz
-layout: post
 permalink: /2013/01/03/determining-the-usls-coefficient-of-performance-part-2/
 categories:
   - Scalability

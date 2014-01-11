@@ -1,7 +1,5 @@
 ---
 title: Planned obsolescence stinks
-author: Baron Schwartz
-layout: post
 permalink: /2009/11/10/planned-obsolescence-stinks/
 categories:
   - Commentary

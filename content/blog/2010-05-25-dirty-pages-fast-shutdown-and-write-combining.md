@@ -1,7 +1,5 @@
 ---
 title: Dirty pages, fast shutdown, and write combining
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/25/dirty-pages-fast-shutdown-and-write-combining/
 categories:
   - SQL

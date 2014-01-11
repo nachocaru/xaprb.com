@@ -1,11 +1,8 @@
 ---
 title: Why is Embarq hijacking my DNS?
-author: Baron Schwartz
-excerpt: |
   <p>Isn't this the same thing that happened a few years ago with ICANN or Verisign or one of those big names?  (strangely, I can't find relevant search results about this!).</p>
   
   <p>I clicked on my toolbar shortcut for <a href="http://www.toggl.com/">Toggl</a> and my Embarq DSL service redirected me to a search-results page instead of telling my browser the truth.  This makes me <em>mad</em>.  The core layers of the Internet are designed the way they are <strong>for a reason</strong> and I don't want to "opt out" of a stupid DNS hijacking stunt I never opted into.</p>
-layout: post
 permalink: /2007/11/23/why-is-embarq-hijacking-my-dns/
 description:
   - "Embarq and Verizon are screwing with their customers' DNS"

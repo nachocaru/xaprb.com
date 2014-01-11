@@ -1,8 +1,5 @@
 ---
 title: How to avoid VBScript regular expression gotchas
-author: Baron Schwartz
-excerpt: "<p>VBScript regular expressions don't work right, and the documentation is incomplete.  This article shows you how to avoid potentially serious problems, and explains an undocumented feature.</p>"
-layout: post
 permalink: /2005/11/04/vbscript-regular-expression-gotchas/
 ---
 VBScript regular expressions are slightly troublesome, though they certainly help turn VBScript into less of a joke when it comes to text processing. The syntax lacks some of the niceties of Perl or .NET regexes, but is complete enough to be very useful. This article shows you how to avoid potentially serious problems, and explains an undocumented feature.

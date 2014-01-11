@@ -1,7 +1,5 @@
 ---
 title: Attending the IT Management Conference
-author: Baron Schwartz
-layout: post
 permalink: /2009/06/29/attending-the-it-management-conference/
 categories:
   - Conferences

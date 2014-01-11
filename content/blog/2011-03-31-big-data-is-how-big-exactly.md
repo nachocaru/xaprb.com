@@ -1,7 +1,5 @@
 ---
 title: Big Data is how big exactly?
-author: Baron Schwartz
-layout: post
 permalink: /2011/03/31/big-data-is-how-big-exactly/
 categories:
   - Commentary

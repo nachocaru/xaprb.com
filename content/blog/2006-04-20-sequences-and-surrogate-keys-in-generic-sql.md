@@ -1,8 +1,5 @@
 ---
 title: How to generate sequences and surrogate keys in generic SQL
-author: Baron Schwartz
-excerpt: '<p>This article demonstrates how to "roll your own" surrogate keys and sequences in a platform-independent way, using standard SQL.</p>'
-layout: post
 permalink: /2006/04/20/sequences-and-surrogate-keys-in-generic-sql/
 description:
   - >

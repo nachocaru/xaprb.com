@@ -1,8 +1,5 @@
 ---
 title: How to make file names cross-platform
-author: Baron Schwartz
-excerpt: '<p>Using a filesystem, such as an external hard drive, across mutiple platforms can sometimes cause annoying behaviors.  This article shows how to avoid problems when files are used on multiple platforms.</p>'
-layout: post
 permalink: /2005/11/17/maximizing-filesystem-portability/
 ---
 Using a filesystem, such as an external hard drive, across mutiple platforms can sometimes cause annoying behaviors. For example, filenames may be changed to all uppercase or all lowercase, which may cause problems on a system with case-sensitive filenames or vice versa. Here are my suggestions for minimizing conflicts.

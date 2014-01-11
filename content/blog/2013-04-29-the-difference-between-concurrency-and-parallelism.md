@@ -1,7 +1,5 @@
 ---
 title: The difference between concurrency and parallelism
-author: Baron Schwartz
-layout: post
 permalink: /2013/04/29/the-difference-between-concurrency-and-parallelism/
 categories:
   - Coding

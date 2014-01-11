@@ -1,7 +1,5 @@
 ---
 title: Would Tufte approve of mixing units on a graph?
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/09/would-tufte-approve-of-mixing-units-on-a-graph/
 categories:
   - PHP

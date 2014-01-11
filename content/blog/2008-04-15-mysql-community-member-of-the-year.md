@@ -1,7 +1,5 @@
 ---
 title: MySQL Community Member of the Year
-author: Baron Schwartz
-layout: post
 permalink: /2008/04/15/mysql-community-member-of-the-year/
 categories:
   - Commentary

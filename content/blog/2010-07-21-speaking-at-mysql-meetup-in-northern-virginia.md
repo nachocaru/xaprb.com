@@ -1,7 +1,5 @@
 ---
 title: Speaking at MySQL Meetup in Northern Virginia
-author: Baron Schwartz
-layout: post
 permalink: /2010/07/21/speaking-at-mysql-meetup-in-northern-virginia/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: What do the InnoDB insert buffer statistics mean?
-author: Baron Schwartz
-layout: post
 permalink: /2009/10/25/what-do-the-innodb-insert-buffer-statistics-mean/
 categories:
   - SQL

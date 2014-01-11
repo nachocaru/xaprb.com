@@ -1,8 +1,5 @@
 ---
 title: Archive strategies for OLTP servers, Part 1
-author: Baron Schwartz
-excerpt: "<p>In May 2005, I wrote a widely-referenced article about how to efficiently archive and/or purge data from online transaction processing (OLTP) database servers.  That article focused on how to write efficient archiving SQL.  In this article I'll discuss archiving strategy, not tactics.  OLTP servers tend to have complex schemas, which makes it important and sometimes difficult to design a good archiving strategy.</p>"
-layout: post
 permalink: /2007/06/13/archive-strategies-for-oltp-servers-part-1/
 description:
   - Examines motivations and requirements for designing archiving strategies

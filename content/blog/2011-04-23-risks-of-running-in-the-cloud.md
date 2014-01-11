@@ -1,7 +1,5 @@
 ---
 title: Risks of running in the cloud
-author: Baron Schwartz
-layout: post
 permalink: /2011/04/23/risks-of-running-in-the-cloud/
 categories:
   - Commentary

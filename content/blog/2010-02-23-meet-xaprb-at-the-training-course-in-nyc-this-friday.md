@@ -1,7 +1,5 @@
 ---
 title: Meet Xaprb at the training course in NYC this Friday
-author: Baron Schwartz
-layout: post
 permalink: /2010/02/23/meet-xaprb-at-the-training-course-in-nyc-this-friday/
 categories:
   - SQL

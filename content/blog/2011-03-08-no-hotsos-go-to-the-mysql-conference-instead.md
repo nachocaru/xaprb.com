@@ -1,7 +1,5 @@
 ---
 title: No Hotsos? Go to the MySQL Conference instead.
-author: Baron Schwartz
-layout: post
 permalink: /2011/03/08/no-hotsos-go-to-the-mysql-conference-instead/
 categories:
   - Conferences

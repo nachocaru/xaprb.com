@@ -1,7 +1,5 @@
 ---
 title: Sessions of interest at MySQL Camp 2009
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/14/sessions-of-interest-at-mysql-camp-2009/
 categories:
   - Conferences

@@ -1,7 +1,5 @@
 ---
 title: "Pop quiz: when will a filesystem copy be an incomplete backup?"
-author: Baron Schwartz
-layout: post
 permalink: /2010/09/25/pop-quiz-when-will-a-filesystem-copy-be-an-incomplete-backup/
 categories:
   - SQL

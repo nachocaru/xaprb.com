@@ -1,7 +1,5 @@
 ---
 title: "A bug in Microsoft SQL Server's replace() function"
-author: Baron Schwartz
-layout: post
 permalink: /2005/11/15/a-bug-in-microsoft-sql-servers-replace-function/
 ---
 I have found a bug in Microsoft SQL Server's replace() function. The function treats `char` and `varchar` differently, and replacements will fail in some cases. Here is a demonstration of the bug:

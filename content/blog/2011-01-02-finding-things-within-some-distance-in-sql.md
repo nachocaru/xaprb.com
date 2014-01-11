@@ -1,7 +1,5 @@
 ---
 title: Finding things within some distance in SQL
-author: Baron Schwartz
-layout: post
 permalink: /2011/01/02/finding-things-within-some-distance-in-sql/
 categories:
   - PostgreSQL

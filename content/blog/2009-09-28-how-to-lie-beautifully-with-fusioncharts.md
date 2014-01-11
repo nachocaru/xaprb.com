@@ -1,7 +1,5 @@
 ---
 title: How to lie beautifully with FusionCharts
-author: Baron Schwartz
-layout: post
 permalink: /2009/09/28/how-to-lie-beautifully-with-fusioncharts/
 categories:
   - Commentary

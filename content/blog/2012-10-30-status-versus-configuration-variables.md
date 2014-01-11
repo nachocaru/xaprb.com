@@ -1,7 +1,5 @@
 ---
 title: Status versus configuration variables
-author: Baron Schwartz
-layout: post
 permalink: /2012/10/30/status-versus-configuration-variables/
 categories:
   - SQL

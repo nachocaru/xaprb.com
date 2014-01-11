@@ -1,7 +1,5 @@
 ---
 title: A review of SQL and Relational Theory by C. J. Date
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/
 categories:
   - Coding

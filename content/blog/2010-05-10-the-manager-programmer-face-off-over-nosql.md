@@ -1,7 +1,5 @@
 ---
 title: The manager-programmer face-off over NoSQL
-author: Baron Schwartz
-layout: post
 permalink: /2010/05/10/the-manager-programmer-face-off-over-nosql/
 categories:
   - Commentary

@@ -1,7 +1,5 @@
 ---
 title: Speaking at Central Virginia Ruby Enthusiasts Nov 13th
-author: Baron Schwartz
-layout: post
 permalink: /2012/11/02/speaking-at-central-virginia-ruby-enthusiasts-nov-13th/
 categories:
   - SQL

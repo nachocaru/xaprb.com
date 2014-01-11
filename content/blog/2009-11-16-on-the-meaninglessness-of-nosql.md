@@ -1,7 +1,5 @@
 ---
 title: On the unhelpfulness of NoSQL
-author: Baron Schwartz
-layout: post
 permalink: /2009/11/16/on-the-meaninglessness-of-nosql/
 categories:
   - SQL

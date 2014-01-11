@@ -1,7 +1,5 @@
 ---
 title: Interesting findings about one of the Go database drivers for MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2012/12/28/interesting-findings-about-one-of-the-go-database-drivers-for-mysql/
 categories:
   - SQL

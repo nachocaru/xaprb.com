@@ -1,7 +1,5 @@
 ---
 title: My favorite features in MySQL 5.6
-author: Baron Schwartz
-layout: post
 permalink: /2012/02/28/my-favorite-features-in-mysql-5-6/
 categories:
   - SQL

@@ -1,8 +1,5 @@
 ---
 title: MySQL Toolkit updated
-author: Baron Schwartz
-excerpt: "<p>I've just released updates to all the tools in the MySQL Toolkit.  The biggest change I made to most packages is using DBD to read MySQL's option files, though some packages got more significant updates.</p>"
-layout: post
 permalink: /2007/03/25/mysql-toolkit-updated/
 description:
   - "I've updated all the tools in the MySQL Toolkit with major and minor changes."

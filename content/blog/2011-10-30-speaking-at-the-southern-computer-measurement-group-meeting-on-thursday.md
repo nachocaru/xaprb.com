@@ -1,7 +1,5 @@
 ---
 title: Speaking at the Southern Computer Measurement Group meeting on Thursday
-author: Baron Schwartz
-layout: post
 permalink: >
   /2011/10/30/speaking-at-the-southern-computer-measurement-group-meeting-on-thursday/
 categories:

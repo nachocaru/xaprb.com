@@ -1,7 +1,5 @@
 ---
 title: "Breaking news: SHOW INNODB STATUS ported to XML"
-author: Baron Schwartz
-layout: post
 permalink: /2010/04/20/breaking-news-show-innodb-status-ported-to-xml/
 categories:
   - SQL

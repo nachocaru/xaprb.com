@@ -1,7 +1,5 @@
 ---
 title: OpenSQL Camp 2008 was a resounding success
-author: Baron Schwartz
-layout: post
 permalink: /2008/11/17/opensql-camp-2008-was-a-resounding-success/
 categories:
   - OpenSQL Camp

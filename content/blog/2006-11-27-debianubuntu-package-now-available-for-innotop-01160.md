@@ -1,8 +1,5 @@
 ---
 title: Debian/Ubuntu package now available for innotop 0.1.160
-author: Baron Schwartz
-excerpt: '<p>A kind soul has contributed a Debian/Ubuntu package for the <a href="http://www.xaprb.com/innotop/">innotop MySQL and InnoDB monitor</a>.  Thanks Sebastien Estienne!</p>'
-layout: post
 permalink: /2006/11/27/debianubuntu-package-now-available-for-innotop-01160/
 description:
   - There are now innotop installation packages for Debian and Ubuntu.

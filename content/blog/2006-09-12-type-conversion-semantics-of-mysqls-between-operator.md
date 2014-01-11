@@ -1,8 +1,5 @@
 ---
 title: "Type conversion semantics of MySQL's BETWEEN operator"
-author: Baron Schwartz
-excerpt: '<p>I got bitten by an implicit type conversion with MySQL recently.  This article is about avoiding implicit type conversions, and the weird places you might find them.</p>'
-layout: post
 permalink: /2006/09/12/type-conversion-semantics-of-mysqls-between-operator/
 description:
   - "Explains how the confusing, undocumented type conversion semantics of MySQL's BETWEEN operator can cause bizarre results.  It is better to avoid BETWEEN unless all operands are of the same type."

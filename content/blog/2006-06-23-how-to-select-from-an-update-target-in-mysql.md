@@ -1,8 +1,5 @@
 ---
 title: How to select from an update target in MySQL
-author: Baron Schwartz
-excerpt: "<p>MySQL doesn't allow referring to a table that's targeted for update in a <code>FROM</code> clause, which can be frustrating.  There's a better way than creating endless temporary tables, though.  This article explains how to update a table while selecting from it in a subquery.</p>"
-layout: post
 permalink: /2006/06/23/how-to-select-from-an-update-target-in-mysql/
 description:
   - Explains how to specify a target table for update in the FROM clause in MySQL.

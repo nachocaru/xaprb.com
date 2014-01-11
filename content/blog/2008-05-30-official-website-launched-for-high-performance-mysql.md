@@ -1,7 +1,5 @@
 ---
 title: Official website launched for High Performance MySQL
-author: Baron Schwartz
-layout: post
 permalink: /2008/05/30/official-website-launched-for-high-performance-mysql/
 description:
   - A new website!

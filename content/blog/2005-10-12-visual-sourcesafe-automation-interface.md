@@ -1,8 +1,5 @@
 ---
 title: How to use the Visual SourceSafe automation interface
-author: Baron Schwartz
-excerpt: '<p>Microsoft Visual SourceSafe provides an automation interface that can be used from within VBScript, VB6 and other languages.  This article lists the options for automating SourceSafe, provides links to documentation, and discusses some bugs that are impossible to work around.</p>'
-layout: post
 permalink: /2005/10/12/visual-sourcesafe-automation-interface/
 ---
 Microsoft Visual SourceSafe provides an automation interface that can be used from within VBScript, VB6 and other languages. This article lists the options for automating SourceSafe, provides links to documentation, and discusses some bugs that are impossible to work around.

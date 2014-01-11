@@ -1,7 +1,5 @@
 ---
 title: "Idea: a reverse changelog for MySQL"
-author: Baron Schwartz
-layout: post
 permalink: /2009/01/26/idea-a-reverse-changelog-for-mysql/
 categories:
   - SQL

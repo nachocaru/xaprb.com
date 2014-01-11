@@ -1,7 +1,5 @@
 ---
 title: Proposed bounty on MySQL Table Sync features
-author: Baron Schwartz
-excerpt: |
   <p>I am considering taking some time off work to concentrate deeply on <a href="http://mysqltoolkit.sourceforge.net/">MySQL Table Sync</a>, which has been getting usage in very large companies whose names we all know.  There are a lot of bugs and feature requests outstanding for it.  It is overly complex, needs a lot of work, and I can't do it in one-hour or even three-hour chunks.  I need to focus on it.  I'm considering asking for a bounty of $2500 USD for this.  Please let me know what you think of this; it seems to be a successful way to sponsor development on some other projects, like Vim.</p>
   
   <p>For the amount of time I think this will take, $2500 is far below my per-hour consulting rate; I considered setting the bounty higher, but I think this will be a fair amount.</p>
@@ -24,7 +22,6 @@ excerpt: |
   </ul>
   
   <p>Alternatively, if someone wants to do it and just contribute the code to the project, I'd be delighted.  I doubt that will happen, though, and there'd still be a lot of work in it for me, so I think it's probably more realistic that I will do it.</p>
-layout: post
 permalink: /2007/10/10/proposed-bounty-on-mysql-table-sync-features/
 description:
   - >

@@ -1,7 +1,5 @@
 ---
 title: Catching erroneous queries, without MySQL proxy
-author: Baron Schwartz
-layout: post
 permalink: /2009/11/01/catching-erroneous-queries-without-mysql-proxy/
 categories:
   - Maatkit

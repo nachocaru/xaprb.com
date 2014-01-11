@@ -1,7 +1,5 @@
 ---
 title: "Screenshots of innotop's new U mode"
-author: Baron Schwartz
-layout: post
 permalink: /2010/11/10/screenshots-of-innotops-new-u-mode/
 categories:
   - Innotop

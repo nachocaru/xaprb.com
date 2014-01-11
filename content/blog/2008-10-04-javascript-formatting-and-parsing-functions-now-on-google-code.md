@@ -1,7 +1,5 @@
 ---
 title: Javascript formatting and parsing functions now on Google Code
-author: Baron Schwartz
-layout: post
 permalink: /2008/10/04/javascript-formatting-and-parsing-functions-now-on-google-code/
 categories:
   - Coding

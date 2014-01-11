@@ -2,8 +2,6 @@
 title: >
   A review of Relational Database Design and the Optimizers by Lahdenmaki and
   Leach
-author: Baron Schwartz
-layout: post
 permalink: >
   /2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/
 categories:

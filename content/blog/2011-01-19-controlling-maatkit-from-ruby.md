@@ -1,7 +1,5 @@
 ---
 title: Controlling Maatkit from Ruby
-author: Baron Schwartz
-layout: post
 permalink: /2011/01/19/controlling-maatkit-from-ruby/
 categories:
   - Maatkit

@@ -1,7 +1,5 @@
 ---
 title: Is automated failover the root of all evil?
-author: Baron Schwartz
-layout: post
 permalink: /2012/09/17/is-automated-failover-the-root-of-all-evil/
 categories:
   - SQL

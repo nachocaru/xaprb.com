@@ -1,7 +1,5 @@
 ---
 title: Percona wants to hire a Maatkit developer
-author: Baron Schwartz
-layout: post
 permalink: /2008/06/24/percona-wants-to-hire-a-maatkit-developer/
 categories:
   - Maatkit

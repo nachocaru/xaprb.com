@@ -1,7 +1,5 @@
 ---
 title: Stopping spam on Google Groups
-author: Baron Schwartz
-layout: post
 permalink: /2009/09/13/stopping-spam-on-google-groups/
 categories:
   - World Wide Web

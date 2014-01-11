@@ -1,7 +1,5 @@
 ---
 title: The quiet end of the community-enterprise split
-author: Baron Schwartz
-layout: post
 permalink: /2009/05/13/the-quiet-end-of-the-community-enterprise-split/
 categories:
   - SQL

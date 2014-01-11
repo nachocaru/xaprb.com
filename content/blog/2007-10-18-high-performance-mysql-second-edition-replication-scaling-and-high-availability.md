@@ -1,13 +1,10 @@
 ---
 title: "High Performance MySQL, Second Edition: Replication, Scaling and High Availability"
-author: Baron Schwartz
-excerpt: |
   <p>Continuing in the tradition, which I hope has been as helpful to you as it has been to me, I'm opening the floor for suggestions on chapter 9 of the upcoming High Performance MySQL, Second Edition.  Unlike the other chapters for which I've listed outlines, this one isn't substantially written yet.  It's in detailed outline form at this point (a tactic that has worked very well for us so far -- I'll write about that someday).</p>
   
   <p>I'm trying to get feedback much earlier in this chapter's lifecycle, for several reasons.  Two of the most important are that this is one of the first chapters I've had a chance to really take from scratch, and the chapters I haven't written from scratch have been harder to organize, as you've probably seen from the last few outlines I posted.  There's a lot of value in working top-down on this deep encyclopedia-style material.</p>
   
   <p>Read on for the outline and more thoughts I just can't keep to myself.</p>
-layout: post
 permalink: >
   /2007/10/18/high-performance-mysql-second-edition-replication-scaling-and-high-availability/
 description:

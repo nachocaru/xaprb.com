@@ -1,7 +1,5 @@
 ---
 title: "MySQL high availability comparison: service versus data"
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/02/mysql-high-availability-comparison-service-versus-data/
 categories:
   - SQL

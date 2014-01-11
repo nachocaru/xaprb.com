@@ -1,7 +1,5 @@
 ---
 title: My favorite wiki is Dokuwiki
-author: Baron Schwartz
-layout: post
 permalink: /2009/03/31/my-favorite-wiki-is-dokuwiki/
 categories:
   - Commentary

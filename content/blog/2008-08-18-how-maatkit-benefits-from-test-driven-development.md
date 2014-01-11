@@ -1,7 +1,5 @@
 ---
 title: How Maatkit benefits from test-driven development
-author: Baron Schwartz
-layout: post
 permalink: /2008/08/18/how-maatkit-benefits-from-test-driven-development/
 categories:
   - Coding

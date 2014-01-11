@@ -1,7 +1,5 @@
 ---
 title: The MySQL init-script mess
-author: Baron Schwartz
-layout: post
 permalink: /2012/04/24/the-mysql-init-script-mess/
 categories:
   - SQL

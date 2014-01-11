@@ -1,7 +1,5 @@
 ---
 title: mk-query-digest now understands HTTP
-author: Baron Schwartz
-layout: post
 permalink: /2009/11/14/mk-query-digest-now-understands-http/
 categories:
   - Maatkit

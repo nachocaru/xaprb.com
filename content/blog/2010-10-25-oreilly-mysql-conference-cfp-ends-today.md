@@ -1,7 +1,5 @@
 ---
 title: "O'Reilly MySQL Conference CfP ends today"
-author: Baron Schwartz
-layout: post
 permalink: /2010/10/25/oreilly-mysql-conference-cfp-ends-today/
 categories:
   - Conferences

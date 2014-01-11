@@ -1,7 +1,5 @@
 ---
 title: Making MySQL comfortable for Oracle DBAs
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/07/making-mysql-comfortable-for-oracle-dbas/
 categories:
   - Oracle

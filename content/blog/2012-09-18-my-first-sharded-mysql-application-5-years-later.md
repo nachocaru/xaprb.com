@@ -1,7 +1,5 @@
 ---
 title: My first sharded MySQL application, 5 years later
-author: Baron Schwartz
-layout: post
 permalink: /2012/09/18/my-first-sharded-mysql-application-5-years-later/
 categories:
   - SQL

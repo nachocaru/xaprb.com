@@ -1,7 +1,5 @@
 ---
 title: Thank you for the MySQL 5.4 Community Release
-author: Baron Schwartz
-layout: post
 permalink: /2009/04/25/thank-you-for-the-mysql-54-community-release/
 categories:
   - Conferences

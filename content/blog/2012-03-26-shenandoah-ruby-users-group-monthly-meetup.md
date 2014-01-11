@@ -1,7 +1,5 @@
 ---
 title: Shenandoah Ruby Users Group Monthly Meetup
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/26/shenandoah-ruby-users-group-monthly-meetup/
 categories:
   - SQL

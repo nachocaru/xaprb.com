@@ -1,7 +1,5 @@
 ---
 title: A script snippet for aggregating GDB backtraces
-author: Baron Schwartz
-layout: post
 permalink: /2009/08/30/a-script-snippet-for-aggregating-gdb-backtraces/
 categories:
   - Maatkit

@@ -1,7 +1,5 @@
 ---
 title: What makes relational databases relational?
-author: Baron Schwartz
-layout: post
 permalink: /2012/03/13/what-makes-relational-databases-relational/
 categories:
   - PostgreSQL

@@ -1,7 +1,5 @@
 ---
 title: "MySQL isn't limited to nested-loop joins"
-author: Baron Schwartz
-layout: post
 permalink: /2013/10/01/mysql-isnt-limited-to-nested-loop-joins/
 categories:
   - SQL
