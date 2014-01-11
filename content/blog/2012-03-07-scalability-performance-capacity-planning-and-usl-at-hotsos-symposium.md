@@ -1,0 +1,27 @@
+---
+title: Scalability, performance, capacity planning and USL at Hotsos Symposium
+author: Baron Schwartz
+layout: post
+permalink: >
+  /2012/03/07/scalability-performance-capacity-planning-and-usl-at-hotsos-symposium/
+categories:
+  - SQL
+---
+I presented at this year&#8217;s [Hotsos Symposium][1]. I am searching for a claim to specialness, and I think it may be that I am the first Hotsos presenter who&#8217;s specifically focused on MySQL. True? I don&#8217;t know, but I&#8217;ll run with it for now.
+
+My topic was on extracting black-box performance metrics from TCP packet headers and timestamps and finding hidden performance problems in the system, without any knowledge of what the client and server are talking to each other about. I then extended the same data to performance and scalability modeling, which you can use for purposes such as forecasting, capacity planning, and bottleneck analysis.
+
+This technique works on MySQL because its TCP protocol is half-duplex, and it&#8217;ll work for any system with a half-duplex protocol. Does it work on Oracle Database? I am not sure, and no one else I&#8217;ve spoken to yet has been certain either. I can probably find out with a little research into the Oracle Database protocol.
+
+I wrote a white paper that goes into my presentation topics in more details. You can find it [here][2], along with sample data and commands that you can use to reproduce my results. This covers Part I of my presentation, and I will publish another white paper with Part II in a while; probably after the [MySQL conference][3] in April.
+
+My techniques are based on models and approaches that [Neil Gunther][4] developed, and Neil himself presented just after I did. His talk was about power-law distributions, and how a log-log plot renders a power-law relationship as linear. It turns out that power laws are related to fractals, the coastline of Britain, the frequency of word usage in the English language, and [response time in Oracle workloads][5]. I&#8217;m sure he will post some details on his [blog][6].
+
+After the day&#8217;s sessions ended, I ended up talking to Neil for a while. He explained and clarified a lot of things I didn&#8217;t understand about his work, such as the relationship between repairman queueing and the Universal Scalability Law. He also saw through a variety of my misconceptions and set me straight. Apparently I need to attend one of his training classes. We followed this by eating dinner and sharing a bottle of wine until late in the evening, and Neil wouldn&#8217;t let me pay in the end. A most enjoyable meal and conversation. Next time it&#8217;s on me!
+
+ [1]: hotsos.com/sym12.html
+ [2]: http://www.percona.com/about-us/mysql-white-paper/mysql-performance-analysis-with-percona-toolkit-and-tcp-ip-network-traffic/
+ [3]: www.percona.com/live/mysql-conference-2012/
+ [4]: http://www.perfdynamics.com/
+ [5]: http://perfdynamics.blogspot.com/2011/08/q-q-plots-for-multi-modal-performance.html
+ [6]: http://perfdynamics.blogspot.com

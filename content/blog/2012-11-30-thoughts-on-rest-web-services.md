@@ -1,0 +1,35 @@
+---
+title: Thoughts on REST web services
+author: Baron Schwartz
+layout: post
+permalink: /2012/11/30/thoughts-on-rest-web-services/
+categories:
+  - Internet
+  - World Wide Web
+  - XML
+---
+I usually keep pretty quiet on things that are controversial, and goodness knows you can start a holy war fast with any comments about REST web services. But I&#8217;ve been thinking and working on these things for years &#8212; REST for over a year, SOAP and friends since 2003 &#8212; and maybe my opinions will be interesting to someone.
+
+I dislike SOAP. I&#8217;ve worked a lot with it, doing about a dozen major integrations with platforms from companies like Amazon, Google, and Yahoo, using several different programming languages, primarily .NET languages and Perl. I have never worked heavily on the server side with SOAP; I&#8217;ve always been a client. From the client side it&#8217;s bad enough, and I do consider myself pretty fluent with most of the standards, though some of the WS- standards never were relevant to me. Regardless, I used to be able to read a raw WSDL for a complex service like Adwords, and tell you exactly what XML you needed to send and what you&#8217;d get back (primarily because the SOAP libraries available never worked right, and I had to write my own in both C# and Perl).
+
+What&#8217;s wrong with SOAP? Complexity. SOAP (and XML in general) is a sledgehammer to crack a nut. It does, however, provide a lot of nice features. You can in theory develop tools for every step of the process: to generate WSDL, write code for servers and clients automatically, and so on. SOAP works, and it generally works well with minor problems caused by quirks of some client libraries not working well with some server implementations (the .NET SOAP libraries never worked right with the WSDLs from Amazon&#8217;s early merchant integration services, though they were valid). SOAP is not the most efficient thing that could ever be done, both from the computing and from the human standpoint. You can theoretically do that with other technologies too, but SOAP is the most obvious success story to illustrate (Thrift, CORBA, Protocol Buffers, etc could also be mentioned &#8212; but they are not apples-to-apples in this discussion). SOAP is just too heavyweight. I always thought there needs to be something more straightforward and efficient that achieves the same goals.
+
+I&#8217;d heard about REST but never looked into it deeply until a couple years ago, when I gained a passing familiarity through some adjacent technologies. Around a year ago I got involved with writing a set of web APIs (I&#8217;ll avoid calling them REST APIs) and worked a little more closely to REST. I quickly learned that I didn&#8217;t know much, and most of my assumptions were gently shown to be wrong by other team members. But as I learned more, I decided I don&#8217;t like REST either.
+
+What&#8217;s wrong with REST? Naivety and idealism. No matter how much we dream the dream, things are not self-describing and infinitely fluid, and people seem to fall in love with the &#8220;elegance&#8221; of HATEOS (which is one of the least elegant acronyms ever created, on any level). When you write a client against a service, the client and all of the systems it&#8217;s connected to represent an ossification of some ideas about the interface the service exposes.
+
+An interface of any type is a contract, a promise to the world. The client trusts the promise, and if the promise changes, the client&#8217;s code and persistence structures must change to match. The &#8220;semantic web&#8221; is a wonderful daydream for the day when computers understand &#8220;meaning,&#8221; but for the time being, very few real useful systems I&#8217;m aware of are in the habit of persisting and working with information that might or might not contain anything or nothing in any or no structured format. REST APIs are supposed to somehow be magically discoverable and traversable on demand &#8212; &#8220;want to know what&#8217;s available through the API? Browse the API and see what you find!&#8221; This is completely unrealistic. If it were realistic, then why does every REST API have documentation that tells you what you&#8217;ll find when you browse the API, and what it means? QED.
+
+Another bit of idealism is the use of HTTP verbs exclusively. HTTP verbs aren&#8217;t sacred and somehow sufficient for everything. Designing to four primary verbs encourages a tremendously simplistic (actually, very complicated in [subtle ways][1]) worldview of what an efficient API does. Most quasi-REST services I&#8217;ve seen (there are very few that really follow the rules) would force one-at-a-time loops over operations involving a lot of data, for example. They were designed by people who&#8217;d never heard of the [fallacies of distributed computing][2].
+
+All of this has been said by many others, and probably more succinctly. What do I have to contribute? Only this: to point you to a good design.
+
+I believe that one of the best service designs I&#8217;ve ever seen is the [Google Adwords API][3]. It uses SOAP, but that&#8217;s just a transport &#8212; it&#8217;s not important. What&#8217;s important is the design. It&#8217;s made for efficiency on a very large scale &#8212; on both the client and the server side &#8212; and to work well with a large variety of client platforms, including Javascript in the browser. It uses batch operations nearly everywhere, and sensibly distills the verbs down to &#8220;read&#8221; and &#8220;write.&#8221; (Okay, they call it &#8220;get&#8221; and &#8220;mutate.&#8221;) The Adwords API actually doesn&#8217;t resemble early versions very much &#8212; I&#8217;ve been writing client code against it since 2004 or so &#8212; and the evolution of its design is a case study in large-scale API design.
+
+About a year ago I was cooking up a hybrid of JSON over HTTP, with many design decisions influenced by Adwords&#8217; design, and called it WORK (as opposed to REST, and because I wanted something that would work). The definitions of the operations and data types (yes, I do believe data types and operations should be predefined and agreed-upon, not discovered dynamically because that Just Doesn&#8217;t Work, as explained previously) were all written into a small JSON file. This served as an IDL that could, in theory and mostly in practice, be used to autogenerate client and server code. I didn&#8217;t see that project through to completion, but it remains an approach I&#8217;d use again in the future.
+
+So, in conclusion I would not recommend that anyone try to develop a REST web service. I&#8217;d recommend something more like RPC-over-JSON-using-parts-of-HTTP. This is what most so-called REST services really are anyway. I don&#8217;t care if anyone calls them REST, but Roy T. Fielding does, so out of respect for him I&#8217;ll use the terms somewhat carefully.
+
+ [1]: http://jcalcote.wordpress.com/2008/10/16/put-or-post-the-rest-of-the-story/
+ [2]: http://en.wikipedia.org/wiki/Fallacies_of_Distributed_Computing
+ [3]: https://developers.google.com/adwords/api/docs/

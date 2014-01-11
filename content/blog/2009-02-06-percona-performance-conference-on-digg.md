@@ -1,0 +1,18 @@
+---
+title: Percona Performance Conference on Digg
+author: Baron Schwartz
+layout: post
+permalink: /2009/02/06/percona-performance-conference-on-digg/
+categories:
+  - Conferences
+  - SQL
+tags:
+  - Percona
+  - perconaperfconf09
+---
+Our [Percona Performance Conference][1] is [making the rounds on Digg][2]. Is it bad form to ask for people to vote for it? &#8230;. ok then I won&#8217;t.
+
+But I assume it&#8217;s okay for me to suggest that perconaperfconf09 is a reasonable tag to use for this event.
+
+ [1]: http://conferences.percona.com/
+ [2]: http://digg.com/linux_unix/Percona_Performance_Conference_2009_on_April_22_23

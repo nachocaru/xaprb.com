@@ -1,0 +1,25 @@
+---
+title: 'The new hotness in open-core: InnoDB'
+author: Baron Schwartz
+layout: post
+permalink: /2010/07/02/the-new-hotness-in-open-core-innodb/
+categories:
+  - Commentary
+  - Open Source
+  - Oracle
+  - SQL
+tags:
+  - Domas Mituzas
+  - InnoDB
+  - Open Core
+  - Xtrabackup
+---
+There&#8217;s lots of buzz lately about the so-called [&#8220;open-core&#8221; business model of Marten Mickos&#8217;s new employer][1]. But this is nothing new. Depending on how you define it, InnoDB is &#8220;open-core,&#8221; and has been for a long time. The InnoDB Hot Backup (ibbackup) tool was always closed-source. Did anyone ever cry foul and claim that this made InnoDB itself not open-source, or accuse Innobase / Oracle of masquerading as open-source? I don&#8217;t recall that happening, although sometimes people got suspicious about [the interplay between the backup tool and the storage engine][2]. Generally, though, the people I know who use InnoDB Hot Backup have no gripes about paying for it.
+
+What is the difference between open-source with closed-source accessories, and crippleware? I think it depends on how people define the core functionality of software. Some might say that backup is core functionality for a database; and others would point to mysqldump and say that InnoDB isn&#8217;t crippleware as long as there is *some* alternative.
+
+I think InnoDB is an interesting case that illustrates what can happen when commercial and GPL play together. Part of that story is [the appearance of XtraBackup][3], an open-source competitor to InnoDB Hot Backup. Everyone&#8217;s subject to the rules of the game, unless they restrict the &#8220;core,&#8221; which would make it non-open-source to begin with.
+
+ [1]: http://www.computerworlduk.com/community/blogs/index.cfm?entryid=3048&#038;blogid=41
+ [2]: http://mituzas.lt/2010/05/08/on-hot-backups/
+ [3]: http://www.mysqlperformanceblog.com/2009/02/24/xtrabackup-open-source-alternative-for-innodb-hot-backup-call-for-ideas/

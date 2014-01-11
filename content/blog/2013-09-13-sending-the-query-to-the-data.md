@@ -1,0 +1,13 @@
+---
+title: Sending the query to the data
+author: Baron Schwartz
+layout: post
+permalink: /2013/09/13/sending-the-query-to-the-data/
+categories:
+  - Cassandra
+  - SQL
+---
+It&#8217;s common wisdom that large-scale database systems require distributing the data across machines. But what seems to be missing in a lot of discussions is distributing the query processing too. By this I mean the actual computation that&#8217;s performed on the data. 
+I just had a conversation with Peter Zaitsev yesterday that helped make concrete some thoughts I&#8217;ve been having about Cassandra for a while. Because Cassandra doesn&#8217;t allow you to really do any computation in the data (aggregating, evaluating expressions, and so on), if you&#8217;re going to use it for truly Big data, you&#8217;re going to fetch enormous amounts of data across the network. Sure, you&#8217;re distributing the storage and retrieval across many machines &#8212; but you&#8217;re locating your data far from your processing. You have a distant low-level key-value store, in essence, and you have to write a database wrapper on top of it if you&#8217;re going to use it for anything non-trivial. 
+The queries need to be sent to the data in fragments. Breaking up the query, sending fragments of them to the appropriate location close to the data, evaluating them, perhaps sending them along with partial results to further nodes and continuing, and eventually (or incrementally) assembling final results and streaming them back to the client, is a big piece of the puzzle that&#8217;s missing in many systems with similar designs. Some other systems do offer so-called distributed processing (usually in the form of a kind of map-reduce) but I haven&#8217;t seen a smart open-source implementation of it yet. By smart I mean high-performance, efficient, and generalized/generalizable, such that it has very few bad-behavior edge-cases. I&#8217;ve seen some systems that, if you have just the right data and queries, will work ok for limited use cases but fall back (with no protection) to worst-case full-cluster-scan nightmares for other types of queries. 
+Distributed hash tables with simple storage and retrieval aren&#8217;t enough, no matter how much frosting is applied, unless they can also do computation. Both data and queries need to be distributed in a distributed system. I think this is one reason why people continue to shard with technologies they know, such as MySQL. For specialized use cases it&#8217;s often not all that hard to write a sharded system that is optimized for the particular types of data access needed, and MySQL has pretty sophisticated abilities to do computations close to the data, in comparison with most open-source distributed key-value stores.

@@ -1,0 +1,24 @@
+---
+title: Speaking at CPOSC 2009
+author: Baron Schwartz
+layout: post
+permalink: /2009/10/05/speaking-at-cposc-2009/
+categories:
+  - Conferences
+  - Maatkit
+  - SQL
+tags:
+  - cposc
+  - cposc2009
+---
+<p style="float:right">
+  <a href="http://cposc.org/" target="_blank"><img src="http://www.xaprb.com/blog/wp-content/uploads/2009/10/cposc_speaker.jpg" alt="CPOSC 2009" /></a>
+</p>
+
+I&#8217;ll be attending and presenting at the [2009 Central Pennsylvania Open-Source Conference][1]. My session is on Maatkit. I see Tom Clark has a session on MySQL performance! I hope to see you there &#8212; I&#8217;ve really become a fan of these regional conferences.
+
+By the way, I&#8217;ve also created a speaker badge by adapting a wallpaper someone else made &#8212; you can find it on the sidebar of my blog if you&#8217;re also a speaker.
+
+<br style="clear:both" />
+
+ [1]: http://cposc.org/

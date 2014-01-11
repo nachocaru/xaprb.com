@@ -1,0 +1,13 @@
+---
+title: innotop version 1.8.1 released
+author: Baron Schwartz
+layout: post
+permalink: /2012/02/25/innotop-version-1-8-1-released/
+categories:
+  - Innotop
+  - SQL
+---
+The new stable version of [innotop][1] is now released. Version 1.8.1 is a bug-fix-only release, with no new features. It&#8217;s available for immediate [download][2].
+
+ [1]: http://code.google.com/p/innotop/
+ [2]: http://code.google.com/p/innotop/downloads/list

@@ -1,0 +1,21 @@
+---
+title: 'Why I&#8217;m not an ACM member'
+author: Baron Schwartz
+layout: post
+permalink: /2012/05/29/why-im-not-an-acm-member/
+categories:
+  - Commentary
+---
+I took a course on engineering ethics as part of my degree in computer science, and decided that it was very important for me to formally ascribe to a recognized code of conduct. This is not just a principle, but also an important legal matter in today&#8217;s litigious atmosphere. Court cases have literally been defended by engineers pointing to a code of ethics as their guidelines for actions and decisions.
+
+So I became an ACM member, and they promptly &#8220;shared&#8221; my information with other organizations who started sending me a large quantity of completely unrelated and unwanted junk mail. I called and asked, and they confirmed that they&#8217;d done this.
+
+My response was to ask the ACM to stop &#8220;sharing&#8221; my information, and to immediately refund my membership dues. Why? Because of the blatant hypocrisy of their actions, which are contradictory to several points in the first section (GENERAL MORAL IMPERATIVES) of the ACM&#8217;s own [code of ethics][1], especially point 1.7.
+
+In a general sense, I believe that my identity and personal information such as my mailing address are mine and mine alone. I take it as a principle that it&#8217;s morally wrong to sell that which doesn&#8217;t belong to you. I know this isn&#8217;t the way the world works, but &#8220;how the world works&#8221; isn&#8217;t how I distinguish between right and wrong. When I joined the ACM, I gave them my information for membership purposes only. I did not authorize them to sell my information, nor was I given a chance to &#8220;opt out&#8221; of such selling. If they sold it &#8212; and as one who&#8217;s worked in several marketing companies, I know they sold it, they didn&#8217;t just give it away &#8212; then the revenue belongs to me, not them.
+
+This incident has always been a sour taste in my mouth, and will remain so. If I were elected supreme ruler of the universe, any type of &#8220;opt-out&#8221; policy for selling someone&#8217;s information would be strictly illegal. The ACM should be lobbying Congress to make it illegal, not doing it themselves. What&#8217;s odd is that the ACM apparently sold my personal information more quickly and broadly than almost any other company I&#8217;ve ever dealt with. I occasionally have to call a company and ask them to set the &#8220;do-not-sell&#8221; bit on my profile, but I&#8217;ve never had such an immediate and large flood of junk mail as I got after giving my information to the ACM.
+
+The ACM just sent me a letter asking me to become a member, which is why this comes up again after all these years. Good luck with that, ACM. Try walking your talk, and then we&#8217;ll see. In the meantime, I&#8217;d like to let the world know that I have continued to adhere to the ACM code of ethics, and treat it as my own rules of conduct. I don&#8217;t need to be an ACM member to get that benefit.
+
+ [1]: http://www.acm.org/about/code-of-ethics
