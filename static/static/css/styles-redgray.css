@@ -14,12 +14,17 @@ body {
   background-color: #feffff;
 }
 a {
-  color: #fff;
+  color: #5b6268;
 }
 a:hover,
 a:focus {
   text-decoration: none;
   color: #5b6268;
+}
+.body a,
+.body a:hover,
+.body a:focus {
+  text-decoration:underline;
 }
 h1 {
   font-size: 45px;
@@ -55,6 +60,7 @@ hr {
 .masthead #logo {
   float: left;
   display: block;
+  color: #fff;
 }
 /* Widewrappers that span the whole width of the page */
 .widewrapper {

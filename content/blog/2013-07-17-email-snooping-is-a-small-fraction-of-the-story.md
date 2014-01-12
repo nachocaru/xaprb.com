@@ -7,6 +7,7 @@ categories:
   - Open Source
 ---
 I wrote previously about why privacy and security [require open-source, inspectable hardware and software][1] to run on, and [software that makes encryption the default][2] so everyone uses it. My example application was email, and I concluded that it's currently impractical to think that we can block government snooping on a large scale even in the domain of email. 
+
 Now, think what a small fraction of people's Internet-connected activities we're talking about: email. What about web browsing, social network use, chat clients, game playing, phone use, GPS use, credit card transactions, search engine activity, smartphone apps, online video streaming, television viewing, car driving, access to personal devices such as security systems and webcams, cable TV use, and on and on? How can all of this be made secure and intrusion-proof? And make no mistake, all of this data is intensely personal, private, and meaningful. Email is a tiny part of the story.
 
 And day by day, our lives are becoming ever more electronic, ever more connected, and thus ever more trackable. Wearable computing and RFID chips are going to be reality for normal citizens in the next decade or less. In twenty years many people will probably have Internet-connected, GPS-enabled, RFID-broadcasting devices physically implanted in their bodies. (The rest of us already carry these in our pockets every day). This is not sci-fi, it's the quite predictable and ordinary extension of current trends and developments.
