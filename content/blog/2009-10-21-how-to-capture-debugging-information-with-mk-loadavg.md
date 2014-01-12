@@ -20,7 +20,7 @@ First, set everything up.
 
 Next let's set up a script that `mk-loadavg` can use to gather some information when it detects a high CPU condition. Save the contents of this script as "collect-stats.sh". The script will gather about 30 seconds worth of statistics. It uses a simple sentinel file `/tmp/gatherinfo` to prevent multiple occurrences from gathering statistics at the same time. (This is intentionally simple for demo purposes.)
 
-``<pre>
+<pre>
 #!/bin/bash
 
 if [ -f /tmp/gatherinfo ]; then exit 0; fi
@@ -37,7 +37,7 @@ sleep 30
 ps -eaf >> collected/$d-ps 2>&1 &
 mysql -e 'show innodb status\G show full processlist\G' >> collected/$d-innodbstatus 2>&1 &
 rm /tmp/gatherinfo
-</pre>`` 
+</pre> 
 Now make the script executable: `chmod +x collect-stats.sh`. At this point we're ready to start working. Let's fire the stats-collection script when the system's user CPU goes above 40%.<cod>
 
 <pre>perl mk-loadavg --watch "Server:vmstat:us:>:40" --interval 1 --execute collect-stats.sh

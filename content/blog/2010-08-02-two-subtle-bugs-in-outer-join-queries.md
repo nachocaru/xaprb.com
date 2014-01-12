@@ -14,7 +14,7 @@ Let's dive right in and analyze these subtle bugs. Warning: if you don't underst
 
 If the outer table in your query contains NULL-able columns, and you place a WHERE clause to filter out all but those rows, you're going to get bugs because a non-matching row in the outer table will be all-NULL. Here's an example. Let's start with a plain outer join query:
 
-`<pre>
+<pre>
 select * from L left join R on l_id = r_id;
 +------+------+---------+
 | l_id | r_id | r_other |
@@ -23,10 +23,10 @@ select * from L left join R on l_id = r_id;
 |    2 |    2 |    NULL | 
 |    3 | NULL |    NULL | 
 +------+------+---------+
-</pre>` 
+</pre> 
 Here we see that one row in the outer table is missing, and one row (the middle row) has a NULL r_other column. Now, let's add a WHERE clause:
 
-`<pre>
+<pre>
 select * from L left join R on l_id = r_id where r_other is null;
 +------+------+---------+
 | l_id | r_id | r_other |
@@ -34,21 +34,21 @@ select * from L left join R on l_id = r_id where r_other is null;
 |    2 |    2 |    NULL | 
 |    3 | NULL |    NULL | 
 +------+------+---------+
-</pre>` 
+</pre> 
 This query is buggy, because the two rows are returned for completely different reasons, and you can't be sure which is which. IS NULL clauses can safely be placed on the columns used in the JOIN clause, but not on other columns in the outer table that might be NULL.
 
 ### Bug 2: an OUTER JOIN is converted to INNER
 
 If you place a non-null-safe comparison operator on any column in the outer table that isn't part of the JOIN clause, you implicitly disable the outer-ness of the query and convert it to an INNER JOIN. Here's an example:
 
-`<pre>
+<pre>
 select * from L left join R on l_id = r_id where r_other > 1;
 +------+------+---------+
 | l_id | r_id | r_other |
 +------+------+---------+
 |    1 |    1 |       5 | 
 +------+------+---------+
-</pre>` 
+</pre> 
 The left-outer-ness of the above query is what causes the third row to be output in the first query I showed you above. The greater-than operator in this example automatically makes the left-ness impossible, because anytime there's a row in the inner table that has no match in the outer table, it'll be filled in with NULLs, and those NULLs will be eliminated by the operator. So the effect is that only matching rows will ever be output.
 
 If you want to ponder variations and subtleties of the above, you can read more discussion on [the issue report where we're hammering out the details][3] of automatically detecting and warning about these sneaky errors.

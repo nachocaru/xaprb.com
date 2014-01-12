@@ -15,7 +15,7 @@ To give an idea, here are some of the relational operations (in SQL speak) you c
     *   Output formatting is easy with `column`, especially with the `-t` option.</ol> 
     In addition to the above, Bash's subshell input operator syntaxes can help avoid a lot of temporary files. For example, if you want to join two unsorted files, you can do it like this:
     
-    `<pre>$ join <(sort file1) <(sort file2)</pre>` 
+    <pre>$ join <(sort file1) <(sort file2)</pre> 
     That's kind of an overview &#8212; I end up hacking together a bunch of things, and I'm sure I'm forgetting something. But pipe-and-filter programming with whitespace-delimited files is generally a much more powerful (and performant) paradigm than I realized a few years ago, and that's the point I wanted to share overall.
     
     As a concrete example, I remember a mailing list thread that began with "I have a 500GB file of 600 billion strings, max length 2000 characters, unsorted, non-unique, and I need a list of the unique strings." Suggestions included Hadoop, custom programs, Gearman, more Hadoop, and so on &#8212; and the ultimate solution was `sort -u` and `sort --merge`, trivially parallelized with Bash. (By the way, an easy way to parallelize things is [`xargs -P`][1].) 

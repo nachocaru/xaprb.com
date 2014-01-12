@@ -13,14 +13,14 @@ I read the blog post, convinced myself that it made sense, and tried to code it.
 
 I decided to use a hard-coded 1024 "buckets", and instead of an array, I used a temporary table.
 
-`<pre>create temporary table buckets(
+<pre>create temporary table buckets(
   id int not null primary key,
   max_zeroes int not null default 0,
   rowcount int not null default 0
-)engine=memory;</pre>` 
+)engine=memory;</pre> 
 Here's the single pass over the values. I'm using a user-defined variable `@c` to avoid recomputing the hash. Let me know if you see any mistakes in my code.
 
-`<pre>insert into buckets(id, max_zeroes, rowcount)
+<pre>insert into buckets(id, max_zeroes, rowcount)
 select
    (@c := crc32(sess_id)) &#038; 1023,
    if(@c < 1024, 22, instr(reverse(bin(@c >> 10)), '1') -1),
@@ -28,15 +28,15 @@ select
 from tbl1
 on duplicate key update
    max_zeroes=greatest(max_zeroes, values(max_zeroes)),
-   rowcount = rowcount + 1;</pre>` 
+   rowcount = rowcount + 1;</pre> 
 That query took 32 minutes; by comparison, a similar query using COUNT(DISTINCT) took 46 minutes. So far, so good. Now here's the final bit, to combine the "buckets" and get the cardinality estimate. Again, flag errors if you see any:
 
-`<pre>select pow(sum(max_zeroes) / 1024, 2) * 1024 * 0.79402 from buckets;
+<pre>select pow(sum(max_zeroes) / 1024, 2) * 1024 * 0.79402 from buckets;
 +-------------------------------------------------+
 | pow(sum(max_zeroes) / 1024, 2) * 1024 * 0.79402 |
 +-------------------------------------------------+
 |                              151741.65811039635 |
-+-------------------------------------------------+</pre>` 
++-------------------------------------------------+</pre> 
 That's not even close. I happen to know that there are more than 10122796 distinct values, and 21669591 rows overall.
 
 Did I do something wrong? I'm trying to decide whether my error is more likely to be that I'm using CRC32, a little coding mistake, the way MySQL handles numbers internally&#8230; something else? I'm not sure what's most likely. I ran this one step at a time when I wrote the code, and all of the hashing and bit-counting seems to be correct, but the aggregate results are just way off.

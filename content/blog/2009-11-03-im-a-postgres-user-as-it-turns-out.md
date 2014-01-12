@@ -7,7 +7,7 @@ categories:
 ---
 Someone recently posted this to an email list as a sample of an interesting SHOW INNODB STATUS output:
 
-`<pre title="use mariadb? use drizzle? drop database oracle?">mysql> SHOW ENGINE INNODB STATUS\G
+<pre title="use mariadb? use drizzle? drop database oracle?">mysql> SHOW ENGINE INNODB STATUS\G
           _______  _______
 |\     /|(  ____ \(  ____ \
 | )   ( || (    \/| (    \/
@@ -24,20 +24,20 @@ Someone recently posted this to an email list as a sample of an interesting SHOW
 |  _____)| |   | |(_____  )   | |   | | ____ |     __)|  __)   (_____  )
 | (      | |   | |      ) |   | |   | | \_  )| (\ (   | (            ) |
 | )      | (___) |/\____) |   | |   | (___) || ) \ \__| (____/\/\____) |
-|/       (_______)\_______)   )_(   (_______)|/   \__/(_______/\_______) </pre>` 
+|/       (_______)\_______)   )_(   (_______)|/   \__/(_______/\_______) </pre> 
 I thought it was worth trying out, so I gave it a shot:
 
-`<pre>mysql> use postgres
+<pre>mysql> use postgres
 ERROR 1049 (42000): Unknown database 'postgres'
-</pre>` 
+</pre> 
 Clearly I just need to create the database. Short work:
 
-`<pre>mysql> create database postgres;
+<pre>mysql> create database postgres;
 Query OK, 1 row affected (0.00 sec)
 
 mysql> use postgres
 Database changed
-</pre>` 
+</pre> 
 So now I'm using Postgres. I still feel like I'm missing something, though. It feels a lot like reading [XKCD][1] comics. Where's the tooltip?
 
  [1]: http://xkcd.com/

@@ -12,7 +12,7 @@ Next up: actual template changes! More graphs!
 
 The changelog follows.
 
-`<pre>2009-10-24: version 1.1.3
+<pre>2009-10-24: version 1.1.3
 
         * This is a bug-fix release only, and contains no template changes.
         * To upgrade from the previous release, upgrade ss_get_mysql_stats.php.
@@ -30,6 +30,6 @@ The changelog follows.
         * SHOW INNODB STATUS parsing for pending_aio_log_ios was broken.
         * SHOW INNODB STATUS parsing for pending_aio_sync_ios was broken.
         * Made SHOW INNODB STATUS parsing less sensitive to false positive matches.
-</pre>`
+</pre>
 
  [1]: http://code.google.com/p/mysql-cacti-templates/

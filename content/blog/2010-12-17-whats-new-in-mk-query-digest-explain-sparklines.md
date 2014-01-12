@@ -11,17 +11,17 @@ A "sparkline" is a simple type of chart that conveys important information witho
 
 Here is an example of the profile report:
 
-`<pre># Profile
+<pre># Profile
 # Rank Query ID           Response time    Calls R/Call   Apdx V/M   EXPLAIN Item
 # ==== ================== ================ ===== ======== ==== ===== ======= =====
 #    1 0x808CDA06B6EB3D5A     0.0141 83.5%     2   0.0071 1.00  0.00 aa      SELECT test.t
 #    2 0x8305A7D4195D2096     0.0011  6.7%     6   0.0002 1.00  0.00 aa      SELECT test.t
-</pre>` 
+</pre> 
 The EXPLAIN column appears if you add the *&#8211;explain* option to mk-query-digest. **Note: while writing this post I discovered a bug in the new functionality, which is now fixed in trunk, so if you want to use this you'll need to 'wget maatkit.org/trunk/mk-query-digest' to get a version that doesn't have the bug.**
 
 In this case, both queries are shown as **aa**. What is that? It's our geek code, one character per table in the EXPLAIN plan. And if we look at the documentation, 'a' is the shorthand for Type=ALL:
 
-`<pre>The abbreviated table access codes are:
+<pre>The abbreviated table access codes are:
 
   a  ALL
   c  const
@@ -34,7 +34,7 @@ In this case, both queries are shown as **aa**. What is that? It's our geek code
   r  ref
   s  system
   u  unique_subquery
-</pre>` 
+</pre> 
 So "aa" is shorthand for "table scan the first table, and do a cross-join with the second table by scanning it too." That's a terrible query plan! Someone needs to fix their SQL or add some indexes or something.
 
 The code includes a couple of other small but important bits of data about the EXPLAIN plan:

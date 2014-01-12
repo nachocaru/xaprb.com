@@ -11,7 +11,7 @@ I've released version 1.1.5 of my [improved Cacti templates][1] for MySQL and ot
 
 The full changelog follows:
 
-`<pre>2009-12-13: version 1.1.5
+<pre>2009-12-13: version 1.1.5
 
   * Support for getting slave lag via mk-heartbeat was broken (issue 87).
   * The memcached stats command hung because it lacked "quit" (issue 65).
@@ -21,7 +21,7 @@ The full changelog follows:
   * Added the -q option to the SSH command to quell missing homedir warnings.
   * The --port option to the MySQL templates could not be null.
   * The log_bytes_flushed and log_bytes_written were renamed (issue 81).
-</pre>`
+</pre>
 
  [1]: http://code.google.com/p/mysql-cacti-templates/
  [2]: http://code.google.com/p/mysql-cacti-templates/wiki/UpgradingTemplates

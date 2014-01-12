@@ -17,7 +17,7 @@ It's not easy to read /proc/diskstats by looking at them, though. So I usually d
 
 Here's a recipe. You might want to refer to the [kernel iostat documentation][1] too.
 
-`<pre>
+<pre>
 wget http://aspersa.googlecode.com/svn/trunk/rel
 wget http://aspersa.googlecode.com/svn/trunk/align
 chmod +x rel align
@@ -41,6 +41,6 @@ m  m dev      reads rd_mrg  rd_sectors ms_reading    writes wr_mrg  wr_sectors m
 0  0 sdb0        99      0        3168       4442      2067      0      133972       3491     -16         869        7403
 0  0 sdb0        22      0         704        140        20      0        8801         12       0         144         152
 0  0 sdb0        16      0         512         62         2      0         466          0       0          62          62
-</pre>`
+</pre>
 
  [1]: http://www.mjmwired.net/kernel/Documentation/iostats.txt

@@ -7,12 +7,12 @@ categories:
 ---
 Here's a little trivia that you might find helpful. Suppose that I have the following in the MySQL slow query log (abbreviated for clarity):
 
-`<pre>
+<pre>
 # User@Host: root[root] @ localhost [127.0.0.1]
 # Time: 100919 17:58:52
 # Query_time: 9.648427  Lock_time: 8.648039
 select sleep(1) from t limit 1;
-</pre>` 
+</pre> 
 To get this into the slow query log, I set the long\_query\_time to 0 and opened two sessions. In one session I ran `LOCK TABLES t WRITE`, and in the other I tried to select from that table. As you can see above, **1) LOCK TABLES contributes to the Lock_time number**, and **2) the Query_time is the sum of execution time and lock time**.
 
 Now, I'll set long\_query\_time = 2 and run the same test. What happens? Nothing shows up in the slow query log, because **3) the time spent waiting for table locks doesn't count towards the slow query time threshold**.

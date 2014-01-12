@@ -10,7 +10,7 @@ You used to use [mk-query-digest][1] to aggregate and report on MySQL's slow que
 
 So now mk-query-digest is a tool that can understand and "do stuff with" a variety of query/response types of information. The latest is HTTP. HTTP traffic is just a query-response flow of events, perfectly suitable for response-time analysis. Example:
 
-`<pre>baron@kanga:~$ mk-query-digest sample-http.txt --type http
+<pre>baron@kanga:~$ mk-query-digest sample-http.txt --type http
 # 1.6s user time, 100ms system time, 14.20M rss, 17.07M vsz
 # Overall: 56 total, 30 unique, 1.27 QPS, 0.06x concurrency ______________
 #                    total     min     max     avg     95%  stddev  median
@@ -52,7 +52,7 @@ get www.mysqlperformanceblog.com/feed/\G
 #    6 0x8C239A43A9C80FD2     0.2373  9.0%     1   0.2373 GET www.mysqlperformanceblog.com/
 #    7 0x4D4095C546E65CD4     0.1959  7.5%     1   0.1959 GET www.mysqlperformanceblog.com/2008/11/26/
 #    8 0x49CC22FAC68CD475     0.1906  7.3%     1   0.1906 GET /favicon.ico
-</pre>` 
+</pre> 
 This is suitable for lots of things. We're trying to look at the most useful protocols, because the variety of inputs is really unlimited; we could implement almost anything that fits into the notion of query and response. For example, the [memcached protocol is becoming something of a lingua franca][2] for a lot of different systems, so there's a big value-add. HTTP has been used a long time as a transport layer for REST, SOAP, and so on (CouchDB anyone?). Valid, and interesting, suggestions are Sphinx, PostgreSQL, and Gearman. (Please [offer to sponsor][3] any that you want to see.)
 
 Back to HTTP: implementing it gives an easy way to measure website response time, including useful things like 95th percentile goodness. And from there, you can drill down into the performance of the work done for these requests. If you want to get really fancy, you can even capture some samples of netstat at the same time as you tcpdump traffic for HTTP, memcached, and MySQL &#8212; so you can blame database queries and memcached requests on specific HTTP requests!

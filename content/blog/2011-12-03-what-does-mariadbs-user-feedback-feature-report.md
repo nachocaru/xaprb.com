@@ -9,7 +9,7 @@ I was curious what information MariaDB's ["phone home" user feedback plugin][1] 
 
 It's easy enough to find out: just load the plugin, then select from the INFORMATION_SCHEMA.FEEDBACK table. This returns a lot of rows that are obviously the status counters and variables, as well as the plugins loaded in the server. A quick exclusion join will eliminate those, and the result on my laptop is this:
 
-`<pre>select f.* from feedback as f
+<pre>select f.* from feedback as f
    left outer join global_variables as v on f.variable_name = v.variable_name
    left outer join global_status    as s on f.variable_name = s.variable_name
    left outer join plugins          as p on f.variable_name = p.plugin_name
@@ -25,15 +25,15 @@ where s.variable_name is null and v.variable_name is null and p.plugin_name is n
 | Uname_machine      | i686                                 |
 | Uname_distribution | fedora: Fedora release 15 (Lovelock) |
 +--------------------+--------------------------------------+
-</pre>` 
+</pre> 
 This actually isn't all, though. If you check the output of SHOW VARIABLES you'll see an extra few rows, one of which is this:
 
-`<pre>+---------------------+------------------------------+
+<pre>+---------------------+------------------------------+
 | Variable_name       | Value                        |
 +---------------------+------------------------------+
 | feedback_server_uid | xlGYjFKJ0ivpSWAktGglpEgVTq8= |
 +---------------------+------------------------------+
-</pre>` 
+</pre> 
 I'll have to look into how that's calculated. It might be useful.
 
  [1]: http://kb.askmonty.org/en/user-feedback-plugin

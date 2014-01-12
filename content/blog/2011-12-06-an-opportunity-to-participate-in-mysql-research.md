@@ -11,13 +11,13 @@ The end goal is an open-source tool that will be a standard part of a typical My
 
 You can help build this tool. I need samples from a wide variety of healthy and sick servers, both heavily and lightly loaded. I need samples that are between a few hours and a week or so long. Here is a script that will gather what I need:
 
-`<pre>$ mysqladmin ext -i1 | awk '
+<pre>$ mysqladmin ext -i1 | awk '
 	/Queries/{q=$4-qp;qp=$4}
 	/Threads_connected/{tc=$4}
-	/Threads_running/{print q, tc, $4}'</pre>` 
+	/Threads_running/{print q, tc, $4}'</pre> 
 The output should look something like this:
 
-`<pre>2147483647   136     7
+<pre>2147483647   136     7
   798   136     7
   767   134     9
   828   134     7
@@ -30,7 +30,7 @@ The output should look something like this:
  1179   134     7
  1151   134     7
  1240   135     7
- 1000   135     7</pre>` 
+ 1000   135     7</pre> 
 Please save this output to a file, and contact me at moc.brpax@norab (reversed) if you would like to offer a dataset for us to test on. If you need any help setting up the data collection, you can use the same email. I'd also appreciate if you'd help spread the word about this via Twitter or other means. Thanks very much!
 
  [1]: http://www.xaprb.com/blog/2011/12/01/automatically-detecting-abnormal-behavior-in-mysql/ "Automatically detecting abnormal behavior in MySQL"

@@ -15,7 +15,7 @@ This second utility does most of the work. It is called 'collect' and by default
 
 Here's a sample of how to use the tools. In summary: get them and make them executable, then configure them; then start a screen session and run the 'stalk' utility as root. Go do something else and come back later to check! A code sample follows.
 
-`<pre>
+<pre>
 $ wget http://aspersa.googlecode.com/svn/trunk/stalk
 $ wget http://aspersa.googlecode.com/svn/trunk/collect
 $ chmod +x stalk collect

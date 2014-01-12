@@ -7,7 +7,7 @@ categories:
 ---
 Unfortunately, MySQL 5.5 doesn't generate a very good query execution plan for IN() queries against a compound (multi-column) index, such as the following query that should be able to use the 2-column primary key:
 
-`<pre>
+<pre>
 explain select * from tbl1
 where (col1, col2) in (
       (732727758,102),(732728118,102),(732728298,102),(732728478,102),
@@ -24,10 +24,10 @@ possible_keys: NULL
           ref: NULL
          rows: 1379
         Extra: Using where
-</pre>` 
+</pre> 
 Queries such as this should usually be rewritten to a form such as the following, which accesses only the 10 rows specified instead of scanning the table:
 
-`<pre>
+<pre>
 explain select * from tbl1
 where (col1=732727758 and col2=102)
    OR (col1=732728118 and col2=102)
@@ -50,4 +50,4 @@ possible_keys: PRIMARY
           ref: NULL
          rows: 10
         Extra: Using where
-</pre>`
+</pre>

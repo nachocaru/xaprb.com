@@ -14,7 +14,7 @@ There are [upgrade instructions][5] on the project wiki for this and all release
 
 The full changelog follows.
 
-`<pre>
+<pre>
 2011-01-22: version 1.1.8
 
   * The cache file names could conflict due to omitting --port (issue 171).
@@ -28,7 +28,7 @@ The full changelog follows.
   * Added a minimum option to the template construction logic (issue 169).
   * Added memtotal for Memory (issue 146).
   * make-template.pl sanity checks were too strict (issue 168).
-</pre>`
+</pre>
 
  [1]: http://code.google.com/p/mysql-cacti-templates/
  [2]: http://code.google.com/p/mysql-cacti-templates/wiki/MySQLTemplates#MySQL_Query_Response_Time_%28Microseconds%29

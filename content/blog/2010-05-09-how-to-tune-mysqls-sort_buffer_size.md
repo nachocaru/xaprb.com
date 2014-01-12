@@ -12,7 +12,7 @@ I perpetually see something like the following:
 > [random sample of SHOW GLOBAL STATUS, like the query cache counters] 
 > my.cnf:
 > 
-> `<pre>[mysqld]
+> <pre>[mysqld]
 key_buffer_size=1500M
 query_cache_size= 64M
 max_connections = 256
@@ -20,7 +20,7 @@ key_buffer = 8M
 sort_buffer_size = 100M
 read_buffer_size = 8M
 delay_key_write = ALL
-</pre>`</blockquote> 
+</pre></blockquote> 
 > There are many problems in this my.cnf file, but the sort\_buffer\_size is a glaring one that identifies the user as someone who should not be playing with live ammunition. Therefore, I have developed an advanced process for tuning sort\_buffer\_size, which you can follow to get *amazing* performance improvements. It's magical.
 > 
 > 1.  How expert are you? 

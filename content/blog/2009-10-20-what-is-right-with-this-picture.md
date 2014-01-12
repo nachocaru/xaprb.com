@@ -7,7 +7,7 @@ categories:
 ---
 Do you know what this is?
 
-`<pre>debian:~/mysql-cacti-templates/t# php mysql.php 
+<pre>debian:~/mysql-cacti-templates/t# php mysql.php 
 
 not ok 1 - basic test to check that the test suite works
 #     Failed test (/root/mysql-cacti-templates/t/mysql.php at line 9)

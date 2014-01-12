@@ -11,7 +11,7 @@ I've just uploaded the [new release of innotop to Google Code][1]. Short version
 
 Longer version:
 
-`<pre>2010-11-06: version 1.8.0
+<pre>2010-11-06: version 1.8.0
 
    Changes:
    * Don't re-fetch SHOW VARIABLES every iteration; it's too slow on many hosts.
@@ -29,7 +29,7 @@ Longer version:
    * Status text from the InnoDB plugin wasn't parsed correctly (issue 36).
    * Transaction ID from InnoDB plugin wasn't subtracted correctly (issue 38).
    * Switching modes and pressing ? for help caused a crash (issue 40).
-</pre>`
+</pre>
 
  [1]: http://code.google.com/p/innotop/
  [2]: http://www.percona.com/docs/wiki/percona-server:features:userstatv2

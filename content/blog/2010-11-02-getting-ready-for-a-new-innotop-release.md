@@ -8,7 +8,7 @@ categories:
 ---
 It's been ages since we've had an update to [innotop][1], or at least, it's been a while since the changes were bundled up and released officially. Barring any bug reports against the [trunk code][2], I'm about ready to release more than a year's worth of improvements to it:
 
-`<pre>   Changes:
+<pre>   Changes:
    * Don't re-fetch SHOW VARIABLES every iteration; it's too slow on many hosts.
    * Add a filter to remove EVENT threads in SHOW PROCESSLIST (issue 32).
    * Add a timestamp to output in -n mode, when -t is specified (issue 37).
@@ -22,7 +22,7 @@ It's been ages since we've had an update to [innotop][1], or at least, it's been
    * Don't try to get InnoDB status if have_innodb != YES (issue 33).
    * Status text from the InnoDB plugin wasn't parsed correctly (issue 36).
    * Transaction ID from the InnoDB plugin wasn't subtracted correctly (issue 38).
-   * Switching modes and pressing ? for help caused a crash (issue 40).</pre>`
+   * Switching modes and pressing ? for help caused a crash (issue 40).</pre>
 
  [1]: http://code.google.com/p/innotop/
  [2]: http://innotop.googlecode.com/svn/trunk/innotop

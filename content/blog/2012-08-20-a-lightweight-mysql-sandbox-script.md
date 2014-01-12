@@ -17,7 +17,7 @@ To connect to it and execute commands, I use the mc command. This will find a ru
 
 To sum up: unpack and trim down the server versions, naming them according to a naming convention, set up a data directory, set up $HOME/.my.cnf, and then create two programs in the $PATH. Here is the `ms` script:
 
-`<pre>
+<pre>
 #!/bin/bash
 
 which="$1"; shift
@@ -78,10 +78,10 @@ EOF
 echo "$PORT" > "/tmp/mysql-$PORT"
 $BIN --defaults-file=my.cnf --pid-file=/tmp/mysql.$PORT.pid "$@"
 rm "/tmp/mysql-$PORT"
-</pre>` 
+</pre> 
 And here is the `mc` command, which I've tweaked a little to run on Mac OSX as well as Linux:
 
-`<pre>#!/bin/sh
+<pre>#!/bin/sh
 # Discover which server is currently running, and use it
 case $(uname) in
 Linux)
@@ -93,7 +93,7 @@ Darwin)
    mysql --port=$port "$@"
    ;;
 esac
-</pre>` 
+</pre> 
 This is pretty basic, and certainly not something I'd promote as [generically useful][2] or ready for the masses, but perhaps it will help someone else who has the (unusual?) usage requirements I have.
 
  [1]: http://mysqlsandbox.net/
