@@ -35,7 +35,7 @@ All of these tools are very flexible and customizable. The user can choose what 
 
 ### top
 
-`top` is the classic tool for monitoring any UNIX-like system. It runs in a terminal and refreshes at intervals, displaying a list of processes in a tabular format. Each column is something like virtual memory size, processor usage, and so forth. It is highly customizable and has some interactive features, such as re-nicing or killing processes. Since it's the most widely known of the tools in this article, I won't go into much detail, other than to say there's a lot to know about it &#8212; read the man page.
+`top` is the classic tool for monitoring any UNIX-like system. It runs in a terminal and refreshes at intervals, displaying a list of processes in a tabular format. Each column is something like virtual memory size, processor usage, and so forth. It is highly customizable and has some interactive features, such as re-nicing or killing processes. Since it's the most widely known of the tools in this article, I won't go into much detail, other than to say there's a lot to know about it -- read the man page.
 
 `top` is one of the programs in the `procps` package, along with `ps`, `vmstat`, `w`, `kill`, `free`, `slabtop`, and `skill`. All these tools are in a default installation on most distributions.
 

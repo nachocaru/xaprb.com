@@ -28,6 +28,6 @@ If I change the tool's documentation to say the default is 2048, you'll see it i
       --shorten                      2048
     
 
-We even have tests for the documentation. If the documentation is code, and code should be tested, then the documentation should be tested too. I updated the documentation for the new version of pt-table-checksum the other day without testing it, and pushed the code back to Daniel, who merged it and ran the tests &#8212; and found that I'd changed a bit of the documentation that said one option disables another option. A statement like that needs to be tested formally.
+We even have tests for the documentation. If the documentation is code, and code should be tested, then the documentation should be tested too. I updated the documentation for the new version of pt-table-checksum the other day without testing it, and pushed the code back to Daniel, who merged it and ran the tests -- and found that I'd changed a bit of the documentation that said one option disables another option. A statement like that needs to be tested formally.
 
 We have many thousands of unit tests for Percona Toolkit last time I checked. One of them guarantees that this little bit of documentation is correct. What a great thing. I continue to try to find ways to make the tools' documentation formally verifiable as much as possible. It's not possible to do 100% of it, but a surprising amount can be tested.

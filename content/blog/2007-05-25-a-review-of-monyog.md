@@ -39,7 +39,7 @@ permalink: /2007/05/25/a-review-of-monyog/
 
 <h3>JavaScript object model</h3>
 
-<p>MONyog populates a JavaScript object hierarchy with the data it fetches.  I think people will find it easy to customize the interface, especially since you can do it from within your web browser.  You just click on the file you want to edit &#8212; including any of the built-in ones &#8212; and you see the code.  It's all there; there is nothing hidden from you.  If you don't know where to get started, just take a look at the built-in counters and copy/paste to make your own.</p>
+<p>MONyog populates a JavaScript object hierarchy with the data it fetches.  I think people will find it easy to customize the interface, especially since you can do it from within your web browser.  You just click on the file you want to edit -- including any of the built-in ones -- and you see the code.  It's all there; there is nothing hidden from you.  If you don't know where to get started, just take a look at the built-in counters and copy/paste to make your own.</p>
 
 <h3>MONyog compared to innotop</h3>
 

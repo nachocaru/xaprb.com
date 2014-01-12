@@ -47,7 +47,7 @@ This is not scientific. This is a sample size of just a handful of people.
 
 Afterwards there was a buffet lunch, which was tasty and had a lot of vegetarian options. I traded a few business cards and talked with a couple of people about topics like how you can design MySQL to replace Oracle RAC, which I believe is not a good way to approach MySQL. Maybe I'll write more about that separately.
 
-The sales presence during Ronald's talk was very supportive &#8212; "we're here if you have questions" &#8212; and not intrusive. At the very end, one of the sales people showed two slides about MySQL Enterprise, for a total of about 3 minutes, and explained their pricing model. However, from what I heard people say, there is some disconnect &#8212; the sales people think it's very simple pricing, but everyone is confused about it. At least 5 people asked me to explain it, but I'm not sure why. I explained to a few curious people how [Percona's pricing models][4] work.
+The sales presence during Ronald's talk was very supportive -- "we're here if you have questions" -- and not intrusive. At the very end, one of the sales people showed two slides about MySQL Enterprise, for a total of about 3 minutes, and explained their pricing model. However, from what I heard people say, there is some disconnect -- the sales people think it's very simple pricing, but everyone is confused about it. At least 5 people asked me to explain it, but I'm not sure why. I explained to a few curious people how [Percona's pricing models][4] work.
 
 Kudos to Ronald for a balanced and fair look at migration, and thanks to MySQL and Carahsoft for sponsoring the event!
 

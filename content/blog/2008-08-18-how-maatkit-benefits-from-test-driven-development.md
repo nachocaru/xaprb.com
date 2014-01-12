@@ -7,7 +7,7 @@ categories:
   - Open Source
   - Programming
 ---
-Over in [Maatkit][1]-land, [Daniel Nichter][2] and I practice [test-first programming, AKA test-driven development][3]. That is, we write tests for each new feature or to catch regressions on each bug we fix. And &#8212; this is crucial &#8212; we write the tests *before* we write the code.* The tests should initially fail, which is a validation that the new code actually works and the tests actually verify this. If we don't first write a failing testcase, then our code lacks a very important guarantee: "if you break this code, then the test case will tell you so." (A test that doesn't fail when the code fails isn't worth writing.)
+Over in [Maatkit][1]-land, [Daniel Nichter][2] and I practice [test-first programming, AKA test-driven development][3]. That is, we write tests for each new feature or to catch regressions on each bug we fix. And -- this is crucial -- we write the tests *before* we write the code.* The tests should initially fail, which is a validation that the new code actually works and the tests actually verify this. If we don't first write a failing testcase, then our code lacks a very important guarantee: "if you break this code, then the test case will tell you so." (A test that doesn't fail when the code fails isn't worth writing.)
 
 <!--more-->
 
@@ -34,7 +34,7 @@ If you're not doing test-first coding, you ought to give it a try. If you are co
 
 Test-driven development is one reason [The Rimm-Kaufman Group's][5] in-house bidding system blows away their competition. (RKG is my previous employer.) The comprehensive unit-test suite lets you know right away if you've broken something. That keeps the code clean and makes it possible to be extremely productive. I remember once when one of my co-workers there implemented a major feature in a very short time. It was also incredibly helpful when sharding the databases (anyone ever done this without a test suite? Would you like to share about how much of your systems broke during sharding? It was almost a non-event at RKG). The people I worked with before I joined RKG looked at me like an alien when I tried to explain that this was possible.
 
-If you're thinking that your code is not "that kind of code," that "only certain kinds of code lend themselves to unit tests," then stop. I've heard this before, and you're wrong. It's only "untestable" because you didn't write tests first. Write tests first, and your code &#8212; all of it! &#8212; will be "that kind of code" that is testable. It's hard. No one says it's not; good programming is much harder than sloppy programming. But it's well worth it.
+If you're thinking that your code is not "that kind of code," that "only certain kinds of code lend themselves to unit tests," then stop. I've heard this before, and you're wrong. It's only "untestable" because you didn't write tests first. Write tests first, and your code -- all of it! -- will be "that kind of code" that is testable. It's hard. No one says it's not; good programming is much harder than sloppy programming. But it's well worth it.
 
 Converting untested, untestable code into tested code is not so much fun, though. And in my experience you'll rarely be rewarded for it, and your coworkers will not appreciate you raising the bar for them. Maybe you need a new job. I hear RKG is hiring. Did I mention that their codebase is built from the ground up on unit tests?
 

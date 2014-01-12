@@ -5,7 +5,7 @@ permalink: /2007/01/25/how-to-calculate-table-checksums-in-mysql/
 categories:
   - Databases
 ---
-MySQL has <del datetime="2007-05-04T20:28:30+00:00">no built-in functionality to calculate a table's checksum in any storage engine but MyISAM</del> (*this is not true; I read the manual wrong, but it doesn't eliminate the usefulness of the technique in this article*). Table checksums can confirm that two tables are identical &#8212; useful to verify a slave server is in sync with its master (see my article on [reliable MySQL replication][1] for more). Fortunately, it's easy to calculate a checksum on non-MyISAM tables with user variables. This technique works on any storage engine with any version of MySQL, doesn't require the `BLACKHOLE` storage engine, and avoids locks caused by `INSERT... SELECT` on InnoDB tables.
+MySQL has <del datetime="2007-05-04T20:28:30+00:00">no built-in functionality to calculate a table's checksum in any storage engine but MyISAM</del> (*this is not true; I read the manual wrong, but it doesn't eliminate the usefulness of the technique in this article*). Table checksums can confirm that two tables are identical -- useful to verify a slave server is in sync with its master (see my article on [reliable MySQL replication][1] for more). Fortunately, it's easy to calculate a checksum on non-MyISAM tables with user variables. This technique works on any storage engine with any version of MySQL, doesn't require the `BLACKHOLE` storage engine, and avoids locks caused by `INSERT... SELECT` on InnoDB tables.
 
 **Update** I've coded this method into a Perl script for you to use. See [MySQL Table Checksum][2] for more details.
 
@@ -93,7 +93,7 @@ You should always reset `@crc` and `@cnt` between runs so you get repeatable res
 
 ### Further considerations
 
-It's important to order the `SELECT` by something predictable, or the results will be non-deterministic. However, an `ORDER BY` clause won't do it &#8212; that orders the final result, not the table scan. Forcing a certain index to be used will do the trick, hence the `USE INDEX` clause above. If you don't have a primary key on your table, use a `UNIQUE` key if that's available; otherwise, you're probably not going to be able to get a dependable checksum.
+It's important to order the `SELECT` by something predictable, or the results will be non-deterministic. However, an `ORDER BY` clause won't do it -- that orders the final result, not the table scan. Forcing a certain index to be used will do the trick, hence the `USE INDEX` clause above. If you don't have a primary key on your table, use a `UNIQUE` key if that's available; otherwise, you're probably not going to be able to get a dependable checksum.
 
 This method is easy to use inside a stored procedure or routine on MySQL 5.0. You can easily build a column list from `INFORMATION_SCHEMA` and generate the dynamic SQL to checksum a table.
 

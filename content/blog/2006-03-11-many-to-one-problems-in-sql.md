@@ -5,7 +5,7 @@ permalink: /2006/03/11/many-to-one-problems-in-sql/
 categories:
   - Databases
 ---
-It's been a while since I've posted an abstract, theoretical article on a fine point of SQL. Today I want to bring your attention to two ways in which an RDBMS can allow you to do something that has no well-defined result. These involve queries where several values are eligible, but only one is chosen &#8212; and chosen in an undefined manner. I'll show you the two blunders, tell you when they might occur, and explain how to avoid them.
+It's been a while since I've posted an abstract, theoretical article on a fine point of SQL. Today I want to bring your attention to two ways in which an RDBMS can allow you to do something that has no well-defined result. These involve queries where several values are eligible, but only one is chosen -- and chosen in an undefined manner. I'll show you the two blunders, tell you when they might occur, and explain how to avoid them.
 
 ### Selecting an un-grouped column in a grouped query
 
@@ -115,13 +115,13 @@ The results will look like this:
   </tr>
 </table>
 
-Here's the problem: the query groups the tuples (rows) into two groups, one group containing two Apples and one with two Oranges. **I can't logically get "the price" from two tuples in a group, because there is no one "the" price**. In the formal mathematics upon which SQL is based, this query is nonsense. MySQL's documentation admits as much, and tells me not to do this unless all the tuples in the group have the same value in that column &#8212; or I'll risk getting unpredictable behavior. In my example, it's pretty easy to see MySQL chooses the value from the "first" tuple in the group (a funny notion, given that there is no first tuple because *sets are theoretically unordered*).
+Here's the problem: the query groups the tuples (rows) into two groups, one group containing two Apples and one with two Oranges. **I can't logically get "the price" from two tuples in a group, because there is no one "the" price**. In the formal mathematics upon which SQL is based, this query is nonsense. MySQL's documentation admits as much, and tells me not to do this unless all the tuples in the group have the same value in that column -- or I'll risk getting unpredictable behavior. In my example, it's pretty easy to see MySQL chooses the value from the "first" tuple in the group (a funny notion, given that there is no first tuple because *sets are theoretically unordered*).
 
-This is a bad behavior introduced solely for the sake of optimization, and the documentation admits that. Grouping requires sorting, which requires comparing values, so grouping literally by as few columns as possible &#8212; even when the logical grouping may be by more columns &#8212; is an (ill-gotten) efficiency gain.
+This is a bad behavior introduced solely for the sake of optimization, and the documentation admits that. Grouping requires sorting, which requires comparing values, so grouping literally by as few columns as possible -- even when the logical grouping may be by more columns -- is an (ill-gotten) efficiency gain.
 
 As with any other non-standard technique, the benefit is offset by lack of portability. Plus, it might cause evil glares from colleagues ;-).
 
-To avoid this problem on MySQL, use standard SQL (sorry for stating the obvious). To make my query standard SQL, I'd either have to use an aggregate function on that column, such as `SUM`, `MIN`, `AVG`, `MAX` or similar &#8212; or, I could add the column to the `GROUP BY` clause, which would separate the results into more groups and change the output. In other words, every column must either be in the grouping clause or an aggregate function.
+To avoid this problem on MySQL, use standard SQL (sorry for stating the obvious). To make my query standard SQL, I'd either have to use an aggregate function on that column, such as `SUM`, `MIN`, `AVG`, `MAX` or similar -- or, I could add the column to the `GROUP BY` clause, which would separate the results into more groups and change the output. In other words, every column must either be in the grouping clause or an aggregate function.
 
 Some platforms, such as SQL Server 2000, will not allow the query. MySQL can be made to throw an error too, if `ONLY_FULL_GROUP_BY` mode is enabled.
 
@@ -277,7 +277,7 @@ What does this statement actually do? Well, logically it first [joins the base t
   </tr>
 </table>
 
-Next it updates each `Price` value in the left-hand side from the column on the right-hand side. But wait, the value appears twice &#8212; that means logically, Apples are being assigned $5.00 twice, and Oranges are being assigned both $4.00 and $6.00 prices. Danger, Will Robinson! Which one wins? As it turns out, in MySQL again the "first" value wins. Not in SQL Server 2000, though &#8212; the "last" one wins on that platform, if memory serves. It doesn't really matter the particulars of which value wins; it would be more legitimate if the database server threw an error, in my opinion.
+Next it updates each `Price` value in the left-hand side from the column on the right-hand side. But wait, the value appears twice -- that means logically, Apples are being assigned $5.00 twice, and Oranges are being assigned both $4.00 and $6.00 prices. Danger, Will Robinson! Which one wins? As it turns out, in MySQL again the "first" value wins. Not in SQL Server 2000, though -- the "last" one wins on that platform, if memory serves. It doesn't really matter the particulars of which value wins; it would be more legitimate if the database server threw an error, in my opinion.
 
 I can think of a few ways to avoid this situation.
 

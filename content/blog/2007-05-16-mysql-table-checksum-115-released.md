@@ -19,7 +19,7 @@ This feature allows you to specify a maximum chunk size, such as one million. My
 
 This doesn't mean one million rows per chunk; it means up to a million. If there are holes in the sequence of values, of course there will be fewer than a million rows in a chunk.
 
-The output now includes an extra column &#8212; the chunk number. This starts at 1 for every table and counts up if the table is chunk-able. This column is included in the `--replicate` data as well, so you will need to add another column to your checksum table if you are using `--replicate`.
+The output now includes an extra column -- the chunk number. This starts at 1 for every table and counts up if the table is chunk-able. This column is included in the `--replicate` data as well, so you will need to add another column to your checksum table if you are using `--replicate`.
 
 In addition to being easier on the server, doing checksums in chunks also means it's easier to use [MySQL Table Sync][1] to synchronize the table if you find problems with it. You can just work on the part of the table that has errors, instead of the whole table. (This code is in Subversion, but not yet released. I need to work on several other things with MySQL Table Sync as well).
 

@@ -32,7 +32,7 @@ The exact query that we were seeing on our client was a little bit more subtle, 
 
     select a.*, [other stuff], a.column1 from ...
 
-This type of query should be catchable by [mk-query-audit][3], when we write it. Oooh &#8212; another flashlight to find hairy things with wobbly eyes under your fridge!
+This type of query should be catchable by [mk-query-audit][3], when we write it. Oooh -- another flashlight to find hairy things with wobbly eyes under your fridge!
 
  [1]: http://code.google.com/p/maatkit/wiki/mk_upgrade
  [2]: http://www.xaprb.com/blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/

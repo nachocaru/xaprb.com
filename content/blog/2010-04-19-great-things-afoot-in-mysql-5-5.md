@@ -31,7 +31,7 @@ I suspect that delete buffering can go completely off the rails, in the same way
 
 ### Performance Schema
 
-I'm completely unimpressed with Performance Schema, and have been from day one. It was an ivory-tower project created and developed in secret, and it bears no evidence of input from people with practical experience. What I see is useless for normal people; it's useful only for MySQL and InnoDB developers, and not even a good solution for them. If you read around the blog posts and docs about it, you find a lack of any practical examples &#8212; and IMO that's because it's not possible to create good examples of how it can be useful. Instead, you see phrases such as "trace issues back to the relevant file and line in the source code so you can really see what's happening behind the scenes." I'm not the only one; [Robin Schumacher panned it too][3].
+I'm completely unimpressed with Performance Schema, and have been from day one. It was an ivory-tower project created and developed in secret, and it bears no evidence of input from people with practical experience. What I see is useless for normal people; it's useful only for MySQL and InnoDB developers, and not even a good solution for them. If you read around the blog posts and docs about it, you find a lack of any practical examples -- and IMO that's because it's not possible to create good examples of how it can be useful. Instead, you see phrases such as "trace issues back to the relevant file and line in the source code so you can really see what's happening behind the scenes." I'm not the only one; [Robin Schumacher panned it too][3].
 
 ### Conclusions
 

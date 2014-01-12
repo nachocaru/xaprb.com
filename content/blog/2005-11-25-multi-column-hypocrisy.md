@@ -5,7 +5,7 @@ permalink: /2005/11/25/multi-column-hypocrisy/
 ---
 Using `DIV` tags and CSS to format a single text into multiple columns is just as bad as using tables for layout. This article explains why.
 
-Everyone agrees tables are not for layout, because tables are supposed to contain tabular data. Similarly, `DIV` elements aren't the right tool for columns, because they are supposed to group content into a generic container &#8212; either to group related elements simply for grouping's sake, or to identify actual content and apply meta-data such as language or class. From the spec:
+Everyone agrees tables are not for layout, because tables are supposed to contain tabular data. Similarly, `DIV` elements aren't the right tool for columns, because they are supposed to group content into a generic container -- either to group related elements simply for grouping's sake, or to identify actual content and apply meta-data such as language or class. From the spec:
 
 > The `DIV` and `SPAN` elements, in conjunction with the `id` and `class` attributes, offer a generic mechanism for adding structure to documents.
 The keyword is **structure**. Using `DIV` elements to lay out text into columns isn't structural, it's presentational. Consider how columnar text is typically accomplished: `DIV` elements, floated left so they'll stack next to each other. This is not semantically meaningful! In particular, the text must be split into multiple `DIV`s to get it into columns. Now the text, which is **one** piece of content and should not be divided, has been divided as though it's **many** pieces of content.

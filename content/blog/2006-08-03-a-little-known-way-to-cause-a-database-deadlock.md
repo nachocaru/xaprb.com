@@ -3,7 +3,7 @@ title: A little-known way to cause a database deadlock
 date: "2006-08-03"
 permalink: /2006/08/03/a-little-known-way-to-cause-a-database-deadlock/
 ---
-A "little-known way," I claim, and yet it happens all the time &#8212; precisely because it's little-known. Experts will quickly recognize where I'm going to go with this article, but I hope many others in my audience will understand deadlocks more deeply after reading it. I'll use MySQL and InnoDB for illustration purposes, but the scenario this article describes (dramatic music, please!) could happen to you, too! And probably will someday, unless you're one of the elite few (ok, enough drama) who know how to avoid it.
+A "little-known way," I claim, and yet it happens all the time -- precisely because it's little-known. Experts will quickly recognize where I'm going to go with this article, but I hope many others in my audience will understand deadlocks more deeply after reading it. I'll use MySQL and InnoDB for illustration purposes, but the scenario this article describes (dramatic music, please!) could happen to you, too! And probably will someday, unless you're one of the elite few (ok, enough drama) who know how to avoid it.
 
 In this article I'll briefly introduce deadlocks, give an example of one that happened at my employer recently, analyze and explain it, and then disclose the secret way to <del datetime="2006-08-04T00:11:58+00:00">avoid</del> cause such deadlocks. Then I'll show you how to reproduce the deadlock and dive into the gory details of what goes on internally with InnoDB. I'll also demonstrate how [innotop][1] can make this type of debugging a lot easier.
 
@@ -149,7 +149,7 @@ Record lock, heap no 6 PHYSICAL RECORD: n_fields 7; compact format; info bits 0
 
 *** WE ROLL BACK TRANSACTION (1)</pre>
 
-That's fairly verbose, because it prints information about the locks it was waiting for and holding, but that's exactly what you need to figure out what was really going on. Notice how you can see Transaction 1 waiting for exactly the same lock Transaction 2 holds. Notice also Transaction 2 locks the "rec but not gap" on that lock. That means it locks the record, as opposed to the [gap before the record][3]. You can read more about this in the MySQL manual &#8212; the entire section on InnoDB transactional model is recommended reading.
+That's fairly verbose, because it prints information about the locks it was waiting for and holding, but that's exactly what you need to figure out what was really going on. Notice how you can see Transaction 1 waiting for exactly the same lock Transaction 2 holds. Notice also Transaction 2 locks the "rec but not gap" on that lock. That means it locks the record, as opposed to the [gap before the record][3]. You can read more about this in the MySQL manual -- the entire section on InnoDB transactional model is recommended reading.
 
 Finally, notice how Transaction 2&#8242;s waited-for lock is trying to lock the gap before the record, with intention to insert. That's what finally caused the deadlock.
 

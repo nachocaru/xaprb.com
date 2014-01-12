@@ -11,13 +11,13 @@ While this specific situation involved MySQL, the techniques I'll discuss below 
 
 ### The situation
 
-We have a series of tables holding traffic data for online advertisements. Some of them hold the raw data from the source. These are then merged into one cost-by-day table, which is rolled up into various kinds of aggregation &#8212; ad by week, client by day, and so forth.
+We have a series of tables holding traffic data for online advertisements. Some of them hold the raw data from the source. These are then merged into one cost-by-day table, which is rolled up into various kinds of aggregation -- ad by week, client by day, and so forth.
 
 Though the archiving jobs were nibbling the data steadily, and some of the tables had even reached their target maintenance size, there was still too much data, and it wasn't indexed optimally. One of the most important tables was still an order of magnitude too big, and archiving it was slow work. Some of the queries were taking too long and causing frequent timeouts and deadlocks, and a beefy server with high-speed disks was hamstrung by repeated multi-gigabyte table scans. Up to 85% of CPU time was spent waiting for disk reads and writes.
 
-This is an illustration of [when not to use surrogate keys on InnoDB tables][3]. The tables were originally designed with surrogate keys as their primary key, which meant they weren't clustered on the most frequently queried criteria: date ranges. Since the rollups and queries almost always happened by date, clustering them date-first meant any given query would be restricted to just part of the table. But they were clustered on the surrogate key &#8212; totally useless for the intended purpose. In fact, the surrogate keys were never referenced in any queries except the archiving jobs. As a result, most queries had to scan the entire table.
+This is an illustration of [when not to use surrogate keys on InnoDB tables][3]. The tables were originally designed with surrogate keys as their primary key, which meant they weren't clustered on the most frequently queried criteria: date ranges. Since the rollups and queries almost always happened by date, clustering them date-first meant any given query would be restricted to just part of the table. But they were clustered on the surrogate key -- totally useless for the intended purpose. In fact, the surrogate keys were never referenced in any queries except the archiving jobs. As a result, most queries had to scan the entire table.
 
-Some of the tables had indexes on the important columns &#8212; usually date and ad ID &#8212; but in a few of the largest, most important tables, the indexes were not date-first, so they weren't helpful, as I verified with `EXPLAIN`. Massive multi-gigabyte indexes weren't even being used in any queries. They were just slowing down anything that updated, inserted or deleted (and making our backups enormous and slow, always another cause of anxiety).
+Some of the tables had indexes on the important columns -- usually date and ad ID -- but in a few of the largest, most important tables, the indexes were not date-first, so they weren't helpful, as I verified with `EXPLAIN`. Massive multi-gigabyte indexes weren't even being used in any queries. They were just slowing down anything that updated, inserted or deleted (and making our backups enormous and slow, always another cause of anxiety).
 
 We had also just signed a new client, one of the Internet's largest advertisers. A huge pile of new data was getting ready to body-slam us. We feared there was no way we could take on that additional load; the rollups alone might bring us down.
 
@@ -40,7 +40,7 @@ The only strategy that we thought could work on such large tables would be to
 
 Based on my tests with some smaller tables, I estimated this process would take days on some of the tables. It could take much longer; I don't know how the work scales relative to the size of the table. The best I could hope for is linear scaling, and it might be exponential, in which case we'd be in bad trouble. To give an idea, dropping a single index would probably take at least three hours on some of the tables.
 
-This could not be done while the server was online, because all sorts of things might go wrong &#8212; way too risky. There was one table this strategy wouldn't work for, anyway: a table that had no unique constraint on the columns we needed to cluster (every other table was OK). Not only did we need to re-index this table, we needed to aggregate it by the data that would be its new primary key.
+This could not be done while the server was online, because all sorts of things might go wrong -- way too risky. There was one table this strategy wouldn't work for, anyway: a table that had no unique constraint on the columns we needed to cluster (every other table was OK). Not only did we need to re-index this table, we needed to aggregate it by the data that would be its new primary key.
 
 This still looked pretty gloomy, but we were prepared to do it if necessary. Before we went to such extremes, I wanted to try one strategy I thought might let us do all this without taking the server offline, much more cheaply.
 
@@ -59,7 +59,7 @@ My idea hinged on three things: the data access patterns, the cost of dropping a
 
 The first thing that gave me hope we could do this online is the way data is updated. Since this is historical data, we usually work a day at a time, adding new data only, then rolling up. Only in exceptional circumstances do we reach into the past and update things. Therefore, most of the data never changes, and didn't need to be locked to ensure its integrity (a simple "don't roll up tables!" email took care of the human side of things).
 
-Second, it's easy to drop tables &#8212; even large ones &#8212; because we keep a fixed-size tablespace, so it doesn't require a lot of disk activity.
+Second, it's easy to drop tables -- even large ones -- because we keep a fixed-size tablespace, so it doesn't require a lot of disk activity.
 
 Finally, it's inexpensive to lock tables, and they can be renamed while they're locked (though that does drop the locks).
 

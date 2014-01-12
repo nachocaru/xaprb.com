@@ -9,7 +9,7 @@ If you code by writing tests that fail, and then fixing the tests by writing the
 
 <pre>$ while read line; do clear; perl MyTestScript.t; done</pre>
 
-This works with any language, not just perl &#8212; just replace the test command with the right one. ALT-TAB, press Enter, ALT-TAB back to your editor.
+This works with any language, not just perl -- just replace the test command with the right one. ALT-TAB, press Enter, ALT-TAB back to your editor.
 
 Part 2 of my tip is to make it really easy to drop into the debugger if you want. Notice the small change here:
 

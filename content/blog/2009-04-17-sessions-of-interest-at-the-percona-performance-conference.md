@@ -6,7 +6,7 @@ categories:
   - Conferences
   - Databases
 ---
-Having written about what I think is cool about the upcoming MySQL Conference and the MySQL Camp, now I want to finish up with what I'd like to see at the [Percona Performance Conference][1]. Just to recap, this is a conference we created to serve those who want to learn about performance &#8212; not "learn about MySQL," not "learn about database performance," just learn about performance, period.
+Having written about what I think is cool about the upcoming MySQL Conference and the MySQL Camp, now I want to finish up with what I'd like to see at the [Percona Performance Conference][1]. Just to recap, this is a conference we created to serve those who want to learn about performance -- not "learn about MySQL," not "learn about database performance," just learn about performance, period.
 
 I want to see *everything*. I think this is going to be the single best conference I've ever been to. Even the way the conference is organized is exciting. For example, it's running from early morning till late at night, nonstop. The sessions are also (mostly) only 25 minutes. This means if you decide a session isn't all that interesting, you didn't spend much time on it, and you don't have long to wait for the next one.
 

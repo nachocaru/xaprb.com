@@ -32,7 +32,7 @@ I had to increase the script timeout so Firefox wouldn't interrupt the tests. I 
 Here's a graph of the times. The algorithms are in alphabetical order:
 
 <img src="/articles/images/date-formatting-benchmark.png" alt="JavaScript date-formatting benchmark" height="311" width="463" /> 
-Obviously, the method I use is much faster &#8212; between 3.15 and 4.89 times faster. Here are the results as numbers in a table. **WARNING**: If you click on the links to the benchmarks, your browser will probably freeze for the better part of a minute on a fast machine &#8212; maybe longer on a slow machine.
+Obviously, the method I use is much faster -- between 3.15 and 4.89 times faster. Here are the results as numbers in a table. **WARNING**: If you click on the links to the benchmarks, your browser will probably freeze for the better part of a minute on a fast machine -- maybe longer on a slow machine.
 
 <table class="borders collapsed">
   <caption>Javascript date-formatting benchmark</caption> <tr>
@@ -148,7 +148,7 @@ Obviously, the method I use is much faster &#8212; between 3.15 and 4.89 times f
 
 Absolutely not, and if it were, the slowness of the other methods would be even more obvious.
 
-First of all, I'm only testing a single method of formatting &#8212; producing a date in YYYY-MM-DD format. I also haven't been scientific enough to really be accurate.
+First of all, I'm only testing a single method of formatting -- producing a date in YYYY-MM-DD format. I also haven't been scientific enough to really be accurate.
 
 Beyond that, though, these various bits of code I've benchmarked are vastly different. The one that provides the most similar *formatting* functionality to mine is Svend Tofte's (that's probably why it's the slowest), but even that one only does *parsing*, not *formatting* (mine does both). The others are much less fully-featured, which means they'd probably be even less performant if someone extended them to implement the same set of functionality.
 

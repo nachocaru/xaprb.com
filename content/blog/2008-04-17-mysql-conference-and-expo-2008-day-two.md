@@ -11,7 +11,7 @@ Day two of the conference was a little disappointing, as far as sessions went. T
 
 This was a talk focused on how MySQL has made it possible for community members to contribute to MySQL. There was quite a bit of talk about IRC channels, mailing lists, and the like. However, the talk gave short shrift to how MySQL plans to become truly open source (in terms of its development model, not its license). I think there was basically nothing to talk about there. I had a good conversation about some of my concerns with the speaker and some others from MySQL right afterwards.
 
-There was basically nobody there &#8212; I didn't count, but I'd say maybe 10 or 12 people. I think this is a telling sign.
+There was basically nobody there -- I didn't count, but I'd say maybe 10 or 12 people. I think this is a telling sign.
 
 ### Architecture of Maria: A New Storage Engine with a Transactional Design
 
@@ -29,7 +29,7 @@ However, I did sneak back into the room for the last bit too. And I gave Grazr a
 
 ### Extending MySQL
 
-This one was mostly for fun. I knew a lot about UDFs already (I've created some) and I knew about the pluggable storage engine API. But I didn't know about pluggable event daemons. Holy cow, what a great way to shoot yourself (or your server) in the foot! All the power of an atomic bomb, with all the safety of SPF 5 sunblock in a nuclear attack. Or something like that. But darn, it sure is nifty. Brian is a great speaker too &#8212; very lively.
+This one was mostly for fun. I knew a lot about UDFs already (I've created some) and I knew about the pluggable storage engine API. But I didn't know about pluggable event daemons. Holy cow, what a great way to shoot yourself (or your server) in the foot! All the power of an atomic bomb, with all the safety of SPF 5 sunblock in a nuclear attack. Or something like that. But darn, it sure is nifty. Brian is a great speaker too -- very lively.
 
 You know, there's another way to extend MySQL that most people don't seem to know about, which Brian didn't mention. That is procedures (not stored procedures). They are sort of like a post-filter for a result set, and like UDFs they've been around forever. I have never heard of anyone writing their own, but there's an example in the server itself: [PROCEDURE ANALYSE][2].
 

@@ -15,6 +15,6 @@ print $fh "hello, world\n";
 
 Now `$buffer` contains "hello, world\n". You can do the same kinds of things when reading from a variable.
 
-I knew you could do it with IO::Scalar, but while refreshing my memory on that, I stumbled upon this &#8212; who needs IO::Scalar anymore?
+I knew you could do it with IO::Scalar, but while refreshing my memory on that, I stumbled upon this -- who needs IO::Scalar anymore?
 
 This is going to make a lot of tests in Maatkit easier to write.

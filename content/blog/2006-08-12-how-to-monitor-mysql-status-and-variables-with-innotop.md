@@ -30,7 +30,7 @@ Okay, on to the good stuff. Start innotop, and switch to V mode with the "V" key
 
 [<img src="/innotop/thumb-innotop-V-mode-usa.png" width="200" height="119" alt="innotop screenshot" />][4]
 
-Let me explain that a bit more. The leftmost column shows which values I've chosen to display. Each row has one value. As you go to the right, you see the values themselves. First you see the most current values, then the ones before that, and so on &#8212; all the way till the far-right column.
+Let me explain that a bit more. The leftmost column shows which values I've chosen to display. Each row has one value. As you go to the right, you see the values themselves. First you see the most current values, then the ones before that, and so on -- all the way till the far-right column.
 
 There are a couple things to notice about this display:
 

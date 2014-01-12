@@ -15,7 +15,7 @@ categories:
 
 Go take a look at Peter's blog post. He's not writing MySQL queries. He's writing queries to Sphinx.
 
-Now think about how cool this is &#8212; how easy this is to integrate with your code that already communicates with MySQL. Is there any other external full-text search system that masquerades as a MySQL server? I don't know of one.
+Now think about how cool this is -- how easy this is to integrate with your code that already communicates with MySQL. Is there any other external full-text search system that masquerades as a MySQL server? I don't know of one.
 
  [1]: http://www.mysqlperformanceblog.com/2009/04/19/talking-mysql-to-sphinx/
  [2]: http://www.sphinxsearch.com/

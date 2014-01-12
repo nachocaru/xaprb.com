@@ -58,7 +58,7 @@ But much more importantly, I've changed the whole angle of the tool. I want to b
 
 Instead of "make the sync use as little network traffic as possible," I've changed the criteria of good-ness to "do it right, do it once, and don't get in the way."
 
-As a result, I can sync a table that gets a ton of updates &#8212; one of the "hottest" tables in my application &#8212; without interfering with my application. Online. Correctly. In one pass. Through replication. Show me another tool that can do that, and I'll re-run my benchmarks :-)
+As a result, I can sync a table that gets a ton of updates -- one of the "hottest" tables in my application -- without interfering with my application. Online. Correctly. In one pass. Through replication. Show me another tool that can do that, and I'll re-run my benchmarks :-)
 
 This doesn't mean I don't care about performance. I do, and I'll bring back the earlier "go easy on the network" sync algorithms at some point. They are very useful when you have a slow network, or your tables aren't being updated and you just want to sync things fast. I'll also be able to speed up the "don't interfere with the application" algorithms.
 
@@ -66,7 +66,7 @@ One interesting thing I did was divide up the functionality so the tool can use 
 
 ### Tools that don't yet exist
 
-What I haven't told you about is a lot of unreleased code and new tools. There's some good stuff in the works. Also stay tuned &#8212; a third party might be about to contribute another tool to Maatkit, which will also be a very neat addition.
+What I haven't told you about is a lot of unreleased code and new tools. There's some good stuff in the works. Also stay tuned -- a third party might be about to contribute another tool to Maatkit, which will also be a very neat addition.
 
 ## Conclusion
 

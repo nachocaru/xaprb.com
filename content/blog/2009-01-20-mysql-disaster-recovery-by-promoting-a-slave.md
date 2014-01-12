@@ -11,7 +11,7 @@ I was just talking to someone who backs up their MySQL servers once a day with m
 
 And they said "We can just promote a slave, we've done it before. It works fine."
 
-Granted, in some/many cases, this is fine. There are all sorts of caveats &#8212; for example, you either know that your [slave has the same data as the master][1] or you don't care. But it's fine for some things.
+Granted, in some/many cases, this is fine. There are all sorts of caveats -- for example, you either know that your [slave has the same data as the master][1] or you don't care. But it's fine for some things.
 
 So then I said "what about DROP TABLE?"
 
@@ -19,7 +19,7 @@ And there was a pause. I assume they were realizing that the chance of accidenta
 
 How about you?
 
-Granted, you can use a [delayed slave][2] to protect against this particular scenario. But you still need "real" backups, and you still have to think about the worst case &#8212; restoring that backup.
+Granted, you can use a [delayed slave][2] to protect against this particular scenario. But you still need "real" backups, and you still have to think about the worst case -- restoring that backup.
 
  [1]: http://www.maatkit.org/doc/mk-table-checksum.html
  [2]: http://www.maatkit.org/doc/mk-slave-delay.html

@@ -14,7 +14,7 @@ I've just released updates to all the tools in the MySQL Toolkit. The biggest ch
 
 ### Overview
 
-I discovered some features I didn't know the Perl MySQL driver had &#8212; features to read MySQL's option files, mostly, though there are some other nice features I use occasionally (but which are very relevant to [innotop][1]). Getting the driver to read the option files instead of doing it myself has many benefits. It does a better job than I do, provides more options, works like MySQL users will expect it to, and perhaps most importantly isn't my problem if it's broken \*grin\* I love not maintaining code.
+I discovered some features I didn't know the Perl MySQL driver had -- features to read MySQL's option files, mostly, though there are some other nice features I use occasionally (but which are very relevant to [innotop][1]). Getting the driver to read the option files instead of doing it myself has many benefits. It does a better job than I do, provides more options, works like MySQL users will expect it to, and perhaps most importantly isn't my problem if it's broken \*grin\* I love not maintaining code.
 
 I also changed how I was handling command-line options. I'm new to this, but I think I've got a good system going now. I did change some options on a couple of the tools, so check your scripts if you upgrade. (I'd rather do it right than remain backwards compatible with a bad system).
 

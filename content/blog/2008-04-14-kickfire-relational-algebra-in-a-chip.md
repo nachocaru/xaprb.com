@@ -5,7 +5,7 @@ permalink: /2008/04/14/kickfire-relational-algebra-in-a-chip/
 ---
 I spent the day Thursday with some of Kickfire's engineers at their headquarters. In this article, I'd like to go over a little of the system's architecture and some other details.
 
-Everything in quotation marks in this article is a quote. (I don't use quotes when I'm glossing over a technical point &#8212; at least, not in this article.)
+Everything in quotation marks in this article is a quote. (I don't use quotes when I'm glossing over a technical point -- at least, not in this article.)
 
 Even though I saw one of Kickfire's engineers running queries on the system, they didn't let me actually take the keyboard and type into it myself. So everything I'm writing here is **still second-hand knowledge**. It's an unreleased product that's in very rapid development, so this is understandable.
 
@@ -62,7 +62,7 @@ Storage is obviously crucial to processing extremely large amounts of data very 
 *   Each column is stored in a fixed width. This is how Kickfire can look up a row as though it's doing an array access.
 *   The internal representation is chosen automatically and may not match what you think. Kickfire can profile data as it's loaded, and choose the type as it goes.
 *   If you tell Kickfire you'll only store values that are X large in a column, and it builds its column storage space to hold that large a value, what happens when you then start adding larger values later? Ravi explained how it works, and it's proprietary right now, but suffice to say that Kickfire does not need to rewrite all the data you've already stored if you suddenly start storing values you didn't anticipate. Yet, it can still maintain O(1) array-lookup performance on the compressed data.
-*   You can pass the storage engine special comments in the CREATE TABLE statement to tell it what kinds of data each column will get. These comments are part of MySQL's standard syntax &#8212; Kickfire has not changed the MySQL parser, so it should be 100% syntax-compatible with a standard MySQL server.
+*   You can pass the storage engine special comments in the CREATE TABLE statement to tell it what kinds of data each column will get. These comments are part of MySQL's standard syntax -- Kickfire has not changed the MySQL parser, so it should be 100% syntax-compatible with a standard MySQL server.
 *   Kickfire has a very Oracle-like set of features around tablespaces, extents, and so on. You can have multiple tablespaces, and you can add devices to tablespaces, etc.
 *   Storage is transactional and ACID-compliant, with logging and <a href="http://en.wikipedia.org/wiki/Algorithms\_for\_Recovery\_and\_Isolation\_Exploiting\_Semantics">ARIES</a> recovery much like Oracle, InnoDB, etc. If it surprises you that a system built for large data warehouses would be transactional and ACID-compliant, welcome to the club. I was expecting the usual special-case behavior, you know, you can load data but you can't update it, or something like that. But as I said, Kickfire isn't doing this halfway. Plus, TPC-H requires ACID properties.
 
@@ -87,7 +87,7 @@ Here are some other tidbits I thought I'd share with you:
 
 As you probably know, I'm a strong believer in <a href="http://www.fsf.org/">Free Software</a>. I am not aware of any plans for Kickfire to release the source code for their modified version of MySQL or their storage engine or optimizer. These are the satellite diamonds that surround the crown jewels: open-sourcing them would make it easier to reverse engineer the chip, which they don't want. However, they've promised me that they're going to open-source some of the migration tools, etc etc. Not initially, but as time permits; and later they'll look at open-sourcing other parts.
 
-I have made sure that they know where I stand on this: I think the ethical thing to do is GPL all the code that they ship, and I think everyone I talked to heard me say that at least once. If you're going to buy their magical hardware, you deserve to have the source code for everything that runs on it, too. And they need to release the interface specs for their hardware so people can use it in new and surprising ways. Who knows &#8212; someone could use it to find a cure for cancer.
+I have made sure that they know where I stand on this: I think the ethical thing to do is GPL all the code that they ship, and I think everyone I talked to heard me say that at least once. If you're going to buy their magical hardware, you deserve to have the source code for everything that runs on it, too. And they need to release the interface specs for their hardware so people can use it in new and surprising ways. Who knows -- someone could use it to find a cure for cancer.
 
 ### Summary
 

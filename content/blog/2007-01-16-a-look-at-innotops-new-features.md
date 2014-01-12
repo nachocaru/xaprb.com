@@ -10,7 +10,7 @@ I just made a snapshot of the development branch of the [innotop][1] MySQL and I
 
 ### Version number policy
 
-Odd-numbered releases, such as 1.3.0, contain the code that will eventually become a stable release &#8212; in this case 1.4. Not all the features are there, and not all of them work perfectly, but it's a development snapshot for community review and feedback. That said, there's no dangerous code here, just the possibility of crashes.
+Odd-numbered releases, such as 1.3.0, contain the code that will eventually become a stable release -- in this case 1.4. Not all the features are there, and not all of them work perfectly, but it's a development snapshot for community review and feedback. That said, there's no dangerous code here, just the possibility of crashes.
 
 ### Major new features
 

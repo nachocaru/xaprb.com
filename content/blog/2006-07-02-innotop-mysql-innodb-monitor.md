@@ -19,7 +19,7 @@ categories:
 
 <ol>
 	<li>11 different modes to show lots of information in very useful ways</li>
-	<li>completely configurable &#8212; for example, you can choose which columns to see in every tabular display, in what order, what column to sort by, what direction to sort, add perl regex filters to any column, and on and on.</li>
+	<li>completely configurable -- for example, you can choose which columns to see in every tabular display, in what order, what column to sort by, what direction to sort, add perl regex filters to any column, and on and on.</li>
 	<li>offers features no other tool gives you, period.  What was the date, time, and query (plus lots of other info!) of each transaction involved in the last deadlock?  No other tool can give you that.  And that's just one of its dozens of unique features.</li>
 	<li>it parses and displays InnoDB information, which is packed full of information.  No other tool even tries to do this.  Parsing the output of the InnoDB monitor is not for the faint of heart!</li>
 	<li>its interactive help and configuration make it very easy to learn and highly productive to use.  What keys are mapped in the current mode?  Press '?' and find out.  What configuration variables can you change?  Press a key and find out.  Every function has context-sensitive help to keep you productive.</li>

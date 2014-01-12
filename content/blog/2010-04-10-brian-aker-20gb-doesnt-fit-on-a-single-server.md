@@ -12,7 +12,7 @@ categories:
 
 Users shouldn't need to put that data onto multiple machines anyway. In fact, I don't think we need a multi-machine solution for the common case at all. We need software that can scale up with today's hardware. 37signals likes to run boxes with half a terabyte of RAM. Are we there yet with MySQL and InnoDB? No. Postgres? No. Anything open-source? Not that I know of. We've got database software that can only do a fraction of what it **should** be able to on that size of server.
 
-I think we have to be clear about the use case for a solution that partitions data across multiple machines. It isn't 20GB of data, and in my opinion it **shouldn't** even be half a terabyte. I think that in the ideal world, we **should** be thinking about that for terabytes and larger &#8212; and in a few years, single-server datasets **should** be even larger.
+I think we have to be clear about the use case for a solution that partitions data across multiple machines. It isn't 20GB of data, and in my opinion it **shouldn't** even be half a terabyte. I think that in the ideal world, we **should** be thinking about that for terabytes and larger -- and in a few years, single-server datasets **should** be even larger.
 
 I say **should** because today's database software obviously has a lot of catching up to do.
 

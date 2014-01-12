@@ -6,7 +6,7 @@ categories:
   - Databases
 ---
 
-Continuing with my wishlist, I'll add windowing functions. They're enormously powerful. They allow you to extend relational logic beyond the strict boundaries of tuples. In MySQL at present, one must use ugly hacks to preserve state from one row to the next, such as user variables &#8212; which are not guaranteed to work if the optimizer changes the query plan. 
+Continuing with my wishlist, I'll add windowing functions. They're enormously powerful. They allow you to extend relational logic beyond the strict boundaries of tuples. In MySQL at present, one must use ugly hacks to preserve state from one row to the next, such as user variables -- which are not guaranteed to work if the optimizer changes the query plan. 
 
 And yeah, PostgreSQL and SQL Server have windowing functions too, and once you've used them it's a little hard to go back. This is in fact one of the main things I hear from people who love PostgreSQL for what I consider to be legitimate reasons. 
 

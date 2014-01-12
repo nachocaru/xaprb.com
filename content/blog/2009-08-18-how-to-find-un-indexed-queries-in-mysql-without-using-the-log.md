@@ -10,7 +10,7 @@ You probably know that it's possible to set configuration variables to [log quer
 
 But what if the slow query log isn't enabled and you are using (or consulting on) MySQL 5.0 or earlier, where it can't be enabled on the fly unless you're using a patched server such as [Percona's enhanced builds][2]? You can still capture these queries.
 
-The key is knowing what it really means for a query to "not use an index." There are two conditions that trigger this &#8212; not using an index at all, or not using a "good" index. Both of these set a bit. If either bit is set, the query is captured by the filter and logged. Both of these bits also set a corresponding bit in the protocol, so the TCP response to the client actually says "here comes the result of your query, and by the way it didn't use an index." This is very useful information.
+The key is knowing what it really means for a query to "not use an index." There are two conditions that trigger this -- not using an index at all, or not using a "good" index. Both of these set a bit. If either bit is set, the query is captured by the filter and logged. Both of these bits also set a corresponding bit in the protocol, so the TCP response to the client actually says "here comes the result of your query, and by the way it didn't use an index." This is very useful information.
 
 I'm sure you can see where this is going. Let's use tcpdump to capture queries, consume the output with [mk-query-digest][3], and filter out all but ones that don't use an index or use no good index:
 

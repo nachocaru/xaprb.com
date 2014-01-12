@@ -16,6 +16,6 @@ Or how about this one?
 
 Both are signs that someone might be trying to sound important. In situations like this, I've noticed that the people I look up to usually don't make weighty-sounding statements about other people's systems. They talk about what they are qualified to talk about: either they say something about their own systems, or if it's warranted and invited, they ask intelligent questions about other people's systems.
 
-People who only have vacuous generalities to contribute don't talk about their own systems, because if they actually worked on systems that qualified them to contribute to the conversation, they'd have something of substance to say. And they don't ask questions, because they don't know what to ask. (The third option &#8212; say nothing &#8212; seems unacceptable, I guess.)
+People who only have vacuous generalities to contribute don't talk about their own systems, because if they actually worked on systems that qualified them to contribute to the conversation, they'd have something of substance to say. And they don't ask questions, because they don't know what to ask. (The third option -- say nothing -- seems unacceptable, I guess.)
 
 For the love of all that is good, please do not look back through my blog archives. I don't want to know.

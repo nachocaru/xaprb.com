@@ -62,13 +62,13 @@ insert into last_processed_row(job, last_row)
    on duplicate key update
       last_row = greatest(last_row, values(last_row));</pre>
 
-There are some subtleties in these queries that bear explanation. First, I just chose a string value &#8212; any arbitrary value will do &#8212; to hold the "job" in the `last_processed_row` bookmark table. That "job" value is the table's primary key. As long as no other job uses the same value, and every query in a single job uses the same value, it'll work.
+There are some subtleties in these queries that bear explanation. First, I just chose a string value -- any arbitrary value will do -- to hold the "job" in the `last_processed_row` bookmark table. That "job" value is the table's primary key. As long as no other job uses the same value, and every query in a single job uses the same value, it'll work.
 
 The first query uses a subquery in the `WHERE` clause to select the job's bookmark value. Why do all that fancy `COALESCE(MIN())` stuff? The job's ID is the bookmark table's primary key, so there's only one row, right? I should be able to just select that row. I don't need to take the `MIN()` of a single value.
 
 That's mostly true, but what if there is no such row in the bookmark table? In that case, there'd be zero rows in the subquery. Using an aggregate function like `MIN()` or `MAX()` will always return a value, "propping open" the subquery to make sure it doesn't "collapse" to zero rows. If there are zero rows, the result is `NULL`, so `COALESCE()` makes sure zero rows equates to a value of zero.
 
-Finally, the last query uses some non-standard MySQL features to insert a row into the bookmark table if it doesn't exist, and update to the most recent value if it does exist. I do *not* use `REPLACE` because it may decrease the value, and I want the value to be monotonically increasing &#8212; the point of this algorithm is to avoid backtracking. You can read more about these and other magical "do many things at once" queries in my article on [flexible inserts and updates in MySQL][4].
+Finally, the last query uses some non-standard MySQL features to insert a row into the bookmark table if it doesn't exist, and update to the most recent value if it does exist. I do *not* use `REPLACE` because it may decrease the value, and I want the value to be monotonically increasing -- the point of this algorithm is to avoid backtracking. You can read more about these and other magical "do many things at once" queries in my article on [flexible inserts and updates in MySQL][4].
 
 ### Results
 

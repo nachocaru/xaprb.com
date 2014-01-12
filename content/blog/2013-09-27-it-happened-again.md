@@ -12,7 +12,7 @@ Woe is me?
 
 And to make it worse, or better, Mark Callaghan wrote a [bunch][6] of blog posts about his performance tests of the new MySQL DMR release. More to read, alas, hooray. 
 
-So, dear MySQL Engineering Team, if you can't release things gradually, would you please publish a summary blog post or article? With blue links that turn purple when I've visited them? Maybe I missed it &#8212; or scrolled past it. 
+So, dear MySQL Engineering Team, if you can't release things gradually, would you please publish a summary blog post or article? With blue links that turn purple when I've visited them? Maybe I missed it -- or scrolled past it. 
 
 With chocolate and beer, 
 

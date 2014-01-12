@@ -19,7 +19,7 @@ I've redesigned the program from the ground up to be more UNIX-friendly. In part
 
 The tool does a lot more for you by default. For example, it analyzes all tables in all databases. You can limit and exclude databases and tables, of course.
 
-There are many more options. This tool is now much more general-purpose. Instead of merely finding duplicated or redundant indexes and foreign keys, the approach I took in this rewrite is to find and print information on *all* indexes and foreign keys &#8212; but filter out all but duplicates by default.
+There are many more options. This tool is now much more general-purpose. Instead of merely finding duplicated or redundant indexes and foreign keys, the approach I took in this rewrite is to find and print information on *all* indexes and foreign keys -- but filter out all but duplicates by default.
 
 This means you can use the tool for other things. For example, you can get a list of all indexes. You could pipe a list of all foreign keys into another program, which describes or analyzes relationships and dependencies among your tables, perhaps to generate schema diagrams. If you want to write a tool for that purpose, please consider adding it to the toolkit. If I don't beat you to it, that is! It's on the list.
 

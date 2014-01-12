@@ -13,7 +13,7 @@ If you haven't already, you should <a href="/blog/2006/08/16/how-to-build-role-b
 
 ### Roles
 
-Let's finish the discussion about roles I pushed aside in the first article. When a user acts in a role, it "acts in the capacity of" that role. When a user is a member of a group, my system permits the user to act in that capacity &#8212; to assume that role. I don't want to go into the details of roles and role-based access control, partly because it's way outside my expertise, but I want to point out that acting as a member of a group is *only one way* to implement roles. There are others.
+Let's finish the discussion about roles I pushed aside in the first article. When a user acts in a role, it "acts in the capacity of" that role. When a user is a member of a group, my system permits the user to act in that capacity -- to assume that role. I don't want to go into the details of roles and role-based access control, partly because it's way outside my expertise, but I want to point out that acting as a member of a group is *only one way* to implement roles. There are others.
 
 The trick to making roles work well is finding the right level of granularity. To accomplish this, I've defined some special roles in my system. In this article I'll demonstrate how to implement the "self" role, but many others are possible. Anything you can deduce about the relationship between a user and an object is a candidate for a role, should you need it. For example, if your system records who creates each row, you could implement a "creator" role. If your schema tracks who supervises employees, you could have a "supervisor" role.
 
@@ -54,7 +54,7 @@ Your privilege system can represent reality better if it respects the object's s
    }
 }</pre>
 
-It's happening again &#8212; the code is taking too much responsibility. Shouldn't the code just be asking if the event is joinable? In fact, isn't it cleaner to make privileges contingent upon the event's status? If you haven't really explored this possibility in your own code, I encourage you to do so. My personal experience is it's a much better way to do it. Think about the places in your code where you could omit checking something's status before doing something to it. You might get rid of a lot of code.
+It's happening again -- the code is taking too much responsibility. Shouldn't the code just be asking if the event is joinable? In fact, isn't it cleaner to make privileges contingent upon the event's status? If you haven't really explored this possibility in your own code, I encourage you to do so. My personal experience is it's a much better way to do it. Think about the places in your code where you could omit checking something's status before doing something to it. You might get rid of a lot of code.
 
 While this represents reality better in one way, it mis-represents it another way. What if `$user->can('join', $event)` returns false? Is permission denied? Maybe not; maybe the event just isn't active. This makes it a little harder to understand why a user can't join an event, but in practice I find this almost never happens in my applications. The applications are built by asking what the user can do, so no user ever gets a link to join an event that's not "joinable," whatever that means. Mashing status and privileges together is a trade-off, but the upside (performance and managability) is so great, I think it's overwhelmingly worth the slightly unfaithful representation. In a bit I'll show you how to do this.
 
@@ -107,7 +107,7 @@ I've now covered enough background to explain how my system represents privilege
 
 1.  "object": a regular object-level (row-level) privilege.
 2.  "table": a privilege granted upon a table itself, as opposed to its contents. For example, "create" cannot be applied to an object, because an object has to exist for a privilege to apply to it. "create" can be granted upon a table, which allows a user to create a row in that table.
-3.  "global": a privilege granted on all rows in a given table. For example, officers ought to be able to view details on every user &#8212; details which might be hidden from other users. A single global privilege in the ACL can grant this.
+3.  "global": a privilege granted on all rows in a given table. For example, officers ought to be able to view details on every user -- details which might be hidden from other users. A single global privilege in the ACL can grant this.
 
 I store privileges two different ways. First, there are the UNIX-style privileges I've already explained. These are clearly object privileges, because they are defined directly in the row. I find these take care of nearly all my needs.
 
@@ -359,7 +359,7 @@ insert into t_privilege
    ('group', 4, 'list_all', 'table',  't_event', 0),
    ('user',  3, 'delete',   'object', 't_event', 1);</pre>
 
-One note on this schema &#8212; I have not included the indexes good performance will require. I've only included primary keys to ensure data validity. My real application has more indexes on `t_implemented_action` and `t_privilege`.
+One note on this schema -- I have not included the indexes good performance will require. I've only included primary keys to ensure data validity. My real application has more indexes on `t_implemented_action` and `t_privilege`.
 
 ### How to determine whether a user can take an action
 
@@ -373,7 +373,7 @@ How about seeing if 'xaprb' can join the 'MySQL Camp' event:
 
 1.  The UNIX-style permissions don't specify anything about the "join" action, so I'll skip them.
 2.  The "join" action is valid for objects.
-3.  The object's type is "t_event," and the "join" action is defined for that type, but not in status 2 &#8212; only in status 4.
+3.  The object's type is "t_event," and the "join" action is defined for that type, but not in status 2 -- only in status 4.
 
 xaprb cannot join the event. Can he join the 'Microsoft Keynote' event?
 
@@ -392,7 +392,7 @@ I've mentioned several times that the trick to doing this easily is to ask the q
 *   [All object privileges][2] shows you every privilege a given user has on an object.
 *   [All table privileges][3] shows you every privilege a given user has on a table.
 *   [All ACL entries][4] shows you all ACL entries defined for a particular object.
-*   **Update:** a new query &#8212; [All actionable objects][5] shows you all objects a user can take a particular action on.
+*   **Update:** a new query -- [All actionable objects][5] shows you all objects a user can take a particular action on.
 
 The queries are built dynamically with a few substitution variables. You can test these queries by saving them to a .php file and piping their output directly into mysql, like so:
 
@@ -420,15 +420,15 @@ I have also never really needed the "other" role in the `t_privilege` table, so 
 
 ### What's missing? How can you extend this system?
 
-I've deliberately omitted a few things. One is negative privileges, which deny someone the right to do something. This would not be hard to add &#8212; I've just never needed it! You could do an <a href="/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion self-join</a> against negative privileges to implement this, and store the negative privileges in the same table. Another possibility would be using more bitwise logic to negate privileges. I've honestly never put too much thought into it.
+I've deliberately omitted a few things. One is negative privileges, which deny someone the right to do something. This would not be hard to add -- I've just never needed it! You could do an <a href="/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion self-join</a> against negative privileges to implement this, and store the negative privileges in the same table. Another possibility would be using more bitwise logic to negate privileges. I've honestly never put too much thought into it.
 
-I hope my sample queries (which are almost identical to my production queries, by the way) give you enough insight to figure out other special things you may need, such as the "creator" or "supervisor" roles I mentioned. Another possibility is packing more bits into the UNIX-style permissions. My examples only use 9 bits. If your application is constantly asking whether some other action, besides read/write/delete, is possible &#8212; hey, use those extra bits. Or if you want, put another role besides user/group_owner/other into the UNIX-style bits. Just because I modelled after UNIX doesn't mean you can't do it differently.
+I hope my sample queries (which are almost identical to my production queries, by the way) give you enough insight to figure out other special things you may need, such as the "creator" or "supervisor" roles I mentioned. Another possibility is packing more bits into the UNIX-style permissions. My examples only use 9 bits. If your application is constantly asking whether some other action, besides read/write/delete, is possible -- hey, use those extra bits. Or if you want, put another role besides user/group_owner/other into the UNIX-style bits. Just because I modelled after UNIX doesn't mean you can't do it differently.
 
 There's lots of room to play with the table structures. For example, my production system has extra columns on `t_action` and `t_implemented_action` to define labels and other things my user interface wants.
 
 ### How does this compare to other systems?
 
-I hate comparisons for their own sake, so I'll only say my table schema is as simple as I could make it and still jam all the special cases in. There are only a couple of tables, and no complex hierachical relationships between them &#8212; everything is flattened out and de-normalized as much as I can think to do. By comparison, [phpGACL][6] uses 18 tables to represent relationships among ACOs and ARO. Here's another system I've found on the web at <a href="http://www.sqlrecipes.com/article_4.html">sqlrecipes.com</a>. Its schema is also more complex.
+I hate comparisons for their own sake, so I'll only say my table schema is as simple as I could make it and still jam all the special cases in. There are only a couple of tables, and no complex hierachical relationships between them -- everything is flattened out and de-normalized as much as I can think to do. By comparison, [phpGACL][6] uses 18 tables to represent relationships among ACOs and ARO. Here's another system I've found on the web at <a href="http://www.sqlrecipes.com/article_4.html">sqlrecipes.com</a>. Its schema is also more complex.
 
 These systems may work better for you, especially if you need a more traditional hierarchical ACL. Fortunately, I've always been able to accomplish what I need without hierarchy and with just a few groups, some custom roles, column defaults, lots of bitwise arithmetic, and special types of privileges. And I have managed quite complex data with this schema, such as inventory and accounting systems together in the same application.
 

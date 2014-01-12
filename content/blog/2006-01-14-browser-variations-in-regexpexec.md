@@ -7,7 +7,7 @@ IE6, Firefox 1.5 and Opera 8.5 handle regular expressions slightly differently. 
 
 ### Properties of match results
 
-Calling `RegExp.prototype.exec()` with a global regular expression returns an Array object with some extra properties. IE and Opera don't quite agree with [ECMA-262][1] &#8212; they add extra properties and don't create properties that should exist (Firefox gets it right).
+Calling `RegExp.prototype.exec()` with a global regular expression returns an Array object with some extra properties. IE and Opera don't quite agree with [ECMA-262][1] -- they add extra properties and don't create properties that should exist (Firefox gets it right).
 
 In case you don't know the ins and outs of JavaScript regexes, there is a subtlety about capturing subexpressions and global regular expressions. `exec` actually only looks for one match even though the expression is global, but sets the index at which the match happened. If I call it again, it keeps looking from where it left off, so I can loop through the successive matches. Each time the result is an array containing the current match, plus the captures and information about where the match occurred. As usual, index 0 of the array contains the text of the entire match, index 1 contains the first captured subexpression, and so on.
 
@@ -288,7 +288,7 @@ for (var prop in result) {
     
     <ul>
       <li>
-        Opera doesn't enumerate over the first captured subexpression in the first result. In Firefox, it exists without a value (has the special value <code>undefined</code>), and in IE it exists <strong>with a value</strong> &#8212; the empty string.
+        Opera doesn't enumerate over the first captured subexpression in the first result. In Firefox, it exists without a value (has the special value <code>undefined</code>), and in IE it exists <strong>with a value</strong> -- the empty string.
       </li>
       <li>
         IE adds the proprietary <code>lastIndex</code> property to the result.
@@ -346,7 +346,7 @@ for (var prop in result) {
     </blockquote>
     
     <p>
-      In other words, the length of the array <em>should</em> be 2 even in the first match, because the length of the array depends <strong>only</strong> on the number of capturing subexpressions in the pattern &#8212; so the browsers are doing the right thing.
+      In other words, the length of the array <em>should</em> be 2 even in the first match, because the length of the array depends <strong>only</strong> on the number of capturing subexpressions in the pattern -- so the browsers are doing the right thing.
     </p>
     
     <p>
@@ -358,7 +358,7 @@ for (var prop in result) {
     </p>
     
     <p>
-      I take exception to IE giving the capture a value. The subexpression doesn't capture anything and doesn't participate in the match, so it should not have a value &#8212; not even the empty string or <code>null</code>. I suppose this one is up for debate, but that's my personal opinion.
+      I take exception to IE giving the capture a value. The subexpression doesn't capture anything and doesn't participate in the match, so it should not have a value -- not even the empty string or <code>null</code>. I suppose this one is up for debate, but that's my personal opinion.
     </p>
     
     <h3>

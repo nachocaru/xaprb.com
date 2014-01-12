@@ -8,7 +8,7 @@ categories:
 ---
 Now why would I do that, especially when my blog is syndicated through it?
 
-Simple. I'm always trying to cut back on RSS and other "stuff." Less is more. But don't worry &#8212; I subscribed again. Only this time, I subscribed to my own filtered version of it! I built it via [Yahoo! Pipes][1]. And I [made it public][2], so you can subscribe to it too.
+Simple. I'm always trying to cut back on RSS and other "stuff." Less is more. But don't worry -- I subscribed again. Only this time, I subscribed to my own filtered version of it! I built it via [Yahoo! Pipes][1]. And I [made it public][2], so you can subscribe to it too.
 
 <!--more-->
 

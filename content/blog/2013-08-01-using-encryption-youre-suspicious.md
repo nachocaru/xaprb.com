@@ -6,7 +6,7 @@ categories:
   - Commentary
   - Web
 ---
-Yesterday more details on the NSA's secret and illegal monitoring activities were [revealed][1]. (Yes, the NSA revealed some things themselves, but as far as I can tell, that was only a conciliatory effort and didn't actually reveal more details &#8212; just more talk.)
+Yesterday more details on the NSA's secret and illegal monitoring activities were [revealed][1]. (Yes, the NSA revealed some things themselves, but as far as I can tell, that was only a conciliatory effort and didn't actually reveal more details -- just more talk.)
 
 Remember my recent series of blog posts, where I claimed that privacy in today's world is impossible without [trustworthy hardware/software][2], privacy is impossible unless it's [default][3], and privacy is [essentially unachievable][4] because of the scope of the problem, and the way we've built our society and technologies? 
 

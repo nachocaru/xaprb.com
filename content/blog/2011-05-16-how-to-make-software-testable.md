@@ -43,6 +43,6 @@ Now you can write back to the person who reported the issue and say "please send
 
 That is the absolutely essential core practice in testing: write code in units (be it functions, modules, programs, or something else) that accept input, cause no side effects, and return output. Then write test suites that begin with known input, execute the code, capture the output, and compare it to what is expected.
 
-Now you've learned in ten minutes what took me many years to learn. When they taught me about software engineering in my Computer Science classes, they didn't teach me how to test. They said "you must test rigorously!" and moved on to the next topic. They left me with the vague understanding that testing was an advanced practice that takes enormous time and effort. It turns out to be simple &#8212; if you start out right. And it saves enormous time and effort.
+Now you've learned in ten minutes what took me many years to learn. When they taught me about software engineering in my Computer Science classes, they didn't teach me how to test. They said "you must test rigorously!" and moved on to the next topic. They left me with the vague understanding that testing was an advanced practice that takes enormous time and effort. It turns out to be simple -- if you start out right. And it saves enormous time and effort.
 
 Testing has enabled me to avoid becoming a good programmer. I can't write good code, but I can write good tests, and with good tests, you can see clearly how broken your code is.

@@ -3,7 +3,7 @@ title: Four types of database abstraction layers
 date: "2006-08-13"
 permalink: /2006/08/13/four-types-of-database-abstraction-layers/
 ---
-Quite a few people have chimed in on a recent discussion about PHP, MySQL, database abstraction layers, and performance. I think enough viewpoints have been covered that I don't need to comment, but one question I don't see answered is "what are the qualities of a good SQL abstraction layer?" I think it's a very interesting &#8212; and complicated &#8212; question. As it turns out, the term has several meanings, and I think it's important to understand them.
+Quite a few people have chimed in on a recent discussion about PHP, MySQL, database abstraction layers, and performance. I think enough viewpoints have been covered that I don't need to comment, but one question I don't see answered is "what are the qualities of a good SQL abstraction layer?" I think it's a very interesting -- and complicated -- question. As it turns out, the term has several meanings, and I think it's important to understand them.
 
 I started drafting this article in February, but put it aside until the recent spate of articles prompted me to finish it. Here are links to some of those articles:
 
@@ -21,7 +21,7 @@ That explains why I'm not going to jump into the fray with my thoughts on the de
 
 ### Types of abstraction layers
 
-People sometimes say "SQL abstraction layer" or "database interface" fairly loosely, assuming everyone knows what they mean. Not so &#8212; I've seen at least four distinct meanings in common usage:
+People sometimes say "SQL abstraction layer" or "database interface" fairly loosely, assuming everyone knows what they mean. Not so -- I've seen at least four distinct meanings in common usage:
 
 1.  A software library to *connect to a database server* and issue queries, fetch results etc.
 2.  A software library to *present a common API to different database servers*.
@@ -34,7 +34,7 @@ Each type of interface usually builds upon the types that precede it in my numbe
 
 ### Type 1: Libraries that provide access to a database
 
-Libraries that connect to specific database software, issue queries, and return results are generally written at a fairly low level, and their interfaces usually map directly to the specific server software they're written for. For example, the [PHP `mysql_` functions][7] are clearly just hooks into the MySQL drivers &#8212; without any real abstraction as a high-level programmer would think of it.
+Libraries that connect to specific database software, issue queries, and return results are generally written at a fairly low level, and their interfaces usually map directly to the specific server software they're written for. For example, the [PHP `mysql_` functions][7] are clearly just hooks into the MySQL drivers -- without any real abstraction as a high-level programmer would think of it.
 
 Type 1 software doesn't really have a goal, except enabling access from the programming language to the database.
 
@@ -108,7 +108,7 @@ Type 4 software's goal is to enable treating database rows as objects in your co
 
 I've shown there are at least four completely different types of "database abstraction layer," and they have very different goals. It makes sense that "goodness" should be measured by different criteria as well, right? In fact, I think there should be some criteria in common, and some will be different.
 
-The common criteria should be &#8212; at a minimum &#8212; speed/efficiency, correctness, good documentation, and platform portability (by which I mean, the system should compile and run on various hardware and operating system platforms).
+The common criteria should be -- at a minimum -- speed/efficiency, correctness, good documentation, and platform portability (by which I mean, the system should compile and run on various hardware and operating system platforms).
 
 Beyond that, each type will have different criteria:
 
@@ -129,9 +129,9 @@ In fact, I think the best-designed system I've seen is the Microsoft .NET `Syste
 
 I generally dislike Type 3 software, and I think anyone who's ever written serious applications that require real performance from a database system will probably agree, for fairly obvious reasons. For one thing, platform-independent SQL is a myth. Easy and/or painless conversion between different database systems is, too. It does not exist in the real world. And I don't agree with those who assert it's a common requirement, or that it would be a good thing. I think porting from one system to another is generally rare, and trying to write "portable" systems when there's no clear need is going to cause nothing but problems. [YAGNI][12].
 
-I also dislike PHP's PEAR libraries. For example, in PEAR::DB and PEAR::MDB2, you never know what type of object you're going to get back from an operation! I said above a Type 3 SQL abstraction layer should be "elegant" and should result in writing less code. The PEAR error-handling paradigm is not elegant. Just one example: every action has to be followed by an `if` statement to check for an error. *That's what error handling is for.* You shouldn't have to write `if` statements &#8212; the software should *throw an error when there's an error!* In my opinion, using these libraries results in ugly, complex code. And remember this: error-handling code is a huge risk anyway, because it's so hard to test adequately. Anything that makes error-handling harder to do well is to be avoided.
+I also dislike PHP's PEAR libraries. For example, in PEAR::DB and PEAR::MDB2, you never know what type of object you're going to get back from an operation! I said above a Type 3 SQL abstraction layer should be "elegant" and should result in writing less code. The PEAR error-handling paradigm is not elegant. Just one example: every action has to be followed by an `if` statement to check for an error. *That's what error handling is for.* You shouldn't have to write `if` statements -- the software should *throw an error when there's an error!* In my opinion, using these libraries results in ugly, complex code. And remember this: error-handling code is a huge risk anyway, because it's so hard to test adequately. Anything that makes error-handling harder to do well is to be avoided.
 
-So I dislike Type 3 software; I'm also not very excited by Type 4, though I don't have such a strong aversion to it. It can be handy at times, but it can also promote a variety of truly bad practices (as [Sheeri Kritzer wrote recently, over-using surrogate keys can be one such bad practice][13]), and sometimes betrays a programmer's partial or complete lack of understanding of relational systems &#8212; or worse yet, unwillingness or inability to think. I've been drafting an article on ORM for six months, so I'll save my full rant for now, but ORM systems usually betray a shallow understanding of Object-Oriented Programming, too.
+So I dislike Type 3 software; I'm also not very excited by Type 4, though I don't have such a strong aversion to it. It can be handy at times, but it can also promote a variety of truly bad practices (as [Sheeri Kritzer wrote recently, over-using surrogate keys can be one such bad practice][13]), and sometimes betrays a programmer's partial or complete lack of understanding of relational systems -- or worse yet, unwillingness or inability to think. I've been drafting an article on ORM for six months, so I'll save my full rant for now, but ORM systems usually betray a shallow understanding of Object-Oriented Programming, too.
 
 ### Summary
 

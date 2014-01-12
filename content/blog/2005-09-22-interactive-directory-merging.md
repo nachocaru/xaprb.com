@@ -15,4 +15,4 @@ Create that as a shell script, `chmod +x` it, put it in your PATH, and invoke it
 
 <pre>$ mergedir /some/directory /other/directory</pre>
 
-When it finds files that differ, it will open vimdiff on them, and you can use the standard vimdiff commands to merge them (commands such as <kbd>dp</kbd>, <kbd>do</kbd>, <kbd>:w</kbd>, <kbd>:qa</kbd>, <kbd>]c</kbd> and so forth &#8212; look in the Vim manual for more information).
+When it finds files that differ, it will open vimdiff on them, and you can use the standard vimdiff commands to merge them (commands such as <kbd>dp</kbd>, <kbd>do</kbd>, <kbd>:w</kbd>, <kbd>:qa</kbd>, <kbd>]c</kbd> and so forth -- look in the Vim manual for more information).

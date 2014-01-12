@@ -15,7 +15,7 @@ I can say what I had in mind when I created the original event, but this is bigg
 
 ### Who controls it?
 
-Nobody. That's right &#8212; I deliberately abdicated control over things. I wanted it to be decentralized. Centralization is a problem; decentralization prevents problems. As just one example, Sheeri Cabral owns opensqlcamp.org the last I saw, and Technocation tends to be the default conduit for all things financial.
+Nobody. That's right -- I deliberately abdicated control over things. I wanted it to be decentralized. Centralization is a problem; decentralization prevents problems. As just one example, Sheeri Cabral owns opensqlcamp.org the last I saw, and Technocation tends to be the default conduit for all things financial.
 
 If someone wants to take things in a new direction, then they can do so. I don't know if anyone would show up for an event that didn't really match the spirit that I think is lodged in people's minds now, but there is no stick you can brandish, other than threat of negative publicity.
 
@@ -43,7 +43,7 @@ I heard a rumor this past week that planning for at least one event is in progre
 
 ### Surprise isn't very community oriented, is it?
 
-This entire conference was born out of an "I see a lot of talk but no action" kind of situation. I generally don't believe in surprise when a community is involved, but sometimes there is a lot of chatter, and talk is actually preventing action &#8212; to get things to happen, you actually have to stop talking. These events were born out of my realization that two things were true:
+This entire conference was born out of an "I see a lot of talk but no action" kind of situation. I generally don't believe in surprise when a community is involved, but sometimes there is a lot of chatter, and talk is actually preventing action -- to get things to happen, you actually have to stop talking. These events were born out of my realization that two things were true:
 
 1.  There was an invitation and call to action but nobody took it, so I didn't need to feel bad about going off and doing something myself.
 2.  If I tried to involve anyone in the early stages of planning, it would just regress back to the arguments over differing visions of the event.

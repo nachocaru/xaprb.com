@@ -5,11 +5,11 @@ permalink: /2009/02/08/thoughts-on-the-new-performance_schema-in-mysql/
 categories:
   - Databases
 ---
-[Peter Gulutzan][1] and [Mark Leith][2] have both written about [the new PERFORMANCE_SCHEMA in MySQL][3]. I've read through the worklog, or most of it &#8212; there were some spots where Firefox seemed to start overlaying parts with other parts, quite weird. But anyway I've read as much as I can.
+[Peter Gulutzan][1] and [Mark Leith][2] have both written about [the new PERFORMANCE_SCHEMA in MySQL][3]. I've read through the worklog, or most of it -- there were some spots where Firefox seemed to start overlaying parts with other parts, quite weird. But anyway I've read as much as I can.
 
 Obviously many people have been putting a ton of thought into this for years, and I can't pretend to judge their work in a single sitting. But I have opinions nevertheless.
 
-If the implementation turns out to be as good as the initial swing at it looks, this is a great development. This is the way things should be done &#8212; this is, finally, the level of detail of instrumentation other databases have. There's a lot of complexity; it is a *large* worklog and I can't say whether it's complete or something is put in the wrong place or will turn out to be not quite what's needed; that's where I stop trying to form an opinion. But overall, this is just a great development.
+If the implementation turns out to be as good as the initial swing at it looks, this is a great development. This is the way things should be done -- this is, finally, the level of detail of instrumentation other databases have. There's a lot of complexity; it is a *large* worklog and I can't say whether it's complete or something is put in the wrong place or will turn out to be not quite what's needed; that's where I stop trying to form an opinion. But overall, this is just a great development.
 
 A few questions and comments, though.
 

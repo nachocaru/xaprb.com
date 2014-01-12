@@ -46,7 +46,7 @@ $comment_author_email = trim($_POST['email']);
 $comment_author_url   = trim($_POST['url']);
 $comment_content      = trim($_POST['comment']);
 $comment_captcha_idx  = trim($_POST['captcha_index']);
-$comment_captcha      = trim($_POST['captcha']);</pre> Only the last two lines are changed in that code sample &#8212; I included the first lines for context. I use the input a bit later, where the input checking occurs:
+$comment_captcha      = trim($_POST['captcha']);</pre> Only the last two lines are changed in that code sample -- I included the first lines for context. I use the input a bit later, where the input checking occurs:
     
     <pre>if ( !is_numeric($comment_captcha_idx) || !$comment_captcha
     || $captchas[$comment_captcha_idx]["answer"] != $comment_captcha)

@@ -67,7 +67,7 @@ To make the blogs, the WordPress installation, and the custom blog theme all ind
             my_custom_theme/
 </pre>
 
-What I've done is separate the custom bits &#8212; the parts that don't ship with WordPress &#8212; away from the files I want to upgrade when I upgrade WordPress. How will this work, though?
+What I've done is separate the custom bits -- the parts that don't ship with WordPress -- away from the files I want to upgrade when I upgrade WordPress. How will this work, though?
 
 I'll make symbolic links from the dogs/ and cats/ directories to the currently installed version of WordPress. So, from the root directory of the website, I type the following at the command line:
 

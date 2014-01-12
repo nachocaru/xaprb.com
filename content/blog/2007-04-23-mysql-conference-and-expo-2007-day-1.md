@@ -14,7 +14,7 @@ If you're interested in short overviews of the sessions I attend, keep watching 
 
 ### The conference overall
 
-This conference is well-organized and friendly. Attire is casual; most people are wearing jeans and t-shirts, or khakis and three-button shirts. I found lunch basic but good &#8212; catered food, with tables set up in a grassy area in the beautiful California sunshine; nicely dressed tables. I had a nice salad with vinaigrette and crumbled bleu cheese, penne with a sun-dried tomato sauce, red potato salad, and bread.
+This conference is well-organized and friendly. Attire is casual; most people are wearing jeans and t-shirts, or khakis and three-button shirts. I found lunch basic but good -- catered food, with tables set up in a grassy area in the beautiful California sunshine; nicely dressed tables. I had a nice salad with vinaigrette and crumbled bleu cheese, penne with a sun-dried tomato sauce, red potato salad, and bread.
 
 Pretty much everyone seems to be here. I don't want to drop names, so I'll just leave it at that (though I cannot avoid mentioning that I'm rooming with Alexey Kovyrin, who has just released an update to the [MySQL Master-Master Replication tool][4]). It is such a pleasure to meet the people I've been emailing with; people from all over the world, who use MySQL for all different kinds of things. I also met some people I've met at previous events, and whom I consider friends now. Here's to all of my friends, new and old!
 

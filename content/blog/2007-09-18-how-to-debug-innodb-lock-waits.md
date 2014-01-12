@@ -49,7 +49,7 @@ Record lock, heap no 1 PHYSICAL RECORD: n_fields 1; compact format; info bits 0
 Record lock, heap no 2 PHYSICAL RECORD: n_fields 3; compact format; info bits 0
  0: len 4; hex 80000001; asc     ;; 1: len 6; hex 000000000d35; asc      5;; 2: len 7; hex 800000002d0110; asc     -  ;;</pre>
 
-That's fine, but there are, ah, limitations. As the manual says, InnoDB periodically prints out this text &#8212; essentially spewing InnoDB's guts &#8212; to its standard output. This gets redirected to the server error log in any sane installation. Who's looking there? And it gets printed out at long intervals, which seems to be about every 16 seconds on the machines I use.
+That's fine, but there are, ah, limitations. As the manual says, InnoDB periodically prints out this text -- essentially spewing InnoDB's guts -- to its standard output. This gets redirected to the server error log in any sane installation. Who's looking there? And it gets printed out at long intervals, which seems to be about every 16 seconds on the machines I use.
 
 Plus, if you've looked at the result, you'll understand this is not something you want to search through manually looking for data. The output can be absolutely huge. What DBA wants to pore over thousands of hex-dumped rows from the table just to answer the question "who holds that lock?"
 
@@ -97,6 +97,6 @@ Of course, the upcoming Falcon storage engine already has better features for de
   <a href="http://the-source.50webs.com">the source</a>
 </div>
 
-The conclusion to this whole article is: use [innotop][1] if you use InnoDB. Heck, use it if you use MySQL at all. It makes a lot of things a lot easier, not just debugging InnoDB lock contention. Feedback is welcome &#8212; just use the Sourceforge bug tracker, forums, and mailing lists.
+The conclusion to this whole article is: use [innotop][1] if you use InnoDB. Heck, use it if you use MySQL at all. It makes a lot of things a lot easier, not just debugging InnoDB lock contention. Feedback is welcome -- just use the Sourceforge bug tracker, forums, and mailing lists.
 
  [1]: http://code.google.com/p/innotop/

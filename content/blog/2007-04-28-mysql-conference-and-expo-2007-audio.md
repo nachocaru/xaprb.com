@@ -6,7 +6,7 @@ categories:
   - Databases
 ---
 
-I recorded many of the sessions I attended at the conference. You can [download the audio files in Ogg Vorbis format][1] here. These files will not stay up forever &#8212; I will probably remove them after a few weeks.
+I recorded many of the sessions I attended at the conference. You can [download the audio files in Ogg Vorbis format][1] here. These files will not stay up forever -- I will probably remove them after a few weeks.
 
 My recorder only records in mp3 format, so I was forced to crank the bitrate down pretty far to avoid ending up with gigabytes of data. Too bad it doesn't record directly to Ogg Vorbis format; if it did, I could get natural-sounding voice-quality at something like 8 kB/sec. Anyway, it is what it is.
 

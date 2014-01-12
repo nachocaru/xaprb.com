@@ -18,4 +18,4 @@ Think about that in contrast to Perl, where you prepare a Statement against a Da
 
 Funny enough, I never wrote a sane interface around DBI. (It's already a wrapper anyway.) I just dealt with it. But I never liked it, and somehow I must have been like the frog in the teapot and never jumped out.
 
-I'm learning a new language now &#8212; Go &#8212; and it's time to learn how Go wants me to think about databases. Will it be sane or awkward? I don't know yet. The documentation doesn't take any time to introduce it, so I'll just work through it and see how it's done.
+I'm learning a new language now -- Go -- and it's time to learn how Go wants me to think about databases. Will it be sane or awkward? I don't know yet. The documentation doesn't take any time to introduce it, so I'll just work through it and see how it's done.

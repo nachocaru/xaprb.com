@@ -7,7 +7,7 @@ categories:
 ---
 I'm on the select board of elite people who were duped into reviewing proposals for the upcoming [MySQL Conference and Expo 2008][1], and I'm here to tell you how to get your proposal accepted. Aside from bribing me with chocolate, that is.
 
-These are *my* opinions. Believe it or not, I have not been instructed how to evaluate proposals. And by the way, I have no authority to get your session accepted &#8212; I only get to say how good I think it is. (Maybe I should re-title this to "how to get me to vote for your session," but that's a lame headline).
+These are *my* opinions. Believe it or not, I have not been instructed how to evaluate proposals. And by the way, I have no authority to get your session accepted -- I only get to say how good I think it is. (Maybe I should re-title this to "how to get me to vote for your session," but that's a lame headline).
 
 ### Be different
 
@@ -53,9 +53,9 @@ Some of the best biographies are the shortest ones. Not to pick favorites, but h
   </p>
 </blockquote>
 
-That is a good bio, but not because Petr used to work for MySQL and now works for Google &#8212; it's good because it gets to the point right away and has zero fluff.
+That is a good bio, but not because Petr used to work for MySQL and now works for Google -- it's good because it gets to the point right away and has zero fluff.
 
-This year the conference is using different organizing software, and you will have the opportunity to edit your bio. Do it &#8212; it will make people want to come to your session more. (Last year someone chose my bio for me and I wasn't able to get it changed &#8212; so please don't use my bio from last year as an example!
+This year the conference is using different organizing software, and you will have the opportunity to edit your bio. Do it -- it will make people want to come to your session more. (Last year someone chose my bio for me and I wasn't able to get it changed -- so please don't use my bio from last year as an example!
 
 ### Be free!
 
@@ -65,7 +65,7 @@ Did I mention it's probably cheaper to attend the conference if you're a speaker
 
 This is the first time I've ever done this, so I don't know what the heck I'm talking about. Jay Pipes or someone else from MySQL is likely to correct this blog post. Read the comments :)
 
-I look forward to seeing your proposal, receiving chocolate in the mail, and marking your proposal as "Great." Just kidding! I actually look forward to seeing you at the conference. Remember &#8212; you only have a few more weeks to submit! Get crackin' *now* so you can plan something great and write up a killer proposal.
+I look forward to seeing your proposal, receiving chocolate in the mail, and marking your proposal as "Great." Just kidding! I actually look forward to seeing you at the conference. Remember -- you only have a few more weeks to submit! Get crackin' *now* so you can plan something great and write up a killer proposal.
 
  [1]: http://www.mysqlconf.com/
  [2]: http://conferences.oreillynet.com/pub/w/54/sessions.html

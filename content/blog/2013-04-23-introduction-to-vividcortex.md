@@ -9,7 +9,7 @@ We're ironing out a kink that's preventing Planet MySQL from aggregating VividCo
 
 VividCortex is a monitoring and analysis product for MySQL, provided as Software-As-A-Service, with agents that run in your systems and report back to our APIs. The agents are super-efficient and non-obtrusive (you've probably noticed my posts about Go recently). They gather high-resolution data about your systems and our web application helps you make sense of it.
 
-VividCortex is shockingly easy to install &#8212; if you're slow at the keyboard, it takes 30 seconds. In less than a minute you can get insight into what your MySQL servers are doing. We are in closed beta right now, with a long waiting list. We're working with a small set of alpha customers to get the product ready for an open beta.
+VividCortex is shockingly easy to install -- if you're slow at the keyboard, it takes 30 seconds. In less than a minute you can get insight into what your MySQL servers are doing. We are in closed beta right now, with a long waiting list. We're working with a small set of alpha customers to get the product ready for an open beta.
 
 Our technology and UI focus around four key areas: easy observability of all of your systems (including very large numbers of servers), fluidly browsing and inspecting to swiftly drill into areas of interest, advanced and highly accurate problem detection, and problem diagnosis. In all of these areas we're truly breaking new ground, unlike anything you can get from legacy monitoring systems, whether commercial or opensource. (Can you think of any existing product that can actually diagnose problems for you?)
 

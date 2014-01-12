@@ -21,7 +21,7 @@ Love it or hate it, MySQL's built-in replication is absolutely key to much of wh
 *   It is generally very low overhead. PostgreSQL's main replication system is built on top of triggers and is said not to scale very well. (Disclaimer: this is only what people have told me; I haven't battle-tested it. But I'm afraid of it.)
 *   There is only One Way To Do It. PostgreSQL has lots of different replication systems. That in itself is a pretty significant deterrent for me.
 
-Regardless of the technical strengths and weaknesses of each database's replication systems, it is my perception that MySQL's ultimately lets me do incredibly flexible and useful things; in general it is Just Enough and has just the right combinations of qualities for lots of purposes. And each of its weaknesses is easily avoided or worked around, or just sidestepped &#8212; because MySQL replication's simplicity and flexibility lets me easily choose a different approach.
+Regardless of the technical strengths and weaknesses of each database's replication systems, it is my perception that MySQL's ultimately lets me do incredibly flexible and useful things; in general it is Just Enough and has just the right combinations of qualities for lots of purposes. And each of its weaknesses is easily avoided or worked around, or just sidestepped -- because MySQL replication's simplicity and flexibility lets me easily choose a different approach.
 
 ### In-Place Upgrades
 
@@ -31,7 +31,7 @@ This may not seem like a big deal, but I work with a lot of data. When you do th
 
 That's the current state of PostgreSQL. You have to dump and reload your data, and when you have a terabyte of data, that's no fun. The workarounds usually involve replicating your data to another server, switching to the other server, upgrading, and switching back. But why should you have to have another server just to upgrade your data?
 
-I see this as a significant &#8212; even critical &#8212; sticking point. It's something I just don't have to think about most of the time with MySQL
+I see this as a significant -- even critical -- sticking point. It's something I just don't have to think about most of the time with MySQL
 
 ### Are PostgreSQL's other strengths enough?
 

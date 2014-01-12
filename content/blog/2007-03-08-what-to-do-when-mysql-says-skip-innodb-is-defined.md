@@ -19,7 +19,7 @@ As it turns out, the error message is a bit misleading. Many problems will cause
 
 ### Dig deeper
 
-If InnoDB says it's disabled, it probably is. Look at a couple other things. Does `SHOW ENGINES` report InnoDB is disabled? How about `SHOW VARIABLES LIKE 'have_innodb'`? Try `SHOW TABLE STATUS` on an InnoDB table &#8212; are most columns `NULL`?
+If InnoDB says it's disabled, it probably is. Look at a couple other things. Does `SHOW ENGINES` report InnoDB is disabled? How about `SHOW VARIABLES LIKE 'have_innodb'`? Try `SHOW TABLE STATUS` on an InnoDB table -- are most columns `NULL`?
 
 If so, you most likely have an InnoDB configuration error. Not that you've disabled it with `skip-innodb`, but there's something wrong. If so, MySQL will still start, but the InnoDB storage engine, and tables that use it, will be disabled.
 

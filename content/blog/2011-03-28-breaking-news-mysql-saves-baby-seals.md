@@ -10,6 +10,6 @@ This is a test to see if people will vote this down on Planet MySQL. If you'll v
 
 Then you're probably the kind of person who'll vote negatively about MySQL saving the lives of baby seals.
 
-Seriously: is it at all possible that the above posts, which got thumbs-down votes, are actually bad news for anyone? I usually don't look at the Planet, and only read through my RSS feeds, but for some reason today I actually browsed to it, and I was just amazed at how many posts that are nothing but great steps forward for the MySQL community have negative votes! Who **are** these people? Who would do such a thing? Get a life! But before you do, please vote this post down &#8212; go on, do it! Prove my point!
+Seriously: is it at all possible that the above posts, which got thumbs-down votes, are actually bad news for anyone? I usually don't look at the Planet, and only read through my RSS feeds, but for some reason today I actually browsed to it, and I was just amazed at how many posts that are nothing but great steps forward for the MySQL community have negative votes! Who **are** these people? Who would do such a thing? Get a life! But before you do, please vote this post down -- go on, do it! Prove my point!
 
 There are two lessons to learn from this: the ability to vote something down brings out the second-worst in people, and the ability to vote anonymously brings out the absolute worst. Both of those "features" should be ripped out of Planet MySQL and thrown away.

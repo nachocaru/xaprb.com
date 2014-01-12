@@ -2,7 +2,7 @@
 title: If you only learn one thing about database transactions, it should be this
 permalink: >
 ---
-I've been writing a lot of articles about locks, deadlocks, and transactions recently, and it occurs to me I've neglected to mention the single most important thing to know. If you only learn one thing about transactions in database systems, you should learn this, and learn it thoroughly &#8212; burn it into your brain permanently, if possible.
+I've been writing a lot of articles about locks, deadlocks, and transactions recently, and it occurs to me I've neglected to mention the single most important thing to know. If you only learn one thing about transactions in database systems, you should learn this, and learn it thoroughly -- burn it into your brain permanently, if possible.
 
 **The single most important thing you can do is keep your transactions as small as possible.**
 
@@ -24,11 +24,11 @@ If you can do it all in a single query, you don't even need a transaction. By de
 
 ### 3. Prepare as much ahead of time as possible
 
-To help include as few statements as possible in your transaction, look at the order of the queries. Can some of them be moved earlier in the sequence, before the `START TRANSACTION` statement? If so, good. Do as much preparation as possible before you start the work. Especially think about whether you can check to make sure there's even work to be done, or whether you're likely to be able to finish the work &#8212; if you can find that out ahead of time, you might be able to avoid even doing anything.
+To help include as few statements as possible in your transaction, look at the order of the queries. Can some of them be moved earlier in the sequence, before the `START TRANSACTION` statement? If so, good. Do as much preparation as possible before you start the work. Especially think about whether you can check to make sure there's even work to be done, or whether you're likely to be able to finish the work -- if you can find that out ahead of time, you might be able to avoid even doing anything.
 
 ### 4. Touch the smallest amount of data possible
 
-If possible, avoid changing data that doesn't need to be changed. For example, if you're updating a summary table and you know what was just changed in the table from which the summary is calculated, you may not need to update the entire summary &#8212; maybe just part of it. Use indexes wisely to constrain your work to just part of a table instead of doing the entire table. Use every bit of information at your disposal to avoid working with more data than you need to.
+If possible, avoid changing data that doesn't need to be changed. For example, if you're updating a summary table and you know what was just changed in the table from which the summary is calculated, you may not need to update the entire summary -- maybe just part of it. Use indexes wisely to constrain your work to just part of a table instead of doing the entire table. Use every bit of information at your disposal to avoid working with more data than you need to.
 
 ### 5. Don't wait around before committing
 
@@ -40,4 +40,4 @@ Transactions have a purpose, and you should not be so afraid of holding locks th
 
 ### Conclusion
 
-Keeping transactions as small as possible is the most important thing to do, but it may not be obvious, especially if you're less experienced with databases. A few easy practices, combined with simple awareness, can go a very long way. But remember &#8212; don't defeat the purpose by cheating yourself out of the very benefits transactions give you.
+Keeping transactions as small as possible is the most important thing to do, but it may not be obvious, especially if you're less experienced with databases. A few easy practices, combined with simple awareness, can go a very long way. But remember -- don't defeat the purpose by cheating yourself out of the very benefits transactions give you.

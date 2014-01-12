@@ -115,7 +115,7 @@ order by sign(seq - 100)</pre>
 
 The trick is to find the right query to partition the data. That will depend on the meaning of "next" and "previous" in the specific application. In this case, partitioning by integer greater-than and less-than is easy.
 
-MySQL likes this query, too. It uses the index well, so it's nice and efficient. You can `EXPLAIN` the query to see how it does it &#8212; basically, it can constrain its search to a range of values in the primary key itself, since it doesn't need any data other than the key (no bookmark lookups needed). It would be even more efficient to do it with a `UNION`, but that's not available in MySQL 3.23.
+MySQL likes this query, too. It uses the index well, so it's nice and efficient. You can `EXPLAIN` the query to see how it does it -- basically, it can constrain its search to a range of values in the primary key itself, since it doesn't need any data other than the key (no bookmark lookups needed). It would be even more efficient to do it with a `UNION`, but that's not available in MySQL 3.23.
 
 So there you have it, another solution in search of a problem. I hope you enjoyed it. There are probably other ways to do it, but this is at least one way that works.
 

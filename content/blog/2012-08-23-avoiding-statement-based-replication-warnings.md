@@ -18,7 +18,7 @@ MySQL will write to the server's error log when this statement is issued and bin
 
 This becomes a problem very quickly, because in fact the statement is deterministic and the rows to be affected can be predicted perfectly. The server is just being overly strict. The general technique illustrated here is a superior alternative to some other ways of [implementing a queue in a database table][1]. But if a superior alternative floods the error log with spurious messages, it must be avoided anyway.
 
-The solution I chose in this case is a blend of SQL and application code. Part of the logic &#8212; the limit &#8212; must be handled in the application code, and pulled out of the UPDATE statement so the server will consider it to be deterministic. Here is pseudocode for the result:
+The solution I chose in this case is a blend of SQL and application code. Part of the logic -- the limit -- must be handled in the application code, and pulled out of the UPDATE statement so the server will consider it to be deterministic. Here is pseudocode for the result:
 
 <pre>
 function claim_a_job() {

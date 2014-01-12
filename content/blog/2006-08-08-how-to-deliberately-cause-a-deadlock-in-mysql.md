@@ -63,7 +63,7 @@ This trick works because of the same principle I explained in a [previous articl
 
 ### Summary
 
-In this article I've explained how you can create a small, low-impact deadlock that doesn't tie up important resources, for the purpose of freeing up other important resources (namely, status and debugging information). I showed you how [innotop][2] &#8212; a program that cares a lot about that status information &#8212; has a built-in function to do this for you easily. And I showed you what I think is the minimal possible deadlock.
+In this article I've explained how you can create a small, low-impact deadlock that doesn't tie up important resources, for the purpose of freeing up other important resources (namely, status and debugging information). I showed you how [innotop][2] -- a program that cares a lot about that status information -- has a built-in function to do this for you easily. And I showed you what I think is the minimal possible deadlock.
 
 If this article is useful to you, [subscribe][5] to receive updates free and conveniently.
 

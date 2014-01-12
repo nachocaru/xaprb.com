@@ -7,7 +7,7 @@ categories:
   - Open Source
   - Operations
 ---
-I recently set up the [solarized][1] color theme for my terminal emulator. I've been meaning to do this for a while, but procrastinated. However, I finally got really frustrated with the colors I get from "ls" sometimes &#8212; I use a dark terminal with light fonts, and the directory listings in particular can become invisible, with dark blue on black.
+I recently set up the [solarized][1] color theme for my terminal emulator. I've been meaning to do this for a while, but procrastinated. However, I finally got really frustrated with the colors I get from "ls" sometimes -- I use a dark terminal with light fonts, and the directory listings in particular can become invisible, with dark blue on black.
 
 Solarized is much improved. All of the colors work well together and are easy on the eyes. What a relief! Recommended for programmers and system administrators. There are plugins or configuration files for a huge variety of programming environments and programs, including Vim of course.
 

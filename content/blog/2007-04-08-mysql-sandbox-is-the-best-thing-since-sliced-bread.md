@@ -12,7 +12,7 @@ To get started, I just read through Giuseppe's Sandbox article on O'Reilly Datab
 <pre>baron@wabbit:~ $ ls /opt/mysql
 3.23.58  4.0.27  4.1.0  4.1.22  5.1.15  5.2.3</pre>
 
-After that, all I had to do was change to the sandbox directory and say `./express_install.pl <version>` for each version, and it set everything up for me. Boy, was that easy! Before I did this, I had spent a couple hours reading through the manual's instructions on how to get many servers on one machine &#8212; this was much faster and easier.
+After that, all I had to do was change to the sandbox directory and say `./express_install.pl <version>` for each version, and it set everything up for me. Boy, was that easy! Before I did this, I had spent a couple hours reading through the manual's instructions on how to get many servers on one machine -- this was much faster and easier.
 
 The next step for me was setting up some of the servers as slaves of others. I needed to modify the config files to set the server-id, and to make them listen to TCP connections, but that was trivial.
 

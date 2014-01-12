@@ -27,7 +27,7 @@ These are compelling reasons to use temporary tables for many purposes. However,
 *   Since they're private to a connection, you can't debug an application easily if you need to see the data it has generated and is working on.
 *   Since they don't persist after a connection closes, they cause problems with replication, as I mentioned.
 
-Any good solution to the problems should ideally offer some of the benefits of temporary tables. Applications need to be able to avoid naming conflicts, and cleanup needs to be easy. And it would be nice to avoid the problems too &#8212; I'd like to see a connection's data, and I'd like to avoid replication issues. Can all this happen? I think so, if you're willing to give up a small amount of convenience, and if there are no privacy issues.
+Any good solution to the problems should ideally offer some of the benefits of temporary tables. Applications need to be able to avoid naming conflicts, and cleanup needs to be easy. And it would be nice to avoid the problems too -- I'd like to see a connection's data, and I'd like to avoid replication issues. Can all this happen? I think so, if you're willing to give up a small amount of convenience, and if there are no privacy issues.
 
 ### One possible solution
 
@@ -38,7 +38,7 @@ The usual advice is to create randomly named scratch tables in a database reserv
 [mysql-find][2] can do the purging easily, so that's no trouble. But there are some drawbacks to this method:
 
 *   Randomly named tables, and checking for an existing table before creating, is a bit messy and is prone to race conditions.
-*   Quick, which connection is using table `d41d8cd98f00b204e9800998ecf8427e`, and what is it used for? Suppose the application creates a scratch table of users, one of messages, and one of interests &#8212; what kind of table is that? I don't know either.
+*   Quick, which connection is using table `d41d8cd98f00b204e9800998ecf8427e`, and what is it used for? Suppose the application creates a scratch table of users, one of messages, and one of interests -- what kind of table is that? I don't know either.
 *   I don't like guessing when a table isn't in use anymore. What if an application was running slowly because, for example, it's talking to an API that's responding slowly? Dropping its tables would be a bad thing to do.
 
 ### My solution

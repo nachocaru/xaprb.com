@@ -24,7 +24,7 @@ mysql> DESCRIBE typeof;
 +-------+------------------+------+-----+---------+-------+
 </pre>
 
-This is one possible way to programmatically determine the type of an expression &#8212; even an arbitrarily complex one.
+This is one possible way to programmatically determine the type of an expression -- even an arbitrarily complex one.
 
 Not beautiful, but it might get the job done. Other ideas?
 

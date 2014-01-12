@@ -9,7 +9,7 @@ XHTML tables provide several elements to group and structure data, including [ro
   <img src="/articles/images/folder-view-slug.png" alt="Data grouped as a folder view" height="85" width="218" />
 </div>
 
-The basic idea is to use `tbody` as many times as needed to group each set of rows together. The image above shows a single `tbody` element. I think using multiple `tbody` elements may not occur to developers because it sounds like there ought to be only one &#8212; but that's not true. Tables can have as many `tbody` elements as you want. You can optionally have one (and only one) `thead` and `tfoot` too. Read the [Tables in HTML documents][2] part of the HTML spec for more, if you want (there's no need to for this article).
+The basic idea is to use `tbody` as many times as needed to group each set of rows together. The image above shows a single `tbody` element. I think using multiple `tbody` elements may not occur to developers because it sounds like there ought to be only one -- but that's not true. Tables can have as many `tbody` elements as you want. You can optionally have one (and only one) `thead` and `tfoot` too. Read the [Tables in HTML documents][2] part of the HTML spec for more, if you want (there's no need to for this article).
 
 The next thing to do is add some CSS. The image will go at the far left of the leftmost (first) `td` as a background image, and I'll add some left-padding to keep the text from overlapping the image. I identify the leftmost column with the `first-child` class.
 

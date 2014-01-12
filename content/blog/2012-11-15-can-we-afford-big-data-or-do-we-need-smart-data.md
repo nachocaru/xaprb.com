@@ -19,11 +19,11 @@ I think most Big Data is utter garbage, collected in the hope that it might be u
 Smart Data is a recognition of this. I see it as a set of practices that I believe we need to build around the lifecycle of Big Data. Smart Data is what you get when Big Data is no longer exciting "just because." The Smart Data lifecycle will vary, but might look like this:
 
 1.  Capture and record everything, and don't delete any of it.
-2.  Wait for a little while until the data is ready for analysis &#8212; say, several cycles of seasonality.
+2.  Wait for a little while until the data is ready for analysis -- say, several cycles of seasonality.
 3.  Analyze the data and determine which portions of it are meaningful, and what meaningful metrics can be distilled from it.
 4.  Aggregate, compress, distill, extract, and otherwise winnow down the Big Data until the meaning and knowledge remains. In most cases I believe this will constitute a tiny fraction of the original dataset.
 5.  Discard the original dataset, or place it into offline storage if you must.
-6.  Stop retaining the whole incoming data stream. I see a variety of options here &#8212; short-term retention, upfront winnowing, realtime streaming analysis and immediate discarding, and so on.
+6.  Stop retaining the whole incoming data stream. I see a variety of options here -- short-term retention, upfront winnowing, realtime streaming analysis and immediate discarding, and so on.
 7.  Repeat. If you have a new question that you think the original data can answer, but the distilled data can't answer, then either go to your archives and pull it out, or if you've discarded it, start again at step 1 for a while and accumulate enough data to answer the question.
 
 Here's a diagram that expresses some of these ideas.

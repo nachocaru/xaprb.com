@@ -23,7 +23,7 @@ InnoDB handles each type of error slightly differently, and doesn't always follo
 
 ### How InnoDB handles these errors
 
-When InnoDB aborts because of a lock wait timeout, it rolls back only the statement that times out, unless your version of MySQL is older than 5.0.13. In these cases, it rolls back the entire transaction. That is, if you have issued five statements in the transaction, and the sixth times out, the first five are rolled back too. The behavior in 5.0.13 and newer is more logical and better to work with &#8212; you should be able to retry just the statement that timed out, and if it succeeds, continue with further statements in your transaction.
+When InnoDB aborts because of a lock wait timeout, it rolls back only the statement that times out, unless your version of MySQL is older than 5.0.13. In these cases, it rolls back the entire transaction. That is, if you have issued five statements in the transaction, and the sixth times out, the first five are rolled back too. The behavior in 5.0.13 and newer is more logical and better to work with -- you should be able to retry just the statement that timed out, and if it succeeds, continue with further statements in your transaction.
 
 If you are having issues with lock wait timeouts, you may have some transactions holding locks too long. MySQL has limited tools to help you solve these problems, but if you browse through my past articles, you'll see I have written extensively about how to determine what is blocking your statement. Unfortunately, there's only so much you can do.
 

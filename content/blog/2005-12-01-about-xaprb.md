@@ -15,11 +15,11 @@ I'm a curious guy. I am constantly pushing myself to learn new things, ask why t
 
 I earn my living as a professional software engineer, doing real work: e-commerce, catalog sales, Internet marketing and advertising, web design and development, and so on. I'm not in it for the glory. I'm not presenting at Web 2.0 conferences. I'm not a professor, an academic, not even an expert. But the challenges I overcome are real, and they're relevant to you, because you're doing real work too.
 
-Your time is scarce. When you find my articles by searching for a solution to a problem, you need to read the solution and apply it. When you have a spare minute over lunch break, you need to read the article, understand the point, and still have time left to rinse out your coffee cup. I write clear, structured articles that explain solutions quickly, and demonstrate techniques and practices in a way that anyone can get and &#8212; importantly &#8212; remember.
+Your time is scarce. When you find my articles by searching for a solution to a problem, you need to read the solution and apply it. When you have a spare minute over lunch break, you need to read the article, understand the point, and still have time left to rinse out your coffee cup. I write clear, structured articles that explain solutions quickly, and demonstrate techniques and practices in a way that anyone can get and -- importantly -- remember.
 
 ### My goals for this blog
 
-This blog is original, quality content. I try not to duplicate other people's content or answer questions answered elsewhere. Sometimes it may look like I do, but I consider every topic carefully, and I don't write unless there's a reason. On average, I revise each article for many weeks before posting, and I currently have 47 drafts in various stages of completion &#8212; and I delete more drafts than I publish. That's how much time and thought I put into my writing.
+This blog is original, quality content. I try not to duplicate other people's content or answer questions answered elsewhere. Sometimes it may look like I do, but I consider every topic carefully, and I don't write unless there's a reason. On average, I revise each article for many weeks before posting, and I currently have 47 drafts in various stages of completion -- and I delete more drafts than I publish. That's how much time and thought I put into my writing.
 
 This blog is regular. I currently have 15 articles finished, and I publish several times a week. I plan ahead for vacations and busy times.
 

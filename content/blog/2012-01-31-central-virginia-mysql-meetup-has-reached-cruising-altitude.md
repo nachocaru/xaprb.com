@@ -5,7 +5,7 @@ permalink: /2012/01/31/central-virginia-mysql-meetup-has-reached-cruising-altitu
 categories:
   - Databases
 ---
-The first [Central Virginia MySQL Meetup][1] was a nice little howdy-do, and as a test flight, I think it showed that the bird can get off the ground quite nicely. So, with the generous help of our meeting host [Meddius][2], we're going to do it regularly on the 3rd Wednesday of every month. The next event is already scheduled &#8212; I will be talking about [high availability options for MySQL][3].
+The first [Central Virginia MySQL Meetup][1] was a nice little howdy-do, and as a test flight, I think it showed that the bird can get off the ground quite nicely. So, with the generous help of our meeting host [Meddius][2], we're going to do it regularly on the 3rd Wednesday of every month. The next event is already scheduled -- I will be talking about [high availability options for MySQL][3].
 
 I'm interested in having outside speakers. Anyone who'd like to come and present something MySQL-relevant, please feel free to email me, or contact me via the Meetup page with the "suggest a Meetup" feature. If you're traveling from outside the area, the airport is CHO, and it's about 30 minutes away. Amtrak is also very convenient. I'm happy to chauffeur you, and can help you find lodging too.
 

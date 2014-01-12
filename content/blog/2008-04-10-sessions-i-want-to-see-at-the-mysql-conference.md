@@ -23,7 +23,7 @@ Here are the sessions I've starred, in chronological order. It's a little too mu
 *   The Lost Art of the Self Join
 *   EXPLAIN Demystified
 *   High Availability Landscape of MySQL
-*   Disaster is Inevitable &#8212; Are You Prepared?
+*   Disaster is Inevitable -- Are You Prepared?
 *   Services Oriented Architecture with PHP and MySQL
 *   Database Integrity Protection with MySQL and DRBD
 *   Falcon from the Beginning

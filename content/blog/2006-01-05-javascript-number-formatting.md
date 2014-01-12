@@ -11,7 +11,7 @@ permalink: /2006/01/05/javascript-number-formatting/
   <a href="/articles/number-functions.zip">Download number-functions</a>
 </p>
 
-This article continues my series on parsing and formatting data with JavaScript, this time with numeric data. I don't need to do number *parsing*, but *formatting* is very useful. The technique is similar to my [date formatting][1] code &#8212; code that writes code (for raw speed), using custom format specifier strings (for flexibility and ease of use). The result is number formatting functionality that is highly efficient, flexible, and easy to use.
+This article continues my series on parsing and formatting data with JavaScript, this time with numeric data. I don't need to do number *parsing*, but *formatting* is very useful. The technique is similar to my [date formatting][1] code -- code that writes code (for raw speed), using custom format specifier strings (for flexibility and ease of use). The result is number formatting functionality that is highly efficient, flexible, and easy to use.
 
 First, the idea: you have a number, you want it formatted a certain way. Here's how:
 
@@ -28,7 +28,7 @@ alert(bignum.numberFormat("0,0,, million");
 My custom date formatting code used PHP's date-formatting syntax because it's much less context-sensitive and (I think) more useful than Microsoft's, but my number-formatting syntax is similar to Microsoft's because it's much more widely used and I don't see an existing, better alternative. Rather than documenting it separately, I'll just point you to the ([poor quality][2]) Microsoft documentation for the [.NET Custom Numeric Format Strings][3] functionality, and list the differences from my implementation:
 
 *   Rounding works differently in multi-section format strings. In .NET with a two-section string, 
-    > If the number to be formatted is negative, but becomes zero after rounding according to the format in the second section, then the resulting zero is formatted according to the first section. This is not true in my code &#8212; the number is formatted according to its value, and once the code decides which section applies, that section will be used no matter what happens during rounding.
+    > If the number to be formatted is negative, but becomes zero after rounding according to the format in the second section, then the resulting zero is formatted according to the first section. This is not true in my code -- the number is formatted according to its value, and once the code decides which section applies, that section will be used no matter what happens during rounding.
 
 *   Question marks are digit placeholders just like the number sign (`#`), but if there's no digit to insert, they get replaced with spaces, not removed. They can be used for space-padding, which might be useful for, say, accounting notation.
 *   You don't have to enter quotes around strings that should be mixed in with the number placeholders. In fact, my syntax is much more permissive than the Microsoft syntax: anything can go anywhere. You can put arbitrary strings smack in the middle of your number if you want.

@@ -25,7 +25,7 @@ Their response:
 
 I think Hotels.com needs to take an objective look at what they're doing. What's the real outcome of their policy? I believe they're working at odds with their stated intentions: 
 
-*   I'm pretty sure one could quickly find lots of studies and statistics to show that the reviews they receive will be badly skewed towards the negative &#8212; probably so skewed that any statistician would reject them out of hand. 
+*   I'm pretty sure one could quickly find lots of studies and statistics to show that the reviews they receive will be badly skewed towards the negative -- probably so skewed that any statistician would reject them out of hand. 
 *   If people don't want to leave reviews, they won't leave reviews, period. No matter how many emails you send them. I can delete the email; I'm not forced to act on it. 
 *   I resent having to delete an email I don't want to get, and emails like this should be optional. It isn't as if allowing an opt-out would decrease the chance of getting feedback. People who like to leave reviews will not opt-out. Anyone who opts out isn't going to leave feedback anyway. 
 *   They're pissing off at least some customers (okay, at least one). Curmudgeonly people like myself are in fact likely to stop using Hotels.com altogether, thus reducing the possible audience from which to get feedback. 

@@ -7,7 +7,7 @@ permalink: /2006/07/09/so-you-think-your-code-is-in-version-control/
 
 ### Introduction
 
-Everyone knows version control is indespensable. I put everything into version control &#8212; even my [GnuCash][1] file is in version control. So is my poetry (you're in luck: this is a technical blog, so I won't post any of it). And definitely all my code, right?
+Everyone knows version control is indespensable. I put everything into version control -- even my [GnuCash][1] file is in version control. So is my poetry (you're in luck: this is a technical blog, so I won't post any of it). And definitely all my code, right?
 
 Well, no. Like many people, some little snippets of code escape my notice. I don't think of it as something that has to be in version control. This is really dangerous. The most recent time I noticed some code eluding my version control fanaticism was in the comments on [my post on re-licensing my JavaScript snippets][2]. I realized that I'd developed these scripts at odd times, over SSH connections to servers I didn't own, e-mailing myself the latest versions to save it&#8230; but never putting it in version control. I felt dumb.
 
@@ -66,7 +66,7 @@ Here are some other things that might need to be in version control:
 
 ### Summary
 
-You may think I'm a fanatic to insist on versioning everything, and you'd be right &#8212; but my fanaticism has saved me, and sometimes my employers, a lot of trouble. I think everything ought to be under version control, but it's so easy to overlook something. I hope this article has helped you make a list of critical code you're not putting into source control.
+You may think I'm a fanatic to insist on versioning everything, and you'd be right -- but my fanaticism has saved me, and sometimes my employers, a lot of trouble. I think everything ought to be under version control, but it's so easy to overlook something. I hope this article has helped you make a list of critical code you're not putting into source control.
 
  [1]: http://www.gnucash.org/
  [2]: /blog/2006/06/19/xaprb-scripts-relicensed/

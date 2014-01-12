@@ -7,7 +7,7 @@ categories:
 ---
 The recent revelations about the NSA's wide-ranging surveillance of Americans and non-Americans alike has spurred a lot of outcry. Of course, some people are crying for legal solutions, but there's absolutely no chance of any present or future elected official changing or stopping it (it's already completely illegal and always has been, so more laws can do nothing but poke loopholes in existing laws forbidding surveillance).
 
-We're on a road that leads to only one place: total, absolute government monitoring of everything we do &#8212; and thus, to some extent, control of everything we do. I'm not a conspiracy theorist or right-wing nutcase. It's just a simple fact that any reasoning person should be able to deduce from a little objective examination of history and a smidgen of logic.
+We're on a road that leads to only one place: total, absolute government monitoring of everything we do -- and thus, to some extent, control of everything we do. I'm not a conspiracy theorist or right-wing nutcase. It's just a simple fact that any reasoning person should be able to deduce from a little objective examination of history and a smidgen of logic.
 
 This is really serious. We are (and have been for years) hovering on the brink of a sudden plunge towards a truly Orwellian society, with progress heading that direction pretty steadily. What are you going to do about it?
 

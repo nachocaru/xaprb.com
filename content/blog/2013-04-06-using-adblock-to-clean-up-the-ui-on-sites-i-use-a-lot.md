@@ -9,7 +9,7 @@ I use LinkedIn a lot. I also use various Google properties a lot. Both of them h
 
 So I've used AdBlock to clean up the elements I don't want. Here's how.
 
-I'm assuming you use one of the many excellent AdBlock extensions for whatever browser you use. If not, you need to do that &#8212; reclaim your browser and view the web the way you want it. Every time I use someone else's computer and they don't have an AdBlock extension it blows my mind.
+I'm assuming you use one of the many excellent AdBlock extensions for whatever browser you use. If not, you need to do that -- reclaim your browser and view the web the way you want it. Every time I use someone else's computer and they don't have an AdBlock extension it blows my mind.
 
 ### LinkedIn Endorsements
 
@@ -17,7 +17,7 @@ LinkedIn has a new endorsement feature. They show me a big banner at the top of 
 
 [<img src="http://www.xaprb.com/blog/wp-content/uploads/2013/04/linked-in-endorsements.png" alt="linked-in-endorsements" width="655" height="207" class="aligncenter size-full wp-image-3133" />][1]
 
-I don't care. I don't know enough about most of my connections to endorse them publicly, and I don't want to see that nonsense. So I AdBlock it. This is easy to do &#8212; just right-click and select the context menu item to block that whole banner.
+I don't care. I don't know enough about most of my connections to endorse them publicly, and I don't want to see that nonsense. So I AdBlock it. This is easy to do -- just right-click and select the context menu item to block that whole banner.
 
 I've also hidden the endorsements on my profile. It's nice that people want to endorse me (although I think LinkedIn is almost bullying them into it by putting the obnoxious endorsement box in their faces), but most of the endorsements are for things I'm not actually expert in. Some of them I literally know nothing about. It's interesting to see the difference between what people think I know and what I actually know.
 

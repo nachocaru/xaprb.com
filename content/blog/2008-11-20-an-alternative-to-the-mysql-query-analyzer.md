@@ -16,7 +16,7 @@ Guessing is not enough. You need to be able to measure what your queries are doi
 
 The article claims that "&#8230;With MySQL Query Analyzer we are watching from the sideline and capturing things that the MySQL server does not give you," but the irony is that since Proxy-based solutions are outside the MySQL server, they actually can't measure things the server already exposes internally. While would be possible to do so by running SHOW STATUS after each query, ask [Mark Callaghan][6] what he thinks of that idea.
 
-If you've ever administered Microsoft SQL Server, you know what kind of insight you can get into a running server. Other databases have similar functionality. MySQL has decided not to build metrics into the server, and is now trying to build it outside the server &#8212; an effort that's ultimately doomed to failure because the information is only available inside.
+If you've ever administered Microsoft SQL Server, you know what kind of insight you can get into a running server. Other databases have similar functionality. MySQL has decided not to build metrics into the server, and is now trying to build it outside the server -- an effort that's ultimately doomed to failure because the information is only available inside.
 
 Let's see a feature comparison. I've chosen features that were promoted in the tech article linked above, plus key features I know are in the Percona patches:
 

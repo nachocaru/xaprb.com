@@ -22,7 +22,7 @@ return 0 unless $qps;
 return ($num_running / 100) / $qps;
 </pre>
 
-If you do the dimensional analysis, if I'm not mistaken, it works. You get seconds. There are problems &#8212; for example, SHOW PROCESSLIST doesn't show you what sampling theory predicts it will, for various reasons. What improvements can you suggest in order to solve the shortcomings? What other shortcomings do you see?
+If you do the dimensional analysis, if I'm not mistaken, it works. You get seconds. There are problems -- for example, SHOW PROCESSLIST doesn't show you what sampling theory predicts it will, for various reasons. What improvements can you suggest in order to solve the shortcomings? What other shortcomings do you see?
 
 What other metrics can you suggest to get a dimensionless number that can give you an idea of the server's load at a given time?
 

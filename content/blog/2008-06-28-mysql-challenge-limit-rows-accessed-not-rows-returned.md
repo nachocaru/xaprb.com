@@ -45,4 +45,4 @@ This appears to work, but it doesn't. If you profile this with SHOW STATUS, you 
 
 Any ideas?
 
-I've got a few. But I don't like them for various reasons. Extra props for really efficient solutions that don't involve subqueries (so it'll work on pre-4.0) or things that add extra overhead (subqueries, for example). I guess you probably see the direction I want to go with this &#8212; I don't want to use subqueries.
+I've got a few. But I don't like them for various reasons. Extra props for really efficient solutions that don't involve subqueries (so it'll work on pre-4.0) or things that add extra overhead (subqueries, for example). I guess you probably see the direction I want to go with this -- I don't want to use subqueries.

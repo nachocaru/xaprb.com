@@ -15,11 +15,11 @@ My little system of multiple-choice questions such as "which of the following is
 
 ### What about Akismet?
 
-"Ah," you say, "but that's really no problem. You say you had [Akismet][2] installed; it should catch most of them." Yes, but it also catches valid comments, which I value highly and don't want to throw away. I had to pore through the spam queue and find them. If you've ever tried that with 1,800 comments in the spam bucket &#8212; holy cow, that's all but impossible. I had to log into my MySQL database at the command line and start nuking them with `LIKE` patterns just to get it down to something manageable. Even a couple dozen spam comments a day *in the spam queue* would push me over the edge. If I had to deal with thousands in the spam bucket, and dozens that weren't caught by Akismet, I'd turn off comments.
+"Ah," you say, "but that's really no problem. You say you had [Akismet][2] installed; it should catch most of them." Yes, but it also catches valid comments, which I value highly and don't want to throw away. I had to pore through the spam queue and find them. If you've ever tried that with 1,800 comments in the spam bucket -- holy cow, that's all but impossible. I had to log into my MySQL database at the command line and start nuking them with `LIKE` patterns just to get it down to something manageable. Even a couple dozen spam comments a day *in the spam queue* would push me over the edge. If I had to deal with thousands in the spam bucket, and dozens that weren't caught by Akismet, I'd turn off comments.
 
-I needed a challenge question just to stop the hemorrhaging. Instead of writing my own this time, I decided to try using a pre-built plugin. I chose the popular "[did you pass math?][3]" plugin. It is, like most WordPress plugins, not perfect &#8212; but it's good enough. I'm down to about 15 spam comments a day in the moderation queue now. With Akismet helping, that becomes quite manageable.
+I needed a challenge question just to stop the hemorrhaging. Instead of writing my own this time, I decided to try using a pre-built plugin. I chose the popular "[did you pass math?][3]" plugin. It is, like most WordPress plugins, not perfect -- but it's good enough. I'm down to about 15 spam comments a day in the moderation queue now. With Akismet helping, that becomes quite manageable.
 
-Notice &#8212; and this surprised me &#8212; the "did you pass math" plugin lets through more spam than my custom solution. I'd bet dollars to donuts that's because it's both popular and not customized per-blog. My system was unique, so it makes sense that it worked better.
+Notice -- and this surprised me -- the "did you pass math" plugin lets through more spam than my custom solution. I'd bet dollars to donuts that's because it's both popular and not customized per-blog. My system was unique, so it makes sense that it worked better.
 
 ### So much for the naysayers
 

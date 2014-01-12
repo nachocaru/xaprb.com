@@ -42,7 +42,7 @@ I'll write separately about the `--pid` option and how I use it. It's a simple n
 
 Speaking of the man page, I hope you'll find the documentation complete and useful. There are examples to stimulate your imagination too.
 
-It's not revolutionary, but it might be useful &#8212; who knows.
+It's not revolutionary, but it might be useful -- who knows.
 
 ### What's next?
 

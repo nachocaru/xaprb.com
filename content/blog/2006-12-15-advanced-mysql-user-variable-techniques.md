@@ -94,11 +94,11 @@ Here's further clarification from the manual:
   </p>
 </blockquote>
 
-In other words, the "alias" in the `HAVING` clause is probably a pointer to a memory location, whose content is not determined for the current row until the current row is output to the client &#8212; at which point it's too late to apply any `HAVING` criteria to the row.
+In other words, the "alias" in the `HAVING` clause is probably a pointer to a memory location, whose content is not determined for the current row until the current row is output to the client -- at which point it's too late to apply any `HAVING` criteria to the row.
 
 ### Side effects of lazy evaluation
 
-In my last article I showed you how to select the top N rows from each group with user variables. To make that work right, I had to group the query, use a `HAVING` clause, and force a certain index order for that query &#8212; because of lazy evaluation. Otherwise, I might have been able to just use the variable in a `WHERE` clause, right? Lazy evaluation is why this doesn't work:
+In my last article I showed you how to select the top N rows from each group with user variables. To make that work right, I had to group the query, use a `HAVING` clause, and force a certain index order for that query -- because of lazy evaluation. Otherwise, I might have been able to just use the variable in a `WHERE` clause, right? Lazy evaluation is why this doesn't work:
 
 <pre>set @type := '', @num := 1;
 
@@ -118,7 +118,7 @@ where @num &lt;= 2;
 
 That last row gets output even though it seems `@num` should have the value 3, eliminating it from the results. However, you can infer from this behavior that `@num` really had the value 2 at the time the `WHERE` clause was evaluated, and was only incremented to 3 after the row was sent to the client.
 
-This aspect of user variable behavior makes user variables significantly harder to understand. Sometimes the results are non-deterministic and/or hard to predict. It would be great if there were a way to update those variables in the context in which they're declared, so they get assigned and read at the same time, instead of having to wait for rows to be sent to the client &#8212; a different step in the query execution plan.
+This aspect of user variable behavior makes user variables significantly harder to understand. Sometimes the results are non-deterministic and/or hard to predict. It would be great if there were a way to update those variables in the context in which they're declared, so they get assigned and read at the same time, instead of having to wait for rows to be sent to the client -- a different step in the query execution plan.
 
 ### Forcing variable evaluation with multi-staged queries
 
@@ -158,7 +158,7 @@ Are there better ways? You bet!
 
 ### Try 1: Use functions to force immediate evaluation
 
-Here's an idea: what if certain functions evaluate their arguments immediately? You could exploit that to create a context that has to be evaluated first, sort of like parenthesizing an expression in an equation. You know, `a = (a + b) * (b + c)` means "do the additions first," which wouldn't be the case without the parentheses &#8212; normally multiplication comes before addition.
+Here's an idea: what if certain functions evaluate their arguments immediately? You could exploit that to create a context that has to be evaluated first, sort of like parenthesizing an expression in an equation. You know, `a = (a + b) * (b + c)` means "do the additions first," which wouldn't be the case without the parentheses -- normally multiplication comes before addition.
 
 For this to work, you'd need a function that guarantees the expression is evaluated. For example, `COALESCE()` might be a good choice as long as you put the expression first in the argument list, since `COALESCE()` shortcuts and doesn't evaluate any more arguments as soon as it find a non-NULL argument.
 
@@ -196,7 +196,7 @@ select type, variety, price,
 from fruits
 where @num &lt;= 2;</pre>
 
-That won't work either, as it turns out. The subqueries are correlated &#8212; they refer to columns from the outer table. That isn't allowed because of the intermediate step, which insulates the inner queries from the outer. This is a limitation of correlated subqueries: you can't nest a subquery in the `FROM` clause inside them.
+That won't work either, as it turns out. The subqueries are correlated -- they refer to columns from the outer table. That isn't allowed because of the intermediate step, which insulates the inner queries from the outer. This is a limitation of correlated subqueries: you can't nest a subquery in the `FROM` clause inside them.
 
 This is really getting silly. It's time to stop trying to force this to work.
 
@@ -317,11 +317,11 @@ I confess, I don't fully understand this. I figured it out through trial and err
 
 ### What's so great about this?
 
-Two words: one pass. One pass through the table &#8212; no quadratic-time algorithms, no grouping or sorting. This is highly efficient. I showed you another technique with `UNION` in my last article, which might be more efficient in some cases. But if you have lots of types of fruit, each of which has just a few varieties, you will be hard-pressed to find a more efficient algorithm to output the first two rows from each group. In fact, I doubt it can be done.
+Two words: one pass. One pass through the table -- no quadratic-time algorithms, no grouping or sorting. This is highly efficient. I showed you another technique with `UNION` in my last article, which might be more efficient in some cases. But if you have lots of types of fruit, each of which has just a few varieties, you will be hard-pressed to find a more efficient algorithm to output the first two rows from each group. In fact, I doubt it can be done.
 
 ### Spurious columns are gone
 
-Putting the variable assignments inside functions not only let me put everything into the `WHERE` clause, it also got rid of the extra columns in the output &#8212; without kludges like subqueries. You can use this technique to clean up your output whenever you're doing row-by-row calculations.
+Putting the variable assignments inside functions not only let me put everything into the `WHERE` clause, it also got rid of the extra columns in the output -- without kludges like subqueries. You can use this technique to clean up your output whenever you're doing row-by-row calculations.
 
 ### Notice the order of rows!
 
@@ -348,7 +348,7 @@ In this article I showed you how two properties of MySQL's user variables (assig
 
 Finally, I showed you one place you might want to use such a technique to get the first N rows from each group. In certain cases, I think this is the most efficient algorithm possible, requiring just one pass through the table.
 
-I don't know about you, but this opens up a lot of interesting possibilities. I have one particular use in mind that I'll write about next &#8212; another way to linearize a query that's normally extremely expensive.
+I don't know about you, but this opens up a lot of interesting possibilities. I have one particular use in mind that I'll write about next -- another way to linearize a query that's normally extremely expensive.
 
 What do you think? Leave a comment and let me know!
 

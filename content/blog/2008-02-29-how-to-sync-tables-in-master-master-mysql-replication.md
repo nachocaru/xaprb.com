@@ -27,6 +27,6 @@ If you do the following, you'll probably cause problems:
 
 <pre>mk-table-sync h=server1,D=sakila,t=film h=server2</pre>
 
-I've just updated the documentation to point out the subtleties with master-master replication. However, you should always keep in mind: it's not just master-master replication. *Any* replication configuration is best synchronized by making the changes on the master, and you should *always* avoid changing data on a slave &#8212; even to "fix" the slave. I might also add a feature to mk-table-sync to warn you when it detects that you are trying to change data on a slave.
+I've just updated the documentation to point out the subtleties with master-master replication. However, you should always keep in mind: it's not just master-master replication. *Any* replication configuration is best synchronized by making the changes on the master, and you should *always* avoid changing data on a slave -- even to "fix" the slave. I might also add a feature to mk-table-sync to warn you when it detects that you are trying to change data on a slave.
 
  [1]: http://code.google.com/p/maatkit/

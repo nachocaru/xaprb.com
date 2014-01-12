@@ -10,7 +10,7 @@ I have recently added some features to [Maatkit's mk-table-checksum][1] tool tha
 
 <!--more-->
 
-The new features let you apply your knowledge of your data to the checksumming operation. For example, if table X is append-only, then you can make it checksum only the new rows (those inserted since the last checksum). If the table is MyISAM, then it has a last-modified timestamp, which comes from the .MYI file's timestamp &#8212; that's another easy way to find out whether the table has changed since the last time you ran the checksum.
+The new features let you apply your knowledge of your data to the checksumming operation. For example, if table X is append-only, then you can make it checksum only the new rows (those inserted since the last checksum). If the table is MyISAM, then it has a last-modified timestamp, which comes from the .MYI file's timestamp -- that's another easy way to find out whether the table has changed since the last time you ran the checksum.
 
 The new features also let you checksum only part of the data. For example, you can checksum 1/7th of your data each day, which is pretty likely to catch differences if they're widespread. And just in case they're localized, you can checksum a different portion each day so you cover the whole dataset each week.
 
@@ -55,7 +55,7 @@ The table will be divided into chunks of 1000 rows based on the range of values 
 
 So far these options are useful, but of course you don't want to checksum your servers one table at a time with an option here, an option there, and so on. Let's see how to simplify this so you can just run the tool and make it Do The Right Thing on every table.
 
-This is the purpose of the `--argtable` argument, which lets you specify per-table options for the checksum operation. You create a table &#8212; I'll use `checksum_args`, but you can call it whatever you like. What's important is the columns in the table:
+This is the purpose of the `--argtable` argument, which lets you specify per-table options for the checksum operation. You create a table -- I'll use `checksum_args`, but you can call it whatever you like. What's important is the columns in the table:
 
 <pre>CREATE TABLE checksum_args (
      db         char(64)     NOT NULL,
@@ -82,7 +82,7 @@ You can also add the `--modulo` and `--offset` into the table.
 
 ### Conclusion
 
-So that's a quick overview of the new features, which open up a range of new possibilities for frequent checksumming of data. Note that frequent isn't the same as continuous (which is also not the same thing as continual, so don't say the title of this post is false advertising). Continuous verification that a slave is in sync with the master requires some support in the server. However, you could easily checksum the newest rows in certain tables as often as you want, like every minute. In fact it's probably a good idea to do checksums *more* often, and in smaller nibbles, with the new features I've explained here. You can ease the workload that way &#8212; spread it over time.
+So that's a quick overview of the new features, which open up a range of new possibilities for frequent checksumming of data. Note that frequent isn't the same as continuous (which is also not the same thing as continual, so don't say the title of this post is false advertising). Continuous verification that a slave is in sync with the master requires some support in the server. However, you could easily checksum the newest rows in certain tables as often as you want, like every minute. In fact it's probably a good idea to do checksums *more* often, and in smaller nibbles, with the new features I've explained here. You can ease the workload that way -- spread it over time.
 
 The features are still evolving, and the newest code in the Subversion trunk is what you should probably look at if you're interested in using them. (Some of them aren't completed in the last release.) If you have suggestions or find bugs, please use the [Maatkit Google Code project][3] to communicate them to the dev team.
 

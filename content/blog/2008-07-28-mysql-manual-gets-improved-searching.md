@@ -7,7 +7,7 @@ categories:
 ---
 Hooray! The [MySQL reference manual][1] has a new search system. It now uses a [Google Appliance][2] and the results should be a lot better. The old system was not very helpful. It used to break config variables into multiple words and search on them individually and give a billion results I didn't care about. I've just tried to search for some things like key\_buffer\_size and got results I think are very useful.
 
-I love the MySQL manual. It is a great example of quality software documentation. As someone recently mentioned, it is not released under a Free license though &#8212; that would be a great improvement, too!
+I love the MySQL manual. It is a great example of quality software documentation. As someone recently mentioned, it is not released under a Free license though -- that would be a great improvement, too!
 
 When did this change happen, by the way? Maybe it's been there for a while and I just missed it because I grew accustomed to using Google search instead.
 

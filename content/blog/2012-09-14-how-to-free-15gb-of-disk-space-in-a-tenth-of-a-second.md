@@ -29,5 +29,8 @@ This puzzled me a little bit. I tried to decide: is this a kernel bug? XFS bug? 
 
 Then I noticed the "before" size seemed to be in some pretty consistent ranges. The samples above show file sizes of 128MB, and there were many more examples of that. Suspicious. On a hunch, I checked the mount options:
 
-`/dev/mapper/shardvg-mysql on /var/lib/mysql type xfs (rw,noatime,allocsize=128M)` 
+<pre>
+/dev/mapper/shardvg-mysql on /var/lib/mysql type xfs (rw,noatime,allocsize=128M)
+</pre>
+
 A quick read of the `allocsize `mount option explains it. The space is preallocated for buffered I/O. InnoDB is not using buffered I/O, so the `.ibd` files don't show this behavior. I think this allocation size might be excessive, and I don't know why it was chosen, but at least now the problem is clear, and I can see a couple options for solving it.

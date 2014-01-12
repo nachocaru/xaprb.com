@@ -7,7 +7,7 @@ categories:
 ---
 There is no "first" or "last" aggregate function in SQL. Sometimes you can use `MIN()` or `MAX()`, but often that won't work either. There are a couple of ways to solve this vexing non-relational problem. Read on to find out how.
 
-First, let's be clear: I am posing a very non-relational problem. This is not about the minimum, maximum, top, most, least or any other relationally valid extreme in the group. It's the first or last, in whatever order the rows happen to come. And we all know rows aren't ordered &#8212; in theory. But in practice they are, and sometimes you need the first or last row in a group.
+First, let's be clear: I am posing a very non-relational problem. This is not about the minimum, maximum, top, most, least or any other relationally valid extreme in the group. It's the first or last, in whatever order the rows happen to come. And we all know rows aren't ordered -- in theory. But in practice they are, and sometimes you need the first or last row in a group.
 
 If you have a question this article doesn't answer, you might like to read [how to select the first/least/max row per group in SQL][1] and [how to find the maximum row per group in SQL without subqueries][2].
 

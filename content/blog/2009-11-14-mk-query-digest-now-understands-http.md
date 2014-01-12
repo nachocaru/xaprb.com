@@ -55,7 +55,7 @@ get www.mysqlperformanceblog.com/feed/\G
 </pre> 
 This is suitable for lots of things. We're trying to look at the most useful protocols, because the variety of inputs is really unlimited; we could implement almost anything that fits into the notion of query and response. For example, the [memcached protocol is becoming something of a lingua franca][2] for a lot of different systems, so there's a big value-add. HTTP has been used a long time as a transport layer for REST, SOAP, and so on (CouchDB anyone?). Valid, and interesting, suggestions are Sphinx, PostgreSQL, and Gearman. (Please [offer to sponsor][3] any that you want to see.)
 
-Back to HTTP: implementing it gives an easy way to measure website response time, including useful things like 95th percentile goodness. And from there, you can drill down into the performance of the work done for these requests. If you want to get really fancy, you can even capture some samples of netstat at the same time as you tcpdump traffic for HTTP, memcached, and MySQL &#8212; so you can blame database queries and memcached requests on specific HTTP requests!
+Back to HTTP: implementing it gives an easy way to measure website response time, including useful things like 95th percentile goodness. And from there, you can drill down into the performance of the work done for these requests. If you want to get really fancy, you can even capture some samples of netstat at the same time as you tcpdump traffic for HTTP, memcached, and MySQL -- so you can blame database queries and memcached requests on specific HTTP requests!
 
  [1]: http://www.maatkit.org/
  [2]: http://blog.northscale.com/northscale-blog/2009/09/power-in-the-protocol.html

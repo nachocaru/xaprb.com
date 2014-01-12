@@ -34,9 +34,9 @@ Here's the query:
 <pre>select * from #offer
     where @now between isnull(startdate, @now) and isnull(enddate, @now)</pre>
 
-The table contains special offers, whose start/end date can be either specified or not (the offer is open-ended). I have inserted a row for each possible case of specified/open-ended. I wrote the select statement to select rows where the offer is valid, i.e. the current date is between the start and end dates. The problem was, only some rows were being selected. Run the code yourself and see. If you get all the rows, run the query again. This problem is non-deterministic &#8212; it depends on the current time, which makes it even worse.
+The table contains special offers, whose start/end date can be either specified or not (the offer is open-ended). I have inserted a row for each possible case of specified/open-ended. I wrote the select statement to select rows where the offer is valid, i.e. the current date is between the start and end dates. The problem was, only some rows were being selected. Run the code yourself and see. If you get all the rows, run the query again. This problem is non-deterministic -- it depends on the current time, which makes it even worse.
 
-This is actually correct behavior, and the reason has to do with the semantics of `ISNULL`. The `ISNULL` return type is the data type of its first argument &#8212; in this case, a `SMALLDATETIME`. So when the column is `NULL`, `@now` gets cast to `SMALLDATETIME`, losing precision down to the minute.
+This is actually correct behavior, and the reason has to do with the semantics of `ISNULL`. The `ISNULL` return type is the data type of its first argument -- in this case, a `SMALLDATETIME`. So when the column is `NULL`, `@now` gets cast to `SMALLDATETIME`, losing precision down to the minute.
 
 To illustrate, let's evaluate the query by hand, using one of the excluded rows, for example the one with both date columns `NULL`. Supposing `@now's` value is `'2005-12-02 08:55:42.807'`, the `WHERE` clause becomes
 

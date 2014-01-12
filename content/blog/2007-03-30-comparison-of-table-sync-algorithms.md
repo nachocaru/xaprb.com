@@ -7,7 +7,7 @@ I've been working on [how to efficiently compare and synchronize data between tw
 
 ### The data and profiling results
 
-I used a sample of real data from a production database. It's fairly simple &#8212; just a bunch of numbers and timestamps, 13 columns in all. The primary key is an integer, and there is a secondary index on another two columns, which makes it a good candidate for a three-stage drilldown via the top-down algorithm. There are exactly 50,000 rows in the sample I used, and the indexes and data come to just over 8MB in an InnoDB table.
+I used a sample of real data from a production database. It's fairly simple -- just a bunch of numbers and timestamps, 13 columns in all. The primary key is an integer, and there is a secondary index on another two columns, which makes it a good candidate for a three-stage drilldown via the top-down algorithm. There are exactly 50,000 rows in the sample I used, and the indexes and data come to just over 8MB in an InnoDB table.
 
 For the tests, I created two copies of the data on the same server, and then changed one of the tables in four different ways. I deleted five rows randomly, 500 rows randomly, and where col2=60, which is 11,424 rows. Finally, I randomly incremented col6 in one row. These are the kinds of data corruptions I see on this table in production.
 
@@ -413,7 +413,7 @@ The following table shows some key statistics from the profiling. 'td' stands fo
 
 ### Analysis
 
-In most cases, the top-down algorithm outperforms the bottom-up. The case where it doesn't is if there's a lot of corruption scattered randomly through the table. It is especially good at detecting the large chunk of missing rows in the third test &#8212; it terminates in just a few queries instead of eleven thousand. This is as I predicted several weeks ago.
+In most cases, the top-down algorithm outperforms the bottom-up. The case where it doesn't is if there's a lot of corruption scattered randomly through the table. It is especially good at detecting the large chunk of missing rows in the third test -- it terminates in just a few queries instead of eleven thousand. This is as I predicted several weeks ago.
 
 The top-down approach is a fair amount faster than the bottom-up on this data, and as long as only a small number of rows are bad, ought to issue a comparable number of queries. It ends up causing fewer reads than bottom-up also. Surprisingly, it's actually more network-efficient when the number of corrupt rows increases; in the case where 500 rows are bad, it moves about half as much data over the network as bottom-up. I attribute this to it being able to use the drill-down and tree-pruning strategies to good advantage. Or, if you look at it another way, the bottom-up algorithm tends to have fairly predictable costs, while the top-down costs vary depending on the nature of the corruption.
 

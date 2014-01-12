@@ -11,7 +11,7 @@ permalink: /2005/11/03/captchas-are-a-terrible-thing/
 4.  [more CAPTCHA inacessibility discussion][5]
 5.  [we can do better than CAPTCHAs][6]
 
-Yahoo! Mail recently presented me with CAPTCHAs before they'd even let me send an email. The messaging on the page said it was to prevent spam. Their software may have decided I was likely a spammer based on the message, because I've never gotten CAPTCHAs before or since from them. Another possibility is that I was randomly selected for a test. In any case the images were almost completely unreadable. It took me three tries to get through, and I'm a computer programmer &#8212; I'd think I would be better able to pass a CAPTCHA than an average user. Here are the images, in the order I saw them:
+Yahoo! Mail recently presented me with CAPTCHAs before they'd even let me send an email. The messaging on the page said it was to prevent spam. Their software may have decided I was likely a spammer based on the message, because I've never gotten CAPTCHAs before or since from them. Another possibility is that I was randomly selected for a test. In any case the images were almost completely unreadable. It took me three tries to get through, and I'm a computer programmer -- I'd think I would be better able to pass a CAPTCHA than an average user. Here are the images, in the order I saw them:
 
 <img src="/articles/images/captcha1.jpg" height="80" width="290" alt="CAPTCHA 1 from Yahoo! Mail" />
 

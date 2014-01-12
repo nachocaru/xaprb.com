@@ -5,11 +5,11 @@ permalink: /2006/06/26/how-to-convert-text-to-columns-in-openofficeorg-calc/
 ---
 Unlike Microsoft Excel, OpenOffice.org 2.0 Calc doesn't have a built-in "text to columns" feature, which is hard to live without once you're used to it. OpenOffice.org has an extensible add-on architecture, and someone has written a "text to columns" add-on, but installation may be confusing. In this article I'll explain how to install the add-on.
 
-I hope this feature will be added into the office suite at some point. Oddly, it seems to already be implemented, but not in the way it's needed. [Writer has a text-to-columns feature][1] already, and Calc's Open process has what looks to me like the needed functionality too &#8212; when opening a delimited text file, it brings up a dialog that does exactly what I'd do with the text-to-columns feature in Excel.
+I hope this feature will be added into the office suite at some point. Oddly, it seems to already be implemented, but not in the way it's needed. [Writer has a text-to-columns feature][1] already, and Calc's Open process has what looks to me like the needed functionality too -- when opening a delimited text file, it brings up a dialog that does exactly what I'd do with the text-to-columns feature in Excel.
 
 ### Update
 
-Here is something I've noticed under GNU/Linux since writing this article: if I've copied text to the primary selection, for example by highlighting it in a terminal window, I can get OO.org to "text to columns" the text just by middle-click-pasting it into the spreadsheet. Instead of actually pasting it, this opens up the "Text Import (Pasted Data)" dialog, which lets me choose delimiters, etc &#8212; exactly what I need. (Of course, it'd be nice if it were even smarter and auto-detected that for me). So far I have not found any other way to cause this dialog to appear, which is puzzling.
+Here is something I've noticed under GNU/Linux since writing this article: if I've copied text to the primary selection, for example by highlighting it in a terminal window, I can get OO.org to "text to columns" the text just by middle-click-pasting it into the spreadsheet. Instead of actually pasting it, this opens up the "Text Import (Pasted Data)" dialog, which lets me choose delimiters, etc -- exactly what I need. (Of course, it'd be nice if it were even smarter and auto-detected that for me). So far I have not found any other way to cause this dialog to appear, which is puzzling.
 
 ### Getting the add-on
 

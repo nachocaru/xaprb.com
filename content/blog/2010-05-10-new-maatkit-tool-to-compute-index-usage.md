@@ -10,7 +10,7 @@ categories:
 ---
 In a couple of recent consulting cases, I needed a tool to analyze how a log of queries accesses indexes and tables in the database, specifically, to find out which indexes are not used. I initially hacked together something similar to [Daniel Nichter's mysqlidxchk][1], but using the framework provided by Maatkit, which gave me a pretty good start right out of the box. This was useful in the very tight time constraints I was under, but was not a complete solution. Alas, I could not use anything like [Percona's enhancements for finding unused indexes][2].
 
-So, in response to another consultant's customer request (and sponsorship &#8212; thank you!) I spent more time actually writing a real tool in the Maatkit style, with full tests and all the rest of the usual goodies. The resulting tool finds all indexes in a server, EXPLAINs the log of queries against the server, and reports which indexes were never selected by EXPLAIN.
+So, in response to another consultant's customer request (and sponsorship -- thank you!) I spent more time actually writing a real tool in the Maatkit style, with full tests and all the rest of the usual goodies. The resulting tool finds all indexes in a server, EXPLAINs the log of queries against the server, and reports which indexes were never selected by EXPLAIN.
 
 Such a tool invites many interesting questions beyond "which indexes are not used." Here are a few samples:
 

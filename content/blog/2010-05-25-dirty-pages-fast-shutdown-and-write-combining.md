@@ -25,7 +25,7 @@ Eventually, our favorite "hot page" gets written so a checkpoint can complete. T
 
 ### Dirty pages and the long tail
 
-The downside to this is the amount of dirty pages in memory, which have to be written out during shutdown. Shutdown is equivalent to a forced checkpoint. The server has been lazily delaying lots of work, because it knows it's going to be able to combine writes. Suddenly, all the bills come due at once &#8212; time to write tons of data to disk! And the problem here is that the server's memory can actually be mostly dirty data. By default, InnoDB lets the buffer pool get up to 90% dirty before it starts to get worried and work hard to flush pages.
+The downside to this is the amount of dirty pages in memory, which have to be written out during shutdown. Shutdown is equivalent to a forced checkpoint. The server has been lazily delaying lots of work, because it knows it's going to be able to combine writes. Suddenly, all the bills come due at once -- time to write tons of data to disk! And the problem here is that the server's memory can actually be mostly dirty data. By default, InnoDB lets the buffer pool get up to 90% dirty before it starts to get worried and work hard to flush pages.
 
 If most writes go to the hottest pages, why should there be so many dirty pages? The answer is the long tail. The few writes that don't go to the tall head go to a very scattered long tail. Again this is hard to prove, but many of those one-off writes are dirtying entire pages just for themselves, and those pages will not be dirtied by any other writes. So the long tail is full of 16kb pages that had only 80 bytes written to them. This ends up being a lot of pages of data.
 

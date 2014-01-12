@@ -15,7 +15,7 @@ I haven't decided yet which sessions I want to attend, but I know this: I'm not 
 
 Hopefully there'll be plenty of time to sit down for meals and chats with all the people I correspond with throughout the year, but rarely get to see or talk to!
 
-<sup>1</sup>And no, I don't get any kickback for saying nice things about the conference. Even reviewing all those proposals was a volunteer job. And Jay Pipes tricked me into it, the rat! He told me it would be only a few hours. Haha, you can't review 250 proposals in a few hours&#8230; I have to say though, some of them were really rewarding to read. One of them was about holding a cosmic prayer circle or something like that. Without expressing any opinion on my religion/spirituality, I did have to vote NO on that one &#8212; sorry, wrong conference.
+<sup>1</sup>And no, I don't get any kickback for saying nice things about the conference. Even reviewing all those proposals was a volunteer job. And Jay Pipes tricked me into it, the rat! He told me it would be only a few hours. Haha, you can't review 250 proposals in a few hours&#8230; I have to say though, some of them were really rewarding to read. One of them was about holding a cosmic prayer circle or something like that. Without expressing any opinion on my religion/spirituality, I did have to vote NO on that one -- sorry, wrong conference.
 
  [1]: http://en.oreilly.com/mysql2008/
  [2]: http://en.oreilly.com/mysql2008/public/schedule/speaker/142

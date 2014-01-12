@@ -13,7 +13,7 @@ This article explains how to create a fixed-size FIFO (first-in, first-out) queu
 
 Since I'm most familiar with MySQL, I'll explain it in detail for MySQL. I'm sure a competent Oracle or DB2 developer can translate it to those platforms.
 
-It is not possible to simultaneously `INSERT` and `DELETE` in standard SQL. However, in MySQL it is possible to simultaneously `INSERT` and `UPDATE`, with the `ON DUPLICATE KEY UPDATE` syntax. Another way to do it is with `REPLACE`, which actually works as a `DELETE` and `INSERT`. I've written about these before ([flexible `INSERT` and `UPDATE` statements in MySQL][2] &#8212; one of my most popular articles). You may not like them because they're non-standard, but they're available. I believe in using what my tools give me.
+It is not possible to simultaneously `INSERT` and `DELETE` in standard SQL. However, in MySQL it is possible to simultaneously `INSERT` and `UPDATE`, with the `ON DUPLICATE KEY UPDATE` syntax. Another way to do it is with `REPLACE`, which actually works as a `DELETE` and `INSERT`. I've written about these before ([flexible `INSERT` and `UPDATE` statements in MySQL][2] -- one of my most popular articles). You may not like them because they're non-standard, but they're available. I believe in using what my tools give me.
 
 For these queries to work, you need to let inserts proceed as normal until the limit (say, 5) is reached. After that, new inserts need to create a unique index violation, and then the two-things-at-once functionality of the statement kicks in.
 
@@ -180,7 +180,7 @@ Till then, I think the best option on these platforms would be a transaction wit
 
 ### Things to think about
 
-If you implement a system like this, consider the edge cases. Are you ever going to delete rows from the queue? If so, does that mess with the desired behavior of new inserts? Are there any ways you can get a hole in the sequence? If so, what happens &#8212; do you get too few rows in the queue, overwrite something other than the oldest row, or something else? If you need to "process" items in the queue, maybe you can just mark them as processed rather than deleting them.
+If you implement a system like this, consider the edge cases. Are you ever going to delete rows from the queue? If so, does that mess with the desired behavior of new inserts? Are there any ways you can get a hole in the sequence? If so, what happens -- do you get too few rows in the queue, overwrite something other than the oldest row, or something else? If you need to "process" items in the queue, maybe you can just mark them as processed rather than deleting them.
 
 What if you want to insert multiple rows at once? If you need to go that route on MySQL, my past articles might help. You could use [advanced user variable techniques][4] to [number several rows at once][5]. I also talked about related techniques in [how to write `INSERT IF NOT EXISTS` queries][6].
 

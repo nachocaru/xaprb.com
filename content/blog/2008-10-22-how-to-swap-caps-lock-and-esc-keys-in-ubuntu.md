@@ -20,7 +20,7 @@ add Lock = Caps_Lock'</pre>
 
 Step two is to make this run every time you log in. Open up System-Preferences-Settings. Click the Add button to add a new entry to the additional startup programs list. In the "name" box, enter "xmodmap" or something else descriptive. In the Command box, enter "/usr/bin/xmodmap /home/[user]/.xmodmaprc", where [user] is your username.
 
-And now get used to being able to hit Escape without reaching for it. If you like this, you might also be interested in using the [Dvorak][2] keyboard &#8212; I can type on either Dvorak or QWERTY, but Dvorak has saved me from something approaching total paralysis of the hands, so it's worth checking into also.
+And now get used to being able to hit Escape without reaching for it. If you like this, you might also be interested in using the [Dvorak][2] keyboard -- I can type on either Dvorak or QWERTY, but Dvorak has saved me from something approaching total paralysis of the hands, so it's worth checking into also.
 
 As your reward for reading this far,
 

@@ -7,7 +7,7 @@ Most operating systems have an auto-mount feature to detect and mount devices, s
 
 ### There's more than one way to do it
 
-There are lots of ways to get things auto-mounted. I've browsed around the Gentoo forums, and I see dozens of ways people do it. Some people write `udev` rules to recognize devices. Others write custom shell scripts, tinker with `/etc/fstab`, or do a combination of lots of things. Probably the most common methods, though, are to use the built-in functionality that comes with the KDE or Gnome desktop environments &#8212; or to use the software *they* use, but not use the desktop environment itself.
+There are lots of ways to get things auto-mounted. I've browsed around the Gentoo forums, and I see dozens of ways people do it. Some people write `udev` rules to recognize devices. Others write custom shell scripts, tinker with `/etc/fstab`, or do a combination of lots of things. Probably the most common methods, though, are to use the built-in functionality that comes with the KDE or Gnome desktop environments -- or to use the software *they* use, but not use the desktop environment itself.
 
 Gnome uses `gnome-volume-manager` and `gnome-volume-properties` to auto-mount devices, and when appropriate runs a program, such as a `gphoto2` in the case of a digital camera. I'm not sure exactly how KDE does automounting, since I haven't used it in many years. What I am fairly sure of is that they both use the same programs to get their work done under the hood. These programs are `hal` (the Hardware Abstraction Layer), `dbus` (a system message bus), and `udev` (userspace device filesystems).
 

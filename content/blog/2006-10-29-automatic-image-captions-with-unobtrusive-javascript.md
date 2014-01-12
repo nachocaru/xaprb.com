@@ -11,7 +11,7 @@ You've probably heard of unobtrusive JavaScript. It's a simple technique that le
 
 ### The idea
 
-How often have you seen websites that use a `table` or a `div` to enclose an image and some text to create a "captioned" image? Far too often, I'd guess. Semantically speaking, though, nothing in the markup actually associates the image and the "caption" &#8212; this isn't a good way to give an image a caption. Until HTML itself actually has a true mechanism for a captioned image, or until someone makes a [microformat][1] for it, you may be better off taking the path of compromise between richness and semantic content.
+How often have you seen websites that use a `table` or a `div` to enclose an image and some text to create a "captioned" image? Far too often, I'd guess. Semantically speaking, though, nothing in the markup actually associates the image and the "caption" -- this isn't a good way to give an image a caption. Until HTML itself actually has a true mechanism for a captioned image, or until someone makes a [microformat][1] for it, you may be better off taking the path of compromise between richness and semantic content.
 
 That compromise, in my view, is using unobtrusive JavaScript to add richness to the site after it is loaded. The document is delivered to the browser in plain-Jane fashion, then altered after the browser loads it. The end result is no more semantic than hard-coding all the extra markup, but it's a good trade-off in my opinion.
 
@@ -31,7 +31,7 @@ You may also see inline styles, a `table` instead of a `div`, and other ugliness
 
 ### The new way
 
-The better way to do this is simply eliminate all that redundant typing. What's redundant, you say? Well, the width of the wrapper element and the text of the "caption," to mention two things. The image already has a width &#8212; why repeat it in the wrapper element? The image already has a place for associated text in its `title` attribute &#8212; why write it out again?
+The better way to do this is simply eliminate all that redundant typing. What's redundant, you say? Well, the width of the wrapper element and the text of the "caption," to mention two things. The image already has a width -- why repeat it in the wrapper element? The image already has a place for associated text in its `title` attribute -- why write it out again?
 
 Let's strip things down to the bare minimum:
 
@@ -113,7 +113,7 @@ After that, the script simply loops through the array of resulting objects. For 
 
 Then it does a couple of tricky things. First, it sizes the wrapper horizontally to match the image. This is necessary so the wrapper doesn't take over the entire width of the page. Next it copies the image's class to the wrapper. This is necessary to preserve any CSS styling that was used to place the image relative to the text. In my case, this preserves the left-floating and right-floating I created in the first example.
 
-Finally, it loops through every other attribute and style property I specified, and copies those from the image to its wrapper. This is an easy way to get the same script to do lots of different things &#8212; you just give it different arguments. Do you want the wrapper to have the same `title` attribute as the image? Fine, just add 'title' to the argument array &#8212; I'm all about choice.
+Finally, it loops through every other attribute and style property I specified, and copies those from the image to its wrapper. This is an easy way to get the same script to do lots of different things -- you just give it different arguments. Do you want the wrapper to have the same `title` attribute as the image? Fine, just add 'title' to the argument array -- I'm all about choice.
 
 I'll add a couple extra lines of CSS to make things prettier, too. Here's the result: [automatic image captions without ugly markup][6].
 

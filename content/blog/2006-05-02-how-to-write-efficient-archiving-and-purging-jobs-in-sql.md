@@ -11,13 +11,13 @@ I have released a tool that does a fantastic job of archiving and purging MySQL 
 
 ### Motivation
 
-Mission-critical database servers can't be taken offline for maintenance tasks such as purging or archiving historical data, yet high-volume OLTP databases need to be small to stay responsive, which creates the need for purging or archiving. The requirements of OLTP and purging processes are quite different. OLTP processes must have immediate access to the database, with nothing else getting long-standing locks that could cause waits, timeouts or deadlocks. Purging is necessary to keep the server fast, but if something else is in the way, the purge processes should yield &#8212; and once a purge process gets access to the data, it should not hold a lock for long.
+Mission-critical database servers can't be taken offline for maintenance tasks such as purging or archiving historical data, yet high-volume OLTP databases need to be small to stay responsive, which creates the need for purging or archiving. The requirements of OLTP and purging processes are quite different. OLTP processes must have immediate access to the database, with nothing else getting long-standing locks that could cause waits, timeouts or deadlocks. Purging is necessary to keep the server fast, but if something else is in the way, the purge processes should yield -- and once a purge process gets access to the data, it should not hold a lock for long.
 
 At my current and previous employers, we've used similar tactics to purge and archive old data without detrimentally impacting the database server. In my current job, we have a set of very large, heavily-used tables that have never been purged or archived until recently. At my previous employer, purge and archive jobs were standard procedure, and moved data steadily off the OLTP servers to analysis servers.
 
 ### First try: failure
 
-When I started work at my current job, nothing was failing, but queries were too slow. One person was already attempting to solve the problem by archiving off all but the most recent data to another database, in MyISAM tables for better performance. The procedure was to dump a table to a file and load it into a MyISAM table in another database, using `LOAD DATA INFILE` because it's very fast. But loading 6 gigabytes into a table is slow no matter what. It took several hours &#8212; I don't know exactly how long &#8212; to load with the indexes disabled. Then came the disaster: enabling the indexes. It never completed, so several days later we killed the query, which completely corrupted the table. We had no idea how long it would have taken, either. We might have been two seconds or two weeks away from success.
+When I started work at my current job, nothing was failing, but queries were too slow. One person was already attempting to solve the problem by archiving off all but the most recent data to another database, in MyISAM tables for better performance. The procedure was to dump a table to a file and load it into a MyISAM table in another database, using `LOAD DATA INFILE` because it's very fast. But loading 6 gigabytes into a table is slow no matter what. It took several hours -- I don't know exactly how long -- to load with the indexes disabled. Then came the disaster: enabling the indexes. It never completed, so several days later we killed the query, which completely corrupted the table. We had no idea how long it would have taken, either. We might have been two seconds or two weeks away from success.
 
 The problem is, that wouldn't have helped much anyway. We still needed to delete the unwanted data from the original table. That in itself would take a very long time. We decided to try the approach that worked well at my former employer.
 
@@ -43,9 +43,9 @@ end</pre>
 The important points to notice are:
 
 1.  The initial find-min-value query is a table scan along the clustered index. As soon as it finds one row that satisfies the conditions, it's done scanning.
-2.  The get-next-row query is not a full table scan &#8212; or should not be, anyway (always check the query plan!). There are two parts to the `WHERE` clause. One of them should be useful for seeking *into the clustered index*. The other should be the archive conditions. This query should be a clustered index seek, then a scan over a certain range of the clustered index.
+2.  The get-next-row query is not a full table scan -- or should not be, anyway (always check the query plan!). There are two parts to the `WHERE` clause. One of them should be useful for seeking *into the clustered index*. The other should be the archive conditions. This query should be a clustered index seek, then a scan over a certain range of the clustered index.
 3.  The get-next-row query is the really important one to optimize.
-4.  The actual changes to the database are very small &#8212; usually just one row at a time, but sometimes a few, depending on the data.
+4.  The actual changes to the database are very small -- usually just one row at a time, but sometimes a few, depending on the data.
 
 Note: I'll use the terms "scan" and "seek" very specifically in this article. Scanning is reading through rows, trying to find one that satisfies a condition. Seeking is using the index to navigate quickly to a desired row.
 
@@ -65,7 +65,7 @@ Once satisfied that the query is efficient, I ran several at once and observed t
 
 ### Good, better, best
 
-While the queries seem to do OK archiving rows from the middle of the table, there's an even better scenario. If the query can simply pop rows off the beginning of the table, it doesn't have to do much work at all &#8212; the first row it finds is always the one it wants. It will be weeks before the tables are down to a reasonable size, so in the meantime I chose an absolute max value for the clustered index. That means I can rewrite the queries so they don't include any non-clustered columns in the `WHERE` clause. Until these tables are pretty small, the get-next-row query looks like this:
+While the queries seem to do OK archiving rows from the middle of the table, there's an even better scenario. If the query can simply pop rows off the beginning of the table, it doesn't have to do much work at all -- the first row it finds is always the one it wants. It will be weeks before the tables are down to a reasonable size, so in the meantime I chose an absolute max value for the clustered index. That means I can rewrite the queries so they don't include any non-clustered columns in the `WHERE` clause. Until these tables are pretty small, the get-next-row query looks like this:
 
 <pre>select min(id)
 from table
@@ -87,7 +87,7 @@ It turns out things will sometimes do much better if transactions aren't committ
 
 ### A scary possibility
 
-I want to discuss an alternate outcome here. Imagine the query is smart enough to seek before scanning, but isn't smart enough to recognize that the first row it finds to satisfy the `WHERE` clause actually has to be the minimum value for the clustered index in the rest of the table. In this case, the query would continue scanning to the end of the table, and conclude the obvious: the first row it found in step 2 is the minimum. In general, this is no worse than scanning from the beginning every time. In either case, the query would be scanning, on average, half the table (ignoring table shrinkage due to archiving). That is, it would scan `(n * (n/2)) - n` rows, which is O(n<sup>2</sup>) &#8212; too slow.
+I want to discuss an alternate outcome here. Imagine the query is smart enough to seek before scanning, but isn't smart enough to recognize that the first row it finds to satisfy the `WHERE` clause actually has to be the minimum value for the clustered index in the rest of the table. In this case, the query would continue scanning to the end of the table, and conclude the obvious: the first row it found in step 2 is the minimum. In general, this is no worse than scanning from the beginning every time. In either case, the query would be scanning, on average, half the table (ignoring table shrinkage due to archiving). That is, it would scan `(n * (n/2)) - n` rows, which is O(n<sup>2</sup>) -- too slow.
 
 Though this scenario is no worse in the general case, in the specific case for which I'm writing my archiving queries, it would be worst-case. I want my queries to pop the first row off the table; if the hypothetical "stupid" query insisted on scanning through the rest of the table, this would be a disaster. Not only would it be scanning, but it'd be starting the scan at the very first row.
 
@@ -118,7 +118,7 @@ where name = 'Xaprb' limit 1;</pre>
 
 Notice *I'm no longer using the `MIN()` function*. This is really important. If I use `MIN()`, it **will** scan the rest of the table.
 
-In this case I don't have to do anything to tell it to scan the clustered index &#8212; it is already doing that on its own &#8212; but in some queries I might have to use `FORCE INDEX` or `IGNORE INDEX` to make it do so. Adding an `ORDER BY id` might also work.
+In this case I don't have to do anything to tell it to scan the clustered index -- it is already doing that on its own -- but in some queries I might have to use `FORCE INDEX` or `IGNORE INDEX` to make it do so. Adding an `ORDER BY id` might also work.
 
 ### Know when you're really done
 

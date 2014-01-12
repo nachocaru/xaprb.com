@@ -12,12 +12,12 @@ On Tuesday:
 
 *   Tutorial: [Innodb and XtraDB Architecture and Performance Optimization][4]. Peter's talks are always great, and this is a perennial favorite. If you have never been, you should go to this one. You will realize how little you really know about InnoDB/XtraDB, and how much it matters.
 *   Tutorial: [Linux and H/W optimizations for MySQL][5]. Last year I tweeted that Yoshinori's tutorial was the 3rd edition of High Performance MySQL, and I really wasn't exaggerating *that* much.
-*   BoF session: [Percona XtraDB Cluster][6]. I believe that this is one of the few truly groundbreaking changes to MySQL &#8212; right up there with "MySQL has transactions now" and "MySQL adds replication."
+*   BoF session: [Percona XtraDB Cluster][6]. I believe that this is one of the few truly groundbreaking changes to MySQL -- right up there with "MySQL has transactions now" and "MySQL adds replication."
 
 On Wednesday:
 
 *   [MySQL Plugins &#8211; why should I bother?][7] Sergei is the co-author of a book on plugins. Their power is not to be underestimated.
-*   [Getting InnoDB Compression Ready for Facebook Scale][8]. Compression is very powerful &#8212; if we can just get the implementation to work better. Facebook, apparently, has done that.
+*   [Getting InnoDB Compression Ready for Facebook Scale][8]. Compression is very powerful -- if we can just get the implementation to work better. Facebook, apparently, has done that.
 *   [The 5 minute DBA: MySQL DBA 101 for Non DBA's][9]. Get started fast with Matt Yonkovit's friendly, engaging and relevant talk. Spoiler: it's longer than five minutes.
 *   [MySQL Optimizer Standoff MySQL 5.6 and MariaDB 5.3][10]. Peter at it again, this time digging into the advances in newer releases of the server, which make a huge difference on some common and important workloads.
 *   [Scaling MySQL Databases for the Web][11]. This is the "Vitess" talk, a technology I'm extremely keen to hear about. It's now powering YouTube's backend.

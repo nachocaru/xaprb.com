@@ -15,7 +15,7 @@ To begin with, imagine this simple scenario. You are a remote DBA. Your client s
 *   It's also not good enough to catch just after the slow queries finish executing, which you can get from the slow query log if you have a realtime log analyzer running; that is a) also after the fact, and b) again not possible from within the database itself.
 *   Watching TCP traffic or using a proxy is similarly off limits.
 
-This is a database, a complex piece of software &#8212; comparable to an operating system in some respects. It should be possible to know that response time is spiking *while the slow queries are executing slowly, before they even finish and return their results to the application*. This is a simple question that should be easy to answer.
+This is a database, a complex piece of software -- comparable to an operating system in some respects. It should be possible to know that response time is spiking *while the slow queries are executing slowly, before they even finish and return their results to the application*. This is a simple question that should be easy to answer.
 
 It's not currently possible inside MySQL, because MySQL doesn't tell you how much time queries spend executing. It's that simple. Fortunately the fix is equally simple: measure how long queries spend executing.
 

@@ -11,7 +11,7 @@ The key to understanding uptime and thinking clearly about it, in my opinion, is
 
 Now, back to uptime. Is 100% uptime even possible? It depends on how you define it. Play funny with the definition, and you can draw a box around a period on your timeline where there was no downtime. During that period, presto! 100% uptime! But that's not legitimate, and we all know it.
 
-What we mean when we say 100% uptime is that there will never be any downtime in the time period starting now and extending to infinity. You might legitimately tweak that definition a little bit &#8212; you could say no unplanned downtime, for example, instead of just no downtime, period.
+What we mean when we say 100% uptime is that there will never be any downtime in the time period starting now and extending to infinity. You might legitimately tweak that definition a little bit -- you could say no unplanned downtime, for example, instead of just no downtime, period.
 
 So here's the thing. If there is any chance at all of downtime, then in the time period extending from now to infinity, the chance becomes a certainty. If we claim 100% uptime, we're claiming zero chance of downtime. That isn't "very small," but "zero." That is, we're claiming that downtime is literally impossible.
 

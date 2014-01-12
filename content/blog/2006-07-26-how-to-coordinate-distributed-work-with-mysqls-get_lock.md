@@ -11,7 +11,7 @@ My current employer used to use a technique similar to the classic [Perl 'Highla
 
 This type of locking can be pretty tricky to get right. There are always lots of edge cases to consider. For example, what if the same program tries to get the lock twice and blocks itself?
 
-Trying to roll your own locking functionality is asking for trouble, unless you really know what you're doing. It's not enough to just create some "sentinel" that indicates "something else is running." It must be done atomically and in a non-blocking fashion &#8212; already tough to hand-roll &#8212; and there are lots of other requirements, such as "the lock must be released if the program dies without having a chance to release it." This is all old news to readers who've worked with threading or other concurrency issues in programs, of course.
+Trying to roll your own locking functionality is asking for trouble, unless you really know what you're doing. It's not enough to just create some "sentinel" that indicates "something else is running." It must be done atomically and in a non-blocking fashion -- already tough to hand-roll -- and there are lots of other requirements, such as "the lock must be released if the program dies without having a chance to release it." This is all old news to readers who've worked with threading or other concurrency issues in programs, of course.
 
 The file-based solution works well on a single machine, but it doesn't work well if you need programs on different machines to play nicely together. Using a network filesystem such as NFS doesn't solve that problem either. It may work on certain systems, but it's not portable.
 
@@ -19,7 +19,7 @@ We had this problem at my employer. We were beginning to distribute parts of the
 
 I was just about to take this approach when I stumbled upon MySQL's [`GET_LOCK`][2] function, completely by accident. I immediately realized we could use it. The syntax is `GET_LOCK(str, timeout)`, and the behavior is to attempt for `timeout` time to get a "lock," returning a value indicating whether it succeeded. The "lock" is exclusive, and setting `timeout` to zero makes the call non-blocking, which is perfect.
 
-I'm putting "lock" in quotes because it's not really a normal database lock, in the way you might be used to thinking of it. It's not a lock on a row, or a lock on a table, or anything like that. It's a lock on an arbitrary string value, and like `flock()`, it's completely advisory; nothing forces a program to wait for the lock &#8212; it is up to the programs to play nicely together.
+I'm putting "lock" in quotes because it's not really a normal database lock, in the way you might be used to thinking of it. It's not a lock on a row, or a lock on a table, or anything like that. It's a lock on an arbitrary string value, and like `flock()`, it's completely advisory; nothing forces a program to wait for the lock -- it is up to the programs to play nicely together.
 
 The actual SQL call is `select COALESCE(GET_LOCK('some_string_value', 0), 0)`. The call returns 1 if the lock was granted, and 0 or `NULL` otherwise (hence the `COALESCE()`). The lock is released either explicitly, or when the connection closes. There are more subtleties to the function's behavior, but for this purpose, this is all we need to worry about (you can read the manual to learn more about the subtleties).
 
@@ -27,7 +27,7 @@ We did raise the question "what if the DB server is down?" but quickly answered 
 
 Unfortunately, as far as I know no other database vendor has provided something similar to this incredibly handy function.
 
-Are there other ways to implement this easily? I can't imagine an easier way &#8212; even the `flock()` solution was harder to get right than this &#8212; but if you have other ideas, let me know. I'm especially interested in how you'd do this without a DB server.
+Are there other ways to implement this easily? I can't imagine an easier way -- even the `flock()` solution was harder to get right than this -- but if you have other ideas, let me know. I'm especially interested in how you'd do this without a DB server.
 
  [1]: http://www.stonehenge.com/merlyn/WebTechniques/col54.html
  [2]: http://dev.mysql.com/doc/refman/5.0/en/miscellaneous-functions.html

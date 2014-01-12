@@ -3,7 +3,7 @@ title: "How to write good comments: say why, not what"
 date: "2005-12-10"
 permalink: /2005/12/10/tell-me-why-not-what/
 ---
-I have [written before][1] about badly commented code, but I've recently encountered two examples of code that warns someone of something bad, then never tells them what it is. This is a great reason to write comments that say why, not what &#8212; my first rule of thumb when commenting code.
+I have [written before][1] about badly commented code, but I've recently encountered two examples of code that warns someone of something bad, then never tells them what it is. This is a great reason to write comments that say why, not what -- my first rule of thumb when commenting code.
 
 ### Example: SQL stored procedure
 
@@ -31,7 +31,7 @@ if instr(sBrowserType, "MSIE") &gt; 0 and instr(sBrowserType, "Mac") &gt; 0 then
     ' some code to prevent further use of the page
 end if</pre>
 
-There was no comment explaining why, and the intern who wrote the code several summers ago was long gone. After I asked everyone &#8212; programmers, writers, team leaders &#8212; one person dredged up a vague recollection that this particular browser wouldn't save all the article's text, causing your article to truncate after a certain point.
+There was no comment explaining why, and the intern who wrote the code several summers ago was long gone. After I asked everyone -- programmers, writers, team leaders -- one person dredged up a vague recollection that this particular browser wouldn't save all the article's text, causing your article to truncate after a certain point.
 
 ### The first rule of Xaprb
 

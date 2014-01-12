@@ -14,7 +14,7 @@ I could have done a simple query:
 <pre>select category, count(*) as num
 from item group by category</pre>
 
-That would have resulted in one row for every category, which would have been thousands of rows &#8212; not very useful for answering the question. I needed just a few rows, showing how many subcategories are large and how many are small. I started by filling a temporary table with my desired size ranges:
+That would have resulted in one row for every category, which would have been thousands of rows -- not very useful for answering the question. I needed just a few rows, showing how many subcategories are large and how many are small. I started by filling a temporary table with my desired size ranges:
 
 <pre>create temporary table ranges (
    s int not null, -- start of range

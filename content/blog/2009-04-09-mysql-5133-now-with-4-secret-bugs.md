@@ -10,7 +10,7 @@ Some unsettling things happened in MySQL in the past week or so.
 
 ### New storage engine not mentioned in the changelog
 
-There's a bit of a storm brewing over at the MySQL Performance Blog, where [Vadim reports discovering a new storage engine][1] added without mention in the [5.1.33 changelog][2]. This is in defiance of the policy of not making changes in a production release. And it certainly belongs in the changelog &#8212; but there is no sign that anyone will remedy this problem.
+There's a bit of a storm brewing over at the MySQL Performance Blog, where [Vadim reports discovering a new storage engine][1] added without mention in the [5.1.33 changelog][2]. This is in defiance of the policy of not making changes in a production release. And it certainly belongs in the changelog -- but there is no sign that anyone will remedy this problem.
 
 Arjen Lentz, who is ex-MySQL and was Employee #25, [reported a bug on the licensing of this storage engine][3]. To my eyes, the engine's license does not look right to include in a GPL database. Arjen agrees.
 

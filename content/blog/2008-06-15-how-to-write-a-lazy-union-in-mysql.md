@@ -5,7 +5,7 @@ permalink: /2008/06/15/how-to-write-a-lazy-union-in-mysql/
 categories:
   - Databases
 ---
-The other day I was explaining options to someone who wanted to know about [archiving data in MySQL][1]. "So," he said, "I might have to code my app to look for the data in two places?" The disadvantage of this is that his app might be more complex. Another disadvantage is that it might take two queries &#8212; if you look for a user in the usual location and it's not there, you have to look for it elsewhere.
+The other day I was explaining options to someone who wanted to know about [archiving data in MySQL][1]. "So," he said, "I might have to code my app to look for the data in two places?" The disadvantage of this is that his app might be more complex. Another disadvantage is that it might take two queries -- if you look for a user in the usual location and it's not there, you have to look for it elsewhere.
 
 One way to deal with this, as long as the archived data is on the same server, is a UNION.
 
@@ -13,7 +13,7 @@ One way to deal with this, as long as the archived data is on the same server, i
 union all
 select user_id from user_archive where user_id = 123;</pre>
 
-The benefit is that you don't have to issue two queries. That saves network round trips, and makes your code shorter. But it has a disadvantage, too: you're still querying the archive table when you don't need to. Does this matter? Yes, it does. Your archive table may be very large and slow &#8212; perhaps stored on a big slow hard drive, perhaps on a SAN &#8212; and just peeking at it is kind of expensive in some cases.
+The benefit is that you don't have to issue two queries. That saves network round trips, and makes your code shorter. But it has a disadvantage, too: you're still querying the archive table when you don't need to. Does this matter? Yes, it does. Your archive table may be very large and slow -- perhaps stored on a big slow hard drive, perhaps on a SAN -- and just peeking at it is kind of expensive in some cases.
 
 Something occurred to me a couple of weeks ago: why not write a UNION that stops executing as soon as one part of it finds a row? Then you can UNION to your heart's content and not incur the overhead of that second lookup unless you need it. For lack of a better term, I'm calling this a lazy UNION.
 

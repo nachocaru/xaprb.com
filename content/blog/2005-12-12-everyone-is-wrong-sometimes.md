@@ -13,7 +13,7 @@ One of the most highly-regarded voices in Web technology today is the online mag
   </p>
 </blockquote>
 
-They were wrong. Even today we are pitifully far from "all" sites; probably fewer than 1% of sites are reasonably standards-compliant. I want to use that to illustrate my point: **Anyone can be wrong, so don't put *anyone* on a pedestal**. Anyone! Not even someone who writes for A List Apart. It's a most uncomfortable place to be, because falling off is inevitable. And it's not fair to yourself, either &#8212; by looking at others as beyond failure, you're selling yourself short, not valuing highly enough your own abilities.
+They were wrong. Even today we are pitifully far from "all" sites; probably fewer than 1% of sites are reasonably standards-compliant. I want to use that to illustrate my point: **Anyone can be wrong, so don't put *anyone* on a pedestal**. Anyone! Not even someone who writes for A List Apart. It's a most uncomfortable place to be, because falling off is inevitable. And it's not fair to yourself, either -- by looking at others as beyond failure, you're selling yourself short, not valuing highly enough your own abilities.
 
 Above all, please don't put *me* on a pedestal! Much appreciated.
 

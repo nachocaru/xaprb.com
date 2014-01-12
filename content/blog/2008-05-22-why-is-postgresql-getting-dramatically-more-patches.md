@@ -14,7 +14,7 @@ categories:
   </p>
 </blockquote>
 
-This is total hearsay &#8212; I don't have hard numbers, haven't verified it myself, etc etc. But consider the source!
+This is total hearsay -- I don't have hard numbers, haven't verified it myself, etc etc. But consider the source!
 
 What can be responsible for this increase in patches to PostgreSQL?
 

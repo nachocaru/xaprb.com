@@ -76,7 +76,7 @@ It ended up helping me avoid re-snapshotting a slave with a ton of data, so it w
 
 This version fixes some badly optimized chunking queries. As I have mentioned in the past, the chunking behavior is preliminary and subject to change. This is still true, but this release is much smarter than the previous release! I have also fleshed out some methods of doing chunking on real-valued columns (float, decimal, and even character). I don't know when I'll get a chance to code, test, and release that.
 
-Even though much remains to be done, MySQL Table Checksum is still a great way to check that your slaves have the same data as the master. (In fact, it's the only way I know of &#8212; and [MySQL employees themselves recommend MySQL Table Checksum][3]).
+Even though much remains to be done, MySQL Table Checksum is still a great way to check that your slaves have the same data as the master. (In fact, it's the only way I know of -- and [MySQL employees themselves recommend MySQL Table Checksum][3]).
 
 Version 1.1.8
 

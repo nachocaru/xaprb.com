@@ -17,7 +17,7 @@ The `map` built-in function is one of the most useful tools in your toolkit. `ma
 my @uc_lamps = map { uc($_) } @lamps;
 # Result: PERL PHP PYTHON</pre>
 
-I just shoved the list in the right side, and it travelled right to left until finally it popped out on the left side and got assigned into `@uc_lamps`. You can do a lot more with `map`, though. In fact, it's pretty much infinitely powerful when it comes to transforming lists. It's really just a glorified loop, but if you think of it as a transformation from input to output, you can really make some elegant code with it. Here's another example &#8212; make a key-value hash out of a delimited string:
+I just shoved the list in the right side, and it travelled right to left until finally it popped out on the left side and got assigned into `@uc_lamps`. You can do a lot more with `map`, though. In fact, it's pretty much infinitely powerful when it comes to transforming lists. It's really just a glorified loop, but if you think of it as a transformation from input to output, you can really make some elegant code with it. Here's another example -- make a key-value hash out of a delimited string:
 
 <pre>my $input = "a:1,b:2,d:3";
 my %output = map { split(/:/, $_) } split(/,/, $input);</pre>
@@ -221,7 +221,7 @@ print process_column_names(
       </p>
       
       <p>
-        If you're still reading, you're one of the ones walking the narrow path that leads to victory. Good! Let's talk about how to execute some code branch depending on the value of a variable. My favorite technique for this is to use a dispatch table of coderefs &#8212; references to subroutines. This is a succinct way to dispatch execution to somewhere or other in your program, without the mess and tedious coding you get with <code>switch</code> statements. Believe me, if you've ever tried to maintain someone else's <code>switch</code> of any size, you're going to appreciate this.
+        If you're still reading, you're one of the ones walking the narrow path that leads to victory. Good! Let's talk about how to execute some code branch depending on the value of a variable. My favorite technique for this is to use a dispatch table of coderefs -- references to subroutines. This is a succinct way to dispatch execution to somewhere or other in your program, without the mess and tedious coding you get with <code>switch</code> statements. Believe me, if you've ever tried to maintain someone else's <code>switch</code> of any size, you're going to appreciate this.
       </p>
       
       <p>
@@ -233,7 +233,7 @@ print process_column_names(
       </p>
       
       <p>
-        Can you imagine? There's no way I'd have added so many features to innotop if it were this much of a pain to write, debug and understand. It doesn't really matter that I wrote it &#8212; six months from now, I won't have a clue what all that code is doing. But I <em>will</em> be able to figure out what a keypress does, because I used a dispatch table.
+        Can you imagine? There's no way I'd have added so many features to innotop if it were this much of a pain to write, debug and understand. It doesn't really matter that I wrote it -- six months from now, I won't have a clue what all that code is doing. But I <em>will</em> be able to figure out what a keypress does, because I used a dispatch table.
       </p>
       
       <p>
@@ -317,7 +317,7 @@ while ( 1 ) {
       </p>
       
       <p>
-        The reality is probably even worse, because you're doing both at the same time. As soon as you type a loop, you're immediately reading it. Reading it. Reading it. As soon as you type &#8212; Reading it. As &#8212; Reading it. As soon as you &#8212; as soon as you type &#8212; type &#8212; Reading it.
+        The reality is probably even worse, because you're doing both at the same time. As soon as you type a loop, you're immediately reading it. Reading it. Reading it. As soon as you type -- Reading it. As -- Reading it. As soon as you -- as soon as you type -- type -- Reading it.
       </p>
       
       <p>

@@ -12,7 +12,7 @@ Of course I promptly discovered that the two most important differences between 
 
 <!--more-->
 
-I use dual monitors; it's pretty much a necessity for me. And I just couldn't get the radeon driver to work right with them. I spent a lot of time trying. I ended up going to the ATI driver, which is proprietary; it had its own issues with mouse pointer corruption and the lot, which eventually were fixed, but it still disabled suspend/resume, and plus it's non-Free. My colleagues know this irked me &#8212; they just heard me griping about it a few days ago.
+I use dual monitors; it's pretty much a necessity for me. And I just couldn't get the radeon driver to work right with them. I spent a lot of time trying. I ended up going to the ATI driver, which is proprietary; it had its own issues with mouse pointer corruption and the lot, which eventually were fixed, but it still disabled suspend/resume, and plus it's non-Free. My colleagues know this irked me -- they just heard me griping about it a few days ago.
 
 But now, praise be, the radeon driver works with my dual monitors! And the drag-and-drop point-and-click configuration interface works, too! I've got a 1680&#215;1024 external monitor, positioned above my 1024&#215;800 laptop display, and I have never so much as peeked at /etc/X11/xorg.conf. Thanks to all the people who worked so hard on this! (It didn't work flawlessly until I rebooted, but who's complaining.) Suspend/resume now work great!
 

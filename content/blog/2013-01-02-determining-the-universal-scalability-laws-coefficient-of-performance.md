@@ -6,7 +6,7 @@ If you're familiar with Neil Gunther's Universal Scalability Law, you may have h
 
 <img src="http://www.xaprb.com/blog/wp-content/uploads/2013/01/usl.png" alt="usl" width="637" height="188" class="aligncenter size-full wp-image-3000" />
 
-No, you don't see it &#8212; but it's actually there, as a hidden "1&#8243; multiplied by N in the numerator on the right-hand side. When you're using the USL to model a system's scalability, you need to use the C(1), the "capacity at one," as a multiplier. I call this the coefficient of performance. It's rarely 1; it's usually thousands.
+No, you don't see it -- but it's actually there, as a hidden "1&#8243; multiplied by N in the numerator on the right-hand side. When you're using the USL to model a system's scalability, you need to use the C(1), the "capacity at one," as a multiplier. I call this the coefficient of performance. It's rarely 1; it's usually thousands.
 
 To illustrate why this matters, consider two systems' throughput as load increases:
 

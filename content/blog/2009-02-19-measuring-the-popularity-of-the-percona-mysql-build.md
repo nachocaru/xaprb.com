@@ -5,7 +5,7 @@ permalink: /2009/02/19/measuring-the-popularity-of-the-percona-mysql-build/
 categories:
   - Databases
 ---
-I have a Google Alert on "percona". (And many other things &#8212; great way to keep tabs on competitors, what people are saying about you, etc.)
+I have a Google Alert on "percona". (And many other things -- great way to keep tabs on competitors, what people are saying about you, etc.)
 
 I've been seeing increasing amounts of this type of thing:
 

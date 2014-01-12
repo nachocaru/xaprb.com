@@ -6,7 +6,7 @@ categories:
   - Databases
   - Open Source
 ---
-Since starting the [innotop][1] and [mysqltoolkit][2] projects on Sourceforge, I have learned a lot about how to use source control more effectively &#8212; especially how branching and tagging can be used. Still, I have limited experience. I want to package all the tools in MySQL Toolkit together and release them in one archive, but I don't know the best way to do it; every idea seems to have drawbacks. Read on for the details, and if you have suggestions, would you please leave comments for me?
+Since starting the [innotop][1] and [mysqltoolkit][2] projects on Sourceforge, I have learned a lot about how to use source control more effectively -- especially how branching and tagging can be used. Still, I have limited experience. I want to package all the tools in MySQL Toolkit together and release them in one archive, but I don't know the best way to do it; every idea seems to have drawbacks. Read on for the details, and if you have suggestions, would you please leave comments for me?
 
 ### How I'm versioning things
 

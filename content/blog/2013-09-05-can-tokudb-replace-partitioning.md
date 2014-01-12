@@ -14,7 +14,7 @@ I wondered if TokuDB supports partitioning. Then I remembered some older posts f
 
 I'm not sure this is true for my use case, for a couple of reasons. 
 
-First, I clearly fall into the only category that the flowchart acknowledges may be a good use case for partitioning: I do need instant block deletes. Paying for data ingestion as well as purging doesn't make sense in my case. It's like eating a hot hot curry &#8212; I don't want to feel the pain on the way out too :-) 
+First, I clearly fall into the only category that the flowchart acknowledges may be a good use case for partitioning: I do need instant block deletes. Paying for data ingestion as well as purging doesn't make sense in my case. It's like eating a hot hot curry -- I don't want to feel the pain on the way out too :-) 
 
 <img src="http://www.xaprb.com/blog/wp-content/uploads/2013/09/Partition-Flow-Chart1-251x300.png" alt="Partition-Flow-Chart1" width="251" height="300" class="aligncenter size-medium wp-image-3257" /> 
 

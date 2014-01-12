@@ -22,19 +22,19 @@ categories:
 
 <p>Ma'at is not only an Egyptian word, she's a goddess.  (We need more women in this profession!)  She is <a href="http://touregypt.net/godsofegypt/maat.htm">the patron of truth, harmony, and order.</a>  She restores things to their proper balance and place.  Without her, everything would return to chaos.  She wears an ostrich feather, and the heart of a deceased person has to be weighed against the feather when passing to the underworld.</p>
 
-<p>In fact, ma'at isn't just a name and a word, it's a concept, as my wife explained to me.  This concept doesn't have an exact parallel in other languages and cultures.  You should read about it via the link I just gave &#8212; it's really quite a fascinating bit of Egyptology.  I asked my wife to find a good image of weighing the heart of the deceased, and she took some time to describe the scene:</p>
+<p>In fact, ma'at isn't just a name and a word, it's a concept, as my wife explained to me.  This concept doesn't have an exact parallel in other languages and cultures.  You should read about it via the link I just gave -- it's really quite a fascinating bit of Egyptology.  I asked my wife to find a good image of weighing the heart of the deceased, and she took some time to describe the scene:</p>
 
 <p><a href='http://www.xaprb.com/blog/wp-content/uploads/2007/11/weighing_of_the_heart.jpg' title='Weighing of the Heart'><img src='http://www.xaprb.com/blog/wp-content/uploads/2007/11/weighing_of_the_heart.thumbnail.jpg' alt='Weighing of the Heart' /></a></p>
 
 <blockquote>
 
-<p>The deceased is in white.  He is visible along the top of the image, in front of a dozen or so judges.  He's visible again in the main part of the image.  Anubis is leading him by the hand into the presence of Osiris. Osiris is not the figure kneeling under the scale &#8212; that's Anubis again.</p>
+<p>The deceased is in white.  He is visible along the top of the image, in front of a dozen or so judges.  He's visible again in the main part of the image.  Anubis is leading him by the hand into the presence of Osiris. Osiris is not the figure kneeling under the scale -- that's Anubis again.</p>
 
 <p>The scale of judgment has the deceased's heart on the left side, in a jar, and the feather of justice (ma'at) on the right side.
 The Egyptians believed that the heart, not the brain, was the source of one's personality and identity.
 The goddess Ma'at is on top of the middle of the scale, supervising the proceedings.  She has the feather of justice on her head.  Thoth, the god of writing (a personified Ibis), takes down the judgment.  If the deceased passes judgment, he will continue to the underworld; otherwise he will be eaten by the "devourer," who is part lion, part alligator, and sits under the right-hand arm of the scale.</p>
 
-<p>In this scene the judgment was positive and Horus (the son of Osiris &#8212; a hawk) leads the deceased towards the canopy where Osiris awaits. Osiris is flanked by two goddesses.  One is Isis; Nephthys is probably the other.</p>
+<p>In this scene the judgment was positive and Horus (the son of Osiris -- a hawk) leads the deceased towards the canopy where Osiris awaits. Osiris is flanked by two goddesses.  One is Isis; Nephthys is probably the other.</p>
 
 </blockquote>
 

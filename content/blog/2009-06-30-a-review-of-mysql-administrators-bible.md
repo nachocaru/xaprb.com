@@ -24,11 +24,11 @@ Speaking of trusting information, I was happy to see very few typos or errors. O
 
 The book is divided into four parts: first steps, developing with MySQL, core administration, and a set of chapters and appendixes grouped under extending your skills. I think this organization works well. You can read the full Table Of Contents at the publisher's site linked above.
 
-Coverage is for MySQL 5.1 and 6.0. As we know, 5.1 was GA'ed and 6.0 has been killed and replaced by a new release policy. This gives a slightly odd feeling to some passages, which speak about 5.1 in the past tense and 6.0 in the present tense! As far as I know, however, this book contains the most complete coverage of MySQL 5.1 in print. The only other similar book I've read that covers 5.1 is *[High Performance MySQL 2nd Edition][3]* &#8212; and that one is a bit light on details because there wasn't a lot of production knowledge of 5.1 yet (I'm the lead author of *HPM2e*, by the way).
+Coverage is for MySQL 5.1 and 6.0. As we know, 5.1 was GA'ed and 6.0 has been killed and replaced by a new release policy. This gives a slightly odd feeling to some passages, which speak about 5.1 in the past tense and 6.0 in the present tense! As far as I know, however, this book contains the most complete coverage of MySQL 5.1 in print. The only other similar book I've read that covers 5.1 is *[High Performance MySQL 2nd Edition][3]* -- and that one is a bit light on details because there wasn't a lot of production knowledge of 5.1 yet (I'm the lead author of *HPM2e*, by the way).
 
 Speaking of which, I think that *MySQL Administrator's Bible* is a very good complement to *High Performance MySQL, 2nd Edition*. The former is useful to people who have varying levels of knowledge, while the latter assumes a lot of experience and doesn't cover introductory material much. And the books have different topics, of course. So if you're new to databases, or if you're new to MySQL, you might do well to start with Sheeri's book, then continue or supplement your education with ours.
 
-All in all, this is a book that's well worth buying if you're going to administer a serious MySQL installation. I tip my hat to Sheeri &#8212; I don't know how she did it. It's a huge project and she pulled through the last (and by far most difficult) part of it by herself.
+All in all, this is a book that's well worth buying if you're going to administer a serious MySQL installation. I tip my hat to Sheeri -- I don't know how she did it. It's a huge project and she pulled through the last (and by far most difficult) part of it by herself.
 
 *Disclosure: I tried to be a tech reviewer for this book, but I was over-committed and had to back out after a while.*
 

@@ -25,7 +25,7 @@ And why couldn't I get any information about this?Â  Why did I have to kill th
 <pre>SELinux is preventing strace (mysqld_t) "signal" to &lt;Unknown&gt; (unconfined_t).
 SELinux is preventing gdb (mysqld_t) "signal" to &lt;Unknown&gt; (unconfined_t).</pre>
 
-Sigh. I'm root on this machine, but I can't do anything with mysqld &#8212; not because I'm restricted, but because mysqld is restricted.
+Sigh. I'm root on this machine, but I can't do anything with mysqld -- not because I'm restricted, but because mysqld is restricted.
 
  [1]: http://www.nsa.gov/selinux/
  [2]: http://www.youtube.com/watch?v=Fow7iUaKrq4

@@ -17,7 +17,7 @@ There is no changelog for SJA alone, but Rohit pointed me to the [FAQ entry for 
 
 ### My experience using SJA
 
-I downloaded version 5.27 of SJA on April 2, noticed some potential issues with it, and contacted Rohit to discuss those. I saw it was issuing the statements to resolve differences in a sequence that would cause problems &#8212; `DELETE`, `INSERT`, `UPDATE`. Indeed, I browsed the help forums and saw this order of operations was an attempt to fix problems caused by syncing in the order `INSERT`, `UPDATE`, `DELETE`:
+I downloaded version 5.27 of SJA on April 2, noticed some potential issues with it, and contacted Rohit to discuss those. I saw it was issuing the statements to resolve differences in a sequence that would cause problems -- `DELETE`, `INSERT`, `UPDATE`. Indeed, I browsed the help forums and saw this order of operations was an attempt to fix problems caused by syncing in the order `INSERT`, `UPDATE`, `DELETE`:
 
 <blockquote cite="http://www.webyog.com/forums/index.phpshowtopic=3135">
   <p>
@@ -31,7 +31,7 @@ There can still be problems even with the new order of operations, and I saw str
 > 
 > The extra phase for update is required only if you choose to delete "Extra rows from the target". Consider this situation: After updating the target in Phase-I, we want to find out extra rows in the target. During this period, a source row changes. The target assumes that this data is "extra" and delete it from itself. So you might land up with an "non-synced" dataset most of the times in a live database.
 
-I must have downloaded 5.27 only a few hours before 5.28 was available. In any case, I re-downloaded (it's just over 1MB &#8212; not large) and as Rohit promised, the issues I saw were gone.
+I must have downloaded 5.27 only a few hours before 5.28 was available. In any case, I re-downloaded (it's just over 1MB -- not large) and as Rohit promised, the issues I saw were gone.
 
 I also mentioned some other minor things I saw in the query log output, such as possibly redundant queries, and Rohit indicated those would be fixed in the next version.
 

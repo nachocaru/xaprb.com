@@ -15,8 +15,8 @@ To get the most out of junk mail filtering, you need to turn filtering on, train
 
 There are several steps to enabling filtering. Here's how I do it. First, I open the Tools/Junk Mail Controls dialog. I select my email account in the pull-down menu, then check the following options:
 
-*   WhiteLists &#8212; I check the "Do not mark&#8230;" option
-*   Handling &#8212; I check the "Move the&#8230;" option, and select a folder to move the messages to. I don't want to delete the junk mail yet. I need it to train the filter. I check the "When I manually&#8230;" option, and again select to move them. Thunderbird is a bit weird about handling messages when I mark them as junk; it's like having the rug pulled out from under me, so sometimes I mark the wrong one by accident.
+*   WhiteLists -- I check the "Do not mark&#8230;" option
+*   Handling -- I check the "Move the&#8230;" option, and select a folder to move the messages to. I don't want to delete the junk mail yet. I need it to train the filter. I check the "When I manually&#8230;" option, and again select to move them. Thunderbird is a bit weird about handling messages when I mark them as junk; it's like having the rug pulled out from under me, so sometimes I mark the wrong one by accident.
 *   I don't use logging, because I don't have Thunderbird delete messages for me automatically.
 
 I switch to the "Adaptive Filter" tab and check the "Enable adaptive junk mail detection" option. This is the real magic. It turns on the Bayesian filter and starts it learning.

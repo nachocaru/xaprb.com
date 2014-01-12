@@ -31,15 +31,15 @@ The date-parsing code is a bit more complex than the formatting code. The parsin
 
 ### Round-trip processing
 
-In many cases, depending on the format string, it should be possible to use the date-parsing code together with the date-formatting code for round-trip processing. Take a date, format it with some format string, then read it back in with the same format string, and you should get the same date. Of course, you need to preserve whatever level of detail you want to get back &#8212; you won't get everything back if you throw it away during the formatting step. You'll see that in the demo too.
+In many cases, depending on the format string, it should be possible to use the date-parsing code together with the date-formatting code for round-trip processing. Take a date, format it with some format string, then read it back in with the same format string, and you should get the same date. Of course, you need to preserve whatever level of detail you want to get back -- you won't get everything back if you throw it away during the formatting step. You'll see that in the demo too.
 
 ### The files
 
-I'm wrapping the [date-formatting and date-parsing code][3] up into a single file. I've also upgraded the [Javascript date-chooser][4] to use both the date-parsing and date-formatting functionality. Please use and enjoy, and if you find any bugs, let me know. Likewise, if you make any improvements, that's great too &#8212; please pass them on to me so I can pass them on to others.
+I'm wrapping the [date-formatting and date-parsing code][3] up into a single file. I've also upgraded the [Javascript date-chooser][4] to use both the date-parsing and date-formatting functionality. Please use and enjoy, and if you find any bugs, let me know. Likewise, if you make any improvements, that's great too -- please pass them on to me so I can pass them on to others.
 
 ### What it's not
 
-This code is **not** a JavaScript implementation of `<a href="http://www.php.net/manual/en/function.strtotime.php">strtotime</a>`. That's too difficult and not that useful in my opinion. (For those not familiar with it, `strtotime` can understand input like "two weeks ago next Sunday"). It's also **not internationalized**. It only works for my little slice of the universe: the English language &#8212; though international date-formatting standards (ISO 8601, highly recommended) make that a moot point anyway.
+This code is **not** a JavaScript implementation of `<a href="http://www.php.net/manual/en/function.strtotime.php">strtotime</a>`. That's too difficult and not that useful in my opinion. (For those not familiar with it, `strtotime` can understand input like "two weeks ago next Sunday"). It's also **not internationalized**. It only works for my little slice of the universe: the English language -- though international date-formatting standards (ISO 8601, highly recommended) make that a moot point anyway.
 
  [1]: /blog/2005/12/12/javascript-closures-for-runtime-efficiency/
  [2]: /articles/javascript-date-parsing-demo.html

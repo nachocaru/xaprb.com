@@ -32,4 +32,4 @@ Now both the wiki "homepage" and the sidebar will contain the page you created. 
 
 If you want, you can use a different homepage and sidebar, but I've found that it works well for me to use the same page for both. It's a preference, that's all.
 
-There's one more trick I'd like to share: you can add the text `<wiki:toc />` at the top of any page to create a small table of contents for that page. There are ways to customize it &#8212; check the documentation for more options.
+There's one more trick I'd like to share: you can add the text `<wiki:toc />` at the top of any page to create a small table of contents for that page. There are ways to customize it -- check the documentation for more options.

@@ -58,7 +58,7 @@ Record lock, heap no 2 PHYSICAL RECORD: n_fields 4; compact format; info bits 0
 
 *** WE ROLL BACK TRANSACTION (2)</pre>
 
-More importantly, the lines beginning "RECORD LOCKS space id 0&#8243; show which index of which table was locked. That is the real meat of the matter &#8212; that's what you need to know.
+More importantly, the lines beginning "RECORD LOCKS space id 0&#8243; show which index of which table was locked. That is the real meat of the matter -- that's what you need to know.
 
 There's just one problem: after there's been a deadlock, it's too late. You don't want to know what held locks in the past, you want to know what holds them now. The deadlock information isn't usually helpful in finding out what transaction is blocking something from happening.
 
@@ -94,7 +94,7 @@ The take-away here is, if you're getting blocked on an InnoDB table, and you're 
 
 ### What about table locks?
 
-Ah, good question. What if the table isn't InnoDB, or what if someone locked it with `LOCK TABLES`, and it doesn't show up in the output of `SHOW ENGINE INNODB STATUS`? As far as I know, you're helpless. I don't know how to get any information on who's locking the table then. Table lock information doesn't seem to be exposed in any fashion &#8212; only row lock information.
+Ah, good question. What if the table isn't InnoDB, or what if someone locked it with `LOCK TABLES`, and it doesn't show up in the output of `SHOW ENGINE INNODB STATUS`? As far as I know, you're helpless. I don't know how to get any information on who's locking the table then. Table lock information doesn't seem to be exposed in any fashion -- only row lock information.
 
 In fact, if you're in a transaction, `LOCK TABLES` seems to "kick you out" of the transaction. Try experimenting with `START TRANSACTION` and `LOCK TABLES` on an InnoDB table, and you'll see what I mean. If you lock a table for writing, then try to select from it in another connection, the other connection will block. If you then issue `START TRANSACTION` on the first connection, the second connection will immediately unblock, and the first connection's transaction will disappear from the InnoDB status text.
 

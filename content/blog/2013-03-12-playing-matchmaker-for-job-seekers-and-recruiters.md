@@ -12,7 +12,7 @@ It's a privilege because I can ask some of these people for help or introduction
 
 Many, many people contact me looking for people to hire. I keep a list. When someone tells me they are on the job market, I try to match them with openings I'm aware of, if any are appropriate. (Many fewer people tell me they're looking for jobs than tell me they're trying to recruit.)
 
-These are my friends, on both sides. I don't introduce people unless I think everyone is really genuinely bringing something great to the table. A great position &#8212; a great talent &#8212; the right circumstances and attitudes.
+These are my friends, on both sides. I don't introduce people unless I think everyone is really genuinely bringing something great to the table. A great position -- a great talent -- the right circumstances and attitudes.
 
 When I do introduce people, I usually do it one-sidedly, depending on the situation. For example, I'll forward the candidate's resume and contact information sometimes, with a few words of introduction. At other times I'll just BCC the candidate. Or I might send the recruiting party's information to the candidate.
 

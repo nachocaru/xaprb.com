@@ -17,7 +17,7 @@ Decreasing the checkpoint interval seems a bit scary, and is bound to have its o
 
 Storing full pages might not really be that expensive. It could bloat the WAL, but is the cost (in terms of time) really that high? InnoDB (in MySQL) protects against partial page writes with a double-write strategy: a region in the tablespace is called the doublewrite buffer. Page writes are first sent to the doublewrite buffer, then to their actual location in the data file. I don't remember where, but I've seen benchmarks showing that this doesn't hurt performance, even though it seems counter-intuitive. Modern disks can do a lot of sequential writes, and the way InnoDB writes its data makes a lot of things sequential. I doubt that putting full pages into the PostgreSQL WAL is forced to cost a lot, unless there is an implementation-specific aspect that makes it expensive.
 
-The TODO has some [items on the WAL][1], which look interesting &#8212; "Eliminate need to write full pages to WAL before page modification" and a couple more items. I need to understand PostgreSQL's recovery process better before I know what these really mean.
+The TODO has some [items on the WAL][1], which look interesting -- "Eliminate need to write full pages to WAL before page modification" and a couple more items. I need to understand PostgreSQL's recovery process better before I know what these really mean.
 
 ### Detecting data corruption
 

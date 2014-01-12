@@ -7,7 +7,7 @@ categories:
 ---
 The technology industry moves incredibly fast, from one bubble to another. Web 2.0. Online auctions. (Remember when the Internet was filled with hundreds of eBay clones?) Social. Mobile. Location-based. Big Data. Whatever.
 
-I don't think anyone will call me insightful for observing that the general idea of "social" had a peak in its hype cycle some time ago. I'd say three years ago was really the peak. At some point, lots of people were excited about applying social-ness to everything. Social was going to be the way everything happened in the future. Businesses were going to revolutionize the way internal communications happened by making everything social. Government was going to be more transparent by being social. We were all going to be constantly tuned in to all this frenzy of everything happening &#8212; events, information, whatnot &#8212; and it would all be saturated with socialness. *(This sounds like a new level of hell to me, but some people thought it was a good thing.)*
+I don't think anyone will call me insightful for observing that the general idea of "social" had a peak in its hype cycle some time ago. I'd say three years ago was really the peak. At some point, lots of people were excited about applying social-ness to everything. Social was going to be the way everything happened in the future. Businesses were going to revolutionize the way internal communications happened by making everything social. Government was going to be more transparent by being social. We were all going to be constantly tuned in to all this frenzy of everything happening -- events, information, whatnot -- and it would all be saturated with socialness. *(This sounds like a new level of hell to me, but some people thought it was a good thing.)*
 
 There were basically no bounds to what social could do. IT was going to get more agile through things like social monitoring, for example, like [Nodeable][1]. It's since been renamed and pivoted entirely, but what I remember was that people chit-chatting and promoting/liking/recommending and having relevance-based feeds about system problems was going to improve the signal-to-noise ratio of monitoring alerts, and allow IT staff to focus on stuff that really needed to be fixed.
 
@@ -23,6 +23,6 @@ There's real, enduring value in the concepts of social. Take a look at Github. I
 
 But Github is not **overtly** social. That's the difference. They don't act as if social is first, and code hosting and issue tracking is secondary. They don't act as if the core value proposition is socialness and code hosting is just the medium through which they do it.
 
-I think that's the right way to do it. Take a solid business idea &#8212; code hosting and revision control and so on &#8212; and add the ability for people to have meta-interactions around it, where it makes sense and actually enriches the core of the business.
+I think that's the right way to do it. Take a solid business idea -- code hosting and revision control and so on -- and add the ability for people to have meta-interactions around it, where it makes sense and actually enriches the core of the business.
 
  [1]: http://nodeable.com/

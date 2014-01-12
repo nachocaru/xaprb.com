@@ -3,11 +3,11 @@ title: "What's the best way to choose graph colors?"
 date: "2008-03-22"
 permalink: /2008/03/22/whats-the-best-way-to-choose-graph-colors/
 ---
-<p>I have an issue I hope someone can help me with.  I am generating <a href="http://oss.oetiker.ch/rrdtool/">RRDtool</a> graphs (for <a href="http://www.cacti.org/">Cacti</a> monitoring templates for MySQL, which I'll release soon) that have up to 11 different metrics on them.  With that many lines or areas on a graph, it becomes very hard to pick colors that are easy to see and easy to distinguish from each other.  What's a good way to choose such colors?  Is there a way to do it automatically &#8212; is there a formal method that will produce good results?</p>
+<p>I have an issue I hope someone can help me with.  I am generating <a href="http://oss.oetiker.ch/rrdtool/">RRDtool</a> graphs (for <a href="http://www.cacti.org/">Cacti</a> monitoring templates for MySQL, which I'll release soon) that have up to 11 different metrics on them.  With that many lines or areas on a graph, it becomes very hard to pick colors that are easy to see and easy to distinguish from each other.  What's a good way to choose such colors?  Is there a way to do it automatically -- is there a formal method that will produce good results?</p>
 
 <p>I know some color theory and I have read about how you can distinguish colors from each other (hue, value etc).  But I am unsure the best way to choose this many colors.  Trying by hand produces garish results or graphs that are just hard to read.</p>
 
-<p>My first <a href="/articles/color-chooser.html">attempt to solve this with a program</a> was to simply create a list of every possible completely saturated color in a 32-bit space &#8212; essentially, the "pure" colors around the rim of the color wheel &#8212; and divide it into the desired number of evenly spaced intervals.  This produces pure colors, which is not ideal.  They are hard to look at.  Did I mention garish?</p>
+<p>My first <a href="/articles/color-chooser.html">attempt to solve this with a program</a> was to simply create a list of every possible completely saturated color in a 32-bit space -- essentially, the "pure" colors around the rim of the color wheel -- and divide it into the desired number of evenly spaced intervals.  This produces pure colors, which is not ideal.  They are hard to look at.  Did I mention garish?</p>
 
 <p>I can shuffle the order so that they're not adjacent, but that only helps avoid a "rainbow effect" if I'm stacking areas of color on top of each other, like in the following image:</p>
 

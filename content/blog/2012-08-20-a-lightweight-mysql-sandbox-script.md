@@ -51,7 +51,7 @@ if [[ "$BASEDIR" = *rel* ]]; then
 fi
 
 # write out the my.cnf
-cat > my.cnf <<EOF
+cat &gt; my.cnf &lt;&lt;EOF
 [client]
 user     = root
 port     = $PORT
@@ -78,7 +78,8 @@ EOF
 echo "$PORT" > "/tmp/mysql-$PORT"
 $BIN --defaults-file=my.cnf --pid-file=/tmp/mysql.$PORT.pid "$@"
 rm "/tmp/mysql-$PORT"
-</pre> 
+</pre>
+
 And here is the `mc` command, which I've tweaked a little to run on Mac OSX as well as Linux:
 
 <pre>#!/bin/sh
@@ -93,7 +94,8 @@ Darwin)
    mysql --port=$port "$@"
    ;;
 esac
-</pre> 
+</pre>
+
 This is pretty basic, and certainly not something I'd promote as [generically useful][2] or ready for the masses, but perhaps it will help someone else who has the (unusual?) usage requirements I have.
 
  [1]: http://mysqlsandbox.net/

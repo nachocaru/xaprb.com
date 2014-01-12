@@ -10,11 +10,11 @@ categories:
 ---
 I bought a [Barnes and Noble Nook Color][1] e-book reader and ripped out the Nook software, replacing it with the [CyanogenMod][2] distribution of the Android OS. It's really, really nice hardware, and CyanogenMod (CM) is really, really nice software. I love them both, and my regular readers will remember that I'm *not a gadget guy*. Read on for more.
 
-I never thought I'd get a tablet, until my phone died and I got a Droid 2 as a replacement. With all those gadgets, I just started to find myself using my phone for reading my RSS feeds and so on &#8212; but hating how small the screen was. I started to think again about a tablet after experiencing how handy the smartphone's extra features are.
+I never thought I'd get a tablet, until my phone died and I got a Droid 2 as a replacement. With all those gadgets, I just started to find myself using my phone for reading my RSS feeds and so on -- but hating how small the screen was. I started to think again about a tablet after experiencing how handy the smartphone's extra features are.
 
 ### The Nook Color Hardware
 
-The Nook Color is a medium-sized Android tablet with a screen that's the same size as the [Samsung Galaxy Tab][3]. It's a perfect size for carrying around &#8212; much better than iPads and Xooms and so on, which are just too big for my taste. This device literally fits in the pocket of my jeans ([specs][4]).
+The Nook Color is a medium-sized Android tablet with a screen that's the same size as the [Samsung Galaxy Tab][3]. It's a perfect size for carrying around -- much better than iPads and Xooms and so on, which are just too big for my taste. This device literally fits in the pocket of my jeans ([specs][4]).
 
 The screen is amazing. It's super sharp. But the Nook Color doesn't have a microphone or a camera, and it doesn't have any phone service. This is fine. I don't want these items. I want a tablet to use primarily at home for consuming content such as blogs, books, newspapers, music, movies, and so on.
 
@@ -30,7 +30,7 @@ So I moved on to CyanogenMod. Early reviews I'd read of this said it wasn't read
 
 It's really ridiculously easy to install CyanogenMod on the Nook, even easier if you don't first update your Nook operating system. It took me longer to burn a bootable ROM on a MicroSD card than anything else. Full instructions can be found beginning at [this page][6].
 
-The result is just brilliant. I've now installed my preferred apps, stripped down the interface by removing some stuff I don't want, such as multiple desktops (CyanogenMod is jammed with features), and I have a simple, elegant, perfectly functioning Android tablet. And I really mean it &#8212; there are no rough edges or crashes or anything you might expect from a third-party OS on your tablet. In fact, one of the things I like the most is that it doesn't come with pre-installed adware, as my Droid did (and the stuff on the Droid can't be uninstalled without rooting it and voiding the warranty, which is not something I'm going to do on my work phone).
+The result is just brilliant. I've now installed my preferred apps, stripped down the interface by removing some stuff I don't want, such as multiple desktops (CyanogenMod is jammed with features), and I have a simple, elegant, perfectly functioning Android tablet. And I really mean it -- there are no rough edges or crashes or anything you might expect from a third-party OS on your tablet. In fact, one of the things I like the most is that it doesn't come with pre-installed adware, as my Droid did (and the stuff on the Droid can't be uninstalled without rooting it and voiding the warranty, which is not something I'm going to do on my work phone).
 
 ### Summary
 

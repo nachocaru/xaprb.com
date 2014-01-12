@@ -5,7 +5,7 @@ permalink: /2006/04/13/using-awk-to-convert-mysql-output-to-tables/
 categories:
   - Databases
 ---
-In this article I'll explain how to control the output of the `mysql` client program and feed it to another program to transform the results as desired. I often transform output into HTML tables for these blog articles &#8212; at least, I do when I'm not being lazy.
+In this article I'll explain how to control the output of the `mysql` client program and feed it to another program to transform the results as desired. I often transform output into HTML tables for these blog articles -- at least, I do when I'm not being lazy.
 
 The `mysql` command-line program can accept a command and print the results directly to STDOUT. The default output behavior differs depending on where its input comes from. When the input comes via STDIN, the output is tab-separated values. When the input comes via the `-e` or `--execute` options, or when the `-t` option is specified, the output is in "tabular" format, with borders drawn by pipes, dashes and plus characters.
 

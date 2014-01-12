@@ -27,7 +27,7 @@ The truth is, saying anything with the words "equal" or "not equal" is a trap wh
 
 ### The right way to think about `NULL`
 
-The correct way to understand `NULL` is that it is not a value. Not "this is a `NULL` value" but "this `NULL` is not a value." Everything either is a value, or it isn't. When something is a value, it is "1," or "hello," or "green," or "$5.00&#8243; etc &#8212; but when something isn't a value, **it just isn't anything at all**. SQL represents "this has no value" by the special non-value `NULL`. When someone says "the `NULL` value," one should mentally disagree, because there's **no such thing**. `NULL` is the complete, total absence of any value whatsoever.
+The correct way to understand `NULL` is that it is not a value. Not "this is a `NULL` value" but "this `NULL` is not a value." Everything either is a value, or it isn't. When something is a value, it is "1," or "hello," or "green," or "$5.00&#8243; etc -- but when something isn't a value, **it just isn't anything at all**. SQL represents "this has no value" by the special non-value `NULL`. When someone says "the `NULL` value," one should mentally disagree, because there's **no such thing**. `NULL` is the complete, total absence of any value whatsoever.
 
 ### What do you get when you compare a value to `NULL`?
 
@@ -40,7 +40,7 @@ Given the following predicates,
 1.  `NULL` is not a value
 2.  No value can ever be equal to a non-value
 
-Here's the proof by contradiction: Pretend for a moment that `NULL` is unequal to a value &#8212; say a real number, excluding infinity and negative infinity. I'll choose an example number, say 5.
+Here's the proof by contradiction: Pretend for a moment that `NULL` is unequal to a value -- say a real number, excluding infinity and negative infinity. I'll choose an example number, say 5.
 
 1.  Assume that `NULL <> 5`.
 2.  That is, `NULL <> 5` is a true expression (comparison operations are boolean, true or false).
@@ -48,7 +48,7 @@ Here's the proof by contradiction: Pretend for a moment that `NULL` is unequal t
 4.  Therefore, there exists a real number equal to `NULL`; it's either less than 5 or greater than 5.
 5.  That's a contradiction, because I took it as a given that no value can be equal to `NULL`.
 
-Therefore `NULL` is neither equal to a value nor unequal to it, so any comparison involving `NULL` is **neither true nor false**. The result of a comparison involving `NULL` is not a boolean **value** &#8212; it is a **non-value**. You just can't compare something that exists with something that doesn't exist.
+Therefore `NULL` is neither equal to a value nor unequal to it, so any comparison involving `NULL` is **neither true nor false**. The result of a comparison involving `NULL` is not a boolean **value** -- it is a **non-value**. You just can't compare something that exists with something that doesn't exist.
 
 It has to be this way, because if a comparison to a non-value had a defined value, every query could be rewritten to return a wrong result. It would be possible to transform expressions to equivalent expressions that gave the opposite answer, and so on.
 
@@ -66,11 +66,11 @@ The `IS NULL` operator tests whether a value is null or not null, and returns a 
 
 I'm trying to write this article to help people understand how non-values work in queries, so I'm being generous with the truth.
 
-Since computers only work with things that exist, non-existence isn't really possible, so `NULL`s must internally be implemented as some value, somewhere &#8212; even if it's a value that indicates another value isn't a value (huh?).
+Since computers only work with things that exist, non-existence isn't really possible, so `NULL`s must internally be implemented as some value, somewhere -- even if it's a value that indicates another value isn't a value (huh?).
 
 I'm glossing over something about comparisons to `NULL`, too. `NULL`s result in tri-valued logic; booleans are no longer just `TRUE` and `FALSE`, but can be `UNKNOWN`, too. The result of comparing `NULL`s is `UNKNOWN`, which is not the same thing as `NULL`, but that's just semantic differences and deep mathematical pondering, and doesn't materially affect how you write queries.
 
-MySQL, for example, implements `UNKNOWN` as `NULL`, though it it isn't perfectly consistent about it &#8212; try these queries:
+MySQL, for example, implements `UNKNOWN` as `NULL`, though it it isn't perfectly consistent about it -- try these queries:
 
 <pre>select unknown;
 select null;
@@ -99,7 +99,7 @@ The comment's author said "`OR NULL` is necessary, or you will just get a count 
 
 If the `OR NULL` is omitted, the result of the expression is a boolean, `TRUE` or `FALSE`, which are actual values. The `COUNT` function counts any value that exists, not whether something is `TRUE` or `FALSE`, so the query is behaving correctly.
 
-On the other hand, the result of the expression `color = 'green' OR NULL` is either `TRUE` or `NULL`. Boolean expressions are short-circuited when they're evaluated. As soon as the first sub-expression in a logical `OR` expression is true, the whole result is true, so when the color is green, the expression is `TRUE` immediately &#8212; a `COUNT`-able value. If the color isn't green, the expression becomes `FALSE OR NULL`, which is `NULL`, of course &#8212; not a `COUNT`-able value.
+On the other hand, the result of the expression `color = 'green' OR NULL` is either `TRUE` or `NULL`. Boolean expressions are short-circuited when they're evaluated. As soon as the first sub-expression in a logical `OR` expression is true, the whole result is true, so when the color is green, the expression is `TRUE` immediately -- a `COUNT`-able value. If the color isn't green, the expression becomes `FALSE OR NULL`, which is `NULL`, of course -- not a `COUNT`-able value.
 
 You can see this in action with the following queries:
 

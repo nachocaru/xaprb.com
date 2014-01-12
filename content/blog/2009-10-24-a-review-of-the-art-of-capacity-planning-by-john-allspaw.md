@@ -17,7 +17,7 @@ categories:
 
 This is an outstanding book. As far as I know Ewen Fortune was the first Perconian to read it, and it's been spreading amongst us since then. I got my copy last week, and read it last night when I couldn't sleep for some reason. It took me about 90 minutes to read.
 
-This book doesn't teach in generalities &#8212; it shows you exactly what to do. Rather than outlining the process of capacity planning (and it is a process!) and then letting you figure out how to apply it, the book shows you the process and then walks you through it several times with real examples.
+This book doesn't teach in generalities -- it shows you exactly what to do. Rather than outlining the process of capacity planning (and it is a process!) and then letting you figure out how to apply it, the book shows you the process and then walks you through it several times with real examples.
 
 The book is also intensely practical, focusing on what makes the application and the business successful. It doesn't get any more straightforward than this: "You don't want to be caught unprepared when growth takes place&#8230; Conversely, the company financial officers will not hold you in high regard either when you've purchased a lot of equipment that lay idle, only to see its price drop a few months later."
 

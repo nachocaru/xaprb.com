@@ -33,6 +33,6 @@ Wrong. Our arch-enemy `NULL` [messes things up][1] again:
   </p>
 </blockquote>
 
-MySQL doesn't let you define a primary key over nullable columns, for this reason. This is as of version 4.0, I believe &#8212; I recall that in version 3.23 there was nothing special about a primary key; it was just a unique non-nullable index named PRIMARY.
+MySQL doesn't let you define a primary key over nullable columns, for this reason. This is as of version 4.0, I believe -- I recall that in version 3.23 there was nothing special about a primary key; it was just a unique non-nullable index named PRIMARY.
 
  [1]: http://dev.mysql.com/doc/en/create-index.html

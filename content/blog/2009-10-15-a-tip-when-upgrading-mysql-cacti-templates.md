@@ -7,7 +7,7 @@ categories:
 ---
 A client recently asked me to fix some Cacti graphs that had broken after upgrading [the Cacti templates I wrote for MySQL][1]. The symptoms were weird; I'm not sure I understand fully what happened, but some of the graphs were OK and some had only part of the data they were supposed to. Some graphs would have one data element as usual, and others would be nan (not a number).
 
-After turning on the debug logs, I found that the script was returning the data correctly &#8212; it was not a script problem. But after Cacti got the data from the script, it wasn't associating it correctly with the RRD archives. Here's a log message:
+After turning on the debug logs, I found that the script was returning the data correctly -- it was not a script problem. But after Cacti got the data from the script, it wasn't associating it correctly with the RRD archives. Here's a log message:
 
 <pre>10/14/2009 12:05:05 PM - CMDPHP: Poller[0] Host[11] DS[1270] CMD: /usr/bin/php -q
   /opt/cacti/scripts/ss_get_mysql_stats.php --host dbserver
@@ -49,7 +49,7 @@ I executed this and found a result like this:
 +-------------------+--------------------------+
 </pre>
 
-That's not right &#8212; the data\_name for thread\_cache_size should be "bm". This is a "compression" tactic I employed a while ago to limit the size of the returned data, because Cacti has a silly buffer size limit that was truncating and discarding data from the script. So this server's Cacti install seemed to have been upgraded from an older version of the templates, and not all of the data sources were updated correctly.
+That's not right -- the data\_name for thread\_cache_size should be "bm". This is a "compression" tactic I employed a while ago to limit the size of the returned data, because Cacti has a silly buffer size limit that was truncating and discarding data from the script. So this server's Cacti install seemed to have been upgraded from an older version of the templates, and not all of the data sources were updated correctly.
 
 The fix for this was to write a couple of custom scripts to find such occurrences in the log and update the database to have the correct two-letter data_name.
 

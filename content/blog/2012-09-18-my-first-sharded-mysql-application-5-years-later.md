@@ -17,8 +17,8 @@ There was a "global" master server, used for a handful of things that needed cen
 
 There were endless little details, complaining applications that didn't behave right, and so on. All of minor importance, all fairly easily solved. The business was not disrupted at all, as I recall. This was helped by the fact that we built and tested the new system in parallel with keeping the existing system running, just to make sure it would work before we did the cutover.
 
-And now, five years later? Things still look pretty similar. There are little annoyances, of course. "Client 184 &#8212; which shard is that on?" Sometimes we want to run queries across shards. The usual. But things work okay for the most part.
+And now, five years later? Things still look pretty similar. There are little annoyances, of course. "Client 184 -- which shard is that on?" Sometimes we want to run queries across shards. The usual. But things work okay for the most part.
 
-There are some drawbacks. For example, multiple clients' data is co-located in tables, with client columns &#8212; that's a lot of repetitive storing of the same number, over and over. (The tables are now partitioned by client, by and large.) And migrating clients to rebalance shards is laborious. It would be nicer if each client were in its own database, with no client columns. But that would have its own challenges; application code would be a lot more complex, and ad-hoc queries would be even more tedious and annoying to manage.
+There are some drawbacks. For example, multiple clients' data is co-located in tables, with client columns -- that's a lot of repetitive storing of the same number, over and over. (The tables are now partitioned by client, by and large.) And migrating clients to rebalance shards is laborious. It would be nicer if each client were in its own database, with no client columns. But that would have its own challenges; application code would be a lot more complex, and ad-hoc queries would be even more tedious and annoying to manage.
 
 All things considered, I'm really not sure I'd change a thing.

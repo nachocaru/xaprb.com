@@ -77,7 +77,7 @@ alert(d.format0());</pre>
 
 ### How can I call a function without a name?
 
-There's still an obvious problem &#8212; I can't call this code at runtime because I don't know the name `format0` of my formatting function. It might be the 99th different formatting string that's been turned into a function, not the first. I need to save some way to look it up. How about the following?
+There's still an obvious problem -- I can't call this code at runtime because I don't know the name `format0` of my formatting function. It might be the 99th different formatting string that's been turned into a function, not the first. I need to save some way to look it up. How about the following?
 
 *   call a function with a format specifier
 *   do a hash lookup with the format specifier, looking for the function that implements the format

@@ -11,9 +11,9 @@ categories:
   <a href="http://cposc.org/" target="_blank"><img src="http://www.xaprb.com/blog/wp-content/uploads/2009/10/cposc_speaker.jpg" alt="CPOSC 2009" /></a>
 </p>
 
-I'll be attending and presenting at the [2009 Central Pennsylvania Open-Source Conference][1]. My session is on Maatkit. I see Tom Clark has a session on MySQL performance! I hope to see you there &#8212; I've really become a fan of these regional conferences.
+I'll be attending and presenting at the [2009 Central Pennsylvania Open-Source Conference][1]. My session is on Maatkit. I see Tom Clark has a session on MySQL performance! I hope to see you there -- I've really become a fan of these regional conferences.
 
-By the way, I've also created a speaker badge by adapting a wallpaper someone else made &#8212; you can find it on the sidebar of my blog if you're also a speaker.
+By the way, I've also created a speaker badge by adapting a wallpaper someone else made -- you can find it on the sidebar of my blog if you're also a speaker.
 
 <br style="clear:both" />
 

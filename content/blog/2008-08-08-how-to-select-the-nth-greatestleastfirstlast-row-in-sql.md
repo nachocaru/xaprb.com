@@ -22,7 +22,7 @@ Finding the desired rows is the hard part. In my previous articles I focused on 
 *   The single biggest/smallest/extremest row in each group. (Pretty easy.)
 *   The N most extreme rows in each group. (Doable, but harder.)
 
-In this article, we're going to see how to get not the most extreme row, not the N most extreme rows, but &#8212; hold your breath &#8212; the single Nth most extreme row per group. (In a future article I might talk about how to get the Nth through Mth most extreme rows.)
+In this article, we're going to see how to get not the most extreme row, not the N most extreme rows, but -- hold your breath -- the single Nth most extreme row per group. (In a future article I might talk about how to get the Nth through Mth most extreme rows.)
 
 ### The setup
 
@@ -51,7 +51,7 @@ insert into fruits values
 
 For convenience so it's easier to see how they are ordered, I've just ordered the fruits alphabetically and given them unique prices.
 
-The desired results &#8212; second-cheapest prices for each fruit &#8212; are as follows:
+The desired results -- second-cheapest prices for each fruit -- are as follows:
 
 <pre>+--------+-----------------+
 | type   | second_cheapest |

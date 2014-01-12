@@ -20,7 +20,7 @@ I'm presenting a session on [how to use Maatkit][2], which I think attendees wil
     *   The PBXT Storage Engine: Meeting Future Challenges. I continue to watch PBXT keenly. IMO it is one of the key storage engines of the future.
     *   Advanced Query Manipulation with MySQL Proxy. Proxy is a tool that'll only become more useful in the future, too.
     *   Introduction to Using DTrace with MySQL. I'd like to learn about DTrace.
-    *   Solving Common SQL Problems with the SeqEngine. It's Beat Vontobel &#8212; he always amazes and delights the audience.
+    *   Solving Common SQL Problems with the SeqEngine. It's Beat Vontobel -- he always amazes and delights the audience.
     *   MySQL Proxy Meets: Binlogs. Hmm, I think there's a lot going on behind the scenes here. I think Jan is being shy and has something really nifty to unwrap.
     *   Understanding and Control of MySQL Query Optimizer: Traditional and Novel Tools and Techniques. Sergey's talks are always interesting for true propeller heads.
     *   Faster Data Reduction and Smoothing for Analysis &#038; Archival in MySQL. I think a lot of my clients could benefit from this!
@@ -31,13 +31,13 @@ I'm presenting a session on [how to use Maatkit][2], which I think attendees wil
     *   Monitoring 101: Simple Stuff to Save Your Bacon. What it says.
     *   High Availability and Scalability Patches from Google. Good luck fitting in the door on this one, too.
     *   SAN Performance on a Internal Disk Budget: The Coming Solid State Disk Revolution. More from Matt Yonkovit.
-    *   Innodb Database Recovery Techniques. Obligatory plug &#8212; Peter Zaitsev.
+    *   Innodb Database Recovery Techniques. Obligatory plug -- Peter Zaitsev.
     *   MySQL Performance on EC2. Mark Callaghan? Mark Callaghan! But I have not a clue about this one. I didn't know he was into EC2. Google doesn't outsource their infrastructure, do they?
     *   There are several time slots on Wednesday when there is nothing of great interest to me. I will be at the Maatkit dot-org booth in the expo hall during this time, or maybe at the Percona conference.
 *   Thursday
     *   More Percona Performance Conference. Fill your brain! More, more, more!
     *   Deep-inspecting MySQL with DTrace. I can't decide whether this or the earlier one is likely to be better. Domas is a wizard.
-    *   Map/Reduce and Queues for MySQL Using Gearman. Gearman is something I have my eyes on &#8212; either that or Spread. For a secret project.
+    *   Map/Reduce and Queues for MySQL Using Gearman. Gearman is something I have my eyes on -- either that or Spread. For a secret project.
     *   MySQL Support Internals. They run a world-class operation and they're my competition.
     *   Dormando's Proxy for MySQL. Just because.
     *   Advanced Master-Slave Replication with Tungsten Failover. I keep meaning to evaluate this, but haven't had time.

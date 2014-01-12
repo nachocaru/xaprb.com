@@ -119,9 +119,9 @@ Tables, columns, views, stored procedures, indexes, and so forth can really bene
 *   Choose a naming convention for indexes and foreign keys, such as FK\_child\_parent and IX\_table\_col.
 *   Don't run words together in names. Either use MixedCapitalization to separate them, or use underscores\_to\_separate_words. All-lowercase words mashed together are hard to both read and type, and make it too easy to make typos. Here are some examples of names (in this case, column names) that are hard to read: `emailwhenrowsexceed`, `clientsteamleader`, `apiratesheet`.
 *   Name things what they are, not what they do. I once redesigned a schema with a table naming standard that encouraged naming tables in a "ThisToThat" fashion. For example, one of the table names was something like "ProdGroupToSuperProdGroupAssociationToProdMenuCategoryAssociation." Not only was that a super-long, confusing, meaningless name, it turned out the table had only one column not involved in relationships to other tables, called "CategoryOrder." This column recorded the preferred ordering of a ProdGroup's Category records. There was a default ordering, and this table had records only when the default ordering needed to be overriden. Therefore, the table recorded category ordering, and I renamed it to something more sensible, like CategoryOrdering.
-*   Long is not good, but short is even worse. Don't kid yourself &#8212; when you come back 6 months later to maintain the code you thought was crystal-clear, you'll no longer have any idea what `srdvpls4tp` is (`standard_deviation_plus_4_time_period`).
+*   Long is not good, but short is even worse. Don't kid yourself -- when you come back 6 months later to maintain the code you thought was crystal-clear, you'll no longer have any idea what `srdvpls4tp` is (`standard_deviation_plus_4_time_period`).
 *   Abbreviations are only good when they're so overwhelmingly common they're part of everyday English, in my opinion. At the risk of picking on my current employer, `costrecon` is a poor name because "recon" is a more common abbreviation for "reconnaissance" than "reconciliation" (the intended meaning). I can never remember what the "other recon word" is. It is literally an effort for me to think of "reconciliation."
-*   I hate Hungarian naming schemes, and all variations thereof. They just make everything harder to read and write, and they are like comments &#8212; they're just a maintenance hazard.
+*   I hate Hungarian naming schemes, and all variations thereof. They just make everything harder to read and write, and they are like comments -- they're just a maintenance hazard.
 
 I see I'm starting to go on longer than I want to. Much has been written about naming in other languages, and it all applies to SQL, so I'll leave it at that. Good naming is good naming.
 
@@ -129,16 +129,16 @@ I see I'm starting to go on longer than I want to. Much has been written about n
 
 It's much clearer to write the full syntax of the language than to use shortcuts. For example, I always explicitly state whether a `JOIN` is a `FULL`, `LEFT`, or `INNER` join.
 
-Likewise, I always use the `AS` keyword in aliases. Including it draws attention to the fact that something is being renamed, and omitting it can cause some subtle bugs. If it's omitted, the difference between an alias and the next element in a list is a comma &#8212; a small, easy-to-miss character. For instance,
+Likewise, I always use the `AS` keyword in aliases. Including it draws attention to the fact that something is being renamed, and omitting it can cause some subtle bugs. If it's omitted, the difference between an alias and the next element in a list is a comma -- a small, easy-to-miss character. For instance,
 
 <pre>select a b, c, d, e
 from table1 table2</pre>
 
-That's just hard to read. Look again &#8212; it's not doing what you might think. Did you find both bugs?
+That's just hard to read. Look again -- it's not doing what you might think. Did you find both bugs?
 
 ### Always insert into named columns
 
-You'll see me do it in this blog for brevity, but in the real world I never do blind (anonymous) inserts. It's hard to figure out what data goes where, and if a table structure changes, blind inserts will break &#8212; possibly badly, but even worse, possibly not badly, in which case inserts will succeed and corrupt the data data, instead of failing and at least preserving data integrity.
+You'll see me do it in this blog for brevity, but in the real world I never do blind (anonymous) inserts. It's hard to figure out what data goes where, and if a table structure changes, blind inserts will break -- possibly badly, but even worse, possibly not badly, in which case inserts will succeed and corrupt the data data, instead of failing and at least preserving data integrity.
 
 This is an anonymous insert:
 

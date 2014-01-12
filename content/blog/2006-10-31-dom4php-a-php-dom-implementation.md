@@ -13,13 +13,13 @@ Several years ago I wrote a pure PHP library for manipulating [XML][1] documents
 
 It's not too hard to build a DOM implementation on top of SAX. In fact, many DOM libraries actually use this technique. You just need to know the [DOM core specification][5] really well, and understand SAX really well. Everything else is easy, haha. The truth is, I don't know how well I knew the spec back then, and I've no time to check right now, so you'll have to let me know.
 
-Since I wrote this years ago, before I was enamored of unit testing, I don't know how good it is. I've used it for several years in production systems without ever looking at the actual code again &#8212; I just use it and take for granted that it works. I may or may not have time to actually write tests for it (probably not, sorry). Maybe you can help me with that. It shouldn't be hard, but I just don't have the time for it.
+Since I wrote this years ago, before I was enamored of unit testing, I don't know how good it is. I've used it for several years in production systems without ever looking at the actual code again -- I just use it and take for granted that it works. I may or may not have time to actually write tests for it (probably not, sorry). Maybe you can help me with that. It shouldn't be hard, but I just don't have the time for it.
 
 If you do want to hack the source, I encourage you to be ready to use a debugger. Getting references right is the tricky part. There are *lots* of references to be built and manipulated in a structure as complex as the DOM, and handling references correctly in PHP 4 is anything but easy for most people.
 
 ### Documentation
 
-I never wrote much documentation for this library, but I might attempt to remedy that at some point (I probably don't have time though &#8212; sorry). In the meantime, here's a synopsis to get you started:
+I never wrote much documentation for this library, but I might attempt to remedy that at some point (I probably don't have time though -- sorry). In the meantime, here's a synopsis to get you started:
 
 <pre>&lt;?php
 
@@ -66,7 +66,7 @@ I'm releasing this under the [GNU LGPL][6]. At one time I had licensed it under 
 
 ### Feedback welcome, and thanks for all the fish
 
-Please do leave feedback in the comments. Since I wrote this years ago and haven't really thought about it since then, I have no idea how good it is &#8212; I can only say I haven't run into any bugs in a while. Maybe I haven't implemented some things I should have, or maybe there are braindead things I've done, who knows. Regardless, I hope you find it helpful.
+Please do leave feedback in the comments. Since I wrote this years ago and haven't really thought about it since then, I have no idea how good it is -- I can only say I haven't run into any bugs in a while. Maybe I haven't implemented some things I should have, or maybe there are braindead things I've done, who knows. Regardless, I hope you find it helpful.
 
 See you next time!
 

@@ -9,7 +9,7 @@ My credit card says it expires "06/07&#8243;. What is that? Is it June 2007, or 
   <img src="/articles/images/credit-card.png" alt="expires WHEN???" height="34" width="100" />
 </p>
 
-I recently placed an order online and got the expiration date wrong. It wouldn't have been all that bad if the entry form had mimicked exactly what's on the front of my card, but the online form had a 4-digit year pulldown, followed by a two-digit space for the month &#8212; exactly the opposite order from my card. As a result, my card didn't go through and the order became a big hassle. Yuck!
+I recently placed an order online and got the expiration date wrong. It wouldn't have been all that bad if the entry form had mimicked exactly what's on the front of my card, but the online form had a 4-digit year pulldown, followed by a two-digit space for the month -- exactly the opposite order from my card. As a result, my card didn't go through and the order became a big hassle. Yuck!
 
 All this could have been avoided if the expiration date were specified as YYYY-MM. Is there a reason not to do this? Maybe the machines that stamp the cards would have to be replaced in order to change the dates, I don't know. Regardless, it's confusing for poor little me.
 

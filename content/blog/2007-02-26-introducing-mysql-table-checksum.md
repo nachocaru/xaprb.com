@@ -33,7 +33,7 @@ For efficiency reasons and to be as general-purpose as possible, the checksum to
 
 It's not in my nature to make you do that work yourself, so I included a tool that will do it for you. It sorts input and makes sure the checksums and row counts for a given table match on all servers. You can either pipe the checksums directly into it, or give it a list of files to process (handy when you need to run the checksum in different places, pipe their outputs to files, and then process the files).
 
-If you use it to filter the output I showed above, you'll see nothing by default, because the tables have identical checksums &#8212; thus there's nothing to see.
+If you use it to filter the output I showed above, you'll see nothing by default, because the tables have identical checksums -- thus there's nothing to see.
 
 ### About MySQL Toolkit
 

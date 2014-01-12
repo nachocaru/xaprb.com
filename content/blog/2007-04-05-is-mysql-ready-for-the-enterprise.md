@@ -32,7 +32,7 @@ This release fixes a bunch of bugs with arithmetic and so forth. It also adds ne
 
 I've written a test suite that generates random data, copies it to another table, randomly screws it up, and then fixes it. This helped me catch the bugs. I haven't seen it fail in a long time now.
 
-However &#8212; caveat emptor. I am still leery of saying this is production-ready yet. For one thing, it's not feature-complete!
+However -- caveat emptor. I am still leery of saying this is production-ready yet. For one thing, it's not feature-complete!
 
 ### MySQL Table Checksum 1.0.4
 

@@ -6,9 +6,9 @@ categories:
   - Commentary
   - Databases
 ---
-I've been thinking about the business of what's variously come to be called commercial open-source and enterprise open-source. I'm interested in the gestalt &#8212; the product, development processes, marketing, licensing and so on.
+I've been thinking about the business of what's variously come to be called commercial open-source and enterprise open-source. I'm interested in the gestalt -- the product, development processes, marketing, licensing and so on.
 
-MySQL has tried many different ways to earn money. These include dual licensing, support subscriptions, a knowledgebase, consulting, an [Enterprise/Community split][1], [trying to make parts of the server closed-source][2], [making tools in a split community/premium version][3], [building functionality externally in closed-source software][4] where they can charge for it, and most recently creating [three tiers of functionality for the MySQL 5.1 server][5]. And these are only the highlights &#8212; MySQL has courageously tried a lot of different models, far more than the blogosphere regularly acknowledges.
+MySQL has tried many different ways to earn money. These include dual licensing, support subscriptions, a knowledgebase, consulting, an [Enterprise/Community split][1], [trying to make parts of the server closed-source][2], [making tools in a split community/premium version][3], [building functionality externally in closed-source software][4] where they can charge for it, and most recently creating [three tiers of functionality for the MySQL 5.1 server][5]. And these are only the highlights -- MySQL has courageously tried a lot of different models, far more than the blogosphere regularly acknowledges.
 
 But are any of them really open-source business models? I have posited before that [the MySQL server is not really open-source][6]. I've come to believe that the MySQL business model is not an open-source one, either. I think all of these different approaches are steps towards a more closed-source business model.
 
@@ -21,7 +21,7 @@ As I see it, the changes in MySQL's business models over the last few years have
 1.  Experienced customers who understand the merits of open-source software recognize that MySQL has trended towards closed-source and isn't really offering a compelling open-source value. They don't buy, and&#8230;
 2.  &#8230; MySQL trends further towards closed-source and tries to sell that; as a result, customers new to open-source software are not educated about its true value.
 
-So instead of making MySQL more open-source and evangelizing that, MySQL might have left themselves few options other than to fall back to closed-source models. And that virtually requires closed-source products to sell. You can call it "feature differentiation," or "value add," or even "crippleware" (and Monty Widenius himself has done that) &#8212; the fact is it's not open-source MySQL is trying to sell. Their offerings that are closest to being open-source are not for sale.
+So instead of making MySQL more open-source and evangelizing that, MySQL might have left themselves few options other than to fall back to closed-source models. And that virtually requires closed-source products to sell. You can call it "feature differentiation," or "value add," or even "crippleware" (and Monty Widenius himself has done that) -- the fact is it's not open-source MySQL is trying to sell. Their offerings that are closest to being open-source are not for sale.
 
 At the sales level, it appears to be working. I've heard that many more people are buying than before. I don't doubt that. This fact is touted as proof that MySQL is successfully building an open-source software business, and the pundits love to applaud it, even [urging MySQL to take a harder line][7]. I suppose they don't see the irony of saying that the [open-source business model is perfected by becoming closed-source][8].
 

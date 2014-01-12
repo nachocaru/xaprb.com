@@ -7,6 +7,7 @@ categories:
 ---
 I decided to take another look at MySQL 5.6, and realized that I've forgotten how many changes this version will have. Each milestone has many improvements, and there have been many milestones, so my memory of the older ones grows hazy. 
 The [Fine Manual][1] has the details, but here is my attempt at a quick (and probably incomplete and inaccurate) summary. I've emphasized a few changes that will make life significantly better for me. 
+
 *   InnoDB: supports fulltext search; **more kinds of ALTER TABLE avoid copying/rebuilding the table**, some without blocking the table at all (truly online ALTER TABLE); more flexibility with data files; improvements to compression; improvements to flushing to avoid checkpointing stalls; ability to access InnoDB tables through the memcached protocol instead of SQL; more INFORMATION_SCHEMA tables; persistent optimizer statistics that can be stored in tables, viewed and manipulated; performance optimizations for readonly transactions; ability to put the undo log into its own file instead of the main tablespace; bigger redo logs; limits on data dictionary size when there are many tables; a lot of work on mutex contention problems; many changes to internal housekeeping threads; faster deadlock detection algorithm; automatic save/restore of buffer pool state for faster warmup;  tables can be exported and imported between servers without dump/load.
 *   Partitioning: you can promote a partition into a table and vice-versa; you can limit queries to touch only desired partitions.
 *   **Performance Schema: many helpful new tables** including statement digests; much lower performance penalty; more configurable both at runtime and in the my.cnf file.
@@ -22,7 +23,9 @@ The [Fine Manual][1] has the details, but here is my attempt at a quick (and pro
 *   Many more changes I've overlooked or didn't mention.
 
 Bug reports already contain references to MySQL version 5.7, so I assume that 5.6 is at least in partial feature freeze. I think the current state of the server might be reasonably close to what will be released as GA, but that is pure speculation. 
+
 MySQL 5.6 will make life much easier for me and the users I support. It is very common for my users to write queries with several "derived table" subqueries that are joined together, for example. These currently result in cross joins, and I have to contact users and ask them to rewrite their query into several steps with indexed temporary tables. I am looking forward to the database server taking care of more of these types of issues for me. 
+
 At the same time, I share some recent concerns about how easy it is to inspect and understand the changes to the server, especially with regard to bugs and security flaws. Reading source code changesets and bug reports is sometimes the only way to truly understand what the server does, and deep understanding is perhaps the shortest path to trust and confidence.
 
- [1]: http://dev.mysql.com/doc/refman/5.6/en/
+[1]: http://dev.mysql.com/doc/refman/5.6/en/

@@ -8,7 +8,7 @@ L. L. Bean got me all excited by telling me they handled my private data the rig
 Then I looked at their [privacy policy][1], and found the rep was wrong:
 
 > From time to time, we make our mailing list (names and addresses only) and general shopping activity available to carefully screened companies whose products we believe will be of interest to you and whose privacy practices meet the Direct Marketing Association's privacy standards. If you prefer that we do not share any information with these companies, please contact us.
-If you're wondering why this is a big deal for me, it's because most companies start selling your information the moment they get it. They use the euphimism "rent," along with phrases such as "share," "make available to," and "carefully selected" (by what criteria &#8212; highest bidder?) to make it sound more acceptable.
+If you're wondering why this is a big deal for me, it's because most companies start selling your information the moment they get it. They use the euphimism "rent," along with phrases such as "share," "make available to," and "carefully selected" (by what criteria -- highest bidder?) to make it sound more acceptable.
 
 Even the "good" companies do this, such as the Christian-owned Sierra Trading Post. Worse yet, companies don't tell you they're doing it. You're expected to read through their online privacy policies (why would you go read a privacy policy on a website, when you called on the phone to request a catalog?) and figure it out, and believe me, sometimes it can be hard to figure it out. So, dear reader, next time you call someone and ask for their catalog or place an order, consider that you may be unknowingly "agreeing" to some things you need to read their website to find out about, too.
 

@@ -18,11 +18,11 @@ Both techniques have their drawbacks. Both require a warm-up period, for example
 Here's a plot of some real data and the two techniques. Click through to see a larger image. The blue line is the sampled data, the red line is an exponential moving average with an average 60-second "memory," and the yellow line is a 60-second moving average.
 
 [<img src="http://www.xaprb.com/blog/wp-content/uploads/2012/10/moving-averages-300x60.png" alt="" title="moving-averages" width="300" height="60" class="aligncenter size-medium wp-image-2927" />][2] 
-Notice how the red line tends to course-correct more quickly and stay more true to the current behavior of the blue line. This is one advantage of the exponential moving average &#8212; if that is what you desire.
+Notice how the red line tends to course-correct more quickly and stay more true to the current behavior of the blue line. This is one advantage of the exponential moving average -- if that is what you desire.
 
 It isn't obvious in this data, but the simple moving average has another disadvantage. Suppose there is a spike of very high values in the sampled data for a few seconds. For the next 60 seconds, this spike is going to be within the window, inflating the moving average. When it is discarded from the window, it causes the moving average to drop suddenly. I have found this to be problematic in several cases. It's especially obvious when you're calculating the standard deviation of the samples (or other sensitive statistics) over the moving window.
 
-The exponential moving average doesn't have that problem because that spike never moves "out of the window." Its influence is there forever &#8212; but as time passes, it gradually becomes smaller, in a smooth fashion. So you don't get abrupt spikes in the current average based on what happened 60 seconds ago.
+The exponential moving average doesn't have that problem because that spike never moves "out of the window." Its influence is there forever -- but as time passes, it gradually becomes smaller, in a smooth fashion. So you don't get abrupt spikes in the current average based on what happened 60 seconds ago.
 
 This is just scratching the surface of the techniques I've explored on a large set of days to weeks of data from tens of thousands of real servers. As I get time, I'll try to write more about it in the future.
 

@@ -26,7 +26,7 @@ At this point, the following are available:
 *   Memcached
 *   Nginx
 
-Unfinished work includes network, disk, etc. The techniques to monitor something of which there is a variable number (e.g. there can be many disks, each of which needs its own graph) are a little more complex than simple things like monitoring overall CPU usage. So that's a work in progress. Once it's done, it'll make it really easy to discover and monitor multiples of *anything* &#8212; for example, multiple MySQL servers or memcached servers on a single host &#8212; without creating a new host for each resource to monitor.
+Unfinished work includes network, disk, etc. The techniques to monitor something of which there is a variable number (e.g. there can be many disks, each of which needs its own graph) are a little more complex than simple things like monitoring overall CPU usage. So that's a work in progress. Once it's done, it'll make it really easy to discover and monitor multiples of *anything* -- for example, multiple MySQL servers or memcached servers on a single host -- without creating a new host for each resource to monitor.
 
 As with the MySQL templates I created, these templates are comprehensive and have lots of nice properties most templates lack. This is something you get free with my scaffolding. If you've ever created templates by hand through the web interface, you should give my work a try. You can turn a three-day project into a few minutes and avoid bugs and other hassles. There are [instructions for creating Cacti templates][3] on the project wiki.
 

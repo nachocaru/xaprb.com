@@ -10,7 +10,7 @@ categories:
 ---
 [Maatkit][1] version 3519 is [ready for download][2]. **There are a lot of changes in this release, many of which are incompatible with previous releases**. There are also a lot of important new features. Read on for the details.
 
-First, thanks to everyone who contributed to this month's release. A lot of people have jumped into Maatkit and started committing code. I attribute this to deliberately forcing a more open policy with decisions being made on the mailing list, rather than the former policy of "Percona pays for development, so they have more say than you do" &#8212; a snobby and ill-advised way to treat an open-source project. If you are interested in contributing to Maatkit, please ask. Subversion commit rights are being handed out willy-nilly. It's great!
+First, thanks to everyone who contributed to this month's release. A lot of people have jumped into Maatkit and started committing code. I attribute this to deliberately forcing a more open policy with decisions being made on the mailing list, rather than the former policy of "Percona pays for development, so they have more say than you do" -- a snobby and ill-advised way to treat an open-source project. If you are interested in contributing to Maatkit, please ask. Subversion commit rights are being handed out willy-nilly. It's great!
 
 Here's a synopsis of this month's most important changes.
 

@@ -122,7 +122,7 @@ Perhaps you simply can't do either of the above. Maybe your table is too large, 
 
 ### Two examples for MySQL
 
-Here's a quick technique that uses [advanced user-variable techniques on MySQL][2] to delete the rows. MySQL's server-side cursors are read-only, so some other technique has to be used. User-variables can do the trick, if you write the statement just right &#8212; it's very touchy.
+Here's a quick technique that uses [advanced user-variable techniques on MySQL][2] to delete the rows. MySQL's server-side cursors are read-only, so some other technique has to be used. User-variables can do the trick, if you write the statement just right -- it's very touchy.
 
 <pre>set @num := 0, @type := '';
 

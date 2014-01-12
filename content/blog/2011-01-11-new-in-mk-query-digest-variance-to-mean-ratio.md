@@ -6,7 +6,7 @@ categories:
   - Databases
   - Open Source
 ---
-This isn't actually new &#8212; it has been out for a few releases. The [mk-query-digest][1] tool from Maatkit now outputs information about each class of queries' variance-to-mean ratio. The new output goes in a couple of places, including perhaps most usefully the "profile" report. Here's an example from a real MySQL system:
+This isn't actually new -- it has been out for a few releases. The [mk-query-digest][1] tool from Maatkit now outputs information about each class of queries' variance-to-mean ratio. The new output goes in a couple of places, including perhaps most usefully the "profile" report. Here's an example from a real MySQL system:
 
 <pre># Profile
 # Rank Query ID           Response time    Calls R/Call Apdx V/M   Item

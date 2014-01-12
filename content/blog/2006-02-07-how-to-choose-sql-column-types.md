@@ -5,9 +5,9 @@ permalink: /2006/02/07/how-to-choose-sql-column-types/
 categories:
   - Databases
 ---
-There are at least two important factors to consider when choosing a column type for a <acronym title="Relational database query language">SQL</acronym> database table: technical requirements and semantics. The choice can be confusing, but it is important to get it right. I've seen it done both ways and it's sometimes hard to tell what's wrong &#8212; it just feels wrong. In this article I will explain how to spot these mistakes, and more importantly, how to explain the mistake clearly to others.
+There are at least two important factors to consider when choosing a column type for a <acronym title="Relational database query language">SQL</acronym> database table: technical requirements and semantics. The choice can be confusing, but it is important to get it right. I've seen it done both ways and it's sometimes hard to tell what's wrong -- it just feels wrong. In this article I will explain how to spot these mistakes, and more importantly, how to explain the mistake clearly to others.
 
-I'll assume the data requirements are already known &#8212; in other words, I have all the information I need to decide what type of data will live in the column.
+I'll assume the data requirements are already known -- in other words, I have all the information I need to decide what type of data will live in the column.
 
 ### Technical considerations
 
@@ -102,7 +102,7 @@ How you approach it is up to you, but I might consider holding the unconscious d
 
 Many <acronym title="Relational database management system">RDBMS</acronym>s allow user-defined data types. At my current employer, I've never seen this facility used. I would love to see us start doing so, though. It would be very helpful to define types such as `ITEMNO`, `CREDITCARDNO` and `TRACKINGCODE`. I think user-defined types are just as important as roles (another thing we don't use).
 
-User-defined types do bring their own challenges; they require more work, may have technical ramifications (how the <acronym title="Relational database management system">RDBMS</acronym> handles the type across databases or servers where it may not be defined), might cause extra bureaucracy, and there are external factors to think about &#8212; educating a consultant who may need to work with the data, for example. Standard tools and code libraries may not be aware of them, too &#8212; for example, the .NET SqlClient classes. I think user-defined types are worth considering, but of course that's a decision that must be weighed carefully.
+User-defined types do bring their own challenges; they require more work, may have technical ramifications (how the <acronym title="Relational database management system">RDBMS</acronym> handles the type across databases or servers where it may not be defined), might cause extra bureaucracy, and there are external factors to think about -- educating a consultant who may need to work with the data, for example. Standard tools and code libraries may not be aware of them, too -- for example, the .NET SqlClient classes. I think user-defined types are worth considering, but of course that's a decision that must be weighed carefully.
 
 ### The moral of the story
 

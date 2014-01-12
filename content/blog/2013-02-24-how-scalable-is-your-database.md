@@ -15,7 +15,7 @@ Using the two definitions I like to use the most, I answer the question in this 
 1.  Scalability in terms of the Universal Scalability Law is the degree to which you can add more workers (or units of hardware) and get equal returns in terms of system throughput.
 2.  Scalability in terms of inherent limitations is how big you can actually make the system.
 
-These are very different things. For example, the Universal Scalability Law doesn't say anything about the amount of data your database stores. But I think we all know that a MySQL server can only hold just so much data. True, it's a lot of data &#8212; there are lots of multi-terabyte MySQL servers out there. But if you need to put, say, 20 petabytes of data into MySQL, *you just can't do it*.
+These are very different things. For example, the Universal Scalability Law doesn't say anything about the amount of data your database stores. But I think we all know that a MySQL server can only hold just so much data. True, it's a lot of data -- there are lots of multi-terabyte MySQL servers out there. But if you need to put, say, 20 petabytes of data into MySQL, *you just can't do it*.
 
 Similarly, if you need to write 40 million values per second into your MySQL server, *you just can't do it.* Nor can you support 10 million concurrent client connections. These things are *impossible* with MySQL.
 

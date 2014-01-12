@@ -17,7 +17,7 @@ Why do cloud hosting providers work so hard to make everyone buy lots of anemic 
 
 First, they want to colocate virtual machines and over-provision, just as airlines sell more tickets than there are seats in the plane. It's a numbers game: sell more capacity than you really have, and bet on some of the instances not using all resources allocated to them. Win! Of course, this is only possible with lots of small instances; the law of large numbers doesn't work without lots of instances, and large instances can't be colocated. Cloud providers tend to dislike dedicated instances, which leads to the second reason. They don't want to make strong claims about the availability of any particular machine. This is where the cloud paradigm of "you must build to recover from machines vanishing without warning" comes from. A dedicated beefy instance wouldn't let the hosting provider push that responsibility onto the application.
 
-There are lots more reasons &#8212; all of them combining into one big overall "cloud application architecture best practice" &#8212; but I think those are two of the showstoppers.
+There are lots more reasons -- all of them combining into one big overall "cloud application architecture best practice" -- but I think those are two of the showstoppers.
 
 I really think this is a wrong paradigm. People talk about the cloud being the technology of the future, but in many ways it's pretty stone-age compared to what smart system architects can achieve with high-quality hardware and networking at a much lower cost, with very strong guarantees of performance, consistency, and availability.
 

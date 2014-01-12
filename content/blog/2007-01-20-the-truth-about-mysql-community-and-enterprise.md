@@ -7,7 +7,7 @@ categories:
 ---
 Late in 2006 MySQL decided to move to a split distribution model, Community and Enterprise. A lot has (apparently) changed since then, yet nothing has really changed since then. These things remain true:
 
-*   MySQL is freely available in both source and binary form &#8212; free as in freedom, and free as in beer.
+*   MySQL is freely available in both source and binary form -- free as in freedom, and free as in beer.
 *   The MySQL community continues to get every single bug fix for free.
 *   The only real change the MySQL community sees is less frequent *official binary builds*. If you want the bleeding-edge code for which there is no official binary build, you can build it yourself.
 
@@ -15,7 +15,7 @@ What is unclear about that?
 
 ### The background
 
-Some time before they officially announced this decision, one of the MySQL folks kindly gave me a call about the upcoming change. I was quite honored to get such a call &#8212; it communicated respect and genuine care for the community and for me as an individual (I am not a paying Enterprise customer). And I have to say, rarely have I been approached about a change like this with such an open mind and humility. Normally I'm accustomed to companies making decisions and just announcing them. The employee who called me, who shall remain nameless, simply told me about the internal discussions and asked for my feedback.
+Some time before they officially announced this decision, one of the MySQL folks kindly gave me a call about the upcoming change. I was quite honored to get such a call -- it communicated respect and genuine care for the community and for me as an individual (I am not a paying Enterprise customer). And I have to say, rarely have I been approached about a change like this with such an open mind and humility. Normally I'm accustomed to companies making decisions and just announcing them. The employee who called me, who shall remain nameless, simply told me about the internal discussions and asked for my feedback.
 
 It took several minutes on the phone for me to get a sense of what they were proposing. Finally I gave my opinions, which I'm trying now to recall:
 

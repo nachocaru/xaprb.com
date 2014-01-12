@@ -21,7 +21,7 @@ This is fine, except `openxml` can cause a huge CPU spike, which is bad news in 
 
 I have rewritten such a search sproc to remove `openxml`, and found it to account for upwards of three-fourths of the total cost, even in an otherwise very expensive sproc. I have anecdotal wisdom from other DBAs about people who over-use `openxml` and end up with systems that run hot all the time.
 
-A list of simple delimited values doesn't need XML &#8212; it's overkill. A better alternative is to pass the string directly into the sproc, and write a <acronym title="user-defined function">UDF</acronym> to return a table with the elements of the string. It's still string parsing, but it's better than using XML.
+A list of simple delimited values doesn't need XML -- it's overkill. A better alternative is to pass the string directly into the sproc, and write a <acronym title="user-defined function">UDF</acronym> to return a table with the elements of the string. It's still string parsing, but it's better than using XML.
 
 ### Solution 1: a `WHILE` loop in a user-defined function
 
@@ -87,7 +87,7 @@ After I wrote this, I saw someone else did the same thing elsewhere, though in m
 
 ### A more efficient approach
 
-Instead of using a loop as I did above, it's actually much more efficient to use an [integers table][3] and a `JOIN` to parse the tokens apart. This approach is slightly less flexible, and doesn't handle all the special cases I handled above with my UDF, such as tokens being separated by several delimiters instead of just one. Regardless, it is absolutely a better way to go, as long as the input is well-formed. It doesn't use any nonstandard SQL, either &#8212; it's a relational solution to the problem. Here are three resources where you can learn more about this extremely elegant technique:
+Instead of using a loop as I did above, it's actually much more efficient to use an [integers table][3] and a `JOIN` to parse the tokens apart. This approach is slightly less flexible, and doesn't handle all the special cases I handled above with my UDF, such as tokens being separated by several delimiters instead of just one. Regardless, it is absolutely a better way to go, as long as the input is well-formed. It doesn't use any nonstandard SQL, either -- it's a relational solution to the problem. Here are three resources where you can learn more about this extremely elegant technique:
 
 *   [http://www.bizdatasolutions.com/tsql/sqlarrays.asp][4]
 *   <http://www.sommarskog.se/arrays-in-sql.html>
@@ -106,12 +106,12 @@ This approach has other advantages over `openxml`, too:
 I would be remiss if I didn't mention the downsides:
 
 1.  string-parsing is never efficient, and can be error-prone
-2.  you will need to create and maintain UDFs (in my case, I need at least two &#8212; one for strings and one for integers)
+2.  you will need to create and maintain UDFs (in my case, I need at least two -- one for strings and one for integers)
 3.  you have less flexibility about types and schemas; this technique is only convenient for simple cases
 
 ### More about efficiency
 
-SQL server seems to be smart enough to reuse resources within a query batch, so the high cost of using `openxml` only seems to happen on the first invocation in a batch. When I benchmarked it with a thousand iterations, the string-parsing solution's constant cost appeared to be about half the constant cost of `openxml` &#8212; not a significant improvement. However, in the common case where it's used only once, the string-parsing is much more efficient because there is no startup cost.
+SQL server seems to be smart enough to reuse resources within a query batch, so the high cost of using `openxml` only seems to happen on the first invocation in a batch. When I benchmarked it with a thousand iterations, the string-parsing solution's constant cost appeared to be about half the constant cost of `openxml` -- not a significant improvement. However, in the common case where it's used only once, the string-parsing is much more efficient because there is no startup cost.
 
 All in all, I think string-parsing is the lesser of the evils.
 

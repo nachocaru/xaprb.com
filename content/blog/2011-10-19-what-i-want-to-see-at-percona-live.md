@@ -18,7 +18,7 @@ Perceptive readers will note that I left some slots empty. I haven't decided yet
 
 I will be presenting two things next week: a 3-hour [tutorial][9] on how to diagnose problems (part one: method; part two: tools), and a session on [black-box performance analysis][10] and scalability modeling with TCP packet headers.
 
-See you there &#8212; I hope!
+See you there -- I hope!
 
  [1]: http://www.percona.com/live/london-2011/schedule-conference/
  [2]: http://www.percona.com/live/london-2011/session/opening-keynote-characterizing-performance/

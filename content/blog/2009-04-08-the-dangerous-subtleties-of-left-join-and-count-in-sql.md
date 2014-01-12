@@ -6,7 +6,7 @@ categories:
   - Databases
   - Programming
 ---
-I want to show you two very expensive SQL idioms that almost everyone uses. These are not query optimization problems &#8212; they are *financially* expensive patterns of SQL.
+I want to show you two very expensive SQL idioms that almost everyone uses. These are not query optimization problems -- they are *financially* expensive patterns of SQL.
 
 These queries don't do what the user thinks they do, and thus they create subtle bugs. And the bugs cause a lot of trouble, and they're hard to track down, and much time is spent on them. I've been meaning to write about this for a while, but a book I read recently brought this topic up again, so I dug this draft out and finished it.
 

@@ -15,7 +15,7 @@ Second, develop great content, and practice it. See the books above.
 
 Third, use a good professionally-designed template. Pay $30 for crying out loud. Are you a graphic designer? No? How much is your time worth? I've [bought Keynote templates from Keynote Pro][5] among other places. I've also hired people to help build custom slides for important talks, such as keynote addresses at major conferences.
 
-Finally, and this is the part I enjoy the most: I rarely put text alone on a slide. I'll almost always choose a master that has space for a little text (and I usually try to use only a few words) and an image. I'll emphasize this: use only a couple of words on the slides. The words on the slide should cue you, if necessary, to remember what to talk about. For the audience, they should convey the overall theme &#8212; think of it as hashtags &#8212; of the things you're talking about now. Do not put the full content on the slides.
+Finally, and this is the part I enjoy the most: I rarely put text alone on a slide. I'll almost always choose a master that has space for a little text (and I usually try to use only a few words) and an image. I'll emphasize this: use only a couple of words on the slides. The words on the slide should cue you, if necessary, to remember what to talk about. For the audience, they should convey the overall theme -- think of it as hashtags -- of the things you're talking about now. Do not put the full content on the slides.
 
 Then I find an image that seems to fit. My favorite way to do this is a Flickr search for CC-licensed content, sorted by interestingness.
 

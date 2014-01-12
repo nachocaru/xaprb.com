@@ -57,7 +57,7 @@ A `WHERE` clause filters the rows *before* they are grouped together. A `HAVING`
 
 A related question is how to delete the 'duplicate' rows once you find them. A common task when cleaning up bad data is to delete all but one of the duplicates, so you can put proper indexes and primary keys on the table, and prevent duplicates from getting into the table again.
 
-Again, the first thing to do is make sure your definition is clear. Exactly which row do you want to keep? The 'first' one? The one with the largest value of some column? For this article, I'll assume you want to keep the 'first' row &#8212; the one with the smallest value of the `id` column. That means you want to delete every other row.
+Again, the first thing to do is make sure your definition is clear. Exactly which row do you want to keep? The 'first' one? The one with the largest value of some column? For this article, I'll assume you want to keep the 'first' row -- the one with the smallest value of the `id` column. That means you want to delete every other row.
 
 Probably the easiest way to do this is with a temporary table. Especially in MySQL, there are some restrictions about selecting from a table and updating it in the same query. You can get around these, as I explain in my article [How to select from an update target in MySQL][1], but I'll just avoid these complications and use a temporary table.
 

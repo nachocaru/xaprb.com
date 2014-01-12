@@ -19,7 +19,7 @@ Incidentally, many of the hacks appear on this and other websites, but that shou
 
 ### There's some really good content
 
-Some of the hacks are great. For example, Hack #24, "Multiply Across a Result Set," shows you how to make up for the lack of a built-in `PRODUCT()` aggregate function with `EXP(SUM(LN(col)))`. It's simple, but I never thought of it, and now I have it tucked away for easy reference when I need it. That's worth something &#8212; I won't know how much until I need it.
+Some of the hacks are great. For example, Hack #24, "Multiply Across a Result Set," shows you how to make up for the lack of a built-in `PRODUCT()` aggregate function with `EXP(SUM(LN(col)))`. It's simple, but I never thought of it, and now I have it tucked away for easy reference when I need it. That's worth something -- I won't know how much until I need it.
 
 There are also some great hacks about date math, which is always a bear. Having the complex math to find the second Tuesday of the month, or the last Thursday, easily at hand is great.
 

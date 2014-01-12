@@ -30,7 +30,7 @@ Before I review any of the notebooks, let me explain what I'm looking for.
 
 
 
-My quest for the Holy Grail of notebooks began innocently enough when I happened to read that [Kate Matsudaira][2] is a notebook connoisseur and will only write on Semikolon Il Creativo notebooks with [Uchida Le Pen pens][3]. Intrigued, I included one of each in my next batch of "stuff" from Amazon.com. I immediately fell in love with the pens, but the notebook was much larger than I expected it to be &#8212; far too large to be practical as I travel and carry it hither and yon.
+My quest for the Holy Grail of notebooks began innocently enough when I happened to read that [Kate Matsudaira][2] is a notebook connoisseur and will only write on Semikolon Il Creativo notebooks with [Uchida Le Pen pens][3]. Intrigued, I included one of each in my next batch of "stuff" from Amazon.com. I immediately fell in love with the pens, but the notebook was much larger than I expected it to be -- far too large to be practical as I travel and carry it hither and yon.
 
 
 
@@ -157,7 +157,7 @@ This notebook is designed for notes, but I'll use it as a journal. I wonder if I
 
 
 
-This notebook is a big step down in size and bulk from the previous two. It's a much more practical size to carry around, and it has the best cover of all of them, in my opinion. The cover isn't quite rigid; it's flexible enough not to be annoying and uncomfortable in a thin bag with other things crammed in. The paper is top-notch quality &#8212; silky smooth and creamy. The corners are rounded, which is always appreciated in a notebook. And, the notebook and the paper are made in the USA, from certified sustainable forests. 
+This notebook is a big step down in size and bulk from the previous two. It's a much more practical size to carry around, and it has the best cover of all of them, in my opinion. The cover isn't quite rigid; it's flexible enough not to be annoying and uncomfortable in a thin bag with other things crammed in. The paper is top-notch quality -- silky smooth and creamy. The corners are rounded, which is always appreciated in a notebook. And, the notebook and the paper are made in the USA, from certified sustainable forests. 
 
 The ruling might extend a little too close to the margins, but although the book doesn't open completely flat, it comes very close; close enough that there shouldn't be a problem with the margins. 
 
@@ -201,7 +201,7 @@ This notebook is a great find, in my opinion. It's a good size, is thin and flex
 
 As you can see, I've chosen a variant that has an extra column on the right for notes to be set aside. I'm going to give this a try because I often find myself going back and cramming cross-references or additional information into the margins. There is a variant without this extra column, however. 
 
-The ruling is a nice width &#8212; just right for me. The color might be a little too dark, though. It could be lighter, or even use light dots, like a signature line, and it'd be nicer in my opinion. 
+The ruling is a nice width -- just right for me. The color might be a little too dark, though. It could be lighter, or even use light dots, like a signature line, and it'd be nicer in my opinion. 
 
 The downsides: the binding doesn't quite open flat, though it comes very close, and I'm not sure if it's going to be all that durable, though the notepad is thin enough that it shouldn't have a long heavy-duty life to wear it out. The ruling doesn't have any margin in the center of the binding. This might seem like a nitpick, but without that guide I find myself cramming my pen into the crevice when writing on the left page, and having trouble with an even left-margin when writing on the right page. 
 
@@ -333,7 +333,7 @@ This is just the smaller version of the above Chameleon Like notebook. Way too s
 
 
 
-Ditto &#8212; this notebook is another mini-Moleskine-lookalike. 
+Ditto -- this notebook is another mini-Moleskine-lookalike. 
 
 ### The Winners
 
@@ -349,9 +349,9 @@ Do you want a big, bulky, analytical notebook? That's the Semikolon Il Creativo 
 
 
 
-But if you're like me and you really want a compact, flexible, practical notebook that slips easily into a messenger bag, opens flat, has nice paper, is slim and inexpensive &#8212; then I'm leaning towards recommending the [Quo Vadis Habana][9] or the Mead Cambridge Premium Notebook, depending on your taste. Note that I can't find the Cambridge online, but if you're near a Target it's probably easy to find. I might go back and buy a half dozen or so, just in case that turns out not to be true! 
+But if you're like me and you really want a compact, flexible, practical notebook that slips easily into a messenger bag, opens flat, has nice paper, is slim and inexpensive -- then I'm leaning towards recommending the [Quo Vadis Habana][9] or the Mead Cambridge Premium Notebook, depending on your taste. Note that I can't find the Cambridge online, but if you're near a Target it's probably easy to find. I might go back and buy a half dozen or so, just in case that turns out not to be true! 
 
-In general, the ultimate notebook for me is 80-100 sheets of paper or 160-200 pages (I've listed pages above, to make everything consistent), an A5 size, and has pretty minimal features &#8212; no need for a ribbon or an elastic strap &#8212; just nice-quality paper, a slim and flexible design, and the right ruling and margins. 
+In general, the ultimate notebook for me is 80-100 sheets of paper or 160-200 pages (I've listed pages above, to make everything consistent), an A5 size, and has pretty minimal features -- no need for a ribbon or an elastic strap -- just nice-quality paper, a slim and flexible design, and the right ruling and margins. 
 
 Here are my favorites in one photo. The rest is up to you. Happy writing, drawing, designing, sketching, scheduling, and organizing! [<img src="http://www.xaprb.com/blog/wp-content/uploads/2013/07/best-notebooks-journals-300x225.jpg" alt="best-notebooks-journals" width="300" height="225" class="aligncenter size-medium wp-image-3231" />][30]
 

@@ -3,7 +3,7 @@ title: "What I've been doing lately"
 date: "2007-07-10"
 permalink: /2007/07/10/what-ive-been-doing-lately/
 ---
-I haven't been blogging about the things I used to &#8212; how-tos and technical hacks &#8212; because I've been working quite hard on [MySQL Toolkit][1] and, believe it or not, [innotop][2]. I've made it possible to write innotop plugins, which have been very useful to our team at work, and I'm working on documentation. Plugins won't make it into the upcoming release; it'll just be bug fixes and documentation. These projects have taken up most of my free time.
+I haven't been blogging about the things I used to -- how-tos and technical hacks -- because I've been working quite hard on [MySQL Toolkit][1] and, believe it or not, [innotop][2]. I've made it possible to write innotop plugins, which have been very useful to our team at work, and I'm working on documentation. Plugins won't make it into the upcoming release; it'll just be bug fixes and documentation. These projects have taken up most of my free time.
 
 I've also tentatively joined a group of people working on a very large, exciting, secret project which may consume the rest of my summer and/or much of the rest of the year. (I've been turning down consulting gigs and other projects because of this). If this secret project works out, I'll be writing more about it here, you can count on that.
 

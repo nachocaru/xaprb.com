@@ -11,13 +11,13 @@ Themes are supported in [XFree86][1] 4.3 or newer. All versions of [xorg][2], th
 
 ### Available mouse cursor themes
 
-Many themes are available &#8212; a great site to look for them is [KDE look][3]. In my opinion, and this is only my opinion, most cursor themes are something only a mother could love. I don't even like the "high-quality" cursors packaged specifically for Gentoo.
+Many themes are available -- a great site to look for them is [KDE look][3]. In my opinion, and this is only my opinion, most cursor themes are something only a mother could love. I don't even like the "high-quality" cursors packaged specifically for Gentoo.
 
 Then again, maybe I'm not like most folks. I like very minimal and functional things with as little clutter as possible. When I look at screenshots of other people's desktops cluttered with a million windows and root-tail displays, transparent terminals and a huge gkrellm window along the side displaying system load, all I can think of is attention deficit disorder. I like [XFCE][4] with nothing but a taskbar showing, or [Fluxbox][5], or even [Ratpoison][6]. Heck, I'm happy with just a terminal and a [screen][7] session. But, that's just me.
 
-I digress &#8212; back to beautiful cursors. I think the [neutral cursor theme][8] is very nice, but I like the [Red Hat 9 cursors][9] even better. The I-beam is thinner, the default arrow has a single-pixel black tip when in front of a white background for precision, and the busy cursor is less distracting. On the plus side, both themes are very straightforward and plain, yet highly attractive and usable.
+I digress -- back to beautiful cursors. I think the [neutral cursor theme][8] is very nice, but I like the [Red Hat 9 cursors][9] even better. The I-beam is thinner, the default arrow has a single-pixel black tip when in front of a white background for precision, and the busy cursor is less distracting. On the plus side, both themes are very straightforward and plain, yet highly attractive and usable.
 
-If you like the looks of these but prefer colorful cursors, the [jaguarx cursor theme][10] is very similar, but has color added. And if you want to mix and match cursors from different themes, well, they're just files &#8212; make your own! It's really easy.
+If you like the looks of these but prefer colorful cursors, the [jaguarx cursor theme][10] is very similar, but has color added. And if you want to mix and match cursors from different themes, well, they're just files -- make your own! It's really easy.
 
 These themes are licensed under the GPL, so I'm free to redistribute them, a liberty I'm happy to take. I've provided links below for your convenience:
 
@@ -55,14 +55,14 @@ In Gentoo, you can install packages from Portage as usual: `emerge blueglass-xcu
 
 ### Choosing a default theme
 
-There's a concept of a default theme. The default theme is located in the `default/` subdirectory of wherever you've installed your theme. This is how the system decides which theme to use &#8212; it uses the "default" theme. It reads the `index.theme` file and looks at it.
+There's a concept of a default theme. The default theme is located in the `default/` subdirectory of wherever you've installed your theme. This is how the system decides which theme to use -- it uses the "default" theme. It reads the `index.theme` file and looks at it.
 
 If you installed your theme system-wide or system-wide local, you need to edit the `/usr/share/cursors/xorg-x11/default/index.theme` or the `/usr/local/share/cursors/xorg-x11/default/index.theme` file. Specify the default theme should **inherit from** the theme you want to use. For example, here is the default X11 theme if you haven't specified anything else:
 
 <pre>[Icon Theme]
 Inherits=core</pre>
 
-That file tells X11 to use the `core` cursor theme &#8212; the one built right into X11 itself. If you want to use the `neutral` theme instead, edit the file thusly:
+That file tells X11 to use the `core` cursor theme -- the one built right into X11 itself. If you want to use the `neutral` theme instead, edit the file thusly:
 
 <pre>[Icon Theme]
 Inherits=neutral</pre>

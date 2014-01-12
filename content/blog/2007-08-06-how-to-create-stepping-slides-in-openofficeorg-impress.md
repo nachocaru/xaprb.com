@@ -3,7 +3,7 @@ title: How to create stepping slides in OpenOffice.org Impress
 date: "2007-08-06"
 permalink: /2007/08/06/how-to-create-stepping-slides-in-openofficeorg-impress/
 ---
-<p>If you've used Microsoft Powerpoint to create "stepping" slides &#8212; slides that appear one bullet point at a time &#8212; and can't figure out how to do it with OpenOffice.org Impress, this article is for you.</p>
+<p>If you've used Microsoft Powerpoint to create "stepping" slides -- slides that appear one bullet point at a time -- and can't figure out how to do it with OpenOffice.org Impress, this article is for you.</p>
 
 <h3>What are stepping slides?</h3>
 
@@ -15,7 +15,7 @@ permalink: /2007/08/06/how-to-create-stepping-slides-in-openofficeorg-impress/
 
 <h3>How do you do it with OpenOffice.org Impress?</h3>
 
-<p>Don't search the Help files for "stepping" &#8212; I went that route and crashed OpenOffice.org.  Strangely, at the moment the search function crashed, I was writing a presentation about search and indexing algorithms!</p>
+<p>Don't search the Help files for "stepping" -- I went that route and crashed OpenOffice.org.  Strangely, at the moment the search function crashed, I was writing a presentation about search and indexing algorithms!</p>
 
 <p>You have to do it as an animation.  One step at a time (no pun intended):</p>
 

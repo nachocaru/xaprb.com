@@ -25,7 +25,7 @@ I have a very important convention: when I'm taking notes and something becomes 
 
 All told, this system kind of feels too simple to be a system. Everyone else seems to use complicated online gizmos named after groceries, or whizbang apps created by 37Signals, but I've found none of them to meet my needs, and just went back to basics. Basic is good. Basic works. Basic lets me concentrate on what I'm doing.
 
-As I said in my previous post, part of this is based on the [GTD][3] book, which I read through a couple of times (with a year in between) and picked the parts that made sense to me. I think it's a useful book to read, if you're having trouble organizing yourself. I would just caution against spending all your energy getting organized &#8212; leave a little energy for actually doing your work!
+As I said in my previous post, part of this is based on the [GTD][3] book, which I read through a couple of times (with a year in between) and picked the parts that made sense to me. I think it's a useful book to read, if you're having trouble organizing yourself. I would just caution against spending all your energy getting organized -- leave a little energy for actually doing your work!
 
  [1]: http://www.xaprb.com/blog/2010/06/30/how-i-keep-track-of-tasks/
  [2]: http://www.amazon.com/Vantec-NexStar-NST-D200SU-2-5-Inch-3-5-Inch/dp/B001QFNDXE/?tag=xaprb-20

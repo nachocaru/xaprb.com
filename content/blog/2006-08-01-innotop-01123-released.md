@@ -12,7 +12,7 @@ As usual, it's a combination of bug fixes, new features, and enhancements to exi
 
 *   More detailed lock information displayed in InnoDB Deadlock mode.
 *   A new section in Row Operations / Semaphores mode shows information about the wait array.
-*   I've expanded the test suite a lot. There's a lot of tricky stuff dealing with older versions of InnoDB that I've solved. It is a lot better at parsing information from the older table formats, etc. (Though I still need to either build or find samples from ancient versions and add them to the test suite &#8212; contact me if you're willing to donate samples from servers running MySQL 3.x or on Windows!)
+*   I've expanded the test suite a lot. There's a lot of tricky stuff dealing with older versions of InnoDB that I've solved. It is a lot better at parsing information from the older table formats, etc. (Though I still need to either build or find samples from ancient versions and add them to the test suite -- contact me if you're willing to donate samples from servers running MySQL 3.x or on Windows!)
 *   It handles foreign key error information better.
 *   Read the changelog in the package for the full list of changes.
 
