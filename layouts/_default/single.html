@@ -16,6 +16,12 @@
                           {{if .Prev}}<a class="previous" href="{{.Prev.Permalink}}">Older: {{.Prev.Title}}</a>{{end}}
                           {{if .Next}}<a class="next" href="{{.Next.Permalink}}">Newer: {{.Next.Title}}</a>{{end}}
 
+                        <ul id="categories">
+                          {{ range .Params.categories }}
+                            <li><a href="{{ $baseurl }}/categories/{{ . | urlize }}">{{ . }}</a> </li>
+                          {{ end }}
+                        </ul>
+
                         </div>
                     </article>
                 </div>

@@ -3,8 +3,7 @@
 
 <section id="main">
   <div>
-   <h1 id="title">{{ .Title }}</h1>
-   you yeard it here first
+   <h1 id="title">default/indexes.html {{ .Title }}</h1>
         <ul id="list">
             {{ range .Data.Pages }}
                 {{ .Render "li"}}
