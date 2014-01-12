@@ -9,5 +9,6 @@ When I kill a query or connection, whoever is running it gets a boring message a
 
 <pre>
 mysql> KILL 10282, "Sorry, no cigar today. Try again tomorrow."
-</pre> 
+</pre>
+
 Joking aside, relevant error messages would be great for all involved.

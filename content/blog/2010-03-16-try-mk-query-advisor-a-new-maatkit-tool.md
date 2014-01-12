@@ -10,7 +10,8 @@ categories:
 
 <pre>$ wget http://www.maatkit.org/trunk/mk-query-advisor
 $ perl mk-query-advisor /var/log/mysql/slow.log
-</pre> 
+</pre>
+
 By default it consumes a log file in MySQL's slow query log format, but it can also parse the general-log format, and if you have any other kind of log you can feed it through mk-query-digest to transform the log into something it can recognize. Tell me if you'd be able to spot the mixture of join styles and use of leading % wildcards in the following query without help:
 
 <pre>
@@ -46,7 +47,8 @@ SELECT `rhubarb_series_title`.`id`, `rhubarb_series_title`.`series_id`,
 `rhubarb_series_title__series`.`author` LIKE '%threefour%') AND
 `rhubarb_series_title`.`series_id` = `rhubarb_series`.`id` AND
 `rhubarb_series`.`poster_id` = `auth_user`.`id`
-</pre> 
+</pre>
+
 Yes, that's a real query, slightly obfuscated.
 
 If you find bugs, [report them][2]. If you find a "bad query" that doesn't trigger any heuristic, [report that too][2]. We're only getting started, but I feel sure that this tool will become a sort of best-practices advisor as we make it more capable. The Google Code issue tracker has [a full initial spec][3], and [the wiki has a roadmap][4].

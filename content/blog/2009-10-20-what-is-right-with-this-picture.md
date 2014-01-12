@@ -17,7 +17,8 @@ not ok 1 - basic test to check that the test suite works
 )
 
 # Looks like you failed 1 tests of 1.
-`</pre> 
+`</pre>
+
 It is the beginning of a test suite, which is long overdue. Writing a test suite for [this code][1] would have saved a lot of work ages ago. But as I always say, if you don't do it from the beginning, it's much harder to do later. And this code began its life as a script someone else wrote, so I wasn't there at the beginning. Better late than never.
 
  [1]: http://code.google.com/p/mysql-cacti-templates/

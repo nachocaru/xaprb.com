@@ -25,7 +25,8 @@ where s.variable_name is null and v.variable_name is null and p.plugin_name is n
 | Uname_machine      | i686                                 |
 | Uname_distribution | fedora: Fedora release 15 (Lovelock) |
 +--------------------+--------------------------------------+
-</pre> 
+</pre>
+
 This actually isn't all, though. If you check the output of SHOW VARIABLES you'll see an extra few rows, one of which is this:
 
 <pre>+---------------------+------------------------------+
@@ -33,7 +34,8 @@ This actually isn't all, though. If you check the output of SHOW VARIABLES you'l
 +---------------------+------------------------------+
 | feedback_server_uid | xlGYjFKJ0ivpSWAktGglpEgVTq8= |
 +---------------------+------------------------------+
-</pre> 
+</pre>
+
 I'll have to look into how that's calculated. It might be useful.
 
  [1]: http://kb.askmonty.org/en/user-feedback-plugin

@@ -37,7 +37,8 @@ sleep 30
 ps -eaf >> collected/$d-ps 2>&1 &
 mysql -e 'show innodb status\G show full processlist\G' >> collected/$d-innodbstatus 2>&1 &
 rm /tmp/gatherinfo
-</pre> 
+</pre>
+
 Now make the script executable: `chmod +x collect-stats.sh`. At this point we're ready to start working. Let's fire the stats-collection script when the system's user CPU goes above 40%.<cod>
 
 <pre>perl mk-loadavg --watch "Server:vmstat:us:>:40" --interval 1 --execute collect-stats.sh

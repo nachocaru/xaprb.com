@@ -17,7 +17,8 @@ I decided to use a hard-coded 1024 "buckets", and instead of an array, I used a 
   id int not null primary key,
   max_zeroes int not null default 0,
   rowcount int not null default 0
-)engine=memory;</pre> 
+)engine=memory;</pre>
+
 Here's the single pass over the values. I'm using a user-defined variable `@c` to avoid recomputing the hash. Let me know if you see any mistakes in my code.
 
 <pre>insert into buckets(id, max_zeroes, rowcount)
@@ -28,7 +29,8 @@ select
 from tbl1
 on duplicate key update
    max_zeroes=greatest(max_zeroes, values(max_zeroes)),
-   rowcount = rowcount + 1;</pre> 
+   rowcount = rowcount + 1;</pre>
+
 
 That query took 32 minutes; by comparison, a similar query using COUNT(DISTINCT) took 46 minutes. So far, so good. Now here's the final bit, to combine the "buckets" and get the cardinality estimate. Again, flag errors if you see any:
 
@@ -39,7 +41,8 @@ select pow(sum(max_zeroes) / 1024, 2) * 1024 * 0.79402 from buckets;
 +-------------------------------------------------+
 |                              151741.65811039635 |
 +-------------------------------------------------+
-</pre> 
+</pre>
+
 
 That's not even close. I happen to know that there are more than 10122796 distinct values, and 21669591 rows overall.
 

@@ -12,7 +12,8 @@ There's a really important difference between a unique index (MySQL's answer to 
   `b` int,
   `c` int,
   UNIQUE KEY `a` (`a`,`b`)
-)</pre> 
+)</pre>
+
 The combination of columns `a, b` should uniquely identify any tuple in the table, right?
 
 <pre>select * from t;
@@ -24,7 +25,8 @@ The combination of columns `a, b` should uniquely identify any tuple in the tabl
 | NULL | NULL |    1 | 
 | NULL | NULL |    1 | 
 +------+------+------+
-</pre> 
+</pre>
+
 Wrong. Our arch-enemy `NULL` [messes things up][1] again:
 
 <blockquote cite="http://dev.mysql.com/doc/en/create-index.html">

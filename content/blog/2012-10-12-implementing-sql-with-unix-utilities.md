@@ -26,7 +26,8 @@ To give an idea, here are some of the relational operations (in SQL speak) you c
 
     
 
-    <pre>$ join <(sort file1) <(sort file2)</pre> 
+    <pre>$ join <(sort file1) <(sort file2)</pre>
+
 
     That's kind of an overview -- I end up hacking together a bunch of things, and I'm sure I'm forgetting something. But pipe-and-filter programming with whitespace-delimited files is generally a much more powerful (and performant) paradigm than I realized a few years ago, and that's the point I wanted to share overall.
 

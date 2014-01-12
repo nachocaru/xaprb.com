@@ -20,7 +20,8 @@ $ perl mk-query-digest --type pglog /path/to/log/file
 
 # Learn about it (search for the string "pglog")
 $ perldoc mk-query-digest
-</pre> 
+</pre>
+
 I'm going to close comments on this blog post so I don't get bug reports in the comments. If you have feedback, please post it to the [Maatkit mailing list][2], or the [Maatkit issue tracker][3]. Or reply to the thread I just started on the Postgres mailing list.
 
  [1]: http://www.maatkit.org/doc/mk-query-digest.html

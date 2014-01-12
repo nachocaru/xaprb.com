@@ -18,7 +18,8 @@ $ mysql -e 'select @@sql_safe_updates, @@sql_select_limit, @@sql_max_join_size\G
  @@sql_safe_updates: 0
  @@sql_select_limit: -1
 @@sql_max_join_size: -1
-</pre> 
+</pre>
+
 With &#8211;safe-updates we get different results:
 
 <pre>
@@ -27,7 +28,8 @@ $ mysql --safe-updates -e 'select @@sql_safe_updates, @@sql_select_limit, @@sql_
  @@sql_safe_updates: 1
  @@sql_select_limit: 1000
 @@sql_max_join_size: 1000000
-</pre> 
+</pre>
+
 The following demonstrates what happens if you now try to do something silly that might be expensive or dangerous:
 
 <pre>
@@ -40,7 +42,8 @@ mysql> delete from t where b = 5;
 ERROR 1175 (HY000): You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column
 mysql> delete from t where a = 5;
 Query OK, 0 rows affected (0.01 sec)
-</pre> 
+</pre>
+
 Alas, you can't set sql\_select\_limit or sql\_safe\_updates through the server configuration file (my.cnf or my.ini) directly. But you can do that through the [init_connect][3] directive.
 
  [1]: http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html#sysvar_max_join_size

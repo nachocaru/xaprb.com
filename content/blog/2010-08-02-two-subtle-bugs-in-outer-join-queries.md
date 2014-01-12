@@ -23,7 +23,8 @@ select * from L left join R on l_id = r_id;
 |    2 |    2 |    NULL | 
 |    3 | NULL |    NULL | 
 +------+------+---------+
-</pre> 
+</pre>
+
 Here we see that one row in the outer table is missing, and one row (the middle row) has a NULL r_other column. Now, let's add a WHERE clause:
 
 <pre>
@@ -34,7 +35,8 @@ select * from L left join R on l_id = r_id where r_other is null;
 |    2 |    2 |    NULL | 
 |    3 | NULL |    NULL | 
 +------+------+---------+
-</pre> 
+</pre>
+
 This query is buggy, because the two rows are returned for completely different reasons, and you can't be sure which is which. IS NULL clauses can safely be placed on the columns used in the JOIN clause, but not on other columns in the outer table that might be NULL.
 
 ### Bug 2: an OUTER JOIN is converted to INNER
@@ -48,7 +50,8 @@ select * from L left join R on l_id = r_id where r_other > 1;
 +------+------+---------+
 |    1 |    1 |       5 | 
 +------+------+---------+
-</pre> 
+</pre>
+
 The left-outer-ness of the above query is what causes the third row to be output in the first query I showed you above. The greater-than operator in this example automatically makes the left-ness impossible, because anytime there's a row in the inner table that has no match in the outer table, it'll be filled in with NULLs, and those NULLs will be eliminated by the operator. So the effect is that only matching rows will ever be output.
 
 If you want to ponder variations and subtleties of the above, you can read more discussion on [the issue report where we're hammering out the details][3] of automatically detecting and warning about these sneaky errors.

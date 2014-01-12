@@ -24,7 +24,8 @@ possible_keys: NULL
           ref: NULL
          rows: 1379
         Extra: Using where
-</pre> 
+</pre>
+
 Queries such as this should usually be rewritten to a form such as the following, which accesses only the 10 rows specified instead of scanning the table:
 
 <pre>

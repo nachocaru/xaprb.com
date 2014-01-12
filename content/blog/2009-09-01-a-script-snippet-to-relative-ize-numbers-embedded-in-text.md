@@ -15,7 +15,8 @@ RW-shared spins 1224197048, OS waits 38281423; RW-excl spins 2432347936, OS wait
 
 How much have the numbers changed in the second sample? My head is too lazy to do that math. So Daniel Nichter and I whipped up Yet Another Snippet to self-discover patterns of text and numbers, and compare each line against the previous line that matches the same pattern. Let's fetch it:
 
-<pre>wget <a href="http://maatkit.googlecode.com/svn/trunk/util/rel">http://maatkit.googlecode.com/svn/trunk/util/rel</a></pre> 
+<pre>wget <a href="http://maatkit.googlecode.com/svn/trunk/util/rel">http://maatkit.googlecode.com/svn/trunk/util/rel</a></pre>
+
 Now give it the above input, and it'll print out something useful (emphasis mine):
 
 <pre>Mutex spin waits 0, rounds 143359179688, OS waits 634106844
