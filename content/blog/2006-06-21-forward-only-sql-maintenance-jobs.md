@@ -1,7 +1,7 @@
 ---
 title: How to do efficient forward-only SQL maintenance jobs
 date: "2006-06-21"
-permalink: /blog/2006/06/21/forward-only-sql-maintenance-jobs/
+url: /blog/2006/06/21/forward-only-sql-maintenance-jobs/
 categories:
   - Databases
 ---

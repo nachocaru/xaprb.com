@@ -1,7 +1,7 @@
 ---
 title: Continuous integration and deployment
 date: "2013-10-16"
-permalink: /blog/2013/10/16/continuous-integration-and-deployment/
+url: /blog/2013/10/16/continuous-integration-and-deployment/
 categories:
   - Databases
   - Operations

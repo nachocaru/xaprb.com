@@ -1,7 +1,7 @@
 ---
 title: A review of Web Operations by John Allspaw and Jesse Robbins
 date: "2010-07-03"
-permalink: /blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/
+url: /blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/
 categories:
   - Databases
   - Operations

@@ -1,7 +1,7 @@
 ---
 title: Fundamental performance and scalability instrumentation
 date: "2011-10-06"
-permalink: /blog/2011/10/06/fundamental-performance-and-scalability-instrumentation/
+url: /blog/2011/10/06/fundamental-performance-and-scalability-instrumentation/
 categories:
   - Conferences
   - Databases

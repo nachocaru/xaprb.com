@@ -1,7 +1,7 @@
 ---
 title: Too many blog posts
 date: "2011-04-20"
-permalink: /blog/2011/04/20/too-many-blog-posts/
+url: /blog/2011/04/20/too-many-blog-posts/
 categories:
   - Databases
 ---

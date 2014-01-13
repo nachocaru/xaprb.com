@@ -1,7 +1,7 @@
 ---
 title: My presentations at the 2008 MySQL Conference and Expo
 date: "2008-01-25"
-permalink: /blog/2008/01/25/my-presentations-at-the-2008-mysql-conference-and-expo/
+url: /blog/2008/01/25/my-presentations-at-the-2008-mysql-conference-and-expo/
 categories:
   - Databases
 ---

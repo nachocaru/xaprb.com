@@ -1,7 +1,7 @@
 ---
 title: Speaking at Percona Live in London this October
 date: "2011-09-21"
-permalink: /blog/2011/09/21/speaking-at-percona-live-in-london-this-october/
+url: /blog/2011/09/21/speaking-at-percona-live-in-london-this-october/
 categories:
   - Conferences
   - Databases

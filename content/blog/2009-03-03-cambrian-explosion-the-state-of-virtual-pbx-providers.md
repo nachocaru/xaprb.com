@@ -1,7 +1,7 @@
 ---
 title: "Cambrian explosion: the state of virtual PBX providers"
 date: "2009-03-03"
-permalink: /blog/2009/03/03/cambrian-explosion-the-state-of-virtual-pbx-providers/
+url: /blog/2009/03/03/cambrian-explosion-the-state-of-virtual-pbx-providers/
 categories:
   - Commentary
   - Web

@@ -1,7 +1,7 @@
 ---
 title: "Selena's thoughts on a hacker's cooperative"
 date: "2009-04-25"
-permalink: /blog/2009/04/25/selenas-thoughts-on-a-hackers-cooperative/
+url: /blog/2009/04/25/selenas-thoughts-on-a-hackers-cooperative/
 categories:
   - Commentary
   - Databases

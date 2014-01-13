@@ -1,7 +1,7 @@
 ---
 title: A review of MySQL 5.1 Plugin Development by Golubchik and Hutchings
 date: "2010-10-10"
-permalink: /blog/2010/10/10/a-review-of-mysql-5-1-plugin-development-by-golubchik-and-hutchings/
+url: /blog/2010/10/10/a-review-of-mysql-5-1-plugin-development-by-golubchik-and-hutchings/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: How to digitize records with Ubuntu, a USB Turntable and Audacity
 date: "2008-08-30"
-permalink: /blog/2008/08/30/how-to-digitize-records-with-ubuntu-a-usb-turntable-and-audacity/
+url: /blog/2008/08/30/how-to-digitize-records-with-ubuntu-a-usb-turntable-and-audacity/
 categories:
   - Music
   - Open Source

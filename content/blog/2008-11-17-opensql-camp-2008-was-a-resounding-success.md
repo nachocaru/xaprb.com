@@ -1,7 +1,7 @@
 ---
 title: OpenSQL Camp 2008 was a resounding success
 date: "2008-11-17"
-permalink: /blog/2008/11/17/opensql-camp-2008-was-a-resounding-success/
+url: /blog/2008/11/17/opensql-camp-2008-was-a-resounding-success/
 categories:
   - Conferences
   - Databases

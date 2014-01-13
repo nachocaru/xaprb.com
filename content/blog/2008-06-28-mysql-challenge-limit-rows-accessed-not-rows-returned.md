@@ -1,7 +1,7 @@
 ---
 title: "MySQL challenge: LIMIT rows accessed, not rows returned"
 date: "2008-06-28"
-permalink: /blog/2008/06/28/mysql-challenge-limit-rows-accessed-not-rows-returned/
+url: /blog/2008/06/28/mysql-challenge-limit-rows-accessed-not-rows-returned/
 categories:
   - Databases
   - Programming

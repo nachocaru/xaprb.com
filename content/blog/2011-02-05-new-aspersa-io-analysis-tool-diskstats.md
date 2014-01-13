@@ -1,7 +1,7 @@
 ---
 title: New Aspersa I/O analysis tool, diskstats
 date: "2011-02-05"
-permalink: /blog/2011/02/05/new-aspersa-io-analysis-tool-diskstats/
+url: /blog/2011/02/05/new-aspersa-io-analysis-tool-diskstats/
 categories:
   - Databases
   - Open Source

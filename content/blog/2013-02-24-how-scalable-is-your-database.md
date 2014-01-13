@@ -1,7 +1,7 @@
 ---
 title: How scalable is your database?
 date: "2013-02-24"
-permalink: /blog/2013/02/24/how-scalable-is-your-database/
+url: /blog/2013/02/24/how-scalable-is-your-database/
 categories:
   - Databases
   - Performance

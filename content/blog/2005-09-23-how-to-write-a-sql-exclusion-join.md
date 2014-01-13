@@ -1,7 +1,7 @@
 ---
 title: How to write a SQL exclusion join
 date: "2005-09-23"
-permalink: /blog/2005/09/23/how-to-write-a-sql-exclusion-join/
+url: /blog/2005/09/23/how-to-write-a-sql-exclusion-join/
 categories:
   - Databases
 ---

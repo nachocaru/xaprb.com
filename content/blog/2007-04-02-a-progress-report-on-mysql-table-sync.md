@@ -1,7 +1,7 @@
 ---
 title: A progress report on MySQL Table Sync
 date: "2007-04-02"
-permalink: /blog/2007/04/02/a-progress-report-on-mysql-table-sync/
+url: /blog/2007/04/02/a-progress-report-on-mysql-table-sync/
 categories:
   - Databases
 ---

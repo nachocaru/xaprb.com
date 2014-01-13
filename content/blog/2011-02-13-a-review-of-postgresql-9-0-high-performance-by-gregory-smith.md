@@ -1,7 +1,7 @@
 ---
 title: A review of PostgreSQL 9.0 High Performance by Gregory Smith
 date: "2011-02-13"
-permalink: /blog/2011/02/13/a-review-of-postgresql-9-0-high-performance-by-gregory-smith/
+url: /blog/2011/02/13/a-review-of-postgresql-9-0-high-performance-by-gregory-smith/
 categories:
   - Databases
   - Reviews

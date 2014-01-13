@@ -1,7 +1,7 @@
 ---
 title: "Brian Aker: 20GB doesn't fit on a single server"
 date: "2010-04-10"
-permalink: /blog/2010/04/10/brian-aker-20gb-doesnt-fit-on-a-single-server/
+url: /blog/2010/04/10/brian-aker-20gb-doesnt-fit-on-a-single-server/
 categories:
   - Commentary
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: How to reverse a sequence in SQL
 date: "2006-08-15"
-permalink: /blog/2006/08/15/how-to-reverse-a-sequence-in-sql/
+url: /blog/2006/08/15/how-to-reverse-a-sequence-in-sql/
 categories:
   - Databases
 ---

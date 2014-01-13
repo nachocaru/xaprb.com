@@ -1,7 +1,7 @@
 ---
 title: It happened again
 date: "2013-09-27"
-permalink: /blog/2013/09/27/it-happened-again/
+url: /blog/2013/09/27/it-happened-again/
 categories:
   - Databases
 ---

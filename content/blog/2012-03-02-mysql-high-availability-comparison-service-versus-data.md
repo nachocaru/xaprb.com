@@ -1,7 +1,7 @@
 ---
 title: "MySQL high availability comparison: service versus data"
 date: "2012-03-02"
-permalink: /blog/2012/03/02/mysql-high-availability-comparison-service-versus-data/
+url: /blog/2012/03/02/mysql-high-availability-comparison-service-versus-data/
 categories:
   - Databases
 ---

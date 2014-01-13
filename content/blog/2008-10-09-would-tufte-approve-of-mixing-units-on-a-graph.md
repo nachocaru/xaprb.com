@@ -1,7 +1,7 @@
 ---
 title: Would Tufte approve of mixing units on a graph?
 date: "2008-10-09"
-permalink: /blog/2008/10/09/would-tufte-approve-of-mixing-units-on-a-graph/
+url: /blog/2008/10/09/would-tufte-approve-of-mixing-units-on-a-graph/
 categories:
   - Databases
   - Programming

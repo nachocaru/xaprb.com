@@ -1,7 +1,7 @@
 ---
 title: MySQL manual gets improved searching
 date: "2008-07-28"
-permalink: /blog/2008/07/28/mysql-manual-gets-improved-searching/
+url: /blog/2008/07/28/mysql-manual-gets-improved-searching/
 categories:
   - Databases
 ---

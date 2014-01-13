@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit needs a new name
 date: "2007-11-06"
-permalink: /blog/2007/11/06/mysql-toolkit-needs-a-new-name/
+url: /blog/2007/11/06/mysql-toolkit-needs-a-new-name/
 categories:
   - Databases
   - Open Source

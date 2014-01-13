@@ -1,7 +1,7 @@
 ---
 title: A review of How Life Imitates Chess
 date: "2009-04-20"
-permalink: /blog/2009/04/20/a-review-of-how-life-imitates-chess/
+url: /blog/2009/04/20/a-review-of-how-life-imitates-chess/
 categories:
   - Commentary
   - Reviews

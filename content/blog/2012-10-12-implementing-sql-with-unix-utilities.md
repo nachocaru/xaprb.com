@@ -1,7 +1,7 @@
 ---
 title: Implementing SQL with Unix utilities
 date: "2012-10-12"
-permalink: /blog/2012/10/12/implementing-sql-with-unix-utilities/
+url: /blog/2012/10/12/implementing-sql-with-unix-utilities/
 categories:
   - Databases
 ---

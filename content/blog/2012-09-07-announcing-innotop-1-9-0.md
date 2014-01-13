@@ -1,7 +1,7 @@
 ---
 title: Announcing innotop 1.9.0
 date: "2012-09-07"
-permalink: /blog/2012/09/07/announcing-innotop-1-9-0/
+url: /blog/2012/09/07/announcing-innotop-1-9-0/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: There is no apostrophe in Maatkit
 date: "2010-01-26"
-permalink: /blog/2010/01/26/there-is-no-apostrophe-in-maatkit/
+url: /blog/2010/01/26/there-is-no-apostrophe-in-maatkit/
 categories:
   - Databases
   - Open Source

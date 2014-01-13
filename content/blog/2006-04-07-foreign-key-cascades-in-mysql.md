@@ -1,7 +1,7 @@
 ---
 title: How to use foreign key cascades in MySQL
 date: "2006-04-07"
-permalink: /blog/2006/04/07/foreign-key-cascades-in-mysql/
+url: /blog/2006/04/07/foreign-key-cascades-in-mysql/
 categories:
   - Databases
 ---

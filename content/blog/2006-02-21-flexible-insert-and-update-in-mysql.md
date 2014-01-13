@@ -1,7 +1,7 @@
 ---
 title: How to write flexible INSERT and UPDATE statements in MySQL
 date: "2006-02-21"
-permalink: /blog/2006/02/21/flexible-insert-and-update-in-mysql/
+url: /blog/2006/02/21/flexible-insert-and-update-in-mysql/
 categories:
   - Databases
 ---

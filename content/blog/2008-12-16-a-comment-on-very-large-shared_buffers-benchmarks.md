@@ -1,7 +1,7 @@
 ---
 title: A comment on very large shared_buffers benchmarks
 date: "2008-12-16"
-permalink: /blog/2008/12/16/a-comment-on-very-large-shared_buffers-benchmarks/
+url: /blog/2008/12/16/a-comment-on-very-large-shared_buffers-benchmarks/
 categories:
   - Databases
 ---

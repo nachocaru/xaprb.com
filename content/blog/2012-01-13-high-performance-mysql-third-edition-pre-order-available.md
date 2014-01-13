@@ -1,7 +1,7 @@
 ---
 title: High Performance MySQL Third Edition pre-order available
 date: "2012-01-13"
-permalink: /blog/2012/01/13/high-performance-mysql-third-edition-pre-order-available/
+url: /blog/2012/01/13/high-performance-mysql-third-edition-pre-order-available/
 categories:
   - Databases
   - Writing

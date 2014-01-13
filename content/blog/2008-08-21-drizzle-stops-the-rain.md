@@ -1,7 +1,7 @@
 ---
 title: Drizzle stops the rain
 date: "2008-08-21"
-permalink: /blog/2008/08/21/drizzle-stops-the-rain/
+url: /blog/2008/08/21/drizzle-stops-the-rain/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Seldom-used HTML form elements
 date: "2005-11-07"
-permalink: /blog/2005/11/07/html-elements-for-form-accessibility/
+url: /blog/2005/11/07/html-elements-for-form-accessibility/
 ---
 Some of the neatest parts of standard HTML are the least-used. Forms in particular can become much more usable and accessible when marked up correctly with a few standard HTML elements. These are LABEL (and the related CSS `outline` property), OPTGROUP, LEGEND, and FIELDSET.
 

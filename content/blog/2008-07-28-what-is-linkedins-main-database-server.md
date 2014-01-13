@@ -1,7 +1,7 @@
 ---
 title: "What is LinkedIn's main database server?"
 date: "2008-07-28"
-permalink: /blog/2008/07/28/what-is-linkedins-main-database-server/
+url: /blog/2008/07/28/what-is-linkedins-main-database-server/
 categories:
   - Databases
 ---

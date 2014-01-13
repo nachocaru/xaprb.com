@@ -1,7 +1,7 @@
 ---
 title: No Hotsos? Go to the MySQL Conference instead.
 date: "2011-03-08"
-permalink: /blog/2011/03/08/no-hotsos-go-to-the-mysql-conference-instead/
+url: /blog/2011/03/08/no-hotsos-go-to-the-mysql-conference-instead/
 categories:
   - Conferences
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: "How to tune MySQL's sort_buffer_size"
 date: "2010-05-09"
-permalink: /blog/2010/05/09/how-to-tune-mysqls-sort_buffer_size/
+url: /blog/2010/05/09/how-to-tune-mysqls-sort_buffer_size/
 categories:
   - Databases
 ---

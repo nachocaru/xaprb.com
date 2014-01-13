@@ -1,7 +1,7 @@
 ---
 title: Interview on webpulp.tv
 date: "2010-11-01"
-permalink: /blog/2010/11/01/interview-on-webpulp-tv/
+url: /blog/2010/11/01/interview-on-webpulp-tv/
 categories:
   - Databases
 ---

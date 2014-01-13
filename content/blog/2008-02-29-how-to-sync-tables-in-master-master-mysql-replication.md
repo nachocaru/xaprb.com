@@ -1,7 +1,7 @@
 ---
 title: How to sync tables in master-master MySQL replication
 date: "2008-02-29"
-permalink: /blog/2008/02/29/how-to-sync-tables-in-master-master-mysql-replication/
+url: /blog/2008/02/29/how-to-sync-tables-in-master-master-mysql-replication/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: A fun use of SUBSTRING_INDEX and friends in MySQL
 date: "2009-09-15"
-permalink: /blog/2009/09/15/a-fun-use-of-substring_index-and-friends-in-mysql/
+url: /blog/2009/09/15/a-fun-use-of-substring_index-and-friends-in-mysql/
 categories:
   - Databases
 ---

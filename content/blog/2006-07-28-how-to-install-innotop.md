@@ -1,7 +1,7 @@
 ---
 title: How to install innotop
 date: "2006-07-28"
-permalink: /blog/2006/07/28/how-to-install-innotop/
+url: /blog/2006/07/28/how-to-install-innotop/
 categories:
   - Databases
   - Open Source

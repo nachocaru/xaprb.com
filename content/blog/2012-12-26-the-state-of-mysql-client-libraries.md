@@ -1,7 +1,7 @@
 ---
 title: The state of MySQL client libraries
 date: "2012-12-26"
-permalink: /blog/2012/12/26/the-state-of-mysql-client-libraries/
+url: /blog/2012/12/26/the-state-of-mysql-client-libraries/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: Sessions I want to see at the MySQL Conference
 date: "2008-04-10"
-permalink: /blog/2008/04/10/sessions-i-want-to-see-at-the-mysql-conference/
+url: /blog/2008/04/10/sessions-i-want-to-see-at-the-mysql-conference/
 categories:
   - Databases
 ---

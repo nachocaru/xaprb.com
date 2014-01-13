@@ -1,7 +1,7 @@
 ---
 title: Is automated failover the root of all evil?
 date: "2012-09-17"
-permalink: /blog/2012/09/17/is-automated-failover-the-root-of-all-evil/
+url: /blog/2012/09/17/is-automated-failover-the-root-of-all-evil/
 categories:
   - Databases
 ---

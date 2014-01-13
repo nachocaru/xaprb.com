@@ -1,7 +1,7 @@
 ---
 title: More Notebooks and Journals!
 date: "2013-10-13"
-permalink: /blog/2013/10/13/more-notebooks-and-journals/
+url: /blog/2013/10/13/more-notebooks-and-journals/
 categories:
   - Commentary
   - Hardware

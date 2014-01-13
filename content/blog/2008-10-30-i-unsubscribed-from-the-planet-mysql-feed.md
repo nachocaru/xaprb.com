@@ -1,7 +1,7 @@
 ---
 title: I unsubscribed from the Planet MySQL feed
 date: "2008-10-30"
-permalink: /blog/2008/10/30/i-unsubscribed-from-the-planet-mysql-feed/
+url: /blog/2008/10/30/i-unsubscribed-from-the-planet-mysql-feed/
 categories:
   - Databases
   - Web

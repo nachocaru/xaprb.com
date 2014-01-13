@@ -1,7 +1,7 @@
 ---
 title: "SHOW COLUMN TYPES: A hidden MySQL treat?"
 date: "2006-09-19"
-permalink: /blog/2006/09/19/show-column-types-a-hidden-mysql-treat/
+url: /blog/2006/09/19/show-column-types-a-hidden-mysql-treat/
 categories:
   - Databases
 ---

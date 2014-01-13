@@ -1,7 +1,7 @@
 ---
 title: Have you tested pt-online-schema-change?
 date: "2012-05-22"
-permalink: /blog/2012/05/22/have-you-tested-pt-online-schema-change/
+url: /blog/2012/05/22/have-you-tested-pt-online-schema-change/
 categories:
   - Databases
 ---

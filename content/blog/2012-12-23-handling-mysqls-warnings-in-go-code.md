@@ -1,7 +1,7 @@
 ---
 title: "Handling MySQL's warnings in Go code"
 date: "2012-12-23"
-permalink: /blog/2012/12/23/handling-mysqls-warnings-in-go-code/
+url: /blog/2012/12/23/handling-mysqls-warnings-in-go-code/
 categories:
   - Databases
 ---

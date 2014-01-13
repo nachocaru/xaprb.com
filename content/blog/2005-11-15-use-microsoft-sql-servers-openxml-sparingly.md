@@ -1,7 +1,7 @@
 ---
 title: "Efficient alternatives to Microsoft SQL Server's openxml"
 date: "2005-11-15"
-permalink: /blog/2005/11/15/use-microsoft-sql-servers-openxml-sparingly/
+url: /blog/2005/11/15/use-microsoft-sql-servers-openxml-sparingly/
 categories:
   - Databases
 ---

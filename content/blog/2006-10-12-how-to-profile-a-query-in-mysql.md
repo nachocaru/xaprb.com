@@ -1,7 +1,7 @@
 ---
 title: How to profile a query in MySQL
 date: "2006-10-12"
-permalink: /blog/2006/10/12/how-to-profile-a-query-in-mysql/
+url: /blog/2006/10/12/how-to-profile-a-query-in-mysql/
 categories:
   - Databases
 ---

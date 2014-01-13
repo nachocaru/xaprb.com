@@ -1,7 +1,7 @@
 ---
 title: How to deliberately cause a deadlock in MySQL
 date: "2006-08-08"
-permalink: /blog/2006/08/08/how-to-deliberately-cause-a-deadlock-in-mysql/
+url: /blog/2006/08/08/how-to-deliberately-cause-a-deadlock-in-mysql/
 categories:
   - Databases
 ---

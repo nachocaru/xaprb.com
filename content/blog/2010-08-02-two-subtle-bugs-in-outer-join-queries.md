@@ -1,7 +1,7 @@
 ---
 title: Two subtle bugs in OUTER JOIN queries
 date: "2010-08-02"
-permalink: /blog/2010/08/02/two-subtle-bugs-in-outer-join-queries/
+url: /blog/2010/08/02/two-subtle-bugs-in-outer-join-queries/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: "A bug in Microsoft SQL Server's replace() function"
 date: "2005-11-15"
-permalink: /blog/2005/11/15/a-bug-in-microsoft-sql-servers-replace-function/
+url: /blog/2005/11/15/a-bug-in-microsoft-sql-servers-replace-function/
 categories:
   - Databases
 ---

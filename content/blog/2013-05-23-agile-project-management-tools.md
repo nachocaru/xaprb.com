@@ -1,7 +1,7 @@
 ---
 title: Agile project management tools
 date: "2013-05-23"
-permalink: /blog/2013/05/23/agile-project-management-tools/
+url: /blog/2013/05/23/agile-project-management-tools/
 categories:
   - Programming
 ---

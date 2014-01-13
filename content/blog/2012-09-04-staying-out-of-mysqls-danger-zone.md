@@ -1,7 +1,7 @@
 ---
 title: "Staying out of MySQL's danger zone"
 date: "2012-09-04"
-permalink: /blog/2012/09/04/staying-out-of-mysqls-danger-zone/
+url: /blog/2012/09/04/staying-out-of-mysqls-danger-zone/
 categories:
   - Databases
 ---

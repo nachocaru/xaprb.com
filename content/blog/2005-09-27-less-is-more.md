@@ -1,7 +1,7 @@
 ---
 title: Less is more
 date: "2005-09-27"
-permalink: /blog/2005/09/27/less-is-more/
+url: /blog/2005/09/27/less-is-more/
 ---
 Simpler is often better. The ability to decide quickly between two equivalent solutions is what sets expert programmers apart. It has been demonstrated over and over again that a) there is more than a tenfold difference in productivity between programmers, and b) there is absolutely zero correlation between speed and quality in programming. Choosing the best solution to a problem is an acquired skill that takes time and experience, but it takes something more as well: a certain mental attitude. A determination to get things *done* and get it *right*, and *fast*. I have observed this quality in the best programmers I've worked with. There is just no comparing them to ordinary key-pressers. They are in a totally different league. They know how to analyze a problem, figure out what's really needed, see several solutions, decide on one, and then use their tools to the absolute best effect *get it done* with no wasting around.
 

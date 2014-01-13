@@ -1,7 +1,7 @@
 ---
 title: "Kickfire: stream-processing SQL queries"
 date: "2008-04-04"
-permalink: /blog/2008/04/04/kickfire-stream-processing-sql-queries/
+url: /blog/2008/04/04/kickfire-stream-processing-sql-queries/
 categories:
   - Databases
 ---

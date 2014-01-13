@@ -1,7 +1,7 @@
 ---
 title: Products that scale linearly to hundreds of servers
 date: "2010-11-02"
-permalink: /blog/2010/11/02/products-that-scale-linearly-to-hundreds-of-servers/
+url: /blog/2010/11/02/products-that-scale-linearly-to-hundreds-of-servers/
 categories:
   - Databases
 ---

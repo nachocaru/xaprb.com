@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit is now Maatkit
 date: "2007-11-18"
-permalink: /blog/2007/11/18/mysql-toolkit-is-now-maatkit/
+url: /blog/2007/11/18/mysql-toolkit-is-now-maatkit/
 categories:
   - Databases
   - Open Source

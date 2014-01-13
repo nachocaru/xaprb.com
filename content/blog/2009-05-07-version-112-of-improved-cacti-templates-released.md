@@ -1,7 +1,7 @@
 ---
 title: Version 1.1.2 of improved Cacti templates released
 date: "2009-05-07"
-permalink: /blog/2009/05/07/version-112-of-improved-cacti-templates-released/
+url: /blog/2009/05/07/version-112-of-improved-cacti-templates-released/
 categories:
   - Databases
   - Open Source

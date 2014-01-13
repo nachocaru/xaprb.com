@@ -1,7 +1,7 @@
 ---
 title: OpenSQL Camp approaches quickly
 date: "2008-11-04"
-permalink: /blog/2008/11/04/opensql-camp-approaches-quickly/
+url: /blog/2008/11/04/opensql-camp-approaches-quickly/
 categories:
   - Conferences
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: mk-query-digest now supports Postgres logs
 date: "2010-02-20"
-permalink: /blog/2010/02/20/mk-query-digest-now-supports-postgres-logs/
+url: /blog/2010/02/20/mk-query-digest-now-supports-postgres-logs/
 categories:
   - Databases
   - Open Source

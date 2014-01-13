@@ -1,7 +1,7 @@
 ---
 title: Archive strategies for OLTP servers, Part 2
 date: "2007-06-14"
-permalink: /blog/2007/06/14/archive-strategies-for-oltp-servers-part-2/
+url: /blog/2007/06/14/archive-strategies-for-oltp-servers-part-2/
 ---
 In the first article in this series on [archiving strategies for online transaction processing (OLTP) database servers][1], I covered some basics: why to archive, and what to consider when gathering requirements for the archived data itself. This article is more technical. I want to help you understand how to choose which rows are archivable, and how to deal with complex data relationships and dependencies. In that context, I'll also discuss a few concrete archiving strategies, their strengths and shortcomings, and how they can satisfy your requirements, especially requirements for data consistency, which as you will see is one of the most difficult problems in archiving.
 

@@ -1,7 +1,7 @@
 ---
 title: "A growing trend: InnoDB mutex contention"
 date: "2010-03-04"
-permalink: /blog/2010/03/04/a-growing-trend-innodb-mutex-contention/
+url: /blog/2010/03/04/a-growing-trend-innodb-mutex-contention/
 categories:
   - Databases
 ---

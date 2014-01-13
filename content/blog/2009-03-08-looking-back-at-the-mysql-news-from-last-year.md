@@ -1,7 +1,7 @@
 ---
 title: Looking back at the MySQL news from last year
 date: "2009-03-08"
-permalink: /blog/2009/03/08/looking-back-at-the-mysql-news-from-last-year/
+url: /blog/2009/03/08/looking-back-at-the-mysql-news-from-last-year/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Progress on High Performance MySQL, 4th Edition
 date: "2012-04-01"
-permalink: /blog/2012/04/01/progress-on-high-performance-mysql-4th-edition/
+url: /blog/2012/04/01/progress-on-high-performance-mysql-4th-edition/
 categories:
   - Databases
 ---

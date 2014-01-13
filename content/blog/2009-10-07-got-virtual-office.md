@@ -1,7 +1,7 @@
 ---
 title: Got virtual office?
 date: "2009-10-07"
-permalink: /blog/2009/10/07/got-virtual-office/
+url: /blog/2009/10/07/got-virtual-office/
 categories:
   - Commentary
 ---

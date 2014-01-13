@@ -1,7 +1,7 @@
 ---
 title: "My wishlist for SQL: the UNTIL clause"
 date: "2010-01-22"
-permalink: /blog/2010/01/22/my-wishlist-for-sql-the-until-clause/
+url: /blog/2010/01/22/my-wishlist-for-sql-the-until-clause/
 categories:
   - Databases
 ---

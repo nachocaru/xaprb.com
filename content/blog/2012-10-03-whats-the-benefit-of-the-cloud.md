@@ -1,7 +1,7 @@
 ---
 title: "What's the benefit of the cloud?"
 date: "2012-10-03"
-permalink: /blog/2012/10/03/whats-the-benefit-of-the-cloud/
+url: /blog/2012/10/03/whats-the-benefit-of-the-cloud/
 categories:
   - Databases
 ---

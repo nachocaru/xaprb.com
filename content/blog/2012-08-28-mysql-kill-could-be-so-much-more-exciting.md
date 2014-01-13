@@ -1,7 +1,7 @@
 ---
 title: MySQL kill could be so much more exciting
 date: "2012-08-28"
-permalink: /blog/2012/08/28/mysql-kill-could-be-so-much-more-exciting/
+url: /blog/2012/08/28/mysql-kill-could-be-so-much-more-exciting/
 categories:
   - Databases
 ---

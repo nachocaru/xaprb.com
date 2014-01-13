@@ -1,7 +1,7 @@
 ---
 title: How triggers affect ROWCOUNT and IDENTITY in SQL Server 2000
 date: "2005-12-23"
-permalink: /blog/2005/12/23/rowcount-and-identity/
+url: /blog/2005/12/23/rowcount-and-identity/
 categories:
   - Databases
 ---

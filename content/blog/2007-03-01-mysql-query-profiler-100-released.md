@@ -1,7 +1,7 @@
 ---
 title: MySQL Query Profiler 1.0.0 released
 date: "2007-03-01"
-permalink: /blog/2007/03/01/mysql-query-profiler-100-released/
+url: /blog/2007/03/01/mysql-query-profiler-100-released/
 categories:
   - Databases
 ---

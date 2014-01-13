@@ -1,6 +1,6 @@
 ---
 title: "High Performance MySQL, Second Edition: Query Performance Optimization"
-permalink: /blog/2007/10/07/high-performance-mysql-second-edition-query-performance-optimization/
+url: /blog/2007/10/07/high-performance-mysql-second-edition-query-performance-optimization/
 date: "2007-10-07"
 categories:
   - Databases

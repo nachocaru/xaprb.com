@@ -1,7 +1,7 @@
 ---
 title: What kind of High Availability do you need?
 date: "2011-05-15"
-permalink: /blog/2011/05/15/what-kind-of-high-availability-do-you-need/
+url: /blog/2011/05/15/what-kind-of-high-availability-do-you-need/
 categories:
   - Databases
 ---

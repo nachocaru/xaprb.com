@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit released as one package
 date: "2007-06-10"
-permalink: /blog/2007/06/10/mysql-toolkit-released-as-one-package/
+url: /blog/2007/06/10/mysql-toolkit-released-as-one-package/
 categories:
   - Databases
   - Open Source

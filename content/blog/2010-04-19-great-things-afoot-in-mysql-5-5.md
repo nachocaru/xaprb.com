@@ -1,7 +1,7 @@
 ---
 title: Great things afoot in MySQL 5.5
 date: "2010-04-19"
-permalink: /blog/2010/04/19/great-things-afoot-in-mysql-5-5/
+url: /blog/2010/04/19/great-things-afoot-in-mysql-5-5/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: MySQL monitoring meetup tonight!
 date: "2012-03-21"
-permalink: /blog/2012/03/21/mysql-monitoring-meetup-tonight/
+url: /blog/2012/03/21/mysql-monitoring-meetup-tonight/
 categories:
   - Databases
 ---

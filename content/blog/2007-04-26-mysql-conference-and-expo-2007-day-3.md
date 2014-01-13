@@ -1,7 +1,7 @@
 ---
 title: MySQL Conference and Expo 2007, Day 3
 date: "2007-04-26"
-permalink: /blog/2007/04/26/mysql-conference-and-expo-2007-day-3/
+url: /blog/2007/04/26/mysql-conference-and-expo-2007-day-3/
 categories:
   - Databases
 ---

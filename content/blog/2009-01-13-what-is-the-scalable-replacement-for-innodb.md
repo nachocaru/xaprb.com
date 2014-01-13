@@ -1,7 +1,7 @@
 ---
 title: What is the scalable replacement for InnoDB?
 date: "2009-01-13"
-permalink: /blog/2009/01/13/what-is-the-scalable-replacement-for-innodb/
+url: /blog/2009/01/13/what-is-the-scalable-replacement-for-innodb/
 categories:
   - Databases
 ---

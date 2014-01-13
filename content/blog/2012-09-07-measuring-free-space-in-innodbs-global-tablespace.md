@@ -1,7 +1,7 @@
 ---
 title: "Measuring free space in InnoDB's global tablespace"
 date: "2012-09-07"
-permalink: /blog/2012/09/07/measuring-free-space-in-innodbs-global-tablespace/
+url: /blog/2012/09/07/measuring-free-space-in-innodbs-global-tablespace/
 categories:
   - Databases
 ---

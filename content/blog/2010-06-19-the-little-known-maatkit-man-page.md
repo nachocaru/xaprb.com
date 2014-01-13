@@ -1,7 +1,7 @@
 ---
 title: The little-known Maatkit man page
 date: "2010-06-19"
-permalink: /blog/2010/06/19/the-little-known-maatkit-man-page/
+url: /blog/2010/06/19/the-little-known-maatkit-man-page/
 categories:
   - Databases
   - Open Source

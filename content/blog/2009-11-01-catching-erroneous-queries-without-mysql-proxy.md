@@ -1,7 +1,7 @@
 ---
 title: Catching erroneous queries, without MySQL proxy
 date: "2009-11-01"
-permalink: /blog/2009/11/01/catching-erroneous-queries-without-mysql-proxy/
+url: /blog/2009/11/01/catching-erroneous-queries-without-mysql-proxy/
 categories:
   - Databases
   - Open Source

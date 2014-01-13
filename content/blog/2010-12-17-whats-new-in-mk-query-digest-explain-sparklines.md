@@ -1,7 +1,7 @@
 ---
 title: "What's new in mk-query-digest: EXPLAIN sparklines"
 date: "2010-12-17"
-permalink: /blog/2010/12/17/whats-new-in-mk-query-digest-explain-sparklines/
+url: /blog/2010/12/17/whats-new-in-mk-query-digest-explain-sparklines/
 categories:
   - Databases
 ---

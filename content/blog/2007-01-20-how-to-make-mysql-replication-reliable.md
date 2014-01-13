@@ -1,7 +1,7 @@
 ---
 title: How to make MySQL replication reliable
 date: "2007-01-20"
-permalink: /blog/2007/01/20/how-to-make-mysql-replication-reliable/
+url: /blog/2007/01/20/how-to-make-mysql-replication-reliable/
 categories:
   - Databases
 ---

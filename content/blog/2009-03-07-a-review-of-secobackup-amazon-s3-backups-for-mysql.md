@@ -1,7 +1,7 @@
 ---
 title: A review of SecoBackup Amazon S3 backups for MySQL
 date: "2009-03-07"
-permalink: /blog/2009/03/07/a-review-of-secobackup-amazon-s3-backups-for-mysql/
+url: /blog/2009/03/07/a-review-of-secobackup-amazon-s3-backups-for-mysql/
 categories:
   - Databases
   - Open Source

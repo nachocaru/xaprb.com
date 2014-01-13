@@ -1,7 +1,7 @@
 ---
 title: Changes to InnoDB autoextend coming in MySQL 5.6
 date: "2012-10-08"
-permalink: /blog/2012/10/08/changes-to-innodb-autoextend-coming-in-mysql-5-6/
+url: /blog/2012/10/08/changes-to-innodb-autoextend-coming-in-mysql-5-6/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Maatkit at the dot-org pavilion at MySQL Conference and Expo 2009
 date: "2008-12-30"
-permalink: /blog/2008/12/30/maatkit-at-the-dot-org-pavilion-at-mysql-conference-and-expo-2009/
+url: /blog/2008/12/30/maatkit-at-the-dot-org-pavilion-at-mysql-conference-and-expo-2009/
 categories:
   - Open Source
 ---

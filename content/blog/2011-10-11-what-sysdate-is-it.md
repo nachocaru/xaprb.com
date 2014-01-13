@@ -1,7 +1,7 @@
 ---
 title: What SYSDATE is it?
 date: "2011-10-11"
-permalink: /blog/2011/10/11/what-sysdate-is-it/
+url: /blog/2011/10/11/what-sysdate-is-it/
 categories:
   - Databases
 ---

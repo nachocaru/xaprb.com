@@ -1,7 +1,7 @@
 ---
 title: A great talk on Go concurrency patterns
 date: "2013-05-24"
-permalink: /blog/2013/05/24/a-great-talk-on-go-concurrency-patterns/
+url: /blog/2013/05/24/a-great-talk-on-go-concurrency-patterns/
 categories:
   - Conferences
   - Databases

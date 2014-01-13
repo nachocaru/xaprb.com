@@ -1,7 +1,7 @@
 ---
 title: How to install innotop on Microsoft Windows
 date: "2006-11-11"
-permalink: /blog/2006/11/11/how-to-install-innotop-on-microsoft-windows/
+url: /blog/2006/11/11/how-to-install-innotop-on-microsoft-windows/
 categories:
   - Databases
   - Open Source

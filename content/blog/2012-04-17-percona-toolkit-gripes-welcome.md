@@ -1,7 +1,7 @@
 ---
 title: Percona Toolkit gripes welcome
 date: "2012-04-17"
-permalink: /blog/2012/04/17/percona-toolkit-gripes-welcome/
+url: /blog/2012/04/17/percona-toolkit-gripes-welcome/
 categories:
   - Databases
 ---

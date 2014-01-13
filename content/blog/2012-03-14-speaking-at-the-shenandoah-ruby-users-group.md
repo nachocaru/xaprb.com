@@ -1,7 +1,7 @@
 ---
 title: Speaking at the Shenandoah Ruby Users Group
 date: "2012-03-14"
-permalink: /blog/2012/03/14/speaking-at-the-shenandoah-ruby-users-group/
+url: /blog/2012/03/14/speaking-at-the-shenandoah-ruby-users-group/
 categories:
   - Databases
 ---

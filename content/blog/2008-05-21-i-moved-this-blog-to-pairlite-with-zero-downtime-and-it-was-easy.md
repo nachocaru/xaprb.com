@@ -1,7 +1,7 @@
 ---
 title: I moved this blog to pairLite with zero downtime, and it was easy
 date: "2008-05-21"
-permalink: /blog/2008/05/21/i-moved-this-blog-to-pairlite-with-zero-downtime-and-it-was-easy/
+url: /blog/2008/05/21/i-moved-this-blog-to-pairlite-with-zero-downtime-and-it-was-easy/
 ---
 Did you notice that I moved this blog from [pair Networks][1] to [pairLite hosting][2]?
 

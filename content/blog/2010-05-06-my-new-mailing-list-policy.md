@@ -1,7 +1,7 @@
 ---
 title: My new mailing list policy
 date: "2010-05-06"
-permalink: /blog/2010/05/06/my-new-mailing-list-policy/
+url: /blog/2010/05/06/my-new-mailing-list-policy/
 categories:
   - Commentary
 ---

@@ -1,7 +1,7 @@
 ---
 title: A review of Pro MySQL (Kruckenberg and Pipes, Apress 2005)
 date: "2007-02-10"
-permalink: /blog/2007/02/10/a-review-of-pro-mysql-kruckenberg-and-pipes-apress-2005/
+url: /blog/2007/02/10/a-review-of-pro-mysql-kruckenberg-and-pipes-apress-2005/
 categories:
   - Databases
 ---

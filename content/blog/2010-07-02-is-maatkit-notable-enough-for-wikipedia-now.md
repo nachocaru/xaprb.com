@@ -1,7 +1,7 @@
 ---
 title: Is Maatkit notable enough for Wikipedia now?
 date: "2010-07-02"
-permalink: /blog/2010/07/02/is-maatkit-notable-enough-for-wikipedia-now/
+url: /blog/2010/07/02/is-maatkit-notable-enough-for-wikipedia-now/
 categories:
   - Databases
   - Open Source

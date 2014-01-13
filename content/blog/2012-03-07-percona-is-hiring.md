@@ -1,7 +1,7 @@
 ---
 title: Percona is hiring
 date: "2012-03-07"
-permalink: /blog/2012/03/07/percona-is-hiring/
+url: /blog/2012/03/07/percona-is-hiring/
 categories:
   - Databases
 ---

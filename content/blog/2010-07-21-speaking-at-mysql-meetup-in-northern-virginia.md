@@ -1,7 +1,7 @@
 ---
 title: Speaking at MySQL Meetup in Northern Virginia
 date: "2010-07-21"
-permalink: /blog/2010/07/21/speaking-at-mysql-meetup-in-northern-virginia/
+url: /blog/2010/07/21/speaking-at-mysql-meetup-in-northern-virginia/
 categories:
   - Conferences
   - Databases

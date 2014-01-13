@@ -1,7 +1,7 @@
 ---
 title: Speaking at NovaRUG on Thursday
 date: "2010-08-16"
-permalink: /blog/2010/08/16/speaking-at-novarug-on-thursday/
+url: /blog/2010/08/16/speaking-at-novarug-on-thursday/
 categories:
   - Conferences
   - Databases

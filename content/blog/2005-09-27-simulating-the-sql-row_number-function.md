@@ -1,7 +1,7 @@
 ---
 title: How to simulate the SQL ROW_NUMBER function
 date: "2005-09-27"
-permalink: /blog/2005/09/27/simulating-the-sql-row_number-function/
+url: /blog/2005/09/27/simulating-the-sql-row_number-function/
 categories:
   - Databases
 ---

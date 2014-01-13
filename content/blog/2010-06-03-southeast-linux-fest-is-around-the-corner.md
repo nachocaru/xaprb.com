@@ -1,7 +1,7 @@
 ---
 title: Southeast Linux Fest is around the corner
 date: "2010-06-03"
-permalink: /blog/2010/06/03/southeast-linux-fest-is-around-the-corner/
+url: /blog/2010/06/03/southeast-linux-fest-is-around-the-corner/
 categories:
   - Conferences
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: How to convert MySQL output to HTML tables
 date: "2006-04-13"
-permalink: /blog/2006/04/13/using-awk-to-convert-mysql-output-to-tables/
+url: /blog/2006/04/13/using-awk-to-convert-mysql-output-to-tables/
 categories:
   - Databases
 ---

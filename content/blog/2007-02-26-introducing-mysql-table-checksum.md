@@ -1,7 +1,7 @@
 ---
 title: Introducing MySQL Table Checksum
 date: "2007-02-26"
-permalink: /blog/2007/02/26/introducing-mysql-table-checksum/
+url: /blog/2007/02/26/introducing-mysql-table-checksum/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: MySQL Enterprise/Community split could be renewed under Oracle
 date: "2009-12-14"
-permalink: /blog/2009/12/14/mysql-enterprisecommunity-split-could-be-renewed-under-oracle/
+url: /blog/2009/12/14/mysql-enterprisecommunity-split-could-be-renewed-under-oracle/
 categories:
   - Commentary
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: "A review of O'Reilly's SQL Hacks"
 date: "2007-01-02"
-permalink: /blog/2007/01/02/a-review-of-oreillys-sql-hacks/
+url: /blog/2007/01/02/a-review-of-oreillys-sql-hacks/
 categories:
   - Databases
 ---

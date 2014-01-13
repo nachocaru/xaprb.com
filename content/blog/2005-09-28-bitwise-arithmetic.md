@@ -1,7 +1,7 @@
 ---
 title: Tips and tricks for bitwise arithmetic
 date: "2005-09-28"
-permalink: /blog/2005/09/28/bitwise-arithmetic/
+url: /blog/2005/09/28/bitwise-arithmetic/
 ---
 Bitwise arithmetic can be very useful, and not just for C and graphics programmers, but for all types of programming tasks. Those who use it frequently enough become fluent. Here I present a few tips. As I think of more, I will add them here.
 

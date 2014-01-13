@@ -1,7 +1,7 @@
 ---
 title: Percona Live CFP closing soon!
 date: "2012-10-10"
-permalink: /blog/2012/10/10/percona-live-cfp-closing-soon/
+url: /blog/2012/10/10/percona-live-cfp-closing-soon/
 categories:
   - Databases
 ---

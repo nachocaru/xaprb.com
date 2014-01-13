@@ -1,7 +1,7 @@
 ---
 title: New Maatkit release policy
 date: "2007-11-18"
-permalink: /blog/2007/11/18/new-maatkit-release-policy/
+url: /blog/2007/11/18/new-maatkit-release-policy/
 categories:
   - Databases
   - Open Source

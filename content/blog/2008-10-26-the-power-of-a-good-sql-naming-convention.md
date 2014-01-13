@@ -1,7 +1,7 @@
 ---
 title: The power of a good SQL naming convention
 date: "2008-10-26"
-permalink: /blog/2008/10/26/the-power-of-a-good-sql-naming-convention/
+url: /blog/2008/10/26/the-power-of-a-good-sql-naming-convention/
 categories:
   - Programming
 ---

@@ -1,7 +1,7 @@
 ---
 title: How to select the first/least/max row per group in SQL
 date: "2006-12-07"
-permalink: /blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
+url: /blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
 categories:
   - Databases
 ---

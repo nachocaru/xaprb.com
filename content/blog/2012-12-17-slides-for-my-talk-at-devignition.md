@@ -1,7 +1,7 @@
 ---
 title: Slides for my talk at DevIgnition
 date: "2012-12-17"
-permalink: /blog/2012/12/17/slides-for-my-talk-at-devignition/
+url: /blog/2012/12/17/slides-for-my-talk-at-devignition/
 categories:
   - Databases
 ---

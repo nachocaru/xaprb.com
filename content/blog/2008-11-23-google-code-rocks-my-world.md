@@ -1,7 +1,7 @@
 ---
 title: Google Code rocks my world
 date: "2008-11-23"
-permalink: /blog/2008/11/23/google-code-rocks-my-world/
+url: /blog/2008/11/23/google-code-rocks-my-world/
 categories:
   - Open Source
   - Programming

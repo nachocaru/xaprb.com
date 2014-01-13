@@ -1,7 +1,7 @@
 ---
 title: How scalable is Riak?
 date: "2013-01-28"
-permalink: /blog/2013/01/28/how-scalable-is-riak/
+url: /blog/2013/01/28/how-scalable-is-riak/
 categories:
   - Databases
   - Performance

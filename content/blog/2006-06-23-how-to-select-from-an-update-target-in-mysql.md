@@ -1,7 +1,7 @@
 ---
 title: How to select from an update target in MySQL
 date: "2006-06-23"
-permalink: /blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
+url: /blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
 categories:
   - Databases
 ---

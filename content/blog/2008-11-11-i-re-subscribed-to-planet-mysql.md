@@ -1,7 +1,7 @@
 ---
 title: I re-subscribed to Planet MySQL
 date: "2008-11-11"
-permalink: /blog/2008/11/11/i-re-subscribed-to-planet-mysql/
+url: /blog/2008/11/11/i-re-subscribed-to-planet-mysql/
 categories:
   - Databases
 ---

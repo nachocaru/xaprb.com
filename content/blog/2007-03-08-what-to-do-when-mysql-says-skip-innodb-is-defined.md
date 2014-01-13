@@ -1,7 +1,7 @@
 ---
 title: What to do when MySQL says skip-innodb is defined
 date: "2007-03-08"
-permalink: /blog/2007/03/08/what-to-do-when-mysql-says-skip-innodb-is-defined/
+url: /blog/2007/03/08/what-to-do-when-mysql-says-skip-innodb-is-defined/
 categories:
   - Databases
 ---

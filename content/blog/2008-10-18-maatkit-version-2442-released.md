@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 2442 released
 date: "2008-10-18"
-permalink: /blog/2008/10/18/maatkit-version-2442-released/
+url: /blog/2008/10/18/maatkit-version-2442-released/
 categories:
   - Databases
   - Open Source

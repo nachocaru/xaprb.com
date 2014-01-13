@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL Conference East 2008
 date: "2008-04-01"
-permalink: /blog/2008/04/01/postgresql-conference-east-2008/
+url: /blog/2008/04/01/postgresql-conference-east-2008/
 categories:
   - Databases
 ---

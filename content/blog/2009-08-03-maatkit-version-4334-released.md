@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 4334 released
 date: "2009-08-03"
-permalink: /blog/2009/08/03/maatkit-version-4334-released/
+url: /blog/2009/08/03/maatkit-version-4334-released/
 categories:
   - Databases
   - Open Source

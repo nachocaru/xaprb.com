@@ -1,7 +1,7 @@
 ---
 title: The unexpected consequences of SELinux
 date: "2008-10-16"
-permalink: /blog/2008/10/16/the-unexpected-consequences-of-selinux/
+url: /blog/2008/10/16/the-unexpected-consequences-of-selinux/
 categories:
   - Databases
   - Operations

@@ -1,7 +1,7 @@
 ---
 title: 6 ways to stay sane while working from home
 date: "2009-09-27"
-permalink: /blog/2009/09/27/6-ways-to-stay-sane-while-working-from-home/
+url: /blog/2009/09/27/6-ways-to-stay-sane-while-working-from-home/
 categories:
   - Commentary
 ---

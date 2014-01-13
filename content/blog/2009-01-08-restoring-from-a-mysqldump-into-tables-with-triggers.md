@@ -1,7 +1,7 @@
 ---
 title: Restoring from a mysqldump into tables with triggers
 date: "2009-01-08"
-permalink: /blog/2009/01/08/restoring-from-a-mysqldump-into-tables-with-triggers/
+url: /blog/2009/01/08/restoring-from-a-mysqldump-into-tables-with-triggers/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: Version 3.0 of mysqlreport released
 date: "2006-12-08"
-permalink: /blog/2006/12/08/version-30-of-mysqlreport-released/
+url: /blog/2006/12/08/version-30-of-mysqlreport-released/
 categories:
   - Databases
 ---

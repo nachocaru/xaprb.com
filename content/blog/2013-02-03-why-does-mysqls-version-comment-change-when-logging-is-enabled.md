@@ -1,7 +1,7 @@
 ---
 title: "Why does MySQL's version comment change when logging is enabled?"
 date: "2013-02-03"
-permalink: /blog/2013/02/03/why-does-mysqls-version-comment-change-when-logging-is-enabled/
+url: /blog/2013/02/03/why-does-mysqls-version-comment-change-when-logging-is-enabled/
 categories:
   - Databases
 ---

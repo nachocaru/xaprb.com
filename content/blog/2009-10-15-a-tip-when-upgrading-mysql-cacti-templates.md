@@ -1,7 +1,7 @@
 ---
 title: A tip when upgrading mysql-cacti-templates
 date: "2009-10-15"
-permalink: /blog/2009/10/15/a-tip-when-upgrading-mysql-cacti-templates/
+url: /blog/2009/10/15/a-tip-when-upgrading-mysql-cacti-templates/
 categories:
   - Databases
 ---

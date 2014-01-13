@@ -1,7 +1,7 @@
 ---
 title: Secure your accounts and devices
 date: "2013-12-18"
-permalink: /blog/2013/12/18/secure-your-accounts-and-devices/
+url: /blog/2013/12/18/secure-your-accounts-and-devices/
 categories:
   - Security
 ---

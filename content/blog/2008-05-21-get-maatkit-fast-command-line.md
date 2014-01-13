@@ -1,7 +1,7 @@
 ---
 title: Get Maatkit fast from the command line
 date: "2008-05-21"
-permalink: /blog/2008/05/21/get-maatkit-fast-command-line/
+url: /blog/2008/05/21/get-maatkit-fast-command-line/
 categories:
   - Databases
   - Open Source

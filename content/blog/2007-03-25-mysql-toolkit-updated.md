@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit updated
 date: "2007-03-25"
-permalink: /blog/2007/03/25/mysql-toolkit-updated/
+url: /blog/2007/03/25/mysql-toolkit-updated/
 categories:
   - Databases
   - Open Source

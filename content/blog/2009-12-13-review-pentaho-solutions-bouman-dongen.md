@@ -1,7 +1,7 @@
 ---
 title: A review of Pentaho Solutions by Roland Bouman and Jos van Dongen
 date: "2009-12-13"
-permalink: /blog/2009/12/13/review-pentaho-solutions-bouman-dongen/
+url: /blog/2009/12/13/review-pentaho-solutions-bouman-dongen/
 categories:
   - Databases
   - Reviews

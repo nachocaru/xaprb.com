@@ -1,7 +1,7 @@
 ---
 title: A review of Understanding MySQL Internals by Sasha Pachev
 date: "2010-02-19"
-permalink: /blog/2010/02/19/a-review-of-understanding-mysql-internals-by-sasha-pachev/
+url: /blog/2010/02/19/a-review-of-understanding-mysql-internals-by-sasha-pachev/
 categories:
   - Databases
   - Reviews

@@ -1,7 +1,7 @@
 ---
 title: "Two upcoming Go-related talks I'm giving"
 date: "2013-04-16"
-permalink: /blog/2013/04/16/two-upcoming-go-related-talks-im-giving/
+url: /blog/2013/04/16/two-upcoming-go-related-talks-im-giving/
 categories:
   - Conferences
   - Programming

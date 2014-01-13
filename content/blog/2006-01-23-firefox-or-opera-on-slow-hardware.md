@@ -1,7 +1,7 @@
 ---
 title: Firefox vs. Opera on slow hardware
 date: "2006-01-23"
-permalink: /blog/2006/01/23/firefox-or-opera-on-slow-hardware/
+url: /blog/2006/01/23/firefox-or-opera-on-slow-hardware/
 ---
 My main computer is a medieval laptop running [Ubuntu][1] GNU/Linux. I used to run Gentoo but tried Ubuntu on a lark, and haven't been motivated enough to change back to Gentoo (or even decide whether I want to, since Ubuntu works fine too). There is one problem, though: [Firefox][2] is running more slowly with each release. What to do?
 

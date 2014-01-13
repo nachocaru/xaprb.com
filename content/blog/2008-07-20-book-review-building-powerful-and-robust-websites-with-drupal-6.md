@@ -1,7 +1,7 @@
 ---
 title: "Book Review: Building powerful and robust websites with Drupal 6"
 date: "2008-07-20"
-permalink: /blog/2008/07/20/book-review-building-powerful-and-robust-websites-with-drupal-6/
+url: /blog/2008/07/20/book-review-building-powerful-and-robust-websites-with-drupal-6/
 ---
 <p style="float:right">
   <a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&#038;location=http%3A%2F%2Fwww.amazon.com%2FBuilding-powerful-robust-websites-Drupal%2Fdp%2F1847192971&#038;tag=xaprb-20&#038;linkCode=ur2&#038;camp=1789&#038;creative=9325"><img style="float:right" src='http://www.xaprb.com/media/2008/07/robust_drupal_6.jpg' alt='Drupal' /></a>

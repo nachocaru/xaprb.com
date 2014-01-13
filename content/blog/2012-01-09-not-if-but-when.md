@@ -1,7 +1,7 @@
 ---
 title: Not if, but when
 date: "2012-01-09"
-permalink: /blog/2012/01/09/not-if-but-when/
+url: /blog/2012/01/09/not-if-but-when/
 categories:
   - Databases
 ---

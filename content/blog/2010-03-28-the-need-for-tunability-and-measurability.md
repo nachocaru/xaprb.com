@@ -1,7 +1,7 @@
 ---
 title: The need for tunability and measurability
 date: "2010-03-28"
-permalink: /blog/2010/03/28/the-need-for-tunability-and-measurability/
+url: /blog/2010/03/28/the-need-for-tunability-and-measurability/
 categories:
   - Databases
 ---

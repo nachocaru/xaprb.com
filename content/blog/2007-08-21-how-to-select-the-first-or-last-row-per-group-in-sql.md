@@ -1,7 +1,7 @@
 ---
 title: How to select the first or last row per group in SQL
 date: "2007-08-21"
-permalink: /blog/2007/08/21/how-to-select-the-first-or-last-row-per-group-in-sql/
+url: /blog/2007/08/21/how-to-select-the-first-or-last-row-per-group-in-sql/
 categories:
   - Databases
 ---

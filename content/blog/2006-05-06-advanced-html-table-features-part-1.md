@@ -1,7 +1,7 @@
 ---
 title: Advanced HTML table features, Part 1
 date: "2006-05-06"
-permalink: /blog/2006/05/06/advanced-html-table-features-part-1/
+url: /blog/2006/05/06/advanced-html-table-features-part-1/
 ---
 After a long break for a bunch of SQL posts, I'm continuing to explain how to push HTML tables to their limits. In this series I discuss the seldom-used features many people don't know exist in HTML tables, such as axes and the `headers` attribute. These are the tools you need to really use tables to their full power, instead of shoving some square-peg data into a round-hole table. Granted, many times you don't need these features, but when you do, they're like the "ludicrous speed" lever on your spaceship: nothing else will do. Hang on to your hat! Tabular data is where HTML gets really interesting.
 

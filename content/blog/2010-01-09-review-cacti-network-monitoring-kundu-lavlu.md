@@ -1,7 +1,7 @@
 ---
 title: >
 date: "2010-01-09"
-permalink: /blog/2010/01/09/review-cacti-network-monitoring-kundu-lavlu/
+url: /blog/2010/01/09/review-cacti-network-monitoring-kundu-lavlu/
 categories:
   - Operations
   - Reviews

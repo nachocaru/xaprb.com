@@ -1,7 +1,7 @@
 ---
 title: Postmodern databases
 date: "2010-06-12"
-permalink: /blog/2010/06/12/postmodern-databases/
+url: /blog/2010/06/12/postmodern-databases/
 categories:
   - Commentary
   - Conferences

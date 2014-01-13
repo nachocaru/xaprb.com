@@ -1,7 +1,7 @@
 ---
 title: A review of Clojure In Action by Amit Rathore
 date: "2012-04-06"
-permalink: /blog/2012/04/06/a-review-of-clojure-in-action-by-amit-rathore/
+url: /blog/2012/04/06/a-review-of-clojure-in-action-by-amit-rathore/
 categories:
   - Programming
   - Reviews

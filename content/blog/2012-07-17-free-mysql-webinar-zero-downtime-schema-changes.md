@@ -1,7 +1,7 @@
 ---
 title: "Free MySQL webinar: zero-downtime schema changes"
 date: "2012-07-17"
-permalink: /blog/2012/07/17/free-mysql-webinar-zero-downtime-schema-changes/
+url: /blog/2012/07/17/free-mysql-webinar-zero-downtime-schema-changes/
 categories:
   - Databases
 ---

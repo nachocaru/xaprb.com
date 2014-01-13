@@ -1,7 +1,7 @@
 ---
 title: The history of OpenSQL Camp
 date: "2010-04-18"
-permalink: /blog/2010/04/18/the-history-of-opensql-camp/
+url: /blog/2010/04/18/the-history-of-opensql-camp/
 categories:
   - Commentary
   - Conferences

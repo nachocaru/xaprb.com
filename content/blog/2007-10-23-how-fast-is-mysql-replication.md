@@ -1,7 +1,7 @@
 ---
 title: How fast is MySQL replication?
 date: "2007-10-23"
-permalink: /blog/2007/10/23/how-fast-is-mysql-replication/
+url: /blog/2007/10/23/how-fast-is-mysql-replication/
 categories:
   - Databases
 ---

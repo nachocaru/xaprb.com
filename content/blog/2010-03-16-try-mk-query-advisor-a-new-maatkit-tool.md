@@ -1,7 +1,7 @@
 ---
 title: Try mk-query-advisor, a new Maatkit tool
 date: "2010-03-16"
-permalink: /blog/2010/03/16/try-mk-query-advisor-a-new-maatkit-tool/
+url: /blog/2010/03/16/try-mk-query-advisor-a-new-maatkit-tool/
 categories:
   - Databases
   - Open Source

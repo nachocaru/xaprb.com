@@ -1,7 +1,7 @@
 ---
 title: Slides for the innotop workshop at MySQL Conference and Expo 2007
 date: "2007-05-05"
-permalink: /blog/2007/05/05/slides-for-the-innotop-workshop-at-mysql-conference-and-expo-2007/
+url: /blog/2007/05/05/slides-for-the-innotop-workshop-at-mysql-conference-and-expo-2007/
 categories:
   - Databases
   - Open Source

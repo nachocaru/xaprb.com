@@ -1,7 +1,7 @@
 ---
 title: Get a free copy of High Performance MySQL 3rd Edition!
 date: "2012-02-15"
-permalink: /blog/2012/02/15/get-a-free-copy-of-high-performance-mysql-3rd-edition/
+url: /blog/2012/02/15/get-a-free-copy-of-high-performance-mysql-3rd-edition/
 categories:
   - Conferences
   - Databases

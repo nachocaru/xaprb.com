@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit version 848 released
 date: "2007-09-01"
-permalink: /blog/2007/09/01/mysql-toolkit-version-848-released/
+url: /blog/2007/09/01/mysql-toolkit-version-848-released/
 categories:
   - Databases
   - Open Source

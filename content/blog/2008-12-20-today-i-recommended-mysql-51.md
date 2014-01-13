@@ -1,7 +1,7 @@
 ---
 title: Today I recommended MySQL 5.1
 date: "2008-12-20"
-permalink: /blog/2008/12/20/today-i-recommended-mysql-51/
+url: /blog/2008/12/20/today-i-recommended-mysql-51/
 categories:
   - Databases
 ---

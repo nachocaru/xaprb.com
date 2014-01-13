@@ -1,7 +1,7 @@
 ---
 title: A very fast FNV hash function for MySQL
 date: "2008-03-09"
-permalink: /blog/2008/03/09/a-very-fast-fnv-hash-function-for-mysql/
+url: /blog/2008/03/09/a-very-fast-fnv-hash-function-for-mysql/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Announcing OpenSQL Camp 2008
 date: "2008-08-26"
-permalink: /blog/2008/08/26/announcing-opensql-camp-2008/
+url: /blog/2008/08/26/announcing-opensql-camp-2008/
 categories:
   - Conferences
   - Databases

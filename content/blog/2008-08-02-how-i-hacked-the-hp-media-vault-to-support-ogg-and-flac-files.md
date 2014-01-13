@@ -1,7 +1,7 @@
 ---
 title: How I hacked the HP Media Vault to support OGG and FLAC files
 date: "2008-08-02"
-permalink: /blog/2008/08/02/how-i-hacked-the-hp-media-vault-to-support-ogg-and-flac-files/
+url: /blog/2008/08/02/how-i-hacked-the-hp-media-vault-to-support-ogg-and-flac-files/
 ---
 Let me begin by saying "I am so not a gadget guy." I don't have an iPhone. Heck, I didn't have a cellphone at all until April when I joined Percona as a consultant. I don't ooh and aah over other people's gadgets most of the time. I don't have, you know, that kind of envy. I'm sure you see where this is going: I got a gadget and I think it's really cool.
 

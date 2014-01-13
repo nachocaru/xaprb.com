@@ -1,7 +1,7 @@
 ---
 title: You have the right to see code samples in an interview
 date: "2008-05-04"
-permalink: /blog/2008/05/04/you-have-the-right-to-see-code-samples-in-an-interview/
+url: /blog/2008/05/04/you-have-the-right-to-see-code-samples-in-an-interview/
 ---
 Joel Spolsky writes about [12 steps to better code][1], and elsewhere about how [candidates should write code in interviews][2].
 

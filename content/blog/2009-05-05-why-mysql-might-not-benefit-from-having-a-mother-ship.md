@@ -1,7 +1,7 @@
 ---
 title: Why MySQL might not benefit from having a mother ship
 date: "2009-05-05"
-permalink: /blog/2009/05/05/why-mysql-might-not-benefit-from-having-a-mother-ship/
+url: /blog/2009/05/05/why-mysql-might-not-benefit-from-having-a-mother-ship/
 categories:
   - Commentary
   - Databases

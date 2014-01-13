@@ -1,7 +1,7 @@
 ---
 title: The innotop session at MySQLConf 2007
 date: "2007-04-10"
-permalink: /blog/2007/04/10/the-innotop-session-at-mysqlconf-2007/
+url: /blog/2007/04/10/the-innotop-session-at-mysqlconf-2007/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: What does an open source sales model look like?
 date: "2009-04-29"
-permalink: /blog/2009/04/29/what-does-an-open-source-sales-model-look-like/
+url: /blog/2009/04/29/what-does-an-open-source-sales-model-look-like/
 categories:
   - Commentary
   - Open Source

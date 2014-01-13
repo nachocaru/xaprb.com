@@ -1,7 +1,7 @@
 ---
 title: Maatkit in RHEL and CentOS
 date: "2008-05-13"
-permalink: /blog/2008/05/13/maatkit-in-rhel-and-centos/
+url: /blog/2008/05/13/maatkit-in-rhel-and-centos/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: When are you required to have a commercial MySQL license?
 date: "2009-02-17"
-permalink: /blog/2009/02/17/when-are-you-required-to-have-a-commercial-mysql-license/
+url: /blog/2009/02/17/when-are-you-required-to-have-a-commercial-mysql-license/
 categories:
   - Databases
 ---

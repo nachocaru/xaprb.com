@@ -1,7 +1,7 @@
 ---
 title: "Where's the Calpont source code?"
 date: "2009-04-25"
-permalink: /blog/2009/04/25/wheres-the-calpont-source-code/
+url: /blog/2009/04/25/wheres-the-calpont-source-code/
 categories:
   - Conferences
   - Databases

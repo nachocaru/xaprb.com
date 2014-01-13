@@ -1,7 +1,7 @@
 ---
 title: "Automated, integrated sharding: the new killer database feature"
 date: "2012-04-09"
-permalink: /blog/2012/04/09/automated-integrated-sharding-the-new-killer-database-feature/
+url: /blog/2012/04/09/automated-integrated-sharding-the-new-killer-database-feature/
 categories:
   - Databases
 ---

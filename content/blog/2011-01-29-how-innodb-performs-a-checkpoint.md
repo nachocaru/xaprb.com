@@ -1,7 +1,7 @@
 ---
 title: How InnoDB performs a checkpoint
 date: "2011-01-29"
-permalink: /blog/2011/01/29/how-innodb-performs-a-checkpoint/
+url: /blog/2011/01/29/how-innodb-performs-a-checkpoint/
 categories:
   - Databases
 ---

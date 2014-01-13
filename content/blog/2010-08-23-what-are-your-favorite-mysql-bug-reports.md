@@ -1,7 +1,7 @@
 ---
 title: What are your favorite MySQL bug reports?
 date: "2010-08-23"
-permalink: /blog/2010/08/23/what-are-your-favorite-mysql-bug-reports/
+url: /blog/2010/08/23/what-are-your-favorite-mysql-bug-reports/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Analyze and optimize memcached usage with Maatkit
 date: "2009-07-25"
-permalink: /blog/2009/07/25/analyze-and-optimize-memcached-usage-with-maatkit/
+url: /blog/2009/07/25/analyze-and-optimize-memcached-usage-with-maatkit/
 categories:
   - Databases
   - Open Source

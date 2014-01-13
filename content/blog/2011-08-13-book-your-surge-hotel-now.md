@@ -1,7 +1,7 @@
 ---
 title: Book your Surge hotel now
 date: "2011-08-13"
-permalink: /blog/2011/08/13/book-your-surge-hotel-now/
+url: /blog/2011/08/13/book-your-surge-hotel-now/
 categories:
   - Conferences
 ---

@@ -1,7 +1,7 @@
 ---
 title: How to unit-test code that interacts with a database
 date: "2008-08-19"
-permalink: /blog/2008/08/19/how-to-unit-test-code-that-interacts-with-a-database/
+url: /blog/2008/08/19/how-to-unit-test-code-that-interacts-with-a-database/
 ---
 I got some interesting comments on my previous article about [unit testing Maatkit][1], including echoes of my own conversion to the unit-testing religion. One of the objections I've heard a lot about unit-testing is how it's impossible to test code that talks to a database. "It's too hard," they say. "Oh, it's easy to test a module that calculates a square root, but a database? Way too much work!"
 

@@ -1,7 +1,7 @@
 ---
 title: Why large IN clauses are problematic
 date: "2006-06-28"
-permalink: /blog/2006/06/28/why-large-in-clauses-are-problematic/
+url: /blog/2006/06/28/why-large-in-clauses-are-problematic/
 ---
 I've seen a lot of SQL code that uses an `IN` clause as a place to put a variable number of parameters, allowing the query to be more flexible. There are several downsides to this technique. This article discusses those downsides and explains how to avoid them.
 

@@ -1,7 +1,7 @@
 ---
 title: Stock images are too popular
 date: "2008-03-27"
-permalink: /blog/2008/03/27/stock-images-are-too-popular/
+url: /blog/2008/03/27/stock-images-are-too-popular/
 ---
 <p>I have an ingrained (possibly even genetic) aversion to stock images.  Actually, not all stock: just the vacuous kind.  You know what I mean: like  the  politically-correct, gender-balanced, racially-balanced, age-diverse ones where people are all smiling and pointing at a computer screen you can't see.  Ugh!</p>
 

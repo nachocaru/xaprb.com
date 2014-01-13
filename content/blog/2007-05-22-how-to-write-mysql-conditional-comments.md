@@ -1,7 +1,7 @@
 ---
 title: How to write MySQL conditional comments
 date: "2007-05-22"
-permalink: /blog/2007/05/22/how-to-write-mysql-conditional-comments/
+url: /blog/2007/05/22/how-to-write-mysql-conditional-comments/
 categories:
   - Databases
 ---

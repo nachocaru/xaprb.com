@@ -1,7 +1,7 @@
 ---
 title: Optimal performance out of the box!
 date: "2010-05-12"
-permalink: /blog/2010/05/12/optimal-performance-out-of-the-box/
+url: /blog/2010/05/12/optimal-performance-out-of-the-box/
 categories:
   - Databases
 ---

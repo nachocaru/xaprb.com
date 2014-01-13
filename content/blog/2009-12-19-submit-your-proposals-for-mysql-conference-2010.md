@@ -1,7 +1,7 @@
 ---
 title: Submit your proposals for MySQL conference 2010
 date: "2009-12-19"
-permalink: /blog/2009/12/19/submit-your-proposals-for-mysql-conference-2010/
+url: /blog/2009/12/19/submit-your-proposals-for-mysql-conference-2010/
 categories:
   - Conferences
   - Databases

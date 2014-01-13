@@ -1,7 +1,7 @@
 ---
 title: What is a SQL blind insert?
 date: "2006-07-07"
-permalink: /blog/2006/07/07/what-is-a-sql-blind-insert/
+url: /blog/2006/07/07/what-is-a-sql-blind-insert/
 categories:
   - Databases
 ---

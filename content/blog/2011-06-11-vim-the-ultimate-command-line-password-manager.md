@@ -1,7 +1,7 @@
 ---
 title: Vim, the ultimate command-line password manager
 date: "2011-06-11"
-permalink: /blog/2011/06/11/vim-the-ultimate-command-line-password-manager/
+url: /blog/2011/06/11/vim-the-ultimate-command-line-password-manager/
 categories:
   - Desktop
 ---

@@ -1,7 +1,7 @@
 ---
 title: "A review of MySQL Administrator's Bible"
 date: "2009-06-30"
-permalink: /blog/2009/06/30/a-review-of-mysql-administrators-bible/
+url: /blog/2009/06/30/a-review-of-mysql-administrators-bible/
 categories:
   - Databases
   - Reviews

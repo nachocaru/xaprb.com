@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 2582 released
 date: "2008-12-01"
-permalink: /blog/2008/12/01/maatkit-version-2582-released/
+url: /blog/2008/12/01/maatkit-version-2582-released/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: How often should you use OPTIMIZE TABLE?
 date: "2010-02-07"
-permalink: /blog/2010/02/07/how-often-should-you-use-optimize-table/
+url: /blog/2010/02/07/how-often-should-you-use-optimize-table/
 categories:
   - Databases
 ---

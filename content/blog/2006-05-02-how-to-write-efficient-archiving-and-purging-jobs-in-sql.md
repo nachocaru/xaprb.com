@@ -1,7 +1,7 @@
 ---
 title: How to write efficient archiving and purging jobs in SQL
 date: "2006-05-02"
-permalink: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+url: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
 categories:
   - Databases
 ---

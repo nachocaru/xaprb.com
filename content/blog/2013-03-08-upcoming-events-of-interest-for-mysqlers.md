@@ -1,7 +1,7 @@
 ---
 title: Upcoming events of interest for MySQLers
 date: "2013-03-08"
-permalink: /blog/2013/03/08/upcoming-events-of-interest-for-mysqlers/
+url: /blog/2013/03/08/upcoming-events-of-interest-for-mysqlers/
 categories:
   - Conferences
   - Databases

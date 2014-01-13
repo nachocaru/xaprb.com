@@ -1,7 +1,7 @@
 ---
 title: Organizing High Performance MySQL, 2nd Edition
 date: "2007-09-06"
-permalink: /blog/2007/09/06/organizing-high-performance-mysql-2nd-edition/
+url: /blog/2007/09/06/organizing-high-performance-mysql-2nd-edition/
 categories:
   - Databases
 ---

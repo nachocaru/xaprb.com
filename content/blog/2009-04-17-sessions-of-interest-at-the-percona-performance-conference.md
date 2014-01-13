@@ -1,7 +1,7 @@
 ---
 title: Sessions of interest at the Percona Performance Conference
 date: "2009-04-17"
-permalink: /blog/2009/04/17/sessions-of-interest-at-the-percona-performance-conference/
+url: /blog/2009/04/17/sessions-of-interest-at-the-percona-performance-conference/
 categories:
   - Conferences
   - Databases

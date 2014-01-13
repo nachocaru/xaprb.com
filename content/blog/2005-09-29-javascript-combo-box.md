@@ -1,7 +1,7 @@
 ---
 title: JavaScript combo box
 date: "2005-09-29"
-permalink: /blog/2005/09/29/javascript-combo-box/
+url: /blog/2005/09/29/javascript-combo-box/
 ---
 <p style="border:solid red 1px; background:yellow">
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>

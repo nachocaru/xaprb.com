@@ -1,7 +1,7 @@
 ---
 title: Priorities are a project risk
 date: "2006-02-26"
-permalink: /blog/2006/02/26/priorities-are-a-project-risk/
+url: /blog/2006/02/26/priorities-are-a-project-risk/
 ---
 If you have to prioritize projects (and you do), you are sacrificing one thing for another. What happens when that starts to work against itself? What happens when you can't just put the highest priority project on top? Can you imagine your priorities looking like this?
 

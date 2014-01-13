@@ -1,7 +1,7 @@
 ---
 title: "What do you know about Oracle's InnoDB+ storage engine?"
 date: "2009-12-12"
-permalink: /blog/2009/12/12/what-do-you-know-about-oracles-innodb-plus-storage-engine/
+url: /blog/2009/12/12/what-do-you-know-about-oracles-innodb-plus-storage-engine/
 categories:
   - Databases
   - Open Source

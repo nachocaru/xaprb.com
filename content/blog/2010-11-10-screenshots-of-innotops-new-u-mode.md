@@ -1,7 +1,7 @@
 ---
 title: "Screenshots of innotop's new U mode"
 date: "2010-11-10"
-permalink: /blog/2010/11/10/screenshots-of-innotops-new-u-mode/
+url: /blog/2010/11/10/screenshots-of-innotops-new-u-mode/
 categories:
   - Databases
   - Open Source

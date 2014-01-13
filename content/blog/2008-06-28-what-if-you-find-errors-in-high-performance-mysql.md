@@ -1,7 +1,7 @@
 ---
 title: What if you find errors in High Performance MySQL?
 date: "2008-06-28"
-permalink: /blog/2008/06/28/what-if-you-find-errors-in-high-performance-mysql/
+url: /blog/2008/06/28/what-if-you-find-errors-in-high-performance-mysql/
 categories:
   - Databases
   - Writing

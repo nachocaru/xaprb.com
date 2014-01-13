@@ -1,7 +1,7 @@
 ---
 title: How to export your Previous Recipients addresses from Mac Mail
 date: "2012-08-15"
-permalink: /blog/2012/08/15/how-to-export-your-previous-recipients-addresses-from-mac-mail/
+url: /blog/2012/08/15/how-to-export-your-previous-recipients-addresses-from-mac-mail/
 categories:
   - Databases
 ---

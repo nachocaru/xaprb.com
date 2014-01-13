@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 2325 released
 date: "2008-09-19"
-permalink: /blog/2008/09/19/maatkit-version-2325-released/
+url: /blog/2008/09/19/maatkit-version-2325-released/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: Why multi-table cross-database deletes fail in MySQL
 date: "2006-05-12"
-permalink: /blog/2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/
+url: /blog/2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Free talk on MySQL and Go at Percona MySQL University DC
 date: "2013-09-04"
-permalink: /blog/2013/09/04/free-talk-on-mysql-and-go-at-percona-mysql-university-dc/
+url: /blog/2013/09/04/free-talk-on-mysql-and-go-at-percona-mysql-university-dc/
 categories:
   - Databases
 ---

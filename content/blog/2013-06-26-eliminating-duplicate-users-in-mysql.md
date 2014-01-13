@@ -1,7 +1,7 @@
 ---
 title: Eliminating duplicate users in MySQL
 date: "2013-06-26"
-permalink: /blog/2013/06/26/eliminating-duplicate-users-in-mysql/
+url: /blog/2013/06/26/eliminating-duplicate-users-in-mysql/
 categories:
   - Databases
 ---

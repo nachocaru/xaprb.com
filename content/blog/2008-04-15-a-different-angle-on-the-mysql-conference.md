@@ -1,7 +1,7 @@
 ---
 title: A different angle on the MySQL Conference
 date: "2008-04-15"
-permalink: /blog/2008/04/15/a-different-angle-on-the-mysql-conference/
+url: /blog/2008/04/15/a-different-angle-on-the-mysql-conference/
 categories:
   - Databases
 ---

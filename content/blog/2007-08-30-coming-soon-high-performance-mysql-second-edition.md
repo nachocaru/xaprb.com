@@ -1,7 +1,7 @@
 ---
 title: "Coming soon: High Performance MySQL, Second Edition"
 date: "2007-08-30"
-permalink: /blog/2007/08/30/coming-soon-high-performance-mysql-second-edition/
+url: /blog/2007/08/30/coming-soon-high-performance-mysql-second-edition/
 categories:
   - Databases
 ---

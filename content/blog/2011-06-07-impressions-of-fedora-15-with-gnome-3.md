@@ -1,7 +1,7 @@
 ---
 title: Impressions of Fedora 15 with Gnome 3
 date: "2011-06-07"
-permalink: /blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/
+url: /blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/
 categories:
   - Desktop
   - Open Source

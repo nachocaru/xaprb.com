@@ -1,7 +1,7 @@
 ---
 title: Seeking input for a new tool to verify MySQL upgrades
 date: "2009-05-29"
-permalink: /blog/2009/05/29/seeking-input-for-a-new-tool-to-verify-mysql-upgrades/
+url: /blog/2009/05/29/seeking-input-for-a-new-tool-to-verify-mysql-upgrades/
 categories:
   - Databases
   - Open Source

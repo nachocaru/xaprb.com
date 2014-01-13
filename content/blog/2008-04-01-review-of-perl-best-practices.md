@@ -1,7 +1,7 @@
 ---
 title: Review of Perl Best Practices
 date: "2008-04-01"
-permalink: /blog/2008/04/01/review-of-perl-best-practices/
+url: /blog/2008/04/01/review-of-perl-best-practices/
 ---
 [<img src="http://www.oreilly.com/catalog/covers/0596001738_cat.gif" style="float:right" width="180" height="236" />][1]In my opinion, every Perl programmer needs at least these two books: the [Camel][2], and the [Dog (Perl Best Practices)][1].
 

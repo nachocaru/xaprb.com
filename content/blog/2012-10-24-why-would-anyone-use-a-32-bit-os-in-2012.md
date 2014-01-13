@@ -1,7 +1,7 @@
 ---
 title: Why would anyone use a 32-bit OS in 2012?
 date: "2012-10-24"
-permalink: /blog/2012/10/24/why-would-anyone-use-a-32-bit-os-in-2012/
+url: /blog/2012/10/24/why-would-anyone-use-a-32-bit-os-in-2012/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Congrats to New Relic
 date: "2011-05-17"
-permalink: /blog/2011/05/17/congrats-to-new-relic/
+url: /blog/2011/05/17/congrats-to-new-relic/
 categories:
   - Open Source
 ---

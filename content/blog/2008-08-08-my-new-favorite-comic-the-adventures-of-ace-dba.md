@@ -1,7 +1,7 @@
 ---
 title: "My new favorite comic: The Adventures of Ace, DBA"
 date: "2008-08-08"
-permalink: /blog/2008/08/08/my-new-favorite-comic-the-adventures-of-ace-dba/
+url: /blog/2008/08/08/my-new-favorite-comic-the-adventures-of-ace-dba/
 categories:
   - Databases
 ---

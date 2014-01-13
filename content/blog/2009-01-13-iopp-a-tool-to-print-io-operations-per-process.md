@@ -1,7 +1,7 @@
 ---
 title: "iopp: a tool to print I/O operations per-process"
 date: "2009-01-13"
-permalink: /blog/2009/01/13/iopp-a-tool-to-print-io-operations-per-process/
+url: /blog/2009/01/13/iopp-a-tool-to-print-io-operations-per-process/
 categories:
   - Databases
   - Open Source

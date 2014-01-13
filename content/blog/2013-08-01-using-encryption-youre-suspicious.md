@@ -1,7 +1,7 @@
 ---
 title: "Using encryption? You're suspicious"
 date: "2013-08-01"
-permalink: /blog/2013/08/01/using-encryption-youre-suspicious/
+url: /blog/2013/08/01/using-encryption-youre-suspicious/
 categories:
   - Commentary
   - Web

@@ -1,7 +1,7 @@
 ---
 title: "There will be an O'Reilly MySQL Conference in April 2010"
 date: "2009-12-11"
-permalink: /blog/2009/12/11/there-will-be-an-oreilly-mysql-conference-in-april-2010/
+url: /blog/2009/12/11/there-will-be-an-oreilly-mysql-conference-in-april-2010/
 categories:
   - Conferences
   - Databases

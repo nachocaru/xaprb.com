@@ -1,7 +1,7 @@
 ---
 title: Things I love about Perl
 date: "2007-12-06"
-permalink: /blog/2007/12/06/things-i-love-about-perl/
+url: /blog/2007/12/06/things-i-love-about-perl/
 ---
 I don't love everything about Perl, but I love its sense of humor, which I think probably comes from its creators' senses of humor. From the Perl function documentation for `redo`:
 

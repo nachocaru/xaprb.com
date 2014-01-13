@@ -1,7 +1,7 @@
 ---
 title: Browser variations in RegExp.exec()
 date: "2006-01-14"
-permalink: /blog/2006/01/14/browser-variations-in-regexpexec/
+url: /blog/2006/01/14/browser-variations-in-regexpexec/
 ---
 IE6, Firefox 1.5 and Opera 8.5 handle regular expressions slightly differently. I analyzed them and learned some interesting things about the browsers. For this article, I'm using `abcde` as the input, and `/abc|d(e)/g` as the regular expression. The expression should match twice, and the second match should capture the letter "e" because it's in a capturing subexpression.
 

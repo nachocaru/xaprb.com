@@ -1,7 +1,7 @@
 ---
 title: Speed up your MySQL replication slaves
 date: "2008-01-13"
-permalink: /blog/2008/01/13/speed-up-your-mysql-replication-slaves/
+url: /blog/2008/01/13/speed-up-your-mysql-replication-slaves/
 categories:
   - Databases
 ---

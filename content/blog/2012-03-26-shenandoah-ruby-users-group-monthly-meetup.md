@@ -1,7 +1,7 @@
 ---
 title: Shenandoah Ruby Users Group Monthly Meetup
 date: "2012-03-26"
-permalink: /blog/2012/03/26/shenandoah-ruby-users-group-monthly-meetup/
+url: /blog/2012/03/26/shenandoah-ruby-users-group-monthly-meetup/
 categories:
   - Databases
 ---

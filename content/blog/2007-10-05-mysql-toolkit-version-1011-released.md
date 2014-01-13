@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit version 1011 released
 date: "2007-10-05"
-permalink: /blog/2007/10/05/mysql-toolkit-version-1011-released/
+url: /blog/2007/10/05/mysql-toolkit-version-1011-released/
 categories:
   - Databases
   - Open Source

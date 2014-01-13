@@ -1,7 +1,7 @@
 ---
 title: Sourceforge reintroduces persistent login cookies
 date: "2009-02-27"
-permalink: /blog/2009/02/27/sourceforge-reintroduces-persistent-login-cookies/
+url: /blog/2009/02/27/sourceforge-reintroduces-persistent-login-cookies/
 categories:
   - Commentary
   - Web

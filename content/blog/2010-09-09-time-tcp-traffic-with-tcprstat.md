@@ -1,7 +1,7 @@
 ---
 title: Time TCP traffic with tcprstat
 date: "2010-09-09"
-permalink: /blog/2010/09/09/time-tcp-traffic-with-tcprstat/
+url: /blog/2010/09/09/time-tcp-traffic-with-tcprstat/
 categories:
   - Databases
   - Open Source

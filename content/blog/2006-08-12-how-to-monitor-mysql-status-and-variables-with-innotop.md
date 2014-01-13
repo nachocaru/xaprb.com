@@ -1,7 +1,7 @@
 ---
 title: How to monitor MySQL status and variables with innotop
 date: "2006-08-12"
-permalink: /blog/2006/08/12/how-to-monitor-mysql-status-and-variables-with-innotop/
+url: /blog/2006/08/12/how-to-monitor-mysql-status-and-variables-with-innotop/
 categories:
   - Databases
   - Open Source

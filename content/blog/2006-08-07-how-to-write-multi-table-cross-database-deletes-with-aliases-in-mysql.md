@@ -1,6 +1,6 @@
 ---
 title: How to write multi-table, cross-database deletes with aliases in MySQL
-permalink: /blog/2006/08/07/how-to-write-multi-table-cross-database-deletes-with-aliases-in-mysql/
+url: /blog/2006/08/07/how-to-write-multi-table-cross-database-deletes-with-aliases-in-mysql/
 date: "2006-08-07"
 categories:
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: MySQL Archiver 0.9.2 released
 date: "2007-06-09"
-permalink: /blog/2007/06/09/mysql-archiver-092-released/
+url: /blog/2007/06/09/mysql-archiver-092-released/
 categories:
   - Databases
 ---

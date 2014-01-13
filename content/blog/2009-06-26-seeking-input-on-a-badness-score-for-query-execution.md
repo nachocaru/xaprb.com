@@ -1,7 +1,7 @@
 ---
 title: Seeking input on a badness score for query execution
 date: "2009-06-26"
-permalink: /blog/2009/06/26/seeking-input-on-a-badness-score-for-query-execution/
+url: /blog/2009/06/26/seeking-input-on-a-badness-score-for-query-execution/
 categories:
   - Databases
   - Open Source

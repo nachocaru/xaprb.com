@@ -1,7 +1,7 @@
 ---
 title: Progress on Maatkit bounty
 date: "2007-11-30"
-permalink: /blog/2007/11/30/progress-on-maatkit-bounty/
+url: /blog/2007/11/30/progress-on-maatkit-bounty/
 categories:
   - Databases
   - Open Source

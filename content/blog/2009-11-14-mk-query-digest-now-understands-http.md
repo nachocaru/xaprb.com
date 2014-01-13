@@ -1,7 +1,7 @@
 ---
 title: mk-query-digest now understands HTTP
 date: "2009-11-14"
-permalink: /blog/2009/11/14/mk-query-digest-now-understands-http/
+url: /blog/2009/11/14/mk-query-digest-now-understands-http/
 categories:
   - Databases
   - Open Source

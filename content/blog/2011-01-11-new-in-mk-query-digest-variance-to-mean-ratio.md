@@ -1,7 +1,7 @@
 ---
 title: "New in mk-query-digest: variance-to-mean ratio"
 date: "2011-01-11"
-permalink: /blog/2011/01/11/new-in-mk-query-digest-variance-to-mean-ratio/
+url: /blog/2011/01/11/new-in-mk-query-digest-variance-to-mean-ratio/
 categories:
   - Databases
   - Open Source

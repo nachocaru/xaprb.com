@@ -1,7 +1,7 @@
 ---
 title: Introducing MySQL Visual Explain
 date: "2007-07-29"
-permalink: /blog/2007/07/29/introducing-mysql-visual-explain/
+url: /blog/2007/07/29/introducing-mysql-visual-explain/
 categories:
   - Databases
 ---

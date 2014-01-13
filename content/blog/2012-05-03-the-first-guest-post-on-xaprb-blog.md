@@ -1,7 +1,7 @@
 ---
 title: The first guest post on Xaprb blog
 date: "2012-05-03"
-permalink: /blog/2012/05/03/the-first-guest-post-on-xaprb-blog/
+url: /blog/2012/05/03/the-first-guest-post-on-xaprb-blog/
 categories:
   - About
   - Commentary

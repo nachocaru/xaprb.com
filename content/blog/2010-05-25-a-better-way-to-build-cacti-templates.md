@@ -1,7 +1,7 @@
 ---
 title: A better way to build Cacti templates
 date: "2010-05-25"
-permalink: /blog/2010/05/25/a-better-way-to-build-cacti-templates/
+url: /blog/2010/05/25/a-better-way-to-build-cacti-templates/
 categories:
   - Databases
   - Monitoring

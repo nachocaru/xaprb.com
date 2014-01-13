@@ -1,7 +1,7 @@
 ---
 title: Three steps to stopping blog comment spam
 date: "2008-10-11"
-permalink: /blog/2008/10/11/three-steps-to-stopping-blog-comment-spam/
+url: /blog/2008/10/11/three-steps-to-stopping-blog-comment-spam/
 categories:
   - Databases
   - Web

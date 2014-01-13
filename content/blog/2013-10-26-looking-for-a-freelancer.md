@@ -1,7 +1,7 @@
 ---
 title: Looking for a freelancer
 date: "2013-10-26"
-permalink: /blog/2013/10/26/looking-for-a-freelancer/
+url: /blog/2013/10/26/looking-for-a-freelancer/
 categories:
   - About
 ---

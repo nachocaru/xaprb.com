@@ -1,7 +1,7 @@
 ---
 title: How Linux iostat computes its results
 date: "2010-01-09"
-permalink: /blog/2010/01/09/how-linux-iostat-computes-its-results/
+url: /blog/2010/01/09/how-linux-iostat-computes-its-results/
 categories:
   - Databases
   - Open Source

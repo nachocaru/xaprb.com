@@ -1,7 +1,7 @@
 ---
 title: A review of Guerrilla Capacity Planning by Neil Gunther
 date: "2010-07-06"
-permalink: /blog/2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/
+url: /blog/2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/
 categories:
   - Databases
   - Reviews

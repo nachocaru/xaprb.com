@@ -1,7 +1,7 @@
 ---
 title: Why is Embarq hijacking my DNS?
 date: "2007-11-23"
-permalink: /blog/2007/11/23/why-is-embarq-hijacking-my-dns/
+url: /blog/2007/11/23/why-is-embarq-hijacking-my-dns/
 ---
 <p>Isn't this the same thing that happened a few years ago with ICANN or Verisign or one of those big names?  (strangely, I can't find relevant search results about this!).</p>
 

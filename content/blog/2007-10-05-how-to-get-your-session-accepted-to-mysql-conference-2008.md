@@ -1,7 +1,7 @@
 ---
 title: How to get your session accepted to MySQL Conference 2008
 date: "2007-10-05"
-permalink: /blog/2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/
+url: /blog/2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Using Aspersa to capture diagnostic data
 date: "2010-05-07"
-permalink: /blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/
+url: /blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/
 categories:
   - Databases
   - Open Source

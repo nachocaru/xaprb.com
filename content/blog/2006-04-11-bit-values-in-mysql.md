@@ -1,7 +1,7 @@
 ---
 title: Why you should not use BIT columns in MySQL
 date: "2006-04-11"
-permalink: /blog/2006/04/11/bit-values-in-mysql/
+url: /blog/2006/04/11/bit-values-in-mysql/
 categories:
   - Databases
 ---

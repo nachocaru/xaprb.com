@@ -1,7 +1,7 @@
 ---
 title: A simple and effective way to protest DRM
 date: "2009-07-12"
-permalink: /blog/2009/07/12/a-simple-and-effective-way-to-protest-drm/
+url: /blog/2009/07/12/a-simple-and-effective-way-to-protest-drm/
 categories:
   - Commentary
 ---

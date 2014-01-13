@@ -1,7 +1,7 @@
 ---
 title: Josh Berkus helps clarify clustering
 date: "2009-11-21"
-permalink: /blog/2009/11/21/josh-berkus-helps-clarify-clustering/
+url: /blog/2009/11/21/josh-berkus-helps-clarify-clustering/
 categories:
   - Databases
 ---

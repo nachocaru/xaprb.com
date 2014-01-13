@@ -1,7 +1,7 @@
 ---
 title: How to write SQL JOIN clauses more compactly
 date: "2006-11-28"
-permalink: /blog/2006/11/28/how-to-write-sql-join-clauses-more-compactly/
+url: /blog/2006/11/28/how-to-write-sql-join-clauses-more-compactly/
 categories:
   - Databases
 ---

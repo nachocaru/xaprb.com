@@ -1,7 +1,7 @@
 ---
 title: A review of SQL and Relational Theory by C. J. Date
 date: "2009-03-29"
-permalink: /blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/
+url: /blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/
 categories:
   - Databases
   - Programming

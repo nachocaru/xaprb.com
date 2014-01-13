@@ -1,7 +1,7 @@
 ---
 title: Progress on High Performance MySQL 3rd Edition
 date: "2011-10-12"
-permalink: /blog/2011/10/12/progress-on-high-performance-mysql-3rd-edition/
+url: /blog/2011/10/12/progress-on-high-performance-mysql-3rd-edition/
 categories:
   - Databases
   - Writing

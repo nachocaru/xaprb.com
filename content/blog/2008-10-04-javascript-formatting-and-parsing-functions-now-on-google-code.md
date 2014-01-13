@@ -1,7 +1,7 @@
 ---
 title: Javascript formatting and parsing functions now on Google Code
 date: "2008-10-04"
-permalink: /blog/2008/10/04/javascript-formatting-and-parsing-functions-now-on-google-code/
+url: /blog/2008/10/04/javascript-formatting-and-parsing-functions-now-on-google-code/
 categories:
   - Programming
   - Web

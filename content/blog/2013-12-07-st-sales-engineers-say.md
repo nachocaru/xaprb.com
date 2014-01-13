@@ -1,7 +1,7 @@
 ---
 title: "S**t sales engineers say"
 date: "2013-12-07"
-permalink: /blog/2013/12/07/st-sales-engineers-say/
+url: /blog/2013/12/07/st-sales-engineers-say/
 categories:
   - Databases
 ---

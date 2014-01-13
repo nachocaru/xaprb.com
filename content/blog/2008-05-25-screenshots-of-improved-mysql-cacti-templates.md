@@ -1,7 +1,7 @@
 ---
 title: Screenshots of improved MySQL Cacti templates
 date: "2008-05-25"
-permalink: /blog/2008/05/25/screenshots-of-improved-mysql-cacti-templates/
+url: /blog/2008/05/25/screenshots-of-improved-mysql-cacti-templates/
 categories:
   - Databases
 ---

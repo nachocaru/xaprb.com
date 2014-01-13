@@ -1,7 +1,7 @@
 ---
 title: New translations of High Performance MySQL
 date: "2013-03-31"
-permalink: /blog/2013/03/31/new-translations-of-high-performance-mysql/
+url: /blog/2013/03/31/new-translations-of-high-performance-mysql/
 categories:
   - Databases
 ---

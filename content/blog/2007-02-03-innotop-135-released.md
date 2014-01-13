@@ -1,7 +1,7 @@
 ---
 title: innotop 1.3.5 released
 date: "2007-02-03"
-permalink: /blog/2007/02/03/innotop-135-released/
+url: /blog/2007/02/03/innotop-135-released/
 categories:
   - Databases
   - Open Source

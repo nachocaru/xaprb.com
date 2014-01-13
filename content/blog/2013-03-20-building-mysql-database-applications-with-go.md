@@ -1,7 +1,7 @@
 ---
 title: Building MySQL Database Applications with Go
 date: "2013-03-20"
-permalink: /blog/2013/03/20/building-mysql-database-applications-with-go/
+url: /blog/2013/03/20/building-mysql-database-applications-with-go/
 categories:
   - Databases
   - Programming

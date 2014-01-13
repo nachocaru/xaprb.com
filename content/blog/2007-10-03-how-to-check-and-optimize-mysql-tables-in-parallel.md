@@ -1,7 +1,7 @@
 ---
 title: How to check and optimize MySQL tables in parallel
 date: "2007-10-03"
-permalink: /blog/2007/10/03/how-to-check-and-optimize-mysql-tables-in-parallel/
+url: /blog/2007/10/03/how-to-check-and-optimize-mysql-tables-in-parallel/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Why building a free service can be a disservice
 date: "2013-05-18"
-permalink: /blog/2013/05/18/why-building-a-free-service-can-be-a-disservice/
+url: /blog/2013/05/18/why-building-a-free-service-can-be-a-disservice/
 categories:
   - Commentary
 ---

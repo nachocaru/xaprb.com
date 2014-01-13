@@ -1,7 +1,7 @@
 ---
 title: How to label Excel and OpenOffice.org XY scatter plots
 date: "2006-01-19"
-permalink: /blog/2006/01/19/excel-vs-calc-part-2/
+url: /blog/2006/01/19/excel-vs-calc-part-2/
 ---
 In an earlier post I compared [number formatting in Excel vs. OpenOffice.org Calc][1]. I've learned some more interesting things about both spreadsheets, as regards opening CSV files and adding labels to XY scatter charts (spoiler: both spreadsheets have problems)
 

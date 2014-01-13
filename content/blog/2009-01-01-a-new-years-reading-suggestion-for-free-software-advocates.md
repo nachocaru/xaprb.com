@@ -1,7 +1,7 @@
 ---
 title: "A New Year's reading suggestion for Free Software advocates"
 date: "2009-01-01"
-permalink: /blog/2009/01/01/a-new-years-reading-suggestion-for-free-software-advocates/
+url: /blog/2009/01/01/a-new-years-reading-suggestion-for-free-software-advocates/
 categories:
   - Commentary
 ---

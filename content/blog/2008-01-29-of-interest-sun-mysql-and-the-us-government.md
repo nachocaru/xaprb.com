@@ -1,7 +1,7 @@
 ---
 title: "Of interest: Sun, MySQL, and the US government"
 date: "2008-01-29"
-permalink: /blog/2008/01/29/of-interest-sun-mysql-and-the-us-government/
+url: /blog/2008/01/29/of-interest-sun-mysql-and-the-us-government/
 categories:
   - Databases
 ---

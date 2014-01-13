@@ -1,7 +1,7 @@
 ---
 title: How to debug InnoDB lock waits
 date: "2007-09-18"
-permalink: /blog/2007/09/18/how-to-debug-innodb-lock-waits/
+url: /blog/2007/09/18/how-to-debug-innodb-lock-waits/
 ---
 This article shows you how to use a little-known InnoDB feature to find out what is holding the lock for which an InnoDB transaction is waiting. I then show you how to use an undocumented feature to make this even easier with [innotop][1].
 

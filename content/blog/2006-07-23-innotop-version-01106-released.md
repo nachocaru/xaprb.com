@@ -1,7 +1,7 @@
 ---
 title: Version 0.1.106 of innotop MySQL/InnoDB monitor released
 date: "2006-07-23"
-permalink: /blog/2006/07/23/innotop-version-01106-released/
+url: /blog/2006/07/23/innotop-version-01106-released/
 categories:
   - Databases
   - Open Source

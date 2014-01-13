@@ -1,7 +1,7 @@
 ---
 title: Migrating US Government applications from Oracle to MySQL
 date: "2009-02-19"
-permalink: /blog/2009/02/19/migrating-us-government-applications-from-oracle-to-mysql/
+url: /blog/2009/02/19/migrating-us-government-applications-from-oracle-to-mysql/
 categories:
   - Conferences
   - Databases

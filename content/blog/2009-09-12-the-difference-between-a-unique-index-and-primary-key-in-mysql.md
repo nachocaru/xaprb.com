@@ -1,7 +1,7 @@
 ---
 title: The difference between a unique index and primary key in MySQL
 date: "2009-09-12"
-permalink: /blog/2009/09/12/the-difference-between-a-unique-index-and-primary-key-in-mysql/
+url: /blog/2009/09/12/the-difference-between-a-unique-index-and-primary-key-in-mysql/
 categories:
   - Databases
 ---

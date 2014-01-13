@@ -1,7 +1,7 @@
 ---
 title: "Announcement: Xaprb scripts are re-licensed"
 date: "2006-06-19"
-permalink: /blog/2006/06/19/xaprb-scripts-relicensed/
+url: /blog/2006/06/19/xaprb-scripts-relicensed/
 ---
 I have re-licensed some of my scripts under the [LGPL][1], which means you can use them as part of other non-GPL software.
 

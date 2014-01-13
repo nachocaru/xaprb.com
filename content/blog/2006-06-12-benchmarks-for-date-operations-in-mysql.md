@@ -1,7 +1,7 @@
 ---
 title: Benchmarks for DATE operations in MySQL
 date: "2006-06-12"
-permalink: /blog/2006/06/12/benchmarks-for-date-operations-in-mysql/
+url: /blog/2006/06/12/benchmarks-for-date-operations-in-mysql/
 categories:
   - Databases
 ---

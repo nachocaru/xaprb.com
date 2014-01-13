@@ -1,7 +1,7 @@
 ---
 title: "MySQL's release process works"
 date: "2013-04-25"
-permalink: /blog/2013/04/25/mysqls-release-process-works/
+url: /blog/2013/04/25/mysqls-release-process-works/
 categories:
   - Databases
 ---

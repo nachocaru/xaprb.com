@@ -1,7 +1,7 @@
 ---
 title: Sphinx 0.9.8 is released!
 date: "2008-07-15"
-permalink: /blog/2008/07/15/sphinx-098-is-released/
+url: /blog/2008/07/15/sphinx-098-is-released/
 ---
 The [Sphinx][1] project just released version 0.9.8, with many enhancements since the previous release. There's never been a better time to try it out. It's really cool technology.
 

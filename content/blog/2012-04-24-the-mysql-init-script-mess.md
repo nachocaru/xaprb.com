@@ -1,7 +1,7 @@
 ---
 title: The MySQL init-script mess
 date: "2012-04-24"
-permalink: /blog/2012/04/24/the-mysql-init-script-mess/
+url: /blog/2012/04/24/the-mysql-init-script-mess/
 categories:
   - Databases
 ---

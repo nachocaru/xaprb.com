@@ -1,7 +1,7 @@
 ---
 title: Aspersa gets a user manual
 date: "2010-09-22"
-permalink: /blog/2010/09/22/aspersa-gets-a-user-manual/
+url: /blog/2010/09/22/aspersa-gets-a-user-manual/
 categories:
   - Databases
   - Open Source

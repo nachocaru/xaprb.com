@@ -1,7 +1,7 @@
 ---
 title: Getting ready for a new innotop release
 date: "2010-11-02"
-permalink: /blog/2010/11/02/getting-ready-for-a-new-innotop-release/
+url: /blog/2010/11/02/getting-ready-for-a-new-innotop-release/
 categories:
   - Databases
   - Open Source

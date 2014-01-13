@@ -1,7 +1,7 @@
 ---
 title: innotop version 1.0 released
 date: "2007-01-07"
-permalink: /blog/2007/01/07/innotop-version-10-released/
+url: /blog/2007/01/07/innotop-version-10-released/
 categories:
   - Databases
   - Open Source

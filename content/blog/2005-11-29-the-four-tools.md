@@ -1,7 +1,7 @@
 ---
 title: The four essential tools for software engineers
 date: "2005-11-29"
-permalink: /blog/2005/11/29/the-four-tools/
+url: /blog/2005/11/29/the-four-tools/
 ---
 I rarely blog on other people's content, but I can't agree more strongly with this [list of essential tools for software engineering][1]:
 

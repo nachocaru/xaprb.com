@@ -1,7 +1,7 @@
 ---
 title: What is new in Maatkit
 date: "2008-01-05"
-permalink: /blog/2008/01/05/what-is-new-in-maatkit/
+url: /blog/2008/01/05/what-is-new-in-maatkit/
 categories:
   - Databases
   - Open Source

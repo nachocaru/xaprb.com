@@ -1,7 +1,7 @@
 ---
 title: Progress on High Performance MySQL, Second Edition
 date: "2007-11-29"
-permalink: /blog/2007/11/29/progress-on-high-performance-mysql-second-edition/
+url: /blog/2007/11/29/progress-on-high-performance-mysql-second-edition/
 categories:
   - Databases
 ---

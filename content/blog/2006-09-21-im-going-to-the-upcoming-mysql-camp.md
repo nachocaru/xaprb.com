@@ -1,7 +1,7 @@
 ---
 title: "I'm going to the upcoming MySQL Camp"
 date: "2006-09-21"
-permalink: /blog/2006/09/21/im-going-to-the-upcoming-mysql-camp/
+url: /blog/2006/09/21/im-going-to-the-upcoming-mysql-camp/
 categories:
   - Databases
 ---

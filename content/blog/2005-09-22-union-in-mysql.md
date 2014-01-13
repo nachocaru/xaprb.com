@@ -1,7 +1,7 @@
 ---
 title: How to write a UNION in SQL without using UNION
 date: "2005-09-22"
-permalink: /blog/2005/09/22/union-in-mysql/
+url: /blog/2005/09/22/union-in-mysql/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Disk latency versus filesystem latency
 date: "2011-05-15"
-permalink: /blog/2011/05/15/disk-latency-versus-filesystem-latency/
+url: /blog/2011/05/15/disk-latency-versus-filesystem-latency/
 categories:
   - Databases
   - Open Source

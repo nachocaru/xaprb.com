@@ -1,7 +1,7 @@
 ---
 title: Thank you for the MySQL 5.4 Community Release
 date: "2009-04-25"
-permalink: /blog/2009/04/25/thank-you-for-the-mysql-54-community-release/
+url: /blog/2009/04/25/thank-you-for-the-mysql-54-community-release/
 categories:
   - Conferences
   - Databases

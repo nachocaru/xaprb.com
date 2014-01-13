@@ -1,7 +1,7 @@
 ---
 title: "High Performance MySQL, Second Edition: Advanced SQL Functionality"
 date: "2007-10-05"
-permalink: /blog/2007/10/05/high-performance-mysql-second-edition-advanced-sql-functionality/
+url: /blog/2007/10/05/high-performance-mysql-second-edition-advanced-sql-functionality/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: "How to choose SQL column types: a case study"
 date: "2006-02-07"
-permalink: /blog/2006/02/07/how-to-choose-sql-column-types/
+url: /blog/2006/02/07/how-to-choose-sql-column-types/
 categories:
   - Databases
 ---

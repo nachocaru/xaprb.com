@@ -1,7 +1,7 @@
 ---
 title: When can I have a big server in the cloud?
 date: "2011-06-10"
-permalink: /blog/2011/06/10/when-can-i-have-a-big-server-in-the-cloud/
+url: /blog/2011/06/10/when-can-i-have-a-big-server-in-the-cloud/
 categories:
   - Databases
   - High Availability

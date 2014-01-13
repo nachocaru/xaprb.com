@@ -1,7 +1,7 @@
 ---
 title: How to change the default database in MySQL
 date: "2008-10-11"
-permalink: /blog/2008/10/11/how-to-change-the-default-database-in-mysql/
+url: /blog/2008/10/11/how-to-change-the-default-database-in-mysql/
 categories:
   - Databases
 ---

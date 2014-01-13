@@ -1,7 +1,7 @@
 ---
 title: MySQL profiling case study, part 2
 date: "2006-10-17"
-permalink: /blog/2006/10/17/mysql-profiling-case-study-part-2/
+url: /blog/2006/10/17/mysql-profiling-case-study-part-2/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Learn how to achieve PCI compliance with MySQL
 date: "2010-03-03"
-permalink: /blog/2010/03/03/learn-how-to-achieve-pci-compliance-with-mysql/
+url: /blog/2010/03/03/learn-how-to-achieve-pci-compliance-with-mysql/
 categories:
   - Conferences
   - Databases

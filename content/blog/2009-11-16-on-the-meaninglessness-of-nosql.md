@@ -1,7 +1,7 @@
 ---
 title: On the unhelpfulness of NoSQL
 date: "2009-11-16"
-permalink: /blog/2009/11/16/on-the-meaninglessness-of-nosql/
+url: /blog/2009/11/16/on-the-meaninglessness-of-nosql/
 categories:
   - Databases
 ---

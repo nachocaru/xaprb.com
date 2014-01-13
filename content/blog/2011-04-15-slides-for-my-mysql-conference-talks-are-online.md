@@ -1,7 +1,7 @@
 ---
 title: Slides for my MySQL Conference talks are online
 date: "2011-04-15"
-permalink: /blog/2011/04/15/slides-for-my-mysql-conference-talks-are-online/
+url: /blog/2011/04/15/slides-for-my-mysql-conference-talks-are-online/
 categories:
   - Conferences
   - Databases

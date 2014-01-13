@@ -1,7 +1,7 @@
 ---
 title: Freeing some Velocity videos
 date: "2013-11-09"
-permalink: /blog/2013/11/09/freeing-some-velocity-videos/
+url: /blog/2013/11/09/freeing-some-velocity-videos/
 categories:
   - Commentary
   - Conferences

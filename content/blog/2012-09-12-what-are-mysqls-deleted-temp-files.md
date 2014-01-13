@@ -1,7 +1,7 @@
 ---
 title: "What are MySQL's deleted temp files?"
 date: "2012-09-12"
-permalink: /blog/2012/09/12/what-are-mysqls-deleted-temp-files/
+url: /blog/2012/09/12/what-are-mysqls-deleted-temp-files/
 categories:
   - Databases
 ---

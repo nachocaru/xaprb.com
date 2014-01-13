@@ -1,7 +1,7 @@
 ---
 title: How Maatkit benefits from test-driven development
 date: "2008-08-18"
-permalink: /blog/2008/08/18/how-maatkit-benefits-from-test-driven-development/
+url: /blog/2008/08/18/how-maatkit-benefits-from-test-driven-development/
 categories:
   - Databases
   - Open Source

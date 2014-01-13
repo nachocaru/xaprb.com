@@ -1,7 +1,7 @@
 ---
 title: "MySQL: Free Software but not Open Source"
 date: "2008-05-14"
-permalink: /blog/2008/05/14/mysql-free-software-but-not-open-source/
+url: /blog/2008/05/14/mysql-free-software-but-not-open-source/
 categories:
   - Databases
 ---

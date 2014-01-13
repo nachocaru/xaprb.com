@@ -1,7 +1,7 @@
 ---
 title: "Warning: upgrade MySQL without testing at your own risk"
 date: "2009-08-08"
-permalink: /blog/2009/08/08/warning-upgrade-mysql-without-testing-at-your-own-risk/
+url: /blog/2009/08/08/warning-upgrade-mysql-without-testing-at-your-own-risk/
 categories:
   - Databases
   - Open Source

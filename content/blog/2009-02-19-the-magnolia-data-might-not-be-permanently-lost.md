@@ -1,7 +1,7 @@
 ---
 title: The Ma.gnolia data might not be permanently lost
 date: "2009-02-19"
-permalink: /blog/2009/02/19/the-magnolia-data-might-not-be-permanently-lost/
+url: /blog/2009/02/19/the-magnolia-data-might-not-be-permanently-lost/
 categories:
   - Databases
 ---

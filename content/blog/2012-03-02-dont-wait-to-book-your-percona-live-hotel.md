@@ -1,7 +1,7 @@
 ---
 title: "Don't wait to book your Percona Live hotel"
 date: "2012-03-02"
-permalink: /blog/2012/03/02/dont-wait-to-book-your-percona-live-hotel/
+url: /blog/2012/03/02/dont-wait-to-book-your-percona-live-hotel/
 categories:
   - Databases
 ---

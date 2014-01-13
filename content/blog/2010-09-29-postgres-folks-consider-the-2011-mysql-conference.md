@@ -1,7 +1,7 @@
 ---
 title: Postgres folks, consider the 2011 MySQL conference
 date: "2010-09-29"
-permalink: /blog/2010/09/29/postgres-folks-consider-the-2011-mysql-conference/
+url: /blog/2010/09/29/postgres-folks-consider-the-2011-mysql-conference/
 categories:
   - Conferences
   - Databases

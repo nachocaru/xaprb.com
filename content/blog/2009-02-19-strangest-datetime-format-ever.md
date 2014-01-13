@@ -1,7 +1,7 @@
 ---
 title: Strangest datetime format ever
 date: "2009-02-19"
-permalink: /blog/2009/02/19/strangest-datetime-format-ever/
+url: /blog/2009/02/19/strangest-datetime-format-ever/
 categories:
   - Databases
 ---

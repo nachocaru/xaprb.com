@@ -1,7 +1,7 @@
 ---
 title: MySQL Sandbox is the best thing since sliced bread
 date: "2007-04-08"
-permalink: /blog/2007/04/08/mysql-sandbox-is-the-best-thing-since-sliced-bread/
+url: /blog/2007/04/08/mysql-sandbox-is-the-best-thing-since-sliced-bread/
 categories:
   - Databases
 ---

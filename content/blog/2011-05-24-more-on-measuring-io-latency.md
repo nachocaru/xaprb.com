@@ -1,7 +1,7 @@
 ---
 title: More on measuring IO latency
 date: "2011-05-24"
-permalink: /blog/2011/05/24/more-on-measuring-io-latency/
+url: /blog/2011/05/24/more-on-measuring-io-latency/
 categories:
   - Databases
 ---

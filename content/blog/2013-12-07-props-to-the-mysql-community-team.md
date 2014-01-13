@@ -1,7 +1,7 @@
 ---
 title: Props to the MySQL Community Team
 date: "2013-12-07"
-permalink: /blog/2013/12/07/props-to-the-mysql-community-team/
+url: /blog/2013/12/07/props-to-the-mysql-community-team/
 categories:
   - Databases
 ---

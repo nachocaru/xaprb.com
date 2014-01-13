@@ -1,7 +1,7 @@
 ---
 title: Quantifying Abnormal Behavior in System Metrics
 date: "2013-06-25"
-permalink: /blog/2013/06/25/quantifying-abnormal-behavior-in-system-metrics/
+url: /blog/2013/06/25/quantifying-abnormal-behavior-in-system-metrics/
 categories:
   - Architecture
   - Conferences

@@ -1,7 +1,7 @@
 ---
 title: Archive strategies for OLTP servers, Part 3
 date: "2007-06-15"
-permalink: /blog/2007/06/15/archive-strategies-for-oltp-servers-part-3/
+url: /blog/2007/06/15/archive-strategies-for-oltp-servers-part-3/
 ---
 In the first two articles in this series, I discussed archiving basics, relationships and dependencies, and specific archiving techniques for online transaction processing (OLTP) database servers. This article covers how to move the data from the OLTP source to the archive destination, what the archive destination might look like, and how to un-archive data. If you can un-archive easily and reliably, a whole new world of possibilities opens up.
 

@@ -1,7 +1,7 @@
 ---
 title: MySQL Table Sync 0.9.2 released
 date: "2007-04-12"
-permalink: /blog/2007/04/12/mysql-table-sync-092-released/
+url: /blog/2007/04/12/mysql-table-sync-092-released/
 categories:
   - Databases
 ---

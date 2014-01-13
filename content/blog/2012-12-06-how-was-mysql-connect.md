@@ -1,7 +1,7 @@
 ---
 title: How was MySQL Connect?
 date: "2012-12-06"
-permalink: /blog/2012/12/06/how-was-mysql-connect/
+url: /blog/2012/12/06/how-was-mysql-connect/
 categories:
   - Databases
 ---

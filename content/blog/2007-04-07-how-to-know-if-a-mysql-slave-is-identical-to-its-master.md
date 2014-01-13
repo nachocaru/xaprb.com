@@ -1,7 +1,7 @@
 ---
 title: How to know if a MySQL slave is identical to its master
 date: "2007-04-07"
-permalink: /blog/2007/04/07/how-to-know-if-a-mysql-slave-is-identical-to-its-master/
+url: /blog/2007/04/07/how-to-know-if-a-mysql-slave-is-identical-to-its-master/
 categories:
   - Databases
 ---

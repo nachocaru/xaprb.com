@@ -1,7 +1,7 @@
 ---
 title: How to find next and previous records in SQL
 date: "2006-04-28"
-permalink: /blog/2006/04/28/how-to-find-next-and-previous-records-in-sql/
+url: /blog/2006/04/28/how-to-find-next-and-previous-records-in-sql/
 categories:
   - Databases
 ---

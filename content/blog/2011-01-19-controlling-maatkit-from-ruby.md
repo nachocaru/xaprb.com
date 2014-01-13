@@ -1,7 +1,7 @@
 ---
 title: Controlling Maatkit from Ruby
 date: "2011-01-19"
-permalink: /blog/2011/01/19/controlling-maatkit-from-ruby/
+url: /blog/2011/01/19/controlling-maatkit-from-ruby/
 categories:
   - Open Source
 ---

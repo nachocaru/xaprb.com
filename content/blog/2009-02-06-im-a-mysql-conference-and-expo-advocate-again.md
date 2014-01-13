@@ -1,7 +1,7 @@
 ---
 title: "I'm a MySQL Conference and Expo advocate again"
 date: "2009-02-06"
-permalink: /blog/2009/02/06/im-a-mysql-conference-and-expo-advocate-again/
+url: /blog/2009/02/06/im-a-mysql-conference-and-expo-advocate-again/
 categories:
   - Conferences
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: "Privacy is impossible unless it's the default"
 date: "2013-07-06"
-permalink: /blog/2013/07/06/privacy-is-impossible-unless-its-the-default/
+url: /blog/2013/07/06/privacy-is-impossible-unless-its-the-default/
 categories:
   - Commentary
 ---

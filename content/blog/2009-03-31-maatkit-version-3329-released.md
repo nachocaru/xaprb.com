@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 3329 released
 date: "2009-03-31"
-permalink: /blog/2009/03/31/maatkit-version-3329-released/
+url: /blog/2009/03/31/maatkit-version-3329-released/
 categories:
   - Databases
   - Open Source

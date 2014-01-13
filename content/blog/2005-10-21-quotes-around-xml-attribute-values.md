@@ -1,7 +1,7 @@
 ---
 title: How to quote and encode XML attribute values
 date: "2005-10-21"
-permalink: /blog/2005/10/21/quotes-around-xml-attribute-values/
+url: /blog/2005/10/21/quotes-around-xml-attribute-values/
 ---
 Attribute values in XML are usually double-quoted, but single-quotes can be used as well, according to the relevant part of the [XML Spec][1]. Here is the production:
 

@@ -1,7 +1,7 @@
 ---
 title: Why is MySQL more popular than PostgreSQL?
 date: "2008-05-18"
-permalink: /blog/2008/05/18/why-is-mysql-more-popular-than-postgresql/
+url: /blog/2008/05/18/why-is-mysql-more-popular-than-postgresql/
 categories:
   - Databases
 ---

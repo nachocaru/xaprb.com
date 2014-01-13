@@ -1,7 +1,7 @@
 ---
 title: "Features I'd like to see in MySQL: CTEs"
 date: "2013-09-09"
-permalink: /blog/2013/09/09/features-id-like-to-see-in-mysql-ctes/
+url: /blog/2013/09/09/features-id-like-to-see-in-mysql-ctes/
 categories:
   - Databases
 ---

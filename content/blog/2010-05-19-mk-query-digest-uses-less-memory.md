@@ -1,7 +1,7 @@
 ---
 title: mk-query-digest uses less memory
 date: "2010-05-19"
-permalink: /blog/2010/05/19/mk-query-digest-uses-less-memory/
+url: /blog/2010/05/19/mk-query-digest-uses-less-memory/
 categories:
   - Databases
   - Open Source

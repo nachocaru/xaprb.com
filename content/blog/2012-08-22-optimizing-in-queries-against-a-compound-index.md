@@ -1,7 +1,7 @@
 ---
 title: Optimizing IN() queries against a compound index
 date: "2012-08-22"
-permalink: /blog/2012/08/22/optimizing-in-queries-against-a-compound-index/
+url: /blog/2012/08/22/optimizing-in-queries-against-a-compound-index/
 categories:
   - Databases
 ---

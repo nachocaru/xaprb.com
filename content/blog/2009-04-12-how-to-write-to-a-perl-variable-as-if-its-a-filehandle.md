@@ -1,7 +1,7 @@
 ---
 title: "How to write to a Perl variable as if it's a filehandle"
 date: "2009-04-12"
-permalink: /blog/2009/04/12/how-to-write-to-a-perl-variable-as-if-its-a-filehandle/
+url: /blog/2009/04/12/how-to-write-to-a-perl-variable-as-if-its-a-filehandle/
 categories:
   - Open Source
   - Programming

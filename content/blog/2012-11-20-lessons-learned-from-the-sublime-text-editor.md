@@ -1,7 +1,7 @@
 ---
 title: Lessons learned from the Sublime Text editor
 date: "2012-11-20"
-permalink: /blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/
+url: /blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/
 categories:
   - Desktop
   - Open Source

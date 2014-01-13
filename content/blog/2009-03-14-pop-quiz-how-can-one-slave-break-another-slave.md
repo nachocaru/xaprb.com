@@ -1,7 +1,7 @@
 ---
 title: "Pop quiz: how can one slave break another slave"
 date: "2009-03-14"
-permalink: /blog/2009/03/14/pop-quiz-how-can-one-slave-break-another-slave/
+url: /blog/2009/03/14/pop-quiz-how-can-one-slave-break-another-slave/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: How pre-fetching relay logs speeds up MySQL replication slaves
 date: "2008-01-13"
-permalink: /blog/2008/01/13/how-pre-fetching-relay-logs-speeds-up-mysql-replication-slaves/
+url: /blog/2008/01/13/how-pre-fetching-relay-logs-speeds-up-mysql-replication-slaves/
 categories:
   - Databases
 ---

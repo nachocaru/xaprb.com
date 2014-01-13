@@ -1,7 +1,7 @@
 ---
 title: A review of the Ergohuman ME7ERG Mesh Office Chair
 date: "2009-08-09"
-permalink: /blog/2009/08/09/a-review-of-the-ergohuman-me7erg-mesh-office-chair/
+url: /blog/2009/08/09/a-review-of-the-ergohuman-me7erg-mesh-office-chair/
 categories:
   - Open Source
   - Reviews

@@ -1,7 +1,7 @@
 ---
 title: Recap of Southeast Linux Fest 2009
 date: "2009-06-21"
-permalink: /blog/2009/06/21/recap-of-southeast-linux-fest-2009/
+url: /blog/2009/06/21/recap-of-southeast-linux-fest-2009/
 categories:
   - Conferences
   - Databases

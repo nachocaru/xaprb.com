@@ -1,7 +1,7 @@
 ---
 title: How I keep track of tasks
 date: "2010-06-30"
-permalink: /blog/2010/06/30/how-i-keep-track-of-tasks/
+url: /blog/2010/06/30/how-i-keep-track-of-tasks/
 categories:
   - Commentary
   - Open Source

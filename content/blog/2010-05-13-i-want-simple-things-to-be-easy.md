@@ -1,7 +1,7 @@
 ---
 title: I want simple things to be easy
 date: "2010-05-13"
-permalink: /blog/2010/05/13/i-want-simple-things-to-be-easy/
+url: /blog/2010/05/13/i-want-simple-things-to-be-easy/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Are you ready for the end of the world?
 date: "2009-02-13"
-permalink: /blog/2009/02/13/are-you-ready-for-the-end-of-the-world/
+url: /blog/2009/02/13/are-you-ready-for-the-end-of-the-world/
 categories:
   - Databases
 ---

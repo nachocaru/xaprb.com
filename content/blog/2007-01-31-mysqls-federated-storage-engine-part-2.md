@@ -1,7 +1,7 @@
 ---
 title: "MySQL's FEDERATED storage engine: Part 2"
 date: "2007-01-31"
-permalink: /blog/2007/01/31/mysqls-federated-storage-engine-part-2/
+url: /blog/2007/01/31/mysqls-federated-storage-engine-part-2/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Introducing MySQL Toolkit's Show Grants tool"
 date: "2007-03-17"
-permalink: /blog/2007/03/17/introducing-mysql-show-grants/
+url: /blog/2007/03/17/introducing-mysql-show-grants/
 categories:
   - Databases
   - Open Source

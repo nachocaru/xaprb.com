@@ -1,7 +1,7 @@
 ---
 title: Growth limits of open-source vis-a-vis MySQL Toolkit
 date: "2007-11-05"
-permalink: /blog/2007/11/05/growth-limits-of-open-source-vis-a-vis-mysql-toolkit/
+url: /blog/2007/11/05/growth-limits-of-open-source-vis-a-vis-mysql-toolkit/
 categories:
   - Databases
   - Open Source

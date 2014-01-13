@@ -1,7 +1,7 @@
 ---
 title: "Planned change in Maatkit and Aspersa development"
 date: "2011-07-06"
-permalink: /blog/2011/07/06/planned-change-in-maatkit-aspersa-development/
+url: /blog/2011/07/06/planned-change-in-maatkit-aspersa-development/
 categories:
   - Databases
   - Open Source

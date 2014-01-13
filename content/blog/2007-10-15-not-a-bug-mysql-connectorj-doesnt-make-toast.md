@@ -1,7 +1,7 @@
 ---
 title: "Not a bug: MySQL Connector/J doesn't make toast"
 date: "2007-10-15"
-permalink: /blog/2007/10/15/not-a-bug-mysql-connectorj-doesnt-make-toast/
+url: /blog/2007/10/15/not-a-bug-mysql-connectorj-doesnt-make-toast/
 categories:
   - Databases
 ---

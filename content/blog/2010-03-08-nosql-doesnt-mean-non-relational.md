@@ -1,7 +1,7 @@
 ---
 title: "NoSQL doesn't mean non-relational"
 date: "2010-03-08"
-permalink: /blog/2010/03/08/nosql-doesnt-mean-non-relational/
+url: /blog/2010/03/08/nosql-doesnt-mean-non-relational/
 categories:
   - Commentary
   - Databases

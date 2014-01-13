@@ -1,7 +1,7 @@
 ---
 title: How to write subqueries without using subqueries in SQL
 date: "2005-09-21"
-permalink: /blog/2005/09/21/subselects-in-mysql/
+url: /blog/2005/09/21/subselects-in-mysql/
 ---
 Some queries that seemingly require the use of subqueries in the FROM clause (commonly called [derived tables][1]) can be written without them. This is useful for earlier versions of MySQL, which do not support subqueries. In this article I'll explain how to get the effect of subqueries without actually using them.
 

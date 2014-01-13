@@ -1,7 +1,7 @@
 ---
 title: How to implement a queue in SQL
 date: "2007-01-11"
-permalink: /blog/2007/01/11/how-to-implement-a-queue-in-sql/
+url: /blog/2007/01/11/how-to-implement-a-queue-in-sql/
 categories:
   - Databases
 ---

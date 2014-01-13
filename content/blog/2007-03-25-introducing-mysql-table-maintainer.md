@@ -1,7 +1,7 @@
 ---
 title: Introducing MySQL Table Maintainer
 date: "2007-03-25"
-permalink: /blog/2007/03/25/introducing-mysql-table-maintainer/
+url: /blog/2007/03/25/introducing-mysql-table-maintainer/
 categories:
   - Databases
 ---

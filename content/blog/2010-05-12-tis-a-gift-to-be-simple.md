@@ -1,7 +1,7 @@
 ---
 title: Tis a gift to be simple
 date: "2010-05-12"
-permalink: /blog/2010/05/12/tis-a-gift-to-be-simple/
+url: /blog/2010/05/12/tis-a-gift-to-be-simple/
 categories:
   - Databases
   - Open Source

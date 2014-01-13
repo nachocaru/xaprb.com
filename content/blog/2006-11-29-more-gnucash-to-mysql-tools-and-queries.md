@@ -1,7 +1,7 @@
 ---
 title: More GnuCash to MySQL tools and queries
 date: "2006-11-29"
-permalink: /blog/2006/11/29/more-gnucash-to-mysql-tools-and-queries/
+url: /blog/2006/11/29/more-gnucash-to-mysql-tools-and-queries/
 categories:
   - Databases
 ---

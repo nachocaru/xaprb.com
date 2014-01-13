@@ -1,7 +1,7 @@
 ---
 title: Baron Schwartz on a podcast at MySQL Conference and Expo 2008
 date: "2008-04-25"
-permalink: /blog/2008/04/25/baron-schwartz-on-a-podcast-at-mysql-conference-and-expo-2008/
+url: /blog/2008/04/25/baron-schwartz-on-a-podcast-at-mysql-conference-and-expo-2008/
 categories:
   - Databases
 ---

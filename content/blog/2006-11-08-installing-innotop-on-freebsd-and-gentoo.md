@@ -1,7 +1,7 @@
 ---
 title: Installing innotop on FreeBSD and Gentoo
 date: "2006-11-08"
-permalink: /blog/2006/11/08/installing-innotop-on-freebsd-and-gentoo/
+url: /blog/2006/11/08/installing-innotop-on-freebsd-and-gentoo/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: Crash injection for writing resilient software
 date: "2013-03-14"
-permalink: /blog/2013/03/14/crash-injection-for-writing-resilient-software/
+url: /blog/2013/03/14/crash-injection-for-writing-resilient-software/
 categories:
   - Databases
 ---

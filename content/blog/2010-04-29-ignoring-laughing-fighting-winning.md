@@ -1,7 +1,7 @@
 ---
 title: Ignoring, laughing, fighting, winning
 date: "2010-04-29"
-permalink: /blog/2010/04/29/ignoring-laughing-fighting-winning/
+url: /blog/2010/04/29/ignoring-laughing-fighting-winning/
 categories:
   - Commentary
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: Duplicate index checker version 1.8 released
 date: "2006-09-17"
-permalink: /blog/2006/09/17/duplicate-index-checker-version-18-released/
+url: /blog/2006/09/17/duplicate-index-checker-version-18-released/
 ---
 What was a 5-minute script has become a bigger project. I've made more improvements to the [duplicate index checker][1]. Soon it will require product activation and have security vulnerabilities every week. Seriously: this is the third iteration, and [three strikes and you automate][2], so I automated. I have a test suite now (your contributions welcome), and I addressed two shortcomings readers pointed out in comments on the original article. You now get better foreign key checking, and FULLTEXT indexes are ignored.
 

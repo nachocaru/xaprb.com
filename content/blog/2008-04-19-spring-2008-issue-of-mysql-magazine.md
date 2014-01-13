@@ -1,7 +1,7 @@
 ---
 title: Spring 2008 issue of MySQL Magazine
 date: "2008-04-19"
-permalink: /blog/2008/04/19/spring-2008-issue-of-mysql-magazine/
+url: /blog/2008/04/19/spring-2008-issue-of-mysql-magazine/
 categories:
   - Databases
   - Writing

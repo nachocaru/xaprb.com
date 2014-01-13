@@ -1,7 +1,7 @@
 ---
 title: An ongoing thread of blogs on MySQL performance
 date: "2009-06-07"
-permalink: /blog/2009/06/07/an-ongoing-thread-of-blogs-on-mysql-performance/
+url: /blog/2009/06/07/an-ongoing-thread-of-blogs-on-mysql-performance/
 categories:
   - Databases
 ---

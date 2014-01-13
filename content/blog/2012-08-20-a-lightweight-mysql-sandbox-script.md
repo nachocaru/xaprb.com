@@ -1,7 +1,7 @@
 ---
 title: A lightweight MySQL sandbox script
 date: "2012-08-20"
-permalink: /blog/2012/08/20/a-lightweight-mysql-sandbox-script/
+url: /blog/2012/08/20/a-lightweight-mysql-sandbox-script/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Speaking at Oracle Open World
 date: "2011-08-13"
-permalink: /blog/2011/08/13/speaking-at-oracle-open-world/
+url: /blog/2011/08/13/speaking-at-oracle-open-world/
 categories:
   - Conferences
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: Version 0.1.123 of innotop released
 date: "2006-08-01"
-permalink: /blog/2006/08/01/innotop-01123-released/
+url: /blog/2006/08/01/innotop-01123-released/
 categories:
   - Databases
   - Open Source

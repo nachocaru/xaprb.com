@@ -1,7 +1,7 @@
 ---
 title: MySQL Table Checksum 1.1.6 released
 date: "2007-06-03"
-permalink: /blog/2007/06/03/mysql-table-checksum-116-released/
+url: /blog/2007/06/03/mysql-table-checksum-116-released/
 categories:
   - Databases
 ---

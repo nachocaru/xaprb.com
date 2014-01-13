@@ -1,7 +1,7 @@
 ---
 title: "Don't forget about SHOW PROFILES"
 date: "2009-05-31"
-permalink: /blog/2009/05/31/dont-forget-about-show-profiles/
+url: /blog/2009/05/31/dont-forget-about-show-profiles/
 categories:
   - Databases
 ---

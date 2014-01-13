@@ -1,7 +1,7 @@
 ---
 title: How MySQL really executes a query
 date: "2009-04-01"
-permalink: /blog/2009/04/01/how-mysql-really-executes-a-query/
+url: /blog/2009/04/01/how-mysql-really-executes-a-query/
 categories:
   - Databases
 ---

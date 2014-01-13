@@ -1,7 +1,7 @@
 ---
 title: Maatkit thanks Vantage Media
 date: "2008-10-09"
-permalink: /blog/2008/10/09/maatkit-thanks-vantage-media/
+url: /blog/2008/10/09/maatkit-thanks-vantage-media/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: OpenSQL Camp develops further
 date: "2008-09-17"
-permalink: /blog/2008/09/17/opensql-camp-develops-further/
+url: /blog/2008/09/17/opensql-camp-develops-further/
 categories:
   - Conferences
   - Databases

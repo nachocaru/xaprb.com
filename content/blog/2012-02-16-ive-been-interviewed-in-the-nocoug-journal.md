@@ -1,7 +1,7 @@
 ---
 title: "I've been interviewed in the NoCOUG Journal"
 date: "2012-02-16"
-permalink: /blog/2012/02/16/ive-been-interviewed-in-the-nocoug-journal/
+url: /blog/2012/02/16/ive-been-interviewed-in-the-nocoug-journal/
 categories:
   - Databases
 ---

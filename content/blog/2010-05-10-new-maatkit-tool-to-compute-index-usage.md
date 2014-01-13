@@ -1,7 +1,7 @@
 ---
 title: New Maatkit tool to compute index usage
 date: "2010-05-10"
-permalink: /blog/2010/05/10/new-maatkit-tool-to-compute-index-usage/
+url: /blog/2010/05/10/new-maatkit-tool-to-compute-index-usage/
 categories:
   - Databases
   - Open Source

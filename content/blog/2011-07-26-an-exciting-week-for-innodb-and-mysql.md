@@ -1,7 +1,7 @@
 ---
 title: An exciting week for InnoDB and MySQL
 date: "2011-07-26"
-permalink: /blog/2011/07/26/an-exciting-week-for-innodb-and-mysql/
+url: /blog/2011/07/26/an-exciting-week-for-innodb-and-mysql/
 categories:
   - Databases
 ---

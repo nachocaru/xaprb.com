@@ -1,7 +1,7 @@
 ---
 title: Official website launched for High Performance MySQL
 date: "2008-05-30"
-permalink: /blog/2008/05/30/official-website-launched-for-high-performance-mysql/
+url: /blog/2008/05/30/official-website-launched-for-high-performance-mysql/
 categories:
   - Databases
 ---

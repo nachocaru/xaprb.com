@@ -1,7 +1,7 @@
 ---
 title: "Determining the USL's coefficient of performance, part 2"
 date: "2013-01-03"
-permalink: /blog/2013/01/03/determining-the-usls-coefficient-of-performance-part-2/
+url: /blog/2013/01/03/determining-the-usls-coefficient-of-performance-part-2/
 categories:
   - Databases
   - Performance

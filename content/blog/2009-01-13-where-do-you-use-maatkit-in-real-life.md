@@ -1,7 +1,7 @@
 ---
 title: Where do you use Maatkit in real life?
 date: "2009-01-13"
-permalink: /blog/2009/01/13/where-do-you-use-maatkit-in-real-life/
+url: /blog/2009/01/13/where-do-you-use-maatkit-in-real-life/
 categories:
   - Databases
   - Open Source

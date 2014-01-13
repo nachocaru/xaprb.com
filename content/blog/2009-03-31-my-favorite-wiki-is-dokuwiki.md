@@ -1,7 +1,7 @@
 ---
 title: My favorite wiki is Dokuwiki
 date: "2009-03-31"
-permalink: /blog/2009/03/31/my-favorite-wiki-is-dokuwiki/
+url: /blog/2009/03/31/my-favorite-wiki-is-dokuwiki/
 categories:
   - Commentary
   - Web

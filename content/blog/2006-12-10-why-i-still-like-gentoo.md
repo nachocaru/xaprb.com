@@ -1,7 +1,7 @@
 ---
 title: Why I (still) like Gentoo
 date: "2006-12-10"
-permalink: /blog/2006/12/10/why-i-still-like-gentoo/
+url: /blog/2006/12/10/why-i-still-like-gentoo/
 ---
 I wrote a post recently that focused only on things I see as shortcomings or problems with Gentoo GNU/Linux. That was the intent of the article, to explain why I switched to Ubuntu for my personal systems. On the flip side, nothing's perfect, but nothing's perfectly flawed, either. There are still many things I like about Gentoo.
 

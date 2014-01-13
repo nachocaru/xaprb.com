@@ -1,6 +1,6 @@
 ---
 title: "Permit Cookies: a Firefox extension that makes cookie whitelisting easy"
-permalink: /blog/2006/10/23/permit-cookies-a-firefox-extension-that-makes-cookie-whitelisting-easy/
+url: /blog/2006/10/23/permit-cookies-a-firefox-extension-that-makes-cookie-whitelisting-easy/
 date: "2006-10-23"
 categories:
   - Web

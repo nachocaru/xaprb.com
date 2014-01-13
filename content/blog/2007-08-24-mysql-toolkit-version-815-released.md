@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit version 815 released
 date: "2007-08-24"
-permalink: /blog/2007/08/24/mysql-toolkit-version-815-released/
+url: /blog/2007/08/24/mysql-toolkit-version-815-released/
 categories:
   - Databases
   - Open Source

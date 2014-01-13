@@ -1,7 +1,7 @@
 ---
 title: How to scale writes with master-master replication in MySQL
 date: "2008-08-06"
-permalink: /blog/2008/08/06/how-to-scale-writes-with-master-master-replication-in-mysql/
+url: /blog/2008/08/06/how-to-scale-writes-with-master-master-replication-in-mysql/
 categories:
   - Databases
 ---

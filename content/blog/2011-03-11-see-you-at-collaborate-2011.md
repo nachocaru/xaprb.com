@@ -1,7 +1,7 @@
 ---
 title: See you at Collaborate 2011
 date: "2011-03-11"
-permalink: /blog/2011/03/11/see-you-at-collaborate-2011/
+url: /blog/2011/03/11/see-you-at-collaborate-2011/
 categories:
   - Conferences
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: OpenSQL Camp events in 2009
 date: "2009-08-29"
-permalink: /blog/2009/08/29/opensql-camp-events-in-2009/
+url: /blog/2009/08/29/opensql-camp-events-in-2009/
 categories:
   - Conferences
   - Databases

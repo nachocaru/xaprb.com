@@ -1,7 +1,7 @@
 ---
 title: A clarification on mk-slave-prefetch
 date: "2011-08-21"
-permalink: /blog/2011/08/21/a-clarification-on-mk-slave-prefetch/
+url: /blog/2011/08/21/a-clarification-on-mk-slave-prefetch/
 categories:
   - Databases
   - Open Source

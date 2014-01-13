@@ -1,7 +1,7 @@
 ---
 title: How to find missing values in a sequence with SQL
 date: "2005-12-06"
-permalink: /blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/
+url: /blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/
 categories:
   - Databases
 ---

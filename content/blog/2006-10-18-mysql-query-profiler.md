@@ -1,7 +1,7 @@
 ---
 title: MySQL Query Profiler
 date: "2006-10-18"
-permalink: /blog/2006/10/18/mysql-query-profiler/
+url: /blog/2006/10/18/mysql-query-profiler/
 categories:
   - Databases
 ---

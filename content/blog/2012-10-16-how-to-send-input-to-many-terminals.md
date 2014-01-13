@@ -1,7 +1,7 @@
 ---
 title: How to send input to many terminals
 date: "2012-10-16"
-permalink: /blog/2012/10/16/how-to-send-input-to-many-terminals/
+url: /blog/2012/10/16/how-to-send-input-to-many-terminals/
 categories:
   - Databases
   - Open Source

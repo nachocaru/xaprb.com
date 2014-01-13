@@ -1,7 +1,7 @@
 ---
 title: How to understand SQL joins
 date: "2005-10-03"
-permalink: /blog/2005/10/03/understanding-sql-joins/
+url: /blog/2005/10/03/understanding-sql-joins/
 categories:
   - Databases
 ---

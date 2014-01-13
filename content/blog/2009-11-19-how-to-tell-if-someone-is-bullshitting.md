@@ -1,7 +1,7 @@
 ---
 title: How to tell if someone is bullshitting
 date: "2009-11-19"
-permalink: /blog/2009/11/19/how-to-tell-if-someone-is-bullshitting/
+url: /blog/2009/11/19/how-to-tell-if-someone-is-bullshitting/
 categories:
   - Commentary
   - Databases

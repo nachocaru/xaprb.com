@@ -1,7 +1,7 @@
 ---
 title: "MySQL Table Sync bounty: let's do it!"
 date: "2007-10-31"
-permalink: /blog/2007/10/31/mysql-table-sync-bounty-lets-do-it/
+url: /blog/2007/10/31/mysql-table-sync-bounty-lets-do-it/
 categories:
   - Databases
 ---

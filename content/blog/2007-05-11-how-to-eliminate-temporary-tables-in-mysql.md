@@ -1,7 +1,7 @@
 ---
 title: How to eliminate temporary tables in MySQL
 date: "2007-05-11"
-permalink: /blog/2007/05/11/how-to-eliminate-temporary-tables-in-mysql/
+url: /blog/2007/05/11/how-to-eliminate-temporary-tables-in-mysql/
 categories:
   - Databases
 ---

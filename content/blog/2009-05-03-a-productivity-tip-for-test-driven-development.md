@@ -1,7 +1,7 @@
 ---
 title: A productivity tip for test-driven development
 date: "2009-05-03"
-permalink: /blog/2009/05/03/a-productivity-tip-for-test-driven-development/
+url: /blog/2009/05/03/a-productivity-tip-for-test-driven-development/
 categories:
   - Programming
 ---

@@ -1,7 +1,7 @@
 ---
 title: Sending the query to the data
 date: "2013-09-13"
-permalink: /blog/2013/09/13/sending-the-query-to-the-data/
+url: /blog/2013/09/13/sending-the-query-to-the-data/
 categories:
   - Databases
 ---

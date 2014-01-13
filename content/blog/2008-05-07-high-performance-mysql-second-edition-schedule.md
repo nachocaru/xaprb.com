@@ -1,7 +1,7 @@
 ---
 title: High Performance MySQL Second Edition Schedule
 date: "2008-05-07"
-permalink: /blog/2008/05/07/high-performance-mysql-second-edition-schedule/
+url: /blog/2008/05/07/high-performance-mysql-second-edition-schedule/
 categories:
   - Databases
 ---

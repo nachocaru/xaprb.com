@@ -1,7 +1,7 @@
 ---
 title: The partitioning improvement that almost was
 date: "2011-03-22"
-permalink: /blog/2011/03/22/the-partitioning-improvement-that-almost-was/
+url: /blog/2011/03/22/the-partitioning-improvement-that-almost-was/
 categories:
   - Databases
 ---

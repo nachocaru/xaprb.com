@@ -1,7 +1,7 @@
 ---
 title: How to optimize subqueries and joins in MySQL
 date: "2006-04-30"
-permalink: /blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
+url: /blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
 categories:
   - Databases
 ---

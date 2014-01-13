@@ -1,7 +1,7 @@
 ---
 title: How MySQL decides to AUTO_INCREMENT a value
 date: "2006-04-23"
-permalink: /blog/2006/04/23/explicit-inserts-into-auto_increment-columns-in-mysql/
+url: /blog/2006/04/23/explicit-inserts-into-auto_increment-columns-in-mysql/
 categories:
   - Databases
 ---

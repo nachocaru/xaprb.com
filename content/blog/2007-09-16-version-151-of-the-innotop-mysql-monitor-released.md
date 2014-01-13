@@ -1,7 +1,7 @@
 ---
 title: Version 1.5.1 of the innotop MySQL monitor released
 date: "2007-09-16"
-permalink: /blog/2007/09/16/version-151-of-the-innotop-mysql-monitor-released/
+url: /blog/2007/09/16/version-151-of-the-innotop-mysql-monitor-released/
 categories:
   - Databases
   - Open Source

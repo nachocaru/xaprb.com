@@ -1,7 +1,7 @@
 ---
 title: Blackhole tables and auto-increment keys
 date: "2011-10-19"
-permalink: /blog/2011/10/19/blackhole-tables-and-auto-increment-keys/
+url: /blog/2011/10/19/blackhole-tables-and-auto-increment-keys/
 categories:
   - Databases
 ---

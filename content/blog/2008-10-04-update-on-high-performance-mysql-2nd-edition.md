@@ -1,7 +1,7 @@
 ---
 title: Update on High Performance MySQL, 2nd Edition
 date: "2008-10-04"
-permalink: /blog/2008/10/04/update-on-high-performance-mysql-2nd-edition/
+url: /blog/2008/10/04/update-on-high-performance-mysql-2nd-edition/
 categories:
   - Writing
 ---

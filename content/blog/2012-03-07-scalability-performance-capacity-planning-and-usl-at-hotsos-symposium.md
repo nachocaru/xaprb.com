@@ -1,6 +1,6 @@
 ---
 title: Scalability, performance, capacity planning and USL at Hotsos Symposium
-permalink: /blog/2012/03/07/scalability-performance-capacity-planning-and-usl-at-hotsos-symposium/
+url: /blog/2012/03/07/scalability-performance-capacity-planning-and-usl-at-hotsos-symposium/
 date: "2012-03-07"
 categories:
   - Conferences

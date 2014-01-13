@@ -1,6 +1,6 @@
 ---
 title: Speaking at the Southern Computer Measurement Group meeting on Thursday
-permalink: /blog/2011/10/30/speaking-at-the-southern-computer-measurement-group-meeting-on-thursday/
+url: /blog/2011/10/30/speaking-at-the-southern-computer-measurement-group-meeting-on-thursday/
 date: "2011-10-30"
 categories:
   - Databases

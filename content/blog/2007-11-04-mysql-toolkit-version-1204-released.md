@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit version 1204 released
 date: "2007-11-04"
-permalink: /blog/2007/11/04/mysql-toolkit-version-1204-released/
+url: /blog/2007/11/04/mysql-toolkit-version-1204-released/
 categories:
   - Databases
   - Open Source

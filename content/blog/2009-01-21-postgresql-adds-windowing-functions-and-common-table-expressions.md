@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL adds windowing functions and common table expressions
 date: "2009-01-21"
-permalink: /blog/2009/01/21/postgresql-adds-windowing-functions-and-common-table-expressions/
+url: /blog/2009/01/21/postgresql-adds-windowing-functions-and-common-table-expressions/
 categories:
   - Databases
 ---

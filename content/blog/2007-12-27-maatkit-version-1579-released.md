@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 1579 released
 date: "2007-12-27"
-permalink: /blog/2007/12/27/maatkit-version-1579-released/
+url: /blog/2007/12/27/maatkit-version-1579-released/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: "Using Go's auto-reconnecting MySQL client libraries"
 date: "2012-11-01"
-permalink: /blog/2012/11/01/using-gos-auto-reconnecting-mysql-client-libraries/
+url: /blog/2012/11/01/using-gos-auto-reconnecting-mysql-client-libraries/
 categories:
   - Databases
 ---

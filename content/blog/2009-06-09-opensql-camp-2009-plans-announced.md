@@ -1,7 +1,7 @@
 ---
 title: OpenSQL Camp 2009 plans announced
 date: "2009-06-09"
-permalink: /blog/2009/06/09/opensql-camp-2009-plans-announced/
+url: /blog/2009/06/09/opensql-camp-2009-plans-announced/
 categories:
   - Conferences
   - Databases

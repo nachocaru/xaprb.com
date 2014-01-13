@@ -1,7 +1,7 @@
 ---
 title: One-day Percona Live conference in San Francisco
 date: "2011-01-13"
-permalink: /blog/2011/01/13/one-day-percona-live-conference-in-san-francisco/
+url: /blog/2011/01/13/one-day-percona-live-conference-in-san-francisco/
 categories:
   - Conferences
   - Databases

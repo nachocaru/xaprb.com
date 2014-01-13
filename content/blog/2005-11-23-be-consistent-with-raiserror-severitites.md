@@ -1,7 +1,7 @@
 ---
 title: RAISERROR severity levels demystified
 date: "2005-11-23"
-permalink: /blog/2005/11/23/be-consistent-with-raiserror-severitites/
+url: /blog/2005/11/23/be-consistent-with-raiserror-severitites/
 ---
 `RAISERROR`'s severity levels are defined in the Sql Server Books On Line, and give vague guidance about which severity level is best. The short and sweet is as follows:
 

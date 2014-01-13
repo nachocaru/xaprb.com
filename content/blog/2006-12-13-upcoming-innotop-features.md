@@ -1,7 +1,7 @@
 ---
 title: Upcoming innotop features
 date: "2006-12-13"
-permalink: /blog/2006/12/13/upcoming-innotop-features/
+url: /blog/2006/12/13/upcoming-innotop-features/
 categories:
   - Databases
   - Open Source

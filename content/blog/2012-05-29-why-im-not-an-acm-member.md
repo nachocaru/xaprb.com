@@ -1,7 +1,7 @@
 ---
 title: "Why I'm not an ACM member"
 date: "2012-05-29"
-permalink: /blog/2012/05/29/why-im-not-an-acm-member/
+url: /blog/2012/05/29/why-im-not-an-acm-member/
 categories:
   - Commentary
 ---

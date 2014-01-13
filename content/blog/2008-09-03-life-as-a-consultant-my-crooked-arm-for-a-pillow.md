@@ -1,7 +1,7 @@
 ---
 title: "Life as a consultant: my crooked arm for a pillow"
 date: "2008-09-03"
-permalink: /blog/2008/09/03/life-as-a-consultant-my-crooked-arm-for-a-pillow/
+url: /blog/2008/09/03/life-as-a-consultant-my-crooked-arm-for-a-pillow/
 categories:
   - Commentary
   - Databases
