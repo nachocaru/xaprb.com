@@ -1,6 +1,7 @@
 ---
 title: How PostgreSQL protects against partial page writes and data corruption
-permalink: 
+permalink: /2010/02/08/how-postgresql-protects-against-partial-page-writes-and-data-corruption/
+date: "2010-02-08"
 categories:
   - Databases
 ---
