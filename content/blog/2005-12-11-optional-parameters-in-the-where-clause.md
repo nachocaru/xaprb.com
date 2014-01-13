@@ -10,7 +10,9 @@ This article explains how to write `WHERE` clauses that accept optional paramete
 <pre>if @param1 is not null
     select * from table1 where col1 = @param1
 else
-    select * from table1 where col2 = @param2</pre> This can be rewritten: 
+    select * from table1 where col2 = @param2</pre>
+
+This can be rewritten: 
 
 <pre>select * from table1
 where (@param1 is null or col1 = @param1)
