@@ -1,7 +1,7 @@
 ---
 title: Switching Presentation Display in OpenOffice.org Impress
 date: "2011-04-10"
-permalink: /2011/04/10/switching-presentation-display-in-openoffice-org-impress/
+permalink: /blog/2011/04/10/switching-presentation-display-in-openoffice-org-impress/
 categories:
   - Conferences
   - Desktop

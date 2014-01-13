@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit distribution 620 released
 date: "2007-07-05"
-permalink: /2007/07/05/mysql-toolkit-distribution-620-released/
+permalink: /blog/2007/07/05/mysql-toolkit-distribution-620-released/
 categories:
   - Databases
   - Open Source

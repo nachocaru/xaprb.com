@@ -1,7 +1,7 @@
 ---
 title: Thoughts on REST web services
 date: "2012-11-30"
-permalink: /2012/11/30/thoughts-on-rest-web-services/
+permalink: /blog/2012/11/30/thoughts-on-rest-web-services/
 categories:
   - Web
 ---

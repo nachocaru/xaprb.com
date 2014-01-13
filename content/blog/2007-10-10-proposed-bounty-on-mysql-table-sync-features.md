@@ -1,7 +1,7 @@
 ---
 title: Proposed bounty on MySQL Table Sync features
 date: "2007-10-10"
-permalink: /2007/10/10/proposed-bounty-on-mysql-table-sync-features/
+permalink: /blog/2007/10/10/proposed-bounty-on-mysql-table-sync-features/
 categories:
   - Databases
 ---

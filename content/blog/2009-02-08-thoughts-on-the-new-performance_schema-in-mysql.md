@@ -1,7 +1,7 @@
 ---
 title: Thoughts on the new PERFORMANCE_SCHEMA in MySQL
 date: "2009-02-08"
-permalink: /2009/02/08/thoughts-on-the-new-performance_schema-in-mysql/
+permalink: /blog/2009/02/08/thoughts-on-the-new-performance_schema-in-mysql/
 categories:
   - Databases
 ---

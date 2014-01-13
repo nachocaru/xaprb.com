@@ -1,7 +1,7 @@
 ---
 title: A review of the Glom graphical database front-end
 date: "2006-09-04"
-permalink: /2006/09/04/a-review-of-the-glom-graphical-database-front-end/
+permalink: /blog/2006/09/04/a-review-of-the-glom-graphical-database-front-end/
 ---
 [Glom][1] is an interesting graphical database front-end I've been meaning to try out for some time. Someone asked about graphical database front-ends on the #mysql IRC channel recently, and that prompted me to install Glom and learn how to use it. My overall impressions? It lands squarely in the middle of its target audience's needs, but still has a quirk here and there. With a bit of polish it will be a fine product, and it's already a winner over Microsoft Access and Filemaker, two similar programs with which you might be familiar. In this article I'll walk through installing and configuring Glom, a simple database design, a quick peek under the hood, an archaeologist's experiences using it, and give my opinions about Glom in detail.
 

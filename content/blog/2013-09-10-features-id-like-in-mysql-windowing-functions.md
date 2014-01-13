@@ -1,7 +1,7 @@
 ---
 title: "Features I'd like in MySQL: windowing functions"
 date: "2013-09-10"
-permalink: /2013/09/10/features-id-like-in-mysql-windowing-functions/
+permalink: /blog/2013/09/10/features-id-like-in-mysql-windowing-functions/
 categories:
   - Databases
 ---

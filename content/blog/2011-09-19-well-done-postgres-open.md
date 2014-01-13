@@ -1,7 +1,7 @@
 ---
 title: Well done, Postgres Open
 date: "2011-09-19"
-permalink: /2011/09/19/well-done-postgres-open/
+permalink: /blog/2011/09/19/well-done-postgres-open/
 categories:
   - Conferences
   - Databases

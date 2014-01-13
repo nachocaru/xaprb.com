@@ -1,7 +1,7 @@
 ---
 title: The MySQL Conference will be very good this year
 date: "2010-01-25"
-permalink: /2010/01/25/the-mysql-conference-will-be-very-good-this-year/
+permalink: /blog/2010/01/25/the-mysql-conference-will-be-very-good-this-year/
 categories:
   - Conferences
   - Databases

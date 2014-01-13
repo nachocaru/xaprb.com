@@ -1,7 +1,7 @@
 ---
 title: Xaprb uses a hybrid of Journalist and deLight themes
 date: "2009-03-07"
-permalink: /2009/03/07/xaprb-uses-a-hybrid-of-journalist-and-delight-themes/
+permalink: /blog/2009/03/07/xaprb-uses-a-hybrid-of-journalist-and-delight-themes/
 categories:
   - About
   - Web

@@ -1,7 +1,7 @@
 ---
 title: "Tables and data part 1: CSS and data types"
 date: "2006-01-02"
-permalink: /2006/01/02/tables-and-data-part-1/
+permalink: /blog/2006/01/02/tables-and-data-part-1/
 ---
 I don't know how spreadsheets do it internally, but at least from a user's perspective, they derive the default cell format from the type of data in the cell. For example, if I enter a number into a cell, the spreadsheet will right-align it. It will format dates and times according to cultural conventions, and will recognize other data types as well. This is the right way to do it, because the formatting conveys information about the data. Right-aligned numbers are numeric, not textual.
 

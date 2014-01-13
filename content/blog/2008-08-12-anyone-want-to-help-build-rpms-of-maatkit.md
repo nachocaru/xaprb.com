@@ -1,7 +1,7 @@
 ---
 title: Anyone want to help build RPMs of Maatkit?
 date: "2008-08-12"
-permalink: /2008/08/12/anyone-want-to-help-build-rpms-of-maatkit/
+permalink: /blog/2008/08/12/anyone-want-to-help-build-rpms-of-maatkit/
 categories:
   - Databases
   - Open Source

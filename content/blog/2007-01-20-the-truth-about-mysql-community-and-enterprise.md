@@ -1,7 +1,7 @@
 ---
 title: The truth about MySQL Community and Enterprise
 date: "2007-01-20"
-permalink: /2007/01/20/the-truth-about-mysql-community-and-enterprise/
+permalink: /blog/2007/01/20/the-truth-about-mysql-community-and-enterprise/
 categories:
   - Databases
 ---

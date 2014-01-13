@@ -1,7 +1,7 @@
 ---
 title: Free webinar on preventing MySQL downtime
 date: "2011-10-13"
-permalink: /2011/10/13/free-webinar-on-preventing-mysql-downtime/
+permalink: /blog/2011/10/13/free-webinar-on-preventing-mysql-downtime/
 categories:
   - Databases
 ---

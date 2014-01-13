@@ -1,7 +1,7 @@
 ---
 title: Secure, easy Cacti graphing without SNMP
 date: "2009-04-25"
-permalink: /2009/04/25/secure-easy-cacti-graphing-without-snmp/
+permalink: /blog/2009/04/25/secure-easy-cacti-graphing-without-snmp/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Send your employees to the MySQL Conference
 date: "2008-03-06"
-permalink: /2008/03/06/send-your-employees-to-the-mysql-conference/
+permalink: /blog/2008/03/06/send-your-employees-to-the-mysql-conference/
 categories:
   - Databases
 ---

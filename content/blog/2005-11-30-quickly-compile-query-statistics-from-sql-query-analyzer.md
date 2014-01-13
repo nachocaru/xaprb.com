@@ -1,7 +1,7 @@
 ---
 title: How to analyze statistics from SQL Query Analyzer
 date: "2005-11-30"
-permalink: /2005/11/30/quickly-compile-query-statistics-from-sql-query-analyzer/
+permalink: /blog/2005/11/30/quickly-compile-query-statistics-from-sql-query-analyzer/
 categories:
   - Databases
 ---

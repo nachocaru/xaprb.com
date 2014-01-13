@@ -1,7 +1,7 @@
 ---
 title: How to find contiguous ranges with SQL
 date: "2006-03-22"
-permalink: /2006/03/22/find-contiguous-ranges-with-sql/
+permalink: /blog/2006/03/22/find-contiguous-ranges-with-sql/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Measuring open-source success by jobs
 date: "2011-07-04"
-permalink: /2011/07/04/measuring-open-source-success-by-jobs/
+permalink: /blog/2011/07/04/measuring-open-source-success-by-jobs/
 categories:
   - Commentary
   - Databases

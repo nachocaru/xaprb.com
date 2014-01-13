@@ -1,7 +1,7 @@
 ---
 title: My personal SQL coding standards
 date: "2006-04-26"
-permalink: /2006/04/26/sql-coding-standards/
+permalink: /blog/2006/04/26/sql-coding-standards/
 categories:
   - Databases
 ---

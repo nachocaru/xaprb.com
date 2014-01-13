@@ -1,7 +1,7 @@
 ---
 title: "I'll be speaking at the O'Reilly MySQL Conference 2010"
 date: "2010-02-20"
-permalink: /2010/02/20/ill-be-speaking-at-the-oreilly-mysql-conference-2010/
+permalink: /blog/2010/02/20/ill-be-speaking-at-the-oreilly-mysql-conference-2010/
 categories:
   - Conferences
   - Databases

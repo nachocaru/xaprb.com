@@ -1,7 +1,7 @@
 ---
 title: How to add a wiki homepage, sidebar, and TOC in Google Code
 date: "2009-07-01"
-permalink: /2009/07/01/how-to-add-a-wiki-homepage-sidebar-and-toc-in-google-code/
+permalink: /blog/2009/07/01/how-to-add-a-wiki-homepage-sidebar-and-toc-in-google-code/
 categories:
   - Open Source
   - Web

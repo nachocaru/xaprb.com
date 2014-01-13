@@ -1,7 +1,7 @@
 ---
 title: "A review of Republic Wireless's cellphone service"
 date: "2013-03-22"
-permalink: /2013/03/22/a-review-of-republic-wirelesss-cellphone-cervice/
+permalink: /blog/2013/03/22/a-review-of-republic-wirelesss-cellphone-cervice/
 categories:
   - Commentary
   - Reviews

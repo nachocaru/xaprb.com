@@ -1,7 +1,7 @@
 ---
 title: A gentle introduction to CouchDB for relational practitioners
 date: "2010-09-07"
-permalink: /2010/09/07/a-gentle-introduction-to-couchdb-for-relational-practitioners/
+permalink: /blog/2010/09/07/a-gentle-introduction-to-couchdb-for-relational-practitioners/
 categories:
   - Databases
 ---

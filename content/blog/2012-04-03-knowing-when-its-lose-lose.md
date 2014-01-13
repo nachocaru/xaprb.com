@@ -1,7 +1,7 @@
 ---
 title: "Knowing when it's lose-lose"
 date: "2012-04-03"
-permalink: /2012/04/03/knowing-when-its-lose-lose/
+permalink: /blog/2012/04/03/knowing-when-its-lose-lose/
 categories:
   - Databases
 ---

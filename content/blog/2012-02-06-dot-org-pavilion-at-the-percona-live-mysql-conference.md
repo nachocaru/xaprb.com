@@ -1,7 +1,7 @@
 ---
 title: Dot-Org Pavilion at the Percona Live MySQL Conference
 date: "2012-02-06"
-permalink: /2012/02/06/dot-org-pavilion-at-the-percona-live-mysql-conference/
+permalink: /blog/2012/02/06/dot-org-pavilion-at-the-percona-live-mysql-conference/
 categories:
   - Databases
 ---

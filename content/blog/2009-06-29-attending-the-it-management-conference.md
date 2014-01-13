@@ -1,7 +1,7 @@
 ---
 title: Attending the IT Management Conference
 date: "2009-06-29"
-permalink: /2009/06/29/attending-the-it-management-conference/
+permalink: /blog/2009/06/29/attending-the-it-management-conference/
 categories:
   - Conferences
 ---

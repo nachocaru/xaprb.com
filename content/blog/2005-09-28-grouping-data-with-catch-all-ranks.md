@@ -1,7 +1,7 @@
 ---
 title: How to group data in SQL with a catch-all bucket
 date: "2005-09-28"
-permalink: /2005/09/28/grouping-data-with-catch-all-ranks/
+permalink: /blog/2005/09/28/grouping-data-with-catch-all-ranks/
 categories:
   - Databases
 ---

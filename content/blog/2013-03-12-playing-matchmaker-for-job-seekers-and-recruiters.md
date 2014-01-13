@@ -1,7 +1,7 @@
 ---
 title: Playing matchmaker for job seekers and recruiters
 date: "2013-03-12"
-permalink: /2013/03/12/playing-matchmaker-for-job-seekers-and-recruiters/
+permalink: /blog/2013/03/12/playing-matchmaker-for-job-seekers-and-recruiters/
 categories:
   - Commentary
   - Databases

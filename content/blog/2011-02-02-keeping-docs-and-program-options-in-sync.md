@@ -1,7 +1,7 @@
 ---
 title: Keeping docs and program options in sync
 date: "2011-02-02"
-permalink: /2011/02/02/keeping-docs-and-program-options-in-sync/
+permalink: /blog/2011/02/02/keeping-docs-and-program-options-in-sync/
 categories:
   - Open Source
   - Programming

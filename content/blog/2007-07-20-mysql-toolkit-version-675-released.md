@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit version 675 released
 date: "2007-07-20"
-permalink: /2007/07/20/mysql-toolkit-version-675-released/
+permalink: /blog/2007/07/20/mysql-toolkit-version-675-released/
 categories:
   - Databases
   - Open Source

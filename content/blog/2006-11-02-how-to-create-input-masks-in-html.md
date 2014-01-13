@@ -1,7 +1,7 @@
 ---
 title: How to create input masks in HTML
 date: "2006-11-02"
-permalink: /2006/11/02/how-to-create-input-masks-in-html/
+permalink: /blog/2006/11/02/how-to-create-input-masks-in-html/
 ---
 
 <p style="border:solid red 1px; background:yellow">

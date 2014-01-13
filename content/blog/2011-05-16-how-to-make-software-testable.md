@@ -1,7 +1,7 @@
 ---
 title: How to make software testable
 date: "2011-05-16"
-permalink: /2011/05/16/how-to-make-software-testable/
+permalink: /blog/2011/05/16/how-to-make-software-testable/
 categories:
   - Programming
 ---

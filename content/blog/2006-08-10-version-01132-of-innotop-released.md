@@ -1,7 +1,7 @@
 ---
 title: Version 0.1.132 of innotop released
 date: "2006-08-10"
-permalink: /2006/08/10/version-01132-of-innotop-released/
+permalink: /blog/2006/08/10/version-01132-of-innotop-released/
 categories:
   - Databases
   - Open Source

@@ -1,6 +1,6 @@
 ---
 title: An algorithm to find and resolve data differences between MySQL tables
-permalink: /2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
+permalink: /blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
 date: "2007-03-05"
 categories:
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: I need your advice on how to package MySQL Toolkit as one file
 date: "2007-06-03"
-permalink: /2007/06/03/advice-on-packaging-mysql-toolkit/
+permalink: /blog/2007/06/03/advice-on-packaging-mysql-toolkit/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: Sessions of interest at MySQL Camp 2009
 date: "2009-04-14"
-permalink: /2009/04/14/sessions-of-interest-at-mysql-camp-2009/
+permalink: /blog/2009/04/14/sessions-of-interest-at-mysql-camp-2009/
 categories:
   - Conferences
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: How to free 15GB of disk space in a tenth of a second
 date: "2012-09-14"
-permalink: /2012/09/14/how-to-free-15gb-of-disk-space-in-a-tenth-of-a-second/
+permalink: /blog/2012/09/14/how-to-free-15gb-of-disk-space-in-a-tenth-of-a-second/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Why NULL never compares false to anything in SQL
 date: "2006-05-18"
-permalink: /2006/05/18/why-null-never-compares-false-to-anything-in-sql/
+permalink: /blog/2006/05/18/why-null-never-compares-false-to-anything-in-sql/
 categories:
   - Databases
 ---

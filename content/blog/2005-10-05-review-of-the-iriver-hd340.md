@@ -1,7 +1,7 @@
 ---
 title: Review of the iRiver HD340
 date: "2005-10-05"
-permalink: /2005/10/05/review-of-the-iriver-hd340/
+permalink: /blog/2005/10/05/review-of-the-iriver-hd340/
 ---
 The iRiver HD340 is a 40GB hard-drive-based multi-codec music player, radio, text reader, and image viewer. I have had mine for about 6 months now. I have found some strengths and weaknesses that do not seem to be common knowledge. As usual, I will try to avoid giving information available elsewhere on the Internet.
 

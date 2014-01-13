@@ -1,7 +1,7 @@
 ---
 title: Role-based access control in SQL, part 2
 date: "2006-08-18"
-permalink: /2006/08/18/role-based-access-control-in-sql-part-2/
+permalink: /blog/2006/08/18/role-based-access-control-in-sql-part-2/
 categories:
   - Databases
 ---

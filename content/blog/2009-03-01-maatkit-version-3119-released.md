@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 3119 released
 date: "2009-03-01"
-permalink: /2009/03/01/maatkit-version-3119-released/
+permalink: /blog/2009/03/01/maatkit-version-3119-released/
 categories:
   - Databases
   - Open Source

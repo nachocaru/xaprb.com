@@ -1,7 +1,7 @@
 ---
 title: MySQL Cacti templates 1.0.0 released
 date: "2008-06-01"
-permalink: /2008/06/01/mysql-cacti-templates-100-released/
+permalink: /blog/2008/06/01/mysql-cacti-templates-100-released/
 categories:
   - Databases
   - Operations

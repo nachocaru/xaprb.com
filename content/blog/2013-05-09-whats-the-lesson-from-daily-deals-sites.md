@@ -1,7 +1,7 @@
 ---
 title: "What's the lesson from daily deals sites?"
 date: "2013-05-09"
-permalink: /2013/05/09/whats-the-lesson-from-daily-deals-sites/
+permalink: /blog/2013/05/09/whats-the-lesson-from-daily-deals-sites/
 categories:
   - Commentary
 ---

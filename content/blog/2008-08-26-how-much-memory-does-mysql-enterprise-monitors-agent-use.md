@@ -1,7 +1,7 @@
 ---
 title: "How much memory does MySQL Enterprise Monitor's agent use?"
 date: "2008-08-26"
-permalink: /2008/08/26/how-much-memory-does-mysql-enterprise-monitors-agent-use/
+permalink: /blog/2008/08/26/how-much-memory-does-mysql-enterprise-monitors-agent-use/
 categories:
   - Databases
   - Open Source

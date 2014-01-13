@@ -1,7 +1,7 @@
 ---
 title: The right way to do social
 date: "2013-03-14"
-permalink: /2013/03/14/the-right-way-to-do-social/
+permalink: /blog/2013/03/14/the-right-way-to-do-social/
 categories:
   - Commentary
 ---

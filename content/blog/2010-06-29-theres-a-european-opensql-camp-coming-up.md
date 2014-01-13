@@ -1,7 +1,7 @@
 ---
 title: "There's a European OpenSQL Camp coming up"
 date: "2010-06-29"
-permalink: /2010/06/29/theres-a-european-opensql-camp-coming-up/
+permalink: /blog/2010/06/29/theres-a-european-opensql-camp-coming-up/
 categories:
   - Conferences
   - Databases

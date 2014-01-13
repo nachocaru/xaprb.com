@@ -1,7 +1,7 @@
 ---
 title: Javascript date parsing and formatting, Part 2
 date: "2005-12-20"
-permalink: /2005/12/20/javascript-date-parsing/
+permalink: /blog/2005/12/20/javascript-date-parsing/
 ---
 <p style="border:solid red 1px; background:yellow">
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>

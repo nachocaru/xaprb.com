@@ -1,7 +1,7 @@
 ---
 title: MySQL conference CfP extended
 date: "2010-11-02"
-permalink: /2010/11/02/mysql-conference-cfp-extended/
+permalink: /blog/2010/11/02/mysql-conference-cfp-extended/
 categories:
   - Conferences
   - Databases

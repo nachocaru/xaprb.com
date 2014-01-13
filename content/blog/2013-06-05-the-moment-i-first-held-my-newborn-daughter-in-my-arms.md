@@ -1,7 +1,7 @@
 ---
 title: The moment I first held my newborn daughter in my arms
 date: "2013-06-05"
-permalink: /2013/06/05/the-moment-i-first-held-my-newborn-daughter-in-my-arms/
+permalink: /blog/2013/06/05/the-moment-i-first-held-my-newborn-daughter-in-my-arms/
 categories:
   - Commentary
 ---

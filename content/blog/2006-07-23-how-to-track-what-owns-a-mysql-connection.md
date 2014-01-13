@@ -1,7 +1,7 @@
 ---
 title: How to track what owns a MySQL connection
 date: "2006-07-23"
-permalink: /2006/07/23/how-to-track-what-owns-a-mysql-connection/
+permalink: /blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/
 categories:
   - Databases
 ---

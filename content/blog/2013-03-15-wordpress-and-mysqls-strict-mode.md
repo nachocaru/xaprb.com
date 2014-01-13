@@ -1,7 +1,7 @@
 ---
 title: "WordPress and MySQL's strict mode"
 date: "2013-03-15"
-permalink: /2013/03/15/wordpress-and-mysqls-strict-mode/
+permalink: /blog/2013/03/15/wordpress-and-mysqls-strict-mode/
 categories:
   - Databases
 ---

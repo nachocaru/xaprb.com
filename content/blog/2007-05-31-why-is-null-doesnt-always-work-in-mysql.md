@@ -1,7 +1,7 @@
 ---
 title: "Why IS NULL doesn't always work in MySQL"
 date: "2007-05-31"
-permalink: /2007/05/31/why-is-null-doesnt-always-work-in-mysql/
+permalink: /blog/2007/05/31/why-is-null-doesnt-always-work-in-mysql/
 categories:
   - Databases
 ---

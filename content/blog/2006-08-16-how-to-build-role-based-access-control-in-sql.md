@@ -1,7 +1,7 @@
 ---
 title: How to build role-based access control in SQL
 date: "2006-08-16"
-permalink: /2006/08/16/how-to-build-role-based-access-control-in-sql/
+permalink: /blog/2006/08/16/how-to-build-role-based-access-control-in-sql/
 categories:
   - Databases
 ---

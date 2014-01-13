@@ -1,6 +1,6 @@
 ---
 title: "High Performance MySQL, Second Edition: Replication, Scaling and High Availability"
-permalink:  /2007/10/18/high-performance-mysql-second-edition-replication-scaling-and-high-availability/
+permalink: /blog/2007/10/18/high-performance-mysql-second-edition-replication-scaling-and-high-availability/
 date: "2007-10-18"
 categories:
   - Databases

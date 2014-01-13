@@ -1,7 +1,7 @@
 ---
 title: Setting up a Go build system in Sublime Text 2
 date: "2013-02-15"
-permalink: /2013/02/15/setting-up-a-go-build-system-in-sublime-text-2/
+permalink: /blog/2013/02/15/setting-up-a-go-build-system-in-sublime-text-2/
 categories:
   - Programming
 ---

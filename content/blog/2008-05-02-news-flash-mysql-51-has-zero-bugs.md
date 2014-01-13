@@ -1,7 +1,7 @@
 ---
 title: "News flash: MySQL 5.1 has zero bugs"
 date: "2008-05-02"
-permalink: /2008/05/02/news-flash-mysql-51-has-zero-bugs/
+permalink: /blog/2008/05/02/news-flash-mysql-51-has-zero-bugs/
 categories:
   - Databases
 ---

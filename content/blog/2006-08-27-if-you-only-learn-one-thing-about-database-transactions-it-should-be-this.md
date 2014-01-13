@@ -1,6 +1,6 @@
 ---
 title: If you only learn one thing about database transactions, it should be this
-permalink: /2006/08/27/if-you-only-learn-one-thing-about-database-transactions-it-should-be-this/
+permalink: /blog/2006/08/27/if-you-only-learn-one-thing-about-database-transactions-it-should-be-this/
 date: "2006-08-27"
 categories:
   - Databases

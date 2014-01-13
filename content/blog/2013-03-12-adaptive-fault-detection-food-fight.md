@@ -1,7 +1,7 @@
 ---
 title: Adaptive Fault Detection food fight
 date: "2013-03-12"
-permalink: /2013/03/12/adaptive-fault-detection-food-fight/
+permalink: /blog/2013/03/12/adaptive-fault-detection-food-fight/
 categories:
   - Conferences
   - Databases

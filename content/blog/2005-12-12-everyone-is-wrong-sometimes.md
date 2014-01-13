@@ -1,7 +1,7 @@
 ---
 title: Everyone is wrong sometimes
 date: "2005-12-12"
-permalink: /2005/12/12/everyone-is-wrong-sometimes/
+permalink: /blog/2005/12/12/everyone-is-wrong-sometimes/
 ---
 Just a quick note on the newness of Web 2.0 and how little weight you should assign to the many opinions floating around, including mine. The web has exploded in the last few years. A lot of people are making a lot of great things. There are also many self-proclaimed pundits and people proclaiming others to be pundits. Whether labeled as pundits by themselves or others, these people aren't infallible; they don't know things for certain. They are writing their best guesses and educated opinions, and they can be and frequently are wrong.
 

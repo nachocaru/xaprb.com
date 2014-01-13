@@ -1,7 +1,7 @@
 ---
 title: MySQL Table Checksum bug fix
 date: "2007-03-05"
-permalink: /2007/03/05/mysql-table-checksum-bug-fix/
+permalink: /blog/2007/03/05/mysql-table-checksum-bug-fix/
 categories:
   - Databases
 ---

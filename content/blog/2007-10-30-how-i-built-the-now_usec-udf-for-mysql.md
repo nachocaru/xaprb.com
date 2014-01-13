@@ -1,7 +1,7 @@
 ---
 title: How I built the NOW_USEC() UDF for MySQL
 date: "2007-10-30"
-permalink: /2007/10/30/how-i-built-the-now_usec-udf-for-mysql/
+permalink: /blog/2007/10/30/how-i-built-the-now_usec-udf-for-mysql/
 categories:
   - Databases
 ---

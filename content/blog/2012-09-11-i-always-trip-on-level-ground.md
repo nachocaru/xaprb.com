@@ -1,7 +1,7 @@
 ---
 title: I always trip on level ground
 date: "2012-09-11"
-permalink: /2012/09/11/i-always-trip-on-level-ground/
+permalink: /blog/2012/09/11/i-always-trip-on-level-ground/
 categories:
   - Databases
 ---

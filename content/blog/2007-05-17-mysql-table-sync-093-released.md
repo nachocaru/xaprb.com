@@ -1,7 +1,7 @@
 ---
 title: MySQL Table Sync 0.9.3 released
 date: "2007-05-17"
-permalink: /2007/05/17/mysql-table-sync-093-released/
+permalink: /blog/2007/05/17/mysql-table-sync-093-released/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Finding queries with duplicate columns
 date: "2009-08-07"
-permalink: /2009/08/07/finding-queries-with-duplicate-columns/
+permalink: /blog/2009/08/07/finding-queries-with-duplicate-columns/
 categories:
   - Databases
   - Open Source

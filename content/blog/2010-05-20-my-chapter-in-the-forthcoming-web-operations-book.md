@@ -1,7 +1,7 @@
 ---
 title: My chapter in the forthcoming Web Operations book
 date: "2010-05-20"
-permalink: /2010/05/20/my-chapter-in-the-forthcoming-web-operations-book/
+permalink: /blog/2010/05/20/my-chapter-in-the-forthcoming-web-operations-book/
 categories:
   - Databases
   - Reviews

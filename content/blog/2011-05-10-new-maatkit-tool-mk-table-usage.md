@@ -1,7 +1,7 @@
 ---
 title: "New Maatkit tool: mk-table-usage"
 date: "2011-05-10"
-permalink: /2011/05/10/new-maatkit-tool-mk-table-usage/
+permalink: /blog/2011/05/10/new-maatkit-tool-mk-table-usage/
 categories:
   - Databases
   - Open Source

@@ -1,5 +1,3 @@
-- make sure all of them have a date
-- put permalinks into url
 - move all images into the blog
 - fix relative links
 - look for missing reference links with [brackets]

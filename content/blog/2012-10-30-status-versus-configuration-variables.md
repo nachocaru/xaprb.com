@@ -1,7 +1,7 @@
 ---
 title: Status versus configuration variables
 date: "2012-10-30"
-permalink: /2012/10/30/status-versus-configuration-variables/
+permalink: /blog/2012/10/30/status-versus-configuration-variables/
 categories:
   - Databases
 ---

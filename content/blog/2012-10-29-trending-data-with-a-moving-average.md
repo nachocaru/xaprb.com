@@ -1,7 +1,7 @@
 ---
 title: Trending data with a moving average
 date: "2012-10-29"
-permalink: /2012/10/29/trending-data-with-a-moving-average/
+permalink: /blog/2012/10/29/trending-data-with-a-moving-average/
 categories:
   - Databases
 ---

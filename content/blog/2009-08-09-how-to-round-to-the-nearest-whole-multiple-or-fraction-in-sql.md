@@ -1,7 +1,7 @@
 ---
 title: How to round to the nearest whole multiple or fraction in SQL
 date: "2009-08-09"
-permalink: /2009/08/09/how-to-round-to-the-nearest-whole-multiple-or-fraction-in-sql/
+permalink: /blog/2009/08/09/how-to-round-to-the-nearest-whole-multiple-or-fraction-in-sql/
 categories:
   - Databases
   - Programming

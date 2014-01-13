@@ -1,7 +1,7 @@
 ---
 title: Introducing MySQL Parallel Dump
 date: "2007-09-30"
-permalink: /2007/09/30/introducing-mysql-parallel-dump/
+permalink: /blog/2007/09/30/introducing-mysql-parallel-dump/
 categories:
   - Databases
 ---

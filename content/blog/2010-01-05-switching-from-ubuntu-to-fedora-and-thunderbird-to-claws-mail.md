@@ -1,7 +1,7 @@
 ---
 title: Switching from Ubuntu to Fedora, and Thunderbird to Claws Mail
 date: "2010-01-05"
-permalink: /2010/01/05/switching-from-ubuntu-to-fedora-and-thunderbird-to-claws-mail/
+permalink: /blog/2010/01/05/switching-from-ubuntu-to-fedora-and-thunderbird-to-claws-mail/
 categories:
   - Desktop
   - Open Source

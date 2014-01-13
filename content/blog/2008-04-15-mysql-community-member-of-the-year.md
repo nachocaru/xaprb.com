@@ -1,7 +1,7 @@
 ---
 title: MySQL Community Member of the Year
 date: "2008-04-15"
-permalink: /2008/04/15/mysql-community-member-of-the-year/
+permalink: /blog/2008/04/15/mysql-community-member-of-the-year/
 categories:
   - Commentary
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: How to escalate privileges in MySQL
 date: "2006-05-31"
-permalink: /2006/05/31/how-to-escalate-privileges-in-mysql/
+permalink: /blog/2006/05/31/how-to-escalate-privileges-in-mysql/
 categories:
   - Databases
 ---

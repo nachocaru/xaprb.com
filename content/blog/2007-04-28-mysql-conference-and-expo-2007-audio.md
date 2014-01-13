@@ -1,7 +1,7 @@
 ---
 title: MySQL Conference and Expo 2007 Audio
 date: "2007-04-28"
-permalink: /2007/04/28/mysql-conference-and-expo-2007-audio/
+permalink: /blog/2007/04/28/mysql-conference-and-expo-2007-audio/
 categories:
   - Databases
 ---

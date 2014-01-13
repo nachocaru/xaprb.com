@@ -1,7 +1,7 @@
 ---
 title: InnoDB is a NoSQL database
 date: "2009-12-13"
-permalink: /2009/12/13/innodb-is-a-nosql-database/
+permalink: /blog/2009/12/13/innodb-is-a-nosql-database/
 categories:
   - Databases
 ---

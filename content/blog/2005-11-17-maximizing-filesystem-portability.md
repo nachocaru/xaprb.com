@@ -1,7 +1,7 @@
 ---
 title: How to make file names cross-platform
 date: "2005-11-17"
-permalink: /2005/11/17/maximizing-filesystem-portability/
+permalink: /blog/2005/11/17/maximizing-filesystem-portability/
 ---
 Using a filesystem, such as an external hard drive, across mutiple platforms can sometimes cause annoying behaviors. For example, filenames may be changed to all uppercase or all lowercase, which may cause problems on a system with case-sensitive filenames or vice versa. Here are my suggestions for minimizing conflicts.
 

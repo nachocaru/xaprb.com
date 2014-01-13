@@ -1,7 +1,7 @@
 ---
 title: "Under-provisioning: the curse of the cloud"
 date: "2010-06-01"
-permalink: /2010/06/01/under-provisioning-the-curse-of-the-cloud/
+permalink: /blog/2010/06/01/under-provisioning-the-curse-of-the-cloud/
 categories:
   - Commentary
   - Databases

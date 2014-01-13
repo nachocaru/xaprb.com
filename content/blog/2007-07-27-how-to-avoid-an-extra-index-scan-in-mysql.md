@@ -1,7 +1,7 @@
 ---
 title: How to avoid an extra index scan in MySQL
 date: "2007-07-27"
-permalink: /2007/07/27/how-to-avoid-an-extra-index-scan-in-mysql/
+permalink: /blog/2007/07/27/how-to-avoid-an-extra-index-scan-in-mysql/
 categories:
   - Databases
 ---

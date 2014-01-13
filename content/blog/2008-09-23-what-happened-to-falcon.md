@@ -1,7 +1,7 @@
 ---
 title: What happened to Falcon?
 date: "2008-09-23"
-permalink: /2008/09/23/what-happened-to-falcon/
+permalink: /blog/2008/09/23/what-happened-to-falcon/
 categories:
   - Databases
 ---

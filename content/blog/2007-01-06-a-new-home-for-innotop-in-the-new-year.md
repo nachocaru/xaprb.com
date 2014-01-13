@@ -1,7 +1,7 @@
 ---
 title: A new home for innotop in the new year
 date: "2007-01-06"
-permalink: /2007/01/06/a-new-home-for-innotop-in-the-new-year/
+permalink: /blog/2007/01/06/a-new-home-for-innotop-in-the-new-year/
 categories:
   - Databases
   - Open Source

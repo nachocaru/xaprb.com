@@ -1,7 +1,7 @@
 ---
 title: All measurements are wrong
 date: "2010-10-02"
-permalink: /2010/10/02/all-measurements-are-wrong/
+permalink: /blog/2010/10/02/all-measurements-are-wrong/
 categories:
   - Programming
 ---

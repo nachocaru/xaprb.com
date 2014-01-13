@@ -1,7 +1,7 @@
 ---
 title: New Central Virginia MySQL Meetup
 date: "2012-01-04"
-permalink: /2012/01/04/new-central-virginia-mysql-meetup/
+permalink: /blog/2012/01/04/new-central-virginia-mysql-meetup/
 categories:
   - Databases
 ---

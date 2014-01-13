@@ -1,7 +1,7 @@
 ---
 title: High Performance MySQL 3rd Edition is real!
 date: "2012-03-28"
-permalink: /2012/03/28/high-performance-mysql-3rd-edition-is-real/
+permalink: /blog/2012/03/28/high-performance-mysql-3rd-edition-is-real/
 categories:
   - Databases
 ---

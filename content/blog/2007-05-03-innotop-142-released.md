@@ -1,7 +1,7 @@
 ---
 title: innotop 1.4.2 released
 date: "2007-05-03"
-permalink: /2007/05/03/innotop-142-released/
+permalink: /blog/2007/05/03/innotop-142-released/
 categories:
   - Databases
   - Open Source

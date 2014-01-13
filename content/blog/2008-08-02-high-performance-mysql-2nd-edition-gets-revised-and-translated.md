@@ -1,7 +1,7 @@
 ---
 title: High Performance MySQL 2nd Edition gets revised and translated
 date: "2008-08-02"
-permalink: /2008/08/02/high-performance-mysql-2nd-edition-gets-revised-and-translated/
+permalink: /blog/2008/08/02/high-performance-mysql-2nd-edition-gets-revised-and-translated/
 categories:
   - Databases
 ---

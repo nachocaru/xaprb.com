@@ -1,7 +1,7 @@
 ---
 title: What would make me buy MySQL Enterprise?
 date: "2007-08-12"
-permalink: /2007/08/12/what-would-make-me-buy-mysql-enterprise/
+permalink: /blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/
 categories:
   - Databases
 ---

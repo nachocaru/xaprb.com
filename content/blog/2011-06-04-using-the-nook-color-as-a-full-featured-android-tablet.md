@@ -1,7 +1,7 @@
 ---
 title: Using the Nook Color as a full-featured Android tablet
 date: "2011-06-04"
-permalink: /2011/06/04/using-the-nook-color-as-a-full-featured-android-tablet/
+permalink: /blog/2011/06/04/using-the-nook-color-as-a-full-featured-android-tablet/
 categories:
   - Hardware
   - Open Source

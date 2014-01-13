@@ -1,7 +1,7 @@
 ---
 title: Organize to resist SOPA in DC
 date: "2012-01-16"
-permalink: /2012/01/16/organize-to-resist-sopa-in-dc/
+permalink: /blog/2012/01/16/organize-to-resist-sopa-in-dc/
 categories:
   - Commentary
   - Web

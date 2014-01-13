@@ -1,7 +1,7 @@
 ---
 title: Some pt-table-checksum FAQs
 date: "2012-02-09"
-permalink: /2012/02/09/some-pt-table-checksum-faqs/
+permalink: /blog/2012/02/09/some-pt-table-checksum-faqs/
 categories:
   - Databases
 ---

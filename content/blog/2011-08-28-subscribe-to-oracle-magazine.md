@@ -1,7 +1,7 @@
 ---
 title: Subscribe to Oracle Magazine
 date: "2011-08-28"
-permalink: /2011/08/28/subscribe-to-oracle-magazine/
+permalink: /blog/2011/08/28/subscribe-to-oracle-magazine/
 categories:
   - Databases
   - MySQL

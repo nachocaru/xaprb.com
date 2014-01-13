@@ -1,7 +1,7 @@
 ---
 title: Killing idle transactions to increase database uptime
 date: "2012-08-13"
-permalink: /2012/08/13/killing-idle-transactions-to-increase-database-uptime/
+permalink: /blog/2012/08/13/killing-idle-transactions-to-increase-database-uptime/
 categories:
   - Databases
 ---

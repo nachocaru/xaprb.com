@@ -1,7 +1,7 @@
 ---
 title: Be bold, but not too bold
 date: "2012-10-08"
-permalink: /2012/10/08/be-bold-but-not-too-bold/
+permalink: /blog/2012/10/08/be-bold-but-not-too-bold/
 categories:
   - About
 ---

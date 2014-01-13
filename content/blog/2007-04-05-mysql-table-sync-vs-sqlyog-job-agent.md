@@ -1,7 +1,7 @@
 ---
 title: MySQL Table Sync vs. SQLyog Job Agent
 date: "2007-04-05"
-permalink: /2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
+permalink: /blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
 categories:
   - Databases
 ---

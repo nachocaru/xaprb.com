@@ -1,7 +1,7 @@
 ---
 title: If yoda you were, SQL you would invent
 date: "2013-02-01"
-permalink: /2013/02/01/if-yoda-you-were-sql-you-would-invent/
+permalink: /blog/2013/02/01/if-yoda-you-were-sql-you-would-invent/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: What should a DBA do?
 date: "2012-09-03"
-permalink: /2012/09/03/what-should-a-dba-do/
+permalink: /blog/2012/09/03/what-should-a-dba-do/
 categories:
   - Databases
 ---

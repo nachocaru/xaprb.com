@@ -1,7 +1,7 @@
 ---
 title: How to select the Nth greatest/least/first/last row in SQL
 date: "2008-08-08"
-permalink: /2008/08/08/how-to-select-the-nth-greatestleastfirstlast-row-in-sql/
+permalink: /blog/2008/08/08/how-to-select-the-nth-greatestleastfirstlast-row-in-sql/
 categories:
   - Databases
 ---

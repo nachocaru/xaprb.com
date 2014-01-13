@@ -1,7 +1,7 @@
 ---
 title: JavaScript date parsing and formatting, Part 1
 date: "2005-12-12"
-permalink: /2005/12/12/javascript-closures-for-runtime-efficiency/
+permalink: /blog/2005/12/12/javascript-closures-for-runtime-efficiency/
 ---
 <p style="border:solid red 1px; background:yellow">
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>

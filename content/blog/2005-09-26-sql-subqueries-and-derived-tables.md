@@ -1,7 +1,7 @@
 ---
 title: The difference between subqueries and derived tables in SQL
 date: "2005-09-26"
-permalink: /2005/09/26/sql-subqueries-and-derived-tables/
+permalink: /blog/2005/09/26/sql-subqueries-and-derived-tables/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Speaking at Percona University Sept 12th
 date: "2013-08-18"
-permalink: /2013/08/18/speaking-at-percona-university-sept-12th/
+permalink: /blog/2013/08/18/speaking-at-percona-university-sept-12th/
 categories:
   - Conferences
   - Databases

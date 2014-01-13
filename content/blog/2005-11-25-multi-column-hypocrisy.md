@@ -1,7 +1,7 @@
 ---
 title: Why not to use CSS for columnar layouts
 date: "2005-11-25"
-permalink: /2005/11/25/multi-column-hypocrisy/
+permalink: /blog/2005/11/25/multi-column-hypocrisy/
 ---
 Using `DIV` tags and CSS to format a single text into multiple columns is just as bad as using tables for layout. This article explains why.
 

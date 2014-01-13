@@ -1,7 +1,7 @@
 ---
 title: Innotop version 1.152 released
 date: "2006-09-28"
-permalink: /2006/09/28/innotop-version-1152-released/
+permalink: /blog/2006/09/28/innotop-version-1152-released/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: The average age of metrics being trended
 date: "2012-10-30"
-permalink: /2012/10/30/the-average-age-of-metrics-being-trended/
+permalink: /blog/2012/10/30/the-average-age-of-metrics-being-trended/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Risks of running in the cloud
 date: "2011-04-23"
-permalink: /2011/04/23/risks-of-running-in-the-cloud/
+permalink: /blog/2011/04/23/risks-of-running-in-the-cloud/
 categories:
   - Commentary
 ---

@@ -1,7 +1,7 @@
 ---
 title: How to write a lazy UNION in MySQL
 date: "2008-06-15"
-permalink: /2008/06/15/how-to-write-a-lazy-union-in-mysql/
+permalink: /blog/2008/06/15/how-to-write-a-lazy-union-in-mysql/
 categories:
   - Databases
 ---

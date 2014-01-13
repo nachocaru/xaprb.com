@@ -1,7 +1,7 @@
 ---
 title: Version 0.1.154 of innotop released
 date: "2006-10-21"
-permalink: /2006/10/21/version-01154-of-innotop-released/
+permalink: /blog/2006/10/21/version-01154-of-innotop-released/
 categories:
   - Databases
   - Open Source

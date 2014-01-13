@@ -1,7 +1,7 @@
 ---
 title: "Beware of svctm in Linux's iostat"
 date: "2010-09-06"
-permalink: /2010/09/06/beware-of-svctm-in-linuxs-iostat/
+permalink: /blog/2010/09/06/beware-of-svctm-in-linuxs-iostat/
 categories:
   - Databases
   - Operations

@@ -1,7 +1,7 @@
 ---
 title: A review of Introduction to Search with Sphinx by Andrew Aksyonoff
 date: "2011-08-28"
-permalink: /2011/08/28/a-review-of-introduction-to-search-with-sphinx-by-andrew-aksyonoff/
+permalink: /blog/2011/08/28/a-review-of-introduction-to-search-with-sphinx-by-andrew-aksyonoff/
 categories:
   - Databases
 ---

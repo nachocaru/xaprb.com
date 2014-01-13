@@ -1,7 +1,7 @@
 ---
 title: EXPLAIN UPDATE in MySQL 5.6
 date: "2013-11-26"
-permalink: /2013/11/26/explain-update-in-mysql-5-6/
+permalink: /blog/2013/11/26/explain-update-in-mysql-5-6/
 categories:
   - Databases
 ---

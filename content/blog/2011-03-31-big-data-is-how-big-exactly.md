@@ -1,7 +1,7 @@
 ---
 title: Big Data is how big exactly?
 date: "2011-03-31"
-permalink: /2011/03/31/big-data-is-how-big-exactly/
+permalink: /blog/2011/03/31/big-data-is-how-big-exactly/
 categories:
   - Commentary
   - Databases

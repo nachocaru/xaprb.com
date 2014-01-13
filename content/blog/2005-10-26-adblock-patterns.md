@@ -1,7 +1,7 @@
 ---
 title: How to block ads effectively with AdBlock regular expressions
 date: "2005-10-26"
-permalink: /2005/10/26/adblock-patterns/
+permalink: /blog/2005/10/26/adblock-patterns/
 ---
 One of the greatest things about Firefox is the ability to customize the browser with extensions. By far my favorite extension is [Adblock][1]. It allows you to specify arbitrary regular expression patterns to block your browser from fetching and displaying content. The regular expression syntax is standard JavaScript syntax, based on Perl 5.
 

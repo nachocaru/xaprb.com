@@ -1,7 +1,7 @@
 ---
 title: Building a MySQL server with XtraDB for speed
 date: "2011-02-08"
-permalink: /2011/02/08/building-a-mysql-server-with-xtradb-for-speed/
+permalink: /blog/2011/02/08/building-a-mysql-server-with-xtradb-for-speed/
 categories:
   - Databases
 ---

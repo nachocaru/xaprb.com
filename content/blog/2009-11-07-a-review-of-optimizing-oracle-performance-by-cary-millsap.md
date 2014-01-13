@@ -1,7 +1,7 @@
 ---
 title: A review of Optimizing Oracle Performance by Cary Millsap
 date: "2009-11-07"
-permalink: /2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/
+permalink: /blog/2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/
 categories:
   - Databases
   - Reviews

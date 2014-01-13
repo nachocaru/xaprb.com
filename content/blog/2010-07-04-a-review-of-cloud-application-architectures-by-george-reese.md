@@ -1,7 +1,7 @@
 ---
 title: A review of Cloud Application Architectures by George Reese
 date: "2010-07-04"
-permalink: /2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/
+permalink: /blog/2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/
 categories:
   - Databases
   - Reviews

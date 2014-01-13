@@ -1,7 +1,7 @@
 ---
 title: How to find data distributions with SQL
 date: "2006-06-10"
-permalink: /2006/06/10/how-to-find-data-distributions-with-sql/
+permalink: /blog/2006/06/10/how-to-find-data-distributions-with-sql/
 categories:
   - Databases
 ---

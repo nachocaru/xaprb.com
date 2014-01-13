@@ -1,7 +1,7 @@
 ---
 title: High Performance MySQL, Third Edition
 date: "2011-09-14"
-permalink: /2011/09/14/high-performance-mysql-third-edition/
+permalink: /blog/2011/09/14/high-performance-mysql-third-edition/
 categories:
   - Databases
   - Writing

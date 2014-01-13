@@ -1,7 +1,7 @@
 ---
 title: "What's your opinion of High Performance MySQL?"
 date: "2012-09-05"
-permalink: /2012/09/05/whats-your-opinion-of-high-performance-mysql/
+permalink: /blog/2012/09/05/whats-your-opinion-of-high-performance-mysql/
 categories:
   - Databases
   - Writing

@@ -1,7 +1,7 @@
 ---
 title: "High Performance MySQL, Second Edition: Backup and Recovery"
 date: "2007-09-19"
-permalink: /2007/09/19/high-performance-mysql-second-edition-backup-and-recovery/
+permalink: /blog/2007/09/19/high-performance-mysql-second-edition-backup-and-recovery/
 categories:
   - Databases
 ---

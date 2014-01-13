@@ -1,7 +1,7 @@
 ---
 title: How to avoid unique index violations on updates in MySQL
 date: "2006-06-16"
-permalink: /2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/
+permalink: /blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/
 categories:
   - Databases
 ---

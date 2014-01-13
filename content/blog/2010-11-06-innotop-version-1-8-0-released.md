@@ -1,7 +1,7 @@
 ---
 title: innotop version 1.8.0 released
 date: "2010-11-06"
-permalink: /2010/11/06/innotop-version-1-8-0-released/
+permalink: /blog/2010/11/06/innotop-version-1-8-0-released/
 categories:
   - Databases
   - Open Source

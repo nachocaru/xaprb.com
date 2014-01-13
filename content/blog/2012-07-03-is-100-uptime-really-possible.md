@@ -1,7 +1,7 @@
 ---
 title: Is 100% uptime really possible?
 date: "2012-07-03"
-permalink: /2012/07/03/is-100-uptime-really-possible/
+permalink: /blog/2012/07/03/is-100-uptime-really-possible/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 1877 released
 date: "2008-03-16"
-permalink: /2008/03/16/maatkit-version-1877-released/
+permalink: /blog/2008/03/16/maatkit-version-1877-released/
 categories:
   - Databases
   - Open Source

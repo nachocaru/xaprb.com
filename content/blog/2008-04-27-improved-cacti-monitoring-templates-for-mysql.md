@@ -1,7 +1,7 @@
 ---
 title: Improved Cacti monitoring templates for MySQL
 date: "2008-04-27"
-permalink: /2008/04/27/improved-cacti-monitoring-templates-for-mysql/
+permalink: /blog/2008/04/27/improved-cacti-monitoring-templates-for-mysql/
 categories:
   - Databases
 ---

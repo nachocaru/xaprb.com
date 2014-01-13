@@ -1,7 +1,7 @@
 ---
 title: Stored procedure debugging in MySQL
 date: "2012-11-01"
-permalink: /2012/11/01/stored-procedure-debugging-in-mysql/
+permalink: /blog/2012/11/01/stored-procedure-debugging-in-mysql/
 categories:
   - Databases
 ---

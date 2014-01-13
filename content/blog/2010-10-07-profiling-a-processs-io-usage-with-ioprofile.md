@@ -1,7 +1,7 @@
 ---
 title: "Profiling a process's IO usage with ioprofile"
 date: "2010-10-07"
-permalink: /2010/10/07/profiling-a-processs-io-usage-with-ioprofile/
+permalink: /blog/2010/10/07/profiling-a-processs-io-usage-with-ioprofile/
 categories:
   - Databases
   - Open Source

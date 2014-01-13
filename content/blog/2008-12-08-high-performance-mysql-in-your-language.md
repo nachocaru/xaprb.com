@@ -1,7 +1,7 @@
 ---
 title: High Performance MySQL in your language
 date: "2008-12-08"
-permalink: /2008/12/08/high-performance-mysql-in-your-language/
+permalink: /blog/2008/12/08/high-performance-mysql-in-your-language/
 categories:
   - Databases
   - Writing

@@ -1,7 +1,7 @@
 ---
 title: Henceforth, I dub thee GLAMP
 date: "2008-02-21"
-permalink: /2008/02/21/henceforth-i-dub-thee-glamp/
+permalink: /blog/2008/02/21/henceforth-i-dub-thee-glamp/
 ---
 I've decided to start replacing L with GL in acronyms where L supposedly stands for Linux.
 

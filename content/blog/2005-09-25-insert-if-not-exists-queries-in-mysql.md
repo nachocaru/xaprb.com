@@ -1,7 +1,7 @@
 ---
 title: "How to write INSERT IF NOT EXISTS queries in standard  SQL"
 date: "2005-09-25"
-permalink: /2005/09/25/insert-if-not-exists-queries-in-mysql/
+permalink: /blog/2005/09/25/insert-if-not-exists-queries-in-mysql/
 categories:
   - Databases
 ---

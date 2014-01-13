@@ -1,7 +1,7 @@
 ---
 title: JavaScript number-formatting library updated
 date: "2007-06-19"
-permalink: /2007/06/19/javascript-number-formatting-library-updated/
+permalink: /blog/2007/06/19/javascript-number-formatting-library-updated/
 ---
 
 I've released a new version of my [powerful, flexible, efficient JavaScript number-formatting library][1], which is probably the best available. This release adds a fix for zero-padding negative numbers.

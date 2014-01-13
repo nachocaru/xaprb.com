@@ -1,7 +1,7 @@
 ---
 title: How to simulate FULL OUTER JOIN in MySQL
 date: "2006-05-26"
-permalink: /2006/05/26/how-to-write-full-outer-join-in-mysql/
+permalink: /blog/2006/05/26/how-to-write-full-outer-join-in-mysql/
 categories:
   - Databases
 ---

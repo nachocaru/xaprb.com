@@ -1,7 +1,7 @@
 ---
 title: What are your favorite PostgreSQL performance resources?
 date: "2008-12-13"
-permalink: /2008/12/13/what-are-your-favorite-postgresql-performance-resources/
+permalink: /blog/2008/12/13/what-are-your-favorite-postgresql-performance-resources/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: How to find duplicate rows with SQL
 date: "2006-10-09"
-permalink: /2006/10/09/how-to-find-duplicate-rows-with-sql/
+permalink: /blog/2006/10/09/how-to-find-duplicate-rows-with-sql/
 categories:
   - Databases
 ---

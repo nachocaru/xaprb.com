@@ -1,7 +1,7 @@
 ---
 title: I wish I could be at PGWest
 date: "2010-10-19"
-permalink: /2010/10/19/i-wish-i-could-be-at-pgwest/
+permalink: /blog/2010/10/19/i-wish-i-could-be-at-pgwest/
 categories:
   - Conferences
   - Databases

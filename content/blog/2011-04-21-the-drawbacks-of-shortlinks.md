@@ -1,7 +1,7 @@
 ---
 title: The drawbacks of shortlinks
 date: "2011-04-21"
-permalink: /2011/04/21/the-drawbacks-of-shortlinks/
+permalink: /blog/2011/04/21/the-drawbacks-of-shortlinks/
 categories:
   - Commentary
   - Web

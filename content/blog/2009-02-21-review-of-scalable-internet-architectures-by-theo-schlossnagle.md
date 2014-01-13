@@ -1,7 +1,7 @@
 ---
 title: Review of Scalable Internet Architectures by Theo Schlossnagle
 date: "2009-02-21"
-permalink: /2009/02/21/review-of-scalable-internet-architectures-by-theo-schlossnagle/
+permalink: /blog/2009/02/21/review-of-scalable-internet-architectures-by-theo-schlossnagle/
 categories:
   - Databases
   - Reviews

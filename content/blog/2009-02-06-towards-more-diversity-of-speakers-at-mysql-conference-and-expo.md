@@ -1,7 +1,7 @@
 ---
 title: Towards more diversity of speakers at MySQL Conference and Expo
 date: "2009-02-06"
-permalink: /2009/02/06/towards-more-diversity-of-speakers-at-mysql-conference-and-expo/
+permalink: /blog/2009/02/06/towards-more-diversity-of-speakers-at-mysql-conference-and-expo/
 categories:
   - Commentary
   - Conferences

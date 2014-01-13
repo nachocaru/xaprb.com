@@ -1,7 +1,7 @@
 ---
 title: Surge 2011 slides, recap
 date: "2011-10-06"
-permalink: /2011/10/06/surge-2011-slides-recap/
+permalink: /blog/2011/10/06/surge-2011-slides-recap/
 categories:
   - Conferences
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: "What it's like to write a technical book, continued"
 date: "2008-06-23"
-permalink: /2008/06/23/what-its-like-to-write-a-technical-book-continued/
+permalink: /blog/2008/06/23/what-its-like-to-write-a-technical-book-continued/
 categories:
   - Databases
   - Open Source

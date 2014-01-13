@@ -1,7 +1,7 @@
 ---
 title: "My new startup: 1-900-SELECT"
 date: "2011-04-01"
-permalink: /2011/04/01/my-new-startup-1-900-select/
+permalink: /blog/2011/04/01/my-new-startup-1-900-select/
 categories:
   - Databases
 ---

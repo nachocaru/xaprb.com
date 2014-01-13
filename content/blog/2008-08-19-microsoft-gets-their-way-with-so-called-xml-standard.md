@@ -1,7 +1,7 @@
 ---
 title: Microsoft gets their way with so-called XML standard
 date: "2008-08-19"
-permalink: /2008/08/19/microsoft-gets-their-way-with-so-called-xml-standard/
+permalink: /blog/2008/08/19/microsoft-gets-their-way-with-so-called-xml-standard/
 categories:
   - Commentary
   - Web

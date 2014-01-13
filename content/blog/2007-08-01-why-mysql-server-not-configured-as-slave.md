@@ -1,7 +1,7 @@
 ---
 title: Why MySQL says the server is not configured as a slave
 date: "2007-08-01"
-permalink: /2007/08/01/why-mysql-server-not-configured-as-slave/
+permalink: /blog/2007/08/01/why-mysql-server-not-configured-as-slave/
 categories:
   - Databases
 ---

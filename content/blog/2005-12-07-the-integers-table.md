@@ -1,7 +1,7 @@
 ---
 title: The integers table
 date: "2005-12-07"
-permalink: /2005/12/07/the-integers-table/
+permalink: /blog/2005/12/07/the-integers-table/
 ---
 For the sake of adding cross-references and my own analysis, I'm going to replicate part of someone else's idea. An [integers table][1] can be used to create any desired sequence of numbers, and the idea can be extended to other data types as well. It's easy to use a [mutex table][2] as an integers table, so there's no need for two tables of the values. You can even create tables with characters, use integers with date functions to generate a range of dates, and so forth. Here is the canonical integers table, and the canonical select from it:
 

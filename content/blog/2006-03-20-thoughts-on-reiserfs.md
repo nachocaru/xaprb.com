@@ -1,7 +1,7 @@
 ---
 title: Thoughts on ReiserFS
 date: "2006-03-20"
-permalink: /2006/03/20/thoughts-on-reiserfs/
+permalink: /blog/2006/03/20/thoughts-on-reiserfs/
 ---
 I recently watched a [video of Hans Reiser's presentation on ReiserFS][1], a journalling filesystem. It piqued my curiosity, so I visited the [ReiserFS website][2] to read more about the filesystem. I ended up un-learning some things I thought I knew, and had some thoughts to share on ReiserFS in general.
 

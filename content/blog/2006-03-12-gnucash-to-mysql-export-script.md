@@ -1,7 +1,7 @@
 ---
 title: GnuCash to MySQL export script
 date: "2006-03-12"
-permalink: /2006/03/12/gnucash-to-mysql-export-script/
+permalink: /blog/2006/03/12/gnucash-to-mysql-export-script/
 categories:
   - Databases
 ---

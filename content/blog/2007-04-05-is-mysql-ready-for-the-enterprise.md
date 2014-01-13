@@ -1,7 +1,7 @@
 ---
 title: Three updated tools in MySQL Toolkit
 date: "2007-04-05"
-permalink: /2007/04/05/is-mysql-ready-for-the-enterprise/
+permalink: /blog/2007/04/05/is-mysql-ready-for-the-enterprise/
 categories:
   - Databases
   - Open Source

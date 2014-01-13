@@ -1,7 +1,7 @@
 ---
 title: Going to PostgreSQL East 2009
 date: "2009-03-24"
-permalink: /2009/03/24/going-to-postgresql-east-2009/
+permalink: /blog/2009/03/24/going-to-postgresql-east-2009/
 categories:
   - Conferences
   - Databases

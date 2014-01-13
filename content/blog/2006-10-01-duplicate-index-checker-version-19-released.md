@@ -1,7 +1,7 @@
 ---
 title: Duplicate index checker version 1.9 released
 date: "2006-10-01"
-permalink: /2006/10/01/duplicate-index-checker-version-19-released/
+permalink: /blog/2006/10/01/duplicate-index-checker-version-19-released/
 ---
 I've made more improvements to the [duplicate index checker][1]. I addressed a [MySQL bug][2] [Roland Bouman][3] mentioned to me, added more tests to the suite, and made changes so it considers more types of indexes now ([HASH][4], BTREE, [SPATIAL][5]). I made no changes to the foreign key checking.
 

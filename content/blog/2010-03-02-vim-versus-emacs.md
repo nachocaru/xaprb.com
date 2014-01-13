@@ -1,7 +1,7 @@
 ---
 title: Vim versus Emacs
 date: "2010-03-02"
-permalink: /2010/03/02/vim-versus-emacs/
+permalink: /blog/2010/03/02/vim-versus-emacs/
 categories:
   - Commentary
 ---

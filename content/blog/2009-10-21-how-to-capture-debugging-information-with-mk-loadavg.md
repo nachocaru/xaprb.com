@@ -1,7 +1,7 @@
 ---
 title: How to capture debugging information with mk-loadavg
 date: "2009-10-21"
-permalink: /2009/10/21/how-to-capture-debugging-information-with-mk-loadavg/
+permalink: /blog/2009/10/21/how-to-capture-debugging-information-with-mk-loadavg/
 categories:
   - Databases
   - Open Source

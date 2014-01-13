@@ -1,7 +1,7 @@
 ---
 title: Can we afford big data, or do we need smart data?
 date: "2012-11-15"
-permalink: /2012/11/15/can-we-afford-big-data-or-do-we-need-smart-data/
+permalink: /blog/2012/11/15/can-we-afford-big-data-or-do-we-need-smart-data/
 categories:
   - Commentary
   - Databases

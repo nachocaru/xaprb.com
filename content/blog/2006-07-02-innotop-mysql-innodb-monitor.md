@@ -1,7 +1,7 @@
 ---
 title: The innotop MySQL and InnoDB monitor
 date: "2006-07-02"
-permalink: /2006/07/02/innotop-mysql-innodb-monitor/
+permalink: /blog/2006/07/02/innotop-mysql-innodb-monitor/
 categories:
   - Databases
   - Open Source

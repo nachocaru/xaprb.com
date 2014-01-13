@@ -1,7 +1,7 @@
 ---
 title: A script snippet to relative-ize numbers embedded in text
 date: "2009-09-01"
-permalink: /2009/09/01/a-script-snippet-to-relative-ize-numbers-embedded-in-text/
+permalink: /blog/2009/09/01/a-script-snippet-to-relative-ize-numbers-embedded-in-text/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: Gratitude for a consistent focus on value
 date: "2009-02-04"
-permalink: /2009/02/04/gratitude-for-a-consistent-focus-on-value/
+permalink: /blog/2009/02/04/gratitude-for-a-consistent-focus-on-value/
 categories:
   - Commentary
 ---

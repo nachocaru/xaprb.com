@@ -1,7 +1,7 @@
 ---
 title: Maatkit on Ohloh
 date: "2007-12-08"
-permalink: /2007/12/08/maatkit-on-ohloh/
+permalink: /blog/2007/12/08/maatkit-on-ohloh/
 categories:
   - Databases
   - Open Source

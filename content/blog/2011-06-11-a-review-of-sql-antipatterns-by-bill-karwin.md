@@ -1,7 +1,7 @@
 ---
 title: A review of SQL Antipatterns by Bill Karwin
 date: "2011-06-11"
-permalink: /2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/
+permalink: /blog/2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/
 categories:
   - Databases
   - Reviews

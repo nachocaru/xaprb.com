@@ -1,7 +1,7 @@
 ---
 title: MySQL Toolkit version 896 released
 date: "2007-09-20"
-permalink: /2007/09/20/mysql-toolkit-version-896-released/
+permalink: /blog/2007/09/20/mysql-toolkit-version-896-released/
 categories:
   - Databases
   - Open Source

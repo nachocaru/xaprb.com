@@ -1,7 +1,7 @@
 ---
 title: Awesome Postgres/MySQL cross-pollination
 date: "2010-12-06"
-permalink: /2010/12/06/awesome-postgresmysql-cross-pollination/
+permalink: /blog/2010/12/06/awesome-postgresmysql-cross-pollination/
 categories:
   - Commentary
   - Databases

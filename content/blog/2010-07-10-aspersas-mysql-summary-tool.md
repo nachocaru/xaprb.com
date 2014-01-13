@@ -1,7 +1,7 @@
 ---
 title: "Aspersa's mysql-summary tool"
 date: "2010-07-10"
-permalink: /2010/07/10/aspersas-mysql-summary-tool/
+permalink: /blog/2010/07/10/aspersas-mysql-summary-tool/
 categories:
   - Databases
   - Open Source

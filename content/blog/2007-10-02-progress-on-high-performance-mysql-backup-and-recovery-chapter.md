@@ -1,7 +1,7 @@
 ---
 title: Progress on High Performance MySQL Backup and Recovery chapter
 date: "2007-10-02"
-permalink: /2007/10/02/progress-on-high-performance-mysql-backup-and-recovery-chapter/
+permalink: /blog/2007/10/02/progress-on-high-performance-mysql-backup-and-recovery-chapter/
 categories:
   - Databases
 ---

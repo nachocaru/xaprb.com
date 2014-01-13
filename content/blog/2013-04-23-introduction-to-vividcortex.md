@@ -1,7 +1,7 @@
 ---
 title: Introduction to VividCortex
 date: "2013-04-23"
-permalink: /2013/04/23/introduction-to-vividcortex/
+permalink: /blog/2013/04/23/introduction-to-vividcortex/
 categories:
   - Databases
 ---

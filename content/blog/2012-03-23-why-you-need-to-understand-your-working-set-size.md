@@ -1,7 +1,7 @@
 ---
 title: Why You Need to Understand Your Working Set Size
 date: "2012-03-23"
-permalink: /2012/03/23/why-you-need-to-understand-your-working-set-size/
+permalink: /blog/2012/03/23/why-you-need-to-understand-your-working-set-size/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: How good is the new High Performance MySQL going to be?
 date: "2007-12-15"
-permalink: /2007/12/15/how-good-is-the-new-high-performance-mysql-going-to-be/
+permalink: /blog/2007/12/15/how-good-is-the-new-high-performance-mysql-going-to-be/
 categories:
   - Databases
 ---

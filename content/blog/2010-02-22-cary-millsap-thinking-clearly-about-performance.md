@@ -1,7 +1,7 @@
 ---
 title: "Cary Millsap: Thinking Clearly about Performance"
 date: "2010-02-22"
-permalink: /2010/02/22/cary-millsap-thinking-clearly-about-performance/
+permalink: /blog/2010/02/22/cary-millsap-thinking-clearly-about-performance/
 categories:
   - Commentary
   - Databases

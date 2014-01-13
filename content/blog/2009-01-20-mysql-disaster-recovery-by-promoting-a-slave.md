@@ -1,7 +1,7 @@
 ---
 title: MySQL disaster recovery by promoting a slave
 date: "2009-01-20"
-permalink: /2009/01/20/mysql-disaster-recovery-by-promoting-a-slave/
+permalink: /blog/2009/01/20/mysql-disaster-recovery-by-promoting-a-slave/
 categories:
   - Databases
   - High Availability

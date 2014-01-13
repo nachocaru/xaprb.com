@@ -1,7 +1,7 @@
 ---
 title: How fast is MySQL Table Checksum?
 date: "2007-05-12"
-permalink: /2007/05/12/how-fast-is-mysql-table-checksum/
+permalink: /blog/2007/05/12/how-fast-is-mysql-table-checksum/
 categories:
   - Databases
 ---

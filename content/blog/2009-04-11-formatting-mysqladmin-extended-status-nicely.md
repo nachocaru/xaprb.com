@@ -1,7 +1,7 @@
 ---
 title: Formatting mysqladmin extended-status nicely
 date: "2009-04-11"
-permalink: /2009/04/11/formatting-mysqladmin-extended-status-nicely/
+permalink: /blog/2009/04/11/formatting-mysqladmin-extended-status-nicely/
 categories:
   - Databases
   - Open Source

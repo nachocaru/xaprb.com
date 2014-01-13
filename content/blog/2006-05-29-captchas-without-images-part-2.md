@@ -1,7 +1,7 @@
 ---
 title: CAPTCHAs without images, part 2
 date: "2006-05-29"
-permalink: /2006/05/29/captchas-without-images-part-2/
+permalink: /blog/2006/05/29/captchas-without-images-part-2/
 ---
 I want to follow up on my earlier article about [how to do CAPTCHAs without images][1], for accessibility and usability. In that article I hoped my simple scheme would deter dumb robots, cutting down on the bulk of the comment spam I was getting.
 

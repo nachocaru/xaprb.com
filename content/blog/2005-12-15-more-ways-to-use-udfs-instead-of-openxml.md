@@ -1,7 +1,7 @@
 ---
 title: "More alternatives to openxml"
 date: "2005-12-15"
-permalink: /2005/12/15/more-ways-to-use-udfs-instead-of-openxml/
+permalink: /blog/2005/12/15/more-ways-to-use-udfs-instead-of-openxml/
 ---
 Following up on my [earlier post][1], here are some alternate usage scenarios for the UDF I wrote to avoid `openxml` in SQL Server 2000.
 

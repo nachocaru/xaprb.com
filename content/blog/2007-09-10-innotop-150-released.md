@@ -1,7 +1,7 @@
 ---
 title: innotop 1.5.0 released
 date: "2007-09-10"
-permalink: /2007/09/10/innotop-150-released/
+permalink: /blog/2007/09/10/innotop-150-released/
 categories:
   - Databases
   - Open Source

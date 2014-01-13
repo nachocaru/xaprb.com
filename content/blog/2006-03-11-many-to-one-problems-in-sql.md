@@ -1,7 +1,7 @@
 ---
 title: How to avoid many-to-one problems in SQL
 date: "2006-03-11"
-permalink: /2006/03/11/many-to-one-problems-in-sql/
+permalink: /blog/2006/03/11/many-to-one-problems-in-sql/
 categories:
   - Databases
 ---

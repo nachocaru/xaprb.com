@@ -1,7 +1,7 @@
 ---
 title: How to use ORDER BY and LIMIT on multi-table updates in MySQL
 date: "2006-08-10"
-permalink: /2006/08/10/how-to-use-order-by-and-limit-on-multi-table-updates-in-mysql/
+permalink: /blog/2006/08/10/how-to-use-order-by-and-limit-on-multi-table-updates-in-mysql/
 categories:
   - Databases
 ---

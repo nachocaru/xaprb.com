@@ -1,7 +1,7 @@
 ---
 title: Debian/Ubuntu package now available for innotop 0.1.160
 date: "2006-11-27"
-permalink: /2006/11/27/debianubuntu-package-now-available-for-innotop-01160/
+permalink: /blog/2006/11/27/debianubuntu-package-now-available-for-innotop-01160/
 categories:
   - Databases
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: Going to PostgreSQL Conference East
 date: "2008-03-29"
-permalink: /2008/03/29/going-to-postgresql-conference-east/
+permalink: /blog/2008/03/29/going-to-postgresql-conference-east/
 categories:
   - Databases
 ---

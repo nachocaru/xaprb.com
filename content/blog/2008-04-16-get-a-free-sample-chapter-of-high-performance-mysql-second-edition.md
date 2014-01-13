@@ -1,7 +1,7 @@
 ---
 title: Get a free sample chapter of High Performance MySQL Second Edition
 date: "2008-04-16"
-permalink: /2008/04/16/get-a-free-sample-chapter-of-high-performance-mysql-second-edition/
+permalink: /blog/2008/04/16/get-a-free-sample-chapter-of-high-performance-mysql-second-edition/
 categories:
   - Databases
 ---

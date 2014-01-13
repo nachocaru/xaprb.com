@@ -1,7 +1,7 @@
 ---
 title: MySQL Heartbeat supports PostgreSQL
 date: "2007-11-06"
-permalink: /2007/11/06/mysql-heartbeat-supports-postgresql/
+permalink: /blog/2007/11/06/mysql-heartbeat-supports-postgresql/
 categories:
   - Databases
 ---

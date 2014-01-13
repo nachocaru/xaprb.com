@@ -1,7 +1,7 @@
 ---
 title: A script snippet for aggregating GDB backtraces
 date: "2009-08-30"
-permalink: /2009/08/30/a-script-snippet-for-aggregating-gdb-backtraces/
+permalink: /blog/2009/08/30/a-script-snippet-for-aggregating-gdb-backtraces/
 categories:
   - Databases
   - Open Source

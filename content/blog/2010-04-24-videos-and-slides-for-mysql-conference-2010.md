@@ -1,7 +1,7 @@
 ---
 title: Videos and slides for MySQL Conference 2010
 date: "2010-04-24"
-permalink: /2010/04/24/videos-and-slides-for-mysql-conference-2010/
+permalink: /blog/2010/04/24/videos-and-slides-for-mysql-conference-2010/
 categories:
   - Conferences
   - Databases

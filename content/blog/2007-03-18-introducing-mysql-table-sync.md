@@ -1,7 +1,7 @@
 ---
 title: Introducing MySQL Table Sync
 date: "2007-03-18"
-permalink: /2007/03/18/introducing-mysql-table-sync/
+permalink: /blog/2007/03/18/introducing-mysql-table-sync/
 categories:
   - Databases
 ---

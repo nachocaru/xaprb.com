@@ -1,7 +1,7 @@
 ---
 title: Speaking at EdUI Conference 2009
 date: "2009-08-13"
-permalink: /2009/08/13/speaking-at-edui-conference-2009/
+permalink: /blog/2009/08/13/speaking-at-edui-conference-2009/
 categories:
   - Conferences
   - Web

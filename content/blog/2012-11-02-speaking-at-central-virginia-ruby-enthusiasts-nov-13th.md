@@ -1,7 +1,7 @@
 ---
 title: Speaking at Central Virginia Ruby Enthusiasts Nov 13th
 date: "2012-11-02"
-permalink: /2012/11/02/speaking-at-central-virginia-ruby-enthusiasts-nov-13th/
+permalink: /blog/2012/11/02/speaking-at-central-virginia-ruby-enthusiasts-nov-13th/
 categories:
   - Databases
 ---

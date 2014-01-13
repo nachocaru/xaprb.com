@@ -1,7 +1,7 @@
 ---
 title: High Performance MySQL is here!
 date: "2008-06-20"
-permalink: /2008/06/20/high-performance-mysql-is-here/
+permalink: /blog/2008/06/20/high-performance-mysql-is-here/
 categories:
   - Databases
   - Writing

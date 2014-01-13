@@ -1,7 +1,7 @@
 ---
 title: How to measure MySQL slave lag accurately
 date: "2007-09-30"
-permalink: /2007/09/30/how-to-measure-mysql-slave-lag-accurately/
+permalink: /blog/2007/09/30/how-to-measure-mysql-slave-lag-accurately/
 categories:
   - Databases
 ---

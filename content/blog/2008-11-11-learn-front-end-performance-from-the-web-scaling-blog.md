@@ -1,7 +1,7 @@
 ---
 title: Learn front-end performance from the Web Scaling Blog
 date: "2008-11-11"
-permalink: /2008/11/11/learn-front-end-performance-from-the-web-scaling-blog/
+permalink: /blog/2008/11/11/learn-front-end-performance-from-the-web-scaling-blog/
 categories:
   - Web
 ---

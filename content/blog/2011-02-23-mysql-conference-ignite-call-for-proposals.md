@@ -1,7 +1,7 @@
 ---
 title: MySQL conference Ignite call for proposals
 date: "2011-02-23"
-permalink: /2011/02/23/mysql-conference-ignite-call-for-proposals/
+permalink: /blog/2011/02/23/mysql-conference-ignite-call-for-proposals/
 categories:
   - Conferences
   - Databases

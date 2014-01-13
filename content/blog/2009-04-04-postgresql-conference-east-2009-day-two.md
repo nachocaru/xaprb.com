@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL Conference East 2009, Day Two
 date: "2009-04-04"
-permalink: /2009/04/04/postgresql-conference-east-2009-day-two/
+permalink: /blog/2009/04/04/postgresql-conference-east-2009-day-two/
 categories:
   - Conferences
   - Databases

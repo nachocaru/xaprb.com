@@ -1,7 +1,7 @@
 ---
 title: Why high-availability is hard with databases
 date: "2010-04-26"
-permalink: /2010/04/26/why-high-availability-is-hard-with-databases/
+permalink: /blog/2010/04/26/why-high-availability-is-hard-with-databases/
 categories:
   - Databases
   - High Availability

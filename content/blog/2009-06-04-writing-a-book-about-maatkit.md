@@ -1,7 +1,7 @@
 ---
 title: Writing a book about Maatkit
 date: "2009-06-04"
-permalink: /2009/06/04/writing-a-book-about-maatkit/
+permalink: /blog/2009/06/04/writing-a-book-about-maatkit/
 categories:
   - Databases
   - Open Source

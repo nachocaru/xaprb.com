@@ -1,7 +1,7 @@
 ---
 title: "Type conversion semantics of MySQL's BETWEEN operator"
 date: "2006-09-12"
-permalink: /2006/09/12/type-conversion-semantics-of-mysqls-between-operator/
+permalink: /blog/2006/09/12/type-conversion-semantics-of-mysqls-between-operator/
 categories:
   - Databases
 ---

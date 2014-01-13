@@ -1,7 +1,7 @@
 ---
 title: "How to find out who is locking a table  in MySQL"
 date: "2006-07-31"
-permalink: /2006/07/31/how-to-analyze-innodb-mysql-locks/
+permalink: /blog/2006/07/31/how-to-analyze-innodb-mysql-locks/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: The dangerous subtleties of LEFT JOIN and COUNT() in SQL
 date: "2009-04-08"
-permalink: /2009/04/08/the-dangerous-subtleties-of-left-join-and-count-in-sql/
+permalink: /blog/2009/04/08/the-dangerous-subtleties-of-left-join-and-count-in-sql/
 categories:
   - Databases
   - Programming

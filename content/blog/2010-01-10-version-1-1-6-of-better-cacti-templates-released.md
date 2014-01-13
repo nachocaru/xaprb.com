@@ -1,7 +1,7 @@
 ---
 title: Version 1.1.6 of Better Cacti Templates released
 date: "2010-01-10"
-permalink: /2010/01/10/version-1-1-6-of-better-cacti-templates-released/
+permalink: /blog/2010/01/10/version-1-1-6-of-better-cacti-templates-released/
 categories:
   - Databases
   - Operations

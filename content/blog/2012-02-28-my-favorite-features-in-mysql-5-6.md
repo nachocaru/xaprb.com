@@ -1,7 +1,7 @@
 ---
 title: My favorite features in MySQL 5.6
 date: "2012-02-28"
-permalink: /2012/02/28/my-favorite-features-in-mysql-5-6/
+permalink: /blog/2012/02/28/my-favorite-features-in-mysql-5-6/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: How to delete duplicate rows with SQL
 date: "2006-10-11"
-permalink: /2006/10/11/how-to-delete-duplicate-rows-with-sql/
+permalink: /blog/2006/10/11/how-to-delete-duplicate-rows-with-sql/
 categories:
   - Databases
 ---

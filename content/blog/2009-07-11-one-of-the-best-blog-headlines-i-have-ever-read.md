@@ -1,7 +1,7 @@
 ---
 title: One of the best blog headlines I have ever read
 date: "2009-07-11"
-permalink: /2009/07/11/one-of-the-best-blog-headlines-i-have-ever-read/
+permalink: /blog/2009/07/11/one-of-the-best-blog-headlines-i-have-ever-read/
 categories:
   - Commentary
 ---

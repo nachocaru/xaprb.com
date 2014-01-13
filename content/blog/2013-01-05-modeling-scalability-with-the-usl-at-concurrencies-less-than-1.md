@@ -1,7 +1,7 @@
 ---
 title: Modeling scalability with the USL at concurrencies less than 1
 date: "2013-01-05"
-permalink: /2013/01/05/modeling-scalability-with-the-usl-at-concurrencies-less-than-1/
+permalink: /blog/2013/01/05/modeling-scalability-with-the-usl-at-concurrencies-less-than-1/
 categories:
   - Databases
   - Performance

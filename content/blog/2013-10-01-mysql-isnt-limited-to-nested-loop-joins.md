@@ -1,7 +1,7 @@
 ---
 title: "MySQL isn't limited to nested-loop joins"
 date: "2013-10-01"
-permalink: /2013/10/01/mysql-isnt-limited-to-nested-loop-joins/
+permalink: /blog/2013/10/01/mysql-isnt-limited-to-nested-loop-joins/
 categories:
   - Databases
 ---

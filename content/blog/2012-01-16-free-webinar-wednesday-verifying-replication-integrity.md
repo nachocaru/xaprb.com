@@ -1,7 +1,7 @@
 ---
 title: "Free webinar Wednesday: verifying replication integrity"
 date: "2012-01-16"
-permalink: /2012/01/16/free-webinar-wednesday-verifying-replication-integrity/
+permalink: /blog/2012/01/16/free-webinar-wednesday-verifying-replication-integrity/
 categories:
   - Databases
 ---

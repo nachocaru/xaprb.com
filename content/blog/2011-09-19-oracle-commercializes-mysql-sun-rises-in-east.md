@@ -1,7 +1,7 @@
 ---
 title: Oracle commercializes MySQL, sun rises in east
 date: "2011-09-19"
-permalink: /2011/09/19/oracle-commercializes-mysql-sun-rises-in-east/
+permalink: /blog/2011/09/19/oracle-commercializes-mysql-sun-rises-in-east/
 categories:
   - Commentary
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: How to write a good MySQL conference proposal
 date: "2009-12-19"
-permalink: /2009/12/19/how-to-write-a-good-mysql-conference-proposal/
+permalink: /blog/2009/12/19/how-to-write-a-good-mysql-conference-proposal/
 categories:
   - Conferences
   - Databases

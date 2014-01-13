@@ -1,7 +1,7 @@
 ---
 title: Designing a database interface for programmers
 date: "2012-10-22"
-permalink: /2012/10/22/designing-a-database-interface-for-programmers/
+permalink: /blog/2012/10/22/designing-a-database-interface-for-programmers/
 categories:
   - Databases
   - Programming

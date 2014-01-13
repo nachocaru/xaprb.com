@@ -1,7 +1,7 @@
 ---
 title: What are your favorite MySQL replication filtering rules?
 date: "2007-10-20"
-permalink: /2007/10/20/what-are-your-favorite-mysql-replication-filtering-rules/
+permalink: /blog/2007/10/20/what-are-your-favorite-mysql-replication-filtering-rules/
 categories:
   - Databases
 ---

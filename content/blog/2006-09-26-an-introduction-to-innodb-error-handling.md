@@ -1,7 +1,7 @@
 ---
 title: An introduction to InnoDB error handling
 date: "2006-09-26"
-permalink: /2006/09/26/an-introduction-to-innodb-error-handling/
+permalink: /blog/2006/09/26/an-introduction-to-innodb-error-handling/
 ---
 Do you know the fine details of MySQL's transactional error handling with the InnoDB storage engine? If you're writing transactional SQL, you need to be prepared to handle errors appropriately, and to do that, you need to know how MySQL handles them. This article introduces you to the topic.
 

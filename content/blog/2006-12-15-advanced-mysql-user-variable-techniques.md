@@ -1,7 +1,7 @@
 ---
 title: Advanced MySQL user variable techniques
 date: "2006-12-15"
-permalink: /2006/12/15/advanced-mysql-user-variable-techniques/
+permalink: /blog/2006/12/15/advanced-mysql-user-variable-techniques/
 categories:
   - Databases
 ---

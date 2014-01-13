@@ -1,7 +1,7 @@
 ---
 title: InfiniDB gets the release process right
 date: "2010-02-04"
-permalink: /2010/02/04/infinidb-gets-the-release-process-right/
+permalink: /blog/2010/02/04/infinidb-gets-the-release-process-right/
 categories:
   - Commentary
   - Databases

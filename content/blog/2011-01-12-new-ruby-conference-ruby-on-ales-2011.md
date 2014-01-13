@@ -1,7 +1,7 @@
 ---
 title: "New Ruby Conference: Ruby on Ales 2011"
 date: "2011-01-12"
-permalink: /2011/01/12/new-ruby-conference-ruby-on-ales-2011/
+permalink: /blog/2011/01/12/new-ruby-conference-ruby-on-ales-2011/
 categories:
   - Conferences
   - Databases

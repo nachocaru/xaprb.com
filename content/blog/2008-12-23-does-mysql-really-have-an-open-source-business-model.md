@@ -1,7 +1,7 @@
 ---
 title: Does MySQL really have an open-source business model?
 date: "2008-12-23"
-permalink: /2008/12/23/does-mysql-really-have-an-open-source-business-model/
+permalink: /blog/2008/12/23/does-mysql-really-have-an-open-source-business-model/
 categories:
   - Commentary
   - Databases

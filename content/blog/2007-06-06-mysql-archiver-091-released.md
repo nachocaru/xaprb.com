@@ -1,7 +1,7 @@
 ---
 title: MySQL Archiver 0.9.1 released
 date: "2007-06-06"
-permalink: /2007/06/06/mysql-archiver-091-released/
+permalink: /blog/2007/06/06/mysql-archiver-091-released/
 categories:
   - Databases
 ---

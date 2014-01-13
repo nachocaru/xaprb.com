@@ -1,7 +1,7 @@
 ---
 title: Automatic image captions with unobtrusive JavaScript
 date: "2006-10-29"
-permalink: /2006/10/29/automatic-image-captions-with-unobtrusive-javascript/
+permalink: /blog/2006/10/29/automatic-image-captions-with-unobtrusive-javascript/
 ---
 <p class="demo">
   <a href="/articles/automatic-image-captions.html">View the Demo</a>

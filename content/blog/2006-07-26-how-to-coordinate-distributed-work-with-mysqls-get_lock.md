@@ -1,7 +1,7 @@
 ---
 title: "How to coordinate distributed work with MySQL's GET_LOCK"
 date: "2006-07-26"
-permalink: /2006/07/26/how-to-coordinate-distributed-work-with-mysqls-get_lock/
+permalink: /blog/2006/07/26/how-to-coordinate-distributed-work-with-mysqls-get_lock/
 categories:
   - Databases
 ---

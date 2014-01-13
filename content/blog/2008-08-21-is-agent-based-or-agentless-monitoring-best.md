@@ -1,7 +1,7 @@
 ---
 title: Is agent-based or agentless monitoring best?
 date: "2008-08-21"
-permalink: /2008/08/21/is-agent-based-or-agentless-monitoring-best/
+permalink: /blog/2008/08/21/is-agent-based-or-agentless-monitoring-best/
 ---
 Rob Young has posted a few blog entries lately on the MySQL Enterprise monitoring software. His latest post claims that agent-based monitoring is equivalent to extensibility ([MySQL Enterprise Monitor: Agent = Extensibility][1]).
 

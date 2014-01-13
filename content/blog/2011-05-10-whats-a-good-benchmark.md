@@ -1,7 +1,7 @@
 ---
 title: "What's a good benchmark?"
 date: "2011-05-10"
-permalink: /2011/05/10/whats-a-good-benchmark/
+permalink: /blog/2011/05/10/whats-a-good-benchmark/
 categories:
   - Databases
 ---

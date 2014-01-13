@@ -1,7 +1,7 @@
 ---
 title: Going to OpenSQL Camp US 2009
 date: "2009-10-19"
-permalink: /2009/10/19/going-to-opensql-camp-us-2009/
+permalink: /blog/2009/10/19/going-to-opensql-camp-us-2009/
 categories:
   - Conferences
   - Databases

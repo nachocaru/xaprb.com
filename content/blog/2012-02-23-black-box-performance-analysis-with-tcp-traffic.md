@@ -1,7 +1,7 @@
 ---
 title: Black-Box Performance Analysis with TCP Traffic
 date: "2012-02-23"
-permalink: /2012/02/23/black-box-performance-analysis-with-tcp-traffic/
+permalink: /blog/2012/02/23/black-box-performance-analysis-with-tcp-traffic/
 categories:
   - Databases
   - Open Source

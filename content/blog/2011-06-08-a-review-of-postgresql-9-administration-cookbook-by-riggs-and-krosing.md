@@ -1,6 +1,6 @@
 ---
 title: A review of PostgreSQL 9 Administration Cookbook by Riggs and Krosing
-permalink: /2011/06/08/a-review-of-postgresql-9-administration-cookbook-by-riggs-and-krosing/
+permalink: /blog/2011/06/08/a-review-of-postgresql-9-administration-cookbook-by-riggs-and-krosing/
 date: "2011-06-08"
 categories:
   - Review

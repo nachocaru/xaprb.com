@@ -1,7 +1,7 @@
 ---
 title: Four companies to sponsor Maatkit development
 date: "2007-11-26"
-permalink: /2007/11/26/four-companies-to-sponsor-maatkit-development/
+permalink: /blog/2007/11/26/four-companies-to-sponsor-maatkit-development/
 categories:
   - Databases
   - Open Source

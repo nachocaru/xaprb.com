@@ -1,7 +1,7 @@
 ---
 title: pair Networks is now carbon-neutral
 date: "2007-09-10"
-permalink: /2007/09/10/pair-networks-is-now-carbon-neutral/
+permalink: /blog/2007/09/10/pair-networks-is-now-carbon-neutral/
 ---
 I'm a big fan of [pair Networks][1], my hosting company. Their service has been outstanding; the few times I've ever had a glitch with my shared hosting, they have been responsive beyond the call of duty and done whatever it takes to fix the issue. I use them to host not only a half-dozen of my own sites, but family and client sites as well, plus some other groups I'm involved with. It has been a uniformly excellent experience.
 

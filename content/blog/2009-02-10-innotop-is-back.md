@@ -1,7 +1,7 @@
 ---
 title: innotop is back
 date: "2009-02-10"
-permalink: /2009/02/10/innotop-is-back/
+permalink: /blog/2009/02/10/innotop-is-back/
 categories:
   - Databases
   - Open Source

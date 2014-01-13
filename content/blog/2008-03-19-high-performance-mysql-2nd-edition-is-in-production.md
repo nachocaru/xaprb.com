@@ -1,7 +1,7 @@
 ---
 title: High Performance MySQL 2nd Edition is in production
 date: "2008-03-19"
-permalink: /2008/03/19/high-performance-mysql-2nd-edition-is-in-production/
+permalink: /blog/2008/03/19/high-performance-mysql-2nd-edition-is-in-production/
 categories:
   - Databases
 ---

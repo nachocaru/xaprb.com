@@ -1,7 +1,7 @@
 ---
 title: Vote for Cacti template enhancements
 date: "2009-12-30"
-permalink: /2009/12/30/vote-for-cacti-template-enhancements/
+permalink: /blog/2009/12/30/vote-for-cacti-template-enhancements/
 categories:
   - Databases
   - Operations

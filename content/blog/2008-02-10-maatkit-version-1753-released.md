@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 1753 released
 date: "2008-02-10"
-permalink: /2008/02/10/maatkit-version-1753-released/
+permalink: /blog/2008/02/10/maatkit-version-1753-released/
 categories:
   - Databases
   - Open Source

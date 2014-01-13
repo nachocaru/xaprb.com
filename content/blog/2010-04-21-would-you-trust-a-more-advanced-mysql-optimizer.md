@@ -1,7 +1,7 @@
 ---
 title: Would you trust a more advanced MySQL optimizer?
 date: "2010-04-21"
-permalink: /2010/04/21/would-you-trust-a-more-advanced-mysql-optimizer/
+permalink: /blog/2010/04/21/would-you-trust-a-more-advanced-mysql-optimizer/
 categories:
   - Commentary
   - Databases

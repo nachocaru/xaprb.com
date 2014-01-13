@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 1972 released
 date: "2008-06-02"
-permalink: /2008/06/02/maatkit-version-1972-released/
+permalink: /blog/2008/06/02/maatkit-version-1972-released/
 categories:
   - Databases
   - Open Source

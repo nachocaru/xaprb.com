@@ -1,7 +1,7 @@
 ---
 title: Status update on High Performance MySQL
 date: "2011-11-21"
-permalink: /2011/11/21/status-update-on-high-performance-mysql/
+permalink: /blog/2011/11/21/status-update-on-high-performance-mysql/
 categories:
   - Databases
   - Writing

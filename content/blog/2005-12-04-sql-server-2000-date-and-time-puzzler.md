@@ -1,7 +1,7 @@
 ---
 title: SQL Server 2000 date and time puzzler
 date: "2005-12-04"
-permalink: /2005/12/04/sql-server-2000-date-and-time-puzzler/
+permalink: /blog/2005/12/04/sql-server-2000-date-and-time-puzzler/
 categories:
   - Databases
 ---

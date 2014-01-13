@@ -1,7 +1,7 @@
 ---
 title: A tweak to column alignment for the mext script
 date: "2009-06-05"
-permalink: /2009/06/05/a-tweak-to-column-alignment-for-the-mext-script/
+permalink: /blog/2009/06/05/a-tweak-to-column-alignment-for-the-mext-script/
 categories:
   - Databases
   - Open Source

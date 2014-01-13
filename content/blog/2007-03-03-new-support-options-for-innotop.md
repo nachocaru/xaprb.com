@@ -1,7 +1,7 @@
 ---
 title: New support options for innotop
 date: "2007-03-03"
-permalink: /2007/03/03/new-support-options-for-innotop/
+permalink: /blog/2007/03/03/new-support-options-for-innotop/
 categories:
   - Databases
   - Open Source

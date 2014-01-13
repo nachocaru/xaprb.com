@@ -1,7 +1,7 @@
 ---
 title: Oracle is improving MySQL
 date: "2010-08-18"
-permalink: /2010/08/18/oracle-is-improving-mysql/
+permalink: /blog/2010/08/18/oracle-is-improving-mysql/
 categories:
   - Databases
 ---

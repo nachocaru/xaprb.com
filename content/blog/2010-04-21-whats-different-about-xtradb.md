@@ -1,7 +1,7 @@
 ---
 title: "What's different about XtraDB?"
 date: "2010-04-21"
-permalink: /2010/04/21/whats-different-about-xtradb/
+permalink: /blog/2010/04/21/whats-different-about-xtradb/
 categories:
   - Conferences
   - Databases

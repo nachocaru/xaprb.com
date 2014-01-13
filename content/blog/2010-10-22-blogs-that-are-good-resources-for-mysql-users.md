@@ -1,7 +1,7 @@
 ---
 title: Blogs that are good resources for MySQL users
 date: "2010-10-22"
-permalink: /2010/10/22/blogs-that-are-good-resources-for-mysql-users/
+permalink: /blog/2010/10/22/blogs-that-are-good-resources-for-mysql-users/
 categories:
   - Databases
 ---

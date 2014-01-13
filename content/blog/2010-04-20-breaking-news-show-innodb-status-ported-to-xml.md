@@ -1,7 +1,7 @@
 ---
 title: "Breaking news: SHOW INNODB STATUS ported to XML"
 date: "2010-04-20"
-permalink: /2010/04/20/breaking-news-show-innodb-status-ported-to-xml/
+permalink: /blog/2010/04/20/breaking-news-show-innodb-status-ported-to-xml/
 categories:
   - Databases
   - Web

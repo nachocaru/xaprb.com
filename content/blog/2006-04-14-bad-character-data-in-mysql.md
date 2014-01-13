@@ -1,7 +1,7 @@
 ---
 title: How to find and fix invalid character data in MySQL
 date: "2006-04-14"
-permalink: /2006/04/14/bad-character-data-in-mysql/
+permalink: /blog/2006/04/14/bad-character-data-in-mysql/
 categories:
   - Databases
 ---

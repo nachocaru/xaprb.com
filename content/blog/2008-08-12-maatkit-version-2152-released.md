@@ -1,7 +1,7 @@
 ---
 title: Maatkit version 2152 released
 date: "2008-08-12"
-permalink: /2008/08/12/maatkit-version-2152-released/
+permalink: /blog/2008/08/12/maatkit-version-2152-released/
 categories:
   - Databases
   - Open Source

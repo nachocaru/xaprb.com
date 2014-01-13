@@ -1,7 +1,7 @@
 ---
 title: How to lie beautifully with FusionCharts
 date: "2009-09-28"
-permalink: /2009/09/28/how-to-lie-beautifully-with-fusioncharts/
+permalink: /blog/2009/09/28/how-to-lie-beautifully-with-fusioncharts/
 categories:
   - Commentary
   - Web

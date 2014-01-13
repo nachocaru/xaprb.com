@@ -1,7 +1,7 @@
 ---
 title: How MySQL replication got out of sync
 date: "2007-11-08"
-permalink: /2007/11/08/how-mysql-replication-got-out-of-sync/
+permalink: /blog/2007/11/08/how-mysql-replication-got-out-of-sync/
 categories:
   - Databases
 ---

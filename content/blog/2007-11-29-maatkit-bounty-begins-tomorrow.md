@@ -1,7 +1,7 @@
 ---
 title: Maatkit bounty begins tomorrow
 date: "2007-11-29"
-permalink: /2007/11/29/maatkit-bounty-begins-tomorrow/
+permalink: /blog/2007/11/29/maatkit-bounty-begins-tomorrow/
 categories:
   - Databases
   - Open Source

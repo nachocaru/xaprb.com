@@ -1,7 +1,7 @@
 ---
 title: How to notify event listeners in MySQL
 date: "2007-08-29"
-permalink: /2007/08/29/how-to-notify-event-listeners-in-mysql/
+permalink: /blog/2007/08/29/how-to-notify-event-listeners-in-mysql/
 categories:
   - Databases
 ---

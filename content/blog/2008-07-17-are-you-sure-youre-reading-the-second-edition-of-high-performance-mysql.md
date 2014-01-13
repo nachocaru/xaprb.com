@@ -1,6 +1,6 @@
 ---
 title: "Are you sure you're reading the second edition of High Performance MySQL?"
-permalink: /2008/07/17/are-you-sure-youre-reading-the-second-edition-of-high-performance-mysql/
+permalink: /blog/2008/07/17/are-you-sure-youre-reading-the-second-edition-of-high-performance-mysql/
 date: "2008-07-17"
 categories:
   - Databases

@@ -1,7 +1,7 @@
 ---
 title: Grab your High Performance MySQL sample content
 date: "2008-06-09"
-permalink: /2008/06/09/grab-your-high-performance-mysql-sample-content/
+permalink: /blog/2008/06/09/grab-your-high-performance-mysql-sample-content/
 categories:
   - Databases
   - Writing

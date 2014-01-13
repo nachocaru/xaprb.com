@@ -1,7 +1,7 @@
 ---
 title: "O'Reilly MySQL 2011 conference CfP is open"
 date: "2010-09-29"
-permalink: /2010/09/29/oreilly-mysql-2011-conference-cfp-is-open/
+permalink: /blog/2010/09/29/oreilly-mysql-2011-conference-cfp-is-open/
 categories:
   - Conferences
   - Databases

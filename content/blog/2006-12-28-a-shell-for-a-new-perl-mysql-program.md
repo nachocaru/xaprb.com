@@ -1,7 +1,7 @@
 ---
 title: A shell for a new Perl MySQL program
 date: "2006-12-28"
-permalink: /2006/12/28/a-shell-for-a-new-perl-mysql-program/
+permalink: /blog/2006/12/28/a-shell-for-a-new-perl-mysql-program/
 categories:
   - Databases
 ---

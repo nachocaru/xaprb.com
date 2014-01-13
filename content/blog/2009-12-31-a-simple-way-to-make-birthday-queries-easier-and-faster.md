@@ -1,7 +1,7 @@
 ---
 title: A simple way to make birthday queries easier and faster
 date: "2009-12-31"
-permalink: /2009/12/31/a-simple-way-to-make-birthday-queries-easier-and-faster/
+permalink: /blog/2009/12/31/a-simple-way-to-make-birthday-queries-easier-and-faster/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: Temporary table subtleties in MySQL
 date: "2006-03-26"
-permalink: /2006/03/26/temporary-table-subtleties-in-mysql/
+permalink: /blog/2006/03/26/temporary-table-subtleties-in-mysql/
 categories:
   - Databases
 ---

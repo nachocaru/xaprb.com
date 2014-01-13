@@ -1,7 +1,7 @@
 ---
 title: Making MySQL comfortable for Oracle DBAs
 date: "2012-03-07"
-permalink: /2012/03/07/making-mysql-comfortable-for-oracle-dbas/
+permalink: /blog/2012/03/07/making-mysql-comfortable-for-oracle-dbas/
 categories:
   - Databases
   - MySQL

@@ -1,7 +1,7 @@
 ---
 title: Adaptive fault detection in MySQL servers
 date: "2012-10-02"
-permalink: /2012/10/02/adaptive-fault-detection-in-mysql-servers/
+permalink: /blog/2012/10/02/adaptive-fault-detection-in-mysql-servers/
 categories:
   - Databases
 ---

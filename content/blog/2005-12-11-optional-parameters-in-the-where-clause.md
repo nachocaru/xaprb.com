@@ -1,7 +1,7 @@
 ---
 title: How to simulate optional parameters in SQL
 date: "2005-12-11"
-permalink: /2005/12/11/optional-parameters-in-the-where-clause/
+permalink: /blog/2005/12/11/optional-parameters-in-the-where-clause/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Features I'd like to see in InnoDB"
 date: "2011-10-12"
-permalink: /2011/10/12/features-id-like-to-see-in-innodb/
+permalink: /blog/2011/10/12/features-id-like-to-see-in-innodb/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: How we enabled threading in MySQL
 date: "2006-07-16"
-permalink: /2006/07/16/how-we-enabled-threading-in-mysql/
+permalink: /blog/2006/07/16/how-we-enabled-threading-in-mysql/
 categories:
   - Databases
 ---

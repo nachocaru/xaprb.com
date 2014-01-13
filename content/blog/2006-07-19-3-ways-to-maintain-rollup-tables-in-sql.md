@@ -1,7 +1,7 @@
 ---
 title: 3 ways to maintain rollup tables in SQL
 date: "2006-07-19"
-permalink: /2006/07/19/3-ways-to-maintain-rollup-tables-in-sql/
+permalink: /blog/2006/07/19/3-ways-to-maintain-rollup-tables-in-sql/
 categories:
   - Databases
 ---

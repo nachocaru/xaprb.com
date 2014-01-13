@@ -1,7 +1,7 @@
 ---
 title: Special mysqldump fingerprinting rule in pt-query-digest
 date: "2011-11-29"
-permalink: /2011/11/29/special-mysqldump-fingerprinting-rule-in-pt-query-digest/
+permalink: /blog/2011/11/29/special-mysqldump-fingerprinting-rule-in-pt-query-digest/
 categories:
   - Databases
   - Open Source

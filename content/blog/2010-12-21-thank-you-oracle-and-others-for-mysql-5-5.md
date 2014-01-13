@@ -1,7 +1,7 @@
 ---
 title: Thank-you Oracle and others for MySQL 5.5
 date: "2010-12-21"
-permalink: /2010/12/21/thank-you-oracle-and-others-for-mysql-5-5/
+permalink: /blog/2010/12/21/thank-you-oracle-and-others-for-mysql-5-5/
 categories:
   - Databases
 ---

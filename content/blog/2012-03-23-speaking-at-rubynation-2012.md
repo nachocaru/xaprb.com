@@ -1,7 +1,7 @@
 ---
 title: Speaking at RubyNation 2012
 date: "2012-03-23"
-permalink: /2012/03/23/speaking-at-rubynation-2012/
+permalink: /blog/2012/03/23/speaking-at-rubynation-2012/
 categories:
   - Databases
 ---

@@ -1,7 +1,7 @@
 ---
 title: An invitation to PostgreSQL community members
 date: "2009-02-21"
-permalink: /2009/02/21/an-invitation-to-postgresql-community-members/
+permalink: /blog/2009/02/21/an-invitation-to-postgresql-community-members/
 categories:
   - Conferences
   - Databases

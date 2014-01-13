@@ -1,7 +1,7 @@
 ---
 title: Did you know Sphinx can act like a MySQL server?
 date: "2009-04-28"
-permalink: /2009/04/28/did-you-know-sphinx-can-act-like-a-mysql-server/
+permalink: /blog/2009/04/28/did-you-know-sphinx-can-act-like-a-mysql-server/
 categories:
   - Databases
 ---

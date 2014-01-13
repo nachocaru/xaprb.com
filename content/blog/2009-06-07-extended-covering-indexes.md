@@ -1,7 +1,7 @@
 ---
 title: Extended covering indexes
 date: "2009-06-07"
-permalink: /2009/06/07/extended-covering-indexes/
+permalink: /blog/2009/06/07/extended-covering-indexes/
 categories:
   - Databases
 ---

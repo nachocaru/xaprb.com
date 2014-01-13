@@ -1,7 +1,7 @@
 ---
 title: How to give locking hints in MySQL
 date: "2006-08-05"
-permalink: /2006/08/05/how-to-give-locking-hints-in-mysql/
+permalink: /blog/2006/08/05/how-to-give-locking-hints-in-mysql/
 categories:
   - Databases
 ---

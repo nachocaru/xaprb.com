@@ -1,7 +1,7 @@
 ---
 title: Introducing MySQL Parallel Restore
 date: "2007-10-15"
-permalink: /2007/10/15/introducing-mysql-parallel-restore/
+permalink: /blog/2007/10/15/introducing-mysql-parallel-restore/
 categories:
   - Databases
 ---

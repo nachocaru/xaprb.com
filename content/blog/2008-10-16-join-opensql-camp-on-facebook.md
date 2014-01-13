@@ -1,7 +1,7 @@
 ---
 title: Join OpenSQL Camp on Facebook
 date: "2008-10-16"
-permalink: /2008/10/16/join-opensql-camp-on-facebook/
+permalink: /blog/2008/10/16/join-opensql-camp-on-facebook/
 categories:
   - Conferences
   - Databases

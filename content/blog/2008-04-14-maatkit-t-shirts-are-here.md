@@ -1,7 +1,7 @@
 ---
 title: Maatkit t-shirts are here
 date: "2008-04-14"
-permalink: /2008/04/14/maatkit-t-shirts-are-here/
+permalink: /blog/2008/04/14/maatkit-t-shirts-are-here/
 categories:
   - Databases
   - Open Source

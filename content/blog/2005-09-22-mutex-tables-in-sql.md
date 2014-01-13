@@ -1,7 +1,7 @@
 ---
 title: Mutex tables in SQL
 date: "2005-09-22"
-permalink: /2005/09/22/mutex-tables-in-sql/
+permalink: /blog/2005/09/22/mutex-tables-in-sql/
 categories:
   - Databases
 ---

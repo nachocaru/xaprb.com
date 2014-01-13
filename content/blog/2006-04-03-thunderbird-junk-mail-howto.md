@@ -1,7 +1,7 @@
 ---
 title: How to train Thunderbird to detect junk mail
 date: "2006-04-03"
-permalink: /2006/04/03/thunderbird-junk-mail-howto/
+permalink: /blog/2006/04/03/thunderbird-junk-mail-howto/
 ---
 Mozilla Thunderbird has an excellent spam filter built into it, but if you don't understand how it works, it may just frustrate you. In this article I'll show you how to use it to its full advantage.
 

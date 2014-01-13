@@ -1,7 +1,7 @@
 ---
 title: How to understand key length limitations in MySQL
 date: "2006-04-17"
-permalink: /2006/04/17/max-key-length-in-mysql/
+permalink: /blog/2006/04/17/max-key-length-in-mysql/
 categories:
   - Databases
 ---

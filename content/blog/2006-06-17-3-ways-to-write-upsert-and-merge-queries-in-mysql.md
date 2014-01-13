@@ -1,7 +1,7 @@
 ---
 title: 3 ways to write UPSERT and MERGE queries in MySQL
 date: "2006-06-17"
-permalink: /2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/
+permalink: /blog/2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/
 categories:
   - Databases
 ---

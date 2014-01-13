@@ -1,7 +1,7 @@
 ---
 title: Maatkit BoF session at the MySQL conference
 date: "2010-03-09"
-permalink: /2010/03/09/maatkit-bof-session-at-the-mysql-conference/
+permalink: /blog/2010/03/09/maatkit-bof-session-at-the-mysql-conference/
 categories:
   - Conferences
   - Databases

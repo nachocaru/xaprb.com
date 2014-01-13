@@ -1,7 +1,7 @@
 ---
 title: "It's not just database servers"
 date: "2012-11-13"
-permalink: /2012/11/13/its-not-just-database-servers/
+permalink: /blog/2012/11/13/its-not-just-database-servers/
 categories:
   - Commentary
   - Programming

@@ -1,7 +1,7 @@
 ---
 title: "A challenge: partition a character set in MySQL"
 date: "2007-06-11"
-permalink: /2007/06/11/a-challenge-partition-a-character-set-in-mysql/
+permalink: /blog/2007/06/11/a-challenge-partition-a-character-set-in-mysql/
 categories:
   - Databases
 ---

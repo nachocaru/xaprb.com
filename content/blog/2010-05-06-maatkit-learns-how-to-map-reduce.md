@@ -1,7 +1,7 @@
 ---
 title: Maatkit learns how to map-reduce
 date: "2010-05-06"
-permalink: /2010/05/06/maatkit-learns-how-to-map-reduce/
+permalink: /blog/2010/05/06/maatkit-learns-how-to-map-reduce/
 categories:
   - Databases
   - Open Source

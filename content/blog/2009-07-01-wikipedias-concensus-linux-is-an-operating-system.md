@@ -1,7 +1,7 @@
 ---
 title: "Wikipedia's concensus: Linux is an operating system"
 date: "2009-07-01"
-permalink: /2009/07/01/wikipedias-concensus-linux-is-an-operating-system/
+permalink: /blog/2009/07/01/wikipedias-concensus-linux-is-an-operating-system/
 categories:
   - Commentary
   - Open Source

@@ -1,7 +1,7 @@
 ---
 title: Remember to sign up for MySQL Conference and Expo!
 date: "2008-02-22"
-permalink: /2008/02/22/remember-to-sign-up-for-mysql-conference-and-expo/
+permalink: /blog/2008/02/22/remember-to-sign-up-for-mysql-conference-and-expo/
 categories:
   - Databases
 ---

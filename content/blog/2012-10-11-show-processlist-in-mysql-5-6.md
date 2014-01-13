@@ -1,7 +1,7 @@
 ---
 title: SHOW PROCESSLIST in MySQL 5.6
 date: "2012-10-11"
-permalink: /2012/10/11/show-processlist-in-mysql-5-6/
+permalink: /blog/2012/10/11/show-processlist-in-mysql-5-6/
 categories:
   - Databases
 ---
