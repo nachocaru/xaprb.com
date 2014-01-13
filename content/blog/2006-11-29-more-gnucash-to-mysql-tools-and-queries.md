@@ -5,9 +5,6 @@ permalink: /2006/11/29/more-gnucash-to-mysql-tools-and-queries/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="/gnucash2mysql/">Download gnucash2mysql and queries</a>
-</p>
 
 I wrote a while ago about a program I wrote to [export GnuCash data into a MySQL database][1], including a couple of queries against the resulting schema. I've made some improvements since then to allow a simple overlay of my wife's categories onto the GnuCash hierarchy. This article explains the improved schema, and includes some more useful tools and queries.
 

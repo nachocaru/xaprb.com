@@ -5,9 +5,6 @@ permalink: /2007/07/29/introducing-mysql-visual-explain/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download MySQL Visual Explain</a>
-</p>
 
 If you've ever wished you could see MySQL's EXPLAIN output formatted as a tree, now you can. MySQL Visual Explain transforms EXPLAIN output into a hierarchical view of the query plan, which is significantly easier to read and understand.
 

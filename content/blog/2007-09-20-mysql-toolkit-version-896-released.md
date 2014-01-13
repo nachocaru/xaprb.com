@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>
-</p>
 
 This release of MySQL Toolkit adds a new tool, fixes some minor bugs, and adds new functionality to several of the tools.
 

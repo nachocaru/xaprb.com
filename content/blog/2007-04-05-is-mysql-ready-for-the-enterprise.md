@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>
-</p>
 
 I've just released three updates to tools in [MySQL Toolkit][1]. The updated programs are MySQL Query Profiler (major new features and helper script), MySQL Table Sync (bug fixes, documentation, features), and MySQL Table Checksum (minor sanity check enhancement).
 

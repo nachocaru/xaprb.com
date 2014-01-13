@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
-</p>
 
 Maatkit (formerly MySQL Toolkit) has for some time been released both as a bundle, and as individual tools. It's too much work to maintain the individual packages, and I don't think it really benefits anyone much, if at all. While the tools will still be versioned separately, I'm going to discontinue releases of the individual packages, and just release the one uber-package from now on.
 

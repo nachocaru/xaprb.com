@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/innotop/">Download innotop</a>
-</p>
 
 Version 1.4.3 of the innotop MySQL and InnoDB monitor is out. This release fixes some minor bugs and feature annoyances, and at last innotop has thorough documentation, available online!
 

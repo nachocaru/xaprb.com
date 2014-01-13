@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
-</p>
 
 This release contains bug fixes and new features. It also contains a new tool: [my implementation of Paul Tuckfield's relay log pipelining idea.][1] I have had quite a few responses to that blog post, and requests for the code. So I'm releasing it as part of Maatkit.
 

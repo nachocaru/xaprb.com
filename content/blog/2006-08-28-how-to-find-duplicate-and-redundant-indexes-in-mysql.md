@@ -5,10 +5,6 @@ permalink: /2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download (part of Maatkit)</a>
-</p>
-
 Peter Zaitsev over at the excellent [MySQL Performance Blog][1] recently wrote an article on [duplicated and redundant indexes][2] -- any indexes which cover exactly the same columns as another index, or cover a leftmost prefix of another index. While there are subtleties, such as FULLTEXT indexes not being the same as non-FULLTEXT, for the most part this is sufficient criteria to raise possible duplicates to a DBA's attention. I opened my big mouth in the comments and said I could write a quick Perl script to discover possible offenders in just a few lines of code. Once I did that, I had to do it and give you the script. Here it is.
 
 The reason this is really easy to do in Perl is that the output of `SHOW CREATE TABLE` lists each index with its columns in order, in an easy-to-parse way, and therefore all one needs to do is compare the string that defines each index with each other index to find duplication and redundancy. Note: you just need to compare the string definition! You don't need to actually parse out the columns and do any advanced computer science on them. And a quick regular expression to anchor each index definition to the beginning of the one to which you're comparing it will satisfy the "leftmost prefix" requirement.

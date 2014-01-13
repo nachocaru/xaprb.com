@@ -5,9 +5,6 @@ permalink: /2007/03/25/introducing-mysql-table-maintainer/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Table Maintainer</a>
-</p>
 
 MySQL Table Maintainer is a new utility to help you run table maintenance commands (ANALYZE, CHECK, OPTIMIZE, REPAIR) on your MySQL tables. It's part of the MySQL toolkit.
 

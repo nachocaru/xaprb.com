@@ -5,9 +5,6 @@ permalink: /2007/03/08/introducing-mysql-deadlock-logger/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">MySQL Deadlock Logger</a>
-</p>
 
 I'm continuing to add new tools to the [MySQL Toolkit][1]. MySQL Deadlock Logger is for extracting and storing information about the latest recorded InnoDB deadlock. It's not only easy to view the information from the command line, it's dead simple to store it back into a MySQL table for analysis. I think most users will find it handy to create a cron job to record the deadlocks automatically for later analysis.
 

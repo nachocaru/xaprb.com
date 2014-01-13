@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
-</p>
 
 Thanks again to all the great [sponsors][1] for my week of work on the kit!
 

@@ -5,9 +5,6 @@ permalink: /2007/06/06/mysql-archiver-091-released/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Archiver</a>
-</p>
 
 MySQL Archiver is the implementation of the [efficient forward-only archiving and purging strategies][1] I wrote about more than a year ago. It nibbles rows from a table, then inserts them into another table and/or writes them to a file. The object is to do this without interfering with critical online transaction-processing (OLTP) queries.
 

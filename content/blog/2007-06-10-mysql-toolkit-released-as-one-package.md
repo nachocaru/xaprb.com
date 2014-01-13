@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>
-</p>
 
 It's finally here: a single-file download for all the tools in MySQL Toolkit. During this process I also upgraded every package in the toolkit to a new release, combining new versioning and some simple non-functional changes with (mostly minor) changes I'd committed but not yet released. Details are at the end of this post.
 

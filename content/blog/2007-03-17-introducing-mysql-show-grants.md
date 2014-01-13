@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Show Grants</a>
-</p>
 
 MySQL Toolkit's Show Grants tool makes it easy to extract grants from a MySQL server in canonical form. You can use it to replicate grants between servers, diff grants, and avoid spurious changesets in version control systems. It's part of the [Maatkit][1] project on Google Code.
 

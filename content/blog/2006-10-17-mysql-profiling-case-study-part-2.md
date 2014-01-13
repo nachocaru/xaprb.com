@@ -5,10 +5,6 @@ permalink: /2006/10/17/mysql-profiling-case-study-part-2/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="/mysql-query-profiler/">Download MySQL Query Profiler</a>
-</p>
-
 This is the third in a series of articles on profiling queries in MySQL (the second of two demonstrations of profiling techniques, but the third article overall). In this article I'll present the same example as in the [second article][1], but use a different approach to show details I didn't include.
 
 An astute reader's comment reinforced my vague unease at my second article. In hindsight, I see I got distracted trying to choose an interesting example that's not too hard to present in one article, yet has enough depth to usefully demonstrate the technique. It's harder than I thought it would be. In real life I've learned from dozens of cases, and cramming everything into one example is probably not possible. In any case, I'm going to approach the same query from a different angle in this article, so you get a more complete picture.

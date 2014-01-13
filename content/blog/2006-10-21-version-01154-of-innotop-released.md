@@ -6,10 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="/innotop/">Download innotop</a>
-</p>
-
 I recently published an article on O'Reilly about monitoring tools for MySQL. Of course I believe [innotop][1] is the best in its class, so I mentioned it. But I also recently added some features to innotop, and made a stability fix too.
 
 ### Innotop upgrade: new features, stability

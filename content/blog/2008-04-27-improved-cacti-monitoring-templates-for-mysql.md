@@ -5,9 +5,6 @@ permalink: /2008/04/27/improved-cacti-monitoring-templates-for-mysql/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/mysql-cacti-templates/">Download MySQL Cacti templates</a>
-</p>
 
 As promised, I've created some improved software for monitoring MySQL via [Cacti][1]. I began using the [de facto MySQL Cacti templates][2] a while ago, but found some things I needed to improve about them. As time passed, I rewrote everything from scratch. The resulting templates are much improved.
 

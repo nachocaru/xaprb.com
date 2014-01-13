@@ -5,9 +5,6 @@ permalink: /2007/08/04/introducing-mysql-slave-delay/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download MySQL Slave Delay</a>
-</p>
 
 MySQL Slave Delay implements an oft-requested replication feature: the ability to make a slave lag its master, a.k.a scheduling binlog events for some time in the future. This will probably be [built into MySQL replication someday][1], but in the meantime, you can use this tool. A delayed slave is great if disaster strikes and propagates through replication, because it lets you stop the delayed slave before it gets corrupted, restart the slave until just before the offending statement, and recover quickly. This is a lot faster than restoring last night's full backup and replaying a day's worth of binary logs on the master.
 

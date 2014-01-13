@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download Maatkit</a>
-</p>
 
 Before I tell you what's new, let me tell you how cool I think it would be if Maatkit were voted [Sourceforge.net project of the year][1]. Just something to think about :-) I suggest the "Best Tool or Utility for SysAdmins" category. You can actually click the Back button and nominate it for several categories. Not that anyone would do that, of course.
 

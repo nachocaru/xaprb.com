@@ -5,10 +5,6 @@ permalink: /2006/10/12/how-to-profile-a-query-in-mysql/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://www.maatkit.org/">Download MySQL Query Profiler</a>
-</p>
-
 When people discuss query optimization on MySQL, or say a query doesn't perform well, they usually mention execution time. Execution time is important, but it's not the only metric to use (or even the best). There are many other ways to measure the work a query requires. This article explains how to really profile a query -- what to measure, how to do it as accurately as possible, and what it means.
 
 This is the first article in a series. In upcoming articles I'll demonstrate some hands-on profiling with concrete examples, and give you a tool to automate the job.

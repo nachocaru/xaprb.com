@@ -5,9 +5,6 @@ permalink: /2006/12/28/a-shell-for-a-new-perl-mysql-program/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="/articles/mysql-skeleton.txt">MySQL Perl script skeleton</a>
-</p>
 
 Brian Aker recently wrote about a ["skeleton project" for quickly boot-strapping a development environment for a new software project][1]. I do something similar for Perl programs that I want to connect to MySQL.
 

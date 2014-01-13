@@ -7,10 +7,6 @@ permalink: /2006/01/05/javascript-number-formatting/
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>
 </p>
 
-<p class="download">
-  <a href="/articles/number-functions.zip">Download number-functions</a>
-</p>
-
 This article continues my series on parsing and formatting data with JavaScript, this time with numeric data. I don't need to do number *parsing*, but *formatting* is very useful. The technique is similar to my [date formatting][1] code -- code that writes code (for raw speed), using custom format specifier strings (for flexibility and ease of use). The result is number formatting functionality that is highly efficient, flexible, and easy to use.
 
 First, the idea: you have a number, you want it formatted a certain way. Here's how:

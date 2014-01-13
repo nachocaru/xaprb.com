@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>
-</p>
 
 I've just released changes to two of the tools in MySQL Toolkit. MySQL Table Checksum got some convenient functionality to help you recursively check slaves for bad replicated checksum chunks. MySQL Archiver got statistics-gathering functionality to help you optimize your archiving and purging jobs, plus a few important bug fixes.
 

@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>
-</p>
 
 I've just released changes to all tools in MySQL Toolkit. The biggest changes are in MySQL Table Sync, which I'm beginning to give sane defaults and options to. Some of the changes are incompatible (but that's what you get with MySQL Table Sync, which is still very rough). I also found and fixed some bugs with MySQL Visual Explain. Thanks to everyone who submitted bug reports.
 

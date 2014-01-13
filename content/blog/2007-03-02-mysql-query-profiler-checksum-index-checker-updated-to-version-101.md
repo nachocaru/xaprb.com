@@ -5,9 +5,6 @@ permalink: /2007/03/02/mysql-query-profiler-checksum-index-checker-updated-to-ve
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>
-</p>
 
 I got a lot of very nice feedback on the three tools I recently added to the MySQL Toolkit project on Sourceforge, and found and solved several issues with quoting and password prompting, index types, and so forth. Thank you all for your feedback, and welcome to Ruslan Zakirov, who plans to add some new tools!
 

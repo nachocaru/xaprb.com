@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
-</p>
 
 This release contains bug fixes and new features. The biggest new feature, in my opinion, is a new sync algorithm for mk-table-sync. Now you can sync any table with an index more efficiently than previously. This is the return of the speed I promised earlier. (Though I haven't yet benchmarked it; I am very short on time these days. Your benchmarks and other contributions are welcome).
 

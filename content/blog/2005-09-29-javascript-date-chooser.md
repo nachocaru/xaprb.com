@@ -7,10 +7,6 @@ permalink: /2005/09/29/javascript-date-chooser/
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>
 </p>
 
-<p class="download">
-  <a href="/articles/date-chooser.zip">Download date-chooser v1.1</a>
-</p>
-
 I wrote this date chooser because the ones I could find on the Internet were crummy, too complicated, or not free. The point is to make form entry more usable and help the user enter valid data (of course, you still need to validate your input when processing). I also wanted to code to be compact and fast, and not require a bunch of ugly code injected into the web page.
 
 I made a [demo][1] so you can see it in action.

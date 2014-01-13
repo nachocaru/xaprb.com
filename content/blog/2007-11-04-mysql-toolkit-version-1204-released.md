@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>
-</p>
 
 This release fixes some minor bugs. It also adds a few major new features to several of the tools. The command-line option and help functionality, as well as several other pieces of common functionality, has been replaced with common modules that have a test suite. This is the first step towards a gradual rewrite to replace untested 'script' code with tested, maintainable code.
 

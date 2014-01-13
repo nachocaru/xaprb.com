@@ -5,9 +5,6 @@ permalink: /2007/03/01/introducing-mysql-duplicate-key-checker/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Get MySQL Duplicate Key Checker</a>
-</p>
 
 I've just released MySQL Duplicate Key Checker on SourceForge. This is a complete rewrite of a [tool I initially released under a slightly different name][1]. It is now much more powerful and friendlier to use, especially for scripting, and has many more options.
 

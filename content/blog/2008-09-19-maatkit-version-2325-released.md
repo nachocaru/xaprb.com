@@ -8,9 +8,6 @@ categories:
   - Operations
   - Programming
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
-</p>
 
 There's a new release with a lot of goodies -- speed, efficiency, user-friendliness, and new features. In particular some of [Percona's][1] clients have sponsored features for things they need such as the ability to more frequently verify that slaves are in sync with their masters. If you need features, please ask Percona about it.
 

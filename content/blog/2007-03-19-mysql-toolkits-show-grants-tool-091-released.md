@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download MySQL Show Grants</a>
-</p>
 
 MySQL Toolkit's Show Grants tool can now separate grants into individual statements, convert them into `REVOKE` statements, and help you remove users from a server, even if your server doesn't support `DROP USER`.
 

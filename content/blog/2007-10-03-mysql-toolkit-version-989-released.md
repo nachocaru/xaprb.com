@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>
-</p>
 
 This release of MySQL Toolkit fixes some minor bugs, and adds major new functionality to MySQL Parallel Dump.
 

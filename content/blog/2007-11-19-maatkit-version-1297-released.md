@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
-</p>
 
 Maatkit (formerly MySQL Toolkit) version 1297 contains a significant update to MySQL Table Checksum (which will be renamed soon to avoid trademark violations). The changelog follows. What you don't see in the changelog is **the unit test suite!** I got a lot more of the code into modules that are tested and re-usable.
 

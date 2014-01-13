@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
-</p>
 
 The newest release of Maatkit contains mk-audit bug fixes, lots of [new features for mk-table-checksum so you can check replication more frequently (see my earlier post about this)][1], and more bug fixes for other tools.
 

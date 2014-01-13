@@ -3,9 +3,6 @@ title: How to create input masks in HTML
 date: "2006-11-02"
 permalink: /2006/11/02/how-to-create-input-masks-in-html/
 ---
-<p class="download">
-  <a href="/html-input-mask/src/">Download HTML Input Mask</a>
-</p>
 
 <p style="border:solid red 1px; background:yellow">
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>

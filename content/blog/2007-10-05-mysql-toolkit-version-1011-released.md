@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>
-</p>
 
 MySQL Toolkit version numbers are based on Subversion revision number. This release is the first past the 1,000-commit milestone. It also marks several days of being in Sourceforge's top 100 most active projects. It has been in the top 300 for a couple of months, and the top 1000 for, um, a long time. While I would hasten to say I'm not a popularity-contest-focused person, it's rewarding to see that people think this project is important and useful.
 

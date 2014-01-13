@@ -5,9 +5,6 @@ permalink: /2007/03/01/mysql-query-profiler-100-released/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Query Profiler</a>
-</p>
 
 I've updated MySQL Query Profiler, which I consider the most important tool I've written. It's now included as part of the MySQL Toolkit project on Sourceforge.
 

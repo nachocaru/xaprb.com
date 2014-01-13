@@ -5,10 +5,6 @@ permalink: /2006/10/18/mysql-query-profiler/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://www.maatkit.org/">Download MySQL Query Profiler</a>
-</p>
-
 This is the fourth in a series of articles on profiling MySQL. My past three articles have explained how to measure the work a query causes MySQL to do. In this article I introduce a tool I've written to do the work for you and produce a compact, readable report of that work, with all the math already done, and the measurements labelled and grouped for ease of comprehension. With this tool you can understand query performance at a glance.
 
 I'm very happy about this tool. Finally, I can run a query and get the kind of measurements I was used to on Microsoft SQL Server. Though the MySQL server isn't as complex as SQL Server and doesn't always let you see as much internal information, at least with this tool I can easily use the information I do have.

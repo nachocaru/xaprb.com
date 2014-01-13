@@ -5,9 +5,6 @@ permalink: /2007/06/03/mysql-table-checksum-116-released/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Table Checksum</a>
-</p>
 
 MySQL Table Checksum 1.1.6 enhances chunking, adds features and fixes bugs. The chunking functionality is where I continue to put most of my effort. **This release's behavior is incompatible with the last release**, and it will probably change again in the future.
 

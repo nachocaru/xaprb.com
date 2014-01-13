@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/innotop">Download innotop</a>
-</p>
 
 It's finally ready -- the new stable version of the innotop MySQL and InnoDB monitor. Version 1.4.0 brings you new features and enhancements I think you'll really enjoy:
 

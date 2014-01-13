@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download MySQL Toolkit</a>
-</p>
 
 MySQL Toolkit distribution 620 updates documentation and test suites, includes some major bug fixes and functionality changes, and adds one new tool to the toolkit. This article is mostly a changelog, with some added notes.
 

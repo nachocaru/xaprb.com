@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>
-</p>
 
 I've just released updates to all the tools in the MySQL Toolkit. The biggest change I made to most packages is using DBD to read MySQL's option files, though some packages got more significant updates.
 

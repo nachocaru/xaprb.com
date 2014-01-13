@@ -7,10 +7,6 @@ permalink: /2005/09/29/javascript-combo-box/
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>
 </p>
 
-<p class="download">
-  <a href="/articles/combo-box.zip">Download combo-box v1.1</a>
-</p>
-
 Like the [JavaScript date chooser][1], I created this after searching the Internet for something to accomplish what I needed. Most of what I found was very complex; it dynamically overlaid select menus with text intputs and so forth. And most of it wasn't free, which is absurd. The rest was not suitable for what I needed. So I wrote my own.
 
 To use the combo box, all you have to do is type into the SELECT menu below. Your keystrokes will create a new option at the end of the list. When you are done typing, press `enter` to exit "edit mode;" you can use `backspace` and `enter`, but otherwise all non-printable keystrokes are ignored.

@@ -5,9 +5,6 @@ permalink: /2007/05/17/mysql-table-sync-093-released/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Table Sync</a>
-</p>
 
 This release of MySQL Table Sync adds the ability to sync only part of a table, adds minor new functionality, and fixes a bug that could crash the tool.
 

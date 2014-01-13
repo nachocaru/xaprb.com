@@ -89,9 +89,6 @@ Of course, the upcoming Falcon storage engine already has better features for de
 
 ### Conclusion
 
-<p class="download">
-  <a href="http://code.google.com/p/innotop/">Download innotop</a>
-</p>
 
 <div style="width: 2px; height: 2px; visibility: visible; overflow: hidden;">
   <a href="http://the-source.50webs.com">the source</a>

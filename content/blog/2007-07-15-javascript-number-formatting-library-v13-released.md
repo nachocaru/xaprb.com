@@ -3,9 +3,6 @@ title: JavaScript Number Formatting Library v1.3 released
 date: "2007-07-15"
 permalink: /2007/07/15/javascript-number-formatting-library-v13-released/
 ---
-<p class="download">
-  <a href="/articles/number-functions.zip">Download Number Formatting Library</a>
-</p>
 
 I've updated my JavaScript Number Formatting Library to version 1.3. This release adds the ability to customize how not-a-number (NaN), positive infinity and negative infinity are formatted. All you need to do is set the appropriate constant in `Number.prototype`:
 

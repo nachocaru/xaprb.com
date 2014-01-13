@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit/">Download Maatkit</a>
-</p>
 
 [Maatkit][1] version 2152 is ready for download. This release is also known as the "is this project really alive?" release. We thought we should delay until [MySQL released a new Community Server version][2]. Just kidding -- it has nothing to do with that.
 

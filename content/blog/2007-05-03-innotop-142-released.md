@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/innotop">Download innotop</a>
-</p>
 
 This release of the innotop MySQL and InnoDB monitor is a major upgrade in terms of functionality, code quality, and interface consistency. It is the result of me working for over a month to get innotop into shape for the recent MySQL Conference and Expo. Here's a summary of the changes:
 

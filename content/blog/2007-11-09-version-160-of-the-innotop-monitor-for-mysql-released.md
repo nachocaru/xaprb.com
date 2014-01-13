@@ -6,9 +6,6 @@ categories:
   - Databases
   - Open Source
 ---
-<p class="download">
-  <a href="http://code.google.com/p/innotop/">Download innotop</a>
-</p>
 
 The 1.5.2 release of innotop contained two bugs, one very minor. The other was a crash because of the new functionality that aggregates results across many connections. I fixed them and released version 1.6.0, which I consider stable and ready for everyone to use. (My version naming convention for innotop is that even-numbered minor versions are for production use; odd-numbered, such as 1.5.2, are the development branch. That's why I release them under the innotop-devel package).
 

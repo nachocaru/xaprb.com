@@ -5,10 +5,6 @@ permalink: /2006/03/12/gnucash-to-mysql-export-script/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="/gnucash2mysql/">Download gnucash2mysql and queries</a>
-</p>
-
 It's tax season, and this year I decided to export my GnuCash data into a MySQL database for analysis. This article is about that process, including source code for the export script and a couple of simple queries.
 
 ### The script

@@ -5,9 +5,6 @@ permalink: /2007/05/08/mysql-find-090-released/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Find</a>
-</p>
 
 If you've used the UNIX `find` command for more than a trivial find-and-print, you know how powerful it is; it's almost a miniature programming environment to find and manipulate files and directories. What if you could do the same thing with MySQL tables and databases? That was the inspiration for writing this tool. I was about to write several other tools to do some MySQL administrative jobs when I realized I could generalize and make something much more useful and powerful.
 

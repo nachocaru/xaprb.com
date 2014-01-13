@@ -5,9 +5,6 @@ permalink: /2007/07/10/mysql-table-checksum-119-released/
 categories:
   - Databases
 ---
-<p class="download">
-  <a href="http://code.google.com/p/maatkit">Download MySQL Toolkit</a>
-</p>
 
 This release fixes some bugs and improves the chunking functionality. MySQL Table Checksum had a few minor bugs and one major bug with the chunking functionality. I also rewrote the chunking, though the behavior is backwards compatible. I am very happy with the way it works now, and will probably not make any more incompatible changes to it. The changes enabled me to add support for chunking on float, double and decimal columns.
 
