@@ -87,8 +87,10 @@ from apples
 
 Here is (conceptually) what happens when we join these tables:
 
-1.  Choose a left-hand table (the first table in the SELECT statement).
-2.  For each row in the right-hand table, take the entire left-hand table and stack its rows next to the row in the right-hand table. <table class="borders collapsed">
+Choose a left-hand table (the first table in the SELECT statement).
+For each row in the right-hand table, take the entire left-hand table and stack its rows next to the row in the right-hand table.
+
+<table class="borders collapsed">
       <caption>apples and oranges</caption> <tr>
         <th>
           Variety
@@ -164,7 +166,9 @@ Here is (conceptually) what happens when we join these tables:
       </tr>
     </table>
 
-3.  Fill in the missing rows in the right-hand table by duplicating them into the empty spaces. <table class="borders collapsed">
+Fill in the missing rows in the right-hand table by duplicating them into the empty spaces.
+
+<table class="borders collapsed">
       <caption>apples and oranges</caption> <tr>
         <th>
           Variety
@@ -256,7 +260,9 @@ Here is (conceptually) what happens when we join these tables:
       </tr>
     </table>
 
-4.  The result is a large table containing the *cross-product* or *Cartesian product* of the two data sets. Now satisfy the matching criteria by applying them as a predicate to each row in this new data set. If the predicate is true for the row, include it, otherwise exclude it. The result contains a single row: <table class="borders collapsed">
+The result is a large table containing the *cross-product* or *Cartesian product* of the two data sets. Now satisfy the matching criteria by applying them as a predicate to each row in this new data set. If the predicate is true for the row, include it, otherwise exclude it. The result contains a single row:
+
+<table class="borders collapsed">
       <caption>apples and oranges</caption> <tr>
         <th>
           Variety
@@ -294,7 +300,9 @@ Here is (conceptually) what happens when we join these tables:
       </tr>
     </table>
 
-5.  Now choose only the desired columns from the result: <table class="borders collapsed">
+Now choose only the desired columns from the result:
+
+<table class="borders collapsed">
       <caption>apples and oranges</caption> <tr>
         <th>
           Variety

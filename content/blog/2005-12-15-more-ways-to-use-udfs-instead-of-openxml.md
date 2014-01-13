@@ -1,5 +1,5 @@
 ---
-title: "More alternatives to <code>openxml</code>"
+title: "More alternatives to openxml"
 date: "2005-12-15"
 permalink: /2005/12/15/more-ways-to-use-udfs-instead-of-openxml/
 ---

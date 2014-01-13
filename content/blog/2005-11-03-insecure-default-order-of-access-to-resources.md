@@ -34,7 +34,7 @@ Here is a simple exploit that demonstrates the above technique by breaking Inter
 3.  Restart IE and try to view Google's homepage. Content Advisor should block it.
 4.  Block IE's access to the DLL that implements Content Advisor, thereby disabling the functionality. 
     1.  IE uses msrating.dll to implement Content Advisor. This is a system DLL, so we can force IE to try to load the DLL from the wrong location by putting a file called msrating.dll in the IE executable's directory.
-    2.  Create a bogus "DLL" in <tt>c:\Program Files\Internet Explorer\</tt> with the following command in the Run dialog: <kbd>notepad c:\program files\Internet Explorer\msrating.dll</kbd>. Notepad will say the file does not exist, and ask if you want to create it. Say Yes, and save the file (you can put something in it or leave it empty, it doesn't matter).
+    2.  Create a bogus "DLL" in `c:\Program Files\Internet Explorer` with the following command in the Run dialog: `notepad c:\program files\Internet Explorer\msrating.dll`. Notepad will say the file does not exist, and ask if you want to create it. Say Yes, and save the file (you can put something in it or leave it empty, it doesn't matter).
     3.  As James Whittaker says, who knew it was so easy to write a DLL?
 5.  Restart Internet Explorer and go to Google's homepage. It will NOT block access to the site, indicating that when IE tried to load msrating.dll it failed (because it tried to load a text file, thinking it was a DLL!). The Content Advisor functionality is not available, as you can see by opening the Internet Options dialog and noticing the Content Advisor settings are grayed out.
 6.  When you are finished amazing your friends and coworkers, you should delete the bogus msrating.dll file.

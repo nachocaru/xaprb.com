@@ -273,108 +273,38 @@ Here's what I get when I call `/abc|d(e)/g.exec("abcde")` twice in a row on the 
       </td>
     </tr></table> 
     
-    <p>
-      I got the results with a <code>for/in</code> loop, like so:
-    </p>
+I got the results with a <code>for/in</code> loop, like so:
     
-    <pre>var re = /abc|d(e)/g;
+<pre>var re = /abc|d(e)/g;
 var result = re.exec("abcde");
 for (var prop in result) {
     ...</pre>
     
-    <p>
-      Here are the differences:
-    </p>
+Here are the differences:
     
-    <ul>
-      <li>
-        Opera doesn't enumerate over the first captured subexpression in the first result. In Firefox, it exists without a value (has the special value <code>undefined</code>), and in IE it exists <strong>with a value</strong> -- the empty string.
-      </li>
-      <li>
-        IE adds the proprietary <code>lastIndex</code> property to the result.
-      </li>
-    </ul>
+*        Opera doesn't enumerate over the first captured subexpression in the first result. In Firefox, it exists without a value (has the special value <code>undefined</code>), and in IE it exists <strong>with a value</strong> -- the empty string.
+*        IE adds the proprietary <code>lastIndex</code> property to the result.
+
+###      Subexpressions
+
+I said Opera <em>doesn't enumerate over</em> the property named "1&#8243; in the first result. According to the spec, the property named "1&#8243; should still exist. Opera knows the property should exist, as I proved by examining the <code>length</code> property. Its value is 2 in all browsers, which is correct as specified by section 15.10.6.2 of the [spec](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf):
     
-    <h3>
-      Subexpressions
-    </h3>
+Performs a regular expression match of <em>string</em> against the regular expression and returns an Array object containing the results of the match, or <strong>null</strong> if the string did not match...  Let <em>n</em> be the length of <em>r</em>'s <em>captures</em> array. (This is the same value as 15.10.2.1&#8242;s <em>NCapturingParens</em>.)
+
+So, the length of the array <em>should</em> be 2 even in the first match, because the length of the array depends <strong>only</strong> on the number of capturing subexpressions in the pattern -- so the browsers are doing the right thing.
     
-    <p>
-      I said Opera <em>doesn't enumerate over</em> the property named "1&#8243; in the first result. According to the spec, the property named "1&#8243; should still exist. Opera knows the property should exist, as I proved by examining the <code>length</code> property. Its value is 2 in all browsers, which is correct as specified by section 15.10.6.2 of the spec:
-    </p>
-    
-    <blockquote cite="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">
-      <h4>
-        15.10.6.2 RegExp.prototype.exec(string)
-      </h4>
-      
-      <p>
-        Performs a regular expression match of <em>string</em> against the regular expression and returns an Array object containing the results of the match, or <strong>null</strong> if the string did not match
-      </p>
-      
-      <p>
-        &#8230;snip&#8230;
-      </p>
-      
-      <ol>
-        <li>
-          &#8230;[1-11 omitted]&#8230;
-        </li>
-        <li value="12">
-          Let <em>n</em> be the length of <em>r</em>'s <em>captures</em> array. (This is the same value as 15.10.2.1&#8242;s <em>NCapturingParens</em>.)
-        </li>
-        <li>
-          Return a new array with the following properties:<ul>
-            <li>
-              The <strong><code>index</code></strong> property is set to the position of the matched substring within the complete string <em>S</em>.
-            </li>
-            <li>
-              The <strong><code>input</code></strong> property is set to <em>S</em>.
-            </li>
-            <li>
-              The <strong><code>length</code></strong> property is set to <em>n</em> + 1.
-            </li>
-            <li>
-              The <strong><code></code></strong> property is set to the matched substring (i.e. the portion of <em>S</em> between offset <em>i</em> inclusive and offset <em>e</em> exclusive).
-            </li>
-            <li>
-              For each integer <em>i</em> such that <em>I</em> > 0 and <em>I</em> &#8804; <em>n</em>, set the property named ToString(<em>i</em>) to the <em>i</em><sup>th</sup> element of <em>r</em>'s <em>captures</em> array.
-            </li>
-          </ul>
-        </li>
-      </ol>
-    </blockquote>
-    
-    <p>
-      In other words, the length of the array <em>should</em> be 2 even in the first match, because the length of the array depends <strong>only</strong> on the number of capturing subexpressions in the pattern -- so the browsers are doing the right thing.
-    </p>
-    
-    <p>
-      If the property exists, Opera should enumerate it in the <code>for/in</code> loop. The spec is clear about what properties are enumerable (section 15.2.4.7), and it never says such a property should get the <code>dontEnum</code> attribute, so I think Opera's behavior is incorrect. In fact, I'm pretty sure Opera is actually never creating the property. I ran some tests with an Array and set one of the properties to <code>undefined</code>. Opera still enumerates it, so it's not as though Opera doesn't enumerate properties that have no value. I think Opera is setting <code>length</code> to 2, but never creating properties for capturing subexpressions that don't participate in the match. Technically this does not violate the spec's instructions on an Array's <code>length</code> property, but it is suspicious.
-    </p>
-    
-    <p>
-      The moral of the story is you shouldn't use a <code>for/in</code> loop when iterating through subexpressions. Just iterate from 0 through <code>length</code> minus one.
-    </p>
-    
-    <p>
-      I take exception to IE giving the capture a value. The subexpression doesn't capture anything and doesn't participate in the match, so it should not have a value -- not even the empty string or <code>null</code>. I suppose this one is up for debate, but that's my personal opinion.
-    </p>
-    
-    <h3>
-      IE's <code>lastIndex</code> property
-    </h3>
-    
-    <p>
-      Technically, this property shouldn't be there; it should be a property of the global <code>RegExp</code> object in ECMA-262, or the regex itself in later versions of JavaScript (I have no idea why you'd make it a property of a global object; that seems like it would cause all sorts of stupid bugs, so I think the way IE does it is probably a lot smarter than the spec).
-    </p>
-    
-    <h3>
-      Other stuff
-    </h3>
-    
-    <p>
-      I spent a lot of time messing with the various browsers to see if I could find obscure bugs enumerating properties that don't exist, setting a value and then unsetting it on subsequent calls, and so forth. The good news is I didn't find any more bugs (though they could still exist!), and I found that the quasi-bugs discussed above are really trivial.
-    </p>
+If the property exists, Opera should enumerate it in the <code>for/in</code> loop. The spec is clear about what properties are enumerable (section 15.2.4.7), and it never says such a property should get the <code>dontEnum</code> attribute, so I think Opera's behavior is incorrect. In fact, I'm pretty sure Opera is actually never creating the property. I ran some tests with an Array and set one of the properties to <code>undefined</code>. Opera still enumerates it, so it's not as though Opera doesn't enumerate properties that have no value. I think Opera is setting <code>length</code> to 2, but never creating properties for capturing subexpressions that don't participate in the match. Technically this does not violate the spec's instructions on an Array's <code>length</code> property, but it is suspicious.
+
+The moral of the story is you shouldn't use a <code>for/in</code> loop when iterating through subexpressions. Just iterate from 0 through <code>length</code> minus one.
+
+I take exception to IE giving the capture a value. The subexpression doesn't capture anything and doesn't participate in the match, so it should not have a value -- not even the empty string or <code>null</code>. I suppose this one is up for debate, but that's my personal opinion.
+
+### IE's <code>lastIndex</code> property
+
+Technically, this property shouldn't be there; it should be a property of the global <code>RegExp</code> object in ECMA-262, or the regex itself in later versions of JavaScript (I have no idea why you'd make it a property of a global object; that seems like it would cause all sorts of stupid bugs, so I think the way IE does it is probably a lot smarter than the spec).
+
+### Other stuff
+
+I spent a lot of time messing with the various browsers to see if I could find obscure bugs enumerating properties that don't exist, setting a value and then unsetting it on subsequent calls, and so forth. The good news is I didn't find any more bugs (though they could still exist!), and I found that the quasi-bugs discussed above are really trivial.
 
  [1]: http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf

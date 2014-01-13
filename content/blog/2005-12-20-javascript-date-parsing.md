@@ -7,10 +7,6 @@ permalink: /2005/12/20/javascript-date-parsing/
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>
 </p>
 
-<p class="download">
-  <a href="/articles/date-functions.zip">Download date-functions v1.1</a>
-</p>
-
 In this post I'll explain how I built on my runtime [date-formatting functionality][1] into the date-parsing realm. The result is a date-parsing library that literally creates itself at runtime.
 
 ### The demo
@@ -39,7 +35,7 @@ I'm wrapping the [date-formatting and date-parsing code][3] up into a single fil
 
 ### What it's not
 
-This code is **not** a JavaScript implementation of `<a href="http://www.php.net/manual/en/function.strtotime.php">strtotime</a>`. That's too difficult and not that useful in my opinion. (For those not familiar with it, `strtotime` can understand input like "two weeks ago next Sunday"). It's also **not internationalized**. It only works for my little slice of the universe: the English language -- though international date-formatting standards (ISO 8601, highly recommended) make that a moot point anyway.
+This code is **not** a JavaScript implementation of <a href="http://www.php.net/manual/en/function.strtotime.php">strtotime</a>. That's too difficult and not that useful in my opinion. (For those not familiar with it, `strtotime` can understand input like "two weeks ago next Sunday"). It's also **not internationalized**. It only works for my little slice of the universe: the English language -- though international date-formatting standards (ISO 8601, highly recommended) make that a moot point anyway.
 
  [1]: /blog/2005/12/12/javascript-closures-for-runtime-efficiency/
  [2]: /articles/javascript-date-parsing-demo.html
