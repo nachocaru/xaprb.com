@@ -2,6 +2,8 @@
 title: Interactive directory merging
 date: "2005-09-22"
 url: /blog/2005/09/22/interactive-directory-merging/
+categories:
+  - Programming
 ---
 Here's an 'interactive' directory merging tool that doesn't require GUI libraries, printer subsystems, and so forth. It is useful when you want to do things the easy way, at a terminal, without taking your hands off your keyboard. And it works on systems where you don't have access to install things yourself, such as a shared webhosting server.
 

@@ -2,6 +2,8 @@
 title: "Kickfire: relational algebra in a chip"
 date: "2008-04-14"
 url: /blog/2008/04/14/kickfire-relational-algebra-in-a-chip/
+categories:
+    - Databases
 ---
 I spent the day Thursday with some of Kickfire's engineers at their headquarters. In this article, I'd like to go over a little of the system's architecture and some other details.
 

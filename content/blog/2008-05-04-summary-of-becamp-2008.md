@@ -2,6 +2,8 @@
 title: Summary of beCamp 2008
 date: "2008-05-04"
 url: /blog/2008/05/04/summary-of-becamp-2008/
+categories:
+    - Conferences
 ---
 Yesterday I went to [beCamp 2008][1] along with four roomfuls of other people interested in technology (perhaps close to 100 people total). The conference was a lot of fun. Not everything went as planned, but that was as planned. This was an [Open Spaces conference][2] and I thought it worked very well. From an email [Eric Pugh][3] sent:
 

@@ -2,6 +2,8 @@
 title: "Windows XP's built-in unzipping functionality is not trustworthy"
 date: "2005-12-01"
 url: /blog/2005/12/01/windows-xps-built-in-unzipping-functionality-is-not-trustworthy/
+categories:
+    - Programming
 ---
 Window's XP's integrated ZIP functionality (built into Windows Explorer) is not trustworthy. You should not rely on it to correctly unzip or show the contents of archives. The problem is related to special characters in filenames. If a filename has one of the [forbidden characters][1], Windows XP simply doesn't extract or show the files. A recent example is the [9rules][2] media kit, which 9rules sent me when I was accepted to the network. I opened it at home but didn't have time to make the requested changes to my site. I decided to do it after work, on my employer's Windows XP machine, and was puzzled because some directories were missing. It turns out the directory had a colon in the name.
 

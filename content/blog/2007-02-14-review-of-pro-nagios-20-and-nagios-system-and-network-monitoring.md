@@ -2,6 +2,8 @@
 title: Review of Pro Nagios 2.0 and Nagios System and Network Monitoring
 date: "2007-02-14"
 url: /blog/2007/02/14/review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/
+categories:
+    - Reviews
 ---
 Last week I read two books on Nagios. I found one easy to use and the other difficult.
 

@@ -2,6 +2,8 @@
 title: I have joined Percona
 date: "2008-03-26"
 url: /blog/2008/03/26/i-have-joined-percona/
+categories:
+    - About
 ---
 Effective April 1, I will join [Percona][1] full-time as a consultant. I'll be helping people build high-performance applications with MySQL, but I'll also be continuing to develop and improve tools such as [Maatkit][2].
 

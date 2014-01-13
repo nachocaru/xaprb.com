@@ -2,6 +2,8 @@
 title: "What I've been doing lately"
 date: "2007-07-10"
 url: /blog/2007/07/10/what-ive-been-doing-lately/
+categories:
+    - About
 ---
 I haven't been blogging about the things I used to -- how-tos and technical hacks -- because I've been working quite hard on [MySQL Toolkit][1] and, believe it or not, [innotop][2]. I've made it possible to write innotop plugins, which have been very useful to our team at work, and I'm working on documentation. Plugins won't make it into the upcoming release; it'll just be bug fixes and documentation. These projects have taken up most of my free time.
 

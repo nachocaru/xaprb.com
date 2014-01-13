@@ -2,6 +2,8 @@
 title: Why you need to read this blog
 date: "2005-12-01"
 url: /blog/2005/12/01/about-xaprb/
+categories:
+    - About
 ---
 You need to read this blog because it can help you become a better software engineer.
 

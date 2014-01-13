@@ -2,6 +2,8 @@
 title: How to update a GCC profile on Gentoo
 date: "2006-06-07"
 url: /blog/2006/06/07/how-to-update-a-gcc-profile-on-gentoo/
+categories:
+    - Programming
 ---
 Multiple versions of GCC can be installed side-by-side in a Gentoo GNU/Linux system. This article is a quick overview of GCC profiles and how to manage them.
 

@@ -2,6 +2,8 @@
 title: "L. L. Bean's privacy policy"
 date: "2005-12-04"
 url: /blog/2005/12/04/l-l-beans-privacy-policy/
+categories:
+    - Commentary
 ---
 L. L. Bean got me all excited by telling me they handled my private data the right way before I even asked them to. I placed an order and later realized I never asked them to place me on their "don't rent, don't sell" list. I called back and asked to be placed on that list, and the friendly voice on the other end of the line assured me they don't sell/rent anyway! Yay! Finally, I thought, a company that doesn't buy into the "it's OK to sell and let people 'opt out' if they want" malarkey. The rep marked my account as "don't rent/sell" anyway, which made me doubly satisfied.
 

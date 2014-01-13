@@ -2,6 +2,8 @@
 title: Singular vs. plural table names
 date: "2005-09-28"
 url: /blog/2005/09/28/singular-vs-plural-table-names/
+categories:
+    - Databases
 ---
 Is it better to name SQL tables with singular or plural names? In my opinion, the most important thing to do is pick one and stick to it. Programmers will always argue about singular vs. plural, and it is possible to make a valid case for both.
 

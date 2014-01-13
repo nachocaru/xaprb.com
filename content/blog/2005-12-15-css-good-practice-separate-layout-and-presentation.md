@@ -2,6 +2,8 @@
 title: How to use CSS to go beyond separation of content and presentation
 date: "2005-12-15"
 url: /blog/2005/12/15/css-good-practice-separate-layout-and-presentation/
+categories:
+    - Web
 ---
 One of CSS's loftiest goals was to help separate content and presentation on the Web<sup>1</sup>. It has succeeded to some degree, bringing great benefits in terms of maintainability, usability, and accessibility.
 

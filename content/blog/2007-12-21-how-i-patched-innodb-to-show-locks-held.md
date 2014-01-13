@@ -2,6 +2,8 @@
 title: How I patched InnoDB to show locks held
 date: "2007-12-21"
 url: /blog/2007/12/21/how-i-patched-innodb-to-show-locks-held/
+categories:
+    - Databases
 ---
 I've written before about how to figure out [which connection is holding the InnoDB locks][1] for which other connections are waiting. In other words, how to figure out who's blocking you from getting work done when you get InnoDB lock timeouts or other InnoDB lock contention. The short and sweet: turn on the InnoDB lock monitor and use [innotop][2] to look at the locks held and waited-for.
 

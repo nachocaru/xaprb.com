@@ -2,6 +2,8 @@
 title: How to convert text to columns in OpenOffice.org Calc
 date: "2006-06-26"
 url: /blog/2006/06/26/how-to-convert-text-to-columns-in-openofficeorg-calc/
+categories:
+    - Desktop
 ---
 Unlike Microsoft Excel, OpenOffice.org 2.0 Calc doesn't have a built-in "text to columns" feature, which is hard to live without once you're used to it. OpenOffice.org has an extensible add-on architecture, and someone has written a "text to columns" add-on, but installation may be confusing. In this article I'll explain how to install the add-on.
 

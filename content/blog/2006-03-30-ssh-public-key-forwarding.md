@@ -2,6 +2,9 @@
 title: SSH public-key forwarding
 date: "2006-03-30"
 url: /blog/2006/03/30/ssh-public-key-forwarding/
+categories:
+    - Programming
+	 - Security
 ---
 SSH is one of the most important tools I have. I use it every day to communicate securely between many different computers, and consider it indespensable. In this article I'll show you how to forward your SSH agent to connect from any remote server to any other remote server without putting your private key on either of them.
 

@@ -4,6 +4,7 @@
 - make a nice metadata thing at the bottom with links and stuff
 - move all the code samples etc to gists
 - find and move everything in /articles
+- images with no source but a link, e.g. /blog/2008/01/11/google-thinks-i-might-be-a-nerd/
 - image on http://localhost:1313/blog/2007-02-19-how-to-subtract-in-sql-over-samples-that-wrap/
 - images on reviews
 - images on http://localhost:1313/blog/2007-02-14-review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/

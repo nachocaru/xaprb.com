@@ -2,6 +2,8 @@
 title: IE blog is a great experience
 date: "2006-02-08"
 url: /blog/2006/02/08/ie-blog-is-a-great-experience/
+categories:
+    - Web
 ---
 Have you noticed how consistent the terminology, tone and style are on the [IE blog][1]? Clearly, a lot of work is going into making this blog as good as possible at promoting the work the IE team is doing on the new browser. It remains to be seen how the browser itself evolves, but I think there is a lot to learn from studying the IE blog.
 

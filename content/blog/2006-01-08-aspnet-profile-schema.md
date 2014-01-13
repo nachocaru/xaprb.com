@@ -2,6 +2,9 @@
 title: "ASP.NET's Profile DB schema"
 date: "2006-01-08"
 url: /blog/2006/01/08/aspnet-profile-schema/
+categories:
+    - Programming
+	 - Databases
 ---
 ASP.NET has built-in functionality to store profile information about a user. The DB table schema has several design trade-offs that make it somewhat inflexible for certain uses.
 

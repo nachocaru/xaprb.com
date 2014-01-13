@@ -2,6 +2,8 @@
 title: JavaScript formatting library update
 date: "2007-06-25"
 url: /blog/2007/06/25/javascript-formatting-library-update/
+categories:
+    - Web
 ---
 This is a quick update on the state of my [JavaScript date formatting libraries][1] and date chooser, and [JavaScript number formatting library][2]. It's been a while since I wrote them, and as you can tell my interests have turned to many other things, but thet remain the [best JavaScript formatting and parsing libraries][3] I've seen.
 

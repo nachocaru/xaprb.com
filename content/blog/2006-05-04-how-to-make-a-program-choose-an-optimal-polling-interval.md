@@ -2,6 +2,8 @@
 title: How to make a program choose an optimal polling interval
 date: "2006-05-04"
 url: /blog/2006/05/04/how-to-make-a-program-choose-an-optimal-polling-interval/
+categories:
+    - Programming
 ---
 My co-worker John taught me a useful technique to let a program choose an optimal wait time when polling a resource. In the post couple of years, I've used it many times. In this article I'll explain the technique and give some examples of when to use it (and when not to use it!).
 
