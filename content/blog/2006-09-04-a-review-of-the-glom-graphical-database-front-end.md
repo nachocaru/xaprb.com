@@ -39,12 +39,14 @@ I already had the latest stable PostgreSQL installed from Portage, which is vers
 
 You need to create a database user that can create and edit databases. Glom also requires PostgreSQL to accept connections over TCP/IP, which it doesn't do by default. If you already have PostgreSQL configured to allow remote connections, you can skip this step. Otherwise, you should follow the instructions on Glom's website, which you can find by following a link from the Download page. Here's what I did to set everything up correctly:
 
-1.  I started PostgreSQL and added it to the default runlevel, so it will start automatically: 
-    <pre>/etc/init.d/postgresql start
+First I started PostgreSQL and added it to the default runlevel, so it will start automatically: 
+
+<pre>/etc/init.d/postgresql start
 rc-update add postgresql default</pre>
 
-2.  I added a PostgreSQL user called `glom`. For reasons I'll explain in a bit, I also created a `glom` database: 
-    <pre>xaprb@tigger ~ $ su -
+I added a PostgreSQL user called `glom`. For reasons I'll explain in a bit, I also created a `glom` database:
+
+<pre>xaprb@tigger ~ $ su -
 root@tigger ~ # su - postgres
 postgres@tigger ~ $ createuser -P
 Enter name of user to add: glom
@@ -55,26 +57,34 @@ Shall the new user be allowed to create more new users? (y/n) y
 CREATE USER
 postgres@tigger ~ $ createdb glom
 CREATE DATABASE
-postgres@tigger ~ $ exit</pre> You don't have to create the 
-    
-    `glom` database, but it makes it easier to verify your user is set up correctly, as you'll see later.
-3.  As root, I edited the PostgreSQL configuration files to allow TCP/IP connections: 
-    <pre>root@tigger ~ # vim /var/lib/postgresql/data/postgresql.conf
+postgres@tigger ~ $ exit</pre>
+
+You don't have to create the     `glom` database, but it makes it easier to verify your user is set up correctly, as you'll see later.
+
+As root, I edited the PostgreSQL configuration files to allow TCP/IP connections: 
+
+<pre>root@tigger ~ # vim /var/lib/postgresql/data/postgresql.conf
 # I added the following line:
 listen_addresses = '*'
 root@tigger ~ # vim /var/lib/postgresql/data/pg_hba.conf
 # I added the following line:
-host    all         all         0.0.0.0 0.0.0.0               md5</pre> These steps took a careful eye; I made some mistakes at first, because I'm not that familiar with configuring PostgreSQL.
+host    all         all         0.0.0.0 0.0.0.0               md5</pre>
 
-4.  I restarted PostgreSQL. It is **not** necessary to restart the computer: 
-    <pre>/etc/init.d/postgresql restart</pre> If you made mistakes, as I did, you may think it restarted, but it actually didn't. I took a look at the log to see what was the matter: 
-    
-    <pre>root@tigger ~ # tail /var/lib/postgresql/data/postgresql.log
+These steps took a careful eye; I made some mistakes at first, because I'm not that familiar with configuring PostgreSQL.
+
+I restarted PostgreSQL. It is **not** necessary to restart the computer: 
+
+<pre>/etc/init.d/postgresql restart</pre>
+
+If you made mistakes, as I did, you may think it restarted, but it actually didn't. I took a look at the log to see what was the matter: 
+
+<pre>root@tigger ~ # tail /var/lib/postgresql/data/postgresql.log
 FATAL:  unrecognized configuration parameter "listen_address"
-FATAL:  unrecognized configuration parameter "listen_address"</pre> I needed to say 
-    
-    `listen_address<strong>es</strong>` in postgresql.conf. Unfortunately Gentoo thought PostgreSQL was already started, so trying to start or stop it failed; I had to "zap" it to proceed: 
-    <pre>/etc/init.d/postgresql zap</pre>
+FATAL:  unrecognized configuration parameter "listen_address"</pre>
+
+I needed to say `listen_address<strong>es</strong>` in postgresql.conf. Unfortunately Gentoo thought PostgreSQL was already started, so trying to start or stop it failed; I had to "zap" it to proceed:
+
+<pre>/etc/init.d/postgresql zap</pre>
 
 Eventually I got the user and database created, and PostgreSQL listening for TCP/IP connections.
 

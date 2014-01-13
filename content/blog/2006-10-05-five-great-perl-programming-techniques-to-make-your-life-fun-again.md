@@ -79,11 +79,11 @@ In this example, getting something from the database is really expensive, so you
 
 ### Trick 3: hash and array slices
 
-Have you ever passed around hashes and arrays and wanted to extract only certain elements from them? Let's say you have a subroutine that accepts a hash reference. Its job is to reverse the query-string parsing I showed you above. In many languages, you'd have to loop through the hash's keys, concatenating the key and value with `&`, then concatenating these together with `=`. You can use `map()` and `join()` to do this much more simply in Perl, like so:
+Have you ever passed around hashes and arrays and wanted to extract only certain elements from them? Let's say you have a subroutine that accepts a hash reference. Its job is to reverse the query-string parsing I showed you above. In many languages, you'd have to loop through the hash's keys, concatenating the key and value with `&amp;`, then concatenating these together with `=`. You can use `map()` and `join()` to do this much more simply in Perl, like so:
 
 <pre>sub make_query_string {
    my ( $vals ) = @_;
-   return join("&", map { "$_=$vals-&gt;{$_}" } keys %$vals);
+   return join("&amp;", map { "$_=$vals-&gt;{$_}" } keys %$vals);
 }
 my %query_params = (
    a =&gt; 1,
@@ -158,12 +158,9 @@ If you're like me five years ago, you might think that's scary as hell at first.
 
 Wait a minute, though. Is it really insecure to match some text and execute it? No, it's not. In fact, text you've matched with a regular expression is likely to be far better checked, just by the fact that you've specified what it has to look like, than most other input to your program. This is much more true than you think. In fact, one of the very safest ways to check *any* input to your program is by pattern matching. This is such a powerful way to validate input, it's the main way to untaint data when you're running in taint mode. This is from the [perlsec][2] man page:
 
-<blockquote cite="http://search.cpan.org/dist/perl/pod/perlsec.pod">
-  <p>
-    Values may be untainted by using them as keys in a hash; otherwise the only way to bypass the tainting mechanism is by referencing subpatterns from a regular expression match. Perl presumes that if you reference a substring using $1, $2, etc., that you knew what you were doing when you wrote the pattern.<p>
-      </blockquote> <p>
-        I won't go any further into why it's inherently safe to use the executable-regular-expression feature, but if you're not convinced, talk to an experienced programmer about it. I <em>do</em> want to convince you this is incredibly powerful. My example above implements this pseudo-code:
-      </p>
+>    Values may be untainted by using them as keys in a hash; otherwise the only way to bypass the tainting mechanism is by referencing subpatterns from a regular expression match. Perl presumes that if you reference a substring using $1, $2, etc., that you knew what you were doing when you wrote the pattern.<p>
+
+I won't go any further into why it's inherently safe to use the executable-regular-expression feature, but if you're not convinced, talk to an experienced programmer about it. I *do* want to convince you this is incredibly powerful. My example above implements this pseudo-code:
       
       <pre>search text for a string of column names
 for each string,
@@ -172,12 +169,10 @@ for each string,
    join it back together around the delimiters
    substitute it back into the original string
 done</pre>
+
+You can write any valid Perl code on the right-hand side. Probably the clearest thing to do is just call a subroutine with the captured text, and do the work there, instead of inlining it all. Here's my example rewritten with a subroutine, and reformatted with the `/x` modifier:
       
-      <p>
-        You can write any valid Perl code on the right-hand side. Probably the clearest thing to do is just call a subroutine with the captured text, and do the work there, instead of inlining it all. Here's my example rewritten with a subroutine, and reformatted with the <code>/x</code> modifier:
-      </p>
-      
-      <pre>sub split_sort_join {
+<pre>sub split_sort_join {
    my ($text) = @_;
    return join( ', ', sort( split( /, /, $text ) ) );
 }
@@ -187,12 +182,10 @@ $fk =~ s/
         (?=\))                # Find a closing paren
         /split_sort_join($1)  # Call split_sort_join on the match
         /gex;</pre>
+
+You can imagine how useful this is if your desired substition is not hard-coded into the right-hand-side of the substitution, too. For example, you could pass a callback function to a subroutine, and use that instead:
       
-      <p>
-        You can imagine how useful this is if your desired substition is not hard-coded into the right-hand-side of the substitution, too. For example, you could pass a callback function to a subroutine, and use that instead:
-      </p>
-      
-      <pre>sub process_column_names {
+<pre>sub process_column_names {
    my ( $fk, $callback ) = @_;
    $fk =~ s/
            (?&lt;=\()           # Find an opening paren
@@ -208,39 +201,30 @@ print process_column_names(
    \&#038;split_sort_join
 ), "\n";</pre>
       
-      <p>
-        If you're not a Perl wizard, your head is probably spinning at this point, so I'll ease off, even though I'm thinking of several other things I want to write about this. Here's the take-away: it's safe. It's powerful. Use it. Once you learn it, you'll be a much more capable programmer.
-      </p>
+
+If you're not a Perl wizard, your head is probably spinning at this point, so I'll ease off, even though I'm thinking of several other things I want to write about this. Here's the take-away: it's safe. It's powerful. Use it. Once you learn it, you'll be a much more capable programmer.
+
+### Trick 5: dispatch tables of coderefs
+
+
+Newcomers to Perl often wonder where the `switch` statement is. If you really, really want to write something that looks like a `case` or `switch` block, you're a lost soul, but okay, `man perlfaq7`. And before you go there, since I know you're a lost soul, I'll give you this ticket to get a slightly cooler room in you-know-where: basically anything you'll ever want to do is explained in the Perl manual pages. Start with `man perlfaq` and go from there. Even if I can't convert you away from `switch`, perhaps I've made a difference by pointing you towards these man pages. Fare thee well! I hardly knew ye, gentle reader&#8230;
+
+
+If you're still reading, you're one of the ones walking the narrow path that leads to victory. Good! Let's talk about how to execute some code branch depending on the value of a variable. My favorite technique for this is to use a dispatch table of coderefs -- references to subroutines. This is a succinct way to dispatch execution to somewhere or other in your program, without the mess and tedious coding you get with `switch` statements. Believe me, if you've ever tried to maintain someone else's `switch` of any size, you're going to appreciate this.
+
+
+Let's say we have a hypothetical interactive program that waits for you to press a key and then does some function.
+
+
+Okay, I lied. It's not hypothetical. I use this technique extensively in <a href="/innotop/">innotop</a>. Innotop has many dozens of key mappings, and they are mapped to different things depending on what mode you're in. "You pressed `c`? Oh wait, let me scroll through my big honkin' `switch` statement and see what that does&#8230; hang on, I'm getting there&#8230; can't find it&#8230; oh, you were in *that* mode! No wonder. Well, let me look at the `switch` statement for that mode, then&#8230;"
+
+
+Can you imagine? There's no way I'd have added so many features to innotop if it were this much of a pain to write, debug and understand. It doesn't really matter that I wrote it -- six months from now, I won't have a clue what all that code is doing. But I *will* be able to figure out what a keypress does, because I used a dispatch table.
+
+
+What exactly is a dispatch table? It's a hash of references to executable code. Let's make a simple example: a program that has just two modes, `display_a` and `display_b`. Each of these is handled by a subroutine of the same name. Here is a complete program that'll loop forever until you press `'q'`:
       
-      <h3>
-        Trick 5: dispatch tables of coderefs
-      </h3>
-      
-      <p>
-        Newcomers to Perl often wonder where the <code>switch</code> statement is. If you really, really want to write something that looks like a <code>case</code> or <code>switch</code> block, you're a lost soul, but okay, <code>man perlfaq7</code>. And before you go there, since I know you're a lost soul, I'll give you this ticket to get a slightly cooler room in you-know-where: basically anything you'll ever want to do is explained in the Perl manual pages. Start with <code>man perlfaq</code> and go from there. Even if I can't convert you away from <code>switch</code>, perhaps I've made a difference by pointing you towards these man pages. Fare thee well! I hardly knew ye, gentle reader&#8230;
-      </p>
-      
-      <p>
-        If you're still reading, you're one of the ones walking the narrow path that leads to victory. Good! Let's talk about how to execute some code branch depending on the value of a variable. My favorite technique for this is to use a dispatch table of coderefs -- references to subroutines. This is a succinct way to dispatch execution to somewhere or other in your program, without the mess and tedious coding you get with <code>switch</code> statements. Believe me, if you've ever tried to maintain someone else's <code>switch</code> of any size, you're going to appreciate this.
-      </p>
-      
-      <p>
-        Let's say we have a hypothetical interactive program that waits for you to press a key and then does some function.
-      </p>
-      
-      <p>
-        Okay, I lied. It's not hypothetical. I use this technique extensively in <a href="/innotop/">innotop</a>. Innotop has many dozens of key mappings, and they are mapped to different things depending on what mode you're in. "You pressed <code>c</code>? Oh wait, let me scroll through my big honkin' <code>switch</code> statement and see what that does&#8230; hang on, I'm getting there&#8230; can't find it&#8230; oh, you were in <em>that</em> mode! No wonder. Well, let me look at the <code>switch</code> statement for that mode, then&#8230;"
-      </p>
-      
-      <p>
-        Can you imagine? There's no way I'd have added so many features to innotop if it were this much of a pain to write, debug and understand. It doesn't really matter that I wrote it -- six months from now, I won't have a clue what all that code is doing. But I <em>will</em> be able to figure out what a keypress does, because I used a dispatch table.
-      </p>
-      
-      <p>
-        What exactly is a dispatch table? It's a hash of references to executable code. Let's make a simple example: a program that has just two modes, <code>display_a</code> and <code>display_b</code>. Each of these is handled by a subroutine of the same name. Here is a complete program that'll loop forever until you press <code>'q'</code>:
-      </p>
-      
-      <pre>#!/usr/bin/perl
+<pre>#!/usr/bin/perl
 
 use strict;
 use warnings FATAL =&gt; 'all';
@@ -268,11 +252,9 @@ while ( 1 ) {
    defined $dispatch_for-&gt;{$char} && $dispatch_for-&gt;{$char}-&gt;();
 }</pre>
       
-      <p>
-        Innotop has tons of such dispatch tables. They're so simple to use; you just look to see if there's an entry for whatever your input is, and if so, you call that to do the work. It can be an anonymous subroutine, such as the anonymous 'quit' subroutine in the example, or it can be a reference to a named subroutine. If you want a 'default' entry, you can do that easily, too:
-      </p>
+Innotop has tons of such dispatch tables. They're so simple to use; you just look to see if there's an entry for whatever your input is, and if so, you call that to do the work. It can be an anonymous subroutine, such as the anonymous 'quit' subroutine in the example, or it can be a reference to a named subroutine. If you want a 'default' entry, you can do that easily, too:
       
-      <pre>my $dispatch_for = {
+<pre>my $dispatch_for = {
    a =&gt; \&display_a,
    b =&gt; \&display_b,
    q =&gt; sub { ReadMode('normal'); exit(0) },
@@ -284,95 +266,44 @@ while ( 1 ) {
    $func-&gt;();
 </pre>
       
-      <p>
-        This is much, much simpler than writing <code>switch</code> statements, nested <code>if/else/else if</code> statements, or many other common programming constructs.
-      </p>
-      
-      <h3>
-        What am I getting at?
-      </h3>
-      
-      <p>
-        There is something common to all five of the tricks I listed. It's somewhat arbitrary that I listed five (I wanted to keep the article small enough to digest), and it's a bit arbitrary <em>which</em> five I chose, because I have many more ideas, but can you see the thread running through them?
-      </p>
-      
-      <p>
-        It's elimination of repetition.
-      </p>
-      
-      <p>
-        Whether it's repetitive typing, or coding constructs that obviously iterate over something, I'm trying to show you ways to a) avoid writing the same code over and over b) avoid reading code that does the same thing over and over.
-      </p>
-      
-      <p>
-        Why?
-      </p>
-      
-      <p>
-        Because repetition kills brain cells. When you're typing nearly the same loop or copy-pasting nearly the same code, your brain is not engaged and productive. You had a moment of insight about how to do something. In a flash, you saw the way to the end product. Now you have to write the code to implement it. Let's just pretend that takes an hour (on a good day), and you follow it with another insight, and so on, and so on. You only had eight interested, stimulated, excited moments in the whole work day? Shoot yourself now and get it over with!
-      </p>
-      
-      <p>
-        By the same token, when you're reading code, you have to follow the program's logic to understand it. When most programmers study a <code>for</code> loop, I'd bet money they mentally "execute the loop," starting at the beginning and ending at the end, to understand the start, middle and end of the loop. Every careful coder I've known does this, at least sometimes, because it's how you understand what the computer is doing. Mentally executing loops is incredibly draining. It's just as bad as typing loops!
-      </p>
-      
-      <p>
-        The reality is probably even worse, because you're doing both at the same time. As soon as you type a loop, you're immediately reading it. Reading it. Reading it. As soon as you type -- Reading it. As -- Reading it. As soon as you -- as soon as you type -- type -- Reading it.
-      </p>
-      
-      <p>
-        I'm not making this up. Studies show this is how people read any type of written material, on screen or off. In fact, one of the most important and difficult techniques to master in speed reading is to stop re-reading things you've just read. I'm doing it right now as I write this, backtracking and editing my writing (sometimes I type with my eyes closed so I can escape this trap more easily).
-      </p>
-      
-      <p>
-        The combination of writing and reading iterative code is tedious and boring, and if you're like me, you have a curious and lively mind, and you hate "tedious and boring." That's why I love writing code that doesn't force me to circle like a tiger pacing a cage.
-      </p>
-      
-      <p>
-        There's another common thread to everything I wrote, too.
-      </p>
-      
-      <p>
-        I'm showing you ways to code in a more declarative style.
-      </p>
-      
-      <p>
-        This is subtle, but after you code in this style for a little while, you'll come to understand it: it's not a procedural programming style. It's declarative, where you say <em>what</em> to do instead of <em>how</em>. It feels much more like writing a specification of the program's desired behavior, instead of writing how to accomplish that behavior. And when you go back to the code later and read it, or maintain someone else's code, you appreciate that even more. The program really does become a spec instead of just an implementation. It's not that obvious at first, or with small programs, but take my word for it, it's true.
-      </p>
-      
-      <p>
-        Back to that moment of insight: what if, at the point of inspiration, you could just say "okay computer, do what I want, and you figure out <em>how</em> to do it." That's declarative. Really, once you had the inspiration that showed you the way to solve the problem, you didn't need to write down the code, did you? You understood everything in that moment, and the rest was just tedium. Writing declaratively helps you get through the tedium that much faster.
-      </p>
-      
-      <ul>
-        <li>
-          The <code>map</code> function is declarative because you specify a transformation and let Perl map it onto each element of a list.
-        </li>
-        <li>
-          Hash and array slices are declarative because you specify what elements you want to read or assign, and let Perl figure out how.
-        </li>
-        <li>
-          <code>||=</code> is declarative because you let Perl figure out whether the value exists, and whether to fetch a new one if it doesn't.
-        </li>
-        <li>
-          Executable regular expressions are declarative because you just write a specification (pattern) of what you want to transform, and provide the transformation, and let Perl figure out how to do it.
-        </li>
-        <li>
-          Dispatch tables are declarative because you specify a mapping between some input and some code, and let Perl do the lookup and dispatch.
-        </li>
-      </ul>
-      
-      <p>
-        You can apply these techniques, one way or another, to any programming language. Another great example is the <a href="http://bennolan.com/behaviour/">Behaviour JavaScript library</a>, and the techniques it encourages. Or my own <a href="/blog/2006/05/14/javascript-date-formatting-benchmarks/">JavaScript date formatting and parsing library</a>, which are not only clearer and simpler to use than their alternatives, but much more powerful and waaaay more efficient.
-      </p>
-      
-      <h3>
-        Conclusion
-      </h3>
-      
-      <p>
-        I hope you've enjoyed thinking about some different ways to reduce repetition, increase productivity, and make coding more fun. If you liked this article, you should <a href="/blog/subscribe/">subscribe</a> to stay current with new ones. And if you want to work in a place where coding is this much fun, <a href="/blog/work-with-me/">come work with me</a>.
-      </p>
+
+This is much, much simpler than writing `switch` statements, nested `if/else/else if` statements, or many other common programming constructs.
+
+### What am I getting at?
+
+There is something common to all five of the tricks I listed. It's somewhat arbitrary that I listed five (I wanted to keep the article small enough to digest), and it's a bit arbitrary *which* five I chose, because I have many more ideas, but can you see the thread running through them?
+
+It's elimination of repetition.
+
+Whether it's repetitive typing, or coding constructs that obviously iterate over something, I'm trying to show you ways to a) avoid writing the same code over and over b) avoid reading code that does the same thing over and over.
+
+Why?
+
+Because repetition kills brain cells. When you're typing nearly the same loop or copy-pasting nearly the same code, your brain is not engaged and productive. You had a moment of insight about how to do something. In a flash, you saw the way to the end product. Now you have to write the code to implement it. Let's just pretend that takes an hour (on a good day), and you follow it with another insight, and so on, and so on. You only had eight interested, stimulated, excited moments in the whole work day? Shoot yourself now and get it over with!
+
+By the same token, when you're reading code, you have to follow the program's logic to understand it. When most programmers study a `for` loop, I'd bet money they mentally "execute the loop," starting at the beginning and ending at the end, to understand the start, middle and end of the loop. Every careful coder I've known does this, at least sometimes, because it's how you understand what the computer is doing. Mentally executing loops is incredibly draining. It's just as bad as typing loops!
+
+The reality is probably even worse, because you're doing both at the same time. As soon as you type a loop, you're immediately reading it. Reading it. Reading it. As soon as you type -- Reading it. As -- Reading it. As soon as you -- as soon as you type -- type -- Reading it.
+
+I'm not making this up. Studies show this is how people read any type of written material, on screen or off. In fact, one of the most important and difficult techniques to master in speed reading is to stop re-reading things you've just read. I'm doing it right now as I write this, backtracking and editing my writing (sometimes I type with my eyes closed so I can escape this trap more easily).
+
+The combination of writing and reading iterative code is tedious and boring, and if you're like me, you have a curious and lively mind, and you hate "tedious and boring." That's why I love writing code that doesn't force me to circle like a tiger pacing a cage.
+
+There's another common thread to everything I wrote, too.
+
+I'm showing you ways to code in a more declarative style.
+
+This is subtle, but after you code in this style for a little while, you'll come to understand it: it's not a procedural programming style. It's declarative, where you say *what* to do instead of *how*. It feels much more like writing a specification of the program's desired behavior, instead of writing how to accomplish that behavior. And when you go back to the code later and read it, or maintain someone else's code, you appreciate that even more. The program really does become a spec instead of just an implementation. It's not that obvious at first, or with small programs, but take my word for it, it's true.
+
+Back to that moment of insight: what if, at the point of inspiration, you could just say "okay computer, do what I want, and you figure out *how* to do it." That's declarative. Really, once you had the inspiration that showed you the way to solve the problem, you didn't need to write down the code, did you? You understood everything in that moment, and the rest was just tedium. Writing declaratively helps you get through the tedium that much faster.
+
+* The `map` function is declarative because you specify a transformation and let Perl map it onto each element of a list.
+* Hash and array slices are declarative because you specify what elements you want to read or assign, and let Perl figure out how.
+* `||=` is declarative because you let Perl figure out whether the value exists, and whether to fetch a new one if it doesn't.
+* Executable regular expressions are declarative because you just write a specification (pattern) of what you want to transform, and provide the transformation, and let Perl figure out how to do it.
+* Dispatch tables are declarative because you specify a mapping between some input and some code, and let Perl do the lookup and dispatch.
+
+You can apply these techniques, one way or another, to any programming language. Another great example is the <a href="http://bennolan.com/behaviour/">Behaviour JavaScript library</a>, and the techniques it encourages. Or my own <a href="/blog/2006/05/14/javascript-date-formatting-benchmarks/">JavaScript date formatting and parsing library</a>, which are not only clearer and simpler to use than their alternatives, but much more powerful and waaaay more efficient.
 
  [1]: http://www.xaprb.com/blog/2006/09/17/duplicate-index-checker-version-18-released/
  [2]: http://search.cpan.org/dist/perl/pod/perlsec.pod

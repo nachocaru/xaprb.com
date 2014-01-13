@@ -1,0 +1,16 @@
+- remove download links
+- fix things that are permalink >
+- make sure all of them have a date
+- put permalinks into url
+- move all images into the blog
+- fix relative links
+- look for missing reference links with [brackets]
+- date all the page really old
+- make a nice metadata thing at the bottom with links and stuff
+- move all the code samples etc to gists
+- find and move everything in /articles
+- search for lots of links, e.g. 2007-10-03-mysql-toolkit-version-989-released http://www.xaprb.com/blog/2007/10/03/mysql-toolkit-version-989-released/
+- image on http://localhost:1313/blog/2007-02-19-how-to-subtract-in-sql-over-samples-that-wrap/
+- images on reviews
+- images on http://localhost:1313/blog/2007-02-14-review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/
+- remove things like the footnotes in http://localhost:1313/blog/2006-11-02-how-to-create-input-masks-in-html/

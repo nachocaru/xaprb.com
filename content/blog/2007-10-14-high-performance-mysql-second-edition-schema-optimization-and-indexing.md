@@ -19,6 +19,7 @@ Choosing Optimal Data Types
 Indexing Basics
 Normalization and Denormalization
 Notes on Storage Engines
+</pre>
 
 Here's a snippet of "what it's like to write this book" that I'll throw out there. OpenOffice.org, at least the version I'm using, doesn't like O'Reilly's custom heading styles and won't show me an outline view of the document. I'm copying and pasting into this blog post by scrolling from one heading to the next. This is always enlightening, because as you can see a lot of the material isn't organized correctly in the hierarchy. Guess what, it's my first look at the chapter's real outline, too! This isn't the outline we planned to have, but the chapter evolved because of making localized changes without any real way to zoom out and make sure the outline still made sense. So my two comments on this are a) OpenOffice.org hasn't been the most helpful tool in some ways and b) these blog posts are, to some extent, airing the project's dirty laundry (illogical outlining, difficult separation of material among chapters, etc). I'm not afraid of that; I think it's healthy and will help the book be better as a result. I guess my experience with open source, combined with my employer's open-books policy, has taught me to embrace transparency instead of fearing it. In the end this material will be organized and make a lot of sense, but that's a process of evolution -- not intelligent design.
 

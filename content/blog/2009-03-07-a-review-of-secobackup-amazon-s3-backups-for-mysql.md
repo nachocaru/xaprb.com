@@ -16,7 +16,9 @@ And so I expected to see it using mysqldump. I tried a backup, and indeed I saw 
 
 In any case, mysqldump might be a fine way to take a backup, for some people, but I need to see what command-line parameters it's using before I can determine. So I hacked around for a while, got it to take a backup of my default instance, and eventually found out how to get the parameters it used to dump the data. Here are the parameters:
 
-`--opt --extended-insert --single-transaction --default-character-set=utf8 --create-options`
+<pre>
+--opt --extended-insert --single-transaction --default-character-set=utf8 --create-options
+</pre>
 
 I also turned on the log to my mysql instance and examined it afterwards to find out more about what this software really does to the database. I didn't see anything unusual.
 

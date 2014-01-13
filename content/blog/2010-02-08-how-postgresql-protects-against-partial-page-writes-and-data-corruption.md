@@ -1,6 +1,8 @@
 ---
 title: How PostgreSQL protects against partial page writes and data corruption
-permalink: >
+permalink: 
+categories:
+  - Databases
 ---
 I explored two interesting topics today while learning more about Postgres.
 
@@ -8,8 +10,9 @@ I explored two interesting topics today while learning more about Postgres.
 
 PostgreSQL's partial page write protection is configured by the following setting, which defaults to "on":
 
-<blockquote cite="http://www.postgresql.org/docs/8.3/static/runtime-config-wal.html#GUC-FULL-PAGE-WRITES">
-</blockquote>
+> full_page_writes (boolean)
+> 
+> When this parameter is on, the PostgreSQL server writes the entire content of each disk page to WAL during the first modification of that page after a checkpoint… Storing the full page image guarantees that the page can be correctly restored, but at a price in increasing the amount of data that must be written to WAL. (Because WAL replay always starts from a checkpoint, it is sufficient to do this during the first change of each page after a checkpoint. Therefore, one way to reduce the cost of full-page writes is to increase the checkpoint interval parameters.)
 
 Trying to reduce the cost of full-page writes by increasing the checkpoint interval highlights a compromise. If you decrease the interval, then you'll be writing full pages to the WAL quite often. This should in theory lead to surges in the number of bytes written to the WAL, immediately following each checkpoint. As pages are revisited over time for further changes, the number of bytes written should taper off gradually until the next checkpoint. Hopefully someone who knows more can confirm this. Does anyone graph the number of bytes written to their WAL? That would be a nice illustration to see how dramatic this surging is.
 

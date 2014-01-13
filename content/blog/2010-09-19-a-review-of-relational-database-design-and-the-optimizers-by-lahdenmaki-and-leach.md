@@ -2,8 +2,6 @@
 title: >
 permalink: >
 ---
-<p style="float:left">
-</p>
 
 [Relational Database Index Design and the Optimizers][1]. By Tapio Lahdenmaki and Mike Leach, Wiley 2005. (Here's [a link to the publisher's site][2]).
 

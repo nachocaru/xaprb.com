@@ -197,7 +197,9 @@ And the right join:
   </tr>
 </table>
 
-The `FULL OUTER JOIN` of these two tables, on price, should give the following result: <table class="borders collapsed">
+The `FULL OUTER JOIN` of these two tables, on price, should give the following result:
+
+<table class="borders collapsed">
   <tr>
     <th scope="row">
       variety
