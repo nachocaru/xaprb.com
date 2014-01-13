@@ -127,7 +127,7 @@ Obviously, the method I use is much faster -- between 3.15 and 4.89 times faster
   
   <tr>
     <td>
-      <a href="/blog/2005/12/20/javascript-date-parsing/">Xaprb</a>
+      <a href="http://www.xaprb.com/blog/2005/12/20/javascript-date-parsing/">Xaprb</a>
     </td>
     
     <td>

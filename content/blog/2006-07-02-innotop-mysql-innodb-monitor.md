@@ -9,7 +9,7 @@ categories:
 
 <p>MySQL and InnoDB expose lots of information about their internals, but it's hard to gather it all into one place and make sense of it.  I've written a tool to do that, and you are free to download and use it.  This article introduces <code>innotop</code>, a powerful text-mode MySQL and InnoDB monitoring tool.  It has lots of features, is  fast and configurable, and it's easy to use.</p>
 
-<p>Note: I'm now making it a priority to make innotop very stable and robust.  If innotop crashes, please help me fix it.  <a href="/blog/2006/08/02/what-to-do-when-innotop-crashes/">Please read this article about how to submit a bug report for innotop</a>.  Thanks so much for helping me build a comprehensive test suite!</p>
+<p>Note: I'm now making it a priority to make innotop very stable and robust.  If innotop crashes, please help me fix it.  <a href="http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/">Please read this article about how to submit a bug report for innotop</a>.  Thanks so much for helping me build a comprehensive test suite!</p>
 
 <h3>Why another text-mode monitoring tool?</h3>
 

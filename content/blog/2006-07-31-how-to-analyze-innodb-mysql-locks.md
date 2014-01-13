@@ -102,7 +102,7 @@ In fact, if you're in a transaction, `LOCK TABLES` seems to "kick you out" of th
 
 Who, indeed? The text I included above is a pain to read, and it's not even representative of what you'll really be looking at. For one thing, you might have to scan through 40 or more transactions to find the ones you care about, and then there's all the other information in the output, some of which can be voluminous (such as deadlocks). What a hassle!
 
-Fortunately, there's a tool to do that for you: `<a href="/blog/2006/07/02/innotop-mysql-innodb-monitor/">innotop</a>`. This tool formats the output neatly and gives you filtering options to display only transactions with locks (or just sort them to the top of the display). Here's how you can do that:
+Fortunately, there's a tool to do that for you: `<a href="http://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/">innotop</a>`. This tool formats the output neatly and gives you filtering options to display only transactions with locks (or just sort them to the top of the display). Here's how you can do that:
 
 Start innotop and use the "T" key to enter InnoDB Transaction mode, if it's not already in that mode. You will see a list of transactions. Next, make the "Locks," "Tbl Used," and "Tbl Lck" columns visible. Press the "c" key to activate the "choose columns" dialog:
 

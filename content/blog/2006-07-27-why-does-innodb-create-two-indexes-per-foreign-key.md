@@ -21,7 +21,7 @@ By the way, I seem to remember seeing some comments in the InnoDB source code th
 
 ### A useful tool
 
-The `<a href="/blog/2006/07/02/innotop-mysql-innodb-monitor/">innotop</a>` tool can format and display the `LATEST FOREIGN KEY ERROR` output for easy reading. I check our systems for foreign key violations regularly. Here is a sample of `innotop`'s output for a violation I deliberately manufactured for this article:
+The `<a href="http://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/">innotop</a>` tool can format and display the `LATEST FOREIGN KEY ERROR` output for easy reading. I check our systems for foreign key violations regularly. Here is a sample of `innotop`'s output for a violation I deliberately manufactured for this article:
 
 <pre>Reason: Foreign key constraint fails for table `test/table_2`:
 

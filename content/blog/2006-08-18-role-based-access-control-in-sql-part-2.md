@@ -9,7 +9,7 @@ This is my second article on how to build a role-based access control system in 
 
 This article picks up where I left off. I want to revisit some things I swept under the rug in the first article, because I didn't want to throw all the complexity in at once. I'll explain my current system's full functionality, which includes roles, status, type checking, and table-level and set-level privileges. I will show you the design in detail, and give working examples and ready-to-run SQL queries. I'll also explore ideas for extending or restricting functionality, because your application isn't likely to be the same as mine. I'll mention possible optimizations, because performance and scalability are important design goals. I'll end with a brief explanation of how I've used this system to make my own web applications simpler and more secure.
 
-If you haven't already, you should <a href="/blog/2006/08/16/how-to-build-role-based-access-control-in-sql/">read the first article</a> before continuing with the rest of this article, because I'll assume you have the context it provides.
+If you haven't already, you should <a href="http://www.xaprb.com/blog/2006/08/16/how-to-build-role-based-access-control-in-sql/">read the first article</a> before continuing with the rest of this article, because I'll assume you have the context it provides.
 
 ### Roles
 
@@ -420,7 +420,7 @@ I have also never really needed the "other" role in the `t_privilege` table, so 
 
 ### What's missing? How can you extend this system?
 
-I've deliberately omitted a few things. One is negative privileges, which deny someone the right to do something. This would not be hard to add -- I've just never needed it! You could do an <a href="/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion self-join</a> against negative privileges to implement this, and store the negative privileges in the same table. Another possibility would be using more bitwise logic to negate privileges. I've honestly never put too much thought into it.
+I've deliberately omitted a few things. One is negative privileges, which deny someone the right to do something. This would not be hard to add -- I've just never needed it! You could do an <a href="http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion self-join</a> against negative privileges to implement this, and store the negative privileges in the same table. Another possibility would be using more bitwise logic to negate privileges. I've honestly never put too much thought into it.
 
 I hope my sample queries (which are almost identical to my production queries, by the way) give you enough insight to figure out other special things you may need, such as the "creator" or "supervisor" roles I mentioned. Another possibility is packing more bits into the UNIX-style permissions. My examples only use 9 bits. If your application is constantly asking whether some other action, besides read/write/delete, is possible -- hey, use those extra bits. Or if you want, put another role besides user/group_owner/other into the UNIX-style bits. Just because I modelled after UNIX doesn't mean you can't do it differently.
 

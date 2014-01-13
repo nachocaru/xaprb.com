@@ -303,7 +303,7 @@ Back to that moment of insight: what if, at the point of inspiration, you could 
 * Executable regular expressions are declarative because you just write a specification (pattern) of what you want to transform, and provide the transformation, and let Perl figure out how to do it.
 * Dispatch tables are declarative because you specify a mapping between some input and some code, and let Perl do the lookup and dispatch.
 
-You can apply these techniques, one way or another, to any programming language. Another great example is the <a href="http://bennolan.com/behaviour/">Behaviour JavaScript library</a>, and the techniques it encourages. Or my own <a href="/blog/2006/05/14/javascript-date-formatting-benchmarks/">JavaScript date formatting and parsing library</a>, which are not only clearer and simpler to use than their alternatives, but much more powerful and waaaay more efficient.
+You can apply these techniques, one way or another, to any programming language. Another great example is the <a href="http://bennolan.com/behaviour/">Behaviour JavaScript library</a>, and the techniques it encourages. Or my own <a href="http://www.xaprb.com/blog/2006/05/14/javascript-date-formatting-benchmarks/">JavaScript date formatting and parsing library</a>, which are not only clearer and simpler to use than their alternatives, but much more powerful and waaaay more efficient.
 
  [1]: http://www.xaprb.com/blog/2006/09/17/duplicate-index-checker-version-18-released/
  [2]: http://search.cpan.org/dist/perl/pod/perlsec.pod
