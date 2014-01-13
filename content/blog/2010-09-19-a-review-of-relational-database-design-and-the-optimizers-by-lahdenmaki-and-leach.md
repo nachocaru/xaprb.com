@@ -1,6 +1,10 @@
 ---
-title: >
-permalink: >
+title: "A review of Relational Database Design and the Optimizers by Lahdenmaki and Leach"
+permalink: /2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/
+date: "2010-09-19"
+categories:
+  - Review
+  - Databases
 ---
 
 [Relational Database Index Design and the Optimizers][1]. By Tapio Lahdenmaki and Mike Leach, Wiley 2005. (Here's [a link to the publisher's site][2]).

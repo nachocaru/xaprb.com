@@ -1,6 +1,7 @@
 ---
 title: "High Performance MySQL, Second Edition: Schema Optimization and Indexing"
-permalink: >
+permalink: /2007/10/14/high-performance-mysql-second-edition-schema-optimization-and-indexing/
+date: "2007-10-14"
 categories:
   - Databases
 ---

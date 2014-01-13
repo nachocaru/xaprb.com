@@ -1,6 +1,11 @@
 ---
 title: Scalability, performance, capacity planning and USL at Hotsos Symposium
-permalink: >
+permalink: /2012/03/07/scalability-performance-capacity-planning-and-usl-at-hotsos-symposium/
+date: "2012-03-07"
+categories:
+  - Conferences
+  - Scalability
+  - Databases
 ---
 I presented at this year's [Hotsos Symposium][1]. I am searching for a claim to specialness, and I think it may be that I am the first Hotsos presenter who's specifically focused on MySQL. True? I don't know, but I'll run with it for now.
 

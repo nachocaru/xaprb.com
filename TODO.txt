@@ -1,5 +1,3 @@
-- remove download links
-- fix things that are permalink >
 - make sure all of them have a date
 - put permalinks into url
 - move all images into the blog

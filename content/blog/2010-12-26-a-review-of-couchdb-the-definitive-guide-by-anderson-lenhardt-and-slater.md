@@ -1,6 +1,10 @@
 ---
 title: A review of CouchDB, the Definitive Guide by Anderson, Lenhardt, and Slater
-permalink: >
+permalink: /2010/12/26/a-review-of-couchdb-the-definitive-guide-by-anderson-lenhardt-and-slater/
+date: "2010-12-26"
+categories:
+  - Review
+  - Databases
 ---
 
 [CouchDB, the Definitive Guide][1]. By J. Chris Anderson, Jan Lehnardt, and Noah Slater, O'Reilly 2010. About 260 pages. (Here's [a link to the publisher's site][2].)

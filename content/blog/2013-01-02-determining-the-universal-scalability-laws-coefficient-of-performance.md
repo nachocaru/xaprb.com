@@ -1,6 +1,10 @@
 ---
 title: "Determining the Universal Scalability Law's coefficient of performance"
-permalink: >
+permalink: /2013/01/02/determining-the-universal-scalability-laws-coefficient-of-performance/
+date: "2013-01-02"
+categories:
+  - Scalability
+  - Databases
 ---
 If you're familiar with Neil Gunther's Universal Scalability Law, you may have heard it said that there are two coefficients, variously called alpha and beta or sigma and kappa. There are actually three coefficients, though. See?
 
