@@ -80,7 +80,7 @@ We decided to let the full update happen once a week, just in case `t2` gets som
 
 I hope this article has given you some ideas on how to take advantage of any patterns you know to be true about data. Not only data structure, but data usage patterns, can create great opportunities for making things better.
 
- [1]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
- [2]: /blog/2006/06/14/how-to-re-index-a-large-database-table/
+ [1]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+ [2]: http://www.xaprb.com/blog/2006/06/14/how-to-re-index-a-large-database-table/
  [3]: http://dev.mysql.com/doc/refman/5.0/en/innodb-transaction-model.html
- [4]: /blog/2006/02/21/flexible-insert-and-update-in-mysql/
+ [4]: http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/

@@ -99,9 +99,9 @@ Finding the first or last row is a bit unintuitive, and it's definitely non-rela
 
 If this article didn't solve your problem, please read these before posting questions to the comments: [how to select the first/least/max row per group in SQL][1] and [how to find the maximum row per group in SQL without subqueries][2].
 
- [1]: /blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
- [2]: /blog/2007/03/14/how-to-find-the-max-row-per-group-in-sql-without-subqueries/
+ [1]: http://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
+ [2]: http://www.xaprb.com/blog/2007/03/14/how-to-find-the-max-row-per-group-in-sql-without-subqueries/
  [3]: http://code.google.com/p/maatkit
  [4]: http://dev.mysql.com/doc/refman/5.0/en/server-sql-mode.html
- [5]: /blog/2005/09/27/simulating-the-sql-row_number-function/
- [6]: /blog/2006/12/02/how-to-number-rows-in-mysql/
+ [5]: http://www.xaprb.com/blog/2005/09/27/simulating-the-sql-row_number-function/
+ [6]: http://www.xaprb.com/blog/2006/12/02/how-to-number-rows-in-mysql/

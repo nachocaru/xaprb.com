@@ -26,4 +26,4 @@ where i in (0, 1);</pre>
 
 The result is not as efficient as a true `UNION`, but it works. This technique simulates `UNION ALL`; to simulate UNION, use `SELECT DISTINCT` instead.
 
- [1]: /blog/2005/09/22/mutex-tables-in-sql/
+ [1]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/

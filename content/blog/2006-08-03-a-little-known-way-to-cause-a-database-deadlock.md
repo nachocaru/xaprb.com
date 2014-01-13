@@ -176,11 +176,11 @@ All in one screen of nicely formatted text! That's so much faster and easier to 
 You've covered a lot of material by reading this far. You've gone from the basics of deadlocks to a specific scenario, how to avoid deadlocks caused by transactions working in opposite directions, looked deep into InnoDB's internals, and learned how innotop can make your life easier by compressing and formatting the output of the InnoDB monitor. I hope you found this article useful. If you did, you should [subscribe][7] to this blog to conveniently keep up with my upcoming articles.
 
  [1]: http://www.xaprb.com/innotop/
- [2]: /blog/2006/07/19/3-ways-to-maintain-rollup-tables-in-sql/
+ [2]: http://www.xaprb.com/blog/2006/07/19/3-ways-to-maintain-rollup-tables-in-sql/
  [3]: http://dev.mysql.com/doc/refman/5.0/en/innodb-next-key-locking.html
- [4]: /innotop/
- [5]: /innotop/innotop-secret-deadlock.png
+ [4]: http://www.xaprb.com/innotop/
+ [5]: http://www.xaprb.com/innotop/innotop-secret-deadlock.png
  [6]: http://dev.mysql.com/doc/internals/en/innodb-page-structure.html
- [7]: /blog/subscribe/
+ [7]: http://www.xaprb.com/blog/subscribe/
 
  *[RDBMS]: Relational Database Management System

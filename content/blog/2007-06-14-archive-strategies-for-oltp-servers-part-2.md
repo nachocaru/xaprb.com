@@ -112,5 +112,5 @@ Now that you've identified which tables to focus on, you need to determine which
     
     <sup>[1]</sup> I realize "widow" is not the opposite of "orphan," but in computer science it is sometimes used to mean "childless," especially for typesetting algorithms. Joe Celko also uses the term to mean "childless" in *SQL For Smarties*.
 
- [1]: /blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/
+ [1]: http://www.xaprb.com/blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/
  [2]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/

@@ -51,6 +51,6 @@ In the second example, there's no *comment*, but there's a *behavior* and a *mes
 
 From a usability standpoint, any interface that warns but doesn't inform is a faux pas, too. "You can't do that" is irritating. "Your browser will not save your work correctly" is helpful.
 
- [1]: /blog/2005/09/28/a-comment-on-comments/
+ [1]: http://www.xaprb.com/blog/2005/09/28/a-comment-on-comments/
  [2]: http://c2.com/cgi/wiki?DontRepeatYourself
  [3]: http://c2.com/cgi/wiki?OnceAndOnlyOnce

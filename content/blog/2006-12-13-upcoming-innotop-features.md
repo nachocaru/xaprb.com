@@ -23,5 +23,5 @@ If you have specific requests, please be sure to ask! I'll get you started: woul
 
 My current TODO list should be finished up in a month or so, and then I'll release a new version. Right now I'm going to take a little break from programming and blogging, so I'll read and reply to your comments when I return.
 
- [1]: /innotop/
+ [1]: http://www.xaprb.com/innotop/
  [2]: http://dev.mysql.com/doc/refman/5.1/en/show-engine.html

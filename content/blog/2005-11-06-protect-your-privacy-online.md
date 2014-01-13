@@ -44,5 +44,5 @@ I'm not naive. I don't pretend this is a perfect solution, but it makes me feel 
 
  [1]: http://del.icio.us
  [2]: http://bloglines.com
- [3]: /blog/2005/10/26/adblock-patterns/
+ [3]: http://www.xaprb.com/blog/2005/10/26/adblock-patterns/
  [4]: http://adblock.mozdev.org/

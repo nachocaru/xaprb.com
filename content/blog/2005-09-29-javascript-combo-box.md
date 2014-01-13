@@ -18,4 +18,4 @@ I'm aware of some bugs:
 
 Any fixes for these or other problems are gratefully received.
 
- [1]: /blog/2005/09/29/javascript-date-chooser/
+ [1]: http://www.xaprb.com/blog/2005/09/29/javascript-date-chooser/

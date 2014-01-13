@@ -300,19 +300,19 @@ I hope this article has given you a good overview of Glom. If you found it usefu
  [9]: http://subversion.tigris.org/
  [10]: http://www.xfce.org/
  [11]: http://www.kde.org
- [12]: /articles/images/glom-developer-mode-not-available.png
+ [12]: http://www.xaprb.com/articles/images/glom-developer-mode-not-available.png
  [13]: http://mail.gnome.org/archives/glom-devel-list/2006-March/msg00001.html
- [14]: /articles/images/glom-connect.png
- [15]: /articles/images/glom-tables-in-database.png
- [16]: /articles/images/glom-list-mode.png
- [17]: /articles/images/glom-define-fields.png
- [18]: /articles/images/glom-details-mode.png
- [19]: /articles/images/glom-relationships.png
- [20]: /articles/images/glom-layout.png
- [21]: /articles/images/glom-formatting.png
- [22]: /articles/images/glom-details-mode-improved.png
- [23]: /articles/images/glom-details-editing.png
- [24]: /articles/images/glom-list-mode-with-data.png
+ [14]: http://www.xaprb.com/articles/images/glom-connect.png
+ [15]: http://www.xaprb.com/articles/images/glom-tables-in-database.png
+ [16]: http://www.xaprb.com/articles/images/glom-list-mode.png
+ [17]: http://www.xaprb.com/articles/images/glom-define-fields.png
+ [18]: http://www.xaprb.com/articles/images/glom-details-mode.png
+ [19]: http://www.xaprb.com/articles/images/glom-relationships.png
+ [20]: http://www.xaprb.com/articles/images/glom-layout.png
+ [21]: http://www.xaprb.com/articles/images/glom-formatting.png
+ [22]: http://www.xaprb.com/articles/images/glom-details-mode-improved.png
+ [23]: http://www.xaprb.com/articles/images/glom-details-editing.png
+ [24]: http://www.xaprb.com/articles/images/glom-list-mode-with-data.png
  [25]: http://www.joelonsoftware.com/articles/LeakyAbstractions.html
  [26]: http://www.treshna.com/bond/
- [27]: /blog/subscribe/
+ [27]: http://www.xaprb.com/blog/subscribe/

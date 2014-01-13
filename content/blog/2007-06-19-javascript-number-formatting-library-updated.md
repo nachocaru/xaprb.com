@@ -14,5 +14,5 @@ I can plug that directly into the unit test suite, run it, and if it gives back 
 
 [Sponsoring][2] bug fixes wouldn't hurt either ;-)
 
- [1]: /blog/2006/01/05/javascript-number-formatting/
- [2]: /blog/donate/
+ [1]: http://www.xaprb.com/blog/2006/01/05/javascript-number-formatting/
+ [2]: http://www.xaprb.com/blog/donate/

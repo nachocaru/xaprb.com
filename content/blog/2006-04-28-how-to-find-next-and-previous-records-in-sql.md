@@ -135,5 +135,5 @@ order by sign(seq - 100)</pre>
 
 If I don't do this, the "prev" `seq` value is NULL. For some reason, the "prev" `dir` value is not null in the same query. Very odd, no?
 
- [1]: /blog/2006/04/20/sequences-and-surrogate-keys-in-generic-sql/
- [2]: /blog/2005/09/22/mutex-tables-in-sql/
+ [1]: http://www.xaprb.com/blog/2006/04/20/sequences-and-surrogate-keys-in-generic-sql/
+ [2]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/

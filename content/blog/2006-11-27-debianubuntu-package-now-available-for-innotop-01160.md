@@ -13,4 +13,4 @@ You can find the package in the [source directory][2]. Sebastien wrote me that h
 Since I use Ubuntu on my own machine now, I may integrate this into my build process for future releases of innotop. But for right now, at least there's another installation option.
 
  [1]: http://www.xaprb.com/innotop/
- [2]: /innotop/src
+ [2]: http://www.xaprb.com/innotop/src

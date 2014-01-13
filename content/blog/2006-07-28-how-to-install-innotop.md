@@ -12,4 +12,4 @@ This is the first in a series of articles I'll write on how to use [`innotop`][1
   Note: this article is outdated now. Please see the <a href="/innotop/">innotop homepage</a> for updated installation instructions and download options.
 </p>
 
- [1]: /innotop/
+ [1]: http://www.xaprb.com/innotop/

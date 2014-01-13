@@ -171,7 +171,7 @@ As long as you have appropriate indexes on the table, this might not be as ineff
 
 As with so many other SQL challenges, if you re-phrase the question, it's easy to select the maximum or minimum row per group without subqueries. The key is to understand what you want, and to be able to word the problem in a way that translates from English to SQL.
 
- [1]: /blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
- [2]: /blog/2005/09/21/subselects-in-mysql/
- [3]: /blog/2005/09/22/mutex-tables-in-sql/
- [4]: /blog/2005/09/23/how-to-write-a-sql-exclusion-join/
+ [1]: http://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
+ [2]: http://www.xaprb.com/blog/2005/09/21/subselects-in-mysql/
+ [3]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/
+ [4]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/

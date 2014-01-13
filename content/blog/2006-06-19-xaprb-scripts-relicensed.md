@@ -29,9 +29,9 @@ This is also a forward-looking change. I'm not trying to be grandiose about thes
 I hope you, or the projects you're working on, will find my work useful. Please feel free to contact me if you have any questions, comments, or improvements.
 
  [1]: http://www.gnu.org/copyleft/lgpl.html
- [2]: /blog/2006/01/05/javascript-number-formatting/
- [3]: /blog/2005/12/12/javascript-closures-for-runtime-efficiency/
- [4]: /blog/2005/09/29/javascript-date-chooser/
- [5]: /blog/2005/09/29/javascript-combo-box/
+ [2]: http://www.xaprb.com/blog/2006/01/05/javascript-number-formatting/
+ [3]: http://www.xaprb.com/blog/2005/12/12/javascript-closures-for-runtime-efficiency/
+ [4]: http://www.xaprb.com/blog/2005/09/29/javascript-date-chooser/
+ [5]: http://www.xaprb.com/blog/2005/09/29/javascript-combo-box/
  [6]: http://www.gnu.org/philosophy/philosophy.html
  [7]: http://www.gnu.org/licenses/why-not-lgpl.html

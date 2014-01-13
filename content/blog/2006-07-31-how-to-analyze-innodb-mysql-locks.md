@@ -129,10 +129,10 @@ Isn't that easier than digging through the output of `SHOW ENGINE INNODB STATUS`
 
 Though I've searched the Internet, searched the source code and the MySQL manual, I haven't been able to find any other ways to get information on current locks in MySQL. But I'd be delighted if you prove me wrong! If you have anything to add, please comment.
 
- [1]: /innotop/
- [2]: /blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/
- [3]: /innotop/innotop-choose-columns.png
- [4]: /innotop/innotop-default-T-display.png
- [5]: /innotop/innotop-choose-sort-column.png
- [6]: /innotop/innotop-add-filter.png
- [7]: /innotop/innotop-filtered-view.png
+ [1]: http://www.xaprb.com/innotop/
+ [2]: http://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/
+ [3]: http://www.xaprb.com/innotop/innotop-choose-columns.png
+ [4]: http://www.xaprb.com/innotop/innotop-default-T-display.png
+ [5]: http://www.xaprb.com/innotop/innotop-choose-sort-column.png
+ [6]: http://www.xaprb.com/innotop/innotop-add-filter.png
+ [7]: http://www.xaprb.com/innotop/innotop-filtered-view.png

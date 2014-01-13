@@ -37,6 +37,6 @@ There seems to be no way to indent the text in a LI without also moving the mark
 
 **PS**: Guess what? It turns out I'm not the [first to notice][3] this.
 
- [1]: /articles/list-styling-example.html
+ [1]: http://www.xaprb.com/articles/list-styling-example.html
  [2]: http://www.w3.org/TR/REC-CSS2/generate.html#propdef-list-style-position
  [3]: http://www.meyerweb.com/eric/css/list-indent.html

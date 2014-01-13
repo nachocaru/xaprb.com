@@ -735,9 +735,9 @@ The best part of the book is the excellent writing and organization. It makes it
  [1]: http://mike.kruckenberg.com/
  [2]: http://jpipes.com/index.php
  [3]: http://www.apress.com/book/bookDisplay.html?bID=433
- [4]: /blog/2007/01/02/a-review-of-oreillys-sql-hacks/
- [5]: /mysql-query-profiler/
- [6]: /blog/2006/04/26/sql-coding-standards/
- [7]: /blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
+ [4]: http://www.xaprb.com/blog/2007/01/02/a-review-of-oreillys-sql-hacks/
+ [5]: http://www.xaprb.com/mysql-query-profiler/
+ [6]: http://www.xaprb.com/blog/2006/04/26/sql-coding-standards/
+ [7]: http://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
  [8]: http://www.mysqlperformanceblog.com/
  [9]: http://www.informit.com/bookstore/product.asp?isbn=0672328550&#038;rl=1

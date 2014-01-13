@@ -39,6 +39,6 @@ Redundant indexes aren't just exact duplicates, as I discussed in the original a
 
 Yet another tool! Yay!
 
- [1]: /blog/2006/09/17/duplicate-index-checker-version-18-released/
- [2]: /blog/2007/02/26/introducing-mysql-table-checksum/
+ [1]: http://www.xaprb.com/blog/2006/09/17/duplicate-index-checker-version-18-released/
+ [2]: http://www.xaprb.com/blog/2007/02/26/introducing-mysql-table-checksum/
  [3]: http://code.google.com/p/maatkit

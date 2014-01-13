@@ -42,4 +42,4 @@ After I made this change, we were able to start looking up who held an open tran
 
 Although this system works well for us, I'm curious if there are better ways to do it. What do you think? Leave a comment!
 
- [1]: /innotop/
+ [1]: http://www.xaprb.com/innotop/

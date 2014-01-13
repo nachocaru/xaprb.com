@@ -48,5 +48,5 @@ Sometimes I've seen people get confused about the distinction between naming the
 
 The above syntax does *not* put 5 into the `price` column. The source columns can be named anything; it's just a name, and it doesn't influence where the data goes. In fact, giving anonymous columns in the source a name is completely superfluous. Even if you're in the habit of doing it as "documentation" of where the source should go, it's a bad idea, simply because it can become wrong when someone changes the query. It's like [a comment that repeats what the code already says][2]: it's redundant, and therefore a liability.
 
- [1]: /blog/2006/04/26/sql-coding-standards/
- [2]: /blog/2005/12/10/tell-me-why-not-what/
+ [1]: http://www.xaprb.com/blog/2006/04/26/sql-coding-standards/
+ [2]: http://www.xaprb.com/blog/2005/12/10/tell-me-why-not-what/

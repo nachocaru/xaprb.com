@@ -37,7 +37,7 @@ I'm wrapping the [date-formatting and date-parsing code][3] up into a single fil
 
 This code is **not** a JavaScript implementation of <a href="http://www.php.net/manual/en/function.strtotime.php">strtotime</a>. That's too difficult and not that useful in my opinion. (For those not familiar with it, `strtotime` can understand input like "two weeks ago next Sunday"). It's also **not internationalized**. It only works for my little slice of the universe: the English language -- though international date-formatting standards (ISO 8601, highly recommended) make that a moot point anyway.
 
- [1]: /blog/2005/12/12/javascript-closures-for-runtime-efficiency/
- [2]: /articles/javascript-date-parsing-demo.html
- [3]: /articles/date-functions.js
- [4]: /blog/2005/09/29/javascript-date-chooser/
+ [1]: http://www.xaprb.com/blog/2005/12/12/javascript-closures-for-runtime-efficiency/
+ [2]: http://www.xaprb.com/articles/javascript-date-parsing-demo.html
+ [3]: http://www.xaprb.com/articles/date-functions.js
+ [4]: http://www.xaprb.com/blog/2005/09/29/javascript-date-chooser/

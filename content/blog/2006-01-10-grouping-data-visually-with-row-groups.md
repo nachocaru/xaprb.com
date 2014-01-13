@@ -25,4 +25,4 @@ Another option is to re-code the first row of each group with `th` elements inst
 
  [1]: http://www.w3.org/TR/REC-html40/struct/tables.html#rowgroups
  [2]: http://www.w3.org/TR/REC-html40/struct/tables.html
- [3]: /articles/row-groups-folder-demo.html
+ [3]: http://www.xaprb.com/articles/row-groups-folder-demo.html

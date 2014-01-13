@@ -106,6 +106,6 @@ You can also poll on something small and efficient, instead of polling a potenti
 Finally, if you need a fixed-size FIFO queue or "round-robin table," try the suggestions in my article on [how to create a queue in SQL][4].
 
  [1]: http://dev.mysql.com/doc/refman/5.0/en/miscellaneous-functions.html
- [2]: /articles/producer_consumer.txt
+ [2]: http://www.xaprb.com/articles/producer_consumer.txt
  [3]: http://www.xaprb.com/blog/2006/05/04/how-to-make-a-program-choose-an-optimal-polling-interval/
  [4]: http://www.xaprb.com/blog/2007/01/11/how-to-implement-a-queue-in-sql/

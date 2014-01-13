@@ -14,5 +14,5 @@ Otherwise, there's not much new functionality since version 0.1.146.
 
 If you experience crashes, that's a bug, and I'd love to hear about it. See [this article about what information I need][2] to debug and fix crashes.
 
- [1]: /innotop/
+ [1]: http://www.xaprb.com/innotop/
  [2]: http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/

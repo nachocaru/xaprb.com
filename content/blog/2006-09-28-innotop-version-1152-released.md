@@ -17,7 +17,7 @@ Looking towards the future, I've also submitted a [bug report against SolidDB][4
 **Update** The packages should be fixed now.
 
  [1]: http://www.xaprb.com/innotop/
- [2]: /innotop/
+ [2]: http://www.xaprb.com/innotop/
  [3]: http://jeremy.zawodny.com/mysql/mytop/
  [4]: http://dev.soliddb.com/bug/show_bug.cgi?id=24
  [5]: http://dev.soliddb.com/

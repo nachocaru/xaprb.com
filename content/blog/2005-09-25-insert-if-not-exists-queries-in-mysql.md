@@ -70,6 +70,6 @@ If this article was useful to you, you should [subscribe][2] to stay current wit
 
 **Edit 2006-02-26** See also my article on using this and other techniques to do [flexible INSERT and UPDATE statements in MySQL][3].
 
- [1]: /blog/2005/09/22/mutex-tables-in-sql/
- [2]: /blog/subscribe/
- [3]: /blog/2006/02/21/flexible-insert-and-update-in-mysql/
+ [1]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/
+ [2]: http://www.xaprb.com/blog/subscribe/
+ [3]: http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/

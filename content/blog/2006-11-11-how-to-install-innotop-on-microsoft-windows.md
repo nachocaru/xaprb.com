@@ -36,5 +36,5 @@ My next project is to take a number of samples of `SHOW INNODB STATUS `from MySQ
 
  [1]: http://www.xaprb.com/innotop/
  [2]: http://www.activestate.com/
- [3]: /innotop/
- [4]: /innotop/innotop-windows-T-mode.png
+ [3]: http://www.xaprb.com/innotop/
+ [4]: http://www.xaprb.com/innotop/innotop-windows-T-mode.png

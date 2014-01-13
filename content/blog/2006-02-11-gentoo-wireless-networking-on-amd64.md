@@ -52,4 +52,4 @@ sys     6m27.860s</pre>
 Needless to say, there are no [problems running Firefox][2] on this machine.
 
  [1]: http://forums.gentoo.org
- [2]: /blog/2006/01/23/firefox-or-opera-on-slow-hardware/
+ [2]: http://www.xaprb.com/blog/2006/01/23/firefox-or-opera-on-slow-hardware/

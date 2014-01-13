@@ -34,5 +34,5 @@ Yay!
  [1]: http://www.xaprb.com/innotop/
  [2]: http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/104722
  [3]: http://bugs.gentoo.org/show_bug.cgi?id=147600
- [4]: /innotop/src/
+ [4]: http://www.xaprb.com/innotop/src/
  [5]: https://bugs.breakmygentoo.net/view.php?id=257

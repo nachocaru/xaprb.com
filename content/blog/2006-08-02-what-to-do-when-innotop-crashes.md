@@ -33,4 +33,4 @@ You can specify the mode on the command-line to solve this:
 
 <pre>% innotop -mode Q</pre>
 
- [1]: /innotop/
+ [1]: http://www.xaprb.com/innotop/

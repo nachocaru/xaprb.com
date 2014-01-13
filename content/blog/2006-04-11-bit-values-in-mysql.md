@@ -88,9 +88,9 @@ The bottom line is, I think bitmask columns should be used sparingly, and only w
  [1]: http://dev.mysql.com/doc/refman/5.0/en/bit-field-values.html
  [2]: http://dev.mysql.com/doc/refman/5.0/en/numeric-type-overview.html
  [3]: http://bugs.mysql.com/bug.php?id=18895
- [4]: /articles/reproduce-bit-bug.sql
- [5]: /blog/2006/02/07/how-to-choose-sql-column-types/
- [6]: /blog/2005/09/28/bitwise-arithmetic/
+ [4]: http://www.xaprb.com/articles/reproduce-bit-bug.sql
+ [5]: http://www.xaprb.com/blog/2006/02/07/how-to-choose-sql-column-types/
+ [6]: http://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/
 
  *[GUI]: Graphical User Interface
  *[ACL]: Access-Control List

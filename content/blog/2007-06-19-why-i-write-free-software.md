@@ -29,5 +29,5 @@ Speaking of all this, just today I got an email offering me a bounty for fixing 
  [2]: http://krow.livejournal.com/525716.html
  [3]: http://code.google.com/p/maatkit/
  [4]: http://code.google.com/p/innotop/
- [5]: /blog/2006/01/05/javascript-number-formatting/
- [6]: /blog/donate/
+ [5]: http://www.xaprb.com/blog/2006/01/05/javascript-number-formatting/
+ [6]: http://www.xaprb.com/blog/donate/

@@ -164,5 +164,5 @@ That is pseudo-code, by the way; if you're doing this in a stored procedure, you
 
 In this article I explained how to solve the special-case problem of removing duplicate rows with no distinguishing columns at all. It's a harder case of the general problem, and SQL has no built-in way to solve it, so you have to learn your platform's tricks to solve it. I showed you how to add a unique column so you can use the "easy" techniques I explained in an earlier article. You might also be able to put the rows into another table and drop the original table. Failing that, you have to use something like cursors. As a bonus, I explained two ways to do this in MySQL, one of them sneaky and the other not.
 
- [1]: /blog/2006/10/11/how-to-delete-duplicate-rows-with-sql/
- [2]: /blog/2006/12/15/advanced-mysql-user-variable-techniques/
+ [1]: http://www.xaprb.com/blog/2006/10/11/how-to-delete-duplicate-rows-with-sql/
+ [2]: http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/

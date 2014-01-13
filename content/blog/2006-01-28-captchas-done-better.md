@@ -67,4 +67,4 @@ That's it. I'm done. It took longer to explain than to actually write the code.
 
 If you're a human, or if you're trying to bypass *just my site*, it would be easy to do, but if you're a spam robot, bypassing the system means learning something about my site (the questions and answers) that is different from other sites. I'm counting on spam robots to be dumber than that, and assume all WordPress sites are the same. Time will tell if I'm right; I anticipate not getting any more spam comments, though. I think the crucial thing is to get it "right enough" that humans find it easy and it's just a *little too hard* for spam robots to make it worth anyone's while. This is, in my opinion, the essential trade-off in security and any other application where you want to stop the Wrong Thing from happening. You can never truly guarantee the Wrong Thing won't happen, but you can make yourself a less attractive target so all the easy targets will get the heat instead.
 
- [1]: /blog/2005/11/03/captchas-are-a-terrible-thing/
+ [1]: http://www.xaprb.com/blog/2005/11/03/captchas-are-a-terrible-thing/

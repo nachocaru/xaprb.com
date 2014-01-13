@@ -32,9 +32,9 @@ Someone sent me a message about a particular module I used in my [MySQL Query Pr
 
 Stay tuned for more goodness to come! At some point I'll finish some of my 65 draft articles and publish them. Yep, I have 65 articles in various states of completion&#8230;! Yikes. You can [subscribe][6] if you want to be notified as soon as I publish anything new.
 
- [1]: /innotop/
- [2]: /blog/2006/08/02/what-to-do-when-innotop-crashes/
+ [1]: http://www.xaprb.com/innotop/
+ [2]: http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/
  [3]: http://www.oreillynet.com/pub/a/mysql/2006/10/19/mysql-tools.html
  [4]: http://jfontain.free.fr/mysql/
- [5]: /mysql-query-profiler/
- [6]: /blog/subscribe/
+ [5]: http://www.xaprb.com/mysql-query-profiler/
+ [6]: http://www.xaprb.com/blog/subscribe/

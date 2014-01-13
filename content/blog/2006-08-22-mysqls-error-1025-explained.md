@@ -20,5 +20,5 @@ There's slightly more information in the output of `SHOW ENGINE INNODB STATUS`, 
 
 In case you didn't understand why the foreign key constraint was failing, the error message innotop parses out is much clearer. It's because the foreign key columns in the parent and child table have to have the same data type. I was trying to change the child's column to an incompatible type.
 
- [1]: /innotop/
- [2]: /innotop/innotop-fk-error-message.png
+ [1]: http://www.xaprb.com/innotop/
+ [2]: http://www.xaprb.com/innotop/innotop-fk-error-message.png

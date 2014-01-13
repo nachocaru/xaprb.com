@@ -86,7 +86,7 @@ If you installed the theme in your `~/.icons/` directory, you can do several dif
  [8]: http://www.kde-look.org/content/show.php?content=28310
  [9]: http://www.kde-look.org/content/show.php?content=5600
  [10]: http://www.kde-look.org/content/show.php?content=6679
- [11]: /articles/neutral.tar.gz
- [12]: /articles/neutral-old.tar.gz
- [13]: /articles/redhat9cursors.tar.gz
- [14]: /articles/jaguarx.tar.gz
+ [11]: http://www.xaprb.com/articles/neutral.tar.gz
+ [12]: http://www.xaprb.com/articles/neutral-old.tar.gz
+ [13]: http://www.xaprb.com/articles/redhat9cursors.tar.gz
+ [14]: http://www.xaprb.com/articles/jaguarx.tar.gz

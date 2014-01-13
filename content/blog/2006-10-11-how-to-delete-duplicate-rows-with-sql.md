@@ -105,10 +105,10 @@ I hope this article filled in some of the gaps in my other article. I've shown y
 If you found this useful, you should [subscribe][6] by e-mail or feeds and get my upcoming articles conveniently.
 
  [1]: http://www.xaprb.com/blog/2006/10/09/how-to-find-duplicate-rows-with-sql/
- [2]: /blog/2007/02/06/how-to-delete-duplicate-rows-with-sql-part-2/
- [3]: /blog/2006/10/09/how-to-find-duplicate-rows-with-sql/
- [4]: /blog/2006/08/07/how-to-write-multi-table-cross-database-deletes-with-aliases-in-mysql/
- [5]: /blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
- [6]: /blog/subscribe/
+ [2]: http://www.xaprb.com/blog/2007/02/06/how-to-delete-duplicate-rows-with-sql-part-2/
+ [3]: http://www.xaprb.com/blog/2006/10/09/how-to-find-duplicate-rows-with-sql/
+ [4]: http://www.xaprb.com/blog/2006/08/07/how-to-write-multi-table-cross-database-deletes-with-aliases-in-mysql/
+ [5]: http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
+ [6]: http://www.xaprb.com/blog/subscribe/
 
  *[RDBMS]: Relational Database Management System

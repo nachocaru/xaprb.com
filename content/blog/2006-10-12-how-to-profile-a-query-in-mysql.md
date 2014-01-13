@@ -134,7 +134,7 @@ If you have any comments, please leave them below. I'm especially interested in 
 
 **Update** Peter has a very good article, which demonstrates some real profiling measurements, on [optimizing loose index scans with `UNION`][10]. Well worth a read.
 
- [1]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+ [1]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
  [2]: http://dev.mysql.com/doc/refman/5.0/en/explain.html
  [3]: http://dev.mysql.com/doc/refman/5.0/en/show-status.html
  [4]: http://hackmysql.com/mysqlreport/
@@ -142,5 +142,5 @@ If you have any comments, please leave them below. I'm especially interested in 
  [6]: http://www.hackmysql.com/selectandsort
  [7]: http://dev.mysql.com/doc/refman/5.0/en/query-cache-configuration.html
  [8]: http://dev.mysql.com/doc/refman/5.0/en/flush.html
- [9]: /subscribe/
+ [9]: http://www.xaprb.com/subscribe/
  [10]: http://www.mysqlperformanceblog.com/2006/08/14/mysql-followup-on-union-for-query-optimization-query-profiling/

@@ -456,10 +456,10 @@ And of course, if you did find it helpful, you might like to [subscribe and rece
  *[ARO]: Access Request Objects
 
  [1]: http://steve-yegge.blogspot.com/2006/03/execution-in-kingdom-of-nouns.html
- [2]: /articles/all-object-privileges.phps
- [3]: /articles/all-table-privileges.phps
- [4]: /articles/all-acl-entries.phps
- [5]: /articles/all-actionable-objects.phps
+ [2]: http://www.xaprb.com/articles/all-object-privileges.phps
+ [3]: http://www.xaprb.com/articles/all-table-privileges.phps
+ [4]: http://www.xaprb.com/articles/all-acl-entries.phps
+ [5]: http://www.xaprb.com/articles/all-actionable-objects.phps
  [6]: http://phpgacl.sourceforge.net/
- [7]: /articles/images/property-pages-screenshot.png
- [8]: /blog/subscribe/
+ [7]: http://www.xaprb.com/articles/images/property-pages-screenshot.png
+ [8]: http://www.xaprb.com/blog/subscribe/
