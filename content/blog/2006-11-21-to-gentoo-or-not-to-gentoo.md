@@ -3,7 +3,7 @@ title: To Gentoo or not to Gentoo?
 date: "2006-11-21"
 url: /blog/2006/11/21/to-gentoo-or-not-to-gentoo/
 categories:
-    - Desktop
+  - Desktop
 ---
 Some people who know I've used Gentoo asked me my thoughts on using it for MySQL servers. Here are my opinions and experiences while using Gentoo, both for desktop systems and for servers.
 

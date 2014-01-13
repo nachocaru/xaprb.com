@@ -3,7 +3,7 @@ title: "Why CAPTCHAs don't work well"
 date: "2005-11-03"
 url: /blog/2005/11/03/captchas-are-a-terrible-thing/
 categories:
-    - Web
+  - Web
 ---
 [CAPTCHA][1]s are tests (usually using images) designed to ensure a human is using a service, denying access to screen-scrapers and abusive script kiddies. Unfortunately they create usability and accessibility problems and can be circumvented. They are a flawed concept overall. Here are some links to sites discussing their use and problems:
 

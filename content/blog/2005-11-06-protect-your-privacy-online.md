@@ -3,7 +3,7 @@ title: How to guard your privacy with blacklists and whitelists
 date: "2005-11-06"
 url: /blog/2005/11/06/protect-your-privacy-online/
 categories:
-    - Web
+  - Web
 ---
 This article explains how to protect your privacy online, without impairing your ability to surf, by creating a content blacklist and a cookie whitelist. In my opinion, this is the most effective combination of privacy controls that doesn't inhibit normal browsing.
 

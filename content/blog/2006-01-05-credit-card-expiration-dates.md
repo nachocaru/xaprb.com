@@ -3,7 +3,7 @@ title: Credit card expiration dates should conform to standards
 date: "2006-01-05"
 url: /blog/2006/01/05/credit-card-expiration-dates/
 categories:
-    - Programming
+  - Programming
 ---
 My credit card says it expires "06/07&#8243;. What is that? Is it June 2007, or July 2006? You may think I'm being silly, but it confuses me. I'm not as smart as some people, but if it confuses me, it's gonna confuse some others too.
 

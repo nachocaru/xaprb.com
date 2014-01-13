@@ -3,7 +3,7 @@ title: How to display an HTML table as a folder tree
 date: "2006-01-10"
 url: /blog/2006/01/10/grouping-data-visually-with-row-groups/
 categories:
-    - Web
+  - Web
 ---
 XHTML tables provide several elements to group and structure data, including [row groups][1] (`thead`, `tbody`, and `tfoot`). Styling row groups with CSS can make data relationships visually obvious. One familiar way to group data visually is with Explorer-style folder icons.
 

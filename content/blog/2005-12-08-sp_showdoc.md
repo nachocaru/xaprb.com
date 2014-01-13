@@ -3,7 +3,7 @@ title: How to use extended properties as documentation with sp_showdoc
 date: "2005-12-08"
 url: /blog/2005/12/08/sp_showdoc/
 categories:
-    - Databases
+  - Databases
 ---
 My current employer has created a policy for documenting database tables. When tables are created or modified, we are required to add extended properties to the tables and columns. SQL Server 2000&#8242;s extended properties are name/value pairs, which can be attached to most objects. There are a few different ways to view them:
 

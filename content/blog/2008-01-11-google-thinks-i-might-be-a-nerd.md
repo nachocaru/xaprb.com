@@ -3,7 +3,7 @@ title: Google thinks I might be a nerd
 date: "2008-01-11"
 url: /blog/2008/01/11/google-thinks-i-might-be-a-nerd/
 categories:
-    - About
+  - About
 ---
 &#8230; I'm almost insulted! Look at this!
 

@@ -3,8 +3,8 @@ title: How to set up Gentoo wireless networking on AMD64
 date: "2006-02-11"
 url: /blog/2006/02/11/gentoo-wireless-networking-on-amd64/
 categories:
-    - Hardware
-	 - Desktop
+  - Hardware
+  - Desktop
 ---
 This is a quick note on wireless networking on Gentoo GNU/Linux with a dual-core AMD 64-bit processor. It's not hard to do, but the choices for hardware are more limited.
 

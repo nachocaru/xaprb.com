@@ -3,7 +3,7 @@ title: JavaScript date parsing and formatting, Part 1
 date: "2005-12-12"
 url: /blog/2005/12/12/javascript-closures-for-runtime-efficiency/
 categories:
-    - Web
+  - Web
 ---
 Have you ever written JavaScript code whose behavior is undefined until runtime, is inefficient, and could be written efficiently if you knew the behavior ahead of time? Here's a way to overcome this: defer it all till runtime, then dynamically build a more efficient function once you know what it has to do. In this article I'll use date formatting as an example of how to take a performance hit **once** on the first invocation, and get extremely fast performance thereafter.
 

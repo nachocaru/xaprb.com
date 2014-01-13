@@ -3,7 +3,7 @@ title: Henceforth, I dub thee GLAMP
 date: "2008-02-21"
 url: /blog/2008/02/21/henceforth-i-dub-thee-glamp/
 categories:
-    - Programming
+  - Programming
 ---
 I've decided to start replacing L with GL in acronyms where L supposedly stands for Linux.
 

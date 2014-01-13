@@ -3,7 +3,7 @@ title: How to auto-mount removable devices in GNU/Linux
 date: "2006-05-20"
 url: /blog/2006/05/20/how-to-auto-mount-removable-devices-in-gnulinux/
 categories:
-    - Desktop
+  - Desktop
 ---
 Most operating systems have an auto-mount feature to detect and mount devices, such as USB flash drives, when they're plugged in. GNU/Linux is no exception. It's easy to install and just as easy to use. In this article I'll show you how to get auto-mounting without changing `/etc/fstab`, writing udev rules, or installing a huge desktop environment such as Gnome or KDE.
 

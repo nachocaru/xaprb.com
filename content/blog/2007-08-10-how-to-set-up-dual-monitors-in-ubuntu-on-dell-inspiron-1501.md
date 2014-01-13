@@ -3,7 +3,7 @@ title: How to set up dual monitors in Ubuntu on Dell Inspiron 1501
 date: "2007-08-10"
 url: /blog/2007/08/10/how-to-set-up-dual-monitors-in-ubuntu-on-dell-inspiron-1501/
 categories:
-    - Desktop
+  - Desktop
 ---
 It took me about five minutes to get dual monitors working on my Dell Inspiron 1501 under Ubuntu 7.04. Here's how I did it.
 

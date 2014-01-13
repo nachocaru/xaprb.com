@@ -3,7 +3,7 @@ title: Kickfire is not SSD-based
 date: "2008-04-09"
 url: /blog/2008/04/09/kickfire-is-not-ssd-based/
 categories:
-    - Databases
+  - Databases
 ---
 Just a quick note: [Kickfire][1] is not based on SSD (solid-state device) hard drives. Their old website says "SQL goes solid state" but that just means SQL in hardware, not SSD.
 

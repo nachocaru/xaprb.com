@@ -3,7 +3,7 @@ title: Why does InnoDB create two indexes per foreign key?
 date: "2006-07-27"
 url: /blog/2006/07/27/why-does-innodb-create-two-indexes-per-foreign-key/
 categories:
-    - Databases
+  - Databases
 ---
 If you've ever created [foreign keys on an InnoDB table][1], you'll see it automatically creates indexes, if none exists, on the referenced columns in the parent table, and also in the foreign key columns in the child table. This article explains why both are needed.
 

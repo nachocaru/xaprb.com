@@ -3,7 +3,7 @@ title: Xaprb is featured on 9rules
 date: "2006-05-28"
 url: /blog/2006/05/28/xaprb-is-featured-on-9rules/
 categories:
-    - About
+  - About
 ---
 The [9rules network][1], a trusted filter that chooses the best content on the web, has [named Xaprb as a featured blog][2]. This means a lot to me. 9rules is a great place to go and find quality content on an Internet that's drowning in garbage, so being featured there is no small matter.
 

@@ -3,7 +3,7 @@ title: How to implement CAPTCHAs without images
 date: "2006-01-28"
 url: /blog/2006/01/28/captchas-done-better/
 categories:
-    - Web
+  - Web
 ---
 I've started getting a lot of spam comments, so I decided the time has come to put a simple system in place to foil the spam robots. In an earlier article I asserted [CAPTCHAs are terrible][1] and there are easy ways to foil naive robots without making the site inaccessible or unusable. I've implemented a simple question-and-answer system to prove my point. Comment forms show a randomly chosen predefined question (I've only put three in the system) and display several predefined answers, only one of which is correct. This took about 30 minutes and maybe 20 lines of actual code to do. Right now the questions and answers are hard-coded in a new include file, but it would be trivial to database them too.
 

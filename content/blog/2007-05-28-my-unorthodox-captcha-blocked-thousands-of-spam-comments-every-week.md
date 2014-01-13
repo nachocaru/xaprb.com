@@ -3,7 +3,7 @@ title: My unorthodox CAPTCHA blocked thousands of spam comments every week
 date: "2007-05-28"
 url: /blog/2007/05/28/my-unorthodox-captcha-blocked-thousands-of-spam-comments-every-week/
 categories:
-    - Web
+  - Web
 ---
 I wrote a custom image-less CAPTCHA for my blog a while ago. I didn't write it as a plugin, so I lost it when I upgraded WordPress a couple weeks ago. Not having this protection was an eye-opening experience, and vindicated what I asserted in my original posts: a naive question-and-answer system is *highly* effective at stopping spammers, probably as effective as scrambled images. Read on for the details.
 

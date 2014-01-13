@@ -3,7 +3,7 @@ title: JavaScript regular expression toolkit
 date: "2006-01-18"
 url: /blog/2006/01/18/regular-expression-toolkit/
 categories:
-    - Web
+  - Web
 ---
 I have created a web page that matches regular expressions against arbitrary input text and displays the results graphically, so you can take some sample text and build regular expressions the easy way, with immediate feedback about what matches and where, where you have errors, and more.
 

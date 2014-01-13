@@ -3,7 +3,7 @@ title: How to switch from linuxthreads to NPTL on Gentoo
 date: "2006-07-12"
 url: /blog/2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/
 categories:
-    - Programming
+  - Programming
 ---
 This article explains how to enable the Native Posix Threading Library (NPTL) on Gentoo GNU/Linux, and how to disable the now-obsolete linuxthreads library so you don't have both on your system.
 

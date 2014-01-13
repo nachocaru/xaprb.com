@@ -3,7 +3,7 @@ title: Ubuntu on Dell Inspiron 1501
 date: "2007-07-24"
 url: /blog/2007/07/24/ubuntu-on-dell-inspiron-1501/
 categories:
-    - Desktop
+  - Desktop
 ---
 I recently bought a Dell Inspiron 1501, which I got a great deal on thanks to the fine people at [DealNews][1]. The base system was $449 shipped, and I chose to upgrade the processor to dual AMD64s. But I didn't buy the system that came with Ubuntu pre-installed; for whatever reason, the one that came with Windows offered a special discount (normally the Windows tax for otherwise identical machines appears to be around $150, and I'm certainly not going to run Windows).
 

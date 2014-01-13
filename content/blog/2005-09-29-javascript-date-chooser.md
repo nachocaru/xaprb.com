@@ -3,7 +3,7 @@ title: JavaScript date chooser
 date: "2005-09-29"
 url: /blog/2005/09/29/javascript-date-chooser/
 categories:
-    - Web
+  - Web
 ---
 <p style="border:solid red 1px; background:yellow">
   If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>

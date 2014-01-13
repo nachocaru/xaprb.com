@@ -3,8 +3,8 @@ title: How to prelink mozilla-firefox-bin
 date: "2005-10-03"
 url: /blog/2005/10/03/prelinking-mozilla-firefox-bin/
 categories:
-    - Desktop
-	 - web
+  - Desktop
+  - Web
 ---
 Gentoo GNU/Linux users can enjoy additional performance enhancements by prelinking binaries. The documentation is unclear on whether binary packages can be prelinked. I tried it and it seems to work fine.
 

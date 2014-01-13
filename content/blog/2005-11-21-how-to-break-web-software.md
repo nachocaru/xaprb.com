@@ -3,7 +3,7 @@ title: How to Break Web Software
 date: "2005-11-21"
 url: /blog/2005/11/21/how-to-break-web-software/
 categories:
-    - Security
+  - Security
 ---
 I recently did a technical review of [*How to Break Web Software: Functional and Security Testing of Web Applications and Web Services*][1], by [James A. Whittaker][2] and [Mike Andrews][3]. My thoughts: it's well worth reading.
 

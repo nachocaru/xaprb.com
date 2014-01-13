@@ -3,7 +3,7 @@ title: Comparison of table sync algorithms
 date: "2007-03-30"
 url: /blog/2007/03/30/comparison-of-table-sync-algorithms/
 categories:
-    - Databases
+  - Databases
 ---
 I've been working on [how to efficiently compare and synchronize data between two tables on different MySQL servers][1]. I've also been working on a tool, sort of like [rsync for database tables][2], which implements both algorithms. I [profiled][2] it to see how well the comparison algorithms work on real data. This article is about the results.
 

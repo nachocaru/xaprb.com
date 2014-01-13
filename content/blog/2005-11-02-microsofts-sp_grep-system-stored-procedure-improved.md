@@ -3,7 +3,7 @@ title: "Microsoft's sp_grep system stored procedure improved"
 date: "2005-11-02"
 url: /blog/2005/11/02/microsofts-sp_grep-system-stored-procedure-improved/
 categories:
-    - Programming
+  - Programming
 ---
 Here is a quick patch to Microsoft's sp_grep system stored procedure, for SQL Server 2000. The changes will enable searching job steps, and return the correct object type for functions. The MS-supplied stored procedure isn't that well-written (doesn't even use ANSI joins), but this patch doesn't correct any style or other issues.
 

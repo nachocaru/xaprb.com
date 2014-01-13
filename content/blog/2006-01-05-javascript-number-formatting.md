@@ -3,7 +3,7 @@ title: How to format numbers in JavaScript flexibly and efficiently
 date: "2006-01-05"
 url: /blog/2006/01/05/javascript-number-formatting/
 categories:
-    - Web
+  - Web
 ---
 This article continues my series on parsing and formatting data with JavaScript, this time with numeric data. I don't need to do number *parsing*, but *formatting* is very useful. The technique is similar to my [date formatting][1] code -- code that writes code (for raw speed), using custom format specifier strings (for flexibility and ease of use). The result is number formatting functionality that is highly efficient, flexible, and easy to use.
 
