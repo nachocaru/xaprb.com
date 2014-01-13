@@ -19,6 +19,6 @@ Another thing I'm interested in: what factors contribute to the high memory usag
 On another note, I think it's almost unfair not to mention the competition, so I will: I was playing with [MONyog][4] 2.6 recently and it started to use a lot of CPU. I think it might be architecture-specific (amd64 Ubuntu) but I can't be sure. It was using 170% CPU on my dual-core system to monitor 2 instances.
 
  [1]: http://www.xaprb.com/blog/2008/08/21/is-agent-based-or-agentless-monitoring-best/
- [2]: http://www.xaprb.com/blog/wp-content/uploads/2008/08/mysql-enterprise-monitor.jpg
+ [2]: http://www.xaprb.com/media/2008/08/mysql-enterprise-monitor.jpg
  [3]: http://www.mysql.com/
  [4]: http://www.webyog.com/

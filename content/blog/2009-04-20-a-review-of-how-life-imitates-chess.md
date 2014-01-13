@@ -6,7 +6,7 @@ categories:
   - Commentary
   - Reviews
 ---
-<p><a href="http://www.amazon.com/How-Life-Imitates-Chess-Boardroom/dp/1596913878?tag=xaprb-20"><img style="margin: 10px" src="http://www.xaprb.com/blog/wp-content/uploads/2009/04/how-life-imitates-chess.jpg" alt="" title="how-life-imitates-chess" width="120" height="187" class="alignleft size-full wp-image-1017" /><a href="http://www.amazon.com/How-Life-Imitates-Chess-Boardroom/dp/1596913878?tag=xaprb-20">How Life Imitates Chess</a>, by Garry Kasparov, 2008.  204 pages.</p>
+<p><a href="http://www.amazon.com/How-Life-Imitates-Chess-Boardroom/dp/1596913878?tag=xaprb-20"><img style="margin: 10px" src="http://www.xaprb.com/media/2009/04/how-life-imitates-chess.jpg" alt="" title="how-life-imitates-chess" width="120" height="187" class="alignleft size-full wp-image-1017" /><a href="http://www.amazon.com/How-Life-Imitates-Chess-Boardroom/dp/1596913878?tag=xaprb-20">How Life Imitates Chess</a>, by Garry Kasparov, 2008.  204 pages.</p>
 
 <p>I've been wanting to write a review of this book for a while.  I forget now exactly when I got it, but I have greatly enjoyed reading it.   I have read it several times.  It's a book on decision making (it's not really a book about chess) from a man who's Russian (which matters because I work with many Russians), a master of decision making, and not least of all -- he has taken on the world's toughest opponents and continues to do so today.  These days he's retired from chess, and is going toe to toe with the Russian government.</p>
 

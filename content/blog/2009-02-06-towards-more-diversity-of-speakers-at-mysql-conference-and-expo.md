@@ -33,7 +33,7 @@ We at Percona think the Percona Performance Conference will add value for everyo
 [MySQL's leaders believe in radical transparency][5], and I applaud them for that. Transparency comes not only from interviews with the media, however; it also comes from observers who analyze available information and draw conclusions. For every person who talks, emails, [Twitters][6], chats or [blogs][7] about this year's conference, many others have noticed, remained silent, and just made other plans. We hope some of those people will reconsider and come visit MySQL and Percona in Santa Clara this April. You'll see more diversity than you were expecting. I only regret that the announcement came so late; I know many of you have missed your window of opportunity to afford the travel to this event, or have made other plans.
 
  [1]: http://www.mysqlperformanceblog.com/2009/02/05/announcing-percona-performance-conference-2009-on-april-22-23/
- [2]: http://www.xaprb.com/blog/wp-content/uploads/2009/02/icspl.txt
+ [2]: http://www.xaprb.com/media/2009/02/icspl.txt
  [3]: http://conferences.percona.com/
  [4]: http://www.theopenforce.com/2008/04/two-markets-in.html
  [5]: http://news.cnet.com/8301-13505_3-10130185-16.html

@@ -8,7 +8,7 @@ categories:
   - Open Source
 ---
 <p style="float:right">
-  <a href="http://cposc.org/" target="_blank"><img src="http://www.xaprb.com/blog/wp-content/uploads/2009/10/cposc_speaker.jpg" alt="CPOSC 2009" /></a>
+  <a href="http://cposc.org/" target="_blank"><img src="http://www.xaprb.com/media/2009/10/cposc_speaker.jpg" alt="CPOSC 2009" /></a>
 </p>
 
 I'll be attending and presenting at the [2009 Central Pennsylvania Open-Source Conference][1]. My session is on Maatkit. I see Tom Clark has a session on MySQL performance! I hope to see you there -- I've really become a fan of these regional conferences.

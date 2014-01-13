@@ -10,4 +10,4 @@ The book, that is. My dog is already studying it. You should buy a few copies fo
 
 ![High Performance MySQL is here!][1]
 
- [1]: http://www.xaprb.com/blog/wp-content/uploads/2008/06/hpmysql_carbon.jpg
+ [1]: http://www.xaprb.com/media/2008/06/hpmysql_carbon.jpg

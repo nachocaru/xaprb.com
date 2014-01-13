@@ -5,7 +5,7 @@ permalink: /blog/2008/03/27/stock-images-are-too-popular/
 ---
 <p>I have an ingrained (possibly even genetic) aversion to stock images.  Actually, not all stock: just the vacuous kind.  You know what I mean: like  the  politically-correct, gender-balanced, racially-balanced, age-diverse ones where people are all smiling and pointing at a computer screen you can't see.  Ugh!</p>
 
-<p><img src='http://www.xaprb.com/blog/wp-content/uploads/2008/03/business_group_meeting.jpg' alt='Business Group Meeting' /></p>
+<p><img src='http://www.xaprb.com/media/2008/03/business_group_meeting.jpg' alt='Business Group Meeting' /></p>
 
 <p>(Photo credit: istockphoto.com)</p>
 
@@ -17,7 +17,7 @@ permalink: /blog/2008/03/27/stock-images-are-too-popular/
 
 <p>Or will they?  Witness: the cover of the <a href="http://www.lulu.com/content/1297960">MySQL 5.1 Cluster DBA Certification Guide</a>, the <a href="http://www.xtuple.com/">xTuple Home Page</a>, and the cover of the <a href="http://www.lsi.com/storage_home/products_home/internal_raid/megaraid_sas/megaraid_sas_8408e/index.html?remote=1">MegaRAID Management Suite</a> documentation.</p>
 
-<p><a href='http://www.xaprb.com/blog/wp-content/uploads/2008/03/stock_images_ad_nauseum.jpg' title='Stock images ad nauseum'><img src='http://www.xaprb.com/blog/wp-content/uploads/2008/03/stock_images_ad_nauseum.thumbnail.jpg' alt='Stock images ad nauseum' /></a></p>
+<p><a href='http://www.xaprb.com/media/2008/03/stock_images_ad_nauseum.jpg' title='Stock images ad nauseum'><img src='http://www.xaprb.com/media/2008/03/stock_images_ad_nauseum.thumbnail.jpg' alt='Stock images ad nauseum' /></a></p>
 
 <p>Interestingly, I ran across all three over-usages of this image in one day, completely by accident.  Are there other places this image is used?  I'd bet there are.</p>
 

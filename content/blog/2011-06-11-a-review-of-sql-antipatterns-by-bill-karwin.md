@@ -6,7 +6,7 @@ categories:
   - Databases
   - Reviews
 ---
-[<img style="float:left; margin-right:10px" src="http://www.xaprb.com/blog/wp-content/uploads/2011/06/bksqla_xlargecover.jpg" alt="" title="SQL Antipatterns" width="190" height="228" class="alignleft size-full wp-image-2372" />][1] [SQL Antipatterns][1], by Bill Karwin, Pragmatic Bookshelf, 2010. About 300 pages. Here's a [link to the publisher's site][2].
+[<img style="float:left; margin-right:10px" src="http://www.xaprb.com/media/2011/06/bksqla_xlargecover.jpg" alt="" title="SQL Antipatterns" width="190" height="228" class="alignleft size-full wp-image-2372" />][1] [SQL Antipatterns][1], by Bill Karwin, Pragmatic Bookshelf, 2010. About 300 pages. Here's a [link to the publisher's site][2].
 
 I loved this book. (Disclosure: Bill is a colleague of mine.) This is the first book I've read from the Pragmatic Bookshelf, and if the rest are like this one, I want to read them. The quality of the writing is way above the average technical book. Techniques that feel gimmicky and forced in other books, such as fake stories to introduce each chapter, actually work here (because they're real stories, not fake ones). Each topic is named in a memorable way and introduced very cleverly. Little quotes and excerpts are tastefully used to illustrate and reinforce the topics. The end result is that it's a lot of fun to read. If you do nothing more than read the first and last page of each chapter, you'll enjoy it and learn a lot at the same time.
 

@@ -16,7 +16,7 @@ I also said that those who use privacy, which is non-default, are making themsel
 
 Yesterday, yet another [ugly NSA slideshow][5] was made public. Take a look at slide 15:
 
-[<img src="http://www.xaprb.com/blog/wp-content/uploads/2013/08/nsa-finding-targets-300x219.png" alt="nsa-finding-targets" width="300" height="219" class="aligncenter size-medium wp-image-3242" />][6] 
+[<img src="http://www.xaprb.com/media/2013/08/nsa-finding-targets-300x219.png" alt="nsa-finding-targets" width="300" height="219" class="aligncenter size-medium wp-image-3242" />][6] 
 
 Look at the following slides, too: they discuss decrypting people's encrypted activities to inspect. Refer to the closing sentence of my quoted paragraph above. Read the full article, linked at the top of this blog post. The amount and specificity of surveillance being performed is stunning. 
 
@@ -27,4 +27,4 @@ Am I psychic? No, this stuff is pretty obvious. As I said previously, it's inevi
  [3]: http://www.xaprb.com/blog/2013/07/06/privacy-is-impossible-unless-its-the-default/ "Privacy is impossible unless it’s the default"
  [4]: http://www.xaprb.com/blog/2013/07/17/email-snooping-is-a-small-fraction-of-the-story/ "Email snooping is a small fraction of the story"
  [5]: http://www.theguardian.com/world/interactive/2013/jul/31/nsa-xkeyscore-program-full-presentation
- [6]: http://www.xaprb.com/blog/wp-content/uploads/2013/08/nsa-finding-targets.png
+ [6]: http://www.xaprb.com/media/2013/08/nsa-finding-targets.png

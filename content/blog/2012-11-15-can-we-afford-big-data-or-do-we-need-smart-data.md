@@ -29,7 +29,7 @@ Smart Data is a recognition of this. I see it as a set of practices that I belie
 Here's a diagram that expresses some of these ideas.
 
 <div id="attachment_2961" class="wp-caption aligncenter" style="width: 310px">
-  <img src="http://www.xaprb.com/blog/wp-content/uploads/2012/11/smart-data-lifecycle-300x268.png" alt="" title="smart-data-lifecycle" width="300" height="268" class="size-medium wp-image-2961" /><p class="wp-caption-text">
+  <img src="http://www.xaprb.com/media/2012/11/smart-data-lifecycle-300x268.png" alt="" title="smart-data-lifecycle" width="300" height="268" class="size-medium wp-image-2961" /><p class="wp-caption-text">
     Smart Data Lifecycle
   </p>
 </div>

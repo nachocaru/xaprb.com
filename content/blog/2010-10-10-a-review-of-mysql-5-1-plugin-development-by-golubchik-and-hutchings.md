@@ -7,7 +7,7 @@ categories:
 ---
 <p style="float:left">
   <div id="attachment_2059" class="wp-caption alignleft" style="width: 135px">
-    <a href="http://www.amazon.com/dp/1849510601/?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/10/mysql-plugin-development.jpg" alt="MySQL 5.1 Plugin Development" title="MySQL 5.1 Plugin Development" width="125" height="152" class="size-full wp-image-2059" /></a><p class="wp-caption-text">
+    <a href="http://www.amazon.com/dp/1849510601/?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/10/mysql-plugin-development.jpg" alt="MySQL 5.1 Plugin Development" title="MySQL 5.1 Plugin Development" width="125" height="152" class="size-full wp-image-2059" /></a><p class="wp-caption-text">
       MySQL 5.1 Plugin Development
     </p>
   </div>

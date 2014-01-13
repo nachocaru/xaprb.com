@@ -13,11 +13,11 @@ permalink: /blog/2007/05/25/a-review-of-monyog/
 
 <p>Your web browser, in turn, communicates with MONyog via <abbr title="Asynchronous JavaScript And XML">AJAX</abbr>.  You view the data in a dashboard through Flash graphs.  If you have more than one server on your screen, you see the graphs side by side in multiple columns.  Here's a screenshot of the dashboard (nothing's really happening because this is just watching my wife's laptop, which is idle).</p>
 
-<p><a href='http://www.xaprb.com/blog/wp-content/uploads/2007/05/monyog-dashboard.png' title='The MONyog dashboard'><img src='http://www.xaprb.com/blog/wp-content/uploads/2007/05/monyog-dashboard.thumbnail.png' alt='The MONyog dashboard' /></a></p>
+<p><a href='http://www.xaprb.com/media/2007/05/monyog-dashboard.png' title='The MONyog dashboard'><img src='http://www.xaprb.com/media/2007/05/monyog-dashboard.thumbnail.png' alt='The MONyog dashboard' /></a></p>
 
 <p>You can also navigate through a hierarchical display of counter data that isn't Flash-graphed, by clicking on the "Show All" in the navigation bar.  For example, if you select "InnoDB Cache," it renders each server side by side in a table, with a bar graph if the value is a percentage.  The built-in rules specify warning thresholds for values, and the top-level knows when something underneath it has a warning.  In the screenshot below, you can see my InnoDB cache hit ratio is only in the 92% range, which would be worrisome if this laptop were really doing any work.  Notice the red dots next to the graph, and also on the far left-hand side of the screen, indicating a problem:</p>
 
-<p><a href='http://www.xaprb.com/blog/wp-content/uploads/2007/05/monyog-all.png' title='MONyog all counters'><img src='http://www.xaprb.com/blog/wp-content/uploads/2007/05/monyog-all.thumbnail.png' alt='MONyog all counters' /></a></p>
+<p><a href='http://www.xaprb.com/media/2007/05/monyog-all.png' title='MONyog all counters'><img src='http://www.xaprb.com/media/2007/05/monyog-all.thumbnail.png' alt='MONyog all counters' /></a></p>
 
 <p>The counters are generated from ordinary JavaScript expressions.  Anyone who can write JavaScript can customize the built-in counters or write their own code to generate the desired data.</p>
 

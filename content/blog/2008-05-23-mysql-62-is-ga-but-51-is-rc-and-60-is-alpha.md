@@ -39,7 +39,7 @@ categories:
 <p>I tried to draw a timeline of MySQL's release history, in some detail in the 5.0 history and in very basic detail in the 5.1 and 6.0 and 6.2 trees.  You can take a look at that.  It's worth studying for 5 minutes or so, even though it's kind of ugly.  There are lots of oddities to notice about it.  Enjoy:</p>
 
 <p>
-<a href='http://www.xaprb.com/blog/wp-content/uploads/2008/05/mysql-timeline.png' title='MySQL release timeline'><img src='http://www.xaprb.com/blog/wp-content/uploads/2008/05/mysql-timeline.thumbnail.png' alt='MySQL release timeline' /></a>
+<a href='http://www.xaprb.com/media/2008/05/mysql-timeline.png' title='MySQL release timeline'><img src='http://www.xaprb.com/media/2008/05/mysql-timeline.thumbnail.png' alt='MySQL release timeline' /></a>
 </p>
 
 <p>The <a href="http://www.mysql.com/about/contact/sales.html">inmates</a> are running the <a href="http://www.mysql.com/">asylum</a>.  This gets more and more amusing as time goes on.</p>

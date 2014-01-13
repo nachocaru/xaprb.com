@@ -9,7 +9,7 @@ categories:
 Gotta love those three-dimensional charts. They sure are shiny! Look at this:
 
 <div id="attachment_1311" class="wp-caption aligncenter" style="width: 474px">
-  <img src="http://www.xaprb.com/blog/wp-content/uploads/2009/09/graphs.png" alt="FusionCharts graphs" title="FusionCharts graphs" width="464" height="195" class="size-full wp-image-1311" /><p class="wp-caption-text">
+  <img src="http://www.xaprb.com/media/2009/09/graphs.png" alt="FusionCharts graphs" title="FusionCharts graphs" width="464" height="195" class="size-full wp-image-1311" /><p class="wp-caption-text">
     FusionCharts graphs
   </p>
 </div>

@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1938" class="wp-caption alignleft" style="width: 190px">
-  <a href="http://www.amazon.com/dp/0596156367?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2010/07/cloud_application_architectures.gif" alt="Cloud Application Architectures" title="Cloud Application Architectures" width="180" height="236" class="size-full wp-image-1938" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/dp/0596156367?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/07/cloud_application_architectures.gif" alt="Cloud Application Architectures" title="Cloud Application Architectures" width="180" height="236" class="size-full wp-image-1938" /></a><p class="wp-caption-text">
     Cloud Application Architectures
   </p>
 </div>

@@ -10,7 +10,7 @@ I'm reading a little bit about Riak, and was curious about performance and scala
 
 The Universal Scalability Law is *such* a powerful tool for thinking about scalability. A few seconds later, I had my answer.
 
-<img src="http://www.xaprb.com/blog/wp-content/uploads/2013/01/usl-model-vs-actual1.png" alt="usl-model-vs-actual" width="640" height="480" class="aligncenter size-full wp-image-3032" />
+<img src="http://www.xaprb.com/media/2013/01/usl-model-vs-actual1.png" alt="usl-model-vs-actual" width="640" height="480" class="aligncenter size-full wp-image-3032" />
 
 Of course, this is to be taken with a spoonful of salt, because the modeling is based on only four measurements. But it's an incredibly quick way to get an idea of what we're looking at, just as a level-set.
 

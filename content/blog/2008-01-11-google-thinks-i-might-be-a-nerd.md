@@ -7,4 +7,4 @@ permalink: /blog/2008/01/11/google-thinks-i-might-be-a-nerd/
 
 ![Google image search for ERD][1]
 
- [1]: http://www.xaprb.com/blog/wp-content/uploads/2008/01/erd_nerd.png
+ [1]: http://www.xaprb.com/media/2008/01/erd_nerd.png

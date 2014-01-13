@@ -7,7 +7,7 @@ categories:
 ---
 I was idly reading the Celestial Seasonings box today while I made tea. Here's the end flap:
 
-<img src="http://www.xaprb.com/blog/wp-content/uploads/2013/12/tea-bag.png" alt="tea-bag" width="424" height="410" class="aligncenter size-full wp-image-3359" />
+<img src="http://www.xaprb.com/media/2013/12/tea-bag.png" alt="tea-bag" width="424" height="410" class="aligncenter size-full wp-image-3359" />
 
 It seemed hard to believe that they really save 3.5 million pounds of waste just by not including that extra packaging, so I decided to do some back-of-the-napkin math. 
 

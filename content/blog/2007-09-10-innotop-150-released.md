@@ -37,9 +37,9 @@ categories:
 
 <p>The built-in rules let you group connections or transactions by status.  They also automagically show a 'count' column, which is there but hidden until the grouping is applied.  Now you can see how many connections are in what status.  Here's a screenshot of before and after:</p>
 
-<p><a href='http://www.xaprb.com/blog/wp-content/uploads/2007/09/innotop-q-ungrouped.png' title='innotop ungrouped'><img src='http://www.xaprb.com/blog/wp-content/uploads/2007/09/innotop-q-ungrouped.thumbnail.png' alt='innotop ungrouped' /></a></p>
+<p><a href='http://www.xaprb.com/media/2007/09/innotop-q-ungrouped.png' title='innotop ungrouped'><img src='http://www.xaprb.com/media/2007/09/innotop-q-ungrouped.thumbnail.png' alt='innotop ungrouped' /></a></p>
 
-<p><a href='http://www.xaprb.com/blog/wp-content/uploads/2007/09/innotop-q-grouped.png' title='innotop grouped'><img src='http://www.xaprb.com/blog/wp-content/uploads/2007/09/innotop-q-grouped.thumbnail.png' alt='innotop grouped' /></a></p>
+<p><a href='http://www.xaprb.com/media/2007/09/innotop-q-grouped.png' title='innotop grouped'><img src='http://www.xaprb.com/media/2007/09/innotop-q-grouped.thumbnail.png' alt='innotop grouped' /></a></p>
 
 <p>You can toggle this on and off easily with the '=' key on any table.   (Most tables don't have default group-by expressions, though, so you'll have to read the docs to learn more about that.  As with any features, let me know if you have a useful default you want me to include in innotop).</p>
 

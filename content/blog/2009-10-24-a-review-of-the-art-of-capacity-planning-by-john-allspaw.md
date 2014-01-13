@@ -8,7 +8,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1376" class="wp-caption alignleft" style="width: 190px">
-  <a href="http://www.amazon.com/Art-Capacity-Planning-Scaling-Resources/dp/0596518579/?tag=xaprb-20"><img src="http://www.xaprb.com/blog/wp-content/uploads/2009/10/Art-Capacity-Planning.gif" alt="The Art of Capacity Planning" title="The Art of Capacity Planning" width="180" height="236" class="size-full wp-image-1376" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/Art-Capacity-Planning-Scaling-Resources/dp/0596518579/?tag=xaprb-20"><img src="http://www.xaprb.com/media/2009/10/Art-Capacity-Planning.gif" alt="The Art of Capacity Planning" title="The Art of Capacity Planning" width="180" height="236" class="size-full wp-image-1376" /></a><p class="wp-caption-text">
     The Art of Capacity Planning
   </p>
 </div>
