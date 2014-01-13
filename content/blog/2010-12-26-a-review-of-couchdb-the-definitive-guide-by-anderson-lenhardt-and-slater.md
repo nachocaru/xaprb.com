@@ -3,7 +3,7 @@ title: A review of CouchDB, the Definitive Guide by Anderson, Lenhardt, and Slat
 url: /blog/2010/12/26/a-review-of-couchdb-the-definitive-guide-by-anderson-lenhardt-and-slater/
 date: "2010-12-26"
 categories:
-  - Review
+  - Reviews
   - Databases
 ---
 

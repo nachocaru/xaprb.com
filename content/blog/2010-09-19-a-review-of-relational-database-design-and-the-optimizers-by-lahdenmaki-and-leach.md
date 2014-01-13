@@ -3,7 +3,7 @@ title: "A review of Relational Database Design and the Optimizers by Lahdenmaki 
 url: /blog/2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/
 date: "2010-09-19"
 categories:
-  - Review
+  - Reviews
   - Databases
 ---
 
