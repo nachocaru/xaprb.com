@@ -17,10 +17,6 @@ The storage engine appears to follow only a few simple rules. It can fetch a sin
 
 The engine reads all data before it writes, so if you ask it to delete or update a row it will fetch it first, then send it back to the remote server with every column in the `WHERE` clause and a `LIMIT` of 1 (apparently the `FEDERATED` engine would rather be safe than sorry). If you ask for many rows to be changed or deleted, it will fetch them all, then issue the queries back one row at a time. `TIMESTAMP` columns do not get auto-updated in this process.
 
-<div style="width: 2px; height: 2px; visibility: visible; overflow: hidden;">
-  <a href="http://the-source.50webs.com">the source</a>
-</div>
-
 The most interesting case is `INSERT`. The engine doesn't do a read before an `INSERT`, nor does it issue `SHOW TABLE STATUS` first. This means `INSERT` statements have less overhead than other statements, though even `INSERT` is done a row at a time when there are many rows to do. Another nice thing about `INSERT`: if the remote table has an `AUTO_INCREMENT` column, `LAST_INSERT_ID()` will work normally.
 
 The engine does not support `REPLACE`, `ON DUPLICATE KEY UPDATE`, or `INSERT IGNORE`. These get translated to `INSERT`.

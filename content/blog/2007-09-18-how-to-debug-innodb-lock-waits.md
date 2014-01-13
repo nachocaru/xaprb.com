@@ -89,11 +89,6 @@ Of course, the upcoming Falcon storage engine already has better features for de
 
 ### Conclusion
 
-
-<div style="width: 2px; height: 2px; visibility: visible; overflow: hidden;">
-  <a href="http://the-source.50webs.com">the source</a>
-</div>
-
 The conclusion to this whole article is: use [innotop][1] if you use InnoDB. Heck, use it if you use MySQL at all. It makes a lot of things a lot easier, not just debugging InnoDB lock contention. Feedback is welcome -- just use the Sourceforge bug tracker, forums, and mailing lists.
 
  [1]: http://code.google.com/p/innotop/

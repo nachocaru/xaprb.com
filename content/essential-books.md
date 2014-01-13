@@ -1,7 +1,6 @@
 ---
 title: Essential Books
-author: Baron Schwartz
-layout: page
+date: "2005-01-01"
 ---
 This page lists the most valuable books on my bookshelf. In my opinion, these books contain knowledge or wisdom that is so valuable and so hard to find that they&#8217;re worth far more than the cover price. I read a lot of books; [I post independent, unbiased, non-paid-for reviews of selected books][1] on this blog; and I mention the best of the best here on this page. If you&#8217;re interested in sending me a review copy of a book, please feel free to contact me.
 
