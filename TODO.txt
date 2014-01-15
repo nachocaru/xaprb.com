@@ -1,3 +1,4 @@
+- create paginated archives (monthly/yearly archives somehow too?)
 - move all images into the blog
 - look for missing reference links with [brackets]
 - move all the code samples etc to gists
