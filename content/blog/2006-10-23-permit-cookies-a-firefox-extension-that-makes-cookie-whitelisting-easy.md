@@ -34,6 +34,6 @@ The little "C" in the status bar turns green to indicate cookies are now allowed
 Thanks, Daniel! You made Firefox a lot easier for me to use!
 
  [1]: http://addons.mozilla.org/firefox/44/
- [2]: /blog/2005/11/06/protect-your-privacy-online/
+ [2]: http://www.xaprb.com/blog/2005/11/06/protect-your-privacy-online/
  [3]: https://addons.mozilla.org/firefox/44/
  [4]: http://mfe.gorgias.de/

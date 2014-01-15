@@ -113,4 +113,4 @@ I like Wolfgang Barth's [Nagios System and Network Monitoring][1] better than Ja
 
  [1]: http://www.amazon.com/gp/product/1593270704?ie=UTF8&#038;tag=xaprb-20&#038;linkCode=as2&#038;camp=1789&#038;creative=9325&#038;creativeASIN=1593270704
  [2]: http://www.amazon.com/gp/product/1590596099?ie=UTF8&#038;tag=xaprb-20&#038;link_code=as3&#038;camp=211189&#038;creative=373489&#038;creativeASIN=1590596099
- [3]: /blog/subscribe/
+ [3]: http://www.xaprb.com/blog/subscribe/

@@ -20,4 +20,4 @@ So instead of reverting to Gnome 2, since I'm going to customize my environment 
 
 When Fedora 16 comes out I'll revisit Gnome 3 and see if it has improved, but for now I'm done with my evaluation. I also just set up a new computer for my dad, who's a Windows user, and installed Fedora 14 with Gnome 2, instead of Fedora 15. I hope the Gnome developers are able to collect and integrate enough feedback to make a groundbreaking Gnome 3 interface that still does what people expect and works the way they work, because that is *the* key to getting more adoption.
 
- [1]: /blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/
+ [1]: http://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/

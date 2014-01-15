@@ -44,7 +44,7 @@ Type 1 software doesn't really have a goal, except enabling access from the prog
 
 Type 2 software does much the same as Type 1, but it abstracts away the guts of Type 1 software so every database system can be accessed with the same functions. This is what Jeremy means when he says
 
-<blockquote cite="http://jeremy.zawodny.com/blog/archives/002194.html">
+<blockquote cite="http://jeremy.zawodny.comhttp://www.xaprb.com/blog/archives/002194.html">
   <p>
     I use a revolutionary new programming technique. Instead of littering my code with those calls, I put my core data access layer into a library&#8211;a separate piece of reusable code that I can include in various parts of my application and&#8230; reuse!
   </p>
@@ -143,7 +143,7 @@ This has been a longish article, but that's because these are complicated issues
  [2]: http://mysqldump.azundris.com/archives/57-Annotations-to-Five-Common-PHP-database-problems.html
  [3]: http://www.mysqlperformanceblog.com/2006/08/11/database-problems-in-mysqlphp-applications/
  [4]: http://doughboy.wordpress.com/2006/08/11/mysqlphp-problems/
- [5]: http://jeremy.zawodny.com/blog/archives/002194.html
+ [5]: http://jeremy.zawodny.comhttp://www.xaprb.com/blog/archives/002194.html
  [6]: http://www.sitepoint.com/forums/showpost.php?p=498687
  [7]: http://www.php.net/manual/en/ref.mysql.php
  [8]: http://dbi.perl.org/

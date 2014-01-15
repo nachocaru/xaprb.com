@@ -15,7 +15,7 @@ And in the process I wouldn't be surprised if I've broken something for Windows 
 For future reference, I'm attaching an image of what it looks like.
 
 <div id="attachment_899" class="wp-caption alignnone" style="width: 310px">
-  <a href="/media/2009/03/xaprb-delight-journalist-theme.png"><img src="/media/2009/03/xaprb-delight-journalist-theme-300x185.png" alt="Theme preview" title="xaprb-delight-journalist-theme" width="300" height="185" class="size-medium wp-image-899" /></a><p class="wp-caption-text">
+  <a href="http://www.xaprb.com/media/2009/03/xaprb-delight-journalist-theme.png"><img src="http://www.xaprb.com/media/2009/03/xaprb-delight-journalist-theme-300x185.png" alt="Theme preview" title="xaprb-delight-journalist-theme" width="300" height="185" class="size-medium wp-image-899" /></a><p class="wp-caption-text">
     Theme preview
   </p>
 </div>

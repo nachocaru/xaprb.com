@@ -165,5 +165,5 @@ where r.id is null;</pre>
 
 I've re-aliased the subquery's tables as "a" and "b" to avoid confusion with "r" and "l."
 
- [1]: /blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/
- [2]: /blog/2005/09/23/how-to-write-a-sql-exclusion-join/
+ [1]: http://www.xaprb.com/blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/
+ [2]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/

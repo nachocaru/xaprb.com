@@ -10,5 +10,5 @@ For those of you who miss what [Maatkit][1]'s mk-audit tool (now retired) gave y
 
  [1]: http://www.maatkit.org/
  [2]: http://code.google.com/p/aspersa/
- [3]: /blog/2010/05/16/apsersas-summary-tool-supports-adaptec-and-megaraid-controllers/
+ [3]: http://www.xaprb.com/blog/2010/05/16/apsersas-summary-tool-supports-adaptec-and-megaraid-controllers/
  [4]: http://aspersa.googlecode.com/svn/html/mysql-summary.html

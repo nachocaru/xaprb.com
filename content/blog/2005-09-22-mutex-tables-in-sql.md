@@ -18,7 +18,7 @@ I typically use the mutex table as the leftmost table of `LEFT OUTER JOIN` queri
 
 If you insert values 0 through 9, the table can do double duty as an [integers table][4], too. Alternatively, an existing integers table can be used as a mutex table.
 
- [1]: /blog/2005/09/22/union-in-mysql/
- [2]: /blog/2006/05/26/how-to-write-full-outer-join-in-mysql/
- [3]: /blog/2005/09/21/subselects-in-mysql/
- [4]: /blog/2005/12/07/the-integers-table/
+ [1]: http://www.xaprb.com/blog/2005/09/22/union-in-mysql/
+ [2]: http://www.xaprb.com/blog/2006/05/26/how-to-write-full-outer-join-in-mysql/
+ [3]: http://www.xaprb.com/blog/2005/09/21/subselects-in-mysql/
+ [4]: http://www.xaprb.com/blog/2005/12/07/the-integers-table/

@@ -22,4 +22,4 @@ In meta-news, it seemed that a lot of people already knew about Maatkit, and Per
 
  [1]: http://www.cposc.org/
  [2]: http://www.maatkit.org/
- [3]: /media/2009/10/Maatkit_CPOSC.pdf
+ [3]: http://www.xaprb.com/media/2009/10/Maatkit_CPOSC.pdf

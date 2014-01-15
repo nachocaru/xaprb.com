@@ -1,7 +1,7 @@
 ---
 title: Blogs as glamour magazines
 date: "2006-03-01"
-url: /blog/2006/03/01/blogs-as-glamour-magazines/
+url: /blog/2006/03/01http://www.xaprb.com/blogs-as-glamour-magazines/
 categories:
   - Web
 ---
@@ -47,7 +47,7 @@ I don't have a crystal ball, but I have a feeling people will tire of repetitive
 
 One final note: please feel free to leave comments telling me how I can improve my own writing, too!
 
- [1]: /blog/2006/02/08/ie-blog-is-a-great-experience/
+ [1]: http://www.xaprb.com/blog/2006/02/08/ie-blog-is-a-great-experience/
  [2]: http://www.google.com/search?q=%22top+10+custom+javascript+functions+of+all+time%22
  [3]: http://9rules.com
  [4]: http://www.goodcopywriting.com

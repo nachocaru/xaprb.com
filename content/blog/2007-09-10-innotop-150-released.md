@@ -27,7 +27,7 @@ categories:
 
 <h3>Plugins</h3>
 
-<p>Plugins let you hook custom code into innotop.  Your custom Perl module can extend or change innotop without touching its source code, and all you have to do is drop it into a directory and activate it (sound familiar to you WordPress users?).  As an example of how this is useful, about two dozen lines of code lets me add "program" and "unix_pid" columns into the Query List and InnoDB Transaction List modes.  These show the originating program and PID for connections by <a href="/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/">querying tables in which this data is stored</a>.  The plugin adds the columns and expressions for them, and then adds the data in by using innotop's own DBI connections.</p>
+<p>Plugins let you hook custom code into innotop.  Your custom Perl module can extend or change innotop without touching its source code, and all you have to do is drop it into a directory and activate it (sound familiar to you WordPress users?).  As an example of how this is useful, about two dozen lines of code lets me add "program" and "unix_pid" columns into the Query List and InnoDB Transaction List modes.  These show the originating program and PID for connections by <a href="http://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/">querying tables in which this data is stored</a>.  The plugin adds the columns and expressions for them, and then adds the data in by using innotop's own DBI connections.</p>
 
 <p>There's an example plugin in the <a href="http://code.google.com/p/innotop/">documentation</a>.</p>
 
@@ -37,9 +37,9 @@ categories:
 
 <p>The built-in rules let you group connections or transactions by status.  They also automagically show a 'count' column, which is there but hidden until the grouping is applied.  Now you can see how many connections are in what status.  Here's a screenshot of before and after:</p>
 
-<p><a href='/media/2007/09/innotop-q-ungrouped.png' title='innotop ungrouped'><img src='/media/2007/09/innotop-q-ungrouped.thumbnail.png' alt='innotop ungrouped' /></a></p>
+<p><a href='http://www.xaprb.com/media/2007/09/innotop-q-ungrouped.png' title='innotop ungrouped'><img src='http://www.xaprb.com/media/2007/09/innotop-q-ungrouped.thumbnail.png' alt='innotop ungrouped' /></a></p>
 
-<p><a href='/media/2007/09/innotop-q-grouped.png' title='innotop grouped'><img src='/media/2007/09/innotop-q-grouped.thumbnail.png' alt='innotop grouped' /></a></p>
+<p><a href='http://www.xaprb.com/media/2007/09/innotop-q-grouped.png' title='innotop grouped'><img src='http://www.xaprb.com/media/2007/09/innotop-q-grouped.thumbnail.png' alt='innotop grouped' /></a></p>
 
 <p>You can toggle this on and off easily with the '=' key on any table.   (Most tables don't have default group-by expressions, though, so you'll have to read the docs to learn more about that.  As with any features, let me know if you have a useful default you want me to include in innotop).</p>
 

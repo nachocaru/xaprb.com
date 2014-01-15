@@ -53,7 +53,7 @@ I'm grateful for the sponsorship, but I think the real winners are the MySQL com
 Finally, a quick journalistic note: I pre-approved this post with representatives from the companies I mentioned, because I respect their right to represent themselves as they wish, but the words are mine, not theirs.
 
  [1]: http://code.google.com/p/maatkit/
- [2]: /blog/2007/10/31/mysql-table-sync-bounty-lets-do-it/
+ [2]: http://www.xaprb.com/blog/2007/10/31/mysql-table-sync-bounty-lets-do-it/
  [3]: http://www.mysql.com/
  [4]: http://www.mysql.com/company/management.html
  [5]: http://jpipes.com/

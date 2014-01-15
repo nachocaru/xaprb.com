@@ -21,7 +21,7 @@ The next question: how should we interpret the word "scalable" given the context
 
 But seriously, what is it?
 
- [1]: http://blogs.sun.com/mrbenchmark/entry/scaling_mysql_on_a_256
+ [1]: http:/http://www.xaprb.com/blogs.sun.com/mrbenchmark/entry/scaling_mysql_on_a_256
  [2]: http://www.mysqlperformanceblog.com/2008/11/11/scaling-to-256-way-the-sun-way/
  [3]: http://www.google.com/search?q=falcon+innodb+replace
  [4]: http://www.mysqlperformanceblog.com/2008/11/26/using-multiple-key-caches-for-myisam-scalability/

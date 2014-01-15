@@ -66,4 +66,4 @@ This example is meant to be simple, so it doesn't illustrate perfectly, but I've
 
 So now you've seen two query idioms to avoid, and why to avoid them. And you've seen that the problems are really caused by NULL! If you're interested in exploring this train of thought further, you should get a copy of [SQL and Relational Theory by C. J. Date][1].
 
- [1]: /blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/
+ [1]: http://www.xaprb.com/blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/

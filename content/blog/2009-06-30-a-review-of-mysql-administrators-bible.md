@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1145" class="wp-caption alignleft" style="width: 250px">
-  <a href="http://www.amazon.com/MySQL-Administrators-Bible-Wiley/dp/0470416912?tag=xaprb-20"><img src="/media/2009/06/mysql-administrators-bible-240x300.jpg" alt="MySQL Administrator&#039;s Bible" title="MySQL Administrator&#039;s Bible" width="240" height="300" class="size-medium wp-image-1145" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/MySQL-Administrators-Bible-Wiley/dp/0470416912?tag=xaprb-20"><img src="http://www.xaprb.com/media/2009/06/mysql-administrators-bible-240x300.jpg" alt="MySQL Administrator&#039;s Bible" title="MySQL Administrator&#039;s Bible" width="240" height="300" class="size-medium wp-image-1145" /></a><p class="wp-caption-text">
     MySQL Administrator's Bible
   </p>
 </div>

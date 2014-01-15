@@ -44,8 +44,8 @@ What had happened? The MyISAM tables on the destination end had just gotten too 
 
 Oh yeah, while I was at it, I totally rewrote the archiver with unit-tested, test-driven, test-first, other-buzzword-compliant code. I added a lot of other improvements, too. For example, it can now archive tables that have much harder keys to optimize efficiently, such as nullable non-unique non-primary keys.
 
- [1]: /blog/2007/11/04/mysql-toolkit-version-1204-released/
+ [1]: http://www.xaprb.com/blog/2007/11/04/mysql-toolkit-version-1204-released/
  [2]: http://kettle.pentaho.org/
  [3]: http://en.wikipedia.org/wiki/Hockey_Stick_graph
- [4]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+ [4]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
  [5]: http://feedblog.org/2007/11/04/mysql-and-disk-transfers-per-second/

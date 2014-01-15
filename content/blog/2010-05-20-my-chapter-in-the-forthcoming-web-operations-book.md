@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1864" class="wp-caption alignleft" style="width: 190px">
-  <a href="http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20"><img src="/media/2010/05/web_operations.gif" alt="Web Operations" title="Web Operations" width="180" height="236" class="size-full wp-image-1864" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/05/web_operations.gif" alt="Web Operations" title="Web Operations" width="180" height="236" class="size-full wp-image-1864" /></a><p class="wp-caption-text">
     Web Operations
   </p>
 </div>
@@ -24,4 +24,4 @@ When I get a dead-tree copy of the rest of the book, I'll review it. I can't rea
  [2]: http://oreilly.com/catalog/0636920000136
  [3]: http://www.amazon.com/Beautiful-Code-Leading-Programmers-Practice/dp/0596510047?tag=xaprb-20
  [4]: http://www.amazon.com/Scalable-Internet-Architectures-Theo-Schlossnagle/dp/067232699X?tag=xaprb-20
- [5]: /blog/essential-books
+ [5]: http://www.xaprb.com/blog/essential-books

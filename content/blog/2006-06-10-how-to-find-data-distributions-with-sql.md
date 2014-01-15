@@ -136,5 +136,5 @@ The results look roughly like this:
 
 The distribution is clearly biased towards single-item categories, with the occasional huge category. Part of the goal was to rewrite our grouping algorithm to chunk things together in groups of 20 to 80 (depending on a variety of complex factors I won't explain here). This query helped us get a realistic picture before and after the algorithm change.
 
- [1]: /blog/2005/09/28/grouping-data-with-catch-all-ranks/
- [2]: /blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
+ [1]: http://www.xaprb.com/blog/2005/09/28/grouping-data-with-catch-all-ranks/
+ [2]: http://www.xaprb.com/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/

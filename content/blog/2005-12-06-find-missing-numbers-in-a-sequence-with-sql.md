@@ -290,6 +290,6 @@ Elapsed time:         148 ms</pre>
 
 MySQL's results did not vary as much; the execution time was .8% faster on the first query, and the `EXPLAIN` result showed that the second query caused 'Range checked for each record'. The two query plans were actually very different, according to `EXPLAIN`.
 
- [1]: /blog/2005/09/23/how-to-write-a-sql-exclusion-join/
- [2]: /blog/2005/12/07/the-integers-table/
- [3]: /blog/2005/11/30/quickly-compile-query-statistics-from-sql-query-analyzer/
+ [1]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/
+ [2]: http://www.xaprb.com/blog/2005/12/07/the-integers-table/
+ [3]: http://www.xaprb.com/blog/2005/11/30/quickly-compile-query-statistics-from-sql-query-analyzer/

@@ -17,4 +17,4 @@ I had a slight glitch with my [Amazon wishlist][3]. I was on vacation and when I
 
  [1]: http://code.google.com/p/maatkit/
  [2]: http://code.google.com/p/innotop/projects/innotop/
- [3]: /blog/donate/
+ [3]: http://www.xaprb.com/blog/donate/

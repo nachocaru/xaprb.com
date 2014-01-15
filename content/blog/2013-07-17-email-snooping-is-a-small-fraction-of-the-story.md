@@ -26,5 +26,5 @@ In the meantime I personally plan to carry on as usual, doing what I can and wor
 
 I also want to end on a positive note. I don't worry about these things; I don't make myself unhappy about them. And I hope you don't, either. The future is *always* uncertain. If it's not the race between technological good and evil, it's something else. This is simply another challenge to be met with a clear, present, joyful head and heart.
 
- [1]: /blog/2013/07/05/without-free-software-and-hardware-privacy-is-impossible/ "Without free software and hardware, privacy is impossible"
- [2]: /blog/2013/07/06/privacy-is-impossible-unless-its-the-default/ "Privacy is impossible unless it’s the default"
+ [1]: http://www.xaprb.com/blog/2013/07/05/without-free-software-and-hardware-privacy-is-impossible/ "Without free software and hardware, privacy is impossible"
+ [2]: http://www.xaprb.com/blog/2013/07/06/privacy-is-impossible-unless-its-the-default/ "Privacy is impossible unless it’s the default"

@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1629" class="wp-caption alignleft" style="width: 190px">
-  <a href="http://www.amazon.com/Understanding-MySQL-Internals-Sasha-Pachev/dp/0596009577?tag=xaprb-20"><img src="/media/2010/02/understanding-mysql-internals.gif" alt="Understanding MySQL Internals" title="Understanding MySQL Internals" width="180" height="236" class="size-full wp-image-1629" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/Understanding-MySQL-Internals-Sasha-Pachev/dp/0596009577?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/02/understanding-mysql-internals.gif" alt="Understanding MySQL Internals" title="Understanding MySQL Internals" width="180" height="236" class="size-full wp-image-1629" /></a><p class="wp-caption-text">
     Understanding MySQL Internals
   </p>
 </div>

@@ -35,4 +35,4 @@ The output should look something like this:
 
 Please save this output to a file, and contact me at moc.brpax@norab (reversed) if you would like to offer a dataset for us to test on. If you need any help setting up the data collection, you can use the same email. I'd also appreciate if you'd help spread the word about this via Twitter or other means. Thanks very much!
 
- [1]: /blog/2011/12/01/automatically-detecting-abnormal-behavior-in-mysql/ "Automatically detecting abnormal behavior in MySQL"
+ [1]: http://www.xaprb.com/blog/2011/12/01/automatically-detecting-abnormal-behavior-in-mysql/ "Automatically detecting abnormal behavior in MySQL"

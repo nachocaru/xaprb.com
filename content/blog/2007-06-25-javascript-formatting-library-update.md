@@ -21,11 +21,11 @@ Who knows -- someday I may end up building some browser GUI systems again and us
 
 *Note:* This episode is pre-recorded. I'm taking a short hiatus from blogging and will respond to your comments when I return.
 
- [1]: /blog/2005/12/20/javascript-date-parsing/
- [2]: /blog/2006/01/05/javascript-number-formatting/
- [3]: /blog/2006/05/14/javascript-date-formatting-benchmarks/
- [4]: /blog/2006/01/02/tables-and-data-part-1/
+ [1]: http://www.xaprb.com/blog/2005/12/20/javascript-date-parsing/
+ [2]: http://www.xaprb.com/blog/2006/01/05/javascript-number-formatting/
+ [3]: http://www.xaprb.com/blog/2006/05/14/javascript-date-formatting-benchmarks/
+ [4]: http://www.xaprb.com/blog/2006/01/02/tables-and-data-part-1/
  [5]: http://sourceforge.net/projects/daloradius
  [6]: http://extjs.com/
  [7]: http://www.xaprb.com/donate/
- [8]: /blog/2007/06/19/javascript-number-formatting-library-updated/
+ [8]: http://www.xaprb.com/blog/2007/06/19/javascript-number-formatting-library-updated/

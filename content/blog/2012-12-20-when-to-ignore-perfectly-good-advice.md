@@ -33,4 +33,4 @@ In the end, I still really appreciate the advice from my friend. It was good adv
  [1]: http://vividcortex.com
  [2]: http://golang.org/
  [3]: http://vimeo.com/53221560
- [4]: /blog/2012/10/02/adaptive-fault-detection-in-mysql-servers/
+ [4]: http://www.xaprb.com/blog/2012/10/02/adaptive-fault-detection-in-mysql-servers/

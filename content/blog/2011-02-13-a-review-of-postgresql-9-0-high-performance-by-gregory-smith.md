@@ -8,7 +8,7 @@ categories:
 ---
 <p style="float:left">
   <div id="attachment_2209" class="wp-caption alignleft" style="width: 253px">
-    <a href="http://www.amazon.com/dp/184951030X?tag=xaprb-20"><img src="/media/2011/02/postgresql_9.0_high_performance-243x300.jpg" alt="PostgreSQL 9.0 High Performance" title="PostgreSQL 9.0 High Performance" width="243" height="300" class="size-medium wp-image-2209" /></a><p class="wp-caption-text">
+    <a href="http://www.amazon.com/dp/184951030X?tag=xaprb-20"><img src="http://www.xaprb.com/media/2011/02/postgresql_9.0_high_performance-243x300.jpg" alt="PostgreSQL 9.0 High Performance" title="PostgreSQL 9.0 High Performance" width="243" height="300" class="size-medium wp-image-2209" /></a><p class="wp-caption-text">
       PostgreSQL 9.0 High Performance
     </p>
   </div>

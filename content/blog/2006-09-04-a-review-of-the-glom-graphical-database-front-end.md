@@ -317,4 +317,4 @@ I hope this article has given you a good overview of Glom. If you found it usefu
  [24]: http://www.xaprb.com/articles/images/glom-list-mode-with-data.png
  [25]: http://www.joelonsoftware.com/articles/LeakyAbstractions.html
  [26]: http://www.treshna.com/bond/
- [27]: /blog/subscribe/
+ [27]: http://www.xaprb.com/blog/subscribe/

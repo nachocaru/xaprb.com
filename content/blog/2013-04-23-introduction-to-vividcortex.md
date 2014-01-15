@@ -18,10 +18,10 @@ One of the enabling technologies is a new kind of fault detection algorithm. We'
 Feel free to ask me more questions, [sign up for our beta][7], or grab me in the halls at the [Percona Live MySQL Conference and Expo][8]. I'd be glad to tell you more.
 
  [1]: https://vividcortex.com/
- [2]: https://vividcortex.com/blog/2013/04/08/why-you-should-almost-never-alert-on-thresholds/
- [3]: https://vividcortex.com/blog/2013/04/09/a-sure-fire-recipe-for-monitoring-disaster/
- [4]: https://vividcortex.com/blog/2013/04/10/2-reasons-why-threshold-based-monitoring-is-hopelessly-broken/
- [5]: https://vividcortex.com/blog/2013/04/16/does-it-really-matter-if-monitoring-isnt-built-for-humans/
- [6]: https://vividcortex.com/blog/2013/04/17/how-does-adaptive-fault-detection-work-does-it-really-eliminate-thresholds/
+ [2]: https://vividcortex.comhttp://www.xaprb.com/blog/2013/04/08/why-you-should-almost-never-alert-on-thresholds/
+ [3]: https://vividcortex.comhttp://www.xaprb.com/blog/2013/04/09/a-sure-fire-recipe-for-monitoring-disaster/
+ [4]: https://vividcortex.comhttp://www.xaprb.com/blog/2013/04/10/2-reasons-why-threshold-based-monitoring-is-hopelessly-broken/
+ [5]: https://vividcortex.comhttp://www.xaprb.com/blog/2013/04/16/does-it-really-matter-if-monitoring-isnt-built-for-humans/
+ [6]: https://vividcortex.comhttp://www.xaprb.com/blog/2013/04/17/how-does-adaptive-fault-detection-work-does-it-really-eliminate-thresholds/
  [7]: https://vividcortex.com/sign-up/
  [8]: http://www.percona.com/live/mysql-conference-2013/

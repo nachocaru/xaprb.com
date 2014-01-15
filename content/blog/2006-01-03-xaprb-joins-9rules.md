@@ -7,7 +7,7 @@ categories:
 ---
 Xaprb is now part of the [9rules][1] network. It's an honor and a pleasure. The best part is what Mr. Scrivens said about me:
 
-<blockquote cite="http://9rules.com/blog/2006/01/xaprb/">
+<blockquote cite="http://9rules.comhttp://www.xaprb.com/blog/2006/01/xaprb/">
   &#8230;the type of guy I would set next to in Calc class and watch him hacking the hell out of his TI calculator&#8230;
 </blockquote>
 

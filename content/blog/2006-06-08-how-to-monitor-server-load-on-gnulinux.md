@@ -73,7 +73,7 @@ Do you have any favorite programs for monitoring and troubleshooting GNU/Linux s
 
  [1]: http://www.gentoo.org/main/en/shots.xml
  [2]: http://jeremy.zawodny.com/mysql/mytop/
- [3]: http://jeremy.zawodny.com/blog/
+ [3]: http://jeremy.zawodny.comhttp://www.xaprb.com/blog/
  [4]: http://www.gnu.org/software/screen/
  [5]: http://www.xaprb.com/articles/images/tload.png
 

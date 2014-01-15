@@ -17,4 +17,4 @@ This is why some old-fashioned, stupid, clueless people still own their own hard
 
 With economies of scale come failures at scale. You can't have it both ways.
 
- [1]: /blog/2010/06/01/under-provisioning-the-curse-of-the-cloud/
+ [1]: http://www.xaprb.com/blog/2010/06/01/under-provisioning-the-curse-of-the-cloud/

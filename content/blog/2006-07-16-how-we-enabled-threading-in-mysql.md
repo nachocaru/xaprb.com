@@ -15,5 +15,5 @@ The key ended up being NPTL. As I discussed in my article on [Gentoo and NPTL][2
 
  *[CPU]: Central Processing Unit
 
- [1]: /blog/2006/06/08/how-to-monitor-server-load-on-gnulinux/
- [2]: /blog/2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/
+ [1]: http://www.xaprb.com/blog/2006/06/08/how-to-monitor-server-load-on-gnulinux/
+ [2]: http://www.xaprb.com/blog/2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/

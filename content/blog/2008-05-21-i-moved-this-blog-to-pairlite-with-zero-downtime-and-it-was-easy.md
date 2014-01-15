@@ -24,5 +24,5 @@ If you don't know what you're doing, hire someone who does!
  [1]: http://www.pair.com/
  [2]: http://www.pairlite.com/
  [3]: http://www.percona.com/
- [4]: /blog/2007/11/23/why-is-embarq-hijacking-my-dns/
+ [4]: http://www.xaprb.com/blog/2007/11/23/why-is-embarq-hijacking-my-dns/
  [5]: http://www.briworks.com/

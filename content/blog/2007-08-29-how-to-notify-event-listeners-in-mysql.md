@@ -107,5 +107,5 @@ Finally, if you need a fixed-size FIFO queue or "round-robin table," try the sug
 
  [1]: http://dev.mysql.com/doc/refman/5.0/en/miscellaneous-functions.html
  [2]: http://www.xaprb.com/articles/producer_consumer.txt
- [3]: /blog/2006/05/04/how-to-make-a-program-choose-an-optimal-polling-interval/
- [4]: /blog/2007/01/11/how-to-implement-a-queue-in-sql/
+ [3]: http://www.xaprb.com/blog/2006/05/04/how-to-make-a-program-choose-an-optimal-polling-interval/
+ [4]: http://www.xaprb.com/blog/2007/01/11/how-to-implement-a-queue-in-sql/

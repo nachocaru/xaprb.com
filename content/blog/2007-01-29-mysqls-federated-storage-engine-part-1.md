@@ -584,6 +584,6 @@ As I ran these queries and observed the results, patterns began to emerge. These
 
  [1]: http://dev.mysql.com/doc/refman/5.0/en/federated-storage-engine.html
  [2]: http://dev.mysql.com/tech-resources/articles/mysql-federated-storage.html
- [3]: /blog/2007/01/31/mysqls-federated-storage-engine-part-2/
+ [3]: http://www.xaprb.com/blog/2007/01/31/mysqls-federated-storage-engine-part-2/
  [4]: http://www.oreillynet.com/pub/a/databases/2006/08/10/mysql-federated-tables.html
  [5]: http://krow.livejournal.com/362079.html

@@ -22,4 +22,4 @@ So -- my point is, go participate, and [let's make Maatkit more Open Source, not
  [1]: http://www.maatkit.org/
  [2]: http://groups.google.com/group/maatkit-discuss
  [3]: http://code.google.com/p/innotop/
- [4]: /blog/2008/05/14/mysql-free-software-but-not-open-source/
+ [4]: http://www.xaprb.com/blog/2008/05/14/mysql-free-software-but-not-open-source/

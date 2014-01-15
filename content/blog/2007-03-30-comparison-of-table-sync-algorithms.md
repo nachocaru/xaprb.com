@@ -425,6 +425,6 @@ There is one caveat. I have benchmarked the "find differences" aspect of the too
 
 These results are encouraging. They tell me that I've designed a good algorithm for fixing slaves that drift, and they reinforced my belief that the two algorithms are highly effective for different scenarios.
 
- [1]: /blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
+ [1]: http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
  [2]: http://code.google.com/p/maatkit
  [3]: http://www.xaprb.com/articles/table-sync-profiles.tar.gz

@@ -76,8 +76,8 @@ As [Dana Carvey says][9], "If I had more time&#8230; the programs we have in pla
  [2]: http://mysqlha.blogspot.com/
  [3]: http://isthe.com/chongo/tech/comp/fnv/
  [4]: http://dev.mysql.com/doc/refman/5.0/en/adding-functions.html
- [5]: http://www.radwin.org/michael/blog/2007/03/mysql_user_defined_functio.html
- [6]: /blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
- [7]: /blog/2007/03/18/introducing-mysql-table-sync/
- [8]: /blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
+ [5]: http://www.radwin.org/michaelhttp://www.xaprb.com/blog/2007/03/mysql_user_defined_functio.html
+ [6]: http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
+ [7]: http://www.xaprb.com/blog/2007/03/18/introducing-mysql-table-sync/
+ [8]: http://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
  [9]: http://snltranscripts.jt.org/88/88adebate.phtml

@@ -27,5 +27,5 @@ My suggestions from the 2008 year still stand, too:
 *   You need to write a detailed enough proposal to convince me that you've put some effort into it. I won't vote for "accept this talk, and then I'll fill in the details." Do the work and take the risk that you won't get accepted -- protecting yourself against rejection is a good way to get a low vote from me.
 
  [1]: http://en.oreilly.com/mysql2010/public/content/home
- [2]: /blog/2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/
+ [2]: http://www.xaprb.com/blog/2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/
  [3]: http://www.copyblogger.com/magnetic-headlines/

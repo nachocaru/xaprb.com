@@ -59,5 +59,5 @@ This is suitable for lots of things. We're trying to look at the most useful pro
 Back to HTTP: implementing it gives an easy way to measure website response time, including useful things like 95th percentile goodness. And from there, you can drill down into the performance of the work done for these requests. If you want to get really fancy, you can even capture some samples of netstat at the same time as you tcpdump traffic for HTTP, memcached, and MySQL -- so you can blame database queries and memcached requests on specific HTTP requests!
 
  [1]: http://www.maatkit.org/
- [2]: http://blog.northscale.com/northscale-blog/2009/09/power-in-the-protocol.html
+ [2]: http:/http://www.xaprb.com/blog.northscale.com/northscale-blog/2009/09/power-in-the-protocol.html
  [3]: http://groups.google.com/group/maatkit-discuss

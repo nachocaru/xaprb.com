@@ -46,4 +46,4 @@ Another possible solution would be to switch to row-based binary logging, which 
 
 An even better solution would be to implement some additional features in the server. Many of the features that developers like the most about NoSQL databases such as MongoDB and Redis (or even PostgreSQL) are special-case behaviors to simplify things that are awkward to do in most databases. Examples include atomically adding and removing from a queue, and features to avoid polling, such as LISTEN and NOTIFY.
 
- [1]: http://www.engineyard.com/blog/2011/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/
+ [1]: http://www.engineyard.comhttp://www.xaprb.com/blog/2011/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/

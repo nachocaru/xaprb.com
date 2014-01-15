@@ -38,4 +38,4 @@ The result is the string "image text uniqueidentifier tinyint smallint int small
 
  [1]: http://dev.mysql.com/doc/mysql/en/group-by-functions.html
  [2]: http://dev.mysql.com/doc/mysql/en/variables.html
- [3]: /blog/2005/09/27/simulating-the-sql-row_number-function/
+ [3]: http://www.xaprb.com/blog/2005/09/27/simulating-the-sql-row_number-function/

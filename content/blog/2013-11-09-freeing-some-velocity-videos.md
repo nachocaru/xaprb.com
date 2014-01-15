@@ -14,4 +14,4 @@ O'Reilly alleviated my concerns about "killing the golden goose," but I like one
 
 I'll post some of my past talks soon for your enjoyment.
 
- [1]: /blog/2013/10/24/should-velocity-videos-be-free/ "Should Velocity videos be free?"
+ [1]: http://www.xaprb.com/blog/2013/10/24/should-velocity-videos-be-free/ "Should Velocity videos be free?"

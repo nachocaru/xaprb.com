@@ -14,4 +14,4 @@ I've updated my JavaScript Number Formatting Library to version 1.3. This releas
 
 For more documentation, see the [original article on JavaScript number formatting][1].
 
- [1]: /blog/2006/01/05/javascript-number-formatting/
+ [1]: http://www.xaprb.com/blog/2006/01/05/javascript-number-formatting/

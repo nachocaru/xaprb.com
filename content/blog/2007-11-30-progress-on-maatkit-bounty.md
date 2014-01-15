@@ -16,4 +16,4 @@ It's not a very efficient algorithm for comparing and syncing data, at least not
 
 Of course, I'll add back the top-down and bottom-up algorithms later, as well as some others. They should turn out to be pretty simple to implement, since they won't have, for example, locking code intertwined with them. When done, the tool will examine the table and figure out the best algorithm to use. This will go a good way towards another of my goals, which is that you should be able to just point it at two tables and tell it to sync them, and it should do it in the most efficient way possible, without needing lots of command-line options.
 
- [1]: /blog/2007/11/29/maatkit-bounty-begins-tomorrow/
+ [1]: http://www.xaprb.com/blog/2007/11/29/maatkit-bounty-begins-tomorrow/

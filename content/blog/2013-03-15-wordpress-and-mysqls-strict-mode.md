@@ -18,5 +18,5 @@ This problem was [reported to WordPress at least 7 years ago][2]. Lessons learne
 *   Those who gripe about MySQL's bugs (as I sometimes do) should remember that MySQL is probably better quality than most of the software that is built to use it. This is probably a universal truth -- the Linux kernel is probably better quality than most software that runs in Linux, for example.
 *   MySQL's bugs often get fixed faster than aforementioned software's bugs, too.
 
- [1]: /blog/2012/12/23/handling-mysqls-warnings-in-go-code/
+ [1]: http://www.xaprb.com/blog/2012/12/23/handling-mysqls-warnings-in-go-code/
  [2]: http://wordpress.org/support/topic/posts-not-saving-to-database

@@ -47,4 +47,4 @@ Changelog for mk-table-sync:
    * Fixed a quoting bug.
    * Made the UTF-8 options configurable.</pre>
 
- [1]: /blog/2008/01/13/how-pre-fetching-relay-logs-speeds-up-mysql-replication-slaves/
+ [1]: http://www.xaprb.com/blog/2008/01/13/how-pre-fetching-relay-logs-speeds-up-mysql-replication-slaves/

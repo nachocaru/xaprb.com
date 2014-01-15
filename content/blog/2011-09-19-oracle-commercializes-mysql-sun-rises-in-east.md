@@ -10,5 +10,5 @@ I've never objected to someone making money from MySQL. I've only expressed disa
 
 I am glad that Oracle is offering more [pay-only extensions][2] to the server in a way that creates opportunities for others to do the same, and I look forward to even more of them in the future.
 
- [1]: /blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/
- [2]: http://blogs.oracle.com/MySQL/entry/new_commercial_extensions_for_mysql
+ [1]: http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/
+ [2]: http:/http://www.xaprb.com/blogs.oracle.com/MySQL/entry/new_commercial_extensions_for_mysql

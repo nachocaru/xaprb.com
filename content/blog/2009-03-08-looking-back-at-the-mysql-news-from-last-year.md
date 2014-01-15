@@ -7,4 +7,4 @@ categories:
 ---
 I think it's occasionally interesting to look back at what people wrote about things while they were happening, especially after big changes (founder and CEO leaving, for example). Here's a blog post from May of 2008, by [Henrik Ingo and Ignacio Torres, about MySQL's business model][1]. No commentary -- just the link.
 
- [1]: http://people.warp.es/~nacho/blog/?p=288
+ [1]: http://people.warp.es/~nachohttp://www.xaprb.com/blog/?p=288

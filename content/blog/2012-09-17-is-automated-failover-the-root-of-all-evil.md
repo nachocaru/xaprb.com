@@ -14,5 +14,5 @@ The category I don't often see targeted as much is this question, which I consid
 
 I haven't looked recently at the source code of the systems that Github identified as making wrong decisions, and I don't know Pacemaker. But I know I have spent a lot of time and effort trying to write a specification for a system that could detect whether automated failover would be safe to attempt, and it's *hard*. One thing that's not all that hard, though, is making sure that *only one attempt is made* to do a failover. One of the best ways to create a [nightmare situation][2] is to fail to a standby, then fail away from it. If I ever create an HA tool such as the ones I've designed-but-not-implemented, there will be a hard stop after one attempt. If the standby doesn't look healthy, someone should call a human, end of story.
 
- [1]: https://github.com/blog/1261-github-availability-this-week
- [2]: /blog/2011/05/04/whats-wrong-with-mmm/
+ [1]: https://github.comhttp://www.xaprb.com/blog/1261-github-availability-this-week
+ [2]: http://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/

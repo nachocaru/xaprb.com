@@ -9,7 +9,7 @@ categories:
 
 I've written a lot about modeling MySQL with the USL, and I like it best of all the scalability models I've seen, but it's not the only way to think about scalability. I was aware that New Relic supports a scalability chart, so I decided to take a peek at that. Here's a screenshot of the chart, from [their blog][1]: <p style="text-align: center;">
 
-  <img class="aligncenter  wp-image-3012" alt="blog-rpm-response1" src="/media/2013/01/blog-rpm-response1.png" width="510" height="295" />
+  <img class="aligncenter  wp-image-3012" alt="blog-rpm-response1" src="http://www.xaprb.com/media/2013/01http://www.xaprb.com/blog-rpm-response1.png" width="510" height="295" />
 
 </p>
 
@@ -38,5 +38,5 @@ I'm curious to hear from people who may have used this feature. What did you use
 
 
 
- [1]: http://blog.newrelic.com/2011/06/13/of-rainbows-and-polka-dots-new-relics-scalability-charts-explained/
+ [1]: http:/http://www.xaprb.com/blog.newrelic.com/2011/06/13/of-rainbows-and-polka-dots-new-relics-scalability-charts-explained/
 

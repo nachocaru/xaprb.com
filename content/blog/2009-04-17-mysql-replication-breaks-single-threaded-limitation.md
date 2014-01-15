@@ -12,4 +12,4 @@ Interestingly, the feature preview is based on MySQL 5.1, which has recently see
  [1]: http://larsthalmann.blogspot.com/2009/04/feature-preview-multi-threaded-slave.html
  [2]: http://www.maatkit.org/doc/mk-slave-prefetch.html
  [3]: http://www.mysqlperformanceblog.com/2009/04/06/mysql-and-ibm/
- [4]: http://s.petrunia.net/blog/?p=52
+ [4]: http://s.petrunia.nethttp://www.xaprb.com/blog/?p=52

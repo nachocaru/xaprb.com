@@ -11,5 +11,5 @@ I tweaked the [mext][1] script so it auto-detects the necessary column widths fo
 
 [Get mext here][2].</p>
 
- [1]: /blog/2009/04/11/formatting-mysqladmin-extended-status-nicely/
+ [1]: http://www.xaprb.com/blog/2009/04/11/formatting-mysqladmin-extended-status-nicely/
  [2]: http://www.xaprb.com/mext

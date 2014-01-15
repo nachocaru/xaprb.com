@@ -101,13 +101,13 @@ What do you think? Also, if I've gone too far, missed something important, gotte
 
 
 [1]: http://techcrunch.com/2009/07/28/yc-funded-rethinkdb-a-mysql-storage-engine-built-from-the-ground-up-for-ssds/
-[2]: http://www.bytebot.net/blog/archives/2009/07/28/rethinkdb-all-the-rage-today
+[2]: http://www.bytebot.nethttp://www.xaprb.com/blog/archives/2009/07/28/rethinkdb-all-the-rage-today
 [3]: http://carcaddar.blogspot.com/2009/10/append-only-databases.html
-[4]: http://blogs.msdn.com/b/pathelland/archive/2007/06/14/accountants-don-t-use-erasers.aspx
+[4]: http:/http://www.xaprb.com/blogs.msdn.com/b/pathelland/archive/2007/06/14/accountants-don-t-use-erasers.aspx
 [5]: https://groups.google.com/forum/#!topic/rethinkdb/Bcg1NPTU6do
 [6]: http://www.quora.com/In-the-RethinkDB-paper-one-of-the-references-is-to-An-append-only-index-tree-structure-which-was-supposed-to-appear-in-the-fourth-quarter-of-2009.-Is-this-paper-available-today
 [7]: https://web.archive.org/web/20090806193803/http://www.rethinkdb.com/papers/whitepaper.pdf
-[8]: /blog/2010/09/07/a-gentle-introduction-to-couchdb-for-relational-practitioners/
+[8]: http://www.xaprb.com/blog/2010/09/07/a-gentle-introduction-to-couchdb-for-relational-practitioners/
 [9]: http://wiki.apache.org/couchdb/Compaction
 [10]: http://www.amazon.com/Transaction-Processing-Concepts-Techniques-Management/dp/1558601902/?tag=xaprb-20
 [11]: http://www.amazon.com/Transactional-Information-Systems-Algorithms-Concurrency/dp/1558605088/?tag=xaprb-20

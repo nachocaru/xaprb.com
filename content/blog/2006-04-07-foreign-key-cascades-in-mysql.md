@@ -29,4 +29,4 @@ In this case cascading updates saved me a huge amount of time and effort. I turn
  *[RDBMS]: Relational Database Management System
 
  [1]: http://dev.mysql.com/doc/refman/5.0/en/innodb-foreign-key-constraints.html
- [2]: /blog/2006/03/12/gnucash-to-mysql-export-script/
+ [2]: http://www.xaprb.com/blog/2006/03/12/gnucash-to-mysql-export-script/

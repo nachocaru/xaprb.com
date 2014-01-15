@@ -70,8 +70,8 @@ Besides variations on method 3, there are some other creative things you could d
 
 I just showed you a bunch of different ways to reverse a sequence in SQL, something that may or may not be useful. I've been amusing myself for months trying to find fund and different ways to solve this problem. I'm interested in any ideas you have too.
 
- [1]: /blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/
- [2]: /blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/
- [3]: /blog/2005/09/28/bitwise-arithmetic/
+ [1]: http://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/
+ [2]: http://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/
+ [3]: http://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/
 
  *[RDBMS]: Relational Database Management System

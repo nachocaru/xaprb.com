@@ -115,8 +115,8 @@ SQL server seems to be smart enough to reuse resources within a query batch, so 
 
 All in all, I think string-parsing is the lesser of the evils.
 
- [1]: /blog/2005/11/15/a-bug-in-microsoft-sql-servers-replace-function/
+ [1]: http://www.xaprb.com/blog/2005/11/15/a-bug-in-microsoft-sql-servers-replace-function/
  [2]: http://msdn.microsoft.com/library/en-us/dnsqlmag01/html/TreatYourself.asp
- [3]: /blog/2005/12/07/the-integers-table/
+ [3]: http://www.xaprb.com/blog/2005/12/07/the-integers-table/
  [4]: http://web.archive.org/web/20050326014057/http://www.bizdatasolutions.com/tsql/sqlarrays.asp
- [5]: /blog/2005/09/28/simulating-the-group-concat-function/
+ [5]: http://www.xaprb.com/blog/2005/09/28/simulating-the-group-concat-function/

@@ -23,6 +23,6 @@ Here are two links to the Microsoft VBScript RegExp documentation on MSDN:
 1.  [VBScript Regular Expression Syntax][2]
 2.  [The VBScript RegExp object][3]
 
- [1]: http://blogs.msdn.com/ericlippert/archive/2005/03/01/382533.aspx
+ [1]: http:/http://www.xaprb.com/blogs.msdn.com/ericlippert/archive/2005/03/01/382533.aspx
  [2]: http://msdn.microsoft.com/library/en-us/script56/html/0a8270d7-7d8f-4368-b2a7-065acb52fc54.asp
  [3]: http://msdn.microsoft.com/library/en-us/script56/html/9f1c25ba-46ce-46af-9f19-ac1d2bcf05d8.asp

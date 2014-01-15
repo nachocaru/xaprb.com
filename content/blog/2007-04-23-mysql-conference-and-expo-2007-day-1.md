@@ -57,11 +57,11 @@ I hope to meet you if you're here, whether at one of my sessions or just in the 
  [1]: http://www.mysqlconf.com/
  [2]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10893
  [3]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12080
- [4]: http://blog.kovyrin.net/2007/04/23/master-master-replication-example-using-mmm/
+ [4]: http:/http://www.xaprb.com/blog.kovyrin.net/2007/04/23/master-master-replication-example-using-mmm/
  [5]: http://www.provenscaling.com/
  [6]: http://develooper.com/
  [7]: http://www.jpipes.com/
- [8]: http://blog.cheyer.biz/2007/04/23/meet-the-experts-at-mysql-uc/
+ [8]: http:/http://www.xaprb.com/blog.cheyer.biz/2007/04/23/meet-the-experts-at-mysql-uc/
  [9]: http://www.solidtech.com/en/products/relationaldatabasemanagementsoftware/sdbformysql.asp
  [10]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12911
  [11]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213

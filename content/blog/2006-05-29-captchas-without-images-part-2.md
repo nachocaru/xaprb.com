@@ -21,6 +21,6 @@ Basically, I went from a stateless and easily hackable system to one with a bare
 
 Now, the only thing left is to wait and see how long it takes the spammers this time. I promise, I will fight image CAPTCHAs till the last resort is exhausted. Who knows how it will work out? I'll certainly let you know!
 
- [1]: /blog/2006/01/28/captchas-done-better/
+ [1]: http://www.xaprb.com/blog/2006/01/28/captchas-done-better/
 
  *[CAPTCHA]: Completely Automated Public Turing Test to Tell Computers and Humans Apart

@@ -71,8 +71,8 @@ Here are some other things that might need to be in version control:
 You may think I'm a fanatic to insist on versioning everything, and you'd be right -- but my fanaticism has saved me, and sometimes my employers, a lot of trouble. I think everything ought to be under version control, but it's so easy to overlook something. I hope this article has helped you make a list of critical code you're not putting into source control.
 
  [1]: http://www.gnucash.org/
- [2]: /blog/2006/06/19/xaprb-scripts-relicensed/
- [3]: /blog/2006/07/07/what-is-a-sql-blind-insert/
+ [2]: http://www.xaprb.com/blog/2006/06/19/xaprb-scripts-relicensed/
+ [3]: http://www.xaprb.com/blog/2006/07/07/what-is-a-sql-blind-insert/
 
  *[IDE]: Integrated Development Environment
  *[RCS]: Revision Control System

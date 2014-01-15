@@ -73,7 +73,7 @@ Finally, someone showed us a [calculator application they'd built on Google App 
  [7]: http://www.cohesiveft.com/
  [8]: http://www.rightscale.com/
  [9]: http://www.rpath.com/
- [10]: http://blogs.conary.com/index.php/juphoff
+ [10]: http:/http://www.xaprb.com/blogs.conary.com/index.php/juphoff
  [11]: http://www.rimmkaufman.com/
  [12]: http://www.cv.nrao.edu/~jmalone/
  [13]: http://www.nrao.edu/

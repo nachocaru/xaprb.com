@@ -20,4 +20,4 @@ I've said before that I think one of the reasons [MySQL was unable to create an 
 
 Still, I think this is a good problem to have, and I trust that the right person will come along and see the opportunity to create a good salary at the same time as really providing a service to Percona and the customers. That person will explain to us how cost (salary) and value (service to us and customers) can be impedance-matched too. And that will probably be an innovation, or at least unconventional. With all the other ways Percona is unconventional, I don't expect us to create a conventional sales model either.
 
- [1]: /blog/2008/12/23/does-mysql-really-have-an-open-source-business-model/
+ [1]: http://www.xaprb.com/blog/2008/12/23/does-mysql-really-have-an-open-source-business-model/

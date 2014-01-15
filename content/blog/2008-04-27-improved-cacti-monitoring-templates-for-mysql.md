@@ -30,7 +30,7 @@ This has taken a lot of time. In particular, I spent a lot of time working on it
 
 If these templates help you and you feel like [visiting my Amazon.com wishlist and sending something my way][7], I'd appreciate it!
 
-<small>PS: You may also be interested in <a href="http://blog.kovyrin.net/2007/10/06/useful-cacti-templates-to-monitor-your-servers/">Alexey Kovyrin's list of templates for monitoring servers</a>.</small>
+<small>PS: You may also be interested in <a href="http:/http://www.xaprb.com/blog.kovyrin.net/2007/10/06/useful-cacti-templates-to-monitor-your-servers/">Alexey Kovyrin's list of templates for monitoring servers</a>.</small>
 
  [1]: http://www.cacti.net/
  [2]: http://faemalia.net/mysqlUtils/

@@ -18,6 +18,6 @@ This proposed change feels a little like deja vu for me, given my recent [advent
 
 **Update:** I got confused somehow and thought that this change would be in an upcoming release, but now I see it's apparently in the RC just released last week. I will test out the behavior and report back.
 
- [1]: https://blogs.oracle.com/supportingmysql/entry/server_defaults_changes_in_mysql
+ [1]: https:/http://www.xaprb.com/blogs.oracle.com/supportingmysql/entry/server_defaults_changes_in_mysql
  [2]: http://dev.mysql.com/doc/refman/5.5/en/innodb-file-space.html
- [3]: /blog/2012/09/14/how-to-free-15gb-of-disk-space-in-a-tenth-of-a-second/
+ [3]: http://www.xaprb.com/blog/2012/09/14/how-to-free-15gb-of-disk-space-in-a-tenth-of-a-second/

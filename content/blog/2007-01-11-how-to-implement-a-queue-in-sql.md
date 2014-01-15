@@ -189,9 +189,9 @@ What if you want to insert multiple rows at once? If you need to go that route o
 In this article I showed you several ways to let a table grow to a fixed size, after which new rows replace old rows. I haven't personally used this in production; this article grew out of a reader's question (thanks for the stimulating topic!). If this article helped you, you should consider [subscribing][7] for future updates via email or feeds. It's free and convenient.
 
  [1]: http://people.planetpostgresql.org/greg/index.php?/archives/89-Implementing-a-queue-in-SQL-Postgres-version.html
- [2]: /blog/2006/02/21/flexible-insert-and-update-in-mysql/
- [3]: /blog/2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/
- [4]: /blog/2006/12/15/advanced-mysql-user-variable-techniques/
- [5]: /blog/2006/12/02/how-to-number-rows-in-mysql/
- [6]: /blog/2005/09/25/insert-if-not-exists-queries-in-mysql/
- [7]: /blog/subscribe/
+ [2]: http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/
+ [3]: http://www.xaprb.com/blog/2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/
+ [4]: http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/
+ [5]: http://www.xaprb.com/blog/2006/12/02/how-to-number-rows-in-mysql/
+ [6]: http://www.xaprb.com/blog/2005/09/25/insert-if-not-exists-queries-in-mysql/
+ [7]: http://www.xaprb.com/blog/subscribe/

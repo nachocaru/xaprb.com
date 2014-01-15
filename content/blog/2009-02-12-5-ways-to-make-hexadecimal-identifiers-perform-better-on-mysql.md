@@ -148,5 +148,5 @@ By the way, this isn't a suggestion that's unique to MySQL. Other database serve
 
 Hexadecimal identifiers make your tables and indexes bigger, and slow down comparisons and lookups. My advice is usually "don't do it," but if you must use hexadecimal values for identifiers, hopefully this article has a few suggestions you can use to make them more efficient.
 
- [1]: /blog/2008/03/09/a-very-fast-fnv-hash-function-for-mysql/
+ [1]: http://www.xaprb.com/blog/2008/03/09/a-very-fast-fnv-hash-function-for-mysql/
  [2]: http://msdn.microsoft.com/en-us/library/aa258245(SQL.80).aspx

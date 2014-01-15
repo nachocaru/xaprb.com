@@ -22,7 +22,7 @@ I've always said that [the split didn't have to be a business failure][4]. I thi
 
 A renewed commitment to the split could re-alienate many in the community. It might also result in a closed-source Enterprise Edition of MySQL, a tactic that MySQL themselves tried but abandoned.
 
- [1]: http://jcole.us/blog/archives/2007/08/09/mysql-community-split-officially-a-failure/
- [2]: http://blogs.sun.com/datacharmer/entry/the_pursuit_of_openness
+ [1]: http://jcole.ushttp://www.xaprb.com/blog/archives/2007/08/09/mysql-community-split-officially-a-failure/
+ [2]: http:/http://www.xaprb.com/blogs.sun.com/datacharmer/entry/the_pursuit_of_openness
  [3]: http://www.marketwire.com/press-release/Oracle-Corporation-NASDAQ-ORCL-1090000.html
- [4]: /blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/
+ [4]: http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/

@@ -8,13 +8,13 @@ categories:
 ---
 If you're familiar with Neil Gunther's Universal Scalability Law, you may have heard it said that there are two coefficients, variously called alpha and beta or sigma and kappa. There are actually three coefficients, though. See?
 
-<img src="/media/2013/01/usl.png" alt="usl" width="637" height="188" class="aligncenter size-full wp-image-3000" />
+<img src="http://www.xaprb.com/media/2013/01/usl.png" alt="usl" width="637" height="188" class="aligncenter size-full wp-image-3000" />
 
 No, you don't see it -- but it's actually there, as a hidden "1&#8243; multiplied by N in the numerator on the right-hand side. When you're using the USL to model a system's scalability, you need to use the C(1), the "capacity at one," as a multiplier. I call this the coefficient of performance. It's rarely 1; it's usually thousands.
 
 To illustrate why this matters, consider two systems' throughput as load increases:
 
-<img src="/media/2013/01/coeff-of-performance.png" alt="coeff-of-performance" width="489" height="486" class="aligncenter size-full wp-image-3001" />
+<img src="http://www.xaprb.com/media/2013/01/coeff-of-performance.png" alt="coeff-of-performance" width="489" height="486" class="aligncenter size-full wp-image-3001" />
 
 The green line and the blue line are both linearly scalable systems. Add twice the concurrency, get twice the throughput. But the slope of the lines is different. The green system can do three times as much work as the blue system, even though it's no more scalable.
 

@@ -44,6 +44,6 @@ InnoDB is a complex system that is trying to balance a lot of different factors 
 
 Even the question of how much data to write, and how quickly, is a hard one. It's hard and expensive to really answer accurately because the *real* answer requires knowledge of things such the frequency and distribution of page dirtying. Therefore, InnoDB kind of avoids this and lets you configure its "I/O capacity" and "dirty page percent" and maybe a few other things, depending on which version you use. These are just models that approximate the true answers to the real questions. All models are wrong. Some models are useful. InnoDB employs useful models that work a lot of the time.
 
- [1]: http://blog.2ndquadrant.com/en/2010/05/postgresql-freebsd-and-free-do.html
+ [1]: http:/http://www.xaprb.com/blog.2ndquadrant.com/en/2010/05/postgresql-freebsd-and-free-do.html
  [2]: http://www.percona.com/docs/wiki/patches:innodb_io_pattern
  [3]: http://www.facebook.com/note.php?note_id=392581440932

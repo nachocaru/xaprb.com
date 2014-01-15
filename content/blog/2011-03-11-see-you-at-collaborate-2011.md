@@ -13,4 +13,4 @@ Sheeri Cabral posted a good round-up of [the MySQL talks at Collaborate][3] on t
 
  [1]: http://www.collaborate11.org/
  [2]: http://coll11.mapyourshow.com/3_0/sessions/sessiondetails.cfm?ScheduledSessionID=2100
- [3]: http://palominodb.com/blog/2011/03/09/mysql-beginners-guide-collaborate
+ [3]: http://palominodb.comhttp://www.xaprb.com/blog/2011/03/09/mysql-beginners-guide-collaborate

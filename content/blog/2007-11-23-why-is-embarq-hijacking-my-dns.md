@@ -11,7 +11,7 @@ categories:
 
 <p>Here's a screenshot of what happens when I type in any old non-existent (or, in Toggl's case, timing-out) domain name.</p>
 
-<p><a href='/media/2007/11/embarq-sysbench.png' title='Embarq screwing with my DNS'><img src='/media/2007/11/embarq-sysbench.thumbnail.png' alt='Embarq screwing with my DNS' /></a></p>
+<p><a href='http://www.xaprb.com/media/2007/11/embarq-sysbench.png' title='Embarq screwing with my DNS'><img src='http://www.xaprb.com/media/2007/11/embarq-sysbench.thumbnail.png' alt='Embarq screwing with my DNS' /></a></p>
 
 <p>And here's what happens when I do a DNS lookup:</p>
 

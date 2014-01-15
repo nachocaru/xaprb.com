@@ -96,7 +96,7 @@ I'm not saying subqueries should be rewritten like this. If your RDBMS supports 
 
 I tried this idea on Microsoft SQL Server with `set statistics io on`, and examined the query plan and performance on a small data set. The query plan is straightforward in either case, but using mutex joins resulted in more logical reads, the expected result. I do not have statistics on the performance on MySQL.
 
- [1]: /blog/2005/09/26/sql-subqueries-and-derived-tables/
- [2]: /blog/2005/09/22/mutex-tables-in-sql/
+ [1]: http://www.xaprb.com/blog/2005/09/26/sql-subqueries-and-derived-tables/
+ [2]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/
 
  *[RDBMS]: Relational database management system

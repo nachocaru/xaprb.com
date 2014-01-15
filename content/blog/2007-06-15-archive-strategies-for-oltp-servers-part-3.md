@@ -102,13 +102,13 @@ I think that's it for the miscellany.
 
 This series has covered what I believe to be the full scope of archiving strategies, from requirements to specific techniques you can use to archive and un-archive data from your OLTP systems. As a reminder, the larger context here is to offer **scaling back** as an alternative to the usual scale-up-or-scale-out dichotomy. There are always more options than you think! Archiving can be difficult and complex, but the potential gains for some types of data can be large, especially compared to some of the more frequently-discussed scaling tactics. Like other solutions, it doesn't work for all situations, but if you forsee a huge amount of data coming at you, you should consider archiving along with other scaling techniques.
 
- [1]: /blog/2007/06/14/archive-strategies-for-oltp-servers-part-2/
- [2]: /blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/
- [3]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+ [1]: http://www.xaprb.com/blog/2007/06/14/archive-strategies-for-oltp-servers-part-2/
+ [2]: http://www.xaprb.com/blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/
+ [3]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
  [4]: http://code.google.com/p/maatkit/
  [5]: http://code.google.com/p/innotop/
  [6]: http://www.mysql.com/
  [7]: http://www.primebase.com/xt/
- [8]: /blog/tags/mysqluc07
+ [8]: http://www.xaprb.com/blog/tags/mysqluc07
  [9]: http://sheeri.net/archives/204
- [10]: http://www.dbazine.com/blogs/blog-cm/craigmullins/blogentry.2007-05-05.0882314926
+ [10]: http://www.dbazine.comhttp://www.xaprb.com/blogshttp://www.xaprb.com/blog-cm/craigmullinshttp://www.xaprb.com/blogentry.2007-05-05.0882314926

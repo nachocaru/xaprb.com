@@ -56,4 +56,4 @@ In addition to watching `vmstat` to measure system CPU usage, `mk-loadavg` can w
 
  [1]: http://www.maatkit.org/
  [2]: http://www.maatkit.org/doc/mk-loadavg.html
- [3]: /blog/2009/10/13/using-mext-to-format-saved-mysqladmin-output-nicely/
+ [3]: http://www.xaprb.com/blog/2009/10/13/using-mext-to-format-saved-mysqladmin-output-nicely/

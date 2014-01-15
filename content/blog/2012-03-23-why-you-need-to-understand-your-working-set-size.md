@@ -7,4 +7,4 @@ categories:
 ---
 I guest-posted on Fusion-io's blog about the [database's working set size][1] and the interplay with fast Flash storage. It's written from a MySQL point of view, but it's applicable to many types of systems.
 
- [1]: http://www.fusionio.com/blog/will-fusionio-make-my-database-faster-percona-guest-blog/
+ [1]: http://www.fusionio.comhttp://www.xaprb.com/blog/will-fusionio-make-my-database-faster-percona-guest-blog/

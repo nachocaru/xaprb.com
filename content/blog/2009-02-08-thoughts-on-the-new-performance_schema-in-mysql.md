@@ -18,6 +18,6 @@ A few questions and comments, though.
 *   What version is this intended for? 6.x is kind of vague after four years of work.
 *   Information by itself is no use unless you can act on it. I predict that a lot of neglected bug reports will get revisited if this information can be brought to bear on it. I also predict that if implemented fully, this will show people where the hot spots in their server are; and yet they'll be unable to fix them.
 
- [1]: http://blogs.mysql.com/peterg/2009/02/05/mysql-performance-schema/
+ [1]: http:/http://www.xaprb.com/blogs.mysql.com/peterg/2009/02/05/mysql-performance-schema/
  [2]: http://www.markleith.co.uk/?p=112
  [3]: http://forge.mysql.com/worklog/task.php?id=2360

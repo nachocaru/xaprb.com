@@ -11,5 +11,5 @@ The blogs that are posting the most news and analysis are [MySQL Performance Blo
 
  [1]: http://www.mysqlperformanceblog.com/
  [2]: http://mikaelronstrom.blogspot.com/
- [3]: http://dimitrik.free.fr/blog/
+ [3]: http://dimitrik.free.frhttp://www.xaprb.com/blog/
  [4]: http://mysqlha.blogspot.com/

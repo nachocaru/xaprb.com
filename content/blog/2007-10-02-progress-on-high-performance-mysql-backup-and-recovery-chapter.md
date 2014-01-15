@@ -65,4 +65,4 @@ A side effect of working on this chapter is that it motivated me to finish the w
 
 I'll post "further updates as events warrant."
 
- [1]: /blog/2007/09/19/high-performance-mysql-second-edition-backup-and-recovery/
+ [1]: http://www.xaprb.com/blog/2007/09/19/high-performance-mysql-second-edition-backup-and-recovery/

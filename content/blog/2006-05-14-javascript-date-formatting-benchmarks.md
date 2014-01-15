@@ -129,7 +129,7 @@ Obviously, the method I use is much faster -- between 3.15 and 4.89 times faster
   
   <tr>
     <td>
-      <a href="/blog/2005/12/20/javascript-date-parsing/">Xaprb</a>
+      <a href="http://www.xaprb.com/blog/2005/12/20/javascript-date-parsing/">Xaprb</a>
     </td>
     
     <td>
@@ -156,5 +156,5 @@ Beyond that, though, these various bits of code I've benchmarked are vastly diff
 
 As I said above, I'm not doing this to pick on anyone, but the Dojo method is probably the least efficient. It's the simplest of all, providing only a few formatting characters, and it's not really that much faster than Svend Tofte's implementation. It's probably so slow because it a) uses lots of `if` statements and b) uses repeated string replacements with regular expressions. This is just a hunch, but if it had the rich feature set of my implementation or Svend Tofte's, I think it would probably be the slowest by far.
 
- [1]: /blog/2005/12/12/javascript-closures-for-runtime-efficiency/
- [2]: /blog/2005/12/20/javascript-date-parsing/
+ [1]: http://www.xaprb.com/blog/2005/12/12/javascript-closures-for-runtime-efficiency/
+ [2]: http://www.xaprb.com/blog/2005/12/20/javascript-date-parsing/

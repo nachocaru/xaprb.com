@@ -8,7 +8,7 @@ categories:
 ---
 [Bruce Momjian says][1]
 
-<blockquote cite="http://momjian.us/main/blogs/pgblog.html#May_22_2008">
+<blockquote cite="http://momjian.us/mainhttp://www.xaprb.com/blogs/pgblog.html#May_22_2008">
   <p>
     &#8230;the volume of patches [to PostgreSQL] has risen dramatically during the past few years.
   </p>
@@ -18,4 +18,4 @@ This is total hearsay -- I don't have hard numbers, haven't verified it myself, 
 
 What can be responsible for this increase in patches to PostgreSQL?
 
- [1]: http://momjian.us/main/blogs/pgblog.html#May_22_2008
+ [1]: http://momjian.us/mainhttp://www.xaprb.com/blogs/pgblog.html#May_22_2008

@@ -51,9 +51,9 @@ This entire conference was born out of an "I see a lot of talk but no action" ki
 Sometimes, it's simply time to shut up and do stuff.
 
  [1]: http://opensqlcamp.org/
- [2]: /blog/2008/04/23/like-it-or-not-it-is-the-mysql-conference-and-expo/
+ [2]: http://www.xaprb.com/blog/2008/04/23/like-it-or-not-it-is-the-mysql-conference-and-expo/
  [3]: http://barcamp.org/beCamp
  [4]: http://www.mysqlperformanceblog.com/2008/04/23/conference-for-mysql-users/
  [5]: http://arjen-lentz.livejournal.com/111872.html
  [6]: http://groups.google.com/group/oursql-conference
- [7]: /blog/2008/08/26/announcing-opensql-camp-2008/
+ [7]: http://www.xaprb.com/blog/2008/08/26/announcing-opensql-camp-2008/

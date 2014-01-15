@@ -51,4 +51,4 @@ Merge Tables and Partitioning
     Maintaining Partitioned Tables
 Distributed Transactions (XA)</pre>
 
- [1]: /blog/2007/08/30/coming-soon-high-performance-mysql-second-edition/
+ [1]: http://www.xaprb.com/blog/2007/08/30/coming-soon-high-performance-mysql-second-edition/

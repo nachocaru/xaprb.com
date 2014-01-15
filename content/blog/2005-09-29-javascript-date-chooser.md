@@ -38,7 +38,7 @@ This code causes the date chooser to be shown with a date range of 1950 to 2010,
 On May 26 2006, I decided I could no longer procrastinate and integrated many of the helpful suggestions from the comments into the code. Thanks to all who wrote in comments suggesting improvements, and a big thanks to [Jared][8] for integrating a bunch of code for me and sending me a comment about it. Changes include a fix for the IE problem of `select` fields showing through, no conflicts with the [Prototype][9] library, and a cleaner show/hide behavior.
 
  [1]: http://www.xaprb.com/articles/javascript-date-chooser-demo.html
- [2]: /blog/2005/12/20/javascript-date-parsing/
+ [2]: http://www.xaprb.com/blog/2005/12/20/javascript-date-parsing/
  [3]: http://www.php.net/manual/en/function.date.php
  [4]: http://www.xaprb.com/articles/date-functions.js
  [5]: http://www.xaprb.com/articles/datechooser.js

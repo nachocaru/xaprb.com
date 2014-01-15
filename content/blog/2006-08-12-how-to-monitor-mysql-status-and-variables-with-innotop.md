@@ -89,4 +89,4 @@ Stay tuned to learn more about innotop; there is a lot more to tell! You can [su
  [4]: http://www.xaprb.com/innotop/innotop-V-mode-usa.png
  [5]: http://www.xaprb.com/innotop/innotop-G-mode-usa.png
  [6]: http://www.xaprb.com/innotop/innotop-S-mode-usa.png
- [7]: /blog/subscribe/
+ [7]: http://www.xaprb.com/blog/subscribe/

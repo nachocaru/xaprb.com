@@ -22,9 +22,9 @@ Baron
 
  [1]: http://vnwrites.blogspot.com/2013/09/mysqlfabric-sharding-maintenance.html
 
- [2]: https://blogs.oracle.com/MySQL/entry/tracing_mysql_protocol_from_client
+ [2]: https:/http://www.xaprb.com/blogs.oracle.com/MySQL/entry/tracing_mysql_protocol_from_client
 
- [3]: https://blogs.oracle.com/mysqlinnodb/entry/https_blogs_oracle_com_mysqlinnodb
+ [3]: https:/http://www.xaprb.com/blogs.oracle.com/mysqlinnodb/entry/https_blogs_oracle_com_mysqlinnodb
 
  [4]: http://on-mysql-replication.blogspot.com/2013/09/mysql-labs-multi-source-replication.html
 

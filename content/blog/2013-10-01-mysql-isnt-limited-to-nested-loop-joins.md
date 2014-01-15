@@ -20,7 +20,7 @@ I think the MySQL documentation could help a little by calling things names that
 
 
 
- [1]: http://use-the-index-luke.com/blog/2013-10-01/mysql-is-to-sql-like-mongodb-to-nosql
+ [1]: http://use-the-index-luke.comhttp://www.xaprb.com/blog/2013-10-01/mysql-is-to-sql-like-mongodb-to-nosql
 
  [2]: http://www.mysqlperformanceblog.com/2012/03/21/multi-range-read-mrr-in-mysql-5-6-and-mariadb-5-5/
 

@@ -16,7 +16,7 @@ Off topic: I picked up a handful of OpenSolaris disks. They'll send you one free
 And then, sadly, I had to head out the door and get on the train. Goodbye Philly! Goodbye Postgres friends! See you next time.
 
  [1]: http://www.postgresqlconference.org/2009/east/
- [2]: http://blogs.sun.com/jkshah/
+ [2]: http:/http://www.xaprb.com/blogs.sun.com/jkshah/
  [3]: http://www.mysqlperformanceblog.com/2009/03/02/ssd-xfs-lvm-fsync-write-cache-barrier-and-lost-transactions/
  [4]: http://www.amazon.com/Innovators-Dilemma-Revolutionary-Business-Essentials/dp/0060521996?tag=xaprb-20
  [5]: http://www.myyearbook.com/

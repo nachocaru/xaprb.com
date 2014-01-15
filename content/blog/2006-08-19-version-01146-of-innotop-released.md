@@ -13,4 +13,4 @@ I re-arranged some information to be more compact and readable in this version, 
 Crashes should not cause any loss of information or other problems, by the way. It's completely safe to run, because it doesn't modify anything, it just reads status information. Up till now I've preferred for it to die so I notice any deficiencies, rather than failing silently.
 
  [1]: http://www.xaprb.com/innotop/
- [2]: /blog/2006/08/02/what-to-do-when-innotop-crashes/
+ [2]: http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/

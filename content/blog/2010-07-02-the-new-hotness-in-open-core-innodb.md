@@ -14,6 +14,6 @@ What is the difference between open-source with closed-source accessories, and c
 
 I think InnoDB is an interesting case that illustrates what can happen when commercial and GPL play together. Part of that story is [the appearance of XtraBackup][3], an open-source competitor to InnoDB Hot Backup. Everyone's subject to the rules of the game, unless they restrict the "core," which would make it non-open-source to begin with.
 
- [1]: http://www.computerworlduk.com/community/blogs/index.cfm?entryid=3048&#038;blogid=41
+ [1]: http://www.computerworlduk.com/communityhttp://www.xaprb.com/blogs/index.cfm?entryid=3048&#038;blogid=41
  [2]: http://mituzas.lt/2010/05/08/on-hot-backups/
  [3]: http://www.mysqlperformanceblog.com/2009/02/24/xtrabackup-open-source-alternative-for-innodb-hot-backup-call-for-ideas/

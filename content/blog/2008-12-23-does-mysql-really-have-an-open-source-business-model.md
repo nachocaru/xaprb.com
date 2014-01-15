@@ -36,11 +36,11 @@ These are interesting times. None of this is without precedent, yet there is so 
 
 <sup>[1]</sup>For the record, I have no problem with a company whose goal is first and foremost to make money.
 
- [1]: /blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/
+ [1]: http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/
  [2]: http://developers.slashdot.org/developers/08/05/06/2125235.shtml
  [3]: http://dev.mysql.com/workbench/?p=13
- [4]: /blog/2008/11/20/an-alternative-to-the-mysql-query-analyzer/
- [5]: http://blogs.mysql.com/kaj/2008/12/01/mysql-51-release-schedule/
- [6]: /blog/2008/05/14/mysql-free-software-but-not-open-source/
+ [4]: http://www.xaprb.com/blog/2008/11/20/an-alternative-to-the-mysql-query-analyzer/
+ [5]: http:/http://www.xaprb.com/blogs.mysql.com/kaj/2008/12/01/mysql-51-release-schedule/
+ [6]: http://www.xaprb.com/blog/2008/05/14/mysql-free-software-but-not-open-source/
  [7]: http://news.cnet.com/8301-13505_3-10122963-16.html
  [8]: http://weblog.infoworld.com/openresource/archives/2008/12/the_cost_of_dev.html

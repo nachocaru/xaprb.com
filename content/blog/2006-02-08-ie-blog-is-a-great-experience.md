@@ -13,7 +13,7 @@ Next, it seems to be edited by professionals. Most of the articles are by progra
 
 Just one example: the consistent focus on how IE6 is not a "great experience" and IE7 is a "great experience." Here are some quotes:
 
-<blockquote cite="http://blogs.msdn.com/ie/archive/2006/02/06/525992.aspx">
+<blockquote cite="http:/http://www.xaprb.com/blogs.msdn.com/ie/archive/2006/02/06/525992.aspx">
   <p>
     The IE6 experience for managing your Favorites and History is fairly disjoint and inconsistent. In IE7 we wanted to address these issues as well as make sure that we had a great experience between Tabs and Favorites.
   </p>
@@ -49,5 +49,5 @@ The only gripe I have, which is shared with many other blogs, is the off-topic p
 
 Well done Microsoft! Now if only the rest of the blogging world would sit up and take notice!
 
- [1]: http://blogs.msdn.com/ie/
- [2]: http://blogs.msdn.com/rssteam/archive/2005/10/08/478505.aspx
+ [1]: http:/http://www.xaprb.com/blogs.msdn.com/ie/
+ [2]: http:/http://www.xaprb.com/blogs.msdn.com/rssteam/archive/2005/10/08/478505.aspx

@@ -18,5 +18,5 @@ Daniel Schneller has also continued to work on a [Java implementation of a GUI t
  [3]: http://rpbouman.blogspot.com/
  [4]: http://dev.mysql.com/doc/refman/5.0/en/create-index.html
  [5]: http://dev.mysql.com/doc/refman/5.0/en/creating-spatial-indexes.html
- [6]: http://www.oreillynet.com/databases/blog/2006/09/_finding_redundant_indexes_usi.html
+ [6]: http://www.oreillynet.com/databaseshttp://www.xaprb.com/blog/2006/09/_finding_redundant_indexes_usi.html
  [7]: http://mysql-index-analyzer.blogspot.com/

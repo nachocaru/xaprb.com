@@ -39,5 +39,5 @@ I am concerned about the lack of openness and transparency in all of these issue
  [1]: http://www.mysqlperformanceblog.com/2009/04/06/mysql-and-ibm/
  [2]: http://dev.mysql.com/doc/refman/5.1/en/news-5-1-33.html
  [3]: http://bugs.mysql.com/44172
- [4]: http://blogs.mysql.com/kaj/2008/12/01/mysql-51-release-schedule/
- [5]: http://jcole.us/blog/archives/2008/04/14/just-announced-mysql-to-launch-new-features-only-in-mysql-enterprise/
+ [4]: http:/http://www.xaprb.com/blogs.mysql.com/kaj/2008/12/01/mysql-51-release-schedule/
+ [5]: http://jcole.ushttp://www.xaprb.com/blog/archives/2008/04/14/just-announced-mysql-to-launch-new-features-only-in-mysql-enterprise/

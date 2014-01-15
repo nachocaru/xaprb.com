@@ -31,38 +31,38 @@ This has to be wrapped in a transaction to avoid a race condition, though. Other
 One solution is to use a [mutex table][1]:
 
 <pre>insert into urls(url)
-select '/blog/'
+select 'http://www.xaprb.com/blog/'
 from mutex
     left outer join urls
-        on urls.url = '/blog/'
+        on urls.url = 'http://www.xaprb.com/blog/'
 where mutex.i = 1 and urls.url is null;</pre>
 
 There are more flexible variations on this technique. Suppose there is no unique index on the url column. If desired, it is possible to insert several values in a single statement by changing the `WHERE` clause:
 
 <pre>insert into urls(url)
-select '/blog/'
+select 'http://www.xaprb.com/blog/'
 from mutex
     left outer join urls
-        on urls.url = '/blog/'
+        on urls.url = 'http://www.xaprb.com/blog/'
 where mutex.i &lt; 5 and urls.url is null;</pre>
 
 Now suppose the requirements specify up to three duplicate entries in the table, and each insert should add a single row. It is possible to insert a row at a time while enforcing the requirement with the following query:
 
 <pre>insert into urls(url)
-select '/blog/'
+select 'http://www.xaprb.com/blog/'
 from mutex
     left outer join urls
-        on urls.url = '/blog/'
+        on urls.url = 'http://www.xaprb.com/blog/'
 where mutex.i = 1
 group by urls.url
 having count(*) &lt; 3;</pre>
 
 This query shows the input to the `INSERT` statement:
 
-<pre>select '/blog/', count(*)
+<pre>select 'http://www.xaprb.com/blog/', count(*)
 from mutex
     left outer join urls
-        on urls.url = '/blog/'
+        on urls.url = 'http://www.xaprb.com/blog/'
 where mutex.i = 1
 group by urls.url;</pre>
 
@@ -70,6 +70,6 @@ If this article was useful to you, you should [subscribe][2] to stay current wit
 
 **Edit 2006-02-26** See also my article on using this and other techniques to do [flexible INSERT and UPDATE statements in MySQL][3].
 
- [1]: /blog/2005/09/22/mutex-tables-in-sql/
- [2]: /blog/subscribe/
- [3]: /blog/2006/02/21/flexible-insert-and-update-in-mysql/
+ [1]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/
+ [2]: http://www.xaprb.com/blog/subscribe/
+ [3]: http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/

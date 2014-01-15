@@ -110,4 +110,4 @@ Here are a couple of concrete ideas. With the conventions I've shown, it's easy 
 There are many good ways to do this, and your favorite method probably has lots to recommend it. But after having worked with lots of such systems myself (including one company who mandated that column names had to be globally unique, which was horrible), I still haven't seen anything better than the simple conventions I've described above. It's kind of a reductionistic "let's make this absolutely as simple as possible" philosophy, and it really pays off.
 
  [1]: http://dev.mysql.com/doc/sakila/en/sakila.html
- [2]: /blog/2008/08/19/how-to-unit-test-code-that-interacts-with-a-database/
+ [2]: http://www.xaprb.com/blog/2008/08/19/how-to-unit-test-code-that-interacts-with-a-database/

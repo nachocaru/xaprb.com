@@ -88,8 +88,8 @@ So that's it! Simple, lightweight, intuitive input masks. With a proper form val
  *[GUI]: Graphical User Interface
 
  [1]: http://msdn.microsoft.com/en-us/masked/html/vbproMask_MEdit.asp
- [2]: /blog/2006/01/02/tables-and-data-part-1/
+ [2]: http://www.xaprb.com/blog/2006/01/02/tables-and-data-part-1/
  [3]: http://prototype.conio.net/
  [4]: http://www.xaprb.com/html-input-mask/html-form-input-mask.html
  [5]: http://particletree.com/notebook/how-to-make-firefox-forms-suck-less/
- [6]: /blog/2005/09/29/javascript-combo-box/
+ [6]: http://www.xaprb.com/blog/2005/09/29/javascript-combo-box/

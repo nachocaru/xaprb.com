@@ -30,5 +30,5 @@ Now you've named the tables identically in both places, so it works. It's as tho
 
 With these requirements met, you can use aliases in the rest of the (possibly complex) query, which is much nicer than writing out fully qualified names everywhere.
 
-[1]: /blog/2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/
-[2]: /blog/2006/04/26/sql-coding-standards/
+[1]: http://www.xaprb.com/blog/2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/
+[2]: http://www.xaprb.com/blog/2006/04/26/sql-coding-standards/

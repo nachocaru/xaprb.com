@@ -21,4 +21,4 @@ I'm piping the output into less -S so that I can see unwrapped output. 30 sample
 
 If you have a hard time visualizing the above, go ahead and run the commands! It'll take only a minute, and it'll make a lot more sense to you then. This is a really useful way to summarize and understand what is going on (or has gone on) inside your MySQL server.
 
- [1]: /blog/2009/04/11/formatting-mysqladmin-extended-status-nicely/
+ [1]: http://www.xaprb.com/blog/2009/04/11/formatting-mysqladmin-extended-status-nicely/

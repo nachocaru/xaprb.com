@@ -30,6 +30,6 @@ By the way, the process of replacing copy/pasted code isn't without its hitches.
 
  [1]: http://opensourcestrategies.blogspot.com/2007/10/limits-of-open-source.html
  [2]: http://code.google.com/p/maatkit
- [3]: /blog/2007/10/31/mysql-table-sync-bounty-lets-do-it/
+ [3]: http://www.xaprb.com/blog/2007/10/31/mysql-table-sync-bounty-lets-do-it/
  [4]: http://www.zmanda.com/
  [5]: http://code.google.com/p/maatkit/

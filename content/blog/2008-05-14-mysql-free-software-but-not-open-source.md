@@ -33,7 +33,7 @@ This matters because both Freedom and an open development model are necessary to
 
 I'm not the only one who notices this. Here's [another quote][7]:
 
-<blockquote cite="http://blogs.the451group.com/opensource/2008/04/24/finding-the-right-balance-mysql%e2%80%99s-changing-development-model/">
+<blockquote cite="http:/http://www.xaprb.com/blogs.the451group.com/opensource/2008/04/24/finding-the-right-balance-mysql%e2%80%99s-changing-development-model/">
   <p>
     With all due respect to Marten, there is a significant difference between the captive open source development model for MySQL and the community open source development model for PostgreSQL.
   </p>
@@ -47,5 +47,5 @@ If this interests you, perhaps you would like to join the discussion on the [our
  [4]: http://forge.mysql.com/contribute/cla.php
  [5]: http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/
  [6]: http://code.google.com/p/google-mysql-tools/
- [7]: http://blogs.the451group.com/opensource/2008/04/24/finding-the-right-balance-mysql%e2%80%99s-changing-development-model/
+ [7]: http:/http://www.xaprb.com/blogs.the451group.com/opensource/2008/04/24/finding-the-right-balance-mysql%e2%80%99s-changing-development-model/
  [8]: http://groups.google.com/group/oursql-sources

@@ -24,7 +24,7 @@ categories:
 
 <p>In fact, ma'at isn't just a name and a word, it's a concept, as my wife explained to me.  This concept doesn't have an exact parallel in other languages and cultures.  You should read about it via the link I just gave -- it's really quite a fascinating bit of Egyptology.  I asked my wife to find a good image of weighing the heart of the deceased, and she took some time to describe the scene:</p>
 
-<p><a href='/media/2007/11/weighing_of_the_heart.jpg' title='Weighing of the Heart'><img src='/media/2007/11/weighing_of_the_heart.thumbnail.jpg' alt='Weighing of the Heart' /></a></p>
+<p><a href='http://www.xaprb.com/media/2007/11/weighing_of_the_heart.jpg' title='Weighing of the Heart'><img src='http://www.xaprb.com/media/2007/11/weighing_of_the_heart.thumbnail.jpg' alt='Weighing of the Heart' /></a></p>
 
 <blockquote>
 

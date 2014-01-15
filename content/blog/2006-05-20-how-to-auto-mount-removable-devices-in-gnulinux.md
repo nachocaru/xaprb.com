@@ -41,7 +41,7 @@ Now all the software I need is installed, and `hald` and `dbus` will start when 
 
 <pre>ivman --nofork &gt; /dev/null 2&gt;&1 &</pre>
 
-Now I'm done. When I plug a device in, `ivman` finds it and mounts it (actually, it can do a lot more than just mount it; read the man page). I have the permissions I need to change files on the device and unmount it again. It appears under `/media`. If I'm running a file manager such as Nautilus, it shows up on the desktop and in the left-hand pane of the browser view, and I can unmount it with a right-click.
+Now I'm done. When I plug a device in, `ivman` finds it and mounts it (actually, it can do a lot more than just mount it; read the man page). I have the permissions I need to change files on the device and unmount it again. It appears under `http://www.xaprb.com/media`. If I'm running a file manager such as Nautilus, it shows up on the desktop and in the left-hand pane of the browser view, and I can unmount it with a right-click.
 
 I'm running `ivman` as myself, not system-wide. There are security and convenience reasons for doing so. The man page explains more about it. It can also automatically run itself as a daemon in the background, but I'm choosing not to do that so a) it quits when I log out for security, and b) I don't get multiple instances running when I log in and out repeatedly.
 

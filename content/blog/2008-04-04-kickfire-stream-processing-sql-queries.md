@@ -51,7 +51,7 @@ Kickfire runs in commodity hardware, and it is just one or two servers, not rack
 
 ### What took so long?
 
-Stream processing is the obvious way to run SQL queries. Some readers may never have thought about it this way, but my guess is that a lot of you already think of SQL in a stream-processing way, even though you might know that computers today really implement it in conventional ways. I have always tried to think of it this way, and I <a href="/blog/2005/10/03/understanding-sql-joins/">always try to explain SQL as a stream</a>, too.
+Stream processing is the obvious way to run SQL queries. Some readers may never have thought about it this way, but my guess is that a lot of you already think of SQL in a stream-processing way, even though you might know that computers today really implement it in conventional ways. I have always tried to think of it this way, and I <a href="http://www.xaprb.com/blog/2005/10/03/understanding-sql-joins/">always try to explain SQL as a stream</a>, too.
 
 So when I was on a call with the Kickfire engineers and it finally sunk in, I felt really silly. Why didn't I think of that? It's so obvious.
 

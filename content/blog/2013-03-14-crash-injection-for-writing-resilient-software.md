@@ -17,6 +17,6 @@ The fix was simple, but the lesson was well learned. I don't remember doing this
 
 In the MySQL world, it would be great if we had more crash-injection testing of InnoDB as well. If you agree, you might consider subscribing to <http://bugs.mysql.com/bug.php> to keep up to date with effort on that front.
 
- [1]: /blog/2011/05/04/whats-wrong-with-mmm/ "What’s wrong with MMM?"
+ [1]: http://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/ "What’s wrong with MMM?"
  [2]: http://en.wikipedia.org/wiki/Crash-only_software
  [3]: http://flamingspork.com/projects/libeatmydata/

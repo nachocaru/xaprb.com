@@ -41,5 +41,5 @@ If you use it to filter the output I showed above, you'll see nothing by default
 I like making you happy. Make me happy in return: [donate][3].
 
  [1]: http://code.google.com/p/maatkit/
- [2]: /blog/2007/01/25/how-to-calculate-table-checksums-in-mysql/
- [3]: /blog/donate/
+ [2]: http://www.xaprb.com/blog/2007/01/25/how-to-calculate-table-checksums-in-mysql/
+ [3]: http://www.xaprb.com/blog/donate/

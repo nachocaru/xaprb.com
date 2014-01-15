@@ -32,7 +32,7 @@ On Thursday:
 
  [1]: http://www.youtube.com/watch?v=cvXqm0RdJms
  [2]: http://www.percona.com/live/mysql-conference-2012/
- [3]: /blog/2012/02/08/im-speaking-at-the-mysql-conference-in-april/ "I’m speaking at the MySQL conference in April"
+ [3]: http://www.xaprb.com/blog/2012/02/08/im-speaking-at-the-mysql-conference-in-april/ "I’m speaking at the MySQL conference in April"
  [4]: http://www.percona.com/live/mysql-conference-2012/sessions/innodb-and-xtradb-architecture-and-performance-optimization
  [5]: http://www.percona.com/live/mysql-conference-2012/sessions/linux-and-hw-optimizations-mysql
  [6]: http://www.percona.com/live/mysql-conference-2012/program/bofs

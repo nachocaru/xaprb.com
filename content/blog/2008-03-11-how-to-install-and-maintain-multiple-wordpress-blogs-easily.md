@@ -5,17 +5,17 @@ url: /blog/2008/03/11/how-to-install-and-maintain-multiple-wordpress-blogs-easil
 categories:
   - Web
 ---
-My wife has a site that needs two WordPress blog installations. The URLs differ by a subdirectory name. Both blogs need to be (URL-wise) subdirectories of /blog/. They need to be completely independent of each other, yet use the same custom theme. And there used to be just a single blog, which was *not* in a subdirectory; its permalinks must not break. (It has nice URLs with the date and title in them, not post ID-style URLs). And because I'm the husband, I get to maintain it, so tack "easy to maintain" onto the requirements (it must be easy to upgrade WP in both blogs, for example). In this article I'll show you how I did it with a single .htaccess file, a single copy of WordPress, two MySQL databases, and a single configuration file.
+My wife has a site that needs two WordPress blog installations. The URLs differ by a subdirectory name. Both blogs need to be (URL-wise) subdirectories of http://www.xaprb.com/blog/. They need to be completely independent of each other, yet use the same custom theme. And there used to be just a single blog, which was *not* in a subdirectory; its permalinks must not break. (It has nice URLs with the date and title in them, not post ID-style URLs). And because I'm the husband, I get to maintain it, so tack "easy to maintain" onto the requirements (it must be easy to upgrade WP in both blogs, for example). In this article I'll show you how I did it with a single .htaccess file, a single copy of WordPress, two MySQL databases, and a single configuration file.
 
 ### Fixing URLs
 
-As I mentioned, there used to be a blog at /blog/ which must not break. Suppose this blog was about dogs and my wife has recently started blogging about cats. She wants two completely independent blogs: /blog/dogs/ and /blog/cats/. Now the old permalinks structure, e.g. /blog/2006/03/01/dogs-are-great/, must redirect to /blog/**dogs/**2006/03/01/dogs-are-great/. How to do this?
+As I mentioned, there used to be a blog at http://www.xaprb.com/blog/ which must not break. Suppose this blog was about dogs and my wife has recently started blogging about cats. She wants two completely independent blogs: http://www.xaprb.com/blog/dogs/ and http://www.xaprb.com/blog/cats/. Now the old permalinks structure, e.g. http://www.xaprb.com/blog/2006/03/01/dogs-are-great/, must redirect to http://www.xaprb.com/blog/**dogs/**2006/03/01/dogs-are-great/. How to do this?
 
-I'm not a mod_rewrite wizard, but I figured there must be a way. And indeed there is: if an incoming URL doesn't contain dogs or cats, it can be rewritten and redirected to the new URL. Here's the code, which goes in /blog/.htaccess:
+I'm not a mod_rewrite wizard, but I figured there must be a way. And indeed there is: if an incoming URL doesn't contain dogs or cats, it can be rewritten and redirected to the new URL. Here's the code, which goes in http://www.xaprb.com/blog/.htaccess:
 
-<pre>RewriteBase /blog/
+<pre>RewriteBase http://www.xaprb.com/blog/
 RewriteCond %{REQUEST_URI} !dogs|cats
-RewriteRule ^(.*)$ http://www.furryfriends.org/blog/dogs/$1 [R]
+RewriteRule ^(.*)$ http://www.furryfriends.orghttp://www.xaprb.com/blog/dogs/$1 [R]
 </pre>
 
 (By the way, the furryfriends thing is just an example, not the real site name).
@@ -25,26 +25,26 @@ So far, so good. That works just fine: when I access a URL without dogs or cats 
 <pre>RewriteCond %{REQUEST_URI} dogs|cats
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (dogs|cats) /blog/$1/index.php [L]
+RewriteRule (dogs|cats) http://www.xaprb.com/blog/$1/index.php [L]
 </pre>
 
-This is basically the same thing WordPress usually does, but I've made it tolerate either dogs or cats and figure out which installation should get the request. The .htaccess file lives in /blog/, not inside /dogs/ or /cats/ where it would be hard to maintain (it would get wiped out with upgrades). I can see different ways of doing this, but this is the way I chose. So here's the whole file:
+This is basically the same thing WordPress usually does, but I've made it tolerate either dogs or cats and figure out which installation should get the request. The .htaccess file lives in http://www.xaprb.com/blog/, not inside /dogs/ or /cats/ where it would be hard to maintain (it would get wiped out with upgrades). I can see different ways of doing this, but this is the way I chose. So here's the whole file:
 
 <pre>&lt;IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Anything to the old address (e.g. /blog/foo/bar) goes to the new address
-# (e.g. /blog/dogs/foo/bar)
-RewriteBase /blog/
+# Anything to the old address (e.g. http://www.xaprb.com/blog/foo/bar) goes to the new address
+# (e.g. http://www.xaprb.com/blog/dogs/foo/bar)
+RewriteBase http://www.xaprb.com/blog/
 RewriteCond %{REQUEST_URI} !dogs|cats
-RewriteRule ^(.*)$ http://www.furryfriends.org/blog/dogs/$1 [R]
+RewriteRule ^(.*)$ http://www.furryfriends.orghttp://www.xaprb.com/blog/dogs/$1 [R]
 
 # If that fired, then we didn't reach this code.  If we did, then this rule
 # should do what a normal WP rule does.
 RewriteCond %{REQUEST_URI} dogs|cats
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule (dogs|cats) /blog/$1/index.php [L]
+RewriteRule (dogs|cats) http://www.xaprb.com/blog/$1/index.php [L]
 &lt;/IfModule>
 </pre>
 

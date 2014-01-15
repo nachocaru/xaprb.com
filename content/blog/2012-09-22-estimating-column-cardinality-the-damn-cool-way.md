@@ -48,4 +48,4 @@ That's not even close. I happen to know that there are more than 10122796 distin
 
 Did I do something wrong? I'm trying to decide whether my error is more likely to be that I'm using CRC32, a little coding mistake, the way MySQL handles numbers internally&#8230; something else? I'm not sure what's most likely. I ran this one step at a time when I wrote the code, and all of the hashing and bit-counting seems to be correct, but the aggregate results are just way off.
 
- [1]: http://blog.notdot.net/2012/09/Dam-Cool-Algorithms-Cardinality-Estimation
+ [1]: http:/http://www.xaprb.com/blog.notdot.net/2012/09/Dam-Cool-Algorithms-Cardinality-Estimation

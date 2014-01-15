@@ -13,5 +13,5 @@ Side note: pair is not the cheapest (and [I'm accepting gifts][3] if you feel th
 
  [1]: http://www.pair.com/
  [2]: http://www.pair.com/news/
- [3]: /blog/donate/
+ [3]: http://www.xaprb.com/blog/donate/
  [4]: http://www.briworks.net/

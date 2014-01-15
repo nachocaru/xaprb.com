@@ -26,6 +26,6 @@ If you're using Maatkit to make sure your slaves have the same data as their mas
 I've been running it in production for a couple of months now with nothing but good results. And the code is drop-dead simple, so I think the chance of bugs is very slim. But if you have questions, problems, bug reports etc, please use the [Maatkit][4] project page to report them.
 
  [1]: http://isthe.com/chongo/tech/comp/fnv/
- [2]: http://www.radwin.org/michael/blog/2007/03/mysql_user_defined_functio.html
+ [2]: http://www.radwin.org/michaelhttp://www.xaprb.com/blog/2007/03/mysql_user_defined_functio.html
  [3]: http://code.google.com/p/google-mysql-tools/
  [4]: http://code.google.com/p/maatkit/

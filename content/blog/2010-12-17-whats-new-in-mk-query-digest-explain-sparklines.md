@@ -50,4 +50,4 @@ Here are some more examples so you can practice reading the results:
 *   **aeeeE** is something like a star-schema join in a data warehousing query. The first table is accessed via a full table scan. It's probably the fact table. The second, third, and fourth tables are accessed through an eq\_ref method; they are probably dimension tables. The last table is also an eq\_ref, but it uses a covering index.
 
  [1]: http://www.maatkit.org/
- [2]: http://s.petrunia.net/blog/?p=24
+ [2]: http://s.petrunia.nethttp://www.xaprb.com/blog/?p=24

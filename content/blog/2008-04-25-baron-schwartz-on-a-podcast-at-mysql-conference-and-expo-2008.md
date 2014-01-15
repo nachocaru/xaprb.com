@@ -9,5 +9,5 @@ I did an interview with [Barton George from Sun][1] while I was at the conferenc
 
 Topics: everything and anything, including Maatkit and PostgreSQL.
 
- [1]: http://blogs.sun.com/barton808/
- [2]: http://blogs.sun.com/barton808/entry/mysql_conf08_talkin_to_baron
+ [1]: http:/http://www.xaprb.com/blogs.sun.com/barton808/
+ [2]: http:/http://www.xaprb.com/blogs.sun.com/barton808/entry/mysql_conf08_talkin_to_baron

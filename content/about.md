@@ -3,7 +3,7 @@ title: "About"
 date: "2005-01-01"
 ---
 
-<img src="/media/2010/01/baron-square.jpg" alt="Baron Schwartz, a.k.a. Xaprb" title="Baron Schwartz, a.k.a. Xaprb" width="310" height="310" class="size-full wp-image-2715" />
+<img src="http://www.xaprb.com/media/2010/01/baron-square.jpg" alt="Baron Schwartz, a.k.a. Xaprb" title="Baron Schwartz, a.k.a. Xaprb" width="310" height="310" class="size-full wp-image-2715" />
 
 Hi! I hope you are finding this blog helpful and enjoyable.
 

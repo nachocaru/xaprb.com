@@ -13,5 +13,5 @@ It is also really nice -- and this is *not* a gratuitous self-serving plug, but 
 
  [1]: http://kb.askmonty.org/en/what-is-mariadb-53
  [2]: http://www.oracle.com/us/corporate/press/439460
- [3]: http://blogs.innodb.com/wp/2011/07/
- [4]: /blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/ "What would make me buy MySQL Enterprise?"
+ [3]: http:/http://www.xaprb.com/blogs.innodb.com/wp/2011/07/
+ [4]: http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/ "What would make me buy MySQL Enterprise?"

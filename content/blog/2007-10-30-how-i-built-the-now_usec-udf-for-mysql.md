@@ -78,7 +78,7 @@ mysql> select now_usec();
 
 For those who have reached this page via Google searches and are looking for more information, you should check out the [MySQL User Defined Function Library][4] project. Lots of good UDFs there.
 
- [1]: /blog/2007/10/23/how-fast-is-mysql-replication/
+ [1]: http://www.xaprb.com/blog/2007/10/23/how-fast-is-mysql-replication/
  [2]: http://dev.mysql.com/doc/en/adding-functions.html
  [3]: http://bugs.mysql.com/bug.php?id=28456
  [4]: http://www.xcdsql.org/MySQL/UDF/

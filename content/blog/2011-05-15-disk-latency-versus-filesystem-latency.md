@@ -12,6 +12,6 @@ Brendan Gregg has a very good ongoing series of blog posts about the importance 
 
 Someone should add Brendan's feed to Planet MySQL. Here are the articles: [part 1][1], [part 2][2]. Brendan will be talking about this topic at [Percona Live][3] on the 26th.
 
- [1]: http://dtrace.org/blogs/brendan/2011/05/11/file-system-latency-part-1/
- [2]: http://dtrace.org/blogs/brendan/2011/05/13/file-system-latency-part-2/
+ [1]: http://dtrace.orghttp://www.xaprb.com/blogs/brendan/2011/05/11/file-system-latency-part-1/
+ [2]: http://dtrace.orghttp://www.xaprb.com/blogs/brendan/2011/05/13/file-system-latency-part-2/
  [3]: http://www.percona.com/live/

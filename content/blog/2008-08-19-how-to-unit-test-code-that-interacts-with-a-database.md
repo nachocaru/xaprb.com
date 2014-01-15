@@ -43,12 +43,12 @@ If you're in the Oracle or SQL Server world, or any other world where you can't 
 
 Have fun! Go forth and test some more!
 
- [1]: /blog/2008/08/18/how-maatkit-benefits-from-test-driven-development/
+ [1]: http://www.xaprb.com/blog/2008/08/18/how-maatkit-benefits-from-test-driven-development/
  [2]: http://www.rimmkaufman.com/rkgblog/
  [3]: http://c2.com/cgi/wiki?SmokeTest
  [4]: https://launchpad.net/mysql-sandbox
  [5]: http://www.craigslist.org/
  [6]: http://c2.com/cgi/wiki?MockObject
- [7]: /blog/2006/05/16/how-to-refactor-without-rewriting-unit-tests/
+ [7]: http://www.xaprb.com/blog/2006/05/16/how-to-refactor-without-rewriting-unit-tests/
  [8]: http://dev.mysql.com/doc/en/server-sql-mode.html
  [9]: http://www.fsf.org/

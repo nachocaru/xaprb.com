@@ -138,4 +138,4 @@ By now you probably see the pattern: do it one step at a time, turning each thin
 
 In this post I showed you how to decompose the problem into simpler and simpler pieces. Often what's hardest about a complex query is trying to do it all at once. I have lots of tips elsewhere on this blog about how to make things faster -- this is not a particularly fast query -- but here I just wanted to show how to get the correct answer.
 
- [1]: /blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/
+ [1]: http://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/

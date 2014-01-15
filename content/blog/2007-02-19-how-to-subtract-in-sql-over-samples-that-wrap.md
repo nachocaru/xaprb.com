@@ -197,4 +197,4 @@ In this article I've shown you three methods to do SQL math on a counter that wr
 
 Can you think of any other ways to do this, or any other uses for these kinds of techniques? Write into the comments!
 
- [1]: /blog/2006/12/15/advanced-mysql-user-variable-techniques/
+ [1]: http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/

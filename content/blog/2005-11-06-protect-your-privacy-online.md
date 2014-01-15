@@ -45,6 +45,6 @@ Whether I need a cookie whitelist is debatable. If I've blacklisted all content 
 I'm not naive. I don't pretend this is a perfect solution, but it makes me feel better about my privacy online. I hope it has helped you too.
 
  [1]: http://del.icio.us
- [2]: http://bloglines.com
- [3]: /blog/2005/10/26/adblock-patterns/
+ [2]: http:/http://www.xaprb.com/bloglines.com
+ [3]: http://www.xaprb.com/blog/2005/10/26/adblock-patterns/
  [4]: http://adblock.mozdev.org/
