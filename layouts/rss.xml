@@ -6,7 +6,7 @@
     <author>{{ .Site.Params.Author }}</author>
     <rights>Copyright (c) {{ .Site.Params.Author }}; all rights reserved.</rights>
     <updated>{{ .Date }}</updated>
-    {{ range .Data.Pages }}
+    {{ range first 20 .Site.Recent }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>

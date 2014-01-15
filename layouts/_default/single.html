@@ -12,18 +12,24 @@
                         </header>
                         <div class="body">
                           {{ .Content }}
-
-                          {{if .Next}}<a class="next" href="{{.Next.Permalink}}">Older: {{.Next.Title}}</a>{{end}}
-                          {{if .Prev}}<a class="previous" href="{{.Prev.Permalink}}">Newer: {{.Prev.Title}}</a>{{end}}
-
-                        <ul id="categories">
-                          {{ range .Params.categories }}
-                            <li><a href="{{ $baseurl }}/categories/{{ . | urlize }}">{{ . }}</a> </li>
-                          {{ end }}
-                        </ul>
-
                         </div>
                     </article>
+                    <div class="row">
+                        <div class="col-md-6">
+                          {{if .Next}}<a class="next" href="{{.Next.Permalink}}"><div style="float:left; width: 65px; height:65px"><i class="fa fa-caret-square-o-left fa-fw fa-3x"></i></i></div>{{.Next.Title}}</a>{{end}}
+                        </div>
+                        <div class="col-md-6">
+                          {{if .Prev}}<a class="previous" href="{{.Prev.Permalink}}"><div style="float:right; width: 65px; height:65px"><i class="fa fa-caret-square-o-right fa-fw fa-3x"></i></i></div>{{.Prev.Title}}</a>{{end}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <p>Posted on {{ .Date.Format "Mon, Jan 2, 2006" }}. Approximately {{ .FuzzyWordCount }} Words.</p>
+                          {{ range .Params.categories }}
+                            <a href="{{ $baseurl }}/categories/{{ . | urlize }}" class="btn btn-primary">{{ . }}</a>
+                          {{ end }}
+                      </div>
+                    </div>
                 </div>
 {{ template "chrome/sidebar.html" . }}
             </div>

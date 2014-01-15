@@ -1,5 +1,8 @@
 - move all images into the blog
-- fix relative links
+- fix relative links:
+	/blog/
+	/media/
+	/articles/
 - look for missing reference links with [brackets]
 - make a nice metadata thing at the bottom with links and stuff
 - move all the code samples etc to gists
