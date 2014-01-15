@@ -1,5 +1,3 @@
----
-baseurl: "http://www.xaprb.com/"
 title: "Xaprb"
 params:
     author: "Baron Schwartz"
@@ -10,4 +8,5 @@ params:
     domain: "xaprb.com"
 indexes:
     category: "categories"
-...
+baseurl: 'http://www.xaprb.com/'
+---
