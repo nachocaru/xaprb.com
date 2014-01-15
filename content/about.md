@@ -3,10 +3,22 @@ title: "About"
 date: "2005-01-01"
 ---
 
-This is the personal blog of Baron Schwartz. The name Xaprb comes from my first name typed on a Dvorak keyboard.
+<img src="/media/2010/01/baron-square.jpg" alt="Baron Schwartz, a.k.a. Xaprb" title="Baron Schwartz, a.k.a. Xaprb" width="310" height="310" class="size-full wp-image-2715" />
 
-I hope you enjoy reading this site and find it useful to you.
+Hi! I hope you are finding this blog helpful and enjoyable.
 
-I welcome hearing from you. However I am not interested in any service provider offerings, offers to advertise or guest post on this blog, or similar solicitations.
+A few words about me. I am Baron Schwartz, the lead author of [High Performance MySQL][1], among other things. My online nickname Xaprb is my first name typed in QWERTY on a Dvorak keyboard layout.
 
-You may contact me at the email address shown in the footer of this site, or via the social networks listed there.
+In addition to my writing, I've created quite a bit of open-source software. I speak frequently. Please contact me if you would like me to address your organization.
+
+You can contact me like this: `SELECT REVERSE( 'moc.brpax@norab');` Please do not ask me about advertising or guest posting on this blog, and please don't send me solicitations for service provider offerings, outsourcing, etc. I will mark your email as spam.
+
+I also invite you to connect with me on [Twitter][2] and [LinkedIn][3].
+
+<p style="clear:both">
+  &nbsp;
+</p>
+
+ [1]: http://www.highperfmysql.com/
+ [2]: http://twitter.com/xaprb
+ [3]: http://www.linkedin.com/in/xaprb
