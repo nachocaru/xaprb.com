@@ -1,3 +1,6 @@
+- enable disqus comments
+- consolidate categories a bit more (mysql, monitoring, scalability,
+  performance seem to need tweaking)
 - create paginated archives (monthly/yearly archives somehow too?)
 - move all images into the blog
 - look for missing reference links with [brackets]
