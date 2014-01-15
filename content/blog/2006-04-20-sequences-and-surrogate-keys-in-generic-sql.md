@@ -119,4 +119,4 @@ MySQL actually allows an `AUTO_INCREMENT` value to serve as a sequence for certa
  *[DBA]: Database Administrator
  *[RDBMS]: Relational Database Management System
 
- [1]: http://www.xaprb.com/blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/
+ [1]: /blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/

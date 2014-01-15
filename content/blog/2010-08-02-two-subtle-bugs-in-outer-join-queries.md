@@ -57,5 +57,5 @@ The left-outer-ness of the above query is what causes the third row to be output
 If you want to ponder variations and subtleties of the above, you can read more discussion on [the issue report where we're hammering out the details][3] of automatically detecting and warning about these sneaky errors.
 
  [1]: http://www.maatkit.org/doc/mk-query-advisor.html
- [2]: http://www.xaprb.com/blog/2010/03/16/try-mk-query-advisor-a-new-maatkit-tool/
+ [2]: /blog/2010/03/16/try-mk-query-advisor-a-new-maatkit-tool/
  [3]: http://code.google.com/p/maatkit/issues/detail?id=950

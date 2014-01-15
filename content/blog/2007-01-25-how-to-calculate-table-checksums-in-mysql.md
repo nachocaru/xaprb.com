@@ -129,11 +129,11 @@ I also touched a bit on the finer points of `NULL` values and `ORDER BY` for con
 
 This is the fastest, easiest, most efficient way I know to compare the contents of two or more tables, which is necessary to verify that a replicated master and slave server are still in sync.
 
- [1]: http://www.xaprb.com/blog/2007/01/20/how-to-make-mysql-replication-reliable/
- [2]: http://www.xaprb.com/blog/2007/02/26/introducing-mysql-table-checksum/
+ [1]: /blog/2007/01/20/how-to-make-mysql-replication-reliable/
+ [2]: /blog/2007/02/26/introducing-mysql-table-checksum/
  [3]: http://dev.mysql.com/doc/refman/5.0/en/checksum-table.html
  [4]: http://datacharmer.blogspot.com/2006/03/seeking-alternatives-to-cursors.html
  [5]: http://dev.mysql.com/doc/refman/5.0/en/blackhole-storage-engine.html
- [6]: http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/
+ [6]: /blog/2006/12/15/advanced-mysql-user-variable-techniques/
  [7]: http://dev.mysql.com/doc/refman/5.0/en/information-functions.html
  [8]: http://www.cryptopp.com/benchmarks.html

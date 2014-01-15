@@ -29,6 +29,6 @@ And that brings me back to Method R. I can see that the queries are suffering fr
 
 And this is why it is a crime to write un-instrumented software: because when an un-instrumented system starts to get overloaded, it is very hard to determine the source of performance problems.
 
- [1]: http://www.xaprb.com/blog/2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/
+ [1]: /blog/2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/
  [2]: http://en.wikipedia.org/wiki/Amdahl%27s_law
  [3]: http://en.wikipedia.org/wiki/Queueing_theory

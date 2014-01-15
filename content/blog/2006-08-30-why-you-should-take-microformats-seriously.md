@@ -113,7 +113,7 @@ There's no need to be pessimistic about microformats. Sure, not everything is fo
 
  [1]: http://microformats.org
  [2]: http://microformats.org/wiki/hcard-parsing
- [3]: http://www.xaprb.com/blog/2006/05/14/javascript-date-formatting-benchmarks/
+ [3]: /blog/2006/05/14/javascript-date-formatting-benchmarks/
  [4]: http://www.w3.org/TR/soap/
  [5]: http://www.tbray.org/ongoing/When/200x/2004/09/18/WS-Oppo
  [6]: http://microformats.org/wiki/hcard

@@ -22,6 +22,6 @@ Some miscellanea:
 Well, I've run out of my allotted thirty minutes of blogging! Back to the salt mines! Just kidding&#8230; I'm actually off to the climbing gym soon to get my mind off it.
 
  [1]: http://www.mysqlperformanceblog.com/2007/11/12/how-we-work-on-high-performance-mysql-second-edition/
- [2]: http://www.xaprb.com/blog/2007/02/14/review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/
+ [2]: /blog/2007/02/14/review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/
  [3]: http://shodan.ru/
  [4]: http://www.sphinxsearch.com/

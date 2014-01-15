@@ -14,5 +14,5 @@ I just looked at [the sysstat website][2], and it has been updated recently to w
 > 
 > The average service time (in milliseconds) for I/O requests that were issued to the device. Warning! Do not trust this field any more. This field will be removed in a future sysstat version.
 
- [1]: http://www.xaprb.com/blog/2010/01/09/how-linux-iostat-computes-its-results/
+ [1]: /blog/2010/01/09/how-linux-iostat-computes-its-results/
  [2]: http://sebastien.godard.pagesperso-orange.fr/

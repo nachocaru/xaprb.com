@@ -97,8 +97,8 @@ Is it really faster to do it the way I've described? Yes, it is. It is [way fast
  [1]: http://www.gazingus.org/html/Date_Formatting_Function.html
  [2]: http://www.mattkruse.com/javascript/date/source.html
  [3]: http://www.svendtofte.com/code/date_format/
- [4]: http://www.xaprb.com/blog/2005/09/29/javascript-date-chooser/
+ [4]: /blog/2005/09/29/javascript-date-chooser/
  [5]: http://www.php.net/manual/en/function.date.php
  [6]: http://www.xaprb.com/articles/date-functions.zip
  [7]: http://www.xaprb.com/articles/date-formatting-demo.html
- [8]: http://www.xaprb.com/blog/2006/05/14/javascript-date-formatting-benchmarks/
+ [8]: /blog/2006/05/14/javascript-date-formatting-benchmarks/

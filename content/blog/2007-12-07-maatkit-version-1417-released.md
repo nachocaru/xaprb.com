@@ -121,5 +121,5 @@ Changelog for mk-visual-explain:
    * Updated common code.
    * Queries of the form "... FROM (SELECT 1) AS X" crashed the tool.</pre>
 
- [1]: http://www.xaprb.com/blog/2007/11/26/four-companies-to-sponsor-maatkit-development/
+ [1]: /blog/2007/11/26/four-companies-to-sponsor-maatkit-development/
  [2]: http://code.google.com/p/maatkit

@@ -28,4 +28,4 @@ Besides canonicalizing grants, it's a more convenient way to extract grants from
 [MySQL Toolkit][1] is a set of essential tools for MySQL users, developers and administrators. The project's goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as `awk` and `sed`. Other tools in the toolkit include a table checksummer and a duplicate key checker.
 
  [1]: http://code.google.com/p/maatkit
- [2]: http://www.xaprb.com/blog/2006/07/09/so-you-think-your-code-is-in-version-control/
+ [2]: /blog/2006/07/09/so-you-think-your-code-is-in-version-control/

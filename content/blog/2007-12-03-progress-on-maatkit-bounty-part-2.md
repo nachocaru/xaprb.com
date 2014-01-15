@@ -20,5 +20,5 @@ Right now I've gotten a simple interface for code that finds differences in rows
 
 I don't think most people will consider this a big deal, but don't expect the final product to correctly sync tables without a primary key and with duplicate rows. Comparing tables with duplicates is absolutely meaningless. If you can't write a `WHERE` clause that uniquely identifies a row, you're done.
 
- [1]: http://www.xaprb.com/blog/2007/11/30/progress-on-maatkit-bounty/
- [2]: http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
+ [1]: /blog/2007/11/30/progress-on-maatkit-bounty/
+ [2]: /blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/

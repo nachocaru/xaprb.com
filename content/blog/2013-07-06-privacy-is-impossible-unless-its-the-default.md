@@ -27,5 +27,5 @@ The bottom line is that we are using technologies such as email that were never 
 
 In a future post I'll broaden this topic beyond email.
 
- [1]: http://www.xaprb.com/blog/2013/07/05/without-free-software-and-hardware-privacy-is-impossible/ "without free software and hardware, privacy is impossible"
+ [1]: /blog/2013/07/05/without-free-software-and-hardware-privacy-is-impossible/ "without free software and hardware, privacy is impossible"
  [2]: http://www.gnupg.org/

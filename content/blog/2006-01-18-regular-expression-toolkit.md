@@ -23,5 +23,5 @@ I used my work on [grouping data visually with row groups][5] and [browser varia
  [2]: http://www.activestate.com/
  [3]: http://www.activestate.com/Products/Komodo/
  [4]: http://www.xaprb.com/demos/rx-toolkit/
- [5]: http://www.xaprb.com/blog/2006/01/10/grouping-data-visually-with-row-groups/
- [6]: http://www.xaprb.com/blog/2006/01/14/browser-variations-in-regexpexec/
+ [5]: /blog/2006/01/10/grouping-data-visually-with-row-groups/
+ [6]: /blog/2006/01/14/browser-variations-in-regexpexec/

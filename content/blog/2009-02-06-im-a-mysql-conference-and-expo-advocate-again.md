@@ -15,11 +15,11 @@ But now I'm back! My colleagues and I will be there, and now I'm advocating for 
 And for the record, I never pressured anyone to accept my sessions. I just stayed silent. That's what polite people do when they're not on the guest list: they just find another party.
 
  [1]: http://www.mysqlconf.com/
- [2]: http://www.xaprb.com/blog/2008/02/22/remember-to-sign-up-for-mysql-conference-and-expo/
- [3]: http://www.xaprb.com/blog/2008/03/06/send-your-employees-to-the-mysql-conference/
+ [2]: /blog/2008/02/22/remember-to-sign-up-for-mysql-conference-and-expo/
+ [3]: /blog/2008/03/06/send-your-employees-to-the-mysql-conference/
  [4]: http://blogs.mysql.com/kaj/2009/01/12/on-open-source-and-open-competition-in-a-not-so-open-world/
  [5]: http://datacharmer.blogspot.com/2008/09/how-to-get-your-proposal-accepted-to.html
  [6]: http://blogs.mysql.com/kaj/2008/09/08/call-for-papers-for-mysql-conference-call-by-22-oct-2008/
  [7]: http://blogs.mysql.com/kaj/2008/10/08/reminder-mysql-user-conference-cfp-ends-in-two-weeks/
- [8]: http://www.xaprb.com/blog/2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/
+ [8]: /blog/2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/
  [9]: http://conferences.percona.com/

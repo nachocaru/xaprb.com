@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1797" class="wp-caption alignleft" style="width: 135px">
-  <a href="http://www.amazon.com/Forecasting-Oracle-Performance-Craig-Shallahamer/dp/1590598024?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/05/forecasting_oracle_performance.gif" alt="Forecasting Oracle Performance" title="Forecasting Oracle  Performance" width="125" height="168" class="size-full wp-image-1797" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/Forecasting-Oracle-Performance-Craig-Shallahamer/dp/1590598024?tag=xaprb-20"><img src="/media/2010/05/forecasting_oracle_performance.gif" alt="Forecasting Oracle Performance" title="Forecasting Oracle  Performance" width="125" height="168" class="size-full wp-image-1797" /></a><p class="wp-caption-text">
     Forecasting Oracle Performance
   </p>
 </div>
@@ -40,4 +40,4 @@ In the end, despite my reservations, I think this book is worth buying because I
 
  [1]: http://www.amazon.com/Forecasting-Oracle-Performance-Craig-Shallahamer/dp/1590598024?tag=xaprb-20
  [2]: http://apress.com/book/view/9781590598023
- [3]: http://www.xaprb.com/blog/essential-books/
+ [3]: /blog/essential-books/

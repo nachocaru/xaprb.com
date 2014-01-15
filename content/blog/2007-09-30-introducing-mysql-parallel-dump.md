@@ -58,6 +58,6 @@ There's one more wish Peter and I both have, but which is impossible for right n
 This script is part of MySQL Toolkit and will be released as soon as I have time. There are a few other bug fixes I want to include. In the meantime, if you're dying to get it, you can grab it from the [MySQL Toolkit][4] subversion repository.
 
  [1]: http://www.mysqlperformanceblog.com/2007/05/22/wishes-for-mysqldump/
- [2]: http://www.xaprb.com/blog/2007/09/19/high-performance-mysql-second-edition-backup-and-recovery/
+ [2]: /blog/2007/09/19/high-performance-mysql-second-edition-backup-and-recovery/
  [3]: http://www.fr3nd.net/projects/mysqlpdump/
  [4]: http://code.google.com/p/maatkit/

@@ -8,7 +8,7 @@ categories:
 ---
 <p style="float:left">
   <div id="attachment_2114" class="wp-caption alignleft" style="width: 190px">
-    <a href="http://www.amazon.com/dp/1449381561?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/12/mongodb-definitive-guide.gif" alt="MongoDB, the Definitive Guide" title="MongoDB, the Definitive Guide" width="180" height="236" class="size-full wp-image-2114" /></a><p class="wp-caption-text">
+    <a href="http://www.amazon.com/dp/1449381561?tag=xaprb-20"><img src="/media/2010/12/mongodb-definitive-guide.gif" alt="MongoDB, the Definitive Guide" title="MongoDB, the Definitive Guide" width="180" height="236" class="size-full wp-image-2114" /></a><p class="wp-caption-text">
       MongoDB, the Definitive Guide
     </p>
   </div>

@@ -49,6 +49,6 @@ And as a bonus, it'll prevent your `SHOW INNODB STATUS` from being completely ov
 
 All in all, it's been a huge relief to have this applied to the servers I manage. Sometimes InnoDB's status output used to drive me nuts. I stopped complaining and did something about it!
 
- [1]: http://www.xaprb.com/blog/2007/09/18/how-to-debug-innodb-lock-waits/
+ [1]: /blog/2007/09/18/how-to-debug-innodb-lock-waits/
  [2]: http://code.google.com/p/innotop/
  [3]: http://bugs.mysql.com/bug.php?id=29126

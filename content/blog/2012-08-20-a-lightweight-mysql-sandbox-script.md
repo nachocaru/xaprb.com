@@ -99,4 +99,4 @@ esac
 This is pretty basic, and certainly not something I'd promote as [generically useful][2] or ready for the masses, but perhaps it will help someone else who has the (unusual?) usage requirements I have.
 
  [1]: http://mysqlsandbox.net/
- [2]: http://www.xaprb.com/blog/2012/04/24/the-mysql-init-script-mess/
+ [2]: /blog/2012/04/24/the-mysql-init-script-mess/

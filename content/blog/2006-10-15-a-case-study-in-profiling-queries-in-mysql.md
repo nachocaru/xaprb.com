@@ -448,7 +448,7 @@ That's pretty bizarre, isn't it? I don't know how the query cost is calculated; 
 
 The example I gave should make it pretty clear how much you can measure about query performance -- execution time is only one data point. In the third article in this series, I'll take the wraps off a shiny new tool that can do all this tedious math for you in the blink of an eye. Stay tuned.
 
- [1]: http://www.xaprb.com/blog/2006/10/12/how-to-profile-a-query-in-mysql/
- [2]: http://www.xaprb.com/blog/2006/06/14/how-to-re-index-a-large-database-table/
+ [1]: /blog/2006/10/12/how-to-profile-a-query-in-mysql/
+ [2]: /blog/2006/06/14/how-to-re-index-a-large-database-table/
  [3]: http://www.xaprb.com/articles/status-before-indexing.csv
  [4]: http://www.xaprb.com/articles/status-after-indexing.csv

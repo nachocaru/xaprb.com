@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <p style="float:right">
-  <a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&#038;location=http%3A%2F%2Fwww.amazon.com%2FBuilding-powerful-robust-websites-Drupal%2Fdp%2F1847192971&#038;tag=xaprb-20&#038;linkCode=ur2&#038;camp=1789&#038;creative=9325"><img style="float:right" src='http://www.xaprb.com/media/2008/07/robust_drupal_6.jpg' alt='Drupal' /></a>
+  <a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&#038;location=http%3A%2F%2Fwww.amazon.com%2FBuilding-powerful-robust-websites-Drupal%2Fdp%2F1847192971&#038;tag=xaprb-20&#038;linkCode=ur2&#038;camp=1789&#038;creative=9325"><img style="float:right" src='/media/2008/07/robust_drupal_6.jpg' alt='Drupal' /></a>
 </p>
 
 I just finished reading [Building Powerful and Robust Websites with Drupal 6][1] ([this title on Packt's site][2]). I've been working on a website powered by Drupal, and though it was obvious that Drupal is very flexible and capable, I was getting pretty lost in the website. So I wanted to read a book that would explain it to me.
@@ -44,4 +44,4 @@ PS: [some people have asked me about the grammar rules and regular expressions I
 
  [1]: http://www.amazon.com/gp/redirect.html?ie=UTF8&#038;location=http%3A%2F%2Fwww.amazon.com%2FBuilding-powerful-robust-websites-Drupal%2Fdp%2F1847192971&#038;tag=xaprb-20&#038;linkCode=ur2&#038;camp=1789&#038;creative=9325
  [2]: http://www.packtpub.com/drupal-6-create-powerful-websites/book
- [3]: http://www.xaprb.com/blog/2008/06/15/what-is-it-like-to-write-a-technical-book/
+ [3]: /blog/2008/06/15/what-is-it-like-to-write-a-technical-book/

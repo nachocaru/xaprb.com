@@ -17,7 +17,7 @@ Anyway, my wife and I have a bunch of computers (desktops and laptops) and we ha
   </p>
   
   <p>
-    I even had all my music ripped already to my <a href="http://www.xaprb.com/blog/2005/10/05/review-of-the-iriver-hd340/">iRiver HD340</a>. In OGG format. And then I found out the HP Media Vault doesn't support OGG format. <a href="http://www.imdb.com/title/tt0093779/">Boo! Boo! Rubbish! Filth! Slime!</a>
+    I even had all my music ripped already to my <a href="/blog/2005/10/05/review-of-the-iriver-hd340/">iRiver HD340</a>. In OGG format. And then I found out the HP Media Vault doesn't support OGG format. <a href="http://www.imdb.com/title/tt0093779/">Boo! Boo! Rubbish! Filth! Slime!</a>
   </p>
   
   <p>

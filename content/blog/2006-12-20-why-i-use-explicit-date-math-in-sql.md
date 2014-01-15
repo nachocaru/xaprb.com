@@ -81,5 +81,5 @@ Both problems were **very** hard to solve. That's why I'm careful with date oper
 
 *Note: I'm taking a break from computers and blogging. This is pre-recorded.* I'll moderate your comments shortly.
 
- [1]: http://www.xaprb.com/blog/2005/12/04/sql-server-2000-date-and-time-puzzler/
- [2]: http://www.xaprb.com/blog/2006/09/12/type-conversion-semantics-of-mysqls-between-operator/
+ [1]: /blog/2005/12/04/sql-server-2000-date-and-time-puzzler/
+ [2]: /blog/2006/09/12/type-conversion-semantics-of-mysqls-between-operator/

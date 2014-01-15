@@ -55,7 +55,7 @@ You should read this as a depth-first tree traversal. In other words, the root o
 
 As I said, this is a simple example. When your queries have many subqueries and/or UNIONs, you quickly get much more complicated EXPLAIN output, which is very hard to understand. It's much easier to read the tree representation for complex queries. Here are thumbnails of the query execution plans of some real queries from a project I've worked on:
 
-<img width="113" height="250" src='http://www.xaprb.com/media/2007/07/mysql-visual-explain-1.png' alt='MySQL Visual Explain output on a complex query' /><img width="151" height="250" src='http://www.xaprb.com/media/2007/07/mysql-visual-explain-2.png' alt='MySQL Visual Explain output on a complex query' />
+<img width="113" height="250" src='/media/2007/07/mysql-visual-explain-1.png' alt='MySQL Visual Explain output on a complex query' /><img width="151" height="250" src='/media/2007/07/mysql-visual-explain-2.png' alt='MySQL Visual Explain output on a complex query' />
 
 The corresponding EXPLAIN output is very hard to understand, even though I've become an expert on EXPLAIN. I can understand the tree view without trouble. I don't think it matters how much of an expert I am, a tree view is always going to be easier to understand.
 

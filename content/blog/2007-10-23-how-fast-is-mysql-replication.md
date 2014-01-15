@@ -83,5 +83,5 @@ Not all that bad, eh? It looks to me like MySQL can replicate most small queries
 If anyone knows of a way to measure the delay between the event being logged in the master's binary log, and the event being logged in the slave's relay log, I'd be interested in seeing the results. I'm guessing it's practically instantaneous for small events like this, and most of the lag is in reading, parsing, and executing the SQL.
 
  [1]: http://datacharmer.blogspot.com/2006/04/measuring-replication-speed.html
- [2]: http://www.xaprb.com/blog/2006/05/04/how-to-make-a-program-choose-an-optimal-polling-interval/
+ [2]: /blog/2006/05/04/how-to-make-a-program-choose-an-optimal-polling-interval/
  [3]: http://dev.mysql.com/doc/en/adding-functions.html

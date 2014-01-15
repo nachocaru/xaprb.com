@@ -13,13 +13,13 @@ categories:
 
 <p>I can shuffle the order so that they're not adjacent, but that only helps avoid a "rainbow effect" if I'm stacking areas of color on top of each other, like in the following image:</p>
 
-<p><a href='http://www.xaprb.com/media/2008/03/mysql_command_counters.png' title='MySQL Command Counters'><img src='http://www.xaprb.com/media/2008/03/mysql_command_counters.thumbnail.png' alt='MySQL Command Counters' /></a></p>
+<p><a href='/media/2008/03/mysql_command_counters.png' title='MySQL Command Counters'><img src='/media/2008/03/mysql_command_counters.thumbnail.png' alt='MySQL Command Counters' /></a></p>
 
 <p>Ugh, rainbows (I chose those by hand, not with my program).  Lines on a white background might be placed in any order, so shuffling doesn't help with those graphs.</p>
 
 <p>I modified my little script to let me vary the saturation and value.  My thinking was that lines on a white background really shouldn't be full-value, and when I'm drawing areas instead of lines, I should de-saturate them so they become more pleasing pastels.  This doesn't really help as much as I might have hoped for, either.  Colors around 80% saturation and 60% value look pretty good, but they're still ugly colors.  And I can't get over five colors without them starting to run together again.  Here's an example with only four colors that's already hard to look at:</p>
 
-<p><a href='http://www.xaprb.com/media/2008/03/innodb_io.png' title='InnoDB I/O Activity'><img src='http://www.xaprb.com/media/2008/03/innodb_io.thumbnail.png' alt='InnoDB I/O Activity' /></a></p>
+<p><a href='/media/2008/03/innodb_io.png' title='InnoDB I/O Activity'><img src='/media/2008/03/innodb_io.thumbnail.png' alt='InnoDB I/O Activity' /></a></p>
 
 <p>Part of the problem, I'm currently thinking, is that I'm varying only one dimension.  I could be varying the saturation as well as the hue, for example.  But that might be another rabbit hole that will waste more time.</p>
 

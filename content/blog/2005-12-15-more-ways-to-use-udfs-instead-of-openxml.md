@@ -206,4 +206,4 @@ from dbo.fn_SplitWords(@NameValues, @Delim1)</pre>
 
 From first to last, each of these queries is more flexible and complex than the preceding one. Therefore I prefer them in that order.
 
- [1]: http://www.xaprb.com/blog/2005/11/15/use-microsoft-sql-servers-openxml-sparingly/
+ [1]: /blog/2005/11/15/use-microsoft-sql-servers-openxml-sparingly/

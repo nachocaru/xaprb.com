@@ -74,7 +74,7 @@ Point taken, but that's only planned at the moment, not reality.
 
 If this is MySQL's goal for the `FEDERATED` engine, it needs to be made clearer. I don't think an average reader of the manual would come to that conclusion otherwise. In the meantime, this series of articles is about understanding what this storage engine does and what it's useful for, here and now. Future functionality is fair game for future articles.
 
- [1]: http://www.xaprb.com/blog/2007/01/29/mysqls-federated-storage-engine-part-1/
- [2]: http://www.xaprb.com/blog/2006/07/04/how-to-exploit-mysql-index-optimizations/
+ [1]: /blog/2007/01/29/mysqls-federated-storage-engine-part-1/
+ [2]: /blog/2006/07/04/how-to-exploit-mysql-index-optimizations/
  [3]: http://www.oreillynet.com/pub/a/databases/2006/08/10/mysql-federated-tables.html
  [4]: http://dev.mysql.com/tech-resources/articles/mysql-federated-storage.html

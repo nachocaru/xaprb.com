@@ -15,4 +15,4 @@ The truth is, a non-relational database would be of very little use. In layman's
 
  [1]: http://en.wikipedia.org/wiki/Relational_algebra
  [2]: http://www.amazon.com/SQL-Relational-Theory-Write-Accurate/dp/0596523068?tag=xaprb-20
- [3]: http://www.xaprb.com/blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/
+ [3]: /blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/

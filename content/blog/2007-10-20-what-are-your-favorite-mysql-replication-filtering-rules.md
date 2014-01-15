@@ -9,4 +9,4 @@ As I wrote a few days ago, I'm writing the [replication chapter for the second e
 
 Thanks very much! I hope the community involvement will make this book more useful for everyone.
 
- [1]: http://www.xaprb.com/blog/2007/10/18/high-performance-mysql-second-edition-replication-scaling-and-high-availability/
+ [1]: /blog/2007/10/18/high-performance-mysql-second-edition-replication-scaling-and-high-availability/

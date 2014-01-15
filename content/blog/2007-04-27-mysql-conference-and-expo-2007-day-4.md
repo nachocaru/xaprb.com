@@ -126,7 +126,7 @@ I too have some cool things in the works, including a whole new way to ensure sl
  [2]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213
  [3]: http://code.google.com/p/innotop
  [4]: http://www.webyog.com/en/
- [5]: http://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
+ [5]: /blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/
  [6]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12448
  [7]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10764
  [8]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10857

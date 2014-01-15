@@ -15,5 +15,5 @@ I don't have a timeline for when I'll write the corresponding restore utility, b
 
 I am very focused on recovery, not backup, as you'll see if you buy the second edition of High Performance MySQL :-) I'm just solving my needs in the order of urgency: one must have a backup to do a restoration. I generally don't like the "urgent, fix now" approach! (For various reasons I won't get into, I am not able to use [ZRM][2], but I would ordinarily recommend it over rolling your own solution).
 
- [1]: http://www.xaprb.com/blog/2007/05/11/how-to-eliminate-temporary-tables-in-mysql/
+ [1]: /blog/2007/05/11/how-to-eliminate-temporary-tables-in-mysql/
  [2]: http://www.zmanda.com/

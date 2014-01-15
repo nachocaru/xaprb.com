@@ -58,5 +58,5 @@ In this article I surveyed the preliminaries of archiving: motivations to archiv
 
 In the next article I'll discuss how to select which data is archivable, and how to deal with the complexities of OLTP schemas during the archiving process.
 
- [1]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+ [1]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
  [2]: http://en.wikipedia.org/wiki/The_Mythical_Man-Month

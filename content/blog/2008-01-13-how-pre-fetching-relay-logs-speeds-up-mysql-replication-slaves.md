@@ -32,6 +32,6 @@ If conditions aren't right, it could really screw you. For example, if your slav
 
 There's more information about this in the upcoming High Performance MySQL, 2nd Edition, which I'm helping to write. We also have a lot more information about how to understand your hardware and workload. There's no way I can fit it all into this post, and I don't want to try. Even if I weren't working like a mad dog on the book and had time to put it here, I can't give away all the book's goodies, can I? :-)
 
- [1]: http://www.xaprb.com/blog/2008/01/13/speed-up-your-mysql-replication-slaves/
+ [1]: /blog/2008/01/13/speed-up-your-mysql-replication-slaves/
  [2]: http://technocation.org/content/2007-mysql-user-conference-and-expo-presentations-and-videos
  [3]: http://mysqldatabaseadministration.blogspot.com/2007/05/pre-fetch-binlogs-to-speed-up-mysql.html

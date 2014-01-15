@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1949" class="wp-caption alignleft" style="width: 163px">
-  <a href="http://www.amazon.com/Guerrilla-Capacity-Planning-Tactical-Applications/dp/3540261389?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/07/guerrilla_capacity_planning.jpg" alt="Guerrilla Capacity Planning" title="Guerrilla Capacity Planning" width="153" height="231" class="size-full wp-image-1949" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/Guerrilla-Capacity-Planning-Tactical-Applications/dp/3540261389?tag=xaprb-20"><img src="/media/2010/07/guerrilla_capacity_planning.jpg" alt="Guerrilla Capacity Planning" title="Guerrilla Capacity Planning" width="153" height="231" class="size-full wp-image-1949" /></a><p class="wp-caption-text">
     Guerrilla Capacity Planning
   </p>
 </div>
@@ -43,8 +43,8 @@ I have a feeling that Neil Gunther is kind of like Einstein: his real gift is hi
 
  [1]: http://www.amazon.com/Guerrilla-Capacity-Planning-Tactical-Applications/dp/3540261389?tag=xaprb-20
  [2]: http://www.springer.com/computer/communication+networks/book/978-3-540-26138-4
- [3]: http://www.xaprb.com/blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/
+ [3]: /blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/
  [4]: http://en.wikipedia.org/wiki/Amdahl%27s_law
  [5]: http://en.wikipedia.org/wiki/Erlang_%28unit%29#Erlang_C_formula
  [6]: http://carymillsap.blogspot.com/2010/03/robbs-question-about-mmm.html
- [7]: http://www.xaprb.com/blog/2010/05/01/a-review-of-forecasting-oracle-performance-by-craig-shallahamer/
+ [7]: /blog/2010/05/01/a-review-of-forecasting-oracle-performance-by-craig-shallahamer/

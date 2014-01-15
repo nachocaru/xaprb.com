@@ -17,5 +17,5 @@ The remaining question is how to encrypt the file full of passwords. That's what
 
 I still might follow up on Sergio's suggestions for building something on top of this. I'd really like integration with the desktop: press a key, start typing and seeing matches auto-complete, press TAB when I have the one I want, and copy the password. Maybe I will actually do this. Or maybe a hot-key to simply open Vim with the password file in a terminal is all I need.
 
- [1]: http://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/
+ [1]: /blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/
  [2]: http://www.vim.org/scripts/script.php?script_id=661

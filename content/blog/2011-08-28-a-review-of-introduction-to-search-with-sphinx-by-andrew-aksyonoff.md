@@ -6,7 +6,7 @@ categories:
   - Databases
 ---
 <div id="attachment_2459" class="wp-caption alignleft" style="width: 190px">
-  <a href="http://www.amazon.com/Introduction-Search-Sphinx-installation-relevance/dp/0596809557/?tag=xaprb-20"><img src="http://www.xaprb.com/media/2011/08/sphinx.jpg" alt="Introduction to Search with Sphinx" title="Introduction to Search with Sphinx" width="180" height="236" class="size-full wp-image-2459" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/Introduction-Search-Sphinx-installation-relevance/dp/0596809557/?tag=xaprb-20"><img src="/media/2011/08/sphinx.jpg" alt="Introduction to Search with Sphinx" title="Introduction to Search with Sphinx" width="180" height="236" class="size-full wp-image-2459" /></a><p class="wp-caption-text">
     Introduction to Search with Sphinx
   </p>
 </div>

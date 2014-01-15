@@ -34,4 +34,4 @@ Changelog for mysql-table-sync:
    * The special command-line syntax didn't allow a bare hostname.
    * Added an informative printout of what is being synced.</pre>
 
- [1]: http://www.xaprb.com/blog/2007/09/30/introducing-mysql-parallel-dump/
+ [1]: /blog/2007/09/30/introducing-mysql-parallel-dump/

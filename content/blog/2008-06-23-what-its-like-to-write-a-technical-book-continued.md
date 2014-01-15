@@ -77,7 +77,7 @@ There were some false positives. For example, bullet-points often scored badly o
 
 If you'd like to see the source code, here's the [clean_text.pl][6] and here's the [analyze_text.pl][7]. Enjoy!
 
- [1]: http://www.xaprb.com/blog/2008/06/15/what-is-it-like-to-write-a-technical-book/
+ [1]: /blog/2008/06/15/what-is-it-like-to-write-a-technical-book/
  [2]: http://www.highperfmysql.com/
  [3]: http://toc.oreilly.com/2008/06/oreilly-author-and-editor-air.html
  [4]: http://dictionary.reference.com/browse/assure

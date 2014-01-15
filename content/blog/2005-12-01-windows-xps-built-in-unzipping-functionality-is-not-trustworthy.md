@@ -9,6 +9,6 @@ Window's XP's integrated ZIP functionality (built into Windows Explorer) is not 
 
 It isn't really Windows's fault; after all, Windows is just showing you the files it thinks are legal. You could argue the real problem is just an invalid (for Windows) archive. But I will stand my ground on this point: Windows should not be hiding errors from you. If Windows can't open and display the contents of an archive, it should say so, and not lead you to believe everything worked. This is a basic principle of building reliable, correct software. You need to know when it fails (and in many cases, define fatal errors and explicitly disallow any efforts to recover, [as is the case with XML][3]).
 
- [1]: http://www.xaprb.com/blog/2005/11/17/maximizing-filesystem-portability/
+ [1]: /blog/2005/11/17/maximizing-filesystem-portability/
  [2]: http://9rules.com
  [3]: http://www.w3.org/TR/REC-xml/#dt-fatal

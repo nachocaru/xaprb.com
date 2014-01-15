@@ -16,7 +16,7 @@ I'm not sure this is true for my use case, for a couple of reasons.
 
 First, I clearly fall into the only category that the flowchart acknowledges may be a good use case for partitioning: I do need instant block deletes. Paying for data ingestion as well as purging doesn't make sense in my case. It's like eating a hot hot curry -- I don't want to feel the pain on the way out too :-) 
 
-<img src="http://www.xaprb.com/media/2013/09/Partition-Flow-Chart1-251x300.png" alt="Partition-Flow-Chart1" width="251" height="300" class="aligncenter size-medium wp-image-3257" /> 
+<img src="/media/2013/09/Partition-Flow-Chart1-251x300.png" alt="Partition-Flow-Chart1" width="251" height="300" class="aligncenter size-medium wp-image-3257" /> 
 
 Secondly, data size matters a lot. If I need to create a redundant index on the timestamp dimension, no matter how good TokuDB's compression is, it'll inflate my storage and I/O costs. And make my backups bigger, and so on, and so on. I don't want an index that I don't need. My queries operate very efficiently without the timestamp index, and creating one only to help delete older data fast wouldn't make sense. 
 

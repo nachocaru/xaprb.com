@@ -47,9 +47,9 @@ If you enjoyed this article, [subscribe via feeds or e-mail][6] to receive my ar
 
 **Update 2006-08-29** The queries I've given here are sloppy, performance-wise. You don't want to just `select * from table` in the subquery in real life; I just wanted to keep the examples simple. In reality you should only be selecting the columns you need in that innermost query, and adding a good `WHERE` clause to limit the results, too.
 
- [1]: http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/
+ [1]: /blog/2006/03/11/many-to-one-problems-in-sql/
  [2]: http://dev.mysql.com/doc/refman/5.0/en/update.html
- [3]: http://www.xaprb.com/blog/2005/09/26/sql-subqueries-and-derived-tables/
+ [3]: /blog/2005/09/26/sql-subqueries-and-derived-tables/
  [4]: http://dev.mysql.com/doc/internals/en/select-derived.html
- [5]: http://www.xaprb.com/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
- [6]: http://www.xaprb.com/blog/subscribe/
+ [5]: /blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
+ [6]: /blog/subscribe/

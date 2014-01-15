@@ -12,7 +12,7 @@ I'm off to my first [Strata][1] conference, and I'm speaking! I've always wanted
 
 My session will be about [ways to make big data small][2], in both the storage and processing dimensions, without losing much of the value. 
 
-<img src="http://www.xaprb.com/media/2013/08/4985831624_fc6cc446c9-300x156.jpg" alt="4985831624_fc6cc446c9" width="300" height="156" class="aligncenter size-medium wp-image-3248" />
+<img src="/media/2013/08/4985831624_fc6cc446c9-300x156.jpg" alt="4985831624_fc6cc446c9" width="300" height="156" class="aligncenter size-medium wp-image-3248" />
 
 
 

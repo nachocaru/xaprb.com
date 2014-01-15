@@ -16,15 +16,15 @@ I also said that those who use privacy, which is non-default, are making themsel
 
 Yesterday, yet another [ugly NSA slideshow][5] was made public. Take a look at slide 15:
 
-[<img src="http://www.xaprb.com/media/2013/08/nsa-finding-targets-300x219.png" alt="nsa-finding-targets" width="300" height="219" class="aligncenter size-medium wp-image-3242" />][6] 
+[<img src="/media/2013/08/nsa-finding-targets-300x219.png" alt="nsa-finding-targets" width="300" height="219" class="aligncenter size-medium wp-image-3242" />][6] 
 
 Look at the following slides, too: they discuss decrypting people's encrypted activities to inspect. Refer to the closing sentence of my quoted paragraph above. Read the full article, linked at the top of this blog post. The amount and specificity of surveillance being performed is stunning. 
 
 Am I psychic? No, this stuff is pretty obvious. As I said previously, it's inevitable. Nothing is going to stop these agencies from doing this stuff. If it's resisted strongly enough, they'll just knuckle down and do it more and more secretly. They won't stop doing it; they will just try to stop being caught in the act.
 
  [1]: http://www.theguardian.com/world/2013/jul/31/nsa-top-secret-program-online-data
- [2]: http://www.xaprb.com/blog/2013/07/05/without-free-software-and-hardware-privacy-is-impossible/ "Without free software and hardware, privacy is impossible"
- [3]: http://www.xaprb.com/blog/2013/07/06/privacy-is-impossible-unless-its-the-default/ "Privacy is impossible unless it’s the default"
- [4]: http://www.xaprb.com/blog/2013/07/17/email-snooping-is-a-small-fraction-of-the-story/ "Email snooping is a small fraction of the story"
+ [2]: /blog/2013/07/05/without-free-software-and-hardware-privacy-is-impossible/ "Without free software and hardware, privacy is impossible"
+ [3]: /blog/2013/07/06/privacy-is-impossible-unless-its-the-default/ "Privacy is impossible unless it’s the default"
+ [4]: /blog/2013/07/17/email-snooping-is-a-small-fraction-of-the-story/ "Email snooping is a small fraction of the story"
  [5]: http://www.theguardian.com/world/interactive/2013/jul/31/nsa-xkeyscore-program-full-presentation
- [6]: http://www.xaprb.com/media/2013/08/nsa-finding-targets.png
+ [6]: /media/2013/08/nsa-finding-targets.png

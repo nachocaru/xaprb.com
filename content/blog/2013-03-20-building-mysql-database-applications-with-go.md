@@ -14,4 +14,4 @@ Afterwards the discussion ranged to a lot of related topics. This was the best p
 
  [1]: http://www.meetup.com/Golang-DC/events/106865142/
  [2]: https://vividcortex.com/
- [3]: http://www.xaprb.com/blog/2013/03/14/crash-injection-for-writing-resilient-software/ "Crash injection for writing resilient software"
+ [3]: /blog/2013/03/14/crash-injection-for-writing-resilient-software/ "Crash injection for writing resilient software"

@@ -20,4 +20,4 @@ This proposed change feels a little like deja vu for me, given my recent [advent
 
  [1]: https://blogs.oracle.com/supportingmysql/entry/server_defaults_changes_in_mysql
  [2]: http://dev.mysql.com/doc/refman/5.5/en/innodb-file-space.html
- [3]: http://www.xaprb.com/blog/2012/09/14/how-to-free-15gb-of-disk-space-in-a-tenth-of-a-second/
+ [3]: /blog/2012/09/14/how-to-free-15gb-of-disk-space-in-a-tenth-of-a-second/

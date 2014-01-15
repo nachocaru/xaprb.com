@@ -24,4 +24,4 @@ We can look at the lowly iostat (or /proc/diskstats in Linux) for an example of 
 I might change my opinion about some of the more complex things that are being added to MySQL; much smarter people have, and I'm probably a hold-out because I'm not that smart. But I still see the need for simple combinations of counters and timers for essential metrics, which do not need complex queries or tools to use. I have a few more things on my wishlist, which I'll write about later.
 
  [1]: http://www.facebook.com/note.php?note_id=390420710932
- [2]: http://www.xaprb.com/blog/2010/01/09/how-linux-iostat-computes-its-results/
+ [2]: /blog/2010/01/09/how-linux-iostat-computes-its-results/

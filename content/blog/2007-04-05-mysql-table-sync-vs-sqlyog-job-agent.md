@@ -470,11 +470,11 @@ Both points are well put. I was initially surprised that there's no command-line
 
 I found [SQLyog Job Agent][3] to be a well-rounded tool for syncing data between MySQL tables. Though not designed purely as a stand-alone tool, once I figured out the XML job file format, it was easy to use. My analysis showed me some areas where there's theoretically a possibility of incorrectly syncing data, but I never observed that happening. I ran some unscientific benchmarks and found that my design for [MySQL Table Sync][2] is several times more efficient *for my test case* in terms of network I/O, which seems to be the major contributor to the time it takes to sync tables.
 
- [1]: http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
+ [1]: /blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
  [2]: http://code.google.com/p/maatkit
  [3]: http://www.webyog.com/en/downloads.php
  [4]: http://www.webyog.com/faq/33_7_en.html
  [5]: http://www.perlmonks.org/?node_id=381053
- [6]: http://www.xaprb.com/blog/2007/03/30/comparison-of-table-sync-algorithms/
+ [6]: /blog/2007/03/30/comparison-of-table-sync-algorithms/
  [7]: http://www.xaprb.com/articles/table-sync-profiles.tar.gz
  [8]: http://www.xaprb.com/articles/sqlyog-vs-mysql-table-sync.tar.gz

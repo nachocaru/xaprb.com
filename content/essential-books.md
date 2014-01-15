@@ -134,29 +134,29 @@ A great book on this topic. Short --- 150 pages --- but very deep, and highly re
 
 A very useful book for anyone who wants to modify the MySQL source code. Also excellent for just understanding the code better. [I reviewed it here][26].
 
- [1]: http://www.xaprb.com/blog/category/review/
+ [1]: /blog/category/review/
  [2]: http://www.amazon.com/High-Performance-MySQL-Optimization-Replication/dp/1449314287?tag=xaprb-20
  [3]: http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20
- [4]: http://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/
+ [4]: /blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/
  [5]: http://www.amazon.com/Optimizing-Oracle-Performance-Cary-Millsap/dp/059600527X?tag=xaprb-20
- [6]: http://www.xaprb.com/blog/2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/
+ [6]: /blog/2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/
  [7]: http://www.amazon.com/dp/0471719994/?tag=xaprb-20
- [8]: http://www.xaprb.com/blog/2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/
+ [8]: /blog/2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/
  [9]: http://www.amazon.com/Understanding-MySQL-Internals-Sasha-Pachev/dp/0596009577?tag=xaprb-20
  [10]: http://www.amazon.com/High-Performance-MySQL-Optimization-Replication/dp/0596101716?tag=xaprb-20
- [11]: http://www.xaprb.com/blog/2010/02/19/a-review-of-understanding-mysql-internals-by-sasha-pachev/
+ [11]: /blog/2010/02/19/a-review-of-understanding-mysql-internals-by-sasha-pachev/
  [12]: http://www.amazon.com/Art-Capacity-Planning-Scaling-Resources/dp/0596518579/?tag=xaprb-20
- [13]: http://www.xaprb.com/blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/
+ [13]: /blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/
  [14]: http://www.amazon.com/gp/product/1590597699/?tag=xaprb-20
- [15]: http://www.xaprb.com/blog/2009/08/22/a-review-of-beginning-database-design-by-clare-churcher/
+ [15]: /blog/2009/08/22/a-review-of-beginning-database-design-by-clare-churcher/
  [16]: http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557?tag=xaprb-20
- [17]: http://www.xaprb.com/blog/2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/
+ [17]: /blog/2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/
  [18]: http://www.amazon.com/dp/067232699X?tag=xaprb-20
- [19]: http://www.xaprb.com/blog/2009/02/21/review-of-scalable-internet-architectures-by-theo-schlossnagle/
+ [19]: /blog/2009/02/21/review-of-scalable-internet-architectures-by-theo-schlossnagle/
  [20]: http://www.amazon.com/SQL-Relational-Theory-Write-Accurate/dp/0596523068?tag=xaprb-20
- [21]: http://www.xaprb.com/blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/
+ [21]: /blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/
  [22]: http://www.amazon.com/Higher-Order-Perl-Transforming-Programs/dp/1558607013?tag=xaprb-20
  [23]: http://www.amazon.com/dp/0596156367?tag=xaprb-20
- [24]: http://www.xaprb.com/blog/2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/
+ [24]: /blog/2010/07/04/a-review-of-cloud-application-architectures-by-george-reese/
  [25]: http://www.amazon.com/dp/1849510601/?tag=xaprb-20
- [26]: http://www.xaprb.com/blog/2010/10/10/a-review-of-mysql-5-1-plugin-development-by-golubchik-and-hutchings/
+ [26]: /blog/2010/10/10/a-review-of-mysql-5-1-plugin-development-by-golubchik-and-hutchings/

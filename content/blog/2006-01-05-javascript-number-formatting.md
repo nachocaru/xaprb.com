@@ -34,8 +34,8 @@ I have a set of unit tests, which use the excellent [JsUnit][4] library. Bring u
 
 Of course there's the obligatory [demo page][6], too.
 
- [1]: http://www.xaprb.com/blog/2005/12/12/javascript-closures-for-runtime-efficiency/
- [2]: http://www.xaprb.com/blog/2005/12/30/excel-calc-number-formatting/
+ [1]: /blog/2005/12/12/javascript-closures-for-runtime-efficiency/
+ [2]: /blog/2005/12/30/excel-calc-number-formatting/
  [3]: http://msdn.microsoft.com/library/en-us/cpguide/html/cpconcustomnumericformatstrings.asp
  [4]: http://www.edwardh.com/jsunit/
  [5]: http://www.xaprb.com/jsunit/testRunner.html

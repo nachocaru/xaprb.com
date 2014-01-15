@@ -61,4 +61,4 @@ You can play around with it and verify that indeed, the second part of the UNION
 
 I have not benchmarked this. My gut feeling is that whether it's beneficial is going to depend on your workload. But it's a fun little hack I thought I'd share with you. By the way, there's no reason you have to stop at two; you could add any number of queries to the UNION.
 
- [1]: http://www.xaprb.com/blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/
+ [1]: /blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/

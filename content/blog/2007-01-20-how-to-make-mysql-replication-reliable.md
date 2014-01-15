@@ -183,13 +183,13 @@ I'm sure this is an incomplete list, and maybe I've even gotten some things wron
  [4]: http://www.mysqlperformanceblog.com/2006/08/21/using-lvm-for-mysql-backup-and-replication-setup/
  [5]: http://lenz.homelinux.org/mylvmbackup/
  [6]: http://code.google.com/p/innotop/
- [7]: http://www.xaprb.com/blog/2006/07/09/so-you-think-your-code-is-in-version-control/
+ [7]: /blog/2006/07/09/so-you-think-your-code-is-in-version-control/
  [8]: http://dev.mysql.com/doc/refman/5.0/en/replication-features.html
  [9]: http://dev.mysql.com/doc/refman/5.0/en/replication-rules.html
  [10]: http://bugs.mysql.com/bug.php?id=25737
  [11]: http://datacharmer.blogspot.com/2006/03/seeking-alternatives-to-cursors.html
- [12]: http://www.xaprb.com/blog/2007/01/25/how-to-calculate-table-checksums-in-mysql/
- [13]: http://www.xaprb.com/blog/2007/02/26/introducing-mysql-table-checksum/
+ [12]: /blog/2007/01/25/how-to-calculate-table-checksums-in-mysql/
+ [13]: /blog/2007/02/26/introducing-mysql-table-checksum/
  [14]: http://bugs.mysql.com/bug.php?id=25531
 
  *[DML]: Data Manipulation Language

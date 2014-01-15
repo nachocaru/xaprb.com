@@ -48,5 +48,5 @@ The traditional advice is "you have to re-initialize your slaves with a fresh sn
 When there's no noticeable error, most people assume the slave has the same data as the master. That sounds reasonable, but it turns out to be a bad assumption. In practice, I have replication running rock-solid, and the slaves still drift out of sync. You'll never know unless you measure, of course.
 
  [1]: http://onlinesolutionsmysql.blogspot.com/2007/03/questions-and-answers-during-first.html
- [2]: http://www.xaprb.com/blog/2007/01/25/how-to-calculate-table-checksums-in-mysql/
+ [2]: /blog/2007/01/25/how-to-calculate-table-checksums-in-mysql/
  [3]: http://code.google.com/p/maatkit

@@ -348,7 +348,7 @@ where b.b is not null or c.c is not null</pre>
 
 Any of these queries will do, and I'm sure there are other ways too. If you can use `UNION`, it's probably the easiest.
 
- [1]: http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
- [2]: http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/
+ [1]: /blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
+ [2]: /blog/2006/03/11/many-to-one-problems-in-sql/
 
  *[RDBMS]: Relational Database Management System

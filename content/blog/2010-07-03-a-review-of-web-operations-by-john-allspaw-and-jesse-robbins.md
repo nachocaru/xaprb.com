@@ -8,7 +8,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1864" class="wp-caption alignleft" style="width: 190px">
-  <a href="http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/05/web_operations.gif" alt="Web Operations" title="Web Operations" width="180" height="236" class="size-full wp-image-1864" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20"><img src="/media/2010/05/web_operations.gif" alt="Web Operations" title="Web Operations" width="180" height="236" class="size-full wp-image-1864" /></a><p class="wp-caption-text">
     Web Operations
   </p>
 </div>
@@ -32,7 +32,7 @@ Overall, though, this is a great book, badly needed, on a topic that is simply n
 
  [1]: http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20
  [2]: http://oreilly.com/catalog/0636920000136
- [3]: http://www.xaprb.com/blog/essential-books
+ [3]: /blog/essential-books/
  [4]: http://www.startuplessonslearned.com/
  [5]: http://www.kitchensoap.com/2009/11/12/how-complex-systems-fail-a-webops-perspective/
  [6]: http://www.amazon.com/Black-Swan-Impact-Highly-Improbable/dp/1400063515?tag=xaprb-20

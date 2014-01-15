@@ -16,6 +16,6 @@ I'll be attending [PgEast][1] this year, as I've done for the last couple of yea
  [1]: http://www.postgresqlconference.org/
  [2]: http://postgresqlconference.org/2010/east/talks/query/analysis_with_mk_query_digest
  [3]: http://www.postgresqlconference.org/2010/east/talks
- [4]: http://www.xaprb.com/blog/2009/04/05/postgresql-conference-east-2009-day-three/
- [5]: http://www.xaprb.com/blog/2009/04/04/postgresql-conference-east-2009-day-two/
- [6]: http://www.xaprb.com/blog/2008/04/01/postgresql-conference-east-2008/
+ [4]: /blog/2009/04/05/postgresql-conference-east-2009-day-three/
+ [5]: /blog/2009/04/04/postgresql-conference-east-2009-day-two/
+ [6]: /blog/2008/04/01/postgresql-conference-east-2008/

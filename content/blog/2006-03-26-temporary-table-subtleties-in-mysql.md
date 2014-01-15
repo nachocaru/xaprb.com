@@ -50,7 +50,7 @@ The privilege to create temporary tables is separate from the privilege to creat
 
 If the word `TEMPORARY` is omitted, the statement tries to drop a regular table. It is a very good idea to **always** include the word `TEMPORARY` to avoid accidentally dropping a regular table! It is way too easy to get confused, especially when working with temporary tables that mask real tables. When working across databases, things get even worse; imagine I'm in database A, create temporary table `B.orders`, and then drop table `orders`, forgetting to qualify it with the database name. Oops! If there's a table named `orders` in database A, I just dropped it! If I'd included the word `TEMPORARY` in my statement, nothing bad would have happened. I won't say who but, ahem, "somebody I know well" has done this on a production system.
 
- [1]: http://www.xaprb.com/blog/2005/12/07/the-integers-table/
+ [1]: /blog/2005/12/07/the-integers-table/
  [2]: http://dev.mysql.com/doc/refman/5.0/en/temporary-table-problems.html
  [3]: http://bugs.mysql.com/bug.php?id=6084
  [4]: http://dev.mysql.com/doc/refman/5.0/en/query-cache-configuration.html

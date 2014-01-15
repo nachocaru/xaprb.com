@@ -573,4 +573,4 @@ And in case you're wondering whether this post is related to my work on [date fo
 
  [1]: http://msdn.microsoft.com/library/en-us/cpguide/html/cpconNumericFormatStrings.asp
  [2]: http://www.gnu.org/philosophy/free-sw.html
- [3]: http://www.xaprb.com/blog/2005/12/12/javascript-closures-for-runtime-efficiency/
+ [3]: /blog/2005/12/12/javascript-closures-for-runtime-efficiency/

@@ -21,4 +21,4 @@ The [PostgreSQL East 2008 conference][2] I went to a few weeks ago was a great e
 Who wants a conference by, for, and of the community?
 
  [1]: http://www.mysqlconf.com
- [2]: http://www.xaprb.com/blog/2008/04/01/postgresql-conference-east-2008/
+ [2]: /blog/2008/04/01/postgresql-conference-east-2008/

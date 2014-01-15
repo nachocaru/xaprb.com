@@ -49,4 +49,4 @@ Changelog for mk-visual-explain:
    * There was a Perl compilation error on Perl 5.10 (issue 90).
 </pre>
 
- [1]: http://www.xaprb.com/blog/2008/10/04/how-to-check-mysql-replication-integrity-continually/
+ [1]: /blog/2008/10/04/how-to-check-mysql-replication-integrity-continually/

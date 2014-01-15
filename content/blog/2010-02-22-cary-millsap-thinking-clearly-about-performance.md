@@ -12,5 +12,5 @@ categories:
  [1]: http://method-r.com/
  [2]: http://method-r.com/downloads/doc_details/44-thinking-clearly-about-performance
  [3]: http://www.maatkit.org/doc/mk-query-digest.html
- [4]: http://www.xaprb.com/blog/2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/
- [5]: http://www.xaprb.com/blog/essential-books/
+ [4]: /blog/2009/11/07/a-review-of-optimizing-oracle-performance-by-cary-millsap/
+ [5]: /blog/essential-books/

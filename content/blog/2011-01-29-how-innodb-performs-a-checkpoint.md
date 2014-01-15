@@ -50,5 +50,5 @@ If these types of topics interest you, you should attend [Percona Live][9] in Sa
  [5]: http://dimitrik.free.fr/blog/archives/2010/07/mysql-performance-innodb-io-capacity-flushing.html
  [6]: http://www.mysqlperformanceblog.com/2011/01/03/mysql-5-5-8-in-search-of-stability/
  [7]: http://www.percona.com/docs/wiki/percona-server:features:innodb_io
- [8]: http://www.xaprb.com/blog/2010/05/25/dirty-pages-fast-shutdown-and-write-combining/
+ [8]: /blog/2010/05/25/dirty-pages-fast-shutdown-and-write-combining/
  [9]: http://www.percona.com/events/percona-live-san-francisco-2011/

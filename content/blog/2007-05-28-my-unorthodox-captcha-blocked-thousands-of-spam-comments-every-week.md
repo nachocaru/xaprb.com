@@ -29,6 +29,6 @@ There's a lot of "wisdom" floating around the web (some of it in the comments on
 
 I may re-write my solution as a plug-in at some point, if I get time. Till then, good enough is good enough, just as it always has been.
 
- [1]: http://www.xaprb.com/blog/2006/01/28/captchas-done-better/
+ [1]: /blog/2006/01/28/captchas-done-better/
  [2]: http://akismet.com/
  [3]: http://www.herod.net/dypm/

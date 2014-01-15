@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1938" class="wp-caption alignleft" style="width: 190px">
-  <a href="http://www.amazon.com/dp/0596156367?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/07/cloud_application_architectures.gif" alt="Cloud Application Architectures" title="Cloud Application Architectures" width="180" height="236" class="size-full wp-image-1938" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/dp/0596156367?tag=xaprb-20"><img src="/media/2010/07/cloud_application_architectures.gif" alt="Cloud Application Architectures" title="Cloud Application Architectures" width="180" height="236" class="size-full wp-image-1938" /></a><p class="wp-caption-text">
     Cloud Application Architectures
   </p>
 </div>
@@ -34,7 +34,7 @@ This book is the first one to go onto [my list of essential books][6] in a while
 
  [1]: http://www.amazon.com/dp/0596156367?tag=xaprb-20
  [2]: http://oreilly.com/catalog/9780596156374
- [3]: http://www.xaprb.com/blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/
- [4]: http://www.xaprb.com/blog/2010/06/01/under-provisioning-the-curse-of-the-cloud/
+ [3]: /blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/
+ [4]: /blog/2010/06/01/under-provisioning-the-curse-of-the-cloud/
  [5]: http://en.wikipedia.org/wiki/Northeast_Blackout_of_2003
- [6]: http://www.xaprb.com/blog/essential-books/
+ [6]: /blog/essential-books/

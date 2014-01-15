@@ -39,5 +39,5 @@ To give an idea, here are some of the relational operations (in SQL speak) you c
 
 
 
- [1]: http://www.xaprb.com/blog/2009/05/01/an-easy-way-to-run-many-tasks-in-parallel/
+ [1]: /blog/2009/05/01/an-easy-way-to-run-many-tasks-in-parallel/
 

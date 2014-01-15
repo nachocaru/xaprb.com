@@ -28,4 +28,4 @@ Today I'm also going to skip the Google Test Automation Conference and focus on 
  [7]: http://www.youtube.com/watch?v=OiE9zRPD6ps&#038;feature=PlayList&#038;p=7D3E685B59779C16&#038;index=4
  [8]: http://www.cs.umd.edu/projects/skoll/
  [9]: http://www.mysqlcamp.org/
- [10]: http://www.xaprb.com/blog/2006/11/15/mysql-camp-2006/
+ [10]: /blog/2006/11/15/mysql-camp-2006/

@@ -36,9 +36,9 @@ I will be very curious to see how things change in the future. MySQL has a lot g
 
 The day we see an [announcement like this one][6] for MySQL will be a great day indeed.
 
- [1]: http://www.xaprb.com/blog/2009/04/20/a-review-of-how-life-imitates-chess/
+ [1]: /blog/2009/04/20/a-review-of-how-life-imitates-chess/
  [2]: http://conferences.percona.com/
- [3]: http://www.xaprb.com/blog/2009/03/08/making-maatkit-more-open-source-one-step-at-a-time/
- [4]: http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/
- [5]: http://www.xaprb.com/blog/2008/05/14/mysql-free-software-but-not-open-source/
+ [3]: /blog/2009/03/08/making-maatkit-more-open-source-one-step-at-a-time/
+ [4]: /blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/
+ [5]: /blog/2008/05/14/mysql-free-software-but-not-open-source/
  [6]: http://mysqlha.blogspot.com/2009/04/hack-on-drizzle-get-paid.html

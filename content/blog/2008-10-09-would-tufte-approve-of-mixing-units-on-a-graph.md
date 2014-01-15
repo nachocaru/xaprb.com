@@ -17,7 +17,7 @@ The graph templates that inspired me to create mine mashed them all together and
 One of the great things about Cacti is that you can graph whatever you want. You can graph the temperature on your server's hard drives, or the Dow Jones Industrial Average, or whatever. So you can have a single graphing solution for your whole company's needs. By contrast, MySQL Enterprise Monitor is focused on a single purpose. So it should do a really good job at it, right? Actually, no, they get it wrong too -- they mix units. Here you can see exactly the effect I'm talking about; one value can obliterate the other. (You get points if you guess what's going on in this graph.)
 
 <div id="attachment_608" class="wp-caption aligncenter" style="width: 310px">
-  <a href="http://www.xaprb.com/media/2008/10/mysql-enterprise-monitor-query-cache.png"><img src="http://www.xaprb.com/media/2008/10/mysql-enterprise-monitor-query-cache-300x121.png" alt="MySQL Enterprise Monitor Query Cache Graph" title="mysql-enterprise-monitor-query-cache" width="300" height="121" class="size-medium wp-image-608" /></a><p class="wp-caption-text">
+  <a href="/media/2008/10/mysql-enterprise-monitor-query-cache.png"><img src="/media/2008/10/mysql-enterprise-monitor-query-cache-300x121.png" alt="MySQL Enterprise Monitor Query Cache Graph" title="mysql-enterprise-monitor-query-cache" width="300" height="121" class="size-medium wp-image-608" /></a><p class="wp-caption-text">
     MySQL Enterprise Monitor Query Cache Graph
   </p>
 </div>

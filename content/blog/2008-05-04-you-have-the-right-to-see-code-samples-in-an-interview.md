@@ -20,4 +20,4 @@ The other approaches I see are to ask about it, assume, or ask the interviewer t
 
  [1]: http://www.joelonsoftware.com/articles/fog0000000043.html
  [2]: http://www.joelonsoftware.com/articles/GuerrillaInterviewing3.html
- [3]: http://www.xaprb.com/blog/2008/04/01/review-of-perl-best-practices/
+ [3]: /blog/2008/04/01/review-of-perl-best-practices/

@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1416" class="wp-caption alignleft" style="width: 238px">
-  <a href="http://www.amazon.com/Optimizing-Oracle-Performance-Cary-Millsap/dp/059600527X?tag=xaprb-20"><img src="http://www.xaprb.com/media/2009/11/optimizing_oracle_performance-228x300.jpg" alt="Optimizing Oracle Performance" title="Optimizing Oracle Performance" width="228" height="300" class="size-medium wp-image-1416" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/Optimizing-Oracle-Performance-Cary-Millsap/dp/059600527X?tag=xaprb-20"><img src="/media/2009/11/optimizing_oracle_performance-228x300.jpg" alt="Optimizing Oracle Performance" title="Optimizing Oracle Performance" width="228" height="300" class="size-medium wp-image-1416" /></a><p class="wp-caption-text">
     Optimizing Oracle Performance
   </p>
 </div>

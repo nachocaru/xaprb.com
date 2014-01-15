@@ -20,4 +20,4 @@ So I'd like to extend again a warm welcome to the PostgreSQL community to this e
 
  [1]: http://www.postgresqlconference.org/2009/east/
  [2]: http://www.pgcon.org/2009/
- [3]: http://www.xaprb.com/blog/2009/02/21/an-invitation-to-postgresql-community-members/
+ [3]: /blog/2009/02/21/an-invitation-to-postgresql-community-members/

@@ -121,4 +121,4 @@ Next time I'll talk about adding meta-data to tables, multi-dimensional tables, 
  [1]: http://www.w3.org/TR/html4/struct/tables.html
  [2]: http://www.w3.org/TR/html4/struct/text.html#edef-ABBR
  [3]: http://www.w3.org/TR/html4/struct/tables.html#adef-abbr
- [4]: http://www.xaprb.com/blog/2006/01/02/tables-and-data-part-1/
+ [4]: /blog/2006/01/02/tables-and-data-part-1/

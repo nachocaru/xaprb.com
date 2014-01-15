@@ -20,4 +20,4 @@ A very useful technique indeed.
 I use the integers table in a number of ways in my posts about SQL. Sometimes you'll see me refer to it as the "numbers" table too.
 
  [1]: http://expertanswercenter.techtarget.com/eac/knowledgebaseAnswer/0,295199,sid63_gci978319,00.html
- [2]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/
+ [2]: /blog/2005/09/22/mutex-tables-in-sql/

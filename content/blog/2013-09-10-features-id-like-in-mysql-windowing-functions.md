@@ -18,5 +18,5 @@ Anyone want to guess what my next wish will be?
 
 
 
- [1]: http://www.xaprb.com/blog/2013/09/09/features-id-like-to-see-in-mysql-ctes/ "Features I’d like to see in MySQL: CTEs"
+ [1]: /blog/2013/09/09/features-id-like-to-see-in-mysql-ctes/ "Features I’d like to see in MySQL: CTEs"
 

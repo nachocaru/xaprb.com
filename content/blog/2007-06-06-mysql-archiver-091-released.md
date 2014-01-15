@@ -28,5 +28,5 @@ I've put almost 30 extra-curricular hours into this recently. Most of the time h
 
 [MySQL Toolkit][2] is a set of essential tools for MySQL users, developers and administrators. The project's goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as `awk` and `sed`.
 
- [1]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+ [1]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
  [2]: http://code.google.com/p/maatkit

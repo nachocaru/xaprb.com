@@ -6,7 +6,7 @@ categories:
   - Databases
   - Writing
 ---
-[<img style="float:right" src='http://www.xaprb.com/media/2008/05/high_performance_mysql.jpg' alt='High Performance MySQL' />][1]
+[<img style="float:right" src='/media/2008/05/high_performance_mysql.jpg' alt='High Performance MySQL' />][1]
 
 If you're waiting for [High Performance MySQL Second Edition][1] to hit the shelf, you're not the only one. I am too! I can't wait to actually hold it in my hands.
 

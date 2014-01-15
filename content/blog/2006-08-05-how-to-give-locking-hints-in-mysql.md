@@ -48,4 +48,4 @@ Are there more ways to control locking than I know about? Please post in the com
  [1]: http://dev.mysql.com/doc/refman/5.0/en/set-transaction.html
  [2]: http://dev.mysql.com/doc/refman/5.0/en/innodb-transaction-isolation.html
  [3]: http://dev.mysql.com/doc/refman/5.0/en/innodb-locking-reads.html
- [4]: http://www.xaprb.com/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/
+ [4]: /blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/

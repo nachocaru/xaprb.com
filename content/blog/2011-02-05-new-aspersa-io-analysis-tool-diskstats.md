@@ -15,7 +15,7 @@ Also, iostat isn't interactive, and I wanted an interactive, menu-driven tool to
 And wouldn't you know it, as I wrote the user's manual I found a [bug][5], after all my ranting about how other tools show I/O stats wrong. I don't have time to diagnose or fix the bug right now, so maybe someone else can contribute that. There is a test suite (remind me to explain sometime how I make Bash scripts highly testable) so if we find the problem and fix it, it'll stay fixed. Contribute your fix to the bug report :-)
 
  [1]: http://aspersa.googlecode.com/svn/html/diskstats.html
- [2]: http://www.xaprb.com/blog/2010/05/14/how-to-read-linuxs-procdiskstats-easily/
+ [2]: /blog/2010/05/14/how-to-read-linuxs-procdiskstats-easily/
  [3]: http://aspersa.googlecode.com/svn/html/stalk.html
  [4]: http://aspersa.googlecode.com/svn/html/collect.html
  [5]: http://code.google.com/p/aspersa/issues/detail?id=80

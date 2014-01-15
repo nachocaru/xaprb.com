@@ -35,5 +35,5 @@ By default it's a pretty terse display, for the reasons I mentioned above. It do
 This is one method to identify the resources that are most often locked, but as always, I'm curious to hear other ideas.
 
  [1]: http://www.xaprb.com/innotop/
- [2]: http://www.xaprb.com/blog/2006/07/31/how-to-analyze-innodb-mysql-locks/
+ [2]: /blog/2006/07/31/how-to-analyze-innodb-mysql-locks/
  [3]: http://www.xaprb.com/innotop/innotop-lock-wait-mode.png

@@ -19,7 +19,7 @@ So, naturally, I decided to stage a giant contest amongst all the premium notebo
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/notepads-300x231.jpg" alt="notepads" width="300" height="231" class="aligncenter size-medium wp-image-3212" />][1]
+[<img src="/media/2013/07/notepads-300x231.jpg" alt="notepads" width="300" height="231" class="aligncenter size-medium wp-image-3212" />][1]
 
 
 Before I review any of the notebooks, let me explain what I'm looking for.
@@ -93,7 +93,7 @@ Allow me to repeat the photo from before:
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/notepads-300x231.jpg" alt="notepads" width="300" height="231" class="aligncenter size-medium wp-image-3212" />][1]
+[<img src="/media/2013/07/notepads-300x231.jpg" alt="notepads" width="300" height="231" class="aligncenter size-medium wp-image-3212" />][1]
 
 
 From the left, and roughly in order of size, these are:
@@ -125,7 +125,7 @@ Whew! That's a lot of reviewing to do. I'll go through them [mostly] in order. I
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/markings-italian-leatherette-300x225.jpg" alt="markings-italian-leatherette" width="300" height="225" class="aligncenter size-medium wp-image-3214" />][5] 
+[<img src="/media/2013/07/markings-italian-leatherette-300x225.jpg" alt="markings-italian-leatherette" width="300" height="225" class="aligncenter size-medium wp-image-3214" />][5] 
 
 This is a wonderful journal that I'm going to enjoy filling up. Though the design is understated, and I tend to like some eye candy on my journals, the cover is supple and has a suede feel, and there are enough pages to be a good journal. (Unlike my notebooks, I like a diary to last a good while.) The paper is smooth and heavy, the ruling and margins are nice, and overall it feels great. 
 
@@ -137,7 +137,7 @@ As a notebook, I can't really use it. It's too large, too thick, and too heavy t
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/semikolon-creativo-large-300x225.jpg" alt="semikolon-creativo-large" width="300" height="225" class="aligncenter size-medium wp-image-3215" />][6] 
+[<img src="/media/2013/07/semikolon-creativo-large-300x225.jpg" alt="semikolon-creativo-large" width="300" height="225" class="aligncenter size-medium wp-image-3215" />][6] 
 
 This is the notebook that started this whole quest. It's perhaps the most "designed" of all of them, with an elaborate perpetual calendar on every page in German, French, and English. It also has several pages of table of contents and calendar overview at the front, and sheets of stickers and labels are included. I immediately wanted to label everything in sight. The notebook made me feel like putting my whole life in order, and I knew I'd feel great about it if I did. 
 
@@ -153,7 +153,7 @@ This notebook is designed for notes, but I'll use it as a journal. I wonder if I
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/quo-vadis-habana-300x225.jpg" alt="quo-vadis-habana" width="300" height="225" class="aligncenter size-medium wp-image-3216" />][8]
+[<img src="/media/2013/07/quo-vadis-habana-300x225.jpg" alt="quo-vadis-habana" width="300" height="225" class="aligncenter size-medium wp-image-3216" />][8]
 
 
 
@@ -169,7 +169,7 @@ All in all, a very nice notebook, and one of the top contenders for certain.
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/paper-blanks-300x225.jpg" alt="paper-blanks" width="300" height="225" class="aligncenter size-medium wp-image-3217" />][10] 
+[<img src="/media/2013/07/paper-blanks-300x225.jpg" alt="paper-blanks" width="300" height="225" class="aligncenter size-medium wp-image-3217" />][10] 
 
 These are my favorite journals. They have a ribbon marker, a magnetic clasp cover, a huge variety of beautiful cover designs to choose from, and they're easy to find at Barnes & Noble. I've probably bought over a dozen of these. It's great when there's a sale; I'll buy several at a time. 
 
@@ -185,7 +185,7 @@ I wouldn't use these for note-taking. They're a little too bulky, the ruling is 
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/peter-pauper-300x225.jpg" alt="peter-pauper" width="300" height="225" class="aligncenter size-medium wp-image-3218" />][11] 
+[<img src="/media/2013/07/peter-pauper-300x225.jpg" alt="peter-pauper" width="300" height="225" class="aligncenter size-medium wp-image-3218" />][11] 
 
 This journal is certainly in the same class as the PaperBlanks journals. It's about the same size, and also has beautiful art on the cover; in this case, a Van Gogh. The paper is a little heavier, and there's no clasp to hold the cover shut. It has slightly fewer pages and is a little thinner. 
 
@@ -195,7 +195,7 @@ This journal is certainly in the same class as the PaperBlanks journals. It's ab
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/mead-cambridge-300x225.jpg" alt="mead-cambridge" width="300" height="225" class="aligncenter size-medium wp-image-3219" />][13] 
+[<img src="/media/2013/07/mead-cambridge-300x225.jpg" alt="mead-cambridge" width="300" height="225" class="aligncenter size-medium wp-image-3219" />][13] 
 
 This notebook is a great find, in my opinion. It's a good size, is thin and flexible with a semi-rigid cover, has trimmed corners to avoid dog-earing, and has nice paper. It's all business, but is just sophisticated enough to feel good, too. 
 
@@ -213,11 +213,11 @@ All in all, one of the top choices for a notebook, due to its design, practical 
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/studio-oh-deconstructed-clock-300x225.jpg" alt="studio-oh-deconstructed-clock" width="300" height="225" class="aligncenter size-medium wp-image-3221" />][14] 
+[<img src="/media/2013/07/studio-oh-deconstructed-clock-300x225.jpg" alt="studio-oh-deconstructed-clock" width="300" height="225" class="aligncenter size-medium wp-image-3221" />][14] 
 
 This journal is perhaps the most versatile of the notebooks and journals I've shown here, because it could easily be a very respectable notebook as well. Its binding is the most attention-grabbing feature. Take a look: 
 
-[<img src="http://www.xaprb.com/media/2013/07/studio-oh-deconstructed-clock-edge-300x225.jpg" alt="studio-oh-deconstructed-clock-edge" width="300" height="225" class="aligncenter size-medium wp-image-3220" />][15]
+[<img src="/media/2013/07/studio-oh-deconstructed-clock-edge-300x225.jpg" alt="studio-oh-deconstructed-clock-edge" width="300" height="225" class="aligncenter size-medium wp-image-3220" />][15]
 
 
 
@@ -231,7 +231,7 @@ The cover is quite rigid, the corners are rounded, the paper is silky and smooth
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/whitelines-squared-300x225.jpg" alt="whitelines-squared" width="300" height="225" class="aligncenter size-medium wp-image-3222" />][17]
+[<img src="/media/2013/07/whitelines-squared-300x225.jpg" alt="whitelines-squared" width="300" height="225" class="aligncenter size-medium wp-image-3222" />][17]
 
 
 
@@ -249,7 +249,7 @@ I'm going to have to say that a couple of the others are nicer, because of their
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/clairefontaine-300x225.jpg" alt="clairefontaine" width="300" height="225" class="aligncenter size-medium wp-image-3223" />][19] 
+[<img src="/media/2013/07/clairefontaine-300x225.jpg" alt="clairefontaine" width="300" height="225" class="aligncenter size-medium wp-image-3223" />][19] 
 
 This notebook is practical and functional, with a plain black cover that's flexible, and rounded corners. Inside there's no decoration or jazz; just basic, plain ruled paper. 
 
@@ -265,7 +265,7 @@ Downside? There are no margins, and the ruling is wide for my taste. The binding
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/barnes-noble-refill-300x225.jpg" alt="barnes-noble-refill" width="300" height="225" class="aligncenter size-medium wp-image-3224" />][21] 
+[<img src="/media/2013/07/barnes-noble-refill-300x225.jpg" alt="barnes-noble-refill" width="300" height="225" class="aligncenter size-medium wp-image-3224" />][21] 
 
 I grabbed this journal refill from the shelves at B/N for one reason: it's simple and inexpensive. It's designed to replace the interior of some kind of journal, I'm not sure what exactly. The paper is a high-quality Italian ivory, and the cover is heavy card stock. The binding opens very flat, more so than many of the notebooks I've mentioned above. 
 
@@ -277,7 +277,7 @@ On the downside, the corners are not rounded, and there is a decoration at the b
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/leuchtturm-1917-300x225.jpg" alt="leuchtturm-1917" width="300" height="225" class="aligncenter size-medium wp-image-3225" />][22] 
+[<img src="/media/2013/07/leuchtturm-1917-300x225.jpg" alt="leuchtturm-1917" width="300" height="225" class="aligncenter size-medium wp-image-3225" />][22] 
 
 This Leuchtturm 1917 notebook has a very analytical, practical feel. It has some great standout features, too, such as page numbers on every page, and the paper is obviously good quality. It also has some nice additions, such as stickers for labeling and archiving, and the binding is very nice, although it doesn't quite open flat easily. 
 
@@ -289,7 +289,7 @@ Other than the added touches such as page numbers and high-quality paper, you co
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/moleskine-300x225.jpg" alt="moleskine" width="300" height="225" class="aligncenter size-medium wp-image-3226" />][24] 
+[<img src="/media/2013/07/moleskine-300x225.jpg" alt="moleskine" width="300" height="225" class="aligncenter size-medium wp-image-3226" />][24] 
 
 Ah, Moleskine, how we love to love you and pay a premium for you. Yet you're so&#8230; boring. Your paper isn't all that great, your cover is uninspiring, your heavy ruling goes all the way across the page with no margin, your elastic droops and sags. You are the girl next door, and goodness knows why you've gotten a reputation for being the beauty queen, because you're not the best girl to take to the prom. 
 
@@ -301,7 +301,7 @@ On the other hand, Moleskine notebooks are perfectly functional, with a nice bin
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/chameleon-like-large-300x225.jpg" alt="chameleon-like-large" width="300" height="225" class="aligncenter size-medium wp-image-3227" />][26] 
+[<img src="/media/2013/07/chameleon-like-large-300x225.jpg" alt="chameleon-like-large" width="300" height="225" class="aligncenter size-medium wp-image-3227" />][26] 
 
 This is essentially another Moleskine look-alike, although it's a size smaller and has a tan cover instead of black. The binding is actually nicer, though the paper is not as nice. Overall, nothing remarkable to see here. 
 
@@ -313,7 +313,7 @@ It's at this size and form factor that the notebooks definitely start to get too
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/semikolon-creativo-small-300x225.jpg" alt="semikolon-creativo-small" width="300" height="225" class="aligncenter size-medium wp-image-3228" />][27] 
+[<img src="/media/2013/07/semikolon-creativo-small-300x225.jpg" alt="semikolon-creativo-small" width="300" height="225" class="aligncenter size-medium wp-image-3228" />][27] 
 
 This is the small version of the large Il Creativo mentioned above. When I saw that the large one was too big for me, I tried to buy a medium one, but it was unavailable from any sellers I could find, so I tried the small one. Unfortunately, like Goldilocks and the Three Bears, this one is Really Too Small. It's cramped to write in. It's just as thick and blocky as the large size. It has too many pages. And it has that annoyingly wide ruling. 
 
@@ -325,7 +325,7 @@ I wanted to like it. But I just can't. I wish I'd been able to get a medium-size
 
 
 
-[<img src="http://www.xaprb.com/media/2013/07/chameleon-like-small-300x225.jpg" alt="chameleon-like-small" width="300" height="225" class="aligncenter size-medium wp-image-3229" />][29] 
+[<img src="/media/2013/07/chameleon-like-small-300x225.jpg" alt="chameleon-like-small" width="300" height="225" class="aligncenter size-medium wp-image-3229" />][29] 
 
 This is just the smaller version of the above Chameleon Like notebook. Way too small for my taste. 
 
@@ -353,11 +353,11 @@ But if you're like me and you really want a compact, flexible, practical noteboo
 
 In general, the ultimate notebook for me is 80-100 sheets of paper or 160-200 pages (I've listed pages above, to make everything consistent), an A5 size, and has pretty minimal features -- no need for a ribbon or an elastic strap -- just nice-quality paper, a slim and flexible design, and the right ruling and margins. 
 
-Here are my favorites in one photo. The rest is up to you. Happy writing, drawing, designing, sketching, scheduling, and organizing! [<img src="http://www.xaprb.com/media/2013/07/best-notebooks-journals-300x225.jpg" alt="best-notebooks-journals" width="300" height="225" class="aligncenter size-medium wp-image-3231" />][30]
+Here are my favorites in one photo. The rest is up to you. Happy writing, drawing, designing, sketching, scheduling, and organizing! [<img src="/media/2013/07/best-notebooks-journals-300x225.jpg" alt="best-notebooks-journals" width="300" height="225" class="aligncenter size-medium wp-image-3231" />][30]
 
 
 
- [1]: http://www.xaprb.com/media/2013/07/notepads.jpg
+ [1]: /media/2013/07/notepads.jpg
 
  [2]: http://katemats.com/
 
@@ -365,55 +365,55 @@ Here are my favorites in one photo. The rest is up to you. Happy writing, drawin
 
  [4]: http://www.amazon.com/gp/product/1593593422/?tag=xaprb-20
 
- [5]: http://www.xaprb.com/media/2013/07/markings-italian-leatherette.jpg
+ [5]: /media/2013/07/markings-italian-leatherette.jpg
 
- [6]: http://www.xaprb.com/media/2013/07/semikolon-creativo-large.jpg
+ [6]: /media/2013/07/semikolon-creativo-large.jpg
 
  [7]: http://www.amazon.com/gp/product/B005DVEUDO/?tag=xaprb-20
 
- [8]: http://www.xaprb.com/media/2013/07/quo-vadis-habana.jpg
+ [8]: /media/2013/07/quo-vadis-habana.jpg
 
  [9]: http://www.amazon.com/gp/product/B0072WW8K4/?tag=xaprb-20
 
- [10]: http://www.xaprb.com/media/2013/07/paper-blanks.jpg
+ [10]: /media/2013/07/paper-blanks.jpg
 
- [11]: http://www.xaprb.com/media/2013/07/peter-pauper.jpg
+ [11]: /media/2013/07/peter-pauper.jpg
 
  [12]: http://www.amazon.com/Almond-Blossom-Journal-Notebook-Diary/dp/144130357X/?tag=xaprb-20
 
- [13]: http://www.xaprb.com/media/2013/07/mead-cambridge.jpg
+ [13]: /media/2013/07/mead-cambridge.jpg
 
- [14]: http://www.xaprb.com/media/2013/07/studio-oh-deconstructed-clock.jpg
+ [14]: /media/2013/07/studio-oh-deconstructed-clock.jpg
 
- [15]: http://www.xaprb.com/media/2013/07/studio-oh-deconstructed-clock-edge.jpg
+ [15]: /media/2013/07/studio-oh-deconstructed-clock-edge.jpg
 
  [16]: http://www.amazon.com/Studio-Oh-Deconstructed-Journal-Epoque/dp/B005K03NHW/?tag=xaprb-20
 
- [17]: http://www.xaprb.com/media/2013/07/whitelines-squared.jpg
+ [17]: /media/2013/07/whitelines-squared.jpg
 
  [18]: http://www.amazon.com/gp/product/B0052XQDUG/?tag=xaprb-20
 
- [19]: http://www.xaprb.com/media/2013/07/clairefontaine.jpg
+ [19]: /media/2013/07/clairefontaine.jpg
 
  [20]: http://www.amazon.com/gp/product/B003JMZT98/?tag=xaprb-20
 
- [21]: http://www.xaprb.com/media/2013/07/barnes-noble-refill.jpg
+ [21]: /media/2013/07/barnes-noble-refill.jpg
 
- [22]: http://www.xaprb.com/media/2013/07/leuchtturm-1917.jpg
+ [22]: /media/2013/07/leuchtturm-1917.jpg
 
  [23]: http://www.amazon.com/gp/product/B002CVAU1Y/?tag=xaprb-20
 
- [24]: http://www.xaprb.com/media/2013/07/moleskine.jpg
+ [24]: /media/2013/07/moleskine.jpg
 
  [25]: http://www.amazon.com/Moleskine-Classic-Cover-Large-Notebook/dp/8883701143/?tag=xaprb-20
 
- [26]: http://www.xaprb.com/media/2013/07/chameleon-like-large.jpg
+ [26]: /media/2013/07/chameleon-like-large.jpg
 
- [27]: http://www.xaprb.com/media/2013/07/semikolon-creativo-small.jpg
+ [27]: /media/2013/07/semikolon-creativo-small.jpg
 
  [28]: http://www.amazon.com/gp/product/B005DVEU1G/?tag=xaprb-20
 
- [29]: http://www.xaprb.com/media/2013/07/chameleon-like-small.jpg
+ [29]: /media/2013/07/chameleon-like-small.jpg
 
- [30]: http://www.xaprb.com/media/2013/07/best-notebooks-journals.jpg
+ [30]: /media/2013/07/best-notebooks-journals.jpg
 

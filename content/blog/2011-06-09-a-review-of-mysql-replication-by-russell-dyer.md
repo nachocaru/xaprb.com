@@ -6,7 +6,7 @@ categories:
   - Databases
   - Reviews
 ---
-[<img src="http://www.xaprb.com/media/2011/06/mysql_replication_front_cover_sm.jpg" alt="" style="float:left" title="mysql_replication_front_cover_sm" width="200" height="313" class="alignleft size-full wp-image-2360" />][1] [MySQL Replication][1] by Russell Dyer, Silent Killdeer, 2010. About 180 pages.
+[<img src="/media/2011/06/mysql_replication_front_cover_sm.jpg" alt="" style="float:left" title="mysql_replication_front_cover_sm" width="200" height="313" class="alignleft size-full wp-image-2360" />][1] [MySQL Replication][1] by Russell Dyer, Silent Killdeer, 2010. About 180 pages.
 
 This is a pocket-sized guide to setting up and managing MySQL replication. It is self-published and made via print-on-demand technology. Topics include how replication works, setting up replication, making backups, and administering replication after it's working. There are several appendixes for replication-related functionality in the MySQL server and command-line tools.
 

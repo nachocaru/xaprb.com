@@ -87,5 +87,5 @@ There is much more to do. If you want to help, it would be great to have a volun
 
 In other unrelated news, I noticed this project has been in Sourceforge's top 1000 for a while now, hovering in the 800 and 900 range. I'm kind of surprised -- Sourceforge has hundreds of thousands of projects. I expect this is somewhat inflated by the fact that I have so far not released the tools in one package, so the download numbers may be a bit higher than they'd otherwise be.
 
- [1]: http://www.xaprb.com/blog/2007/03/30/comparison-of-table-sync-algorithms/
+ [1]: /blog/2007/03/30/comparison-of-table-sync-algorithms/
  [2]: http://code.google.com/p/maatkit

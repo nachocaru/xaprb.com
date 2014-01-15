@@ -55,5 +55,5 @@ Changelog for mysql-table-sync:
    * Errors were being hidden in an EVAL when --execute was specified (bug #1819744).
 </pre>
 
- [1]: http://www.xaprb.com/blog/2007/10/31/mysql-table-sync-bounty-lets-do-it/
+ [1]: /blog/2007/10/31/mysql-table-sync-bounty-lets-do-it/
  [2]: http://www.paragon-cs.com/wordpress/?p=52

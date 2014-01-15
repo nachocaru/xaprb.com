@@ -15,7 +15,7 @@ I can't claim to understand fully what I'm doing, although I think I grasp it in
 
 I'll present some of my work at [Percona Live][5] in a few weeks.
 
- [1]: http://www.xaprb.com/blog/2011/12/06/an-opportunity-to-participate-in-mysql-research/ "An opportunity to participate in MySQL research"
+ [1]: /blog/2011/12/06/an-opportunity-to-participate-in-mysql-research/ "An opportunity to participate in MySQL research"
  [2]: http://en.wikipedia.org/wiki/Control_chart
  [3]: http://en.wikipedia.org/wiki/Exponential_smoothing
  [4]: http://www.sciencedirect.com/science/article/pii/S0169207003001134

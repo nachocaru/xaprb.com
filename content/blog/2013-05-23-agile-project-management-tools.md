@@ -11,6 +11,6 @@ Here are *some* of the products I looked at yesterday:
 
 Acunote, ActiveCollab, AgileBench, AgileZen, Asana, Backlog, Basecamp, Blimp, Bugly, Huboard, IceScrum, JIRA, Kanbanery, Kickoff, Lean-To, Lighthouse, OnTime, PivotalTracker, Planbox, Plan.io, Rally, Redmine, ScrumDo, Sensei, SnowyEvening, Sprintly, TargetProcess, Trac, Trajectory, Trello, Unfuddle, YouTrack, Zoho Projects.
 
-[<img src="http://www.xaprb.com/media/2013/05/shocked.jpg" alt="shocked" width="400" height="382" class="aligncenter size-full wp-image-3177" />][1]
+[<img src="/media/2013/05/shocked.jpg" alt="shocked" width="400" height="382" class="aligncenter size-full wp-image-3177" />][1]
 
- [1]: http://www.xaprb.com/media/2013/05/shocked.jpg
+ [1]: /media/2013/05/shocked.jpg

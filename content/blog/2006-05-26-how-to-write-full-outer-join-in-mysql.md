@@ -852,5 +852,5 @@ This technique works if there are duplicate rows, and works on older versions of
 
  *[RDBMS]: Relational Database Management System
 
- [1]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/
- [2]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/
+ [1]: /blog/2005/09/23/how-to-write-a-sql-exclusion-join/
+ [2]: /blog/2005/09/22/mutex-tables-in-sql/

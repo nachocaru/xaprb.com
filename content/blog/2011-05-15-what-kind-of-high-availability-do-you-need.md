@@ -28,5 +28,5 @@ Josh Berkus wrote a while back about [three types of cluster users][3], as oppos
 I also agree with Henrik about the need to turn off automatic failover. In many, many situations this is by far the best approach. Sometimes people state requirements that, if one steps back and looks at them afresh, quite obviously indicate that an automatic failover is the last thing that's desirable. For example, if someone tells me that he expects failover to be required less than once a year, this is almost guaranteed not to be a good case for automatic failover. A system that's tested so infrequently is almost certainly not going to work right when it's needed. In such cases, it's far better to leave everything alone until an expert human can resolve the problem, rather than have a stupid machine destroy what would otherwise be a fixable system.
 
  [1]: http://openlife.cc/blogs/2011/may/different-ways-doing-ha-mysql
- [2]: http://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/
+ [2]: /blog/2011/05/04/whats-wrong-with-mmm/
  [3]: http://it.toolbox.com/blogs/database-soup/the-three-database-clustering-users-35473

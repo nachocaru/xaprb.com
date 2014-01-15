@@ -6,7 +6,7 @@ categories:
   - Reviews
   - Databases
 ---
-[<img style="float:left; padding-right:10px" src="http://www.xaprb.com/media/2011/06/postgreql-administration-cookbook.jpg" alt="" title="postgreql-administration-cookbook" width="200" height="247" class="alignleft size-full wp-image-2351" />][1]
+[<img style="float:left; padding-right:10px" src="/media/2011/06/postgreql-administration-cookbook.jpg" alt="" title="postgreql-administration-cookbook" width="200" height="247" class="alignleft size-full wp-image-2351" />][1]
 
 [PostgreSQL 9 Administration Cookbook][1]. By Simon Riggs and Hannu Krosing, Packt, 2010. Approximately 330 pages. ([Link to publisher's site][2].)
 

@@ -17,4 +17,4 @@ The result of the work we've been doing recently, replacing "chunking" with "nib
 
 [1] Although in theory you can operate on the first column in a multi-column index, real-world experience shows that the first column in such indexes tends to have low cardinality, thus creating enormous chunks. And although it is possible to treat date, timestamp, and some other types as numeric, in practice it is very difficult. What number corresponds to 0000-00-00? Our attempts to create algorithms that would work on non-numeric types such as character-based columns were tremendously difficult and the results were discouraging; again, in the real world it doesn't work well.
 
- [1]: http://www.xaprb.com/blog/2007/06/15/archive-strategies-for-oltp-servers-part-3/ "Archive strategies for OLTP servers, Part 3"
+ [1]: /blog/2007/06/15/archive-strategies-for-oltp-servers-part-3/ "Archive strategies for OLTP servers, Part 3"

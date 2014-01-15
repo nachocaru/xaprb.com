@@ -42,7 +42,7 @@ I really hope you'll try it and let me know what you think.
 
 [MySQL Toolkit][2] is a set of essential tools for MySQL users, developers and administrators. The project's goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as `awk` and `sed`. Other tools in the toolkit include a table checksummer and a duplicate key checker.
 
- [1]: http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
+ [1]: /blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
  [2]: http://code.google.com/p/maatkit
  [3]: http://www.sysadminmag.com/articles/2004/0408/
  [4]: http://www.perlmonks.org/?node_id=381053

@@ -9,5 +9,5 @@ Years ago I complained bitterly about [MySQL's backwards development and release
 
 Congratulations, and thanks, to the MySQL team for superhuman software engineering, release engineering, documentation, bug triage and analysis, and doing a million things right -- in other words, making a damn good database, which is *hard*. You know I still have gripes occasionally, and so do most people, but in the scheme of things -- wow. MySQL is awesome.
 
- [1]: http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/ "What would make me buy MySQL Enterprise?"
+ [1]: /blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/ "What would make me buy MySQL Enterprise?"
  [2]: http://insidemysql.com/the-milestone-release-model-revisited/

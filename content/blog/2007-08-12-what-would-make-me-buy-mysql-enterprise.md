@@ -174,9 +174,9 @@ The current Enterprise offering not only isn't compelling, but is designed to ac
  [3]: http://dev.mysql.com/doc/refman/5.0/en/releasenotes-es-5-0-48.html
  [4]: http://dev.mysql.com/doc/refman/5.0/en/charset-repertoire.html
  [5]: http://www.mysql.com/products/which-edition.html
- [6]: http://www.xaprb.com/media/2007/08/mysql-enterprise-community-current.png
+ [6]: /media/2007/08/mysql-enterprise-community-current.png
  [7]: http://en.wikipedia.org/wiki/Pointy_Haired_Boss
- [8]: http://www.xaprb.com/media/2007/08/mysql-community-enterprise-desired.png
+ [8]: /media/2007/08/mysql-community-enterprise-desired.png
  [9]: http://bugs.mysql.com/bug.php?id=28244
  [10]: http://bugs.mysql.com/bug.php?id=24200
  [11]: http://bugs.mysql.com/bug.php?id=28421

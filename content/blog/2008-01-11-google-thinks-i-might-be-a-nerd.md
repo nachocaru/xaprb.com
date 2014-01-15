@@ -9,4 +9,4 @@ categories:
 
 ![Google image search for ERD][1]
 
- [1]: http://www.xaprb.com/media/2008/01/erd_nerd.png
+ [1]: /media/2008/01/erd_nerd.png

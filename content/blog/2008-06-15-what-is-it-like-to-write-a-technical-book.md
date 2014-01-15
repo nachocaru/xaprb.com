@@ -9,7 +9,7 @@ categories:
 
 <p>As you probably know, I recently finished <a href="http://www.highperfmysql.com/">writing a book</a> with a few co-authors.  I kept notes along the way and wanted to describe the process for those who are thinking about writing a book, too.</p>
 
-<p><strong>Update</strong>: see <a href="http://www.xaprb.com/blog/2008/06/23/what-its-like-to-write-a-technical-book-continued/">the followup post for more of the story</a>, including my editor's responses.</p>
+<p><strong>Update</strong>: see <a href="/blog/2008/06/23/what-its-like-to-write-a-technical-book-continued/">the followup post for more of the story</a>, including my editor's responses.</p>
 
 <p>I think it's important to be objective; my purpose here is to help prospective authors get a feeling of what it's like, and it's not all good (but I'd encourage people to do it anyway). Hopefully I won't come off as sounding peeved at anyone or like I'm trying to put people down. I'll have a lot to say about what went right and wrong, and how it helped and hindered the process.</p>
 
@@ -233,7 +233,7 @@ An awkward phrase that showed up a lot:
 
 <p>The production editor was going to just check for spelling and grammar, right?  I think someone told me that.  Instead, she went through the book in such incredible detail I couldn't believe it.  And she proposed major changes to just about every paragraph in the whole book.  She made so many changes that it took me at least a day, sometimes two or three, to review each chapter.  That's weeks of work I never saw coming -- every weekend, every night, all the time -- just like when I was writing.  And these were necessary changes.  She found every little ambiguous phrase, every contradiction between parts of the book, missing curly braces in code samples, paragraphs that belonged in other chapters, sentences that needed to be moved, commas in the wrong place, and much more.   She was an absolute editing machine.  Here's an example:</p>
 
-<p><a href='http://www.xaprb.com/media/2008/06/production_editing.png' title='Production editing'><img src='http://www.xaprb.com/media/2008/06/production_editing.thumbnail.png' alt='Production editing' /></a></p>
+<p><a href='/media/2008/06/production_editing.png' title='Production editing'><img src='/media/2008/06/production_editing.thumbnail.png' alt='Production editing' /></a></p>
 
 <p>Remember, this is <em>after</em> the editor and the assistant editor have had about five passes through the material.   I really didn't expect this much revision at this point; I thought it was going to be just fixing commas and quotes in the wrong place.</p>
 

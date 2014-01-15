@@ -104,5 +104,5 @@ where row_number = 1;
 
 This is an efficient, flexible way to generate and use row numbers in MySQL. I'll leave it to you to find uses for it for right now, but I'm going to show you at least one application for this in an upcoming article.
 
- [1]: http://www.xaprb.com/blog/2005/09/27/simulating-the-sql-row_number-function/
+ [1]: /blog/2005/09/27/simulating-the-sql-row_number-function/
  [2]: http://dev.mysql.com/doc/refman/5.0/en/user-variables.html

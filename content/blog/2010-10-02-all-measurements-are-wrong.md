@@ -15,4 +15,4 @@ When computers store and retrieve numbers, that's often *imprecise*, and that *i
 
  [1]: http://www.perfdynamics.com/
  [2]: http://omniti.com/surge/2010
- [3]: http://www.xaprb.com/blog/2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/
+ [3]: /blog/2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/

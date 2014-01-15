@@ -21,7 +21,7 @@ I'll leave you with another example of curve-fitting that took place recently: [
 
 Speaking of that, Neil Gunther counters with a [power law model][4]. He thinks Redmonk is wrong and it'll take quite a bit longer for Github to hit 5 million users. My money's on Neil Gunther.
 
- [1]: http://www.xaprb.com/blog/2011/01/15/sleep-while-you-can-because-it-wont-last-long/ "Sleep while you can, because it won’t last long"
+ [1]: /blog/2011/01/15/sleep-while-you-can-because-it-wont-last-long/ "Sleep while you can, because it won’t last long"
  [2]: http://graphpad.com/guides/prism/6/curve-fitting/
  [3]: http://redmonk.com/dberkholz/2013/01/21/github-will-hit-5-million-users-within-a-year/
  [4]: https://groups.google.com/d/topic/guerrilla-capacity-planning/Hd9SQy654c4/discussion

@@ -15,7 +15,7 @@ So what's left for Falcon? I think they are [asking themselves the same question
 
 But from my point of view, the biggest win in the short term would still be to drive InnoDB development forward at a consistent and accelerating pace to meet the needs of users and the advances in hardware. Of course, that's what XtraDB set out to do, and I think the XtraDB project has helped snap InnoDB out of their Percheron-like plod towards improvement. This is nothing but good; when it comes to competition among storage engines, no one should be resting on their laurels. I also see that [Sun's team has more good things in the works][4], which is great. I'd love for InnoDB to stop being a work horse and start being a quarter horse. We need it to be both scalable *and* high-performance.
 
- [1]: http://www.xaprb.com/blog/2009/01/13/what-is-the-scalable-replacement-for-innodb/
+ [1]: /blog/2009/01/13/what-is-the-scalable-replacement-for-innodb/
  [2]: http://dimitrik.free.fr/db_STRESS_MySQL_540_and_others_Apr2009.html
  [3]: http://carotid.blogspot.com/2009_04_01_archive.html#8499683187188909543
  [4]: http://blogs.sun.com/dlutz/entry/concurrent_commit_revisited

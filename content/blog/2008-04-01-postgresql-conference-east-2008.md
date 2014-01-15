@@ -66,7 +66,7 @@ All in all a great time and great people, and I'm sorry I missed the first day. 
  [5]: http://www.commandprompt.com/blogs/joshua_drake/
  [6]: http://people.planetpostgresql.org/mha/
  [7]: http://www.chesnok.com/daily/
- [8]: http://www.xaprb.com/blog/2008/03/06/send-your-employees-to-the-mysql-conference/
+ [8]: /blog/2008/03/06/send-your-employees-to-the-mysql-conference/
  [9]: http://lewiscunningham.com/
  [10]: http://xmlsoft.org/
  [11]: http://postgresmen.ru/

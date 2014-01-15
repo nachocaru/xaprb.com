@@ -43,12 +43,12 @@ This brings to a close my series on profiling queries in MySQL. I hope you've fo
 
 If this was useful to you, you should consider [subscribing to my articles via feeds or e-mail][9].
 
- [1]: http://www.xaprb.com/blog/2006/10/12/how-to-profile-a-query-in-mysql/
- [2]: http://www.xaprb.com/blog/2006/10/15/a-case-study-in-profiling-queries-in-mysql/
- [3]: http://www.xaprb.com/blog/2006/10/17/mysql-profiling-case-study-part-2/
+ [1]: /blog/2006/10/12/how-to-profile-a-query-in-mysql/
+ [2]: /blog/2006/10/15/a-case-study-in-profiling-queries-in-mysql/
+ [3]: /blog/2006/10/17/mysql-profiling-case-study-part-2/
  [4]: http://forge.mysql.com/snippets/view.php?id=15
  [5]: http://jcole.us/
  [6]: http://www.provenscaling.com/
  [7]: http://lists.mysql.com/internals/33768
  [8]: http://hackmysql.com/mysqlreport/
- [9]: http://www.xaprb.com/blog/subscribe/
+ [9]: /blog/subscribe/

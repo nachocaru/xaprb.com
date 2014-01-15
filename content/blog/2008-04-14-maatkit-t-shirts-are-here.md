@@ -6,7 +6,7 @@ categories:
   - Databases
   - Open Source
 ---
-[<img style="float:right" src='http://www.xaprb.com/media/2008/04/maatkit.jpg' alt='Maatkit' />][1]
+[<img style="float:right" src='/media/2008/04/maatkit.jpg' alt='Maatkit' />][1]
 
 I'm at the [MySQL Conference][2] and the t-shirts I created for [Maatkit][1] have arrived. Come get yours! They are high-quality, attractive shirts you'll be proud to wear, and they are a nice rich wine-red color.
 

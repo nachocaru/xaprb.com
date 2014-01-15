@@ -16,5 +16,5 @@ Then the rest of the program becomes "glue" for these tested modules. A lot of t
 
 The features I'm planning to implement, as well as the bugs I'm planning to fix, are all in the bug tracker at Sourceforge.
 
- [1]: http://www.xaprb.com/blog/2007/11/26/four-companies-to-sponsor-maatkit-development/
+ [1]: /blog/2007/11/26/four-companies-to-sponsor-maatkit-development/
  [2]: http://code.google.com/p/maatkit/

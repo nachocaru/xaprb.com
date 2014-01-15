@@ -7,7 +7,7 @@ categories:
   - Reviews
 ---
 <div id="attachment_1531" class="wp-caption alignleft" style="width: 250px">
-  <a href="http://www.amazon.com/Cacti-Network-Monitoring-Ibrahim-Lavlu/dp/1847195962?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/01/cacti-network-monitoring.jpg" alt="Cacti Network Monitoring" title="Cacti Network Monitoring" width="240" height="240" class="size-full wp-image-1531" /></a><p class="wp-caption-text">
+  <a href="http://www.amazon.com/Cacti-Network-Monitoring-Ibrahim-Lavlu/dp/1847195962?tag=xaprb-20"><img src="/media/2010/01/cacti-network-monitoring.jpg" alt="Cacti Network Monitoring" title="Cacti Network Monitoring" width="240" height="240" class="size-full wp-image-1531" /></a><p class="wp-caption-text">
     Cacti Network Monitoring
   </p>
 </div>

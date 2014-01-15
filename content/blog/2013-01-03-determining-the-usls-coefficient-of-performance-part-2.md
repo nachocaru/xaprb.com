@@ -21,6 +21,6 @@ In practice, I tend to combine methods 2 and 3. I use method 2 to find a startin
 
 What if you don't have measurements at N=1? The best approach, in my experience, is to take the slope of the line from the first data point you have, and use that. N=1 will almost always be higher than this, because real systems are rarely linearly scalable. That's okay. If you let the regression adjust the coefficient as needed for the best fit, you'll end up with a good answer anyway.
 
- [1]: http://www.xaprb.com/blog/2013/01/02/determining-the-universal-scalability-laws-coefficient-of-performance/ "Determining the Universal Scalability Law’s coefficient of performance"
+ [1]: /blog/2013/01/02/determining-the-universal-scalability-laws-coefficient-of-performance/ "Determining the Universal Scalability Law’s coefficient of performance"
  [2]: http://www.mysqlperformanceblog.com/2011/01/26/modeling-innodb-scalability-on-multi-core-servers/
  [3]: http://www.mysqlperformanceblog.com/2011/02/28/is-voltdb-really-as-scalable-as-they-claim/

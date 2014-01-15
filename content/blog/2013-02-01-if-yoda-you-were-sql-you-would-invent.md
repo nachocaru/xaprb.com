@@ -32,6 +32,6 @@ How many fewer bugs would SQL programmers write if they didn't have to do a ment
 
 But George Lucas wouldn't like that, and I guess he was on the SQL committee.
 
-<img src="http://www.xaprb.com/media/2013/02/34182677.jpg" alt="34182677" width="400" height="276" class="aligncenter size-full wp-image-3042" />
+<img src="/media/2013/02/34182677.jpg" alt="34182677" width="400" height="276" class="aligncenter size-full wp-image-3042" />
 
 Comments, you have? MMmmmmmmmrmrrrrr! Leave them below, you will!

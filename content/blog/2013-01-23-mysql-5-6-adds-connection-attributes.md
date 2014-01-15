@@ -12,4 +12,4 @@ That hasn't historically been available in MySQL, but with MySQL 5.6, [it will b
 [I used to emulate this feature in client-side code][2]. That workaround is still in useful production deployment at a previous employer.
 
  [1]: http://dev.mysql.com/doc/refman/5.6/en/performance-schema-connection-attribute-tables.html
- [2]: http://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/
+ [2]: /blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/

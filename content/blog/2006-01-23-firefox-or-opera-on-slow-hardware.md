@@ -65,8 +65,8 @@ I suppose, whether it's Opera or Firefox, the most important thing is to keep it
  [5]: http://fluxbox.sourceforge.net/
  [6]: http://www.nongnu.org/ratpoison/
  [7]: http://www.opera.com
- [8]: http://www.xaprb.com/blog/2005/11/06/protect-your-privacy-online/
- [9]: http://www.xaprb.com/blog/2005/10/26/adblock-patterns/
+ [8]: /blog/2005/11/06/protect-your-privacy-online/
+ [9]: /blog/2005/10/26/adblock-patterns/
  [10]: http://karmatics.com/aardvark/
  [11]: http://www.hacksrus.com/~ginda/venkman/
  [12]: http://chrispederick.com/work/webdeveloper/

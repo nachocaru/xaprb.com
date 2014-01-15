@@ -12,6 +12,6 @@ I just wrote about how [Maatkit has gotten some new features][1] for helping peo
 
 Thanks Vantage! Your sponsorship helps many people and businesses.
 
- [1]: http://www.xaprb.com/blog/2008/10/04/how-to-check-mysql-replication-integrity-continually/
+ [1]: /blog/2008/10/04/how-to-check-mysql-replication-integrity-continually/
  [2]: http://www.percona.com/
  [3]: http://www.vantagemedia.com/
