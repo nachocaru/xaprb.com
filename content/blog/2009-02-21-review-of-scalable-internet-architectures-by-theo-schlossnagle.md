@@ -6,13 +6,9 @@ categories:
   - Databases
   - Reviews
 ---
-<div id="attachment_868" class="wp-caption alignleft" style="width: 250px">
-  <a href="http://www.amazon.com/dp/067232699X?tag=xaprb-20"><img src="http://www.xaprb.com/media/2009/02/scalable_internet_architectures.jpg" alt="Scalable Internet Architectures" title="scalable_internet_architectures" width="240" height="240" class="size-full wp-image-868" /></a><p class="wp-caption-text">
-    Scalable Internet Architectures
-  </p>
-</div>I've just finished reading 
+<a href="http://www.amazon.com/dp/067232699X?tag=xaprb-20"><img src="http://www.xaprb.com/media/2009/02/scalable_internet_architectures.jpg" alt="Scalable Internet Architectures" title="scalable_internet_architectures" width="240" height="240" /></a>
 
-[Scalable Internet Architectures][1] by [Theo Schlossnagle][2]. It's a great book. Anyone building large systems should read it. Heck, anyone building any system that needs to run on more than one server should read it.
+I've just finished reading [Scalable Internet Architectures][1] by [Theo Schlossnagle][2]. It's a great book. Anyone building large systems should read it. Heck, anyone building any system that needs to run on more than one server should read it.
 
 The book got mixed reviews on Amazon, but I really think that's about writing style, not substance. Sometimes Theo takes the reader on a scenic tour of something that doesn't seem to have much to do with the subject matter, and then wraps up by showing how it is actually directly relevant. For example, he spends quite a bit of time talking about why HTTPS inherently poses different scaling problems than HTTP. If you aren't a patient reader, you might bail out before getting to the punch line.
 

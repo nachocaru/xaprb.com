@@ -7,9 +7,9 @@ categories:
   - Databases
 ---
 
-[Relational Database Index Design and the Optimizers][1]. By Tapio Lahdenmaki and Mike Leach, Wiley 2005. (Here's [a link to the publisher's site][2]).
+[Relational Database Index Design and the Optimizers][1]. By Tapio Lahdenmaki and Mike Leach, Wiley 2005.
 
-I picked this book up on the advice of an Oracle expert, and after one of my colleagues had read it and mentioned it to me. The focus is on how to design indexes that will produce the best performance for various types of queries. It goes into quite a bit of detail on how databases execute specific types of queries, including sort-merge joins and multiple index access, and develops a generic cost model that can be used to produce a quick upper-bound estimate (QUBE) for the execution time of a query. The book focuses on DB2, Oracle, and SQL Server, but applies equally well to MySQL and PostgreSQL.<sup>&dagger;</sup> I learned a lot from this book, and will add it to my [list of essential books][3].
+I picked this book up on the advice of an Oracle expert, and after one of my colleagues had read it and mentioned it to me. The focus is on how to design indexes that will produce the best performance for various types of queries. It goes into quite a bit of detail on how databases execute specific types of queries, including sort-merge joins and multiple index access, and develops a generic cost model that can be used to produce a quick upper-bound estimate (QUBE) for the execution time of a query. The book focuses on DB2, Oracle, and SQL Server, but applies equally well to MySQL and PostgreSQL.<sup>&dagger;</sup> I learned a lot from this book, and will add it to my list of essential books.
 
 There are too many myths and rules of thumb about index design. This book debunks them pretty thoroughly. It walks the reader through the process of understanding what a database does to execute a query, and how much that costs; and then what a database does to execute a data modification, and how much that costs. Given this knowledge, you can answer questions such as "what is the ideal index for each of these two queries?" and "should the queries have separate indexes, or is it better to find a compromise that will be good for both of them?" and even "how much slower will the compromise be for each query?" In many cases, the results are non-obvious, and often don't agree with the rules of thumb you might have been taught. Generally, the book concludes, we should use indexes much more than we often do, and we should not hold irrational fears about the cost of maintaining indexes.
 
@@ -19,3 +19,4 @@ There are a few things I'll point out so it doesn't seem like an unqualified end
 
 <sup>&dagger;</sup> Note that although PostgreSQL does not yet support index-only queries, which is a major focus of the book, the various cost models apply equally well. One must simply account for the cost of the table access, and not assume that the index is the only thing that's touched by the query. In general, you're going to need to know the internals of your database server to apply this book's wisdom.
 
+[1]: http://www.amazon.com/Relational-Database-Index-Design-Optimizers/dp/0471719994/?tag=xaprb-20
