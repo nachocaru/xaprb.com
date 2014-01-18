@@ -476,5 +476,5 @@ I found [SQLyog Job Agent][3] to be a well-rounded tool for syncing data between
  [4]: http://www.webyog.com/faq/33_7_en.html
  [5]: http://www.perlmonks.org/?node_id=381053
  [6]: http://www.xaprb.com/blog/2007/03/30/comparison-of-table-sync-algorithms/
- [7]: http://www.xaprb.com/articles/table-sync-profiles.tar.gz
- [8]: http://www.xaprb.com/articles/sqlyog-vs-mysql-table-sync.tar.gz
+ [7]: http://www.xaprb.com/media/2007/03/table-sync-profiles.tar.gz
+ [8]: http://www.xaprb.com/media/2007/03/sqlyog-vs-mysql-table-sync.tar.gz

@@ -23,11 +23,11 @@ I thought I'd have to write my own extension, but never got around to it. In the
 
 It puts a small icon in the status bar:
 
-<img src="/articles/images/permit-cookies-status-bar.png" width="77" height="29" alt="Permit Cookies Status Bar" />
+<img src="/media/2006/10/permit-cookies-status-bar.png" width="77" height="29" alt="Permit Cookies Status Bar" />
 
 When I want to allow cookies for a site, a single click on the icon pops up a dialog with the top-level domain of the site I'm browsing already filled in:
 
-<img src="/articles/images/permit-cookies-dialog.png" width="361" height="198" alt="Permit Cookies Dialog" />
+<img src="/media/2006/10/permit-cookies-dialog.png" width="361" height="198" alt="Permit Cookies Dialog" />
 
 The little "C" in the status bar turns green to indicate cookies are now allowed. Another click on that same icon later will let me change my setting for that site, to delete the setting and disallow cookies once more.
 

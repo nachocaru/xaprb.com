@@ -7,7 +7,7 @@ categories:
 ---
 A high-performance application that has producers and consumers of some resource, such as a queue of messages, needs an efficient way to notify the consumers when the producer has inserted into the queue. Polling the queue for changes is not a good option. MySQL's `GET_LOCK()` and `RELEASE_LOCK()` functions can provide both mutual exclusivity and notifications.
 
-This post was prompted by a message to the MySQL general emailing list some time ago, but I'm finally getting around to actually testing the theoretical solution I mentioned then (I can never just think my way through anything that involves locking and waiting&#8230; I have to test it).
+This post was prompted by a message to the MySQL general emailing list some time ago, but I'm finally getting around to actually testing the theoretical solution I mentioned then (I can never just think my way through anything that involves locking and waiting... I have to test it).
 
 Here's the set-up:
 
@@ -83,7 +83,7 @@ This works because the producer and consumer are really notifying *each other* -
 
 ### Complications
 
-There's more to it than this. `GET_LOCK()` has a timeout, which can't be infinite. If the timeout expires, the function returns, but doesn't grant the lock. Some other errors could also cause this to happen. The producer and consumer have to be prepared to recognize when the lock isn't granted, and retry. The return value of `GET_LOCK()` signifies whether the lock was really granted. Also, either the producer or consumer could die, and then there'd be no wait for the lock at all. The consumer can tell that this happened by noticing there's no work to do. The producer can't really tell unless it queries the database. But the producer is likely waiting for something (another lock, user input,&#8230;) where the code says "time passes." So this shouldn't really be a problem.
+There's more to it than this. `GET_LOCK()` has a timeout, which can't be infinite. If the timeout expires, the function returns, but doesn't grant the lock. Some other errors could also cause this to happen. The producer and consumer have to be prepared to recognize when the lock isn't granted, and retry. The return value of `GET_LOCK()` signifies whether the lock was really granted. Also, either the producer or consumer could die, and then there'd be no wait for the lock at all. The consumer can tell that this happened by noticing there's no work to do. The producer can't really tell unless it queries the database. But the producer is likely waiting for something (another lock, user input...) where the code says "time passes." So this shouldn't really be a problem.
 
 Another limitation is the possibility of the consumer starting first and locking out the producer. If it doesn't release the lock and try to re-lock periodically, the producer will never be able to get a lock. If it does, there's still another problem. The consumer should sleep so as not to spin-wait for the presence of a producer. If the producer produces a row while the consumer is sleeping, and then doesn't produce and release again for a very long time, the consumer will not find out about the row the producer inserted. It will have to wait for the next message the producer inserts. The solution is to make sure the consumer keeps the lock while it sleeps.
 
@@ -106,6 +106,6 @@ You can also poll on something small and efficient, instead of polling a potenti
 Finally, if you need a fixed-size FIFO queue or "round-robin table," try the suggestions in my article on [how to create a queue in SQL][4].
 
  [1]: http://dev.mysql.com/doc/refman/5.0/en/miscellaneous-functions.html
- [2]: http://www.xaprb.com/articles/producer_consumer.txt
+ [2]: https://gist.github.com/xaprb/8494656
  [3]: http://www.xaprb.com/blog/2006/05/04/how-to-make-a-program-choose-an-optimal-polling-interval/
  [4]: http://www.xaprb.com/blog/2007/01/11/how-to-implement-a-queue-in-sql/

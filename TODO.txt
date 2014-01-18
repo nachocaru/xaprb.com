@@ -11,3 +11,4 @@
 - images on reviews
 - images on http://localhost:1313/blog/2007-02-14-review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/
 - remove things like the footnotes in http://localhost:1313/blog/2006-11-02-how-to-create-input-masks-in-html/
+- /subscribe/ links

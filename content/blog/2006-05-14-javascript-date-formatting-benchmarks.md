@@ -33,7 +33,7 @@ I had to increase the script timeout so Firefox wouldn't interrupt the tests. I 
 
 Here's a graph of the times. The algorithms are in alphabetical order:
 
-<img src="/articles/images/date-formatting-benchmark.png" alt="JavaScript date-formatting benchmark" height="311" width="463" /> 
+<img src="/media/2006/05/date-formatting-benchmark.png" alt="JavaScript date-formatting benchmark" height="311" width="463" /> 
 Obviously, the method I use is much faster -- between 3.15 and 4.89 times faster. Here are the results as numbers in a table. **WARNING**: If you click on the links to the benchmarks, your browser will probably freeze for the better part of a minute on a fast machine -- maybe longer on a slow machine.
 
 <table class="borders collapsed">
@@ -69,7 +69,7 @@ Obviously, the method I use is much faster -- between 3.15 and 4.89 times faster
     </td>
     
     <td>
-      <a href="/articles/date-formatting-benchmarks/test-dojotoolkit.html">Link</a>
+      <a href="/media/2006/05/date-formatting-benchmarks/test-dojotoolkit.html">Link</a>
     </td>
   </tr>
   
@@ -87,7 +87,7 @@ Obviously, the method I use is much faster -- between 3.15 and 4.89 times faster
     </td>
     
     <td>
-      <a href="/articles/date-formatting-benchmarks/test-gazingus.html">Link</a>
+      <a href="/media/2006/05/date-formatting-benchmarks/test-gazingus.html">Link</a>
     </td>
   </tr>
   
@@ -105,7 +105,7 @@ Obviously, the method I use is much faster -- between 3.15 and 4.89 times faster
     </td>
     
     <td>
-      <a href="/articles/date-formatting-benchmarks/test-mattkruse.html">Link</a>
+      <a href="/media/2006/05/date-formatting-benchmarks/test-mattkruse.html">Link</a>
     </td>
   </tr>
   
@@ -123,7 +123,7 @@ Obviously, the method I use is much faster -- between 3.15 and 4.89 times faster
     </td>
     
     <td>
-      <a href="/articles/date-formatting-benchmarks/test-svendtofte.html">Link</a>
+      <a href="/media/2006/05/date-formatting-benchmarks/test-svendtofte.html">Link</a>
     </td>
   </tr>
   
@@ -141,7 +141,7 @@ Obviously, the method I use is much faster -- between 3.15 and 4.89 times faster
     </td>
     
     <td>
-      <a href="/articles/date-formatting-benchmarks/test-xaprb.html">Link</a>
+      <a href="/media/2006/05/date-formatting-benchmarks/test-xaprb.html">Link</a>
     </td>
   </tr>
 </table>

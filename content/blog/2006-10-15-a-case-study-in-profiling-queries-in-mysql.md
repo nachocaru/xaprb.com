@@ -450,5 +450,5 @@ The example I gave should make it pretty clear how much you can measure about qu
 
  [1]: http://www.xaprb.com/blog/2006/10/12/how-to-profile-a-query-in-mysql/
  [2]: http://www.xaprb.com/blog/2006/06/14/how-to-re-index-a-large-database-table/
- [3]: http://www.xaprb.com/articles/status-before-indexing.csv
- [4]: http://www.xaprb.com/articles/status-after-indexing.csv
+ [3]: http://www.xaprb.com/media/2006/10/status-before-indexing.csv
+ [4]: http://www.xaprb.com/media/2006/10/status-after-indexing.csv

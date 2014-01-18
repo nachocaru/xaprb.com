@@ -23,9 +23,7 @@ This is the part I found confusing. The difference between macros and add-ons in
 
 <pre>xaprb $ /usr/lib/openoffice/program/unopkg gui</pre>
 
-<p class="center">
-  <img src="/articles/open-office-org-package-manager.png" width="487" height="351" alt="OpenOffice.org Package Manager" />
-</p>
+<img src="/media/2006/06/open-office-org-package-manager.png" width="487" height="351" alt="OpenOffice.org Package Manager" />
 
 Lo and behold, it brought up the same dialog I can access through the Tools > Package Manager menu entry. All that searching for nothing. I recommend not running it from the command-line; just run it through Tools > Package Manager!
 
@@ -35,9 +33,7 @@ Once I found it, installing the package was as easy as selecting the My Packages
 
 Here's a screenshot of what it looks like (click the screenshot for a full-size look).
 
-<p class="center">
-  <a href="/articles/open-office-org-text-to-columns.png"><img src="/articles/open-office-org-text-to-columns-preview.png" width="320" height="239" alt="OpenOffice.org text to columns" /></a>
-</p>
+<a href="/media/2006/06/open-office-org-text-to-columns.png"><img src="/media/2006/06/open-office-org-text-to-columns-preview.png" width="320" height="239" alt="OpenOffice.org text to columns" /></a>
 
 So far it has worked fine for myself and my coworker. I hope it's useful to you too.
 

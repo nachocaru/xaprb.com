@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Date formatting benchmark</title>
+<script src="DateFormat.js" type="text/javascript"></script>
+</head>
+<body>
+
+<p>The following tests 100,000 iterations of formatting the current date into YYYY-MM-DD format.</p>
+
+<p>The library used is by <a href="http://web.archive.org/web/20050204062056/http://gazingus.org/html/Date_Formatting_Function.html">Gazingus</a>.</p>
+
+<script type="text/javascript">
+var start = new Date();
+for (i = 0; i < 100000; ++i) {
+    start.format("YYYY-MM-DD");
+}
+var end = new Date();
+document.write("Time: " + (end.getTime() - start.getTime()) + "ms");
+</script>
+
+</body>

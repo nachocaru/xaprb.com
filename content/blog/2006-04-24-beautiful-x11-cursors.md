@@ -73,10 +73,11 @@ If you installed the theme in your `~/.icons/` directory, you can do several dif
 
 *   Rename the theme directory from `theme_directory` to `default`.
 *   Leave your themes in their original directories, and make a `default` directory and create in it a single file called `index.theme` with the contents as shown just above.
-*   Leave your themes in their original directories, and make a symlink named `default` to the theme directory. For instance, `ln -sfnT ~/.icons/redhat9cursors/ ~/.icons/default`. </ul> 
-    I like the last option, because it never leaves me in doubt about which theme I'm really using.
+*   Leave your themes in their original directories, and make a symlink named `default` to the theme directory. For instance, `ln -sfnT ~/.icons/redhat9cursors/ ~/.icons/default`.
+
+I like the last option, because it never leaves me in doubt about which theme I'm really using.
     
-    **Update: in Ubuntu Hardy Heron, open System/Preferences/Appearance and click "Customize&#8230;" then select the Pointer tab. Select your preferred cursor set here. The list will include cursors installed under ~/.icons/**
+**Update: in Ubuntu Hardy Heron, open System/Preferences/Appearance and click "Customize&#8230;" then select the Pointer tab. Select your preferred cursor set here. The list will include cursors installed under ~/.icons/**
 
  [1]: http://www.xfree86.org/
  [2]: http://www.x.org/
@@ -88,7 +89,7 @@ If you installed the theme in your `~/.icons/` directory, you can do several dif
  [8]: http://www.kde-look.org/content/show.php?content=28310
  [9]: http://www.kde-look.org/content/show.php?content=5600
  [10]: http://www.kde-look.org/content/show.php?content=6679
- [11]: http://www.xaprb.com/articles/neutral.tar.gz
- [12]: http://www.xaprb.com/articles/neutral-old.tar.gz
- [13]: http://www.xaprb.com/articles/redhat9cursors.tar.gz
- [14]: http://www.xaprb.com/articles/jaguarx.tar.gz
+ [11]: http://www.xaprb.com/media/2006/04/neutral.tar.gz
+ [12]: http://www.xaprb.com/media/2006/04/neutral-old.tar.gz
+ [13]: http://www.xaprb.com/media/2006/04/redhat9cursors.tar.gz
+ [14]: http://www.xaprb.com/media/2006/04/jaguarx.tar.gz

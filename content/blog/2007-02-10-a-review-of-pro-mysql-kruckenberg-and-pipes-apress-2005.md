@@ -9,7 +9,7 @@ Pro MySQL, by [Mike Kruckenberg][1] and [Jay Pipes][2], covers advanced MySQL to
 
 ### Overview
 
-[<img style="float:left" src="/articles/images/pro-mysql.jpg" alt="Pro MySQL book cover image" />][3] Pro MySQL covers a lot of topics you need to know, and probably will not learn about anywhere else.
+[<img style="float:left" src="/media/2007/02/pro-mysql.jpg" alt="Pro MySQL book cover image" />][3] Pro MySQL covers a lot of topics you need to know, and probably will not learn about anywhere else.
 
 The book's target audience is MySQL professionals. The authors assume significant depth of background in the subject area, and strive to put the finishing touches on your education -- to take you from apprentice to journeyman, so to speak. I think they do a great job.
 

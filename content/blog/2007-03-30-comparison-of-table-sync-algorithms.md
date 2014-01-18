@@ -427,4 +427,4 @@ These results are encouraging. They tell me that I've designed a good algorithm 
 
  [1]: http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/
  [2]: http://code.google.com/p/maatkit
- [3]: http://www.xaprb.com/articles/table-sync-profiles.tar.gz
+ [3]: http://www.xaprb.com/media/2007/03/table-sync-profiles.tar.gz

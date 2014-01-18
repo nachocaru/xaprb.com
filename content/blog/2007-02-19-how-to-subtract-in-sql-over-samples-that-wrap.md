@@ -42,7 +42,7 @@ select * from samples;
 
 A manual calculation is easier than it looks, and solving this by hand is the key to solving it in SQL. You don't have to do a bunch of nasty math, like subtracting 982 from 163 (that's already too hard for me). You just have to notice where the counter wraps. You can find these places by seeing where the number decreases from one sample to the next. In the example, the counter wraps twice: from 900 to 230, and from 982 to 163. Here's the data, graphed with wraps "unrolled."
 
-<img src="/articles/images/samples-that-wrap.png" width="450" height="400" alt="Graph of sample data" />
+<img src="/media/2007/02/samples-that-wrap.png" width="450" height="400" alt="Graph of sample data" />
 
 There are several ways to proceed from here. One way is to calculate the traffic as 1,000 times the number of wraps. Then you just do a little math to "clean up the edges:" subtract the first number in the sequence, and then add the last number. This gives (2 * 1000) &#8211; 100 + 600, which is 2500.
 

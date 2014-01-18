@@ -18,7 +18,4 @@ If you must put your text into columns, there's a good [AListApart article about
 
 For purists though, there's no getting around it until CSS 3: anything you do to format a single text into multiple columns is a hack, also known as an abuse. How quick we are to criticize people who used tables for layout, but how soon we forget our high-minded principles when we can't have what we want.
 
- *[CSS]: Cascading Style Sheets
- *[HTML]: Hypertext Markup Language
-
  [1]: http://www.alistapart.com/articles/css3multicolumn

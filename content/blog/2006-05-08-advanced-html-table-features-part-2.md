@@ -57,19 +57,19 @@ The HTML spec says `axis` is for categorizing data, potentially for [rendering t
 
 This article is getting long, so I'll wrap up with a simple example of multi-dimensional data commonly encoded in two dimensions: the familiar color chooser. Here are several color choosers from various systems:
 
-<img src="/articles/images/dreamweaver-color-chooser.png" width="181" height="121" alt="Dreamweaver Color Chooser" />
+<img src="/media/2006/05/dreamweaver-color-chooser.png" width="181" height="121" alt="Dreamweaver Color Chooser" />
 
 Dreamweaver's color chooser flattens three dimensions (red, green, blue) into two by slicing the cube into layers and placing them next to each other. Notice how there are two rows of three six-by-six blocks of color -- six blocks of six by six. You can see the same strategy at a paint store. If you step back and unfocus your eyes, you can always see blocks of color next to each other.
 
-<img src="/articles/images/gimp-color-chooser-1.png" width="188" height="217" alt="GIMP Color Chooser" />
+<img src="/media/2006/05/gimp-color-chooser-1.png" width="188" height="217" alt="GIMP Color Chooser" />
 
 This color chooser from the GIMP flattens the three dimensions (hue, saturation and luminance) into two by placing hue in the narrow bar on the right, and the saturation and luminance in the square on the left. The selected hue is red, all the way at the top of the bar.
 
-<img src="/articles/images/gimp-color-chooser-2.png" width="188" height="215" alt="GIMP Color Chooser" />
+<img src="/media/2006/05/gimp-color-chooser-2.png" width="188" height="215" alt="GIMP Color Chooser" />
 
 This one is from the GIMP again, but it's a different style. Don't let the triangle fool you. It's the same dimensions as the first one, presented a bit differently. I guess some people find it easier to use.
 
-<img src="/articles/images/ms-color-chooser.png" width="218" height="267" alt="MS Paint Color Chooser" />
+<img src="/media/2006/05/ms-color-chooser.png" width="218" height="267" alt="MS Paint Color Chooser" />
 
 This is from Microsoft Paint. This is also hue, saturation and luminance. Luminance is in the narrow bar at the right. Hue is in the square (left to right), and saturation is too (top to bottom).
 
@@ -85,13 +85,11 @@ If I were processing tabular data with scripts, and it involved any kind of aggr
 
 Until then, invent your own uses! How about a script that iterates over every cell, collecting a list of all axes, then populates a drop-down menu with the axes so a user can choose to do something to one axis at a time? By "do something," I mean it could hide the other cells, or do some math on the selected axis. For example, you could have another drop-down menu of functions on the selected cells, like a spreadsheet's status-bar display (sum, avg, etc):
 
-<img src="/articles/images/calc-status-bar-functions.png" width="240" height="202" alt="OpenOffice.org Calc's status bar summary function" />
+<img src="/media/2006/05/calc-status-bar-functions.png" width="240" height="202" alt="OpenOffice.org Calc's status bar summary function" />
 
 ### Summary
 
 In this article I explained how the `axis` attribute of table cells can indicate to which axes the cell belongs in a multi-dimensional space, the multiple hierarchy problem and how to solve it, and gave some examples of flattened-out multi-dimensional data. This article is probably a solution in search of a problem, but given that the `axis` attribute isn't used very much and might also be a solution without a problem, I don't mind :-)
-
- *[BI]: Business Intelligence
 
  [1]: http://www.w3.org/TR/html4/struct/tables.html#multi-dimension
  [2]: https://bugzilla.mozilla.org/show_bug.cgi?id=915#c27

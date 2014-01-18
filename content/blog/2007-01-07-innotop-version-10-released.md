@@ -40,7 +40,7 @@ Send me yours :-)</p></blockquote>
 
 <p>I no longer have the code from that try -- it was little more than a shell script at that time.  But the first version of innotop I committed to my CVS repository is 444 lines, <em>including a sample of the InnoDB monitor output I pasted in for my reference</em>, and InnoDBParser.pm was 394 lines total.  It looked like this when I ran it from <code>watch</code>:</p>
 
-<p><a href="/articles/innotop-blast-from-past.png"><img src="/articles/innotop-blast-from-past-thumb.png" alt="screenshot of innotop, CVS revision 1.1" /></a></p>
+<p><a href="/media/2007/01/innotop-blast-from-past.png"><img src="/media/2007/01/innotop-blast-from-past-thumb.png" alt="screenshot of innotop, CVS revision 1.1" /></a></p>
 
 <p>Given the transactions being held open for 23,000 seconds (it still makes me cringe), I'm sure you can see why I was motivated to write this utility.</p>
 

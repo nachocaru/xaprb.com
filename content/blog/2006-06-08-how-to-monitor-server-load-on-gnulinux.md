@@ -75,6 +75,6 @@ Do you have any favorite programs for monitoring and troubleshooting GNU/Linux s
  [2]: http://jeremy.zawodny.com/mysql/mytop/
  [3]: http://jeremy.zawodny.comhttp://www.xaprb.com/blog/
  [4]: http://www.gnu.org/software/screen/
- [5]: http://www.xaprb.com/articles/images/tload.png
+ [5]: http://www.xaprb.com/media/2006/08/tload.png
 
  *[SSH]: Secure Shell
