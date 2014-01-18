@@ -9,7 +9,9 @@ Using a filesystem, such as an external hard drive, across mutiple platforms can
 
 ### Use only letters and numbers, underscores, and dashes
 
-<img class="alignright" src="/articles/images/special-chars.png" height="134" width="331" alt="MS Windows prevents special characters in filename" />Avoid using characters that any system treats as special characters, not just your own. PCs running Microsoft Windows will generally not allow you to type a special character into a filename, but Mac OS X will. UNIX and Linux will too, if you escape the characters in the argument (though Linux/UNIX won't allow `/` even if you escape it). Windows can be forced to accept `:` as part of a filename, but the resulting file's name apparently truncates at the `:`.
+<img src="/media/2005/11/special-chars.png" height="134" width="331" alt="MS Windows prevents special characters in filename" />
+
+Avoid using characters that any system treats as special characters, not just your own. PCs running Microsoft Windows will generally not allow you to type a special character into a filename, but Mac OS X will. UNIX and Linux will too, if you escape the characters in the argument (though Linux/UNIX won't allow `/` even if you escape it). Windows can be forced to accept `:` as part of a filename, but the resulting file's name apparently truncates at the `:`.
 
 I have a friend who uses Mac OS X and needs to share files via an external drive with a PC running Windows at her job. She used the `/` character in some filenames, which prevented her from copying files to the drive. I recommend avoiding the characters `\ / : * ? " < > |` no matter what OS or filesystem you are using. These characters are not portable.
 

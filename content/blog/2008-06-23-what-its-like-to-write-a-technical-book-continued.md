@@ -67,7 +67,7 @@ Here's how I analyzed each chapter:
 *   I ran my clean_text.pl program against the exported file to convert the format to a simpler one without special characters and markup. Some of the markup (footnotes, for example) stayed in the text and confused the metrics, but that's life.
 *   I ran my analyze_text.pl program against this to find the "worst" places.
 
-As I wrote in my previous post, the analyzer uses a combination of readability metrics and "other stuff" to measure the badness of each sentence and paragraph. It aggregates sentences and paragraphs by the metrics. I calculated the number of words, percent of complex words, syllables per word, number of sentences, words per sentence, and a bunch of other things, as well as the standard readability metrics. Each sentence and paragraph got scored on these. Then I printed overall metrics, and sorted the sentences and paragraphs worst-first and printed out a snippet of the offending text. Here's a [sample of chapter 3&#8242;s metrics][5] (originally numbered chapter 4) at some intermediate stage in the writing process.
+As I wrote in my previous post, the analyzer uses a combination of readability metrics and "other stuff" to measure the badness of each sentence and paragraph. It aggregates sentences and paragraphs by the metrics. I calculated the number of words, percent of complex words, syllables per word, number of sentences, words per sentence, and a bunch of other things, as well as the standard readability metrics. Each sentence and paragraph got scored on these. Then I printed overall metrics, and sorted the sentences and paragraphs worst-first and printed out a snippet of the offending text.
 
 This was a lot of work. If I had been writing with Vim, I could have done better. I could have used the compiler integration and set my "make" program to the analysis program. If you use Vim and you don't know about this, it's a pity. My next book will be written in Vim, by the way.
 
@@ -75,12 +75,10 @@ Actually, I probably could have done better regardless, but this was good enough
 
 There were some false positives. For example, bullet-points often scored badly on the readability metrics, and so a five-word bullet point item would look like terrible writing just because it was short enough that it had a high percentage of complex words. It's not an exact science. Maybe next time will be better.
 
-If you'd like to see the source code, here's the [clean_text.pl][6] and here's the [analyze_text.pl][7]. Enjoy!
+If you'd like to see the source code and its results at some intermediate stage in the writing process, it's all [here][5]. Enjoy!
 
  [1]: http://www.xaprb.com/blog/2008/06/15/what-is-it-like-to-write-a-technical-book/
  [2]: http://www.highperfmysql.com/
  [3]: http://toc.oreilly.com/2008/06/oreilly-author-and-editor-air.html
  [4]: http://dictionary.reference.com/browse/assure
- [5]: http://www.xaprb.com/articles/ch04.txt
- [6]: http://www.xaprb.com/articles/clean_text.txt
- [7]: http://www.xaprb.com/articles/analyze_text.txt
+ [5]: https://gist.github.com/xaprb/8492226

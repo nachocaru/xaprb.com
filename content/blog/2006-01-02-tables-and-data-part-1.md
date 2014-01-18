@@ -217,4 +217,4 @@ That's all for now. In upcoming articles, several threads (JavaScript, date and 
  [4]: http://www.w3.org/TR/REC-CSS2/tables.html#column-alignment
  [5]: http://www.w3.org/TR/CSS21/selector.html#q10
  [6]: http://www.w3.org/TR/2005/WD-css3-selectors-20051215/#attribute-selectors
- [7]: http://www.xaprb.com/articles/tables-and-data-1.html
+ [7]: http://www.xaprb.com/media/2006/01/tables-and-data-1.html

@@ -7,9 +7,7 @@ categories:
 ---
 My credit card says it expires "06/07&#8243;. What is that? Is it June 2007, or July 2006? You may think I'm being silly, but it confuses me. I'm not as smart as some people, but if it confuses me, it's gonna confuse some others too.
 
-<p style="text-align:center">
-  <img src="/articles/images/credit-card.png" alt="expires WHEN???" height="34" width="100" />
-</p>
+<img src="/media/2006/01/credit-card.png" alt="expires WHEN???" height="34" width="100" />
 
 I recently placed an order online and got the expiration date wrong. It wouldn't have been all that bad if the entry form had mimicked exactly what's on the front of my card, but the online form had a 4-digit year pulldown, followed by a two-digit space for the month -- exactly the opposite order from my card. As a result, my card didn't go through and the order became a big hassle. Yuck!
 

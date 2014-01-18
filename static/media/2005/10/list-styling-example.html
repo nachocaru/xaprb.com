@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>List Styling Test File</title>
+<style type="text/css">
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+div {
+    margin-left: 20px;
+    padding-left: 0;
+    margin-top: 0;
+    padding-top: 0;
+    border-left: 1px solid red;
+}
+li {
+    border-left: 1px solid blue;
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    border-left: 1px solid black;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+</style>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+_uacct = "UA-101883-1";
+urchinTracker();
+</script>
+</head>
+<body>
+
+<h1>List Styling Test File</h1>
+
+<div>
+<p>Default:</p>
+<ul>
+    <li>First list item<br />comes first</li>
+    <li>Second list item<br />comes second</li>
+</ul>
+
+<p>Without margin on UL:</p>
+<ul style="margin: 0;">
+    <li>First list item<br />comes first</li>
+    <li>Second list item<br />comes second</li>
+</ul>
+
+<p>Without padding on UL:</p>
+<ul style="padding: 0;">
+    <li>First list item<br />comes first</li>
+    <li>Second list item<br />comes second</li>
+</ul>
+
+<p>With no margin, 40px padding on UL:</p>
+<ul style="margin-left: 0; padding-left: 40px;">
+    <li>First list item<br />comes first</li>
+    <li>Second list item<br />comes second</li>
+</ul>
+
+<p>With 40px margin, no padding on UL:</p>
+<ul style="margin-left: 40px; padding-left: 0;">
+    <li>First list item<br />comes first</li>
+    <li>Second list item<br />comes second</li>
+</ul>
+
+<p>With marker outside:</p>
+<ul style="list-style: outside;">
+    <li>First list item<br />comes first</li>
+    <li>Second list item<br />comes second</li>
+</ul>
+
+<p>With marker inside:</p>
+<ul style="list-style: inside;">
+    <li>First list item<br />comes first</li>
+    <li>Second list item<br />comes second</li>
+</ul>
+
+<p>With text-indent on LI:</p>
+<ul>
+    <li style="text-indent: 40px;">First list item<br />comes first</li>
+    <li style="text-indent: 40px;">Second list item<br />comes second</li>
+</ul>
+
+<p>With marker inside and text-indent on LI:</p>
+<ul style="list-style: inside;">
+    <li style="text-indent: 40px;">First list item<br />comes first</li>
+    <li style="text-indent: 40px;">Second list item<br />comes second</li>
+</ul>
+</div>
+</body>
+</html>

@@ -7,9 +7,7 @@ categories:
 ---
 It's safe to use `@@ROWCOUNT` in SQL Server 2000 even when there is a trigger on the base table. The trigger will not skew your results; you'll get what you expect. `@@ROWCOUNT` works correctly even when `NOCOUNT` is set.
 
-<p style="text-align:center">
-  <img src="/articles/images/rowcount.png" width="215" height="136" alt="Silly rowcount/identity graphic" />
-</p>
+<img src="/media/2005/12/rowcount.png" width="215" height="136" alt="Silly rowcount/identity graphic" />
 
 To quote the documentation:
 

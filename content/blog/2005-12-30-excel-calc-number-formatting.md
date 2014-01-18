@@ -7,9 +7,7 @@ categories:
 ---
 I was playing with custom format strings in Excel recently and noticed something odd. The number of digits to the left of the decimal place seemed to vary bizarrely when using custom format strings for exponential notation, in ways that contradict the documentation. OpenOffice.org doesn't exhibit the same wackiness. Which spreadsheet formats numbers more sanely?
 
-<p style="text-align:center">
-  <img src="/articles/images/excel-vs-calc.jpg" alt="Excel vs. Calc" width="162" height="110" />
-</p>
+<img src="/media/2005/12/excel-vs-calc.jpg" alt="Excel vs. Calc" width="162" height="110" />
 
 If you're not familiar with custom format strings, it's just a way of making your own format. You can right-click on a cell, choose "Format Cells&#8230;" and click Custom at the bottom of the list, then enter a formatting string. The formatting syntax is used throughout Windows, and you rub elbows with it any number of ways when you program the Windows API, but the documentation seems to be only about 90% consistent between, say, Excel and the [.NET Numeric Format Strings documentation][1].
 

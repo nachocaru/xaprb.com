@@ -6,7 +6,7 @@ categories:
   - Web
 ---
 <p class="demo">
-  <a href="/articles/automatic-image-captions.html">View the Demo</a>
+  <a href="/media/2006/10/automatic-image-captions.html">View the Demo</a>
 </p>
 
 You've probably heard of unobtrusive JavaScript. It's a simple technique that lets you create richer documents without cluttered markup or accessibility problems. I often see link decoration and drop-shadow effects done with unobtrusive JavaScript. How about unobtrusive image captions? Instead of writing a caption into the page, let JavaScript do it. In this article I'll show you how simple this can be.
@@ -132,14 +132,13 @@ If you haven't done much reading on [unobtrusive JavaScript][8], you really shou
 
 ### Conclusion
 
-I hope this article has helped you break out of a common web design rut and snazzy up your documents without adding un-semantic markup bloat. If you thought this was good, let me know! If you want to suggest some improvement, let me know that too! And if you want to [subscribe to my articles, go right ahead][9]. It's free and easy.
+I hope this article has helped you break out of a common web design rut and snazzy up your documents without adding un-semantic markup bloat. If you thought this was good, let me know! If you want to suggest some improvement, let me know that too!
 
  [1]: http://www.xaprb.com/blog/2006/08/30/why-you-should-take-microformats-seriously/
  [2]: http://www.sxc.hu/
- [3]: http://www.xaprb.com/articles/automatic-image-captions-before.html
+ [3]: http://www.xaprb.com/media/2006/10/automatic-image-captions-before.html
  [4]: http://www.scottandrew.com/weblog/articles/cbs-events
  [5]: http://prototype.conio.net/
- [6]: http://www.xaprb.com/articles/automatic-image-captions.html
+ [6]: http://www.xaprb.com/media/2006/10/automatic-image-captions.html
  [7]: http://www.456bereastreet.com/archive/200505/transparent_custom_corners_and_borders/
  [8]: http://onlinetools.org/articles/unobtrusivejavascript/
- [9]: http://www.xaprb.com/blog/subscribe

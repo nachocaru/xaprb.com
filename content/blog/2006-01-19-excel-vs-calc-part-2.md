@@ -7,9 +7,7 @@ categories:
 ---
 In an earlier post I compared [number formatting in Excel vs. OpenOffice.org Calc][1]. I've learned some more interesting things about both spreadsheets, as regards opening CSV files and adding labels to XY scatter charts (spoiler: both spreadsheets have problems)
 
-<p style="text-align:center">
-  <img src="/articles/images/excel-vs-calc-2.png" alt="Excel vs. Calc" width="162" height="110" />
-</p>
+<img src="/media/2006/01/excel-vs-calc-2.png" alt="Excel vs. Calc" width="162" height="110" />
 
 ### Opening CSV files with Excel
 
@@ -19,17 +17,13 @@ Maybe someone else can answer this one for me, because I'm stumped and can't see
 
 I've been working with cemetery data again. Recently we took a total station out to a cemetery and mapped it, then downloaded the data as tab-separated values. For a quick and dirty map of the data, it's great to import it into a spreadsheet, select the Northing and Easting columns, and map it as a scatter plot. This gives a quick sense of what the map looks like. Of course, when you've got hundreds of points on the map, you want them labelled so you can see what they are, like so:
 
-<p style="text-align:center">
-  <img src="/articles/images/oocalc-scatter-plot-result.png" alt="The desired result" width="365" height="193" />
-</p>
+<img src="/media/2006/01/oocalc-scatter-plot-result.png" alt="The desired result" width="365" height="193" />
 
 The first column in the spreadsheet is the point's name. We tried and tried but couldn't get Excel to plot the points with nice labels next to them. A bit of Googling revealed lots of other frustrated folks with the same problem. This has been a limitation in Excel for many years, and so many people want this feature, I wonder why they aren't implementing it. The good news is, someone has written a little utility which will [label XY scatter plots in Excel][2], both for PC and Mac ([here's another link][3]). So it's possible to do after all -- just not easy, and not built-in.
 
 On the other hand, opening the same file with [OpenOffice.org][4] Calc and creating the same graph led me to believe it is supported in Calc. The graphing autopilot has a step where I specified the first column as labels:
 
-<p style="text-align:center">
-  <img src="/articles/images/oocalc-scatter-plot-step1.png" alt="Step 1, choosing the data" width="388" height="283" />
-</p>
+<img src="/media/2006/01/oocalc-scatter-plot-step1.png" alt="Step 1, choosing the data" width="388" height="283" />
 
 But after following through the rest of the steps -- choose chart type, etc etc -- the final result has no labels. I fooled around with it for a while, read the documentation and surfed the web, but still couldn't get it to show the labels. Only after [I posted on the OpenOffice.org forums][5] did I find an answer:
 

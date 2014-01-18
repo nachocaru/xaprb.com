@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tree-Table Test</title>
+<style type="text/css">
+* {
+    font-family: verdana;
+    font-size: small;
+}
+table {
+    border-collapse: separate;
+}
+th, td {
+    padding: 2px;
+    margin: 0;
+}
+thead th {
+    text-align: left;
+    font-weight: normal;
+    background: #D4D0C8;
+    border: 1px outset #D4D0C8;
+}
+td.first-child {
+    padding-left: 20px;
+}
+tbody tr td.first-child {
+    background: url(folder-background.png) center left no-repeat;
+}
+tbody tr.first-child td.first-child {
+    background: url(folder-background.png) top left no-repeat;
+}
+tbody tr.last-child td.first-child {
+    background: url(folder-background.png) bottom left no-repeat;
+}
+</style>
+</head>
+<body>
+
+<table cellspacing="0">
+    <thead><tr><th scope="col">Group</th><th scope="col">Property</th><th scope="col">Value</th></tr></thead>
+    <tbody>
+        <tr class="first-child">
+            <td class="first-child">Fruits</td>
+            <td>Count</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td class="first-child">Apples</td>
+            <td>Color</td>
+            <td>Red</td>
+        </tr>
+        <tr class="last-child">
+            <td class="first-child">Oranges</td>
+            <td>Color</td>
+            <td>Orange</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr class="first-child">
+            <td class="first-child">Vegetables</td>
+            <td>Count</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td class="first-child">Cauliflowers</td>
+            <td>Color</td>
+            <td>White</td>
+        </tr>
+        <tr>
+            <td class="first-child">Carrots</td>
+            <td>Color</td>
+            <td>Orange</td>
+        </tr>
+        <tr>
+            <td class="first-child">Peas</td>
+            <td>Color</td>
+            <td>Green</td>
+        </tr>
+        <tr class="last-child">
+            <td class="first-child">Onions</td>
+            <td>Color</td>
+            <td>White</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

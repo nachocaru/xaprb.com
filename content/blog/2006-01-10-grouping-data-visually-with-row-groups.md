@@ -7,9 +7,7 @@ categories:
 ---
 XHTML tables provide several elements to group and structure data, including [row groups][1] (`thead`, `tbody`, and `tfoot`). Styling row groups with CSS can make data relationships visually obvious. One familiar way to group data visually is with Explorer-style folder icons.
 
-<div style="text-align:center">
-  <img src="/articles/images/folder-view-slug.png" alt="Data grouped as a folder view" height="85" width="218" />
-</div>
+<img src="/media/2006/01/folder-view-slug.png" alt="Data grouped as a folder view" height="85" width="218" />
 
 The basic idea is to use `tbody` as many times as needed to group each set of rows together. The image above shows a single `tbody` element. I think using multiple `tbody` elements may not occur to developers because it sounds like there ought to be only one -- but that's not true. Tables can have as many `tbody` elements as you want. You can optionally have one (and only one) `thead` and `tfoot` too. Read the [Tables in HTML documents][2] part of the HTML spec for more, if you want (there's no need to for this article).
 
@@ -27,4 +25,4 @@ Another option is to re-code the first row of each group with `th` elements inst
 
  [1]: http://www.w3.org/TR/REC-html40/struct/tables.html#rowgroups
  [2]: http://www.w3.org/TR/REC-html40/struct/tables.html
- [3]: http://www.xaprb.com/articles/row-groups-folder-demo.html
+ [3]: http://www.xaprb.com/media/2006/01/row-groups-folder-demo.html

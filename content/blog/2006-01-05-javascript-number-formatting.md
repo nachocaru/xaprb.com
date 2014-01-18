@@ -30,7 +30,7 @@ My custom date formatting code used PHP's date-formatting syntax because it's mu
 
 I've only implemented a subset of the various number-formatting syntaxes I've seen in spreadsheets and so forth. The subset is about 85% complete in my opinion. However, I think it's *functionally* about 99% complete, which means I think 99% of the time you want to format a number, it will do what you want. The tradeoff is simplicity and speed. Number formatting is actually much more difficult than date formatting, and I've tried to keep the code sane.
 
-I have a set of unit tests, which use the excellent [JsUnit][4] library. Bring up the [unit test page][5] and enter the following url to be tested: `www.xaprb.com/articles/number-test.html`.
+I have a set of unit tests, which use the excellent [JsUnit][4] library. Bring up the [unit test page][5] and enter the following url to be tested: `www.xaprb.com/media/2006/01/number-test.html`.
 
 Of course there's the obligatory [demo page][6], too.
 
@@ -38,5 +38,5 @@ Of course there's the obligatory [demo page][6], too.
  [2]: http://www.xaprb.com/blog/2005/12/30/excel-calc-number-formatting/
  [3]: http://msdn.microsoft.com/library/en-us/cpguide/html/cpconcustomnumericformatstrings.asp
  [4]: http://www.edwardh.com/jsunit/
- [5]: http://www.xaprb.com/jsunit/testRunner.html
- [6]: http://www.xaprb.com/articles/number-formatting-demo.html
+ [5]: http://www.xaprb.com/media/2006/01/jsunit/testRunner.html
+ [6]: http://www.xaprb.com/media/2006/01/number-formatting-demo.html

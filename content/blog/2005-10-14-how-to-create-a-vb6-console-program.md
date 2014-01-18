@@ -42,6 +42,6 @@ Don't name the batch file "link.bat" or it will call itself! Another of Microsof
 
 I have gleaned this code from all over the Internet. Very little of it is my own.
 
- [1]: http://www.xaprb.com/articles/ModStdIO.bas.txt
+ [1]: https://gist.github.com/xaprb/8492636
  [2]: http://msdn.microsoft.com/library/en-us/script56/html/FSOoriFileSystemObject.asp
  [3]: http://msdn.microsoft.com/library/en-us/shellcc/platform/shell/reference/functions/commandlinetoargv.asp

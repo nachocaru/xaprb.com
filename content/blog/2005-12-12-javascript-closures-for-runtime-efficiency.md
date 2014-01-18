@@ -99,6 +99,6 @@ Is it really faster to do it the way I've described? Yes, it is. It is [way fast
  [3]: http://www.svendtofte.com/code/date_format/
  [4]: http://www.xaprb.com/blog/2005/09/29/javascript-date-chooser/
  [5]: http://www.php.net/manual/en/function.date.php
- [6]: http://www.xaprb.com/articles/date-functions.zip
- [7]: http://www.xaprb.com/articles/date-formatting-demo.html
+ [6]: https://gist.github.com/xaprb/8492729
+ [7]: http://www.xaprb.com/media/2005/12/date-formatting-demo.html
  [8]: http://www.xaprb.com/blog/2006/05/14/javascript-date-formatting-benchmarks/
