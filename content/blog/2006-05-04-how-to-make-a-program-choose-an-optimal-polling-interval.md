@@ -82,8 +82,5 @@ This may have been a good thing to do, but perhaps I was over-working the techni
 
 It's true John and I were optimizing different things. "Whether to bid" isn't the same thing as "whether to calculate a bid," and "keep the working set small" isn't the same as "only make important bid changes," but it's certain the system won't bid an ad if it doesn't first calculate a bid. The discussion made me re-examine my optimization strategy, which is a good thing.
 
- *[POP3]: Post Office Protocol Version 3
- *[IPC]: Inter-Process Communication
-
  [1]: http://en.wikipedia.org/wiki/Observer_design_pattern
  [2]: http://msdn.microsoft.com/library/en-us/dnbda/html/observerpattern.asp

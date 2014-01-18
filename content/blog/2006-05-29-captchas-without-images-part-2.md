@@ -23,4 +23,3 @@ Now, the only thing left is to wait and see how long it takes the spammers this 
 
  [1]: http://www.xaprb.com/blog/2006/01/28/captchas-done-better/
 
- *[CAPTCHA]: Completely Automated Public Turing Test to Tell Computers and Humans Apart

@@ -81,5 +81,3 @@ There's an easy solution to this: start the set of queries by storing all those 
 
 Large `IN` clauses are an easy tool in the toolbag, but they don't scale well, from both a performance and maintainability point of view. I recommend transforming them into a join to a temporary table, which can be filled with the data that would have gone into the `IN` clause to begin with. Once the temporary table is populated with a known set of data, queries are easy to write and understand.
 
- *[CPAN]: Comprehensive Perl Archive Network
- *[RDBMS]: Relational Database Management System

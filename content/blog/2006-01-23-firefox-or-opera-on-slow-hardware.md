@@ -71,5 +71,3 @@ I suppose, whether it's Opera or Firefox, the most important thing is to keep it
  [11]: http://www.hacksrus.com/~ginda/venkman/
  [12]: http://chrispederick.com/work/webdeveloper/
  [13]: http://adblock.mozdev.org/
-
- *[LAMP]: Linux, Apache, MySQL, Perl/PHP/Python

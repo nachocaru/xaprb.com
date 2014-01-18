@@ -77,4 +77,3 @@ Do you have any favorite programs for monitoring and troubleshooting GNU/Linux s
  [4]: http://www.gnu.org/software/screen/
  [5]: http://www.xaprb.com/media/2006/08/tload.png
 
- *[SSH]: Secure Shell

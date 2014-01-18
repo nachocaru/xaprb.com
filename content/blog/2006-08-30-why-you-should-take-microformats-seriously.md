@@ -127,8 +127,3 @@ There's no need to be pessimistic about microformats. Sure, not everything is fo
  [14]: http://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#profiles
  [15]: http://www.w3.org/TR/1999/REC-html401-19991224/struct/global.html#meta-data
 
- *[XML]: Extensible Markup Language
- *[DTD]: Document Type Definition
- *[SOAP]: Simple Object Access Protocol
- *[XHTML]: Extensible Hypertext Markup Language
- *[TEI]: Text Encoding Initiative

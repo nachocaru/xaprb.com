@@ -98,5 +98,3 @@ I tried this idea on Microsoft SQL Server with `set statistics io on`, and exami
 
  [1]: http://www.xaprb.com/blog/2005/09/26/sql-subqueries-and-derived-tables/
  [2]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/
-
- *[RDBMS]: Relational database management system

@@ -74,4 +74,3 @@ I just showed you a bunch of different ways to reverse a sequence in SQL, someth
  [2]: http://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/
  [3]: http://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/
 
- *[RDBMS]: Relational Database Management System

@@ -19,4 +19,3 @@ Of course, search engines would have to agree upon this as a standard, but it se
 
 I know it's more complex than this. I'm sure there are lots of issues that would make it harder for search engines to implement this scheme, and I can think of some right away (repeated parameters with different values, issues with how the cache is really structured, etc). I'm just tossing it out there for someone to mull upon it, if anyone wants to.
 
- *[URI]: Uniform Resource Identifier

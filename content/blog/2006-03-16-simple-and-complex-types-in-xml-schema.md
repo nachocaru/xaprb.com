@@ -68,7 +68,5 @@ Just to clarify: elements have an element type, and their content has a content 
 
 For further reading, I again heartily recommend the Primer linked above. Another good resource is Priscilla Walmsley's <span class="title">Definitive XML Schema</span>. She not only knows her stuff (she's part of the W3C XML Schema Working Group), but she writes very well.
 
- *[WSDL]: Web services description language
-
  [1]: http://www.w3.org/XML/Schema
  [2]: http://www.w3.org/TR/xmlschema-0/

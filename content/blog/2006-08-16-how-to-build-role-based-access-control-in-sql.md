@@ -246,14 +246,6 @@ We're not ready for that yet. It will involve quite a bit more complexity, which
 
 Finally, the next article will explain how to build truly role-based access control. What I've shown you so far doesn't really have to be implemented as role-based, though you'll see how it fits into the role-based paradigm in the next article.
 
- *[ORM]: Object-Relational Mapping
- *[RBAC]: Role-Based Access Control
- *[ACL]: Access Control Lists
- *[DOM]: Document Object Model
- *[SAX]: Simple API for XML
- *[XML]: eXtensible Markup Language
- *[ARO]: Access Request Object
- *[ACO]: Access Control Object
 
  [1]: http://en.wikipedia.org/wiki/Access_control_lists
  [2]: http://en.wikipedia.org/wiki/Role-Based_Access_Control

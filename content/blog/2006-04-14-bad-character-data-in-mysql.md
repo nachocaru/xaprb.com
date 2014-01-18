@@ -115,4 +115,3 @@ select * from test;
  [1]: http://www.cs.tut.fi/~jkorpela/www/windows-chars.html
  [2]: http://www.xaprb.com/blog/2005/12/07/the-integers-table/
 
- *[ASCII]: American Standard Code for Information Interchange

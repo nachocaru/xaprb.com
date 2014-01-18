@@ -26,7 +26,5 @@ Sometimes a single value appears all through the database in many different tabl
 
 In this case cascading updates saved me a huge amount of time and effort. I turned on cascading updates (behind the scenes, this involves deleting and re-creating the foreign keys, but that is easy to script out and do in a transaction), updated, then turned the cascades off again.
 
- *[RDBMS]: Relational Database Management System
-
  [1]: http://dev.mysql.com/doc/refman/5.0/en/innodb-foreign-key-constraints.html
  [2]: http://www.xaprb.com/blog/2006/03/12/gnucash-to-mysql-export-script/

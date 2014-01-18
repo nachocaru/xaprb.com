@@ -45,11 +45,6 @@ I've covered a lot of ground here, and not really gone into much depth with any 
 
 While I'm on the subject, I want to point out that probably the most widely used implementation of SSH is OpenSSH. It's from the same people that make [OpenBSD][8], a famously secure operating system. And though it is nearly ubiquitous and indispensable, even for Microsoft folks, very little attention goes to the fact that [it's free but nobody really contributes money to it][9]. The [OpenSSH project is painfully underfunded][10], and there is widespread discussion about the problems this may cause. [I encourage you to donate][11] something to it, even if it's just ten dollars. It is easily the most underfunded project I can think of, especially considering how much of the world depends on it.
 
- *[SSH]: Secure shell
- *[FTP]: File Transfer Protocol
- *[CVS]: Concurrent Versions System
- *[GUI]: Graphical User Interface
-
  [1]: http://www.openssh.com/
  [2]: http://www.chiark.greenend.org.uk/~sgtatham/putty/
  [3]: http://www.gentoo.org/proj/en/keychain/

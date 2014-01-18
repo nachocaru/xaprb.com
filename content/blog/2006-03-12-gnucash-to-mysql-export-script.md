@@ -94,4 +94,3 @@ order by name;</pre>
  [5]: http://expat.sourceforge.net
  [6]: http://www.xaprb.com/blog/2006/03/08/decimal-math-in-mysql/
 
- *[XML]: Extensible Markup Language

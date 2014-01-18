@@ -43,6 +43,3 @@ while (my $line = &lt;STDIN&gt;) {
 
 **Update** Looks like the MySQL folks already did this work for me, duh. The `-H` option outputs HTML for query results.
 
- *[HTML]: Hypertext Markup Language
- *[STDOUT]: Standard output
- *[STDIN]: Standard input

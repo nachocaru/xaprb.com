@@ -1,8 +1,4 @@
 - consolidate categories a bit more (mysql, monitoring, scalability,
   performance seem to need tweaking)
 - create paginated archives (monthly/yearly archives somehow too?)
-- move all images into the blog
 - look for missing reference links with [brackets]
-- find and move everything in /articles
-- images on reviews
-- remove things like the footnotes in http://localhost:1313/blog/2006-11-02-how-to-create-input-masks-in-html/

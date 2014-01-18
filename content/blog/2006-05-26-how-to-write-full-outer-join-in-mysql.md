@@ -850,7 +850,6 @@ Remember, this can't be done without the mutex table, because I need something t
 
 This technique works if there are duplicate rows, and works on older versions of MySQL, but is probably the least efficient of the three I've demonstrated here. As usual, which query is appropriate depends on circumstances.
 
- *[RDBMS]: Relational Database Management System
 
  [1]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/
  [2]: http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/

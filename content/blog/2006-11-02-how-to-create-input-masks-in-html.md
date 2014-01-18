@@ -84,8 +84,6 @@ Despite the length of that list, these are such minor things (except for maybe i
 
 So that's it! Simple, lightweight, intuitive input masks. With a proper form validation library on the back-end, you should be able to use this to help your users enter data in the format you desire. Again, let me know what you think, and by all means improve this, and send me the results!
 
- *[HTML]: Hypertext Markup Language
- *[GUI]: Graphical User Interface
 
  [1]: http://msdn.microsoft.com/en-us/masked/html/vbproMask_MEdit.asp
  [2]: http://www.xaprb.com/blog/2006/01/02/tables-and-data-part-1/

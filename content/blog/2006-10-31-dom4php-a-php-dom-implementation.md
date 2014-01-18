@@ -78,6 +78,3 @@ See you next time!
  [6]: http://www.gnu.org/copyleft/lgpl.html
  [7]: http://www.xaprb.com/blog/2006/06/19/xaprb-scripts-relicensed/
 
- *[XML]: Extensible Markup Language
- *[DOM]: Document Object Model
- *[SAX]: Simple API for XML

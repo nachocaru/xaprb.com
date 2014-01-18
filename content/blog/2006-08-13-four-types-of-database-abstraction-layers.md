@@ -153,4 +153,3 @@ This has been a longish article, but that's because these are complicated issues
  [12]: http://c2.com/xp/YouArentGonnaNeedIt.html
  [13]: http://sheeri.com/archives/99
 
- *[CRUD]: Create, Retrieve, Update and Delete

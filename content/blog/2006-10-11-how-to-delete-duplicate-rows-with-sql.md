@@ -111,4 +111,3 @@ If you found this useful, you should [subscribe][6] by e-mail or feeds and get m
  [5]: http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
  [6]: http://www.xaprb.com/index.xml
 
- *[RDBMS]: Relational Database Management System

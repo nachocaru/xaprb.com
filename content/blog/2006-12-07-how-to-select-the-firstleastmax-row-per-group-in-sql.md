@@ -251,4 +251,3 @@ I hope you've enjoyed and profited from this discussion. If you did, maybe you'd
  [6]: http://dev.mysql.com/doc/refman/5.0/en/server-sql-mode.html
  [7]: http://www.xaprb.com/index.xml
 
- *[RDBMS]: Relational Database Management System

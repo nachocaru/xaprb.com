@@ -192,4 +192,3 @@ I'm sure this is an incomplete list, and maybe I've even gotten some things wron
  [13]: http://www.xaprb.com/blog/2007/02/26/introducing-mysql-table-checksum/
  [14]: http://bugs.mysql.com/bug.php?id=25531
 
- *[DML]: Data Manipulation Language

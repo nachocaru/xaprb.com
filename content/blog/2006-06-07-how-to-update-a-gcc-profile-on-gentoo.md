@@ -51,8 +51,6 @@ As you can see, it switched me to the new profile, and advised me to update my e
 
 Regardless, I'm going to try this [guide on recompiling each package only once][2] and see how it goes.
 
- *[GCC]: Gnu Compiler Collection
- *[DLL]: Dynamically Linked Library
 
  [1]: http://www.gentoo.org/doc/en/gcc-upgrading.xml
  [2]: http://forums.gentoo.org/viewtopic-t-494331.html

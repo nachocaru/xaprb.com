@@ -74,6 +74,3 @@ You may think I'm a fanatic to insist on versioning everything, and you'd be rig
  [2]: http://www.xaprb.com/blog/2006/06/19/xaprb-scripts-relicensed/
  [3]: http://www.xaprb.com/blog/2006/07/07/what-is-a-sql-blind-insert/
 
- *[IDE]: Integrated Development Environment
- *[RCS]: Revision Control System
- *[CPAN]: Comprehensive Perl Archive Network

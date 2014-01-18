@@ -132,9 +132,5 @@ This hasn't impacted the archiving I'm doing at this point. When I need to be re
 
 I didn't do this myself... I'm standing on the shoulders of giants, particularly my co-worker John, who taught me about this stuff and went through all this analysis with me. So, even though I say "I" a lot in this article, it's not really just me.
 
- *[OLTP]: Online transaction processing
- *[DBA]: Database Administrator
- *[I/O]: Input/output
- *[CPU]: Central Processing Unit
 
  [1]: http://code.google.com/p/maatkit/

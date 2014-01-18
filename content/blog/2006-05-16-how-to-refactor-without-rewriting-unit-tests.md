@@ -16,4 +16,3 @@ It also taught me the valuable lesson I'm espousing in this article. It was part
 
 I think there's a natural tendency to test the implementation as a coding assist. For instance, in a weakly typed language, it can be tough to make sure a variable has the desired type. I understand the desire to put it in the unit tests, and I am not sure where else it belongs, but I really think it doesn't belong there. It makes the code harder to change, which defeats the purpose of unit testing.
 
- *[XSLT]: Extensible Stylesheet Language Transformations

@@ -108,5 +108,3 @@ Most importantly, our database is under control, and we can just do routine main
  [2]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
  [3]: http://www.xaprb.com/blog/2006/05/10/when-to-avoid-and-when-to-use-surrogate-keys-in-innodb-tables/
 
- *[RDBMS]: Relational Database Management System
- *[CPU]: Central Processing Unit
