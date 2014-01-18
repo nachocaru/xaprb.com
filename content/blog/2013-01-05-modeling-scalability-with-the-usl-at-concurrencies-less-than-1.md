@@ -5,6 +5,7 @@ url: /blog/2013/01/05/modeling-scalability-with-the-usl-at-concurrencies-less-th
 categories:
   - Databases
   - Performance
+  - Scalability
 ---
 [Last time][1] I said that you can set a starting value for the USL's coefficient of performance and let your modeling software (R, gnuplot, etc) manipulate this as part of the regression to find the best fit. However, there is a subtlety in the USL model that you need to be aware of. Here is a picture of the low-end of the curve:
 

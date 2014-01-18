@@ -5,7 +5,6 @@ url: /blog/2011/03/11/see-you-at-collaborate-2011/
 categories:
   - Conferences
   - Databases
-  - MySQL
 ---
 I'll be speaking at [IOUG's Collaborate][1] conference in Florida the week of April 10-14. My session is called [MySQL Performance Basics][2]. For those who know MySQL, this won't be exciting, but if you're new to it, I hope it will be a good orientation to what you should focus on and ignore.
 

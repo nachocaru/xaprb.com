@@ -6,6 +6,7 @@ categories:
   - Conferences
   - Databases
   - Performance
+  - Scalability
 ---
 This post is a followup to some promises I made at Postgres Open.
 

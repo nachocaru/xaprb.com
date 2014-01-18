@@ -4,7 +4,6 @@ date: "2010-05-25"
 url: /blog/2010/05/25/a-better-way-to-build-cacti-templates/
 categories:
   - Databases
-  - Monitoring
   - Open Source
   - Operations
 ---

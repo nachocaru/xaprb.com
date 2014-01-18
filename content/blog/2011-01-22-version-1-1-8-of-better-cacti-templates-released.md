@@ -4,7 +4,6 @@ date: "2011-01-22"
 url: /blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/
 categories:
   - Databases
-  - Monitoring
   - Operations
   - Programming
 ---

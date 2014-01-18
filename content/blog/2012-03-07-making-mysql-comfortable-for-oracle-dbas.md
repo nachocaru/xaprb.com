@@ -4,7 +4,6 @@ date: "2012-03-07"
 url: /blog/2012/03/07/making-mysql-comfortable-for-oracle-dbas/
 categories:
   - Databases
-  - MySQL
   - Open Source
 ---
 I'm at [Hotsos Symposium][1] this week, and it suddenly occurred to me that a lot of Oracle DBAs who are beginning to manage MySQL servers might have some things to share with others in a similar role shift:

@@ -5,7 +5,6 @@ url: /blog/2013/03/12/adaptive-fault-detection-food-fight/
 categories:
   - Conferences
   - Databases
-  - Monitoring
 ---
 I was a guest on the [Food Fight Show][1] last week, along with a bevy of really smart people asking and answering tough questions on fault detection. We didn't talk a lot about MySQL, but given that [VividCortex][2] is focusing on MySQL initially, pretty much all of my experience with zero-threshold, zero-configuration fault detection is MySQL-based.
 

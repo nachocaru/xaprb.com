@@ -1,2 +1,0 @@
-- consolidate categories a bit more (mysql, monitoring, scalability,
-  performance seem to need tweaking)

@@ -5,6 +5,7 @@ url: /blog/2013/01/03/determining-the-usls-coefficient-of-performance-part-2/
 categories:
   - Databases
   - Performance
+  - Scalability
 ---
 [Last time][1] I said that the USL has a forgotten third coefficient, the coefficient of performance. This is the same thing as the system's throughput at concurrency=1, or C(1). How do you determine this coefficient? There are at least three ways.
 
