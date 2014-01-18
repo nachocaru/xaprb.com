@@ -172,7 +172,7 @@ If this article was useful to you, you should [subscribe][3] to stay current wit
 
  [1]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/
  [2]: http://dev.mysql.com/doc/
- [3]: http://www.xaprb.com/blog/subscribe/
+ [3]: http://www.xaprb.com/index.xml
  [4]: http://www.xaprb.com/blog/2005/09/25/insert-if-not-exists-queries-in-mysql/
 
  *[RDBMS]: Relational Database Management System

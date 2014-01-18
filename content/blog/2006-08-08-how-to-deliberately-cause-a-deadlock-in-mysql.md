@@ -71,4 +71,4 @@ If this article is useful to you, [subscribe][5] to receive updates free and con
  [2]: http://www.xaprb.com/innotop/
  [3]: http://www.xaprb.com/innotop/innotop-wipe-deadlock.png
  [4]: http://www.xaprb.com/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/
- [5]: http://www.xaprb.com/blog/subscribe/
+ [5]: http://www.xaprb.com/index.xml

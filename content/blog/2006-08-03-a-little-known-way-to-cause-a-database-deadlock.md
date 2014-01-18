@@ -183,4 +183,4 @@ You've covered a lot of material by reading this far. You've gone from the basic
  [4]: http://code.google.com/p/innotop/
  [5]: http://www.xaprb.com/innotop/innotop-secret-deadlock.png
  [6]: http://dev.mysql.com/doc/internals/en/innodb-page-structure.html
- [7]: http://www.xaprb.com/blog/subscribe/
+ [7]: http://www.xaprb.com/index.xml

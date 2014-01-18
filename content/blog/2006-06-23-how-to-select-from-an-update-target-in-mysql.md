@@ -52,4 +52,4 @@ If you enjoyed this article, [subscribe via feeds or e-mail][6] to receive my ar
  [3]: http://www.xaprb.com/blog/2005/09/26/sql-subqueries-and-derived-tables/
  [4]: http://dev.mysql.com/doc/internals/en/select-derived.html
  [5]: http://www.xaprb.com/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
- [6]: http://www.xaprb.com/blog/subscribe/
+ [6]: http://www.xaprb.com/index.xml

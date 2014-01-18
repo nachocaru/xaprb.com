@@ -16,5 +16,5 @@ Finally, thanks for the very kind words, [Kyle][5]!
  [1]: http://9rules.com
  [2]: http://9rules.com/en/browse/featured/archive/94/
  [3]: http://9rules.com/en/browse/
- [4]: http://www.xaprb.com/blog/subscribe/
+ [4]: http://www.xaprb.com/index.xml
  [5]: http://warpspire.com/

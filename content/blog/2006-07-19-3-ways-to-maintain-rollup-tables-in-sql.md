@@ -79,4 +79,4 @@ If you found this article useful, [subscribe via feeds or e-mail][3] to be notif
 
  [1]: http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/
  [2]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
- [3]: http://www.xaprb.com/blog/subscribe/
+ [3]: http://www.xaprb.com/index.xml

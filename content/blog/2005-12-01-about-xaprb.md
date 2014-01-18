@@ -33,4 +33,4 @@ And finally, I listen and respond. If you have challenges of your own, I'll try 
 
 You've read this far, now take the next step. [Subscribe][1] and keep up with new articles! You'll get great technical writing, delivered conveniently via email or feeds.
 
- [1]: http://www.xaprb.com/blog/subscribe/
+ [1]: http://www.xaprb.com/index.xml

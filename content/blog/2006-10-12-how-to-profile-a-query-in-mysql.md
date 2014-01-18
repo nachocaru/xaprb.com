@@ -142,5 +142,5 @@ If you have any comments, please leave them below. I'm especially interested in 
  [6]: http://www.hackmysql.com/selectandsort
  [7]: http://dev.mysql.com/doc/refman/5.0/en/query-cache-configuration.html
  [8]: http://dev.mysql.com/doc/refman/5.0/en/flush.html
- [9]: http://www.xaprb.com/subscribe/
+ [9]: http://www.xaprb.com/index.xml
  [10]: http://www.mysqlperformanceblog.com/2006/08/14/mysql-followup-on-union-for-query-optimization-query-profiling/

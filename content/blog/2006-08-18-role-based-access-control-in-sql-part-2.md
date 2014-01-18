@@ -455,7 +455,7 @@ It's pretty hard to summarize such a complex article, but I'd like to wrap up by
  [5]: https://gist.github.com/xaprb/8491752
  [6]: http://phpgacl.sourceforge.net/
  [7]: http://www.xaprb.com/media/2006/08/property-pages-screenshot.png
- [8]: http://www.xaprb.com/blog/subscribe/
+ [8]: http://www.xaprb.com/index.xml
  [9]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/
  [11]: http://c2.com/xp/OnceAndOnlyOnce.html
  [12]: http://www.xaprb.com/blog/2006/08/16/how-to-build-role-based-access-control-in-sql/

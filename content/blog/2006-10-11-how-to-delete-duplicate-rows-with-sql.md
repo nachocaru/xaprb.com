@@ -109,6 +109,6 @@ If you found this useful, you should [subscribe][6] by e-mail or feeds and get m
  [3]: http://www.xaprb.com/blog/2006/10/09/how-to-find-duplicate-rows-with-sql/
  [4]: http://www.xaprb.com/blog/2006/08/07/how-to-write-multi-table-cross-database-deletes-with-aliases-in-mysql/
  [5]: http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
- [6]: http://www.xaprb.com/blog/subscribe/
+ [6]: http://www.xaprb.com/index.xml
 
  *[RDBMS]: Relational Database Management System

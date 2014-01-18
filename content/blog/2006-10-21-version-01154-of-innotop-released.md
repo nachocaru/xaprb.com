@@ -37,4 +37,4 @@ Stay tuned for more goodness to come! At some point I'll finish some of my 65 dr
  [3]: http://www.oreillynet.com/pub/a/mysql/2006/10/19/mysql-tools.html
  [4]: http://jfontain.free.fr/mysql/
  [5]: http://www.xaprb.com/mysql-query-profiler/
- [6]: http://www.xaprb.com/blog/subscribe/
+ [6]: http://www.xaprb.com/index.xml

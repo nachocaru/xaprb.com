@@ -194,4 +194,4 @@ In this article I showed you several ways to let a table grow to a fixed size, a
  [4]: http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/
  [5]: http://www.xaprb.com/blog/2006/12/02/how-to-number-rows-in-mysql/
  [6]: http://www.xaprb.com/blog/2005/09/25/insert-if-not-exists-queries-in-mysql/
- [7]: http://www.xaprb.com/blog/subscribe/
+ [7]: http://www.xaprb.com/index.xml

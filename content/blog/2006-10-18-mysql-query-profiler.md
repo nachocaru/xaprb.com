@@ -51,4 +51,4 @@ If this was useful to you, you should consider [subscribing to my articles via f
  [6]: http://www.provenscaling.com/
  [7]: http://lists.mysql.com/internals/33768
  [8]: http://hackmysql.com/mysqlreport/
- [9]: http://www.xaprb.com/blog/subscribe/
+ [9]: http://www.xaprb.com/index.xml
