@@ -7,6 +7,8 @@ categories:
 ---
 It's tax season, and this year I decided to export my GnuCash data into a MySQL database for analysis. This article is about that process, including source code for the export script and a couple of simple queries.
 
+The source code is available [on GitHub](https://github.com/xaprb/gnucash2mysql).
+
 ### The script
 
 [GnuCash][1] is a powerful double-entry accounting system for managing personal and/or business finances. I've used it since about 2002, and find it adequate for my needs. However, the reporting is widely acknowledged to be one of its weakest points. Reporting is implemented in the [Scheme programming language][2], and if the included reports aren't enough, most people probably won't be able to write their own. Personally, I find it much easier (for certain reports) to write SQL queries instead. With that in mind, I set out to write a little script that will insert my GnuCash data into a MySQL database.

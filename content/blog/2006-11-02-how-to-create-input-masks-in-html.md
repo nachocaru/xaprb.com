@@ -19,7 +19,7 @@ Have you ever wanted to apply an input mask to an HTML form field? Input masks a
 ### What's an input mask?
 
 <p class="demo">
-  <a href="/html-input-mask/html-form-input-mask.html">View the Demo</a>
+  <a href="/html-input-mask/">View the Demo</a>
 </p>
 
 Input masks are guides to help users enter data in the correct format. They typically do *not* actually validate data; they just ensure the right types of characters are entered in the right places. Typical uses are for dates, times, social security numbers, phone numbers, and credit card numbers. The user enters un-formatted input, and the mask takes care of adding dashes and other separators in appropriate places.
@@ -88,6 +88,6 @@ So that's it! Simple, lightweight, intuitive input masks. With a proper form val
  [1]: http://msdn.microsoft.com/en-us/masked/html/vbproMask_MEdit.asp
  [2]: http://www.xaprb.com/blog/2006/01/02/tables-and-data-part-1/
  [3]: http://prototype.conio.net/
- [4]: http://www.xaprb.com/html-input-mask/html-form-input-mask.html
+ [4]: http://www.xaprb.com/html-input-mask/
  [5]: http://particletree.com/notebook/how-to-make-firefox-forms-suck-less/
  [6]: http://www.xaprb.com/blog/2005/09/29/javascript-combo-box/
