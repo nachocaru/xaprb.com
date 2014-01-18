@@ -48,7 +48,7 @@ A well-written introduction to database design. I [reviewed it here][15].<br sty
 
 ### [SQL Antipatterns][16]
 
-<a href="http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557?tag=xaprb-20"><img style="float:left; margin-right:10px" src="http://www.xaprb.com/media/2011/06/bksqla_xlargecover.jpg" alt="" title="SQL Antipatterns" width="190" height="228" class="alignleft size-full wp-image-2372" /></a>
+<a href="http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557?tag=xaprb-20"><img src="http://www.xaprb.com/media/2011/06/bksqla_xlargecover.jpg" alt="" title="SQL Antipatterns" width="190" height="228" class="alignleft size-full wp-image-2372" /></a>
 
 An excellent book for developers who must interact with databases. It explains the mistakes that programmers make over and over again, showing why they're bad approaches, when to use them anyway, and what good alternatives exist. I reviewed it [here][17].<br style="clear: both" />
 
