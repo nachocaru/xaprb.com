@@ -5,11 +5,11 @@ url: /blog/2006/08/18/role-based-access-control-in-sql-part-2/
 categories:
   - Databases
 ---
-This is my second article on how to build a role-based access control system in SQL. In the first article I gave a high-level overview of access control systems in general, especially in the web-application context, and talked about how some ACLs are implemented. I introduced the problems I designed my system to solve, and gave a roadmap for where this series of articles will end. I finished that article with a sketch of some basics to provide row-level read, write, and delete access control.
+This is my second article on how to build a role-based access control system in SQL. In the first article I gave a high-level overview of access control systems in general, especially in the web-application context, and talked about how some Access Control Lists (ACLs) are implemented. I introduced the problems I designed my system to solve, and gave a roadmap for where this series of articles will end. I finished that article with a sketch of some basics to provide row-level read, write, and delete access control.
 
 This article picks up where I left off. I want to revisit some things I swept under the rug in the first article, because I didn't want to throw all the complexity in at once. I'll explain my current system's full functionality, which includes roles, status, type checking, and table-level and set-level privileges. I will show you the design in detail, and give working examples and ready-to-run SQL queries. I'll also explore ideas for extending or restricting functionality, because your application isn't likely to be the same as mine. I'll mention possible optimizations, because performance and scalability are important design goals. I'll end with a brief explanation of how I've used this system to make my own web applications simpler and more secure.
 
-If you haven't already, you should <a href="http://www.xaprb.com/blog/2006/08/16/how-to-build-role-based-access-control-in-sql/">read the first article</a> before continuing with the rest of this article, because I'll assume you have the context it provides.
+If you haven't already, you should [read the first article][12] before continuing with the rest of this article, because I'll assume you have the context it provides.
 
 ### Roles
 
@@ -27,7 +27,7 @@ Another topic I put aside, but used implicitly, was actions. Actions are importa
 
 I've already introduced the "event" data type. What actions can a user take on an event, besides the basic three? I can think of "join" and "withdraw." Since actions are verbs, chances are your application already defines a lot of actions as class methods, and you may even maintain a list of actions as part of your design process.
 
-Actions are the first place where type matters. I've mentioned that objects in my system are both typed and identified; that is, you need to know both the table and the ID of a row to apply privileges to it (you didn't need to know the table in the last article). Certain actions will apply to all types, such as read/write/delete, but others will only apply to specific types &#8211; a natural concept in object-oriented programming, which I assume you're doing if you're using an ORM system.
+Actions are the first place where type matters. I've mentioned that objects in my system are both typed and identified; that is, you need to know both the table and the ID of a row to apply privileges to it (you didn't need to know the table in the last article). Certain actions will apply to all types, such as read/write/delete, but others will only apply to specific types --- a natural concept in object-oriented programming, which I assume you're doing if you're using an ORM (Object-Relational Mapping) system.
 I find it useful to define a generic set of semi-UNIX-ish actions, which can be applied uniformly to *every* type by common code. These let me build "property pages" automatically, which are important when I need to administer the properties of different types of objects. Some examples are "stat", "chmod", "chgrp", "chown", "chmeta", "view\_acl", and "add\_privilege." Other actions apply only to specific types.
 
 Actions are stored in the database, because they need to be involved in some of the queries I'll show you later. This means they could theoretically be subject to ACL privileges like other objects, but in practice I find this is needless complexity (what good would it do to define a new action in the database, unless there is application code to implement it? Perhaps in an application with plug-in functionality this would be useful, but I'm not doing that.) For that reason I don't give them extra columns like other tables, and I exclude them from my ORM system. Here's the basic schema:
@@ -83,7 +83,7 @@ An object's status is stored in its `c_status` column, which I need to add to my
 
 I said actions are only valid for certain types of objects, but that's not represented anywhere in the privilege system. I've said I'm going to mix privileges and status together for the many benefits it gives. Should I also mix types into the recipe?
 
-There could be one good reason not to do this: <a href="http://c2.com/xp/OnceAndOnlyOnce.html">Once And Only Once</a>. The code might already define what actions are valid for what types, if your system is very object-oriented. On the other hand, your code might not be that strictly object-oriented, and you might want the application to be able to take actions that don't correspond to an object method. I find this is the case in my code, because I don't live in the [Kingdom of Nouns][1]. In this case you do want the privilege system to know which actions are valid for which types.
+There could be one good reason not to do this: [Once And Only Once][11]. The code might already define what actions are valid for what types, if your system is very object-oriented. On the other hand, your code might not be that strictly object-oriented, and you might want the application to be able to take actions that don't correspond to an object method. I find this is the case in my code, because I don't live in the [Kingdom of Nouns][1]. In this case you do want the privilege system to know which actions are valid for which types.
 
 But there's another reason, too: your types probably share some actions. Here's one example from my application: memberships and events can both be activated, so the 'activate' action applies in more than one place. In fact, some actions are even shared more than twice in my system, and *in some cases they don't apply in the same statuses*. In this case, I think the relational database is the best place to store this information.
 
@@ -420,7 +420,7 @@ I have also never really needed the "other" role in the `t_privilege` table, so 
 
 ### What's missing? How can you extend this system?
 
-I've deliberately omitted a few things. One is negative privileges, which deny someone the right to do something. This would not be hard to add -- I've just never needed it! You could do an <a href="http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion self-join</a> against negative privileges to implement this, and store the negative privileges in the same table. Another possibility would be using more bitwise logic to negate privileges. I've honestly never put too much thought into it.
+I've deliberately omitted a few things. One is negative privileges, which deny someone the right to do something. This would not be hard to add -- I've just never needed it! You could do an [exclusion self-join][9] against negative privileges to implement this, and store the negative privileges in the same table. Another possibility would be using more bitwise logic to negate privileges. I've honestly never put too much thought into it.
 
 I hope my sample queries (which are almost identical to my production queries, by the way) give you enough insight to figure out other special things you may need, such as the "creator" or "supervisor" roles I mentioned. Another possibility is packing more bits into the UNIX-style permissions. My examples only use 9 bits. If your application is constantly asking whether some other action, besides read/write/delete, is possible -- hey, use those extra bits. Or if you want, put another role besides user/group_owner/other into the UNIX-style bits. Just because I modelled after UNIX doesn't mean you can't do it differently.
 
@@ -428,7 +428,7 @@ There's lots of room to play with the table structures. For example, my producti
 
 ### How does this compare to other systems?
 
-I hate comparisons for their own sake, so I'll only say my table schema is as simple as I could make it and still jam all the special cases in. There are only a couple of tables, and no complex hierachical relationships between them -- everything is flattened out and de-normalized as much as I can think to do. By comparison, [phpGACL][6] uses 18 tables to represent relationships among ACOs and ARO. Here's another system I've found on the web at <a href="http://www.sqlrecipes.com/article_4.html">sqlrecipes.com</a>. Its schema is also more complex.
+I hate comparisons for their own sake, so I'll only say my table schema is as simple as I could make it and still jam all the special cases in. There are only a couple of tables, and no complex hierachical relationships between them -- everything is flattened out and de-normalized as much as I can think to do. By comparison, [phpGACL][6] uses 18 tables to represent relationships among Access Control Objects (ACOs) and Access Request Objects (ARO).
 
 These systems may work better for you, especially if you need a more traditional hierarchical ACL. Fortunately, I've always been able to accomplish what I need without hierarchy and with just a few groups, some custom roles, column defaults, lots of bitwise arithmetic, and special types of privileges. And I have managed quite complex data with this schema, such as inventory and accounting systems together in the same application.
 
@@ -436,11 +436,11 @@ These systems may work better for you, especially if you need a more traditional
 
 I currently use this system to implement a lot of the logic behind my web application. Between the privileges, type checking in the queries, and status-awareness, all my web application needs to do is ask the database what the user can do, and then display it. For example, I often use a "tab" metaphor, and the tabs are generated from the query. Here's a screenshot of the property pages I mentioned:
 
-[<img src="/articles/images/thumb-property-pages-screenshot.png" width="200" height="" alt="Property Pages Screenshot" />][7]
+[<img src="/media/2006/08/thumb-property-pages-screenshot.png" width="200" height="" alt="Property Pages Screenshot" />][7]
 
 I use the same query to populate drop-down menus and so on.
 
-My web app also uses url rewriting to funnel requests through a central dispatcher, which reads the URL and decides what file should handle the request. Before that happens, though, it verifies that the user is authorized to do what the URL requests! For example, my URLs look like "http://www.site.com/event/list_all/". The dispatcher looks at the URL and realizes the user is trying to take the `list_all` action on the `event` type. It runs the appropriate fetch-all query and sees if `list_all` is allowed. If so, it dispatches the request. The file that handles the request can focus on business logic instead of handling authorization, because it knows the user is pre-authorized. This is what I meant in my first article, when I said access control should be at the heart of the application, not bolted on. As a result of this design, most of the pages that actually do something only need a few lines of very focused code. This approach has also allowed me to factor out virtually all common code. I can't think of any duplicated code at all right now, though I'm sure there is some.
+My web app also uses url rewriting to funnel requests through a central dispatcher, which reads the URL and decides what file should handle the request. Before that happens, though, it verifies that the user is authorized to do what the URL requests! For example, my URLs look like `http://www.site.com/event/list_all/`. The dispatcher looks at the URL and realizes the user is trying to take the `list_all` action on the `event` type. It runs the appropriate fetch-all query and sees if `list_all` is allowed. If so, it dispatches the request. The file that handles the request can focus on business logic instead of handling authorization, because it knows the user is pre-authorized. This is what I meant in my first article, when I said access control should be at the heart of the application, not bolted on. As a result of this design, most of the pages that actually do something only need a few lines of very focused code. This approach has also allowed me to factor out virtually all common code. I can't think of any duplicated code at all right now, though I'm sure there is some.
 
 I'm not trying to brag; I just want to share with you how this has been a success for me.
 
@@ -448,18 +448,14 @@ I'm not trying to brag; I just want to share with you how this has been a succes
 
 It's pretty hard to summarize such a complex article, but I'd like to wrap up by saying I'm keen to hear your comments. Suggestions for improvements are especially welcome. I hope this article has been helpful for you.
 
-And of course, if you did find it helpful, you might like to [subscribe and receive free, convenient updates][8] by email or feeds when I post new articles.
-
- *[ACL]: Access Control List
- *[ORM]: Object-Relational Mapping
- *[ACOs]: Access Control Objects
- *[ARO]: Access Request Objects
-
  [1]: http://steve-yegge.blogspot.com/2006/03/execution-in-kingdom-of-nouns.html
- [2]: http://www.xaprb.com/articles/all-object-privileges.phps
- [3]: http://www.xaprb.com/articles/all-table-privileges.phps
- [4]: http://www.xaprb.com/articles/all-acl-entries.phps
- [5]: http://www.xaprb.com/articles/all-actionable-objects.phps
+ [2]: https://gist.github.com/xaprb/8491726
+ [3]: https://gist.github.com/xaprb/8491739
+ [4]: https://gist.github.com/xaprb/8491757
+ [5]: https://gist.github.com/xaprb/8491752
  [6]: http://phpgacl.sourceforge.net/
- [7]: http://www.xaprb.com/articles/images/property-pages-screenshot.png
+ [7]: http://www.xaprb.com/media/2006/08/property-pages-screenshot.png
  [8]: http://www.xaprb.com/blog/subscribe/
+ [9]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/
+ [11]: http://c2.com/xp/OnceAndOnlyOnce.html
+ [12]: http://www.xaprb.com/blog/2006/08/16/how-to-build-role-based-access-control-in-sql/
