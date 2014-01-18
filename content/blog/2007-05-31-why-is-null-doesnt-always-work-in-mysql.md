@@ -57,7 +57,7 @@ Bizarre, eh? However, any system that's really used much in the real world will 
 
 ### Conclusion
 
-Know thy [MySQL Manual][3]. I only discovered these things by accident. The good news is, the manual is really, really good; it has to be one of the best pieces of documentation I know. Now, if only [innotop][4]'s manual were that good&#8230;
+Know thy [MySQL Manual][3]. I only discovered these things by accident. The good news is, the manual is really, really good; it has to be one of the best pieces of documentation I know. Now, if only [innotop][4]'s manual were that good...
 
  [1]: http://dev.mysql.com/doc/refman/5.0/en/server-sql-mode.html
  [2]: http://dev.mysql.com/doc/refman/5.0/en/set-option.html

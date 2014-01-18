@@ -67,7 +67,7 @@ I don't understand who invented balloon notifications. Everything has them these
 
 When it's time to check email, I'll switch to Thunderbird. Actually, it's just as likely that I'll *start* Thunderbird -- I'm likely to shut it down instead of just minimizing it. When it's time to chat with someone, I'll open Skype and look to see if they're online. Again, it's actually more likely that I'll send them an email and schedule a time to talk with them.
 
-Some people have their computers configured to talk to them. When I'm calling them I'll send them a link through a chat program, and I hear "MESSAGE FROM BARON! AITCH TEE TEE PEE COLON SLASH SLASH DOUBLE YOU DOUBLE YOU DOUBLE YOU DOT &#8230;." in the background. I would murder my computer if it did that to me.
+Some people have their computers configured to talk to them. When I'm calling them I'll send them a link through a chat program, and I hear "MESSAGE FROM BARON! AITCH TEE TEE PEE COLON SLASH SLASH DOUBLE YOU DOUBLE YOU DOUBLE YOU DOT ...." in the background. I would murder my computer if it did that to me.
 
 I also don't let people casually interrupt me. My favorite example of this is Skype. People see me online, and they open a chat window and say "hi baron". *They're generally not going to get a reply.* Maybe if I said "hi" back, they'd say "have you finished configuring server2 yet?" Or "we are going to need you guys to help, we're creating a new Facebook app and it's going to take about 100 hours of work." Or maybe they'd say "o hai, u can haz cheezburger?" They need to start with "here's what I want from you," not "hi."
 

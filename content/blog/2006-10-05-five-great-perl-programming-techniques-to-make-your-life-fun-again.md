@@ -209,7 +209,7 @@ If you're not a Perl wizard, your head is probably spinning at this point, so I'
 ### Trick 5: dispatch tables of coderefs
 
 
-Newcomers to Perl often wonder where the `switch` statement is. If you really, really want to write something that looks like a `case` or `switch` block, you're a lost soul, but okay, `man perlfaq7`. And before you go there, since I know you're a lost soul, I'll give you this ticket to get a slightly cooler room in you-know-where: basically anything you'll ever want to do is explained in the Perl manual pages. Start with `man perlfaq` and go from there. Even if I can't convert you away from `switch`, perhaps I've made a difference by pointing you towards these man pages. Fare thee well! I hardly knew ye, gentle reader&#8230;
+Newcomers to Perl often wonder where the `switch` statement is. If you really, really want to write something that looks like a `case` or `switch` block, you're a lost soul, but okay, `man perlfaq7`. And before you go there, since I know you're a lost soul, I'll give you this ticket to get a slightly cooler room in you-know-where: basically anything you'll ever want to do is explained in the Perl manual pages. Start with `man perlfaq` and go from there. Even if I can't convert you away from `switch`, perhaps I've made a difference by pointing you towards these man pages. Fare thee well! I hardly knew ye, gentle reader...
 
 
 If you're still reading, you're one of the ones walking the narrow path that leads to victory. Good! Let's talk about how to execute some code branch depending on the value of a variable. My favorite technique for this is to use a dispatch table of coderefs -- references to subroutines. This is a succinct way to dispatch execution to somewhere or other in your program, without the mess and tedious coding you get with `switch` statements. Believe me, if you've ever tried to maintain someone else's `switch` of any size, you're going to appreciate this.
@@ -218,7 +218,7 @@ If you're still reading, you're one of the ones walking the narrow path that lea
 Let's say we have a hypothetical interactive program that waits for you to press a key and then does some function.
 
 
-Okay, I lied. It's not hypothetical. I use this technique extensively in <a href="/innotop/">innotop</a>. Innotop has many dozens of key mappings, and they are mapped to different things depending on what mode you're in. "You pressed `c`? Oh wait, let me scroll through my big honkin' `switch` statement and see what that does&#8230; hang on, I'm getting there&#8230; can't find it&#8230; oh, you were in *that* mode! No wonder. Well, let me look at the `switch` statement for that mode, then&#8230;"
+Okay, I lied. It's not hypothetical. I use this technique extensively in <a href="/innotop/">innotop</a>. Innotop has many dozens of key mappings, and they are mapped to different things depending on what mode you're in. "You pressed `c`? Oh wait, let me scroll through my big honkin' `switch` statement and see what that does... hang on, I'm getting there... can't find it... oh, you were in *that* mode! No wonder. Well, let me look at the `switch` statement for that mode, then..."
 
 
 Can you imagine? There's no way I'd have added so many features to innotop if it were this much of a pain to write, debug and understand. It doesn't really matter that I wrote it -- six months from now, I won't have a clue what all that code is doing. But I *will* be able to figure out what a keypress does, because I used a dispatch table.

@@ -56,7 +56,7 @@ Pentaho's Matt Casters spoke on **how to extract data from many disparate source
 
 Have you been reading Matt's blog? Do you remember his understated post on [processing a large volume of data in parallel with near-linear scalability][13]? I've been eagerly reading his articles for a while and it was great to hear him speak and see him demo these things.
 
-The techniques he showed are great, but may result in CPU bottlenecks on the server that does the processing, because you can easily get enough data from a bunch of servers in parallel to peg the CPU. The next level of parallelization is the Carte server, which runs on remote machines and is basically grid computing for business intelligence. He gave a demo of this, which looks great. (Hmmm, I wonder if I could get seti@home to run BI for me? Yeah&#8230;.) Matt finished up with a demo and overview of the Pentaho product overall.
+The techniques he showed are great, but may result in CPU bottlenecks on the server that does the processing, because you can easily get enough data from a bunch of servers in parallel to peg the CPU. The next level of parallelization is the Carte server, which runs on remote machines and is basically grid computing for business intelligence. He gave a demo of this, which looks great. (Hmmm, I wonder if I could get seti@home to run BI for me? Yeah....) Matt finished up with a demo and overview of the Pentaho product overall.
 
 ### Birds of a Feather Sessions
 

@@ -59,7 +59,7 @@ So what do I want?
 
 *   The bookmarks or page markers. I prefer a silken ribbon for journals, but for notebooks I actually prefer none; my favorite is [these magnetic owl page markers][4].
 
-*   The design. This is the most subjective and intangible thing of all. The design needs to be professional, a little bit creative, and inspiring. It should make me feel like an artist as well as an engineer. If I may stereotype for a moment, the Germans perhaps err on the side of being too mechanical, the Swiss can sometimes feel as if everything is meant to be a coffee-table conversation piece, and the Americans can be deathly boring. I want something that makes me feel light and nimble, practical, yet &#8230; a craftsman, somehow.
+*   The design. This is the most subjective and intangible thing of all. The design needs to be professional, a little bit creative, and inspiring. It should make me feel like an artist as well as an engineer. If I may stereotype for a moment, the Germans perhaps err on the side of being too mechanical, the Swiss can sometimes feel as if everything is meant to be a coffee-table conversation piece, and the Americans can be deathly boring. I want something that makes me feel light and nimble, practical, yet ... a craftsman, somehow.
 
 Is that really so much to ask?
 
@@ -291,7 +291,7 @@ Other than the added touches such as page numbers and high-quality paper, you co
 
 [<img src="http://www.xaprb.com/media/2013/07/moleskine-300x225.jpg" alt="moleskine" width="300" height="225" class="aligncenter size-medium wp-image-3226" />][24] 
 
-Ah, Moleskine, how we love to love you and pay a premium for you. Yet you're so&#8230; boring. Your paper isn't all that great, your cover is uninspiring, your heavy ruling goes all the way across the page with no margin, your elastic droops and sags. You are the girl next door, and goodness knows why you've gotten a reputation for being the beauty queen, because you're not the best girl to take to the prom. 
+Ah, Moleskine, how we love to love you and pay a premium for you. Yet you're so... boring. Your paper isn't all that great, your cover is uninspiring, your heavy ruling goes all the way across the page with no margin, your elastic droops and sags. You are the girl next door, and goodness knows why you've gotten a reputation for being the beauty queen, because you're not the best girl to take to the prom. 
 
 On the other hand, Moleskine notebooks are perfectly functional, with a nice binding, and lots of adoring fans can't all be all wrong, can they? 
 

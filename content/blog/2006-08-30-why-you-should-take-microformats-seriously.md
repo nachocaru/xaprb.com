@@ -51,7 +51,7 @@ In my opinion, the microformat work is going in the right direction -- it just i
 
 <blockquote cite="http://www.tbray.org/ongoing/When/200x/2004/09/18/WS-Oppo">
   <p>
-    I'm deeply suspicious of 'standards' built by committees in advance of industry experience&#8230;
+    I'm deeply suspicious of 'standards' built by committees in advance of industry experience...
   </p>
 </blockquote>
 
@@ -71,7 +71,7 @@ Lots of people, like [Steve Farrell][8], have raised these issues in conversatio
 
 I hope people don't continue to be pessimistic about the future of microformats. Many standards have failed because of some show-stopping problem or other, sure, but the world hasn't ended. One excellent example is [the IPv6 mess][9]. Even if there are some shortcomings to microformats, whatever they are will be addressed somehow.
 
-### To a man with a hammer&#8230;
+### To a man with a hammer...
 
 Microformats are built on XHTML, and therefore XML, so there's a huge pre-existing toolset for addressing the requirement for a doctype. If you come from the XML world, as I do, your first thought might be "we need to use XML tools to solve this XML problem." And the first places you'd probably look are XML Schema and good old-fashioned DTDs. These have been proven over and over again, especially DTDs. Let me explain these a bit, and show you why they're not the solution for microformats.
 
@@ -89,7 +89,7 @@ If you're an XML expert, I hope by this point I've convinced you that you need t
 
 I think, but I'm not sure, the solution is [XHTML Meta Data Profiles (XMDP)][12].
 
-It might look like a "hey, would this work?" idea got an acronym, and maybe that's true. I'm not really clear on where the [GMPG][13] work is going to end up, but at this point it looks more promising to me than anything else (digression: Their homepage sounds like an artist's statement. "&#8230;GMPG efforts provoke optimism and empowerment, nevertheless reawakening criticism of complexity&#8230;" Go read the whole thing. I still don't know whether it's a joke. If it's a joke, it's wicked funny. If they're serious, it's wicked funny).
+It might look like a "hey, would this work?" idea got an acronym, and maybe that's true. I'm not really clear on where the [GMPG][13] work is going to end up, but at this point it looks more promising to me than anything else (digression: Their homepage sounds like an artist's statement. "...GMPG efforts provoke optimism and empowerment, nevertheless reawakening criticism of complexity..." Go read the whole thing. I still don't know whether it's a joke. If it's a joke, it's wicked funny. If they're serious, it's wicked funny).
 
 Anyway, I want to mention some of the background for this idea of meta-data profiles. This is not something made up out of whole cloth. HTML has many un-explored possibilities. A famous one is the `class` attribute, which didn't get recognition as a meta-data container for a long time, and was just relegated to the role of CSS beast of burden. Similarly, HTML 4 defines the [`profile` attribute][14], which is -- like the mechanisms built into DTD and XML Schema -- a means of extending (X)HTML, *without changing or extending the doctype*. This is exactly what's needed for extensions like microformats, which embed documents within documents. The `profile` extension mechanism is a generic hook. When an HTML document defines a meta-data profile, it is really saying "hey, there's more you can find out about me. Go to such-and-such URI to learn more." And at the referenced URI can be a [meta-data definition][15], which is completely outside the scope of the HTML specification. This is important, because it means the HTML document's meaning can be extended arbitrarily, not just in the ways the HTML spec's authors might have foreseen.
 

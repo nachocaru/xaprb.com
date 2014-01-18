@@ -88,7 +88,7 @@ Notice the first transaction has been waiting 20 seconds for a lock to be grante
 
 Again, there's some information here, but not a lot. If you issue a query and it hangs and waits for a lock, knowing what lock it's waiting for isn't really helpful. And knowing some other transaction holds a lock isn't *always* helpful either.
 
-It can be useful sometimes though, and that's better than nothing. If you only see two transactions with locks, you know the one that's **not** waiting for a lock is probably the one that holds them. Notice something scary in the information above? Transaction "0 93789771&#8243;, on connection 23731, has been active for&#8230; eight and a half hours! Whoa. It's time to [find out what owns that connection][2] and possibly kill it.
+It can be useful sometimes though, and that's better than nothing. If you only see two transactions with locks, you know the one that's **not** waiting for a lock is probably the one that holds them. Notice something scary in the information above? Transaction "0 93789771&#8243;, on connection 23731, has been active for... eight and a half hours! Whoa. It's time to [find out what owns that connection][2] and possibly kill it.
 
 The take-away here is, if you're getting blocked on an InnoDB table, and you're lucky enough to see only one other transaction with locks, it's probably the one blocking you.
 

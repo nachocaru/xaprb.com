@@ -20,7 +20,7 @@ No, there was an error about something failing, do I want to continue, yes I do,
 
 Finally I resorted to [kill-dash-nine][2].Â  Then I was able to restart, log in quickly before the server bogged down, and watch the processlist grow full of unauthenticated connections. Ah hah! It's a networking problem.Â  [The old skip-name-resolve problem][3] reared its ugly head. It was an easy fix.
 
-And why couldn't I get any information about this?Â  Why did I have to kill the server?Â  Well&#8230; here's the messages from /var/log/messages:
+And why couldn't I get any information about this?Â  Why did I have to kill the server?Â  Well... here's the messages from /var/log/messages:
 
 <pre>SELinux is preventing strace (mysqld_t) "signal" to &lt;Unknown&gt; (unconfined_t).
 SELinux is preventing gdb (mysqld_t) "signal" to &lt;Unknown&gt; (unconfined_t).</pre>

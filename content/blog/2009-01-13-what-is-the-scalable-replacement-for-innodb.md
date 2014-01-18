@@ -9,7 +9,7 @@ A while back a Sun engineer posted an [article][1] claiming that the best way to
 
 But what I'm interested in is something the author says in the comments of his own blog post:
 
-> btw; we are working on a scalable replacement of InnoDB. Stay tuned&#8230;.
+> btw; we are working on a scalable replacement of InnoDB. Stay tuned....
 
 What is it?
 

@@ -381,7 +381,7 @@ xaprb cannot join the event. Can he join the 'Microsoft Keynote' event?
 2.  We need to look in the `t_privilege` table for a row that matches any of the following: 
     *   c\_role is 'user', c\_who is 2, c\_action is 'join', c\_type is 'object', c\_related\_table is 't\_event', and c\_related_uid is 2,
     *   or, c\_role is 'user', c\_who is 2, c\_action is 'join', c\_type is 'global', and c\_related\_table is 't_event',
-    *   &#8230; this goes on for a long time.
+    *   ... this goes on for a long time.
 
 I'm not going to type all the possible combinations of columns and values. This is exactly why my old privilege system was buggy and bloated. Fortunately, it's really not bad to express this in SQL.
 

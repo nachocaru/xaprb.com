@@ -13,7 +13,7 @@ I used a sample of real data from a production database. It's fairly simple -- j
 
 For the tests, I created two copies of the data on the same server, and then changed one of the tables in four different ways. I deleted five rows randomly, 500 rows randomly, and where col2=60, which is 11,424 rows. Finally, I randomly incremented col6 in one row. These are the kinds of data corruptions I see on this table in production.
 
-I ran these tests on a Dell Inspiron 5000 laptop with a 500MHz processor from 1999. Don't pay attention to the absolute numbers, as I'm sure you will not be serving data from a laptop whose circuitry starts to screech when it displays an animated cursor (yes, that does happen&#8230;).
+I ran these tests on a Dell Inspiron 5000 laptop with a 500MHz processor from 1999. Don't pay attention to the absolute numbers, as I'm sure you will not be serving data from a laptop whose circuitry starts to screech when it displays an animated cursor (yes, that does happen...).
 
 You can [download the test data and the profiling results (1.4MB)][3] if you wish.
 

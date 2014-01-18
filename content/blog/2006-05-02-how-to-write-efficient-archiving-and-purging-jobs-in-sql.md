@@ -21,7 +21,7 @@ When I started work at my current job, nothing was failing, but queries were too
 
 The problem is, that wouldn't have helped much anyway. We still needed to delete the unwanted data from the original table. That in itself would take a very long time. We decided to try the approach that worked well at my former employer.
 
-### In my previous life&#8230;
+### In my previous life...
 
 At my former employer, an all-Microsoft shop, expert DBAs had developed a strategy that worked well for archiving and purging data from Microsoft SQL Server in a variety of situations. The approach was to scan the clustered index linearly through the table, archiving one (or sometimes a few) rows at a time. The jobs I wrote, which were patterned after other jobs and guided by the DBAs, were stored procedures that looked something like this:
 
@@ -57,7 +57,7 @@ With this background in mind, I wrote a Perl script that emulates these stored p
 
 I wanted to answer several questions. Will MySQL use the clustered index to seek before scanning? Will one-at-a-time delete transactions be cheap and fast, and avoid blocking or other contention among queries?
 
-To answer the first question, I wrote my get-next-row query's `WHERE` clause to find only every tenth row in the table, based on a non-indexed column. That meant it would delete a row, skip nine rows, delete a row&#8230; pretty soon it would be working in the middle of the table, not at the beginning. If it seeks before scanning, the speed ought to stay fairly constant as it goes through the table. If it starts a scan at at the beginning every time, it ought to get slower as it goes (ignoring a slight speed increase due to the table getting smaller).
+To answer the first question, I wrote my get-next-row query's `WHERE` clause to find only every tenth row in the table, based on a non-indexed column. That meant it would delete a row, skip nine rows, delete a row... pretty soon it would be working in the middle of the table, not at the beginning. If it seeks before scanning, the speed ought to stay fairly constant as it goes through the table. If it starts a scan at at the beginning every time, it ought to get slower as it goes (ignoring a slight speed increase due to the table getting smaller).
 
 After testing a variety of scenarios, I concluded that MySQL will indeed seek, then start scanning. Within the limits of my ability to detect, the speed seemed to stay fairly constant as the query progressed through the table.
 
@@ -130,7 +130,7 @@ This hasn't impacted the archiving I'm doing at this point. When I need to be re
 
 ### Acknowledgements
 
-I didn't do this myself&#8230; I'm standing on the shoulders of giants, particularly my co-worker John, who taught me about this stuff and went through all this analysis with me. So, even though I say "I" a lot in this article, it's not really just me.
+I didn't do this myself... I'm standing on the shoulders of giants, particularly my co-worker John, who taught me about this stuff and went through all this analysis with me. So, even though I say "I" a lot in this article, it's not really just me.
 
  *[OLTP]: Online transaction processing
  *[DBA]: Database Administrator

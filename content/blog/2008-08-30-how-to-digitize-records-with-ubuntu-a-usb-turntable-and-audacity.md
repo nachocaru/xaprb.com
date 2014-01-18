@@ -43,7 +43,7 @@ categories:
 
 <h3>Record the LP</h3>
 
-<p>Actually recording the LP is straightforward.  Just start Audacity recording, then start the turntable and lower the needle.  I'm not going to tell you about cleaning the LP and all that&#8230; you probably know it already.</p>
+<p>Actually recording the LP is straightforward.  Just start Audacity recording, then start the turntable and lower the needle.  I'm not going to tell you about cleaning the LP and all that... you probably know it already.</p>
 
 <p>Once you have recorded some music, you probably want to chop it up into individual songs and export them as MP3, OGG, or FLAC.  (I'm loving FLAC.  <a href="http://www.xaprb.com/blog/2008/08/02/how-i-hacked-the-hp-media-vault-to-support-ogg-and-flac-files/">My HP Media Vault streams FLAC</a> to me via iTunes or Rhythmbox just fine.)  I experimented with a variety of ways to do that.  I settled on the following method.</p>
 

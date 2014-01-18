@@ -30,7 +30,7 @@ I also got to work with chromatic -- he edited the article. It's a pleasure to b
 
 Someone sent me a message about a particular module I used in my [MySQL Query Profiler tool][5] for debugging purposes. Apparently, when I took out all the places I actually used it but didn't remove the reference to the module, it caused some earlier versions of Perl to complain. I fixed that too.
 
-Stay tuned for more goodness to come! At some point I'll finish some of my 65 draft articles and publish them. Yep, I have 65 articles in various states of completion&#8230;! Yikes. You can [subscribe][6] if you want to be notified as soon as I publish anything new.
+Stay tuned for more goodness to come! At some point I'll finish some of my 65 draft articles and publish them. Yep, I have 65 articles in various states of completion...! Yikes. You can [subscribe][6] if you want to be notified as soon as I publish anything new.
 
  [1]: http://www.xaprb.com/innotop/
  [2]: http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/

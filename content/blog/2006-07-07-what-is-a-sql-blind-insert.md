@@ -35,7 +35,7 @@ Because the database schema may change. Columns may be moved, renamed, added, or
 
 Usually, when this happens, it's in the middle of the night when that scheduled task runs, and you're at home in bed when the phone rings. Yuck!
 
-Even in the best case, it can be hard to figure out what's wrong, because the columns in the target table aren't the way they used to be. You could end up very confused, under a lot of pressure to fix something in the middle of the night, and the extra documentation provided by the named target columns isn't there. Notice in my example above, the `variety` column from the `fruits` table is actually supposed to go into the `type` column in the `apples` table. Imagine there's also a column named `variety` on the `apples` table, but it's for a different bit of data&#8230; you might end up trying to 'fix' the broken query by putting the wrong data into the wrong column, if you didn't have those named targets to alert you that's not the right thing to do.
+Even in the best case, it can be hard to figure out what's wrong, because the columns in the target table aren't the way they used to be. You could end up very confused, under a lot of pressure to fix something in the middle of the night, and the extra documentation provided by the named target columns isn't there. Notice in my example above, the `variety` column from the `fruits` table is actually supposed to go into the `type` column in the `apples` table. Imagine there's also a column named `variety` on the `apples` table, but it's for a different bit of data... you might end up trying to 'fix' the broken query by putting the wrong data into the wrong column, if you didn't have those named targets to alert you that's not the right thing to do.
 
 ### How to fix this
 

@@ -21,7 +21,7 @@ I don't know where MVC came from and I'm sure I won't change my mind if I find o
 
 Even more fun: some folks try to invent an MVC framework, like the original ASP.NET, and "get it wrong," to disdainful criticism. Then they have to reinvent it, sometimes several times.
 
-It's kind of like the OSI 7-layer model, which everyone agrees doesn't actually represent modern networking technology stacks cleanly, and yet everyone talks about the OSI layers. There's a clean way to think about networking layers, but the OSI model ain't it. Or NoSQL -- the most unhelpful, undescriptive name for an &#8230; amorphous category of technologies or worldviews or design patterns or whatever&#8230; ever.
+It's kind of like the OSI 7-layer model, which everyone agrees doesn't actually represent modern networking technology stacks cleanly, and yet everyone talks about the OSI layers. There's a clean way to think about networking layers, but the OSI model ain't it. Or NoSQL -- the most unhelpful, undescriptive name for an ... amorphous category of technologies or worldviews or design patterns or whatever... ever.
 
 The lesson: great concepts that teach great truths, and could result in great advances in engineering due to a common mental model around which other things can be built, can be sidetracked by slapping an ill-fitting monicker or set of analogies on them. And sometimes we never seem to get another chance. NoSQL believers can't seem to think of anything better than NoSQL as a name (and neither can I, as much as I deplore the NoSQL name). We're stuck.
 

@@ -36,7 +36,7 @@ Time acquiring
   Average         724 ms
   Max            5182 ms</pre>
 
-As always, very helpful&#8230; just the facts, nothing more. I have 1.25 GB of buffer pool, 100% used, very small percentage of dirty pages, etc etc. You can see it all at a glance.
+As always, very helpful... just the facts, nothing more. I have 1.25 GB of buffer pool, 100% used, very small percentage of dirty pages, etc etc. You can see it all at a glance.
 
 It pulls the data from `SHOW STATUS`, which means it only works on newer versions of MySQL. Those variables are available in 5.0.3 and later, if memory serves me.
 

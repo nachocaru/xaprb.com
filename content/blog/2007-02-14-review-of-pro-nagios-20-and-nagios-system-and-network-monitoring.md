@@ -27,7 +27,7 @@ I read James Turnbull's Pro Nagios 2.0 first. I brought it home for the weekend,
 
 *   It explains difficult concepts abstractly. Here are some of the first sentences from Chapter 2&#8242;s introductory paragraph:
     
-    > You do this by defining a series of objects that represent the characteristics of the environment being monitored. You begin by defining your assets to the Nagios server. Nagios calls them *hosts*. Then you define the attributes and functions of these assets&#8230;
+    > You do this by defining a series of objects that represent the characteristics of the environment being monitored. You begin by defining your assets to the Nagios server. Nagios calls them *hosts*. Then you define the attributes and functions of these assets...
     
     The book would have been clearer if it used the concrete Nagios metaphors (hosts, services, contacts), but it describes many things in object-oriented programming terms.
 

@@ -10,7 +10,7 @@ categories:
 
 <blockquote cite="http://momjian.us/mainhttp://www.xaprb.com/blogs/pgblog.html#May_22_2008">
   <p>
-    &#8230;the volume of patches [to PostgreSQL] has risen dramatically during the past few years.
+    ...the volume of patches [to PostgreSQL] has risen dramatically during the past few years.
   </p>
 </blockquote>
 

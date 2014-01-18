@@ -33,7 +33,7 @@ If you use the `SERIALIZABLE` isolation level in MySQL, a `SELECT` statement loc
 
 ### Lock hints in queries
 
-MySQL does allow you to specify directly what locks should be acquired in a `SELECT`, with the lock hints `FOR UPDATE` and `LOCK IN SHARE MODE`. Basically, `FOR UPDATE` gets write locks, and `LOCK IN SHARE MODE` gets shared read locks on the rows read. You can read more about this on the manual page [SELECT &#8230; FOR UPDATE and SELECT &#8230; LOCK IN SHARE MODE Locking Reads][3].
+MySQL does allow you to specify directly what locks should be acquired in a `SELECT`, with the lock hints `FOR UPDATE` and `LOCK IN SHARE MODE`. Basically, `FOR UPDATE` gets write locks, and `LOCK IN SHARE MODE` gets shared read locks on the rows read. You can read more about this on the manual page [SELECT ... FOR UPDATE and SELECT ... LOCK IN SHARE MODE Locking Reads][3].
 
 It's not the same level of granularity as in SQL Server, because for example you can't apply a different locking hint to each table involved in a join, but it's certainly useful.
 

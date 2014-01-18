@@ -6,7 +6,7 @@ categories:
   - Commentary
   - Databases
 ---
-It seems that a lot of people equate non-SQL databases with non-relational-ness, or malign the word *relational*. This is pretty much pure ignorance. If you've ever uttered a sentence that includes the phrase "&#8230;non-relational database&#8230;" then I have two suggestions for you.
+It seems that a lot of people equate non-SQL databases with non-relational-ness, or malign the word *relational*. This is pretty much pure ignorance. If you've ever uttered a sentence that includes the phrase "...non-relational database..." then I have two suggestions for you.
 
 1.  Study relational algebra. At a *bare minimum*, read the [Wikipedia article on relational algebra][1]. There is much more you could do -- take a class on the topic, or read [C.J. Date's SQL and Relational Theory][2] ([my review][3]). Ask yourself how similar SQL is to the relational algebra. How is relational algebra different from SELECT and GROUP BY? Is relational theory about relationships between data? What part do transactions play in relational algebra? Is MySQL a relational database? What about PostgreSQL, Oracle, or DB2?
 2.  Now that you understand relational theory more, choose a database that you think is non-relational and write a formal proof that it is not relationally complete. Please do post a link to the proof in the comments.

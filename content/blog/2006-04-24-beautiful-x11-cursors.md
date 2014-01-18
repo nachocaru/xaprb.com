@@ -49,7 +49,7 @@ To install a theme, download the theme and unpack it. You should have a director
 *   theme_name 
     *   index.theme
     *   cursors 
-        *   cursor files&#8230;
+        *   cursor files...
 
 Move the entire `theme_name` directory to the installation destination: `/usr/share/cursors/xorg-x11/`, `/usr/local/share/cursors/xorg-x11/`, or `~/.icons/`.
 
@@ -77,7 +77,7 @@ If you installed the theme in your `~/.icons/` directory, you can do several dif
 
 I like the last option, because it never leaves me in doubt about which theme I'm really using.
     
-**Update: in Ubuntu Hardy Heron, open System/Preferences/Appearance and click "Customize&#8230;" then select the Pointer tab. Select your preferred cursor set here. The list will include cursors installed under ~/.icons/**
+**Update: in Ubuntu Hardy Heron, open System/Preferences/Appearance and click "Customize..." then select the Pointer tab. Select your preferred cursor set here. The list will include cursors installed under ~/.icons/**
 
  [1]: http://www.xfree86.org/
  [2]: http://www.x.org/

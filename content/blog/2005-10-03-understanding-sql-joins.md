@@ -11,7 +11,7 @@ Many programmers learn SQL by writing it. I learned it by studying relational al
 
 SQL is a functional language. Try to think of a SELECT statement as a function. That is, a mathematical function, or mapping, which -- this is important -- *maps an input to an output*. When you select data from a table, think of the table as a source. Data streams out of the table. If it helps you, think of a little grinding cog icon. Then it streams out of the cog onto your screen as a familiar tabular result set. The cog is the SELECT statement, the function. It *transforms* the data. Maybe it just passes it straight through, but it really is a mapping of input to output. (By the way, if you take this approach when programming in XSLT or LISP, you will grasp things much more easily.)
 
-A join is a SELECT statement with multiple data sources. The data streams from those sources into your cog icon, and a single stream flows out again. A SELECT statement always has one and only one output. (Why? Think of a function&#8230; think back to your math classes). Joins are functions that perform matching between data streams. The matching is necessary to merge the multiple input streams into a single output.
+A join is a SELECT statement with multiple data sources. The data streams from those sources into your cog icon, and a single stream flows out again. A SELECT statement always has one and only one output. (Why? Think of a function... think back to your math classes). Joins are functions that perform matching between data streams. The matching is necessary to merge the multiple input streams into a single output.
 
 Let's look at two tables of data, `apples` and `oranges`.
 

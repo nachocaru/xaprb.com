@@ -15,11 +15,11 @@ Despite the fact that all of the chapters and appendixes are theoretically a "fi
 
 Some miscellanea:
 
-*   The production staff replied to my inquiry to the editor to say that yes, we will be able to have references that point to a specific page number. This was a big relief to me. It requires extra work, but makes the book so much more valuable as a reference work in my opinion. To see why, look at the top of page 151 in the first section, which just refers to chapters and sections by their titles: "See&#8230; the "Tools" section&#8230;" Now try to find the "Tools" section. If it took you a while&#8230; well, the first time I did it, I missed it, and thought it might mean the Tools *Chapter*. The second edition will say "The X section on page Y" or similar. (Okay, I'll shut up about this now -- everyone has to have a [pet peeve][2], eh?)
+*   The production staff replied to my inquiry to the editor to say that yes, we will be able to have references that point to a specific page number. This was a big relief to me. It requires extra work, but makes the book so much more valuable as a reference work in my opinion. To see why, look at the top of page 151 in the first section, which just refers to chapters and sections by their titles: "See... the "Tools" section..." Now try to find the "Tools" section. If it took you a while... well, the first time I did it, I missed it, and thought it might mean the Tools *Chapter*. The second edition will say "The X section on page Y" or similar. (Okay, I'll shut up about this now -- everyone has to have a [pet peeve][2], eh?)
 *   We are currently at 425 pages in OpenOffice.org Writer, which by my calculations puts us around 470 pages in print. As I said before, I think we'll break 500 pages by the time we finish the rest of the missing material.
 *   [Andrew Aksyonoff][3] has contributed an appendix on the [Sphinx full-text search system][4]. If you don't know anything about it, check it out. It's an amazing piece of software that does a lot more than just full-text search.
 
-Well, I've run out of my allotted thirty minutes of blogging! Back to the salt mines! Just kidding&#8230; I'm actually off to the climbing gym soon to get my mind off it.
+Well, I've run out of my allotted thirty minutes of blogging! Back to the salt mines! Just kidding... I'm actually off to the climbing gym soon to get my mind off it.
 
  [1]: http://www.mysqlperformanceblog.com/2007/11/12/how-we-work-on-high-performance-mysql-second-edition/
  [2]: http://www.xaprb.com/blog/2007/02/14/review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/

@@ -13,7 +13,7 @@ There are several things going on here:
 
 1.  You're running `mysql-parallel-dump` with all the ordinary options. Some of them are really specific to dumping data, but not all that many -- most of the options are about choosing which databases to include and exclude, and so on.
 2.  You're adding a double dash `--` to make it stop processing any further options.
-3.  The rest of the arguments are being treated as a system command, but&#8230; 
+3.  The rest of the arguments are being treated as a system command, but... 
 4.  Not before interpolating the database and table name into them. The %D and %N are a little macro language. There are some other macros too -- see the documentation.
 
 The net effect is to loop through all the tables and run `OPTIMIZE TABLE` on them.

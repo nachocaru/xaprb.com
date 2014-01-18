@@ -48,7 +48,7 @@ The code will not only choose a sleep time and adapt to changing conditions. Dur
 
 The above code is bare-minimum simplistic, and there are many ways to improve it. Here's one limitation: it won't actually find a single optimal sleep time. It'll bounce around between several powers of two. That might not be so great, depending on the application. Here are two ways to change that:
 
-1.  Don't work in powers of two. Choose a multiplier and an interval such as 100, then increment or decrement the multiplier. Now the interval goes from 100 to 200, 300, 400&#8230; The downside to this method is the wait time may not adapt quickly enough to changing conditions, for some applications.
+1.  Don't work in powers of two. Choose a multiplier and an interval such as 100, then increment or decrement the multiplier. Now the interval goes from 100 to 200, 300, 400... The downside to this method is the wait time may not adapt quickly enough to changing conditions, for some applications.
 2.  Don't change the interval based on a boolean value such as `didSomething`, but compare a number such as `amountOfStuffDone` to a range of values. If `amountOfStuffDone` is between acceptable values, the interval doesn't need to be changed.
 
 Both variations can help find a better wait time.

@@ -63,7 +63,7 @@ What's not to love?
 *   Elegant.
 *   Solves world hunger.
 
-Well, I'm still working on that last part&#8230;!
+Well, I'm still working on that last part...!
 
  [1]: http://www.xaprb.com/blog/2007/01/20/how-to-make-mysql-replication-reliable/
  [2]: http://code.google.com/p/maatkit

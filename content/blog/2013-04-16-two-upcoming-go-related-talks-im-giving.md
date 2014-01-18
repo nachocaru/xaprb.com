@@ -11,7 +11,7 @@ I'm scheduled to talk about Go a couple times in the upcoming weeks.
 
 
 
-The first is May 4th in Arlington at [A Day Of Foster.ly][1]. I'll be a participant in a panel titled *Add To Your Programming Toolkit: Languages You Should Know About (Erlang, Clojure, R, Go, etc&#8230;)*. I'm talking about Go, naturally.
+The first is May 4th in Arlington at [A Day Of Foster.ly][1]. I'll be a participant in a panel titled *Add To Your Programming Toolkit: Languages You Should Know About (Erlang, Clojure, R, Go, etc...)*. I'm talking about Go, naturally.
 
 
 

@@ -26,9 +26,9 @@ Here's the lunch menu:
 *   Garlic rubbed rosemary breast of chicken
 *   Pacific salmon filet with roasted tomato sause [sic]
 
-Lunch was served atop a premium heavy white cotton table dressing resting on a circular quadri-pedal planar table. The center dressing was a cluster of upright wheat grass nestled on a sparkling porcelain platter, garnished with&#8230;
+Lunch was served atop a premium heavy white cotton table dressing resting on a circular quadri-pedal planar table. The center dressing was a cluster of upright wheat grass nestled on a sparkling porcelain platter, garnished with...
 
-&#8230; two small ripe-looking plastic pears.
+... two small ripe-looking plastic pears.
 
 Seriously.
 

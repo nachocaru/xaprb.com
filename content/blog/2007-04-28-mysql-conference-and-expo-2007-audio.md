@@ -12,7 +12,7 @@ My recorder only records in mp3 format, so I was forced to crank the bitrate dow
 
 Some of the files begin with a little silence, or begin partway into the talk. If you don't hear anything, try skipping forward a few minutes.
 
-**UPDATE** Kevin Burton kindly hosted an [iPod-compatible podcast of these files in mp3 format][2] (more than twice the size, but&#8230; I think he has lots of disk space and bandwidth).
+**UPDATE** Kevin Burton kindly hosted an [iPod-compatible podcast of these files in mp3 format][2] (more than twice the size, but... I think he has lots of disk space and bandwidth).
 
  [1]: http://www.xaprb.com/presentations/mysqlconf2007
  [2]: http://www.feedblog.org/2007/05/unofficial_mysq.html

@@ -8,7 +8,7 @@ categories:
 ---
 That's right, I said InnoDB+, with a "plus" at the end. I didn't know it existed until, while following some links from [Monty's appeal to save MySQL][1], I decided to read a [Groklaw post][2] that links to [Eben Moglen's letter to the EU Commission][3], which includes this text:
 
-> Innobase could therefore have provided an enhanced version of InnoDB, like Oracle's current InnoDB+, under non-GPL license, &#8230;
+> Innobase could therefore have provided an enhanced version of InnoDB, like Oracle's current InnoDB+, under non-GPL license, ...
 
 I don't know anything more. Do you?
 

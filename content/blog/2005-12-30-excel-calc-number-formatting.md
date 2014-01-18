@@ -9,7 +9,7 @@ I was playing with custom format strings in Excel recently and noticed something
 
 <img src="/media/2005/12/excel-vs-calc.jpg" alt="Excel vs. Calc" width="162" height="110" />
 
-If you're not familiar with custom format strings, it's just a way of making your own format. You can right-click on a cell, choose "Format Cells&#8230;" and click Custom at the bottom of the list, then enter a formatting string. The formatting syntax is used throughout Windows, and you rub elbows with it any number of ways when you program the Windows API, but the documentation seems to be only about 90% consistent between, say, Excel and the [.NET Numeric Format Strings documentation][1].
+If you're not familiar with custom format strings, it's just a way of making your own format. You can right-click on a cell, choose "Format Cells..." and click Custom at the bottom of the list, then enter a formatting string. The formatting syntax is used throughout Windows, and you rub elbows with it any number of ways when you program the Windows API, but the documentation seems to be only about 90% consistent between, say, Excel and the [.NET Numeric Format Strings documentation][1].
 
 Back to the data I was seeing with Excel. I wanted to have two digits to the left of the decimal point and two to the right, for a total of four significant figures; the exponent should be zero-padded so it's two digits as well. Here is how you can do that with Excel, according to the documentation: `00.00E+00`. Sounds good, but it doesn't work in practice. Here's some data, the actual results, and what I expected:
 

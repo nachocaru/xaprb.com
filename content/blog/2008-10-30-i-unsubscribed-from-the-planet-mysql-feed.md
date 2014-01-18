@@ -14,7 +14,7 @@ Simple. I'm always trying to cut back on RSS and other "stuff." Less is more. Bu
 
 So what's wrong with Planet MySQL?
 
-Well&#8230; have you noticed how much airheaded marketing fluff has been pumped into the feed lately? It's like some marketing droid handed down the order from on high, telling every marketing sub-droid to start writing clueless posts promoting things they don't understand. So I have filtered out a few choice items. I have cut out the stuff I consider fluffy and/or bovine feces. And anyone who writes things I think are fluffy in the future, will get the axe too. Less is more.
+Well... have you noticed how much airheaded marketing fluff has been pumped into the feed lately? It's like some marketing droid handed down the order from on high, telling every marketing sub-droid to start writing clueless posts promoting things they don't understand. So I have filtered out a few choice items. I have cut out the stuff I consider fluffy and/or bovine feces. And anyone who writes things I think are fluffy in the future, will get the axe too. Less is more.
 
 Let me know if you subscribe to it. Feel free to suggest further filters.
 

@@ -9,7 +9,7 @@ You have only a few more days to sign up for the [MySQL Conference and Expo][1] 
 
 [I'm presenting two sessions: one on the query cache, and one on EXPLAIN][2]. Both are manageable for an hour-or-so talk. I'm not trying to boil the ocean, but rather to help you understand these important topics in ways you'll remember after leaving the conference.
 
-I was also on the voting committee for the proposals, so I've read them all. I really believe this event is worth every penny. (Of course, as a speaker, it doesn't cost me&#8230; but I digress).
+I was also on the voting committee for the proposals, so I've read them all. I really believe this event is worth every penny. (Of course, as a speaker, it doesn't cost me... but I digress).
 
 While you're there you should also plan to get certified, also at a significant savings. This is a great career move, and there are sessions that will help you prepare. There's a critical shortage of people who really know how to use MySQL. I must admit, I'm not even certified! But I'll be taking the certification exams too.
 

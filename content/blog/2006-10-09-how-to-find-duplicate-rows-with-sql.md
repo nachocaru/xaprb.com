@@ -147,7 +147,7 @@ This returns zero rows, of course, because there are no duplicate `{b, c}` tuple
 |    3 |        3 |
 +------+----------+</pre>
 
-Nothing found all the duplicates, though. What I think made it most frustrating is that it partially worked, making the person think it was almost the right query&#8230; perhaps just another variation would get it&#8230;
+Nothing found all the duplicates, though. What I think made it most frustrating is that it partially worked, making the person think it was almost the right query... perhaps just another variation would get it...
 
 In fact, it's **impossible** to do with this type of simple `GROUP BY` query. Why is this? It's because when you group by one column, you distribute like values of the *other* column across multiple groups. You can see this visually by ordering by those columns, which is what grouping does. First, order by column `b` and see how they are grouped:
 

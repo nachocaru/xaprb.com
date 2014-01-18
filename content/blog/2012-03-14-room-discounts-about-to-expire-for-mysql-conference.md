@@ -9,6 +9,6 @@ My earlier blog post was wrong, our block of rooms for the [conference][1] is st
 
 Please don't ask me to help -- I'm not involved in this, just trying to get the information out there. The logistics are beyond my ken.
 
-Update: apparently the room discount rate ends on the 19th when our reservation on the block of rooms is released or something -- again, beyond my understanding. I am a Bear of Very Small Brain&#8230;
+Update: apparently the room discount rate ends on the 19th when our reservation on the block of rooms is released or something -- again, beyond my understanding. I am a Bear of Very Small Brain...
 
  [1]: http://www.percona.com/live/mysql-conference-2012/

@@ -14,7 +14,7 @@ This tool is designed to help you run maintenance commands on your MySQL tables.
 
 *   Check first, then repair if anything is wrong
 *   Check tables before optimizing them, and skip if they have problems
-*   Do tables based on storage engine, size, age, time since last checking/optimizing etc&#8230; am I missing anything?
+*   Do tables based on storage engine, size, age, time since last checking/optimizing etc... am I missing anything?
 *   Compact repeated output, and add table status information to help you understand what's happening
 *   Prevent or allow the statements to go into the binlog so they get executed on slave servers
 *   Do (or don't do) views as well
@@ -62,7 +62,7 @@ This tool is different from myisamchk, and is therefore needed (I hate writing t
   </p>
   
   <p>
-    You must ensure that no other program is using the tables while you are running myisamchk. The most effective means of doing so is to shut down the MySQL server while running myisamchk, or to lock all tables that myisamchk is being used on&#8230; However, the easiest way to avoid this problem is to use CHECK TABLE instead of myisamchk to check tables.
+    You must ensure that no other program is using the tables while you are running myisamchk. The most effective means of doing so is to shut down the MySQL server while running myisamchk, or to lock all tables that myisamchk is being used on... However, the easiest way to avoid this problem is to use CHECK TABLE instead of myisamchk to check tables.
   </p>
 </blockquote>
 

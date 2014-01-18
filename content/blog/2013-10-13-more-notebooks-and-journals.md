@@ -42,7 +42,7 @@ I recently stumbled on an interesting system of journaling / note-taking called 
 
 ### Conclusion
 
-There's an embarrassment of riches to choose from when it comes to journals and notebooks, and my bookshelf is stockpiled with a couple of years' worth now that I've done this epic series. But in today's digital world, can you ever get too much of good old paper and pen? Enjoy the simpler pleasures&#8230; I hope this blog has helped with that a little bit.
+There's an embarrassment of riches to choose from when it comes to journals and notebooks, and my bookshelf is stockpiled with a couple of years' worth now that I've done this epic series. But in today's digital world, can you ever get too much of good old paper and pen? Enjoy the simpler pleasures... I hope this blog has helped with that a little bit.
 
  [1]: http://www.xaprb.com/blog/2013/07/10/ultimate-notebook-and-journal-face-off/ "Ultimate notebook and journal face-off"
  [2]: http://www.grandluxe.com/online-store.html

@@ -85,7 +85,7 @@ The queries also perform differently depending on whether the values in `aggrega
 
 If I were being really scientific, I'd run `vmstat` and `iostat` and count I/O and other statistics too, to see how the queries access the tables differently, but I leave that as an exercise for the reader.
 
-In the query at work, I ended up using the join. It's more efficient on that specific data. I was actually surprised when I wrote the test queries for this article and found the subquery performing so much better. The difference could be due to any number of things -- data, indexes, the fact we haven't optimized the tables at work because they're too big to touch, different architecture (Xeon vs. my AMD64), server configuration, memory, disk speed&#8230; who knows.
+In the query at work, I ended up using the join. It's more efficient on that specific data. I was actually surprised when I wrote the test queries for this article and found the subquery performing so much better. The difference could be due to any number of things -- data, indexes, the fact we haven't optimized the tables at work because they're too big to touch, different architecture (Xeon vs. my AMD64), server configuration, memory, disk speed... who knows.
 
 Moral of the story: try different ways of doing the same thing!
 

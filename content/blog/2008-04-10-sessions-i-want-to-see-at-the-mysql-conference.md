@@ -7,7 +7,7 @@ categories:
 ---
 This year's conference has a great lineup. As usual, with 8 sessions concurrently, it's impossible to pick which ones I want to see. However, I did learn a few things from last year's conference, which I think will help me get more out of it this time.
 
-Number one rule: not all sessions are created equal. I can't say for sure, but I'm pretty sure that when you see "How Product X Will Scale Your Databases" presented by a person from Company X, you can reasonably suspect that Company X is paying for this privilege, and it's not really a session as much as a product demo. These sessions were not reviewed and voted on by the community (I know, because I was one of the community members who were asked to review and vote on proposals. Maybe I'm being a whistle-blower and won't get this honor next year as a result&#8230;)
+Number one rule: not all sessions are created equal. I can't say for sure, but I'm pretty sure that when you see "How Product X Will Scale Your Databases" presented by a person from Company X, you can reasonably suspect that Company X is paying for this privilege, and it's not really a session as much as a product demo. These sessions were not reviewed and voted on by the community (I know, because I was one of the community members who were asked to review and vote on proposals. Maybe I'm being a whistle-blower and won't get this honor next year as a result...)
 
 Number two rule: if the description is vague, or if it sounds like regurgitation, I'm skeptical. For example, if the summary starts off by saying "Today's databases are dealing with more data than ever before. Data is mission-critical to today's business enterprises" they lost me already. Writing that in a session description betrays thoughtlessness.
 

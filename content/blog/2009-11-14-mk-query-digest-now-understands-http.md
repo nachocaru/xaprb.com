@@ -6,7 +6,7 @@ categories:
   - Databases
   - Open Source
 ---
-You used to use [mk-query-digest][1] to aggregate and report on MySQL's slow query log. Then it got the ability to grab query events from polling SHOW PROCESSLIST. Next we thought, really, how hard can it be to implement the libmysql wire protocol, so we can sniff TCP packets? &#8230; it's hard, but not that hard as it turns out. But why stop there, why not implement memcached protocol too? I think you can see where this is headed.
+You used to use [mk-query-digest][1] to aggregate and report on MySQL's slow query log. Then it got the ability to grab query events from polling SHOW PROCESSLIST. Next we thought, really, how hard can it be to implement the libmysql wire protocol, so we can sniff TCP packets? ... it's hard, but not that hard as it turns out. But why stop there, why not implement memcached protocol too? I think you can see where this is headed.
 
 So now mk-query-digest is a tool that can understand and "do stuff with" a variety of query/response types of information. The latest is HTTP. HTTP traffic is just a query-response flow of events, perfectly suitable for response-time analysis. Example:
 

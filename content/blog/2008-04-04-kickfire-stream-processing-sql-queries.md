@@ -45,7 +45,7 @@ I'm taking some liberties here, to illustrate the differences. As I said, I have
 
 This is not a new idea. If you've worked with modern graphics cards, you've seen this in action. Programming languages like <a href="http://en.wikipedia.org/wiki/Cg\_%28programming\_language%29">Cg</a> express the stream-processing concepts elegantly. If you've ever been in a classroom full of C++ programmers trying to learn Cg, you've seen how hard it is to grasp this different approach. Essentially, graphics programming on one of these chips is a series of transformations, not a series of instructions. You input some vertexes at one end of the processor, and you tell the chip to do some matrix multiplies and so on. Out pops the result at the other end.
 
-If this doesn't sound much different from instructions&#8230; well, meditate on it. It's like an assembly line, but nobody leaves their station along the conveyor belt. In a traditional CPU, the "person" at the conveyor *constantly* leaves to go get the materials he needs.
+If this doesn't sound much different from instructions... well, meditate on it. It's like an assembly line, but nobody leaves their station along the conveyor belt. In a traditional CPU, the "person" at the conveyor *constantly* leaves to go get the materials he needs.
 
 Kickfire runs in commodity hardware, and it is just one or two servers, not racks full. Like many other systems designed for large amounts of data, it uses a column data store. Unlike many other systems, it uses an industry standard interconnect and a custom pluggable MySQL storage engine.
 
@@ -71,7 +71,7 @@ Hint: they are going to be giving a <a href="http://en.oreilly.com/mysql2008/pub
 
 ### Why am I writing this?
 
-Well, they promised me chocolate&#8230;
+Well, they promised me chocolate...
 
 Seriously: I do have an agenda, but there are actually several motivations here. The first is that they initially contacted me because of my involvement with the MySQL community. Of course they're hoping to gain publicity through me, but they also wanted to let the community have some input. I've been sort of a secret liason for you, representing your interests to Kickfire. I've advocated pretty strongly for certain things I'll go into in a later post.
 

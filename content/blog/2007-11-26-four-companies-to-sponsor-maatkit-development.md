@@ -22,7 +22,7 @@ Here are the companies who have promised their financial support:
 
 I don't know how the idea to support the project started at MySQL AB, but that quote really tells me "we get it: we have a symbiotic relationship with our community of users." In a follow-up email, [Jay Pipes][5] wrote,
 
-> &#8230; MySQL wants to make it clear that we very much support and appreciate the work you've done on the toolkit. It has proven to be one of, if not the, most popular and successful open source ecosystem projects surrounding MySQL and for good reason. So, for your work and commitment to the project, a big thank you from MySQL. :)
+> ... MySQL wants to make it clear that we very much support and appreciate the work you've done on the toolkit. It has proven to be one of, if not the, most popular and successful open source ecosystem projects surrounding MySQL and for good reason. So, for your work and commitment to the project, a big thank you from MySQL. :)
 > 
 > Secondly, we would like to encourage you to be open and public about our support of you. The community team is always looking for opportunities such as the one which presented itself with your toolkit, and we want the outside community to know about our support and encouragement. Therefore, you have our blessing and encouragement to blog about the sponsorship of your development work. Please do let us know if and when you decide to blog about it. Remember also that this sponsorship is no strings attached. There is no expectation of specific work on our end.
 

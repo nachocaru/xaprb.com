@@ -14,9 +14,9 @@ To give an idea, here are some of the relational operations (in SQL speak) you c
 
 
 
-1.  **SELECT col1, col2&#8230;** can be implemented with several variants of Unix utilities: `cut` and `awk` are the two most obvious. I tend to use `awk` only when needed, or when it's more convenient to combine operations into a single tool.
+1.  **SELECT col1, col2...** can be implemented with several variants of Unix utilities: `cut` and `awk` are the two most obvious. I tend to use `awk` only when needed, or when it's more convenient to combine operations into a single tool.
 
-2.  **JOIN** can be implemented with the&#8230; wait for it&#8230; `join` utility. You'll need to `sort` its input first, though.
+2.  **JOIN** can be implemented with the... wait for it... `join` utility. You'll need to `sort` its input first, though.
 
 3.  Many **GROUP BY** operations can be performed with combinations of `grep -c`, `sort` with or without the `-urnk` options (look at the man page -- you can apply options to individual sort keys), and `uniq` with or without the `-c` option. Many more can be done with 20 or 30 characters of `awk`. 
 

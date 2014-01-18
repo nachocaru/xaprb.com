@@ -11,7 +11,7 @@ First I'll explain what I'm talking about. [MySQL allows specially formatted com
 
 They look like this: `/*!32358 ... CODE ...*/;`. One useful example is `SHOW /*!50002 GLOBAL */ STATUS`, which will show global status on all MySQL versions, instead of showing global status on older versions and session status on newer versions.
 
-You can find examples in many places, but for a long time, I didn't know how to write my own. I didn't know which numbers should go where. For example, if I wanted to write something to run in 4.1.22 and greater, how should I write the version number? Is it `/*!4122*/` or `/*!41022*/` or `/*!40122*/`&#8230; I just got lost.
+You can find examples in many places, but for a long time, I didn't know how to write my own. I didn't know which numbers should go where. For example, if I wanted to write something to run in 4.1.22 and greater, how should I write the version number? Is it `/*!4122*/` or `/*!41022*/` or `/*!40122*/`... I just got lost.
 
 Once I figured it out, of course, it's very simple. The version number always has five digits. The first number is the major version. The next two are the minor version, left-padded with zeros, and the last are the revision, also left-padded. In terms of `sprintf`, it looks like `sprintf('%d%02d%02d', major, minor, revision)`. So the number I needed above was 40122.
 

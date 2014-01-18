@@ -5,7 +5,7 @@ url: /blog/2008/01/11/google-thinks-i-might-be-a-nerd/
 categories:
   - About
 ---
-&#8230; I'm almost insulted! Look at this!
+... I'm almost insulted! Look at this!
 
 ![Google image search for ERD][1]
 

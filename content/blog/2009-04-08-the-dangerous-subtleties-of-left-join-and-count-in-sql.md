@@ -58,7 +58,7 @@ from user
 group by user.userid;
 </pre>
 
-But what if that's not what the author of the query meant? There's no way to really know. There are several possible intended meanings for the query, and there are several different ways to write the query to express those meanings more clearly. But the original query is ambiguous, for a few reasons. And everyone who reads this query afterwards will end up guessing what the original author meant. "I think I can safely change this to&#8230;"
+But what if that's not what the author of the query meant? There's no way to really know. There are several possible intended meanings for the query, and there are several different ways to write the query to express those meanings more clearly. But the original query is ambiguous, for a few reasons. And everyone who reads this query afterwards will end up guessing what the original author meant. "I think I can safely change this to..."
 
 This example is meant to be simple, so it doesn't illustrate perfectly, but I've seen lots of cases where many different interpretations are equally reasonable. I often end up being asked to optimize performance for such queries, and again I can only write back to the client "someone needs to tell me what this query is supposed to do, because I can't figure it out."
 

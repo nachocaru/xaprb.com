@@ -59,7 +59,7 @@ This blog post isn't about RethinkDB, though. I'm just using their evolution ove
 
 Around the same time as RethinkDB, a new NoSQL database called CouchDB was built on many of the same premises. In fact, I even blogged a quick overview of it as it started to become commercialized: [A gentle introduction to CouchDB for relational practitioners][8]. 
 
-CouchDB had so many benefits from using immutability. MVCC (multi-version concurrency control), instant backup and recovery, crash-only design. But the big thing everyone complained about was&#8230; [compaction][9]. CouchDB became a little bit legendary for compaction. 
+CouchDB had so many benefits from using immutability. MVCC (multi-version concurrency control), instant backup and recovery, crash-only design. But the big thing everyone complained about was... [compaction][9]. CouchDB became a little bit legendary for compaction. 
 
 You see, CouchDB's files would grow forever (duh!) and you'd fill up your disks if you didn't do something about it. What could you do about it? CouchDB's answer was that you would periodically save a complete new database, without old versions of documents that had been obsoleted. It's a rewrite-the-whole-database process. The most obvious problem with this was that you had to reserve twice as much disk space as you needed for your database, because you needed enough space to write a new copy. If your disk got too full, compaction would fail because there wasn't space for two copies. 
 

@@ -59,7 +59,7 @@ One solution to this is to move the `IN` clause to the `FROM` clause. It may be 
 
 One example where this worked well on MySQL is explained in a recent e-mail from my coworker:
 
-> &#8230; that was a good tip on replacing 'in' clauses with joins to subqueries in the from clause. The queries in reporting were totally hitting a wall, so I took the query as shown in mytop, moved the subquery from the where to the from, and it went from 1M 56seconds to 20 seconds.
+> ... that was a good tip on replacing 'in' clauses with joins to subqueries in the from clause. The queries in reporting were totally hitting a wall, so I took the query as shown in mytop, moved the subquery from the where to the from, and it went from 1M 56seconds to 20 seconds.
 
 I wouldn't say a factor-of-six improvement is revolutionary, but every little bit helps, especially when the query is executed a lot. Your mileage may vary. I know some situations where the improvement is dramatic.
 

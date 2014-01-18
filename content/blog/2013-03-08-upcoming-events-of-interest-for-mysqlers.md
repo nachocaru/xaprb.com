@@ -19,7 +19,7 @@ I'm joining two Meetups soon to talk about building database (MySQL) application
 
 ### Upcoming Conferences
 
-*   [Percona Live MySQL Conference and Expo 2013][4] in Santa Clara, CA April 22-25, 2013. This is **the** annual MySQL conference. I'm not speaking this year, but&#8230;
+*   [Percona Live MySQL Conference and Expo 2013][4] in Santa Clara, CA April 22-25, 2013. This is **the** annual MySQL conference. I'm not speaking this year, but...
 *   [Velocity Web Performance And Operations Conference][5] June 18-20, Santa Clara, CA. This is an amazing event that brings together the best and brightest people who are building the future of the Internet. I am speaking on [quantifying system normality][6].
 
 ### Upcoming Call For Proposals

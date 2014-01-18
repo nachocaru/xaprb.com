@@ -29,11 +29,11 @@ But after following through the rest of the steps -- choose chart type, etc etc 
 
 1.  Select the data, start the graphing AutoPilot, check "First column as labels" and create the graph
 2.  Place the cursor over the unselected graph and right click. Select "Edit"
-3.  Select "Insert > Data Labels&#8230;" and check "Show Label Text"
+3.  Select "Insert > Data Labels..." and check "Show Label Text"
 
 I probably would not have solved this on my own. The way to select and unselect charts, and how to modify their properties, is really unintuitive, I'm afraid. Even after fooling with charts a while, I'm still blundering through things like exactly what sequence of actions is necessary to make a chart editable, what I need to do to alter the scale on the axes, and so forth. Even if I had known all that in advance, though, I wouldn't think to go to the Insert menu to add labels to the chart. I told it to do that when I created the chart -- why doesn't it show them by default? If I didn't want them to show, I wouldn't have specified the first column as labels.
 
-I conclude both Excel and OpenOffice.org both have some room for improvement. I'm sure that comes as no surprise! The good news is, OpenOffice.org is a community-driven effort, with an open bug-tracking system and active forums -- not to mention it's [Free Software][6]. You know who I'm backing&#8230; take 'em to the mat!
+I conclude both Excel and OpenOffice.org both have some room for improvement. I'm sure that comes as no surprise! The good news is, OpenOffice.org is a community-driven effort, with an open bug-tracking system and active forums -- not to mention it's [Free Software][6]. You know who I'm backing... take 'em to the mat!
 
  [1]: http://www.xaprb.com/blog/2005/12/30/excel-calc-number-formatting/
  [2]: http://www.bmsltd.ie/MVP/MVPPage.asp

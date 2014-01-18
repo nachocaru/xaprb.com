@@ -81,7 +81,7 @@ Aside from an alarming trend in the numbers (quick! Get me the VP of Marketing!)
 
 <pre>&lt;tr&gt;&lt;td&gt;2005-01-05&lt;/td&gt;&lt;td&gt;-82.58&lt;/td&gt;&lt;/tr&gt;</pre>
 
-I used standard formats for the data. The dates are in ISO8601 standard format, and the numbers are just plain&#8230; numbers. No fanciness here. That's intentional, because I want it to be easy for a program to use in a future article (you'll see, it will get pretty complex).
+I used standard formats for the data. The dates are in ISO8601 standard format, and the numbers are just plain... numbers. No fanciness here. That's intentional, because I want it to be easy for a program to use in a future article (you'll see, it will get pretty complex).
 
 ### First steps: formatting, type vs. value
 

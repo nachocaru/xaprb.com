@@ -21,7 +21,7 @@ I know that's a mouthful if you're not familiar with this type of analysis. What
 *   by buyer frequency
 *   by total dollar amount
 *   by geographic location
-*   by sign of zodiac&#8230;
+*   by sign of zodiac...
 
 Any seemingly simple data actually has tons and tons of information in it, all along different *dimensions*, and if I squint along the right dimensions, I see patterns that aren't obvious otherwise. Some of the dimensions are inherent to the data itself, and others need to be indicated explicitly. For instance, the total number of orders is inherent to a set of data -- I count the set to find it. Whether each order is a gift is NOT inherent to the set of data; this I need to indicate in each order. Once I have encoded that information, it's possible to slice the data along yet another dimension (gift/non-gift).
 
@@ -29,7 +29,7 @@ The `axis` attribute allows me to [specify to which dimensions each cell belongs
 
 <blockquote cite="http://www.w3.org/TR/html4/struct/tables.html#adef-axis">
   <p>
-    This attribute may be used to place a cell into conceptual categories that can be considered to form axes in an n-dimensional space&#8230; The value of this attribute is a comma-separated list of category names.
+    This attribute may be used to place a cell into conceptual categories that can be considered to form axes in an n-dimensional space... The value of this attribute is a comma-separated list of category names.
   </p>
 </blockquote>
 
@@ -81,7 +81,7 @@ I don't know why I'd want to do any of that. I'm just hypothesizing. It would de
 
 ### So, what do I do with this stuff?
 
-If I were processing tabular data with scripts, and it involved any kind of aggregating or slicing, folding into pivot tables, or so forth, I'd certainly be using the features I've discussed above. Right now, though, I'm not doing any of that. I've had some cool data-processing articles, including scripts that do this kind of fancy processing, in draft form for about 6 months&#8230; someday I'll finish them.
+If I were processing tabular data with scripts, and it involved any kind of aggregating or slicing, folding into pivot tables, or so forth, I'd certainly be using the features I've discussed above. Right now, though, I'm not doing any of that. I've had some cool data-processing articles, including scripts that do this kind of fancy processing, in draft form for about 6 months... someday I'll finish them.
 
 Until then, invent your own uses! How about a script that iterates over every cell, collecting a list of all axes, then populates a drop-down menu with the axes so a user can choose to do something to one axis at a time? By "do something," I mean it could hide the other cells, or do some math on the selected axis. For example, you could have another drop-down menu of functions on the selected cells, like a spreadsheet's status-bar display (sum, avg, etc):
 

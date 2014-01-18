@@ -25,7 +25,7 @@ The reasons I'd buy a MySQL Enterprise subscription would be as follows, in orde
 2.  Technical support.
 3.  The knowledge base, etc, etc.
 
-### But&#8230; that's what Enterprise is, right?
+### But... that's what Enterprise is, right?
 
 The [official list of benefits in an Enterprise subscription][2] looks like it matches my list, doesn't it?
 
@@ -39,22 +39,22 @@ The [official list of benefits in an Enterprise subscription][2] looks like it m
       MySQL Enterprise Server: The MySQL Enterprise Server is the most reliable, secure and up-to-date version of MySQL in source and binary format.
     </li>
     <li>
-      Extensive Reliability Testing&#8230;
+      Extensive Reliability Testing...
     </li>
   </ol>
   
   <p>
-    &#8230; etc &#8230;
+    ... etc ...
   </p>
 </blockquote>
 
 The thing is, those first two bullets are **blatantly untrue**. Want proof? Look at the [change list for MySQL 5.0.48][3], which will be the next Monthly Rapid Update. Here are just a few of the changes near the top of the list, with my comments:
 
-1.  Coercion of ASCII values to character sets that are a superset of ASCII sometimes was not done, resulting in illegal mix of collations errors. These cases now are resolved using repertoire, a new string expression attribute&#8230; 
+1.  Coercion of ASCII values to character sets that are a superset of ASCII sometimes was not done, resulting in illegal mix of collations errors. These cases now are resolved using repertoire, a new string expression attribute... 
     *   My comment: A [new, complex string expression attribute][4], designed to fix an edge case, is going straight into the "reliable" Enterprise branch? No way I want that untested change on my production servers.
 2.  FEDERATED tables had an artificially low maximum of key length. 
     *   A fix to FEDERATED? FEDERATED is riddled with *basic* bugs and should not even be distributed with Enterprise, and even so, who cares if I can't make as long an index as I should be able to? I can work around it while the community tests it.
-3.  In some cases, INSERT INTO &#8230; SELECT &#8230; GROUP BY could insert rows even if the SELECT by itself produced an empty result. 
+3.  In some cases, INSERT INTO ... SELECT ... GROUP BY could insert rows even if the SELECT by itself produced an empty result. 
     *   Another edge case, probably easy to avoid, that probably affects core parts of the server.
 4.  In a stored function or trigger, when InnoDB detected deadlock, it attempted rollback and displayed an incorrect error message (Explicit or implicit commit is not allowed in stored function or trigger). Now InnoDB returns an error under these conditions and does not attempt rollback. 
     *   Changes to InnoDB's deadlock and rollback behavior should not be included in a hot-fix, especially since it only affects stored functions and triggers, which are also not ready for Enterprise.

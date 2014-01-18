@@ -13,7 +13,7 @@ In my [original article][1], I hypothesized that CAPTCHAs with scrambled images 
 
 ### How much spam do I get?
 
-My little system of multiple-choice questions such as "which of the following is blue? a) sky b) grass &#8230;" seemed to cut out the vast majority of comment spam, but I never quite knew how much until I took it away and replaced it with a default installation of WordPress 2.1. In the old system, I had to delete a comment or two a day from the moderation queue. Wanna guess how much spam I built up in a week with nothing but Akismet in the new installation? From Sunday night May 13th to the next Sunday night, I got over 1,800 spam comments.
+My little system of multiple-choice questions such as "which of the following is blue? a) sky b) grass ..." seemed to cut out the vast majority of comment spam, but I never quite knew how much until I took it away and replaced it with a default installation of WordPress 2.1. In the old system, I had to delete a comment or two a day from the moderation queue. Wanna guess how much spam I built up in a week with nothing but Akismet in the new installation? From Sunday night May 13th to the next Sunday night, I got over 1,800 spam comments.
 
 ### What about Akismet?
 

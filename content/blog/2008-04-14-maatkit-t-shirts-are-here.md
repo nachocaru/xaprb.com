@@ -10,7 +10,7 @@ categories:
 
 I'm at the [MySQL Conference][2] and the t-shirts I created for [Maatkit][1] have arrived. Come get yours! They are high-quality, attractive shirts you'll be proud to wear, and they are a nice rich wine-red color.
 
-[Harrison Fisk (co-author of MySQL Clustering)][3] got the first one, because he told me that he recommends Maatkit to MySQL Support customers about twice a week. I made sure to save one for [Jay Pipes][4] too, because his luggage got lost so he has nothing to wear. Unfortunately, I didn't make any Maatkit underwear, sorry Jay. Now I know what to do for next year&#8230;
+[Harrison Fisk (co-author of MySQL Clustering)][3] got the first one, because he told me that he recommends Maatkit to MySQL Support customers about twice a week. I made sure to save one for [Jay Pipes][4] too, because his luggage got lost so he has nothing to wear. Unfortunately, I didn't make any Maatkit underwear, sorry Jay. Now I know what to do for next year...
 
 I've already given out a whole bunch of them, and at this rate all 50 of them might not last the day!
 

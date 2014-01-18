@@ -41,7 +41,7 @@ Results:
   
   <tr>
     <td>
-      017D&#8230;[snip]&#8230;
+      017D...[snip]...
     </td>
     
     <td>
@@ -58,5 +58,5 @@ Results:
   </p>
   
   <p>
-    I'm surprised and nonplussed. After all the gazillions of dollars that went into ASP.NET 2.0&#8230; I'll give them some credit and say "it's good that they found a way to store the data in the table without customizing the table schema based on the desired profile properties," but this design is barely a step up from that. This schema is missing all the obvious benefits of normalization.
+    I'm surprised and nonplussed. After all the gazillions of dollars that went into ASP.NET 2.0... I'll give them some credit and say "it's good that they found a way to store the data in the table without customizing the table schema based on the desired profile properties," but this design is barely a step up from that. This schema is missing all the obvious benefits of normalization.
   </p>

@@ -17,4 +17,4 @@ The real reason is because of something called relational algebra, which takes i
 
 Now, we can get into further arguments about whether relational databases are really relational -- and lots of people do that -- but I'll stay away from that for the time being.
 
-And in my best Paul Harvey voice, it's time to say "and now you know&#8230; the rest of the story!"
+And in my best Paul Harvey voice, it's time to say "and now you know... the rest of the story!"

@@ -6,7 +6,7 @@ categories:
   - Databases
   - Open Source
 ---
-This release of [Maatkit][1] is basically all about [mk-log-parser][2], our new log analysis tool. Daniel and I have been working hard on it all month, adding killer new features like &#8211;review, fixing tons of bugs, and making it twice as fast. I believe it's far and away the best slow-log analysis tool in existence, both in terms of functionality and quality. (Do any of the other tools even have test suites&#8230;?) But you should take it for a spin and see yourself. If you run it into something it won't parse, or find anything else wrong, please use the [Google Code project][3] and the [mailing list][4] (*not the comments on this blog!*) for support.
+This release of [Maatkit][1] is basically all about [mk-log-parser][2], our new log analysis tool. Daniel and I have been working hard on it all month, adding killer new features like &#8211;review, fixing tons of bugs, and making it twice as fast. I believe it's far and away the best slow-log analysis tool in existence, both in terms of functionality and quality. (Do any of the other tools even have test suites...?) But you should take it for a spin and see yourself. If you run it into something it won't parse, or find anything else wrong, please use the [Google Code project][3] and the [mailing list][4] (*not the comments on this blog!*) for support.
 
 Major changes:
 

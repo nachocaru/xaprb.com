@@ -19,7 +19,7 @@ This is an outstanding book. As far as I know Ewen Fortune was the first Perconi
 
 This book doesn't teach in generalities -- it shows you exactly what to do. Rather than outlining the process of capacity planning (and it is a process!) and then letting you figure out how to apply it, the book shows you the process and then walks you through it several times with real examples.
 
-The book is also intensely practical, focusing on what makes the application and the business successful. It doesn't get any more straightforward than this: "You don't want to be caught unprepared when growth takes place&#8230; Conversely, the company financial officers will not hold you in high regard either when you've purchased a lot of equipment that lay idle, only to see its price drop a few months later."
+The book is also intensely practical, focusing on what makes the application and the business successful. It doesn't get any more straightforward than this: "You don't want to be caught unprepared when growth takes place... Conversely, the company financial officers will not hold you in high regard either when you've purchased a lot of equipment that lay idle, only to see its price drop a few months later."
 
 There are several discussions of special cases, such as when database and web server reside on the same hardware. These side trips serve two purposes: they help you see how to apply the process of capacity planning in more complex situations, and they cement the importance of the process even in the straightforward cases, so you learn it better.
 

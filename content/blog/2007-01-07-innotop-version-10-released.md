@@ -25,7 +25,7 @@ Subject: tool I wrote over the weekend<br /
 called innodb-tx-monitor, which I wrote over the weekend.  It parses the 
 output of SHOW INNODB STATUS.  I am going to maintain and improve this 
 and make it available on my website for the world to use, so if you have 
-any improvements to suggest or code changes to make&#8230; it's definitely a 
+any improvements to suggest or code changes to make... it's definitely a 
 rough draft as of this point, but hey.</p>
 
 <p>I use it like this:</p>

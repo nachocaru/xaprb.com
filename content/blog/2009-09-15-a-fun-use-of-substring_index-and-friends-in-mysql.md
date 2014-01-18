@@ -12,7 +12,7 @@ I used to develop with MySQL, and those were the golden days. These days I don't
 
 I could do it with all kinds of correlated subqueries and so on -- but maybe I could also just do it without them, no? Can this be done with plain old JOINS and GROUP BY? I'm sure you know the answer.
 
-Here's my approach: group emails by issue, and concatenate the dates they were sent in reverse order. If an email was sent from Percona to the customer, replace the date with a magical OUTBOUND constant. The result might look like this: "2009-09-11 13:17:34,OUTBOUND,&#8230;". I'll change this to create a good sample string, which I'll use from now on:
+Here's my approach: group emails by issue, and concatenate the dates they were sent in reverse order. If an email was sent from Percona to the customer, replace the date with a magical OUTBOUND constant. The result might look like this: "2009-09-11 13:17:34,OUTBOUND,...". I'll change this to create a good sample string, which I'll use from now on:
 
 <pre>set @email_dates := '2009-09-11 13:17:34,2009-09-11 12:26:17,2009-09-11 12:10:34,OUTBOUND,2009-09-11 12:02:47';</pre>
 

@@ -19,7 +19,7 @@ Open Source is much more of a development methodology than a philosophical stand
   </p>
 </blockquote>
 
-In contrast, Free Software is not about development practices at all. You can develop Free Software any way you like; what makes it Free is the license. Free Software is about protection of rights and freedoms. It is a moral and ethical platform. The promise of Free Software is quite different from "better quality, higher reliability&#8230;" Free Software is not about quality or reliability.
+In contrast, Free Software is not about development practices at all. You can develop Free Software any way you like; what makes it Free is the license. Free Software is about protection of rights and freedoms. It is a moral and ethical platform. The promise of Free Software is quite different from "better quality, higher reliability..." Free Software is not about quality or reliability.
 
 So why is MySQL not Open Source? Simple. Sun/MySQL uses a closed development model. Nobody can get code in from the outside without accepting a [Contributor License Agreement (CLA)][4] which requires surrendering important rights, including ownership of the code. Sun/MySQL controls the code absolutely and maintains ownership of it. And even people who have signed the CLA report their patches stagnating -- often for years -- and still not being accepted into the source. This is not Open Source.
 

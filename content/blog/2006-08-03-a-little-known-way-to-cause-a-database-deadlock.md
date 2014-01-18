@@ -155,7 +155,7 @@ That's fairly verbose, because it prints information about the locks it was wait
 
 Finally, notice how Transaction 2&#8242;s waited-for lock is trying to lock the gap before the record, with intention to insert. That's what finally caused the deadlock.
 
-If you're having a hard time "noticing" the "obvious" things I'm pointing out in that cryptic mess, read on. There is hope&#8230;
+If you're having a hard time "noticing" the "obvious" things I'm pointing out in that cryptic mess, read on. There is hope...
 
 ### Everything is better with innotop
 

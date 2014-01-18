@@ -17,7 +17,7 @@ I'm on the [MySQL conference][1] committee again this year, so I'll be reading a
     
     > With the increase complexity of software architecture and database design the amount of data stored in databases systems grows rapidly. Additionally, data security and international regulatory laws require that data changes are audited and restorable to any point of time. The revision engine implements automated auditing of data transparently as a storage engine.
     
-    That proposal wastes *the first two sentences* stating obvious things, instead of talking about the session itself. It is asking too much of the reader to plow through all of that. The proposal should get to the point: *"The Revision Engine automatically saves all old versions of your data&#8230;"*
+    That proposal wastes *the first two sentences* stating obvious things, instead of talking about the session itself. It is asking too much of the reader to plow through all of that. The proposal should get to the point: *"The Revision Engine automatically saves all old versions of your data..."*
 
 *   A cool topic cannot save you. You have to demonstrate a clear thought process with a well-written proposal. If your proposal is badly written, I have no choice but to believe that you can't create and deliver a good talk.
 

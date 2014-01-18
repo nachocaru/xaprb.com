@@ -20,7 +20,7 @@ Let's take a look at the new features.
 
 ### Checksumming only part of the data
 
-Suppose you want a rough idea of whether your data is really different on a slave. Maybe you're a consultant who needs to check a really big data set to see if there's cause for concern. (Hmm, this sounds familiar, almost as though&#8230; nevermind.) One way to do that is to checksum a random sample of the rows. Let's checksum 5% of the data:
+Suppose you want a rough idea of whether your data is really different on a slave. Maybe you're a consultant who needs to check a really big data set to see if there's cause for concern. (Hmm, this sounds familiar, almost as though... nevermind.) One way to do that is to checksum a random sample of the rows. Let's checksum 5% of the data:
 
 <pre>mk-table-checksum --replicate test.checksum --chunksize 1000 --probability 5 localhost</pre>
 

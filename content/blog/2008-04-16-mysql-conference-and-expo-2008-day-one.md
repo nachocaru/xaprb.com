@@ -9,7 +9,7 @@ Today is the first day at the conference (aside from the tutorials, which were y
 
 ### New Subquery Optimizations in 6.0
 
-By Sergey Petrunia. This was a similar session to one I went to last year. MySQL has a few cases where subqueries are badly optimized, and this session went into the details of how this is being addressed in MySQL 6.0. There are several new optimization techniques for all types of subqueries, such as inside-out subqueries, materialization, and converting to joins. The optimizations apply to scalar subqueries and subqueries in the FROM clause. Performance results are very good, depending on which data you choose to illustrate. The overall point is that the worst-case subquery nastiness should be resolved. I'm speaking of WHERE NOT IN(SELECT&#8230;) and friends. It remains to be seen how this shakes out as 6.0 matures, and what edge cases will pop up.
+By Sergey Petrunia. This was a similar session to one I went to last year. MySQL has a few cases where subqueries are badly optimized, and this session went into the details of how this is being addressed in MySQL 6.0. There are several new optimization techniques for all types of subqueries, such as inside-out subqueries, materialization, and converting to joins. The optimizations apply to scalar subqueries and subqueries in the FROM clause. Performance results are very good, depending on which data you choose to illustrate. The overall point is that the worst-case subquery nastiness should be resolved. I'm speaking of WHERE NOT IN(SELECT...) and friends. It remains to be seen how this shakes out as 6.0 matures, and what edge cases will pop up.
 
 ### The Lost Art Of the Self Join
 
@@ -33,7 +33,7 @@ Lars Thalmann and Mats Kindahl gave this session. At a high level, I'd say it wa
 
 ### BoF Sessions
 
-I dropped in on a few BoF sessions, including the Sphinx one and the PBXT/Blob Streaming one. (Keep an eye on the PrimeBase folks -- they are up to great things.) Ronald Bradford protected me from those who wanted to get me drunk. Hint: it's really easy&#8230; I have to say, though, Monty's black vodka was amazing.
+I dropped in on a few BoF sessions, including the Sphinx one and the PBXT/Blob Streaming one. (Keep an eye on the PrimeBase folks -- they are up to great things.) Ronald Bradford protected me from those who wanted to get me drunk. Hint: it's really easy... I have to say, though, Monty's black vodka was amazing.
 
 Speaking of Blob Streaming, Paul McCullagh and I were talking earlier in the day about the project's name, MyBS. This has been smirked about a few times. I think it's a great name, because after all my initials are BS (I usually insert one of my four middle names in to alleviate this problem, but I digress). The conversation went like this:
 

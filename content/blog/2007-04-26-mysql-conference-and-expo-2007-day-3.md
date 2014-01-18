@@ -16,7 +16,7 @@ Just two quick notes: I am recording the sessions I attend on my iRiver when pos
 
 There were again three keynotes this morning. Eben Moglen delivered a fantastic, thought-provoking speech with which I mostly agreed. I was working on [innotop][3] during the others, though I was in the room.
 
-Lunch was&#8230; I forgot to write it down. A salad and mixed vegetables, a roll, tomatoes that I had to cut. I don't know. I was trying to meet some folks in the exhibit hall and it's all a blur now.
+Lunch was... I forgot to write it down. A salad and mixed vegetables, a roll, tomatoes that I had to cut. I don't know. I was trying to meet some folks in the exhibit hall and it's all a blur now.
 
 ### [NitroEDB for MySQL Storage Engine][4]
 
@@ -24,7 +24,7 @@ This session was mostly a demo and/or sales pitch by three engineers from NitroS
 
 ### [The Declarative Power of Views][5]
 
-This session was amazing! It was standing-room-only. Beat Vontobel started out with the classic "animals" guessing game, except it was a series of questions to figure out which programming language you were thinking of. The demo was live, running on his own server on another continent. You simply select from the questions table, and it asks you one question, which is just a single column of text. You insert your answer into the answers table, which is a single yes/no enum column. Then you select from the questions table again&#8230; and there's a different question now. As you continue, it narrows down the choices and eventually guesses what you're thinking of.
+This session was amazing! It was standing-room-only. Beat Vontobel started out with the classic "animals" guessing game, except it was a series of questions to figure out which programming language you were thinking of. The demo was live, running on his own server on another continent. You simply select from the questions table, and it asks you one question, which is just a single column of text. You insert your answer into the answers table, which is a single yes/no enum column. Then you select from the questions table again... and there's a different question now. As you continue, it narrows down the choices and eventually guesses what you're thinking of.
 
 Behind the scenes, even though all you can see is the questions and answers, is a series of views. No procedures, triggers, or functions.
 
@@ -44,11 +44,11 @@ I have not yet learned how solidDB will be licensed.
 
 ### [MySQL Server Roadmap][7]
 
-This session was packed. Robin Schumacher took the first part of it, showing **what's planned for the entire MySQL product line** over the next year or so. It was a talk calculated to make the audience spend the next year squirming in anticipation. *Oooh, finally I'll get enhanced replication monitoring, and subqueries will get decently optimized, and&#8230;!!!!*
+This session was packed. Robin Schumacher took the first part of it, showing **what's planned for the entire MySQL product line** over the next year or so. It was a talk calculated to make the audience spend the next year squirming in anticipation. *Oooh, finally I'll get enhanced replication monitoring, and subqueries will get decently optimized, and...!!!!*
 
 Robin is a confident, eloquent speaker. The kind of person whom I imagine promises things that make the developers in the audience cringe slightly. "Replication conflict detection! Next slide."
 
-He gave a demo of the upcoming online backup of a large table while selecting from the table in another session, but amusingly didn't seem to notice that the SELECT queries in the other window were failing with syntax errors. (Never mind, though&#8230; you can do the demo yourself if you want; he included the code you'll need on a recent article. Robin, if you're reading this: if you noticed the statements failing, you are one cool customer to continue without missing a beat!)
+He gave a demo of the upcoming online backup of a large table while selecting from the table in another session, but amusingly didn't seem to notice that the SELECT queries in the other window were failing with syntax errors. (Never mind, though... you can do the demo yourself if you want; he included the code you'll need on a recent article. Robin, if you're reading this: if you noticed the statements failing, you are one cool customer to continue without missing a beat!)
 
 He followed this with a quick mention of storage engine partners and then proceeded to pitch MySQL Enterprise and MySQL Workbench. Afterwards he finished up with a quote that went something like this: "Backup is coming. It's real. It's working." ;-) Seriously, I believe him.
 
@@ -102,7 +102,7 @@ Well, I'm fairly slap-happy at this point with jet lag and lack of sleep, but I 
 
 And by the way, I just spoke to someone from another Large Company We All Know, who asked me to implement a new feature in innotop. As Monty is famous for saying, "Trivial. It's trivial." If you want to see it, be there; I'll have it done in time for the session.
 
-Now if you'll excuse me, I have to fire up Vim&#8230;
+Now if you'll excuse me, I have to fire up Vim...
 
  [1]: http://www.mysqlconf.com/
  [2]: http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213

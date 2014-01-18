@@ -16,8 +16,8 @@ Changes since version 0.1.123 include:
 2.  Add "W" mode to display InnoDB locks.
 3.  Add more information to various displays throughout.
 4.  Handle special cases, and display more information, in InnoDB Deadlock mode.
-5.  Tons and tons of tedious special-case parsing to handle InnoDB's bewildering array of nearly unparseable messages about foreign key errors. After reading a lot of source code, I've decided that there are such a wide range of error messages even within one MySQL release, not to mention different ones in different versions, that I should stop focusing on this and work on other things for a bit. Note to anyone thinking of building anything like InnoDB, which outputs status text&#8230; please consider that someone may want to use a machine to read it someday (some of the InnoDB status text is even hard to figure out if you're a human!) Parsability is not that hard to do, and it makes everything so much more useful. Not that I'm complaining :-)
-6.  A lot more tests in the test suite&#8230; thanks to everyone who sent me dumps of `SHOW ENGINE INNODB STATUS`!
+5.  Tons and tons of tedious special-case parsing to handle InnoDB's bewildering array of nearly unparseable messages about foreign key errors. After reading a lot of source code, I've decided that there are such a wide range of error messages even within one MySQL release, not to mention different ones in different versions, that I should stop focusing on this and work on other things for a bit. Note to anyone thinking of building anything like InnoDB, which outputs status text... please consider that someone may want to use a machine to read it someday (some of the InnoDB status text is even hard to figure out if you're a human!) Parsability is not that hard to do, and it makes everything so much more useful. Not that I'm complaining :-)
+6.  A lot more tests in the test suite... thanks to everyone who sent me dumps of `SHOW ENGINE INNODB STATUS`!
 7.  Fix some minor issues with the innotop configuration file, especially when upgrading versions, and with the InnoDB statusbar display.
 8.  Dozens of minor annoyances and little bugs that caused crashes.
 

@@ -13,6 +13,6 @@ Well, if my perfectionist nature were allowed to run free, and if Peter et al's 
   </p>
 </blockquote>
 
-And now I must begin a solid weekend of revisions&#8230; wish me luck!
+And now I must begin a solid weekend of revisions... wish me luck!
 
  [1]: http://twitter.com/sheeri/statuses/485576042

@@ -182,7 +182,7 @@ select type, variety, price,
 
 Sorry, no dice. This gives exactly the same results.
 
-This idea will not work, period. *Each and every expression in the `SELECT` list is evaluated as the rows are generated.* Functions are expressions, scalar subqueries are expressions&#8230; the only things that will work are operations that result in rows being evaluated for a final value.
+This idea will not work, period. *Each and every expression in the `SELECT` list is evaluated as the rows are generated.* Functions are expressions, scalar subqueries are expressions... the only things that will work are operations that result in rows being evaluated for a final value.
 
 ### Try 2: Force my will on the query
 
@@ -313,7 +313,7 @@ where
    and (@type := type) is not null
    and (@num &lt;= 2);</pre>
 
-I confess, I don't fully understand this. I figured it out through trial and error. If the user manual explains it well enough for me to have gotten there by reason, I don't know where. Can someone make it make sense please? I don't want to have to read the source&#8230;
+I confess, I don't fully understand this. I figured it out through trial and error. If the user manual explains it well enough for me to have gotten there by reason, I don't know where. Can someone make it make sense please? I don't want to have to read the source...
 
 ### What's so great about this?
 
@@ -340,7 +340,7 @@ Exercise for the reader: run this query without an index that can be used for or
 
 ### Is that all?
 
-Nope. If you can put user-variable evaluations inside a function, you can put them anywhere you can put a function. That means you could, for example, put them in the `ORDER BY` clause, in the `JOIN` clause, in the `HAVING` clause&#8230; anywhere. Now that you know you can do this, you can manipulate variables in lots of places you couldn't do otherwise.
+Nope. If you can put user-variable evaluations inside a function, you can put them anywhere you can put a function. That means you could, for example, put them in the `ORDER BY` clause, in the `JOIN` clause, in the `HAVING` clause... anywhere. Now that you know you can do this, you can manipulate variables in lots of places you couldn't do otherwise.
 
 ### Conclusion
 

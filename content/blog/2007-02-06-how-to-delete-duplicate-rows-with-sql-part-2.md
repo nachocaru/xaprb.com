@@ -103,7 +103,7 @@ The easiest thing to do is add a column with a unique number. This is called som
 
 Once you've done that, you're on easy street. Now go read my [previous article][1] to do the actual deleting.
 
-### If that won't do&#8230;
+### If that won't do...
 
 Build a new table with distinct values from the old table, then drop and rename:
 
@@ -116,7 +116,7 @@ DROP TABLE fruits;
 
 RENAME TABLE new_fruits fruits;</pre>
 
-### If you can't do that&#8230;
+### If you can't do that...
 
 Perhaps you simply can't do either of the above. Maybe your table is too large, for example. In that case you're going to have to use some sort of iterative technique to do it; loop through the rows one at a time and delete every row you see more than once. This is also going to be a platform-specific solution; you may need to use a `WHILE` loop or server-side cursor. Consult your platform's documentation for more; I can't possibly cover all the bases here.
 

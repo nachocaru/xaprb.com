@@ -17,7 +17,7 @@ Now, how can you do it? Ah, that's the trick. I offer you six simple suggestions
 
 The way to think about transactions is as an urgent mission. The instant you say `START TRANSACTION`, the race is on.
 
-It's like when you're waiting in the car for the pouring rain to stop, before you make a mad dash for the house. You prepare yourself, unlock the door, unbuckle the seat belt&#8230; take a deep breath&#8230; *START TRANSACTION go go go go COMMIT!* 
+It's like when you're waiting in the car for the pouring rain to stop, before you make a mad dash for the house. You prepare yourself, unlock the door, unbuckle the seat belt... take a deep breath... *START TRANSACTION go go go go COMMIT!* 
 
 ### 2. Do as few statements as possible
 

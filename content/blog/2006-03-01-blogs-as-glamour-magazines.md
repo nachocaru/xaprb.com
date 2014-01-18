@@ -21,7 +21,7 @@ I think the appeal is the number itself. It subtly implies the list is complete 
 
 ### Repetitive, non-original content
 
-The Internet is becoming an echo chamber. Someone writes a post, then someone else writes a post about it, then&#8230; it's not uncommon to find thousands of links to a post. Many of these posts appear to be original content, until you read carefully and realize it's a formulaic, substanceless copy-and-paste (partial or complete) with little or no original content -- sometimes not even a short intro sentence.
+The Internet is becoming an echo chamber. Someone writes a post, then someone else writes a post about it, then... it's not uncommon to find thousands of links to a post. Many of these posts appear to be original content, until you read carefully and realize it's a formulaic, substanceless copy-and-paste (partial or complete) with little or no original content -- sometimes not even a short intro sentence.
 
 For an example, try a [Google search for "top 10 custom javascript functions of all time"][2] and see how many results you get. I'm getting about 142,000 results. MSN finds thousands of pages that link directly to the post on the author's site. One such post, on a very popular blog, misspelled two words in the title until it was corrected a few minutes later! That's an indication of how little time goes into these echo-chamber posts.
 
@@ -35,7 +35,7 @@ I wish it weren't true, but glamour magazines are often written better than blog
 
 <blockquote cite="http://goodcopywriting.com/general-copywriting/the-state-of-copywriting-and-the-web/">
   <p>
-    Spelling, grammar, what? This is an all too common mistake I find on the web. Web sites, even professional ones, are riddled with simple spelling and gramatical mistakes&#8230; Run your site through a spell checker and grammar checker&#8230;
+    Spelling, grammar, what? This is an all too common mistake I find on the web. Web sites, even professional ones, are riddled with simple spelling and gramatical mistakes... Run your site through a spell checker and grammar checker...
   </p>
 </blockquote>
 

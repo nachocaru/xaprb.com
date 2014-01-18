@@ -79,7 +79,7 @@ Pretty easy, huh? Take a look at the output: the first thing it did was fix the 
 
 While I'd love to continue building the perfect beast, I'm going to have to call it quits around noon today and start cleaning up, writing the documentation, and getting ready to release the code. I'm not sure how much I'll finish in that time.
 
-By the way, anyone who wants to is welcome to get the code from the [Maatkit][2] SVN repository! I never make a big deal out of that because I generally assume people want to run released code, but SVN is there if you want it&#8230;
+By the way, anyone who wants to is welcome to get the code from the [Maatkit][2] SVN repository! I never make a big deal out of that because I generally assume people want to run released code, but SVN is there if you want it...
 
  [1]: http://sourceforge.net/projects/mysql-sandbox
  [2]: http://code.google.com/p/maatkit/

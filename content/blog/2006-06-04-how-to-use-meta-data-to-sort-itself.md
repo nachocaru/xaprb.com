@@ -84,7 +84,7 @@ I knew I wanted entries in this table to define a sort order. For the `marker` t
   
   <tr>
     <td colspan="4">
-      &#8230; etc &#8230;
+      ... etc ...
     </td>
   </tr>
 </table>

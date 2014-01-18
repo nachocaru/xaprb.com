@@ -100,7 +100,7 @@ Presto, we have a way to catch all queries causing errors.
 
 ### Benefits
 
-There are a lot of benefits to doing things this way. Of course, we can do all the usual things with the queries (filter, aggregate, report, save to a file and analyze with any of a number of tools, store to the database&#8230;). But even better, we can do that at any time, without having to install MySQL Proxy or do anything else disruptive to the system. In fact, we can even dump the tcpdump output to a file and take it elsewhere to examine it -- there is no need to even have Perl or the Maatkit tools on the server you want to examine. This is one of the nice things about *not* coupling the analysis and collection tightly together, which is unique to mk-query-digest as far as I know.
+There are a lot of benefits to doing things this way. Of course, we can do all the usual things with the queries (filter, aggregate, report, save to a file and analyze with any of a number of tools, store to the database...). But even better, we can do that at any time, without having to install MySQL Proxy or do anything else disruptive to the system. In fact, we can even dump the tcpdump output to a file and take it elsewhere to examine it -- there is no need to even have Perl or the Maatkit tools on the server you want to examine. This is one of the nice things about *not* coupling the analysis and collection tightly together, which is unique to mk-query-digest as far as I know.
 
  [1]: http://www.chriscalender.com/?p=66
  [2]: http://code.google.com/p/maatkit/issues/detail?id=669

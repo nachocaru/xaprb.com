@@ -175,7 +175,7 @@ If you're used to seeing it, it may look like there's nothing wrong with that qu
   </tr>
 </table>
 
-(Ignore for a moment that this table has pretty much the same data as the Fruits table&#8230;)
+(Ignore for a moment that this table has pretty much the same data as the Fruits table...)
 
 I'll re-write the query to show how I might unwittingly update a FruitPrices tuple from multiple Fruits tuples:
 
@@ -353,7 +353,7 @@ insert into FruitPrices(Fruit)
 
 ### What's really wrong with these queries?
 
-The relational model, which SQL doesn't follow exactly, is all about functions in the mathematical sense. Recall a function is just a mapping from the domain to the range, and one input value from the domain must produce exactly one output in the range. A given input value may not map to two output values. This is why a lot of functions can't be turned around backwards and still be functions. For example, `sin(0)` is 0, but so is `sin(2*pi)`, and `sin` is a function; but the inverse isn't a function. If you turn `sin` around and try to put 0 into the back end, what do you get out? You get 0, and 2*pi, and &#8230; infinitely many other values.
+The relational model, which SQL doesn't follow exactly, is all about functions in the mathematical sense. Recall a function is just a mapping from the domain to the range, and one input value from the domain must produce exactly one output in the range. A given input value may not map to two output values. This is why a lot of functions can't be turned around backwards and still be functions. For example, `sin(0)` is 0, but so is `sin(2*pi)`, and `sin` is a function; but the inverse isn't a function. If you turn `sin` around and try to put 0 into the back end, what do you get out? You get 0, and 2*pi, and ... infinitely many other values.
 
 The incorrect statements I've shown above make no sense because they're trying to shove data into a function backwards, and there can be more than one result on the output. I've shown how RDBMSs often just pick one of the outputs, and it's fine to know that's going to happen, but it's also important to know what is really going on.
 

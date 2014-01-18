@@ -8,7 +8,7 @@ categories:
 ---
 This is a quick note on wireless networking on Gentoo GNU/Linux with a dual-core AMD 64-bit processor. It's not hard to do, but the choices for hardware are more limited.
 
-First, installing Gentoo is just as easy as a standard installation. There is a separate installation document for it. All I needed to do was follow the instructions. I'm not expert with Gentoo, but I've installed it a half-dozen times or so since 2002&#8230; if it's not easy for you, wait 4 years and try again ;-)
+First, installing Gentoo is just as easy as a standard installation. There is a separate installation document for it. All I needed to do was follow the instructions. I'm not expert with Gentoo, but I've installed it a half-dozen times or so since 2002... if it's not easy for you, wait 4 years and try again ;-)
 
 Here's my hardware:
 

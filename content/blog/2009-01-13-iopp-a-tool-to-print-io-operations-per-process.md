@@ -50,7 +50,7 @@ According to that, we're looking at the pid, the number of kibibytes read and wr
 
 This tool would have been very handy to know about last week. One of my clients was seeing a lot of disk writes from a MySQL server, and it would have made it considerably easier to diagnose the problem.
 
-There is one small bug -- the -i flag causes idle processes not to be printed out, but it's applied after bytes have been transformed into kibi/mebibytes, so any process that has zeroes after that transformation gets filtered out. So you'll get different output from -i -k than you will from -i or from -i -m. I'll see if I can find the author's email address and let him know about this&#8230;
+There is one small bug -- the -i flag causes idle processes not to be printed out, but it's applied after bytes have been transformed into kibi/mebibytes, so any process that has zeroes after that transformation gets filtered out. So you'll get different output from -i -k than you will from -i or from -i -m. I'll see if I can find the author's email address and let him know about this...
 
  [1]: http://pugs.postgresql.org/node/513
  [2]: http://lkml.org/lkml/2007/3/3/131

@@ -23,7 +23,7 @@ All I'm trying to do is demonstrate the general coding methodology I used, becau
 
 ### Setup
 
-I ran these benchmarks on Firefox 1.5.0.2 on my home computer, a fairly new and powerful AMD64 machine running Gentoo GNU/Linux. I won't bother telling you all the hardware specs&#8230; that always makes my eyes glaze over.
+I ran these benchmarks on Firefox 1.5.0.2 on my home computer, a fairly new and powerful AMD64 machine running Gentoo GNU/Linux. I won't bother telling you all the hardware specs... that always makes my eyes glaze over.
 
 I created a set of pages that do nothing but include the JavaScript files needed, and run 100,000 iterations of date-formatting. I closed my browser window between each test, and nothing else was running on my machine. I ran each test several times and averaged the results, rounding to four significant digits.
 

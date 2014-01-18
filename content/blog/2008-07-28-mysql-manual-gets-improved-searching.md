@@ -11,7 +11,7 @@ I love the MySQL manual. It is a great example of quality software documentation
 
 When did this change happen, by the way? Maybe it's been there for a while and I just missed it because I grew accustomed to using Google search instead.
 
-Edit: I actually would suggest a change to this search, too. It's the same change I have suggested in the past: put the document title in front of the manual's title. Instead of "MySQL :: MySQL 5.1 Reference Manual :: 7.4.6.6 Restructuring a Key &#8230;" I would rather see "Restructuring a Key Cache :: MySQL 5.1 Reference Manual". (Note that the title gets truncated as-is, and it's hard to see in the browser's titlebar/tab/system taskbar).
+Edit: I actually would suggest a change to this search, too. It's the same change I have suggested in the past: put the document title in front of the manual's title. Instead of "MySQL :: MySQL 5.1 Reference Manual :: 7.4.6.6 Restructuring a Key ..." I would rather see "Restructuring a Key Cache :: MySQL 5.1 Reference Manual". (Note that the title gets truncated as-is, and it's hard to see in the browser's titlebar/tab/system taskbar).
 
  [1]: http://dev.mysql.com/doc/
  [2]: http://www.google.com/enterprise/search.html

@@ -84,7 +84,7 @@ categories:
 
 <blockquote><p>Good performance depends on both an optimal schema and optimal indexing.  Optimizing server settings can improve performance from a few percent to several times, but optimizing a poorly designed or badly indexed schema can improve performance several orders of magnitude. </p></blockquote>
 
-<p>This paragraph is not very clear, but it's not very unclear, either.  What's to be done to fix it?  Well, let's see&#8230; you have to find what's good and bad about it.  What's confusing?  I think "from a few percent to several times" is pretty unclear.  What are we trying to say here?  Zoom out: what is the point of the whole paragraph?  I'd say the main points in this paragraph are a) you need both optimal schema and indexing; b) settings can give a little improvement, but schema can give a lot.  Now we'll try to figure out how to say that succinctly, and what to leave in and what to leave out.  What eventually went to print was this:</p>
+<p>This paragraph is not very clear, but it's not very unclear, either.  What's to be done to fix it?  Well, let's see... you have to find what's good and bad about it.  What's confusing?  I think "from a few percent to several times" is pretty unclear.  What are we trying to say here?  Zoom out: what is the point of the whole paragraph?  I'd say the main points in this paragraph are a) you need both optimal schema and indexing; b) settings can give a little improvement, but schema can give a lot.  Now we'll try to figure out how to say that succinctly, and what to leave in and what to leave out.  What eventually went to print was this:</p>
 
 <blockquote><p>
 Optimizing a poorly designed or badly indexed schema can improve performance by
@@ -96,7 +96,7 @@ and indexes for the specific queries you will run.</p></blockquote>
 <blockquote><p>Generosity can be Unwise</p>
 <p>A common mistake is assuming that since space consumption for short strings is the same for VARCHAR(10) and VARCHAR(200), you can simply set the maximum length to some higher value. In fact this has a severe performance penalty, because strings are often internally allocated as a fixed size object.  Thus VARCHAR(200) will use much more space in memory, especially for sorting or operations which use in-memory temporary tables. The same thing happens with filesorts that use on-disk temporary tables.  The best strategy is to allocate the space you really need. </p></blockquote>
 
-<p>&#8230; and after:</p>
+<p>... and after:</p>
 
 <blockquote><p>                             Generosity Can Be Unwise</p>
 <p>Storing the value 'hello' requires the same amount of space in a VARCHAR(5) and a
@@ -173,7 +173,7 @@ An awkward phrase that showed up a lot:
 
 \&lt;by [a-zA-Z]+ing\&gt;</pre>
 
-<p>These expressions helped me catch constructions such as "the tail of the dog," which can be shortened to "the dog's tail."  Or something I noticed a lot from existing content: "By using mysqldump, you can dump data" becomes "You can dump data with mysqldump."  (The last line in the file catches that one.)  I tried to make my sentences say, as plainly as possible, "who does what to what."  If you can't answer that question about a sentence, it's not clear in my opinion.  I tried to use shorter words when possible: "allow" can often be "let," and as a bonus it usually turns a phrase into a single word: "This setting allows you to &#8230;" becomes "This setting lets you&#8230;."</p>
+<p>These expressions helped me catch constructions such as "the tail of the dog," which can be shortened to "the dog's tail."  Or something I noticed a lot from existing content: "By using mysqldump, you can dump data" becomes "You can dump data with mysqldump."  (The last line in the file catches that one.)  I tried to make my sentences say, as plainly as possible, "who does what to what."  If you can't answer that question about a sentence, it's not clear in my opinion.  I tried to use shorter words when possible: "allow" can often be "let," and as a bonus it usually turns a phrase into a single word: "This setting allows you to ..." becomes "This setting lets you...."</p>
 
 <p>Phrases like "of course" usually alert me that I'm being sloppy.  "Of course" really means "this is obvious, but I'm stating it anyway."  So why write it, then?  However, far more often "of course" is a proxy for "I believe this, but I don't know why and it feels hard to explain, so I'm going to just imply that it's obvious and you shouldn't have to ask me to explain it."  A lot of other phrases in my list are just mental bad habits I get into -- such as "in order to," which can usually be shortened to "to."</p>
 
@@ -200,10 +200,10 @@ An awkward phrase that showed up a lot:
 	<li>Revise</li>
 	<li>Send to the editor</li>
 	<li>Revise</li>
-	<li>Repeat, repeat, repeat&#8230;</li>
+	<li>Repeat, repeat, repeat...</li>
 </ul>
 
-<p>That's roughly what it takes to get something ready for tech review.  Each chapter went to the editor or assistant editor about three times, and back to Peter at least once or twice.  Peter's revisions were exhaustive (and exhausting) and sometimes a lot of work to figure out what to do with.  He also added a lot of depth in many cases, which required rewriting and re-outlining.  (Remember my advice about outlining to an insane level of detail before beginning to write&#8230;?).  All of these steps also took a lot of time, because it was a lot of work for Peter, too.  He was also doing a lot of onsite consulting, moving his whole family to the USA, and keeping Percona going at the same time.  I honestly have no idea how he did it.</p>
+<p>That's roughly what it takes to get something ready for tech review.  Each chapter went to the editor or assistant editor about three times, and back to Peter at least once or twice.  Peter's revisions were exhaustive (and exhausting) and sometimes a lot of work to figure out what to do with.  He also added a lot of depth in many cases, which required rewriting and re-outlining.  (Remember my advice about outlining to an insane level of detail before beginning to write...?).  All of these steps also took a lot of time, because it was a lot of work for Peter, too.  He was also doing a lot of onsite consulting, moving his whole family to the USA, and keeping Percona going at the same time.  I honestly have no idea how he did it.</p>
 
 <p>At the "end" of this process, the chapters were reasonably feature-complete, but with large sections marked TODO because they were waiting on one of the authors, an "external network call" to Heikki or someone, or a benchmark.  Still, things have to go to the tech reviewers at some point.  From then on, the process was</p>
 
@@ -241,7 +241,7 @@ An awkward phrase that showed up a lot:
 
 <p>This was made worse by the fact that the production editing process was done in Microsoft Word.  I don't have or use Word.  That would have been OK, but as I already mentioned, OO.org's markup and review capabilities are pretty limited.  The editor used markup comments extensively to clarify a lot of questions she had.  These are precisely OO.org's weakest point.  So I ended up using my wife's laptop, which has Word on it, to review the files.  This refreshed my memory on how buggy Word is -- I would say even buggier than OO.org.  Word crashed I can't tell you how many times, and the display and formatting issues were just ridiculous.  Sometimes entire pages were lost or scrambled.  I'd see the middle of a paragraph at the end of one page, scroll to the beginning of the next page, and see some content that belonged much later in the book.  I'd click something to insert a note or edit a change, and it would freak out and put my cursor at the very top of the file; or just plain crash.  This process was much slower than it should have been.  I stand by my assertion that a word processing program is a terrible tool for writing a book.</p>
 
-<p>But eventually, I got through it.  And then, after that, I was really done.  Right?  Eh&#8230; no.  At this point I got an actual schedule of the remaining steps.</p>
+<p>But eventually, I got through it.  And then, after that, I was really done.  Right?  Eh... no.  At this point I got an actual schedule of the remaining steps.</p>
 
 <ul>
 	<li>Copyedit</li>
@@ -289,7 +289,7 @@ pointed out that this is not a time of heavy work in production, but we're cutti
 
 <p>Let me be clear: the publisher is not why the book didn't come out sooner.  A book is like a baby: it's done when it's done, and not before.  What I'm pointing out here is that at no point in the process did I have an idea how far from completion we were, despite a lot of effort to find out.</p>
 
-<p>There were times when I told the editor basic things, like the page count so far, and he seemed completely surprised even though I kept a file with a table of chapters and page count, and sent email constantly about it.  Even in March I was getting emails that said "Because the page count is a little higher than we originally anticipated&#8230;" and then "You're right about page count! The copy-editor says the Word files come to 600 without preface, index, foreword, etc."  I don't know where all my emails were going -- it seemed like everything I told them went into /dev/null.  Their lack of knowledge about the book's status was not due to my lack of telling them.</p>
+<p>There were times when I told the editor basic things, like the page count so far, and he seemed completely surprised even though I kept a file with a table of chapters and page count, and sent email constantly about it.  Even in March I was getting emails that said "Because the page count is a little higher than we originally anticipated..." and then "You're right about page count! The copy-editor says the Word files come to 600 without preface, index, foreword, etc."  I don't know where all my emails were going -- it seemed like everything I told them went into /dev/null.  Their lack of knowledge about the book's status was not due to my lack of telling them.</p>
 
 <p>Another thing that was frustrating was the process of choosing technical reviewers.  It was never clear whose responsibility this really was.  I thought (and still believe) it was the publisher's.  I asked about finding people pretty early on, but my question just kind of fell on the floor.  So I asked again, and again; I proposed a list of people; I asked the editor to contact them; I contacted them myself; nobody would decide which of the people were actually the ones we wanted to use; I finally made a decision and said "OK, these people X Y and Z are the ones I want."  And then I waited, and after a bit asked about progress, and back came the reply "maybe we should talk about who we should ask to be technical reviewers."  Pretty frustrating, but ultimately we did get chapters ready, so we had to send them to the reviewers.</p>
 

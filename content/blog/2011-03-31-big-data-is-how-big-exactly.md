@@ -14,4 +14,4 @@ I don't know what Big Data is, but the stick-of-gum-sized flash drive in my pock
 
 The lack of definition of Big Data is characteristic of hyped buzzwords. It's why nobody can refute anyone's claims. I think a good guiding principle for marketing might be "don't associate yourself with something that you can claim despite it being unverifiable." This might go along with "don't brag about things your competitors can also claim."
 
-Edit: oh my, I just realized that one of Percona's webinars had "Big Data" in the title. Busted. It was Continuent who proposed the webinar and picked the title, but still&#8230; the pot calls the kettle black!
+Edit: oh my, I just realized that one of Percona's webinars had "Big Data" in the title. Busted. It was Continuent who proposed the webinar and picked the title, but still... the pot calls the kettle black!

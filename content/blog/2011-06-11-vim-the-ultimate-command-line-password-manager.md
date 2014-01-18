@@ -5,7 +5,7 @@ url: /blog/2011/06/11/vim-the-ultimate-command-line-password-manager/
 categories:
   - Desktop
 ---
-Thanks to [a comment on a recent blog post][1] where I lamented the lack of an easy-to-use password manager, I've switched from Revelation to&#8230; Vim.
+Thanks to [a comment on a recent blog post][1] where I lamented the lack of an easy-to-use password manager, I've switched from Revelation to... Vim.
 
 I already use Vim for my note-keeping system. I simply add a modeline to the top of the file,
 

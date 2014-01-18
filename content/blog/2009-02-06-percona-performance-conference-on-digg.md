@@ -6,7 +6,7 @@ categories:
   - Conferences
   - Databases
 ---
-Our [Percona Performance Conference][1] is [making the rounds on Digg][2]. Is it bad form to ask for people to vote for it? &#8230;. ok then I won't.
+Our [Percona Performance Conference][1] is [making the rounds on Digg][2]. Is it bad form to ask for people to vote for it? .... ok then I won't.
 
 But I assume it's okay for me to suggest that perconaperfconf09 is a reasonable tag to use for this event.
 

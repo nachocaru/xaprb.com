@@ -18,8 +18,8 @@ I've also heard from insiders that the familiar sales tactics don't work for MyS
 
 As I see it, the changes in MySQL's business models over the last few years have produced a self-reinforcing cycle, something like this:
 
-1.  Experienced customers who understand the merits of open-source software recognize that MySQL has trended towards closed-source and isn't really offering a compelling open-source value. They don't buy, and&#8230;
-2.  &#8230; MySQL trends further towards closed-source and tries to sell that; as a result, customers new to open-source software are not educated about its true value.
+1.  Experienced customers who understand the merits of open-source software recognize that MySQL has trended towards closed-source and isn't really offering a compelling open-source value. They don't buy, and...
+2.  ... MySQL trends further towards closed-source and tries to sell that; as a result, customers new to open-source software are not educated about its true value.
 
 So instead of making MySQL more open-source and evangelizing that, MySQL might have left themselves few options other than to fall back to closed-source models. And that virtually requires closed-source products to sell. You can call it "feature differentiation," or "value add," or even "crippleware" (and Monty Widenius himself has done that) -- the fact is it's not open-source MySQL is trying to sell. Their offerings that are closest to being open-source are not for sale.
 

@@ -7,7 +7,7 @@ categories:
 ---
 [<img src="http://www.postgresql.org/layout/images/hdr_left.png" width="230" height="80" alt="PostgreSQL" style="float:right" />][1]As a I wrote a couple of days ago, I went to the second day of [PostgreSQL Conference East 2008][2] last Sunday. I had a good time and really enjoyed meeting everyone, listening, learning, and occasionally talking. I asked a number of fearless-newbie questions that paid off handsomely: people were very willing to humor me. I also left with a beautiful t-shirt, mug, and bag combo thanks to [EnterpriseDB][3]. The bag has already been put to use for a grocery shopping trip.
 
-Note to conference/website organizers: I can't link to anything but the front page, so I assume my link above will someday point to the 2009 conference, or the 2008 West conference. It would be good to give each event a permalink right from the start&#8230;
+Note to conference/website organizers: I can't link to anything but the front page, so I assume my link above will someday point to the 2009 conference, or the 2008 West conference. It would be good to give each event a permalink right from the start...
 
 One thing that surprised me was the distance people traveled to attend. I thought this would be an east-coast USA thing, but people came from Portland, Russia, and beyond.
 
@@ -43,7 +43,7 @@ The great quote from this session was the response to "what would you use instea
 
 ### Big, Bad, Broken, PostgreSQL
 
-This talk was by [Robert Treat][13] of [OmniTI][14]. He described how a data warehouse turned into a train wreck and how they recovered it. The exact cause of failure is apparently still not known. But it sounded like an interesting, sleepless time. This was a pretty [technical discussion][15]. One thing I found interesting was the definition of "large" data warehouse. To my mind, a terabyte or two isn't exceptionally large. Is that very large in the Postgres world? I'm not trying to be a jerk&#8230; just trying to understand. I think one of the reasons it might be large goes back to what people were saying about the need to dump and reload for every upgrade: doing that for a TB of data sounds like a significant barrier to building really large systems.
+This talk was by [Robert Treat][13] of [OmniTI][14]. He described how a data warehouse turned into a train wreck and how they recovered it. The exact cause of failure is apparently still not known. But it sounded like an interesting, sleepless time. This was a pretty [technical discussion][15]. One thing I found interesting was the definition of "large" data warehouse. To my mind, a terabyte or two isn't exceptionally large. Is that very large in the Postgres world? I'm not trying to be a jerk... just trying to understand. I think one of the reasons it might be large goes back to what people were saying about the need to dump and reload for every upgrade: doing that for a TB of data sounds like a significant barrier to building really large systems.
 
 ### Monitoring PostgreSQL with ptop
 

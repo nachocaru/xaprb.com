@@ -31,7 +31,7 @@ Just one example: the consistent focus on how IE6 is not a "great experience" an
 > 
 > ### Having a great default experience
 > 
-> Most users just want to quickly put the content of the screen on &#8230; 
+> Most users just want to quickly put the content of the screen on ... 
 
 I could go on, but instead I'll just mention another couple of things I see consistently:
 

@@ -26,7 +26,7 @@ Now you've named the tables identically in both places, so it works. It's as tho
 
 <pre>delete db1.apples a</pre>
 
-&#8230; but see my [SQL coding standards][2] for why I always include the optional but should-be-mandatory `AS` keyword.
+... but see my [SQL coding standards][2] for why I always include the optional but should-be-mandatory `AS` keyword.
 
 With these requirements met, you can use aliases in the rest of the (possibly complex) query, which is much nicer than writing out fully qualified names everywhere.
 

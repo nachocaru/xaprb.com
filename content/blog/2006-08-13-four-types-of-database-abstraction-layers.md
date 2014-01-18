@@ -46,7 +46,7 @@ Type 2 software does much the same as Type 1, but it abstracts away the guts of 
 
 <blockquote cite="http://jeremy.zawodny.comhttp://www.xaprb.com/blog/archives/002194.html">
   <p>
-    I use a revolutionary new programming technique. Instead of littering my code with those calls, I put my core data access layer into a library&#8211;a separate piece of reusable code that I can include in various parts of my application and&#8230; reuse!
+    I use a revolutionary new programming technique. Instead of littering my code with those calls, I put my core data access layer into a library&#8211;a separate piece of reusable code that I can include in various parts of my application and... reuse!
   </p>
 </blockquote>
 
@@ -90,7 +90,7 @@ The emphasis is mine. Type 3 software writes the queries for you behind the scen
 
 <blockquote cite="http://www.sitepoint.com/forums/showpost.php?p=498687">
   <p>
-    &#8230; and when they decide to use another DBMS instead of MySQL (and they undoubtedly will at some point), the conversion will be painless.
+    ... and when they decide to use another DBMS instead of MySQL (and they undoubtedly will at some point), the conversion will be painless.
   </p>
 </blockquote>
 

@@ -25,4 +25,4 @@ categories:
 
 <p>Right now I'm thinking that I should ask for help, instead of continuing to work on this myself.  So, any ideas are welcome!</p>
 
-<p>By the way, beautiful colors would be nice&#8230; a lot of the colors I choose by hand are very pretty and I'm sure my impartial, evenly-distributing script will never choose them in a million years.  Also, it's actually a good thing when graphs each have their own color scheme (as long as it's attractive) because it becomes easier to identify graphs without having to read the title.  Just some extra food for thought.</p>
+<p>By the way, beautiful colors would be nice... a lot of the colors I choose by hand are very pretty and I'm sure my impartial, evenly-distributing script will never choose them in a million years.  Also, it's actually a good thing when graphs each have their own color scheme (as long as it's attractive) because it becomes easier to identify graphs without having to read the title.  Just some extra food for thought.</p>

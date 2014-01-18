@@ -109,7 +109,7 @@ where price = (select min(price) from fruits as f where f.type = fruits.type)
 | cherry | chelan   |  6.33 | 
 +--------+----------+-------+</pre>
 
-Yuck! That can be written as a self-join, but it's just as bad (I leave it as an exercise for the reader). This gets worse as you go to higher numbers (top 3, top 4&#8230;). There are other ways to phrase the statement, but they all boil down to the same thing, and they're all pretty unwieldy and inefficient.
+Yuck! That can be written as a self-join, but it's just as bad (I leave it as an exercise for the reader). This gets worse as you go to higher numbers (top 3, top 4...). There are other ways to phrase the statement, but they all boil down to the same thing, and they're all pretty unwieldy and inefficient.
 
 There's a better way: select the variety from each type where the variety is no more than the second-cheapest of that type.
 
@@ -155,7 +155,7 @@ from (
 
 This isn't one pass through the table, by the way. The subquery is implemented as a temporary table behind the scenes, so filling it with data is one pass; then selecting every row from it and applying the `WHERE` clause is another. However, twice through is still O(n) with respect to the table size. That's a lot better than correlated subqueries, which are O(n<sup>2</sup>) with respect to the group size -- even moderate group sizes cause bad performance (say there are five varieties of each fruit. That's on the order of 25 passes through the table, all told).
 
-### One-pass technique on MySQL&#8230; maybe?
+### One-pass technique on MySQL... maybe?
 
 If you want to leave your queries up the the query optimizer's whims, you can try this technique, which builds no temporary tables and makes just one pass through:
 
@@ -183,7 +183,7 @@ This theoretically ought to work if MySQL orders by the `GROUP BY` criteria, whi
 | cherry | chelan   |  6.33 |          3 | cherry |
 +--------+----------+-------+------------+--------+</pre>
 
-Look closely&#8230; it's returning rows one and three from each group, and they're not numbered in order of increasing price? Huh? But the `HAVING` clause says the row_number should be no greater than 2! Here's what it returns on version 5.0.24a on Ubuntu:
+Look closely... it's returning rows one and three from each group, and they're not numbered in order of increasing price? Huh? But the `HAVING` clause says the row_number should be no greater than 2! Here's what it returns on version 5.0.24a on Ubuntu:
 
 <pre>+--------+------------+-------+------------+--------+
 | type   | variety    | price | row_number | dummy  |
@@ -235,7 +235,7 @@ Ah, now we're cooking! It did what I wanted, without a filesort or temporary tab
 
 ### Other methods
 
-Be sure to check the comments for user-contributed methods. There are some really novel approaches. I always learn so much from your comments&#8230; thank you!
+Be sure to check the comments for user-contributed methods. There are some really novel approaches. I always learn so much from your comments... thank you!
 
 ### Conclusion
 
