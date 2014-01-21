@@ -8,8 +8,8 @@ categories:
 I've been a happy CrossFiter for a few years now. I met my co-founder and many
 friends in [CrossFit Charlottesville][1], completely changed my level of fitness
 and many key indicators of health such as my hemoglobin A1C and vitamin D
-levels, am stronger than I've ever been, feel great, and even my wife does
-CrossFit now. It's fantastic. It's community, fun, health, fitness. It's the
+levels, am stronger than I've ever been, feel great, and now my wife does
+CrossFit too. It's fantastic. It's community, fun, health, fitness. It's the
 antidote to the boring gyms I forced myself to go to for years and hated every
 minute.
 
@@ -56,7 +56,7 @@ about CrossFit, which I choose not to participate in personally, are:
 	so-called Paleo Diet. I could write an entire post about what I think is
 	wrong about the Paleo Diet (it's not the diet, but its adherents, who are the
 	problem), but I'll just link [here][3] instead. My opinion is partially
-	formed by being married to an archaelogist.
+	formed by being married to an archaeologist.
 
 I'm perfectly fine when people disagree with me on these topics. Lots of people
 are really enthusiastic about lots of things. I choose to take what I like about
@@ -213,13 +213,59 @@ The gym I go to --- that nonsense does not happen. And I've been to a few gyms
 over the years and found them to be good. I'm glad I learned in a safe
 environment, but not all gyms and coaches are that good.
 
+### Precedent and Direction-Setting, and Lack of Reporting
+
+What worries me the most is that the type of tragedy that happened to Kevin Ogar
+is going to happen close to home and impact my friends or my gym. The problem is
+complex to untangle, but in brief,
+
+1. Once annually there's a series of quasi-competitions called the CrossFit
+	Open. These are scored workouts over a span of weeks. They are set by the
+	national CrossFit organization, not the local gyms. The scores are used to
+	filter who is the first rank of competitors to go to regional competitions,
+	and then eventually on to the annual CrossFit Games.
+2. The CrossFit Open workouts will certainly include snatches.
+3. If local gyms don't program snatches regularly, their members won't be
+	prepared at all for the Open.
+4. Local gyms don't have to participate in the Open, and don't have to encourage
+	their members to, but that's easier said than done due to the community
+	aspects of CrossFit.
+
+The result, in my opinion, is that there's systemic pressure for gyms and
+members to do things that carry a higher risk-to-reward ratio than many members
+would prefer. Anecdotally, many members I've spoken to share my concerns about
+the snatch. They love CrossFit, but they don't like the pressure to do this
+awkward and frightening movement.
+
+Finally, it's very difficult to understand how serious the problem really is. Is
+there a high risk of injury from a snatch, or does it just seem that way because
+of high-profile incidents? Are we right to be afraid of the snatch, or is it
+just a movement that makes you feel really vulnerable? The problem here is that
+there's no culture of reporting incidents in CrossFit.
+
+I can point to another sport where that culture does exist: caving. The National
+Speleological Survey publishes accident reports, and conscientious cavers share
+a culture that every incident, even minor ones, must be reported. As a result,
+you can browse the NSS accident reports [(summarized here)][9] and see some
+things clearly (you have to be a member to access the full reports, which are
+often excruciatingly detailed). One of the most obvious conclusions you'll draw
+right away is that cave diving (scuba diving in underwater caves) is incredibly
+dangerous and kills a lot of people, despite it being a small portion of the
+overall caving sport's popularity. If you weren't a caver and you didn't know
+about cave diving, would you think this was the case? I'm not sure I would.
+After reading cave diving accident reports, I remember being shocked at how many
+people are found dead underwater for no explainable reason, with air left in
+their tanks. The accident reports help cavers assess the risks of what they do.
+
+Nothing similar exists for CrossFit, and I wish it did.
+
 ### Negative Press About CrossFit
 
 On this topic, I've also read a bunch of attention-seeking blog posts from
 people who "told the dirty truth" about how CrossFit injured them and there's a
 culture of silencing dissenters and so on. I'm sure some of that happens, but
 the stuff I've read has been from people who have an axe to grind. And frankly,
-most of those people were undisputably idiots. They were blaming their problems
+most of those people were indisputably idiots. They were blaming their problems
 and injuries on CrossFit when the real problem was between their ears. I won't
 link to them, because they don't deserve the attention.
 
@@ -264,3 +310,4 @@ Photo credits:
 [6]: /media/2014/01/steiner.jpg
 [7]: http://www.youtube.com/watch?v=TAZgiahlvjs
 [8]: /media/2014/01/deadlift.jpg
+[9]: http://www.caves.org/pub/aca/
