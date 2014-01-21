@@ -16,11 +16,12 @@ minute.
 ![Kettlebells][4]
 
 But there is a fringe element in CrossFit, which unfortunately looks mainstream
-to some who don't really know it. From the outside, CrossFit can look almost
-cult-like. It's easy to get an impression of people doing dangerous things with
-little caution or training. To hear people talk about it, everyone in CrossFit
-works out insanely until they vomit, pushing themselves until their muscles
-break down and vital organs go into failure modes.
+to some who don't really have enough context to judge. From the outside,
+CrossFit can look almost cult-like. It's easy to get an impression of people
+doing dangerous things with little caution or training. To hear people talk
+about it, everyone in CrossFit works out insanely until they vomit, pushing
+themselves until their muscles break down and vital organs go into failure
+modes.
 
 That's not what I've experienced. I've never seen anyone vomit, or even come
 close to it as far as I know. I think that part of this dichotomy comes from
@@ -51,9 +52,10 @@ about CrossFit, which I choose not to participate in personally, are:
 	movements are good. The problem is, the workout movements aren't all
 	functional. A few of them are rather hardcore and very technical movements
 	chosen from various mixtures of disciplines.
-3. Rabidly ignorant and enthusiastic adherence to mindsets such as the so-called
-	Paleo Diet. I could write an entire post about what I think is wrong with the
-	Paleo Diet, but I'll just link [here][3] instead. My opinion is partially
+3. Untempered enthusiasm about, and ignorant promotion of, fads such as the
+	so-called Paleo Diet. I could write an entire post about what I think is
+	wrong about the Paleo Diet (it's not the diet, but its adherents, who are the
+	problem), but I'll just link [here][3] instead. My opinion is partially
 	formed by being married to an archaelogist.
 
 I'm perfectly fine when people disagree with me on these topics. Lots of people
@@ -105,7 +107,7 @@ The next issue is that the snatch features prominently in many CrossFit
 workouts, *especially competition workouts.* This is not a small problem. Think
 about it: in competition, when these extreme athletes have raised the bar to
 such an extent that weeding out the best of the best requires multi-day
-performances few mortals could ever achieve, and we're throwing high-rep,
+performances few mortals could ever achieve, we're throwing high-rep,
 heavy-weight *snatches* into the mix. What's astonishing isn't that Kevin Ogar got
 seriously injured. What's amazing is that we don't have people severing their
 spines on the snatch all the time.
@@ -114,7 +116,7 @@ What on earth is *wrong* with these people? What do they expect?
 
 You might think this is an issue that's only present in the competitions. But
 that's not true. I generally refuse to do snatches in workouts at the gym. I
-will substitute them for other movement. Why? Take a look at a typical snatch
+will substitute them for other movements. Why? Take a look at a typical snatch
 workout:
 
 > AMRAP (as many rounds as possible) in 12 Minutes of:
@@ -164,7 +166,7 @@ strongly, and that's fine.
 There's one more problem that contributes, I think, to needless risk in CrossFit
 gyms. This is the combination of inadequate coaching and a focus on "goal
 completion" to the exclusion of safety and absolutely perfect form, especially
-during workouts where you're trying to finish a set amound of movements as fast
+during workouts where you're trying to finish a set amount of movements as fast
 as possible, or do as much as possible in a fixed time.
 
 There's no getting around the fact that CrossFit coaches aren't all giving the
@@ -174,15 +176,13 @@ qualifications they need.
 Anecdotally, I'll tell the story of traveling in California, where I visited a
 gym and did one of my favorite workouts, Diane. In Diane, you deadlift 225
 pounds 21 reps, do 21 handstand pushups, repeat both movements with 15 reps
-each, and finish with 9 reps each. I happen to be relatively stronger at
-deadlifts than many other movements, so this is fun for me, although I usually
-scale the weights down anyway.
+each, and finish with 9 reps each.
 
 Deadlifting consists of grasping the bar on the ground and standing up straight,
-then lowering it again. It is not a dynamic movement. You do not move through
-any unstable or out-of-control ranges of motion. If you drop the bar you won't
+then lowering it again. It is not a dynamic or unstable movement. You do not
+move through any out-of-control ranges of motion. If you drop the bar you won't
 drop it on yourself, it'll just fall to the ground. Nevertheless, if done wrong,
-it can injure you just like anything else.
+it can injure you badly, just like anything else.
 
 ![Deadlift][8]
 
@@ -209,7 +209,7 @@ have taken the matter into his own hands and asked for more active coaching.
 
 But that doesn't excuse the coach either.
 
-The gym I go to -- that nonsense does not happen. And I've been to a few gyms
+The gym I go to --- that nonsense does not happen. And I've been to a few gyms
 over the years and found them to be good. I'm glad I learned in a safe
 environment, but not all gyms and coaches are that good.
 
@@ -220,17 +220,18 @@ people who "told the dirty truth" about how CrossFit injured them and there's a
 culture of silencing dissenters and so on. I'm sure some of that happens, but
 the stuff I've read has been from people who have an axe to grind. And frankly,
 most of those people were undisputably idiots. They were blaming their problems
-and injuries on CrossFit when the real problem was between their ears.
+and injuries on CrossFit when the real problem was between their ears. I won't
+link to them, because they don't deserve the attention.
 
 Don't believe most of what you read online about CrossFit. Many of the people
 telling their personal stories about their experiences in CrossFit are drama
 queens blowing things completely out of proportion. There's a lot of legitimate
 objective criticism too, most of it from neutral third-parties who have serious
-credentials in physical fitness coaching. And there's a lot of great writing
-about what's good about CrossFit, much of it from the good-hearted, honest,
-knowledgeable coaches and gym owners who soldier on despite the ongoing soap
-operas and media hype wars. They're bringing fitness and health --- and fun ---
-to people who otherwise don't get enough of it.
+credentials in physical fitness coaching, but this doesn't get as much attention.
+And there's a lot of great writing about what's good about CrossFit, much of it
+from the good-hearted, honest, knowledgeable coaches and gym owners who soldier
+on despite the ongoing soap operas and media hype wars. They're bringing fitness
+and health --- and fun --- to people who otherwise don't get enough of it.
 
 ### Summary
 
@@ -240,10 +241,10 @@ people hurt. Mix it in with snatches and it's a miracle if nobody gets seriously
 injured.
 
 If you participate in CrossFit, which I highly recommend, take responsibility
-for your own safety. If there is a rah-rah attitude of extremism in your gym, or
-if your coaches aren't actually experts at what they do (the CrossFit
-weekend-long certification seminars don't count), or if it's not right for any
-other reason, go elsewhere.
+for your own safety. If there is a rah-rah attitude of pushing too hard at all
+costs in your gym, or if your coaches aren't actually experts at what they do
+(the CrossFit weekend-long certification seminars don't count), or if it's not
+right for any other reason, go elsewhere.
 
 Stay healthy and have fun, and do constantly varied, functional movements at high
 intensity in the company of your peers -- and do it safely.
