@@ -665,6 +665,11 @@ and pleasure in listening to music.
 
 ![Guitar Soundhole][29]
 
+Suggested links from various sources:
+
+* http://demonstrations.wolfram.com/TheVibratingString/
+* http://www.truetemperament.com/
+
 ### Picture Credits
 
 * http://www.flickr.com/photos/angelocesare/249168890/
