@@ -140,18 +140,18 @@ as possible. To get a sense for how insane that actually is, take a look at
 a *beast* and he *struggles*. And *his form breaks down.* I'm over-using
 italics. I'm sorry, I'll cool down.
 
-My point is that I think this extremely technical, very dangerous movement has
-limited or no place in CrossFit workouts. It does very little but put people
-into a situation where they're at very high risk of getting injured. It does not
-make people more fit more effectively than alternative movements. One can get
+My point is that I think this extremely technical, very dangerous movement should have
+limited or no place in CrossFit workouts. I think it does very little but put people
+into a situation where they're at very high risk of getting injured. I do not
+think it makes people more fit more effectively than alternative movements. I think one can get
 the same or better benefits from much safer movements.
 
 Doing the snatch is an expert stunt. I personally think that I'll never be good
 at snatches unless I do them twice a week, minimum. And one of the tenets of
 CrossFit is that there should be a large variety of constantly varied movements.
 This automatically rules out doing any one movement very often.
-Looking back through my own records, I see that I recorded snatches in
-pre-workout skill work approximately twice every three months. That is nowhere
+In my own CrossFit workouts, going to the gym 2 or 3 times a week, I typically go weeks at a time without being trained on snatches in
+pre-workout skill work. That is nowhere
 near enough to develop real skill at it. (This is why I do my skill-work
 snatches with little more than an empty bar.)
 
@@ -159,7 +159,7 @@ There are other movements in CrossFit that I think are riskier than they need to
 be, but snatches are the quintessential example.
 
 I know many people who are experts in these topics will disagree with me very
-strongly, and that's fine.
+strongly, and I don't mind that. This is just my opinion.
 
 ### Bad Coaches, Bad Vibes
 
@@ -244,8 +244,8 @@ just a movement that makes you feel really vulnerable? The problem here is that
 there's no culture of reporting incidents in CrossFit.
 
 I can point to another sport where that culture does exist: caving. The National
-Speleological Survey publishes accident reports, and conscientious cavers share
-a culture that every incident, even minor ones, must be reported. As a result,
+Speleological Society publishes accident reports, and conscientious cavers share
+a culture that every incident, even trivial ones, must be reported. As a result,
 you can browse the NSS accident reports [(summarized here)][9] and see some
 things clearly (you have to be a member to access the full reports, which are
 often excruciatingly detailed). One of the most obvious conclusions you'll draw
@@ -254,14 +254,14 @@ dangerous and kills a lot of people, despite it being a small portion of the
 overall caving sport's popularity. If you weren't a caver and you didn't know
 about cave diving, would you think this was the case? I'm not sure I would.
 After reading cave diving accident reports, I remember being shocked at how many
-people are found dead underwater for no explainable reason, with air left in
+people are found dead underwater for no apparent reason, with air left in
 their tanks. The accident reports help cavers assess the risks of what they do.
 
 Nothing similar exists for CrossFit, and I wish it did.
 
 ### Negative Press About CrossFit
 
-On this topic, I've also read a bunch of attention-seeking blog posts from
+On the topic of what gets attention and exposure, I've seen a bunch of attention-seeking blog posts from
 people who "told the dirty truth" about how CrossFit injured them and there's a
 culture of silencing dissenters and so on. I'm sure some of that happens, but
 the stuff I've read has been from people who have an axe to grind. And frankly,
