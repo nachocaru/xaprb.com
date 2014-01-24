@@ -6,7 +6,7 @@ categories:
   - Databases
 ---
 I'm excited to be speaking at the [Percona Live MySQL Conference][1] again this
-year. I'll present two sessions: [Developing MySQL Applications with Go][3] and
+year. I'll present two sessions: [Developing MySQL Applications with Go][2] and
 [Knowing the Unknowable: Per-Query Metrics][3]. The first is a walk-through of
 everything I've learned over the last 18 months writing large-scale MySQL-backed
 applications with Google's Go language. The second is about using statistical
