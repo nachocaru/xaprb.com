@@ -10,6 +10,7 @@ This is a public service announcement. Many people I know are not taking importa
 This blog post will urge you to use *higher* security than popular advice you'll hear. **It really, really, *really* is necessary to use strong measures to secure your digital life.** The technology being used to attack you is very advanced, operates at a large scale, and you probably stand to lose much more than you realize. 
 
 You're also likely not as good at being secure as you think you are. If you're like most people, you don't take some important precautions, and you overestimate the strength and effectiveness of security measures you *do* use. 
+
 ### Password Security
 
 The simplest and most effective way to dramatically boost your online security is **use a password storage program**, or password safe. You need to *stop making passwords you can remember* and make long, random passwords on websites. The only practical way to do this is to use a password safe. 
@@ -50,6 +51,7 @@ There seems to be a perception that lots of people think two-factor auth is not 
 Unfortunately, most websites don't support two-factor authentication. Fortunately, many of the most popular and valuable services do, including Facebook, Google, Paypal, Dropbox, LinkedIn, Twitter, and most of the other services that you probably use which are most likely to get compromised. [Here is a list of services with two-factor auth][5], with instructions on how to set it up for each one. 
 
 **Please enable two-factor authentication if it is supported!** I can't tell you how many of my friends and family have had their Gmail, Facebook, Twitter, and other services compromised. Please don't let this happen to you! It could do serious harm to you -- worse than a stolen credit card. 
+
 ### Secure Your Devices
 
 
@@ -68,13 +70,16 @@ All of this is easily preventable. Given that one or more of your devices will s
 *   Encrypt your backup hard drives. Backups are one of the most common ways that data is stolen. *(You have backups, right? I could write another entire blog post on backups. Three things are inevitable: death, taxes, and loss of data that you really care about.)* 
 *   Use a service such as [Prey Project][7] to let you have at least some basic control over your device if it's lost or stolen. 
 *   Keep records of your devices' make, model, serial number, and so on. Prey Project makes this easy. 
-*   On your phone or tablet, customize the lockscreen with a message such as "user@email.com &#8211; reward if found" and on your laptops, stick a small label inside the lid with your name and phone number. You never know if a nice person will return something to you. I know I would do it for you. ### Things that don't help
+*   On your phone or tablet, customize the lockscreen with a message such as "user@email.com &#8211; reward if found" and on your laptops, stick a small label inside the lid with your name and phone number. You never know if a nice person will return something to you. I know I would do it for you.
 
+### Things that don't help
 
 Finally, here are some techniques that aren't as useful as you might have been told. 
 
 *   Changing passwords doesn't significantly enhance security unless you change from an insecure password to a strong one. Changing passwords is most useful, in my opinion, when a service has already been compromised or potentially compromised. It's possible on any given day that an attacker has gotten a list of encrypted passwords for a service, hasn't yet been discovered, and hasn't yet decrypted them, and that you'll foil the attack by changing your password in the meanwhile, but this is such a vanishingly small chance that it's not meaningful. 
-*   (OK, this ended up being a list of 1 thing. Tell me what else should go here.) ### Summary
+*   (OK, this ended up being a list of 1 thing. Tell me what else should go here.)
+
+### Summary
 
 
 Here is a summary of the most valuable steps you can take to protect yourself: 
