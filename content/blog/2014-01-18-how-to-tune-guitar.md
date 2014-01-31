@@ -669,6 +669,8 @@ Suggested links from various sources:
 
 * http://demonstrations.wolfram.com/TheVibratingString/
 * http://www.truetemperament.com/
+* (PDF) [Everything You Ever Wanted to Know About String Tension](http://www.daddariostrings.com/Resources/JDCDAD/images/tension_chart.pdf)
+* http://www.sksmithmusic.com/virtual_classroom/string_choice.html
 
 ### Picture Credits
 

@@ -52,11 +52,10 @@ about CrossFit, which I choose not to participate in personally, are:
 	movements are good. The problem is, the workout movements aren't all
 	functional. A few of them are rather hardcore and very technical movements
 	chosen from various mixtures of disciplines.
-3. Untempered enthusiasm about, and ignorant promotion of, fads such as the
-	so-called Paleo Diet. I could write an entire post about what I think is
-	wrong about the Paleo Diet (it's not the diet, but its adherents, who are the
-	problem), but I'll just link [here][3] instead. My opinion is partially
-	formed by being married to an archaeologist.
+3. Untempered enthusiasm about, and ignorant promotion of, things such as the
+	so-called [Paleo Diet][3]. I'm biased about this by being married to an
+	archaeologist, but it isn't the diet that is the issue. It's the fanaticism
+	that some people have about it, which can be off-putting to newcomers.
 
 I'm perfectly fine when people disagree with me on these topics. Lots of people
 are really enthusiastic about lots of things. I choose to take what I like about
@@ -116,21 +115,21 @@ What on earth is *wrong* with these people? What do they expect?
 
 You might think this is an issue that's only present in the competitions. But
 that's not true. I generally refuse to do snatches in workouts at the gym. I
-will substitute them for other movements. Why? Take a look at a typical snatch
+will substitute them for other movements. Why? Take a look at one sample snatch
 workout:
 
 > AMRAP (as many rounds as possible) in 12 Minutes of:
 > 
 > 1. Snatch x 10
 > 1. Double Under x 50
-> 1. Box Jump Step Down x 10
+> 1. Box Jump x 10
 > 1. Sprint
 
 That's 12 minutes of highly challenging movements (to put it in perspective,
 most non-CrossFitters, and even many CrossFitters, would not be able to do the
 double-unders or box-jumps). You're coming off a sprint and you're going to
 throw off 10 snatches in a row, and you're going to do it with perfect form?
-Right. This is just *asking* for injury.
+Unlikely. This is just *asking* for injury.
 
 Or we could look at the "named WODs" that are benchmarks for CrossFitters
 everywhere. There's Amanda, for example: 9, 7, and 5 reps of muscle-ups and
