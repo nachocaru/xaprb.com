@@ -68,9 +68,14 @@ All of this is easily preventable. Given that one or more of your devices will s
 *   On Android tablets and phones, you can encrypt the entire device. You have to set up a screen lock code first. 
 *   If you use a thumb drive or external hard drive to transfer files between devices, encrypt it. 
 *   Encrypt your backup hard drives. Backups are one of the most common ways that data is stolen. *(You have backups, right? I could write another entire blog post on backups. Three things are inevitable: death, taxes, and loss of data that you really care about.)* 
-*   Use a service such as [Prey Project][7] to let you have at least some basic control over your device if it's lost or stolen. 
+*   Use a service such as [Prey Project][7] to let you have at least some basic control over your device if it's lost or stolen.  Android phones now have the [Android Device Manager][10] and [Google Location History][9], but you have to enable these.
 *   Keep records of your devices' make, model, serial number, and so on. Prey Project makes this easy. 
 *   On your phone or tablet, customize the lockscreen with a message such as "user@email.com &#8211; reward if found" and on your laptops, stick a small label inside the lid with your name and phone number. You never know if a nice person will return something to you. I know I would do it for you.
+
+### External Links and Resources
+
+* http://evanhahn.com/tape/two-factor-auth-list/
+* [How PayPal and GoDaddy exposed someone to account theft][8]
 
 ### Things that don't help
 
@@ -101,3 +106,6 @@ Do you have any other suggestions? Please use the comments below to add your tho
 [5]: http://evanhahn.com/tape/two-factor-auth-list/
 [6]: www.truecrypt.org/
 [7]: http://preyproject.com/
+[8]: https://medium.com/p/24eb09e026dd
+[9]: https://maps.google.com/locationhistory/
+[10]: https://www.google.com/android/devicemanager
