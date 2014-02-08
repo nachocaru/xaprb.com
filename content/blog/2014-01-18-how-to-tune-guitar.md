@@ -317,9 +317,9 @@ String  Freq    Overtone_2  Overtone_3  Overtone_4  Overtone_5
 ======  ======  ==========  ==========  ==========  ==========
 E       82.41               247.22      329.63 
 A       110.00              330.00      440.00
-D       146.83              440.50      587.33
+D       146.83              440.50      587.33      734.16
 G       196.00              587.99                  979.99
-B       246.94                          987.77             
+B       246.94              740.82      987.77
 E       329.63              988.88      
 </pre>
 
@@ -428,7 +428,7 @@ If you do the math on higher overtones, you'll notice a few other interesting in
 
 * **Open A String to Open B String.** The 9th overtone of the open A string is a high B note at 990Hz, and the 4th overtone of the open B is a high B at 987.77HZ. If you can hear this high note, you should hear it beating just over twice per second. The interval between the A and B strings is a minor 7th, which should be slightly narrow. Thus, if you tune the B until the beating disappears, you should then flatten it two beats.
 * **Open D String to Open E String.** This is also a minor 7th interval. You're listening for a very high E note, at 1321.5Hz on the D string, and 1318.5 on the E string, which is 3 beats narrow.
-* **Open D String to Open B String.** The 10th overtone of the D string is similar to a high F-sharp produced by the open B string (from B to F-sharp is a 5th). The overtone on the D string is 1,468.32Hz, and on the B string it's the 6th overtone at 1,481.65Hz. This interval is a little more than 13 beats wide. This is hard to hear and hard to count, but if you can hear the beating and it isn't very rapid, you know something's out of tune.
+* **Open D String to Open B String.** The 5th overtone of the D string is similar to the 3rd overtone of the B string. This interval is about 6 and 2/3 beats wide. This is a bit hard to hear at first, but you're listening for a high F-sharp.
 
 ### Systems for Tuning Arbitrary Instruments
 
