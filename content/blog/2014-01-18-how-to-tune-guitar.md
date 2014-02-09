@@ -420,7 +420,10 @@ I don't mean to dismiss digital tuners. They're very useful when you're in a
 noisy place, or when you're tuning things like electric guitars, which have
 distortion that buries overtones in noise. But if you learn to tune by
 hearing beats, you'll be the better for it, and you'll never regret it, I
-promise.
+promise. By the way, if you have an Android smartphone, I've had pretty good
+results with the gStrings app.
+
+![Tune-o-phone][30]
 
 #### Advanced Magic
 
@@ -476,8 +479,8 @@ Later I designed and built a second one, pictured below. Pardon the dust!
 
 ![Dulcimer][12]
 
-Tuning this dulcimer takes a while. I start with an octave on the bass course,
-and tune by fourths and fifths. Dulcimers can have many different tunings; this
+Tuning this dulcimer takes a while. I start with an octave on the bass course.
+Dulcimers can have many different tunings; this
 one follows the typical tuning of traditional dulcimers, which is essentially a
 set of changing keys that cycle backwards by fifths as you climb the scale.
 Starting at G, for example, you have a C major scale up to the next G, centered
@@ -521,10 +524,10 @@ skew as you go.
 
 Another instrument I built (this time with my grandfather) is a simplified
 replica of the [Scottish wire-strung Queen Mary harp][13]. This historical
-instrument turns out, on further [research][14], to be designed for golden
-strings. As a result it is quite difficult to tune with bronze or brass strings.
-It is "low-headed" and would need a much higher head to work well with bronze or
-brass.
+instrument might have been designed for some golden and silver strings,
+according to [Ann Heyman's research][14]. In any case, it is quite difficult to
+tune with bronze or brass strings.  It is "low-headed" and would need a much
+higher head to work well with bronze or brass.
 
 ![Harp][15]
 
@@ -541,12 +544,12 @@ Amazon. All these years later, I still listen to Patrick Ball's music often.
 His newest recording, [The Wood of Morois][18], is just stunning.
 I corresponded with Patrick while planning to build my harp, and he put me in
 touch with master harpmaker [Jay Witcher][19], and his own role model, Ann
-Heymann, who was responsible for rediscovering the lost techniques of playing
+Heymann, who was responsible for reinventing the lost techniques of playing
 wire-strung harps. Her recordings are a little hard to find in music stores, but
-are priceless in my opinion. You can buy them from her websites
+are worth it. You can buy them from her websites
 http://www.clairseach.com/, http://www.annheymann.com/, and
 http://www.harpofgold.net/. If you're interested in learning to play wire-strung
-harp, her book is the only existing written source as far as I know.
+harp, her book is one of the main written sources.
 There are a variety of magazines covering the harp renaissance in the latter
 part of the 20th century, and they contain much valuable additional material.
 
@@ -560,8 +563,8 @@ are interested, I'll dig deeper into these nuances.
 
 The nuances and deviations from perfect theory are the main reasons why a) it's
 impossible to tune anything perfectly and b) an instrument that's tuned
-skillfully by ear sounds glorious, whereas an instrument tuned digitally sounds
-lifeless.
+skillfully by ear sounds glorious, whereas an instrument tuned digitally can
+sound lifeless.
 
 #### Harmonics, Overtones, and Partials
 
@@ -713,3 +716,4 @@ Suggested links from various sources:
 [27]: https://docs.google.com/spreadsheet/ccc?key=0AqLZaBImC-JLdFp0RnNpY2JPcWlPdnNQXzkyQ2hyb1E&usp=sharing
 [28]: https://musicofspheres.com/products/music_chart.php
 [29]: /media/2014/01/8075445_c8b558d3a8.jpg
+[30]: /media/2014/01/tune-o-phone.jpg
