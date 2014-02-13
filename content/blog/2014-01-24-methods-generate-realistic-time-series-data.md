@@ -4,7 +4,7 @@ date: "2014-01-24"
 url: /blog/2014/01/24/methods-generate-realistic-time-series-data/
 categories:
   - Programming
-  - Monitoring
+  - Operations
 ---
 I am interested in compiling a list of techniques to generate fake time-series
 data that looks and behaves realistically. The goal is to make a mock API for

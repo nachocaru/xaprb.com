@@ -1,0 +1,2 @@
+RedirectMatch (.*)/feed/$ http://www.xaprb.com/index.xml
+DirectoryIndex index.html
