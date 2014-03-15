@@ -31,5 +31,9 @@ The topic is, roughly, databases. Officially,
 I am excited and a bit nervous. A Google Tech Talk! Wow! Thanks for inviting me,
 Google!
 
+**Update**: Slides are embedded below.
+
+<iframe src="https://app.box.com/embed_widget/ko7s90gvgiix/s/0d578lmrl6xm487z4ska?view=list&sort=name&direction=ASC&theme=blue" width="640" height="420" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
 [1]: http://www.youtube.com/user/GoogleTechTalks
 [2]: https://twitter.com/xaprb
