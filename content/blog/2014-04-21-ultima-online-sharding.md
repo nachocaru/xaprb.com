@@ -19,9 +19,9 @@ architecture of some things," I said. "That would have been about 2006."
 ![ultima](/media/2014/04/ultima.jpg)
 
 I pondered. "Well, I guess there was the famous LiveJournal architecture
-article. That was, I dunno, 2003?"
+article about MySQL. That was, I dunno, 2003?"
 
-The person took pity on me then and told me the following history. I can neither
+The person then told me the following history. I can neither
 confirm nor deny it; what do you know about it?
 
 > Years ago there was a game called *Ultima Online*. It....
@@ -30,9 +30,9 @@ I broke in. "Hey! In 1995 my brother and I were staff members at a Boy Scout
 Camp, and one of the other staff members had a game called Ultima Underworld on
 his PC. It was addictive. Any relationship?"
 
-"Yes," said the man. "It became Ultima Online."
+"Yes, it was a predecessor to Ultima Online."
 
-Silence. "Oh," I said. "Well, that's basically the last game I've ever played.
+"Oh," I said. "Well, that's basically the last game I've ever played.
 But please go on."
 
 > Ultima Online was early in the Internet age -- late nineties, I think. They
@@ -47,7 +47,7 @@ But please go on."
 > broken into shards and reality was broken along with it.
 
 True? False? It's easy to verify that the storyline is true, but is this how we
-ended up with "sharding" in the database world?
+ended up with "sharding" in the database world, especially in MySQL?
 
 Note: I'm paraphrasing the conversation from the cocktail party. My memory isn't
 that good.
