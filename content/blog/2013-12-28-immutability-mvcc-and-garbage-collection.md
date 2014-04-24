@@ -97,6 +97,9 @@ Note that I am not a relational curmudgeon claiming that it's all been done befo
 
 What do you think? Also, if I've gone too far, missed something important, gotten anything wrong, or otherwise need some education myself, please let me know so I can a) learn and b) correct my error.
 
+References/links that might be useful:
+
+* http://www.datastax.com/dev/blog/compaction-improvements-in-cassandra-21
 
 [1]: http://techcrunch.com/2009/07/28/yc-funded-rethinkdb-a-mysql-storage-engine-built-from-the-ground-up-for-ssds/
 [2]: http://www.bytebot.net/blog/archives/2009/07/28/rethinkdb-all-the-rage-today

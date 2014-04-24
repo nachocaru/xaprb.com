@@ -30,11 +30,12 @@ I and the other developers there (another secret: it's a small team; [small team
 
 ### Things to avoid
 
-There are several things I *do not* recommend doing when you unit-test code that talks to a database. I'll just mention a couple:<ul 
+There are several things I *do not* recommend doing when you unit-test code that talks to a database. I'll just mention a couple:
 
 *   Don't [mock][6] anything! In general I think mocking is the devil. Most of the mock objects I've ever seen reflected a propensity to [test an implementation instead of a behavior][7], which is also the devil. Write all your code to test a test instance of something real, and do not mock up a database to test against. It is a rabbit-hole that you will not emerge from easily.
 *   Never let a test connect to a production database. Never, ever. Worlds of hurt will follow. Not only are you risking your production data, but what about the risk to your code? You're testing against things that will almost certainly change and break your tests; and you're possibly polluting your live data with testing data and/or changing live data from the tests.
-*   I also recommend developing unit tests for your current database functionality if you're thinking about changing it much. [Don't like MySQL's lax error handling? Plan to set the SQL_MODE to something stricter?][8] Dive into that database abstraction library and make your tests run in strict mode first by setting SQL_MODE on every new connection that's created when running inside a test; fix all the breakage in the test suite; feel sure that your code isn't going to break in production. That was easy!</ul> 
+*   I also recommend developing unit tests for your current database functionality if you're thinking about changing it much. [Don't like MySQL's lax error handling? Plan to set the SQL_MODE to something stricter?][8] Dive into that database abstraction library and make your tests run in strict mode first by setting SQL_MODE on every new connection that's created when running inside a test; fix all the breakage in the test suite; feel sure that your code isn't going to break in production. That was easy!
+
 ### Summary
 
 Once your creative juices get flowing, you'll see tons of places your unit test suite can help you out.
