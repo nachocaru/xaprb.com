@@ -17,6 +17,10 @@ the slide that made its way into my talk as a result:
 
 ![Smirnov](/media/2014/05/smirnov.jpg)
 
-My slides are embedded below. Enjoy.
+My slides are embedded below. Enjoy. I've also uploaded an [Excel spreadsheet][1] you
+can use to tinker with the math and reproduce my results. Let me know if I did
+anything wrong, please!
 
 <iframe src="https://app.box.com/embed_widget/hnd0llg8tzut/s/o60h3cxbp5fa1u5jw1pu?view=list&sort=name&direction=ASC&theme=blue" width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+
+[1]: /media/2014/05/time-series-tricks.xlsx
