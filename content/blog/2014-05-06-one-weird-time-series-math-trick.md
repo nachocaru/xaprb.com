@@ -4,6 +4,7 @@ date: "2014-05-06"
 url: /blog/2014/05/06/one-weird-time-series-math-trick/
 categories:
   - Programming
+  - Conferences
 ---
 
 Monitorama 2014 Portland has been a great show. I've enjoyed the technical
