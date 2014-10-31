@@ -87,7 +87,8 @@ you've fretted, a little less, a little more. Listen until you hear the beats.
 Musical notes have mathematical relationships to one another. The exact
 relationships depend on the tuning. There are many tunings, but in this article
 I'll focus on the tuning used for nearly all music in modern Western cultures:
-the [12-tone equal temperament][5] tuning.
+the [12-tone equal temperament][5] tuning, said to be developed by Bach (this is
+[contested](http://www.larips.com), though).
 
 In this tuning, the octave is the fundamental interval of pitch. Notes double in
 frequency as they rise an octave, and the ratio of frequencies between each

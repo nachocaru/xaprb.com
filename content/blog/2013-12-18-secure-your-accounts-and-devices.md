@@ -32,6 +32,11 @@ Here are some other important rules for password security.
 *   Don't use your web browser's features for storing passwords and credit cards. Browsers themselves, and their password storage, are the target of many attacks. 
 *   Never write passwords down on paper, except once. The only paper copy of my passwords is the master password to my computer, password safe, and GPG key. These are in my bank's safe deposit box, because if something happens to me I don't want my family to be completely screwed. (I could write another blog post on the need for a will, power of attorney, advance medical directive, etc.) 
 *   Never treat any account online, no matter how trivial, as "not important enough for a secure password." That last item deserves a little story. Ten years ago I didn't use a password safe, and I treated most websites casually. "Oh, this is just a discussion forum, I don't care about it." I used an easy-to-type password for such sites. I used the same one everywhere, and it was a common five-letter English word (not my name, if you're guessing). Suddenly one day I realized that someone could guess this password easily, log in, change the password and in many cases the email address, and lock me out of my own account. They could then proceed to impersonate me, do illegal and harmful things in my name, etc. Worse, they could go find other places that I had accounts (easy to find -- just search Google for my name or username!) and do the same things in many places. I scrambled to find and fix this problem. At the end of it, I realized I had created more than 300 accounts that could have been compromised. Needless to say, I was very, very lucky. My reputation, employment, credit rating, and even my status as a free citizen could have been taken away from me. Don't let this happen to you! 
+* Never use real answers to security questions. Always generate fake answers. City of birth? The moon. Favorite high school teacher? Swimming pool. First pet? Diesel locomotive. Store these answers in your password safe. I've guessed my way into many an account by knowing who someone's mother's maiden name was, or paternal grandfather, or whatever. It's usually easy to find this stuff online with a little searching.
+
+Some people I know have a set of heuristics to generate a password for each service. "Take the first two letters, prepend the year of signup, reverse the last two letters..." These passwords are a) weak, b) not easy to change since the heuristics don't change, c) easy to figure out if someone gets one of your passwords. In other words, if someone is able to steal your password to, say, Amazon, and figures out from the password `no2014amaz` what your heuristic is, they'll be able to log into lots of other services with a little guesswork.
+
+If you feel unusually vigorous, you could try out [this person's mental encryption scheme](http://www.scilogs.com/hlf/mental-cryptography-and-good-passwords/), but I see a major weakness with that: it doesn't allow for changing your password, since your password is a hashed scheme of the service name. I also think the passwords it generates are less secure than some people have opined them to be, just because they're short. It's interesting but clearly impractical for most people. A password safe is much better.
 
 ### Use Two-Factor Auth
 
@@ -52,8 +57,9 @@ Unfortunately, most websites don't support two-factor authentication. Fortunatel
 
 **Please enable two-factor authentication if it is supported!** I can't tell you how many of my friends and family have had their Gmail, Facebook, Twitter, and other services compromised. Please don't let this happen to you! It could do serious harm to you -- worse than a stolen credit card. 
 
-### Secure Your Devices
+Another suggestion I've heard, for websites and services that don't offer strong security and for which you don't want or need to remember or store a password, is to just reset your password every single time you log in. In this way, your email account effectively becomes external authentication, and every password becomes single-use. You click "forgot password," check your email, click on the link there, enter some random gibberish (best generated with `pwgen 50` or similar) for your "new password" that you're never going to use again, and log in.
 
+### Secure Your Devices
 
 Sooner or later someone is going to get access to one of your devices -- tablet, phone, laptop, thumb drive. I've never had a phone or laptop lost or stolen myself, but it's a matter of time. I've known a lot of people in this situation. One of my old bosses, for example, forgot a laptop in the seat pocket of an airplane, and someone took it and didn't return it. 
 
@@ -103,8 +109,8 @@ Do you have any other suggestions? Please use the comments below to add your tho
 [2]: https://agilebits.com/onepassword
 [3]: https://lastpass.com/
 [4]: http://keepass.info/
-[5]: http://evanhahn.com/tape/two-factor-auth-list/
-[6]: www.truecrypt.org/
+[5]: http://twofactorauth.org/
+[6]: http://www.truecrypt.org/
 [7]: http://preyproject.com/
 [8]: https://medium.com/p/24eb09e026dd
 [9]: https://maps.google.com/locationhistory/
