@@ -1,7 +1,7 @@
 ---
-title: "If You Think Eventual Consistency Is Complicated, Try MVCC"
-date: "2014-12-07"
-url: /blog/2014/12/07/eventual-consistency-simpler-than-mvcc/
+title: "If Eventual Consistency Seems Hard, Wait Till You Try MVCC"
+date: "2014-12-08"
+url: /blog/2014/12/08/eventual-consistency-simpler-than-mvcc/
 categories:
   - Programming
   - Databases
@@ -15,16 +15,16 @@ This should sound familiar:
 > the database should do.
 
 Nobody argued this line of reasoning more vigorously than when trying to defend
-relational databases, especially during the darkest years (ca.  2008-2010), when
-NoSQL still meant *NO SQL DAMMIT*, all sorts of NoSQL databases were sprouting,
+relational databases, especially during the darkest years (ca.  2009-2010), when
+NoSQL still meant **NO SQL DAMMIT**, all sorts of NoSQL databases were sprouting,
 and most of them were massively overhyped.
 
-But as valid as those arguments against NoSQL's "eventual consistency" model
+But as valid as those arguments against NoSQL's "false economy" simplicity
 were and are, the arguments against relational databases' complexity hold true,
 too.
 
 The truth is that no database is really simple. Databases have a lot of
-functionality and behaviors -- even the "simple" databases do -- and require
+functionality and behaviors---even the "simple" databases do---and require
 deep knowledge to use well when reliability, correctness, and performance are
 important.
 
@@ -42,7 +42,7 @@ the best source to cite:
 > the data store or the application. If conflict resolution is done by the data
 > store, its choices are rather limited...
 
-One can quickly cite this out of context and argue that a bunch of
+One can trivially quote this out of context and argue that a bunch of
 database logic ends up being reimplemented in the application at read time,
 everywhere a read occurs. Indeed, sometimes this extreme does occur. Some use
 cases might actually need to check and reconcile conflicting updates with every
@@ -62,6 +62,8 @@ similar to Schroedinger's Cat, or double-slit experiments, or whatnot.
 Relatively ignorant people like me bring these up around the pool table and
 argue about them to try to sound smart, without knowing much about them.
 
+![schroedinger's cat](/media/2014/12/schroedingers-cat.jpg)
+
 Distributed systems are hard!  There's no denying that. But is there a better
 way?
 
@@ -77,26 +79,27 @@ just do that, and keep it simple?
 Let's talk about that word, simplicity.
 
 Simplicity in relational systems is only achieved when there's no concurrency.
-Add in concurrency, and all the complexity of distributed systems comes back to
+Add in concurrency, and all the complexity of distributed systems comes home to
 roost, because distributed and concurrent are fundamentally about solving some
 of the same problems. In fact, unless you're running a single-writer,
-single-reader database on a single-core server -- and maybe not even then, I'm
-not sure -- you actually have a distributed system inside your server.
+single-reader database on a single-core server---and maybe not even then, I'm
+not sure---you actually have a distributed system inside your server.
 Everything's distributed.
 
 <blockquote class="twitter-tweet" lang="en"><p>Sorry, I&#39;m not impressed with serializable isolation via a single writer mutex.</p>&mdash; Preetam Jinka (@PreetamJinka) <a href="//twitter.com/PreetamJinka/status/537313622410952704">November 25, 2014</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+Concurrent operation isn't a nice-to-have in most systems, it's a given.
 The way many relational systems handle concurrency is with this nifty little
 thing called Multi-Version Concurrency Control (MVCC). It's way simpler than
 eventual consistency. (Sarcasm alert!)
 
-Basically it works like this:
+It works a little like this:
 
 1. There are four standard transaction isolation levels, each with their own
 	kinds of constraints and tradeoffs. Each defines which kinds of bad,
 	inconsistent behaviors aren't allowed to happen.
 2. In REPEATABLE READ, the isolation level that a lot of people consider ideal,
-	you get "read snapshots" that let see an unchanging view of the database over
+	you get "read snapshots" that let you see an unchanging view of the database over
 	time. Even as it's changing underneath you! This is implemented by keeping
 	old row versions until they are no longer needed.
 3. Other isolation levels, such as READ COMMITTED, are "bad." Because they don't
@@ -112,10 +115,12 @@ Basically it works like this:
 
 Clearly, this is much better than eventually consistent databases, right?
 
-### The Brain-Rot That Is MVCC
+### The Rabbit-Hole That Is MVCC
 
 Unfortunately, the relational databases and their MVCCs are far from such a
 utopia. The reality is that MVCC is way more complex than I've described.
+
+![alice-down-the-rabbit-hole](/media/2014/12/alice-down-the-rabbit-hole.jpg)
 
 MVCC and the ACID properties are intertwined in very complex ways. The first
 problem comes from the ACID properties themselves.  These four properties are
@@ -129,12 +134,12 @@ other.<sup>2</sup>
 Next, isolation levels. Every database implements them differently. There's a
 lot of disagreement about the right way to implement each of the isolation
 levels, and this must have been an issue when the standards were written,
-because the standards are pretty vague themselves. Most databases are pretty
-opinionated. Here's what 
+because the standards leave a lot unspecified. Most databases are pretty
+opinionated, by contrast. Here's what 
 [PostgreSQL says](http://www.postgresql.org/docs/9.3/static/transaction-iso.html) (emphasis mine):
 
 > The reason that PostgreSQL only provides three isolation levels is that this
-> is *the only sensible way<sup>3</sup>* to map the standard isolation levels to the
+> is *the only sensible way*<sup>3</sup> to map the standard isolation levels to the
 > multiversion concurrency control architecture.
 
 And MySQL, [via InnoDB](http://dev.mysql.com/doc/refman/5.6/en/set-transaction.html):
@@ -159,7 +164,7 @@ things like "A somewhat Oracle-like isolation level with respect to consistent
 
 From experience I know that Microsoft SQL Server's locking and multiversion
 concurrency model is different yet again. So there's at least four different
-implementations with very different behaviors -- and we haven't even gotten to
+implementations with very different behaviors---and we haven't even gotten to
 other databases. For example, Jim Starkey's failed Falcon storage engine
 for MySQL was going to use "pure MVCC" in contradistinction to InnoDB's "mixed
 MVCC," whatever that means. Falcon, naturally, also had "quirks" in its MVCC
@@ -201,6 +206,8 @@ The abstraction just
 [leaked](http://www.joelonsoftware.com/articles/LeakyAbstractions.html), that's
 what.
 
+![Spiral Watch](/media/2014/12/spiral-watch.jpg)
+
 The problem is due to several logical necessities and implementation details.
 It's not solely one or the other. The MVCC model is trying to balance a bunch of
 things going on concurrently, and there are logical contradictions that can't go
@@ -209,9 +216,9 @@ cases that have to be handled with special exceptions in the behavior. And the
 implementation details leak through, inevitably. That's what you are seeing above.
 
 One of the logical necessities, for example, is that you can only modify the
-latest version of a row. If you try to update an old version (the version
+latest version of a row (eventually, at least). If you try to update an old version (the version
 contained in your consistent snapshot), you're going to get into trouble. There
-can be only one truth and conflicting versions of the data aren't allowed to be
+can (eventually) be only one truth, and conflicting versions of the data aren't allowed to be
 presented to a user as they are in eventual consistency. For this reason,
 various kinds of operations cause you to confront hard questions, such as:
 
@@ -249,7 +256,8 @@ authors](//blogs.oracle.com/mysqlinnodb/entry/mysql_5_5_innodb_change)
 that explains how various performance optimizations impact index operations.
 This might seem unrelated, but every access InnoDB makes to data has to interact
 with the MVCC rules it implements. And this all has implications for locking,
-deadlocks, and so on.
+deadlocks, and so on. Locking in itself is a complex topic in InnoDB. The list goes
+on.
 
 ### How It Works In PostgreSQL
 
@@ -338,7 +346,7 @@ Eventually consistent is easy to ridicule, though. Here's one of my favorites:
 
 Can we have the best of all worlds? Can we have transactional behavior with
 strong ACID properties, high concurrency, etc, etc? Some claim that we can.
-FoundationDB, for example, [asserts](//foundationdb.com/acid-claims) that
+[FoundationDB](//foundationdb.com/), for example, [asserts](//foundationdb.com/acid-claims) that
 it's possible and that their implementation is fully serializable, calling other
 isolation levels weak, i.e.  not true I-as-in-ACID. I haven't yet used
 FoundationDB so I can't comment, though I have always been impressed with what
@@ -353,10 +361,16 @@ And I don't think MVCC is the simpler paradigm of the two.
 
 Notes:
 
-1. If you don't tweet me puns and acid-cat meme pictures about this paragraph, I shall be disappointed in you.
+1. If you don't [tweet](//twitter.com/xaprb) me puns and acid-cat meme pictures about this paragraph, I shall be disappointed in you.
 2. Pun intended.
 3. Also note that PostgreSQL used to provide only *two* isolation
 	levels, and the documentation used to make the same comment about it being
 	the only sensible thing to do. It's not quite clear to me whether this is
 	meant to imply that it's the only sensible way to implement MVCC, or the only
 	sensible way to implement PostgreSQL's MVCC.
+
+Pic credits:
+
+* [Alice](http://www.writerightwords.com/down-the-rabbit-hole/)
+* [Schroedinger's Cat](https://www.flickr.com/photos/t_zero/7762560470/)
+* [Spiral Watch](https://www.flickr.com/photos/stuartncook/4613088809/)
