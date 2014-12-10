@@ -86,11 +86,10 @@ Now suppose I want to insert new rows *and* update existing rows. Again, there a
     from t2 as l
         left outer join t1 as r on l.d = r.a
     where r.a is null;
-
-update t1 as l
-    inner join t2 as r on l.a = r.d
-    set l.b = r.e, l.c = r.f;</pre>
-    
+    update t1 as l
+        inner join t2 as r on l.a = r.d
+        set l.b = r.e, l.c = r.f;</pre>
+        
     The benefit to this approach is standards compliance. This should work on a wide variety of database platforms.
     
     The downside is poor efficiency. Imagine the datasets are huge and there are only a few duplicate rows. The first statement inserts the (huge number of) new rows by joining the two huge datasets together. The next statement joins them together again, except this time the join is even bigger because of all the new rows in `t1`! And worse yet, it updates the rows that just got inserted, which is certainly not needed. It is far better to do the update first, which should only affect a few rows, then insert the new rows:
@@ -98,25 +97,22 @@ update t1 as l
     <pre>update t1 as l
     inner join t2 as r on l.a = r.d
     set l.b = r.e, l.c = r.f;
-
-insert into t1 (a, b, c)
-    select l.d, l.e, l.f
-    from t2 as l
-        left outer join t1 as r on l.d = r.a
-    where r.a is null;</pre>
-    
+    insert into t1 (a, b, c)
+        select l.d, l.e, l.f
+        from t2 as l
+            left outer join t1 as r on l.d = r.a
+        where r.a is null;</pre>
+        
     This is far more efficient, but it still might be very bad. It could lock the tables for a long time with large datasets, and like all two-step processes, it is not transactional.
 
 *   Use non-standard MySQL extensions to make the two-step process more efficient. MySQL allows multiple-table updates, which can be used to mark which rows are duplicates during the `UPDATE`, eliminating the need for an exclusion join in the `INSERT`. To accomplish this, `t2` needs a new column to record its "status," which I will call `done`.
     
     <pre>alter table t2 add done tinyint null;
-
 update t1
     inner join t2 on t1.a = t2.d
     set t1.b = t2.e,
         t1.c = t2.f,
         t2.done = 1;
-
 insert into t1 (a, b, c)
     select d, e, f from t2
     where done is null;</pre>
