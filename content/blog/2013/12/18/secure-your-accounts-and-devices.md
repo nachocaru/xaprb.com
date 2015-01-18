@@ -49,10 +49,13 @@ Cards](https://www.qwertycards.com/) and
 
 These have some weaknesses as well, but there are workarounds:
 
-1. They can only generate one password, so you can't change your password.
+1. They can only generate one password per site, so you can't change your password or have multiple logins per site.
 	Workaround: use different secret words to "salt" the passwords over time, and
 	remember which one you're currently using. If you can't log into a site, try
 	past secret words. Workaround 2: get a new card and keep the old one.
+	Workaround 3: add a "version" to the site; for example you might add v1 to
+	the site name or company name. You could also append a username so you can
+	have multiple logins, e.g. appending "personal" or "work" or similar.
 2. They generate strong passwords, which some sites may not accept. For example,
 	some sites have length limits or forbid "special characters" in passwords.
 	Workaround: just use the first N characters of the password. Workaround 2:
@@ -121,7 +124,7 @@ All of this is easily preventable. Given that one or more of your devices will s
 
 ### External Links and Resources
 
-* http://evanhahn.com/tape/two-factor-auth-list/
+* http://twofactorauth.org
 * [How PayPal and GoDaddy exposed someone to account theft][8]
 * [Good advice on common password misconceptions](https://www.qwertycards.com/strong_passwords.html)
 
