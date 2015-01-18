@@ -34,9 +34,50 @@ Here are some other important rules for password security.
 *   Never treat any account online, no matter how trivial, as "not important enough for a secure password." That last item deserves a little story. Ten years ago I didn't use a password safe, and I treated most websites casually. "Oh, this is just a discussion forum, I don't care about it." I used an easy-to-type password for such sites. I used the same one everywhere, and it was a common five-letter English word (not my name, if you're guessing). Suddenly one day I realized that someone could guess this password easily, log in, change the password and in many cases the email address, and lock me out of my own account. They could then proceed to impersonate me, do illegal and harmful things in my name, etc. Worse, they could go find other places that I had accounts (easy to find -- just search Google for my name or username!) and do the same things in many places. I scrambled to find and fix this problem. At the end of it, I realized I had created more than 300 accounts that could have been compromised. Needless to say, I was very, very lucky. My reputation, employment, credit rating, and even my status as a free citizen could have been taken away from me. Don't let this happen to you! 
 * Never use real answers to security questions. Always generate fake answers. City of birth? The moon. Favorite high school teacher? Swimming pool. First pet? Diesel locomotive. Store these answers in your password safe. I've guessed my way into many an account by knowing who someone's mother's maiden name was, or paternal grandfather, or whatever. It's usually easy to find this stuff online with a little searching.
 
+### Strong, Memorable Passwords Without a Safe
+
 Some people I know have a set of heuristics to generate a password for each service. "Take the first two letters, prepend the year of signup, reverse the last two letters..." These passwords are a) weak, b) not easy to change since the heuristics don't change, c) easy to figure out if someone gets one of your passwords. In other words, if someone is able to steal your password to, say, Amazon, and figures out from the password `no2014amaz` what your heuristic is, they'll be able to log into lots of other services with a little guesswork.
 
 If you feel unusually vigorous, you could try out [this person's mental encryption scheme](http://www.scilogs.com/hlf/mental-cryptography-and-good-passwords/), but I see a major weakness with that: it doesn't allow for changing your password, since your password is a hashed scheme of the service name. I also think the passwords it generates are less secure than some people have opined them to be, just because they're short. It's interesting but clearly impractical for most people. A password safe is much better.
+
+Another alternative, which I did not know about when I wrote this post, is a
+unique physical device to generate passwords. Two that I'm aware of are [QWERTY
+Cards](https://www.qwertycards.com/) and
+[PasswordCard](https://www.passwordcard.org/).
+
+![qwertycard](/media/2013/12/qwertycards.png)
+
+These have some weaknesses as well, but there are workarounds:
+
+1. They can only generate one password, so you can't change your password.
+	Workaround: use different secret words to "salt" the passwords over time, and
+	remember which one you're currently using. If you can't log into a site, try
+	past secret words. Workaround 2: get a new card and keep the old one.
+2. They generate strong passwords, which some sites may not accept. For example,
+	some sites have length limits or forbid "special characters" in passwords.
+	Workaround: just use the first N characters of the password. Workaround 2:
+	translate all "special characters" to something non-special, such as an
+	underscore. Neither is foolproof, since you'll have to remember this site as
+	a special exception, but it may be workable.
+
+### Avoiding Insecure Sites
+
+The limitations on length and special characters that I mentioned in the
+previous paragraph are red flags that your password is not secured properly in
+their servers.
+
+Do not trust such sites. If you're forced to use them, do so, but otherwise I
+would suggest finding another way to do your business.
+
+<blockquote class="twitter-tweet" lang="en"><p>Nothing screams &quot;we are wildly insecure&quot; like a 16-character limit on password length. Stay classy, <a href="https://twitter.com/AOL">@AOL</a>.</p>&mdash; Baron Schwartz (@xaprb) <a href="https://twitter.com/xaprb/status/544310203819495425">December 15, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/auswipe">@auswipe</a> no, a mere 18-character password limit is the dubious honor of <a href="https://twitter.com/CrateandBarrel">@CrateandBarrel</a></p>&mdash; Baron Schwartz (@xaprb) <a href="https://twitter.com/xaprb/status/544317402524430336">December 15, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+Another red flag is when you reset your password and instead of forcing you to create a new one, they a) send your existing one (which means they stored it, which they should *never* do) or b) generate a new one and send it to you in email.
+
+
 
 ### Use Two-Factor Auth
 
@@ -82,6 +123,7 @@ All of this is easily preventable. Given that one or more of your devices will s
 
 * http://evanhahn.com/tape/two-factor-auth-list/
 * [How PayPal and GoDaddy exposed someone to account theft][8]
+* [Good advice on common password misconceptions](https://www.qwertycards.com/strong_passwords.html)
 
 ### Things that don't help
 
