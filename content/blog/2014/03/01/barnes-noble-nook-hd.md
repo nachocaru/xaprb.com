@@ -33,6 +33,8 @@ Nook, I *actually use it* on a regular basis.
 
 ![Nook][2]
 
+<!--more-->
+
 I bought the Nook HD+ because it seemed like the best deal in midsize tablets.
 I got it refurbished for just over $100, via the official refurbished reseller
 on eBay.

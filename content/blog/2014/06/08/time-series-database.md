@@ -8,9 +8,11 @@ categories:
 
 I've had conversations about time-series databases with many people over the last couple of years. I [wrote previously](http://www.xaprb.com/blog/2014/03/02/time-series-databases-influxdb/) about some of the open-source technologies that people commonly use for time-series storage.
 
-![Time Series][timeseries]
+![Time Series](/media/2014/06/timeseries.jpg)
 
 Because I have my own ideas about what constitutes a good time-series database, and because a few people have asked me to describe my requirements, I have decided to publish my thoughts here. All opinions that follow are my own, and as you read you should mentally add "in my opinion" to every sentence.
+
+<!--more-->
 
 For the record, I currently have an efficient time-series database that is working well. It is [built on MySQL](https://vividcortex.com//blog/2014/04/30/why-mysql/). This is a high bar for a replacement to jump over.
 
@@ -119,5 +121,4 @@ Pic credits:
 * [Seasons](https://www.flickr.com/photos/hugovk/6798051186/)
 * [Theater](https://www.flickr.com/photos/sprengben/4976954312/)
 
-[timeseries]: /media/2014/06/timeseries.jpg
 [theater]: /media/2014/06/theater.jpg

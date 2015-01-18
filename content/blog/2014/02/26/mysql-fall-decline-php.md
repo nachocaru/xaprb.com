@@ -28,6 +28,8 @@ groups of people) holding such differences but being unaware of them, and
 therefore misinterpreting words and actions from a group who doesn't share the
 same worldview, believing them to be dishonest, irrational, or hostile.
 
+<!--more-->
+
 Looking at Josh's statements again, we can see two assertions that are just
 calmly stated as though everyone knows these things, they're true, it's stating
 the obvious:

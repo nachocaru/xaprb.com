@@ -12,6 +12,8 @@ Meditation has a host of scientifically proven immediate and long-term benefits.
 
 ![meditation](/media/2014/06/stones.jpg)
 
+<!--more-->
+
 I'll guide you through a process of checking in and becoming aware of your body and mind. Then we'll let the body rest until we come back for it, while we turn our attention to the breath for a few minutes. During this time we'll notice and be gently curious about thoughts and feelings that spontaneously arise. Then we'll bring our attention back to our bodies and senses, and finish with a few deep breaths.
 
 This practice is easy and nonjudgmental. Your mileage may vary, but I find that I'm able to take the resulting sense of calm and clarity with me into my other activities afterwards.

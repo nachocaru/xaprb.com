@@ -10,11 +10,13 @@ Focus is perhaps the most important attribute in an organization. In fact, my di
 
 Likewise, the ability to create and sustain focus is perhaps the most valuable skill of the organization's members, including both individual contributors and leaders.
 
-![Rainbokeh][rainbokeh]
+![Rainbokeh](/media/2014/05/rainbokeh.jpg)
 
 ### What Is Focus, And Why Is It Hard?
 
 My dictionary says focus is "an act of concentrating." Consider the root words: *concentrate* literally means to bring to a common center, to be centered together.
+
+<!--more-->
 
 More broadly, I think of focus as a *resource* similar to time, money, goodwill, and other more-or-less-fungible things. I claim that focus is usually an organization's most valuable, most threatened, and scarcest resource.
 
@@ -147,7 +149,6 @@ Photo credits:
 * https://www.flickr.com/photos/80901381@N04/7649502498
 * https://www.flickr.com/photos/velvettears/5982590252/
 
-[rainbokeh]: /media/2014/05/rainbokeh.jpg
 [perfection]: /media/2014/05/perfection.jpg
 [shell]: /media/2014/05/fossil.jpg
 [cityscape]: /media/2014/05/cityscape.jpg

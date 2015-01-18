@@ -24,6 +24,8 @@ a lot of trouble can come of a seemingly innocent request or offer.
 Does that sound so dangerous? Believe me, it is. A lot is on the line for you,
 Martha, and Jack. Consider:
 
+<!--more-->
+
 * How well do you know Martha? What if you're wrong about her business? If you
   introduce her to Jack, things might go wrong. They could turn out to be
   competitors. Or perhaps Martha is doing something that Jack thinks is

@@ -19,6 +19,8 @@ Why does this happen? As usual, there's no single root cause, but a variety of p
 
 When managers declare a freeze, they're not being malicious. They're doing something that seems to make sense. That's why it's important to understand the reasoning.
 
+<!--more-->
+
 The goal is simple: prevent breaking something that's working. And a lot of issues seem to trace back to a deployment that breaks a working system, so it's natural to want to avoid a deployment.
 
 The assumptions, in my experience, are that

@@ -1,6 +1,7 @@
 ---
 title: Essential Books
 date: "2005-01-01"
+menu: "main"
 ---
 This page lists the most valuable books on my bookshelf. In my opinion, these books contain knowledge or wisdom that is so valuable and so hard to find that they're worth far more than the cover price. I read a lot of books; [I post independent, unbiased, non-paid-for reviews of selected books][1] on this blog; and I mention the best of the best here on this page. If you're interested in sending me a review copy of a book, please feel free to contact me.
 
@@ -15,6 +16,16 @@ I'm the lead author of this book. It is the must-have book for anyone who goes b
 <a href="http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/07/web_operations.gif" alt="Web Operations" title="Web Operations" class="size-full wp-image-1864" /></a>
 
 I'm a contributing author to this book. It's a groundbreaking look at an emerging discipline, and explains how leading practitioners think and act to keep systems up and people happy. I reviewed it [here][4].
+
+### [The Ultimate Guide to Building Database-Driven Apps with Go](https://vividcortex.com/resources/building-database-driven-apps-with-go/)
+
+<a href="https://vividcortex.com/resources/building-database-driven-apps-with-go/"><img
+src='/media/2015/01/ultimate-guide.png' alt='The Ultimate Guide to Building Database-Driven Apps with Go' width="135" height="150" /></a>
+
+This is a free e-book that requires registration with VividCortex. I wrote this book after years of experience with Go's
+`database/sql` interface. I also was one of the main authors for <a
+href="http://go-database-sql.org">go-database-sql.org</a>, which taught me a lot
+about the subject matter. This is a complete rewrite from scratch, however.
 
 ### [Optimizing Oracle Performance][5]
 

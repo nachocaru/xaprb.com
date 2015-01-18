@@ -19,7 +19,7 @@ First, the opinion. If I may paraphrase, the discussion was something like this:
 
 I'm simplifying, because the speaker actually suggested that MySQL makes a really good database for primary-key lookups as well.
 
-The place I would differ slightly is on the last bullet point. It really depends on which key-value store you choose. The subtlety I'd suggest to consider is whether you'd like a simple key-value store that can do only simple key-value set/get operations, or whether you want something that also provides more functionality if needed. I would argue that for most use cases, there is at least occasional need for something more sophisticated, and often there's a frequent need.
+The place I would differ slightly is on the last bullet point. <!--more--> It really depends on which key-value store you choose. The subtlety I'd suggest to consider is whether you'd like a simple key-value store that can do only simple key-value set/get operations, or whether you want something that also provides more functionality if needed. I would argue that for most use cases, there is at least occasional need for something more sophisticated, and often there's a frequent need.
 
 The more "sophisticated" uses I'm talking about would include things such as evaluating expressions against the data, or performing operations such as `GROUP BY`. Both of these are orthogonal to use of `JOIN`. Consider how many times you've done something like the following:
 

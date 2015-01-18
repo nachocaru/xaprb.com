@@ -25,6 +25,8 @@ usually cost-per-ad-per-day and half a dozen other summary tables. In my case I
 saw these things in the MySQL context, but you can pick your technology and
 someone's trying to do time-series tasks on top of it.
 
+<!--more-->
+
 One of the problems you see in these situations is very limited flexibility. For
 example, you can't run ad-hoc queries. You can only run queries that are
 supported by your precomputed, predesigned summary tables.

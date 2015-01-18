@@ -11,7 +11,9 @@ Once upon a time I managed several teams of consultants. At a certain stage of t
 
 Cary Millsap, about whom I have written quite a bit elsewhere on this blog, suggested that I might profit from reading [*The Goal*](http://www.amazon.com/Goal-Process-Ongoing-Improvement/dp/0884271951/?tag=xaprb-20) by Eliyahu Goldratt. I will let history be the judge of the outcome, but from my perspective, this was revolutionary for me. It is a clear watershed moment in my memory: I lived life one way and saw things through one lens before, and afterwards everything was different.
 
-![Horse Race][horserace]
+![Horse Race](/media/2014/05/horse-race.jpg)
+
+<!--more-->
 
 *The Goal* helped me relate what I had learned about performance in the computer context --- queueing theory, system optimization, computer architecture, and so on --- to organizations. It taught me that, at least in some senses, humans and their interactions form systems that obey fundamentally the same laws as computer components. This is not to dehumanize people and treat them as components. Far from it: *The Goal* helped me to organize my thoughts and knowledge about computers by giving me human analogies. It helped me deepen and strengthen my intuition about how things work.
 
@@ -120,7 +122,6 @@ Photo credits: [horse race](https://www.flickr.com/photos/kingstongal/6011726882
 [chain-link fence](https://www.flickr.com/photos/willmontague/3813295674/).
 
 [perfmgmt]: https://vividcortex.com/blog/2014/04/21/monitoring-is-dead-long-live-performance-management/
-[horserace]: /media/2014/05/horse-race.jpg
 [smoke]: /media/2014/05/chaos.jpg
 [chain]: /media/2014/05/chain.jpg
 [dependencies]: /media/2014/05/chain-link.jpg

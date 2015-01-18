@@ -6,8 +6,13 @@
     <div class="content container">
 <div class="post">
   <h1>{{ .Title }}</h1>
-  <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+  <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }} in
+		{{ range .Params.categories }}
+		<a href="/categories/{{ . | urlize }}" class="btn btn-primary">{{ . }}</a>
+		{{ end }}
+  </span>
       {{ .Content }}
+		{{ partial "disqus.html" . }}
 </div>
 </div>
 

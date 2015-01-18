@@ -27,6 +27,8 @@ ultimately responsible for *everything*.
 
 ![Turtles](/media/2014/07/turtles.jpg)
 
+<!--more-->
+
 That's why the search for a root cause is usually a witch-hunt in disguise, trying
 to find someone or something to blame. If you think there is really a single
 cause, you eventually must identify a single person. If you stop short of that,

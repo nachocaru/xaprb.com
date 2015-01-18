@@ -24,6 +24,8 @@ article about MySQL. That was, I dunno, 2003?"
 The person then told me the following history. I can neither
 confirm nor deny it; what do you know about it?
 
+<!--more-->
+
 > Years ago there was a game called *Ultima Online*. It....
 
 I broke in. "Hey! In 1995 my brother and I were staff members at a Boy Scout

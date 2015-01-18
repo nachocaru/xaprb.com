@@ -19,6 +19,8 @@ sky and landing right in front of me.
 
 ![Velocity](/media/2014/06/velocity.png)
 
+<!--more-->
+
 It's not the talks (though those are great). It's the people. The people
 at Velocity are the people I want to spend my career with, the people thinking
 about the same types of problems I am, the people trying to work on similar

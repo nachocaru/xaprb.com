@@ -10,11 +10,13 @@ categories:
 
 A while ago I [wrote](http://www.xaprb.com/blog/2012/04/24/the-mysql-init-script-mess/) about some of the things that can make MySQL unreliable or hard to operate. Some time after that, in a completely unrelated topic, someone made me aware of a set of principles called [12-factor](http://12factor.net) that I believe originated from experiences building Heroku.
 
-![Dodecahedron][1]
+![Dodecahedron](/media/2014/05/dodecahedron.jpg)
 
 That's been over a year, and I've come to increasingly agree with the 12-factor principles. I guess I'm extremely late to the party, but making applications behave in 12-factor-compliant ways has solved a lot of problems for me.
 
 This experience has repeatedly reminded me of one of the applications that continues to cause a lot of the kinds of pain that the 12-factor principles have solved for me: MySQL.
+
+<!--more-->
 
 Example: configuration files. I initially thought MySQL's technique of multiple configuration files that serve as defaults, overrides to the defaults, and eventually are overridden by the commandline options was a good thing. In fact, you can blame me for that pattern being imitated in Percona Toolkit, if you want to blame anyone for it.
 
@@ -30,4 +32,3 @@ I don't propose blindly following 12-factor principles. They are most applicable
 
 [Pic](https://www.flickr.com/photos/sanchtv/4192677571)
 
-[1]: /media/2014/05/dodecahedron.jpg

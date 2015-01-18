@@ -2,10 +2,11 @@ title: "Xaprb"
 params:
     author: "Baron Schwartz"
     subtitle: "Stay Curious!"
+    description: "Stay Curious"
     ga_account: "0xdeadbeef"
     twitter: "@xaprb"
     domain: "xaprb.com"
-indexes:
+Taxonomies:
     category: "categories"
 baseurl: 'http://www.xaprb.com/'
 ---

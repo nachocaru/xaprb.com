@@ -6,16 +6,18 @@ categories:
   - Programming
 ---
 
-I spoke at [Gophercon][1] last week in Denver, and it was one of the best
+I spoke at [Gophercon](http://gophercon.com/) last week in Denver, and it was one of the best
 conferences I've attended. I can't remember learning so much and meeting so many
 great people in years. I have page after page of notes in my notebook, many of
 which I've yet to follow up on. The conference prompted a burst of learning and
 a flurry of creativity for me, as well as a huge list of things to study
 further.
 
-![Gophercon][5]
+![Gophercon](/media/2014/05/gophercon.png)
 
 In no particular order, here are some of the many highlights for me:
+
+<!--more-->
 
 * Meeting some of the Go team. Most of the people I've been interacting with or
   following online were there, although I didn't get to meet all of them in
@@ -56,10 +58,8 @@ and quality of the hallway track at this conference:
 Finally, if you would like to write Go professionally, [VividCortex][6] is
 hiring!
 
-[1]: http://gophercon.com/
 [2]: http://talks.golang.org/2014/go4gophers.slide
 [3]: http://talks.golang.org/2014/hellogophers.slide
 [4]: http://influxdb.org/blog/2014/04/30/java-is-the-cobol-of-my-generation-and-go-is-its-successor.html
-[5]: /media/2014/05/gophercon.png
 [6]: https://vividcortex.com/
 [7]: http://blog.joshsoftware.com/2014/05/05/my-experience-at-the-awesome-first-ever-gophercon-2014/

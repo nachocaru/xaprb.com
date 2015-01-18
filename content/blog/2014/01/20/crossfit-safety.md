@@ -23,6 +23,8 @@ about it, everyone in CrossFit works out insanely until they vomit, pushing
 themselves until their muscles break down and vital organs go into failure
 modes.
 
+<!--more-->
+
 That's not what I've experienced. I've never seen anyone vomit, or even come
 close to it as far as I know. I think that part of this dichotomy comes from
 certain people trying to promote CrossFit as a really badass thing to do, so

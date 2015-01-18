@@ -31,6 +31,8 @@ version," you won't find it here, because I find the math, physics, and theory
 of tuning to be fascinating, and I want to share that and not just the quick
 how-to.
 
+<!--more-->
+
 If you practice and train yourself to hear in the correct way, with a little time you'll be able to tune a guitar by just striking the open strings, without using harmonics or frets. You'll be able to do this quickly, and the result will be a guitar that sounds truly active, alive, energetic, amazing --- much better results than you'll get with a digital tuner. As a bonus, you'll impress all of your friends.
 
 ### My Personal History With Tuning

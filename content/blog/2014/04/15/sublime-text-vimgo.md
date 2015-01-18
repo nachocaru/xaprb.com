@@ -16,6 +16,8 @@ little harder, then.
 
 ![Superman][3]
 
+<!--more-->
+
 I think the thing that made me start using Sublime Text was the nice IDE-like code completion and
 other features, which are easy to install with a package called GoSublime. I was
 aware that these are also available in Vim, but when I tried, the configuration

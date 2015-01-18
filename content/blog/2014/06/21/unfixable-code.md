@@ -13,9 +13,11 @@ I posit that some code can become literally unfixable. Programmers can paint
 themselves into a corner with the code and it becomes impossible to get out
 again.
 
-![humpty][humpty]
+![humpty](/media/2014/06/humpty.jpg)
 
 The scenario arises when a specific set of conditions exists:
+
+<!--more-->
 
 * the code is difficult to work with for some reason --- inherent complexity, badly written code, whatever
 * the code is not tested and is not written to be testable
@@ -38,5 +40,3 @@ PS: I remember seeing claims that if more than a small amount (10% or so, as I
 recall?) of a program's code needs to be modified, a rewrite from scratch will
 be a better outcome in less time. If you can find any sources for that claim,
 please leave them in the comments.
-
-[humpty]: /media/2014/06/humpty.jpg

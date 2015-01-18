@@ -28,6 +28,8 @@ functionality and behaviors---even the "simple" databases do---and require
 deep knowledge to use well when reliability, correctness, and performance are
 important.
 
+<!--more-->
+
 ### Eventual Consistency is Hard
 
 Eventual consistency is hard to work with because developers bear extra burden.
