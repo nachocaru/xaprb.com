@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to avoid imprecise DECIMAL math in MySQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to avoid imprecise DECIMAL math in MySQL</h1>
+  <span class="post-date">Wed, Mar 8, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>MySQL versions 4.1 and below use imprecise math in operations with <code>DECIMAL</code> data, which is supposed to be precise (that&rsquo;s the whole point). There is no real solution to the problem, though there are workarounds. There is also at least one genuine bug in MySQL related to this problem. In this article I&rsquo;ll explain the problems, demonstrate them in action, and show you how to work around them.</p>
+
+<h3 id="toc_0">The problem</h3>
+
+<p>Many fractional values cannot be represented exactly as a <a href="http://en.wikipedia.org/wiki/Floating_point">floating-point number</a> in computers. For example, the value one-tenth, which we represent as 0.1 in base ten, is impossible to represent exactly in base two. SQL databases provide fixed-point data types to support precision math where it is needed. Currency values are a typical use.</p>
+
+<p>MySQL supports <code>DECIMAL</code> data types, which store numbers as strings instead of as numbers so there are no issues representing them exactly, but versions prior to 5.0 perform operations on the values with floating-point math. For example, the <code>SUM</code> function converts the string representation to floats before operating on them. This is documented in the <a href="http://dev.mysql.com/doc/refman/5.0/en/problems-with-float.html">MySQL manual</a>.</p>
+
+<h3 id="toc_1">Demonstration</h3>
+
+<p>I first encountered this problem while building a system to import my financial data into a database so I could query the transactions with SQL. I ran a query to find unbalanced transactions caused by splits that had been deleted:</p>
+
+<pre>select transaction, sum(amount) as amount
+from split
+group by transaction
+having sum(amount) &lt;&gt; 0;</pre>
+
+<p>Here&rsquo;s the result:</p>
+
+<table class="borders collapsed">
+  <tr>
+    <th>
+      transaction
+    </th>
+    
+    <th>
+      amount
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      1198d02fd0d69f117f4617ba964b69f
+    </td>
+    
+    <td style="text-align:right">
+      -2103.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      182fedf6bf740de209da658362307d6
+    </td>
+    
+    <td style="text-align:right">
+      0.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      2054cd0a4ce9ef8c7c61625b8c8fe1d
+    </td>
+    
+    <td style="text-align:right">
+      -4288.60
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      3c6cb1aa8df451e0d2a234bea919edd
+    </td>
+    
+    <td style="text-align:right">
+      0.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      559a3896c86610d860c37cd2ddd9d11
+    </td>
+    
+    <td style="text-align:right">
+      -2977.52
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      81487469bdbc9e862ddaf068086aabe
+    </td>
+    
+    <td style="text-align:right">
+      -0.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      8b35ecf20129dae97ba08cd75b6eb69
+    </td>
+    
+    <td style="text-align:right">
+      -875.70
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      96779b5478b7b4cda07e639729ac4ff
+    </td>
+    
+    <td style="text-align:right">
+      -0.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      9906d1f5e2c30208f6c922db4c6eea0
+    </td>
+    
+    <td style="text-align:right">
+      -2884.80
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      a05aeca558816b7ed8e86b06cce1a60
+    </td>
+    
+    <td style="text-align:right">
+      -0.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      a482d3416841b6870e22aeb7bc1e65b
+    </td>
+    
+    <td style="text-align:right">
+      -0.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      b1ae92ed169b21d7495b41c8980ae59
+    </td>
+    
+    <td style="text-align:right">
+      -886.82
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      d96ac1878cbbc0b25324acf1304c5ec
+    </td>
+    
+    <td style="text-align:right">
+      -4792.32
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      e8e1fcd15fc82ae2cdc057341efe4af
+    </td>
+    
+    <td style="text-align:right">
+      0.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      f5bfdeb0a7e93f501ca530663fa7ef9
+    </td>
+    
+    <td style="text-align:right">
+      -3241.28
+    </td>
+  </tr>
+</table>
+
+<p>The comparison <code>sum(amount) &lt;&gt; 0</code> should have eliminated about half those tuples. The fact that it didn&rsquo;t, combined with the presence of -0.00 (negative zero), made me suspect floating-point values were being used behind the scenes. The numbers were being displayed as fixed-point, but if I could display them as floating-point, I could verify my theory. It&rsquo;s not possible to use <code>CAST</code> to cast a value to floating-point in MySQL 4.1, but I accomplished the same thing by multiplying the <code>amount</code> column by 1e1. When I did this, I found the numbers weren&rsquo;t exactly zero; they were just close, for example, 3.1086244689504e-13.</p>
+
+<p>After hunting around for a while without luck, <a href="http://bugs.mysql.com/bug.php?id=17742">I entered a bug report</a>, which was changed to not-a-bug status with a friendly pointer to the documentation (oops!).</p>
+
+<h3 id="toc_2">The bug</h3>
+
+<p>There&rsquo;s still at least one real bug, though. The following query adds an <code>ORDER BY</code> clause to the query above:</p>
+
+<pre>select...
+order by amount;</pre>
+
+<p>The results are interesting indeed!</p>
+
+<table class="borders collapsed">
+  <tr>
+    <th>
+      transaction
+    </th>
+    
+    <th>
+      amount
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      d96ac1878cbbc0b25324acf1304c5ec
+    </td>
+    
+    <td style="text-align:right">
+      -4792.32
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      2054cd0a4ce9ef8c7c61625b8c8fe1d
+    </td>
+    
+    <td style="text-align:right">
+      -4288.60
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      f5bfdeb0a7e93f501ca530663fa7ef9
+    </td>
+    
+    <td style="text-align:right">
+      -3241.28
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      559a3896c86610d860c37cd2ddd9d11
+    </td>
+    
+    <td style="text-align:right">
+      -2977.52
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      9906d1f5e2c30208f6c922db4c6eea0
+    </td>
+    
+    <td style="text-align:right">
+      -2884.80
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      1198d02fd0d69f117f4617ba964b69f
+    </td>
+    
+    <td style="text-align:right">
+      -2103.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      b1ae92ed169b21d7495b41c8980ae59
+    </td>
+    
+    <td style="text-align:right">
+      -886.82
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      8b35ecf20129dae97ba08cd75b6eb69
+    </td>
+    
+    <td style="text-align:right">
+      -875.70
+    </td>
+  </tr>
+</table>
+
+<p>What happened to the spurious results? They disappeared! An <code>ORDER BY</code> clause is never supposed to do anything but order the results; it certainly should not eliminate tuples. I think this is kind of weird, creepy and cool at the same time.</p>
+
+<p>If I had to guess, I&rsquo;d say the results are being ordered <em>before</em> they are filtered by the <code>HAVING</code> clause, and in the process, converted back to <code>DECIMAL</code> from float, then eliminated by the <code>HAVING</code>. That may not be what&rsquo;s really happening, but it seems likely.</p>
+
+<p>This strange behavior raises the possibility of improving the code, too. Ordering may not be as efficient as it could be; it should be the last operation in a <code>SELECT</code> so it operates on as few tuples as possible. And an implicit cast forced by the ordering operation doesn&rsquo;t seem right, either; it means the ordering clause changes the values in the tuples as well as changing which tuples are present in the output. Both should be of concern.</p>
+
+<h3 id="toc_3">Workarounds</h3>
+
+<p>There is <em>no way to force precision math</em> in these types of operations. It cannot be done. No amount of casting or rounding will fix the problem reliably on every platform (math is different on every platform, and a &ldquo;solution&rdquo; may not work everywhere). There are a couple of workarounds, though.</p>
+
+<ul>
+<li>Compare to an acceptable tolerance. For example, instead of <code>having sum(amount) &lt;&gt; 0</code>, use <code>having abs(sum(amount)) &lt; .001</code>.</li>
+<li>Add an <code>ORDER BY</code> clause! Just kidding.</li>
+<li>Save the results in temporary tables, then perform further operations on them. Once they&rsquo;re stored in temporary tables, they will be cast back to their string representation and the close-but-not-quite values will become exact again.</li>
+<li>Upgrade to version 5.0 or above, where exact math is implemented with 64-bit integer operations. Yay!</li>
+</ul>
+
+<p>With a little imagination, it&rsquo;s probably possible to work around most situations. I hope this article helps you avoid possible problems with imprecise math.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

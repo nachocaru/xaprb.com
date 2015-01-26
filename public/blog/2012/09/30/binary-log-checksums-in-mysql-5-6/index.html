@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Binary log checksums in MySQL 5.6 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Binary log checksums in MySQL 5.6</h1>
+  <span class="post-date">Sun, Sep 30, 2012 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>MySQL 5.6 will have &ldquo;<a href="http://dev.mysql.com/doc/refman/5.6/en/replication-options-binary-log.html#sysvar_binlog_checksum">checksums in the binary log</a>,&rdquo; which can be variously described, but one phrase I&rsquo;ve heard a few times is, loosely, that it helps ensure replication integrity. This isn&rsquo;t specific enough to make it clear what it does, and when I&rsquo;ve talked about pt-table-checksum and its purpose (for example, on webinars), people often ask whether pt-table-checksum will be obsoleted by replication checksums in MySQL 5.6. The answer is no, they do completely different things. But it&rsquo;s kind of confusing, a bit like <a href="http://www.mysqlperformanceblog.com/2012/01/19/how-does-semisynchronous-mysql-replication-work/">semi-synchronous replication</a> in that regard.</p>
+
+<p>pt-table-checksum ensures that your replicas have the same logical dataset as their masters. They can drift for any number of reasons &ndash; someone changes data directly on the replica, there is an error in replication, a nondeterministic change is made on the master in STATEMENT binlog format &ndash; the list goes on. MySQL 5.6 will add many safeguards to help prevent or avoid some of these, but they are still possible. You need a tool like pt-table-checksum to verify <em>data integrity</em> on replicas. The server has no built-in way to do that for you.</p>
+
+<p>Binary log event checksums ensure that the binary log events are transmitted without corruption when replicas connect to the master and retrieve its binary log. This prevents problems such as bit-flips in memory, bugs in the I/O thread when it reads the log events and writes them to the relay log, network corruption, and so forth. It does <em>not</em> verify that the data that&rsquo;s changed by the binary log event will match the changes on the master.</p>
+
+<p>I&rsquo;m really happy with the binary log checksum feature, and glad that it&rsquo;s enabled by default. I have fixed many replication problems caused by binary logs being transmitted to a relay log incorrectly. Preventing them from happening in the first place, or detecting when they do and halting replication, is a great enhancement. By the way, <a href="http://bugs.mysql.com/bug.php?id=25737">I requested this feature</a>, so, thanks Oracle!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

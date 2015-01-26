@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> MySQL Conference and Expo 2007, Day 3 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>MySQL Conference and Expo 2007, Day 3</h1>
+  <span class="post-date">Thu, Apr 26, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p><a href="http://www.mysqlconf.com/"><img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" /></a>
+In my third day at the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo 2007</a>, I again attended keynotes and sessions, one of which I participated in. This evening I had dinner with a fellow community member and arrived late to the Quiz Show, even though I was supposed to be on one of the teams! I blame it on the restaurant, because they took too long to figure out what I meant when I said &ldquo;kÃ¶nnen wir einen Hubschrauber essen heute abend?&rdquo;</p>
+
+<p>Today I attended by a decent margin the best sessions I&rsquo;ve been at all week. If you don&rsquo;t think they&rsquo;re saving the best for last, come to my <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213">tutorial and demo on monitoring MySQL and InnoDB with innotop</a> tomorrow and see!</p>
+
+<p>Just two quick notes: I am recording the sessions I attend on my iRiver when possible, and will post the audio for download after I get home. Also, you can click on the headings of each of the talks; I have linked them to the session description.</p>
+
+<h3 id="toc_0">Keynotes</h3>
+
+<p>There were again three keynotes this morning. Eben Moglen delivered a fantastic, thought-provoking speech with which I mostly agreed. I was working on <a href="http://code.google.com/p/innotop">innotop</a> during the others, though I was in the room.</p>
+
+<p>Lunch was&hellip; I forgot to write it down. A salad and mixed vegetables, a roll, tomatoes that I had to cut. I don&rsquo;t know. I was trying to meet some folks in the exhibit hall and it&rsquo;s all a blur now.</p>
+
+<h3 id="toc_1"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/14304">NitroEDB for MySQL Storage Engine</a></h3>
+
+<p>This session was mostly a demo and/or sales pitch by three engineers from NitroSecurity. The technology seems well-done, but as far as I can tell the storage engine is not going to be GPL&rsquo;ed. Too bad they&rsquo;re missing a big opportunity. On the plus side, they did write some software to ease integration with the storage engine API, and that&rsquo;s GPL&rsquo;ed (probably because it has to be, since I guess it&rsquo;s going to be linked with MySQL).</p>
+
+<h3 id="toc_2"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10931">The Declarative Power of Views</a></h3>
+
+<p>This session was amazing! It was standing-room-only. Beat Vontobel started out with the classic &ldquo;animals&rdquo; guessing game, except it was a series of questions to figure out which programming language you were thinking of. The demo was live, running on his own server on another continent. You simply select from the questions table, and it asks you one question, which is just a single column of text. You insert your answer into the answers table, which is a single yes/no enum column. Then you select from the questions table again&hellip; and there&rsquo;s a different question now. As you continue, it narrows down the choices and eventually guesses what you&rsquo;re thinking of.</p>
+
+<p>Behind the scenes, even though all you can see is the questions and answers, is a series of views. No procedures, triggers, or functions.</p>
+
+<p>The idea? <strong>SQL is a declarative language, and can &ndash; and should &ndash; be used as a logic language, much like Prolog or Lisp. And the basic building block of the language is the view</strong>, which expresses a predicate. I would have said it&rsquo;s a functional language, and the SELECT statement is the way to express a predicate; a view is an abstraction over the SELECT. But I&rsquo;m not going to argue with such eloquence.</p>
+
+<p>(And for those of you who saw me raise my hand to the &ldquo;do you program in Lisp&rdquo; question, no, it&rsquo;s not because I&rsquo;m an Emacs user. I&rsquo;m not, I&rsquo;m a Vim user. I use Lisp for artificial intelligence and expert systems).</p>
+
+<p>As if his demo had not made the point forcefully, Beat then proceeded to show us Prolog and SQL code for &ldquo;who is a sibling of who,&rdquo; side by side. The parallel is obvious. It was tremendously impressive. If you weren&rsquo;t there, <em>download the slides and read them.</em></p>
+
+<h3 id="toc_3"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13949">Transaction Processing and Durability with solidDB for MySQL</a></h3>
+
+<p>This session was a very technical discussion of <strong>how isolation, Multi-Versioning Concurrency Control, durability and locking work in solidDB</strong>. The engine implements both pessimistic and optimistic locking models on a per-table basis, though the terms &ldquo;pessimistic&rdquo; and &ldquo;optimistic&rdquo; are somewhat misnomers, as is &ldquo;locking.&rdquo; It has more to do with record version numbers than locks, as I understand it. Durability (the D in ACID) can also be set to relaxed or strict, at the session level. These features, and the discussion around them, brought the compromises of speed, concurrency, storage, and durability into stark clarity. I&rsquo;m impressed by solidDB&rsquo;s range of choices for the DBA. Of course they are also going to support some notion of compatibility with InnoDB&rsquo;s behavior.</p>
+
+<p>Interestingly, you can mix pessimistically and optimistically locked tables in a single transaction, and the behavior is not upgraded or downgraded &ndash; you get pessimistic behavior on one table and optimistic on the other.</p>
+
+<p>I have not yet learned how solidDB will be licensed.</p>
+
+<h3 id="toc_4"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12492">MySQL Server Roadmap</a></h3>
+
+<p>This session was packed. Robin Schumacher took the first part of it, showing <strong>what&rsquo;s planned for the entire MySQL product line</strong> over the next year or so. It was a talk calculated to make the audience spend the next year squirming in anticipation. <em>Oooh, finally I&rsquo;ll get enhanced replication monitoring, and subqueries will get decently optimized, and&hellip;!!!!</em></p>
+
+<p>Robin is a confident, eloquent speaker. The kind of person whom I imagine promises things that make the developers in the audience cringe slightly. &ldquo;Replication conflict detection! Next slide.&rdquo;</p>
+
+<p>He gave a demo of the upcoming online backup of a large table while selecting from the table in another session, but amusingly didn&rsquo;t seem to notice that the SELECT queries in the other window were failing with syntax errors. (Never mind, though&hellip; you can do the demo yourself if you want; he included the code you&rsquo;ll need on a recent article. Robin, if you&rsquo;re reading this: if you noticed the statements failing, you are one cool customer to continue without missing a beat!)</p>
+
+<p>He followed this with a quick mention of storage engine partners and then proceeded to pitch MySQL Enterprise and MySQL Workbench. Afterwards he finished up with a quote that went something like this: &ldquo;Backup is coming. It&rsquo;s real. It&rsquo;s working.&rdquo; ;-) Seriously, I believe him.</p>
+
+<p>Jeffrey Pugh took the microphone at this point. He showed us a timeline of MySQL history and features, where we are today, and again what&rsquo;s planned. Interestingly, he made a public admission of 5.0 being released before being ready, and said this mistake will not be repeated &ndash; but apparently sometime in the last week or so MySQL has decided to skip directly from version 5.1, omitting 5.2 and going right to 6.0. Is this version number inflation? It seems like it. Here are some semi-quotes: &ldquo;We don&rsquo;t want bugs in 6.0. We don&rsquo;t want to repeat 5.0.&rdquo; So, how about not jumping into it? Give it some breathing room.</p>
+
+<p>Someone asked if MySQL will include other programming languages like a JVM embedded, and Robin and Jeffrey made soothing noises into the microphone. My reaction, in case anyone&rsquo;s listening is <em>for the love of all that&rsquo;s good and pure keep those things the heck away from MySQL.</em> Please! It is and should be a RDBMS, or at least tries to be and ought to keep trying to. If you embed these things in it, next thing you know it&rsquo;ll be like Microsoft SQL Server where you can run a fricking web service from a stored procedure.</p>
+
+<p>And of course, there was a discussion about the perpetual topic: what is the difference between Community and Enterprise? I was surprised to hear Robin and Jeffrey correcting each other on this!</p>
+
+<p>All in all, a lively session. Nothing is boring around here.</p>
+
+<h3 id="toc_5"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12911">Lightning Rounds with Top MySQL Community Contributors</a></h3>
+
+<p>I got talking to an engineer, who shall not be named, from a Big Company we all know and love (but which shall not be named) in the hall. Thus I arrived late to the session in which I was supposed to participate. Fortunately, I was not listed first. It was a series of community contributors giving lightning-fast (well, sometimes) talks about <strong>our experiences as community members</strong>. While I sat listening, something strange happened; I began to think in a different way than I had prepared to speak. Thus when it was my turn, I ignored my slides and spoke extemporaneously. I suppose this is a good thing; one is not supposed to read one&rsquo;s slides.</p>
+
+<h3 id="toc_6"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12541">Query Optimizer Internals and What&rsquo;s New in the MySQL 5.2 Optimizer</a></h3>
+
+<p>Holy cow was this a great session. This was the most riveting thing I&rsquo;ve seen all week. You could really tell who was into this kind of geekiness, because there weren&rsquo;t that many people in the room. I even tried to record the question and answer session during the intermission as we all crowded around Timour Katchaouno at the lectern.</p>
+
+<p>This session went deep into <strong>how the optimizer really works</strong>. Topics included how it is similar to and different from other database systems (most of them actually generate machine code; MySQL does not), what it does and why, and what&rsquo;s coming in the next versions. And for the first time I really understand why MySQL&rsquo;s core developers think the output of EXPLAIN is somehow understandable to an ordinary mortal (by the way, I have been planning for a while to reverse translate EXPLAIN into a tree view for the rest of us. I&rsquo;ll get to it, really).</p>
+
+<p>Timour explained MySQL&rsquo;s cost-based query optimization, which is built on &ldquo;units of disk access.&rdquo; He showed its evolution from pre-5.0 where it was an exhaustive search of all possible execution plans, which is O(n!) and didn&rsquo;t perform well on more than a handful of tables in in a join. I never had this happen to me, but apparently you could quite easily write queries that would take hours, days, weeks just to generate a query plan &ndash; and that&rsquo;s before you even started to execute! These days you can join up to 62 tables, and the algorithm uses exhaustive left-deep search up until a threshold (currently 7 tables), after which it becomes greedy and can choose a non-optimal plan. At least it&rsquo;ll terminate, though.</p>
+
+<p>I have good news for the query optimization team, though: my brother has solved the Travelling Salesperson problem, which is N-P complete of course. Obviously left-deep search can be transformed into this; so this problem is solved as well. I&rsquo;m sure it will only be a matter of time before the patents go through, so who&rsquo;s the highest bidder for the best query optimizer on the planet? Anyone?</p>
+
+<p>This talk brought up a bunch of questions, which I need to follow up on. I&rsquo;ll report more in a future article.</p>
+
+<p>What fun! I haven&rsquo;t been this excited since my days at University, scribbling notes as I struggled to understand my teacher&rsquo;s thick accent and predilection for thinking of everything in terms of real-time databases, sigmas, and so on.</p>
+
+<h3 id="toc_7">Dinner</h3>
+
+<p>I went with Martin Friebe for supper at a Thai restaurant. On the way there we got talking about table checksum algorithms to detect when a slave is or isn&rsquo;t in sync with its master. Martin had some great ideas, which I will implement into <a href="http://code.google.com/p/maatkit">MySQL Table Checksum</a> to provide another way for you to guarantee two tables have the same data. This particular method will have lower impact on the servers (no locking) and guarantee a consistent read at exactly the same point in the binlog. It will be very useful in certain circumstances. Thank you Martin for the company and the great conversation!</p>
+
+<h3 id="toc_8">Quiz Show</h3>
+
+<p>I stumped the judges and picked up a spare copy of <em>Programming Perl</em>. You can never have enough, eh?</p>
+
+<p>Okay, I didn&rsquo;t really stump the judges; someone asked a question nobody knew the answer to, and I proposed an answer nobody could refute. Let&rsquo;s see, what does the NDB option <a href="http://dev.mysql.com/doc/connector/j/en/server-system-variables.html#optvar_ndb_report_thresh_binlog_epoch_slip">ndb_report_thresh_binlog_epoch_slip</a> mean? Is it really the amount of clock skew NDB will permit between the data nodes?</p>
+
+<blockquote cite="http://dev.mysql.com/doc/connector/j/en/server-system-variables.html#optvar_ndb_report_thresh_binlog_epoch_slip">
+  <p>
+    This is a threshold on the number of epochs to be behind before reporting binlog status. For example, a value of 3 (the default) means that if the difference between which epoch has been received from the storage nodes and which epoch has been applied to the binlog is 3 or more, a status message will be sent to the cluster log.
+  </p>
+</blockquote>
+
+<p>Nope. But I got the book anyway.</p>
+
+<h3 id="toc_9">Next</h3>
+
+<p>Well, I&rsquo;m fairly slap-happy at this point with jet lag and lack of sleep, but I still want to make a plug for my <a href="http://code.google.com/p/innotop">innotop</a> session tomorrow at 10:45 in Ballroom C. Even if you don&rsquo;t use InnoDB, you will find this tool has something to offer you. And my presentation and demo is going to be fun, with gratuitous use of stock images. Come on out.</p>
+
+<p>And by the way, I just spoke to someone from another Large Company We All Know, who asked me to implement a new feature in innotop. As Monty is famous for saying, &ldquo;Trivial. It&rsquo;s trivial.&rdquo; If you want to see it, be there; I&rsquo;ll have it done in time for the session.</p>
+
+<p>Now if you&rsquo;ll excuse me, I have to fire up Vim&hellip;</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

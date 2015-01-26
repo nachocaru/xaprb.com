@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Architecture on Xaprb </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.xaprb.com/categories/architecture/index.xml/</link>
+    
+    
+    
+    <updated>Tue, 25 Jun 2013 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Quantifying Abnormal Behavior in System Metrics</title>
+      <link>http://www.xaprb.com/blog/2013/06/25/quantifying-abnormal-behavior-in-system-metrics/</link>
+      <pubDate>Tue, 25 Jun 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/06/25/quantifying-abnormal-behavior-in-system-metrics/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve posted &lt;a href=&#34;https://vividcortex.comhttp://www.xaprb.com/blog/2013/06/25/quantifying-abnormal-behavior/&#34;&gt;slides for my Velocity talk on VividCortex&amp;rsquo;s blog&lt;/a&gt;. The talk explained how we use exponentially weighted moving statistics to generate a meta-metric of abnormality for the time-series metrics measured from MySQL. That&amp;rsquo;s kind of a mouthful. Maybe you had to be there :-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Thinking clearly about fitting a model to data</title>
+      <link>http://www.xaprb.com/blog/2013/01/31/thinking-clearly-about-fitting-a-model-to-data/</link>
+      <pubDate>Thu, 31 Jan 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/01/31/thinking-clearly-about-fitting-a-model-to-data/</guid>
+      <description>&lt;p&gt;I have often seen people fitting curves to sets of data without first understanding whether that is appropriate. I once even &lt;a href=&#34;http://www.xaprb.com/blog/2011/01/15/sleep-while-you-can-because-it-wont-last-long/&#34; title=&#34;Sleep while you can, because it won’t last long&#34;&gt;used this blog&lt;/a&gt; to criticize someone for doing that.&lt;/p&gt;
+
+&lt;p&gt;I was trying to explain that it&amp;rsquo;s wrong to fit a model to a set of measurements, unless the model actually describes the process that produced the measurements.&lt;/p&gt;
+
+&lt;p&gt;All of my explanations (and rants) have fallen far short of the clarity and simplicity of this &lt;a href=&#34;http://graphpad.com/guides/prism/6/curve-fitting/&#34;&gt;curve-fitting guide&lt;/a&gt;. It&amp;rsquo;s a user&amp;rsquo;s manual for the GraphPad software, but it&amp;rsquo;s really about curve-fitting in general. It is &lt;em&gt;excellent&lt;/em&gt; reading. Here are a few selected gems:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Choosing a model is a scientific decision. You should base your choice on your understanding of chemistry or physiology (or genetics, etc.). The choice should not be based solely on the shape of the graph&amp;hellip; Don&amp;rsquo;t use a computer program as a way to avoid understanding your experimental system, or to avoid making scientific decisions.&lt;/p&gt;
+
+&lt;p&gt;Your goal in using a model is not necessarily to describe your system perfectly. A perfect model may have too many parameters to be useful. Rather, your goal is to find as simple a model as possible that comes close to describing your system. You want a model to be simple enough so you can fit the model to data, but complicated enough to fit your data well and give you parameters that help you understand the system, reach valid scientific conclusions, and design new experiments.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This software user&amp;rsquo;s manual is better than any textbook I&amp;rsquo;ve read. There&amp;rsquo;s no fluff, just common sense, uncommonly well-written.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll leave you with another example of curve-fitting that took place recently: &lt;a href=&#34;http://redmonk.com/dberkholz/2013/01/21/github-will-hit-5-million-users-within-a-year/&#34;&gt;predicting Github&amp;rsquo;s user growth&lt;/a&gt;. Does the author use a model that&amp;rsquo;s known to actually describe the processes at work in the growth of a population? A commenter makes a &lt;em&gt;great&lt;/em&gt; point: &amp;ldquo;I&amp;rsquo;d love to see what happens if you just fit to the first 3 years and chart out the modelled prediction vs reality for years 4 and 5.&amp;rdquo; That&amp;rsquo;s one of the fastest ways to tell whether you&amp;rsquo;re seeing things. All meaning has pattern, but not all pattern has meaning. That&amp;rsquo;s a Neil Gunther quote.&lt;/p&gt;
+
+&lt;p&gt;Speaking of that, Neil Gunther counters with a &lt;a href=&#34;https://groups.google.com/d/topic/guerrilla-capacity-planning/Hd9SQy654c4/discussion&#34;&gt;power law model&lt;/a&gt;. He thinks Redmonk is wrong and it&amp;rsquo;ll take quite a bit longer for Github to hit 5 million users. My money&amp;rsquo;s on Neil Gunther.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

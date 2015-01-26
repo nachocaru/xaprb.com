@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> PostgreSQL Conference East 2009, Day Three &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>PostgreSQL Conference East 2009, Day Three</h1>
+  <span class="post-date">Sun, Apr 5, 2009 in
+		
+		<a href="/categories/Conferences" class="btn btn-primary">Conferences</a>
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>As I said yesterday, I was only able to attend a couple of talks at the <a href="http://www.postgresqlconference.org/2009/east/">PostgreSQL Conference East 2009</a> this morning before leaving to catch my flight back to Virginia.</p>
+
+<ul>
+<li>Effects of Flash and SSDs on PostgreSQL &ndash; by <a href="http:/http://www.xaprb.com/blogs.sun.com/jkshah/">Jignesh Shah of Sun Microsystems</a>. Jignesh went through a series of comparisons between hard drives and SSD drives, looking at where they really make sense in terms of performance, capacity and price. He found exactly the same things that <a href="http://www.mysqlperformanceblog.com/2009/03/02/ssd-xfs-lvm-fsync-write-cache-barrier-and-lost-transactions/">Vadim wrote about on our blog: write caching is enabled by default</a>, and the vendors don&rsquo;t want you to disable it, because the device needs the write cache for wear leveling. While SSD has some performance advantages over spindle-based drives, I&rsquo;m still <a href="http://www.amazon.com/Innovators-Dilemma-Revolutionary-Business-Essentials/dp/0060521996?tag=xaprb-20">not seeing it as a killer &ndash; yet</a>. But I think these issues will work themselves out. The manufacturers just need to battery back that cache and everything will change.</li>
+<li>Predicting Postgres Performance: Practical Queueing Theory for Postgres DBAs &ndash; by <a href="http://www.myyearbook.com/">Jonah Harris of myYearbook</a>. Another excellent talk. Basically &ldquo;queueing theory in a nutshell,&rdquo; with some examples of how you can expect performance to change, given some things you already know. Someone urged me to get the myYearbook crew to the Percona Performance Conference, and I think we tried but lost the momentum somewhere. I&rsquo;ll be emailing Jonah about it now. This talk would be perfect there.</li>
+</ul>
+
+<p>Off topic: I picked up a handful of OpenSolaris disks. They&rsquo;ll send you one free, but if you&rsquo;re like me, typing in your address is too much to do. I&rsquo;ll throw it on VirtualBox and see how it does, I&rsquo;ve been curious about it for a while. If you&rsquo;re local to me and you want one, let me know and I&rsquo;ll give you one next time I see you.</p>
+
+<p>And then, sadly, I had to head out the door and get on the train. Goodbye Philly! Goodbye Postgres friends! See you next time.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

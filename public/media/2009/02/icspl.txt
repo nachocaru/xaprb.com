@@ -1,0 +1,45 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings FATAL => 'all';
+use English qw(-no_match_vars);
+
+foreach my $file ( @ARGV ) {
+   open my $fh, "<", $file or die $OS_ERROR;
+   my %speakers;
+   my %companies;
+   my ($sun, $others) = (0, 0);
+   while ( my $line = <$fh> ) {
+      chomp $line;
+      my $desc = $line;
+      if ( $line =~ m/^DESCRIPTION/ ) {
+         while ( $line !~ m/^END/ ) {
+            $line = <$fh>;
+            chomp $line;
+            $desc .= $line;
+         }
+      }
+      my ($by) = $desc =~ m/^DESCRIPTION:Presented by (.*\))\./;
+      next unless $by;
+      foreach my $speaker ( split(/(?<=\)), /, $by) ) {
+         my ($person, $company) = $speaker =~ m/([^\(]*) \((.*?)\)/;
+         die $by, $speaker unless $company;
+         if ( $company =~ m/mysql|sun/i ) { # Lump together Sun and MySQL
+            $company = "Sun/MySQL";
+            $sun++;
+         }
+         else {
+            $others++;
+         }
+         $companies{$company}++;
+         $speakers{$person}++;
+      }
+   }
+
+   print $file, "\n";
+   printf "\tNumber of speakers:              %d\n", scalar(keys %speakers);
+   printf "\tNumber of companies:             %d\n", scalar(keys %companies);
+   printf "\tNumber of times Sun/MySQL speak: %d\n", $sun;
+   printf "\tNumber of times others speak:    %d\n", $others;
+   close $fh;
+}

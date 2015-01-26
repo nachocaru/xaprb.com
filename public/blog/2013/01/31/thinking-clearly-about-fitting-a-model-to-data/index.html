@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Thinking clearly about fitting a model to data &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Thinking clearly about fitting a model to data</h1>
+  <span class="post-date">Thu, Jan 31, 2013 in
+		
+		<a href="/categories/Architecture" class="btn btn-primary">Architecture</a>
+		
+  </span>
+      <p>I have often seen people fitting curves to sets of data without first understanding whether that is appropriate. I once even <a href="http://www.xaprb.com/blog/2011/01/15/sleep-while-you-can-because-it-wont-last-long/" title="Sleep while you can, because it won’t last long">used this blog</a> to criticize someone for doing that.</p>
+
+<p>I was trying to explain that it&rsquo;s wrong to fit a model to a set of measurements, unless the model actually describes the process that produced the measurements.</p>
+
+<p>All of my explanations (and rants) have fallen far short of the clarity and simplicity of this <a href="http://graphpad.com/guides/prism/6/curve-fitting/">curve-fitting guide</a>. It&rsquo;s a user&rsquo;s manual for the GraphPad software, but it&rsquo;s really about curve-fitting in general. It is <em>excellent</em> reading. Here are a few selected gems:</p>
+
+<blockquote>
+<p>Choosing a model is a scientific decision. You should base your choice on your understanding of chemistry or physiology (or genetics, etc.). The choice should not be based solely on the shape of the graph&hellip; Don&rsquo;t use a computer program as a way to avoid understanding your experimental system, or to avoid making scientific decisions.</p>
+
+<p>Your goal in using a model is not necessarily to describe your system perfectly. A perfect model may have too many parameters to be useful. Rather, your goal is to find as simple a model as possible that comes close to describing your system. You want a model to be simple enough so you can fit the model to data, but complicated enough to fit your data well and give you parameters that help you understand the system, reach valid scientific conclusions, and design new experiments.</p>
+</blockquote>
+
+<p>This software user&rsquo;s manual is better than any textbook I&rsquo;ve read. There&rsquo;s no fluff, just common sense, uncommonly well-written.</p>
+
+<p>I&rsquo;ll leave you with another example of curve-fitting that took place recently: <a href="http://redmonk.com/dberkholz/2013/01/21/github-will-hit-5-million-users-within-a-year/">predicting Github&rsquo;s user growth</a>. Does the author use a model that&rsquo;s known to actually describe the processes at work in the growth of a population? A commenter makes a <em>great</em> point: &ldquo;I&rsquo;d love to see what happens if you just fit to the first 3 years and chart out the modelled prediction vs reality for years 4 and 5.&rdquo; That&rsquo;s one of the fastest ways to tell whether you&rsquo;re seeing things. All meaning has pattern, but not all pattern has meaning. That&rsquo;s a Neil Gunther quote.</p>
+
+<p>Speaking of that, Neil Gunther counters with a <a href="https://groups.google.com/d/topic/guerrilla-capacity-planning/Hd9SQy654c4/discussion">power law model</a>. He thinks Redmonk is wrong and it&rsquo;ll take quite a bit longer for Github to hit 5 million users. My money&rsquo;s on Neil Gunther.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

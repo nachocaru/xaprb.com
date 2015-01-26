@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to display an HTML table as a folder tree &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to display an HTML table as a folder tree</h1>
+  <span class="post-date">Tue, Jan 10, 2006 in
+		
+		<a href="/categories/Web" class="btn btn-primary">Web</a>
+		
+  </span>
+      <p>XHTML tables provide several elements to group and structure data, including <a href="http://www.w3.org/TR/REC-html40/struct/tables.html#rowgroups">row groups</a> (<code>thead</code>, <code>tbody</code>, and <code>tfoot</code>). Styling row groups with CSS can make data relationships visually obvious. One familiar way to group data visually is with Explorer-style folder icons.</p>
+
+<p><img src="/media/2006/01/folder-view-slug.png" alt="Data grouped as a folder view" height="85" width="218" /></p>
+
+<p>The basic idea is to use <code>tbody</code> as many times as needed to group each set of rows together. The image above shows a single <code>tbody</code> element. I think using multiple <code>tbody</code> elements may not occur to developers because it sounds like there ought to be only one &ndash; but that&rsquo;s not true. Tables can have as many <code>tbody</code> elements as you want. You can optionally have one (and only one) <code>thead</code> and <code>tfoot</code> too. Read the <a href="http://www.w3.org/TR/REC-html40/struct/tables.html">Tables in HTML documents</a> part of the HTML spec for more, if you want (there&rsquo;s no need to for this article).</p>
+
+<p>The next thing to do is add some CSS. The image will go at the far left of the leftmost (first) <code>td</code> as a background image, and I&rsquo;ll add some left-padding to keep the text from overlapping the image. I identify the leftmost column with the <code>first-child</code> class.</p>
+
+<p>Next, the first and last rows in the group need special treatment. The middle rows get a little dotted &ldquo;tree-view&rdquo; extender line, but the first row needs a folder icon and the last needs the extender line not to continue downward (because there&rsquo;s nothing below it to connect to). To accomplish this, the first row in the group gets the <code>first-child</code> class, and the last gets <code>class=&quot;last-child&quot;</code>. Now I can use these to set different background images for the first and last rows in the group.</p>
+
+<p>If I knew that my browser was a Good Browser such as Opera, Firefox or Konqueror, I could use the CSS selector <code>:first-child</code> instead of adding classes, but since IE is still popular, I&rsquo;m adding the classes to the HTML instead.</p>
+
+<p>This part is optional, but I like to do it because it keeps the number of images down: use exactly the same image for every row (first, middle and last), and set the <code>background-position</code> property so a different part of the image will show up (top, middle, and bottom of the image).</p>
+
+<p>That&rsquo;s it! Here&rsquo;s a <a href="http://www.xaprb.com/media/2006/01/row-groups-folder-demo.html">demo</a>.</p>
+
+<p>Another option is to re-code the first row of each group with <code>th</code> elements instead of <code>td</code>. The <code>scope</code> attribute can then be set to <code>rowgroup</code>, which conveys additional semantic meaning about the row and eliminates the need to add the <code>first-child</code> class to the <code>tr</code>. Whether I do that depends on the data. I don&rsquo;t think it makes sense for my demo, but I can imagine data applications where it does. I can also imagine making the leftmost column <code>th</code> instead of <code>td</code> in my sample data; that strikes me as appropriate. Regardless of how I do it, if I mark the data up semantically, I can use CSS to reflect that meaning visually.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Installing CyanogenMod on the Barnes and Noble Nook HD&#43; &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Installing CyanogenMod on the Barnes and Noble Nook HD&#43;</h1>
+  <span class="post-date">Mon, Jan 19, 2015 in
+		
+		<a href="/categories/Hardware" class="btn btn-primary">Hardware</a>
+		
+  </span>
+      
+
+<p>I <a href="/blog/2014/03/01/barnes-noble-nook-hd/">wrote previously</a> about how much I
+was using and enjoying my 9-inch Barnes and Noble Nook HD+. I&rsquo;m still using and
+enjoying it, but a few of the things I mentioned in that article&mdash;the useless home
+screen, the schizophrenic updates from two app stores at once, and so
+on&mdash;started to annoy me. I started to fantasize about installing a clean,
+uncluttered Android operating system on it instead of using the Nook operating
+system. The best-known general-purpose Android OS is CyanogenMod, and that&rsquo;s
+what I was thinking about.</p>
+
+<p><img src="/media/2015/01/cyanogenmod.jpg" alt="cyanogenmod" />
+</p>
+
+<p>Last time I did this, I didn&rsquo;t like the result. I&rsquo;ll explain why, then move on
+to show you how to install CyanogenMod easily on the Nook HD+ and talk about the
+results. (I&rsquo;m very happy thus far).</p>
+
+<h3 id="toc_0">It Didn&rsquo;t End Well Last Time</h3>
+
+<p>I never wrote about this, but when I <a href="/blog/2011/06/04/using-the-nook-color-as-a-full-featured-android-tablet/">previously had a 7-inch Nook
+Color</a>,
+and installed CyanogenMod on it, I was happy at first but after a while it
+wasn&rsquo;t what I wanted anymore.</p>
+
+<p>I had a number of issues with things like Netflix not working, exiting with an
+error about being unsupported on this device (though clearly it wasn&rsquo;t the
+device, since the stock Nook OS had Netflix), various apps not working well, and
+so on. The base OS seemed to work well enough, but after trying to install some
+more apps, I found some problems. Combine that with the not-large-enough size
+and the short battery life, and I just eventually sold it on eBay. I tried
+wiping it and reinstalling stock Nook OS, but for some reason I must have not
+backed up the stock ROM correctly, and it didn&rsquo;t really function right.</p>
+
+<p>So I was very hesitant to go through the same experience again with my new Nook.
+I like the hardware and user experience of the new one. It&rsquo;s light, it&rsquo;s a good
+size, it has great battery life, and it&rsquo;s powerful enough (mostly). What if I
+ended up with a glitchy OS again, or problems with apps?</p>
+
+<h3 id="toc_1">Trying Less Drastic Measures</h3>
+
+<p>To mitigate this risk, first I tried a couple of alternatives. One was to
+install a custom home screen via the Nova Launcher app, instead of the Nook home
+screen. This let me get rid of the large, ugly area where Nook wanted to show me
+things I didn&rsquo;t want to buy. Combined with a nice sharp Zen-rocks-and-a-flower
+wallpaper, it felt like a much nicer user experience.</p>
+
+<p>The lock screen was still ugly, though. I tried disabling that and replacing it
+with another one from the app store, but that never worked very well; I was
+unable to really disable the Nook&rsquo;s lock screen, and the new lock screen didn&rsquo;t
+work right. The default Nook lock screen is really pretty embarrassing. There&rsquo;s
+a high-resolution screen on the device and the lock screen looks like it was
+made for a low-res device. I&rsquo;m nitpicking, but my point is you can skin some of
+the Nook, but not all of it, so the user interface still feels cheap.</p>
+
+<p>There were other minor problems&mdash;clearly the Nook OS is based on an old version
+of Android. Fast task switching (and task killing) aren&rsquo;t possible.  There&rsquo;s
+also lots of little annoyances like having apps pop up messages &ldquo;Syncing Your
+Library&rdquo; while watching a movie.</p>
+
+<p>Two major problems remained. One was the bloatware installed on the Nook,
+including the Nook app store that irritatingly kept overwriting versions of apps
+installed from the Google Play store. More serious, though, was the app
+instability. Gmail was unusable for a couple of weeks while some bug worked its
+way through the release process. Gmail is a big part of why I have the tablet to
+begin with. And even after it became usable again, it would crash at random
+times. I&rsquo;d be watching a movie and see a pop-up, &ldquo;Unfortunately, Gmail has
+stopped.&rdquo; I&rsquo;d open the Chrome browser and it would lock up the tablet for 30
+seconds and then kill itself. I am not sure if I&rsquo;m right, but I blame this on
+the Nook app store and/or the ancient Nook OS, not on Gmail.</p>
+
+<p>Another problem was performance. I installed <a href="http://www.monumentvalleygame.com/">Monument
+Valley</a> and I love, love, <em>love</em> it. It&rsquo;s
+just amazing. But the Nook didn&rsquo;t seem quite fast enough. Graphics
+stuttered, and there were visual glitches and other artifacts.</p>
+
+<p>There were some other things&mdash;inability to encrypt the whole device, for
+example.</p>
+
+<p>So although the skinned device was a lot nicer, it was still starting to wear on
+me. And I read online that CyanogenMod solved these problems: clean,
+uncluttered; latest version of Android; lots of performance improvements; safety
+and privacy improvements over and above even Google&rsquo;s open-source Android
+releases; ability to encrypt the whole device.</p>
+
+<p>So I decided to go for it and install CyanogenMod! But not on <strong>my</strong> device. I
+didn&rsquo;t want to take the chance of wiping it and ending up wishing I hadn&rsquo;t.
+When I bought my first Nook HD+ 9-inch tablet, they were selling for $175 or so,
+and $100 or so refurbished on eBay. Now they&rsquo;re discontinued, and eBay is the
+best place to buy one. I got a practically brand-new one for $109 including
+shipping. <strong>This</strong> device would be my sandbox. And if I liked it, well, I have a
+gift idea for what to do with the extra one.</p>
+
+<h3 id="toc_2">Installing CyanogenMod On The Nook HD+ 9-Inch</h3>
+
+<p>Installing CyanogenMod is really quite easy. The online forums are
+super-confusing, though. That&rsquo;s the hard part. All the instructions seem to
+cater to someone who already knows what they&rsquo;re doing, or they&rsquo;re written in a
+spastic style that is impossible to understand. In many cases they just plain
+don&rsquo;t work; they are written by people who are speculating/extrapolating and
+haven&rsquo;t done it themselves.</p>
+
+<p>So I&rsquo;m going to walk you through it plain and simple. I&rsquo;ll follow the
+instructions on the <a href="http://wiki.cyanogenmod.org/w/Ovation_Info">CyanogenMod Wiki for the Nook
+HD+</a> and the corresponding
+<a href="http://wiki.cyanogenmod.org/w/Install_CM_for_ovation">installation
+instructions</a> with some
+clarifications and extra details. A lot is missing or assumed there.</p>
+
+<p><strong>What To Know</strong></p>
+
+<p>Some terminology, in case you encounter it on the Internet:</p>
+
+<ul>
+<li>CM = CyanogenMod, the operating system you&rsquo;ll install on the tablet</li>
+<li>CWM = ClockworkMod, a &ldquo;recovery&rdquo; system for installing new software</li>
+<li>Gapps = Google Apps, the Google-branded Android ecosystem apps including the Google Play store (not at all related to Google&rsquo;s office and productivity suite for businesses)</li>
+<li>adb = the Android debug bridge, software you&rsquo;ll use to communicate with the Nook when it is booted into recovery mode</li>
+</ul>
+
+<p><strong>What You&rsquo;ll Do</strong></p>
+
+<p>You&rsquo;re going to follow these steps:</p>
+
+<ul>
+<li>Download CyanogenMod, Google Apps, and adb</li>
+<li>Download ClockworkMod and make a bootable SD card with it</li>
+<li>Boot the Nook to the ClockworkMod recovery operating system</li>
+<li>Use the Android Debugger to transfer CyanogenMod and Google Apps to the Nook</li>
+<li>Use ClockworkMod to install these two onto the Nook</li>
+<li>You&rsquo;re done</li>
+</ul>
+
+<p><strong>What You&rsquo;ll Need</strong></p>
+
+<ul>
+<li>A computer with USB and an SD card reader</li>
+<li>A micro-SD card and an adapter for using it in a full-size SD card reader. Mine is 2GB, but you won&rsquo;t go wrong if you use a larger one</li>
+<li>A fully charged Nook</li>
+</ul>
+
+<p><strong>What To Download</strong></p>
+
+<p>You need to download some things before you start. Don&rsquo;t unzip these files, just
+download them. Don&rsquo;t put them onto the SD card. Just keep them on your computer.</p>
+
+<p>CyanogenMod: the Nook HD+ is code-named &ldquo;ovation&rdquo;. Get the <a href="http://download.cyanogenmod.org/?type=snapshot&amp;device=ovation">latest ovation
+snapshot build</a>
+and download it to your computer. Make a note of the CyanogenMod version you
+download. I downloaded the following file just now:</p>
+
+<pre><code>cm-11-20141112-SNAPSHOT-M12-ovation.zip
+</code></pre>
+
+<p>This is CyanogenMod version 11.</p>
+
+<p>Google Apps: you&rsquo;ll want the proprietary Google Apps, which will give you access
+to the Google Play store and so on. Download them from this link:
+<a href="http://wiki.cyanogenmod.org/w/Gapps">http://wiki.cyanogenmod.org/w/Gapps</a> Choose the correct version of them for your
+OS, in my case for CyanogenMod (CM) version 11. I downloaded this file:</p>
+
+<pre><code>gapps-kk-20140606-signed.zip
+</code></pre>
+
+<p>ClockworkMod: any version that is built for the Nook HD+. This is the sketchiest
+part of the process, because you typically have to hunt around for something
+built by someone and just linked into a forum thread. You don&rsquo;t need the latest
+and greatest, you just need something that&rsquo;ll boot up from a micro SD card. I
+downloaded <code>NookHDplus-CWM-6046-for-internal-memory-rev0-(07-13-14).zip</code> from
+<a href="http://forum.xda-developers.com/showpost.php?p=42406126&amp;postcount=7">this XDA
+thread</a> and
+found it to work fine. Download this to your computer as well.</p>
+
+<p><strong>Making A Bootable Micro SD Card</strong></p>
+
+<p>For some reason, the online instructions all do this simple task in bizarre
+ways. I think a part of that may be due to people using Windows, which doesn&rsquo;t
+have the <code>dd</code> command. If you use Windows, you may need to download a bunch of
+stuff as instructed on the XDA thread I just linked to. But if you use a
+Unix-based OS, you can just put your SD card into your computer and copy the
+recovery image onto it with <code>dd</code>.</p>
+
+<p>You&rsquo;ll need to make sure the SD card device is unmounted, and figure out what the
+device&rsquo;s Unix path is. I assume you can do that without my help. On my Mac, the
+device was <code>/dev/disk2</code>.</p>
+
+<p>Then, unzip the ClockworkMod file, and <code>dd</code> the <code>recovery.img</code> onto the device, e.g.</p>
+
+<pre><code>sudo dd bs=4m if=recovery.img of=/dev/your/device/here
+</code></pre>
+
+<p>This will take a few minutes to complete.</p>
+
+<p>Now you have a card that you can put into the Nook&rsquo;s card reader and boot it up.
+Instead of booting up to the Nook OS, it will boot up to the &ldquo;recovery mode&rdquo;
+operating system on the card. Try it. You should see the Nook splash screen for
+a second or two, then a Cyanoboot logo will appear:</p>
+
+<p><img src="/media/2015/01/cyanoboot.png" alt="cyanoboot" />
+</p>
+
+<p>A moment later you should see a menu with options to do some basic operations&mdash;reboot,
+install, backup, and so on. If this doesn&rsquo;t work, you&rsquo;ll need to
+re-read, perhaps read online info&hellip; keep working until you get it. It worked
+the first time for me.</p>
+
+<p>Use the volume keys to highlight the desired menu item, the Nook&rsquo;s home button (the
+N button) to select/OK the highlighted item, and the power button to go back.</p>
+
+<p>Note that, instead of following the confused and contradictory instructions
+online about copying various files to this bootable SD card, and whether that
+will or won&rsquo;t work and in what order you have to do it, we are only putting the
+<code>recovery.img</code> file onto it.</p>
+
+<p><strong>Make A Backup</strong></p>
+
+<p>Once you have the Nook booted into recovery mode on the SD card, you need to
+make a backup. Use the volume keys to go to &ldquo;backup and restore&rdquo; and choose
+&ldquo;backup to /sdcard&rdquo; and let this run. It may take a while. This will be your
+backup in case you want to restore the stock Nook OS and all your data.</p>
+
+<p>While this is working, move on to the next step.</p>
+
+<p><strong>Install the Android Debug Bridge</strong></p>
+
+<p>The Android debug bridge (adb) software lets you connect your computer to the Nook
+when it&rsquo;s booted into recovery mode. We&rsquo;ll use it to copy the necessary files to
+the Nook&rsquo;s internal storage and then to install these.</p>
+
+<p>Follow the instructions on the <a href="http://wiki.cyanogenmod.org/w/Adb">CyanogenMod
+Wiki</a> to install adb. Please read the
+instructions carefully. You basically need to download some software, unzip it,
+execute it, and in the menu that appears, select a fairly minimal set of tools
+to install. The initial install isn&rsquo;t the full suite of software, it&rsquo;s just an
+installer you use to get the stuff you really need.</p>
+
+<p>You don&rsquo;t need to really &ldquo;install&rdquo; the software on your computer, it&rsquo;s more a
+matter of downloading. For example,
+I did not modify my computer&rsquo;s <code>$PATH</code> variable to put <code>adb</code> into my path. I
+just opened a terminal and executed <code>./platform-tools/adb &lt;options&gt;</code> to do what
+I needed. Afterwards I deleted the directory from my downloads folder and my
+computer is clean and unaltered, with nothing &ldquo;installed.&rdquo;</p>
+
+<p><strong>Wipe The Nook</strong></p>
+
+<p>Presumably your Nook&rsquo;s backup has finished now. Next,
+you have to completely reset the Nook. You can&rsquo;t install CyanogenMod onto a Nook
+that hasn&rsquo;t been reset. I don&rsquo;t quite understand why, but the installation
+process failed for me (and others online) until a factory reset.</p>
+
+<p>Don&rsquo;t use the factory reset in the Nook itself. Use the reset function built
+into your bootable ClockworkMod disk. Select <strong>wipe data/factory reset</strong> and let
+it run. It should only take a moment.</p>
+
+<p><strong>Mount The Nook&rsquo;s Internal Storage</strong></p>
+
+<p>You have to mount the Nook&rsquo;s internal storage (often referred to as &ldquo;sdcard&rdquo;
+although it is not really a card) so you can copy the files you&rsquo;re going to
+install. Navigate back to the main menu and select <strong>mounts and storage</strong>, then
+<strong>mount /data</strong>. For some reason ClockworkMod refers to it under different
+names, but this is the correct thing to mount on the Nook HD+.</p>
+
+<p><strong>Copy CyanogenMod and Google Apps to the Nook</strong></p>
+
+<p>There are a couple ways to install software onto the Nook. I tried the
+&ldquo;sideload&rdquo; method mentioned in the CyanogenMod wiki&rsquo;s instructions, but it
+didn&rsquo;t work. The &ldquo;push and install&rdquo; method worked, so that&rsquo;s what I&rsquo;ll document
+here.</p>
+
+<p>Remove the USB cable from the Nook power charger and plug it into your computer.
+Your computer is now connected via USB to the Nook.</p>
+
+<p>Now you can use the <code>adb push</code> tool to copy the downloaded software from your
+computer to the Nook, and tell the Nook to store the zip files in <code>/sdcard</code>/,
+which is the storage you just mounted on the Nook. In my case, it looked like this:</p>
+
+<pre><code>~/Downloads/android-sdk-macosx/platform-tools/adb push ~/Downloads/cm-11-20141112-SNAPSHOT-M12-ovation.zip /sdcard/
+~/Downloads/android-sdk-macosx/platform-tools/adb push ~/Downloads/gapps-kk-20140606-signed.zip /sdcard/
+</code></pre>
+
+<p>These take a few moments to transfer. When I did it, they took about 55 and 40 seconds,
+respectively.</p>
+
+<p><strong>Install The New Software</strong></p>
+
+<p>Now you&rsquo;re ready to take the plunge! On the Nook, use the power button to return
+to the main menu, and select <strong>install zip</strong>, then <strong>install zip from /sdcard</strong>.
+Select the CyanogenMod zip file and install it, then the Google Apps (gapps) zip
+file and install that.</p>
+
+<p>If you don&rsquo;t see the files: reboot the Nook and try the transfer again. I have
+gone through this process a couple of times and had the transfer appear to
+succeed (but the files never appeared in the ClockworkMod menu), then when I
+rebooted the Nook and tried again, it worked fine. I believe it was a problem
+mounting the <code>/sdcard</code> directory.</p>
+
+<p>After installing: Reboot. You&rsquo;re done. First boot will take a minute or two;
+you&rsquo;ll be presented with a setup menu after that. Subsequent boots will take about 20 seconds in my experience.</p>
+
+<h3 id="toc_3">Results</h3>
+
+<p>The process of installing CyanogenMod onto an Android device is a bit like
+buying a computer with Windows and replacing it with Linux.</p>
+
+<p>Thus far, I have noticed the following results from using my freshly installed
+CyanogenMod operating system:</p>
+
+<ol>
+<li>It is faster and graphics are noticeably better. No glitches or visual
+artifacts in Monument Valley, for example.</li>
+<li>All the Nook-specific annoyances are gone, naturally.</li>
+<li>Hulu&rsquo;s app wouldn&rsquo;t install, saying &ldquo;Your device isn&rsquo;t compatible with this
+version.&rdquo; Too bad; with the stock Nook OS, it installed OK. Not that I ever
+used it, but it installed.</li>
+<li>No problems with Netflix, Spotify, Pandora, and lots and lots of other apps.</li>
+<li>I discovered things I didn&rsquo;t even know about my Nook&rsquo;s hardware. For example,
+I thought it didn&rsquo;t have a microphone. With the newer version of Android
+that&rsquo;s installed now, the Google Now &ldquo;OK Google&hellip;&rdquo; instructions work fine.
+It hears and recognizes my voice! Mind blown!</li>
+<li>Having a clean, uncluttered tablet OS is so nice!</li>
+<li>Full-device encryption doesn&rsquo;t do anything. It shows an Android logo, but no
+progress bar or other feedback. I didn&rsquo;t realize it was stuck until I got
+suspicious after 10 hours or so, checked online, and found that this is
+apparently a known problem. Alas, I still cannot take this device out of my
+house or put any sensitive data on it, because <a href="/blog/2013/12/18/secure-your-accounts-and-devices/">it is not secure
+enough</a> for me.</li>
+</ol>
+
+<p>In other words, I&rsquo;m loving it as a tablet to use around the home.</p>
+
+<p>I leave you with this precious gift from Ida, the protagonist in Monument Valley. You&rsquo;re welcome.</p>
+
+<p><img src="/media/2015/01/ida-flower.png" alt="Ida and the Flower" />
+</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

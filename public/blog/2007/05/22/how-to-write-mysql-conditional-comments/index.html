@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to write MySQL conditional comments &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to write MySQL conditional comments</h1>
+  <span class="post-date">Tue, May 22, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>MySQL&rsquo;s version-specific conditional comment syntax confused me for the longest time. Then I learned about <code>printf</code> formatting rules, and it all became clear. Read on if you don&rsquo;t already know what I mean.</p>
+
+<p>First I&rsquo;ll explain what I&rsquo;m talking about. <a href="http://dev.mysql.com/doc/refman/4.1/en/comments.html">MySQL allows specially formatted comments with a server version number embedded in them</a>. Servers newer than the version number will execute the commented-out code, and older servers won&rsquo;t. This is really useful sometimes. For example, if you want a SQL script only to run on versions where that feature is supported, you can write it in a conditional comment. The output of mysqldump usually contains a lot of them.</p>
+
+<p>They look like this: <code>/*!32358 ... CODE ...*/;</code>. One useful example is <code>SHOW /*!50002 GLOBAL */ STATUS</code>, which will show global status on all MySQL versions, instead of showing global status on older versions and session status on newer versions.</p>
+
+<p>You can find examples in many places, but for a long time, I didn&rsquo;t know how to write my own. I didn&rsquo;t know which numbers should go where. For example, if I wanted to write something to run in 4.1.22 and greater, how should I write the version number? Is it <code>/*!4122*/</code> or <code>/*!41022*/</code> or <code>/*!40122*/</code>&hellip; I just got lost.</p>
+
+<p>Once I figured it out, of course, it&rsquo;s very simple. The version number always has five digits. The first number is the major version. The next two are the minor version, left-padded with zeros, and the last are the revision, also left-padded. In terms of <code>sprintf</code>, it looks like <code>sprintf('%d%02d%02d', major, minor, revision)</code>. So the number I needed above was 40122.</p>
+
+<p>The advantage to this formatting is that you can do a string comparison on the formatted version numbers to determine whether one is greater than the other; you don&rsquo;t have to compare each part of the version number separately.</p>
+
+<p>I remembered my long period of confusion recently when I was writing some conditional comments for a new tool. It felt almost too simple to write about, but maybe I&rsquo;m not the only one who was in the dark for a long time!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

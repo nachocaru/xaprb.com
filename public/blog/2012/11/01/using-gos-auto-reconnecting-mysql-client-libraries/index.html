@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Using Go&#39;s auto-reconnecting MySQL client libraries &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Using Go&#39;s auto-reconnecting MySQL client libraries</h1>
+  <span class="post-date">Thu, Nov 1, 2012 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>I&rsquo;ve been doing a little bit of programming in Go recently, and really enjoying it. It&rsquo;s an awesome language with really solid libraries. It reminds me a lot of the .NET framework in that it&rsquo;s well-thought-out, but the Go language itself is a lot smaller, less formal, and a lot more expressive than I ever found C# to be. And that&rsquo;s saying a lot &ndash; C# was my previous favorite language, along with the occasional Java, C++, Python, JavaScript, and &ndash; gasp &ndash; Visual Basic 6. Go beats them all.</p>
+
+<p>But I digress. I&rsquo;m writing Go applications that talk to MySQL. Some of them talk to the database in read-only ways, and I just wanted to share this neat little nugget about the <a href="https://github.com/ziutek/mymysql">MyMySQL client libraries</a> (pure-Go implementation; not a wrapper around a C library). One of its features, which you can enable optionally, is autorc. This stands for auto-reconnect to the server. It&rsquo;s done very smartly. In fact, you don&rsquo;t even have to connect at all; you just query the server, and the connection either opens or reopens. I&rsquo;ve tested it and it&rsquo;s really working well.</p>
+
+<p>This has removed a large pile of smelly code from my application. It&rsquo;s awesome. That&rsquo;s all, folks!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

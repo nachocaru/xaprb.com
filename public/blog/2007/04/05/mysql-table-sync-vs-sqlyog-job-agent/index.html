@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> MySQL Table Sync vs. SQLyog Job Agent &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>MySQL Table Sync vs. SQLyog Job Agent</h1>
+  <span class="post-date">Thu, Apr 5, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>When I wrote my first article on <a href="http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/">algorithms to compare and synchronize data between MySQL tables</a>, Webyog&rsquo;s Rohit Nadhani left a comment on the article mentioning the SQLyog Job Agent, which has a similar function. Although I have been developing <a href="http://code.google.com/p/maatkit">MySQL Table Sync</a> essentially in isolation, I have been meaning to give SQLyog Job Agent a try. I recently did so, and then followed that up with an email conversation with Rohit. This article is about my experience using the SQLyog Job Agent from the command line, some thoughts on the algorithm as best I can deduce it, and benchmark results against MySQL Table Sync.</p>
+
+<h3 id="toc_0">Description of SQLyog Job Agent</h3>
+
+<p><a href="http://www.webyog.com/en/downloads.php">SQLyog Job Agent (SJA)</a> is part of the SQLyog suite of tools. It is not designed as a stand-alone command-line tool, but is meant to execute jobs created by the SQLyog GUI tool. I have not yet tried the GUI, as I&rsquo;m mostly a command-line user. (However, I know many people who use the GUI tool every day).</p>
+
+<p>Since the jobs SJA executes are created by the GUI, there&rsquo;s not much documentation for the command-line tool. It has no help output, but it wasn&rsquo;t hard to create a sync .xml file by examining the included samples.</p>
+
+<p>There is no changelog for SJA alone, but Rohit pointed me to the <a href="http://www.webyog.com/faq/33_7_en.html">FAQ entry for SQLyog</a> overall. The earliest mention I can find is October of 2003.</p>
+
+<h3 id="toc_1">My experience using SJA</h3>
+
+<p>I downloaded version 5.27 of SJA on April 2, noticed some potential issues with it, and contacted Rohit to discuss those. I saw it was issuing the statements to resolve differences in a sequence that would cause problems &ndash; <code>DELETE</code>, <code>INSERT</code>, <code>UPDATE</code>. Indeed, I browsed the help forums and saw this order of operations was an attempt to fix problems caused by syncing in the order <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>:</p>
+
+<blockquote cite="http://www.webyog.com/forums/index.phpshowtopic=3135">
+  <p>
+    We recently changed the order of operation for DATASYNC from INSERT -> DELETE -> UPDATE to DELETE -> INSERT -> UPDATE. That can be confusing (rows will be deleted and next inserted), but in the end data should come there.
+  </p>
+</blockquote>
+
+<p>There can still be problems even with the new order of operations, and I saw strange behavior in the sync jobs I ran. For example, to sync a table that was merely missing 500 rows, it was deleting 103 rows and then inserting 603, instead of just inserting 500. I asked Rohit about this, and he confirmed it was a bug that was fixed in version 5.28:</p>
+
+<blockquote>
+<p>This algorithm was introduced for a very small period of time to handle &ldquo;live&rdquo; changes on a source table during sync of that table. Now we have changed it to update/delete/update. Update includes both INSERTs and UPDATEs. You should download 5.28 and try.</p>
+
+<p>The extra phase for update is required only if you choose to delete &ldquo;Extra rows from the target&rdquo;. Consider this situation: After updating the target in Phase-I, we want to find out extra rows in the target. During this period, a source row changes. The target assumes that this data is &ldquo;extra&rdquo; and delete it from itself. So you might land up with an &ldquo;non-synced&rdquo; dataset most of the times in a live database.</p>
+</blockquote>
+
+<p>I must have downloaded 5.27 only a few hours before 5.28 was available. In any case, I re-downloaded (it&rsquo;s just over 1MB &ndash; not large) and as Rohit promised, the issues I saw were gone.</p>
+
+<p>I also mentioned some other minor things I saw in the query log output, such as possibly redundant queries, and Rohit indicated those would be fixed in the next version.</p>
+
+<h3 id="toc_2">SQLyog Job Agent&rsquo;s sync algorithm</h3>
+
+<p>I would never reverse engineer a closed-source application, but peeking in the query log is fair game! I found most queries fairly straightforward. SJA finds differences with checksum queries, which appear to be inspired by <a href="http://www.perlmonks.org/?node_id=381053">Giuseppe Maxia&rsquo;s work on remote database comparison in 2004</a>. Here&rsquo;s a typical query, abbreviated to fit on the page:</p>
+
+<pre>select  left(concat(IF(`col1`&lt;0,'-','+'), lpad(abs(`col1`),9,'0')),4),
+   concat(
+      sum(conv(substring(md5(concat_ws(",",[all columns])),1,8),16,10)),
+      sum(conv(substring(md5(concat_ws(",",[all columns])),9,8),16,10)),
+      sum(conv(substring(md5(concat_ws(",",[all columns])),17,8),16,10)),
+      sum(conv(substring(md5(concat_ws(",",[all columns])),25,8),16,10))
+   )as hashkey,
+   count(*)as yog_cnt, `col1`
+from test2
+group by 1 order by 2</pre>
+
+<p>Here are the first few rows resulting from that query on my test data set:</p>
+
+<pre>+------+------------------------------------------------------+---------+-----------+
+| [..] | hashkey                                              | yog_cnt | col1      |
++------+------------------------------------------------------+---------+-----------+
+| +411 | 1034880993212471840918027163413727068358             |       1 | 411149050 | 
+| +100 | 10388239781124433886971298309216711174110863         |       6 | 100356640 | 
+| +483 | 104843946004106862890734106456706210129920770876     |      49 | 483694780 | 
+| +284 | 10504012808811182574082112225135699596455074096      |      51 | 284017580 | 
+| +368 | 1054403046550107382218321910460918668291081851629911 |     489 | 368027560 | 
++------+------------------------------------------------------+---------+-----------+</pre>
+
+<p>As SJA finds differences between the tables, it adds <code>WHERE</code> clauses to the checksum query, narrowing the range of rows by limiting the upper and lower boundaries of the rows that are being checksummed. Here&rsquo;s a typical <code>WHERE</code> clause:</p>
+
+<pre>where   `col1` >= 219000000 and `col1` &lt; 220000000</pre>
+
+<p>In subsequent queries SJA also increases the size of the substring it takes on the first column, from 4 to 7 to 10 leftmost characters. If you ignore the sign digit, this means it is narrowing the grouping by 10<sup>3</sup> rows each time, or in other words grouping the current working set into a maximum of 1000 groups. This is very similar to <a href="http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/">the algorithm I proposed in my first article</a>, as a fallback mechanism when the DBA cannot use an index to design a grouping strategy.</p>
+
+<p>Beyond this, SJA seems to do the kinds of queries you&rsquo;d expect a sync tool to issue.</p>
+
+<h3 id="toc_3">Potential weaknesses in SQLyog Job Agent&rsquo;s checksums</h3>
+
+<p>I&rsquo;ve worked hard to design a very strong checksum algorithm for MySQL Table Sync to detect when rows have changed. I&rsquo;ve spent many hours consulting with several experts, including someone who studied applied statistics for a PhD at MIT. After nearly a month of work on this algorithm, I was eager to see the SJA checksum algorithm.</p>
+
+<p>SJA slices the base-16 checksum into four strings 8 characters long, converts those into base 10, and sums them over the group. It then concatenates the resulting four integers together to form a single string of digits. This represents the &ldquo;checksum&rdquo; of the group of rows.</p>
+
+<p>There are a couple theoretical weaknesses with in this approach. <code>SUM()</code> is commutative, so the order of the rows in a group is immaterial, which is a good thing. However, it might be possible to overflow a <code>BIGINT</code> with the <code>SUM()</code> over a large group. This seems unlikely, but 8 hex digits is 32 bits, and since <code>BIGINT</code> math is signed for aggregate functions in MySQL (except for the bitwise functions), that leaves 31 bits of headroom, which is just over 2 billion. Lots of people have tables with more than 2 billion rows. Granted, you still wouldn&rsquo;t overflow unless every value in the set was FFFFFFFF, but who knows what might happen, especially if you have many more rows.</p>
+
+<p>The next potential problem is the law of large numbers. Using <code>SUM()</code> increases the likelihood of a collision. It changes the distribution of numbers from pseudo-random over the range to a normal distribution &ndash; the familiar bell curve. Certain numbers will be more likely to occur than others, and this likelihood increases as the set grows.</p>
+
+<p>Finally, string concatenation of base-ten digits discards the most significant digits. If you convert the four sliced hex strings to base ten and they end up being 1, 2, 3, and 4, and then you concatenate them, you get 1234. But the sum of the checksum is not 1234; it is 1*16<sup>24</sup> + 2*16<sup>16</sup> + 3*16<sup>8</sup> + 4*16<sup></sup>. This truncates the full 128-bit range of <code>MD5()</code>.</p>
+
+<p>Rohit responded to my concern:</p>
+
+<blockquote>
+<p>Yes, there are chances of collisions. I did the math 3 years back(when I had designed the algo.). I don&rsquo;t remember exact details, but the chances of collision are extremely rare. Of course, it is not as good as a &ldquo;pure&rdquo; MD5. In the last 3 years of selling this (a vast majority of our 8000+ paid customers use it), we have not encountered any cases where collisions have been an issue.</p>
+</blockquote>
+
+<p>I believe collisions would be undetectable, but I don&rsquo;t really know how SJA works inside (tangent: I keep wondering if there&rsquo;s a way to use something like the accounting trick of differences divisible by nine to help see which rows are bad without doing so many grouped queries). Perhaps there is a way to know when there has been a collision. In any case, I checked the tables with <a href="http://code.google.com/p/maatkit">MySQL Table Checksum</a> after syncing, and they were correctly synced.</p>
+
+<p>For what it&rsquo;s worth, MySQL Table Sync&rsquo;s algorithm doesn&rsquo;t have these theoretical weaknesses.</p>
+
+<h3 id="toc_4">Performance analysis of SQLyog Job Agent&rsquo;s queries</h3>
+
+<p>Before I benchmarked SJA against MySQL Table Sync, I took a few minutes to analyze the queries it uses. It looks to me like there may be some room for optimization. There are several full table scans, some of which might be combined (for example, the initial <code>COUNT(*)</code> and <code>MAX(CHARLEN())</code>. However, these are one-off queries; the real place to optimize is in the repeated queries.</p>
+
+<p>I believe the checksum query could be optimized to do only one call to <code>MD5()</code> per row, instead of four. I don&rsquo;t think MySQL recognizes the <code>MD5()</code> sub-expression as something whose value can be re-used instead of calling again. Can anyone confirm this?</p>
+
+<p>The <code>GROUP BY</code> and <code>ORDER BY</code> clauses also don&rsquo;t use indexes. I believe a little rewriting could get them to use the primary key, which would avoid a temporary table and filesort.</p>
+
+<h3 id="toc_5">Benchmark method and results</h3>
+
+<p>I did an informal benchmark of SQLyog Job Agent and MySQL Table Sync, whose results I should stress are <em>not scientific</em>. Since I already had a realistic data set for <a href="http://www.xaprb.com/blog/2007/03/30/comparison-of-table-sync-algorithms/">the benchmarks I ran last week</a>, I just re-used that. You can download the <a href="http://www.xaprb.com/media/2007/03/table-sync-profiles.tar.gz">sample data</a> I used, and the <a href="http://www.xaprb.com/media/2007/03/sqlyog-vs-mysql-table-sync.tar.gz">full benchmark results and scripts I used to run the benchmark</a>.</p>
+
+<p>I ran the benchmark on my laptop, which is so old and slow you can literally hear the circuits make noise when there is a context switch. It has plenty of memory, but not much of anything else! I am using Ubuntu 6.10 and the MySQL version is 5.0.24a-Debian_9ubuntu2-log. One consequence of running the benchmark on a single computer is that I/O becomes sequential for both tools, whereas SJA should be able to take advantage of asynchronous I/O if it is communicating with two different servers.</p>
+
+<p>I used mostly the same queries as in my previous benchmark. The table has 50,000 rows, and in subsequent tests I deleted a random 5 rows from the destination, then 500 rows, then updated 1 row, then deleted all rows where col2 = 60 (as before, it&rsquo;s 11,424 rows), and finally deleted all col2=60 rows from the source instead of the destination. These are the same scenarios I ran in my earlier benchmarks, except the last which is new.</p>
+
+<p>I used <a href="http://code.google.com/p/maatkit">MySQL Query Profiler</a> to measure the server activity and elapsed time. The file &ldquo;commands.txt&rdquo; included in the aforementioned download is the input I sent to mysql-query-profiler. (I used a new feature I added to the profiler, which I have not yet packaged and released).</p>
+
+<p>The following is a summary of the benchmark results. SJA means SQLyog Job Agent, and MTS means MySQL Table Sync:</p>
+
+<table class="borders collapsed compact">
+  <caption>Benchmark Results</caption> <tr>
+    <td>
+      &nbsp;
+    </td>
+    
+    <th colspan="2">
+      Delete 5
+    </th>
+    
+    <th colspan="2">
+      Delete 500
+    </th>
+    
+    <th colspan="2">
+      Delete Chunk
+    </th>
+    
+    <th colspan="2">
+      Change 1
+    </th>
+    
+    <th colspan="2">
+      Delete Chunk
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+    </td>
+    
+    <th>
+      SJA
+    </th>
+    
+    <th>
+      MTS
+    </th>
+    
+    <th>
+      SJA
+    </th>
+    
+    <th>
+      MTS
+    </th>
+    
+    <th>
+      SJA
+    </th>
+    
+    <th>
+      MTS
+    </th>
+    
+    <th>
+      SJA
+    </th>
+    
+    <th>
+      MTS
+    </th>
+    
+    <th>
+      SJA
+    </th>
+    
+    <th>
+      MTS
+    </th>
+  </tr>
+  
+  <tr>
+    <th>
+      Time
+    </th>
+    
+    <td style="text-align:right">
+      67
+    </td>
+    
+    <td style="text-align:right">
+      17
+    </td>
+    
+    <td style="text-align:right">
+      95
+    </td>
+    
+    <td style="text-align:right">
+      40
+    </td>
+    
+    <td style="text-align:right">
+      145
+    </td>
+    
+    <td style="text-align:right">
+      58
+    </td>
+    
+    <td style="text-align:right">
+      68
+    </td>
+    
+    <td style="text-align:right">
+      14
+    </td>
+    
+    <td style="text-align:right">
+      128
+    </td>
+    
+    <td style="text-align:right">
+      13
+    </td>
+  </tr>
+  
+  <tr>
+    <th>
+      Bytes In
+    </th>
+    
+    <td style="text-align:right">
+      22416
+    </td>
+    
+    <td style="text-align:right">
+      14019
+    </td>
+    
+    <td style="text-align:right">
+      959541
+    </td>
+    
+    <td style="text-align:right">
+      660240
+    </td>
+    
+    <td style="text-align:right">
+      7530599
+    </td>
+    
+    <td style="text-align:right">
+      3325356
+    </td>
+    
+    <td style="text-align:right">
+      9791
+    </td>
+    
+    <td style="text-align:right">
+      4172
+    </td>
+    
+    <td style="text-align:right">
+      5313711
+    </td>
+    
+    <td style="text-align:right">
+      2909
+    </td>
+  </tr>
+  
+  <tr>
+    <th>
+      Bytes Out
+    </th>
+    
+    <td style="text-align:right">
+      312668
+    </td>
+    
+    <td style="text-align:right">
+      383713
+    </td>
+    
+    <td style="text-align:right">
+      3575005
+    </td>
+    
+    <td style="text-align:right">
+      2968327
+    </td>
+    
+    <td style="text-align:right">
+      11998535
+    </td>
+    
+    <td style="text-align:right">
+      1730543
+    </td>
+    
+    <td style="text-align:right">
+      110347
+    </td>
+    
+    <td style="text-align:right">
+      229229
+    </td>
+    
+    <td style="text-align:right">
+      3325058
+    </td>
+    
+    <td style="text-align:right">
+      89128
+    </td>
+  </tr>
+  
+  <tr>
+    <th>
+      Rows Sorted
+    </th>
+    
+    <td style="text-align:right">
+      4637
+    </td>
+    
+    <td style="text-align:right">
+      725
+    </td>
+    
+    <td style="text-align:right">
+      44412
+    </td>
+    
+    <td style="text-align:right">
+      32592
+    </td>
+    
+    <td style="text-align:right">
+      18916
+    </td>
+    
+    <td style="text-align:right">
+    </td>
+    
+    <td style="text-align:right">
+      1640
+    </td>
+    
+    <td style="text-align:right">
+      4
+    </td>
+    
+    <td style="text-align:right">
+      23597
+    </td>
+    
+    <td style="text-align:right">
+    </td>
+  </tr>
+  
+  <tr>
+    <th>
+      Filesorts
+    </th>
+    
+    <td style="text-align:right">
+      24
+    </td>
+    
+    <td style="text-align:right">
+    </td>
+    
+    <td style="text-align:right">
+      980
+    </td>
+    
+    <td style="text-align:right">
+    </td>
+    
+    <td style="text-align:right">
+      5522
+    </td>
+    
+    <td style="text-align:right">
+    </td>
+    
+    <td style="text-align:right">
+      10
+    </td>
+    
+    <td style="text-align:right">
+    </td>
+    
+    <td style="text-align:right">
+      5584
+    </td>
+    
+    <td style="text-align:right">
+    </td>
+  </tr>
+  
+  <tr>
+    <th>
+      Bookmark Lookup
+    </th>
+    
+    <td style="text-align:right">
+      309598
+    </td>
+    
+    <td style="text-align:right">
+      82
+    </td>
+    
+    <td style="text-align:right">
+      398251
+    </td>
+    
+    <td style="text-align:right">
+      4572
+    </td>
+    
+    <td style="text-align:right">
+      350432
+    </td>
+    
+    <td style="text-align:right">
+      10
+    </td>
+    
+    <td style="text-align:right">
+      301988
+    </td>
+    
+    <td style="text-align:right">
+      20
+    </td>
+    
+    <td style="text-align:right">
+      325477
+    </td>
+    
+    <td style="text-align:right">
+      10
+    </td>
+  </tr>
+</table>
+
+<p>You can see MySQL Table Sync performs somewhat better overall on this data set, and sometimes performs much better. Overall it runs in about 28% the time, doing about 28% as much I/O and sorting only 36% as many rows. I don&rsquo;t want to speculate too much, but it seems to me that most of the difference is probably the reduced I/O, with more efficient queries a distant second. I designed MySQL Table Sync to be network-efficient, so this result does not surprise me.</p>
+
+<h3 id="toc_6">Miscellaneous thoughts</h3>
+
+<p>SJA and MySQL Table Sync are not really designed for the same purposes. Though both can sync data between remote tables, MySQL Table Sync is explicitly designed for network efficiency and guaranteed consistency when syncing, even while the server is being used. I&rsquo;m not done with it yet, but it already has a variety of options a smart DBA can use to sync tables &ndash; especially on replication slaves that have become corrupt &ndash; more efficiently than a generic algorithm that applies to all table structures. As far as I know, SJA doesn&rsquo;t offer these features. On the other hand, it can do a lot of things MySQL Table Sync cannot, such as sync schema differences as well as data differences. To some extent then, this comparison is apples to oranges.</p>
+
+<p>For example, I&rsquo;m not sure exactly how the SJA does its deletes, inserts and updates, but I believe the only order of operations that&rsquo;s correct in every case is DELETE, UPDATE, INSERT. But perhaps there are other considerations when you are doing more complicated types of syncing, such as two-way syncs. I don&rsquo;t know any way to guarantee a point-in-time consistent two-way sync on tables that are being written to on both servers. I suspect SJA cannot guarantee this level of consistency either. My goals are a little different; I&rsquo;d prefer to do a simpler task with a guarantee of consistency than a two-way sync with potential for inconsistency (you can always run MySQL Table Sync twice to do a two-way sync).</p>
+
+<p>Rohit was very kind to spend time discussing SQLyog Job Agent over email with me, and I appreciate Webyog very much for their contributions to the MySQL community and to open source, so I was careful to ask permission to write this article. That&rsquo;s not something I&rsquo;d normally do, but since I&rsquo;m peeking into the query log of a commercial product, analyzing it, and benchmarking it I wanted to be respectful and err on the side of caution. If Rohit had expressed any discomfort with me discussing SJA I probably wouldn&rsquo;t have written this. In response to me asking &ldquo;Is there anything you would like me to avoid writing about,&rdquo; Rohit wrote:</p>
+
+<blockquote>
+<p>Nothing in particular. My only concern is that the usability should not be judged by the command line usage. Another thing that I would like to highlight is that SJA communicates with servers in different threads so the database communication time is not &ldquo;added&rdquo; up!</p>
+</blockquote>
+
+<p>Both points are well put. I was initially surprised that there&rsquo;s no command-line help for SJA, but once I understood that it&rsquo;s not meant to be stand-alone, it made sense to me. And SJA&rsquo;s asynchronous I/O is a very smart design; my choice of Perl as a programming language has necessarily limited, or made more difficult, these kinds of optimizations.</p>
+
+<h3 id="toc_7">Conclusion</h3>
+
+<p>I found <a href="http://www.webyog.com/en/downloads.php">SQLyog Job Agent</a> to be a well-rounded tool for syncing data between MySQL tables. Though not designed purely as a stand-alone tool, once I figured out the XML job file format, it was easy to use. My analysis showed me some areas where there&rsquo;s theoretically a possibility of incorrectly syncing data, but I never observed that happening. I ran some unscientific benchmarks and found that my design for <a href="http://code.google.com/p/maatkit">MySQL Table Sync</a> is several times more efficient <em>for my test case</em> in terms of network I/O, which seems to be the major contributor to the time it takes to sync tables.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Less is more &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Less is more</h1>
+  <span class="post-date">Tue, Sep 27, 2005 in
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>Simpler is often better. The ability to decide quickly between two equivalent solutions is what sets expert programmers apart. It has been demonstrated over and over again that a) there is more than a tenfold difference in productivity between programmers, and b) there is absolutely zero correlation between speed and quality in programming. Choosing the best solution to a problem is an acquired skill that takes time and experience, but it takes something more as well: a certain mental attitude. A determination to get things <em>done</em> and get it <em>right</em>, and <em>fast</em>. I have observed this quality in the best programmers I&rsquo;ve worked with. There is just no comparing them to ordinary key-pressers. They are in a totally different league. They know how to analyze a problem, figure out what&rsquo;s really needed, see several solutions, decide on one, and then use their tools to the absolute best effect <em>get it done</em> with no wasting around.</p>
+
+<p>As an example of a problem that will stump duller minds, suppose you want to make sure there is exactly one space after each comma in this text:</p>
+
+<blockquote>
+<p>Choosing the best solution to a problem is an acquired skill that takes time and experience,but it takes something more as well: a certain mental attitude. A determination to get things done and get it right, and fast. I have observed this quality in the best programmers I&rsquo;ve worked with. There is just no comparing them to ordinary key-pressers. They are in a totally different league. They know how to analyze a problem,figure out what&rsquo;s really needed, see several solutions, decide on one,and then use their tools to the absolute best effect get it done with no wasting around.
+A novice&rsquo;s solution is to use the mouse and keyboard to insert spaces where needed. This is slow and error-prone. It is a terrible solution.</p>
+</blockquote>
+
+<p>A narcissist uses a regular expression replacement to find a word, followed by a comma, followed by a word. The narcissist captures the first and second words, then replaces the text by the first word, a comma, a space, and the second word. The narcissist has impressed himself, but he spent a bunch of time fooling around with pattern capturing and clustering, consulting reference manuals, and so forth. This is also a stupid solution.</p>
+
+<p>The programmer who has no use for wasting his life with a keyboard and mouse, and equally little use for proving he can Do It The Hard Way, uses his text editor to</p>
+
+<ol>
+<li>replace <code>&quot;,&quot;</code> by <code>&quot;, &quot;</code></li>
+<li>replace <code>&quot;, &amp;nbsp;&quot;</code> by <code>&quot;, &quot;</code></li>
+</ol>
+
+<p>There are probably other solutions, but life is short and the customer is waiting.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to implement CAPTCHAs without images &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to implement CAPTCHAs without images</h1>
+  <span class="post-date">Sat, Jan 28, 2006 in
+		
+		<a href="/categories/Web" class="btn btn-primary">Web</a>
+		
+  </span>
+      
+
+<p>I&rsquo;ve started getting a lot of spam comments, so I decided the time has come to put a simple system in place to foil the spam robots. In an earlier article I asserted <a href="http://www.xaprb.com/blog/2005/11/03/captchas-are-a-terrible-thing/">CAPTCHAs are terrible</a> and there are easy ways to foil naive robots without making the site inaccessible or unusable. I&rsquo;ve implemented a simple question-and-answer system to prove my point. Comment forms show a randomly chosen predefined question (I&rsquo;ve only put three in the system) and display several predefined answers, only one of which is correct. This took about 30 minutes and maybe 20 lines of actual code to do. Right now the questions and answers are hard-coded in a new include file, but it would be trivial to database them too.</p>
+
+<h3 id="toc_0">How I did it</h3>
+
+<p>Create a new file, say <code>captchas.php</code>. Fill it with an array of entries, one per question:</p>
+
+<pre>&lt;?php
+$captchas = Array();
+
+# Create a single entry
+$captchas[] = array(
+    "question" =&gt; "What color is the sky?",
+    "answer" =&gt; "blue",
+    "options" =&gt; array("blue", "red", "orange"));
+
+# Create as many as desired by copy-and-paste...
+?&gt;</pre>
+
+<p>Modify the comment form. Include the above file in <code>wp-content/themes/default/comments.php</code>, and change a few lines where the form is displayed. At the top of the file:</p>
+
+<pre>&lt;?php require_once("captchas.php"); ?&gt;</pre>
+
+<p>Then, just before the SUBMIT button for the form,</p>
+
+<pre>&lt;?php
+$tabindex = 5;
+$captcha_index = rand(0, count($captchas) - 1);
+?&gt;
+&lt;input type="hidden"
+    name="captcha_index" value="&lt;?php echo $captcha_index; ?&gt;" /&gt;
+&lt;p&gt;&lt;?php echo $captchas[$captcha_index]["question"]; ?&gt;
+&lt;?php foreach ($captchas[$captcha_index]["options"] as $captcha_answer) { ?&gt;
+&lt;br /&gt;&lt;label for="captcha_&lt;?php echo $captcha_answer; ?&gt;"&gt;
+&lt;input tabindex="&lt;?php echo $tabindex++; ?&gt;"
+    id="captcha_&lt;?php echo $captcha_answer; ?&gt;" type="radio"
+    name="captcha" value="&lt;?php echo $captcha_answer; ?&gt;"
+    /&gt;&lt;?php echo $captcha_answer; ?&gt;&lt;/label&gt;
+&lt;?php } ?&gt;&lt;/p&gt;</pre>
+
+<p>Now the randomly chosen question&rsquo;s ID and the user&rsquo;s answer are submitted along with the form.</p>
+
+<p>On the receiving end of the form, which is in <code>wp-comments-post.php</code>, all I have to do is check the answer against the correct answer for the question. First, I include the <code>captchas.php</code> file as before. Then I grab the two new inputs where the rest of the input is grabbed:</p>
+
+<pre>$comment_author       = trim($_POST['author']);
+$comment_author_email = trim($_POST['email']);
+$comment_author_url   = trim($_POST['url']);
+$comment_content      = trim($_POST['comment']);
+$comment_captcha_idx  = trim($_POST['captcha_index']);
+$comment_captcha      = trim($_POST['captcha']);</pre>
+
+<p>Only the last two lines are changed in that code sample &ndash; I included the first lines for context. I use the input a bit later, where the input checking occurs:</p>
+
+<pre>if ( !is_numeric($comment_captcha_idx) || !$comment_captcha
+    || $captchas[$comment_captcha_idx]["answer"] != $comment_captcha)
+{
+        die( __("Error: wrong answer to the CAPTCHA question"));
+}</pre>
+
+<p>That&rsquo;s it. I&rsquo;m done. It took longer to explain than to actually write the code.</p>
+
+<h3 id="toc_1">How hard is it to circumvent this?</h3>
+
+<p>If you&rsquo;re a human, or if you&rsquo;re trying to bypass <em>just my site</em>, it would be easy to do, but if you&rsquo;re a spam robot, bypassing the system means learning something about my site (the questions and answers) that is different from other sites. I&rsquo;m counting on spam robots to be dumber than that, and assume all WordPress sites are the same. Time will tell if I&rsquo;m right; I anticipate not getting any more spam comments, though. I think the crucial thing is to get it &ldquo;right enough&rdquo; that humans find it easy and it&rsquo;s just a <em>little too hard</em> for spam robots to make it worth anyone&rsquo;s while. This is, in my opinion, the essential trade-off in security and any other application where you want to stop the Wrong Thing from happening. You can never truly guarantee the Wrong Thing won&rsquo;t happen, but you can make yourself a less attractive target so all the easy targets will get the heat instead.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

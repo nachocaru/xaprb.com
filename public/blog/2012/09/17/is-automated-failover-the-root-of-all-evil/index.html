@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Is automated failover the root of all evil? &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Is automated failover the root of all evil?</h1>
+  <span class="post-date">Mon, Sep 17, 2012 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>Github&rsquo;s recent <a href="https://github.com/blog/1261-github-availability-this-week">post-mortem</a> is well worth reading. They had a series of interrelated failures that caused their MySQL servers to become unavailable. The money quote:</p>
+
+<blockquote>
+<p>The automated failover of our main production database could be described as the root cause of both of these downtime events. In each situation in which that occurred, if any member of our operations team had been asked if the failover should have been performed, the answer would have been a resounding no. There are many situations in which automated failover is an excellent strategy for ensuring the availability of a service. After careful consideration, we&rsquo;ve determined that ensuring the availability of our primary production database is not one of these situations.</p>
+</blockquote>
+
+<p>Most automated failover tools receive a lot of engineering effort to answer questions like these: Is the system really dead, or just unreachable? Do I have a quorum, or is there a split brain? Is failover really the right thing to do?</p>
+
+<p>The category I don&rsquo;t often see targeted as much is this question, which I consider far more important: Is the system in a situation that I [the system] know I am capable of resolving correctly? Is anything in a state that I haven&rsquo;t been programmed to understand and assess?</p>
+
+<p>I haven&rsquo;t looked recently at the source code of the systems that Github identified as making wrong decisions, and I don&rsquo;t know Pacemaker. But I know I have spent a lot of time and effort trying to write a specification for a system that could detect whether automated failover would be safe to attempt, and it&rsquo;s <em>hard</em>. One thing that&rsquo;s not all that hard, though, is making sure that <em>only one attempt is made</em> to do a failover. One of the best ways to create a <a href="http://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/">nightmare situation</a> is to fail to a standby, then fail away from it. If I ever create an HA tool such as the ones I&rsquo;ve designed-but-not-implemented, there will be a hard stop after one attempt. If the standby doesn&rsquo;t look healthy, someone should call a human, end of story.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

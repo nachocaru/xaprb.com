@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> CAPTCHAs without images, part 2 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>CAPTCHAs without images, part 2</h1>
+  <span class="post-date">Mon, May 29, 2006 in
+		
+		<a href="/categories/Web" class="btn btn-primary">Web</a>
+		
+  </span>
+      <p>I want to follow up on my earlier article about <a href="http://www.xaprb.com/blog/2006/01/28/captchas-done-better/">how to do CAPTCHAs without images</a>, for accessibility and usability. In that article I hoped my simple scheme would deter dumb robots, cutting down on the bulk of the comment spam I was getting.</p>
+
+<p>It did cut out the comment spam &ndash; for a while. After a while, though, I started to get some spam again. I could see the spammer was either doing it manually, or had figured out that my form submission included the ID of the question I&rsquo;d asked (wow, you spammers <em>sure are smart</em>). I tried changing the questions once or twice, thinking they might be automated set-and-forget spambots that would not get updated for a while. This seemed to have no effect at all. &ldquo;Alas,&rdquo; I thought, &ldquo;I&rsquo;ll just put up with a few spam comments every now and then.&rdquo; Then it became 10 a day. That bothered me, but still not enough to do anything about it.</p>
+
+<p>But then some @$$ started really slamming me. It was all about buying medications and online poker and so forth. It&rsquo;s funny how easy it is to detect which spammer is which by the message style, too. The phrasing is always the same. I could tell this one was new. And I was getting hundreds of spam comments a day.</p>
+
+<p>I tried a Bayesian filter plugin for WordPress briefly, but it didn&rsquo;t work quite right and I didn&rsquo;t have enough time to learn about WordPress&rsquo;s plugin architecture to fix it. During that trial, comments were totally disabled on the blog. I couldn&rsquo;t let that continue, so I uninstalled the plugin and kept moderating while I hoped for a few spare minutes to find a fix.</p>
+
+<p>Meanwhile, even my posts about not using image CAPTCHAs were getting slain. Oh, the irony!</p>
+
+<p>Finally, I managed to find a half-hour to tweak my image-less CAPTCHA system. Instead of posting back which question was on the comment form, I made it set up a session and store which question, like traditional CAPTCHA systems. I really didn&rsquo;t want a heavy-weight solution where I stored the information in an actual session or in a relational database. I wanted it to be just enough to deter spammers, as before. So this time I used some encryption, some randomization, and a known bit of data that changes frequently &ndash; though I won&rsquo;t say what that is &ndash; to generate a passkey and put it in a cookie. The cookie is valid only for one request, and is time-sensitive too. And since the secret changes frequently, hopefully it&rsquo;s not obvious how this all works (though, as before, it wouldn&rsquo;t be too hard to figure it out if you approach it from a &ldquo;what would be easiest for him to do&rdquo; point of view).</p>
+
+<p>Basically, I went from a stateless and easily hackable system to one with a bare minimum of statefulness, and I guess it was just enough to foil the spammers. I haven&rsquo;t gotten a single spam comment since. This is like being in an airplane and putting noise-blocking headphones on. It is blessed, blessed relief. And I&rsquo;m really happy because I seem to have found &ndash; at least temporarily &ndash; just the right balance between people and robots.</p>
+
+<p>Now, the only thing left is to wait and see how long it takes the spammers this time. I promise, I will fight image CAPTCHAs till the last resort is exhausted. Who knows how it will work out? I&rsquo;ll certainly let you know!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

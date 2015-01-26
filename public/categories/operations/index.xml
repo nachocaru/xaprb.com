@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Operations on Xaprb </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.xaprb.com/categories/operations/index.xml/</link>
+    
+    
+    
+    <updated>Sat, 29 Nov 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Why Deployment Freezes Don&#39;t Prevent Outages</title>
+      <link>http://www.xaprb.com/blog/2014/11/29/code-freezes-dont-prevent-outages/</link>
+      <pubDate>Sat, 29 Nov 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/11/29/code-freezes-dont-prevent-outages/</guid>
+      <description>
+
+&lt;p&gt;I have $10 that says you&amp;rsquo;ve experienced this before: there&amp;rsquo;s a holiday, trade show, or other important event coming up. Management is worried about the risk of an outage during this all-important time, and restricts deployments from the week prior through the end of the event.&lt;/p&gt;
+
+&lt;p&gt;What really happens, of course, is that the system in question becomes booby-trapped with extra risk. As a result, problems are more likely, and when there there is even a slight issue, it has the potential to escalate into a major crisis.&lt;/p&gt;
+
+&lt;p&gt;Why does this happen? As usual, there&amp;rsquo;s no single root cause, but a variety of problems combine to create a brittle, risky situation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/11/freeze.png&#34; alt=&#34;freeze&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Assumptions&lt;/h3&gt;
+
+&lt;p&gt;When managers declare a freeze, they&amp;rsquo;re not being malicious. They&amp;rsquo;re doing something that seems to make sense. That&amp;rsquo;s why it&amp;rsquo;s important to understand the reasoning.&lt;/p&gt;
+
+&lt;p&gt;The goal is simple: prevent breaking something that&amp;rsquo;s working. And a lot of issues seem to trace back to a deployment that breaks a working system, so it&amp;rsquo;s natural to want to avoid a deployment.&lt;/p&gt;
+
+&lt;p&gt;The assumptions, in my experience, are that&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the systems are working now&lt;/li&gt;
+&lt;li&gt;systems break because of change&lt;/li&gt;
+&lt;li&gt;restricting change will prevent breakage&lt;/li&gt;
+&lt;li&gt;the riskiest change is deployment, so restricting deployment eliminates risky change&lt;/li&gt;
+&lt;li&gt;potential downsides are less costly than potential outages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Unfortunately, the assumptions are wrong, which is why deployment freezes often have the opposite of the intended effect.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Change Breaks Things&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s true that change breaks things, but that doesn&amp;rsquo;t tell the whole story. The reality is that systems are always changing, even when you think they&amp;rsquo;re not. And they&amp;rsquo;re also broken. Right now. You just don&amp;rsquo;t know it yet.&lt;/p&gt;
+
+&lt;p&gt;The first great lie is that you can stop systems from changing. You can&amp;rsquo;t stop change. Shipping code is &lt;em&gt;not&lt;/em&gt; the only change in a system. Unless the system is turned off completely, it&amp;rsquo;s changing every instant. User requests are being served. Logs are being written. Cron jobs and other scheduled tasks are starting, running, and stopping. The system clock is advancing. There are also dependencies on other systems, which likewise are undergoing constant change. And there are requirements changes, which nobody ever thinks about.&lt;/p&gt;
+
+&lt;p&gt;Most of these changes happen all the time and nothing goes wrong, or humans adjust and fix things as a matter of course. But many of these changes actually expose corner-case bugs or weird problems that just aren&amp;rsquo;t tickled often. As a result, you get the illusion that your systems are not broken. And that&amp;rsquo;s the second great lie, because your systems &lt;em&gt;are&lt;/em&gt; broken. You just don&amp;rsquo;t know it yet.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s broken? All sorts of things. Your Java runtime has a time bug that&amp;rsquo;s waiting to throw it into an infinite loop when a leap second happens. Your website has a SQL injection vulnerability that nobody&amp;rsquo;s exploited yet. A set of servers that you bought all together and installed at the same time has a ticking time bomb in the RAID controllers, which are all going to go into degraded self-test mode simultaneously. Your auto-increment integer column is  crossing the 2 billion mark right now, and will soon reach its max value.&lt;/p&gt;
+
+&lt;p&gt;The reality is that practically every running system is a ticking time bomb. You just don&amp;rsquo;t know what&amp;rsquo;s ticking or how long till it stops.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/11/clock.jpg&#34; alt=&#34;clock&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;Uncontrolled Change Is More Dangerous&lt;/h3&gt;
+
+&lt;p&gt;As I said, I&amp;rsquo;m not demonizing your managers. They&amp;rsquo;re actually right to think that deployments are riskier and are likely to cause breaking changes. That&amp;rsquo;s because deployment is often a barely-controlled change.&lt;/p&gt;
+
+&lt;p&gt;Generally, the more automated (scripted) the deployment is, the safer. This is actually not because of the automation, but because of an effect of automation. With automated deployment in place, deployment usually becomes a more frequent process, which tends to exercise, expose, and remove sources of risk to a larger extent.&lt;/p&gt;
+
+&lt;p&gt;So the headline of this section is wrong, in a way. Uncontrolled change isn&amp;rsquo;t what&amp;rsquo;s dangerous. Infrequent change is the problem.&lt;/p&gt;
+
+&lt;p&gt;Wait! Isn&amp;rsquo;t that precisely the opposite of what the managers are asking? Aren&amp;rsquo;t they asking us to freeze deployments &lt;em&gt;in order to slow the pace of change and decrease risk?&lt;/em&gt;  Yep, that&amp;rsquo;s right. Their intuition is actually the reverse of the truth: to make the systems safer, they should be encouraging more deployments, not fewer.&lt;/p&gt;
+
+&lt;p&gt;Deplyoment freezes actually add risk. But that&amp;rsquo;s not all. The deployoment freeze sets in place a vicious cycle that includes a couple of other effects and spirals down and down. Watch as I show you how the deplyoment freeze is only the first step in how we ambush the operations engineers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/11/raccoon.jpg&#34; alt=&#34;excellent smithers&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;You Can&amp;rsquo;t Freeze Deployments&lt;/h3&gt;
+
+&lt;p&gt;Freezes never, but &lt;em&gt;never&lt;/em&gt;, work. You can declare a freeze, but you can&amp;rsquo;t make it happen.&lt;/p&gt;
+
+&lt;p&gt;This follows naturally from the inability to actually stop the systems from changing. Systems that change are going to break, and you have to respond to this.&lt;/p&gt;
+
+&lt;p&gt;There are other effects, too. Requirements change, for example. The catalog merchants went to the marketers and decided to offer a special promo. Buy a tablet and a case in combination with a warranty, and get a bluetooth keyboard free! Sounds great; we&amp;rsquo;ll make a bundle &amp;ndash; let&amp;rsquo;s print and ship those catalogs. Just in time for the holidays! Whoops, nobody told IT about this. Catalogs are printed already. We&amp;rsquo;ve got two weeks and there&amp;rsquo;s no going back; we need the order-entry system and the website to support this promo. Bingo; forced change.&lt;/p&gt;
+
+&lt;p&gt;Whether it&amp;rsquo;s a promo or a bugfix, something always has to be changed. So we always have to break the rule. This is why the rule inevitably ends up being &lt;em&gt;no deployments except for emergency changes.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is getting good. What&amp;rsquo;s riskier than a change? An emergency change. What&amp;rsquo;s riskier still? Undeployed code!&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;Undeployed Code Is Inventory; Inventory Is Risk&lt;/h3&gt;
+
+&lt;p&gt;The process of developing and deploying code is really a process of forking and merging your codebase. A developer writes a new version of the application, which diverges from what&amp;rsquo;s running in production. The developer then merges it back in and deploys it to production, resolving the differences.&lt;/p&gt;
+
+&lt;p&gt;There are at least two key points where &lt;em&gt;inventory&lt;/em&gt; of risk builds up in this process. The first is when the developer&amp;rsquo;s codebase isn&amp;rsquo;t merged into the main code yet. The longer this waits, and the more the code diverges, the riskier. Secondly, after merging and before deployment.&lt;/p&gt;
+
+&lt;p&gt;Code that has been merged and not deployed is a loaded gun. If I merge in my changes and don&amp;rsquo;t deploy them, and you then merge and deploy yours, you&amp;rsquo;ve just deployed mine too. This was more than you bargained for. It&amp;rsquo;s now more likely that your deployment will break something, and harder for you to fix if it does.&lt;/p&gt;
+
+&lt;p&gt;In a deployment freeze, two important things happen.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Lots of latent changes build up, ready to break the whole world when the freeze is lifted. &lt;em&gt;There is increasing risk of breaking the system after the freeze.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Every developer&amp;rsquo;s codebase, and knowledge of the codebase, is diverging from production. Development and QA environments typically are, too. As a result, when emergency changes have to be applied to production during the freeze, breakage is much more likely. &lt;em&gt;There is increasing risk of breaking the system during the freeze.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;Frozen Systems are Inoperable&lt;/h3&gt;
+
+&lt;p&gt;We&amp;rsquo;ve seen that the tip of the codebase is where the least risk has accumulated. The tip is where things work best. Frozen systems get further behind this tip, and therefore much riskier.&lt;/p&gt;
+
+&lt;p&gt;Infrastructure is code, too. Frozen systems also become incompatible with the current tip of environment configuration and infrastructure automation code. The result is that emergency deployments are often done outside of normal change control procedures, and the usual automation and deployment code can&amp;rsquo;t be used.&lt;/p&gt;
+
+&lt;p&gt;To illustrate this problem, consider that app code and automation code are usually separate, although there is a dependency. This dependency is not properly versioned most of the time. Is your Puppet code version-controlled in lockstep with your application code, such that if you want to deploy a stale version of the app code, the deployment process will check out and use the older Puppet code? Would this even work, if it were possible &amp;ndash; can you just run old Puppet code on systems that have been advanced forward? The answer to both of these questions is likely no.&lt;/p&gt;
+
+&lt;p&gt;Imagine trying to drive your car without all the usual help you get from it: no mirrors, no gauges, no power steering, no power brakes. A car with all these things disabled is largely inoperable for most people.&lt;/p&gt;
+
+&lt;p&gt;A system that&amp;rsquo;s stale in production for a month, while developers work actively on a bunch of unshipped changes, is in a similar state. Important controls, indicators, and assists are disabled. It&amp;rsquo;s largely inoperable.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ve seen that a deployment freeze can&amp;rsquo;t prevent the need for changes. Now we see that it forces the inevitable changes to be done in a much more dangerous way, seriously increasing the risk of problems. Looks like the freeze is not preventing the risk of an outage as intended!&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_6&#34;&gt;The Cost Of Deployment Freezes&lt;/h3&gt;
+
+&lt;p&gt;The assumption is that the downsides of a deployment freeze are outweighed by the benefit of avoiding outages. I&amp;rsquo;m arguing that the benefit is much smaller than expected, and may even be negative. What about the costs?&lt;/p&gt;
+
+&lt;p&gt;Deployment freezes have a huge productivity cost. Huge.&lt;/p&gt;
+
+&lt;p&gt;When you can&amp;rsquo;t deploy, you can&amp;rsquo;t resolve the temporary tension in the system that results from changes that aren&amp;rsquo;t merged or deployed. Many changes you make while developing the system have to go through a compatibility lifecycle: to mutate from state A to B, you must first go to AB, which is backwards compatible with A and forward compatible with B. Then you move from AB to B.&lt;/p&gt;
+
+&lt;p&gt;A simple example is adding a column to a table. You make sure the code ignores new columns, add the column with a default value, then make the code recognize and work with the new column, then remove the default value once it&amp;rsquo;s no longer needed.&lt;/p&gt;
+
+&lt;p&gt;This kind of compatibility lifecycle represents a set of &lt;em&gt;dependencies&lt;/em&gt; across time. If you&amp;rsquo;ve read The Goal, you know dependencies are bad for workflow. These dependencies become blockers for developers working on the code, and even for other developers and operations staff. If the dependencies are short-lived, it often isn&amp;rsquo;t too bad. This is the case when you deploy a dozen times a day. But if the dependencies become long-lived, large portions of engineering slows down or stops completely. Projects have to be shelved until things can be deployed. Meanwhile, work that&amp;rsquo;s been done on these projects becomes stale and creates conflicts with alternative work. It often has to be reworked later.&lt;/p&gt;
+
+&lt;p&gt;What was a local change and dependency becomes, given a little more time, a global blocker and waste of work.&lt;/p&gt;
+
+&lt;p&gt;This scenario is practically certain to happen. Deployment freezes crush productivity, often long beyond the duration of the freeze itself.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_7&#34;&gt;What About Feature Freezes?&lt;/h3&gt;
+
+&lt;p&gt;It&amp;rsquo;s fairly common for large, complex, fast-moving systems to declare feature freezes in preparation for a major release. (Think of versions of operating systems or databases, for example.) However, this is different from a deployment freeze in a web appication.&lt;/p&gt;
+
+&lt;p&gt;The most important difference is that a deployment freeze is an attempt to branch the infrastructure, code/app, data, system state, and activity (customers/users). This is not branching one thing, but many interdependent things. This is practically impossible to do.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_8&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Frozen systems can run as-is briefly, but then pressure to change them mounts steeply. The system grows stale, but things change anyway and force changes. These changes become much more difficult and dangerous, and the likelihood of an outage grows quickly.&lt;/p&gt;
+
+&lt;p&gt;Code freezes thus make systems more likely to break, while impacting productivity. Both the cost and the risk are much worse than intuition would suggest.&lt;/p&gt;
+
+&lt;p&gt;I believe that a focus on improving the processes by which changes are made, making smaller and more frequent iterations, and finding out and fixing breakage as soon as possible is a better way to the goal. But that&amp;rsquo;s a different article&lt;/p&gt;
+
+&lt;p&gt;What have your experiences been? Let me know in the comments.&lt;/p&gt;
+
+&lt;p&gt;Image credits: &lt;a href=&#34;http://www.imdb.com/title/tt0118688/&#34;&gt;freeze&lt;/a&gt;, &lt;a href=&#34;https://www.flickr.com/photos/jlhopgood/6795353385/&#34;&gt;clock&lt;/a&gt;, &lt;a href=&#34;http://memegenerator.net/instance/53212554&#34;&gt;raccoon&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Root Cause Fallacy</title>
+      <link>http://www.xaprb.com/blog/2014/07/21/root-cause-fallacy/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/07/21/root-cause-fallacy/</guid>
+      <description>&lt;p&gt;Wouldn&amp;rsquo;t you like to find the root cause of that downtime incident? Many people
+would. But experience has taught me that there is no such thing as a single root
+cause. Instead, there&amp;rsquo;s a chain of interrelated causes, each of which is
+necessary but none of which is sufficient to cause the overall problem.&lt;/p&gt;
+
+&lt;p&gt;I am often reminded of an outage years ago. It was &amp;ldquo;caused&amp;rdquo; by a failed disk.
+But the disk was in a RAID5 array, and another disk in that array had failed
+some time previously. Backups had also failed some time previously, so there
+were no backups. Health checks didn&amp;rsquo;t notify anyone of the degraded disk array,
+due to a misconfigured alerting system. Alerting and backups failed because the
+person in charge of operations was not performing his duties.  The operations
+person was still in the driver&amp;rsquo;s seat because of management dysfunction.&lt;/p&gt;
+
+&lt;p&gt;If you really want to get to the root cause of a problem, you need to use the
+Five Whys approach. I rarely do that because I already know where it ends. The
+CEO or equivalent is always the problem. It&amp;rsquo;s turtles all the way down (or up).
+Saying that the CEO is ultimately responsible is true but useless. The CEO is
+ultimately responsible for &lt;em&gt;everything&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/07/turtles.jpg&#34; alt=&#34;Turtles&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s why the search for a root cause is usually a witch-hunt in disguise, trying
+to find someone or something to blame. If you think there is really a single
+cause, you eventually must identify a single person. If you stop short of that,
+everyone knows the process was a farce. But blaming a person is also a farce.
+Everyone knows that someone&amp;rsquo;s being thrown under the bus and that wasn&amp;rsquo;t the
+real problem.&lt;/p&gt;
+
+&lt;p&gt;There are several solutions to this dilemma. One is to stop looking for a
+&lt;em&gt;single&lt;/em&gt; root cause, and instead identify the &lt;em&gt;system&lt;/em&gt; of conditions or
+dysfunctions that jointly caused the observed problem. This allows something
+constructive to come out of the postmortem, instead of inexorably bringing
+pressure to bear on a well-meaning person who will then be sacrificed to appease
+the false gods of reductionist blame-gaming.&lt;/p&gt;
+
+&lt;p&gt;Another is to change the culture and own failures as opportunities. Navigating
+this can be tricky. I&amp;rsquo;ve heard from more than one person who was fired from a
+workforce with a supposedly &amp;ldquo;blameless culture&amp;rdquo; policy after tripping over a
+booby-trap. I haven&amp;rsquo;t attended one yet, but I&amp;rsquo;ve heard that Dave Zwieback&amp;rsquo;s
+postmortem workshops are excellent.&lt;/p&gt;
+
+&lt;p&gt;More and more people I speak to are either doubtful or outright reject
+root-cause analysis these days. That&amp;rsquo;s a good thing. I used to be pressured for
+root-cause analysis years ago, and there was always an airtight and unspoken
+assumption that &lt;em&gt;of course&lt;/em&gt; such a thing exists and is the right way to handle
+the aftermath of an incident. I&amp;rsquo;m happy the times are changing. These days, even
+some companies have stopped saying their tools or products can find root causes.
+Maybe this trend will allow us to replace the manifest failures of root-cause
+analysis with something more helpful.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/animaltourism/5096371069/&#34;&gt;Pic Credit&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Amber Alert: Worse Than Nothing?</title>
+      <link>http://www.xaprb.com/blog/2014/02/12/amber-alert/</link>
+      <pubDate>Wed, 12 Feb 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/02/12/amber-alert/</guid>
+      <description>&lt;p&gt;In the last few years, there&amp;rsquo;s been a lot of discussion about alerts in the
+circles I move in. There&amp;rsquo;s general agreement that a lot of tools don&amp;rsquo;t provide
+good alerting mechanisms, including problems such as unclear alerts, alerts that
+can&amp;rsquo;t be acted upon, and alerts that lack context.&lt;/p&gt;
+
+&lt;p&gt;Yesterday and today at the Strata conference, my phone and lots of
+phones around me started blaring klaxon sounds. When I looked at my phone, I saw
+something like this (the screenshot is from a later update, but otherwise
+similar):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/02/amber-alert-overview.png&#34; alt=&#34;Overview&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve seen alerts like this before, but they were alerts about severe weather
+events, such as tornado watches. This one, frankly, looked like someone hacked
+into the Verizon network and sent out spam alarms. Seriously &amp;mdash; what the hell,
+a license plate? What?&lt;/p&gt;
+
+&lt;p&gt;Besides, it says &lt;strong&gt;AMBER&lt;/strong&gt;, which is a cautionary color. It&amp;rsquo;s not a red alert,
+after all. It can&amp;rsquo;t be anything serious, right?&lt;/p&gt;
+
+&lt;p&gt;The second time it happened I looked at the details:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/02/amber-alert-detail.png&#34; alt=&#34;Details&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This is even less informative. It&amp;rsquo;s an amber alert (not an urgent color like
+red). But it&amp;rsquo;s a sigificant threat to my life or property? I&amp;rsquo;m supposed to
+respond to it immediately? Oh wait, my response is to &amp;ldquo;monitor&amp;rdquo; and &amp;ldquo;attend to
+information sources.&amp;rdquo; Almost everything on this whole screen is conflicting.
+What a cluster-fudge of useless non-information!&lt;/p&gt;
+
+&lt;p&gt;Later I looked up some information online and found that an &lt;a href=&#34;http://en.wikipedia.org/wiki/AMBER_Alert&#34;&gt;amber alert&lt;/a&gt; is a
+child abduction alert. This one turned out to be a &lt;a href=&#34;http://www.sfgate.com/crime/article/Person-of-interest-in-Amber-Alert-case-5228726.php&#34;&gt;false alarm&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;All of this raises an obvious question: &lt;em&gt;why on earth would someone think that
+making a bunch of people&amp;rsquo;s cellphones quack with a cryptic message would convey
+useful information?&lt;/em&gt; For something as critical as a child abduction, they should
+&lt;em&gt;get to the point and state it directly&lt;/em&gt;. Judging by reactions around me, and
+people I spoke to, almost nobody knows what an amber alert is. I certainly
+didn&amp;rsquo;t. When I tweeted about it, only one person in my network seemed to be
+aware of it.&lt;/p&gt;
+
+&lt;p&gt;How can &lt;em&gt;anyone&lt;/em&gt; take something like this seriously? All this does is make
+people like me find the preferences for alerts and disable them.&lt;/p&gt;
+
+&lt;p&gt;In my opinion, this is an example of complete failure in alert design. I don&amp;rsquo;t
+think I can overstate how badly done this is. I want to say only a politician
+could have dreamed up something so stupid&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;But then I remember: oh, yeah. Pingdom alerts (we&amp;rsquo;ll email you that your site is
+down, but we won&amp;rsquo;t tell you an HTTP status code or anything else remotely
+useful.) Nagios alerts (we&amp;rsquo;ll tell you &lt;code&gt;DISK CRITICAL&lt;/code&gt; and follow that with
+&lt;code&gt;(44% inode=97%)&lt;/code&gt; &amp;ndash; anyone know what that means?). And so on.&lt;/p&gt;
+
+&lt;p&gt;Perhaps the amber alert system was designed by a system administrator, not a
+politician.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Generating Realistic Time Series Data</title>
+      <link>http://www.xaprb.com/blog/2014/01/24/methods-generate-realistic-time-series-data/</link>
+      <pubDate>Fri, 24 Jan 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/01/24/methods-generate-realistic-time-series-data/</guid>
+      <description>&lt;p&gt;I am interested in compiling a list of techniques to generate fake time-series
+data that looks and behaves realistically. The goal is to make a mock API for
+developers to work against, without needing bulky sets of real data, which are
+annoying to deal with, especially as things change and new types of data are
+needed.&lt;/p&gt;
+
+&lt;p&gt;To achieve this, I think several specific things need to be addressed:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;What common classes or categories of time-series data are there? For example,
+
+&lt;ul&gt;
+&lt;li&gt;cyclical (ex: traffic to a web server day-over-day)&lt;/li&gt;
+&lt;li&gt;apparently random (ex: stock ticker)&lt;/li&gt;
+&lt;li&gt;generally increasing (ex: stock ticker for an index)&lt;/li&gt;
+&lt;li&gt;exponentially decaying (ex: unix load average)&lt;/li&gt;
+&lt;li&gt;usually zero, with occasional nonzero values (ex: rainfall in a specific location)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;What parameters describe the data&amp;rsquo;s behavior? Examples might include an
+exponential decay, periodicity, distribution of values, distribution of
+intervals between peaks, etc.&lt;/li&gt;
+&lt;li&gt;What techniques can be used to deterministically generate data that
+approximates a given category of time-series data, so that one can generate
+mock sources of data without storing real examples? For a simplistic example,
+you could seed a random number generator for determinism, and use something
+like &lt;code&gt;y_n = rand() * 10 + 100&lt;/code&gt; for data that fluctuates randomly between 90 and
+100.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To make the mock API, I imagine we could catalog a set of metrics we want to
+be able to generate, with the following properties for each:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name&lt;/li&gt;
+&lt;li&gt;type&lt;/li&gt;
+&lt;li&gt;dimensions&lt;/li&gt;
+&lt;li&gt;parameters&lt;/li&gt;
+&lt;li&gt;random seed or other initializer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This reduces the problem from what we currently do (keeping entire data sets,
+which need to be replaced as our data gathering techniques evolve) into just a
+dictionary of metrics and their definitions.&lt;/p&gt;
+
+&lt;p&gt;Then the mock API would accept requests for a set of metrics, the time range
+desired, and the resolution desired. The metrics would be computed and returned.&lt;/p&gt;
+
+&lt;p&gt;To make this work correctly, the metrics need to be generated deterministically.
+That is, if I ask for metrics from 5am to 6am on a particular day, I should
+always get the same values for the metrics. And if I ask for a different time
+range, I&amp;rsquo;d get different values. What this means, in my opinion, is that there
+needs to be a closed-form function that produces the metric&amp;rsquo;s output for a given
+timestamp. (I think one-second resolution of data is fine enough for most
+purposes.)&lt;/p&gt;
+
+&lt;p&gt;Does anyone have suggestions for how to do this?&lt;/p&gt;
+
+&lt;p&gt;The result will be open-sourced, so everyone who&amp;rsquo;s interested in such a
+programmatically generated dataset can benefit from it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Continuous integration and deployment</title>
+      <link>http://www.xaprb.com/blog/2013/10/16/continuous-integration-and-deployment/</link>
+      <pubDate>Wed, 16 Oct 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/10/16/continuous-integration-and-deployment/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been talking to some smart people about deployment. First a little background. One of my colleagues was working on a project that ultimately didn&amp;rsquo;t bear fruit. It was a system for continuous delivery, and involved reacting to &lt;code&gt;git push&lt;/code&gt; by building and shipping to production. But it felt as if the problem shouldn&amp;rsquo;t be separated from provisioning, and from setting up a development environment, and so these things got folded in, and the effort became a boil-the-ocean project that had to be set aside.&lt;/p&gt;
+
+&lt;p&gt;During this process I came to appreciate my colleague&amp;rsquo;s point of view on topics such as how software should be deployed and how it should be designed to run in its environment. A lot of this is encapsulated in &lt;a href=&#34;http://12factor.net/&#34;&gt;The Twelve Factors&lt;/a&gt;. In fact, I actually created and deployed to a Heroku app, and experienced firsthand why people love Heroku.&lt;/p&gt;
+
+&lt;p&gt;At Velocity this week, we&amp;rsquo;re talking a lot about resilience, operations, and so on. Introducing change is often one of the things that exposes failure modes in our products, and this fragility is probably more likely to show up during deployments than almost any other time. But there&amp;rsquo;s not a lot of discussion at Velocity about deployment &amp;ndash; that vital part of the engineering process where we take code from development and mutate our production environment to include it.&lt;/p&gt;
+
+&lt;p&gt;I started asking some people about this, because I need to resume the deployment effort at my own company. A few people gave me pointers to prior art to look at, but some other people told me it&amp;rsquo;s not a solved problem for them either. I&amp;rsquo;ll include some of that information in this post.&lt;/p&gt;
+
+&lt;p&gt;But first I want to write my current thoughts about this subject, to get it on record and to stimulate more conversation. Later I&amp;rsquo;ll follow up after I&amp;rsquo;ve learned more.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s a little difficult for me to organize my thoughts coherently, so I&amp;rsquo;ll just drop a list on you:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I want continuous deployment because if it&amp;rsquo;s not a part of the culture at the company, we&amp;rsquo;ll engineer ourselves into a corner away from it and it&amp;rsquo;ll get more and more difficult to ship code rapidly later. Tools are vital; rules can&amp;rsquo;t overcome the natural reluctance (or just lack of incentive) to push code to production. I also want continuous deployment for a few reasons that might be obvious to readers. First, small, incremental changes are a lot less risky. Second, it is a positive feedback cycle. Third, code that&amp;rsquo;s written but not serving customers is inventory that I&amp;rsquo;ve paid for but not benefited from (and neither are customers). The cost of this inventory is very real; this is a philosophy expressed well in Eli Goldratt&amp;rsquo;s book &lt;em&gt;The Goal&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Code should be deployed when it&amp;rsquo;s merged to master/HEAD and all tests passed. It&amp;rsquo;s a good question whether it should be deployed completely automatically, or whether it&amp;rsquo;s good to let people batch together some changes. I favor the latter. We might not want to deploy every typo fixed. We don&amp;rsquo;t want the batches to accumulate, though, or deployment gets really scary and risky. Visibility into whose changes, and what they are, is important for this scenario. Approval by all involved is also important.&lt;/li&gt;
+&lt;li&gt;I don&amp;rsquo;t want to build all of this infrastructure myself. I want to use external providers as much as possible. I prefer to buy or rent rather than build, because I won&amp;rsquo;t do the job as well, and it&amp;rsquo;s not my core business. I don&amp;rsquo;t want to engage in &amp;ldquo;undifferentiated heavy lifting,&amp;rdquo; to quote someone smart at Netflix.&lt;/li&gt;
+&lt;li&gt;However, there&amp;rsquo;s a tension here. External providers must be a convenience, not in the critical path. If one or more external providers is down, that can&amp;rsquo;t be a hard block on a deployment. The last thing I want is to have downtime I can&amp;rsquo;t fix because someone else has downtime too. As an example, I want to continue to use Github and CircleCI, but I don&amp;rsquo;t want to make them SPOFs. But if I have an alternate, less-used deployment route, that&amp;rsquo;s also a problem; there should only be one deployment system, or the fallback will fail when I need it. I think the solution is to make Github and CircleCI trigger deployment, but only as one possible source of triggers.&lt;/li&gt;
+&lt;li&gt;Deploying binaries with restarts is very different from source code deployments, and there are other types of deployments that need to be considered as well. Deployment to stateless resources (a web server) is a lot simpler and less risky than deploying to something that is stateful, or affects something stateful such as a database server. There&amp;rsquo;s also the matter of migrations. From my experience with lots of large companies, migrations are simplistic and I&amp;rsquo;ve never seen them scale beyond toy applications. But taking them out-of-band means the system is not completely self-documenting, and may not be runnable unless some change or other requirement is satisfied, which can only be performed and verified by a human. These are concerns I don&amp;rsquo;t know how to resolve.&lt;/li&gt;
+&lt;li&gt;Although it&amp;rsquo;s tempting to put manifests (Procfile) and include provisioning (and even scaling) in the deployment process, I think it&amp;rsquo;s better to put a strong barrier between those. Otherwise we&amp;rsquo;ll end up with a hairball that can&amp;rsquo;t be dealt with separately. System provisioning and configuration to prepare an environment to be deployed into is not part of deployment. Similarly, there needs to be some thought about a service directory to register and mutate the state of the overall system, such as taking apps in and out of proxies and load balancers before, during, and after deployments. That might need to be part of deployment, or the provisioning, or both.&lt;/li&gt;
+&lt;li&gt;Most of the services I&amp;rsquo;ve seen for deployment want to imagine that the world is all on Heroku, where a deployment is a &lt;code&gt;git push&lt;/code&gt;. Unfortunately, as nice as that is, it isn&amp;rsquo;t going to work. The other thing many of them offer is &amp;ldquo;we&amp;rsquo;ll run your Capistrano jobs&amp;rdquo; &amp;ndash; but that&amp;rsquo;s also not workable, because allowing external hands to poke into our systems is not an option. Agent-based deployment is preferable. I have good experience with this, even with self-upgrading agents. There are some companies (Distelli) that do something reasonable here.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thoughts from other people I talked to include:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We think about this basically all the time at [company]. The difficulty is that organizations build their own because there&amp;rsquo;s a likely corollary to Conway&amp;rsquo;s Law here: deployment and development infrastructure are context sensitive, so therefore organization sensitive.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And Jez Humble offered this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I wrote a &lt;a href=&#34;http://www.amazon.com/dp/0321601912&#34; target=&#34;_blank&#34;&gt;book&lt;/a&gt; on the topic, plus I &lt;a href=&#34;http://continuousdelivery.com/&#34; target=&#34;_blank&#34;&gt;blog&lt;/a&gt; and &lt;a href=&#34;http://continuousdelivery.com/talks/&#34; target=&#34;_blank&#34;&gt;speak&lt;/a&gt; about it a bunch.&lt;/p&gt;
+
+&lt;p&gt;You also want to check out Michael Nygard&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/dp/0978739213/&#34; target=&#34;_blank&#34;&gt;Release It!&lt;/a&gt; and his &lt;a href=&#34;http://www.youtube.com/watch?v=Luskg9ES9qI&#34; target=&#34;_blank&#34;&gt;stuff&lt;/a&gt;, which is extremely awesome&lt;/p&gt;
+
+&lt;p&gt;There are some &lt;a href=&#34;http://continuousdelivery.com/2013/05/videos-from-the-continuous-delivery-track-at-qcon-sf-2012/&#34; target=&#34;_blank&#34;&gt;talks&lt;/a&gt; from the continuous delivery tracks at various conferences (including from &lt;a href=&#34;http://www.youtube.com/watch?v=JR-ccCTmMKY&#34; target=&#34;_blank&#34;&gt;Etsy&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m running a conference which talks about continuous delivery, lean UX, devops and related stuff: &lt;a href=&#34;http://flowcon.org/flowcon-sanfran-2013/schedule/index.jsp&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://flowcon.org/flowcon-sanfran-2013/schedule/index.jsp&#34;&gt;http://flowcon.org/flowcon-sanfran-2013/schedule/index.jsp&lt;/a&gt;&lt;/a&gt;&lt;/blockquote&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I look forward to your thoughts and links to further study. Thanks!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Quantifying Abnormal Behavior in System Metrics</title>
+      <link>http://www.xaprb.com/blog/2013/06/25/quantifying-abnormal-behavior-in-system-metrics/</link>
+      <pubDate>Tue, 25 Jun 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/06/25/quantifying-abnormal-behavior-in-system-metrics/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve posted &lt;a href=&#34;https://vividcortex.comhttp://www.xaprb.com/blog/2013/06/25/quantifying-abnormal-behavior/&#34;&gt;slides for my Velocity talk on VividCortex&amp;rsquo;s blog&lt;/a&gt;. The talk explained how we use exponentially weighted moving statistics to generate a meta-metric of abnormality for the time-series metrics measured from MySQL. That&amp;rsquo;s kind of a mouthful. Maybe you had to be there :-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to send input to many terminals</title>
+      <link>http://www.xaprb.com/blog/2012/10/16/how-to-send-input-to-many-terminals/</link>
+      <pubDate>Tue, 16 Oct 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/10/16/how-to-send-input-to-many-terminals/</guid>
+      <description>&lt;p&gt;Do you ever find yourself wanting to open several terminal windows and send the same commands to all of them? I&amp;rsquo;ve had this need many times, and I&amp;rsquo;ve never found a completely satisfactory solution. I&amp;rsquo;ve also known a lot of people who&amp;rsquo;ve written various sets of scripts to help them accomplish such tasks.&lt;/p&gt;
+
+&lt;p&gt;In no particular order, here are a few ways I&amp;rsquo;ve done this in the past:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Facebook&amp;rsquo;s pmysql client&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;http://www.netfort.gr.jp/~dancer/software/dsh.html.en&#34;&gt;dsh&lt;/a&gt; tool&lt;/li&gt;
+&lt;li&gt;Several screen windows named remoteXXX, followed by a bash for-loop: &lt;code&gt;while read cmd; do screen -X at remote# stuff &amp;quot;$cmd&amp;quot;; done&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Using many PuTTY windows and the &lt;a href=&#34;http://www.millardsoftware.com/puttycs&#34;&gt;puttycs&lt;/a&gt; tool&lt;/li&gt;
+&lt;li&gt;Opening many tabs in KDE&amp;rsquo;s Kterm tool and selecting the options to send input to all tabs&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here are some I&amp;rsquo;ve heard about, but never used:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://guichaz.free.fr/polysh/&#34;&gt;PolySH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;rcall&lt;/li&gt;
+&lt;li&gt;A variety of &amp;ldquo;terminal multiplexor&amp;rdquo; web pages I&amp;rsquo;ve &lt;a href=&#34;http://delicious.com/xaprb/terminal+multiplexor&#34;&gt;bookmarked&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Of course, in many cases a technology like Chef or Puppet provides the true solution. But a lot of the MySQL users I&amp;rsquo;ve known haven&amp;rsquo;t grown to the point that they want to spend the upfront time and effort to learn and deploy something like that. They&amp;rsquo;re investing in development instead, and bearing the cost of a little less efficient systems administration process.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s your favorite technique for doing lots of things all at once?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Easy on the eyes: the solarized color theme</title>
+      <link>http://www.xaprb.com/blog/2011/07/28/easy-on-the-eyes-the-solarized-color-theme/</link>
+      <pubDate>Thu, 28 Jul 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/07/28/easy-on-the-eyes-the-solarized-color-theme/</guid>
+      <description>&lt;p&gt;I recently set up the &lt;a href=&#34;http://ethanschoonover.com/solarized&#34;&gt;solarized&lt;/a&gt; color theme for my terminal emulator. I&amp;rsquo;ve been meaning to do this for a while, but procrastinated. However, I finally got really frustrated with the colors I get from &amp;ldquo;ls&amp;rdquo; sometimes &amp;ndash; I use a dark terminal with light fonts, and the directory listings in particular can become invisible, with dark blue on black.&lt;/p&gt;
+
+&lt;p&gt;Solarized is much improved. All of the colors work well together and are easy on the eyes. What a relief! Recommended for programmers and system administrators. There are plugins or configuration files for a huge variety of programming environments and programs, including Vim of course.&lt;/p&gt;
+
+&lt;p&gt;I use XFCE&amp;rsquo;s terminal, and I found that there was no terminal configuration file for it in the download. But I found a workaround: just append the colors listed in &lt;a href=&#34;https://github.com/sgerrand/solarized/blob/7541ef797ee9a2ef7d95d349f8ae600a5d1b2aef/xfce4-terminal-colors-solarized/terminalrc&#34;&gt;this file&lt;/a&gt; to the end of $HOME/.config/Terminal/terminalrc.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Disk latency versus filesystem latency</title>
+      <link>http://www.xaprb.com/blog/2011/05/15/disk-latency-versus-filesystem-latency/</link>
+      <pubDate>Sun, 15 May 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/05/15/disk-latency-versus-filesystem-latency/</guid>
+      <description>&lt;p&gt;Brendan Gregg has a very good ongoing series of blog posts about the importance of measuring latency at the layer that&amp;rsquo;s appropriate for the question you are trying to answer. If you&amp;rsquo;re wondering whether I/O latency is a problem for MySQL, you need to measure I/O latency at the filesystem layer, not the disk layer. There are a lot of factors to consider. To quote from his latest post:
+&amp;gt; This isn’t really a problem with iostat(1M) – it’s a great tool for system administrators to understand the usage of their resources. But the applications are far, far away from the disks – and have a complex file system in-between. For application analysis, iostat(1M) may provide clues that disks could be causing issues, but you really want to measure at the file system level to directly associate latency with the application, and to be inclusive of other file system latency issues.&lt;/p&gt;
+
+&lt;p&gt;Someone should add Brendan&amp;rsquo;s feed to Planet MySQL. Here are the articles: &lt;a href=&#34;http://dtrace.orghttp://www.xaprb.com/blogs/brendan/2011/05/11/file-system-latency-part-1/&#34;&gt;part 1&lt;/a&gt;, &lt;a href=&#34;http://dtrace.orghttp://www.xaprb.com/blogs/brendan/2011/05/13/file-system-latency-part-2/&#34;&gt;part 2&lt;/a&gt;. Brendan will be talking about this topic at &lt;a href=&#34;http://www.percona.com/live/&#34;&gt;Percona Live&lt;/a&gt; on the 26th.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to gather statistics at regular intervals</title>
+      <link>http://www.xaprb.com/blog/2011/03/18/how-to-gather-statistics-at-regular-intervals/</link>
+      <pubDate>Fri, 18 Mar 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/03/18/how-to-gather-statistics-at-regular-intervals/</guid>
+      <description>&lt;p&gt;I gather a lot of statistics such as performance data. Sometimes I have multiple things going on a system and I want to be able to align and compare the resulting data from multiple processes later. That means they need to be aligned on time intervals. Here is a naive way to gather stats at intervals:&lt;/p&gt;
+
+&lt;pre&gt;while sleep 1; do gather-some-stats; done
+&lt;/pre&gt;
+
+&lt;p&gt;There are two problems: each iteration will take longer than a second, so there will be drift; and the iterations will not be aligned exactly on the clock ticks, so the data isn&amp;rsquo;t as easy to correlate with other samples. This becomes a bigger problem when there are many such jobs gathering data at longer intervals such as 15 seconds or 5 minutes, where the lack of correlation between samples can be frustrating.&lt;/p&gt;
+
+&lt;p&gt;Here is what I&amp;rsquo;ve been doing recently. Is there a better way?&lt;/p&gt;
+
+&lt;pre&gt;INTERVAL=1
+while true; do
+   sleep=$(date +%s.%N | awk &#34;{print $INTERVAL - (\$1 % $INTERVAL)}&#34;)
+   sleep $sleep
+   gather-some-stats
+done
+&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Version 1.1.8 of Better Cacti Templates released</title>
+      <link>http://www.xaprb.com/blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/</link>
+      <pubDate>Sat, 22 Jan 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve released version 1.1.8 of the &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/&#34;&gt;Better Cacti Templates&lt;/a&gt; project. This release includes a bunch of bug fixes and several important new graphs. There are &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/MySQLTemplates#MySQL_Query_Response_Time_%28Microseconds%29&#34;&gt;graphs&lt;/a&gt; for the new &lt;a href=&#34;http://www.percona.com/docs/wiki/percona-server:features:response_time_distribution&#34;&gt;response-time statistics exposed in Percona Server&lt;/a&gt;, and a new set of graphs for &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/MongoDBTemplates&#34;&gt;MongoDB&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/UpgradingTemplates&#34;&gt;upgrade instructions&lt;/a&gt; on the project wiki for this and all releases. There is also a comprehensive tutorial on &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/CreatingGraphs&#34;&gt;how to create your own graphs and templates&lt;/a&gt; with this project. Use the &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/issues/list&#34;&gt;project issue tracker&lt;/a&gt; (&lt;strong&gt;not the comments on this post!&lt;/strong&gt;) to view and report issues, and use the &lt;a href=&#34;http://groups.google.com/group/better-cacti-templates&#34;&gt;project mailing list&lt;/a&gt; to discuss the templates and scripts.&lt;/p&gt;
+
+&lt;p&gt;The full changelog follows.&lt;/p&gt;
+
+&lt;pre&gt;
+2011-01-22: version 1.1.8
+
+  * The cache file names could conflict due to omitting --port (issue 171).
+  * Load-average parsing did not work correctly at high load (issue 170).
+  * The --mpds option to make-template.pl did not create new inputs (issue 133).
+  * The url and port were reversed in the Nginx commandline (issue 149).
+  * Added $nc_cmd to ss_get_by_ssh.php (issue 154, issue 152).
+  * InnoDB Transactions and other graphs showed NaN instead of 0 (issue 159).
+  * Added graphs for Percona Server response-time distribution (issue 158).
+  * Added graphs for MongoDB (issue 136).
+  * Added a minimum option to the template construction logic (issue 169).
+  * Added memtotal for Memory (issue 146).
+  * make-template.pl sanity checks were too strict (issue 168).
+&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time TCP traffic with tcprstat</title>
+      <link>http://www.xaprb.com/blog/2010/09/09/time-tcp-traffic-with-tcprstat/</link>
+      <pubDate>Thu, 09 Sep 2010 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2010/09/09/time-tcp-traffic-with-tcprstat/</guid>
+      <description>&lt;p&gt;I just realized that I didn&amp;rsquo;t publicize this in the Postgres world, or anywhere but the MySQL blogosphere for that matter. Some folks at my company have released a generic TCP-response-time tool. Very useful for monitoring, benchmarks, historical metrics, and so on. It&amp;rsquo;s kind of like iostat, but for TCP traffic, and fully focused on time, not traffic size. Performance == time and tasks, and this is a lightweight way to measure that data. I wrote an introductory blog post &lt;a href=&#34;http://www.mysqlperformanceblog.com/2010/08/31/introducing-tcprstat-a-tcp-response-time-tool/&#34;&gt;here&lt;/a&gt;, and the documentation is &lt;a href=&#34;http://www.percona.com/docs/wiki/tcprstat:start&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Beware of svctm in Linux&#39;s iostat</title>
+      <link>http://www.xaprb.com/blog/2010/09/06/beware-of-svctm-in-linuxs-iostat/</link>
+      <pubDate>Mon, 06 Sep 2010 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2010/09/06/beware-of-svctm-in-linuxs-iostat/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been studying the source of iostat again and trying to understand whether all of its &lt;a href=&#34;http://www.xaprb.com/blog/2010/01/09/how-linux-iostat-computes-its-results/&#34;&gt;calculations I explained here&lt;/a&gt; are valid and correct. Two of the columns did not seem consistent to me. The await and svctm columns are supposed to measure the average time from beginning to end of requests including device queueing, and actual time to service the request on the device, respectively. But there&amp;rsquo;s really no instrumentation to support that distinction. The device statistics you can get from the kernel do not provide timing information about device queueing, only a) begin-to-end timing of completed requests and b) the time accumulated by requests that haven&amp;rsquo;t yet completed. I concluded that the await is correct, but the svctm cannot be.&lt;/p&gt;
+
+&lt;p&gt;I just looked at &lt;a href=&#34;http://sebastien.godard.pagesperso-orange.fr/&#34;&gt;the sysstat website&lt;/a&gt;, and it has been updated recently to warn about this, too:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;svctm&lt;/p&gt;
+
+&lt;p&gt;The average service time (in milliseconds) for I/O requests that were issued to the device. Warning! Do not trust this field any more. This field will be removed in a future sysstat version.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A review of Web Operations by John Allspaw and Jesse Robbins</title>
+      <link>http://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/</link>
+      <pubDate>Sat, 03 Jul 2010 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/</guid>
+      <description>&lt;div id=&#34;attachment_1864&#34; class=&#34;wp-caption alignleft&#34; style=&#34;width: 190px&#34;&gt;
+  &lt;a href=&#34;http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20&#34;&gt;&lt;img src=&#34;http://www.xaprb.com/media/2010/05/web_operations.gif&#34; alt=&#34;Web Operations&#34; title=&#34;Web Operations&#34; width=&#34;180&#34; height=&#34;236&#34; class=&#34;size-full wp-image-1864&#34; /&gt;&lt;/a&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+    Web Operations
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20&#34;&gt;Web Operations&lt;/a&gt;. By John Allspaw and Jesse Robbins, O&amp;rsquo;Reilly 2010, with a chapter by myself. (Here&amp;rsquo;s &lt;a href=&#34;http://oreilly.com/catalog/0636920000136&#34;&gt;a link to the publisher&amp;rsquo;s site&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;I wrote a chapter for this book, and it&amp;rsquo;s now on shelves in bookstores near you. I got my dead-tree copy today and read everyone else&amp;rsquo;s contributions to it. It&amp;rsquo;s a good book. A group effort such as this one is necessarily going to have some differences in style and even overlapping content, but overall it works very well. It includes chapters from some really smart people, some of whom I was not previously familiar with. John and Jesse obviously have good connections. A lot of the folks are from Flickr.&lt;/p&gt;
+
+&lt;p&gt;Here are the highlights in my opinion.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Theo Schlossnagle, who has a place on my list of &lt;a href=&#34;http://www.xaprb.com/blog/essential-books/&#34;&gt;essential books&lt;/a&gt;, opens things with an overview of what web operations really is, and why it&amp;rsquo;s hard. Don&amp;rsquo;t skip this. Theo&amp;rsquo;s introduction is concise and thoughtful.&lt;/li&gt;
+&lt;li&gt;Eric Ries discusses the benefits of continuous deployment. He is right on the money. Right out of college I spent 3 years as a developer at a company with very little engineering discipline, and then left for another company built by a small ace team practicing extreme programming. Eric nails the benefits of continuous deployment &amp;ndash; he really gets it. I hadn&amp;rsquo;t heard of Eric before, but now I&amp;rsquo;ve subscribed to &lt;a href=&#34;http://www.startuplessonslearned.com/&#34;&gt;his blog&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;John Allspaw (whose book on capacity planning is also on my list of essentials) and Richard Cook discuss how complex systems fail. This chapter appeared in part as a &lt;a href=&#34;http://www.kitchensoap.com/2009/11/12/how-complex-systems-fail-a-webops-perspective/&#34;&gt;whitepaper and blog post on John&amp;rsquo;s blog&lt;/a&gt;, and is expanded in this book. I have spent a lot of time examining failures for clients, and as VP of Consulting, also a lot of time examining Percona&amp;rsquo;s own mistakes. I fully agree with the conclusions in this chapter. A few key points: there is never a single root cause; our desire to find one blinds us and keeps us from learning; &lt;em&gt;true&lt;/em&gt; failures are inherently unpredictable and happen only when a series of things fails; avoiding failure requires experience with failure. This echoes another book I&amp;rsquo;ve read recently, &lt;a href=&#34;http://www.amazon.com/Black-Swan-Impact-Highly-Improbable/dp/1400063515?tag=xaprb-20&#34;&gt;The Black Swan&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://brian.moonspot.net/&#34;&gt;Brian Moon&amp;rsquo;s&lt;/a&gt; chapter on unexpected traffic spikes. If you get a chance to hear Brian speak, take it. He&amp;rsquo;s an engaging guy with interesting and relevant stories to tell. Stories are always a better experience than bullet points.&lt;/li&gt;
+&lt;li&gt;Jake Loomis&amp;rsquo;s chapter on postmortems. My own research into prevention of emergencies agrees almost perfectly with his list of things to do on page 225. Read this chapter carefully! Now, knowing how to put this into action is hard &amp;ndash; very hard &amp;ndash; but at least you&amp;rsquo;ll have a place to start. The worst compliment I ever got after fixing a system that&amp;rsquo;d run out of hard drive space (due to utter lack of basic monitoring) was that I&amp;rsquo;d &amp;ldquo;saved the day.&amp;rdquo; Baloney. Postmortems can be a great way to learn your infrastructure&amp;rsquo;s weaknesses and prevent emergencies in the future. I&amp;rsquo;m fully confident that this particular client will again deploy new servers without adding them into Nagios, and the results will be predictable.&lt;/li&gt;
+&lt;li&gt;Naturally, my chapter about choosing a relational database architecture for web applications (skewed towards MySQL). There is a chapter on NoSQL databases by Eric Florenzano as well, but it is more introductionary-level.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What wasn&amp;rsquo;t so good? I didn&amp;rsquo;t get a lot of value out of John&amp;rsquo;s interview with Heather Champ, on community management and web operations. I did not think the interview format worked well in a book full of essays. But that might just be me. Also, a couple of places in two or three chapters felt a bit rant-ish without a lot of clear actionable advice; I think readers won&amp;rsquo;t get so much out of this.&lt;/p&gt;
+
+&lt;p&gt;Overall, though, this is a great book, badly needed, on a topic that is simply not yet recognized for its true importance. As Theo writes, we&amp;rsquo;re seeing the emergence of web operations as a very large profession; it&amp;rsquo;s one whose definition is not yet formalized or agreed-upon, but that&amp;rsquo;ll change. It&amp;rsquo;s too important not to. Jesse&amp;rsquo;s introduction repeats this sentiment: the world now relies on the web, and so the world relies also on the engineers who make it run. Web operations is work that matters.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I keep track of notes</title>
+      <link>http://www.xaprb.com/blog/2010/07/03/how-i-keep-track-of-notes/</link>
+      <pubDate>Sat, 03 Jul 2010 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2010/07/03/how-i-keep-track-of-notes/</guid>
+      <description>&lt;p&gt;This is the follow-up to my post on &lt;a href=&#34;http://www.xaprb.com/blog/2010/06/30/how-i-keep-track-of-tasks/&#34;&gt;how I keep track of tasks&lt;/a&gt;. It&amp;rsquo;s important for me to have a good system for keeping notes and other files organized. The problem usually turns out to be that I want them organized several different ways simultaneously: by date, by project, by person, by subject. Alas, if I keep them in files on a hard drive, I can only choose one such organizing strategy, because filesystems are a single hierarchy.&lt;/p&gt;
+
+&lt;p&gt;I choose to organize by date, simply because most of the time I need access to notes and files about things I&amp;rsquo;m working on now or recently. If I need to find files by project or subject, there&amp;rsquo;s a search feature in my file browser, and it works really well! So date-organization is good enough for me.&lt;/p&gt;
+
+&lt;p&gt;Inside my home directory, I have a directory per year, and inside that, a directory per month. If I write a note today, it goes into the $HOME/etc/&lt;sup&gt;2010&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;/03/ directory. The filename starts with today&amp;rsquo;s date. That&amp;rsquo;s the simple organizing principle behind my note system. It also lets me eventually move things off my computer into permanent storage, so I don&amp;rsquo;t have to keep backing things up forever and carrying around infinite amounts of data. I keep the last couple of years; if I need access to notes or projects from 2006, I can go pull a hard drive off the shelf and pop it into my &lt;a href=&#34;http://www.amazon.com/Vantec-NexStar-NST-D200SU-2-5-Inch-3-5-Inch/dp/B001QFNDXE/?tag=xaprb-20&#34;&gt;hard drive dock&lt;/a&gt; (buy one of those, and you&amp;rsquo;ll never get ripped off again by external drives with their own enclosures and power supplies).&lt;/p&gt;
+
+&lt;p&gt;I still need a quick way to create files and place them there, or move them there after I create them. For creating files, I use Vim. There is nothing better than a plain-text editor for me. My Vim settings are such that if I begin a line with a hyphen, Vim keeps nice indentation for me, making it easy to take notes in bulleted lists with proper indentation. If you&amp;rsquo;re on a call with me and you hear typing, I&amp;rsquo;m probably taking notes into Vim.&lt;/p&gt;
+
+&lt;p&gt;But it&amp;rsquo;s a pain to type out the full path to the file including the year, month, and date. So I created some helper scripts and put them into my $PATH. The most important are &amp;rsquo;t&amp;rsquo; and &amp;lsquo;c&amp;rsquo;. &amp;rsquo;t&amp;rsquo; simply uses Vim to edit a file. (It also creates any required directories, based on today&amp;rsquo;s date.) So if I am on a call with Joe, I just type &amp;rsquo;t joe&amp;rsquo; into a terminal, and I&amp;rsquo;m editing /home/baron/etc/&lt;sup&gt;2010&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;/03-joe.txt.&lt;/p&gt;
+
+&lt;p&gt;The &amp;lsquo;c&amp;rsquo; tool cats the file&amp;rsquo;s contents. If I type &amp;lsquo;c joe&amp;rsquo;, it executes &amp;lsquo;cat /home/baron/etc/&lt;sup&gt;2010&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;/03-joe.txt&amp;rsquo;. This makes it easy to grep, copy and paste, and so on.&lt;/p&gt;
+
+&lt;p&gt;There are a few more tools: the &amp;rsquo;m&amp;rsquo; tool moves any file into the date-based hierarchy, so if I save a PDF of an order-confirmation page, for example, I can then &amp;rsquo;m&amp;rsquo; it and it goes into its proper place. And I have a few tools to list files I created today, yesterday, this week, and this month.&lt;/p&gt;
+
+&lt;p&gt;I have a very important convention: when I&amp;rsquo;m taking notes and something becomes my responsibility to follow up on, I type TODO in the notes. After the call ends, I can grep for TODO in the file and quickly transfer the item into the task system I described in the post linked from above. This is how I can be confident that I&amp;rsquo;m not forgetting anything I&amp;rsquo;m supposed to do: I take notes and write it out as it happens, and then review the notes afterwards.&lt;/p&gt;
+
+&lt;p&gt;All told, this system kind of feels too simple to be a system. Everyone else seems to use complicated online gizmos named after groceries, or whizbang apps created by 37Signals, but I&amp;rsquo;ve found none of them to meet my needs, and just went back to basics. Basic is good. Basic works. Basic lets me concentrate on what I&amp;rsquo;m doing.&lt;/p&gt;
+
+&lt;p&gt;As I said in my previous post, part of this is based on the &lt;a href=&#34;http://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0142000280?tag=xaprb-20&#34;&gt;GTD&lt;/a&gt; book, which I read through a couple of times (with a year in between) and picked the parts that made sense to me. I think it&amp;rsquo;s a useful book to read, if you&amp;rsquo;re having trouble organizing yourself. I would just caution against spending all your energy getting organized &amp;ndash; leave a little energy for actually doing your work!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

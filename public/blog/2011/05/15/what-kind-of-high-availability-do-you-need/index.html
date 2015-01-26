@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> What kind of High Availability do you need? &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>What kind of High Availability do you need?</h1>
+  <span class="post-date">Sun, May 15, 2011 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>Henrik just wrote a good article on <a href="http://openlife.cchttp://www.xaprb.com/blogs/2011/may/different-ways-doing-ha-mysql">different ways of achieving high availability with MySQL</a>. I was going to respond in the comments, but decided it is better not to post such a long comment there.</p>
+
+<p>One of the questions I think is useful to ask is what kind of high availability is desired. It is quite possible for a group of several people to stand in a hallway and talk about high availability, all of them apparently discussing the same thing but really talking about very different things.</p>
+
+<p>Henrik says &ldquo;At MySQL/Sun we recommended against asynchronous replication as a HA solution so that was the end of it as far as MMM was concerned. Instead we recommended DRBD, shared disk or MySQL Cluster based solutions.&rdquo; Notice that all of those are synchronous technologies (at least, the way MySQL recommended them to be configured), generally employed to ensure a specific desirable property &ndash; no loss of data. But &ldquo;I must not lose any committed transaction&rdquo; and &ldquo;my database must be available&rdquo; are actually orthogonal requirements. One is about availability, the other is durability.</p>
+
+<p>A lot of people who say they want High Availability actually want High Durability.</p>
+
+<p>There are a great many MySQL users for whom writes are much less valuable than reads. I would point to an advertising-supported website as a canonical example. If the system isn&rsquo;t available &ndash; that is, available to serve read queries &ndash; then a lot of money is lost. If someone&rsquo;s latest comment on a blog post is lost &ndash; who cares? Money continues to flow.</p>
+
+<p>This is why a lot of people want a system that keeps the database online, even if some writes are lost. Note that loss of writes is not the same thing as consistency &ndash; consistency and durability are also orthogonal for most users&rsquo; purposes. So we aren&rsquo;t talking about eventual consistency or any of the other buzzwords, but simply &ldquo;the system must respond to read queries.&rdquo;</p>
+
+<p>Asynchronous replication is well suited to many such users&rsquo; availability requirements, as long as replication does not fail (halt) through a write conflict or some other failure mode. (It is often perfectly acceptable for it to fail in other ways, as long as it does not halt.) That&rsquo;s why a lot of users are interested in the specific type of &ldquo;high availability&rdquo; that a system such as MMM is intended to provide (but, as I mentioned, <a href="http://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/">actually doesn&rsquo;t provide</a>). In other words, MMM would be great for a lot of people, if it worked correctly.</p>
+
+<p>I have also been exposed to applications for which this kind of availability-trumps-durability paradigm is absolutely unacceptable. The advertising system upon which the advertising-supported website relies for its income is a good example. Users know they can build sites that only need to be available for reads, precisely because they are trusting that Google AdSense is highly available for writes! Delegating writes to someone else is the easiest way to build systems.</p>
+
+<p>There is a place for DRBD and MySQL Cluster, and there are also many situations that are served by neither the DRBD nor the MMM type of solution.</p>
+
+<p>Josh Berkus wrote a while back about <a href="http://it.toolbox.comhttp://www.xaprb.com/blogs/database-soup/the-three-database-clustering-users-35473">three types of cluster users</a>, as opposed to three types of clusters. I think it&rsquo;s helpful to approach the conversation from that angle sometimes too. As a consultant, I almost always do that when I enter a discussion with a customer who wants a &ldquo;cluster&rdquo; or &ldquo;high availability.&rdquo; Those are basically code phrases that tell me I need to start at the beginning and ensure we are all talking about the same requirements!</p>
+
+<p>I also agree with Henrik about the need to turn off automatic failover. In many, many situations this is by far the best approach. Sometimes people state requirements that, if one steps back and looks at them afresh, quite obviously indicate that an automatic failover is the last thing that&rsquo;s desirable. For example, if someone tells me that he expects failover to be required less than once a year, this is almost guaranteed not to be a good case for automatic failover. A system that&rsquo;s tested so infrequently is almost certainly not going to work right when it&rsquo;s needed. In such cases, it&rsquo;s far better to leave everything alone until an expert human can resolve the problem, rather than have a stupid machine destroy what would otherwise be a fixable system.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

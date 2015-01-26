@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Version 1.5.1 of the innotop MySQL monitor released &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Version 1.5.1 of the innotop MySQL monitor released</h1>
+  <span class="post-date">Sun, Sep 16, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      <p>This release is part of the unstable 1.5 branch. Its features will ultimately go into the stable 1.6 branch. You can download it from the <a href="http://code.google.com/p/innotop">innotop-devel package</a>.</p>
+
+<p>The major change is a new Command Summary&rsquo; mode (switch to this mode with the &lsquo;C&rsquo; key) that&rsquo;s similar to <a href="http://jeremy.zawodny.com/mysql/mytop/">mytop&rsquo;s</a> &lsquo;c&rsquo; mode. It shows you the relative size of variables from SHOW STATUS and SHOW VARIABLES. Here&rsquo;s a sample:</p>
+
+<pre>Command Summary (? for help) localhost, 25+07:16:43, 2.45 QPS, 3 thd, 5.0.40
+
+_____________________ Command Summary _____________________
+Name                    Value    Pct     Last Incr  Pct    
+Select_scan             3244858  69.89%          2  100.00%
+Select_range            1354177  29.17%          0    0.00%
+Select_full_join          39479   0.85%          0    0.00%
+Select_full_range_join     4097   0.09%          0    0.00%
+Select_range_check            0   0.00%          0    0.00%</pre>
+
+<p>The default is to show the <code>Com_*</code> variables, but I&rsquo;ve used a different prefix to illustrate that you can view any variables you want. You just choose the prefix. Useful ones are <code>Select_</code>, <code>Handler_</code> and <code>Sort_</code>. This gives you instant insight into the kind of work your server is doing. You can see in the sample above that the kinds of joins the server does is healthily balanced towards scans and ranges on the first table. The server does very few full joins, full range joins, and range-check query plans (this is good).</p>
+
+<p>The example shows one server, as you can see by the first line. Naturally, you can monitor many servers in aggregate, and it&rsquo;s configured to do this by default if you&rsquo;re watching more than one server. However, there&rsquo;s a bug in the percentage columns when you do that (the Value columns are accurate when aggregated). I have a fix in mind for that, which will also fix many other things that cause me (and you) too much work when customizing innotop. But that&rsquo;ll come later. I feel this is good enough for now, since the main use for this mode is when you&rsquo;re just trying to familiarize yourself with a server, perhaps at a consulting job, or when reading someone&rsquo;s tuning tutorial or the like.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to install beautiful X11 cursors &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to install beautiful X11 cursors</h1>
+  <span class="post-date">Mon, Apr 24, 2006 in
+		
+		<a href="/categories/Desktop" class="btn btn-primary">Desktop</a>
+		
+  </span>
+      
+
+<p>X11 comes with unattractive mouse cursors, but it&rsquo;s trivial to replace them with other themes. In this article I&rsquo;ll explain how to install mouse cursors system-wide or for a single user, and give you links to my favorite cursor themes.</p>
+
+<p>Nicely crafted mouse cursors are very important for usability, in my opinion. I need my mouse cursors to be unobtrusive, yet really easy to see. They need to be easy to find without peering at the screen or waving the mouse wildly, and easy to use precisely on every kind of background. Smooth, beautiful cursors are a definite plus.</p>
+
+<p>Themes are supported in <a href="http://www.xfree86.org/">XFree86</a> 4.3 or newer. All versions of <a href="http://www.x.org/">xorg</a>, the successor to XFree86, support themes. I hope you&rsquo;re using xorg by this time.</p>
+
+<h3 id="toc_0">Available mouse cursor themes</h3>
+
+<p>Many themes are available &ndash; a great site to look for them is <a href="http://www.kde-look.org/?xcontentmode=36">KDE look</a>. In my opinion, and this is only my opinion, most cursor themes are something only a mother could love. I don&rsquo;t even like the &ldquo;high-quality&rdquo; cursors packaged specifically for Gentoo.</p>
+
+<p>Then again, maybe I&rsquo;m not like most folks. I like very minimal and functional things with as little clutter as possible. When I look at screenshots of other people&rsquo;s desktops cluttered with a million windows and root-tail displays, transparent terminals and a huge gkrellm window along the side displaying system load, all I can think of is attention deficit disorder. I like <a href="http://www.xfce.org">XFCE</a> with nothing but a taskbar showing, or <a href="http://fluxbox.sourceforge.net">Fluxbox</a>, or even <a href="http://www.nongnu.org/ratpoison/">Ratpoison</a>. Heck, I&rsquo;m happy with just a terminal and a <a href="http://www.gnu.org/software/screen/">screen</a> session. But, that&rsquo;s just me.</p>
+
+<p>I digress &ndash; back to beautiful cursors. I think the <a href="http://www.kde-look.org/content/show.php?content=28310">neutral cursor theme</a> is very nice, but I like the <a href="http://www.kde-look.org/content/show.php?content=5600">Red Hat 9 cursors</a> even better. The I-beam is thinner, the default arrow has a single-pixel black tip when in front of a white background for precision, and the busy cursor is less distracting. On the plus side, both themes are very straightforward and plain, yet highly attractive and usable.</p>
+
+<p>If you like the looks of these but prefer colorful cursors, the <a href="http://www.kde-look.org/content/show.php?content=6679">jaguarx cursor theme</a> is very similar, but has color added. And if you want to mix and match cursors from different themes, well, they&rsquo;re just files &ndash; make your own! It&rsquo;s really easy.</p>
+
+<p>These themes are licensed under the GPL, so I&rsquo;m free to redistribute them, a liberty I&rsquo;m happy to take. I&rsquo;ve provided links below for your convenience:</p>
+
+<ol>
+<li><a href="http://www.xaprb.com/media/2006/04/neutral.tar.gz">Neutral cursor theme</a></li>
+<li><a href="http://www.xaprb.com/media/2006/04/neutral-old.tar.gz">Another (older?) version of the neutral cursor theme</a></li>
+<li><a href="http://www.xaprb.com/media/2006/04/redhat9cursors.tar.gz">Red Hat 9 cursor theme</a></li>
+<li><a href="http://www.xaprb.com/media/2006/04/jaguarx.tar.gz">Jaguarx cursor theme</a></li>
+</ol>
+
+<h3 id="toc_1">Installation options</h3>
+
+<p>There are three basic ways to install the themes:</p>
+
+<ol>
+<li>System-wide</li>
+<li>System-wide in the local directory</li>
+<li>For one user only</li>
+</ol>
+
+<p>System-wide installations place the cursors in subdirectories of <code>/usr/share/cursors/xorg-x11</code>. System-wide in the local directory means placing them in <code>/usr/&lt;strong&gt;local&lt;/strong&gt;/share/cursors/xorg-x11</code>. The difference is <code>/usr/share/</code> installations will get cleaned out by installation and package management systems, so unless you install them through your distribution&rsquo;s package management system, you may lose them when upgrading X11. <code>/usr/local/share</code> installations won&rsquo;t get wiped out when upgrading your system.</p>
+
+<p>Single-user installations require no access to system directories, so a non-root user can alter his or her own theme easily, and even take it from computer to computer. In this case, the themes are placed in subdirectories in <code>~/.icons/</code>.</p>
+
+<p>User-specific settings override local settings, which override system-wide settings.</p>
+
+<h3 id="toc_2">Installing the theme</h3>
+
+<p>To install a theme, download the theme and unpack it. You should have a directory structure like the following:</p>
+
+<ul>
+<li>theme_name
+
+<ul>
+<li>index.theme</li>
+<li>cursors
+
+<ul>
+<li>cursor files&hellip;</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>Move the entire <code>theme_name</code> directory to the installation destination: <code>/usr/share/cursors/xorg-x11/</code>, <code>/usr/local/share/cursors/xorg-x11/</code>, or <code>~/.icons/</code>.</p>
+
+<p>In Gentoo, you can install packages from Portage as usual: <code>emerge blueglass-xcursors</code>.</p>
+
+<h3 id="toc_3">Choosing a default theme</h3>
+
+<p>There&rsquo;s a concept of a default theme. The default theme is located in the <code>default/</code> subdirectory of wherever you&rsquo;ve installed your theme. This is how the system decides which theme to use &ndash; it uses the &ldquo;default&rdquo; theme. It reads the <code>index.theme</code> file and looks at it.</p>
+
+<p>If you installed your theme system-wide or system-wide local, you need to edit the <code>/usr/share/cursors/xorg-x11/default/index.theme</code> or the <code>/usr/local/share/cursors/xorg-x11/default/index.theme</code> file. Specify the default theme should <strong>inherit from</strong> the theme you want to use. For example, here is the default X11 theme if you haven&rsquo;t specified anything else:</p>
+
+<pre>[Icon Theme]
+Inherits=core</pre>
+
+<p>That file tells X11 to use the <code>core</code> cursor theme &ndash; the one built right into X11 itself. If you want to use the <code>neutral</code> theme instead, edit the file thusly:</p>
+
+<pre>[Icon Theme]
+Inherits=neutral</pre>
+
+<p>If you installed the theme in your <code>~/.icons/</code> directory, you can do several different things:</p>
+
+<ul>
+<li>Rename the theme directory from <code>theme_directory</code> to <code>default</code>.</li>
+<li>Leave your themes in their original directories, and make a <code>default</code> directory and create in it a single file called <code>index.theme</code> with the contents as shown just above.</li>
+<li>Leave your themes in their original directories, and make a symlink named <code>default</code> to the theme directory. For instance, <code>ln -sfnT ~/.icons/redhat9cursors/ ~/.icons/default</code>.</li>
+</ul>
+
+<p>I like the last option, because it never leaves me in doubt about which theme I&rsquo;m really using.</p>
+
+<p><strong>Update: in Ubuntu Hardy Heron, open System/Preferences/Appearance and click &ldquo;Customize&hellip;&rdquo; then select the Pointer tab. Select your preferred cursor set here. The list will include cursors installed under ~/.icons/</strong></p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

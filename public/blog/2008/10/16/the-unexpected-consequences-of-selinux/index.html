@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> The unexpected consequences of SELinux &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>The unexpected consequences of SELinux</h1>
+  <span class="post-date">Thu, Oct 16, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Operations" class="btn btn-primary">Operations</a>
+		
+  </span>
+      <p>I&rsquo;ve been working with a client recently who has <a href="http://www.nsa.gov/selinux/">SELinux</a> on his servers.Â  It has been quite a struggle sometimes.</p>
+
+<p>My colleages tell me that SELinux has a pretty noticeable performance impact.Â  I am not sure if we have benchmarks to support this; at any rate, the client said it&rsquo;s OK, we&rsquo;ll take the performance hit.</p>
+
+<p>There have been a few problems (Nagios can&rsquo;t run because it can&rsquo;t write to its own pid file, etc etc).Â  Last night there was something new: &ldquo;too many connections&rdquo; when trying to connect to MySQL.Â  As a result the site was down, and it wasn&rsquo;t possible to log in to MySQL and see why. But the oddest thing happened: mysqld would not shut down.Â  It was sitting basically idle, doing absolutely nothing, and wouldn&rsquo;t stop. There was nothing in any log files to show what might be going on.</p>
+
+<p>So I tried some standard tricks of the trade to see what it was doing, starting with strace. No go.Â  It wouldn&rsquo;t show me anything. What about gdb?</p>
+
+<p>No, there was an error about something failing, do I want to continue, yes I do, but then I don&rsquo;t get any information when I ask for stack traces or anything else.</p>
+
+<p>Finally I resorted to <a href="http://www.youtube.com/watch?v=Fow7iUaKrq4">kill-dash-nine</a>.Â  Then I was able to restart, log in quickly before the server bogged down, and watch the processlist grow full of unauthenticated connections. Ah hah! It&rsquo;s a networking problem.Â  <a href="http://www.mysqlperformanceblog.com/2008/05/31/dns-achilles-heel-mysql-installation/">The old skip-name-resolve problem</a> reared its ugly head. It was an easy fix.</p>
+
+<p>And why couldn&rsquo;t I get any information about this?Â  Why did I have to kill the server?Â  Well&hellip; here&rsquo;s the messages from /var/log/messages:</p>
+
+<pre>SELinux is preventing strace (mysqld_t) "signal" to &lt;Unknown&gt; (unconfined_t).
+SELinux is preventing gdb (mysqld_t) "signal" to &lt;Unknown&gt; (unconfined_t).</pre>
+
+<p>Sigh. I&rsquo;m root on this machine, but I can&rsquo;t do anything with mysqld &ndash; not because I&rsquo;m restricted, but because mysqld is restricted.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

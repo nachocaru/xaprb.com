@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to convert MySQL output to HTML tables &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to convert MySQL output to HTML tables</h1>
+  <span class="post-date">Thu, Apr 13, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>In this article I&rsquo;ll explain how to control the output of the <code>mysql</code> client program and feed it to another program to transform the results as desired. I often transform output into HTML tables for these blog articles &ndash; at least, I do when I&rsquo;m not being lazy.</p>
+
+<p>The <code>mysql</code> command-line program can accept a command and print the results directly to STDOUT. The default output behavior differs depending on where its input comes from. When the input comes via STDIN, the output is tab-separated values. When the input comes via the <code>-e</code> or <code>--execute</code> options, or when the <code>-t</code> option is specified, the output is in &ldquo;tabular&rdquo; format, with borders drawn by pipes, dashes and plus characters.</p>
+
+<p>Results can also be printed vertically, as they are when an interactive command is terminated with <code>\G</code> instead of a semicolon. The command-line option for this format is <code>-E</code> or <code>--vertical</code>.</p>
+
+<p>I usually select results in non-tabular format and feed them to <code>awk</code> to turn them into HTML. Here is a quick one-liner that will format the first two columns:</p>
+
+<p><code>echo &quot;select ...&quot; | mysql | sed -e 's/\|//g' | awk '{a++; if(a&lt;2){print &quot;&lt;tr&gt;&lt;th&gt;&quot; $1 &quot;&lt;/th&gt;&lt;th&gt;&quot; $2 &quot;&lt;/th&gt;&lt;/tr&gt;&quot;;} else { print &quot;&lt;tr&gt;&lt;td&gt;&quot; $1 &quot;&lt;/td&gt;&lt;td&gt;&quot; $2 &quot;&lt;/td&gt;&lt;/tr&gt;&quot;; }}'</code></p>
+
+<p>The result is formatted into HTML rows and columns, and all I need to do is wrap it in a set of <code>&lt;table&gt;</code> tags.</p>
+
+<p>I sometimes use Perl, too. Here&rsquo;s a script I&rsquo;ve saved in my <code>PATH</code> so I can pipe results into it:</p>
+
+<pre>#!/usr/bin/perl
+use strict;
+use warnings;
+
+LINE:
+while (my $line = &lt;STDIN&gt;) {
+    next LINE if $line =~ m/^\+/;
+    chomp $line;
+    if ($line =~ m/^\|/) {
+        $line =~ s#^\| | \|$##g;
+        chomp $line;
+        print "&lt;tr&gt;&lt;td&gt;"
+            . join("&lt;/td&gt;&lt;td&gt;", split(/(?&lt;=\S)\s+\|\s+(?=\S)/, $line))
+            . "&lt;/td&gt;&lt;/tr&gt;\n";
+    }
+    else {
+        print "&lt;tr&gt;&lt;td&gt;"
+            . join("&lt;/td&gt;&lt;td&gt;", split(/\t/, $line))
+            . "&lt;/td&gt;&lt;/tr&gt;\n";
+    }
+}</pre>
+
+<p><strong>Update</strong> Looks like the MySQL folks already did this work for me, duh. The <code>-H</code> option outputs HTML for query results.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Why is MySQL more popular than PostgreSQL? &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Why is MySQL more popular than PostgreSQL?</h1>
+  <span class="post-date">Sun, May 18, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>There is much discussion of why <a href="http://www.mysql.com/">MySQL</a> is more widely adopted than <a href="http://www.postgresql.org/">PostgreSQL</a>. The discussion I&rsquo;ve heard is mostly among the PostgreSQL community members, who believe their favorite database server is better in many ways, and are sometimes puzzled why people would choose an inferior product.</p>
+
+<p>There are also many comparison charts that show one server is better than the other in some ways. These don&rsquo;t really seem to help people with this question, either!</p>
+
+<p>I can&rsquo;t answer for everyone, but I can put it in the form of a question: if I were to replace MySQL with PostgreSQL, what things do I rely on that would become painful or even force a totally different strategy? The answer turns out to be fairly simple for me: replication and upgrades.</p>
+
+<h3 id="toc_0">Replication</h3>
+
+<p>Love it or hate it, MySQL&rsquo;s built-in replication is absolutely key to much of what I do with MySQL. I can truthfully say that it has lots of problems and limitations. But I can also say this about it:</p>
+
+<ul>
+<li>It&rsquo;s included by default with the server. PostgreSQL&rsquo;s have historically not been included. (I think this is about to change, but I&rsquo;m not sure.)</li>
+<li>It is conceptually very simple. You could call that a weakness and a limitation, but you could also say that it enables a tremendous amount of flexibility. I tend to hold with the latter view. PostgreSQL&rsquo;s replication technologies have a very different complexity profile. That scares me.</li>
+<li>It is easy to set up (it takes just a couple of commands) and is easily scriptable. This is mostly due to its simplicity. I am happy because I know it inside and out.</li>
+<li>It is generally very low overhead. PostgreSQL&rsquo;s main replication system is built on top of triggers and is said not to scale very well. (Disclaimer: this is only what people have told me; I haven&rsquo;t battle-tested it. But I&rsquo;m afraid of it.)</li>
+<li>There is only One Way To Do It. PostgreSQL has lots of different replication systems. That in itself is a pretty significant deterrent for me.</li>
+</ul>
+
+<p>Regardless of the technical strengths and weaknesses of each database&rsquo;s replication systems, it is my perception that MySQL&rsquo;s ultimately lets me do incredibly flexible and useful things; in general it is Just Enough and has just the right combinations of qualities for lots of purposes. And each of its weaknesses is easily avoided or worked around, or just sidestepped &ndash; because MySQL replication&rsquo;s simplicity and flexibility lets me easily choose a different approach.</p>
+
+<h3 id="toc_1">In-Place Upgrades</h3>
+
+<p>MySQL&rsquo;s files are extremely portable between versions, between operating systems, and even between platforms most of the time (unless you have a system that doesn&rsquo;t use IEEE floating-point format, but who does these days?). That means an upgrade is dead simple.</p>
+
+<p>This may not seem like a big deal, but I work with a lot of data. When you do that, you have to consider the alternatives: what if I couldn&rsquo;t upgrade in-place?</p>
+
+<p>That&rsquo;s the current state of PostgreSQL. You have to dump and reload your data, and when you have a terabyte of data, that&rsquo;s no fun. The workarounds usually involve replicating your data to another server, switching to the other server, upgrading, and switching back. But why should you have to have another server just to upgrade your data?</p>
+
+<p>I see this as a significant &ndash; even critical &ndash; sticking point. It&rsquo;s something I just don&rsquo;t have to think about most of the time with MySQL</p>
+
+<h3 id="toc_2">Are PostgreSQL&rsquo;s other strengths enough?</h3>
+
+<p>Not for the systems I work on. These two problems seem extremely difficult for me to work around. I rely so heavily on MySQL&rsquo;s replication and in-place upgrades that it feels too daunting to live without them.</p>
+
+<p>What I&rsquo;m trying to do here is give some psychological insight into what makes me feel happy with MySQL, and afraid of the thought of having to solve these problems with PostgreSQL. It may or may not apply broadly; my sense is that these are concerns for others as well, but I could be wrong.</p>
+
+<p>If I were primarily a PostgreSQL user, I&rsquo;m sure there would be similar feelings the other direction. This would explain why some people in the PostgreSQL camp seem to recoil away from MySQL. I&rsquo;d be interested to hear why that is, too.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

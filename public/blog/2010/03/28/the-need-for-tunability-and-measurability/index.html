@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> The need for tunability and measurability &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>The need for tunability and measurability</h1>
+  <span class="post-date">Sun, Mar 28, 2010 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>To program is human, to instrument is divine. Complex systems that will support a heavy workload will eventually have to be tuned for it. There are two prerequisites for tuning: tunability, and measurability.</p>
+
+<p>Tunability generally means configuration settings. Adding configuration settings is a sign of a humble and wise programmer. It means that the programmer acknowledges &ldquo;I don&rsquo;t understand how this system will be used, what environment it will run in, or even what my code really does.&rdquo; Sometimes things are hard-coded. InnoDB is notorious for this, although don&rsquo;t take that to mean that I think Heikki Tuuri isn&rsquo;t humble and wise &ndash; nobody&rsquo;s perfect. Sometimes programmers set out to create systems that are self-tuning. I&rsquo;m not aware of any success stories I can point to in this regard, but I can point to plenty of failures. Perhaps I can&rsquo;t think of any successes because I don&rsquo;t need to.</p>
+
+<p>Measurability (instrumentation) is the next sign of a wise and humble programmer. If your system must be tuned, then it needs to be measured to enable wise decisions. There are at least two important kinds of metrics &ndash; a subject for another blog post. Most large systems I&rsquo;ve worked with (primarily database systems, but operating systems too) are seriously lacking in measurability. A programmer who makes the system measurable acknowledges &ldquo;I might be wrong, and if I am, it&rsquo;s a good thing to enable people to prove it,&rdquo; and realizes that &ldquo;you cannot improve what you cannot measure.&rdquo;</p>
+
+<p>Complex, high-load systems get micro-optimized, making them even more opaque. By the time an I/O operation in InnoDB reaches the disk, it&rsquo;s often impossible to blame it on a specific query. Not just because of lack of instrumentation &ndash; even with perfect instrumentation, I/O operations wouldn&rsquo;t be assignable one-to-one with user actions. Optimization does that, because a lot of optimizations are about deferring, anticipating, or combining work. That makes instrumentation even more important.</p>
+
+<p>This weekend, I heard conflicting stories about instrumentation in Postgres. Someone claimed to have offered patches with a detailed set of instrumentation (I&rsquo;d also heard this story from someone else at the same company, six months ago in a different place). He told me that the maintainers had declined it on the basis of the added overhead. Someone else told me that no such offer had been made, at least not in public where the decision could be taken to the mailing lists. I don&rsquo;t know what&rsquo;s true. I do know that stock Postgres is virtually un-instrumented in ways that matter a lot. The same can be said of MySQL, although interestingly the Venn diagram of the ways these two projects are instrumented doesn&rsquo;t overlap all that much.</p>
+
+<p>The performance and maintenance cost of adding instrumentation to an application pales in comparison to the benefits. There&rsquo;s a famous quote from Oracle guru Tom Kyte, who when asked about the cost of Oracle&rsquo;s performance instrumentation, estimated it at negative ten percent. That is, without the ability to measure Oracle and thus improve it, it&rsquo;d be at least ten percent slower. I think ten percent is a modest estimate for most systems I work with.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

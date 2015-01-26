@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A gentle introduction to CouchDB for relational practitioners &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A gentle introduction to CouchDB for relational practitioners</h1>
+  <span class="post-date">Tue, Sep 7, 2010 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>CouchDB is a document-oriented database written in Erlang that addresses a particular &ldquo;sweet spot&rdquo; in data storage and retrieval needs. This blog post is an introduction to CouchDB for those of us who have a relational database background.</p>
+
+<p>A CouchDB database doesn&rsquo;t have tables. It has a collection of documents, stored in a B+Tree. A document is a collection of attributes and values. Values can be atomic, or complex nested structures such as arrays and sub-documents. When you add a document to a database, CouchDB stores it in the B+Tree, indexed by two attributes with special meaning: _id and _rev.</p>
+
+<p>CouchDB lets you store related data together even if it isn&rsquo;t all the same type of data; you can store documents representing blog posts, users, and comments &ndash; all in the same database. This is not as chaotic as it sounds. To get your data back out of CouchDB in sensible ways, you define views over the database. A view stores a subset of the database&rsquo;s documents. You can think of them as materialized partial indexes. You can create a view of blog posts, and a view of comments, and so on. Each view is another B+Tree. It stays up-to-date with the changes you make to the database.</p>
+
+<p>You can structure your documents any way you want. There is no fixed schema. If you decide after a while that you want to add tags to your blog posts, you can simply write new posts with a collection of tags and save them into the database. Old posts won&rsquo;t have tags, but that&rsquo;s OK; if your application code can read the old format and write the new format, you have an application that doesn&rsquo;t need a fixed schema.</p>
+
+<p>Updates are never done in-place. Everything is copy-on-write. New revisions are saved into the database as new documents, obsoleting old ones, and CouchDB increments the _rev property each time. To update a document, you fetch it, change it, and send it back, specifying the _id and the most recent _rev. If someone else changed the document in the meantime, your _rev is stale, and your update fails. You must re-fetch and re-save; you can&rsquo;t lock a document.
+CouchDB runs on HTTP and JSON. All of its operations, such as store and retrieve, are standard HTTP requests. The documents themselves are represented in JSON. You can talk directly to CouchDB with curl, Ajax, and anything else that can speak HTTP. There is no &ldquo;protocol&rdquo; other than this. CouchDB isn&rsquo;t just Web-friendly, it is actually made of the same technologies that the Web is made of. You query CouchDB by specifying the database, document ID, view name, and so forth directly in the URL. For example, to fetch a blog post document from the &ldquo;blog&rdquo; database, you might issue a <code>GET http://www.xaprb.com/blog/helloworld</code>. Queries against views and other objects have simple clean URLs, too.</p>
+
+<p>CouchDB uses special documents, called &ldquo;design documents,&rdquo; to store JavaScript code in the database. The code defines the views I mentioned earlier. Another thing you can store is validation functions. This is code that CouchDB executes when you save a document to the database. It accepts a document as input, and can reject it, so you do have control over the schema of documents &ndash; it doesn&rsquo;t have to be a free-for-all. In the blog application, you can have a validation function that starts by enforcing &ldquo;every document must have a &lsquo;type&rsquo; property, and its content must be one of (post,user,comment).&rdquo; Then you can have separate validation logic for each type of document.</p>
+
+<p>Design documents can also contain something called &ldquo;show functions.&rdquo; CouchDB will execute the function&rsquo;s code in response to HTTP requests to that URL, and send the resulting data back as an HTTP response (as usual). With show functions, you can store entire applications inside the database. Your browser might never even know that it&rsquo;s talking to a database directly, instead of a web server with a database behind it.</p>
+
+<p>CouchDB isn&rsquo;t designed for arbitrary queries at runtime. You can only query one view, show function, or database at a time. You can&rsquo;t do joins. You can&rsquo;t do arbitrary GROUP BY and ORDER BY. You have to decide in advance what operations you&rsquo;re going to need, and build views for them. You can then issue requests to those views, essentially the equivalent of key lookups and range scans with a few basic options such as an offset, limit, and reverse order. Now, having said that, you <em>can</em> define views that reduce the database down to aggregates, create a custom ordering, and so on. You <em>can</em> define the equivalent of the relational &ldquo;project&rdquo; operation inside your view code.</p>
+
+<p>Here&rsquo;s how: a view is a map-reduce operation. A view is defined in two parts, the map and the reduce. The map is not optional; it generates the contents of the view. It is a JavaScript function. CouchDB iterates over the database and feeds each document into the function, collects the results, and inserts them into the view&rsquo;s B+Tree index. Inside the view function&rsquo;s code, you emit key-value 2-tuples.</p>
+
+<ul>
+<li>The key will identify the tuple in the index that&rsquo;s built to store this view. It can be simple or complex, so you can create a view that&rsquo;s keyed by [this,that,the_other_thing]. The view will be ordered by the same thing; that&rsquo;s how B+Trees work.</li>
+<li>The value you emit is whatever you want the B+Tree to store at its leaf nodes, and can also be complex (it&rsquo;s a document, like any other).</li>
+</ul>
+
+<p>The &ldquo;reduce&rdquo; part of the operation is optional. It computes what is stored in the non-leaf nodes of the B+Tree index. For example, you can use it to create aggregates, such as summing up counts of comments. In addition to the reduce part of the code, there is a &ldquo;rereduce&rdquo;. The rereduce is called as the operation is invoked on higher and higher non-leaf nodes, all the way to the root of the tree. CouchDB knows how to take advantage of the data that&rsquo;s stored by these reduce and rereduce operations, so for example, it doesn&rsquo;t necessarily have to descend all the way to the leaf nodes and scan in order to count how many documents match a particular query.</p>
+
+<p>An important thing to know about all this code is that nothing is allowed to have side effects. You can&rsquo;t modify the database in a view definition, for example. Documents are immutable; it&rsquo;s all copy-on-write. You get input; you can specify output; that&rsquo;s it, period. It&rsquo;s a form of functional programming. Why do we care? Because it keeps things simple and elegant, and enables all kinds of nice properties and functionality, such as replication and eventual consistency and cache expiry and scaling to multiple nodes and so on.</p>
+
+<p>The database file is append-only. Old versions don&rsquo;t automatically get cleaned up. The database grows forever until you compact it. This process builds a new database and then does a swap-and-discard. The append-only, copy-on-write design makes backups easy, and data corruption unlikely.</p>
+
+<p>CouchDB comes with a &ldquo;graphical user interface&rdquo; called Futon. It&rsquo;s built right into the database, and surprise! &ndash; it works through HTTP and Ajax. You just fire up CouchDB, point your Web browser to /_utils, and go. It&rsquo;s a fun way to explore CouchDB.</p>
+
+<p>With all that in mind, why would you want to use CouchDB instead of a relational database? For most things I&rsquo;m involved with, I want a relational database. But I got asked recently to help with a database that&rsquo;ll store records about people. Although nobody has implemented anything yet, it&rsquo;s a terrible match for a relational database, and an excellent fit for a document-oriented one. The inputs are going to be arbitrary documents with different structures, such as census records, birth records, tax records, estate and probate records, marriage records, and so on. Nobody knows what it&rsquo;s going to store in the future. When people build &ldquo;flexible schemas&rdquo; in relational databases, they usually go for the so-called EAV or EBLOB models. In other words, they aren&rsquo;t using the database relationally at all, and it simply doesn&rsquo;t work well. This type of project needs a document-oriented database.</p>
+
+<p>I&rsquo;ve left out a lot of important details, but the point of this post is to understand the high-level CouchDB concepts and how they&rsquo;re implemented, so you can reason for yourself about it. If you&rsquo;ve read this far and you think that CouchDB might be a good fit for your needs, I encourage you to take a look at <a href="http://www.amazon.com/dp/0596155891/?tag=xaprb-20">CouchDB, The Definitive Guide</a>.</p>
+
+<p><strong>Update:</strong> CouchOne adapted the above post as a <a href="http://www.couchone.com/gentle-introduction">white paper</a> and <a href="http:/http://www.xaprb.com/blog.couchone.com/post/1167966323/a-gentle-introduction-to-couchdb-for-relational">guest-posted it on their own blog</a>.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

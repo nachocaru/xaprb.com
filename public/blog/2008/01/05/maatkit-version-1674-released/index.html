@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Maatkit version 1674 released &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Maatkit version 1674 released</h1>
+  <span class="post-date">Sat, Jan 5, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      <p>Maatkit contains essential command-line utilities for MySQL, such as a table checksum tool and query profiler. It provides missing features such as checking slaves for data consistency, with emphasis on quality and scriptability.</p>
+
+<p>This release contains bug fixes and new features.</p>
+
+<pre>Changelog for mk-archiver:
+
+2008-01-05: version 1.0.6
+
+   * Made suffixes for time options optional (bug #1858696).
+
+Changelog for mk-deadlock-logger:
+
+2008-01-05: version 1.0.8
+
+   * Made suffixes for time options optional (bug #1858696).
+
+Changelog for mk-heartbeat:
+
+2008-01-05: version 1.0.6
+
+   * Made suffixes for time options optional (bug #1858696).
+
+Changelog for mk-parallel-dump:
+
+2008-01-05: version 1.0.4
+
+   * Second and later chunks had DROP/CREATE TABLE (bug #1863949).
+   * Made suffixes for time options optional (bug #1858696).
+   * --locktables didn't disable --flushlock.
+
+Changelog for mk-parallel-restore:
+
+2008-01-05: version 1.0.3
+
+   * Made suffixes for time options optional (bug #1858696).
+   * --ignoretables was ignored.
+
+Changelog for mk-slave-delay:
+
+2008-01-05: version 1.0.5
+
+   * Made suffixes for time options optional (bug #1858696).
+   * The program was ignoring some connection parameters.
+   * Made the program use master when the I/O thread waits for relay log space.
+
+Changelog for mk-slave-restart:
+
+2008-01-05: version 1.0.5
+
+   * Made suffixes for time options optional (bug #1858696).
+   * Added logic to discard corrupt relay logs.
+   * Added --monitor, --sentinel, and --stop.
+   * Added --quiet and changed --verbose to 1 by default.
+   * Added the ability to monitor many servers with --recurse.
+
+Changelog for mk-table-checksum:
+
+2008-01-05: version 1.1.24
+
+   * Added support for the FNV_64 UDF, which is distributed with Maatkit.
+   * --emptyrepltbl didn't Do The Right Thing by default.
+   * --explain didn't disable --emptyrepltbl
+   * Made suffixes for time options optional (bug #1858696).
+   * The --float-precision option was ignored.
+   * (mk-checksum-filter) -i, -d options worked only on multiple files.
+
+Changelog for mk-table-sync:
+
+2008-01-05: version 1.0.3
+
+   * Added the --function command-line option.
+   * Added support for the FNV_64 hash function (see mk-table-checksum).
+   * Made suffixes for time options optional (bug #1858696).
+   * InnoDB tables use --transaction unless it's explicitly specified.</pre>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

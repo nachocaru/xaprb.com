@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Math on Xaprb </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.xaprb.com/categories/math/index.xml/</link>
+    
+    
+    
+    <updated>Mon, 02 Jun 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Can Anomaly Detection Solve Alert Spam?</title>
+      <link>http://www.xaprb.com/blog/2014/06/02/can-anomaly-detection-solve-alert-spam/</link>
+      <pubDate>Mon, 02 Jun 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/06/02/can-anomaly-detection-solve-alert-spam/</guid>
+      <description>&lt;p&gt;Anomaly detection is all the buzz these days in the &amp;ldquo;#monitoringlove&amp;rdquo; community.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/06/anomaly.jpg&#34; alt=&#34;anomaly&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The conversation usually goes something like the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Alerts are spammy and often generate false positives.&lt;/li&gt;
+&lt;li&gt;What you really want to know is when something anomalous is happening.&lt;/li&gt;
+&lt;li&gt;Anomaly detection can replace static thresholds and heuristics.&lt;/li&gt;
+&lt;li&gt;The result will be better accuracy and lower noise.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;m going to give a &lt;a href=&#34;https://vividcortex.com/anomaly-detection-webinar/&#34;&gt;webinar about the science of statistical anomaly detection on June 17th&lt;/a&gt;. Sorry, no spoilers will be given here. You&amp;rsquo;ll have to attend the webinar to find out what I think on the above topics.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/matthileo/3888057995/&#34;&gt;Pic Credit&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

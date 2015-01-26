@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> MySQL Toolkit version 896 released &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>MySQL Toolkit version 896 released</h1>
+  <span class="post-date">Thu, Sep 20, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      
+
+<p>This release of MySQL Toolkit adds a new tool, fixes some minor bugs, and adds new functionality to several of the tools.</p>
+
+<h3 id="toc_0">New tool: MySQL Heartbeat</h3>
+
+<p>This tool was contributed by <a href="http://provenscaling.com/">Proven Scaling</a>&rsquo;s <a href="http://jcole.us/">Jeremy Cole</a> and <a href="http://www.sixapart.com/">Six Apart</a>. It measures replication delay on a slave, which can be daisy-chained to any depth. It does not rely on SHOW SLAVE STATUS, and in fact it doesn&rsquo;t even need the slave processes to be running. You could use it to measure replication delay on your own hand-rolled replication, if you wanted.</p>
+
+<p>The most common way to use it is to run one process to update a heartbeat on the master, and another to monitor the lag on a slave (you can run as many as you wish to monitor multiple slaves). By default it prints moving averages of delay over one, five and fifteen-minute time windows:</p>
+
+<pre>0s [  0.00s,  0.00s,  0.00s ]
+   0s [  0.00s,  0.00s,  0.00s ]
+   1s [  0.02s,  0.00s,  0.00s ]
+   2s [  0.05s,  0.01s,  0.00s ]
+   3s [  0.10s,  0.02s,  0.01s ]
+   4s [  0.17s,  0.03s,  0.01s ]
+   0s [  0.17s,  0.03s,  0.01s ]
+   0s [  0.17s,  0.03s,  0.01s ]
+   0s [  0.17s,  0.03s,  0.01s ]</pre>
+
+<p>(of course, I couldn&rsquo;t resist making that configurable, so you can specify your own time windows).</p>
+
+<p>You can also run it as a daemon. Running the update process as a daemon is intuitive. Running the monitoring process isn&rsquo;t quite as obvious, because a daemon should re-open STDOUT to /dev/null. What you can do is give it the &#8211;file argument and it&rsquo;ll keep a file current with the most recent line of output, which you can check anytime you want to see how your slave has been doing over the last X time windows.</p>
+
+<h3 id="toc_1">Changelog</h3>
+
+<p>Here&rsquo;s a changelog for the other tools I updated in this release:</p>
+
+<pre>Changelog for mysql-deadlock-logger:
+
+2007-09-20: version 1.0.4
+
+   * Added --interval, --time, and --daemonize options, and signal handling.
+   * --askpass did not allow different passwords on --source and --dest.
+
+Changelog for mysql-duplicate-key-checker:
+
+2007-09-20: version 1.1.1
+
+   * Exit code wasn't always defined.
+
+Changelog for mysql-query-profiler:
+
+2007-09-20: version 1.1.5
+
+   * Documentation didn't specify how queries in FILE are separated.
+
+Changelog for mysql-slave-delay:
+
+2007-09-20: version 1.0.1
+
+   * Added a --daemonize option to detach from the shell and run in the background.
+
+Changelog for mysql-slave-restart:
+
+2007-09-20: version 1.0.1
+
+   * Added a --daemonize option to detach from the shell and run in the background.
+
+Changelog for mysql-table-checksum:
+
+2007-09-20: version 1.1.15
+
+   * The CHECKSUM strategy was always disabled.
+
+Changelog for mysql-visual-explain:
+
+2007-09-20: version 1.0.3
+
+   * filesort wasn't applied to the first non-constant table.</pre>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

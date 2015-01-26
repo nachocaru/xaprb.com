@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> If you only learn one thing about database transactions, it should be this &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>If you only learn one thing about database transactions, it should be this</h1>
+  <span class="post-date">Sun, Aug 27, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>I&rsquo;ve been writing a lot of articles about locks, deadlocks, and transactions recently, and it occurs to me I&rsquo;ve neglected to mention the single most important thing to know. If you only learn one thing about transactions in database systems, you should learn this, and learn it thoroughly &ndash; burn it into your brain permanently, if possible.</p>
+
+<p><strong>The single most important thing you can do is keep your transactions as small as possible.</strong></p>
+
+<p>That simple practice will improve performance, increase concurrency, reduce deadlocks, and generally create world peace. Plus it&rsquo;ll make you think hard about your queries, which will probably make them higher-quality and better to maintain.</p>
+
+<p>Now, how can you do it? Ah, that&rsquo;s the trick. I offer you six simple suggestions.</p>
+
+<h3 id="toc_0">1. Have the right attitude</h3>
+
+<p>The way to think about transactions is as an urgent mission. The instant you say <code>START TRANSACTION</code>, the race is on.</p>
+
+<p>It&rsquo;s like when you&rsquo;re waiting in the car for the pouring rain to stop, before you make a mad dash for the house. You prepare yourself, unlock the door, unbuckle the seat belt&hellip; take a deep breath&hellip; <em>START TRANSACTION go go go go COMMIT!</em></p>
+
+<h3 id="toc_1">2. Do as few statements as possible</h3>
+
+<p>Do only the statements you need to inside the transaction. Don&rsquo;t make updates to <code>big_huge_table</code> and inserts to <code>giant_table</code>, then poke around inside other tables looking at little things of no consequence before finishing your work. Remember, a transaction is a set of statements that must all succeed together as a unit, or must all fail together as a unit. Include in your transaction only the statements that belong to that unit of work.</p>
+
+<p>If you can do it all in a single query, you don&rsquo;t even need a transaction. By definition, a single query is a one-statement transaction.</p>
+
+<h3 id="toc_2">3. Prepare as much ahead of time as possible</h3>
+
+<p>To help include as few statements as possible in your transaction, look at the order of the queries. Can some of them be moved earlier in the sequence, before the <code>START TRANSACTION</code> statement? If so, good. Do as much preparation as possible before you start the work. Especially think about whether you can check to make sure there&rsquo;s even work to be done, or whether you&rsquo;re likely to be able to finish the work &ndash; if you can find that out ahead of time, you might be able to avoid even doing anything.</p>
+
+<h3 id="toc_3">4. Touch the smallest amount of data possible</h3>
+
+<p>If possible, avoid changing data that doesn&rsquo;t need to be changed. For example, if you&rsquo;re updating a summary table and you know what was just changed in the table from which the summary is calculated, you may not need to update the entire summary &ndash; maybe just part of it. Use indexes wisely to constrain your work to just part of a table instead of doing the entire table. Use every bit of information at your disposal to avoid working with more data than you need to.</p>
+
+<h3 id="toc_4">5. Don&rsquo;t wait around before committing</h3>
+
+<p>The goal is to lock as few resources as possible, for the shortest time possible. To that end, look at whether you can re-order the statements within your transaction. Is it possible to make the big changes later in the transaction? Can you delay getting locks on the really important table, which everyone else is accessing at the same time, until near the end? If so, you might cut down the number of locks and the duration they&rsquo;re held. And definitely commit the transaction as soon as you&rsquo;re done.</p>
+
+<h3 id="toc_5">6. Don&rsquo;t sacrifice consistency</h3>
+
+<p>Transactions have a purpose, and you should not be so afraid of holding locks that you commit when only half the work is done. Use transactions deliberately and carefully to group a set of work together into a logical unit. By all means examine whether the unit is bigger than it needs to be, but don&rsquo;t shoot yourself in the foot by committing before the work is all done, out of fear of deadlocks.</p>
+
+<h3 id="toc_6">Conclusion</h3>
+
+<p>Keeping transactions as small as possible is the most important thing to do, but it may not be obvious, especially if you&rsquo;re less experienced with databases. A few easy practices, combined with simple awareness, can go a very long way. But remember &ndash; don&rsquo;t defeat the purpose by cheating yourself out of the very benefits transactions give you.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

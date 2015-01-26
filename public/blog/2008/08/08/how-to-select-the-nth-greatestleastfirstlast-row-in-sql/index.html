@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to select the Nth greatest/least/first/last row in SQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to select the Nth greatest/least/first/last row in SQL</h1>
+  <span class="post-date">Fri, Aug 8, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>This is a continuation of my articles on <a href="http://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/">how to select the desired rows from ranked data</a>. A user recently posed a question in the comments that I thought was particularly intriguing:</p>
+
+<blockquote>
+<p>What is the best way to query 1) Sum of min price of all types? 2) Sum of 2nd highest price of all types?</p>
+</blockquote>
+
+<p>Sounds like fun! Let me start by saying the sum is the easy part. You can always do that like so:</p>
+
+<pre>select sum(price) from (
+   -- find desired rows here
+) as x;</pre>
+
+<p>Finding the desired rows is the hard part. In my previous articles I focused on extrema:</p>
+
+<ul>
+<li>The single biggest/smallest/extremest row in each group. (Pretty easy.)</li>
+<li>The N most extreme rows in each group. (Doable, but harder.)</li>
+</ul>
+
+<p>In this article, we&rsquo;re going to see how to get not the most extreme row, not the N most extreme rows, but &ndash; hold your breath &ndash; the single Nth most extreme row per group. (In a future article I might talk about how to get the Nth through Mth most extreme rows.)</p>
+
+<h3 id="toc_0">The setup</h3>
+
+<p>Let&rsquo;s create some sample data to get started.</p>
+
+<pre>drop table if exists fruits;
+
+create table fruits (
+   type varchar(20) not null,
+   variety varchar(20) not null,
+   price int not null,
+   primary key (type, variety)
+);
+
+insert into fruits values
+('apple',  'fuji',       1),
+('apple',  'gala',       2),
+('apple',  'limbertwig', 3),
+('cherry', 'bing',       4),
+('cherry', 'chelan',     5),
+('orange', 'navel',      6),
+('orange', 'valencia',   7),
+('pear',   'bartlett',   8),
+('pear',   'bradford',   9);
+</pre>
+
+<p>For convenience so it&rsquo;s easier to see how they are ordered, I&rsquo;ve just ordered the fruits alphabetically and given them unique prices.</p>
+
+<p>The desired results &ndash; second-cheapest prices for each fruit &ndash; are as follows:</p>
+
+<pre>+--------+-----------------+
+| type   | second_cheapest |
++--------+-----------------+
+| apple  |               2 | 
+| cherry |               5 | 
+| orange |               7 | 
+| pear   |               9 | 
++--------+-----------------+
+</pre>
+
+<h3 id="toc_1">The solution</h3>
+
+<p>The intuition you need here is that if you get the 2 cheapest fruits in each group, and then take the single most extreme from each group, you can get the Nth offset. Let&rsquo;s begin with one of the queries from my earlier article. (You should be able to use any of them. I&rsquo;m just using this one because it&rsquo;s convenient and pretty clear.)</p>
+
+<pre>select type, variety, price
+from fruits
+where (
+   select count(*) from fruits as f
+   where f.type = fruits.type and f.price &lt; fruits.price
+) &lt;= 1;
++--------+----------+-------+
+| type   | variety  | price |
++--------+----------+-------+
+| apple  | fuji     |     1 | 
+| apple  | gala     |     2 | 
+| cherry | bing     |     4 | 
+| cherry | chelan   |     5 | 
+| orange | navel    |     6 | 
+| orange | valencia |     7 | 
+| pear   | bartlett |     8 | 
+| pear   | bradford |     9 | 
++--------+----------+-------+
+</pre>
+
+<p>The result is the 2 cheapest fruits from each type. (Notice that all we really did was eliminate one row &ndash; the most expensive apple.) Now let&rsquo;s get the second cheapest &ndash; and what is that? It&rsquo;s simply the most expensive of the fruits we found in that query. And that&rsquo;s just a MAX().</p>
+
+<pre>select type, max(price) as second_cheapest
+from (
+   select type, variety, price
+   from fruits
+   where (
+      select count(*) from fruits as f
+      where f.type = fruits.type and f.price &lt; fruits.price
+   ) &lt;= 1
+) as x
+group by type;
++--------+-----------------+
+| type   | second_cheapest |
++--------+-----------------+
+| apple  |               2 | 
+| cherry |               5 | 
+| orange |               7 | 
+| pear   |               9 | 
++--------+-----------------+
+</pre>
+
+<p>That&rsquo;s it!</p>
+
+<h3 id="toc_2">Sum of the second cheapest</h3>
+
+<p>By now you probably see the pattern: do it one step at a time, turning each thing into a simpler question that&rsquo;s easy to answer. So how do we sum the second cheapest prices for each type of fruit? First, we find them (done!), then we sum them.</p>
+
+<pre>select sum(second_cheapest) from (
+   select type, max(price) as second_cheapest
+   from (
+      select type, variety, price
+      from fruits
+      where (
+         select count(*) from fruits as f
+         where f.type = fruits.type and f.price &lt; fruits.price
+      ) &lt;= 1
+   ) as x
+   group by type
+) as y;
++----------------------+
+| sum(second_cheapest) |
++----------------------+
+|                   23 | 
++----------------------+
+</pre>
+
+<h3 id="toc_3">Conclusion</h3>
+
+<p>In this post I showed you how to decompose the problem into simpler and simpler pieces. Often what&rsquo;s hardest about a complex query is trying to do it all at once. I have lots of tips elsewhere on this blog about how to make things faster &ndash; this is not a particularly fast query &ndash; but here I just wanted to show how to get the correct answer.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

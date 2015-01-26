@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to simulate the GROUP_CONCAT function &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to simulate the GROUP_CONCAT function</h1>
+  <span class="post-date">Wed, Sep 28, 2005 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>MySQL 4.1 adds a number of new aggregate functions, among them <a href="http://dev.mysql.com/doc/mysql/en/group-by-functions.html">GROUP_CONCAT</a>. Earlier versions require you to build and compile the function as a C++ extension, which I&rsquo;m told is easy. However, that is usually not possible in a shared hosting environment.</p>
+
+<p>It is possible to use <a href="http://dev.mysql.com/doc/mysql/en/variables.html">user variables</a> to write some queries without GROUP_CONCAT. The key is to understand how MySQL implements selects. As the following example shows, it really loops through each row one at a time, evaluating the expression for each. This example uses the same <code>fruits</code> table as in my article on <a href="http://www.xaprb.com/blog/2005/09/27/simulating-the-sql-row_number-function/">simulating the ROW_NUMBER function</a>:</p>
+
+<pre>set @result = '';
+select @result := concat(@result, variety, ' ') 
+from fruits where type = 'apple';
++------------------------------------------+
+| @result := concat(@result, variety, ' ') |
++------------------------------------------+
+| fuji                                     |
+| fuji gala                                |
+| fuji gala limbertwig                     |
++------------------------------------------+
+select @result;
++-----------------------+
+| @result               |
++-----------------------+
+| fuji gala limbertwig  |
++-----------------------+</pre>
+
+<p>It is possible to get similar functionality from Microsoft SQL Server 2000 with a local variable.</p>
+
+<pre>declare @result varchar(8000);
+set @result = '';
+select @result = @result + name + ' '
+    from master.dbo.systypes;
+select rtrim(@result);</pre>
+
+<p>The result is the string &ldquo;image text uniqueidentifier tinyint smallint int smalldatetime real money datetime float sql_variant ntext bit decimal numeric smallmoney bigint varbinary varchar binary char timestamp nvarchar nchar sysname.&rdquo; It is necessary to initialize the string to &ldquo; before the select, because NULL concatenates to NULL.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

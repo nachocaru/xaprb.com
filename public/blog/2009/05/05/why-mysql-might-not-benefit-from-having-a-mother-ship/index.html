@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Why MySQL might not benefit from having a mother ship &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Why MySQL might not benefit from having a mother ship</h1>
+  <span class="post-date">Tue, May 5, 2009 in
+		
+		<a href="/categories/Commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      <p>As I was driving with a colleague in California a couple of weeks ago during the conference, the topic of conversation turned to the notion that Percona and the rest of the MySQL community really need the presence of a central entity that provides a recognized home for the MySQL server. The conversation went something like &ldquo;I was talking to so-and-so, and he said, <em>you know, you guys really need Sun/MySQL, because without the mother ship, things will fall apart and your own business will fail</em>.&rdquo;</p>
+
+<p>I happen to believe this is FUD, and that the reverse might actually be true. (This is one reason why we&rsquo;re <a href="http://www.xaprb.com/blog/2009/04/20/a-review-of-how-life-imitates-chess/">competing</a> head-on with MySQL.) Having a &ldquo;mother ship&rdquo; is in the long run, a very complex scenario to fully understand. There are all sorts of causes and effects that play out in subtle ways. I honestly doubt anyone can really know what the true effect is.</p>
+
+<p>So what <em>can</em> we say about the presence or absence of a single controlling organization, then? Simply this: we can look for examples of where power is decentralized, and see how it fares. Let&rsquo;s see some names:</p>
+
+<ul>
+<li>The Linux kernel.</li>
+<li>The GNU/Linux operating system in all its variations.</li>
+<li>PostgreSQL.</li>
+<li>Apache.</li>
+</ul>
+
+<p>There are more that I could mention. But these are good enough examples to show that a thriving ecosystem is possible when power is not completely concentrated. In many ways, these projects have been far more successful than MySQL. I invite you to simply take a look at the Postgres hackers mailing list to see the PostgreSQL project&rsquo;s success first-hand.</p>
+
+<p>I can mention a few effects I&rsquo;ve seen in the MySQL world that I don&rsquo;t see elsewhere, and which I attribute to the presence of MySQL the corporation. The single biggest one I see is how the community around MySQL differs from, say, the community around PostgreSQL. As I said in my recent keynote address at the <a href="http://conferences.percona.com/">Percona Performance Conference</a>, I think the best way to describe it is &ldquo;MySQL <em>has</em> a community. PostgreSQL <em>is</em> a community.&rdquo; (That&rsquo;s a quote from a PostgreSQL community member.)</p>
+
+<p>PostgreSQL isn&rsquo;t the only project I can point to &ndash; Drizzle, for example, is taking a very good approach in my opinion. But any of these will do as an example. The key point is that there is a fundamentally different outlook on the relationship, both inside and outside MySQL, than there might be. On the outside, I have observed a lot of passivity and negativity. On the inside, I sometimes detect something that might be called paternalism.</p>
+
+<p>Unflattering &ndash; yes, I&rsquo;m being rather unflattering. But let&rsquo;s be honest. The status quo between MySQL and &ldquo;the community&rdquo; is not good, not good at all. It resembles nothing so much as the relationship between users and producers of a proprietary product. That&rsquo;s not bad for a proprietary product &ndash; but really bad for an open-source one. Just the fact that we talk about MySQL and &ldquo;the community&rdquo; as though they&rsquo;re separate reveals a lot.</p>
+
+<p>And I attribute this to the presence of a mother ship, however you might choose to label it. It creates a power relationship that I believe is a roadblock to a lot of good things. I know of examples in the last few weeks where the power relationship caused appalling problems with some of the foremost community members &ndash; situations that would never have happened in a relationship of equals. (I&rsquo;m being discreet for a reason; I don&rsquo;t want to cause any more heartache for those involved. Let&rsquo;s just leave it at &ldquo;the entire community suffered as a result.&rdquo;) This kind of thing has been happening for <em>years</em>.</p>
+
+<p>I firmly believe those who would truly participate in open source must recognize that there is no true meeting of the minds, unless everyone is an equal. Not just &ldquo;treated as an equal&rdquo; &ndash; if you hold the power, then <em>you can&rsquo;t be an equal</em>, no matter how you try to treat others. Anyone who tries to be &ldquo;more equal&rdquo; than others is poisoning the well. The only solution I see is to <a href="http://www.xaprb.com/blog/2009/03/08/making-maatkit-more-open-source-one-step-at-a-time/">divest oneself of power</a>.</p>
+
+<p>I think there are <a href="http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/">a lot of opportunities</a> here for everyone involved. And those who are best placed to take those opportunities, but don&rsquo;t, merely create a vacuum that draws others in to do it in their stead. And that&rsquo;s why I think that ultimately, the mother ship structure is not only unnecessary and sometimes detrimental, but may even become irrelevant.</p>
+
+<p>I will be very curious to see how things change in the future. MySQL has a lot going for it: an incredible team of talented, dedicated employees; visionary leaders; unprecedented technology landscape; economic conditions &ndash; it&rsquo;s an enviable position. What I&rsquo;m most interested in is to see how they will nurture the <a href="http://www.xaprb.com/blog/2008/05/14/mysql-free-software-but-not-open-source/">open-source nature of the product</a>, which is its greatest strength &ndash; if it is teased out of the closed-source models that have bound it so tightly in recent years. The good news is, I think it&rsquo;s theirs to lose; they can win if they play it right, but the rest of us win no matter what.</p>
+
+<p>The day we see an <a href="http://mysqlha.blogspot.com/2009/04/hack-on-drizzle-get-paid.html">announcement like this one</a> for MySQL will be a great day indeed.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

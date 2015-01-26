@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Version 1.1.6 of Better Cacti Templates released &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Version 1.1.6 of Better Cacti Templates released</h1>
+  <span class="post-date">Sun, Jan 10, 2010 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>I&rsquo;ve released version 1.1.6 of the <a href="http://code.google.com/p/mysql-cacti-templates/">Better Cacti Templates</a> project. This release includes a bunch of bug fixes (but not all of them!) and two new sets of graphs. One set is for disk I/O on GNU/Linux, and the other is a new set of templates for OpenVZ. I&rsquo;m looking for feedback on both of those. This release also has a bunch of code-level features: much better test coverage (hooray!), and a refactored ss_get_by_ssh.php that makes it much easier to create new graphs and templates. The SSH-based templates also take advantage of the same caching as the MySQL templates, which makes them a lot more efficient.</p>
+
+<p>There are <a href="http://code.google.com/p/mysql-cacti-templates/wiki/UpgradingTemplates">upgrade instructions</a> on the project wiki for this and all releases. There is also a comprehensive tutorial on <a href="http://code.google.com/p/mysql-cacti-templates/wiki/CreatingGraphs">how to create your own graphs and templates</a> with this project. Use the <a href="http://code.google.com/p/mysql-cacti-templates/issues/list">project issue tracker</a> to view and report issues, and use the <a href="http://groups.google.com/group/better-cacti-templates">project mailing list</a> to discuss the templates and scripts.</p>
+
+<p>The full changelog follows.</p>
+
+<pre>
+2010-01-10: version 1.1.6
+
+  * Added OpenVZ graphs (--type openvz) (issue 95).
+  * Added IO usage graphs (--type diskstats) (issue 97).
+  * Added extra error-reporting (issue 110).
+  * The $debug $debug_log options couldn't be set in the .cnf file (issue 110).
+  * Added a --use-ssh option to ss_get_by_ssh.php (issue 66).
+  * Added a debugging log to ss_get_by_ssh.php (issue 54).
+  * Enabled caching of results in ss_get_by_ssh.php (issue 46).
+  * Added a test suite for ss_get_by_ssh.php (issue 110).
+  * The 'free' stats suffered from PHP's issues with big numbers (issue 102).
+  * There was ambiguity (but no error) in SHOW STATUS overrides (issue 106).
+  * It was hard to debug failures caused by missing ext/mysql (issue 105).
+  * Code to make ss_get_mysql_stats.php testable was broken (issue 108).
+</pre>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

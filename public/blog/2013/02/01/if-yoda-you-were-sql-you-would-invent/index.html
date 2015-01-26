@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> If yoda you were, SQL you would invent &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>If yoda you were, SQL you would invent</h1>
+  <span class="post-date">Fri, Feb 1, 2013 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>SQL is such a bizarre language. It is all backwards. Consider:</p>
+
+<pre>SELECT   item_id, COUNT(*) AS qty, SUM(qty * price) AS total
+FROM     line_item
+WHERE    invoice_id = 18743
+GROUP BY item_id
+HAVING   SUM(discount) > 0
+ORDER BY item_id;</pre>
+
+<p>What is the logical flow of this statement? If SQL were written in logical-flow order, it might look something like this:</p>
+
+<pre>
+FROM     line_item
+WHERE    invoice_id = 18743
+RETRIEVE item_id, qty, price, discount
+GROUP BY item_id
+COMPUTE  item_id, COUNT(*) AS qty, SUM(qty * price) AS total, SUM(discount)
+HAVING   SUM(discount) > 0
+PROJECT  item_id, qty, total
+ORDER BY item_id;</pre>
+
+<p>SQL can get really hard to read and understand, really fast. Faster than any other language I can think of, and I&rsquo;ve been programming in SQL for years. It&rsquo;s such a weird language. It&rsquo;s almost declarative, but it&rsquo;s not. It feels a little pseudo-functional, like LISP, but it&rsquo;s not. Even XSLT makes more sense than SQL!</p>
+
+<p>How many fewer bugs would SQL programmers write if they didn&rsquo;t have to do a mental translation between the Yoda-speak that is SQL and the logical operations the RDBMS executes? I&rsquo;m not saying they should know the actual implementation, I&rsquo;m just saying it&rsquo;d be great if we didn&rsquo;t obfuscate things more than needed.</p>
+
+<p>But George Lucas wouldn&rsquo;t like that, and I guess he was on the SQL committee.</p>
+
+<p><img src="http://www.xaprb.com/media/2013/02/34182677.jpg" alt="34182677" width="400" height="276" class="aligncenter size-full wp-image-3042" /></p>
+
+<p>Comments, you have? MMmmmmmmmrmrrrrr! Leave them below, you will!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

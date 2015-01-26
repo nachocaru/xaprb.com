@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> When systems scale better than linearly &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>When systems scale better than linearly</h1>
+  <span class="post-date">Thu, Oct 6, 2011 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Performance" class="btn btn-primary">Performance</a>
+		
+  </span>
+      <p>I&rsquo;ve been seeing a few occasions where <a href="http://www.perfdynamics.com/">Neil J. Gunther&rsquo;s</a> Universal Scalability Law doesn&rsquo;t seem to model all of the important factors in a system as it scales. Models are only models, and they&rsquo;re not the whole truth, so they never match reality perfectly. But there appear to be a small number of cases where systems can actually scale a bit better than linearly over a portion of the domain, due to what I&rsquo;ve been calling an &ldquo;economy of scale.&rdquo; I believe that the Universal Scalability Law might need a third factor (seriality, coherency, and the new factor, economy of scale). I don&rsquo;t think that the results I&rsquo;m seeing can be modeled adequately with only two parameters.</p>
+
+<p>Here are two publicly available cases that appear to demonstrate this phenomenon: Robert Haas&rsquo;s recent blog post on PostgreSQL, titled <a href="http://rhaas.blogspot.com/2011/09/scalability-in-graphical-form-analyzed.html">Scalability, in Graphical Form, Analyzed</a> and Mikael Ronstrom&rsquo;s post from May on MySQL (NDB) Cluster, titled <a href="http://mikaelronstrom.blogspot.com/2011/05/better-than-linear-scaling-is-possible.html">Better than Linear Scaling is Possible</a>.</p>
+
+<p>Dr. Ronstrom&rsquo;s post discusses the mechanics of the phenomenon, and speculates (I&rsquo;m not sure it&rsquo;s conclusive) that it is from a combination of partitioning and better use of CPU caches. Now someone needs to do the math to figure out how to include this factor into the equation.</p>
+
+<p>The good thing about the Universal Scalability Law is how simple and applicable it is for many systems. It&rsquo;s nice that this economy-of-scale factor seems to be unusual and the simpler model remains easy to apply for a large variety of tasks.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

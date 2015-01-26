@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to leave a program running after you log out &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to leave a program running after you log out</h1>
+  <span class="post-date">Fri, Aug 1, 2008 in
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      
+
+<p>Have you ever run a command on a Unix-like system and then realized it&rsquo;ll take a really long time, and you want to log out of the computer and leave it running? Or maybe you&rsquo;ve connected over SSH to a remote server and executed a command that will take a while, and you&rsquo;re really worried that your network connection will fail and kill the command.</p>
+
+<p>There are several ways to log out without stopping the command. Let&rsquo;s take a look.</p>
+
+<h3 id="toc_0">Method 1: Job Control</h3>
+
+<p>When I learned about job control in the <a href="http://linux.die.net/man/1/bash">bash</a> shell, I was in the middle of an AI project on my <a href="http://www.cs.virginia.edu/">computer science department&rsquo;s</a> servers. I had written a <a href="http://clisp.cons.org/">LISP</a> program that simulated a little robot going from place to place delivering parts to an assembly line. The challenge was that he had to figure out the optimal route to do so, all the while never running out of fuel. (As it turns out, he was cursed by my professor with a small fuel tank.) The experiment was going to take at least 3 days &ndash; he had a lot of learning to do and a lot of parts to deliver. But I didn&rsquo;t realize this until I checked the next morning and saw his progress. What to do?</p>
+
+<p>After reading on the web, I learned that I could press Control-Z to suspend the job, and then &lsquo;bg&rsquo; to make it run in the background! Success! Then I logged out. And my job died. FAIL. Moral: test first.</p>
+
+<p>Why did it die? Because when I logged out, the shell sent the SIGHUP signal to all of its jobs.</p>
+
+<p>There&rsquo;s a way to do this, though: press Control-Z, type &lsquo;bg&rsquo;, and then type &lsquo;disown %1&#8242;. Now the job won&rsquo;t get the SIGHUP signal. Here&rsquo;s a demo:</p>
+
+<pre>baron@kanga:~$ run_forrest_run 
+CTRL-Z
+[1]+  Stopped                 run_forrest_run
+baron@kanga:~$ bg
+[1]+ run_forrest_run &#038;
+baron@kanga:~$ disown %1
+baron@kanga:~$</pre>
+
+<p>That&rsquo;s method one: <a href="http://linux.die.net/man/1/disown">disown</a> the job. It has a variety of shortcomings, though. Let&rsquo;s see what Method 2 has to offer.</p>
+
+<h3 id="toc_1">Method 2: nohup</h3>
+
+<p>Method 2 is to use the <a href="http://linux.die.net/man/1/nohup">nohup</a> command. This starts the program in the background and directs its output to a file called nohup.out. Now you can log out and come back later.</p>
+
+<p>What&rsquo;s the difference? Whereas disown is a job control feature that is part of the bash shell, nohup is a built-in standard program. It also takes care of saving the program&rsquo;s output for you. You can come back to it later and <a href="http://linux.die.net/man/1/tail">tail</a> the file to see what your program has been telling you.</p>
+
+<p>Demo time:</p>
+
+<pre>baron@kanga:~$ nohup run_forrest_run 
+nohup: ignoring input and appending output to `nohup.out'
+CTRL-Z
+[1]+  Stopped                 nohup run_forrest_run
+baron@kanga:~$ bg
+[1]+ nohup run_forrest_run &#038;
+baron@kanga:~$ 
+</pre>
+
+<p>I consider both of these really crude, though. For example, after you log back in, how do you attach your terminal to the program&rsquo;s standard input to type answers if it wants to ask you questions? This is just one thing that&rsquo;s not ideal. You know what&rsquo;s elegant? Method 3.</p>
+
+<h3 id="toc_2">Method 3: screen</h3>
+
+<p><a href="http://linux.die.net/man/1/screen">GNU Screen</a> is the bomb. There is only one thing it doesn&rsquo;t do for me, and I&rsquo;ll talk about that in another post. Before I tell you about other things, let me paste some text from the man page:</p>
+
+<blockquote>
+<p>Screen is a full-screen window manager that multiplexes a physical terminal between several processes (typically interactive shells). Each virtual terminal provides the functions of a DEC VT100 terminal and, in addition, several control functions from the ISO 6429 (ECMA 48, ANSI X3.64) and ISO 2022 standards (e.g. insert/delete line and support for multiple character sets). There is a scrollback history buffer for each virtual terminal and a copy-and-paste mechanism that allows moving text regions between windows.</p>
+</blockquote>
+
+<p>If that sounds intimidating, it ought to &ndash; screen has a really absurd amount of functionality and can take a long time to learn. I confess that I am not familiar with about 90% of what it can do. Every so often someone shows me something new and I feel humble. It&rsquo;s a lot like <a href="http://www.vim.org/">vim</a>: ten years on, and I still know only a little about it. I do know I can&rsquo;t live without it.</p>
+
+<p>Enough about that: how can it run commands after you log out?</p>
+
+<p>Simple. Just type &ldquo;screen -R -D&rdquo; and then start working as you normally would. When you&rsquo;re ready to quit, you can detach with &ldquo;Control-A D&rdquo;. Screen keeps running. When you log in again later, you can type &ldquo;screen -R -D&rdquo; and re-attach to the screen session. I would show you a screenshot of this, but it&rsquo;s hard to do &ndash; you&rsquo;ll see why if you type the commands yourself. A screencast would be the only way to do a decent demo, and I&rsquo;m too lazy.</p>
+
+<p>That&rsquo;s not all screen can do: if your network connection goes down, screen doesn&rsquo;t die. You only detached, you didn&rsquo;t kill it. It keeps running in the background and you can re-attach to it after your network connection resumes. When I&rsquo;m working on a client&rsquo;s systems, I start screen by default! That way if something happens, I can get back to where I was. I can also log everything in my session to a file with &ldquo;Control-A H&rdquo; and other people can log in and share the connection to watch me or help me with &ldquo;screen -xx&rdquo;.</p>
+
+<h3 id="toc_3">Summary</h3>
+
+<p>So there you have it: good, better, best. I still use the first two methods sometimes when I run a command and then realize I should have started a screen session (or when screen isn&rsquo;t installed, heaven forbid) but in general, screen is the arrow I&rsquo;m always pulling out of the quiver.</p>
+
+<p>By the way I&rsquo;m intentionally leaving out some more shell features, such as starting a program in the background from the get-go with &amp;. If you want to fill that in, leave a comment &ndash; I just wanted to keep this article on topic.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

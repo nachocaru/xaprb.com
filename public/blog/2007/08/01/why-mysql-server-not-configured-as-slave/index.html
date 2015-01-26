@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Why MySQL says the server is not configured as a slave &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Why MySQL says the server is not configured as a slave</h1>
+  <span class="post-date">Wed, Aug 1, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>Is MySQL giving you the error message &ldquo;ERROR 1200 (HY000): The server is not configured as slave; fix in config file or with CHANGE MASTER TO&rdquo; when you try to run START SLAVE? There are a few simple troubleshooting steps to take, but I always forget what to do. This article is to help me remember in the future!</p>
+
+<ul>
+<li>First, make sure you have run <a href="http://dev.mysql.com/doc/en/change-master-to.html">CHANGE MASTER TO</a> and configured the server as a slave. If you&rsquo;ve done this, you should get some output from <a href="http://dev.mysql.com/doc/en/show-slave-status.html">SHOW SLAVE STATUS</a>. If so, go to the next step.</li>
+<li>Next, make sure you have set a server ID on both the master and the slave. Try running <code>SHOW VARIABLES LIKE 'server_id'</code> on both servers. If the value is zero or one, check the configuration file for an explicit setting, because zero or one is often the default value when nothing is specified. I have seen this cause the slave to fail, even in cases where the master&rsquo;s ID is 1, which ought to work okay but sometimes doesn&rsquo;t.</li>
+<li>Finally, make sure your master and slave have different server IDs (on small networks, I usually set the server ID to the last octet in the server&rsquo;s IP address, because it&rsquo;s handy and easy to remember). MySQL slaves will refuse to replicate from a master with the same ID.</li>
+</ul>
+
+<p>You should now be able to run <a href="http://dev.mysql.com/doc/en/start-slave.html">START SLAVE</a> and start your slave replicating from the master.</p>
+
+<p>Did I miss anything? Let me know, and I&rsquo;ll add it!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

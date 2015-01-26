@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Performance on Xaprb </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.xaprb.com/categories/performance/index.xml/</link>
+    
+    
+    
+    <updated>Sun, 24 Feb 2013 00:00:00 UTC</updated>
+    
+    <item>
+      <title>How scalable is your database?</title>
+      <link>http://www.xaprb.com/blog/2013/02/24/how-scalable-is-your-database/</link>
+      <pubDate>Sun, 24 Feb 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/02/24/how-scalable-is-your-database/</guid>
+      <description>&lt;p&gt;Most of the time, when people say &amp;ldquo;scalability&amp;rdquo; they mean any of dozens of things. Most of the time, when I say it I mean &lt;a href=&#34;http://www.perfdynamics.com/Manifesto/USLscalability.html&#34;&gt;exactly one precisely defined thing&lt;/a&gt;. However, I don&amp;rsquo;t claim that&amp;rsquo;s the only correct use of &amp;ldquo;scalability.&amp;rdquo; There is another, in particular, that I think is very important to understand: the inherent limitations of the system. This second one doesn&amp;rsquo;t have a single mathematical definition, but it&amp;rsquo;s vital nonetheless.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll frame the discussion by asking this: how scalable is your database?&lt;/p&gt;
+
+&lt;p&gt;Using the two definitions I like to use the most, I answer the question in this way.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Scalability in terms of the Universal Scalability Law is the degree to which you can add more workers (or units of hardware) and get equal returns in terms of system throughput.&lt;/li&gt;
+&lt;li&gt;Scalability in terms of inherent limitations is how big you can actually make the system.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These are very different things. For example, the Universal Scalability Law doesn&amp;rsquo;t say anything about the amount of data your database stores. But I think we all know that a MySQL server can only hold just so much data. True, it&amp;rsquo;s a lot of data &amp;ndash; there are lots of multi-terabyte MySQL servers out there. But if you need to put, say, 20 petabytes of data into MySQL, &lt;em&gt;you just can&amp;rsquo;t do it&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Similarly, if you need to write 40 million values per second into your MySQL server, &lt;em&gt;you just can&amp;rsquo;t do it.&lt;/em&gt; Nor can you support 10 million concurrent client connections. These things are &lt;em&gt;impossible&lt;/em&gt; with MySQL.&lt;/p&gt;
+
+&lt;p&gt;I hear some people saying &amp;ldquo;of course you can! You shard it, dummy!&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;Ah. But do you then have &lt;strong&gt;a&lt;/strong&gt; database, or do you have &lt;strong&gt;many&lt;/strong&gt;? You have many, of course. If you build your own sharding layer on top of lots of MySQL instances, one could argue that you then have a single very large database. But it isn&amp;rsquo;t a &amp;ldquo;MySQL database&amp;rdquo; anymore. MySQL has been relegated to a component of this sharded DBMS. As a supporting crew member, MySQL can play a role in a 20PB database, but MySQL &lt;em&gt;&lt;a href=&#34;http://dictionary.reference.com/browse/per+se&#34;&gt;per se&lt;/a&gt;&lt;/em&gt; can&amp;rsquo;t do it.&lt;/p&gt;
+
+&lt;p&gt;When you&amp;rsquo;re designing a system of any kind, it&amp;rsquo;s smart to keep in mind that a lot of technologies have practical limits that can&amp;rsquo;t be exceeded. They may grow with time and Moore&amp;rsquo;s Law, but they represent a cap you can&amp;rsquo;t get around without doing something differently.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How scalable is Riak?</title>
+      <link>http://www.xaprb.com/blog/2013/01/28/how-scalable-is-riak/</link>
+      <pubDate>Mon, 28 Jan 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/01/28/how-scalable-is-riak/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m reading a little bit about Riak, and was curious about performance and scalability. The only benchmark I found that allowed me to assess scalability was &lt;a href=&#34;http://joyent.comhttp://www.xaprb.com/blog/riak-smartmachine-benchmark-the-technical-details/&#34;&gt;this one from Joyent&lt;/a&gt;. Of course, they say scalability is linear (everyone says that without knowing what it means) but the results are clearly not a straight line. So how scalable is it, really?&lt;/p&gt;
+
+&lt;p&gt;The Universal Scalability Law is &lt;em&gt;such&lt;/em&gt; a powerful tool for thinking about scalability. A few seconds later, I had my answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.xaprb.com/media/2013/01/usl-model-vs-actual1.png&#34; alt=&#34;usl-model-vs-actual&#34; width=&#34;640&#34; height=&#34;480&#34; class=&#34;aligncenter size-full wp-image-3032&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course, this is to be taken with a spoonful of salt, because the modeling is based on only four measurements. But it&amp;rsquo;s an incredibly quick way to get an idea of what we&amp;rsquo;re looking at, just as a level-set.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A close look at New Relic&#39;s scalability chart</title>
+      <link>http://www.xaprb.com/blog/2013/01/07/a-close-look-at-new-relics-scalability-chart/</link>
+      <pubDate>Mon, 07 Jan 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/01/07/a-close-look-at-new-relics-scalability-chart/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve written a lot about modeling MySQL with the USL, and I like it best of all the scalability models I&amp;rsquo;ve seen, but it&amp;rsquo;s not the only way to think about scalability. I was aware that New Relic supports a scalability chart, so I decided to take a peek at that. Here&amp;rsquo;s a screenshot of the chart, from &lt;a href=&#34;http:/http://www.xaprb.com/blog.newrelic.com/2011/06/13/of-rainbows-and-polka-dots-new-relics-scalability-charts-explained/&#34;&gt;their blog&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;blog-rpm-response1&#34; src=&#34;http://www.xaprb.com/media/2013/01/blog-rpm-response1.png&#34; width=&#34;510&#34; height=&#34;295&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s how it works. It plots response time (or database time, or CPU) as the dependent variable, versus throughput as the independent variable. There&amp;rsquo;s a line through it to indicate the general shape. Samples are charted as points in a scatter plot. The points are color-coded by the time of day. Outliers are automatically removed.&lt;/p&gt;
+
+&lt;p&gt;The focus on response time is really good. That&amp;rsquo;s one of the things I like about New Relic. While most systems show people status counters, and imply that they have some deep insight and meaningfulness (there&amp;rsquo;s usually no meaning to be found in status counters!), New Relic is educating people about the importance of response time, or latency.&lt;/p&gt;
+
+&lt;p&gt;But as I read through the blog posts about this chart, it struck me that there&amp;rsquo;s something a little odd about it. The problem, I realized, is that it plots throughput as the independent variable on the chart. But throughput isn&amp;rsquo;t an independent variable. Throughput is the system&amp;rsquo;s output under load, and depends on a) the load on the system, b) the system&amp;rsquo;s scalability. It&amp;rsquo;s a &lt;em&gt;dependent&lt;/em&gt; variable.&lt;/p&gt;
+
+&lt;p&gt;In a chart like this, it would be even better to show the independent variable as the variable that one can really control: the concurrency or load on the system. By &amp;ldquo;load&amp;rdquo; I mean the usual definition: the amount of work waiting to be completed, i.e. the backlog; this is what a Unix load average measures.&lt;/p&gt;
+
+&lt;p&gt;To explain a little more what I mean about throughput being dependent, not independent, here are a few ways to think about it:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;An independent variable should range from zero to infinity (negative numbers are unphysical in a situation like this, so we exclude that). Throughput has a very finite theoretical and practical upper bound, but concurrency can theoretically go to infinity as work arrives and doesn&amp;rsquo;t complete.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;An independent variable is the variable &lt;em&gt;you can control as an input parameter of a system under test&lt;/em&gt;. It&amp;rsquo;s dead-easy to achieve the desired concurrency for a benchmark or other test. It&amp;rsquo;s &lt;em&gt;amazingly&lt;/em&gt; difficult to manufacture a desired throughput for a benchmark, even in &amp;ldquo;easy&amp;rdquo; conditions. Computers are unruly beasts &amp;ndash; they are queueing systems, and random variations and dependencies cause throughput to fluctuate greatly. That&amp;rsquo;s because throughput is measured at the &lt;em&gt;output&lt;/em&gt; end of the system, after the queues inside the system have had their way with the input and introduced statistical fluctuations into it. It&amp;rsquo;s quite easy to generate a desired &lt;em&gt;arrival rate&lt;/em&gt; for a system under test, provided that you have an unbounded number of workers ready to keep submitting more requests as the system queues up and stalls existing workers, but arrivals are not the same as throughput :-) Any way you look at it, you can pick your concurrency and your arrival rate, but you really can&amp;rsquo;t pick your throughput reliably. Throughput is an effect, not a cause.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;An independent variable in a function must map to one and only one value of the dependent variable. But we know that as load increases, a system&amp;rsquo;s throughput rises, peaks, and then falls again as retrograde scalability manifests itself. Suppose a system&amp;rsquo;s throughput goes from 10,000 queries per second at 16 threads, to 20,000 at 32 threads, and back to 10,000 at 64 threads. Now if we flip the chart&amp;rsquo;s axes around and treat throughput as an input, we&amp;rsquo;ll find that a throughput of 10,000 queries per second would map to either 16 or 64 threads. That doesn&amp;rsquo;t describe a real function.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So although the New Relic scalability chart shows some of the &lt;em&gt;effects&lt;/em&gt; of the system&amp;rsquo;s scalability, and it&amp;rsquo;s great to visualize the variation in response time as throughput varies, it doesn&amp;rsquo;t strike me as quite the right angle of approach.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m curious to hear from people who may have used this feature. What did you use it for? Were you successful in gaining insight into scalability bottlenecks? How did it help you?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Modeling scalability with the USL at concurrencies less than 1</title>
+      <link>http://www.xaprb.com/blog/2013/01/05/modeling-scalability-with-the-usl-at-concurrencies-less-than-1/</link>
+      <pubDate>Sat, 05 Jan 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/01/05/modeling-scalability-with-the-usl-at-concurrencies-less-than-1/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.xaprb.com/blog/2013/01/03/determining-the-usls-coefficient-of-performance-part-2/&#34; title=&#34;Determining the USL’s coefficient of performance, part 2&#34;&gt;Last time&lt;/a&gt; I said that you can set a starting value for the USL&amp;rsquo;s coefficient of performance and let your modeling software (R, gnuplot, etc) manipulate this as part of the regression to find the best fit. However, there is a subtlety in the USL model that you need to be aware of. Here is a picture of the low-end of the curve:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.xaprb.com/media/2013/01/usl1.png&#34; alt=&#34;usl&#34; width=&#34;490&#34; height=&#34;486&#34; class=&#34;aligncenter size-full wp-image-3008&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The graph shows the USL model as the blue curve and linear scalability as the black line. Notice that at concurrencies less than 1, the value of the USL function is actually greater than the linear scalability function. This deserves some thought and explanation, because it can cause problems.&lt;/p&gt;
+
+&lt;p&gt;If you think about it, concurrency between one and zero is impossible. In fact, concurrency is not a smooth function, it is a step function. There can be zero requests resident in the system, one request, two requests, and so on &amp;ndash; but not 0.7 requests or 3.14159 requests. However, the USL is defined in terms of a continuous function, not a step function.&lt;/p&gt;
+
+&lt;p&gt;The trouble with the MySQL systems I usually model is that I generally observe them in the wild, which means that I get a large number of samples of throughput-and-concurrency, and I aggregate them. For example, I&amp;rsquo;ll usually observe concurrency once per second, and average these samples over a minute or more for each point I want to feed into the USL model. This approach generates concurrency values that are real numbers, not just integers &amp;ndash; so it&amp;rsquo;s entirely possible that during a given minute, the &amp;ldquo;average concurrency&amp;rdquo; on the system comes out to 0.7 or 3.14159. What&amp;rsquo;s to be done with this?&lt;/p&gt;
+
+&lt;p&gt;In the perfect world, I&amp;rsquo;d like to delete &amp;ldquo;empty space&amp;rdquo; during which zero queries were executing, and determine the actual throughput at each integral value of concurrency. But it&amp;rsquo;s a lot less convenient to do this, at best; and it&amp;rsquo;s usually impractical or impossible. So I work with the data I have. In practice I find it&amp;rsquo;s good enough.&lt;/p&gt;
+
+&lt;p&gt;Back to the funny anomaly where the USL predicts better-than-linear scalability between concurrency=0 and =1. The outcome is that the regression to the USL model can potentially skew the values of the USL coefficients, if you have any samples that lie between 0 and 1. Thus, it may be a good idea to discard these samples. This should not be a significant portion of your sample dataset anyway. If you don&amp;rsquo;t have a lot of samples at higher concurrencies, you probably don&amp;rsquo;t have enough data to model the system accurately, and you should act accordingly.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Determining the USL&#39;s coefficient of performance, part 2</title>
+      <link>http://www.xaprb.com/blog/2013/01/03/determining-the-usls-coefficient-of-performance-part-2/</link>
+      <pubDate>Thu, 03 Jan 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/01/03/determining-the-usls-coefficient-of-performance-part-2/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.xaprb.com/blog/2013/01/02/determining-the-universal-scalability-laws-coefficient-of-performance/&#34; title=&#34;Determining the Universal Scalability Law’s coefficient of performance&#34;&gt;Last time&lt;/a&gt; I said that the USL has a forgotten third coefficient, the coefficient of performance. This is the same thing as the system&amp;rsquo;s throughput at concurrency=1, or C(1). How do you determine this coefficient? There are at least three ways.&lt;/p&gt;
+
+&lt;p&gt;Neil Gunther&amp;rsquo;s writings, or at least those that I&amp;rsquo;ve read and remember, say that you should set it equal to your measurement of C(1). Most of his writing discusses a handful of measurements of the system: one at concurrency 1, and at least 4 to 6 at higher concurrencies. I can&amp;rsquo;t remember a time when he&amp;rsquo;s discussed taking more than one measurement of throughput at each level of concurrency, so I think the assumption is that you&amp;rsquo;re going to take a single measurement at various concurrencies (or, in the case of hardware scalability, units of hardware), and you&amp;rsquo;re done.&lt;/p&gt;
+
+&lt;p&gt;This tends to work quite well. I&amp;rsquo;ve blogged before about this: well-designed systems, measured in a carefully controlled test, tend to match the Universal Scalability Law model quite well. Here are &lt;a href=&#34;http://www.mysqlperformanceblog.com/2011/01/26/modeling-innodb-scalability-on-multi-core-servers/&#34;&gt;two&lt;/a&gt; &lt;a href=&#34;http://www.mysqlperformanceblog.com/2011/02/28/is-voltdb-really-as-scalable-as-they-claim/&#34;&gt;examples&lt;/a&gt;.
+Most systems I model aren&amp;rsquo;t like that. I don&amp;rsquo;t do my modeling in a lab. I get thousands, if not tens or hundreds of thousands, of measurements of throughput and concurrency from a MySQL server&amp;rsquo;s real production traffic. How do you determine the system&amp;rsquo;s throughput at concurrency=1 in this kind of situation? You may have hundreds or thousands of samples at or near concurrency=1, and here&amp;rsquo;s the interesting thing: they aren&amp;rsquo;t tightly clustered. This leads to the two additional techniques I&amp;rsquo;ve used.&lt;/p&gt;
+
+&lt;p&gt;Method 2 is fairly obvious: you can take an aggregate measure of the throughput at N=1. You can simply average, or you can use the median. In my experience, the latter tends to be a little more accurate, because the median essentially discards outliers. Given enough samples, it is very likely that the median is truly representative of the system&amp;rsquo;s real behavior.&lt;/p&gt;
+
+&lt;p&gt;Finally, method 3 is to treat C(1) as one of the parameters to fit in the regression to the USL model. Instead of holding it as a fixed quantity, go ahead and let the regression find the best fit for it along with the other coefficients.&lt;/p&gt;
+
+&lt;p&gt;In practice, I tend to combine methods 2 and 3. I use method 2 to find a starting point for the coefficient, and then I let the regression tweak it as needed. In my experience, this usually produces good results. Sometimes the software doing the regression gets a little confused, or stuck at a local maximum, but otherwise it works well.&lt;/p&gt;
+
+&lt;p&gt;What if you don&amp;rsquo;t have measurements at N=1? The best approach, in my experience, is to take the slope of the line from the first data point you have, and use that. N=1 will almost always be higher than this, because real systems are rarely linearly scalable. That&amp;rsquo;s okay. If you let the regression adjust the coefficient as needed for the best fit, you&amp;rsquo;ll end up with a good answer anyway.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Black-Box Performance Analysis with TCP Traffic</title>
+      <link>http://www.xaprb.com/blog/2012/02/23/black-box-performance-analysis-with-tcp-traffic/</link>
+      <pubDate>Thu, 23 Feb 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/02/23/black-box-performance-analysis-with-tcp-traffic/</guid>
+      <description>&lt;p&gt;This is a cross-post from the &lt;a href=&#34;http://www.mysqlperformanceblog.com/2012/02/23/black-box-mysql-performance-analysis-with-tcp-traffic/&#34;&gt;MySQL Performance Blog&lt;/a&gt;. I thought it would be interesting to users of PostgreSQL, Redis, Memcached, and $system-of-interest as well.&lt;/p&gt;
+
+&lt;p&gt;For about the past year I&amp;rsquo;ve been formulating a series of tools and practices that can provide deep insight into system performance simply by looking at TCP packet headers, and when they arrive and depart from a system. This works for MySQL as well as a lot of other types of systems, because it doesn&amp;rsquo;t require any of the contents of the packet. Thus, it works without knowledge of what the server and client are conversing about. Packet headers contain only information that&amp;rsquo;s usually regarded as non-sensitive (IP address, port, TCP flags, etc), so it&amp;rsquo;s also very easy to get access to this data even in highly secure environments.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve finally written up a paper that shows some of my techniques for detecting problems in a system, which can be an easy way to answer questions such as &amp;ldquo;is there something we should look into more deeply?&amp;rdquo; without launching a full-blown analysis project first. It&amp;rsquo;s available from the white paper section of our website: &lt;a href=&#34;http://www.percona.com/about-us/mysql-white-paper/mysql-performance-analysis-with-percona-toolkit-and-tcp-ip-network-traffic/&#34;&gt;MySQL Performance Analysis with Percona Toolkit and TCP/IP Network Traffic&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Surge 2011 slides, recap</title>
+      <link>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</link>
+      <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</guid>
+      <description>&lt;p&gt;This year&amp;rsquo;s &lt;a href=&#34;http://omniti.com/surge/2011/&#34;&gt;Surge&lt;/a&gt; conference was a great sophomore event to follow up last year&amp;rsquo;s inaugural conference. A lot of very smart people were there, and the hallway track was great.&lt;/p&gt;
+
+&lt;p&gt;I presented on three things: a lightning talk about causes of MySQL downtime; I chaired a panel on Big Data and the Cloud; and I showed how to derive scalability and performance metrics from TCP traffic. I&amp;rsquo;ve sent my slides to the Surge organizers, and I understand that they will be posting them as well as integrating them into the video of my session. In the meanwhile you can download my slides from &lt;a href=&#34;http://www.percona.com/about-us/presentations/&#34;&gt;Percona&amp;rsquo;s presentations page&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fundamental performance and scalability instrumentation</title>
+      <link>http://www.xaprb.com/blog/2011/10/06/fundamental-performance-and-scalability-instrumentation/</link>
+      <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/10/06/fundamental-performance-and-scalability-instrumentation/</guid>
+      <description>&lt;p&gt;This post is a followup to some promises I made at Postgres Open.&lt;/p&gt;
+
+&lt;p&gt;Instrumentation can be a lot of work to add to a server, and it can add overhead to the server too. The bits of instrumentation I&amp;rsquo;ll advocate in this post are few and trivial, but disproportionately powerful.&lt;/p&gt;
+
+&lt;p&gt;If all server software shipped with these metrics as the basic starting point, it would change the world forever:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Time elapsed, in high resolution (preferably microseconds; milliseconds is okay; one-second is mostly useless). When I ask for this counter, it simply tells me either the time of day, or the server&amp;rsquo;s uptime, or something like that. It can be used to determine the boundaries of an observation interval, defined by two measurements. It needs to be consistent with the other metrics that I&amp;rsquo;ll explain next.&lt;/li&gt;
+&lt;li&gt;The number of queries (statements) that have completed.&lt;/li&gt;
+&lt;li&gt;The current number of queries being executed.&lt;/li&gt;
+&lt;li&gt;The total execution time of all queries, including the in-progress time of currently executing queries, in high resolution. That is, if two queries executed with 1 second of response time each, the result is 2 seconds, no matter whether the queries executed concurrently or serially. If one query started executing .5 seconds ago and is still executing, it should contribute .5 second to the counter.&lt;/li&gt;
+&lt;li&gt;The server&amp;rsquo;s total busy time, in high resolution. This is different from the previous point in that it only shows the portion of the observation interval during which queries were executing, regardless of whether they were concurrent or not. If two queries with 1-second response time executed serially, the counter is 2. If they executed concurrently, the counter is something less than 2, because the overlapping time isn&amp;rsquo;t double-counted.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In practice, these can be maintained as follows, in pseudo-code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;global timestamp;
+global concurrency;
+global busytime;
+global totaltime;
+global queries;
+
+function run_query() {
+  local now = time();
+  if ( concurrency ) {
+    busytime += now - timestamp;
+    totaltime += (now - timestamp) * concurrency;
+  }
+  concurrency++;
+  timestamp = now;
+
+  // Execute the query, and when it completes...
+
+  now = time();
+  busytime += now - timestamp;
+  totaltime += (now - timestamp) * concurrency;
+  concurrency--;
+  timestamp = now;
+  queries++;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I may have missed something there; I&amp;rsquo;m writing this off the cuff. If I&amp;rsquo;ve messed up, let me know and I&amp;rsquo;ll fix it. In any case, these metrics can be used to derive all sorts of powerful things through applications of Little&amp;rsquo;s Law and queueing theory, as well as providing the inputs to the Universal Scalability Law. They should be reported by simply reading from the variables marked as &amp;ldquo;global&amp;rdquo; above, to provide a consistent view of the metrics.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>When systems scale better than linearly</title>
+      <link>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</link>
+      <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been seeing a few occasions where &lt;a href=&#34;http://www.perfdynamics.com/&#34;&gt;Neil J. Gunther&amp;rsquo;s&lt;/a&gt; Universal Scalability Law doesn&amp;rsquo;t seem to model all of the important factors in a system as it scales. Models are only models, and they&amp;rsquo;re not the whole truth, so they never match reality perfectly. But there appear to be a small number of cases where systems can actually scale a bit better than linearly over a portion of the domain, due to what I&amp;rsquo;ve been calling an &amp;ldquo;economy of scale.&amp;rdquo; I believe that the Universal Scalability Law might need a third factor (seriality, coherency, and the new factor, economy of scale). I don&amp;rsquo;t think that the results I&amp;rsquo;m seeing can be modeled adequately with only two parameters.&lt;/p&gt;
+
+&lt;p&gt;Here are two publicly available cases that appear to demonstrate this phenomenon: Robert Haas&amp;rsquo;s recent blog post on PostgreSQL, titled &lt;a href=&#34;http://rhaas.blogspot.com/2011/09/scalability-in-graphical-form-analyzed.html&#34;&gt;Scalability, in Graphical Form, Analyzed&lt;/a&gt; and Mikael Ronstrom&amp;rsquo;s post from May on MySQL (NDB) Cluster, titled &lt;a href=&#34;http://mikaelronstrom.blogspot.com/2011/05/better-than-linear-scaling-is-possible.html&#34;&gt;Better than Linear Scaling is Possible&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dr. Ronstrom&amp;rsquo;s post discusses the mechanics of the phenomenon, and speculates (I&amp;rsquo;m not sure it&amp;rsquo;s conclusive) that it is from a combination of partitioning and better use of CPU caches. Now someone needs to do the math to figure out how to include this factor into the equation.&lt;/p&gt;
+
+&lt;p&gt;The good thing about the Universal Scalability Law is how simple and applicable it is for many systems. It&amp;rsquo;s nice that this economy-of-scale factor seems to be unusual and the simpler model remains easy to apply for a large variety of tasks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I&#39;ll be presenting at Postgres Open 2011</title>
+      <link>http://www.xaprb.com/blog/2011/07/19/ill-be-presenting-at-postgres-open-2011/</link>
+      <pubDate>Tue, 19 Jul 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/07/19/ill-be-presenting-at-postgres-open-2011/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been accepted to present at the brand-new and very exciting &lt;a href=&#34;http://postgresopen.org/&#34;&gt;Postgres Open 2011&lt;/a&gt; about system scaling, TCP traffic, and mathematical modeling. I&amp;rsquo;m really looking forward to it &amp;ndash; it will be my first PostgreSQL conference in a couple of years! See you there.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I&#39;m speaking at Surge 2011</title>
+      <link>http://www.xaprb.com/blog/2011/07/06/im-speaking-at-surge-2011/</link>
+      <pubDate>Wed, 06 Jul 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/07/06/im-speaking-at-surge-2011/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ll be speaking at &lt;a href=&#34;http://omniti.com/surge/&#34;&gt;Surge&lt;/a&gt; again this year. This time, unlike last year&amp;rsquo;s talk, I&amp;rsquo;m tackling a very concrete topic: &lt;a href=&#34;http://omniti.com/surge/2011/speakers/baron-schwartz&#34;&gt;extracting scalability and performance metrics from TCP network traffic&lt;/a&gt;. It turns out that most things that communicate over TCP can be analyzed very elegantly just by capturing arrival and departure timestamps of packets, nothing more. I&amp;rsquo;ll show examples where different views on the same data pull out completely different insights about the application, even though we have no information about the application itself (okay, I actually know that it&amp;rsquo;s a MySQL database, and a lot about the actual database and workload, but I don&amp;rsquo;t need that in order to do what I&amp;rsquo;ll show you). It&amp;rsquo;s an amazingly powerful technique that I continue to find new ways to apply to real systems.&lt;/p&gt;
+
+&lt;p&gt;Take a look at the other speakers too &amp;ndash; it is an impressive lineup. I hope you can attend. Last year&amp;rsquo;s show was a great event.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>When can I have a big server in the cloud?</title>
+      <link>http://www.xaprb.com/blog/2011/06/10/when-can-i-have-a-big-server-in-the-cloud/</link>
+      <pubDate>Fri, 10 Jun 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/06/10/when-can-i-have-a-big-server-in-the-cloud/</guid>
+      <description>&lt;p&gt;I was at a conference recently talking with a Major Cloud Hosting Provider and mentioned that for database servers, I really want large instances, quite a bit larger than the largest I can get now. The lack of cloud servers with lots of memory, many &lt;em&gt;fast&lt;/em&gt; cores, and fast I/O and network performance leads to premature sharding, which is costly. A large number of applications can currently run on a single real server, but would require sharding to run in any of the popular cloud providers&amp;rsquo; environments. And many of those applications aren&amp;rsquo;t growing rapidly, so by the time they outgrow today&amp;rsquo;s hardware we can pretty much count on simply upgrading and staying on a single machine.&lt;/p&gt;
+
+&lt;p&gt;The person I was talking to actually seemed to become angry at me, and basically called me an idiot. This person&amp;rsquo;s opinion is that no one should be running on anything larger than 4GB of memory, and anyone who doesn&amp;rsquo;t build their system to be sharded and massively horizontally scaled is clueless.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve received similar push-back from a lot of cloud hosting providers. When I work through the math with clients, a lot of them don&amp;rsquo;t like the ultimate price/performance ratio offered by cloud hosting. Hype doesn&amp;rsquo;t drive everyone&amp;rsquo;s business decisions, so a lot of people are wisely staying far away from cloud hosting for their applications, or even moving whole applications out of cloud hosting into real hardware to consolidate machines and save a lot of money. Some of them are using flash storage devices such as Fusion-io to further lower their TCO (this isn&amp;rsquo;t the right answer for every app, though).&lt;/p&gt;
+
+&lt;p&gt;Why do cloud hosting providers work so hard to make everyone buy lots of anemic machines and shard their applications an order of magnitude more than is required? Why aren&amp;rsquo;t they jumping to offer really beefy instances? I think there are a couple of simple reasons.&lt;/p&gt;
+
+&lt;p&gt;First, they want to colocate virtual machines and over-provision, just as airlines sell more tickets than there are seats in the plane. It&amp;rsquo;s a numbers game: sell more capacity than you really have, and bet on some of the instances not using all resources allocated to them. Win! Of course, this is only possible with lots of small instances; the law of large numbers doesn&amp;rsquo;t work without lots of instances, and large instances can&amp;rsquo;t be colocated. Cloud providers tend to dislike dedicated instances, which leads to the second reason. They don&amp;rsquo;t want to make strong claims about the availability of any particular machine. This is where the cloud paradigm of &amp;ldquo;you must build to recover from machines vanishing without warning&amp;rdquo; comes from. A dedicated beefy instance wouldn&amp;rsquo;t let the hosting provider push that responsibility onto the application.&lt;/p&gt;
+
+&lt;p&gt;There are lots more reasons &amp;ndash; all of them combining into one big overall &amp;ldquo;cloud application architecture best practice&amp;rdquo; &amp;ndash; but I think those are two of the showstoppers.&lt;/p&gt;
+
+&lt;p&gt;I really think this is a wrong paradigm. People talk about the cloud being the technology of the future, but in many ways it&amp;rsquo;s pretty stone-age compared to what smart system architects can achieve with high-quality hardware and networking at a much lower cost, with very strong guarantees of performance, consistency, and availability.&lt;/p&gt;
+
+&lt;p&gt;Cloud computing is new enough that we don&amp;rsquo;t understand, in a collective sense, how to think about it. (I know that lots of individuals do, but as a whole, there isn&amp;rsquo;t much of a shared understanding.) The real value proposition that I want to see emerge from cloud computing is pretty much orthogonal to what everyone&amp;rsquo;s raving about these days. I want to see the DevOps engineering discipline build momentum around the idea that systems should be treated as services, with architectural components provisioned and controlled through APIs. That can be done completely independently of many of the characteristics of current cloud computing platforms (virtualization, ephemerality, horizontally scaled architectures&amp;hellip;)&lt;/p&gt;
+
+&lt;p&gt;And like most people, I&amp;rsquo;ve got an ego and I don&amp;rsquo;t appreciate repeatedly being called a moron by cloud computing providers&amp;rsquo; sales people, who don&amp;rsquo;t know anything about running database servers. I can do math and understand price/performance, and I know the cost and difficulty of building a sharded application. I look forward to the day when I don&amp;rsquo;t have to just bite my tongue and walk on to the next booth. I look forward to cloud hosting providers advancing to the year 2005 or so. I&amp;rsquo;m sure it will happen as we figure this all out.&lt;/p&gt;
+
+&lt;p&gt;Feel free to comment, but don&amp;rsquo;t expect me to approve your comment if you&amp;rsquo;re from a cloud provider and you&amp;rsquo;re plugging your platform :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Subtleties in the Universal Scalability Law</title>
+      <link>http://www.xaprb.com/blog/2011/04/16/subtleties-in-the-universal-scalability-law/</link>
+      <pubDate>Sat, 16 Apr 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/04/16/subtleties-in-the-universal-scalability-law/</guid>
+      <description>&lt;p&gt;Those of you who&amp;rsquo;ve been following my recent work on modeling system scalability might be interested in this. (It&amp;rsquo;s not my work, by the way. I&amp;rsquo;m just trying to ski in the wake of &lt;a href=&#34;http://www.perfdynamics.com/&#34;&gt;Neil Gunther&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve measured quite a few systems that have some strange bubbles in the scalability curve. As I explained in &lt;a href=&#34;http://en.oreilly.com/mysql2011/public/schedule/detail/17153&#34;&gt;my talk on Thursday&lt;/a&gt;, systems don&amp;rsquo;t always follow the model precisely, because of their internal architecture. Systems sometimes behave differently at specific points because, say, an internal structure gets filled up and allocates a larger array to hold more of whatever it is, or CPU scheduling changes to balance threads across cores differently, or any of a number of other possibilities that are sometimes hard to understand or predict. Yes, this is hand-waving. But although it could sometimes take a lot of work to explain these kinds of things, it&amp;rsquo;s easy to observe and measure them in action, so the phenomenon is clearly real. VoltDB, for example, does not follow the scalability curve at 1 and 2 nodes in the cluster because 1 and 2 nodes are magic numbers. In computer science we usually say that there are three types of numbers: 0, 1, and many. Turns out it&amp;rsquo;s a little different for VoltDB.&lt;/p&gt;
+
+&lt;p&gt;So, for those of you who are curious about this, I now stop blathering and simply &lt;a href=&#34;http://perfdynamics.blogspot.com/2011/02/usl-fine-point-sub-amdahl-scalability.html&#34;&gt;direct you to Neil Gunther&amp;rsquo;s blog to read more&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

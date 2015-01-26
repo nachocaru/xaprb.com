@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Time-Series Database Requirements &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Time-Series Database Requirements</h1>
+  <span class="post-date">Sun, Jun 8, 2014 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>I&rsquo;ve had conversations about time-series databases with many people over the last couple of years. I <a href="http://www.xaprb.com/blog/2014/03/02/time-series-databases-influxdb/">wrote previously</a> about some of the open-source technologies that people commonly use for time-series storage.</p>
+
+<p><img src="/media/2014/06/timeseries.jpg" alt="Time Series" />
+</p>
+
+<p>Because I have my own ideas about what constitutes a good time-series database, and because a few people have asked me to describe my requirements, I have decided to publish my thoughts here. All opinions that follow are my own, and as you read you should mentally add &ldquo;in my opinion&rdquo; to every sentence.</p>
+
+<p>For the record, I currently have an efficient time-series database that is working well. It is <a href="https://vividcortex.com//blog/2014/04/30/why-mysql/">built on MySQL</a>. This is a high bar for a replacement to jump over.</p>
+
+<h3 id="toc_0">Definition of Data Type</h3>
+
+<p>For my purposes, time-series can be defined as follows:</p>
+
+<ul>
+<li>A series is identified by a source name or ID (for example: host ID) and a metric name or ID.</li>
+<li>A series consists of a sequence of {timestamp, value} measurements ordered by timestamp, where the timestamp is probably a high-precision Unix timestamp and the value is a floating-point number.</li>
+</ul>
+
+<h3 id="toc_1">Workload Characteristics</h3>
+
+<p>Time-series data is not general-purpose and has specific patterns in its workload. A time-series database should be optimized for the following.</p>
+
+<p>For writes:</p>
+
+<ul>
+<li>Write-mostly is the norm; perhaps 95% to 99% of operations are writes, sometimes higher.</li>
+<li>Writes are almost always sequential appends; they almost always arrive in time order. There is a caveat to this.</li>
+<li>Writes to the distant past are rare. Most measurements are written within a few seconds or minutes after being observed, in the worst case.</li>
+<li>Updates are rare.</li>
+<li>Deletes are in bulk, beginning at the start of history and proceeding in contiguous blocks. Deletes of individual measurements or deletes from random locations in history are rare. Efficient bulk deletes are important; as close to zero cost as possible. Non-bulk deletes need not be optimal.</li>
+<li>Due to the above, an immutable storage format is potentially a good thing. As a further consequence of immutable storage, a predefined or fixed schema may be a problem long-term.</li>
+</ul>
+
+<p>For reads, the following usually holds:</p>
+
+<ul>
+<li>Data is much larger than memory and rarely read, so caching typically doesn&rsquo;t work well; systems are often IO-bound.</li>
+<li>Reads are typically logically sequential per-series, ascending or descending.</li>
+<li>Concurrent reads and reads of multiple series at once are reasonably common.</li>
+</ul>
+
+<p>The caveat to &ldquo;writes arrive in sequential order&rdquo; is that measurements typically arrive ordered by {timestamp, series_id}, but reads are typically done in {series_id, timestamp} order. Reads need to be fast, even though they are rare. There are generally two approaches to dealing with this. The first is to write efficiently, so the data isn&rsquo;t read-optimized per-series on disk, and deploy massive amounts of compute power in parallel for reads, scanning through all the data linearly. The second is to pay a penalty on writes, so the data is tightly packed by series and optimized for sequential reads of a series.</p>
+
+<h3 id="toc_2">Performance and Scaling Characteristics</h3>
+
+<p>A time-series database should be:</p>
+
+<ul>
+<li>Distributed by design &mdash; no bolt-on clustering or sharding. Automatic data distribution, automatic query distribution. Fault-tolerant and highly available, with built-in replication and automatic failover. I think by this point we should all understand what it means for a database to be natively distributed. There are several good examples of databases that do it sensibly, and little of this should need to be novel.</li>
+<li>Send the query to the data, don&rsquo;t bring the data to the query. This is a restatement of &ldquo;automatic query distribution.&rdquo; Queries may touch many gigabytes or terabytes of data, so moving it across the network is not scalable.</li>
+<li>Efficient per-node so it is capable of running at large scale without requiring thousands of servers.</li>
+<li>Able to take advantage of powerful hardware: PCIe flash storage, lots of RAM, many CPU cores. This rules out single-writer systems.</li>
+<li>Fast and consistent. No spikes or stalls; no checkpoint freezes; no compaction lock-ups.</li>
+</ul>
+
+<h3 id="toc_3">Operational Requirements</h3>
+
+<ul>
+<li>I do not specifically need ACID, but I need the database to quickly recover to a consistent state after events like a power failure. For my purposes, time-series data is not subject to the same durability constraints as financial data.</li>
+<li>Non-blocking backups are a must. Incremental backups are a very good thing.</li>
+<li>It needs to be possible to scale the cluster up or down without downtime or locking.</li>
+<li>Compressed storage. Time-series data is big, but highly compressible.</li>
+<li>The database should be well instrumented.</li>
+</ul>
+
+<h3 id="toc_4">Language and/or API Design</h3>
+
+<p>I&rsquo;ve spoken to many people who have built large-scale time-series databases for big companies. Most of them have told me that the lack of a high-level way to access and query the database was the long-term millstone around their neck.</p>
+
+<p>I would be happy with something that looks like SQL, as InfluxDB&rsquo;s query language does. Crucially, it needs to avoid a few of the legacy limitations of SQL. The way I think about it is that SQL tables are fixed-width and grow downwards by adding rows. A natural outcome of that is that each column in SQL statements is known in advance and explicitly named, and expressions naturally work within a single row or in aggregates over groups of rows, but cannot span rows otherwise without doing a JOIN.</p>
+
+<p><img src="/media/2014/06/theater.jpg" alt="Theater" />
+</p>
+
+<p>However, in time-series databases, rows are series identified by the &ldquo;primary key.&rdquo; Rows grow sideways as new measurements are added, tables grow downwards as new series are added, and columns are timestamps. Thus, tables are sparse matrices. Expressions must operate in aggregates over rectangular sections of the sparse matrix, not just rows or columns, and the language must permit a GROUP BY functionality in both directions. You could say that both rows and columns must be addressable by keys instead of by literal identifiers, and ideally by pattern matching in addition to strict equality and ranges.</p>
+
+<p>Ideally, the language and database should support <em>server-side processing</em> of at least the following, and probably much more:</p>
+
+<ul>
+<li>Expressions such as arithmetic and string operations.</li>
+<li>Aggregate functions.</li>
+<li>Resampling into time resolutions different from the storage resolution.</li>
+<li>Expressions and operators that refer to different series, e.g. to sum series, or divide one by another, and to combine such expressions, e.g. to sum up all series whose identifiers match a pattern, then divide the result by the sum of another group of series.</li>
+<li>Ordering, ranking, and limiting.</li>
+</ul>
+
+<p>Another way to say the above is that the language and database should be designed for analytics, not just for drawing strip charts. Many open-source time-series databases such as RRDTool are far too tightly coupled with their expected use case, and this is a serious limitation.</p>
+
+<p>There should be an efficient binary protocol that supports bulk inserts.</p>
+
+<h3 id="toc_5">Non-Requirements</h3>
+
+<p>I&rsquo;d like a database that does one thing well. I do not think I need any of the following, and I regard them as neutral, or in some cases even as drawbacks:</p>
+
+<ul>
+<li>Access control &mdash; authentication and authorization.</li>
+<li>Ability to visualize data, draw graphs, etc.</li>
+<li>Support for multiple measurements at the same timestamp. The measurement&rsquo;s primary key is <code>series,timestamp</code> and it does not make sense to allow multiple values with the same timestamp.</li>
+<li>Multi-dimensionality. Multiple dimensions for a series can be stored as multiple series, and multiple series can be combined in expressions with the query language I specified, so the atom of &ldquo;series&rdquo; already provides for the use case of multi-dimensionality.</li>
+<li>&ldquo;Tagging&rdquo; measurements or series with additional ad-hoc key-value pairs.</li>
+<li>Joins from time-series data to relational data.</li>
+</ul>
+
+<h3 id="toc_6">Bonus and Additional Features</h3>
+
+<p>The preceding sections describe a good general-purpose time-series database, from my point of view. Nice-to-have features might include:</p>
+
+<ul>
+<li>Support for retention policies.</li>
+<li>Support for storing data in multiple resolutions (materialized views) and selecting the appropriate resolution to access for a given request.</li>
+<li>Support for maintaining downsampled data in coarser resolutions, automatically building these materialized views as high-resolution data arrives (automatic rollup).</li>
+<li>Support for query priorities or admission control to prevent starvation and DOS from large queries.</li>
+</ul>
+
+<p>For my particular uses, I also need support for:</p>
+
+<ul>
+<li>Many series per server in my cluster, far more than practical limits on the number of files in a directory for example.</li>
+<li>Although some series are long-lived, many are not. Many are sparse, with measurements only once in a long while. Series are dynamic and are not predefined; new series may appear at any moment. Due to this requirement, I need efficient support for discovering which series exist during any given time range.</li>
+<li>Multi-tenancy at the physical level. This is partially by demand; some customers want to know that their data is separate from other customers&rsquo; data. It is partially pragmatic, to support features such as separate retention policies per customer.</li>
+</ul>
+
+<h3 id="toc_7">Conclusion</h3>
+
+<p>The future of &ldquo;big data&rdquo; is mostly time-series. Someone who creates a good time-series database for
+such use cases will probably do quite well. I&rsquo;m sure my requirements aren&rsquo;t the
+most general-purpose or complete, but I hope it&rsquo;s useful to share anyway.</p>
+
+<p>Pic credits:</p>
+
+<ul>
+<li><a href="https://www.flickr.com/photos/hugovk/6798051186/">Seasons</a></li>
+<li><a href="https://www.flickr.com/photos/sprengben/4976954312/">Theater</a></li>
+</ul>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

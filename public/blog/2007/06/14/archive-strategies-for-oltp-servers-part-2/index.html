@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Archive strategies for OLTP servers, Part 2 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Archive strategies for OLTP servers, Part 2</h1>
+  <span class="post-date">Thu, Jun 14, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>In the first article in this series on <a href="http://www.xaprb.com/blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/">archiving strategies for online transaction processing (OLTP) database servers</a>, I covered some basics: why to archive, and what to consider when gathering requirements for the archived data itself. This article is more technical. I want to help you understand how to choose which rows are archivable, and how to deal with complex data relationships and dependencies. In that context, I&rsquo;ll also discuss a few concrete archiving strategies, their strengths and shortcomings, and how they can satisfy your requirements, especially requirements for data consistency, which as you will see is one of the most difficult problems in archiving.</p>
+
+<p>Remember I&rsquo;m basing these articles on the <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">nibbling principle</a> I explained in my very first article on archiving strategies. The goal is not to move away tables or take gigantic chunks out of tables manually. If you need to archive, you&rsquo;ll need to do it frequently, perhaps continuously. That means you need to write automated, incremental jobs that nibble small chunks of unwanted data away without impacting the OLTP work you&rsquo;re trying to optimize.</p>
+
+<p>It&rsquo;s a different matter if you&rsquo;re archiving or purging from an OLAP system such as a data warehouse, of course.</p>
+
+<h3 id="toc_0">What data should you archive?</h3>
+
+<p>You can&rsquo;t archive until you know what you&rsquo;re going to archive. You need to prioritize your efforts, and then for each type of data, which typically means each table, you need to know whether each row is archivable.</p>
+
+<h4 id="toc_1">Prioritize</h4>
+
+<p>The first thing to do is determine priorities. You might know some data <em>can</em> be archived, but come back to that later. Focus on what <em>needs</em> to go away to make your transactional processes run more quickly. What gets queried the most? Consider tables &ldquo;heavily queried&rdquo; if they have extremes of any type of query &ndash; many small queries can cause just as much work as frequent long-running ones. Which tables have the most rows, the most data, the largest indexes? Which tables are growing the most quickly? Think also about access patterns; if you have tables that are frequently scanned partially or wholly for aggregates, those too are candidates.</p>
+
+<p>Identify the worst offenders and think about which of them you need to do first. If you know some frequently-queried tables are growing very fast, I would consider prioritizing them, even if they&rsquo;re not yet too large. I&rsquo;ve seen tables reach a point where they become too large to query, and thus difficult to archive.</p>
+
+<p>Another thing you might consider is how easy it will be to archive a row, especially if you are running close to capacity. If you can archive the second-most-important table easily, and it will give the server significant performance headroom, you might want to do that first. You can archive the more work-intensive most-important table later, when your server has some capacity to spare.</p>
+
+<h4 id="toc_2">Is it archivable?</h4>
+
+<p>Now that you&rsquo;ve identified which tables to focus on, you need to determine which rows are candidates for archiving. Rather than query the table, I would focus on identifying rules, which ideally you should be able to express as a <code>WHERE</code> clause in a query. The simpler the better. Here are some examples.</p>
+
+<ul>
+<li>Is the row related to something that&rsquo;s no longer current? For example, is it a product you don&rsquo;t sell anymore, or related to a client with whom you no longer work?</li>
+<li>Is it scratch data that never got used? For example, an abandoned shopping cart, an order that was invalidated and cancelled, or data that was prepared for upload to a business partner but was rejected by their systems?</li>
+
+<li><p>Is it data that used to record a fact, but has now been &ldquo;cancelled&rdquo; and just records &ldquo;zero?&rdquo; For example, one system I&rsquo;ve worked on records advertising traffic. For various reasons it can end up with rows that say &ldquo;on this day, this advertisement was clicked zero times and caused zero sales.&rdquo; This happened because of artifacts in the rollup processes. If a row records the same thing as the absence of a row, it can go (actually it should probably be purged, not archived).</il></p>
+
+<ul>
+<li>Is it an orphan (its parent record is gone) or a widow<sup><a href="http://www.xaprb.com/blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/">1</a></sup> (it has no child records)?</li>
+<li>Does it fall into some time window that makes it no longer likely to be accessed?</ul>
+This last case is probably one of the most complex, but it&rsquo;s important because data can often be archived by this criteria when it doesn&rsquo;t meet any other. One example is summary tables to support decisions on OLTP systems (as opposed to a decision support system running from a data warehouse). If you do many calculations on the most recent data &ndash; say, the most recent quarter &ndash; you can probably archive previous quarters to slower storage.</li>
+</ul>
+
+<p>Of course, you might not be able to get a definite answer on whether a row can be archived. Often the true answer is too expensive to get, or is in the outside world, perhaps even in the future. Sometimes the answer is &ldquo;I think it can go, but if the client asks, it has to be there&rdquo; or &ldquo;I think it can go, as long as we don&rsquo;t get some improbable event.&rdquo; In these cases you can build your systems to cope with cache misses, as it were, and go ahead and archive the data based on probability. This is why I made the comparison with caching in the first article.</p>
+
+<p>An example of this comes from the advertising system I mentioned. It is designed so an advertisement that doesn&rsquo;t generate any traffic for some time can be archived, but retrieved if it gets traffic in the future. I&rsquo;ll write more about un-archiving in the next article.</p>
+
+<p>Finally, you might not need to specify criteria for each type of data by itself. OLTP systems often have parent-child relationships among tables, so in addition to orphan or widow checks, you can decide transitively. If a row is archivable when its parent is older than a certain age, then the row&rsquo;s children can be archived by looking at their &ldquo;grandparent&rdquo; or &ldquo;uncle.&rdquo; I will call this a &ldquo;transitive check&rdquo; from now on.</p>
+
+<h3 id="toc_3">How to handle data dependencies</h3>
+
+<p>Relationships among data, and ensuring consistency with respect to the relationships, usually make archiving itself complex and difficult. Just as you did with archived storage requirements, you need to gather requirements for the instantaneous state of the system during archiving. There are several strategies for meeting different requirements, depending on your data&rsquo;s relationships.</p>
+
+<h4 id="toc_4">Types of relationships, consistency guarantees, and efficiency</h4>
+
+<p>I already mentioned parent/child relationships. In general, whenever you have some data in one table that&rsquo;s used to look up data in another table, you have one of several possibilities:</p>
+
+<ol>
+<li>There&rsquo;s an actual database-enforced foreign key between the tables</li>
+<li>Some business logic, whether in queries, stored procedures, constraints or just application code, expects certain data in one table when it sees data in another</li>
+<li>Your systems treat it as a pleasant surprise when they find corresponding data in the two tables</li>
+</ol>
+
+<p>My guess is most of you have a fair amount of data that&rsquo;s described by cases one and two, and much less that falls into case three. Wouldn&rsquo;t you know it, case three is the easiest to handle!</p>
+
+<p>There are several levels of consistency you might choose to follow, and you can mix and match them depending on the data. These flow from the three kinds of relationships:</p>
+
+<ul>
+<li><strong>No orphans.</strong> Foreign keys in most systems enforce this rule. If you attempt to move a parent row away, the child will become an orphan, and most foreign keys will raise an error. Your application code might also forbid orphans. In this case you&rsquo;ll have to archive the children before the parent.</li>
+<li><strong>Orphans are okay.</strong> In this case you can archive the parents first, and the children next. In some systems you can disable database-enforced foreign keys, if they&rsquo;re the only reason for a no-orphans-allowed situation.</li>
+<li><strong>No matter.</strong> In this case you can archive however you please.</li>
+</ul>
+
+<p>You need to balance your consistency requirements against the need to archive efficiently. If you require 100% consistent database state all the time, you might end up doing a lot of database transactions. Transactions are built to ensure consistency, but as I mentioned in previous articles, your archiving jobs need to be designed so they are the victims if there&rsquo;s ever a conflict between them and OLTP processes. Huge transactions to ensure consistency may not be practical while archiving!</p>
+
+<h4 id="toc_5">Strategies for archiving</h4>
+
+<p>Once you&rsquo;ve decided what level of inconsistency you can tolerate, you can choose archive strategies. Just as with everything else, archive strategies are a trade-off. In this case the compromise is usually between efficiency and consistency.</p>
+
+<p>Here are three basic types of archiving strategies. There may be others, but these are the ones I&rsquo;ve used and/or considered using most of the time:</p>
+
+<ol>
+<li>Archive parents and children with recursion.</li>
+<li>Leave orphans, then clean them up later.</li>
+<li>Archive at the leaves of the dependency tree and work toward the root.</li>
+</ol>
+
+<p>The first strategy is a classic computer-science depth-first-traversal problem. You typically start with a central table &ndash; the root of the tree or the root of a subtree &ndash; and for each row you recursively archive its children, only archiving the parent after all the children are gone. This can be difficult, especially since your OLTP schema might not be a tree; it can be a directed acyclic graph, or it can even be a graph with cycles. Satisfying all the dependencies without introducing infinite recursion can be a hard problem. You might also find that not all the dependencies are themselves archivable. You might need to gather a list of all data that is archivable before archiving any of it, which actually means <em>two</em> tree traversals. Finally, you might end up with a chunk of data that has to be archived all at once, which I think is impractical in many OLTP systems. The advantage, if you can pull this off, is that you get a consistent state as long as you do it all in one transaction.</p>
+
+<p>By the way, it&rsquo;s typically hard to archive tables that have inter-row relationships, such as nested-set or other tree representations, without violating consistency requirements.</p>
+
+<p>If you can get away with it, it&rsquo;s generally easier to archive the core table and leave orphans. There are a couple advantages to this. First, you can archive in single-row (or some other small amount) chunks. This satisfies the requirement to keep it low-impact. Second, it&rsquo;s simpler and more efficient to determine whether the child rows can be archived. If they are orphans, they can be. The downside is your applications might not behave well, particularly if they are working with rows in the child table whose parent rows are disappearing.</p>
+
+<p>A final strategy is to archive at the leaves of the dependency tree and work &ldquo;up.&rdquo; In this situation, you are sort of doing the first strategy &ndash; making sure dependency relationships aren&rsquo;t broken &ndash; but you&rsquo;re not trying to boil the ocean. Depending on how deep the dependency tree is, you can usually decide whether a row is archivable either transitively, or by checking whether it&rsquo;s a widow. When you&rsquo;re working at the leaves, you check whether the root is archivable; when you&rsquo;re on an internal node you check if the node is a widow. There are a couple potential drawbacks, including efficiency and consistency requirements in the archive storage, which I&rsquo;ll cover next.</p>
+
+<h3 id="toc_6">It&rsquo;s never that simple</h3>
+
+<p>Alas, there&rsquo;s still more complexity to conquer. You have to consider how efficient it is to determine whether a row is archivable, and what sort of consistency you need to guarantee between the unarchived and the archived data.</p>
+
+<h4 id="toc_7">Consistency, again</h4>
+
+<p>I&rsquo;ll start with the consistency problem first. This is a different sort of consistency, which is why I didn&rsquo;t mention it before. It would have confused things.</p>
+
+<p>It&rsquo;s not always enough to consider consistency in the OLTP system. You might have to think about the archived storage too, and even worse, the two of them in combination. Consider this scenario: you have a parent row in one table, some of whose children in another table can be archived. Do they need a parent row in their destination, too? In other words, do you need to copy the row from <code>source.parent</code> to <code>archive.parent</code> before you can insert into <code>archive.child</code>? And if so, does it bother you that the row in <code>source.parent</code> cannot be archived yet because some of its children are not archivable?</p>
+
+<p>If you must have a row in <code>archive.parent</code> before inserting into archive.child, you will probably have to resign yourself to having two copies of the parent row &ndash; one in the source, one in the archive. Otherwise, you are enforcing an all-or-nothing constraint on the whole &ldquo;family&rdquo; of rows, and this will probably reduce the amount of data you can archive. In practice, I think most people will end up having no foreign keys or other consistency guarantees on the archived data, so child rows can be freely inserted into the archive. If your source and archive are on the same server, don&rsquo;t foreign key the archive&rsquo;s child table to the source&rsquo;s parent table, or you won&rsquo;t be able to archive from the parent! Along with this, you&rsquo;ll probably need to treat an archived row as &ldquo;dirty&rdquo; or &ldquo;un-authoritative&rdquo; if it duplicates a row in the source. Upcoming articles will dig into this more.</p>
+
+<h4 id="toc_8">Efficient archivability checks</h4>
+
+<p>The second potential complication of the strategies above is performance while checking whether a row can be archived. Both transitive checks and widow checks can have high cost.</p>
+
+<p>Transitive checks for archivability can cause a heavy query load on certain tables. Here&rsquo;s a real example, from the systems I described above. An ad is archivable if it has no traffic in the past 18 months. Tables that depend on ads, and which contain an ad&rsquo;s ID, can be archived by checking the traffic table for any traffic for that ad in the last 18 months. This means a lot of queries against the traffic table, which is large and heavily queried anyway. It would be more efficient to archive the ad, and then archive its dependent tables by checking whether the ad doesn&rsquo;t exist anymore. This works best if the ad table can be archived to a small fraction of its former size, which makes index lookups faster.</p>
+
+<p>Another problem with transitive checks is if several relationships must be traversed. In this case you might have to look up values in intermediate tables before checking the final table. This adds more overhead.</p>
+
+<p>The transitive checks are often &ldquo;upward&rdquo; checks in the dependency tree, and have a single parent row in a single parent table; or sometimes &ldquo;up and across&rdquo; to another table. By contrast, widow checks are downward, and might have to check many child tables for child rows. This can be expensive, particularly in tables that are close to the root of the dependency tree. The ads table is a good example. It has literally scores of dependent tables. Querying each of them before archiving a row would be prohibitively expensive. Even worse, a child table might not have an index on its parent column. If your application doesn&rsquo;t traverse the relationship from parent to child, such an index wouldn&rsquo;t be needed, and adding one just to support archiving queries might not be wise.</p>
+
+<p>One compromise I have used occasionally, but not analyzed rigorously, is to build a table of parent row IDs that can be archived, and then access that from child archiving jobs, instead of doing transitive checks. This way at least the &ldquo;traffic&rdquo; table, or its equivalent, only takes the hit once.</p>
+
+<h3 id="toc_9">Conclusion</h3>
+
+<p>I&rsquo;ve covered a lot of ground in this article, starting with &ldquo;deciding archivability&rdquo; and &ldquo;handling relationships.&rdquo; Both require knowing your data, applications, schema, and consistency requirements. It helps to understand how they interact with various archiving strategies, and in turn how those strategies can violate or support your consistency requirements. Efficiency is a big deal &ndash; it&rsquo;s the point of archiving, after all &ndash; so you need to include it when determining what you <em>really</em> require in terms of consistency.</p>
+
+<p>The next article will cover some specific strategies for actually moving the data from the source to the archive, how to do that while fulfilling data consistency requirements (again!), and finally how to un-archive. This last point is crucial for scaling by &ldquo;scaling back,&rdquo; because it lets you archive data you&rsquo;re not sure is archivable, yet pay virtually no penalty.</p>
+
+<hr />
+
+<p><sup><a href="http://www.xaprb.com/blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/">1</a></sup> I realize &ldquo;widow&rdquo; is not the opposite of &ldquo;orphan,&rdquo; but in computer science it is sometimes used to mean &ldquo;childless,&rdquo; especially for typesetting algorithms. Joe Celko also uses the term to mean &ldquo;childless&rdquo; in <em>SQL For Smarties</em>.</p></li>
+</ul>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

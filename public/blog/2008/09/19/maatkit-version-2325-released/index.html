@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Maatkit version 2325 released &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Maatkit version 2325 released</h1>
+  <span class="post-date">Fri, Sep 19, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/Operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>There&rsquo;s a new release with a lot of goodies &ndash; speed, efficiency, user-friendliness, and new features. In particular some of <a href="http://www.percona.com/">Percona&rsquo;s</a> clients have sponsored features for things they need such as the ability to more frequently verify that slaves are in sync with their masters. If you need features, please ask Percona about it.</p>
+
+<p><a href="http://hackmysql.com/">Daniel Nichter</a> has written most of the code for this release. Having a dedicated developer is really moving the project forward. Thanks Daniel!</p>
+
+<p>If you check the issues list on the project&rsquo;s website you&rsquo;ll see we have some ambitious plans for the project, mostly driven by real-world needs from Percona&rsquo;s clients, many of whom run very large data centers and such. It makes me really happy that Maatkit is solving serious problems for which no other solution exists.</p>
+
+<p>Here&rsquo;s the changelog:</p>
+
+<pre>Changelog for mk-archiver:
+
+2008-09-19: version 1.0.11
+
+   * Updates to shared code.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-audit:
+
+2008-09-19: version 0.9.2
+
+   * Checks /etc/sysctl.conf for default ipv4 system variables (issue 56).
+   * No longer reports false-positive duplicate system variables (issue 58).
+   * Added --socket.
+   * The mysqld binary was not detected correctly from 'ps' output.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-deadlock-logger:
+
+2008-09-19: version 1.0.12
+
+   * Added --pid option.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-duplicate-key-checker:
+
+2008-09-19: version 1.1.8
+
+   * Updates to shared code.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-find:
+
+2008-09-19: version 0.9.13
+
+   * Updates to shared code.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-heartbeat:
+
+2008-09-19: version 1.0.11
+
+   * Dies if heartbeat table does not have at least one row (issue 45).
+   * Added --pid option.
+   * Using debug (MKDEBUG=1) and --daemonize now causes script to die.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-parallel-dump:
+
+2008-09-19: version 1.0.10
+
+   * Added option --biggestfirst which is enabled by default (issue 31).
+   * --noflushlock and --nolocktables caused a global flush and lock (issue 12).
+   * Made debugging code more efficient in non-debug mode.
+   * Fixed various bugs in shared code.
+   * Moved all command-line documentation to POD.
+
+Changelog for mk-parallel-restore:
+
+2008-09-17: version 1.0.9
+
+   * Made restores resume by default if possible (issue 30).
+   * Added --noresume option (issue 30).
+   * Added --[no]atomicresume option (issue 30).
+   * --progress is reported by bytes instead of chunk count (issue 32).
+   * --progress counting and prediction was improved.
+   * LOAD DATA queries show bytes done and db.tbl name in SQL comment.
+   * CHARACTER SET was declared in the wrong place for csv LOAD DATA query.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-query-profiler:
+
+2008-09-19: version 1.1.12
+
+   * Updates to shared code.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-show-grants:
+
+2008-09-19: version 1.0.12
+
+   * Updates to shared code.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-slave-delay:
+
+2008-09-19: version 1.0.9
+
+   * Updates to shared code.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-slave-find:
+
+2008-09-19: version 1.0.3
+
+   * Updates to shared code.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-slave-move:
+
+2008-09-19: version 0.9.3
+
+   * Updates to shared code.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-slave-prefetch:
+
+2008-09-19: version 1.0.4
+
+   * Added --pid option.
+   * Using debug (MKDEBUG=1) and --daemonize now causes script to die.
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-slave-restart:
+
+2008-09-19: version 1.0.9
+
+   * Added --pid option (issue 18).
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-table-checksum:
+
+2008-09-19: version 1.1.29
+
+   * Added --argtable, --offset and --modulo for issue 53.
+   * Added --nouseindex option (issue 8).
+   * Fixed processing of column options (issue 4, patch by Travis Whitton)
+   * Changed --emptyrepltbl to always completely empty the table (issue 21).
+   * Added --schema option for issue 5.
+   * Added --since and --sincecolumn options for issue 53.
+   * Added --probability option for issue 53.
+   * A missing table caused a crash (issue 35).
+   * Functions specified with --function were not optimized (issue 43).
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-table-sync:
+
+2008-09-19: version 1.0.9
+
+   * Added --nouseindex option (issue 8).
+   * Dies if any dest table has triggers unless --ignore-triggers (issue 37).
+   * Added better support for CRC32 (issue 43).
+   * Made debugging code more efficient in non-debug mode.
+
+Changelog for mk-visual-explain:
+
+2008-09-19: version 1.0.10
+
+   * Updates to shared code.
+   * Made debugging code more efficient in non-debug mode.</pre>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Getting ready for a new innotop release &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Getting ready for a new innotop release</h1>
+  <span class="post-date">Tue, Nov 2, 2010 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      <p>It&rsquo;s been ages since we&rsquo;ve had an update to <a href="http://code.google.com/p/innotop/">innotop</a>, or at least, it&rsquo;s been a while since the changes were bundled up and released officially. Barring any bug reports against the <a href="http://innotop.googlecode.com/svn/trunk/innotop">trunk code</a>, I&rsquo;m about ready to release more than a year&rsquo;s worth of improvements to it:</p>
+
+<pre>   Changes:
+   * Don't re-fetch SHOW VARIABLES every iteration; it's too slow on many hosts.
+   * Add a filter to remove EVENT threads in SHOW PROCESSLIST (issue 32).
+   * Add a timestamp to output in -n mode, when -t is specified (issue 37).
+   * Add a new U mode, for Percona/MariaDB USER_STATISTICS enhancements (issue 39).
+   * Add support for millisecond query time in Percona Server (issue 39).
+   * Display a summary of queries executed in Query List mode (issue 26).
+
+   Bugs fixed:
+   * Hostname parsing wasn't standards compliant (issue 30).
+   * MKDEBUG didn't work on some Perl versions (issue 22).
+   * Don't try to get InnoDB status if have_innodb != YES (issue 33).
+   * Status text from the InnoDB plugin wasn't parsed correctly (issue 36).
+   * Transaction ID from the InnoDB plugin wasn't subtracted correctly (issue 38).
+   * Switching modes and pressing ? for help caused a crash (issue 40).</pre>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

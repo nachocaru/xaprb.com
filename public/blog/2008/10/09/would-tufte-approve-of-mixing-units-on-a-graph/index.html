@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Would Tufte approve of mixing units on a graph? &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Would Tufte approve of mixing units on a graph?</h1>
+  <span class="post-date">Thu, Oct 9, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>I&rsquo;ve created a set of <a href="http://code.google.com/p/mysql-cacti-templates/">Cacti templates for graphing stats about MySQL</a>. While these were based on several other people&rsquo;s work, there are many improvements. One of them in particular I want to bring up, and I&rsquo;ll go so far as to say it ought to be a &ldquo;best practice&rdquo; for graphing. That is, don&rsquo;t mix units on a graph.</p>
+
+<p>In the simplest terms, this means that just because things are related doesn&rsquo;t mean they belong together. I made an effort to separate things onto different graphs when they have different units. For example, the query cache metrics don&rsquo;t all belong together. There are memory metrics, there are block metrics, and there are metrics about queries. If you jam them all together, the differences in the units will cause various graphs to obliterate each other. Some values are much larger than others, and that&rsquo;ll cause some values to be minuscule on the graph.</p>
+
+<p>The graph templates that inspired me to create mine mashed them all together and then scaled things <a href="http://www.xkcd.com/485/">logarithmically</a> to compensate for the resulting problems. This does not address the root of the matter. By contrast, my templates split them apart, so all the things whose unit is &ldquo;query&rdquo; are on one graph together. Then I looked at the remaining stats (units: blocks and units: bytes) and decided that in the interest of not having way too many graphs, I&rsquo;d put them together. I&rsquo;m still not sure this was a great idea, and I have a nagging Tufte voice in my head. Anyway, I tried to strike a balance in this specific case, but in general I kept things separate.</p>
+
+<p>One of the great things about Cacti is that you can graph whatever you want. You can graph the temperature on your server&rsquo;s hard drives, or the Dow Jones Industrial Average, or whatever. So you can have a single graphing solution for your whole company&rsquo;s needs. By contrast, MySQL Enterprise Monitor is focused on a single purpose. So it should do a really good job at it, right? Actually, no, they get it wrong too &ndash; they mix units. Here you can see exactly the effect I&rsquo;m talking about; one value can obliterate the other. (You get points if you guess what&rsquo;s going on in this graph.)</p>
+
+<div id="attachment_608" class="wp-caption aligncenter" style="width: 310px">
+  <a href="http://www.xaprb.com/media/2008/10/mysql-enterprise-monitor-query-cache.png"><img src="http://www.xaprb.com/media/2008/10/mysql-enterprise-monitor-query-cache-300x121.png" alt="MySQL Enterprise Monitor Query Cache Graph" title="mysql-enterprise-monitor-query-cache" width="300" height="121" class="size-medium wp-image-608" /></a><p class="wp-caption-text">
+    MySQL Enterprise Monitor Query Cache Graph
+  </p>
+</div>
+
+<p>I&rsquo;ve tried to make the Cacti templates for MySQL as useful as possible, and judging by the graphs I see on client sites (these templates are quite popular, independent of me or my employer) they do a pretty good job. There&rsquo;s still room for improvement, though. I&rsquo;m adding more carefully selected bits of information into the graphs, and making them more robust to deal with bizarre errors that happen in real life. And of course, always finding new ways to work around the limitations of PHP and Cacti, both of which have their quirks.</p>
+
+<p>Are there wishes you have for these graphs, too? If so, <a href="http://code.google.com/p/mysql-cacti-templates/issues/list">submit an issue report on the Google Code project</a>. Just don&rsquo;t ask me to graph unrelated things together, OK?</p>
+
+<p>PS: sometimes things with the same units are still much bigger or smaller than each other. That&rsquo;s why my templates always print out the values in numbers along the bottom of the graph, so you can see the magnitude of the values, not just look at the lines.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

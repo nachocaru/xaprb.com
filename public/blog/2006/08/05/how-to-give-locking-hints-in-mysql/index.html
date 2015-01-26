@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to give locking hints in MySQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to give locking hints in MySQL</h1>
+  <span class="post-date">Sat, Aug 5, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>I worked with Microsoft SQL Server 2000 at my previous employer, and was accustomed to explicitly defining the locking mode I wanted, by providing lock hints on queries. MySQL gives less control over locking, but there are ways to control the type of locks a query will acquire. This article explores those techniques.</p>
+
+<p>I&rsquo;ve been trying to learn more about MySQL locks and deadlocks, and have written several articles on the topic recently, so I&rsquo;m keen to hear your feedback.</p>
+
+<h3 id="toc_0">The lock hints I used on SQL Server</h3>
+
+<p>The two most common lock hints I used on queries at my former employer were <code>nolock</code> and <code>updlock holdlock</code>. The first hint tells the server not to acquire any locks at all on a query:</p>
+
+<pre>select col1, col2 from tbl1(<strong>nolock</strong>)</pre>
+
+<p>That&rsquo;s a big efficiency win, because locks are extra overhead. The side effect is you could be reading another transaction&rsquo;s uncommitted data.</p>
+
+<p>The second method was useful for avoiding lock escalation deadlocks. Suppose I read from a table into a temporary table, did some manipulation, and then updated the base table again. Without any lock hints, the initial read would acquire shared read locks, which would be escalated later for writing. If something else acquired shared locks in the meantime, the escalation would cause at least a block, and possibly a deadlock. To avoid this, our DBA&rsquo;s coding standard was to acquire and hold those write locks as early as possible in the transaction: at the first read. For instance,</p>
+
+<pre>create table #temp ...
+insert into #temp... select col1, col2
+   from tbl1(<strong>updlock holdlock</strong>)</pre>
+
+<h3 id="toc_1">Transaction isolation levels</h3>
+
+<p>One way to get the same effect in MySQL is to use SQL standard transaction isolation levels (see <a href="http://dev.mysql.com/doc/refman/5.0/en/set-transaction.html">SET TRANSACTION syntax</a>). For example, to avoid any locks at all, and allow a transaction to read dirty, possibly inconsistent data, use <code>READ UNCOMMITTED</code>. (You can do the same thing in SQL Server 2000, and then omit the <code>(nolock)</code> hint. In SQL Server 2005, I believe more of the standard isolation levels are supported, which provides better multi-versioning. I&rsquo;m no expert on this, and I don&rsquo;t keep up with new developments in the SQL Server world anymore, so you&rsquo;ll have to read elsewhere to find out more.)</p>
+
+<p>MySQL&rsquo;s default isolation level is <code>REPEATABLE READ</code>. You should read the manual to understand what this really means. It is fairly complex and has interesting implications. A good place to start is on the page <a href="http://dev.mysql.com/doc/refman/5.0/en/innodb-transaction-isolation.html">InnoDB and TRANSACTION ISOLATION LEVEL</a>.</p>
+
+<p>If you use the <code>SERIALIZABLE</code> isolation level in MySQL, a <code>SELECT</code> statement locks rows in shared mode, similar to the default behavior I discussed above in Microsoft SQL Server.</p>
+
+<h3 id="toc_2">Lock hints in queries</h3>
+
+<p>MySQL does allow you to specify directly what locks should be acquired in a <code>SELECT</code>, with the lock hints <code>FOR UPDATE</code> and <code>LOCK IN SHARE MODE</code>. Basically, <code>FOR UPDATE</code> gets write locks, and <code>LOCK IN SHARE MODE</code> gets shared read locks on the rows read. You can read more about this on the manual page <a href="http://dev.mysql.com/doc/refman/5.0/en/innodb-locking-reads.html">SELECT &hellip; FOR UPDATE and SELECT &hellip; LOCK IN SHARE MODE Locking Reads</a>.</p>
+
+<p>It&rsquo;s not the same level of granularity as in SQL Server, because for example you can&rsquo;t apply a different locking hint to each table involved in a join, but it&rsquo;s certainly useful.</p>
+
+<h3 id="toc_3">Server version and configuration</h3>
+
+<p>Finally, server version and configuration affects how and when locks are acquired. Not only is the default transaction isolation level configurable, but options that affect replication and binary logging come into play. There&rsquo;s some discussion about this in the comments on my <a href="http://www.xaprb.com/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/">previous article on deadlocks</a>.</p>
+
+<h3 id="toc_4">Is there more?</h3>
+
+<p>Are there more ways to control locking than I know about? Please post in the comments.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

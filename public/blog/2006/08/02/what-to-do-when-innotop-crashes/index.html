@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> What to do when innotop crashes &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>What to do when innotop crashes</h1>
+  <span class="post-date">Wed, Aug 2, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      
+
+<p>A couple of people have written in reporting <a href="http://www.xaprb.com/innotop/"><code>innotop</code></a> crashes. Unfortunately I don&rsquo;t have access to enough variations of operating systems and MySQL versions to test everything myself, but if you&rsquo;re able to help by sending me a bug report when <code>innotop</code> crashes, I&rsquo;m willing to work on fixing it! I hope soon I&rsquo;ll have a much larger test suite, and am grateful for your help with that. This article explains what information I need to reproduce and debug crashes.</p>
+
+<p>I hope you&rsquo;re not getting crashes, but as this is new software and I haven&rsquo;t been able to test it in that many different environments, it&rsquo;s to be expected I suppose.</p>
+
+<p>By the way, even if it does crash, <strong>it is safe to use</strong>. <code>innotop</code> doesn&rsquo;t modify anything on your server, it just reads and formats status information.</p>
+
+<h3 id="toc_0">How to help me fix bugs</h3>
+
+<p>If you can do the following when <code>innotop</code> crashes, I&rsquo;d be very grateful:</p>
+
+<ol>
+<li>Ensure &lsquo;debug&rsquo; is on in your configuration file. Open up <code>$HOME/.innotop</code>and look for the line starting <code>debug=</code>. It should say <code>debug=1</code>. If not, make it so; this will enable lots more debugging information. This option is enabled by default in the version I&rsquo;m distributing now.</li>
+<li>If &lsquo;debug&rsquo; mode was on, your crash should have written to a file called <code>$HOME/.innotop_core_dump</code>. Please send me that file. If &lsquo;debug&rsquo; wasn&rsquo;t on, maybe <code>innotop</code> will crash again if you try to restart it after setting the option, and it&rsquo;ll write the core dump file.</li>
+<li>Please let me know your operating system, Perl version, and the OS and MySQL version of the MySQL server you connected to.</li>
+<li>If you can send me your configuration file (don&rsquo;t forget to remove your MySQL password from it if you saved it there!), that would also be helpful. The configuration file is stored in <code>$HOME/.innotop</code>.</li>
+</ol>
+
+<p>You can send this to me any way you wish. An attachment to an email is fine. You can send to .</p>
+
+<p>Thank you so much for your help!</p>
+
+<h3 id="toc_1">How to restart <code>innotop</code> after a crash</h3>
+
+<p>If your crash was caused by selecting a certain mode, for example by pressing the &lsquo;R&rsquo; key, <code>innotop</code> may have saved that mode into its configuration file when it crashed, and may try to start up again in that mode. In this case it may crash again before you can get it started.</p>
+
+<p>You can specify the mode on the command-line to solve this:</p>
+
+<pre>% innotop -mode Q</pre>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

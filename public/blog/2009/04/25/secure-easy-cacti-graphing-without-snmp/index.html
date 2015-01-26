@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Secure, easy Cacti graphing without SNMP &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Secure, easy Cacti graphing without SNMP</h1>
+  <span class="post-date">Sat, Apr 25, 2009 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p><a href="http://www.cacti.net/">Cacti</a> is a great tool for collecting information about systems and graphing it. However, it likes to use SNMP, and SNMP is often not desirable. Instead, I often see the need for a method that is:</p>
+
+<ul>
+<li>Secure. Use trusted, well-known, encrypted communication. Do not open up new ports.</li>
+<li>Zero install on the monitored system.</li>
+<li>As little installation or modification on the monitoring system as possible.</li>
+</ul>
+
+<p>Over the last several years, I&rsquo;ve slowly created more and more software to create Cacti graphs via standard POSIX command-line utilities over SSH with key-pair authentication. (I&rsquo;ve also created similar software for Nagios, but that&rsquo;s another matter.) The major problem with the work I&rsquo;ve done is that it&rsquo;s totally un-publicized.</p>
+
+<p>The system works by passing command-line arguments to a local PHP script like any other Cacti script. This script then executes a remote SSH command, such as <code>ssh somehost uptime</code> and extracts statistics from the result.</p>
+
+<p>The requirements are very simple. On the system to be monitored, a public key must be installed. On the monitoring system, the cacti user account must have a private SSH key that it can read and others can&rsquo;t. This is standard for any SSH key. The cacti user account must also have the SSH key fingerprint of the monitored system in its known_hosts file.</p>
+
+<p>The work I&rsquo;ve done thus far is available from Subversion in the <a href="http://code.google.com/p/mysql-cacti-templates">mysql-cacti-templates</a> project. This project has the scaffolding for creating Cacti templates easily, so I&rsquo;m using it.</p>
+
+<p>At this point, the following are available:</p>
+
+<ul>
+<li>Apache</li>
+<li>Operating system (CPU, memory, load average, etc)</li>
+<li>Memcached</li>
+<li>Nginx</li>
+</ul>
+
+<p>Unfinished work includes network, disk, etc. The techniques to monitor something of which there is a variable number (e.g. there can be many disks, each of which needs its own graph) are a little more complex than simple things like monitoring overall CPU usage. So that&rsquo;s a work in progress. Once it&rsquo;s done, it&rsquo;ll make it really easy to discover and monitor multiples of <em>anything</em> &ndash; for example, multiple MySQL servers or memcached servers on a single host &ndash; without creating a new host for each resource to monitor.</p>
+
+<p>As with the MySQL templates I created, these templates are comprehensive and have lots of nice properties most templates lack. This is something you get free with my scaffolding. If you&rsquo;ve ever created templates by hand through the web interface, you should give my work a try. You can turn a three-day project into a few minutes and avoid bugs and other hassles. There are <a href="http://code.google.com/p/mysql-cacti-templates/wiki/CreatingGraphs">instructions for creating Cacti templates</a> on the project wiki.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A very fast FNV hash function for MySQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A very fast FNV hash function for MySQL</h1>
+  <span class="post-date">Sun, Mar 9, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>I wrote a User-Defined Function that implements the <a href="http://isthe.com/chongo/tech/comp/fnv/">FNV (Fowler-Voll-No)</a> hash function for MySQL. I&rsquo;m <a href="http://www.radwin.org/michaelhttp://www.xaprb.com/blog/2007/03/mysql_user_defined_functio.html">not the first person to do this</a> &ndash; in fact, I was inspired by the <a href="http://code.google.com/p/google-mysql-tools/">Google patches for MySQL</a>. But my implementation is a little bit different from most, in a very important way that leads directly to much higher performance, especially suited for the Maatkit tools.</p>
+
+<p>A bit of background: FNV hashing is a very fast hash algorithm that operates in fixed memory. It is widely used in lots of important areas in computer science. My implementation requires absolutely no <code>malloc()</code> calls, which is a darn good thing because I am not to be trusted with <code>malloc()</code>, having spent too many years programming in managed languages. I made it return a 64-bit integer, which matches the size MySQL uses internally for most integer arithmetic.</p>
+
+<p>The most important thing I did was make my UDF accept 1 to infinity arguments. That means you can hash entire rows with a single function call. And that is very useful for the <a href="http://code.google.com/p/maatkit/">Maatkit</a> table-checksumming tools, which tend to run about 8-10 times faster when they don&rsquo;t have to make MySQL do a bunch of string concatenation. That translates directly to less impact on the server, and less slave lag (if that is a problem for you).</p>
+
+<p>Here&rsquo;s how my implementation works:</p>
+
+<pre>SELECT FNV_64(col1, col2, col3, .... colN) FROM ...</pre>
+
+<p>Compare this to MD5() hashing that accomplishes the same thing:</p>
+
+<pre>SELECT MD5(CONCAT_WS('#', col1, col2, col3, .... colN)) FROM ...</pre>
+
+<p>The UDF&rsquo;s code is distributed with Maatkit, and I plan to eventually build it as a binary that can be installed without requiring you to compile it. However, compiling is very easy; there are instructions in the source code comments. Installing is also easy: just a simple SQL statement.</p>
+
+<p>If you&rsquo;re using Maatkit to make sure your slaves have the same data as their master, you should install the UDF on all your servers for a significant performance boost. You&rsquo;ll save your servers a lot of work. You don&rsquo;t need to do anything extra for Maatkit to take advantage of it. Maatkit will auto-detect it if you have it installed.</p>
+
+<p>I&rsquo;ve been running it in production for a couple of months now with nothing but good results. And the code is drop-dead simple, so I think the chance of bugs is very slim. But if you have questions, problems, bug reports etc, please use the <a href="http://code.google.com/p/maatkit/">Maatkit</a> project page to report them.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

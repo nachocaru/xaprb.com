@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> MySQL&#39;s ERROR 1025 explained &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>MySQL&#39;s ERROR 1025 explained</h1>
+  <span class="post-date">Tue, Aug 22, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>MySQL issues a cryptic error message, &ldquo;Error on rename,&rdquo; when you try to alter a table in such a way that it would break a foreign key constraint:</p>
+
+<pre>create table test1(a int not null primary key)engine=innodb;
+create table test2(a int not null, foreign key(a) references test1 (a)) engine=innodb;
+alter table test2 modify a smallint not null;       
+ERROR 1025 (HY000): Error on rename of './test/#sql-2fa8_1' to './test/test2' (errno: 150)</pre>
+
+<p>This happens because <code>ALTER TABLE</code> really works by making a copy of the table, then renaming to move the old table out of the way and move the new table into its place. It is certainly one of the less meaningful error messages I&rsquo;ve seen in MySQL.</p>
+
+<p>There&rsquo;s slightly more information in the output of <code>SHOW ENGINE INNODB STATUS</code>, if you are looking there (of course, if you&rsquo;re looking there you&rsquo;re probably already clued in to what&rsquo;s going on). And <a href="http://www.xaprb.com/innotop/">innotop</a> can parse that information for you:</p>
+
+<p><a href="http://www.xaprb.com/innotop/innotop-fk-error-message.png"><img src="/innotop/thumb-innotop-fk-error-message.png" width="200" height="" alt="innotop FK screenshot" /></a></p>
+
+<p>In case you didn&rsquo;t understand why the foreign key constraint was failing, the error message innotop parses out is much clearer. It&rsquo;s because the foreign key columns in the parent and child table have to have the same data type. I was trying to change the child&rsquo;s column to an incompatible type.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

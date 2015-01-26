@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Lessons learned from the Sublime Text editor &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Lessons learned from the Sublime Text editor</h1>
+  <span class="post-date">Tue, Nov 20, 2012 in
+		
+		<a href="/categories/Desktop" class="btn btn-primary">Desktop</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>Terminal-based, keystroke-driven editors are enormously powerful, and I still haven&rsquo;t seen anything more powerful than Vim. I&rsquo;m a longtime Vim user, and although I&rsquo;m not the world&rsquo;s foremost jaw-dropping expert on Vim, I would call myself an advanced power user at the very least, and probably a true expert. Still, I have maintained a relationship with GUI text editors over the years, too. An editor that has an insertion point for a cursor, and &ldquo;native&rdquo; mouse interaction, has an appeal I&rsquo;ve never quite shaken. I&rsquo;ve used (and been highly productive with) Kate, GEdit, Notepad++, Visual Studio, and many others. I have <em>purchased licenses</em> for Textpad, Textmate, and most recently <a href="http://www.sublimetext.com/">Sublime Text 2</a>.</p>
+
+<p>Sublime Text is a very nice editor. I&rsquo;ve chosen it for my recent Go programming because of the <a href="https://github.com/DisposaBoy/GoSublime">GoSublime</a> integration, which uses <a href="https://github.com/nsf/gocode">gocode</a> (which also works for Vim, by the way) to provide IDE-like autocomplete and other helpful functionality, like incremental syntax checking and running gofmt on save. Sublime Text also has a limited Vim emulation mode, which lets me drop into Vim command mode for some mouseless productivity.</p>
+
+<p>Keep in mind that I think Sublime is great, and well worth the license fee. That said, I find its advocates a bit wide-eyed and breathless in their enthusiasm. I keep thinking, <em>Have they never used a decent editor before?</em> Take the &ldquo;multiple selection&rdquo; feature. You can select something, such as a variable name, then press Control-D repeatedly and select other occurrences of the same text. Then you can type, and all of the occurrences change simultaneously. <em>Revolutionary! Any praise about multiple selections is an understatement!</em></p>
+
+<p>Really? You&rsquo;ve been able to do that with just as few, or even fewer, keystrokes in Vi or Vim forever:</p>
+
+<pre><code>:%s/oldtext/newtext/gc
+</code></pre>
+
+<p>All you have to do is press a key for every occurrence. If you want to change them all without confirmation, leave off the trailing &lsquo;c&rsquo; command to the regular expression. This is <em>basic</em>, not a power-user feature. It&rsquo;s Unix regex 101 for any number of tools &ndash; nothing new to learn here.</p>
+
+<p>Similarly, a number of other purportedly &ldquo;new&rdquo; features in Sublime Text 2 are decades old, well-worn and loved in many other text editors. I&rsquo;ll admit that most of the mouse-based, cursor-insertion-point, GUI text editors don&rsquo;t offer these types of features in any usable or convenient way; they just seem to lend themselves much better to terminal-based editors like Vim and Emacs. (Example: passing selected text through a shell command and reinserting it into the file.)</p>
+
+<p>In fact, many of these older text editors offer <em>way</em> more functionality than Sublime Text. It doesn&rsquo;t even come close. The find-and-replace in Vim, for example, is way better than the dialog-based functionality in Sublime Text, or nearly any GUI editor for that matter. Not to mention the documentation; Vim&rsquo;s documentation and help system is breathtaking, but Sublime Text&rsquo;s is&hellip; uninspired at best. You can compare terminal-based text editors to Sublime Text on a bunch of dimensions and it comes up way, way short. Again, this is just some rambling thoughts &ndash; I repeat, I bought the license. And I&rsquo;m sure Sublime Text is going to continue improving rapidly, as it has been the whole time I&rsquo;ve been aware of it.</p>
+
+<p>And now we come to my point: it appears to me, from the enthusiastic response to Sublime Text, that <em>a large proportion of the developer population either uses a weak-sauce text editor or is utterly untrained on using a powerful one.</em> How else can we explain the enthusiasm? I honestly can&rsquo;t think of anything. And this is a really saddening thought, because it means that thousands of programmers have completely neglected one of the most important things they could do: become truly proficient, if not expert, with their text editor. The text editor is to the programmer as the wrench is to the mechanic, as the compass is to the navigator, as the shoe is to the runner. It is arguably the single most important tool you&rsquo;ll use as a programmer.</p>
+
+<p>There&rsquo;s just no excuse. If you aren&rsquo;t using a powerful text editor (and I would count Sublime Text as one), <em>get one.</em> And if you aren&rsquo;t at least an advanced user of that editor, <em>get a move on it.</em> I&rsquo;m not the first to say this, but I can&rsquo;t remember or locate the quotation about this topic that I&rsquo;m trying to recall. Maybe someone can help out in the comments.</p>
+
+<p>What&rsquo;s your favorite text editor? What&rsquo;s your favorite resource for becoming an amazing wizard with it, so that you regularly do the kinds of tricks that make your friends say &ldquo;hey, what editor is that?&rdquo;</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

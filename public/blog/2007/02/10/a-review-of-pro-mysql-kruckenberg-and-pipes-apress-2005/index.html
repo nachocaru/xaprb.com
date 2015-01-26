@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A review of Pro MySQL (Kruckenberg and Pipes, Apress 2005) &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A review of Pro MySQL (Kruckenberg and Pipes, Apress 2005)</h1>
+  <span class="post-date">Sat, Feb 10, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>Pro MySQL, by <a href="http://mike.kruckenberg.com/">Mike Kruckenberg</a> and <a href="http://jpipes.com/index.php">Jay Pipes</a>, covers advanced MySQL topics, especially focusing on optimization and internals. I give it a solid 4 stars.</p>
+
+<h3 id="toc_0">Overview</h3>
+
+<p><a href="http://www.apress.com/book/bookDisplay.html?bID=433"><img style="float:left" src="/media/2007/02/pro-mysql.jpg" alt="Pro MySQL book cover image" /></a> Pro MySQL covers a lot of topics you need to know, and probably will not learn about anywhere else.</p>
+
+<p>The book&rsquo;s target audience is MySQL professionals. The authors assume significant depth of background in the subject area, and strive to put the finishing touches on your education &ndash; to take you from apprentice to journeyman, so to speak. I think they do a great job.</p>
+
+<p>The writing is lucid and well-organized. It&rsquo;s also well-edited; apparently this book was not rushed to press as so many technical books are. It&rsquo;s exceptionally easy to read and understand. There are plenty of examples, but they do not interfere with the writing. Paragraphs are long enough that the pages are filled with large, solid chunks of text, without interruptions or distractions. Even footnotes are unusual. Unlike many other technical books, the page count is not inflated with endless code listings! Oh, and I don&rsquo;t think I saw any typos &ndash; I can&rsquo;t remember the last time I read a typo-free technical book.</p>
+
+<p>Pro MySQL actually goes beyond &ldquo;easy to read&rdquo; and &ldquo;well-organized.&rdquo; In fact, it&rsquo;s downright engaging. I found it so much fun to read that I put aside my wife&rsquo;s Christmas present (two volumes on the history of World War II, which is super-interesting) and started carrying this book with me everywhere till I finished reading it. I read it over lunch at work, in the waiting room at the doctor&rsquo;s office, and everywhere else I got a chance. It&rsquo;s that interesting.</p>
+
+<p>On the downside, there are a couple of places where the book restates the official manual, and a technical blip or three. However, these are few and relatively minor.</p>
+
+<h3 id="toc_1">Organization</h3>
+
+<p>The book is organized in two parts. The first, &ldquo;Design and Development,&rdquo; comprises the first 13 chapters, which I would roughly group into advanced technical topics and new features in MySQL 5.0. The second part, &ldquo;Administration,&rdquo; covers the usual topics like installation, security and backup, but also has sections on replication and clusters.</p>
+
+<p>I wanted to see how long and how many of each kind of chapter there are, so of course I threw it into a SQL table (spreadsheets are for wimps).</p>
+
+<table class="borders collapsed compact">
+  <tr>
+    <th>
+      num
+    </th>
+    
+    <th>
+      title
+    </th>
+    
+    <th>
+      p
+    </th>
+    
+    <th>
+      part
+    </th>
+    
+    <th>
+      section
+    </th>
+    
+    <th>
+      len
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      1
+    </td>
+    
+    <td>
+      Analyzing Business Requirements
+    </td>
+    
+    <td>
+      3
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      Background
+    </td>
+    
+    <td>
+      36
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      2
+    </td>
+    
+    <td>
+      Index Concepts
+    </td>
+    
+    <td>
+      39
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      Background
+    </td>
+    
+    <td>
+      30
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      3
+    </td>
+    
+    <td>
+      Transaction Processing
+    </td>
+    
+    <td>
+      69
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      Background
+    </td>
+    
+    <td>
+      36
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      4
+    </td>
+    
+    <td>
+      MySQL System Architecture
+    </td>
+    
+    <td>
+      105
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      Background
+    </td>
+    
+    <td>
+      48
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      5
+    </td>
+    
+    <td>
+      Storage Engines and Data Types
+    </td>
+    
+    <td>
+      153
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      Background
+    </td>
+    
+    <td>
+      36
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      6
+    </td>
+    
+    <td>
+      Benchmarking and Profiling
+    </td>
+    
+    <td>
+      189
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      Background
+    </td>
+    
+    <td>
+      46
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      7
+    </td>
+    
+    <td>
+      Essential SQL
+    </td>
+    
+    <td>
+      235
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      Background
+    </td>
+    
+    <td>
+      64
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      8
+    </td>
+    
+    <td>
+      SQL Scenarios
+    </td>
+    
+    <td>
+      299
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      Background
+    </td>
+    
+    <td>
+      50
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      9
+    </td>
+    
+    <td>
+      Stored Procedures
+    </td>
+    
+    <td>
+      349
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      MySQL 5
+    </td>
+    
+    <td>
+      26
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      10
+    </td>
+    
+    <td>
+      Functions
+    </td>
+    
+    <td>
+      375
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      MySQL 5
+    </td>
+    
+    <td>
+      30
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      11
+    </td>
+    
+    <td>
+      Cursors
+    </td>
+    
+    <td>
+      405
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      MySQL 5
+    </td>
+    
+    <td>
+      14
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      12
+    </td>
+    
+    <td>
+      Views
+    </td>
+    
+    <td>
+      419
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      MySQL 5
+    </td>
+    
+    <td>
+      24
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      13
+    </td>
+    
+    <td>
+      Triggers
+    </td>
+    
+    <td>
+      443
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      MySQL 5
+    </td>
+    
+    <td>
+      26
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      14
+    </td>
+    
+    <td>
+      MySQL Installation and Configuration
+    </td>
+    
+    <td>
+      469
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      Administration
+    </td>
+    
+    <td>
+      28
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      15
+    </td>
+    
+    <td>
+      User Administration
+    </td>
+    
+    <td>
+      497
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      Administration
+    </td>
+    
+    <td>
+      36
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      16
+    </td>
+    
+    <td>
+      Security
+    </td>
+    
+    <td>
+      533
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      Administration
+    </td>
+    
+    <td>
+      22
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      17
+    </td>
+    
+    <td>
+      Backup and Restoration
+    </td>
+    
+    <td>
+      555
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      Administration
+    </td>
+    
+    <td>
+      30
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      18
+    </td>
+    
+    <td>
+      Replication
+    </td>
+    
+    <td>
+      585
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      Administration
+    </td>
+    
+    <td>
+      32
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      19
+    </td>
+    
+    <td>
+      Cluster
+    </td>
+    
+    <td>
+      617
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      Administration
+    </td>
+    
+    <td>
+      28
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      20
+    </td>
+    
+    <td>
+      Troubleshooting
+    </td>
+    
+    <td>
+      645
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      Administration
+    </td>
+    
+    <td>
+      24
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      21
+    </td>
+    
+    <td>
+      MySQL Data Dictionary
+    </td>
+    
+    <td>
+      669
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      Administration
+    </td>
+    
+    <td>
+      30
+    </td>
+  </tr>
+</table>
+
+<p>Note: the &ldquo;section&rdquo; is my own way of grouping the chapters, as I explained above. Here&rsquo;s a graphical view of the book&rsquo;s organization, using one of the techniques I learned from <a href="http://www.xaprb.com/blog/2007/01/02/a-review-of-oreillys-sql-hacks/">SQL Hacks</a>:</p>
+
+<pre>select section,
+   count(*) as num_chaps,
+   avg(len) as avg_chap_len,
+   repeat('#', sum(len)/15) as total_pages
+from chapters
+group by section
+order by field(section, 'Background', 'MySQL 5', 'Administration');</pre>
+
+<table class="borders collapsed compact">
+  <tr>
+    <th>
+      section
+    </th>
+    
+    <th>
+      num_chaps
+    </th>
+    
+    <th>
+      avg_chap_len
+    </th>
+    
+    <th>
+      total_pages
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Background
+    </td>
+    
+    <td>
+      8
+    </td>
+    
+    <td>
+      43.2500
+    </td>
+    
+    <td>
+      #######################
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      MySQL 5
+    </td>
+    
+    <td>
+      5
+    </td>
+    
+    <td>
+      24.0000
+    </td>
+    
+    <td>
+      ########
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Administration
+    </td>
+    
+    <td>
+      8
+    </td>
+    
+    <td>
+      28.7500
+    </td>
+    
+    <td>
+      ###############
+    </td>
+  </tr>
+</table>
+
+<p>You can see they devote significant space to explaining the background and theory of using MySQL (and indeed relational databases in general), but not so much to the new features in MySQL 5. This is to be expected, as MySQL 5 was brand-new at the time.</p>
+
+<p>The following sections will explore these chapters in more detail.</p>
+
+<h3 id="toc_2">Part 1</h3>
+
+<p>Part 1, &ldquo;Design and Development,&rdquo; has 13 chapters that pretty much fully cover the topics a well-rounded software engineer needs to master for professional MySQL usage. There are a few weak spots, but for the most part, this material is all necessary to the book &ndash; no long, boring chapters I wanted to skip to &ldquo;get to the good stuff.&rdquo; It&rsquo;s almost all &ldquo;good stuff.&rdquo;</p>
+
+<p>Chapter 1 might be considered skip-worthy, because it&rsquo;s about team roles, why you might choose MySQL, and so forth. However, it still deserves reading because a) it&rsquo;s short and b) you should be interested in what Mike and Jay have to say about it. They&rsquo;re people you can learn from. They also give a very good overview of many RDBMSs, not just MySQL, and the strengths and weaknesses of each. If you&rsquo;re trying to decide which products to consider for your business, you should read this section. It is very balanced, one of the best such I&rsquo;ve seen.</p>
+
+<p>Chapter 2 covers index concepts in significant technical detail. This is the missing link most engineers need: how indexes are built, how disks work, clustered indexes, etc. If you don&rsquo;t know this material, you will make bad decisions about indexes.</p>
+
+<p>Chapter 3 is about transactions, both in theory and how MySQL implements them. Topics include logging, recovery, and checkpointing. Many people consider this relevant only if you&rsquo;re using the InnoDB storage engine, but in my opinion you&rsquo;re pretty likely to need InnoDB for professional applications, so if you&rsquo;re trying to learn what you&rsquo;ll need to know, you should not only read this chapter, but come back to it after you finish the rest of the book.</p>
+
+<p>Chapter 4 really digs in. It takes you on a guided tour of the MySQL system architecture, with frequent looks at tastefully abridged source code (and lots of references to where you should read more on your own). The chapter moves from an overview into resource management, storage engines and handlers, caching and memory, and so forth. It finishes up by tracing the execution path of a simple query, which is invaluable insight into how things work in the server; if you&rsquo;ve ever tried to read the source code yourself, you&rsquo;ll really appreciate this. MySQL is well-designed, but there&rsquo;s a lot of code, and it helps a lot to have someone give such a clear overview.</p>
+
+<p>Chapter 5 discusses storage engines in detail, especially MyISAM and InnoDB, which is appropriate given their popularity. For these two engines, the book explains everything down to the individual bits in the record format on disk. Other storage engines get about one page each. The chapter closes with a nine-page overview of what you need to think about when choosing a storage engine.</p>
+
+<p>Chapter 6 covers benchmarking and profiling. The authors claim that these skills set professionals apart, and I agree. In fact, long before I read this book I wrote a <a href="http://www.xaprb.com/mysql-query-profiler/">MySQL query profiling tool</a>, which as far as I know is <em>still</em> the only one of its kind (most developers seem to think it&rsquo;s enough to run a query and see how long it takes).
+Chapter 7, &ldquo;Essential SQL,&rdquo; is one of the most important chapters, but it isn&rsquo;t as uniformly good as the rest of the book. It&rsquo;s a bit too basic in places, and I think the authors should have assumed their readers were already trained in some of the topics they cover, such as the different types of joins. On the plus side, they open the chapter with recommendations for writing good SQL code, and I was happy to see that; this is something professionals care about, but few people advocate otherwise (the authors agree almost wholly with my own <a href="http://www.xaprb.com/blog/2006/04/26/sql-coding-standards/">SQL coding standards</a>, which made me smile).
+This chapter also repeats some material from the official manual, and contains some technical bloopers, such as an erroneous explanation of dependent subquery optimizations on page 268, which might lead some unsuspecting programmers to write a subquery that will run longer than the half-life of hydrogen. Alas.</p>
+
+<p>The more advanced parts of Chapter 7 also made me think &ldquo;yes, but there&rsquo;s more to it than that&rdquo; a few times. On page 282, they show different ways to rewrite a &ldquo;<a href="http://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/">find the max row</a>&rdquo; type of query that aren&rsquo;t really equivalent in all cases, but they don&rsquo;t say so. Sometimes there are ways to write queries as joins when they claim it can only be done with subqueries. And on page 286, they actually give the correct answer to the situation they incorrectly analyzed on page 268. However, on the whole Chapter 7 is well worth spending a lot of time with.</p>
+
+<p>Chapter 8, &ldquo;SQL Scenarios,&rdquo; is really good. It&rsquo;s filled with the types of things <a href="http://www.mysqlperformanceblog.com/">Peter Zaitsev</a> and I tend to write about &ndash; how to optimize so multiple indexes can be used, duplicate entries, and so forth. There&rsquo;s a very clear explanation of the nested set model of storing hierarchical data, the best I&rsquo;ve read in fact. This chapter has more code listings than others, but there&rsquo;s still a high prose-to-code ratio, so your eyes won&rsquo;t glaze over.
+You should spend a lot of time reading chapters 7 and 8. These are probably the two chapters you&rsquo;ll come back to most often, too. They&rsquo;re the core of the book for most readers, in my opinion.</p>
+
+<p>Chapters 9 through 13 cover features new in MySQL 5: stored procedures, functions, cursors, views and triggers. As I showed above, these chapters are quite a bit shorter on average than the others. The depth of coverage is correspondingly less. The tone tends to be a bit guarded, too; I think the authors wanted to explain the new features, but since they hadn&rsquo;t been hammered on by the community very extensively yet, there just wasn&rsquo;t enough practical experience to know and cover all the nuances.</p>
+
+<h3 id="toc_3">Part 2</h3>
+
+<p>The second part of the book is about administration. While some of the material isn&rsquo;t unique to the book, it is well-written and organized, making it useful anyway. Some parts cover topics I haven&rsquo;t found well-presented elsewhere.</p>
+
+<p>Chapter 14 is a fairly routine discussion of installation and the most basic configuration, which is at roughly the same level as Chapter 1 in the first part of the book. Chapter 15 covers user administration. The sections discuss privileges, how they work, and how to manage them from the command line and with the GUI MySQL Administrator tool (which unfortunately I have never been able to get to work for this purpose; it always hangs. Maybe I should file a bug on that). Chapter 16, &ldquo;Security,&rdquo; is also not terribly in-depth, but again it provides full coverage of topics a professional needs to know. Ditto Chapter 17, &ldquo;Backup and Restoration.&rdquo;</p>
+
+<p>Chapter 18, &ldquo;Replication,&rdquo; gets into the more advanced topics again. There&rsquo;s a lot of information about how replication really works; this can be gleaned from the manual, but it&rsquo;s nicely presented here. Some of it I haven&rsquo;t been able to find in the manual, for example, what each line in the master.info file means. Chapter 19, &ldquo;Cluster,&rdquo; is at a similar level of depth. If you want to know whether replication or clustering will solve some specific scenario, so you know whether to look into them in more detail, these chapters will probably answer that for you. They will probably <em>not</em> be sufficient information for you to successfully set up and manage these features, though. You will need to read the manual, and in the case of NDB Cluster, you should probably buy the book from MySQL (<a href="http://www.informit.com/bookstore/product.asp?isbn=0672328550&amp;#038;rl=1">MySQL Clustering by Alex Davies and Harrison Fisk, MySQL Press, 2006</a>). To be fair, at the time Pro MySQL was published, I think it was the only material on Cluster in print.</p>
+
+<p>Chapter 20 is about troubleshooting, and explains where you should look and what to investigate when something goes wrong. This will help with basic trouble, but the real troubleshooting guide is the whole book &ndash; if you&rsquo;ve read the rest of the book, you already know more than you&rsquo;ll learn from this chapter. And finally, Chapter 21 introduces another feature new to MySQL 5.0, the INFORMATION_SCHEMA database, which is part of the SQL:2003 standard.</p>
+
+<p>On the whole, Part 2 isn&rsquo;t the strongest part of the book, but it&rsquo;s definitely worth reading.</p>
+
+<h3 id="toc_4">Summary</h3>
+
+<p>Pro MySQL belongs on your bookshelf if your company uses MySQL. It belongs in your hands if you are responsible for MySQL at your company.</p>
+
+<p>This isn&rsquo;t a typical 10-pound doorweight book full of &ldquo;code listings&rdquo; and screenshots. It does have a high page count, but for the most part it&rsquo;s all packed full of information, most of which you either won&rsquo;t find elsewhere or won&rsquo;t find in any one place.</p>
+
+<p>The best part of the book is the excellent writing and organization. It makes it clear and engaging. It&rsquo;s an easy read, even when the material is highly technical and difficult to understand. Kudos to Mike and Jay for bucking the trend and writing a really good technical book!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

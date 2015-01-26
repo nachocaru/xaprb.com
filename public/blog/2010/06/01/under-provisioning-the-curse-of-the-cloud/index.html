@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Under-provisioning: the curse of the cloud &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Under-provisioning: the curse of the cloud</h1>
+  <span class="post-date">Tue, Jun 1, 2010 in
+		
+		<a href="/categories/Commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>A common problem I see people running into when using a cloud computing service is the trap of under-provisioning. There&rsquo;s a chain effect that leads to this result: 1) people don&rsquo;t understand how virtualization works, and therefore 2) they don&rsquo;t realize how much of a computing resource they&rsquo;re really buying, so 3) they assume they are entitled to more than they really are, and 4) they under-provision. A few other causes and effects come into play here, too. For example, the choice to use the cloud is sometimes founded on economic assumptions that frequently turn out to be wrong. The cloud service looks more economically attractive than it really is, due to under-provisioning.</p>
+
+<p>Let&rsquo;s get back to this idea that people under-provision. How do I know that&rsquo;s happening? I&rsquo;ll use anecdotal evidence to illustrate. Here&rsquo;s a real quote from a recent engagement about database (MySQL) performance problems:</p>
+
+<blockquote>
+<p>Do you think it&rsquo;s likely that the underlying hardware is simply worse than average? If you think this will be an ongoing problem, maybe we should try our luck with a new instance/storage cluster?</p>
+</blockquote>
+
+<p>The fundamental assumption here is that some clusters are overloaded and are giving poor quality of service. We&rsquo;re trained to think this way because we are familiar with services such as shared hosting, where other users on your particular server might really be abusive and claim resources that should be yours. But this isn&rsquo;t how virtualization works in the common cloud platforms. In these platforms, you aren&rsquo;t sharing resources with other users. You are guaranteed to get what you deserve! No kidding &ndash; this actually works.</p>
+
+<p>If that&rsquo;s true, then why does performance fluctuate so much? The answer lies in how resources are parceled out. Assume there are 10 units of computing resources, and you&rsquo;re paying for one of them. You buy 1/10th of the machine&rsquo;s power. But it just happens that you&rsquo;re the only virtual instance running on that physical server. You fire up an intense job. How much power do you get? You paid for 1 unit, <strong>but you get 10, because no one else is using the other 9 units.</strong> This is the way most virtualization platforms work: they give you extra resources if they&rsquo;re available and not being claimed by anyone else&rsquo;s instance. This guarantees that you&rsquo;ll never get less than you deserve, but it leaves open the possibility that you&rsquo;ll get more than you deserve. (What would be the point of wasting that power, really?) Under-provisioning is the obverse of over-providing, which is what the virtualization platform does.</p>
+
+<p>First-generation hyperthreading gave the same illusion of more resources than are really available, by the way. It made you think there were multiple processors, when in fact there weren&rsquo;t &ndash; there were multiple sets of registers. Hyperthreading is a form of virtualization, too.</p>
+
+<p>What typically happens is that people are running their cloud instances on machines whose underlying physical hardware is not fully utilized, and they get used to a certain level of performance they&rsquo;re not really paying for. Alas, you can&rsquo;t really know whether this is happening or not! But it surely is in many (most?) cases, which is why occasionally you get some resource that seems much slower than you&rsquo;re accustomed to, and you think it&rsquo;s &ldquo;too slow.&rdquo; Not so. Your other units are &ldquo;too fast.&rdquo;</p>
+
+<p>I have a theory that if you really knew the true capacity you were buying, you&rsquo;d view the price-to-performance ratio much less favorably. But it&rsquo;s almost impossible to know that, really; it doesn&rsquo;t help that the cloud service providers are rather vague about how much power a certain instance size really gives you. (They aren&rsquo;t being malicious; it&rsquo;s just the way virtualization works.) Under-provisioning is almost forced on users because they have no alternative &ndash; you could plan for worst-case performance, and you&rsquo;d be doing the right thing, but how will you ever know you&rsquo;ve really hit rock bottom and the worst case is really no worse? How can you even benchmark and do proper capacity planning, if you don&rsquo;t know what you&rsquo;re benchmarking? This should really give you serious pause. You should be thinking &ldquo;wait, I&rsquo;m basing my capacity planning and provisioning on luck and the law of large numbers. What if my luck runs out and I get a Black Swan event?&rdquo; The question is not &ldquo;what if,&rdquo; but &ldquo;when.&rdquo;</p>
+
+<p>I also think that the lack of transparency encourages people to use cloud computing services for the wrong reasons altogether. I could write about this, but I think <a href="http://lethargy.org/~jesus/writes/thoughts-on-the-cloud">Theo Schlossnagle said it pretty well already</a>.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

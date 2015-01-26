@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Introducing MySQL Deadlock Logger &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Introducing MySQL Deadlock Logger</h1>
+  <span class="post-date">Thu, Mar 8, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>I&rsquo;m continuing to add new tools to the <a href="http://code.google.com/p/maatkit">MySQL Toolkit</a>. MySQL Deadlock Logger is for extracting and storing information about the latest recorded InnoDB deadlock. It&rsquo;s not only easy to view the information from the command line, it&rsquo;s dead simple to store it back into a MySQL table for analysis. I think most users will find it handy to create a cron job to record the deadlocks automatically for later analysis.</p>
+
+<p>Like the rest of the tools in the toolkit, tried to to make this tool follow the UNIX philosophy of doing one thing and doing it well. My emphasis is on command-line scriptability combined with ease of human use. To that end, I designed the default output to be easy to pipe into awk or other tools, but I also made the tool smartly look for your .my.cnf file for database connection parameters.</p>
+
+<h3 id="toc_0">How to view the latest deadlock</h3>
+
+<p>Because I have my database connection parameters in my .my.cnf file, I can run the deadlock logger with just the &#8211;print option and see a compact summary of the latest deadlock:</p>
+
+<pre>$ mysql-deadlock-logger --print
+server ts thread txn_id txn_time user hostname ip db tbl idx lock_type lock_mode wait_hold victim query
+localhost 2007-03-08T20:34:22 81 21309 29 baron localhost  test c GEN_CLUST_INDEX RECORD X w 1 select * from c for update
+localhost 2007-03-08T20:34:22 83 21310 19 baron localhost  test a GEN_CLUST_INDEX RECORD X w 0 select * from a for update</pre>
+
+<p>It&rsquo;s easy to specify which of those bits of data you want to see, too:</p>
+
+<pre>$ mysql-deadlock-logger --print -C ts,user,hostname,db,tbl,idx
+ts user hostname db tbl idx
+2007-03-08T20:34:22 baron localhost test c GEN_CLUST_INDEX
+2007-03-08T20:34:22 baron localhost test a GEN_CLUST_INDEX</pre>
+
+<p>If you&rsquo;ve spent much time poring over the output of <code>SHOW INNODB STATUS</code>, you no doubt see what an improvement this is. You also might see some resemblance to <a href="http://code.google.com/p/innotop">innotop</a>&rsquo;s Deadlock mode. It&rsquo;s no coincidence, of course; I copied some of the parsing code.</p>
+
+<h3 id="toc_1">How to save the data in a table</h3>
+
+<p>It&rsquo;s easy to save the data into a table for analysis. Once you&rsquo;ve created the table with the query included in the documentation, you just specify the &#8211;dest option, like this: <code>mysql-deadlock-logger --dest deadlocks</code>.</p>
+
+<p>If it weren&rsquo;t reading from my .my.cnf file, I&rsquo;d have to be more specific: <code>mysql-deadlock-logger --dest baron:password@localhost/test.deadlocks</code>. That&rsquo;s really easy to run from a cron job.</p>
+
+<p>Here&rsquo;s what ends up in the table:</p>
+
+<pre>mysql&gt; select ts, user, hostname, db, tbl, idx from deadlocks;
++---------------------+-------+-----------+------+-----+-----------------+
+| ts                  | user  | hostname  | db   | tbl | idx             |
++---------------------+-------+-----------+------+-----+-----------------+
+| 2007-03-08 20:34:22 | baron | localhost | test | c   | GEN_CLUST_INDEX | 
+| 2007-03-08 20:34:22 | baron | localhost | test | a   | GEN_CLUST_INDEX | 
++---------------------+-------+-----------+------+-----+-----------------+</pre>
+
+<p>I&rsquo;m only including some of the columns so the output isn&rsquo;t too big, but you get the idea.</p>
+
+<h3 id="toc_2">Summary</h3>
+
+<p>MySQL Deadlock Logger does the heavy lifting of parsing relevant information from <code>SHOW INNODB STATUS</code> so you can view or save it for analysis. If you have any feedback, I&rsquo;d be glad to hear it; please use the <a href="http://code.google.com/p/maatkit">MySQL Toolkit Forums</a> for support or bug reports.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

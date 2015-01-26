@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Ubuntu on Dell Inspiron 1501 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Ubuntu on Dell Inspiron 1501</h1>
+  <span class="post-date">Tue, Jul 24, 2007 in
+		
+		<a href="/categories/Desktop" class="btn btn-primary">Desktop</a>
+		
+  </span>
+      <p>I recently bought a Dell Inspiron 1501, which I got a great deal on thanks to the fine people at <a href="http://www.dealnews.com/">DealNews</a>. The base system was $449 shipped, and I chose to upgrade the processor to dual AMD64s. But I didn&rsquo;t buy the system that came with Ubuntu pre-installed; for whatever reason, the one that came with Windows offered a special discount (normally the Windows tax for otherwise identical machines appears to be around $150, and I&rsquo;m certainly not going to run Windows).</p>
+
+<p>Therefore, I was not sure Ubuntu would support all the hardware. It&rsquo;s the same story it&rsquo;s been for as long as I&rsquo;ve been using computers: hardware manufacturers withhold specifications from the Free Software world, so there is always a chance something will be a trouble. The good news is, I&rsquo;ve only noticed two very minor incompatibilities out of the box.</p>
+
+<p>One is that the Fn+arrow keys won&rsquo;t change my screen brightness, at least under XFCE. Strangely, my ancient Dell laptop had no trouble with that. I assume the old one was a hardware-controlled feature and this one needs some software support, but I could be wrong.</p>
+
+<p>The other thing is the built-in wireless card, which isn&rsquo;t supported with Ubuntu 7.04&#8242;s drivers out of the box. However, I quickly found a set of <a href="http://www.linux-geek.org/index.php/2007/04/22/dell-1390-native-linux-driver-how-to-updated">drivers for the Broadcom Corporation Dell Wireless 1390</a> card, and was up and running shortly thereafter. The only thing I had to do after installing the drivers was press the Fn+F2 key, which turns the card on.</p>
+
+<p>Otherwise everything works brilliantly.</p>
+
+<p>And now for a rant: click through to that page about the drivers, and you&rsquo;ll see an example of what I consider the Ubuntu sudo disease. There&rsquo;s even a screenshot of someone typing <code>sudo uname -a</code> and using sudo to remove a file he didn&rsquo;t create with sudo. I think unfortunately, Ubuntu&rsquo;s policy of allowing one to run any command with sudo has created a crop of people who don&rsquo;t understand what should and shouldn&rsquo;t be privileged; some of them seem to believe that &lsquo;sudo&rsquo; is what you type at the beginning of every command. It completely defeats the purpose and circumvents the security gained by not running as root. For my part, when I want to administer my system, I become root, do what I need to do, and then quit again. I rarely sudo any command other than <code>sudo su -</code>.</p>
+
+<p>But that&rsquo;s just me.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

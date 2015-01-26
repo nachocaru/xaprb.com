@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to select the first or last row per group in SQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to select the first or last row per group in SQL</h1>
+  <span class="post-date">Tue, Aug 21, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>There is no &ldquo;first&rdquo; or &ldquo;last&rdquo; aggregate function in SQL. Sometimes you can use <code>MIN()</code> or <code>MAX()</code>, but often that won&rsquo;t work either. There are a couple of ways to solve this vexing non-relational problem. Read on to find out how.</p>
+
+<p>First, let&rsquo;s be clear: I am posing a very non-relational problem. This is not about the minimum, maximum, top, most, least or any other relationally valid extreme in the group. It&rsquo;s the first or last, in whatever order the rows happen to come. And we all know rows aren&rsquo;t ordered &ndash; in theory. But in practice they are, and sometimes you need the first or last row in a group.</p>
+
+<p>If you have a question this article doesn&rsquo;t answer, you might like to read <a href="http://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/">how to select the first/least/max row per group in SQL</a> and <a href="http://www.xaprb.com/blog/2007/03/14/how-to-find-the-max-row-per-group-in-sql-without-subqueries/">how to find the maximum row per group in SQL without subqueries</a>.</p>
+
+<h3 id="toc_0">A MySQL user-variable solution</h3>
+
+<p>I&rsquo;ll show a MySQL-specific solution with one of the queries I developed for <a href="http://code.google.com/p/maatkit">MySQL Table Checksum</a>.</p>
+
+<p>Here&rsquo;s the idea: crush an entire table down to a single checksum value by checksumming each row, mushing it together with the previous row&rsquo;s checksum, and then checksumming the result again. It&rsquo;s fairly easy to do this, but it&rsquo;s hard to get the final result in one statement. This is necessary to use the statement in an <code>INSERT .. SELECT</code>, which I needed to do.</p>
+
+<p>An example might clarify:</p>
+
+<pre>select * from fruit;
++---------+
+| variety |
++---------+
+| apple   | 
+| orange  | 
+| lemon   | 
+| pear    | 
++---------+
+
+set @crc := '';
+
+select variety, @crc := md5(concat(@crc, md5(variety))) from fruit;
++---------+-----------------------------------------+
+| variety | @crc := md5(concat(@crc, md5(variety))) |
++---------+-----------------------------------------+
+| apple   | ae6d32585ecc4d33cb8cd68a047d8434        | 
+| orange  | 7ec613c796f44ef5ccb0e24e94323e38        | 
+| lemon   | a2475f37be12cebf733ebfc7ee2ee473        | 
+| pear    | ec98fe57833bbd91790ebc7ccf84c7e9        | 
++---------+-----------------------------------------+</pre>
+
+<p>I want the &ldquo;last&rdquo; value of <code>@crc</code> after the statement is done processing. How can I do this? The solution I found is to use a counter variable. I&rsquo;ll demonstrate:</p>
+
+<pre>set @crc := '', @cnt := 0;
+
+select variety,
+   @cnt := @cnt + 1 as cnt,
+   @crc := md5(concat(@crc, md5(variety))) as crc
+from fruit;
++---------+------+----------------------------------+
+| variety | cnt  | crc                              |
++---------+------+----------------------------------+
+| apple   |    1 | ae6d32585ecc4d33cb8cd68a047d8434 | 
+| orange  |    2 | 7ec613c796f44ef5ccb0e24e94323e38 | 
+| lemon   |    3 | a2475f37be12cebf733ebfc7ee2ee473 | 
+| pear    |    4 | ec98fe57833bbd91790ebc7ccf84c7e9 | 
++---------+------+----------------------------------+</pre>
+
+<p>The counter variable might make you want to write something like <code>HAVING cnt = MAX(cnt)</code>, but that won&rsquo;t work (try it!). Instead, I prefixed the checksum with the count so the last row is the stringwise maximum:</p>
+
+<pre>select variety,
+   @crc := concat(lpad(@cnt := @cnt + 1, 10, '0'),
+      md5(concat(right(@crc, 32), md5(variety)))) as crc
+from fruit;
++---------+--------------------------------------------+
+| variety | crc                                        |
++---------+--------------------------------------------+
+| apple   | 0000000001ae6d32585ecc4d33cb8cd68a047d8434 | 
+| orange  | 00000000027ec613c796f44ef5ccb0e24e94323e38 | 
+| lemon   | 0000000003a2475f37be12cebf733ebfc7ee2ee473 | 
+| pear    | 0000000004ec98fe57833bbd91790ebc7ccf84c7e9 | 
++---------+--------------------------------------------+
+</pre>
+
+<p>You can see I also left-padded the count so a lexical sort will agree with a numeric sort, and so I can predict how many extra characters I&rsquo;ll need to remove to get back the original value. Now I can use the <code>MAX()</code> function to select the last row, and simply lop off the leftmost ten digits (I use the <code>RIGHT()</code> function for convenience, but generally you want to use <code>SUBSTRING()</code>):</p>
+
+<pre>select right(max(
+   @crc := concat(lpad(@cnt := @cnt + 1, 10, '0'),
+      md5(concat(right(@crc, 32), md5(variety))))
+   ), 32) as crc
+from fruit;
++----------------------------------+
+| crc                              |
++----------------------------------+
+| ec98fe57833bbd91790ebc7ccf84c7e9 | 
++----------------------------------+</pre>
+
+<p><em>Et voila</em>, I got the last value in the group. By the way, this will work with ONLY_FULL_GROUP_BY in the server&rsquo;s <a href="http://dev.mysql.com/doc/refman/5.0/en/server-sql-mode.html">SQL mode</a>.</p>
+
+<h3 id="toc_1">Other methods</h3>
+
+<p>My solution relies on a MySQL user variable to do the counting, but there are many ways to number rows in SQL: you could <a href="http://www.xaprb.com/blog/2005/09/27/simulating-the-sql-row_number-function/">simulate the ROW_NUMBER() function</a>, for instance, or use techniques mentioned in the comments on <a href="http://www.xaprb.com/blog/2006/12/02/how-to-number-rows-in-mysql/">how to number rows in MySQL</a> (one of the comments shows a particularly clever solution with subqueries, but I didn&rsquo;t want to use it because MySQL doesn&rsquo;t support subqueries in older versions). Any of these should work one way or another. Of course, if you are using a product such as Microsoft SQL server 2005, which actually has the ROW_NUMBER() function, you can use that!</p>
+
+<h3 id="toc_2">Conclusion</h3>
+
+<p>Finding the first or last row is a bit unintuitive, and it&rsquo;s definitely non-relational, but sometimes it&rsquo;s what you need. The technique I demonstrated in this article is easily adaptable to many kinds of queries. I hope it helped you!</p>
+
+<p>If this article didn&rsquo;t solve your problem, please read these before posting questions to the comments: <a href="http://www.xaprb.com/blog/2006/12/07/how-to-select-the-firstleastmax-row-per-group-in-sql/">how to select the first/least/max row per group in SQL</a> and <a href="http://www.xaprb.com/blog/2007/03/14/how-to-find-the-max-row-per-group-in-sql-without-subqueries/">how to find the maximum row per group in SQL without subqueries</a>.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

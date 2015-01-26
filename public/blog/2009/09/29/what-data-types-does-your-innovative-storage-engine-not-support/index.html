@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> What data types does your innovative storage engine NOT support? &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>What data types does your innovative storage engine NOT support?</h1>
+  <span class="post-date">Tue, Sep 29, 2009 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>I&rsquo;ve been investigating a few different storage engines for MySQL lately, and something I&rsquo;ve noticed is that they all list what they support, but they generally don&rsquo;t say what they don&rsquo;t support. For example, Infobright&rsquo;s documentation shows <a href="http://www.infobright.org/wiki/Supported_Data_Types_and_Values/">a list of every data type supported</a>. What&rsquo;s missing? Hmm, I don&rsquo;t see BLOB, BIT, ENUM, SET&hellip; it&rsquo;s kind of hard to tell. The same thing is true of the list of functions that are optimized inside Infobright&rsquo;s own code instead of at the server layer. I can see what&rsquo;s optimized, but I can&rsquo;t see whether FUNC_WHATEVER() is optimized without scanning the page &ndash; and there&rsquo;s no list of un-optimized functions.</p>
+
+<p>I don&rsquo;t mean to pick on Infobright. I&rsquo;ve recently looked at another third-party storage engine and they did exactly the same thing. It&rsquo;s just that the docs I saw weren&rsquo;t public as far as I know, so I can&rsquo;t mention them by name. XtraDB&rsquo;s documentation falls short too, of course, although it&rsquo;s pretty well understood that it is very similar to InnoDB.</p>
+
+<p>For a product like this, I think the most helpful thing would be a page explaining two things: 1) the enhancements or extra functionality over the standard MySQL server, and 2) the unavailable or degraded functionality. It would also be good to have both high-level and detailed versions of this.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

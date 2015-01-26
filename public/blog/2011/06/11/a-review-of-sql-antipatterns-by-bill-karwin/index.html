@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A review of SQL Antipatterns by Bill Karwin &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A review of SQL Antipatterns by Bill Karwin</h1>
+  <span class="post-date">Sat, Jun 11, 2011 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Reviews" class="btn btn-primary">Reviews</a>
+		
+  </span>
+      <p><a href="http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557?tag=xaprb-20"><img style="float:left; margin-right:10px" src="http://www.xaprb.com/media/2011/06/bksqla_xlargecover.jpg" alt="" title="SQL Antipatterns" width="190" height="228" class="alignleft size-full wp-image-2372" /></a> <a href="http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557?tag=xaprb-20">SQL Antipatterns</a>, by Bill Karwin, Pragmatic Bookshelf, 2010. About 300 pages. Here&rsquo;s a <a href="http://pragprog.com/titles/bksqla/sql-antipatterns">link to the publisher&rsquo;s site</a>.</p>
+
+<p>I loved this book. (Disclosure: Bill is a colleague of mine.) This is the first book I&rsquo;ve read from the Pragmatic Bookshelf, and if the rest are like this one, I want to read them. The quality of the writing is way above the average technical book. Techniques that feel gimmicky and forced in other books, such as fake stories to introduce each chapter, actually work here (because they&rsquo;re real stories, not fake ones). Each topic is named in a memorable way and introduced very cleverly. Little quotes and excerpts are tastefully used to illustrate and reinforce the topics. The end result is that it&rsquo;s a lot of fun to read. If you do nothing more than read the first and last page of each chapter, you&rsquo;ll enjoy it and learn a lot at the same time.</p>
+
+<p>The target audience here is developers who must work with databases, not database administrators per se. But if you&rsquo;re a DBA and you&rsquo;re having a hard time explaining something to a developer, you could do a lot worse than referring to this book. The content is database-agnostic, with specific mention of a broad variety of databases such as MySQL, Oracle, SQL Server, and more when appropriate.</p>
+
+<p>There are four major categories of mistakes: logical database design, physical database design, queries, and development practices. These cover 25 &ldquo;anti-patterns&rdquo; showing how not to do things, and explaining why they&rsquo;re wrong, when it might be a good idea to do it that way anyhow, and what your alternatives are.</p>
+
+<p>For example, the first pattern is titled Jaywalking. The name is a reference to avoiding intersections, i.e. storing comma-delimited lists in a single column. The chapter explains what&rsquo;s hard to do in a database that&rsquo;s designed in this manner, and how to sniff out the use of this antipattern. Then it explains how to create an intersection table, and ends with a pithy recommendation to &ldquo;store each value in its own column and row.&rdquo; Pretty straightforward, and much more effective than a lecture on all the different varieties of normal forms.</p>
+
+<p>Sometimes I thought of some other alternatives. For example, in avoiding FLOAT data types to prevent rounding errors for currency values, the book suggests using DECIMAL. But another option is storing an integer number of the smallest currency unit (pennies, in the US dollar currency). And I thought of lots more antipatterns, such as using a table as a queue, which often happens sneakily, without anyone realizing it. I am sure we could all suggest more antipatterns and alternatives. Anything can be taken to extremes; I think this book wisely stops before the point of burn-out.</p>
+
+<p>Like Bill Karwin, I see developers make these mistakes constantly, so I recommend this book to every developer who interacts with a database. It might be a good book to buy for new team members, if you&rsquo;re the team leader.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

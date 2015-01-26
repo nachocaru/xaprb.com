@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Progress on High Performance MySQL 3rd Edition &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Progress on High Performance MySQL 3rd Edition</h1>
+  <span class="post-date">Wed, Oct 12, 2011 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Writing" class="btn btn-primary">Writing</a>
+		
+  </span>
+      <p>A few people have asked me how it&rsquo;s going, so I thought I&rsquo;d just share it with everyone. Things are going great. I&rsquo;m writing much more quickly than I thought I would be, and as a result I&rsquo;m finding I have time to do more changes than I thought I could, which makes me happy. I should be finished drafting the chapters by the end of the year.</p>
+
+<p>In particular, the faster than expected pace is giving me a chance to address one of the big weaknesses of the second edition. In many places, the second edition is a collection of facts and experiences. It says what and why, but it doesn&rsquo;t convey a process or method, and it doesn&rsquo;t teach you how to think about things and apply the results to situations beyond what the book covers. I&rsquo;m finding a number of key areas to remedy that: performance optimization, profiling, indexing, high availability, scalability, and so on. I&rsquo;m adding an explanation of the principles and consequences, and actually showing real case studies selected from the most interesting customer issues I&rsquo;ve seen at Percona. These illustrate the process or method I explain, and then I wrap that up by pointing out the key bits and reinforcing why they&rsquo;re important.</p>
+
+<p>I&rsquo;m also adding chapter summaries. Summaries are hard to write. They should synthesize, not restate, the main points, and they should organize the reader&rsquo;s thoughts for the transition to the next chapter. I hope I&rsquo;m doing a good enough job at this, but it&rsquo;s bound to be better than the second edition, which didn&rsquo;t have summaries.</p>
+
+<p>Detailed outlining is saving me. After writing the second edition, I realized that I&rsquo;d spent about four times as much time rewriting as I did writing. This time I did a lot of outlining before I went to the writing stage, down to the level of individual thoughts and the relationship between them &ndash; nearly prose level, but not quite. Prose is much harder to reorganize and cut-and-paste than bullet points, because it requires correct grammar. Outlining doesn&rsquo;t have to be grammatically correct. The effort I put into outlining in exhaustive detail is definitely paying off. When I find a section or chapter that I want to rewrite instead of just updating, and I didn&rsquo;t plan for that, I back off and go back to the outlining. It&rsquo;s so much more efficient. For example, I just caught myself starting to spin my wheels on partitioning, which is a section that I decide to rewrite to convey a how-to-think approach instead of what-to-think. I noticed the inefficiency, went to the outline in a text file, came back to the chapter, and ended up finishing it very quickly.</p>
+
+<p>Finally, and I never thought I&rsquo;d say this, but I&rsquo;m using Microsoft Word and it&rsquo;s making my life easier. The copyeditors use Word, and I knew I was going to have to use something that reads and writes .doc files eventually, so I decided to just use Word all the way through. I threw up a virtualbox with Windows XP, went out and bought a copy of Word 2010 for $150 or so, and installed it. It runs great in the virtual machine, and it is so much better than Open Office it&rsquo;s not even in the same league. It works very well, with a lot of features that really do enhance my productivity. It isn&rsquo;t Free Software, but maybe I&rsquo;m growing up and coming to terms with the real world: sometimes getting things done is more important than principles, and $150 is less valuable than the time I&rsquo;m saving. (I knew that I definitely was not going to use Open Office this time around, no matter what. I was planning on plain-text and Vim. But Word is actually more productive, I believe, by the time I factor in the interaction with the editors and other back-and-forth.)</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

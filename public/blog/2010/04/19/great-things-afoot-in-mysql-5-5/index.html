@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Great things afoot in MySQL 5.5 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Great things afoot in MySQL 5.5</h1>
+  <span class="post-date">Mon, Apr 19, 2010 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>I haven&rsquo;t been blogging much about the changes in MySQL for a while. But the MySQL and InnoDB engineers have been doing a ton of work over the last couple years, and now it&rsquo;s seeing the light of day, so it&rsquo;s time to offer words of congratulations and appreciation about that.</p>
+
+<p>I was holding my breath for a big-splash 5.5 GA announcement at last week&rsquo;s conference, but I was wrong. Still, <a href="http://dev.mysql.com/tech-resources/articles/introduction-to-mysql-55.html">there&rsquo;s a lot to talk about in 5.5</a>, with a dozen or more substantial blog posts from the InnoDB and MySQL teams alone over the last week or so! Here are a few choice tidbits of the good, the bad, and the ugly.</p>
+
+<h3 id="toc_0">InnoDB is the default storage engine</h3>
+
+<p>&ldquo;No big deal,&rdquo; I thought. &ldquo;Serious users do this anyway.&rdquo; But then Morgan Tocker pointed out that it really is a big deal. This is going to cause a sea change in the way MySQL is used. Instead of growing up on a storage engine that doesn&rsquo;t give a damn about your data (MyISAM), and then learning about one that does (InnoDB), users will be plunged into a much more advanced and complex storage engine from day one. We&rsquo;re going to be seeing a lot more people learning internals, a lot more pressure on InnoDB&rsquo;s seams, a lot more of everything InnoDB. And a lot less MyISAM. Instead of &ldquo;why would I switch from MyISAM to InnoDB?&rdquo; we&rsquo;ll be hearing &ldquo;I hear there&rsquo;s this MyISAM thing, when should I use that?&rdquo;</p>
+
+<p>This was a very smart move on MySQL&rsquo;s part.</p>
+
+<h3 id="toc_1">InnoDB improvements</h3>
+
+<p>This is a mixed bag. Some improvements are awesome. Some look like improved implementations of the changes in XtraDB, which is also awesome.</p>
+
+<p>In the &ldquo;we peeked at XtraDB&rdquo; department, I&rsquo;m thinking about improvements to recovery time, a separate purge thread (inspired in XtraDB by a Sun employee&rsquo;s patch), and changes to enable multiple rollback segments. The concepts for these are proven by XtraDB users to be tremendously effective in the real world, and I am hopeful that InnoDB has done a great job of implementing the concepts. The changes to recovery seem even better than Yasufumi&rsquo;s work, although it&rsquo;s not clear yet whether InnoDB&rsquo;s recovery is really any faster than XtraDB&rsquo;s. InnoDB took a tremendous leap forward by implementing these changes.</p>
+
+<p>I am not that thrilled with multiple buffer pools. This looks to me like saying &ldquo;it&rsquo;s a hard problem and we don&rsquo;t know the best solution, but how about we try this classic idea.&rdquo; The buffer pool is already hard to manage (can&rsquo;t be resized at runtime, can&rsquo;t pin a table or index into it&hellip;) and it looks like this doesn&rsquo;t improve that. Instead, it looks like a zero-sum game with respect to really advancing the internal architecture, done solely for performance reasons, and I think it&rsquo;s a local optimization that won&rsquo;t be very future-proof. I predict this will be changed somewhat in the future. Unless other problems with the buffer pool are fixed, any future enhancements to multiple pools will probably have ugly problems such as fragmentation. I know it&rsquo;s not very helpful for me to criticize without offering suggestions, but the truth is I&rsquo;m aware that all my suggestions would be hand-waving (&ldquo;avoid mutexes on global structures,&rdquo; duh).</p>
+
+<p>The work on splitting up mutexes is complex and I don&rsquo;t have an opinion on it yet. Benchmarks are great, but the real world often holds unpleasant surprises. So we&rsquo;ll see about the true performance changes. I know InnoDB has done a ton of work on this, but it seems to me that Percona had reasons not to do things the way InnoDB did. The great thing about this is that if InnoDB&rsquo;s approach suffers in some workload, then Percona will be able to construct a benchmark to show pretty graphs about it!</p>
+
+<p>The async I/O worries me; I/O is not well instrumented, and that&rsquo;s a complex change. Yet another mysterious thing that can behave badly and be difficult or impossible to understand.</p>
+
+<p>I suspect that delete buffering can go completely off the rails, in the same ways that insert buffering can. At the time of writing, there is only very crude control over the buffering mechanism. There is no way to control how large the buffer is, or make InnoDB unload the buffer in the background (XtraDB lets you do those things). But I would not be surprised if InnoDB is working on this limitation. I think this is a very low-hanging fruit. The behavior of the insert buffer is utterly bizarre sometimes (&ldquo;I ran STOP SLAVE, why the heck did my completely idle server start flushing tens of gigs of data to disk and become unresponsive for half an hour afterwards?&rdquo;) The implementation is just silly: you cannot prevent the insert buffer from putting pressure on the LRU list and forcing things out of the buffer pool that you really want there. And <a href="http://en.oreilly.com/mysql2010/public/schedule/detail/12660">Yasufumi&rsquo;s last slide on his presentation</a> showed clearly how the lack of control over the buffer causes performance problems in InnoDB, and makes XtraDB beat even the newest InnoDB versions in some benchmarks.</p>
+
+<h3 id="toc_2">Performance Schema</h3>
+
+<p>I&rsquo;m completely unimpressed with Performance Schema, and have been from day one. It was an ivory-tower project created and developed in secret, and it bears no evidence of input from people with practical experience. What I see is useless for normal people; it&rsquo;s useful only for MySQL and InnoDB developers, and not even a good solution for them. If you read around the blog posts and docs about it, you find a lack of any practical examples &ndash; and IMO that&rsquo;s because it&rsquo;s not possible to create good examples of how it can be useful. Instead, you see phrases such as &ldquo;trace issues back to the relevant file and line in the source code so you can really see what&rsquo;s happening behind the scenes.&rdquo; I&rsquo;m not the only one; <a href="http://en.oreilly.com/mysql2010/public/schedule/detail/13366">Robin Schumacher panned it too</a>.</p>
+
+<h3 id="toc_3">Conclusions</h3>
+
+<p>I am really heartened to see MySQL not only continuing to work really hard on the server and on InnoDB, but also to see all the hard work from the last few years finally become available where it can be reviewed, praised or criticized, and put into production. I think that it&rsquo;s time to take Don MacAskill&rsquo;s praise of Percona last year (&rdquo;<a href="http://don.blogs.smugmug.com/2008/12/23/great-things-afoot-in-the-mysql-community/">great things are afoot</a>&rdquo;) and pass it over to MySQL and InnoDB! I hope the pace of development, <em>and getting it out the door</em>, continues as it is now.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

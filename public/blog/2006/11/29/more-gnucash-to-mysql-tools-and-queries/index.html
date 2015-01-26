@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> More GnuCash to MySQL tools and queries &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>More GnuCash to MySQL tools and queries</h1>
+  <span class="post-date">Wed, Nov 29, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>I wrote a while ago about a program I wrote to <a href="http://www.xaprb.com/blog/2006/03/12/gnucash-to-mysql-export-script/">export GnuCash data into a MySQL database</a>, including a couple of queries against the resulting schema. I&rsquo;ve made some improvements since then to allow a simple overlay of my wife&rsquo;s categories onto the GnuCash hierarchy. This article explains the improved schema, and includes some more useful tools and queries.</p>
+
+<h3 id="toc_0">The improved schema</h3>
+
+<p>The heart of the schema that holds the GnuCash data remains the same, but I&rsquo;ve added a table to overlay our categorization system onto it. The fundamental issue is the old multiple-hierarchy problem: some transactions should live in different places in the GnuCash account hierarchy than they belong in our expense summary. To remedy this, I just created a table to define our own categories. The resulting system is very simple, and defines a single level of hierarchy, where everything is at the top level; there are no nested categories (though you can simulate nested categories with a naming convention, such as &ldquo;Auto:Repair&rdquo;).</p>
+
+<p>This system is about as simple as possible. Here&rsquo;s the query to create the new table:</p>
+
+<pre>create table account_category (
+   account char(31) not null primary key,
+   category char(20)
+) ENGINE=InnoDB;</pre>
+
+<p>It would be more normalized to place this data in the <code>account</code> table itself, but that makes it too easy to wipe out your category data when you recreate the schema. For that reason I decided to separate the account and its category.</p>
+
+<h3 id="toc_1">Category setup</h3>
+
+<p>There&rsquo;s a required initial setup before this is usable, of course: you have to define the categories and associate accounts with them. To ease this step, you should go through your GnuCash file and check the &ldquo;placeholder&rdquo; properties checkbox for any accounts you know only exist to hold other accounts. This way you won&rsquo;t have to worry about assigning them to categories. If you do this, you should run <code>gnucash2mysql</code> to re-create the schema and re-import the data.</p>
+
+<p>Next, run the included <code>setup-categories.pl</code> script. It will ask you to enter a category name for each unassigned account. It prints the account hierarchy so you can easily tell what the account is. If you want to leave an account un-categorized, just press Enter and it&rsquo;ll be skipped.</p>
+
+<p>The categorization requires that you understand the double-entry accounting principles on which GnuCash is built. The updated queries I&rsquo;ve included in the download will include transaction splits that transfer money both <strong>into and out of</strong> a GnuCash account, so think about that as you assign the categories. For example, our GnuCash account &ldquo;Bills:Groceries&rdquo; is associated with &ldquo;Groceries.&rdquo; When there is a transaction involving &ldquo;Bills:Groceries,&rdquo; the money has to come from somewhere &ndash; our checking account, for example. We don&rsquo;t want to include the checking account in any categories, or that money will get counted twice &ndash; once as it leaves the checking account, once as it enters the &ldquo;Bills::Groceries&rdquo; expense account. This is the fundamental simplification I made to create a non-double-entry report of what we spend. On the other hand, maybe you want to do it differently. Suit yourself :-)</p>
+
+<h3 id="toc_2">When you&rsquo;re done</h3>
+
+<p>When you&rsquo;re done associating categories with accounts, you will find new queries in the package for your enjoyment.</p>
+
+<h3 id="toc_3">Miscellaneous improvements</h3>
+
+<p>In the time since I first wrote this program I&rsquo;ve realized the benefits of using Perl libraries that are already installed on most systems. I&rsquo;ve gotten rid of the dependencies on non-standard libraries in the new versions. That change should make the scripts easier to install and use. The scripts also read your .my.cnf file if it exists, so you don&rsquo;t have to specify MySQL options.</p>
+
+<p>At the end of the day, these little scripts and queries are about having more than one way to do things. I hope you find them useful.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

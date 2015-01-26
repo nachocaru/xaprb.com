@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> What does &gt; /dev/null 2&gt;&amp;1 mean? &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>What does &gt; /dev/null 2&gt;&amp;1 mean?</h1>
+  <span class="post-date">Tue, Jun 6, 2006 in
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      
+
+<p>I remember being confused for a very long time about the trailing garbage in commands I saw in Unix systems, especially while watching compilers do their work. Nobody I asked could tell me what the funny greater-thans, ampersands and numbers after the commands meant, and search engines never turned up anything but examples of it being used without explanation. In this article I&rsquo;ll explain those weird commands.</p>
+
+<p>Here&rsquo;s an example command:</p>
+
+<pre>wibble &gt; /dev/null 2&gt;&1</pre>
+
+<h3 id="toc_0">Output redirection</h3>
+
+<p>The greater-thans (<code>&gt;</code>) in commands like these redirect the program&rsquo;s output somewhere. In this case, something is being redirected into <code>/dev/null</code>, and something is being redirected into <code>&amp;1</code>.</p>
+
+<h3 id="toc_1">Standard in, out, and error</h3>
+
+<p>There are three standard sources of input and output for a program. Standard input usually comes from the keyboard if it&rsquo;s an interactive program, or from another program if it&rsquo;s processing the other program&rsquo;s output. The program <em>usually</em> prints to standard output, and <em>sometimes</em> prints to standard error. These three file descriptors (you can think of them as &ldquo;data pipes&rdquo;) are often called STDIN, STDOUT, and STDERR.</p>
+
+<p>Sometimes they&rsquo;re not named, they&rsquo;re numbered! The built-in numberings for them are 0, 1, and 2, in that order. By default, if you don&rsquo;t name or number one explicitly, you&rsquo;re talking about STDOUT.</p>
+
+<p>Given that context, you can see the command above is redirecting standard output into <code>/dev/null</code>, which is a place you can dump anything you don&rsquo;t want (often called the bit-bucket), then redirecting standard error into standard output (you have to put an <code>&amp;</code> in front of the destination when you do this).</p>
+
+<p>The short explanation, therefore, is &ldquo;all output from this command should be shoved into a black hole.&rdquo; That&rsquo;s one good way to make a program be really quiet!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

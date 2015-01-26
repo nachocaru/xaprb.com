@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Open-Source on Xaprb </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.xaprb.com/categories/open-source/index.xml/</link>
+    
+    
+    
+    <updated>Wed, 05 Feb 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>MySQL, SQL, NoSQL, Open Source And Beyond: a Google Tech Talk</title>
+      <link>http://www.xaprb.com/blog/2014/02/05/mysql-nosql-open-source-google-tech-talk/</link>
+      <pubDate>Wed, 05 Feb 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/02/05/mysql-nosql-open-source-google-tech-talk/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve been invited to give a Tech Talk at Google next Thursday, February 13th,
+from 11:00 to 12:30 Pacific time. Unfortunately the talk won&amp;rsquo;t be streamed live,
+nor is it open to the general public, but it will be recorded and hosted on
+&lt;a href=&#34;http://www.youtube.com/user/GoogleTechTalks&#34;&gt;YouTube&lt;/a&gt; afterwards. I&amp;rsquo;ve also been told that a small number of individuals might
+be allowed to attend from outside Google. If you would like me to try to get a
+guest pass for you, please tweet that to &lt;a href=&#34;https://twitter.com/xaprb&#34;&gt;@xaprb&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The topic is, roughly, databases. Officially,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;toc_0&#34;&gt;MySQL, SQL, NoSQL, and Open Source in 2014 and Beyond&lt;/h3&gt;
+
+&lt;p&gt;Predictions are hard to get right, especially when they involve the future.
+Rather than predict the future, I&amp;rsquo;ll explain how I view the relational and
+NoSQL database worlds today, especially the MySQL product and community, but
+including open-source and proprietary data management technologies about which
+I know enough to get in trouble. I&amp;rsquo;ll explain how my self-image as a
+practitioner and contributor has changed, especially as I&amp;rsquo;ve moved from
+consulting (where I tell people what they should do) into being a company
+founder (where I sometimes wish someone would tell me what to do). As for the
+future, I&amp;rsquo;ll express my preferences for specific outcomes, and try to be
+careful what I wish for.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I am excited and a bit nervous. A Google Tech Talk! Wow! Thanks for inviting me,
+Google!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: Slides are embedded below.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://app.box.com/embed_widget/ko7s90gvgiix/s/0d578lmrl6xm487z4ska?view=list&amp;sort=name&amp;direction=ASC&amp;theme=blue&#34; width=&#34;640&#34; height=&#34;420&#34; frameborder=&#34;0&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Email snooping is a small fraction of the story</title>
+      <link>http://www.xaprb.com/blog/2013/07/17/email-snooping-is-a-small-fraction-of-the-story/</link>
+      <pubDate>Wed, 17 Jul 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/07/17/email-snooping-is-a-small-fraction-of-the-story/</guid>
+      <description>&lt;p&gt;I wrote previously about why privacy and security &lt;a href=&#34;http://www.xaprb.com/blog/2013/07/05/without-free-software-and-hardware-privacy-is-impossible/&#34; title=&#34;Without free software and hardware, privacy is impossible&#34;&gt;require open-source, inspectable hardware and software&lt;/a&gt; to run on, and &lt;a href=&#34;http://www.xaprb.com/blog/2013/07/06/privacy-is-impossible-unless-its-the-default/&#34; title=&#34;Privacy is impossible unless it’s the default&#34;&gt;software that makes encryption the default&lt;/a&gt; so everyone uses it. My example application was email, and I concluded that it&amp;rsquo;s currently impractical to think that we can block government snooping on a large scale even in the domain of email.&lt;/p&gt;
+
+&lt;p&gt;Now, think what a small fraction of people&amp;rsquo;s Internet-connected activities we&amp;rsquo;re talking about: email. What about web browsing, social network use, chat clients, game playing, phone use, GPS use, credit card transactions, search engine activity, smartphone apps, online video streaming, television viewing, car driving, access to personal devices such as security systems and webcams, cable TV use, and on and on? How can all of this be made secure and intrusion-proof? And make no mistake, all of this data is intensely personal, private, and meaningful. Email is a tiny part of the story.&lt;/p&gt;
+
+&lt;p&gt;And day by day, our lives are becoming ever more electronic, ever more connected, and thus ever more trackable. Wearable computing and RFID chips are going to be reality for normal citizens in the next decade or less. In twenty years many people will probably have Internet-connected, GPS-enabled, RFID-broadcasting devices physically implanted in their bodies. (The rest of us already carry these in our pockets every day). This is not sci-fi, it&amp;rsquo;s the quite predictable and ordinary extension of current trends and developments.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not to say that this is evil. All of these things have good and wholesome uses, and will become available for good reasons &amp;ndash; medical, business, convenience, entertainment, and so on. They&amp;rsquo;ll enhance us and our lives greatly. But their potential for abuse, and thus the virtual certainty that they will be abused, is stunning.&lt;/p&gt;
+
+&lt;p&gt;And as I&amp;rsquo;ve pointed out in my previous posts, it&amp;rsquo;s practically impossible to prevent such abuse, even for the mundane technologies such as email. Any workably-secure technology that I currently know of is unsuitable for mass use, and thus won&amp;rsquo;t be used. All of these devices and technologies will, in their convenience, expose us to intrusion on a scale I&amp;rsquo;m not sure I can imagine.&lt;/p&gt;
+
+&lt;p&gt;Put it this way: have you heard of bitcoin? It&amp;rsquo;s a radical departure from traditional currencies. Now imagine that &lt;em&gt;every kind of electronic activity you engage in needs to be similarly radically invented if there&amp;rsquo;s any hope of privacy and security.&lt;/em&gt; This might not be an exaggeration.&lt;/p&gt;
+
+&lt;p&gt;What can we do? I think that all devices, technologies, and services need to be designed to be surveillance-proof, but I think the very foundations of our technology platforms, such as the Internet itself and all of the components that make it work, might have to be redesigned. Perhaps there&amp;rsquo;s another way, such as building a secure &amp;ldquo;tunnel&amp;rdquo; or VPN-like environment inside and on top of existing technology. But I&amp;rsquo;m not the expert in such matters.&lt;/p&gt;
+
+&lt;p&gt;If someone can solve this, it could be a more significant technological advance than all of the technological advances in human history thus far, because rather than just enabling technical innovation, it could enable and guarantee freedom &amp;ndash; both freedom &lt;em&gt;to&lt;/em&gt; and freedom &lt;em&gt;from&lt;/em&gt;. If so, this would truly be a first. However, I believe that freedom is never guaranteed and won universally and permanently; I believe there will always have to be a fight for freedom against those who seek to limit it.&lt;/p&gt;
+
+&lt;p&gt;In the meantime I personally plan to carry on as usual, doing what I can and working to become successful within the system, so that I have more of an opportunity to counteract the potential and actual abuses. Because that&amp;rsquo;s what it seems to come down to: stopping governments from monitoring and thus (as I said previously) partially controlling us seems to be impossible or impractical.&lt;/p&gt;
+
+&lt;p&gt;I also want to end on a positive note. I don&amp;rsquo;t worry about these things; I don&amp;rsquo;t make myself unhappy about them. And I hope you don&amp;rsquo;t, either. The future is &lt;em&gt;always&lt;/em&gt; uncertain. If it&amp;rsquo;s not the race between technological good and evil, it&amp;rsquo;s something else. This is simply another challenge to be met with a clear, present, joyful head and heart.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The state of MySQL client libraries</title>
+      <link>http://www.xaprb.com/blog/2012/12/26/the-state-of-mysql-client-libraries/</link>
+      <pubDate>Wed, 26 Dec 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/12/26/the-state-of-mysql-client-libraries/</guid>
+      <description>&lt;p&gt;Those who&amp;rsquo;ve been around the MySQL world are probably aware of the much-discussed topics of GPL licensing, dual licensing, and in particular, licensing of the client libraries (also called connectors or drivers) and the &lt;a href=&#34;http://www.mysql.com/about/legal/licensing/foss-exception/&#34;&gt;FOSS exception&lt;/a&gt; to that licensing. This is newly relevant with the announcement of a permissively-licensed MySQL-compatible client library for MariaDB.&lt;/p&gt;
+
+&lt;p&gt;The difference is that this time there&amp;rsquo;s been some question about the provenance and history of the source code. Some people asked me about this. Some of them were aware of a relatively obscure detail: there&amp;rsquo;ve been permissively licensed MySQL client libraries for years, in the form of libdrizzle, a BSD-licensed library for the Drizzle fork of MySQL.&lt;/p&gt;
+
+&lt;p&gt;Here are some of the thoughts that seemed to be going through peoples&amp;rsquo; minds:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;This changes everything, doesn&amp;rsquo;t it? Now I don&amp;rsquo;t have to to open-source my application or pay Oracle licensing fees.&lt;/li&gt;
+&lt;li&gt;Is the source code of these new connectors untainted, or am I exposing myself to liability problems by using it?&lt;/li&gt;
+&lt;li&gt;Isn&amp;rsquo;t MariaDB&amp;rsquo;s driver just a copy-paste and LGPL relicense of the BSD-licensed Drizzle driver? Sure, that&amp;rsquo;s legal, but is it ethical?&lt;/li&gt;
+&lt;li&gt;Are these connectors really compatible, or will they cause problems?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Many people seem constitutionally incapable of understanding the GPL. I consider myself forever done with discussions about what the GPL permits or forbids, so I won&amp;rsquo;t address that. But I thought some of these things were worth looking into, at least quickly.&lt;/p&gt;
+
+&lt;p&gt;In particular, I was curious whether the allegations of plagiarism on MariaDB&amp;rsquo;s behalf were true. So I downloaded the latest release of the &lt;a href=&#34;https://launchpad.net/libdrizzle/+download&#34;&gt;Drizzle&lt;/a&gt; and &lt;a href=&#34;http://www.skysql.com/downloads/connectors/c&#34;&gt;MariaDB&lt;/a&gt; C libraries, unpacked the source code, and just took a quick look. Here&amp;rsquo;s what I found.&lt;/p&gt;
+
+&lt;p&gt;The first thing I wanted to check was the allegation that MariaDB&amp;rsquo;s drivers were just an LGPL wrapper or copy-paste of Drizzle&amp;rsquo;s libraries. A few minutes of study showed &lt;strong&gt;no obvious plagiarism from Drizzle&amp;rsquo;s source&lt;/strong&gt;. The MariaDB drivers appear to have a lot more code, documentation, tests, and so on, and it looks to be organized very differently than the Drizzle drivers. Files are in different directory hierarchies, code appears to be split up among files very differently, files are named differently, and so on. After about ten minutes of reading source, &lt;strong&gt;I saw no code that looks similar&lt;/strong&gt;. A cursory grepping of the source code also shows words like &amp;ldquo;infile&amp;rdquo; that appear only in the MariaDB code. If there&amp;rsquo;s plagiarism from Drizzle&amp;rsquo;s library source code, it&amp;rsquo;s going to take a little more work to find it. In fact, from what I see, the Drizzle libraries don&amp;rsquo;t implement all of the protocol&amp;rsquo;s features, and that tangentially answers one of the other questions about true compatibility.&lt;/p&gt;
+
+&lt;p&gt;The next question is about MariaDB&amp;rsquo;s code versus MySQL&amp;rsquo;s code. The MariaDB library&amp;rsquo;s source looks and feels very similar to MySQL&amp;rsquo;s source. This is no surprise to me. If Monty sat alone in a room and coded a library from scratch, based only on the MySQL protocol documents and his memory, I&amp;rsquo;d expect the result to look a lot like MySQL&amp;rsquo;s source code anyway. But when I opened some of the files, things got less clear to me. For example, the copyright header in include/my_list.h begins with this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* Copyright (C) 2000 MySQL AB &amp;amp;#038; MySQL Finland AB &amp;amp;#038; TCX DataKonsult AB
+
+   This library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Library General Public
+   License as published by the Free Software Foundation; either
+   version 2 of the License, or (at your option) any later version.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I was surprised. I thought I&amp;rsquo;d see a &amp;ldquo;clean-room&amp;rdquo; reimplementation of the protocol, with no relationship to MySQL&amp;rsquo;s source code. But this file appears to be the same code as MySQL&amp;rsquo;s, although the header says that the file is licensed under the LGPL. I compared that with the same header file in MySQL 5.6&amp;#8242;s source code, and here&amp;rsquo;s the result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 of the License.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So that file is licensed under the &amp;ldquo;viral&amp;rdquo; copyleft GPL version 2 only, not the more permissive LGPL version 2 or later. Did the license terms on that file get changed over time? I am not surprised to see Oracle erasing prior copyright history and updating it to show themselves as the owners, but did they change the license from LGPL to GPL too? One way to find out is to check the MySQL 5.0 source code, because that was released before Sun or Oracle entered the picture. Here&amp;rsquo;s the header file&amp;rsquo;s copyright notice for MySQL 5.0.28:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* Copyright (C) 2000 MySQL AB
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The license matches Oracle&amp;rsquo;s, although of course the copyright owner has changed since then. So it looks to me like Oracle didn&amp;rsquo;t change the license terms; they just updated the ownership information.&lt;/p&gt;
+
+&lt;p&gt;Some important questions arise from this. I&amp;rsquo;m not qualified to answer them because I&amp;rsquo;m neither a lawyer nor a MySQL historian, but I&amp;rsquo;m qualified to ask them and I&amp;rsquo;d surely like to know the answers:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Is a legitimately LGPL-licensed copy of these header files available?&lt;/li&gt;
+&lt;li&gt;What&amp;rsquo;s the origin of the triple copyright ownership listed in MariaDB&amp;rsquo;s header file, to include &amp;ldquo;MySQL Finland AB&amp;rdquo; and &amp;ldquo;TCX DataKonsult AB&amp;rdquo; ? What&amp;rsquo;s the relationship between these entities and MySQL AB?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I think that perhaps someone from Monty Program or SkySQL is in the best position to answer these questions; in fact, Monty himself is probably the most knowledgeable. I&amp;rsquo;m looking forward to understanding more of the history around the source code and its licensing and provenance.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lessons learned from the Sublime Text editor</title>
+      <link>http://www.xaprb.com/blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/</link>
+      <pubDate>Tue, 20 Nov 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/</guid>
+      <description>&lt;p&gt;Terminal-based, keystroke-driven editors are enormously powerful, and I still haven&amp;rsquo;t seen anything more powerful than Vim. I&amp;rsquo;m a longtime Vim user, and although I&amp;rsquo;m not the world&amp;rsquo;s foremost jaw-dropping expert on Vim, I would call myself an advanced power user at the very least, and probably a true expert. Still, I have maintained a relationship with GUI text editors over the years, too. An editor that has an insertion point for a cursor, and &amp;ldquo;native&amp;rdquo; mouse interaction, has an appeal I&amp;rsquo;ve never quite shaken. I&amp;rsquo;ve used (and been highly productive with) Kate, GEdit, Notepad++, Visual Studio, and many others. I have &lt;em&gt;purchased licenses&lt;/em&gt; for Textpad, Textmate, and most recently &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;Sublime Text 2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sublime Text is a very nice editor. I&amp;rsquo;ve chosen it for my recent Go programming because of the &lt;a href=&#34;https://github.com/DisposaBoy/GoSublime&#34;&gt;GoSublime&lt;/a&gt; integration, which uses &lt;a href=&#34;https://github.com/nsf/gocode&#34;&gt;gocode&lt;/a&gt; (which also works for Vim, by the way) to provide IDE-like autocomplete and other helpful functionality, like incremental syntax checking and running gofmt on save. Sublime Text also has a limited Vim emulation mode, which lets me drop into Vim command mode for some mouseless productivity.&lt;/p&gt;
+
+&lt;p&gt;Keep in mind that I think Sublime is great, and well worth the license fee. That said, I find its advocates a bit wide-eyed and breathless in their enthusiasm. I keep thinking, &lt;em&gt;Have they never used a decent editor before?&lt;/em&gt; Take the &amp;ldquo;multiple selection&amp;rdquo; feature. You can select something, such as a variable name, then press Control-D repeatedly and select other occurrences of the same text. Then you can type, and all of the occurrences change simultaneously. &lt;em&gt;Revolutionary! Any praise about multiple selections is an understatement!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Really? You&amp;rsquo;ve been able to do that with just as few, or even fewer, keystrokes in Vi or Vim forever:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:%s/oldtext/newtext/gc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All you have to do is press a key for every occurrence. If you want to change them all without confirmation, leave off the trailing &amp;lsquo;c&amp;rsquo; command to the regular expression. This is &lt;em&gt;basic&lt;/em&gt;, not a power-user feature. It&amp;rsquo;s Unix regex 101 for any number of tools &amp;ndash; nothing new to learn here.&lt;/p&gt;
+
+&lt;p&gt;Similarly, a number of other purportedly &amp;ldquo;new&amp;rdquo; features in Sublime Text 2 are decades old, well-worn and loved in many other text editors. I&amp;rsquo;ll admit that most of the mouse-based, cursor-insertion-point, GUI text editors don&amp;rsquo;t offer these types of features in any usable or convenient way; they just seem to lend themselves much better to terminal-based editors like Vim and Emacs. (Example: passing selected text through a shell command and reinserting it into the file.)&lt;/p&gt;
+
+&lt;p&gt;In fact, many of these older text editors offer &lt;em&gt;way&lt;/em&gt; more functionality than Sublime Text. It doesn&amp;rsquo;t even come close. The find-and-replace in Vim, for example, is way better than the dialog-based functionality in Sublime Text, or nearly any GUI editor for that matter. Not to mention the documentation; Vim&amp;rsquo;s documentation and help system is breathtaking, but Sublime Text&amp;rsquo;s is&amp;hellip; uninspired at best. You can compare terminal-based text editors to Sublime Text on a bunch of dimensions and it comes up way, way short. Again, this is just some rambling thoughts &amp;ndash; I repeat, I bought the license. And I&amp;rsquo;m sure Sublime Text is going to continue improving rapidly, as it has been the whole time I&amp;rsquo;ve been aware of it.&lt;/p&gt;
+
+&lt;p&gt;And now we come to my point: it appears to me, from the enthusiastic response to Sublime Text, that &lt;em&gt;a large proportion of the developer population either uses a weak-sauce text editor or is utterly untrained on using a powerful one.&lt;/em&gt; How else can we explain the enthusiasm? I honestly can&amp;rsquo;t think of anything. And this is a really saddening thought, because it means that thousands of programmers have completely neglected one of the most important things they could do: become truly proficient, if not expert, with their text editor. The text editor is to the programmer as the wrench is to the mechanic, as the compass is to the navigator, as the shoe is to the runner. It is arguably the single most important tool you&amp;rsquo;ll use as a programmer.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s just no excuse. If you aren&amp;rsquo;t using a powerful text editor (and I would count Sublime Text as one), &lt;em&gt;get one.&lt;/em&gt; And if you aren&amp;rsquo;t at least an advanced user of that editor, &lt;em&gt;get a move on it.&lt;/em&gt; I&amp;rsquo;m not the first to say this, but I can&amp;rsquo;t remember or locate the quotation about this topic that I&amp;rsquo;m trying to recall. Maybe someone can help out in the comments.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s your favorite text editor? What&amp;rsquo;s your favorite resource for becoming an amazing wizard with it, so that you regularly do the kinds of tricks that make your friends say &amp;ldquo;hey, what editor is that?&amp;rdquo;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to send input to many terminals</title>
+      <link>http://www.xaprb.com/blog/2012/10/16/how-to-send-input-to-many-terminals/</link>
+      <pubDate>Tue, 16 Oct 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/10/16/how-to-send-input-to-many-terminals/</guid>
+      <description>&lt;p&gt;Do you ever find yourself wanting to open several terminal windows and send the same commands to all of them? I&amp;rsquo;ve had this need many times, and I&amp;rsquo;ve never found a completely satisfactory solution. I&amp;rsquo;ve also known a lot of people who&amp;rsquo;ve written various sets of scripts to help them accomplish such tasks.&lt;/p&gt;
+
+&lt;p&gt;In no particular order, here are a few ways I&amp;rsquo;ve done this in the past:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Facebook&amp;rsquo;s pmysql client&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;http://www.netfort.gr.jp/~dancer/software/dsh.html.en&#34;&gt;dsh&lt;/a&gt; tool&lt;/li&gt;
+&lt;li&gt;Several screen windows named remoteXXX, followed by a bash for-loop: &lt;code&gt;while read cmd; do screen -X at remote# stuff &amp;quot;$cmd&amp;quot;; done&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Using many PuTTY windows and the &lt;a href=&#34;http://www.millardsoftware.com/puttycs&#34;&gt;puttycs&lt;/a&gt; tool&lt;/li&gt;
+&lt;li&gt;Opening many tabs in KDE&amp;rsquo;s Kterm tool and selecting the options to send input to all tabs&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here are some I&amp;rsquo;ve heard about, but never used:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://guichaz.free.fr/polysh/&#34;&gt;PolySH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;rcall&lt;/li&gt;
+&lt;li&gt;A variety of &amp;ldquo;terminal multiplexor&amp;rdquo; web pages I&amp;rsquo;ve &lt;a href=&#34;http://delicious.com/xaprb/terminal+multiplexor&#34;&gt;bookmarked&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Of course, in many cases a technology like Chef or Puppet provides the true solution. But a lot of the MySQL users I&amp;rsquo;ve known haven&amp;rsquo;t grown to the point that they want to spend the upfront time and effort to learn and deploy something like that. They&amp;rsquo;re investing in development instead, and bearing the cost of a little less efficient systems administration process.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s your favorite technique for doing lots of things all at once?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Announcing innotop 1.9.0</title>
+      <link>http://www.xaprb.com/blog/2012/09/07/announcing-innotop-1-9-0/</link>
+      <pubDate>Fri, 07 Sep 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/09/07/announcing-innotop-1-9-0/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve just released &lt;a href=&#34;http://code.google.com/p/innotop/&#34;&gt;innotop&lt;/a&gt; version 1.9.0. This version fixes a lot of bugs, makes the tool work better when monitoring dozens of MySQL servers, and adds two new modes: a Health Dashboard and an InnoDB Blockers/Blocked mode.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A new dashboard for innotop</title>
+      <link>http://www.xaprb.com/blog/2012/08/14/a-new-dashboard-for-innotop/</link>
+      <pubDate>Tue, 14 Aug 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/08/14/a-new-dashboard-for-innotop/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m using innotop again every day, for the first time in a few years. I found that I didn&amp;rsquo;t like the tool that the younger and less experienced version of me created. It is very flexible and has the ability to surface a lot of information about MySQL, but not all on one screen. I wanted a &amp;ldquo;single pane of glass&amp;rdquo; health dashboard for the servers I&amp;rsquo;m monitoring, instead of having to look on various screens for important bits of information.&lt;/p&gt;
+
+&lt;p&gt;The good news is, innotop is very extensible and I know the code because I wrote most of it, so in a short while I had a dashboard that suited me. I committed these changes to trunk, so if you wish you can easily get the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wget innotop.googlecode.com/svn/trunk/innotop
+$ chmod +x innotop
+$ ./innotop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can select the new &amp;lsquo;A&amp;rsquo; mode by pressing the capital &amp;lsquo;A&amp;rsquo; key. Here is a screenshot (click for full size version):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.xaprb.com/media/2012/08/innotop-mode-A.png&#34;&gt;&lt;img src=&#34;http://www.xaprb.com/media/2012/08/innotop-mode-A-300x236.png&#34; alt=&#34;&#34; title=&#34;innotop-mode-A&#34; width=&#34;300&#34; height=&#34;236&#34; class=&#34;aligncenter size-medium wp-image-2777&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Each line in the table is a single server. From the left, the columns are the server&amp;rsquo;s name, uptime, QPS sparkline, current QPS, length of longest-running user query (excludes replication and system users), number of user threads running (ditto on the meaning of that) as a sparkline and current value, number of connections, open tables, whether replication is OK, how much replication is lagging, and the total of all InnoDB&amp;rsquo;s pending I/O operations.&lt;/p&gt;
+
+&lt;p&gt;The coloration is based on the length of the MaxSQL column and ReplLag column. If Repl is not Yes, the row is colored black on a red background.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Making MySQL comfortable for Oracle DBAs</title>
+      <link>http://www.xaprb.com/blog/2012/03/07/making-mysql-comfortable-for-oracle-dbas/</link>
+      <pubDate>Wed, 07 Mar 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/03/07/making-mysql-comfortable-for-oracle-dbas/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m at &lt;a href=&#34;http://www.hotsos.com/sym12.html&#34;&gt;Hotsos Symposium&lt;/a&gt; this week, and it suddenly occurred to me that a lot of Oracle DBAs who are beginning to manage MySQL servers might have some things to share with others in a similar role shift:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Familiar, comfortable tools and techniques, or capabilities of the Oracle Database, that you miss in MySQL&lt;/li&gt;
+&lt;li&gt;Equivalents or replacements for the aforementioned&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do you have anything to share with your fellow DBAs going through ODT (Oracle Delerium Tremens)? Do you have any wishes that you haven&amp;rsquo;t satisfied yet? Post in the comments and let&amp;rsquo;s see if we can create a sort of forum for sharing and/or a wishlist in case someone gets an urge to fill in a missing piece!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>innotop version 1.8.1 released</title>
+      <link>http://www.xaprb.com/blog/2012/02/25/innotop-version-1-8-1-released/</link>
+      <pubDate>Sat, 25 Feb 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/02/25/innotop-version-1-8-1-released/</guid>
+      <description>&lt;p&gt;The new stable version of &lt;a href=&#34;http://code.google.com/p/innotop/&#34;&gt;innotop&lt;/a&gt; is now released. Version 1.8.1 is a bug-fix-only release, with no new features. It&amp;rsquo;s available for immediate &lt;a href=&#34;http://code.google.com/p/innotop/downloads/list&#34;&gt;download&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Black-Box Performance Analysis with TCP Traffic</title>
+      <link>http://www.xaprb.com/blog/2012/02/23/black-box-performance-analysis-with-tcp-traffic/</link>
+      <pubDate>Thu, 23 Feb 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/02/23/black-box-performance-analysis-with-tcp-traffic/</guid>
+      <description>&lt;p&gt;This is a cross-post from the &lt;a href=&#34;http://www.mysqlperformanceblog.com/2012/02/23/black-box-mysql-performance-analysis-with-tcp-traffic/&#34;&gt;MySQL Performance Blog&lt;/a&gt;. I thought it would be interesting to users of PostgreSQL, Redis, Memcached, and $system-of-interest as well.&lt;/p&gt;
+
+&lt;p&gt;For about the past year I&amp;rsquo;ve been formulating a series of tools and practices that can provide deep insight into system performance simply by looking at TCP packet headers, and when they arrive and depart from a system. This works for MySQL as well as a lot of other types of systems, because it doesn&amp;rsquo;t require any of the contents of the packet. Thus, it works without knowledge of what the server and client are conversing about. Packet headers contain only information that&amp;rsquo;s usually regarded as non-sensitive (IP address, port, TCP flags, etc), so it&amp;rsquo;s also very easy to get access to this data even in highly secure environments.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve finally written up a paper that shows some of my techniques for detecting problems in a system, which can be an easy way to answer questions such as &amp;ldquo;is there something we should look into more deeply?&amp;rdquo; without launching a full-blown analysis project first. It&amp;rsquo;s available from the white paper section of our website: &lt;a href=&#34;http://www.percona.com/about-us/mysql-white-paper/mysql-performance-analysis-with-percona-toolkit-and-tcp-ip-network-traffic/&#34;&gt;MySQL Performance Analysis with Percona Toolkit and TCP/IP Network Traffic&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Special mysqldump fingerprinting rule in pt-query-digest</title>
+      <link>http://www.xaprb.com/blog/2011/11/29/special-mysqldump-fingerprinting-rule-in-pt-query-digest/</link>
+      <pubDate>Tue, 29 Nov 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/11/29/special-mysqldump-fingerprinting-rule-in-pt-query-digest/</guid>
+      <description>&lt;p&gt;The pt-query-digest tool has a number of special cases that affect how it &amp;ldquo;fingerprints&amp;rdquo; queries when it groups similar queries together to produce an aggregated report over the group. One of these is a special rule for queries that appear to come from mysqldump, of the following form:&lt;/p&gt;
+
+&lt;pre&gt;SELECT /*!40001 SQL_NO_CACHE */ * FROM `users`&lt;/pre&gt;
+
+&lt;p&gt;All such queries will be fingerprinted together and presented in a single class of queries. I remember many instances where mysqldump queries crowded the report of the &amp;ldquo;most important&amp;rdquo; queries and just caused other queries to be excluded. Grouping them together made it obvious that mysqldump&amp;rsquo;s load on the server was a problem, but didn&amp;rsquo;t obliterate other interesting things we wanted to see in the report.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Want to hack Maatkit and Aspersa? We&#39;re hiring</title>
+      <link>http://www.xaprb.com/blog/2011/09/01/want-to-hack-maatkit-and-aspersa-were-hiring/</link>
+      <pubDate>Thu, 01 Sep 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/09/01/want-to-hack-maatkit-and-aspersa-were-hiring/</guid>
+      <description>&lt;p&gt;As announced on the Maatkit and Aspersa mailing lists, Daniel and I have created a new toolkit that represents the union of the two, and will be focusing efforts on this Percona Toolkit moving forward. The goal is to make them simpler and significantly more powerful, and to create more tools. The tools will continue to be open-source, but will be developed primarily to meet our MySQL support and consulting staff&amp;rsquo;s needs.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re interested in challenging software engineering in Perl and shell, then please &lt;a href=&#34;http://www.percona.com/about-us/career/perl-and-shell-developer/&#34;&gt;apply online&lt;/a&gt;. You can work online from anywhere, but I strongly prefer someone in the Americas timezones.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A clarification on mk-slave-prefetch</title>
+      <link>http://www.xaprb.com/blog/2011/08/21/a-clarification-on-mk-slave-prefetch/</link>
+      <pubDate>Sun, 21 Aug 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/08/21/a-clarification-on-mk-slave-prefetch/</guid>
+      <description>&lt;p&gt;It seems to be a popular misconception that mk-slave-prefetch is designed to keep a MySQL replica server &amp;ldquo;warm&amp;rdquo; and ready to serve production traffic in case the master is demoted or fails. &lt;strong&gt;This is not what mk-slave-prefetch does&lt;/strong&gt;. It&amp;rsquo;s related, and easy to confuse, but its purpose is different.&lt;/p&gt;
+
+&lt;p&gt;The mk-slave-prefetch tool is designed to try to execute a read-only approximation of the write workload that the replica is about to have to perform. It is meant to do this just a little bit before the replication thread (which can only be true if replication is lagging), so that when the replica replays writes to execute replication, it doesn&amp;rsquo;t have to wait for disk I/O.&lt;/p&gt;
+
+&lt;p&gt;Keeping caches warmed up for production traffic requires that the &lt;em&gt;read&lt;/em&gt; workload, which does not flow through relay logs, is executed on the server. If you point mk-slave-prefetch at a server, you&amp;rsquo;re just double-executing the &lt;em&gt;write&lt;/em&gt; workload in a read-only fashion.&lt;/p&gt;
+
+&lt;p&gt;Perhaps an example will clarify. Suppose that a master database has a bunch of writes to WritableTable, and lots and lots of reads to ReadableTable. On the replica, the only queries in the relay log will be on WritableTable. And what will mk-slave-prefetch be doing? Executing SELECT queries against WritableTable. No traffic on ReadableTable at all. If you switch to use the replica as the primary server, ReadableTable&amp;rsquo;s data won&amp;rsquo;t be in the caches.&lt;/p&gt;
+
+&lt;p&gt;To actually warm up the replica, you need to replay the queries against the ReadableTable. You can only find those by looking at the master. You can read its query logs, or watch its processlist, or capture TCP traffic, or any other method of capturing read traffic. There is a feature built into mk-query-digest to help you capture and replay these against the replica: &lt;a href=&#34;http://www.maatkit.org/doc/mk-query-digest.html#execute&#34;&gt;&amp;#8211;execute&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A parting note: mk-slave-prefetch is an extremely niche tool that generally doesn&amp;rsquo;t help replicas keep up with their masters. Only in very special cases is the hardware, data, and workload suitable for what it does.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Easy on the eyes: the solarized color theme</title>
+      <link>http://www.xaprb.com/blog/2011/07/28/easy-on-the-eyes-the-solarized-color-theme/</link>
+      <pubDate>Thu, 28 Jul 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/07/28/easy-on-the-eyes-the-solarized-color-theme/</guid>
+      <description>&lt;p&gt;I recently set up the &lt;a href=&#34;http://ethanschoonover.com/solarized&#34;&gt;solarized&lt;/a&gt; color theme for my terminal emulator. I&amp;rsquo;ve been meaning to do this for a while, but procrastinated. However, I finally got really frustrated with the colors I get from &amp;ldquo;ls&amp;rdquo; sometimes &amp;ndash; I use a dark terminal with light fonts, and the directory listings in particular can become invisible, with dark blue on black.&lt;/p&gt;
+
+&lt;p&gt;Solarized is much improved. All of the colors work well together and are easy on the eyes. What a relief! Recommended for programmers and system administrators. There are plugins or configuration files for a huge variety of programming environments and programs, including Vim of course.&lt;/p&gt;
+
+&lt;p&gt;I use XFCE&amp;rsquo;s terminal, and I found that there was no terminal configuration file for it in the download. But I found a workaround: just append the colors listed in &lt;a href=&#34;https://github.com/sgerrand/solarized/blob/7541ef797ee9a2ef7d95d349f8ae600a5d1b2aef/xfce4-terminal-colors-solarized/terminalrc&#34;&gt;this file&lt;/a&gt; to the end of $HOME/.config/Terminal/terminalrc.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>I&#39;ll be presenting at Postgres Open 2011</title>
+      <link>http://www.xaprb.com/blog/2011/07/19/ill-be-presenting-at-postgres-open-2011/</link>
+      <pubDate>Tue, 19 Jul 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/07/19/ill-be-presenting-at-postgres-open-2011/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been accepted to present at the brand-new and very exciting &lt;a href=&#34;http://postgresopen.org/&#34;&gt;Postgres Open 2011&lt;/a&gt; about system scaling, TCP traffic, and mathematical modeling. I&amp;rsquo;m really looking forward to it &amp;ndash; it will be my first PostgreSQL conference in a couple of years! See you there.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

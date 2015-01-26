@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Advanced HTML table features, Part 2 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Advanced HTML table features, Part 2</h1>
+  <span class="post-date">Mon, May 8, 2006 in
+		
+		<a href="/categories/Web" class="btn btn-primary">Web</a>
+		
+  </span>
+      
+
+<p>This is the second article in a two-part series on understanding and using advanced features in HTML tables. In the first part I explained a few of the simpler features. In this article I&rsquo;ll explain how the <code>axis</code> attribute allows an author to encode <em>multi</em>-dimensional data into <em>two</em>-dimensional tables, and to encode <em>relational</em> data into <em>hierarchical</em> tables.</p>
+
+<h3 id="toc_0">Encoding multiple dimensions</h3>
+
+<p>There are lots of places where data has more than two dimensions &ndash; or where I might want to break data apart into more than two dimensions.</p>
+
+<p>As just one example, take business intelligence analysis in a relational database. Star schemas and data cubes are built expressly for the purpose of slicing and aggregating data by dimensions and measures.</p>
+
+<p>I know that&rsquo;s a mouthful if you&rsquo;re not familiar with this type of analysis. What I&rsquo;m saying is, data comes in a lump, and I want to slice and dice it a bunch of ways. For example, if I&rsquo;m doing BI for a catalog retailer, I want to be able to analyze orders</p>
+
+<ul>
+<li>over time</li>
+<li>by number of items</li>
+<li>per buyer</li>
+<li>by buyer frequency</li>
+<li>by total dollar amount</li>
+<li>by geographic location</li>
+<li>by sign of zodiac&hellip;</li>
+</ul>
+
+<p>Any seemingly simple data actually has tons and tons of information in it, all along different <em>dimensions</em>, and if I squint along the right dimensions, I see patterns that aren&rsquo;t obvious otherwise. Some of the dimensions are inherent to the data itself, and others need to be indicated explicitly. For instance, the total number of orders is inherent to a set of data &ndash; I count the set to find it. Whether each order is a gift is NOT inherent to the set of data; this I need to indicate in each order. Once I have encoded that information, it&rsquo;s possible to slice the data along yet another dimension (gift/non-gift).</p>
+
+<p>The <code>axis</code> attribute allows me to <a href="http://www.w3.org/TR/html4/struct/tables.html#multi-dimension">specify to which dimensions each cell belongs</a>:</p>
+
+<blockquote cite="http://www.w3.org/TR/html4/struct/tables.html#adef-axis">
+  <p>
+    This attribute may be used to place a cell into conceptual categories that can be considered to form axes in an n-dimensional space... The value of this attribute is a comma-separated list of category names.
+  </p>
+</blockquote>
+
+<p>I know of no user agent which currently does the kinds of gymnastics mentioned in the spec (it sounds like the authors of the spec envision user agents as SQL databases, and users themselves as data analysts), but the capability is there in the data. I can encode rich semantic information into table cells with <code>axis</code>, basically categorizing each little bit of data. And I can do it on a cell-by-cell basis &ndash; the finest granularity possible in a table.</p>
+
+<p>It&rsquo;s a similar concept to the way people are &ldquo;tagging&rdquo; things on the web these days. Since I can add as many axes to my table as I want just by putting them into the cells, there can be many-to-many relationships between the data and the axes/tags/categories.</p>
+
+<h3 id="toc_1">The multiple-hierarchy problem</h3>
+
+<p>HTML&rsquo;s essential nature is hierarchical, because elements are contained inside other elements. Whenever I encode data in one hierarchy, I rule out placing it into another. Yet <em>I almost always want multiple hierarchies</em> &ndash; this is a truism I&rsquo;ve seen time after time in real-life applications, and it always frustrates people because it severely limits what they can do with the data.</p>
+
+<p>Here&rsquo;s a real example of the multiple-hierarchy problem. At my previous employer, I was tasked with integrating an analysis software package into a website. The package created a set of nested categories and subcategories for each page and product, and when a user visited a page, they recorded the page visit. Their analysis system, which the marketing and creative teams used, allowed what data-analysis folks often call &ldquo;drill-down&rdquo; &ndash; start viewing overall stats at the top (whole website), then navigate down through the categories to view statistics about each one. So, if I started at the top, then navigated to Men&rsquo;s Wear, then to Shoes, I could see how the men&rsquo;s shoes pages performed. I could do the same thing with Women&rsquo;s Wear/Shoes, or Children&rsquo;s/Shoes. But I could <em>not</em> get a summary of all pages about shoes.</p>
+
+<p>This is a predictable situation. It happens every time someone tries to &ldquo;categorize&rdquo; things with a hierarchy. What the teams wanted was relational data, not hierarchical (actually, hierarchies <em>are</em> relational, but they only allow one kind of relationship: parent to child).</p>
+
+<p>Another example of where people want to escape a single hierarchy is tables themselves &ndash; lots of people want the <code>colgroup</code> element to apply CSS properties to &ldquo;child&rdquo; cells, but it can&rsquo;t because of the strict element hierarchy (<code>colgroup</code> is not really the parent element of any table cells at all). You can read hundreds of comments about this on Mozilla bug <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=915#c27">915</a>.</p>
+
+<h3 id="toc_2">Flatten out the hierarchy with <code>axis</code></h3>
+
+<p>It&rsquo;s just not possible to have multiple hierarchies; the only way to break out of it is to encode relational data as relational, not hierarchical. That&rsquo;s what <code>axis</code> can do. Instead of building a strict hierarchy, I can build a flat table, then encode enough meta-data to let a processing application categorize the data as needed.</p>
+
+<p>The HTML spec says <code>axis</code> is for categorizing data, potentially for <a href="http://www.w3.org/TR/html4/struct/tables.html#h-11.4">rendering tables in non-visual user agents</a>, but there&rsquo;s no reason that data can&rsquo;t be used for other things too, such as processing by scripts. The possibilities are pretty much limitless. Just consider how scriptable the <code>class</code> attribute is &ndash; <code>axis</code> offers similar power, but it&rsquo;s decoupled from CSS, so it&rsquo;s potentially even simpler.</p>
+
+<h3 id="toc_3">Example: the color chooser</h3>
+
+<p>This article is getting long, so I&rsquo;ll wrap up with a simple example of multi-dimensional data commonly encoded in two dimensions: the familiar color chooser. Here are several color choosers from various systems:</p>
+
+<p><img src="/media/2006/05/dreamweaver-color-chooser.png" width="181" height="121" alt="Dreamweaver Color Chooser" /></p>
+
+<p>Dreamweaver&rsquo;s color chooser flattens three dimensions (red, green, blue) into two by slicing the cube into layers and placing them next to each other. Notice how there are two rows of three six-by-six blocks of color &ndash; six blocks of six by six. You can see the same strategy at a paint store. If you step back and unfocus your eyes, you can always see blocks of color next to each other.</p>
+
+<p><img src="/media/2006/05/gimp-color-chooser-1.png" width="188" height="217" alt="GIMP Color Chooser" /></p>
+
+<p>This color chooser from the GIMP flattens the three dimensions (hue, saturation and luminance) into two by placing hue in the narrow bar on the right, and the saturation and luminance in the square on the left. The selected hue is red, all the way at the top of the bar.</p>
+
+<p><img src="/media/2006/05/gimp-color-chooser-2.png" width="188" height="215" alt="GIMP Color Chooser" /></p>
+
+<p>This one is from the GIMP again, but it&rsquo;s a different style. Don&rsquo;t let the triangle fool you. It&rsquo;s the same dimensions as the first one, presented a bit differently. I guess some people find it easier to use.</p>
+
+<p><img src="/media/2006/05/ms-color-chooser.png" width="218" height="267" alt="MS Paint Color Chooser" /></p>
+
+<p>This is from Microsoft Paint. This is also hue, saturation and luminance. Luminance is in the narrow bar at the right. Hue is in the square (left to right), and saturation is too (top to bottom).</p>
+
+<p>If I were to mark up a table of all HTML colors, I might only mark up the cells that fall <em>on the axes</em> to indicate where the axes are. In other words, the cell containing the color <code>#110000</code> would be on the <code>red</code> axis, and the cell containing the color <code>#001100</code> would be on the <code>blue</code> axis.</p>
+
+<p>Another way I might mark things up would be to indicate when a value falls in a plane. For example, the value <code>#003377</code> is in the <code>green-blue</code> plane.</p>
+
+<p>I don&rsquo;t know why I&rsquo;d want to do any of that. I&rsquo;m just hypothesizing. It would depend completely on the need I am trying to satisfy.</p>
+
+<h3 id="toc_4">So, what do I do with this stuff?</h3>
+
+<p>If I were processing tabular data with scripts, and it involved any kind of aggregating or slicing, folding into pivot tables, or so forth, I&rsquo;d certainly be using the features I&rsquo;ve discussed above. Right now, though, I&rsquo;m not doing any of that. I&rsquo;ve had some cool data-processing articles, including scripts that do this kind of fancy processing, in draft form for about 6 months&hellip; someday I&rsquo;ll finish them.</p>
+
+<p>Until then, invent your own uses! How about a script that iterates over every cell, collecting a list of all axes, then populates a drop-down menu with the axes so a user can choose to do something to one axis at a time? By &ldquo;do something,&rdquo; I mean it could hide the other cells, or do some math on the selected axis. For example, you could have another drop-down menu of functions on the selected cells, like a spreadsheet&rsquo;s status-bar display (sum, avg, etc):</p>
+
+<p><img src="/media/2006/05/calc-status-bar-functions.png" width="240" height="202" alt="OpenOffice.org Calc's status bar summary function" /></p>
+
+<h3 id="toc_5">Summary</h3>
+
+<p>In this article I explained how the <code>axis</code> attribute of table cells can indicate to which axes the cell belongs in a multi-dimensional space, the multiple hierarchy problem and how to solve it, and gave some examples of flattened-out multi-dimensional data. This article is probably a solution in search of a problem, but given that the <code>axis</code> attribute isn&rsquo;t used very much and might also be a solution without a problem, I don&rsquo;t mind :-)</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

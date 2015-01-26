@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to escalate privileges in MySQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to escalate privileges in MySQL</h1>
+  <span class="post-date">Wed, May 31, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>In MySQL, privileges are stored in tables in the <code>mysql</code> database, so if I have <code>UPDATE</code> privileges to that database, it&rsquo;s easy to update my own privileges. For an example of what the desired privileges should be, run the following query:</p>
+
+<pre>select * from user where User='root';</pre>
+
+<p>The <code>Grant_priv</code> column is what I&rsquo;m interested in. I just update that value to &lsquo;Y&rsquo; for my user, execute <code>FLUSH PRIVILEGES</code>, log out, and log back in. I&rsquo;m all-powerful! I can grant myself any privileges I want, grant other people privileges, and so on. Of course, I could do that before by updating the system tables anyway, but now I can do it more conveniently with the built-in administration commands.</p>
+
+<p>This isn&rsquo;t just a weakness in the design of MySQL; Microsoft SQL Server 2000 also stores privileges in system tables (one of the reasons SQL injection attacks are so easy on an improperly configured instance of SQL Server 2000).</p>
+
+<p>The real point I want to make in this article is it&rsquo;s a bad idea to run the following query, so often recommended in how-to articles and books:</p>
+
+<pre>grant all on *.* to 'xaprb'@'%' identified by 'password';</pre>
+
+<p>If someone tells you that&rsquo;s the way to add a user, don&rsquo;t listen! You need to specify the databases and/or tables to which the user should have access. Otherwise, the user will have <code>UPDATE</code> permission in the system tables, and is all-powerful.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

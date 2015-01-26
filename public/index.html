@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Xaprb &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="http://www.xaprb.com/index.xml/" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="posts">
+
+      
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2015/01/24/ultimate-bargain-coffee-kit/">
+        The Ultimate Bargain Coffee Kit
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Jan 24, 2015</span>
+
+    <p>I&rsquo;ve started drinking coffee over the last few years. Like most things I&rsquo;ve
+picked up relatively late in life, I am kind of a snob, in that I want good
+coffee but I want it to be quick, easy, and cheap. This post is about the gear
+I&rsquo;ve settled on for making my morning cup.</p>
+
+<p><img src="/media/2015/01/coffee.jpg" alt="coffee" />
+</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2015/01/24/ultimate-bargain-coffee-kit/"> &raquo; Continue Reading (about 1700 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2015/01/19/install-cyanogenmod-nook-hdplus/">
+        Installing CyanogenMod on the Barnes and Noble Nook HD&#43;
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Jan 19, 2015</span>
+
+    <p>I <a href="/blog/2014/03/01/barnes-noble-nook-hd/">wrote previously</a> about how much I
+was using and enjoying my 9-inch Barnes and Noble Nook HD+. I&rsquo;m still using and
+enjoying it, but a few of the things I mentioned in that article&mdash;the useless home
+screen, the schizophrenic updates from two app stores at once, and so
+on&mdash;started to annoy me. I started to fantasize about installing a clean,
+uncluttered Android operating system on it instead of using the Nook operating
+system. The best-known general-purpose Android OS is CyanogenMod, and that&rsquo;s
+what I was thinking about.</p>
+
+<p><img src="/media/2015/01/cyanogenmod.jpg" alt="cyanogenmod" />
+</p>
+
+<p>Last time I did this, I didn&rsquo;t like the result. I&rsquo;ll explain why, then move on
+to show you how to install CyanogenMod easily on the Nook HD+ and talk about the
+results. (I&rsquo;m very happy thus far).</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2015/01/19/install-cyanogenmod-nook-hdplus/"> &raquo; Continue Reading (about 2700 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/12/08/eventual-consistency-simpler-than-mvcc/">
+        If Eventual Consistency Seems Hard, Wait Till You Try MVCC
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Dec 8, 2014</span>
+
+    <p>This should sound familiar:</p>
+
+<blockquote>
+<p>One of the great lies about NoSQL databases is that they&rsquo;re simple. Simplicity
+done wrong makes things a lot harder and more complicated to develop and
+operate. Programmers and operations staff end up reimplementing (badly) things
+the database should do.</p>
+</blockquote>
+
+<p>Nobody argued this line of reasoning more vigorously than when trying to defend
+relational databases, especially during the darkest years (ca.  2009-2010), when
+NoSQL still meant <strong>NO SQL DAMMIT</strong>, all sorts of NoSQL databases were sprouting,
+and most of them were massively overhyped.</p>
+
+<p>But as valid as those arguments against NoSQL&rsquo;s &ldquo;false economy&rdquo; simplicity
+were and are, the arguments against relational databases&rsquo; complexity hold true,
+too.</p>
+
+<p>The truth is that no database is really simple. Databases have a lot of
+functionality and behaviors&mdash;even the &ldquo;simple&rdquo; databases do&mdash;and require
+deep knowledge to use well when reliability, correctness, and performance are
+important.</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/12/08/eventual-consistency-simpler-than-mvcc/"> &raquo; Continue Reading (about 3000 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/12/06/free-tutorial-golang-database-sql/">
+        A Free Tutorial On Go&#39;s Database/SQL Package
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Dec 6, 2014</span>
+
+    Do you use Google&rsquo;s Go language (golang)? Do you use a relational database such as MySQL or PostgreSQL with it? Do you want to learn how to? Go has a package called database/sql for connecting to relational databases. There&rsquo;s package documentation, but you&rsquo;ll need to read the source code if you really want to understand how to use the package. The documentation doesn&rsquo;t really explain how to use the package, it just explains what it does.
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/12/06/free-tutorial-golang-database-sql/"> &raquo; Continue Reading (about 200 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/11/29/code-freezes-dont-prevent-outages/">
+        Why Deployment Freezes Don&#39;t Prevent Outages
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Nov 29, 2014</span>
+
+    <p>I have $10 that says you&rsquo;ve experienced this before: there&rsquo;s a holiday, trade show, or other important event coming up. Management is worried about the risk of an outage during this all-important time, and restricts deployments from the week prior through the end of the event.</p>
+
+<p>What really happens, of course, is that the system in question becomes booby-trapped with extra risk. As a result, problems are more likely, and when there there is even a slight issue, it has the potential to escalate into a major crisis.</p>
+
+<p>Why does this happen? As usual, there&rsquo;s no single root cause, but a variety of problems combine to create a brittle, risky situation.</p>
+
+<p><img src="/media/2014/11/freeze.png" alt="freeze" />
+</p>
+
+<h3>Assumptions</h3>
+
+<p>When managers declare a freeze, they&rsquo;re not being malicious. They&rsquo;re doing something that seems to make sense. That&rsquo;s why it&rsquo;s important to understand the reasoning.</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/11/29/code-freezes-dont-prevent-outages/"> &raquo; Continue Reading (about 2100 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/11/03/bring-guitar-velocity/">
+        Can You Bring A Guitar To Velocity?
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Nov 3, 2014</span>
+
+    I need help. I&rsquo;m giving an Ignite talk at Velocity EU that involves a guitar. I don&rsquo;t want to bring a guitar all the way from America just for this. Would you please loan me one? It doesn&rsquo;t need to be anything special &ndash; any old classical or acoustic 6-string standard guitar will do. All I&rsquo;m going to do is tune it. If you can bring a guitar to loan me, please post in the comments or give me a shout on Twitter.
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/11/03/bring-guitar-velocity/"> &raquo; Continue Reading (about 100 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/11/01/print-full-bleed-microsoft-word/">
+        How To Print All The Way To The Edge In Microsoft Word
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Nov 1, 2014</span>
+
+    You&rsquo;re creating a document with Word that you want to turn into a nice full-page PDF. It has a gorgeous background color that will look great. But every time you convert it to a PDF, it ends up with ugly white borders at the edges, and Word warns you about printing beyond the printable margins. Dragging the margins and changing the Page Setup options does no good. How can you fix this?
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/11/01/print-full-bleed-microsoft-word/"> &raquo; Continue Reading (about 300 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/10/30/win-free-pass-velocity/">
+        Win a Free Pass to Velocity
+      </a>
+    </h1>
+
+    <span class="post-date">Thu, Oct 30, 2014</span>
+
+    O&rsquo;Reilly Velocity is November 17-19 in Barcelona. O’Reilly gave me a 2-day pass to give away, and I decided to have some fun with it. We’re also giving away a pass on the VividCortex blog, so you can double your odds of winning. For your chance to win a 2-day pass, do one of the following: Answer any of the following questions; or Write a haiku that’s somehow relevant to Velocity Tweet your answers to @xaprb with #velocitytrivia.
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/10/30/win-free-pass-velocity/"> &raquo; Continue Reading (about 300 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/07/21/root-cause-fallacy/">
+        The Root Cause Fallacy
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Jul 21, 2014</span>
+
+    <p>Wouldn&rsquo;t you like to find the root cause of that downtime incident? Many people
+would. But experience has taught me that there is no such thing as a single root
+cause. Instead, there&rsquo;s a chain of interrelated causes, each of which is
+necessary but none of which is sufficient to cause the overall problem.</p>
+
+<p>I am often reminded of an outage years ago. It was &ldquo;caused&rdquo; by a failed disk.
+But the disk was in a RAID5 array, and another disk in that array had failed
+some time previously. Backups had also failed some time previously, so there
+were no backups. Health checks didn&rsquo;t notify anyone of the degraded disk array,
+due to a misconfigured alerting system. Alerting and backups failed because the
+person in charge of operations was not performing his duties.  The operations
+person was still in the driver&rsquo;s seat because of management dysfunction.</p>
+
+<p>If you really want to get to the root cause of a problem, you need to use the
+Five Whys approach. I rarely do that because I already know where it ends. The
+CEO or equivalent is always the problem. It&rsquo;s turtles all the way down (or up).
+Saying that the CEO is ultimately responsible is true but useless. The CEO is
+ultimately responsible for <em>everything</em>.</p>
+
+<p><img src="/media/2014/07/turtles.jpg" alt="Turtles" />
+</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/07/21/root-cause-fallacy/"> &raquo; Continue Reading (about 600 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/07/14/the-docker-book/">
+        A Review Of The Docker Book
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Jul 14, 2014</span>
+
+    The Docker Book is a newly published book from James Turnbull, whose name you will recognize if you&rsquo;re at all familiar with DevOps, Puppet, or Docker itself. It&rsquo;s a nice introduction to what Docker is and how to get started using it. It&rsquo;s like Goldilocks &mdash; not too detailed, not too superficial, just right. The book starts from the basics, assuming no prior knowledge with Docker, or even most of the core concepts of virtualization, but moves quickly through these topics into installing Docker and getting started with it.
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/07/14/the-docker-book/"> &raquo; Continue Reading (about 300 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/07/07/mac-time-machine-links/">
+        Mac&#39;s Time Machine and Symlinks
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Jul 7, 2014</span>
+
+    I use Mac OSX&rsquo;s built-in Time Machine for backups, and a couple of times I&rsquo;ve noticed my backups failed and couldn&rsquo;t be completed successfully. I was unable to fix the problem until I reformatted the backup drive. Today I think I stumbled on the solution. The problem seems to come from swapping a directory and a symlink to it. I had a set of directories with symlinks back and forth, and sometimes I moved the directory to where the symlink was and made a symlink to it from where it used to be.
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/07/07/mac-time-machine-links/"> &raquo; Continue Reading (about 200 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/07/05/on-focus/">
+        On Focus
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Jul 5, 2014</span>
+
+    <p>Focus is perhaps the most important attribute in an organization. In fact, my dictionary defines an organization as &ldquo;an organized body of people with a particular purpose&hellip;&rdquo; A focused organization recognizes and cleaves to its purpose.</p>
+
+<p>Likewise, the ability to create and sustain focus is perhaps the most valuable skill of the organization&rsquo;s members, including both individual contributors and leaders.</p>
+
+<p><img src="/media/2014/05/rainbokeh.jpg" alt="Rainbokeh" />
+</p>
+
+<h3>What Is Focus, And Why Is It Hard?</h3>
+
+<p>My dictionary says focus is &ldquo;an act of concentrating.&rdquo; Consider the root words: <em>concentrate</em> literally means to bring to a common center, to be centered together.</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/07/05/on-focus/"> &raquo; Continue Reading (about 2600 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/06/24/meditate-at-velocity/">
+        Meditate With Me At Velocity
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, Jun 24, 2014</span>
+
+    <p>Join me and other <a href="http://velocityconf.com/">Velocity</a> attendees during the Wednesday afternoon 2:40pm break for a 10-15 minute guided meditation session appropriate for people of any faith or of none.</p>
+
+<p>Meditation has a host of scientifically proven immediate and long-term benefits. If you get an extra 10% of clarity and effectiveness for the rest of the afternoon, you&rsquo;ll end up learning more and making your conference experience more worthwhile.</p>
+
+<p><img src="/media/2014/06/stones.jpg" alt="meditation" />
+</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/06/24/meditate-at-velocity/"> &raquo; Continue Reading (about 300 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/06/21/unfixable-code/">
+        Unfixable Code
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, Jun 21, 2014</span>
+
+    <p>Over the years I&rsquo;ve come to believe something that I&rsquo;m not sure others will
+agree with. I would like to hear your point of view on it.</p>
+
+<p>I posit that some code can become literally unfixable. Programmers can paint
+themselves into a corner with the code and it becomes impossible to get out
+again.</p>
+
+<p><img src="/media/2014/06/humpty.jpg" alt="humpty" />
+</p>
+
+<p>The scenario arises when a specific set of conditions exists:</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/06/21/unfixable-code/"> &raquo; Continue Reading (about 300 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/06/18/my-favorite-conferences-velocity-surge/">
+        Two of My Favorite Conferences: Velocity and Surge
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Jun 18, 2014</span>
+
+    <p>Two of my favorite conferences are coming up. One&rsquo;s just next week, and
+another&rsquo;s in the fall.</p>
+
+<h3>Velocity</h3>
+
+<p><a href="http://www.kqzyfj.com/click-7094008-11742203">Velocity</a> is such a great event.
+I wanted to go for years, and when I finally did it was honestly one of the
+highlights of my professional career. I still don&rsquo;t know what I did get get
+invited to speak that first year. It was a golden horseshoe falling out of the
+sky and landing right in front of me.</p>
+
+<p><img src="/media/2014/06/velocity.png" alt="Velocity" />
+</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/06/18/my-favorite-conferences-velocity-surge/"> &raquo; Continue Reading (about 700 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/06/08/time-series-database-requirements/">
+        Time-Series Database Requirements
+      </a>
+    </h1>
+
+    <span class="post-date">Sun, Jun 8, 2014</span>
+
+    <p>I&rsquo;ve had conversations about time-series databases with many people over the last couple of years. I <a href="http://www.xaprb.com/blog/2014/03/02/time-series-databases-influxdb/">wrote previously</a> about some of the open-source technologies that people commonly use for time-series storage.</p>
+
+<p><img src="/media/2014/06/timeseries.jpg" alt="Time Series" />
+</p>
+
+<p>Because I have my own ideas about what constitutes a good time-series database, and because a few people have asked me to describe my requirements, I have decided to publish my thoughts here. All opinions that follow are my own, and as you read you should mentally add &ldquo;in my opinion&rdquo; to every sentence.</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/06/08/time-series-database-requirements/"> &raquo; Continue Reading (about 1500 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/06/02/can-anomaly-detection-solve-alert-spam/">
+        Can Anomaly Detection Solve Alert Spam?
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Jun 2, 2014</span>
+
+    Anomaly detection is all the buzz these days in the &ldquo;#monitoringlove&rdquo; community. The conversation usually goes something like the following: Alerts are spammy and often generate false positives. What you really want to know is when something anomalous is happening. Anomaly detection can replace static thresholds and heuristics. The result will be better accuracy and lower noise. I&rsquo;m going to give a webinar about the science of statistical anomaly detection on June 17th.
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/06/02/can-anomaly-detection-solve-alert-spam/"> &raquo; Continue Reading (about 100 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/05/24/the-goal/">
+        The Goal
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, May 24, 2014</span>
+
+    <p>Once upon a time I managed several teams of consultants. At a certain stage of the organization&rsquo;s growth, we wanted to achieve a higher billable-time utilization more easily, and we wanted more structure and process.</p>
+
+<p>Cary Millsap, about whom I have written quite a bit elsewhere on this blog, suggested that I might profit from reading <a href="http://www.amazon.com/Goal-Process-Ongoing-Improvement/dp/0884271951/?tag=xaprb-20"><em>The Goal</em></a> by Eliyahu Goldratt. I will let history be the judge of the outcome, but from my perspective, this was revolutionary for me. It is a clear watershed moment in my memory: I lived life one way and saw things through one lens before, and afterwards everything was different.</p>
+
+<p><img src="/media/2014/05/horse-race.jpg" alt="Horse Race" />
+</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/05/24/the-goal/"> &raquo; Continue Reading (about 1500 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/05/10/can-mysql-be-12factor-service/">
+        Can MySQL be a 12-factor service?
+      </a>
+    </h1>
+
+    <span class="post-date">Sat, May 10, 2014</span>
+
+    <p>A while ago I <a href="http://www.xaprb.com/blog/2012/04/24/the-mysql-init-script-mess/">wrote</a> about some of the things that can make MySQL unreliable or hard to operate. Some time after that, in a completely unrelated topic, someone made me aware of a set of principles called <a href="http://12factor.net">12-factor</a> that I believe originated from experiences building Heroku.</p>
+
+<p><img src="/media/2014/05/dodecahedron.jpg" alt="Dodecahedron" />
+</p>
+
+<p>That&rsquo;s been over a year, and I&rsquo;ve come to increasingly agree with the 12-factor principles. I guess I&rsquo;m extremely late to the party, but making applications behave in 12-factor-compliant ways has solved a lot of problems for me.</p>
+
+<p>This experience has repeatedly reminded me of one of the applications that continues to cause a lot of the kinds of pain that the 12-factor principles have solved for me: MySQL.</p>
+
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/05/10/can-mysql-be-12factor-service/"> &raquo; Continue Reading (about 500 words)</a></p>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="http://www.xaprb.com/blog/2014/05/06/one-weird-time-series-math-trick/">
+        Monitorama 2014: This One Weird Time-Series Math Trick
+      </a>
+    </h1>
+
+    <span class="post-date">Tue, May 6, 2014</span>
+
+    Monitorama 2014 Portland has been a great show. I&rsquo;ve enjoyed the technical nature of the talks, the diversity of the speakers, the topics from hilarious to thought-provoking, and the stage in a theater, set up for a Shakespearean tragedy. I have also taken a lot of notes. For example, Toufic from Metafor Software suggested that the audience look into the Kolmogorov-Smirnov test. I am proud of the slide that made its way into my talk as a result: My slides are embedded below.
+	 <p style="text-align:right"><a href="http://www.xaprb.com/blog/2014/05/06/one-weird-time-series-math-trick/"> &raquo; Continue Reading (about 200 words)</a></p>
+  </div>
+  
+</div>
+</div>
+
+  </body>
+</html>

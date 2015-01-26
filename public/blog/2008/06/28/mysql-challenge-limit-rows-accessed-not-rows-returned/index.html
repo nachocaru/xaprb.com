@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> MySQL challenge: LIMIT rows accessed, not rows returned &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>MySQL challenge: LIMIT rows accessed, not rows returned</h1>
+  <span class="post-date">Sat, Jun 28, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>Dear reader, this is a challenge. How&rsquo;s your MySQL prowess? You know about LIMIT: it cuts off the results at the specified number.</p>
+
+<pre>mysql&gts; select actor_id from sakila.actor where actor_id % 5 = 0 limit 5;
++----------+
+| actor_id |
++----------+
+|        5 | 
+|       10 | 
+|       15 | 
+|       20 | 
+|       25 | 
++----------+
+5 rows in set (0.00 sec)</pre>
+
+<p>But that query actually accessed 25 rows. What if I want to say &ldquo;return up to 5 rows, but don&rsquo;t read any more than 20 rows to find them?&rdquo;</p>
+
+<p>Right now I&rsquo;ve got the following:</p>
+
+<pre>mysql&gt; select actor_id, @rows
+    -&gt; from actor, (select @rows := 0) as x where
+    -&gt;    ((@rows := @rows + 1) &lt;= 20)
+    -&gt;    and actor_id % 5 = 0 
+    -&gt; limit 5;
++----------+-------+
+| actor_id | @rows |
++----------+-------+
+|        5 | 5     | 
+|       10 | 10    | 
+|       15 | 15    | 
+|       20 | 20    | 
++----------+-------+
+4 rows in set (0.00 sec)</pre>
+
+<p>The derived table subquery <code>x</code> is only there to initialize the user variable at the beginning of the query.</p>
+
+<p>This appears to work, but it doesn&rsquo;t. If you profile this with SHOW STATUS, you see that it reads every row in the table (Handler_read_next = 200). This is actually worse, not better, than just LIMIT.</p>
+
+<p>Any ideas?</p>
+
+<p>I&rsquo;ve got a few. But I don&rsquo;t like them for various reasons. Extra props for really efficient solutions that don&rsquo;t involve subqueries (so it&rsquo;ll work on pre-4.0) or things that add extra overhead (subqueries, for example). I guess you probably see the direction I want to go with this &ndash; I don&rsquo;t want to use subqueries.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

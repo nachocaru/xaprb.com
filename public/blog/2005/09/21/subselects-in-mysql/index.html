@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to write subqueries without using subqueries in SQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to write subqueries without using subqueries in SQL</h1>
+  <span class="post-date">Wed, Sep 21, 2005 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>Some queries that seemingly require the use of subqueries in the FROM clause (commonly called <a href="http://www.xaprb.com/blog/2005/09/26/sql-subqueries-and-derived-tables/">derived tables</a>) can be written without them. This is useful for earlier versions of MySQL, which do not support subqueries. In this article I&rsquo;ll explain how to get the effect of subqueries without actually using them.</p>
+
+<p>The basic principle that makes this work is this: a subquery in the FROM clause really works like an anonymous view, and can be accomplished as joins to base tables, <em>as long as the joins don&rsquo;t interact</em>.</p>
+
+<h3 id="toc_0">Introduction</h3>
+
+<p>I&rsquo;ll demonstrate how to add a sum across two grouped subqueries with a single grouped select. The three example tables are as follows:</p>
+
+<pre>create table category (
+    uid int primary key,
+    title varchar(50)
+);
+create table item (
+    uid int primary key,
+    cat int,
+    qty int,
+    checkedout int
+);
+create table bulk_checkout (
+    uid int primary key,
+    cat int,
+    qty int
+);</pre>
+
+<p>These tables represent a very simplified version of an inventory system I maintain. Items are entered individually where possible, and tagged with their ID number; tents, bikes etc are entered individually, with a quantity of 1. There are also items that we don&rsquo;t count separately, such as AA batteries. These are entered together as a single item, and given a quantity of 30, for example.</p>
+
+<p>When we check items out, we either check out a certain item, say item #47, or we check out X items of category Y. For example, 15 AA batteries would be checked out as qty 15 of category &lsquo;Misc&rsquo;. We check out a specific item by updating its <code>checkedout</code> column, but we check out in bulk by inserting into <code>bulk_checkout</code>.</p>
+
+<h3 id="toc_1">How I&rsquo;d write the query with subqueries</h3>
+
+<p>The example query is a summary of item count and checked-out count, grouped by category. Here is how I would write this query with subqueries:</p>
+
+<pre>select
+  category.title,
+  it.qty,
+  coalesce(it.qtyout, 0)
+    + coalesce(bulk.qtyout, 0) as qtyout
+from category
+  left outer join (
+    select cat, sum(qty) as qty,
+    sum(
+      case when checkedout = 1 then qty else 0 end
+    ) as qtyout
+    from item
+    group by cat
+  ) as it on it.cat = category.uid
+  left outer join (
+    select cat, sum(qty) as qtyout
+    from bulk_checkout
+    group by cat
+  ) as bulk on bulk.cat = category.uid</pre>
+
+<h3 id="toc_2">A failed attempt</h3>
+
+<p>Here is how I first tried to write this without subqueries. It will not work; see if you can figure out why:</p>
+
+<pre>select
+  category.title,
+  sum(it.qty) as qty,
+  sum(
+    case when checkedout = 1 then it.qty else 0 end
+    + coalesce(bulk_checkout.qty, 0)) as qtyout
+from category
+  left outer join item as it on it.cat = category.uid
+  left outer join bulk_checkout
+    on bulk_checkout.cat = category.uid</pre>
+
+<p>It will not work because the joins may cause rows to appear more than once in the result set, which will cause them to be counted too many times in the sums. For instance, if there are two entries in <code>bulk_checkout</code> for category 1, every row in <code>item</code> for category 1 will be duplicated, and the <code>qty</code> will be twice too large. You may think you can divide by <code>count(*)</code>, or take averages, or do some other such magic, but I don&rsquo;t think there is a way to do so. Leave a comment if you find a way to do it!</p>
+
+<p>Why is this? The subselects need to be independent, so rows in bulk<code>_checkout</code> and <code>item</code> must not have any effect on each other (via the join) as discussed above.</p>
+
+<h3 id="toc_3">A solution</h3>
+
+<p>I need a way to join to both tables in one query, while having the effect of two queries that each join only to one of them. How is this possible? I can think of only one way: join on some mutually exclusive values, so rows from one table aren&rsquo;t mixed with rows from the other table. A <a href="http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/">mutex table</a> is the only answer I am aware of. Here is the query written with the mutex table:</p>
+
+<pre>select category.title, sum(it.qty) as qty,
+  sum(
+    case when checkedout = 1 then it.qty else 0 end
+    + coalesce(bulk_checkout.qty, 0)) as qtyout
+from category
+  inner join mutex on i in (0, 1)
+  left outer join item as it
+    on it.cat = category.uid and i = 0
+  left outer join bulk_checkout
+    on bulk_checkout.cat = category.uid and i = 1
+group by category.title</pre>
+
+<p>I&rsquo;m not saying subqueries should be rewritten like this. If your RDBMS supports them, subqueries can simplify and clarify queries, and may improve query performance (if you&rsquo;re using them as you should). The mutex technique actually results in 50% null values on the right-hand side, which hurts performance. There is also another table in the join, which depending on the query plan chosen will cause twice the probing, inner looping, or hashing (because it has two rows). There is also grouping, which requires sorting (bad), and coalescing, (negligible).</p>
+
+<p>I tried this idea on Microsoft SQL Server with <code>set statistics io on</code>, and examined the query plan and performance on a small data set. The query plan is straightforward in either case, but using mutex joins resulted in more logical reads, the expected result. I do not have statistics on the performance on MySQL.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

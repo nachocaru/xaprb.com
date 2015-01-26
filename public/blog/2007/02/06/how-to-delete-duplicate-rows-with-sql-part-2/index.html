@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to delete duplicate rows with SQL, Part 2 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to delete duplicate rows with SQL, Part 2</h1>
+  <span class="post-date">Tue, Feb 6, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>By reader request, this article explains ways to remove duplicate rows when they are completely identical, and you don&rsquo;t have a primary key or other criterion to identify which rows to &ldquo;save.&rdquo;</p>
+
+<p>This is a special case of deleting duplicates. I&rsquo;ve written another article about the more general case, so I assume you have the background it gives. If not, you should probably go read my article about <a href="http://www.xaprb.com/blog/2006/10/11/how-to-delete-duplicate-rows-with-sql/">how to delete duplicate rows in SQL</a>.</p>
+
+<h3 id="toc_0">Introduction</h3>
+
+<p>In general, this is a hard problem. Suppose you have the following data, and you want to delete everything but the first row of its type (you don&rsquo;t care which, because all duplicate rows are completely identical).</p>
+
+<table class="borders compact collapsed">
+  <tr>
+    <th>
+      Fruit
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+  </tr>
+</table>
+
+<p>When you&rsquo;re done, you want just two rows in the table:</p>
+
+<table class="borders compact collapsed">
+  <tr>
+    <th>
+      Fruit
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+  </tr>
+</table>
+
+<h3 id="toc_1">Why this is hard</h3>
+
+<p>This is hard because there is no way to do this in standard SQL (correct me if I&rsquo;m wrong). SQL is based on relational algebra, and duplicates cannot occur in relational algebra, because duplicates are not allowed in a set. That&rsquo;s why SQL doesn&rsquo;t give you tools to solve this problem.</p>
+
+<p>No database product is truly relational, so in real life it&rsquo;s possible for duplicates to occur. When it happens, you will have to resort to platform-specific methods to solve it. There should always be a way to do it, because there is always a difference between apparently identical rows. It might be an internal row ID, for example (as in Oracle). If nothing else, the rows have different memory and disk locations in the computer.</p>
+
+<h3 id="toc_2">The easy way</h3>
+
+<p>The easiest thing to do is add a column with a unique number. This is called something different on every platform: it&rsquo;s an <code>IDENTITY</code> column in SQL Server, an <code>AUTO_INCREMENT</code> column in MySQL, a <code>SERIAL</code> in PostgreSQL, and so on. Look at your platform&rsquo;s documentation for instructions how to do it.</p>
+
+<p>Once you&rsquo;ve done that, you&rsquo;re on easy street. Now go read my <a href="http://www.xaprb.com/blog/2006/10/11/how-to-delete-duplicate-rows-with-sql/">previous article</a> to do the actual deleting.</p>
+
+<h3 id="toc_3">If that won&rsquo;t do&hellip;</h3>
+
+<p>Build a new table with distinct values from the old table, then drop and rename:</p>
+
+<pre>CREATE TABLE new_fruits ...;
+
+INSERT INTO new_fruits(fruit)
+   SELECT DISTINCT fruit FROM fruits;
+
+DROP TABLE fruits;
+
+RENAME TABLE new_fruits fruits;</pre>
+
+<h3 id="toc_4">If you can&rsquo;t do that&hellip;</h3>
+
+<p>Perhaps you simply can&rsquo;t do either of the above. Maybe your table is too large, for example. In that case you&rsquo;re going to have to use some sort of iterative technique to do it; loop through the rows one at a time and delete every row you see more than once. This is also going to be a platform-specific solution; you may need to use a <code>WHILE</code> loop or server-side cursor. Consult your platform&rsquo;s documentation for more; I can&rsquo;t possibly cover all the bases here.</p>
+
+<h3 id="toc_5">Two examples for MySQL</h3>
+
+<p>Here&rsquo;s a quick technique that uses <a href="http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/">advanced user-variable techniques on MySQL</a> to delete the rows. MySQL&rsquo;s server-side cursors are read-only, so some other technique has to be used. User-variables can do the trick, if you write the statement just right &ndash; it&rsquo;s very touchy.</p>
+
+<pre>set @num := 0, @type := '';
+
+delete from fruits
+where greatest(0,
+   @num := if(type = @type, @num + 1, 0),
+   least(0, length(@type := type))) &gt; 1
+order by type;</pre>
+
+<p>If you don&rsquo;t understand that, go read the article :-) This can be very efficient because it doesn&rsquo;t require any <code>GROUP BY</code> clause. If your rows are &ldquo;naturally ordered&rdquo; with all the duplicates adjacent to each other, you can even omit the <code>ORDER BY</code> clause (if your rows aren&rsquo;t &ldquo;sorted naturally,&rdquo; you will miss some duplicate rows).</p>
+
+<p>The other obvious option is to repeatedly identify a duplicated row, find how many times it&rsquo;s duplicated, and delete one less than that many rows. You will need to either do this in a stored routine, or get help from some programming language. For example, in pseudo-code:</p>
+
+<pre>set @num := 0;
+
+select @type := type, @num := count(*)
+   from fruits
+   group by type
+   having count(*) > 1
+   limit 1;
+
+while @num > 0
+
+   delete from fruits where type = 'type'
+      limit @num - 1;
+
+   set @num := 0;
+   select @type := type, @num := count(*)
+      from fruits
+      group by type
+      having count(*) &gt; 1
+      limit 1;
+
+end while</pre>
+
+<p>That is pseudo-code, by the way; if you&rsquo;re doing this in a stored procedure, you&rsquo;re going to have to concatenate strings together to make an executable statement and execute it. If you&rsquo;re using an external programming language, you&rsquo;ll need to fetch the values that are duplicated and dynamically build a statement that deletes all but one row.</p>
+
+<h3 id="toc_6">Summary</h3>
+
+<p>In this article I explained how to solve the special-case problem of removing duplicate rows with no distinguishing columns at all. It&rsquo;s a harder case of the general problem, and SQL has no built-in way to solve it, so you have to learn your platform&rsquo;s tricks to solve it. I showed you how to add a unique column so you can use the &ldquo;easy&rdquo; techniques I explained in an earlier article. You might also be able to put the rows into another table and drop the original table. Failing that, you have to use something like cursors. As a bonus, I explained two ways to do this in MySQL, one of them sneaky and the other not.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

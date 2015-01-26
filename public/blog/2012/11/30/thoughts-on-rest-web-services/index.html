@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Thoughts on REST web services &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Thoughts on REST web services</h1>
+  <span class="post-date">Fri, Nov 30, 2012 in
+		
+		<a href="/categories/Web" class="btn btn-primary">Web</a>
+		
+  </span>
+      <p>I usually keep pretty quiet on things that are controversial, and goodness knows you can start a holy war fast with any comments about REST web services. But I&rsquo;ve been thinking and working on these things for years &ndash; REST for over a year, SOAP and friends since 2003 &ndash; and maybe my opinions will be interesting to someone.</p>
+
+<p>I dislike SOAP. I&rsquo;ve worked a lot with it, doing about a dozen major integrations with platforms from companies like Amazon, Google, and Yahoo, using several different programming languages, primarily .NET languages and Perl. I have never worked heavily on the server side with SOAP; I&rsquo;ve always been a client. From the client side it&rsquo;s bad enough, and I do consider myself pretty fluent with most of the standards, though some of the WS- standards never were relevant to me. Regardless, I used to be able to read a raw WSDL for a complex service like Adwords, and tell you exactly what XML you needed to send and what you&rsquo;d get back (primarily because the SOAP libraries available never worked right, and I had to write my own in both C# and Perl).</p>
+
+<p>What&rsquo;s wrong with SOAP? Complexity. SOAP (and XML in general) is a sledgehammer to crack a nut. It does, however, provide a lot of nice features. You can in theory develop tools for every step of the process: to generate WSDL, write code for servers and clients automatically, and so on. SOAP works, and it generally works well with minor problems caused by quirks of some client libraries not working well with some server implementations (the .NET SOAP libraries never worked right with the WSDLs from Amazon&rsquo;s early merchant integration services, though they were valid). SOAP is not the most efficient thing that could ever be done, both from the computing and from the human standpoint. You can theoretically do that with other technologies too, but SOAP is the most obvious success story to illustrate (Thrift, CORBA, Protocol Buffers, etc could also be mentioned &ndash; but they are not apples-to-apples in this discussion). SOAP is just too heavyweight. I always thought there needs to be something more straightforward and efficient that achieves the same goals.</p>
+
+<p>I&rsquo;d heard about REST but never looked into it deeply until a couple years ago, when I gained a passing familiarity through some adjacent technologies. Around a year ago I got involved with writing a set of web APIs (I&rsquo;ll avoid calling them REST APIs) and worked a little more closely to REST. I quickly learned that I didn&rsquo;t know much, and most of my assumptions were gently shown to be wrong by other team members. But as I learned more, I decided I don&rsquo;t like REST either.</p>
+
+<p>What&rsquo;s wrong with REST? Naivety and idealism. No matter how much we dream the dream, things are not self-describing and infinitely fluid, and people seem to fall in love with the &ldquo;elegance&rdquo; of HATEOS (which is one of the least elegant acronyms ever created, on any level). When you write a client against a service, the client and all of the systems it&rsquo;s connected to represent an ossification of some ideas about the interface the service exposes.</p>
+
+<p>An interface of any type is a contract, a promise to the world. The client trusts the promise, and if the promise changes, the client&rsquo;s code and persistence structures must change to match. The &ldquo;semantic web&rdquo; is a wonderful daydream for the day when computers understand &ldquo;meaning,&rdquo; but for the time being, very few real useful systems I&rsquo;m aware of are in the habit of persisting and working with information that might or might not contain anything or nothing in any or no structured format. REST APIs are supposed to somehow be magically discoverable and traversable on demand &ndash; &ldquo;want to know what&rsquo;s available through the API? Browse the API and see what you find!&rdquo; This is completely unrealistic. If it were realistic, then why does every REST API have documentation that tells you what you&rsquo;ll find when you browse the API, and what it means? QED.</p>
+
+<p>Another bit of idealism is the use of HTTP verbs exclusively. HTTP verbs aren&rsquo;t sacred and somehow sufficient for everything. Designing to four primary verbs encourages a tremendously simplistic (actually, very complicated in <a href="http://jcalcote.wordpress.com/2008/10/16/put-or-post-the-rest-of-the-story/">subtle ways</a>) worldview of what an efficient API does. Most quasi-REST services I&rsquo;ve seen (there are very few that really follow the rules) would force one-at-a-time loops over operations involving a lot of data, for example. They were designed by people who&rsquo;d never heard of the <a href="http://en.wikipedia.org/wiki/Fallacies_of_Distributed_Computing">fallacies of distributed computing</a>.</p>
+
+<p>All of this has been said by many others, and probably more succinctly. What do I have to contribute? Only this: to point you to a good design.</p>
+
+<p>I believe that one of the best service designs I&rsquo;ve ever seen is the <a href="https://developers.google.com/adwords/api/docs/">Google Adwords API</a>. It uses SOAP, but that&rsquo;s just a transport &ndash; it&rsquo;s not important. What&rsquo;s important is the design. It&rsquo;s made for efficiency on a very large scale &ndash; on both the client and the server side &ndash; and to work well with a large variety of client platforms, including Javascript in the browser. It uses batch operations nearly everywhere, and sensibly distills the verbs down to &ldquo;read&rdquo; and &ldquo;write.&rdquo; (Okay, they call it &ldquo;get&rdquo; and &ldquo;mutate.&rdquo;) The Adwords API actually doesn&rsquo;t resemble early versions very much &ndash; I&rsquo;ve been writing client code against it since 2004 or so &ndash; and the evolution of its design is a case study in large-scale API design.</p>
+
+<p>About a year ago I was cooking up a hybrid of JSON over HTTP, with many design decisions influenced by Adwords&rsquo; design, and called it WORK (as opposed to REST, and because I wanted something that would work). The definitions of the operations and data types (yes, I do believe data types and operations should be predefined and agreed-upon, not discovered dynamically because that Just Doesn&rsquo;t Work, as explained previously) were all written into a small JSON file. This served as an IDL that could, in theory and mostly in practice, be used to autogenerate client and server code. I didn&rsquo;t see that project through to completion, but it remains an approach I&rsquo;d use again in the future.</p>
+
+<p>So, in conclusion I would not recommend that anyone try to develop a REST web service. I&rsquo;d recommend something more like RPC-over-JSON-using-parts-of-HTTP. This is what most so-called REST services really are anyway. I don&rsquo;t care if anyone calls them REST, but Roy T. Fielding does, so out of respect for him I&rsquo;ll use the terms somewhat carefully.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> What to do when MySQL says skip-innodb is defined &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>What to do when MySQL says skip-innodb is defined</h1>
+  <span class="post-date">Thu, Mar 8, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>Are you seeing a MySQL error that says InnoDB support isn&rsquo;t enabled, even though it is? This article explains why it happens and how to fix it.</p>
+
+<h3 id="toc_0">The symptom</h3>
+
+<p>Suppose you call <code>SHOW INNODB STATUS</code> or another InnoDB-specific command and MySQL reports the following error:</p>
+
+<p>&ldquo;ERROR 1235 (42000): Cannot call SHOW INNODB STATUS because skip-innodb is defined&rdquo;</p>
+
+<p>Yet you search the MySQL configuration files and find that&rsquo;s not true. And you know you have InnoDB tables, too. What&rsquo;s going on?</p>
+
+<p>As it turns out, the error message is a bit misleading. Many problems will cause this error message.</p>
+
+<h3 id="toc_1">Dig deeper</h3>
+
+<p>If InnoDB says it&rsquo;s disabled, it probably is. Look at a couple other things. Does <code>SHOW ENGINES</code> report InnoDB is disabled? How about <code>SHOW VARIABLES LIKE 'have_innodb'</code>? Try <code>SHOW TABLE STATUS</code> on an InnoDB table &ndash; are most columns <code>NULL</code>?</p>
+
+<p>If so, you most likely have an InnoDB configuration error. Not that you&rsquo;ve disabled it with <code>skip-innodb</code>, but there&rsquo;s something wrong. If so, MySQL will still start, but the InnoDB storage engine, and tables that use it, will be disabled.</p>
+
+<h3 id="toc_2">One possible solution</h3>
+
+<p>When this happened to me, it was a config file upgrade that I didn&rsquo;t check carefully. The old directive for the InnoDB data file was as follows:</p>
+
+<pre>innodb_data_file_path           = ibdata1:10M:autoextend</pre>
+
+<p>When I upgraded the file, I changed it to</p>
+
+<pre>innodb_data_file_path = ibdata1:10M:autoextend:max:128M</pre>
+
+<p>That wouldn&rsquo;t have been a problem, except the file was already larger than 128MB. This is a slightly hard error to catch sometimes, because it may not show up in your MySQL error log (it doesn&rsquo;t on my Ubuntu laptop when I deliberately force the error to happen).</p>
+
+<h3 id="toc_3">A note of general caution</h3>
+
+<p>For those of you who are new to InnoDB configuration and administration, be careful. InnoDB has to be told exactly what to do. If you do anything wrong, such as set the permissions wrong on InnoDB&rsquo;s log or data files or directories, change the file sizes, or any of a bunch of other mistakes, it will be very unforgiving. It may even wipe your existing log and data files and replace them with new ones full of zeroes (yes, this will delete all your data).</p>
+
+<p>The MySQL error log is your friend, but in many cases InnoDB doesn&rsquo;t flush any output to it for a long time, so you might for example start MySQL and see &ldquo;MySQL NOT started.&rdquo; It might just be that InnoDB wasn&rsquo;t shut down nicely and has to roll back transactions to get to a consistent state. If so, that information will show up in the log files, but it might take a Very Long Time.</p>
+
+<h3 id="toc_4">If you need help</h3>
+
+<p>You can get help on the #mysql IRC channel, mailing lists, or just read the <a href="http://dev.mysql.com/doc/refman/5.0/en/index.html">MySQL manual</a>. I like the IRC channel best myself. It&rsquo;s friendly and there are a lot of smart people there to answer your questions.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Security on Xaprb </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.xaprb.com/categories/security/index.xml/</link>
+    
+    
+    
+    <updated>Wed, 18 Dec 2013 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Secure your accounts and devices</title>
+      <link>http://www.xaprb.com/blog/2013/12/18/secure-your-accounts-and-devices/</link>
+      <pubDate>Wed, 18 Dec 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/12/18/secure-your-accounts-and-devices/</guid>
+      <description>
+
+&lt;p&gt;This is a public service announcement. Many people I know are not taking important steps necessary to secure their online accounts and devices (computers, cellphones) against malicious people and software. It&amp;rsquo;s a matter of time before something seriously harmful happens to them.&lt;/p&gt;
+
+&lt;p&gt;This blog post will urge you to use &lt;em&gt;higher&lt;/em&gt; security than popular advice you&amp;rsquo;ll hear. &lt;strong&gt;It really, really, &lt;em&gt;really&lt;/em&gt; is necessary to use strong measures to secure your digital life.&lt;/strong&gt; The technology being used to attack you is very advanced, operates at a large scale, and you probably stand to lose much more than you realize.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;re also likely not as good at being secure as you think you are. If you&amp;rsquo;re like most people, you don&amp;rsquo;t take some important precautions, and you overestimate the strength and effectiveness of security measures you &lt;em&gt;do&lt;/em&gt; use.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Password Security&lt;/h3&gt;
+
+&lt;p&gt;The simplest and most effective way to dramatically boost your online security is &lt;strong&gt;use a password storage program&lt;/strong&gt;, or password safe. You need to &lt;em&gt;stop making passwords you can remember&lt;/em&gt; and make long, random passwords on websites. The only practical way to do this is to use a password safe.&lt;/p&gt;
+
+&lt;p&gt;Why? Because if you can remember the password, it&amp;rsquo;s &lt;a href=&#34;http://arstechnica.com/security/2013/05/how-crackers-make-minced-meat-out-of-your-passwords/&#34;&gt;trivially hackable&lt;/a&gt;. For example, passwords like 10qp29wo38ei47ru can be broken instantly. Anything you can feasibly remember is just too weak.&lt;/p&gt;
+
+&lt;p&gt;And, any rule you set for yourself that requires self-discipline will be violated, because you&amp;rsquo;re lazy. &lt;strong&gt;You need to make security easier so that you automatically do things more securely&lt;/strong&gt;. A password safe is the best way to do that, by far. A good rule of thumb for most people is that you should not try to know your own passwords, except the password to your password safe. (People with the need to be hyper-secure will take extraordinary measures, but those aren&amp;rsquo;t practical or necessary for most of us.)&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href=&#34;https://agilebits.com/onepassword&#34;&gt;1Password&lt;/a&gt;. Others I know of are &lt;a href=&#34;https://lastpass.com/&#34;&gt;LastPass&lt;/a&gt; and &lt;a href=&#34;http://keepass.info/&#34;&gt;KeePass Password Safe&lt;/a&gt;. I personally wouldn&amp;rsquo;t use any others, because lesser-known ones are more likely to be malware.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s easy to share a password safe&amp;rsquo;s data across devices, and make a backup of it, by using a service such as Dropbox. The password safe&amp;rsquo;s files are encrypted, so the contents will not be at risk even if the file syncing service is compromised for some reason. (Use a strong password to encrypt your password safe!)&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s important to note that online passwords are different from the password you use to log into your personal computer. Online passwords are much more exposed to brute-force, large-scale hacking attacks. By contrast, your laptop probably isn&amp;rsquo;t going to be subjected to a brute-force password cracking attack, because attackers usually need physical access to the computer to do that. This is not a reason to use a weak password for your computer; I&amp;rsquo;m just trying to illustrate how important it is to use &lt;em&gt;really&lt;/em&gt; long, random passwords for websites and other online services, because they &lt;em&gt;are&lt;/em&gt; frequent targets of brute-force attacks.&lt;/p&gt;
+
+&lt;p&gt;Here are some other important rules for password security.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Never use the same password in more than one service or login. If you do, someone who compromises it will be able to compromise other services you use.&lt;/li&gt;
+&lt;li&gt;Set your password generation program (likely part of your password safe) to make long, random passwords with numbers, special characters, and mixed case. I leave mine set to 20 characters by default. If a website won&amp;rsquo;t accept such a long password I&amp;rsquo;ll shorten it. For popular websites such as LinkedIn, Facebook, etc I use much longer passwords, 50 characters or more. They are such valuable attack targets that I&amp;rsquo;m paranoid.&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t use your web browser&amp;rsquo;s features for storing passwords and credit cards. Browsers themselves, and their password storage, are the target of many attacks.&lt;/li&gt;
+&lt;li&gt;Never write passwords down on paper, except once. The only paper copy of my passwords is the master password to my computer, password safe, and GPG key. These are in my bank&amp;rsquo;s safe deposit box, because if something happens to me I don&amp;rsquo;t want my family to be completely screwed. (I could write another blog post on the need for a will, power of attorney, advance medical directive, etc.)&lt;/li&gt;
+&lt;li&gt;Never treat any account online, no matter how trivial, as &amp;ldquo;not important enough for a secure password.&amp;rdquo; That last item deserves a little story. Ten years ago I didn&amp;rsquo;t use a password safe, and I treated most websites casually. &amp;ldquo;Oh, this is just a discussion forum, I don&amp;rsquo;t care about it.&amp;rdquo; I used an easy-to-type password for such sites. I used the same one everywhere, and it was a common five-letter English word (not my name, if you&amp;rsquo;re guessing). Suddenly one day I realized that someone could guess this password easily, log in, change the password and in many cases the email address, and lock me out of my own account. They could then proceed to impersonate me, do illegal and harmful things in my name, etc. Worse, they could go find other places that I had accounts (easy to find &amp;ndash; just search Google for my name or username!) and do the same things in many places. I scrambled to find and fix this problem. At the end of it, I realized I had created more than 300 accounts that could have been compromised. Needless to say, I was very, very lucky. My reputation, employment, credit rating, and even my status as a free citizen could have been taken away from me. Don&amp;rsquo;t let this happen to you!&lt;/li&gt;
+&lt;li&gt;Never use real answers to security questions. Always generate fake answers. City of birth? The moon. Favorite high school teacher? Swimming pool. First pet? Diesel locomotive. Store these answers in your password safe. I&amp;rsquo;ve guessed my way into many an account by knowing who someone&amp;rsquo;s mother&amp;rsquo;s maiden name was, or paternal grandfather, or whatever. It&amp;rsquo;s usually easy to find this stuff online with a little searching.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Strong, Memorable Passwords Without a Safe&lt;/h3&gt;
+
+&lt;p&gt;Some people I know have a set of heuristics to generate a password for each service. &amp;ldquo;Take the first two letters, prepend the year of signup, reverse the last two letters&amp;hellip;&amp;rdquo; These passwords are a) weak, b) not easy to change since the heuristics don&amp;rsquo;t change, c) easy to figure out if someone gets one of your passwords. In other words, if someone is able to steal your password to, say, Amazon, and figures out from the password &lt;code&gt;no2014amaz&lt;/code&gt; what your heuristic is, they&amp;rsquo;ll be able to log into lots of other services with a little guesswork.&lt;/p&gt;
+
+&lt;p&gt;If you feel unusually vigorous, you could try out &lt;a href=&#34;http://www.scilogs.com/hlf/mental-cryptography-and-good-passwords/&#34;&gt;this person&amp;rsquo;s mental encryption scheme&lt;/a&gt;, but I see a major weakness with that: it doesn&amp;rsquo;t allow for changing your password, since your password is a hashed scheme of the service name. I also think the passwords it generates are less secure than some people have opined them to be, just because they&amp;rsquo;re short. It&amp;rsquo;s interesting but clearly impractical for most people. A password safe is much better.&lt;/p&gt;
+
+&lt;p&gt;Another alternative, which I did not know about when I wrote this post, is a
+unique physical device to generate passwords. Two that I&amp;rsquo;m aware of are &lt;a href=&#34;https://www.qwertycards.com/&#34;&gt;QWERTY
+Cards&lt;/a&gt; and
+&lt;a href=&#34;https://www.passwordcard.org/&#34;&gt;PasswordCard&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2013/12/qwertycards.png&#34; alt=&#34;qwertycard&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;These have some weaknesses as well, but there are workarounds:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;They can only generate one password per site, so you can&amp;rsquo;t change your password or have multiple logins per site.
+Workaround: use different secret words to &amp;ldquo;salt&amp;rdquo; the passwords over time, and
+remember which one you&amp;rsquo;re currently using. If you can&amp;rsquo;t log into a site, try
+past secret words. Workaround 2: get a new card and keep the old one.
+Workaround 3: add a &amp;ldquo;version&amp;rdquo; to the site; for example you might add v1 to
+the site name or company name. You could also append a username so you can
+have multiple logins, e.g. appending &amp;ldquo;personal&amp;rdquo; or &amp;ldquo;work&amp;rdquo; or similar.&lt;/li&gt;
+&lt;li&gt;They generate strong passwords, which some sites may not accept. For example,
+some sites have length limits or forbid &amp;ldquo;special characters&amp;rdquo; in passwords.
+Workaround: just use the first N characters of the password. Workaround 2:
+translate all &amp;ldquo;special characters&amp;rdquo; to something non-special, such as an
+underscore. Neither is foolproof, since you&amp;rsquo;ll have to remember this site as
+a special exception, but it may be workable.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;Avoiding Insecure Sites&lt;/h3&gt;
+
+&lt;p&gt;The limitations on length and special characters that I mentioned in the
+previous paragraph are red flags that your password is not secured properly in
+their servers.&lt;/p&gt;
+
+&lt;p&gt;Do not trust such sites. If you&amp;rsquo;re forced to use them, do so, but otherwise I
+would suggest finding another way to do your business.&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;Nothing screams &amp;quot;we are wildly insecure&amp;quot; like a 16-character limit on password length. Stay classy, &lt;a href=&#34;https://twitter.com/AOL&#34;&gt;@AOL&lt;/a&gt;.&lt;/p&gt;&amp;mdash; Baron Schwartz (@xaprb) &lt;a href=&#34;https://twitter.com/xaprb/status/544310203819495425&#34;&gt;December 15, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;&lt;a href=&#34;https://twitter.com/auswipe&#34;&gt;@auswipe&lt;/a&gt; no, a mere 18-character password limit is the dubious honor of &lt;a href=&#34;https://twitter.com/CrateandBarrel&#34;&gt;@CrateandBarrel&lt;/a&gt;&lt;/p&gt;&amp;mdash; Baron Schwartz (@xaprb) &lt;a href=&#34;https://twitter.com/xaprb/status/544317402524430336&#34;&gt;December 15, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Another red flag is when you reset your password and instead of forcing you to create a new one, they a) send your existing one (which means they stored it, which they should &lt;em&gt;never&lt;/em&gt; do) or b) generate a new one and send it to you in email.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;Use Two-Factor Auth&lt;/h3&gt;
+
+&lt;p&gt;Two-factor authentication (aka 2-step login) is a much stronger mechanism for account security than a password alone. It uses a &amp;ldquo;second factor&amp;rdquo; (something you physically possess) in addition to the common &amp;ldquo;first factor&amp;rdquo; (something you know &amp;ndash; a password) to verify that you are the person authorized to access the account.&lt;/p&gt;
+
+&lt;p&gt;Typically, the login process with two-factor authentication looks like this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You enter your username and password.&lt;/li&gt;
+&lt;li&gt;The service sends a text message to your phone. The message contains a 6-digit number.&lt;/li&gt;
+&lt;li&gt;You must enter the number to finish logging in. With two-factor auth in place, it is very difficult for malicious hackers to access your account, even if they know your password. &lt;strong&gt;Two-factor auth is way more secure than other tactics such as long passwords&lt;/strong&gt;, but it doesn&amp;rsquo;t mean you shouldn&amp;rsquo;t also use a password safe and unique, random, non-memorized passwords.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Two-factor auth has a bunch of special ways to handle other common scenarios, such as devices that can&amp;rsquo;t display the dialog to ask for the 6-digit code, or what if you lose your cellphone, or what if you&amp;rsquo;re away from your own computer and don&amp;rsquo;t have your cellphone. Nonetheless, these edge cases are easy to handle. For example, you can get recovery codes for when you lose or don&amp;rsquo;t have your cellphone. You should store these &amp;ndash; where else? &amp;ndash; in your password safe.&lt;/p&gt;
+
+&lt;p&gt;There seems to be a perception that lots of people think two-factor auth is not convenient. I disagree. I&amp;rsquo;ve never found it inconvenient, and I use two-factor auth a lot. And I&amp;rsquo;ve never met these people, whoever they are, who think two-factor auth is such a high burden. The worst thing that happens to me is that I sometimes have to get out of my chair and get my phone from another room to log in.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, most websites don&amp;rsquo;t support two-factor authentication. Fortunately, many of the most popular and valuable services do, including Facebook, Google, Paypal, Dropbox, LinkedIn, Twitter, and most of the other services that you probably use which are most likely to get compromised. &lt;a href=&#34;http://twofactorauth.org/&#34;&gt;Here is a list of services with two-factor auth&lt;/a&gt;, with instructions on how to set it up for each one.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Please enable two-factor authentication if it is supported!&lt;/strong&gt; I can&amp;rsquo;t tell you how many of my friends and family have had their Gmail, Facebook, Twitter, and other services compromised. Please don&amp;rsquo;t let this happen to you! It could do serious harm to you &amp;ndash; worse than a stolen credit card.&lt;/p&gt;
+
+&lt;p&gt;Another suggestion I&amp;rsquo;ve heard, for websites and services that don&amp;rsquo;t offer strong security and for which you don&amp;rsquo;t want or need to remember or store a password, is to just reset your password every single time you log in. In this way, your email account effectively becomes external authentication, and every password becomes single-use. You click &amp;ldquo;forgot password,&amp;rdquo; check your email, click on the link there, enter some random gibberish (best generated with &lt;code&gt;pwgen 50&lt;/code&gt; or similar) for your &amp;ldquo;new password&amp;rdquo; that you&amp;rsquo;re never going to use again, and log in.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;Secure Your Devices&lt;/h3&gt;
+
+&lt;p&gt;Sooner or later someone is going to get access to one of your devices &amp;ndash; tablet, phone, laptop, thumb drive. I&amp;rsquo;ve never had a phone or laptop lost or stolen myself, but it&amp;rsquo;s a matter of time. I&amp;rsquo;ve known a lot of people in this situation. One of my old bosses, for example, forgot a laptop in the seat pocket of an airplane, and someone took it and didn&amp;rsquo;t return it.&lt;/p&gt;
+
+&lt;p&gt;And how many times have you heard about some government worker leaving a laptop at the coffee shop and suddenly millions of people&amp;rsquo;s Social Security numbers are stolen?&lt;/p&gt;
+
+&lt;p&gt;Think about your phone. If someone stole my phone and it weren&amp;rsquo;t protected, they&amp;rsquo;d have access to a bunch of my accounts, contact lists, email, and a lot of other stuff I really, really do not want them messing with. If you&amp;rsquo;re in the majority of people who leave your phone completely unsecured, think about the consequences for a few minutes. Someone getting access to all the data and accounts on your phone could probably ruin your life for a long time if they wanted to.&lt;/p&gt;
+
+&lt;p&gt;All of this is easily preventable. Given that one or more of your devices will someday certainly end up in the hands of someone who may have bad intentions, I think it&amp;rsquo;s only prudent to take some basic measures:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Set the device to require a password, lock code, or pattern to be used to unlock it after it goes to sleep, when it&amp;rsquo;s idle for a bit, or when you first power it on. If someone steals your device, and can access it without entering your password, you&amp;rsquo;re well and truly screwed.&lt;/li&gt;
+&lt;li&gt;Use full-device encryption. If someone steals your device, for heaven&amp;rsquo;s sake don&amp;rsquo;t let them have access to your data. For Mac users, use File Vault under Preferences / Security and Privacy. Encrypt the whole drive, not just the home directory. On Windows, use &lt;a href=&#34;http://www.truecrypt.org/&#34;&gt;TrueCrypt&lt;/a&gt;, and on Linux, you probably already know what you&amp;rsquo;re doing.&lt;/li&gt;
+&lt;li&gt;On Android tablets and phones, you can encrypt the entire device. You have to set up a screen lock code first.&lt;/li&gt;
+&lt;li&gt;If you use a thumb drive or external hard drive to transfer files between devices, encrypt it.&lt;/li&gt;
+&lt;li&gt;Encrypt your backup hard drives. Backups are one of the most common ways that data is stolen. &lt;em&gt;(You have backups, right? I could write another entire blog post on backups. Three things are inevitable: death, taxes, and loss of data that you really care about.)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Use a service such as &lt;a href=&#34;http://preyproject.com/&#34;&gt;Prey Project&lt;/a&gt; to let you have at least some basic control over your device if it&amp;rsquo;s lost or stolen.  Android phones now have the &lt;a href=&#34;https://www.google.com/android/devicemanager&#34;&gt;Android Device Manager&lt;/a&gt; and &lt;a href=&#34;https://maps.google.com/locationhistory/&#34;&gt;Google Location History&lt;/a&gt;, but you have to enable these.&lt;/li&gt;
+&lt;li&gt;Keep records of your devices&amp;rsquo; make, model, serial number, and so on. Prey Project makes this easy.&lt;/li&gt;
+&lt;li&gt;On your phone or tablet, customize the lockscreen with a message such as &amp;ldquo;user@email.com &amp;#8211; reward if found&amp;rdquo; and on your laptops, stick a small label inside the lid with your name and phone number. You never know if a nice person will return something to you. I know I would do it for you.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;External Links and Resources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://twofactorauth.org&#34;&gt;http://twofactorauth.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/p/24eb09e026dd&#34;&gt;How PayPal and GoDaddy exposed someone to account theft&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.qwertycards.com/strong_passwords.html&#34;&gt;Good advice on common password misconceptions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_6&#34;&gt;Things that don&amp;rsquo;t help&lt;/h3&gt;
+
+&lt;p&gt;Finally, here are some techniques that aren&amp;rsquo;t as useful as you might have been told.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Changing passwords doesn&amp;rsquo;t significantly enhance security unless you change from an insecure password to a strong one. Changing passwords is most useful, in my opinion, when a service has already been compromised or potentially compromised. It&amp;rsquo;s possible on any given day that an attacker has gotten a list of encrypted passwords for a service, hasn&amp;rsquo;t yet been discovered, and hasn&amp;rsquo;t yet decrypted them, and that you&amp;rsquo;ll foil the attack by changing your password in the meanwhile, but this is such a vanishingly small chance that it&amp;rsquo;s not meaningful.&lt;/li&gt;
+&lt;li&gt;(OK, this ended up being a list of 1 thing. Tell me what else should go here.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_7&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;Here is a summary of the most valuable steps you can take to protect yourself:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Get a password safe, and use it for all of your accounts. Protect it with a long password. Make this the &lt;em&gt;one&lt;/em&gt; password you memorize.&lt;/li&gt;
+&lt;li&gt;Use long (as long as possible), randomly generated passwords for all online accounts and services, and &lt;em&gt;never&lt;/em&gt; reuse a password.&lt;/li&gt;
+&lt;li&gt;Use two-factor authentication for all services that support it.&lt;/li&gt;
+&lt;li&gt;Encrypt your hard drives, phones and tablets, and backups, and use a password or code to lock all computers, phones, tablets, etc when you turn them off, leave them idle, or put them to sleep.&lt;/li&gt;
+&lt;li&gt;Install something like Prey Project on your portable devices, and label them so nice people can return them to you.&lt;/li&gt;
+&lt;li&gt;Write down the location and access instructions (including passwords) for your password safe, computer, backup hard drives, etc and put it in a safe deposit box. Friends try not to let friends get hacked and ruined. Don&amp;rsquo;t stop at upgrading your own security. Please tell your friends and family to do it, too!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do you have any other suggestions? Please use the comments below to add your thoughts.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using GPG in Gmail on a Mac</title>
+      <link>http://www.xaprb.com/blog/2013/10/24/using-gpg-in-gmail-on-a-mac/</link>
+      <pubDate>Thu, 24 Oct 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/10/24/using-gpg-in-gmail-on-a-mac/</guid>
+      <description>&lt;p&gt;I used to use the FireGPG extension to encrypt and decrypt text in a browser &amp;ndash; including wikis, for example, where sensitive client information could be stored. It&amp;rsquo;s been a while since I had that need, but recently I wanted to send a GPG-encrypted message to a coworker, and FireGPG has been discontinued for years. I also use a Mac now, and Chrome is my primary browser.&lt;/p&gt;
+
+&lt;p&gt;What to do? I looked around at a few Chrome extensions, but didn&amp;rsquo;t really like them.&lt;/p&gt;
+
+&lt;p&gt;Then &lt;a href=&#34;https://twitter.com/mnxsolutions/status/393178369543520256&#34;&gt;someone&lt;/a&gt; kindly pointed out on Twitter that the GPG suite from &lt;a href=&#34;https://gpgtools.org/&#34;&gt;gpgtools.org&lt;/a&gt; adds &amp;ldquo;services&amp;rdquo; to the right-click menu on a Mac, which enable all sorts of GPG actions on selected text, files, and so on. I had an earlier version of the GPG suite installed, so I upgraded it. (I got an error message about the pin entry application, so I uninstalled and reinstalled, which fixed it.)&lt;/p&gt;
+
+&lt;p&gt;Et voila. Here I&amp;rsquo;m composing a message: &lt;img src=&#34;http://www.xaprb.com/media/2013/10/compose.png&#34; alt=&#34;compose&#34; width=&#34;413&#34; height=&#34;316&#34; class=&#34;aligncenter size-full wp-image-3297&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then I encrypt it: &lt;img src=&#34;http://www.xaprb.com/media/2013/10/encrypt.png&#34; alt=&#34;encrypt&#34; width=&#34;495&#34; height=&#34;680&#34; class=&#34;aligncenter size-full wp-image-3298&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the result: &lt;img src=&#34;http://www.xaprb.com/media/2013/10/encrypted.png&#34; alt=&#34;encrypted&#34; width=&#34;410&#34; height=&#34;473&#34; class=&#34;aligncenter size-full wp-image-3299&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And here I&amp;rsquo;ve decrypted it on the receiving end: &lt;img src=&#34;http://www.xaprb.com/media/2013/10/decrypted.png&#34; alt=&#34;decrypted&#34; width=&#34;554&#34; height=&#34;374&#34; class=&#34;aligncenter size-full wp-image-3300&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not quite as seamless as a plugin would make it, but for occasional use it&amp;rsquo;s more than acceptable.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SSH public-key forwarding</title>
+      <link>http://www.xaprb.com/blog/2006/03/30/ssh-public-key-forwarding/</link>
+      <pubDate>Thu, 30 Mar 2006 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2006/03/30/ssh-public-key-forwarding/</guid>
+      <description>
+
+&lt;p&gt;SSH is one of the most important tools I have. I use it every day to communicate securely between many different computers, and consider it indespensable. In this article I&amp;rsquo;ll show you how to forward your SSH agent to connect from any remote server to any other remote server without putting your private key on either of them.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;First, the concept: &lt;a href=&#34;http://www.openssh.com/&#34;&gt;SSH&lt;/a&gt; is a secure protocol for setting up a communications channel between two computers on a network. This communications channel can act as the &amp;ldquo;carrier&amp;rdquo; for any number of uses. All traffic is encrypted, so you can get a &amp;ldquo;secure line&amp;rdquo; across an insecure network.&lt;/p&gt;
+
+&lt;p&gt;Probably the most familiar usage of SSH is connecting and logging in remotely to another computer. Once logged in, you can use the command line just as though you were sitting at the other computer&amp;rsquo;s terminal. Other uses include secure FTP, secure file copies, secure CVS access, running GUI applications on another computer and forwarding the display to the computer you&amp;rsquo;re working on so it appears to be running on your own computer, and on and on.&lt;/p&gt;
+
+&lt;p&gt;If there&amp;rsquo;s a UNIX or GNU/Linux distribution that doesn&amp;rsquo;t include SSH by default, I&amp;rsquo;ve never heard of it. Even Mac OS X includes it. Microsoft Windows does not, but there&amp;rsquo;s an &lt;em&gt;excellent&lt;/em&gt; free implementation that runs under Windows: &lt;a href=&#34;http://www.chiark.greenend.org.uk/~sgtatham/putty/&#34;&gt;PuTTY&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;No more passwords!&lt;/h3&gt;
+
+&lt;p&gt;One of the really nice things about SSH is that it supports multiple authentication methods. One is passwords. Passwords, though, are one of the least secure and convenient methods of authenticating. Enter public-key authentication: SSH can authenticate me with an encryption key. If I put my public key on &lt;code&gt;someserver&lt;/code&gt;, present my private key to the SSH program and tell it to connect to &lt;code&gt;someserver&lt;/code&gt;, the SSH server on the other end uses my public key to log me in. I never have to type a password.&lt;/p&gt;
+
+&lt;p&gt;All I have to do is generate an encryption key pair. The keys are matched to each other in such a way that anything I encrypt with my private key can only be decrypted with my public key, and vice versa. That&amp;rsquo;s how I can log in without sending my private key to the other server &amp;ndash; my SSH program just encrypts the traffic and sends it, and the server at the other end of the connection can either decrypt it or it can&amp;rsquo;t. If it has my public key available, it can.&lt;/p&gt;
+
+&lt;p&gt;Now, to make it really convenient, I need to load my private key into memory. I use the handy &lt;a href=&#34;http://www.gentoo.org/proj/en/keychain/&#34;&gt;keychain&lt;/a&gt; program to do this. One done, my key is ready for use until I reboot the computer. At my previous employer I used PuTTY on Windows, so I used the Pageant program to load my private key. I also used the excellent free &lt;a href=&#34;http://www.nongnu.org/cvs/&#34;&gt;CVS&lt;/a&gt; client &lt;a href=&#34;http://www.tortoisecvs.org/&#34;&gt;TortoiseCVS&lt;/a&gt; (there&amp;rsquo;s a similar one for &lt;a href=&#34;http://subversion.tigris.org/&#34;&gt;Subversion&lt;/a&gt;, too &amp;ndash; &lt;a href=&#34;http://tortoisesvn.tigris.org/&#34;&gt;TortoiseSVN&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Guess what? No more passwords! Any computer I connect to will just magically log me in, as long as it has my public key. For more information on this, please read the &lt;a href=&#34;http://www.gentoo.org/proj/en/keychain/&#34;&gt;keychain&lt;/a&gt; documentation, especially the IBM DeveloperWorks articles to which it links.&lt;/p&gt;
+
+&lt;p&gt;One thing to watch out for: &lt;strong&gt;don&amp;rsquo;t let anyone have your private key&lt;/strong&gt;. Keep it &lt;em&gt;private&lt;/em&gt; and &lt;em&gt;secure&lt;/em&gt;. Make sure you know which of your keys is the public key and which is the private key. Nobody needs your private key, and you shouldn&amp;rsquo;t have it on any other computer &amp;ndash; you put your &lt;em&gt;public&lt;/em&gt; key on the computers to which you need to connect.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;More convenience: forwarding keys&lt;/h3&gt;
+
+&lt;p&gt;OK, so I&amp;rsquo;ve set everything up. I have put my public key on the two computers I connect to, &lt;code&gt;server1&lt;/code&gt; and &lt;code&gt;server2&lt;/code&gt;. I open a terminal and type &lt;code&gt;ssh server1&lt;/code&gt;. Boom! I&amp;rsquo;m logged in. Then I realize I put a file on &lt;code&gt;server2&lt;/code&gt; and I need it. I&amp;rsquo;m on &lt;code&gt;server1&lt;/code&gt; right now. No problem; I connect via SSH. But wait, &lt;code&gt;server2&lt;/code&gt; asks me for my password! What&amp;rsquo;s this?&lt;/p&gt;
+
+&lt;p&gt;What happened is, I logged into &lt;code&gt;server1&lt;/code&gt; with my private key, but when I tried to connect to &lt;code&gt;server2&lt;/code&gt;, my private key wasn&amp;rsquo;t available to authenticate me. At this point, I might copy my private key to &lt;code&gt;server1&lt;/code&gt;, but that&amp;rsquo;s not the best way to do it. In fact, it&amp;rsquo;s possible to tell SSH to forward my private key to servers when I connect to them. This is in-memory only; the key never gets stored on the disk, so it stays secure. But it&amp;rsquo;s available if it&amp;rsquo;s needed to connect to other servers. This chain of forwarding can go on and on. All I need to do is tell SSH to forward the keys (more strictly, forward the &lt;em&gt;agent&lt;/em&gt;, which has loaded my keys into memory). This is a configuration option, set in the &lt;code&gt;.ssh/config&lt;/code&gt; file on my local computer &amp;ndash; the one I&amp;rsquo;m sitting at:&lt;/p&gt;
+
+&lt;pre&gt;Host *
+ForwardAgent yes&lt;/pre&gt;
+
+&lt;p&gt;That configuration directive tells SSH to forward my SSH agent to all hosts. Voila!&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;Next steps&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;ve covered a lot of ground here, and not really gone into much depth with any of it, but I hope this gives you an idea of how much there is to SSH &amp;ndash; one of those great tools that can be as simple or as complex as you need it to be. I&amp;rsquo;m not even pretending to be an expert; I know I don&amp;rsquo;t know that much about it myself. I only know as much as I&amp;rsquo;m motivated to learn :-)&lt;/p&gt;
+
+&lt;p&gt;While I&amp;rsquo;m on the subject, I want to point out that probably the most widely used implementation of SSH is OpenSSH. It&amp;rsquo;s from the same people that make &lt;a href=&#34;http://www.openbsd.org&#34;&gt;OpenBSD&lt;/a&gt;, a famously secure operating system. And though it is nearly ubiquitous and indispensable, even for Microsoft folks, very little attention goes to the fact that &lt;a href=&#34;http://www.thejemreport.com/mambo/content/view/239/1/&#34;&gt;it&amp;rsquo;s free but nobody really contributes money to it&lt;/a&gt;. The &lt;a href=&#34;http://os.newsforge.com/os/06/03/20/2050223.shtml&#34;&gt;OpenSSH project is painfully underfunded&lt;/a&gt;, and there is widespread discussion about the problems this may cause. &lt;a href=&#34;http://www.openssh.com/donations.html&#34;&gt;I encourage you to donate&lt;/a&gt; something to it, even if it&amp;rsquo;s just ten dollars. It is easily the most underfunded project I can think of, especially considering how much of the world depends on it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to Break Web Software</title>
+      <link>http://www.xaprb.com/blog/2005/11/21/how-to-break-web-software/</link>
+      <pubDate>Mon, 21 Nov 2005 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2005/11/21/how-to-break-web-software/</guid>
+      <description>&lt;p&gt;I recently did a technical review of &lt;a href=&#34;http://www.amazon.com/gp/product/0321369440?ie=UTF8&amp;amp;#038;tag=xaprb-20&amp;amp;#038;link_code=as3&amp;amp;#038;camp=211189&amp;amp;#038;creative=373489&amp;amp;#038;creativeASIN=0321369440&#34;&gt;&lt;em&gt;How to Break Web Software: Functional and Security Testing of Web Applications and Web Services&lt;/em&gt;&lt;/a&gt;, by &lt;a href=&#34;http://www.cs.fit.edu/~jw/&#34;&gt;James A. Whittaker&lt;/a&gt; and &lt;a href=&#34;http://www.foundstone.com/&#34;&gt;Mike Andrews&lt;/a&gt;. My thoughts: it&amp;rsquo;s well worth reading.&lt;/p&gt;
+
+&lt;p&gt;Though what I reviewed wasn&amp;rsquo;t yet a final draft (my job was to help find technical and other errors, make suggestions on organizing the information and so forth), the content was (mostly) all there. I own other work by Whittaker, and I encourage anyone who&amp;rsquo;s interested to read this book when it&amp;rsquo;s published. It is appropriate for a variety of audiences. I will not recommend anything to anyone &amp;ndash; I don&amp;rsquo;t want to be in the position of giving advice, for several reasons &amp;ndash; but allow me to &amp;ldquo;suggest that you consider owning a copy&amp;rdquo; if you make things people will view with a web browser. Here&amp;rsquo;s a sampling of folks for whom I consider this book especially relevant:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a tester&lt;/li&gt;
+&lt;li&gt;a programmer&lt;/li&gt;
+&lt;li&gt;a team leader or manager&lt;/li&gt;
+&lt;li&gt;a creative copywriter&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Security is everyone&amp;rsquo;s job, and basic understanding of how security can be violated will change the way you think. It&amp;rsquo;s a good thing.&lt;/p&gt;
+
+&lt;p&gt;I am not paid for this veiled endorsement. It is unsolicited, but approved by the authors :^).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to exploit an insecure order of access to resources</title>
+      <link>http://www.xaprb.com/blog/2005/11/03/insecure-default-order-of-access-to-resources/</link>
+      <pubDate>Thu, 03 Nov 2005 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2005/11/03/insecure-default-order-of-access-to-resources/</guid>
+      <description>
+
+&lt;p&gt;When gaining access to resources, such as loading a DLL or invoking a program, beware of default order of access. Insecure defaults can result in using the wrong resource. I find this particularly a problem on the Microsoft platform. Here are two cases where the Microsoft approach, designed to &amp;ldquo;make it easy,&amp;rdquo; ends up making it insecure instead.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Invoking an executable program&lt;/h3&gt;
+
+&lt;p&gt;If you do not specify the absolute location of the executable, where does the OS look for it? In Microsoft Windows, the search path is first in the current directory, then in the $PATH environment variable. This leads to a very easy exploit: find out the current directory, then place a compromised executable in that location, named the same as a standard executable like notepad.exe. Now when the user types &lt;kbd&gt;notepad file.txt&lt;/kbd&gt;, the fake &amp;ldquo;notepad&amp;rdquo; executes and does whatever it wants.&lt;/p&gt;
+
+&lt;p&gt;UNIX solves this problem by forcing you to explicitly specify &amp;ldquo;I mean the executable in the current directory.&amp;rdquo; If you want to execute &lt;kbd&gt;prog&lt;/kbd&gt; in the current directory, you must type &lt;kbd&gt;./prog&lt;/kbd&gt;. Otherwise the search path is in $PATH only. You can override this by adding &amp;ldquo;.&amp;rdquo; to $PATH, but only a very foolish user would do that.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;The .NET Global Application Cache&lt;/h3&gt;
+
+&lt;p&gt;The Microsoft .NET platform&amp;rsquo;s Global Application Cache (GAC) is often misunderstood and misused. I attribute this to under-skilled developers having access to powerful programming tools. (I continue to believe programming should NOT be &amp;ldquo;made easy.&amp;rdquo; This is one way security flaws happen.) I think these under-educated programmers are very likely to misuse the GAC and leave openings for exploits like the one I just demonstrated. In my personal experience, I&amp;rsquo;ve seen quite a few people use the GAC just because they can, when in fact what they are putting in the GAC should NOT be made available to every application, and should just be put in the local directory with the executable.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;Loading a library&lt;/h3&gt;
+
+&lt;p&gt;Again, by default the OS looks for libraries in the same directory as the executable. If you want to force an executable to load a tainted library instead of a system-provided DLL, all you have to do is place a bogus file in the executable&amp;rsquo;s directory. You can protect yourself from this by always installing the DLL in the executable&amp;rsquo;s directory and not allowing it to look in the system&amp;rsquo;s own directories, but then you lose the benefit of sharing code between applications.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;How to break Internet Explorer&amp;rsquo;s content rating system&lt;/h3&gt;
+
+&lt;p&gt;Here is a simple exploit that demonstrates the above technique by breaking Internet Explorer&amp;rsquo;s rating defaults (thanks to James Whittaker for showing me this).&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open Internet Explorer and view any website, such as Google&amp;rsquo;s homepage.&lt;/li&gt;
+&lt;li&gt;Enable Content Advisor and block Google.
+
+&lt;ol&gt;
+&lt;li&gt;Open the Tools:Internet Options dialog, and click on the Content tab.&lt;/li&gt;
+&lt;li&gt;Click on &amp;ldquo;Enable&amp;rdquo; to turn Content Advisor on.&lt;/li&gt;
+&lt;li&gt;It will ask you for a username and password; enter some values you can easily remember. The point here is simply to turn the Content Advisor on, not to try to crack the password you enter.&lt;/li&gt;
+&lt;li&gt;Once you have enabled it, click on Settings (it will ask for your password again).&lt;/li&gt;
+&lt;li&gt;Enter www.google.com into your list of disapproved sites by typing the address into the &amp;ldquo;Allow this Web site&amp;rdquo; box, then clicking &amp;ldquo;Never.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;You have now blocked Google.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Restart IE and try to view Google&amp;rsquo;s homepage. Content Advisor should block it.&lt;/li&gt;
+&lt;li&gt;Block IE&amp;rsquo;s access to the DLL that implements Content Advisor, thereby disabling the functionality.
+
+&lt;ol&gt;
+&lt;li&gt;IE uses msrating.dll to implement Content Advisor. This is a system DLL, so we can force IE to try to load the DLL from the wrong location by putting a file called msrating.dll in the IE executable&amp;rsquo;s directory.&lt;/li&gt;
+&lt;li&gt;Create a bogus &amp;ldquo;DLL&amp;rdquo; in &lt;code&gt;c:\Program Files\Internet Explorer&lt;/code&gt; with the following command in the Run dialog: &lt;code&gt;notepad c:\program files\Internet Explorer\msrating.dll&lt;/code&gt;. Notepad will say the file does not exist, and ask if you want to create it. Say Yes, and save the file (you can put something in it or leave it empty, it doesn&amp;rsquo;t matter).&lt;/li&gt;
+&lt;li&gt;As James Whittaker says, who knew it was so easy to write a DLL?&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Restart Internet Explorer and go to Google&amp;rsquo;s homepage. It will NOT block access to the site, indicating that when IE tried to load msrating.dll it failed (because it tried to load a text file, thinking it was a DLL!). The Content Advisor functionality is not available, as you can see by opening the Internet Options dialog and noticing the Content Advisor settings are grayed out.&lt;/li&gt;
+&lt;li&gt;When you are finished amazing your friends and coworkers, you should delete the bogus msrating.dll file.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

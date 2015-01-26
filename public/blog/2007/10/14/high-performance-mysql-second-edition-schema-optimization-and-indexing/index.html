@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> High Performance MySQL, Second Edition: Schema Optimization and Indexing &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>High Performance MySQL, Second Edition: Schema Optimization and Indexing</h1>
+  <span class="post-date">Sun, Oct 14, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>I&rsquo;ve been trying to [circle back][1] and clean up things I left for later in several chapters of High Performance MySQL, second edition. This includes a lot of material in chapter 4, Schema Optimization and Indexing. At some point I&rsquo;ll write more about the process of writing this book, and what we&rsquo;ve done well and what we&rsquo;ve learned to do better, but for right now I wanted to complete the picture of what material we have on schema, index, and query optimization. The last two chapters I&rsquo;ve written about ([Query Performance Optimization][2] and [Advanced MySQL Features][3]) have generated lots of feed back along the lines of &ldquo;don&rsquo;t forget X!&rdquo; to which I&rsquo;m obliged to reply &ldquo;It&rsquo;s in a different chapter.&rdquo;</p>
+
+<p>The truth is, it&rsquo;s difficult to separate these topics sensibly. I&rsquo;d like to do it in the mythical &ldquo;perfect&rdquo; way that serializes into a nice narrative without cross-references, but even the perfectionist in me wilts under the glare of deadlines. As a result, I don&rsquo;t know if it&rsquo;s really possible for us to completely avoid cross-references. (I do know there&rsquo;s room for improvement in how we&rsquo;ve arranged the material, but I&rsquo;ve spent a lot of the day today trying to de-dupe some topics we wrote about in two places, and I&rsquo;m coming to appreciate that re-organizing is an extraordinary amount of work, especially in OpenOffice.org &ndash; but more on that later).</p>
+
+<p>All this is a preface to the following sentence: schema, indexing, advanced features, and query optimization are intermingled to some extent in the three chapters, even though we tried to separate the topics sensibly. I haven&rsquo;t yet taken some of the suggestions I got in comments on the last chapter I posted. Like I said, reorganizing is a lot of work :-)</p>
+
+<p>Here&rsquo;s the outline. I have the same kinds of questions as before: what are we forgetting, do you have any questions or topics you&rsquo;d like us to cover, etc? Comments are welcome.</p>
+
+<p>[<strong>Update</strong>: I forgot to mention the vital statistics. So far it&rsquo;s about 55 pages printed.]</p>
+
+<pre>[Intro]
+Choosing Optimal Data Types
+Indexing Basics
+Normalization and Denormalization
+Notes on Storage Engines
+</pre>
+
+<p>Here&rsquo;s a snippet of &ldquo;what it&rsquo;s like to write this book&rdquo; that I&rsquo;ll throw out there. OpenOffice.org, at least the version I&rsquo;m using, doesn&rsquo;t like O&rsquo;Reilly&rsquo;s custom heading styles and won&rsquo;t show me an outline view of the document. I&rsquo;m copying and pasting into this blog post by scrolling from one heading to the next. This is always enlightening, because as you can see a lot of the material isn&rsquo;t organized correctly in the hierarchy. Guess what, it&rsquo;s my first look at the chapter&rsquo;s real outline, too! This isn&rsquo;t the outline we planned to have, but the chapter evolved because of making localized changes without any real way to zoom out and make sure the outline still made sense. So my two comments on this are a) OpenOffice.org hasn&rsquo;t been the most helpful tool in some ways and b) these blog posts are, to some extent, airing the project&rsquo;s dirty laundry (illogical outlining, difficult separation of material among chapters, etc). I&rsquo;m not afraid of that; I think it&rsquo;s healthy and will help the book be better as a result. I guess my experience with open source, combined with my employer&rsquo;s open-books policy, has taught me to embrace transparency instead of fearing it. In the end this material will be organized and make a lot of sense, but that&rsquo;s a process of evolution &ndash; not intelligent design.</p>
+
+<p>As I said, at some point I&rsquo;ll write more about the process of writing. It&rsquo;s been educational, and most bloggers I know who&rsquo;ve written a book don&rsquo;t say much about it (they just pop their heads up every now and then to apologize for not blogging). Very briefly: if you dream of writing a book, do it. It helps that my boss and co-workers support me in this venture, but it&rsquo;s worth it regardless.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

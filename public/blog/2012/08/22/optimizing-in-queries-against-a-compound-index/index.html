@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Optimizing IN() queries against a compound index &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Optimizing IN() queries against a compound index</h1>
+  <span class="post-date">Wed, Aug 22, 2012 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>Unfortunately, MySQL 5.5 doesn&rsquo;t generate a very good query execution plan for IN() queries against a compound (multi-column) index, such as the following query that should be able to use the 2-column primary key:</p>
+
+<pre>
+explain select * from tbl1
+where (col1, col2) in (
+      (732727758,102),(732728118,102),(732728298,102),(732728478,102),
+      (732735678,102),(962074728,102),(964153098,102),(2027956818,102),
+      (2034233178,102),(2034233538,102))\G
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: tbl1
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 1379
+        Extra: Using where
+</pre>
+
+<p>Queries such as this should usually be rewritten to a form such as the following, which accesses only the 10 rows specified instead of scanning the table:</p>
+
+<pre>
+explain select * from tbl1
+where (col1=732727758 and col2=102)
+   OR (col1=732728118 and col2=102)
+   OR (col1=732728298 and col2=102)
+   OR (col1=732728478 and col2=102)
+   OR (col1=732735678 and col2=102)
+   OR (col1=962074728 and col2=102)
+   OR (col1=964153098 and col2=102)
+   OR (col1=2027956818 and col2=102)
+   OR (col1=2034233178 and col2=102)
+   OR (col1=2034233538 and col2=102)\G
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: tbl1
+         type: range
+possible_keys: PRIMARY
+          key: PRIMARY
+      key_len: 10
+          ref: NULL
+         rows: 10
+        Extra: Using where
+</pre>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

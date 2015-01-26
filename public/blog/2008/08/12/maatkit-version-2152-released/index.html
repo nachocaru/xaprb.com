@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Maatkit version 2152 released &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Maatkit version 2152 released</h1>
+  <span class="post-date">Tue, Aug 12, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      <p><a href="http://www.maatkit.org/">Maatkit</a> version 2152 is ready for download. This release is also known as the &ldquo;is this project really alive?&rdquo; release. We thought we should delay until <a href="http://www.mysqlperformanceblog.com/2008/08/08/new-mysql-community-release-great-job-mysql/">MySQL released a new Community Server version</a>. Just kidding &ndash; it has nothing to do with that.</p>
+
+<p>This release is also very significant in that it&rsquo;s the first one that has large code contributions by someone other than myself. As you may know, <a href="http://www.percona.com/">Percona</a> (my employer) has hired the <a href="http://hackmysql.com/">very talented Daniel Nichter, author of mysqlreport and other goodies</a>, to help with Maatkit. So far it is a match made in heaven, and Daniel did most of the coding for this release.</p>
+
+<p>This is also our first release since <a href="http://develooper.com/">Ask</a> helped me move the project (thank you Ask!) to Google Code. That means you finally get a decent interface for entering issues, etc, etc. The only thing remaining on Sourceforge at this point is the online documentation, which I will probably move to maatkit.org soon. But more importantly, it means the developers have a decent interface for issues, etc etc. <a href="http://sourceforge.net/tracker/?func=detail&amp;#038;aid=1855476&amp;#038;group_id=1&amp;#038;atid=350001">Sourceforge is just a bloody nightmare &ndash; their site keeps getting harder and harder to use</a>, both as a developer and as a user. It had gotten to the point where simply adding the files to the site for download would take me hours. I tried to automate it, in true Perl fashion, but their make-a-release forms resisted my every effort. I cannot say what a relief it is to have usable project hosting that gets out of my way and lets me work. A double thanks to Ask for pushing me over the edge on this &ndash; it had been on my mind a long time. And thanks to Google, too, for a great project management interface.</p>
+
+<p>Also note that the Sourceforge forums and mailing lists are dead. Google Groups is the preferred replacement.</p>
+
+<p>Keep reporting those bugs and feature requests!</p>
+
+<p>As you might expect, the changelog for such a long release cycle is, er, large. There&rsquo;s a lot of new stuff here. I&rsquo;d like to highlight the new features in mk-parallel-dump and mk-parallel-restore &ndash; which I just used to reduce a job that would have taken weeks down to mere days &ndash; and a lot of new code in mk-table-sync, as well as the up-and-coming mk-audit, which is in release-early/often mode.</p>
+
+<pre>Changelog for mk-archiver:
+
+2008-08-11: version 1.0.10
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * Added more information to --statistics and changed --whyquit slightly.
+
+Changelog for mk-audit:
+
+2008-08-11: version 0.9.1
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * Added useful functionality.
+
+Changelog for mk-deadlock-logger:
+
+2008-08-11: version 1.0.11
+
+   * Files downloaded directly from SVN crashed due to version information.
+
+Changelog for mk-duplicate-key-checker:
+
+2008-08-11: version 1.1.7
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * Full-text indexes were not treated specially (issue 10).
+
+Changelog for mk-fifo-split:
+
+2008-08-11: version 1.0.1
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * Added --offset option.
+   * --statistics didn't calculate lines/sec properly.
+   * Removed --sleep; EOF doesn't mean anything to a non-terminal.
+
+Changelog for mk-find:
+
+2008-08-11: version 0.9.12
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * Added --exec_dsn so you can execute SQL on a different server.
+
+Changelog for mk-heartbeat:
+
+2008-08-11: version 1.0.10
+
+   * Files downloaded directly from SVN crashed due to version information.
+
+Changelog for mk-parallel-dump:
+
+2008-08-11: version 1.0.9
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * Added --progress option.
+   * CHANGE MASTER TO in 00_master_data.sql used the I/O thread position.
+   * Added features to permit resuming of dumps.
+   * --age without --sets did the opposite of what it should (isssue 7)
+   * --stopslave died after complaining the slave was not running.
+
+Changelog for mk-parallel-restore:
+
+2008-08-11: version 1.0.8
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * Added --progress option.
+
+Changelog for mk-query-profiler:
+
+2008-08-11: version 1.1.11
+
+   * Files downloaded directly from SVN crashed due to version information.
+
+Changelog for mk-show-grants:
+
+2008-08-11: version 1.0.11
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * Anonymous users were not permitted (issue 28).
+
+Changelog for mk-slave-delay:
+
+2008-08-11: version 1.0.8
+
+   * Files downloaded directly from SVN crashed due to version information.
+
+Changelog for mk-slave-find:
+
+2008-08-11: version 1.0.2
+
+   * Files downloaded directly from SVN crashed due to version information.
+
+Changelog for mk-slave-move:
+
+2008-08-11: version 0.9.2
+
+   * The -m option was not recognized as an alias for --timeout.
+   * Files downloaded directly from SVN crashed due to version information.
+
+Changelog for mk-slave-prefetch:
+
+2008-08-11: version 1.0.3
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * Added the --numprefix option for use in sharded data stores.
+   * The Rotate binary log event type was not handled.
+
+Changelog for mk-slave-restart:
+
+2008-08-11: version 1.0.8
+
+   * Files downloaded directly from SVN crashed due to version information.
+
+Changelog for mk-table-checksum:
+
+2008-08-11: version 1.1.28
+
+   * Files downloaded directly from SVN crashed due to version information.
+
+Changelog for mk-table-sync:
+
+2008-08-11: version 1.0.8
+
+   * Files downloaded directly from SVN crashed due to version information.
+   * --synctomaster did not abort when unable to discover the master.
+   * An error waiting for the master to catch up caused other tables to fail.
+   * Added --bufferinmysql to help make GroupBy algorithm more efficient.
+   * Added safety checks to prevent changing data on a slave server.
+   * Added --skipslavecheck to prevent safety checks on destination server.
+   * Made the GroupBy algorithm the default replacement for Stream.
+   * Added the GroupBy algorithm, which can sync tables without unique keys.
+   * Syncing could stop and leave a row to delete in the destination.
+   * Generate command-line help from the POD.
+
+Changelog for mk-visual-explain:
+
+2008-08-11: version 1.0.9
+
+   * Files downloaded directly from SVN crashed due to version information.
+</pre>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

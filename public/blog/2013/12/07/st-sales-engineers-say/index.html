@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> S**t sales engineers say &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>S**t sales engineers say</h1>
+  <span class="post-date">Sat, Dec 7, 2013 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>Here&rsquo;s a trip down memory lane. I was just cleaning out some stuff and I found some notes I took from a hilarious MySQL seminar a few years back. I won&rsquo;t say when or where, to protect the guilty.[1]</p>
+
+<p>I found it so absurd that I had to write down what I was witnessing. Enough time has passed that we can probably all laugh about this now. Times and people have changed.</p>
+
+<p>The seminar was a sales pitch in disguise, of course. The speakers were singing Powerpoint Karaoke to slides real tech people had written. Every now and then, when they advanced a slide, they must have had a panicked moment. &ldquo;I don&rsquo;t remember this slide at all!&rdquo; they must have been thinking. So they&rsquo;d mumble something really funny and trying-too-hard-to-be-casual about &ldquo;oh, yeah, [insert topic here] but you all already know this, I won&rsquo;t bore you with the details [advance slide hastily].&rdquo; It&rsquo;s strange how transparent that is to the audience.</p>
+
+<p>Here are some of the things the sales &ldquo;engineers&rdquo; said during this seminar, in response to audience questions:</p>
+
+<ul>
+<li>Q. How does auto-increment work in replication? A: On slaves, you have to ALTER TABLE to remove auto-increment because only one table in a cluster can be auto-increment. When you switch replication to a different master you have to ALTER TABLE on all servers in the whole cluster to add/remove auto-increment. (This lie was told early in the day. Each successive person who took a turn presenting built upon it instead of correcting it. I&rsquo;m not sure whether this was admirable teamwork or cowardly face-saving.)</li>
+<li>Q. Does InnoDB&rsquo;s log grow forever? A: Yes. You have to back up, delete, and restore your database if you want to shrink it.</li>
+<li>Q. What size sort buffer should I have? A: 128MB is the suggested starting point. You want this sucker to be BIG. </ul></li>
+</ul>
+
+<p>There was more, but that&rsquo;s enough for a chuckle. Note to sales engineers everywhere: beware the guy in the front row scribbling notes and grinning.</p>
+
+<p>What are your best memories of worst sales engineer moments?</p>
+
+<p><em>1. For the avoidance of doubt, it was NOT any of the trainers, support staff, consultants, or otherwise anyone prominently visible to the community. Nor was it anyone else whose name I&rsquo;ve mentioned before. I doubt any readers of this blog, except for former MySQL AB employees (pre-Sun), would have ever heard of these people. I had to think hard to remember who those names belonged to.</em></p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> The bigger they are, the harder they fall &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>The bigger they are, the harder they fall</h1>
+  <span class="post-date">Mon, Apr 25, 2011 in
+		
+		<a href="/categories/Commentary" class="btn btn-primary">Commentary</a>
+		
+  </span>
+      <p>I see that a lot of people just don&rsquo;t get it when they start talking about high availability, redundancy, failover, etc. This is probably not going to change, but maybe I can try anyway.</p>
+
+<p>Let&rsquo;s think about how you can survive a massive Amazon AWS failure. You build your application to automatically move services to another part of the infrastructure that&rsquo;s still up. Great! Now assume that everyone else is smart, too. Their applications move, too. What happens next?</p>
+
+<p>The whole AWS cloud melts to the ground. Have you never seen this happen, where one instance of something fails and others pick up the load and fail in turn? I have. OK, so let&rsquo;s say that you&rsquo;re really smart, and you also have the ability to move to an entirely different provider. Now suppose that other people are smart too. Next stop &ndash; Rackspace Cloud is down, and so is Joyent, and so on.</p>
+
+<p>You can&rsquo;t just pretend that &ldquo;the cloud&rdquo; is infinite. It isn&rsquo;t. Stop trying! In &ldquo;the cloud,&rdquo; you still have to do capacity planning, even though it&rsquo;s <a href="http://www.xaprb.com/blog/2010/06/01/under-provisioning-the-curse-of-the-cloud/">hard or impossible</a>, and you still have to think about the possibility that the resources you assume are there aren&rsquo;t. Let&rsquo;s think about cloud computing&rsquo;s older name &ndash; utility computing. Can you think of any utilities that have had capacity shortages, brownouts, or even cascading failures? I worked a bunch of case studies on them in my engineering classes, but I also lived through some of them myself.</p>
+
+<p>This is why some old-fashioned, stupid, clueless people still own their own hardware. Those dumb clod-jumpers aren&rsquo;t hip enough to move into the cloud where everything is magical. I bet they have kerosene lanterns for when the lights go out, too.</p>
+
+<p>With economies of scale come failures at scale. You can&rsquo;t have it both ways.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

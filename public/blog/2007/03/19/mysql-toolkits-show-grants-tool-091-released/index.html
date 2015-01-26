@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> MySQL Toolkit&#39;s Show Grants tool 0.9.1 released &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>MySQL Toolkit&#39;s Show Grants tool 0.9.1 released</h1>
+  <span class="post-date">Mon, Mar 19, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      
+
+<p>MySQL Toolkit&rsquo;s Show Grants tool can now separate grants into individual statements, convert them into <code>REVOKE</code> statements, and help you remove users from a server, even if your server doesn&rsquo;t support <code>DROP USER</code>.</p>
+
+<h3 id="toc_0">Changes</h3>
+
+<p>The comment on my last post, combined with my need to revoke some grants today on a server that accidentally got grants replicated to it, prompted me to add more functionality to this tool. It can now:</p>
+
+<ul>
+<li>Separate grants into individual statements, one grant per line. Instead of a line with <code>GRANT SELECT, INSERT...</code> you can now see one line for each grant, if you wish. This makes it easier to pipe the output through other tools to select only the grants you want, and actually makes the output more diff-friendly too.</li>
+<li>Convert <code>GRANT</code> statements into equivalent <code>REVOKE</code> statements (also one at a time if you wish). This makes it easier to remove specific grants from a user.</li>
+<li>Add <code>DROP USER</code> and other statements to help you completely remove a user&rsquo;s account. MySQL historically has three ways to do this. In recent versions you can just say <code>DROP USER</code> and it gets rid of the user and all the user&rsquo;s grants. In older versions this command didn&rsquo;t remove the grants, so you still had to manually remove those &ndash; a tedious process. And in even older versions there&rsquo;s no <code>DROP USER</code> command at all; you have to <code>REVOKE</code> everything, then <code>DELETE</code> from the user table and <code>FLUSH PRIVILEGES</code>. The tool now has options to create these statements for you.</li>
+</ul>
+
+<h3 id="toc_1">The temptation I resisted</h3>
+
+<p>I had to resist the temptation to add more options, for example to entirely remove the <code>GRANT</code> statements so the tool will merely output the statements required to remove a user. But I think that&rsquo;s feature creep; you can easily pipe the output through <code>grep -v &quot;^GRANT&quot;</code> and do it yourself.</p>
+
+<p>Still, if you&rsquo;d find this or other features useful, let me know.</p>
+
+<h3 id="toc_2">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>. Other tools in the toolkit include a table checksummer and a duplicate key checker.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

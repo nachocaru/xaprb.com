@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Version 0.1.154 of innotop released &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Version 0.1.154 of innotop released</h1>
+  <span class="post-date">Sat, Oct 21, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      
+
+<p>I recently published an article on O&rsquo;Reilly about monitoring tools for MySQL. Of course I believe <a href="http://www.xaprb.com/innotop/">innotop</a> is the best in its class, so I mentioned it. But I also recently added some features to innotop, and made a stability fix too.</p>
+
+<h3 id="toc_0">Innotop upgrade: new features, stability</h3>
+
+<p>Now you can easily monitor open tables with innotop. Just get the latest version (your configuration file will be upgraded seamlessly) and press the &lsquo;O&rsquo; key (that&rsquo;s capital &ldquo;oh&rdquo;).</p>
+
+<p>This can be useful when a table is in use by a query, and things are timing out with a lock wait, yet you can&rsquo;t find any transaction that has a lock. At least you can see which table (of potentially many accessed by a query) is causing the problem.</p>
+
+<p>There&rsquo;s a default filter to only show tables in use by one or more queries. As always, press the &lsquo;w&rsquo; key to add or remove &lsquo;where&rsquo; clauses (regular expression filters) on any column in the display. Press &lsquo;c&rsquo; to choose columns, and &rsquo;s&rsquo; to choose a sort column. Press &lsquo;r&rsquo; to reverse sort. Press &lsquo;$&rsquo; to see every configuration variable relevant to this screen, and &lsquo;?&rsquo; to see every key mapping for this screen.</p>
+
+<p>I&rsquo;m also continuing on the epic quest to make innotop handle basically any crap input you throw at it. Since the output of <code>SHOW INNODB STATUS</code> can be truncated right in the middle of something due to it being large, this means the InnoDBParser module might return hashes with half the expected keys, or keys whose values are undefined, and so forth. It may sound easy to handle this, until you realize the sheer size and complexity of the data in the status monitor. Checking each and every thing for complete and defined values (and providing defaults if something is missing) is tedious, and I hate to do it because it makes the code messy, but it&rsquo;s a necessary evil. If you have problems with innotop crashing, please send me a crash report (<a href="http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/">see this article to find out what information I need</a>). The good news is I haven&rsquo;t received a crash report in a long time now, so perhaps it&rsquo;s getting pretty good at &ldquo;garbage in, useful information out.&rdquo;</p>
+
+<h3 id="toc_1">Article on O&rsquo;Reilly Network</h3>
+
+<p>O&rsquo;Reilly just published my article on <a href="http://www.oreillynet.com/pub/a/mysql/2006/10/19/mysql-tools.html">Open Tools for MySQL Administrators</a>, where I discuss the tools I&rsquo;ve found useful for monitoring MySQL. I&rsquo;ve learned a good bit from writing this, such as how to spell Giuseppe Maxia&rsquo;s name right (apparently it&rsquo;s pretty common to misspell it, my apologies for adding to that).</p>
+
+<p>I am also watching the comments with interest. Someone has already mentioned a tool I didn&rsquo;t know existed, <a href="http://jfontain.free.fr/mysql/">moodss</a>. It is a modular system for monitoring lots of things, with what looks like very nice MySQL monitoring functionality. I haven&rsquo;t tried it, but I&rsquo;m strongly considering installing it at work next week. I&rsquo;ll let you know what I think.</p>
+
+<p>I also got to work with chromatic &ndash; he edited the article. It&rsquo;s a pleasure to be supported by someone so knowledgeable. In case you don&rsquo;t know, chromatic is a great Perl programmer and has written a book on Extreme Programming.</p>
+
+<h3 id="toc_2">Miscellaneous</h3>
+
+<p>Someone sent me a message about a particular module I used in my <a href="http://www.xaprb.com/mysql-query-profiler/">MySQL Query Profiler tool</a> for debugging purposes. Apparently, when I took out all the places I actually used it but didn&rsquo;t remove the reference to the module, it caused some earlier versions of Perl to complain. I fixed that too.</p>
+
+<p>Stay tuned for more goodness to come! At some point I&rsquo;ll finish some of my 65 draft articles and publish them. Yep, I have 65 articles in various states of completion&hellip;! Yikes. You can <a href="http://www.xaprb.com/index.xml">subscribe</a> if you want to be notified as soon as I publish anything new.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

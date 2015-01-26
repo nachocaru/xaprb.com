@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Try mk-query-advisor, a new Maatkit tool &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Try mk-query-advisor, a new Maatkit tool</h1>
+  <span class="post-date">Tue, Mar 16, 2010 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      <p><a href="http://www.maatkit.org/">We</a> have an early draft of a new tool available for you to use and test. It uses heuristics to find problems in SQL. Please use it and give feedback! Here&rsquo;s how:</p>
+
+<pre>$ wget http://www.maatkit.org/trunk/mk-query-advisor
+$ perl mk-query-advisor /var/log/mysql/slow.log
+</pre>
+
+<p>By default it consumes a log file in MySQL&rsquo;s slow query log format, but it can also parse the general-log format, and if you have any other kind of log you can feed it through mk-query-digest to transform the log into something it can recognize. Tell me if you&rsquo;d be able to spot the mixture of join styles and use of leading % wildcards in the following query without help:</p>
+
+<pre>
+# Query ID 0x643E813A9ABDA151 at byte 2001701
+# CRIT JOI.001 Mixing comma and ANSI joins.
+# WARN ARG.001 Argument with leading wildcard.
+SELECT `rhubarb_series_title`.`id`, `rhubarb_series_title`.`series_id`,
+`rhubarb_series_title`.`title`, `rhubarb_series_title`.`url`,
+`rhubarb_series_title`.`type`, `rhubarb_series`.`id`, `rhubarb_series`.`title`,
+`rhubarb_series`.`alt_title`, `rhubarb_series`.`url`, `rhubarb_series`.`aka`,
+`rhubarb_series`.`author`, `rhubarb_series`.`artist`,
+`rhubarb_series`.`summary`, `rhubarb_series`.`logo`,
+`rhubarb_series`.`logo_updated`, `rhubarb_series`.`us_publisher`,
+`rhubarb_series`.`jp_publisher`, `rhubarb_series`.`start_date`,
+`rhubarb_series`.`official_website`, `rhubarb_series`.`create_time`,
+`rhubarb_series`.`modify_time`, `rhubarb_series`.`poster_id`,
+`rhubarb_series`.`note`, `rhubarb_series`.`status`,
+`rhubarb_series`.`status_note`, `rhubarb_series`.`suspended`,
+`rhubarb_series`.`licensed`, `rhubarb_series`.`warning`,
+`rhubarb_series`.`no_ads`, `rhubarb_series`.`orientation`,
+`rhubarb_series`.`gen_js`, `rhubarb_series`.`image_pre`,
+`rhubarb_series`.`views`, `rhubarb_series`.`rank`,
+`rhubarb_series`.`last_chapter`, `rhubarb_series`.`last_updated`,
+`rhubarb_series`.`bookmark_count`, `rhubarb_series`.`ad_pre`, `auth_user`.`id`,
+`auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`,
+`auth_user`.`email`, `auth_user`.`password`, `auth_user`.`is_staff`,
+`auth_user`.`is_active`, `auth_user`.`is_superuser`, `auth_user`.`last_login`,
+`auth_user`.`date_joined` FROM `rhubarb_series_title` INNER JOIN
+`rhubarb_series` AS `rhubarb_series_title__series` ON
+`rhubarb_series_title`.`series_id` = `rhubarb_series_title__series`.`id` ,
+`rhubarb_series`,  `auth_user` WHERE (`rhubarb_series_title__series`.`suspended`
+= 0 AND `rhubarb_series_title__series`.`author` LIKE '%onetwo%' AND
+`rhubarb_series_title__series`.`author` LIKE '%threefour%') AND
+`rhubarb_series_title`.`series_id` = `rhubarb_series`.`id` AND
+`rhubarb_series`.`poster_id` = `auth_user`.`id`
+</pre>
+
+<p>Yes, that&rsquo;s a real query, slightly obfuscated.</p>
+
+<p>If you find bugs, <a href="http://code.google.com/p/maatkit/issues/list">report them</a>. If you find a &ldquo;bad query&rdquo; that doesn&rsquo;t trigger any heuristic, <a href="http://code.google.com/p/maatkit/issues/list">report that too</a>. We&rsquo;re only getting started, but I feel sure that this tool will become a sort of best-practices advisor as we make it more capable. The Google Code issue tracker has <a href="http://code.google.com/p/maatkit/issues/detail?id=861">a full initial spec</a>, and <a href="http://code.google.com/p/maatkit/wiki/mk_query_advisor">the wiki has a roadmap</a>.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Automatic image captions with unobtrusive JavaScript &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Automatic image captions with unobtrusive JavaScript</h1>
+  <span class="post-date">Sun, Oct 29, 2006 in
+		
+		<a href="/categories/Web" class="btn btn-primary">Web</a>
+		
+  </span>
+      
+
+<p class="demo">
+  <a href="/media/2006/10/automatic-image-captions.html">View the Demo</a>
+</p>
+
+<p>You&rsquo;ve probably heard of unobtrusive JavaScript. It&rsquo;s a simple technique that lets you create richer documents without cluttered markup or accessibility problems. I often see link decoration and drop-shadow effects done with unobtrusive JavaScript. How about unobtrusive image captions? Instead of writing a caption into the page, let JavaScript do it. In this article I&rsquo;ll show you how simple this can be.</p>
+
+<h3 id="toc_0">The idea</h3>
+
+<p>How often have you seen websites that use a <code>table</code> or a <code>div</code> to enclose an image and some text to create a &ldquo;captioned&rdquo; image? Far too often, I&rsquo;d guess. Semantically speaking, though, nothing in the markup actually associates the image and the &ldquo;caption&rdquo; &ndash; this isn&rsquo;t a good way to give an image a caption. Until HTML itself actually has a true mechanism for a captioned image, or until someone makes a <a href="http://www.xaprb.com/blog/2006/08/30/why-you-should-take-microformats-seriously/">microformat</a> for it, you may be better off taking the path of compromise between richness and semantic content.</p>
+
+<p>That compromise, in my view, is using unobtrusive JavaScript to add richness to the site after it is loaded. The document is delivered to the browser in plain-Jane fashion, then altered after the browser loads it. The end result is no more semantic than hard-coding all the extra markup, but it&rsquo;s a good trade-off in my opinion.</p>
+
+<p>Plus, it makes authoring content <em>much</em> easier. Let&rsquo;s see how.</p>
+
+<h3 id="toc_1">The old way</h3>
+
+<p>Here&rsquo;s typical code you might see to create a &ldquo;captioned&rdquo; image:</p>
+
+<pre>&lt;div style="width:100px"&gt;
+   &lt;img src="treefrog.png" alt="A tree frog"
+      width="100" height="100" /&gt;
+   &lt;p&gt;A tree frog&lt;/p&gt;
+&lt;/div&gt;</pre>
+
+<p>You may also see inline styles, a <code>table</code> instead of a <code>div</code>, and other ugliness.</p>
+
+<h3 id="toc_2">The new way</h3>
+
+<p>The better way to do this is simply eliminate all that redundant typing. What&rsquo;s redundant, you say? Well, the width of the wrapper element and the text of the &ldquo;caption,&rdquo; to mention two things. The image already has a width &ndash; why repeat it in the wrapper element? The image already has a place for associated text in its <code>title</code> attribute &ndash; why write it out again?</p>
+
+<p>Let&rsquo;s strip things down to the bare minimum:</p>
+
+<pre>&lt;img src="treefrog.png" alt="A tree frog"
+      title="A tree frog" class="figure"
+      width="100" height="100" /&gt;</pre>
+
+<p>Does that look minimal to you? If you&rsquo;re thinking the <code>alt</code> attribute and the <code>title</code> attribute are redundant, I disagree. The <code>alt</code> attribute is never to be presented to the user when the image can be presented. It is an alternate representation of the content when the image isn&rsquo;t available. It is not a title for the image. That&rsquo;s why there is a <code>title</code> attribute for images! If it were redundant to the <code>alt</code> attribute, it wouldn&rsquo;t be there.</p>
+
+<p>I propose this as the bare minimum for an image, except for one thing: CSS styling. You may want to use CSS to float your image to the left or right. Nobody wants an ugly break in the text flow for an image. But that&rsquo;s where I&rsquo;ll start with this article.</p>
+
+<h3 id="toc_3">CSS styling</h3>
+
+<p>Time for a demonstration of the starting point. I&rsquo;ll insert two images from <a href="http://www.sxc.hu/">stock.xchng</a>, a great free stock photography site. I&rsquo;ll float one of them left and the other right with the following CSS:</p>
+
+<pre>.left {
+   float: left;
+   margin-right: 5px;
+}
+.right {
+   float: right;
+   margin-left: 5px;
+}</pre>
+
+<p>You can see a <a href="http://www.xaprb.com/media/2006/10/automatic-image-captions-before.html">demonstration here</a>. It&rsquo;s pretty plain, isn&rsquo;t it? But it works. Nothing fancy, but then again you can do a lot with this basic markup. Now let&rsquo;s add some captions to those images.</p>
+
+<h3 id="toc_4">The magic</h3>
+
+<p>It&rsquo;s actually really easy to lift the images out of the page, insert a wrapper element, and put the image back into the wrapper. There are some subtleties, and I&rsquo;ve done a thing or two to make the technique easily extensible. Here&rsquo;s the code:</p>
+
+<pre>function addCaptionsToImages() {
+   wrapImagesInDiv( 'figure', [], [ 'float' ] );
+}
+
+if(typeof window.addEventListener != 'undefined') {
+   window.addEventListener('load', addCaptionsToImages, false);
+}
+else if(typeof document.addEventListener != 'undefined') {
+   document.addEventListener('load', addCaptionsToImages, false);
+}
+else if(typeof window.attachEvent != 'undefined') {
+   window.attachEvent('onload', addCaptionsToImages);
+}
+
+function wrapImagesInDiv( className, attributes, styles ) {
+   var images = document.getElementsByClassName(className);
+   for ( var i = 0; i &lt; images.length; ++i ) {
+      var img = images[i];
+      // Lift the image out of the page and insert a div under it.
+      var parent = img.parentNode;
+      var frame = document.createElement('div');
+      var txt = document.createTextNode(img.getAttribute('title'));
+      parent.insertBefore(frame, img);
+      parent.removeChild(img);
+      frame.appendChild(img);
+      frame.appendChild(txt);
+      // These are special cases.  We always copy these from the image to the
+      // div.
+      frame.style.width = img.getAttribute('width') + 'px';
+      frame.className = img.className;
+      // Copy specified attributes and style properties from the image to the
+      // div.
+      for ( var j = 0; j &lt; attributes.length; ++j ) {
+         frame.setAttribute(attributes[j], img.getAttribute(attributes[j]));
+      }
+      for ( var j = 0; j &lt; styles.length; ++j ) {
+         frame.style[styles[j]] = img.style[styles[j]];
+      }
+   }
+}</pre>
+
+<p>I&rsquo;ll break that down a bit at a time. The first few lines define a function to be called on page load. I use <a href="http://www.scottandrew.com/weblog/articles/cbs-events">Scott Andrew&rsquo;s cross-browser onload functionality</a> to add an event that&rsquo;ll call the <code>wrapImagesInDiv</code> function with the desired arguments. I do this because I want the flexibility of passing desired arguments.</p>
+
+<p>Next I define the <code>wrapImagesInDiv</code> function itself. This function accepts a class name, an array of attribute names, and an array of style property names. The class name defines the target elements: everything with a class of &ldquo;figure.&rdquo; The array of attribute names specifies which attribute values should be copied from the image to its wrapper, and likewise with style properties. You&rsquo;ll see where I use those in a bit.</p>
+
+<p>The first line inside the function uses the <code>document.getElementsByClassName</code> method supplied by the <a href="http://prototype.conio.net/">Prototype library</a> to find all the images labelled with <code>class=&quot;figure&quot;</code>. There are other ways to do this, but I think Prototype is ubiquitous enough that this is a fine choice.</p>
+
+<p>After that, the script simply loops through the array of resulting objects. For each object, it gets a reference to the parent element, creates a <code>div</code> element, moves the image inside that, and appends the image&rsquo;s <code>title</code> attribute as text afterward.</p>
+
+<p>Then it does a couple of tricky things. First, it sizes the wrapper horizontally to match the image. This is necessary so the wrapper doesn&rsquo;t take over the entire width of the page. Next it copies the image&rsquo;s class to the wrapper. This is necessary to preserve any CSS styling that was used to place the image relative to the text. In my case, this preserves the left-floating and right-floating I created in the first example.</p>
+
+<p>Finally, it loops through every other attribute and style property I specified, and copies those from the image to its wrapper. This is an easy way to get the same script to do lots of different things &ndash; you just give it different arguments. Do you want the wrapper to have the same <code>title</code> attribute as the image? Fine, just add &lsquo;title&rsquo; to the argument array &ndash; I&rsquo;m all about choice.</p>
+
+<p>I&rsquo;ll add a couple extra lines of CSS to make things prettier, too. Here&rsquo;s the result: <a href="http://www.xaprb.com/media/2006/10/automatic-image-captions.html">automatic image captions without ugly markup</a>.</p>
+
+<h3 id="toc_5">Further tweaks</h3>
+
+<p>This is a really simple technique, and you can go much further with it. Here are some more ideas:</p>
+
+<ol>
+<li>Use Roger Johansson&rsquo;s technique to <a href="http://www.456bereastreet.com/archive/200505/transparent_custom_corners_and_borders/">add custom corners, borders, and drop shadows</a>. Why not?</li>
+<li>In keeping with thinking of the images as &ldquo;figures,&rdquo; auto-number them, and create references to them on the fly by adding in other hooks for JavaScript.</li>
+<li>Tables could be figures, too, and you could auto-number and auto-reference them. But don&rsquo;t auto-caption tables, because they already have a caption element of their own.</li>
+<li>Generate a table of figures for your document.</li>
+</ol>
+
+<p>If you haven&rsquo;t done much reading on <a href="http://onlinetools.org/articles/unobtrusivejavascript/">unobtrusive JavaScript</a>, you really should. You can do so much with it. And the best part is, it lets you keep your HTML sooooo much cleaner and saves you so much work.</p>
+
+<h3 id="toc_6">Conclusion</h3>
+
+<p>I hope this article has helped you break out of a common web design rut and snazzy up your documents without adding un-semantic markup bloat. If you thought this was good, let me know! If you want to suggest some improvement, let me know that too!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

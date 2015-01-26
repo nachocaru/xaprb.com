@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>Color Splitter</title>
+</head>
+<body onload="fillForm()">
+
+<form action="color-chooser.html" method="get">
+   <input type="text" name="num" /> Number<br />
+   <input type="text" name="sat" /> Saturation % <br />
+   <input type="text" name="val" /> Value % <br />
+   <input type="submit" />
+</form>
+
+<table>
+<script type="text/javascript">
+function get_param( name ) {
+   name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+   var regexS = "[\\?&]"+name+"=([^&#]*)";
+   var regex = new RegExp( regexS );
+   var results = regex.exec( window.location.href );
+   if( results == null )
+      return "";
+   else
+      return results[1];
+}
+
+function fillForm() {
+   var f = document.forms[0];
+   f.num.value = get_param('num');
+   f.sat.value = get_param('sat');
+   f.val.value = get_param('val');
+}
+
+function array_to_color ( arr ) {
+   return 'rgb(' + arr.join(',') + ')';
+}
+
+// Set up an array with all the possible fully-saturated colors in ROYGBIV order
+var pure  = [];
+var color = [255, 0, 0]; // Pure red
+var red   = 0; var green = 1; var blue  = 2; // Positions in the color array
+var cycle = [ // [ color, direction ] pairs
+   [ green, 1 ],  // Add green: ROY
+   [ red, -1 ],   // Subtract red: YG
+   [ blue, 1 ],   // Add blue: GB
+   [ green, -1],  // Subtract green: BI
+   [ red, 1 ],    // Add red: IV
+   [ blue, -1],   // Subtract blue: VR
+];
+for ( var c in cycle ) {
+   var which = cycle[c][0];
+   var dir   = cycle[c][1];
+   // Cycle that color between 0, 255 in some direction.
+   for (var col = color[which]; col >= 0 && col <= 255; col += dir) {
+      color[which] = col;
+      pure.push([color[red], color[blue], color[green]]);
+   }
+}
+
+function to_hex ( color ) {
+   var result = '';
+   for ( var i in color ) {
+      var res = color[i].toString(16).toUpperCase();
+      if ( res.length == 1 ) {
+         res = '0' + res;
+      }
+      result += res;
+   }
+   return result;
+}
+
+// Divide the color wheel into the requested number of intervals
+var final_colors = [];
+if ( get_param('num') ) {
+   var num = parseInt(get_param('num'));
+   var incr = (pure.length + 1) / num;
+   for ( var i = 0; i < num; ++i ) {
+      var pos = Math.round(i * incr);
+      var col = [pure[pos][red], pure[pos][blue], pure[pos][green]];
+      // Alter the color: de-saturate it or darken it.
+      if ( get_param('sat') ) {
+         // De-saturating means to move everything towards the max one
+         // proportionately
+         var sat = Math.min(100, parseInt(get_param('sat')));
+         sat = 100 - sat;
+         var max = Math.max(col[red], Math.max(col[blue], col[green]));
+         col[red] += Math.round((max - col[red]) * (sat / 100));
+         col[blue] += Math.round((max - col[blue]) * (sat / 100));
+         col[green] += Math.round((max - col[green]) * (sat / 100));
+      }
+      if ( get_param('val') ) {
+         // Changing the value means to move towards 0
+         var val = Math.min(100, parseInt(get_param('val')));
+         col[red] = Math.round(col[red] * val / 100 );
+         col[green] = Math.round(col[green] * val / 100 );
+         col[blue] = Math.round(col[blue] * val / 100 );
+      }
+      final_colors.push(col);
+   }
+}
+
+// Don't just print the colors out in order; try to pick so each subsequent
+// color is as close to diametrically opposite the previous one as possible.
+var i = 0;
+while (final_colors.length > 0) {
+   var col;
+   if ( i % 2 == 0 ) {
+      col = final_colors.shift();
+   }
+   else {
+      col = final_colors.splice(Math.floor(final_colors.length/2), 1)[0];
+   }
+   document.write('<tr><td style="background-color:' + array_to_color(col)
+       + '">&nbsp;&nbsp;&nbsp;</td><td>' + to_hex(col) + ' '
+       + col.join(',') + '</td></tr>');
+   i++;
+}
+
+/*
+for ( var col in pure ) {
+   document.write('<tr><td style="background-color:' + array_to_color(pure[col])
+       + '">' + pure[col].join(',') + '</td></tr>');
+}
+*/
+</script>
+</table>
+
+</body>
+</html>

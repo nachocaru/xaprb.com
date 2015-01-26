@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Estimating column cardinality the damn cool way &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Estimating column cardinality the damn cool way</h1>
+  <span class="post-date">Sat, Sep 22, 2012 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>Have you seen <a href="http:/http://www.xaprb.com/blog.notdot.net/2012/09/Dam-Cool-Algorithms-Cardinality-Estimation">Damn Cool Algorithms: Cardinality Estimation</a> yet? If not, take a few minutes and read through it. Now, what if we try using that approach instead of COUNT(DISTINCT) in MySQL to see how many distinct values there are in a column?</p>
+
+<p>I recently needed this information in real life, and the table is large with many duplicate values. The column is some 32-character hex string, a hash value that represents a session ID. I&rsquo;ll call the column <code>sess_id</code>. I wanted to know how many distinct values it had, but I thought it would be cool (damn cool, really) to try this approach and see what happened.</p>
+
+<p>I read the blog post, convinced myself that it made sense, and tried to code it. Here&rsquo;s my rough translation of the algorithm into MySQL-speak. Note that I&rsquo;m using <code>crc32()</code>, which may not be a great choice for a hash. (The value in the column is already a hash, so in theory I could just use the value, but I wanted to see how this would work if implemented in a way that can be applied generically.)</p>
+
+<p>I decided to use a hard-coded 1024 &ldquo;buckets&rdquo;, and instead of an array, I used a temporary table.</p>
+
+<pre>create temporary table buckets(
+  id int not null primary key,
+  max_zeroes int not null default 0,
+  rowcount int not null default 0
+)engine=memory;</pre>
+
+<p>Here&rsquo;s the single pass over the values. I&rsquo;m using a user-defined variable <code>@c</code> to avoid recomputing the hash. Let me know if you see any mistakes in my code.</p>
+
+<pre>insert into buckets(id, max_zeroes, rowcount)
+select
+   (@c := crc32(sess_id)) &amp; 1023,
+   if(@c &lt; 1024, 22, instr(reverse(bin(@c >> 10)), '1') -1),
+   1
+from tbl1
+on duplicate key update
+   max_zeroes=greatest(max_zeroes, values(max_zeroes)),
+   rowcount = rowcount + 1;</pre>
+
+<p>That query took 32 minutes; by comparison, a similar query using COUNT(DISTINCT) took 46 minutes. So far, so good. Now here&rsquo;s the final bit, to combine the &ldquo;buckets&rdquo; and get the cardinality estimate. Again, flag errors if you see any:</p>
+
+<pre>
+select pow(sum(max_zeroes) / 1024, 2) * 1024 * 0.79402 from buckets;
++-------------------------------------------------+
+| pow(sum(max_zeroes) / 1024, 2) * 1024 * 0.79402 |
++-------------------------------------------------+
+|                              151741.65811039635 |
++-------------------------------------------------+
+</pre>
+
+<p>That&rsquo;s not even close. I happen to know that there are more than 10122796 distinct values, and 21669591 rows overall.</p>
+
+<p>Did I do something wrong? I&rsquo;m trying to decide whether my error is more likely to be that I&rsquo;m using CRC32, a little coding mistake, the way MySQL handles numbers internally&hellip; something else? I&rsquo;m not sure what&rsquo;s most likely. I ran this one step at a time when I wrote the code, and all of the hashing and bit-counting seems to be correct, but the aggregate results are just way off.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

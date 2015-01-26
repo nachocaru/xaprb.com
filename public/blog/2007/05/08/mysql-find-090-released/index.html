@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> MySQL Find 0.9.0 released &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>MySQL Find 0.9.0 released</h1>
+  <span class="post-date">Tue, May 8, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>If you&rsquo;ve used the UNIX <code>find</code> command for more than a trivial find-and-print, you know how powerful it is; it&rsquo;s almost a miniature programming environment to find and manipulate files and directories. What if you could do the same thing with MySQL tables and databases? That was the inspiration for writing this tool. I was about to write several other tools to do some MySQL administrative jobs when I realized I could generalize and make something much more useful and powerful.</p>
+
+<p>This first release has only the functionality I needed for the jobs I had to do. Initially I just implemented commands for working with tables, but the design evolved into something that can be more powerful with minimal added work. Though I modelled the tool after <code>find</code>, I didn&rsquo;t build in all the complex expressions and conditions. Instead, I followed the general idea of having three kinds of options: regular options, tests, and actions.</p>
+
+<p>The tests allow you to do things like select tables with more than a certain number of rows and with a given storage engine. There are numeric, date, and regular-expression tests.</p>
+
+<p>You can apply actions to the selected tables, and as with <code>find</code>, the default action is to just print their names. There&rsquo;s a <code>--printf</code> option and two ways to <code>exec</code> SQL commands.</p>
+
+<h3 id="toc_0">What&rsquo;s it for?</h3>
+
+<p>By way of introduction, let me explain what I was going to write special-purpose tools to do, and then show you how I can do it with mysql-find instead.</p>
+
+<ul>
+<li>The first job was a tool I had tentatively titled <code>mysql-measure-tables</code>, which would gather selected data about all tables (data size, index size, number of rows) and store it into another table for forensics and analysis over time.</li>
+<li>The second was a <code>stale-table-sniper</code> tool to find scratch tables and delete them when a process fails to clean up after itself. I had something like this implemented at my employer, but it also needed to throw away tables in some databases after they got a few weeks old. These are tables the analysts create and don&rsquo;t delete.</li>
+</ul>
+
+<p>Both are fairly easy to implement; really just a dozen or so lines of code. But as I began to implement the stale table sniper, it occurred to me that I should emulate <code>find</code> instead.</p>
+
+<p>With <code>mysql-find</code>, now I can do these tasks and many more, very easily:</p>
+
+<pre># Delete scratch tables created by processes that died
+mysql-find --pid '\D_(\d+)$' scratch --exec_plus "DROP TABLE %s";
+
+# Delete old tables created by analysts
+mysql-find --mtime +30 analyst_scratch --exec_plus "DROP TABLE %s";
+
+# Save table size and row count for monitoring over time
+mysql-find --noquote --exec "INSERT INTO stat.tblsize(db, tbl, idxlen, datalen, rowcount) VALUES('%D', '%N', %I, %d, %S)";
+</pre>
+
+<p>I&rsquo;ll write separately about the <code>--pid</code> option and how I use it. It&rsquo;s a simple naming convention that makes life easy when you don&rsquo;t want to use temporary tables (in my case, because of replication). If you&rsquo;re curious, there are more details in the mysql-find man page.</p>
+
+<p>Speaking of the man page, I hope you&rsquo;ll find the documentation complete and useful. There are examples to stimulate your imagination too.</p>
+
+<p>It&rsquo;s not revolutionary, but it might be useful &ndash; who knows.</p>
+
+<h3 id="toc_1">What&rsquo;s next?</h3>
+
+<p>What features are upcoming, you say? Actually, I don&rsquo;t have plans for any more functionality myself. This tool works for me as it is. But if you need something, hop onto the mailing lists, forums, or bug trackers at <a href="http://code.google.com/p/maatkit">MySQL Toolkit Sourceforge page</a> and ask. Other obvious additions would be the ability to work with databases, columns, indexes, foreign keys etc. And of course, if you find bugs, that&rsquo;s the place to report them.</p>
+
+<h3 id="toc_2">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

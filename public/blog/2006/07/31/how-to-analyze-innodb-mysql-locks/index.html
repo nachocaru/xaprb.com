@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to find out who is locking a table  in MySQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to find out who is locking a table  in MySQL</h1>
+  <span class="post-date">Mon, Jul 31, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>MySQL is adding more tools to monitor its internals with every new release, but one thing it still lacks is a way to find out who is locking what, and therefore which transactions block which other ones. This is such a vital feature that I&rsquo;m considering writing my own patch to the source! Still, it is possible, to a limited extent, to find out who&rsquo;s locking resources. In this article I&rsquo;ll explain how you can do that.</p>
+
+<p>This article is the second in a series on how to use the <a href="http://www.xaprb.com/innotop/"><code>innotop</code></a> MySQL and InnoDB monitor.</p>
+
+<h3 id="toc_0">Introduction</h3>
+
+<p>Here&rsquo;s the situation: you are trying to update a table and every time you issue the query, it hangs until it times out and tells you the lock wait timeout was exceeded. Someone has locked the table you&rsquo;re trying to update, but you have no idea who. This can be incredibly frustrating, because this could go on indefinitely. I&rsquo;ve sometimes had to put work off till another day, because the table is locked all day long.</p>
+
+<p>I&rsquo;ve found only a very limited set of circumstances in which MySQL will say what&rsquo;s happening with locks. These are all printed out in the text of <code>SHOW ENGINE INNODB STATUS</code>.</p>
+
+<h3 id="toc_1">When there was a deadlock</h3>
+
+<p>The first way to see locks is when there&rsquo;s been a deadlock. The status text will show transaction information on the transactions that deadlocked, which locks they held, and which they were waiting for. Here is a sample. Look at the sections titled &ldquo;WAITING FOR THIS LOCK TO BE GRANTED&rdquo; and &ldquo;HOLDS THE LOCKS.&rdquo;</p>
+
+<pre>------------------------
+LATEST DETECTED DEADLOCK
+------------------------
+060731 20:19:58
+*** (1) TRANSACTION:
+TRANSACTION 0 93698, ACTIVE 2 sec, process no 12767, OS thread id 1141946720 starting index read
+mysql tables in use 1, locked 1
+LOCK WAIT 4 lock struct(s), heap size 1216
+MySQL thread id 3, query id 19 localhost root Updating
+update test.innodb_deadlock_maker set a = 0 where a &lt;&gt; 0
+*** (1) WAITING FOR THIS LOCK TO BE GRANTED:
+RECORD LOCKS space id 0 page no 131120 n bits 72 index `GEN_CLUST_INDEX` of table `test/innodb_deadlock_maker` trx id 0 93698 lock_mode X waiting
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 4; compact format; info bits 0
+ 0: len 6; hex 000000019000; asc       ;; 1: len 6; hex 000000016e01; asc     n ;; 2: len 7; hex 80000000320110; asc     2  ;; 3: len 4; hex 80000000; asc     ;;
+
+*** (2) TRANSACTION:
+TRANSACTION 0 93699, ACTIVE 2 sec, process no 12767, OS thread id 1142212960 starting index read, thread declared inside InnoDB 500
+mysql tables in use 1, locked 1
+4 lock struct(s), heap size 1216
+MySQL thread id 4, query id 20 localhost root Updating
+update test.innodb_deadlock_maker set a = 1 where a &lt;&gt; 1
+*** (2) HOLDS THE LOCK(S):
+RECORD LOCKS space id 0 page no 131120 n bits 72 index `GEN_CLUST_INDEX` of table `test/innodb_deadlock_maker` trx id 0 93699 lock mode S
+Record lock, heap no 1 PHYSICAL RECORD: n_fields 1; compact format; info bits 0
+ 0: len 8; hex 73757072656d756d; asc supremum;;
+
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 4; compact format; info bits 0
+ 0: len 6; hex 000000019000; asc       ;; 1: len 6; hex 000000016e01; asc     n ;; 2: len 7; hex 80000000320110; asc     2  ;; 3: len 4; hex 80000000; asc     ;;
+
+Record lock, heap no 3 PHYSICAL RECORD: n_fields 4; compact format; info bits 0
+ 0: len 6; hex 000000019001; asc       ;; 1: len 6; hex 000000016e01; asc     n ;; 2: len 7; hex 8000000032011f; asc     2  ;; 3: len 4; hex 80000001; asc     ;;
+
+*** (2) WAITING FOR THIS LOCK TO BE GRANTED:
+RECORD LOCKS space id 0 page no 131120 n bits 72 index `GEN_CLUST_INDEX` of table `test/innodb_deadlock_maker` trx id 0 93699 lock_mode X waiting
+Record lock, heap no 2 PHYSICAL RECORD: n_fields 4; compact format; info bits 0
+ 0: len 6; hex 000000019000; asc       ;; 1: len 6; hex 000000016e01; asc     n ;; 2: len 7; hex 80000000320110; asc     2  ;; 3: len 4; hex 80000000; asc     ;;
+
+*** WE ROLL BACK TRANSACTION (2)</pre>
+
+<p>More importantly, the lines beginning &ldquo;RECORD LOCKS space id 0&#8243; show which index of which table was locked. That is the real meat of the matter &ndash; that&rsquo;s what you need to know.</p>
+
+<p>There&rsquo;s just one problem: after there&rsquo;s been a deadlock, it&rsquo;s too late. You don&rsquo;t want to know what held locks in the past, you want to know what holds them now. The deadlock information isn&rsquo;t usually helpful in finding out what transaction is blocking something from happening.</p>
+
+<h3 id="toc_2">When a transaction is waiting for locks</h3>
+
+<p>The next place you can sometimes see lock information is in the transaction section of the output. Here&rsquo;s a sample:</p>
+
+<pre>---TRANSACTION 0 93789802, ACTIVE 19 sec, process no 9544, OS thread id 389120018
+MySQL thread id 23740, query id 194861248 worker1.office 192.168.0.12 robot
+---TRANSACTION 0 93789797, ACTIVE 20 sec, process no 9537, OS thread id 389005359 starting index read
+mysql tables in use 1, locked 1
+LOCK WAIT 2 lock struct(s), heap size 320
+MySQL thread id 23733, query id 194861215 elpaso 192.168.0.31 robot Updating
+update test.test set col1 = 4
+------- TRX HAS BEEN WAITING 20 SEC FOR THIS LOCK TO BE GRANTED:
+RECORD LOCKS space id 0 page no 299998 n bits 200 index `PRIMARY` of table `test/test` trx id 0 93789797 lock_mode X locks rec but not gap waiting
+Record lock, heap no 77 PHYSICAL RECORD: n_fields 15; compact format; info bits 0 
+ 0: len 4; hex 80474fd6; asc  GO ;; 1: len 6; hex 000005970680; asc       ;; 2: len 7; hex 000017c02b176c; asc     + l;; 3: len 4; hex 80000003; asc     ;; 4: len 8; hex 800000000da0c93a; asc        :;; 5: len 8; hex 800000000eb2ea7e; asc        ~;; 6: len 4; hex c771fe44; asc  q D;; 7: len 4; hex 8000003e; asc    &gt;;; 8: len 8; hex 8000123eb9e5dfd5; asc    &gt;    ;; 9: len 4; hex 8000003a; asc    :;; 10: len 8; hex 8000123eb9e43603; asc    &gt;  6 ;; 11: len 4; hex 80000035; asc    5;; 12: len 8; hex 8000123eb9d6c130; asc    &gt;   0;; 13: len 4; hex 80000033; asc    3;; 14: len 8; hex 8000123eb9c7c853; asc    &gt;   S;;
+ 
+---------------------
+---TRANSACTION 0 93789679, ACTIVE 31082 sec, process no 9535, OS thread id 388972583 starting index read, thread declared inside InnoDB 6
+mysql tables in use 4, locked 4
+11614 lock struct(s), heap size 683328
+MySQL thread id 23731, query id 194861117 elpaso 192.168.0.31 robot</pre>
+
+<p>Notice the first transaction has been waiting 20 seconds for a lock to be granted, and it tells you which table and index as above. The other transaction I included (there were many in this section, but I omitted most) says it has 4 tables open and 4 locked. What it doesn&rsquo;t say is which ones.</p>
+
+<p>Again, there&rsquo;s some information here, but not a lot. If you issue a query and it hangs and waits for a lock, knowing what lock it&rsquo;s waiting for isn&rsquo;t really helpful. And knowing some other transaction holds a lock isn&rsquo;t <em>always</em> helpful either.</p>
+
+<p>It can be useful sometimes though, and that&rsquo;s better than nothing. If you only see two transactions with locks, you know the one that&rsquo;s <strong>not</strong> waiting for a lock is probably the one that holds them. Notice something scary in the information above? Transaction &ldquo;0 93789771&#8243;, on connection 23731, has been active for&hellip; eight and a half hours! Whoa. It&rsquo;s time to <a href="http://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/">find out what owns that connection</a> and possibly kill it.</p>
+
+<p>The take-away here is, if you&rsquo;re getting blocked on an InnoDB table, and you&rsquo;re lucky enough to see only one other transaction with locks, it&rsquo;s probably the one blocking you.</p>
+
+<h3 id="toc_3">What about table locks?</h3>
+
+<p>Ah, good question. What if the table isn&rsquo;t InnoDB, or what if someone locked it with <code>LOCK TABLES</code>, and it doesn&rsquo;t show up in the output of <code>SHOW ENGINE INNODB STATUS</code>? As far as I know, you&rsquo;re helpless. I don&rsquo;t know how to get any information on who&rsquo;s locking the table then. Table lock information doesn&rsquo;t seem to be exposed in any fashion &ndash; only row lock information.</p>
+
+<p>In fact, if you&rsquo;re in a transaction, <code>LOCK TABLES</code> seems to &ldquo;kick you out&rdquo; of the transaction. Try experimenting with <code>START TRANSACTION</code> and <code>LOCK TABLES</code> on an InnoDB table, and you&rsquo;ll see what I mean. If you lock a table for writing, then try to select from it in another connection, the other connection will block. If you then issue <code>START TRANSACTION</code> on the first connection, the second connection will immediately unblock, and the first connection&rsquo;s transaction will disappear from the InnoDB status text.</p>
+
+<h3 id="toc_4">Who wants to read all that mess?</h3>
+
+<p>Who, indeed? The text I included above is a pain to read, and it&rsquo;s not even representative of what you&rsquo;ll really be looking at. For one thing, you might have to scan through 40 or more transactions to find the ones you care about, and then there&rsquo;s all the other information in the output, some of which can be voluminous (such as deadlocks). What a hassle!</p>
+
+<p>Fortunately, there&rsquo;s a tool to do that for you: <code>&lt;a href=&quot;http://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/&quot;&gt;innotop&lt;/a&gt;</code>. This tool formats the output neatly and gives you filtering options to display only transactions with locks (or just sort them to the top of the display). Here&rsquo;s how you can do that:</p>
+
+<p>Start innotop and use the &ldquo;T&rdquo; key to enter InnoDB Transaction mode, if it&rsquo;s not already in that mode. You will see a list of transactions. Next, make the &ldquo;Locks,&rdquo; &ldquo;Tbl Used,&rdquo; and &ldquo;Tbl Lck&rdquo; columns visible. Press the &ldquo;c&rdquo; key to activate the &ldquo;choose columns&rdquo; dialog:</p>
+
+<p><a href="http://www.xaprb.com/innotop/innotop-choose-columns.png"><img src="/innotop/thumb-innotop-choose-columns.png" alt="innotop screenshot" width="200" height="118" /></a></p>
+
+<p>Press Return and you should see something that looks like this:</p>
+
+<p><a href="http://www.xaprb.com/innotop/innotop-default-T-display.png"><img src="/innotop/thumb-innotop-default-T-display.png" alt="innotop screenshot" width="200" height="118" /></a></p>
+
+<p>Now sort transactions with locks to the top by pressing the &ldquo;s&rdquo; key and choosing &ldquo;lock_structs&rdquo; as the sort column. You may need to press the &ldquo;r&rdquo; key afterwards to reverse the sort order if they go to the bottom instead. Alternatively, you can use the &ldquo;w&rdquo; key to add a filter on the &ldquo;lock_structs&rdquo; column, such as &ldquo;[1-9]&rdquo; to match only rows where the column isn&rsquo;t zero (this is a handy filter to add in general, just so you can see how many transactions have locks).</p>
+
+<p>Here&rsquo;s a screenshot of me changing the sort column, and adding a filter:</p>
+
+<p><a href="http://www.xaprb.com/innotop/innotop-choose-sort-column.png"><img src="/innotop/thumb-innotop-choose-sort-column.png" alt="innotop screenshot" width="200" height="118" /></a><a href="http://www.xaprb.com/innotop/innotop-add-filter.png"><img src="/innotop/thumb-innotop-add-filter.png" alt="innotop screenshot" width="200" height="118" /></a></p>
+
+<p>And here&rsquo;s a screenshot of the result:</p>
+
+<p><a href="http://www.xaprb.com/innotop/innotop-filtered-view.png"><img src="/innotop/thumb-innotop-filtered-view.png" alt="innotop screenshot" width="200" height="118" /></a>
+In this example you could see the locks without hiding the other rows, but when you have a very busy server it can really help to hide all the transactions without locks.</p>
+
+<p>Isn&rsquo;t that easier than digging through the output of <code>SHOW ENGINE INNODB STATUS</code>? I think so.</p>
+
+<h3 id="toc_5">Is there more?</h3>
+
+<p>Though I&rsquo;ve searched the Internet, searched the source code and the MySQL manual, I haven&rsquo;t been able to find any other ways to get information on current locks in MySQL. But I&rsquo;d be delighted if you prove me wrong! If you have anything to add, please comment.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

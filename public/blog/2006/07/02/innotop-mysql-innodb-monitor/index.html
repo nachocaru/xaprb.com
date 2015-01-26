@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> The innotop MySQL and InnoDB monitor &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>The innotop MySQL and InnoDB monitor</h1>
+  <span class="post-date">Sun, Jul 2, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      <p>MySQL and InnoDB expose lots of information about their internals, but it&rsquo;s hard to gather it all into one place and make sense of it.  I&rsquo;ve written a tool to do that, and you are free to download and use it.  This article introduces innotop, a powerful text-mode MySQL and InnoDB monitoring tool.  It has lots of features, is  fast and configurable, and it&rsquo;s easy to use.</p>
+
+<p>Note: I&rsquo;m now making it a priority to make innotop very stable and robust.  If innotop crashes, please help me fix it.  Please read this article about how to submit a bug report for innotop.  Thanks so much for helping me build a comprehensive test suite!</p>
+
+<p>Why another text-mode monitoring tool?</p>
+
+<p>Because the available ones aren&rsquo;t good enough.  I didn&rsquo;t want to duplicate anyone else&rsquo;s effort, but the other similar tools (mytop, mtop) haven&rsquo;t been actively maintained in years, don&rsquo;t work correctly with newer versions of MySQL, and frankly only offer a small fraction of the features I&rsquo;ve built into innotop.</p>
+
+<p>I said innotop has lots of features and is really flexible.  Here&rsquo;s just a small sampling to give an idea:</p>
+
+<ul>
+<li>11 different modes to show lots of information in very useful ways</li>
+<li>completely configurable &ndash; for example, you can choose which columns to see in every tabular display, in what order, what column to sort by, what direction to sort, add perl regex filters to any column, and on and on.</li>
+<li>offers features no other tool gives you, period.  What was the date, time, and query (plus lots of other info!) of each transaction involved in the last deadlock?  No other tool can give you that.  And that&rsquo;s just one of its dozens of unique features.</li>
+<li>it parses and displays InnoDB information, which is packed full of information.  No other tool even tries to do this.  Parsing the output of the InnoDB monitor is not for the faint of heart!</li>
+<li>its interactive help and configuration make it very easy to learn and highly productive to use.  What keys are mapped in the current mode?  Press &lsquo;?&rsquo; and find out.  What configuration variables can you change?  Press a key and find out.  Every function has context-sensitive help to keep you productive.</li>
+</ul>
+
+<p>Perhaps its most powerful and ambitious feature is the way it presents InnoDB internals.  MySQL is sorely lacking in instrumentation and analysis compared to other major relational database systems (for example, Microsoft SQL Server), and it is just no fun searching through the output of the InnoDB monitors to glean bits of information from it.  In my opinion, this feature alone is a major step forward to looking at what MySQL is doing internally.  The information has always been there, but until now it&rsquo;s been hard for DBAs to use.</p>
+
+<p>innotop is designed to do whatever you need it to do, and if it doesn&rsquo;t, you can let me know how to improve it.  I am continually using and improving this tool, in response to my own needs and those of other people using it.</p>
+
+<p>How to get and install innotop</p>
+
+<p>You can download innotop from this link, and read the documentation here (generated from the embedded POD, which you can also read on the command-line).  You can also press the &lsquo;?&rsquo; key for online, context-sensitive help once innotop is running.</p>
+
+<p>Please send improvements and suggestions to me.  I have been using it for quite a while now, but I&rsquo;m sure there are bugs lurking around somewhere.  In particular, if you find any InnoDB monitor output it can&rsquo;t parse, please send me that output so I can add it to my test suite.</p>
+
+<p>Screenshots</p>
+
+<p>You can find screenshots <a href="http://innotop.googlecode.com/svn/html/screenshots.html">here</a>.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> What is new in Maatkit &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>What is new in Maatkit</h1>
+  <span class="post-date">Sat, Jan 5, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      
+
+<p>My posts lately have been mostly progress reports and release notices. That&rsquo;s because we&rsquo;re in the home stretch on the book, and I don&rsquo;t have much spare time. However, a lot has also been changing with Maatkit, and I wanted to take some time to write about it properly. I&rsquo;ll just write about each tool in no particular order.</p>
+
+<h3 id="toc_0">Overall</h3>
+
+<p>I&rsquo;ve been fixing a fair number of bugs, most of which have been in the code for a while. Every bug I fix these days gets a test case to guard against regressions. I&rsquo;ve integrated the tests into the Makefile, so there&rsquo;s no way for me to forget to run them.</p>
+
+<p>The test suite has hundreds of tests, which is probably pretty good in comparison to many projects of this type. However, there will probably never be enough tests. I&rsquo;ve moved much (in some cases, almost all) of the code into modules, which are easy to test, but it&rsquo;s always a little harder to test programs themselves, so some things aren&rsquo;t tested. (For example, it&rsquo;s tedious to set up a test case that requires many MySQL instances to be running in a multi-tier replication setup).</p>
+
+<p>Still, I think the quality has increased a lot in the last 6 months or so, since I&rsquo;ve been more disciplined about tests. That discipline, by the way, was forced on me. The mk-table-sync tool was completely unmanageable. I was able to rewrite that tool in December, almost entirely using modularized, tested code.</p>
+
+<h3 id="toc_1">mk-heartbeat</h3>
+
+<p>Jeremy Cole and Six Apart originally contributed this tool. Since then I&rsquo;ve added a lot more features, allowed a lot more control over how it works, and it even works on PostgreSQL now. As an example, I added features that make it easy to run every hour from a crontab. It daemonizes, runs in the background, and then quits automatically when the new instance starts. I use it in production to give me a reliable metric for how up-to-date a slave is. When I need to know absolutely &ldquo;has this slave received this update,&rdquo; Seconds_behind_master won&rsquo;t do, for many reasons. Load balancing and lots of other things hinge on up-to-date slaves.</p>
+
+<h3 id="toc_2">mk-parallel-dump</h3>
+
+<p>I think this tool is probably the fastest, smartest way to do backups in tab-delimited format. I&rsquo;ve been fixing a lot of bugs in this one, mostly for non-tab-delimited dumps. It has turned out to be harder to write this code because it uses shell commands to call <code>mysqldump</code>. (The tab-delimited dumps are done entirely via SQL, which is why it&rsquo;s so good at what it does).</p>
+
+<h3 id="toc_3">mk-slave-restart</h3>
+
+<p>I&rsquo;ve been having a lot of trouble with relay log corruption, so unfortunately this tool has become necessary to use regularly in production. As a result I made it quite a bit smarter. It can detect relay log corruption, and instead of the usual skip-one-and-continue, it issues a CHANGE MASTER TO, so the slave will discard and re-fetch its relay logs. I&rsquo;ve also made it capable of monitoring many slaves at once. (It discovers slaves via either SHOW SLAVE HOSTS or SHOW PROCESSLIST, so if you point it at a master, it can watch all the master&rsquo;s slaves with a single command).</p>
+
+<h3 id="toc_4">mk-table-checksum</h3>
+
+<p>I&rsquo;ve made a lot of changes to this tool recently. Smarter chunking code to divide your tables into bits that are easier for the server to work with, TONS of small improvements and fixes, and much friendlier behavior.</p>
+
+<p>The most recent release also includes a big speed improvement. Most of the time this tool spends is waiting for MySQL to run checksum queries. While my pure-SQL checksum queries are faster than most (all?) other ways to compare data in different servers, I&rsquo;ve recently been trying to reduce the amount of work they cause.</p>
+
+<p>As a result, I investigated <a href="http://code.google.com/p/google-mysql-tools/">Google&rsquo;s MySQL patches</a>. <a href="http://mysqlha.blogspot.com/">Mark Callaghan</a> mentioned to me that he&rsquo;d added a checksum function into their version of the server, and I wanted to look at that. They&rsquo;re using the <a href="http://isthe.com/chongo/tech/comp/fnv/">FNV</a> hash function to checksum data. I decided that a <a href="http://dev.mysql.com/doc/refman/5.0/en/adding-functions.html">UDF</a> would be a fine way to write a faster row-checksum function, so I wrote a 64-bit FNV hash UDF. While I&rsquo;m <a href="http://www.radwin.org/michaelhttp://www.xaprb.com/blog/2007/03/mysql_user_defined_functio.html">not the first person to do that</a>, my version accepts any number of arguments, not just one. This makes it a lot more efficient to checksum every column in a row, because you don&rsquo;t have to a) make multiple calls to the hash function or b) concatenate the arguments so you can make a single call. I also copied Google&rsquo;s logic to make it simpler and more efficient to checksum NULLs, which avoids still more function calls. The UDF returns a 64-bit number, which can be fed directly to BIT_XOR to crush an entire table (or group of rows) into a single order-independent checksum. And finally, FNV is also a lot faster than, say, MD5 or SHA1.</p>
+
+<p>The results are quite a bit faster for my hardware: 12.7 seconds instead of 80 seconds on a CPU-bound workload. So that&rsquo;s at least a 6.2x speedup. (80 seconds was the best I was able to achieve before. Some of the checksum techniques used up to 197 seconds on the same data).</p>
+
+<p>The UDF is really simple to compile and install, does no memory allocations or other nasty things, and should be safe for you to use. The source is included with the latest Maatkit release. (Older Maatkit versions won&rsquo;t be able to take full advantage of it, by the way, but they can still be sped up somewhat). However, I would really appreciate some review from more experienced coders. I&rsquo;m no C++ wizard. In fact, my first attempts at writing this thing were so blockheaded and wrong, I was almost embarrassed. (Thanks are due to the fine people hanging out on #mysql-dev).</p>
+
+<h3 id="toc_5">mk-table-sync</h3>
+
+<p>After my week-long coding marathon on this in December, I&rsquo;ve needed to continue working on this. I&rsquo;ve needed it quite a few times to solve problems with replication. (Did I mention relay log corruption?). It&rsquo;s much faster and less buggy now, and as a bonus, the latest release can also take advantage of the FNV UDF I just mentioned.</p>
+
+<p>I think I should explain the general evolution in this tool&rsquo;s life. It started out as &ldquo;<a href="http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/">how to find differences in data efficiently</a>.&rdquo; This was a period where I did a lot of deep thinking on exploiting the structures inherent in data. It then progressed to &ldquo;<a href="http://www.xaprb.com/blog/2007/03/18/introducing-mysql-table-sync/">how to sync data efficiently</a>.&rdquo; At this point I was able to <a href="http://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/">outperform another data-syncing tool by a wide margin</a>, even though it was a multi-threaded C++ program and mine was just a Perl script. I did that by writing efficient queries and moving very little data across the network.</p>
+
+<p>The most recent incarnation has thrown performance out the window, at least as measured by those criteria. The aforementioned C++ program now outperforms mine by a wide margin on the same tests.</p>
+
+<p>What changed?</p>
+
+<p>Two things: I&rsquo;m focusing on quality, and I&rsquo;m focusing on syncing running servers correctly with minimal interruption.</p>
+
+<p>Once I have good-quality, well-tested code, I&rsquo;ll be able to speed it up. I know this because I&rsquo;m currently doing some things I know are slower than they could be.</p>
+
+<p>But much more importantly, I&rsquo;ve changed the whole angle of the tool. I want to be able to synchronize a busy master and slave, without locking tables, automatically ensuring that the data stays consistent and there are no race conditions. I do this with a lot of special tricks, such as syncing tables in small bits, using <code>SELECT FOR UPDATE</code> to lock only the rows I&rsquo;m syncing, and so on. And I&rsquo;m actively working to make the tool Do The Right Thing without needing 99 command-line arguments. (I think the latest release does this very well).</p>
+
+<p>Instead of &ldquo;make the sync use as little network traffic as possible,&rdquo; I&rsquo;ve changed the criteria of good-ness to &ldquo;do it right, do it once, and don&rsquo;t get in the way.&rdquo;</p>
+
+<p>As a result, I can sync a table that gets a ton of updates &ndash; one of the &ldquo;hottest&rdquo; tables in my application &ndash; without interfering with my application. Online. Correctly. In one pass. Through replication. Show me another tool that can do that, and I&rsquo;ll re-run my benchmarks :-)</p>
+
+<p>This doesn&rsquo;t mean I don&rsquo;t care about performance. I do, and I&rsquo;ll bring back the earlier &ldquo;go easy on the network&rdquo; sync algorithms at some point. They are very useful when you have a slow network, or your tables aren&rsquo;t being updated and you just want to sync things fast. I&rsquo;ll also be able to speed up the &ldquo;don&rsquo;t interfere with the application&rdquo; algorithms.</p>
+
+<p>One interesting thing I did was divide up the functionality so the tool can use many different sync algorithms. I created something like a storage-engine API, except it&rsquo;s a sync API. It&rsquo;s really easy to add in new sync algorithms now. All I have to do is write the code that algorithm needs. This is really only about 200-300 lines of code for the current algorithms.</p>
+
+<h3 id="toc_6">Tools that don&rsquo;t yet exist</h3>
+
+<p>What I haven&rsquo;t told you about is a lot of unreleased code and new tools. There&rsquo;s some good stuff in the works. Also stay tuned &ndash; a third party might be about to contribute another tool to Maatkit, which will also be a very neat addition.</p>
+
+<h2 id="toc_7">Conclusion</h2>
+
+<p>As <a href="http://snltranscripts.jt.org/88/88adebate.phtml">Dana Carvey says</a>, &ldquo;If I had more time&hellip; the programs we have in place are getting the job done, so let&rsquo;s stay on course, a thousand points of light. Well, unfortunately, I guess my time is up.&rdquo; Maatkit is getting better all the time, just wait and see.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

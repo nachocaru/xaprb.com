@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Review of Scalable Internet Architectures by Theo Schlossnagle &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Review of Scalable Internet Architectures by Theo Schlossnagle</h1>
+  <span class="post-date">Sat, Feb 21, 2009 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Reviews" class="btn btn-primary">Reviews</a>
+		
+  </span>
+      <p><a href="http://www.amazon.com/dp/067232699X?tag=xaprb-20"><img src="http://www.xaprb.com/media/2009/02/scalable_internet_architectures.jpg" alt="Scalable Internet Architectures" title="scalable_internet_architectures" width="240" height="240" /></a></p>
+
+<p>I&rsquo;ve just finished reading <a href="http://www.amazon.com/dp/067232699X?tag=xaprb-20">Scalable Internet Architectures</a> by <a href="http://omniti.com/is/theo-schlossnagle">Theo Schlossnagle</a>. It&rsquo;s a great book. Anyone building large systems should read it. Heck, anyone building any system that needs to run on more than one server should read it.</p>
+
+<p>The book got mixed reviews on Amazon, but I really think that&rsquo;s about writing style, not substance. Sometimes Theo takes the reader on a scenic tour of something that doesn&rsquo;t seem to have much to do with the subject matter, and then wraps up by showing how it is actually directly relevant. For example, he spends quite a bit of time talking about why HTTPS inherently poses different scaling problems than HTTP. If you aren&rsquo;t a patient reader, you might bail out before getting to the punch line.</p>
+
+<p>It&rsquo;s a pretty compact book, at 225 pages (plus an appendix on <a href="http://www.spread.org/">Spread</a>). Theo&rsquo;s writing is terse, even blunt at times. He knows what he&rsquo;s talking about and he expects you to do your part to keep up with him. You need to start at the beginning and read the whole book. This isn&rsquo;t a reference that you can just pick up to get five-minute answers.</p>
+
+<p>The topics are as follows:</p>
+
+<ul>
+<li>Scaling Up (and Down)</li>
+<li>Principles for Avoiding Failure</li>
+<li>Mission-Critical Environments</li>
+<li>High Availability. <em>HA! No Downtime?!</em></li>
+<li>Load Balancing <em>and the Utter Confusion Surrounding It</em></li>
+<li>Static Content Serving <em>for Speed and Glory</em></li>
+<li>Static Meets Dynamic <em>Adding Caches to Reduce Costs</em></li>
+<li>Distributed Databases Are Easy <em>Just Read the Fine Print</em></li>
+<li>Juggling Logs <em>and Other Circus Tricks</em></li>
+<li>The Right Tool for the Job</li>
+</ul>
+
+<p>These subjects may not seem to add up to a holistic worldview of scalability, but trust me, it works out that way. Theo uses specific scenarios &ndash; in complete detail &ndash; to illustrate larger concepts. You have to work to follow him, but the payoff is big. Here&rsquo;s a sample of the conclusion to one excursion into the woods:</p>
+
+<blockquote>
+<p>Where are we going with this? &hellip; Each request we passed through the server during our contrived test required 743ms of attention. Of that time, 87ms was <em>not</em> horizontally scalable&hellip; we were simply attempting to show that some portion of the interaction was dependent on shared, nonscalable resources. We succeeded; now how do we fix it?</p>
+</blockquote>
+
+<p>Have you ever wondered how to build an architecture that automatically results in website visitors accessing the data center nearest them <em>in network distance</em>? No, the answer isn&rsquo;t looking up IP addresses to determine geographic location. There&rsquo;s actually an elegant solution to this problem, and I didn&rsquo;t know it.</p>
+
+<p>What about this one: what&rsquo;s a scalable way to invalidate a cache that lives on the filesystem of many machines at once? What if one of the machines doesn&rsquo;t obey is offline or misses the message for some reason?</p>
+
+<p>This book is about how to think scalably. Just as an SQL programmer must learn to think relationally, a person who hopes to design a scalable application architecture must learn to think the right way. And Theo teaches this paradigm better than I&rsquo;ve seen it done before.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

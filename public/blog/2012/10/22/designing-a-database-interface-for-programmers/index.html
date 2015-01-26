@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Designing a database interface for programmers &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Designing a database interface for programmers</h1>
+  <span class="post-date">Mon, Oct 22, 2012 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>How do you connect to and converse with your database of choice (MySQL, in my case)? Chances are it&rsquo;s largely formed by the programming language you choose. I&rsquo;ve worked with a variety of programming languages. Anytime I begin learning a new one, I am reminded again that there&rsquo;s more than one way to skin a cat.</p>
+
+<p>Over the last few years, I&rsquo;ve mostly programmed in Perl and shell. The shell interface to MySQL is simple: the <code>mysql</code> command-line tool. There is not much to think about. In Perl, however, the standard is to use DBI. I have grown accustomed to DBI over the years, but that doesn&rsquo;t mean I like it. I think it&rsquo;s one of the worst database APIs I&rsquo;ve seen. The abstractions it uses (there are only two object abstractions: connections and &ldquo;statement handles&rdquo;) are awkward to the extreme.</p>
+
+<p>It does get worse, though. PHP historically used libmysql&rsquo;s C library for connecting to MySQL, and similarly used native drivers/libraries for every other database. You had no notion of abstraction: you called the library&rsquo;s functions directly. Sure, there were PEAR libraries to wrap around this, but a) they were ugly too, and not really a PHP standard, and b) the language could have done us all a favor and defined a common interface that all of the drivers could be wrapped inside. That&rsquo;s what every other language tends to do, love it or hate it. When I wrote a lot of PHP, and this was before the newer drivers were available, I wrote a set of classes to abstract away from the raw libmysql C function calls.</p>
+
+<p>Guess what design I chose to emulate for that? Microsoft&rsquo;s. Microsoft&rsquo;s database interaction libraries make a lot of sense for me. There&rsquo;s a notion of a Connection. You can create a Statement that&rsquo;s tied to the connection, and when you execute the Statement, you get a Result, and so on. This is fairly consistent for VBScript (ASP), Visual Basic, the .NET class libraries, and so on. It is a clean and straightforward design. The functions you want to execute map to verbs you think about, and the nouns/objects are also obvious. You execute a Statement to get a Result.</p>
+
+<p>Think about that in contrast to Perl, where you prepare a Statement against a Database (not a Connection?) and then execute a Statement ($sth) to get&hellip; nothing but an indication of whether it succeeded, and then you start retrieving rows from&hellip; the $sth? Huh? But rows don&rsquo;t belong to a Statement, they belong to a Result! Oh, I get it, after I execute a Statement, it shape-shifts into a Result. And then I can re-execute it&hellip; bleh. All of the nouns are overloaded with several meanings because there aren&rsquo;t enough nouns to represent the variety of concepts, and the verbs are attached to the wrong nouns, and it&rsquo;s just ugly.</p>
+
+<p>Funny enough, I never wrote a sane interface around DBI. (It&rsquo;s already a wrapper anyway.) I just dealt with it. But I never liked it, and somehow I must have been like the frog in the teapot and never jumped out.</p>
+
+<p>I&rsquo;m learning a new language now &ndash; Go &ndash; and it&rsquo;s time to learn how Go wants me to think about databases. Will it be sane or awkward? I don&rsquo;t know yet. The documentation doesn&rsquo;t take any time to introduce it, so I&rsquo;ll just work through it and see how it&rsquo;s done.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to monitor MySQL status and variables with innotop &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to monitor MySQL status and variables with innotop</h1>
+  <span class="post-date">Sat, Aug 12, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      
+
+<p>This is one in a series of articles on how to use <a href="http://www.xaprb.com/innotop/">innotop</a>, a MySQL and InnoDB monitor. In this article I&rsquo;ll explain how innotop can make it much easier to collect useful information from <code>SHOW STATUS</code> and <code>SHOW VARIABLES</code> into one place. There are three modes in innotop that do this in different ways, so one of them may meet your needs.</p>
+
+<h3 id="toc_0">Introduction</h3>
+
+<p>The output of <code>SHOW STATUS</code> and <code>SHOW VARIABLES</code> is one of the most useful tools for troubleshooting a MySQL server and getting a sense of how well it&rsquo;s running, what type of workload it&rsquo;s under, and so forth. In case you&rsquo;re not familiar with these, I recommend you <a href="http://dev.mysql.com/doc/refman/5.0/en/show.html">read up on them in the MySQL manual</a> before you read the rest of this article. You will get more out of the article if you understand what information is behind my examples.</p>
+
+<p>The most basic method of getting at these variables is to issue a <code>SHOW</code> command, but the result is fairly certain to be an information overload, even if you use <code>LIKE</code> to constrain the results. Another thing you often need to know is how the values change over time; how many table scans happen per second, for example? It&rsquo;s hard to compare results of <code>SHOW</code> commands quickly, but you need to do that to understand what&rsquo;s happening in the server.</p>
+
+<p>The classic tool for this is MySQL&rsquo;s own <code>mysqladmin</code>. You can run it with the <code>-i</code> and <code>-r</code> arguments to tell it to keep printing values every so often, and print the difference from the last set of values when it does so. A basic command to watch status variables might be the following:</p>
+
+<pre>mysqladmin extended -i10 -r</pre>
+
+<p>You can pipe that through <code>grep</code> to filter the results a little too.</p>
+
+<p>There is clearly much room for improvement. I&rsquo;ve included three different ways of viewing this information more easily and flexibly in innotop, and I&rsquo;ll explain those next.</p>
+
+<h3 id="toc_1">Method one: V mode</h3>
+
+<p>Before we begin: If you haven&rsquo;t already, you should <a href="http://www.xaprb.com/innotop/">download and install innotop</a>, and run these examples on your own server. It&rsquo;s a lot more interesting when you get to see how your own server is running. And if you&rsquo;re not upgraded to the latest and greatest version of innotop, it&rsquo;s worth doing; there are a lot more features in each new version. Specifically, I&rsquo;m going to show some features only available in version 0.1.139.</p>
+
+<p>Okay, on to the good stuff. Start innotop, and switch to V mode with the &ldquo;V&rdquo; key. V stands for &ldquo;Variables and Status.&rdquo; It displays a table with a row for each chosen value, and a column for each set of values you want to view. Values can be chosen from anything you can find in <code>SHOW STATUS</code> or <code>SHOW VARIABLES</code>. A picture is worth a thousand words:</p>
+
+<p><a href="http://www.xaprb.com/innotop/innotop-V-mode-usa.png"><img src="/innotop/thumb-innotop-V-mode-usa.png" width="200" height="119" alt="innotop screenshot" /></a></p>
+
+<p>Let me explain that a bit more. The leftmost column shows which values I&rsquo;ve chosen to display. Each row has one value. As you go to the right, you see the values themselves. First you see the most current values, then the ones before that, and so on &ndash; all the way till the far-right column.</p>
+
+<p>There are a couple things to notice about this display:</p>
+
+<ol>
+<li>The display is incremental. That is, I&rsquo;m not displaying the real values here. I&rsquo;m displaying the difference between snapshots. You can see the <code>Uptime</code> value is incremented by 60 in each successive column. That&rsquo;s because I&rsquo;ve chosen a sleep time of 60 seconds between snapshots. (I usually choose <code>Uptime</code> as the first value so I can see what time range is displayed).</li>
+<li>The far-right column is not incremental. That&rsquo;s because it&rsquo;s the earliest snapshot innotop has in memory, so there&rsquo;s nothing earlier to subtract from it. Besides, you don&rsquo;t always want to know the difference between values. Sometimes you want to know the value itself. This gives you a baseline so you can see both the incremental and absolute values at the same time.</li>
+<li>The second line of the display, above the values table, shows you the current display options. You can see incremental is on, and per-second average is off. You can toggle this with the &ldquo;i&rdquo; and &ldquo;a&rdquo; keys, so you can instantly switch back and forth between several views on the data.</li>
+<li>Long-number display is on. You can toggle it on and off with the &ldquo;l&rdquo; key (that&rsquo;s a lowercase &ldquo;L&rdquo;) for a more compact display.</li>
+</ol>
+
+<p>It&rsquo;s a pretty compact way to look at 8 minutes of history for the server, wouldn&rsquo;t you agree? You can easily get a lot more information from this display than with the other methods I&rsquo;ve discussed. But there&rsquo;s more!</p>
+
+<ul>
+<li>I include several preset choices of values to display with innotop. You can toggle back and forth between them with the keys &ldquo;0&#8243; through &ldquo;9&#8243;. There are presets for the query cache, table and index scans, InnoDB variables, transaction statements, and more. All in all, there&rsquo;s room for ten sets of values.</li>
+<li>You can customize each set with the &ldquo;c&rdquo; key. Pick and choose from any value in STATUS and VARIABLES, as I said. This gets saved in your configuration file, so it&rsquo;s there when you quit and restart innotop.</li>
+<li>You can choose the number of snapshots you want to display, from 2 to 9, so you can decide how much history you want to look at on one screen.</li>
+</ul>
+
+<h3 id="toc_2">Method 2: modelled after <code>tload</code></h3>
+
+<p>Another way to monitor these variables is to draw a graph in the style of <code>tload</code>. The theory behind this mode is that you choose a few values (with the &ldquo;c&rdquo; key, as usual) and innotop will scale the per-second average of the values against the maximum it has ever seen, and use that to draw a pretty graph. You enter Graph mode with the &ldquo;G&rdquo; key. Here&rsquo;s a screenshot of that:</p>
+
+<p><a href="http://www.xaprb.com/innotop/innotop-G-mode-usa.png"><img src="/innotop/thumb-innotop-G-mode-usa.png" width="200" height="119" alt="innotop screenshot" /></a></p>
+
+<p>This isn&rsquo;t quite like <code>tload</code>, because the graph runs from top to bottom, not left to right. It prints out a header periodically, including the &ldquo;max value&rdquo; against which it is scaling.</p>
+
+<p>In practice, I haven&rsquo;t quite gotten this right yet. I&rsquo;m not sure how to scale it. I have no problems doing the math, but scaling against &ldquo;the max value ever seen&rdquo; doesn&rsquo;t seem to produce good results. Sometimes it results in a nice graph; other times not. I keep thinking there must be a good way to calculate actual server load, so it can be graphed meaningfully, but I can&rsquo;t think of it. Any suggestions?</p>
+
+<p>I&rsquo;m not very happy with this mode. If I can&rsquo;t figure out a way to make it more useful, I may get rid of this functionality, even though it&rsquo;s only a few lines of code.</p>
+
+<h3 id="toc_3">Method 3: modelled after <code>vmstat</code></h3>
+
+<p>My co-worker John anticipated that the graph wouldn&rsquo;t be that useful, much to his credit, and asked me if I could imitate <code>vmstat</code> and <code>iostat</code> instead of drawing a graph. The result is &ldquo;S&rdquo; mode. It can print the same information as &ldquo;G&rdquo; mode, except it prints values instead of a graph. Here&rsquo;s another screenshot, showing per-second averages between sets of values (again, the &ldquo;i&rdquo; and &ldquo;a&rdquo; keys manipulate these options, and you can choose values with the &ldquo;c&rdquo; key):</p>
+
+<p><a href="http://www.xaprb.com/innotop/innotop-S-mode-usa.png"><img src="/innotop/thumb-innotop-S-mode-usa.png" width="200" height="119" alt="innotop screenshot" /></a></p>
+
+<p>I think this is more useful than &ldquo;G&rdquo; mode, though it&rsquo;s somewhat redundant to the &ldquo;V&rdquo; mode I demonstrated above. Because the values are laid out across the screen, and time flows from bottom to top of the screen, you can fit fewer values on the screen, but you can view a longer time window.</p>
+
+<h3 id="toc_4">Recap of the modes</h3>
+
+<p>I just showed you three modes innotop has for monitoring status and variable information from a MySQL server:</p>
+
+<ol>
+<li>&ldquo;V&rdquo; mode prints a table of snapshots, with lots of different options.</li>
+<li>&ldquo;G&rdquo; mode tries to print a graph, but doesn&rsquo;t always do a very good job.</li>
+<li>&ldquo;S&rdquo; mode prints something similar to &ldquo;V&rdquo; mode, but the data is laid out differently.</li>
+</ol>
+
+<p>The three modes are basically different ways of looking at the same values. There&rsquo;s some redundancy among them, but because it requires so little code to do each of them, I don&rsquo;t care about the redundancy from a coding standpoint. I don&rsquo;t mind maintaining three features with similar functionality, if it gives more ways to use the monitor.</p>
+
+<p>If you have any suggestions for improvements, I&rsquo;m waiting to hear from you :-)</p>
+
+<h3 id="toc_5">Summary</h3>
+
+<p>In this article I explained the old-fashioned way to monitor the output of <code>SHOW STATUS</code>and <code>SHOW VARIABLES</code>, and then showed you how innotop can make this a lot faster and easier, and hopefully give you enough different views on the data that you can find one you like.</p>
+
+<p>Stay tuned to learn more about innotop; there is a lot more to tell! You can <a href="http://www.xaprb.com/index.xml">subscribe via feeds or e-mail</a> to keep current.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

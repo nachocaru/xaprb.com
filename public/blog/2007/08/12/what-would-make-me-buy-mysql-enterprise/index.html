@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> What would make me buy MySQL Enterprise? &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>What would make me buy MySQL Enterprise?</h1>
+  <span class="post-date">Sun, Aug 12, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>MySQL AB&rsquo;s <a href="http://www.planetmysql.org/kaj/?p=123">recent changes to the Community/Enterprise split</a> have made people go as far as calling the split a failure. I don&rsquo;t think it&rsquo;s working well either, but it could be fixed. Here&rsquo;s what I think would make Enterprise a compelling offer.</p>
+
+<h3 id="toc_0">I&rsquo;d recommend Enterprise if I could</h3>
+
+<p>If the MySQL Enterprise Server were a good thing, I&rsquo;d recommend it to my consulting clients. I&rsquo;d suggest we start using it at my employer, too. I believe in supporting people and companies whose work benefits me. Here&rsquo;s the thing, though: I think it would be detrimental, even dangerous.</p>
+
+<p>Why on earth would I think that?</p>
+
+<p>Because nobody&rsquo;s testing the Enterprise source code before it&rsquo;s released.</p>
+
+<p>It&rsquo;s getting bug fixes that haven&rsquo;t been stress-tested in the real world. Some of them are even being rolled back, many months later, because they were broken.</p>
+
+<h3 id="toc_1">Reasons I&rsquo;d buy MySQL Enterprise</h3>
+
+<p>The reasons I&rsquo;d buy a MySQL Enterprise subscription would be as follows, in order of importance:</p>
+
+<ol>
+<li>A stable, tested version of the server with well-known, documented limitations and bugs.</li>
+<li>Technical support.</li>
+<li>The knowledge base, etc, etc.</li>
+</ol>
+
+<h3 id="toc_2">But&hellip; that&rsquo;s what Enterprise is, right?</h3>
+
+<p>The <a href="http://www.mysql.com/products/enterprise/subscription_benefits.html">official list of benefits in an Enterprise subscription</a> looks like it matches my list, doesn&rsquo;t it?</p>
+
+<blockquote cite="http://www.mysql.com/products/enterprise/subscription_benefits.html">
+  <p>
+    MySQL Enterprise subscriptions include the following benefits:
+  </p>
+  
+  <ol>
+    <li>
+      MySQL Enterprise Server: The MySQL Enterprise Server is the most reliable, secure and up-to-date version of MySQL in source and binary format.
+    </li>
+    <li>
+      Extensive Reliability Testing...
+    </li>
+  </ol>
+  
+  <p>
+    ... etc ...
+  </p>
+</blockquote>
+
+<p>The thing is, those first two bullets are <strong>blatantly untrue</strong>. Want proof? Look at the <a href="http://dev.mysql.com/doc/refman/5.0/en/releasenotes-es-5-0-48.html">change list for MySQL 5.0.48</a>, which will be the next Monthly Rapid Update. Here are just a few of the changes near the top of the list, with my comments:</p>
+
+<ol>
+<li>Coercion of ASCII values to character sets that are a superset of ASCII sometimes was not done, resulting in illegal mix of collations errors. These cases now are resolved using repertoire, a new string expression attribute&hellip;
+
+<ul>
+<li>My comment: A <a href="http://dev.mysql.com/doc/refman/5.0/en/charset-repertoire.html">new, complex string expression attribute</a>, designed to fix an edge case, is going straight into the &ldquo;reliable&rdquo; Enterprise branch? No way I want that untested change on my production servers.</li>
+</ul></li>
+<li>FEDERATED tables had an artificially low maximum of key length.
+
+<ul>
+<li>A fix to FEDERATED? FEDERATED is riddled with <em>basic</em> bugs and should not even be distributed with Enterprise, and even so, who cares if I can&rsquo;t make as long an index as I should be able to? I can work around it while the community tests it.</li>
+</ul></li>
+<li>In some cases, INSERT INTO &hellip; SELECT &hellip; GROUP BY could insert rows even if the SELECT by itself produced an empty result.
+
+<ul>
+<li>Another edge case, probably easy to avoid, that probably affects core parts of the server.</li>
+</ul></li>
+<li>In a stored function or trigger, when InnoDB detected deadlock, it attempted rollback and displayed an incorrect error message (Explicit or implicit commit is not allowed in stored function or trigger). Now InnoDB returns an error under these conditions and does not attempt rollback.
+
+<ul>
+<li>Changes to InnoDB&rsquo;s deadlock and rollback behavior should not be included in a hot-fix, especially since it only affects stored functions and triggers, which are also not ready for Enterprise.</li>
+</ul></li>
+</ol>
+
+<p>These bug fixes address minor problems, but seem to have the potential to cause major damage if there&rsquo;s a problem with the fix itself. None of these should be included in a hot-fix release. In fact, after looking through the whole list, I don&rsquo;t see <em>anything</em> I would want to go to my production servers before six months of community testing. There&rsquo;s simply too much at stake. The upside of including these changes is so small, and the potential downside so large, that it doesn&rsquo;t make sense to include them.</p>
+
+<h3 id="toc_3">What would I not want in Enterprise?</h3>
+
+<p>Here are some things that would <em>not</em> attract me to Enterprise:</p>
+
+<ul>
+<li>Patches and hot fixes.</li>
+<li>New features.</li>
+</ul>
+
+<p>Take a look at bullet points number three and four in the list of Enterprise benefits:</p>
+
+<blockquote cite="http://www.mysql.com/products/enterprise/subscription_benefits.html">
+  <ol>
+    <li value="3">
+      Updates and Upgrades with New Features: You receive the newest versions of MySQL Enterprise Server released during your active subscription term.
+    </li>
+    <li>
+      Predicable Releases with Bug Fixes and Updates: Predictable and scheduled service packs ensure that a new, fully up-to-date version of the MySQL Enterprise Server is always available with the latest updates and bug fixes. Customers of MySQL Enterprise receive Monthly Rapid Updates &#038; Quarterly Service Packs
+    </li>
+  </ol>
+</blockquote>
+
+<p>These are exactly the things I don&rsquo;t want in my Enterprise source code. These two &ldquo;benefits&rdquo; directly conflict with the first two benefits. They cannot coexist, period.</p>
+
+<p>MySQL&rsquo;s marketing information says <a href="http://www.mysql.com/products/which-edition.html">new experimental features are unstable,</a> but <a href="http://www.mysql.com/products/enterprise/subscription_benefits.html">hot bug fixes are stable and reliable</a>. In reality, there&rsquo;s no difference between new features and new bug fixes; they are both unstable and untested and don&rsquo;t belong in a conservative, reliable product.</p>
+
+<p>Until this changes, the Enterprise source code will continue to be less trustworthy than the Community source code, in my opinion. Even if the Community source doesn&rsquo;t get the bug fixes, at least you know what you&rsquo;re dealing with.</p>
+
+<h3 id="toc_4">How would I change the current release policy?</h3>
+
+<p>I think this is easiest to explain with diagrams. Here&rsquo;s the current release policy, as I understand it (I know this is over-simplified, but I&rsquo;m trying to simplify this enough to show how I&rsquo;d change it):</p>
+
+<p><img src="http://www.xaprb.com/media/2007/08/mysql-enterprise-community-current.png" alt="MySQL Community and Enterprise Source Policy" />
+</p>
+
+<p>As I understand it now, the Community source gets (or is intended to get &ndash; it&rsquo;s not really working, but that&rsquo;s off-topic) frequent contributions from the community, and occasional bug fixes that are applied to the Enterprise source. The Community source is built and released infrequently.</p>
+
+<p>On the other hand, the Enterprise source gets frequent hot fixes and releases, and infrequently gets features merged from the Community source after they&rsquo;re deemed stable.</p>
+
+<p>I&rsquo;m not sure who designed this scheme, but I think a lot of people tried to say it was a bad idea and they went ahead anyway. Perhaps the symmetry in the diagram appealed to <a href="http://en.wikipedia.org/wiki/Pointy_Haired_Boss">someone</a>.</p>
+
+<p>Here&rsquo;s how that would have to change before I&rsquo;d buy Enterprise:</p>
+
+<p><img src="http://www.xaprb.com/media/2007/08/mysql-community-enterprise-desired.png" alt="MySQL Community and Enterprise Source Policy" />
+</p>
+
+<p>In this model, the Community gets <em>all</em> source code changes first, and after they are stable, they&rsquo;re merged into the Enterprise source. The Community code is built and released frequently, and Enterprise is extremely conservative.</p>
+
+<p>This I&rsquo;d pay for. This is a compelling offer that gives Enterprise customers substantial return for their money.</p>
+
+<p>In this model, I&rsquo;d be paying MySQL to do the painstaking work of looking at all the changes that happened in the Community source tree during the last release cycle, carefully selecting the good stuff, merging that into the Enterprise source tree, and testing the result. This is a proven model for creating high-quality software from a rapidly changing codebase. I don&rsquo;t know why MySQL invented their own method instead, but it was a mistake.</p>
+
+<p>Notice something else about this: unless the MySQL developers know something about revision control and merging I don&rsquo;t (entirely possible, since I&rsquo;ve never used the product they use), this is a lot simpler to manage. There are no cross-currents between the two source trees. It&rsquo;s not just the aesthetics of having all the arrows going the same direction; I&rsquo;d be a <em>lot</em> more confident that the merges went smoothly in this model. I think there&rsquo;s a much lower chance of a mistake.</p>
+
+<p>I also think the engineers would have a lot less work to do, and could concentrate more on making software and less on maintaining two complicated source trees. In fact, I believe the Community branch has actually been getting bug fixes too, contrary to my first diagram. This isn&rsquo;t what MySQL initially announced they&rsquo;d do, but if I had to guess, I&rsquo;d say the engineering team said it would be too much work to keep the bug fixes out of the Enterprise branch.</p>
+
+<h3 id="toc_5">Notice what I&rsquo;m not saying about Community</h3>
+
+<p>I am explicitly avoiding saying something in particular about the Community source. I want quick release cycles and all patches applied there first, for one and only one reason: so the Enterprise source is trustworthy and stable. I&rsquo;m <em>not</em> saying I want it so I can get the most bleeding-edge new fun stuff for free in Community. That is not a factor for me in the mindset I&rsquo;m using to write this article &ndash; I am imagining myself as a customer who is very risk-averse (which is true).</p>
+
+<p>This model would probably make some Community users happy too, though.</p>
+
+<h3 id="toc_6">What if I needed an immediate fix?</h3>
+
+<p>What if I found a serious bug in the software and needed it fixed right away for my business? Shouldn&rsquo;t MySQL release a hot-fix into the Enterprise tree for that?</p>
+
+<p><strong>No</strong>. I found a bug, who cares? If I found it, it means the community didn&rsquo;t find it first. If the community didn&rsquo;t find it, it probably only affects me. Therefore, the bug fix should go into the Community server.</p>
+
+<p>If I couldn&rsquo;t work around the problem (unlikely), I should be able to pay MySQL&rsquo;s support engineers to make me a custom patch and build just to fix this problem. I&rsquo;d assume all the risk of that, of course. This unstable, experimental patch should not go into the Enterprise source, but other customers should hear about it.</p>
+
+<p>Right now you might be considering the similarity to Red Hat Enterprise Linux, and thinking &ldquo;but RHEL does get hot fixes, so why shouldn&rsquo;t MySQL Enterprise?&rdquo; The reason is MySQL Enterprise isn&rsquo;t an entire operating system distribution of software, with third parties fixing defects in upstream source. The Community process I&rsquo;m advocating should take care of the <em>vast</em> majority of such bugs. Someone might find a critical security flaw that would warrant a hot-fix to the Enterprise product without waiting six months. But seriously, look at the bugs people find in MySQL &ndash; look at that changelog I linked to. There are no critical security flaws or kernel buffer overflows &ndash; and those are the kinds of things RHEL gets hot fixes for.</p>
+
+<p>Some people might be drawn to MySQL&rsquo;s current monthly hot-fix policy because they come from a Microsoft background, where Microsoft releasing service packs and hot-fixes is seen as a good thing. All I can say to those people is, you&rsquo;ve become like a frog in a pot of boiling water. Microsoft&rsquo;s fixes and service packs are a broken way of fixing their broken software, and are not a good way to manage quality software, so you shouldn&rsquo;t measure the value of a release policy by whether it looks like Microsoft&rsquo;s.</p>
+
+<h3 id="toc_7">What would my ideal Enterprise version look like?</h3>
+
+<p>I&rsquo;d really like to see MySQL AB stop adding new features and make the existing ones work better. The bugs I keep finding are usually quite simple, and I think that&rsquo;s a sign of a low-quality codebase. For example, try <a href="http://bugs.mysql.com/bug.php?id=28244">creating a view that already exists</a>. It breaks replication. How did this bug go unnoticed for so long? In my opinion, it&rsquo;s because the server hasn&rsquo;t been stable since 5.0 was released, and nobody&rsquo;s using the bleeding-edge features as much as the core of the server, which is where I&rsquo;d like MySQL AB to concentrate for the Enterprise version.</p>
+
+<p>The Enterprise version I&rsquo;d like to see doesn&rsquo;t have views. That&rsquo;s right, it doesn&rsquo;t have views, because nobody&rsquo;s used and tested them thoroughly yet (if they had, there wouldn&rsquo;t be so many bugs in them). It doesn&rsquo;t have triggers, stored procedures, the FEDERATED storage engine, stored functions &ndash; in terms of features, it&rsquo;s somewhere in version 4.1. That&rsquo;s what I&rsquo;d call MySQL Enterprise. I don&rsquo;t want these features because I don&rsquo;t use them right now anyway, because they have the potential to cause such massive pain. I want them to go back to the community incubator so the bugs can get worked out. I&rsquo;m managing just fine without using them, but I&rsquo;m not managing fine with the pain they&rsquo;re causing just by being there even though I don&rsquo;t use them.</p>
+
+<p>But at the same time the existing features, especially those needed for scaling and high availability, would be given a lot more attention. Replication would have much stronger assurances of accuracy and reliability. InnoDB would scale to more processors. The query optimizer would get a lot of love. In terms of improvements to existing features, my ideal Enterprise version is somewhere around 5.0.32. I chose that version because it was released about six or eight months ago, which means the <a href="http://bugs.mysql.com/bug.php?id=24200">big changes in that version</a> would have been out in the Community for six or eight months and I&rsquo;d be satisfied having them in the Enterprise version.</p>
+
+<p>Right now, if you want to upgrade because of a bug that&rsquo;s fixed in a newer version, you upgrade into some other bugs. I&rsquo;m seriously tired of upgrading into the newest, latest, greatest bugs, like <a href="http://bugs.mysql.com/bug.php?id=28421">infinite loops in relay logs that fill hard drives with gigabytes of duplicate logs in a matter of minutes</a>. These bugs have cost a significant amount of money, time, and frustration. I would definitely recommend people buy and use Enterprise if it fixed bugs without introducing new ones, but I see no signs of that happening.</p>
+
+<h3 id="toc_8">MySQL&rsquo;s sales pitch doesn&rsquo;t convince me</h3>
+
+<p>There&rsquo;s one more thing I think MySQL would have to do to get me to buy Enterprise, and that&rsquo;s develop a better sales pitch. I&rsquo;ll explain that &ndash; keep reading.</p>
+
+<p>I think the way the Community/Enterprise split is designed smacks of marketing people making decisions. I don&rsquo;t think this is ultimately going to be as successful a strategy for MySQL as it could be, because they won&rsquo;t be able to sell it as well. Why not? Because unlike many other products, the people who make decisions about their company&rsquo;s MySQL installations are engineers, by and large. The current marketing message sounds pretty condescending to an engineer.</p>
+
+<p>I&rsquo;ve even joined a MySQL webinar just to see. It was supposedly about scaling with MySQL, but in fact there was very little content. They spent a lot of time trying to say you should buy Enterprise. This was very strange, since the webinar was only open to current Enterprise customers. But the reasons they gave for choosing one or the other had me shaking my head in disbelief. It went something like this:</p>
+
+<blockquote>
+<p>You should choose MySQL Enterprise if you&rsquo;re making money with MySQL, because Enterprise is the version for making money. If you plan to use MySQL to make money, you should use Enterprise. On the other hand, you should use Community if you&rsquo;re just experimenting with MySQL. It&rsquo;s free and has lots of hot new features, like SHOW PROFILE and um, uh, that&rsquo;s it. Anyway, you should use it if you&rsquo;re just experimenting, because it&rsquo;s the version for experimenting. Oh, and you should use it for your testing if you&rsquo;re an Enterprise customer, because it&rsquo;s for experimenting with, and tests are experiments.</p>
+</blockquote>
+
+<p>These aren&rsquo;t direct quotes, but they probably aren&rsquo;t far off &ndash; they certainly capture the spirit, if not the letter, of the webinar. Their strongest reason for using Enterprise was &ldquo;because you should use Enterprise,&rdquo; and they said it several times. And when they said Enterprise users should run Community on their test systems, I thought &ldquo;you&rsquo;re kidding. I&rsquo;m going to test with a different version of the product than I run in production? Enough already.&rdquo; I signed off with about five minutes left in the webinar.</p>
+
+<p>The bottom line is, I don&rsquo;t trust a company that assumes I won&rsquo;t have a problem with such nonsense. I know there are smart engineers working on the MySQL server, but the marketing message is the face the world sees. In my experience, that ends up giving the marketing people the right to make decisions, even when the engineers disapprove. Therefore, I have no confidence the people making the decisions about how MySQL is developed and released are competent to do so.</p>
+
+<p>If MySQL&rsquo;s marketing materials were written and presented by people with serious tech savvy, I&rsquo;d be a lot more comfortable about the invisible parts of the company. I assume most other engineers are going to extrapolate backwards from the faÃ§ade, just like me, and conclude the decision-making process is untrustworthy.</p>
+
+<p>Incidentally, this is exactly why my current employer (an advertising agency) rocks: because the sales folks and execs have decades of experience running companies in the industries we serve, and the people who answer when you call to discuss your account are analysts, not customer service reps. Whoever picks up the phone is an Excel wizard and has a SQL window (not a reporting system, a SQL prompt) open directly to an analysis server &ndash; our analysts and sales people are smart and capable and generally have business or engineering degrees from top universities; they&rsquo;re not just friendly voices.</p>
+
+<p>Contrary to popular wisdom, you can tell a lot about the book by looking at the cover. That&rsquo;s why MySQL needs a sales pitch that&rsquo;s convincing and respectable to an engineer.</p>
+
+<h3 id="toc_9">Conclusion</h3>
+
+<p>MySQL AB says it needs to offer its paying customers something of value, and rightly so. Unfortunately, someone who doesn&rsquo;t seem to understand software engineering at all has decided on a truly backwards way to do that. The result is a release policy that seriously degrades the quality of both product versions. MySQL AB&rsquo;s marketing folks keep trying to say the Emperor&rsquo;s new clothes are beautiful, but proof by repeated assertion just doesn&rsquo;t work on people who know software engineering.</p>
+
+<p>Put another way, MySQL AB is trying to sell Enterprise on the so-called benefit of <em>including</em> bug fixes so the product is &ldquo;more stable.&rdquo; This is an oxymoron. They should be selling the service of <em>excluding</em> untrusted code instead.</p>
+
+<p>The current Enterprise offering not only isn&rsquo;t compelling, but is designed to actually be <em>lower quality than the Community source</em> because there are fewer people testing it. Not using the Enterprise source is a no-brainer for me. However, if they&rsquo;ll correct this mistake and start producing a source tree that&rsquo;s conservative, high-quality, and stable, I&rsquo;ll recommend people buy it. I wish MySQL well in their efforts to commercialize the product, but I don&rsquo;t want what they&rsquo;re trying to sell right now.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

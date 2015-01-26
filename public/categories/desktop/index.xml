@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Desktop on Xaprb </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.xaprb.com/categories/desktop/index.xml/</link>
+    
+    
+    
+    <updated>Sat, 01 Nov 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>How To Print All The Way To The Edge In Microsoft Word</title>
+      <link>http://www.xaprb.com/blog/2014/11/01/print-full-bleed-microsoft-word/</link>
+      <pubDate>Sat, 01 Nov 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/11/01/print-full-bleed-microsoft-word/</guid>
+      <description>&lt;p&gt;You&amp;rsquo;re creating a document with Word that you want to turn into a nice full-page PDF. It has a gorgeous background color that will look great. But every time you convert it to a PDF, it ends up with ugly white borders at the edges, and Word warns you about printing beyond the printable margins. Dragging the margins and changing the Page Setup options does no good. How can you fix this?&lt;/p&gt;
+
+&lt;p&gt;The secret is that the printable margins are defined in the paper Word thinks
+it&amp;rsquo;s &amp;ldquo;printing&amp;rdquo; to, not in the document itself. You need to define a new set of
+paper settings and use that. Then you can print &amp;ldquo;full-bleed&amp;rdquo; to the edge of the
+document, including graphics, lines, text and background colors. Here&amp;rsquo;s how:&lt;/p&gt;
+
+&lt;p&gt;Go to &amp;ldquo;File &amp;gt; Page Setup.&amp;rdquo; In the &amp;ldquo;Paper Size&amp;rdquo; dropdown menu, select &amp;ldquo;Custom Paper Sizes.&amp;rdquo; Here&amp;rsquo;s what that looks like in a Mac.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/11/paper-size.png&#34; alt=&#34;paper-size&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Now add a new paper size, and call it &amp;ldquo;Full Bleed.&amp;rdquo; Set the non-printable area to 0 on all sides. Here&amp;rsquo;s what that should look like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/11/full-bleed.png&#34; alt=&#34;full-bleed&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Now you&amp;rsquo;re done. Your PDF document will look just as you see it in the visual
+preview, including background colors and other elements that reach the edge of
+the page.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using GPG in Gmail on a Mac</title>
+      <link>http://www.xaprb.com/blog/2013/10/24/using-gpg-in-gmail-on-a-mac/</link>
+      <pubDate>Thu, 24 Oct 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/10/24/using-gpg-in-gmail-on-a-mac/</guid>
+      <description>&lt;p&gt;I used to use the FireGPG extension to encrypt and decrypt text in a browser &amp;ndash; including wikis, for example, where sensitive client information could be stored. It&amp;rsquo;s been a while since I had that need, but recently I wanted to send a GPG-encrypted message to a coworker, and FireGPG has been discontinued for years. I also use a Mac now, and Chrome is my primary browser.&lt;/p&gt;
+
+&lt;p&gt;What to do? I looked around at a few Chrome extensions, but didn&amp;rsquo;t really like them.&lt;/p&gt;
+
+&lt;p&gt;Then &lt;a href=&#34;https://twitter.com/mnxsolutions/status/393178369543520256&#34;&gt;someone&lt;/a&gt; kindly pointed out on Twitter that the GPG suite from &lt;a href=&#34;https://gpgtools.org/&#34;&gt;gpgtools.org&lt;/a&gt; adds &amp;ldquo;services&amp;rdquo; to the right-click menu on a Mac, which enable all sorts of GPG actions on selected text, files, and so on. I had an earlier version of the GPG suite installed, so I upgraded it. (I got an error message about the pin entry application, so I uninstalled and reinstalled, which fixed it.)&lt;/p&gt;
+
+&lt;p&gt;Et voila. Here I&amp;rsquo;m composing a message: &lt;img src=&#34;http://www.xaprb.com/media/2013/10/compose.png&#34; alt=&#34;compose&#34; width=&#34;413&#34; height=&#34;316&#34; class=&#34;aligncenter size-full wp-image-3297&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then I encrypt it: &lt;img src=&#34;http://www.xaprb.com/media/2013/10/encrypt.png&#34; alt=&#34;encrypt&#34; width=&#34;495&#34; height=&#34;680&#34; class=&#34;aligncenter size-full wp-image-3298&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the result: &lt;img src=&#34;http://www.xaprb.com/media/2013/10/encrypted.png&#34; alt=&#34;encrypted&#34; width=&#34;410&#34; height=&#34;473&#34; class=&#34;aligncenter size-full wp-image-3299&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And here I&amp;rsquo;ve decrypted it on the receiving end: &lt;img src=&#34;http://www.xaprb.com/media/2013/10/decrypted.png&#34; alt=&#34;decrypted&#34; width=&#34;554&#34; height=&#34;374&#34; class=&#34;aligncenter size-full wp-image-3300&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not quite as seamless as a plugin would make it, but for occasional use it&amp;rsquo;s more than acceptable.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lessons learned from the Sublime Text editor</title>
+      <link>http://www.xaprb.com/blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/</link>
+      <pubDate>Tue, 20 Nov 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2012/11/20/lessons-learned-from-the-sublime-text-editor/</guid>
+      <description>&lt;p&gt;Terminal-based, keystroke-driven editors are enormously powerful, and I still haven&amp;rsquo;t seen anything more powerful than Vim. I&amp;rsquo;m a longtime Vim user, and although I&amp;rsquo;m not the world&amp;rsquo;s foremost jaw-dropping expert on Vim, I would call myself an advanced power user at the very least, and probably a true expert. Still, I have maintained a relationship with GUI text editors over the years, too. An editor that has an insertion point for a cursor, and &amp;ldquo;native&amp;rdquo; mouse interaction, has an appeal I&amp;rsquo;ve never quite shaken. I&amp;rsquo;ve used (and been highly productive with) Kate, GEdit, Notepad++, Visual Studio, and many others. I have &lt;em&gt;purchased licenses&lt;/em&gt; for Textpad, Textmate, and most recently &lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;Sublime Text 2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sublime Text is a very nice editor. I&amp;rsquo;ve chosen it for my recent Go programming because of the &lt;a href=&#34;https://github.com/DisposaBoy/GoSublime&#34;&gt;GoSublime&lt;/a&gt; integration, which uses &lt;a href=&#34;https://github.com/nsf/gocode&#34;&gt;gocode&lt;/a&gt; (which also works for Vim, by the way) to provide IDE-like autocomplete and other helpful functionality, like incremental syntax checking and running gofmt on save. Sublime Text also has a limited Vim emulation mode, which lets me drop into Vim command mode for some mouseless productivity.&lt;/p&gt;
+
+&lt;p&gt;Keep in mind that I think Sublime is great, and well worth the license fee. That said, I find its advocates a bit wide-eyed and breathless in their enthusiasm. I keep thinking, &lt;em&gt;Have they never used a decent editor before?&lt;/em&gt; Take the &amp;ldquo;multiple selection&amp;rdquo; feature. You can select something, such as a variable name, then press Control-D repeatedly and select other occurrences of the same text. Then you can type, and all of the occurrences change simultaneously. &lt;em&gt;Revolutionary! Any praise about multiple selections is an understatement!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Really? You&amp;rsquo;ve been able to do that with just as few, or even fewer, keystrokes in Vi or Vim forever:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:%s/oldtext/newtext/gc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All you have to do is press a key for every occurrence. If you want to change them all without confirmation, leave off the trailing &amp;lsquo;c&amp;rsquo; command to the regular expression. This is &lt;em&gt;basic&lt;/em&gt;, not a power-user feature. It&amp;rsquo;s Unix regex 101 for any number of tools &amp;ndash; nothing new to learn here.&lt;/p&gt;
+
+&lt;p&gt;Similarly, a number of other purportedly &amp;ldquo;new&amp;rdquo; features in Sublime Text 2 are decades old, well-worn and loved in many other text editors. I&amp;rsquo;ll admit that most of the mouse-based, cursor-insertion-point, GUI text editors don&amp;rsquo;t offer these types of features in any usable or convenient way; they just seem to lend themselves much better to terminal-based editors like Vim and Emacs. (Example: passing selected text through a shell command and reinserting it into the file.)&lt;/p&gt;
+
+&lt;p&gt;In fact, many of these older text editors offer &lt;em&gt;way&lt;/em&gt; more functionality than Sublime Text. It doesn&amp;rsquo;t even come close. The find-and-replace in Vim, for example, is way better than the dialog-based functionality in Sublime Text, or nearly any GUI editor for that matter. Not to mention the documentation; Vim&amp;rsquo;s documentation and help system is breathtaking, but Sublime Text&amp;rsquo;s is&amp;hellip; uninspired at best. You can compare terminal-based text editors to Sublime Text on a bunch of dimensions and it comes up way, way short. Again, this is just some rambling thoughts &amp;ndash; I repeat, I bought the license. And I&amp;rsquo;m sure Sublime Text is going to continue improving rapidly, as it has been the whole time I&amp;rsquo;ve been aware of it.&lt;/p&gt;
+
+&lt;p&gt;And now we come to my point: it appears to me, from the enthusiastic response to Sublime Text, that &lt;em&gt;a large proportion of the developer population either uses a weak-sauce text editor or is utterly untrained on using a powerful one.&lt;/em&gt; How else can we explain the enthusiasm? I honestly can&amp;rsquo;t think of anything. And this is a really saddening thought, because it means that thousands of programmers have completely neglected one of the most important things they could do: become truly proficient, if not expert, with their text editor. The text editor is to the programmer as the wrench is to the mechanic, as the compass is to the navigator, as the shoe is to the runner. It is arguably the single most important tool you&amp;rsquo;ll use as a programmer.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s just no excuse. If you aren&amp;rsquo;t using a powerful text editor (and I would count Sublime Text as one), &lt;em&gt;get one.&lt;/em&gt; And if you aren&amp;rsquo;t at least an advanced user of that editor, &lt;em&gt;get a move on it.&lt;/em&gt; I&amp;rsquo;m not the first to say this, but I can&amp;rsquo;t remember or locate the quotation about this topic that I&amp;rsquo;m trying to recall. Maybe someone can help out in the comments.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s your favorite text editor? What&amp;rsquo;s your favorite resource for becoming an amazing wizard with it, so that you regularly do the kinds of tricks that make your friends say &amp;ldquo;hey, what editor is that?&amp;rdquo;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Making auto-resetting VirtualBox machines</title>
+      <link>http://www.xaprb.com/blog/2011/08/31/making-auto-resetting-virtualbox-machines/</link>
+      <pubDate>Wed, 31 Aug 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/08/31/making-auto-resetting-virtualbox-machines/</guid>
+      <description>&lt;p&gt;I don&amp;rsquo;t know if I&amp;rsquo;ve said this before, but I absolutely love VirtualBox. It makes it so easy to run Windows in the cases where I have to for a client&amp;rsquo;s silly Windows-only VPN software or something like that. Windows runs better inside VirtualBox than it does on bare hardware.&lt;/p&gt;
+
+&lt;p&gt;One of the tricks I use constantly is to set up a bunch of VirtualBox instances with a common (shared) base disk image. You can do this by creating a machine, installing your operating system on it, then throwing away the machine and keeping the resulting disk image. You can then keep this image registered inside VirtualBox, but detached from any actual machines. Then set it immutable so it never changes again:&lt;/p&gt;
+
+&lt;pre&gt;VBoxManage modifyhd HardDisks/Windows_XP.vdi --type immutable&lt;/pre&gt;
+
+&lt;p&gt;Substitute the name of your actual disk image file. Now you have a freshly installed Windows image on that file, which can serve as the base for lots and lots of machines. I have one set up with Service Pack 3, all the usual annoyances disabled, etc etc.&lt;/p&gt;
+
+&lt;p&gt;Now here comes the magic: you can create special-purpose machines that always revert to the fresh image when you boot them up. Let&amp;rsquo;s say I want an image with an annoying VPN installed. I will create a new machine, call it Windows_XP_VPN, and select the Windows_XP.vdi file as its disk image. After selecting this disk image, I juts go through all the rest of the settings, finish the wizard, and I have my machine. I boot it up, make some changes, and when I shut it down, all the changes it&amp;rsquo;s made are stored in a &lt;em&gt;differencing&lt;/em&gt; disk image file. It doesn&amp;rsquo;t touch the base image file; any modifications are made to a copy-on-write image file.&lt;/p&gt;
+
+&lt;p&gt;The special characteristic of this differencing image file is that it resets on boot. If I shut down the machine and look at the image files, I&amp;rsquo;ll see one that&amp;rsquo;s oh, maybe a couple hundred megabytes. I can have lots of these images sharing the same base image file that usually ends up being multiple gigabytes, so sharing the base image file is a great way to save on disk space. But what happens when I restart this machine, is that the differencing file gets emptied first. If I boot up, save a file on the desktop, and restart, the file is gone. I&amp;rsquo;m back to the fresh image.&lt;/p&gt;
+
+&lt;p&gt;So this isn&amp;rsquo;t the full solution, actually, because the nasty VPN software I installed isn&amp;rsquo;t there after restart. I want it to persist. How can I do this? It&amp;rsquo;s actually pretty simple. I&amp;rsquo;ll just set the differencing image not to reset at boot:&lt;/p&gt;
+
+&lt;pre&gt;VBoxManage modifyhd Machines/Windows_XP_VPN/Snapshots/[image file name] --autoreset false&lt;/pre&gt;
+
+&lt;p&gt;Now this machine will store its state across reboots. However, I actually &lt;em&gt;like&lt;/em&gt; Windows machines to reset at boot. If I don&amp;rsquo;t have them doing that, they eventually fill up with garbage. I want a clean image, with the VPN installed, and every time I start the machine I want that minty-fresh just-installed nasty VPN feeling. How can I do this? It turns out this is also not hard. Instead of turning off autoreset on the image, I just take a snapshot after shutting down. Only the &lt;em&gt;most recent state&lt;/em&gt; (which is stored in a differencing image file) will be configured as auto-reset. Snapshots are stored in a snapshot image file that doesn&amp;rsquo;t get reset. Whatever changes I made before I took a snapshot, are persisted across reboots.&lt;/p&gt;
+
+&lt;p&gt;To illustrate this, let&amp;rsquo;s say I start a fresh machine from my base disk image. Then I install VPN on that, and shut down. If I reboot now, I lose my VPN. But if I take a snapshot, and call it &amp;ldquo;VPN installed&amp;rdquo; or something like that, when I restart my VPN is still there. Now I&amp;rsquo;ll make a folder and put it on the desktop, and reboot again. Presto &amp;ndash; the folder is gone, but the VPN is still there.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s magic, and it&amp;rsquo;s the nicest thing ever, especially for Windows. No worries about viruses, no problems installing some junk spyware that some customer thinks is a good screen-sharing tool, whatever. I can trash the machine, shut it down, and when I reboot it, it&amp;rsquo;s spiffy clean.&lt;/p&gt;
+
+&lt;p&gt;And this brings me back to my original point: &lt;em&gt;I love VirtualBox&lt;/em&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Easy on the eyes: the solarized color theme</title>
+      <link>http://www.xaprb.com/blog/2011/07/28/easy-on-the-eyes-the-solarized-color-theme/</link>
+      <pubDate>Thu, 28 Jul 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/07/28/easy-on-the-eyes-the-solarized-color-theme/</guid>
+      <description>&lt;p&gt;I recently set up the &lt;a href=&#34;http://ethanschoonover.com/solarized&#34;&gt;solarized&lt;/a&gt; color theme for my terminal emulator. I&amp;rsquo;ve been meaning to do this for a while, but procrastinated. However, I finally got really frustrated with the colors I get from &amp;ldquo;ls&amp;rdquo; sometimes &amp;ndash; I use a dark terminal with light fonts, and the directory listings in particular can become invisible, with dark blue on black.&lt;/p&gt;
+
+&lt;p&gt;Solarized is much improved. All of the colors work well together and are easy on the eyes. What a relief! Recommended for programmers and system administrators. There are plugins or configuration files for a huge variety of programming environments and programs, including Vim of course.&lt;/p&gt;
+
+&lt;p&gt;I use XFCE&amp;rsquo;s terminal, and I found that there was no terminal configuration file for it in the download. But I found a workaround: just append the colors listed in &lt;a href=&#34;https://github.com/sgerrand/solarized/blob/7541ef797ee9a2ef7d95d349f8ae600a5d1b2aef/xfce4-terminal-colors-solarized/terminalrc&#34;&gt;this file&lt;/a&gt; to the end of $HOME/.config/Terminal/terminalrc.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I ended my trial of Gnome 3</title>
+      <link>http://www.xaprb.com/blog/2011/06/28/how-i-ended-my-trial-of-gnome-3/</link>
+      <pubDate>Tue, 28 Jun 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/06/28/how-i-ended-my-trial-of-gnome-3/</guid>
+      <description>&lt;p&gt;tl;dr version: I like XFCE better than Gnome 3.&lt;/p&gt;
+
+&lt;p&gt;I wrote &lt;a href=&#34;http://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/&#34;&gt;previously&lt;/a&gt; about trying out Gnome 3. I&amp;rsquo;ve been using it for about a month now, and it&amp;rsquo;s time for me to make a decision about whether to keep using it or revert to Gnome 2. I&amp;rsquo;m actually on vacation, which ends soon. I need to do this before vacation ends, so I can be fully productive at work.&lt;/p&gt;
+
+&lt;p&gt;My ultimate impression of Gnome 3 is that it&amp;rsquo;s very slick, and makes significant improvements in some ways, but it&amp;rsquo;s not very usable for my purposes, and has too many self-contradictions. I still have the complaints I listed in my earlier blog post, such as the identity crisis between keyboard and mouse use. It is geared to keyboard control in some ways, but not enough to really work, and at the same time it&amp;rsquo;s hard to use it with the mouse. For example, it wastes space on items such as huge thick titlebars (what is that for, if not for the mouse to grab?). Yet window borders are only 1 pixel thick, which is very hard to grab with the mouse when I want to resize, and there are no minimize buttons by default. And there is a big black bar across the top of my screen, which contains a lot of useless items I normally hide. At the same time, this bar isn&amp;rsquo;t configurable and I can&amp;rsquo;t put the things I actually want onto it, so it simply sits there making part of my screen unusable.&lt;/p&gt;
+
+&lt;p&gt;After using Gnome 3 for a while, and trying to customize it to my liking, I gave up a couple of days ago. There are simply too many things that were either designed in a way I don&amp;rsquo;t like, or don&amp;rsquo;t work as designed (bugs). At this point, I revisited my reasons for using Gnome. I used to use XFCE, and Fluxbox before that, but I ultimately decided to use Gnome because it was the default, and I want to avoid customizing my environment as much as possible. Gnome had gotten to the point where it was about as good as anything else, for my purposes.&lt;/p&gt;
+
+&lt;p&gt;So instead of reverting to Gnome 2, since I&amp;rsquo;m going to customize my environment anyway, I decided to go back to XFCE instead. And now I&amp;rsquo;m happy again. It&amp;rsquo;s simple, usable, functional, attractive, and fast. It&amp;rsquo;s easy to customize slightly to my taste (e.g. moving the taskbar to the bottom of the screen, Windows style). And Alt-TAB works sanely. And, I get back some of the things I always missed, such as one-click ways to maximize windows vertically or horizontally.&lt;/p&gt;
+
+&lt;p&gt;When Fedora 16 comes out I&amp;rsquo;ll revisit Gnome 3 and see if it has improved, but for now I&amp;rsquo;m done with my evaluation. I also just set up a new computer for my dad, who&amp;rsquo;s a Windows user, and installed Fedora 14 with Gnome 2, instead of Fedora 15. I hope the Gnome developers are able to collect and integrate enough feedback to make a groundbreaking Gnome 3 interface that still does what people expect and works the way they work, because that is &lt;em&gt;the&lt;/em&gt; key to getting more adoption.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vim, the ultimate command-line password manager</title>
+      <link>http://www.xaprb.com/blog/2011/06/11/vim-the-ultimate-command-line-password-manager/</link>
+      <pubDate>Sat, 11 Jun 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/06/11/vim-the-ultimate-command-line-password-manager/</guid>
+      <description>&lt;p&gt;Thanks to &lt;a href=&#34;http://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/&#34;&gt;a comment on a recent blog post&lt;/a&gt; where I lamented the lack of an easy-to-use password manager, I&amp;rsquo;ve switched from Revelation to&amp;hellip; Vim.&lt;/p&gt;
+
+&lt;p&gt;I already use Vim for my note-keeping system. I simply add a modeline to the top of the file,&lt;/p&gt;
+
+&lt;pre&gt;# vim: set ic hlsearch:&lt;/pre&gt;
+
+&lt;p&gt;This makes searches case-insensitive, so I can just open the file and start typing a search, and it highlights it and moves to the first match as I type. It&amp;rsquo;s a great way to find something in a file. I have used this simple technique for many years to build a topical index over thousands of interesting email threads, code snippets, posts from bloggers, and customer issues. To use a buzzword, it scales as large as I need it to, and I can quickly find just about anything on any topic I&amp;rsquo;ve cared about in the past.&lt;/p&gt;
+
+&lt;p&gt;The remaining question is how to encrypt the file full of passwords. That&amp;rsquo;s what Sergio showed me in his comment. There&amp;rsquo;s a &lt;a href=&#34;http://www.vim.org/scripts/script.php?script_id=661&#34;&gt;GPG plugin for Vim&lt;/a&gt; that detects that I&amp;rsquo;m opening a GPG-encrypted file and decrypts the buffer for me. This makes it incredibly easy to open, search, edit, and save the file. Much easier than Revelation. I found that the plugin didn&amp;rsquo;t properly encrypt the file (or I&amp;rsquo;m doing something wrong), so I first created the file as plain-text and manually encrypted it with GPG, and subsequently the plugin seems to work great.&lt;/p&gt;
+
+&lt;p&gt;I still might follow up on Sergio&amp;rsquo;s suggestions for building something on top of this. I&amp;rsquo;d really like integration with the desktop: press a key, start typing and seeing matches auto-complete, press TAB when I have the one I want, and copy the password. Maybe I will actually do this. Or maybe a hot-key to simply open Vim with the password file in a terminal is all I need.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Impressions of Fedora 15 with Gnome 3</title>
+      <link>http://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/</link>
+      <pubDate>Tue, 07 Jun 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/06/07/impressions-of-fedora-15-with-gnome-3/</guid>
+      <description>&lt;p&gt;I finally upgraded from Fedora 13 to Fedora 15 on my beloved &lt;a href=&#34;http://www.amazon.com/dp/B002P3KMVC?tag=xaprb-20&#34;&gt;ASUS-UL30A-X5&lt;/a&gt;. It includes the new Gnome 3, with the &amp;ldquo;Gnome Shell&amp;rdquo; interface. It&amp;rsquo;s quite different from anything else I&amp;rsquo;ve used, and you can read lots of positive and negative impressions around the web.&lt;/p&gt;
+
+&lt;p&gt;Fedora 15 and Gnome 3 have awesome support for my laptop&amp;rsquo;s hardware. It&amp;rsquo;s simply flawless. You could not expect better software/hardware integration if you paid thousands of dollars for something from Steve Jobs. Fedora has been great about this for a long time, actually, although there was a video driver problem in Fedora 13 that would sometimes kernel-panic if I did a lot of suspending and resuming combined with plugging and unplugging external monitors. That&amp;rsquo;s not a problem I&amp;rsquo;ve seen in this release.&lt;/p&gt;
+
+&lt;p&gt;This is my work laptop, so it&amp;rsquo;s not important whether it&amp;rsquo;s cool or exciting. I am generally dealing with a lot of open windows, rapidly switching between them, opening new programs, finding files and directories, and so on. I need the interface to help me with that. So far, results are very positive, with a few things that are either giving me withdrawal pains or simply aren&amp;rsquo;t working as well as I need.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re considering using Gnome 3, don&amp;rsquo;t just try it out on a live CD for ten minutes and decide it&amp;rsquo;s lame. It&amp;rsquo;s completely new and different, and you need to spend a little time actually learning it. You had to learn Mac or Windows or whatever you currently use; if you struggle with Gnome 3 at first, stop struggling and read the documentation for 15 minutes or so. The best and fastest place to get started is with the &lt;a href=&#34;https://live.gnome.org/GnomeShell/CheatSheet&#34;&gt;cheat sheet&lt;/a&gt;. You do things &lt;em&gt;differently&lt;/em&gt; in Gnome 3. You don&amp;rsquo;t have your familiar start menu, taskbar, system tray, desktop icons, and so on. You don&amp;rsquo;t use your mouse, in general, although you can if you want to.&lt;/p&gt;
+
+&lt;p&gt;The Gnome 3 desktop environment is definitely beautiful and well-done. I&amp;rsquo;d say it&amp;rsquo;s the best-designed, fastest, best-integrated desktop I&amp;rsquo;ve used on Linux, and perhaps all-around the best interface I&amp;rsquo;ve used on any platform. (Mac OS X, for example, is very pretty but not very usable IMO, although it&amp;rsquo;s getting better these days with the ability to control it more completely without using the mouse. I&amp;rsquo;m not a Mac fan, for what it&amp;rsquo;s worth.) You can call it eye candy if you wish, and I won&amp;rsquo;t argue, but I&amp;rsquo;ll point out that it&amp;rsquo;s extremely tasteful eye candy. I never felt that KDE&amp;rsquo;s eye candy was anything but garish, by contrast.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s extremely easy and efficient to find and open programs in Gnome 3; much better than using a &amp;ldquo;start menu.&amp;rdquo; Press the &amp;ldquo;Windows key&amp;rdquo; and type the first few letters of the program&amp;rsquo;s name, then press Enter. Done. You can do the same thing to switch between your open windows.&lt;/p&gt;
+
+&lt;p&gt;The most important thing for me is managing a lot of open windows while switching between things a lot. This is the nature of my work, not something I&amp;rsquo;m doing wrong. I haven&amp;rsquo;t gotten used to this yet. I still want to be able to choose a window from the taskbar with my mouse, when I&amp;rsquo;m working with a mouse. It&amp;rsquo;s nice to be able to switch to a window with the keyboard quickly, but I need both abilities. Some activities, such as web browsing and graphics editing, are more mouse-driven. It&amp;rsquo;s most important to me that I don&amp;rsquo;t have to switch between the mouse and the keyboard, rather than solely that the keyboard can be used very easily. When I&amp;rsquo;m text editing in Vim (100% keyboard driven), the abilities to find and switch to other windows with just the keyboard are awesome. But I need both kinds of usability.&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t gotten used to the distinction between alt-tab and alt-backtick, for switching between groups of applications and switching between windows within an application group. I might ultimately decide to configure the behavior back to alt-tab&amp;rsquo;s old familiar behavior. I don&amp;rsquo;t really think of groups of windows as applications/activities in a unit, which I think the Gnome 3 interface really assumes is the case. I group windows by using tabbed interfaces (browser, for example) in most cases; and when I have multiple windows of a single application open, they&amp;rsquo;re usually not related. For example, I&amp;rsquo;ll have several terminals open, but they&amp;rsquo;re not all for one task. I&amp;rsquo;m more likely to have Firefox with three tabs open, and three terminals, and an email or two, and a chat window &amp;ndash; and the three terminals all correspond to different activities.&lt;/p&gt;
+
+&lt;p&gt;Gnome 3&amp;#8242;s partial answer to this task grouping is completely redesigned workspace support. It&amp;rsquo;s awesome &amp;ndash; it&amp;rsquo;s the way it always should have worked. But I&amp;rsquo;m not quite used to using it yet. I expect to use it a lot more as I relearn/unlearn old habits. In the meantime, when I have several Skype chats open and I want to find one of them, it&amp;rsquo;s a bit painful for me because Gnome wants to switch me to Skype, as a whole, rather than switching me to any given chat window. And if one of them is buried and visually not accessible, it&amp;rsquo;s hard for me to use the keyboard to get to it.&lt;/p&gt;
+
+&lt;p&gt;I use IRC a lot at work. I usually use XChat, but I decided to give the Gnome messaging platform a try. It&amp;rsquo;s basically Empathy, tightly integrated into the desktop environment, to make chatting easy and unintrusive. These &lt;a href=&#34;http://www.gnome.org/gnome-3/&#34;&gt;videos&lt;/a&gt; show how this works. Unfortunately, Empathy isn&amp;rsquo;t a very richly featured IRC client, and this is one of those tools that I use so much and so specifically that I have special needs. I was able to tweak Empathy to make it alert me when people mentioned me by name, but I ran out of some other configuration options that I need. XChat lets me create custom key bindings to change my nickname easily, custom highlight words, and so on. From what I can see so far, Empathy doesn&amp;rsquo;t have that ability. And I&amp;rsquo;ve gotten confused or lost a bit of chat history/context a couple of times when odd things happened, such as the person at the other end of a private message chat changing his nickname. I might just need to learn how to use Empathy better, so I&amp;rsquo;m reserving my judgment a bit before I switch back to XChat. But at this point I think that Empathy is better designed for the &amp;ldquo;AOL instant messenger&amp;rdquo; type of chatting than it is for IRC, with its concept of multiple people in a single channel with changing nicknames.&lt;/p&gt;
+
+&lt;p&gt;I had to change one of the default window manager behaviors. My email client (Claws Mail) opens a new window to compose a message, and I have customized Claws to do almost everything with the keyboard. So when I press &amp;lsquo;c&amp;rsquo;, it opens a new message window. Gnome 3 decided to place this window behind my Claws Mail window, with the focus remaining on the main window, and a notification that my new window is ready to use. But then I have to switch focus to the new window to actually use it. This doesn&amp;rsquo;t work for me, so I started gconf-editor and changed the value of /apps/metacity/general/new_windows_always_on_top. That solved the problem.&lt;/p&gt;
+
+&lt;p&gt;I absolutely rely on Revelation for password management, and it has a nice panel applet / widget that I used heavily in Gnome 2. Unfortunately, Gnome 3 has no panels. So I have to use the Revelation program directly, instead of the applet. This is painful. The Revelation interface is not very good. I searched around for another password manager, but couldn&amp;rsquo;t find anything better (they all look worse, frankly). I don&amp;rsquo;t think that the native Gnome keyring manager is the solution I&amp;rsquo;m looking for. I have nearly 200 passwords, and I use dozens of them actively every day &amp;ndash; and the number of paswords probably grows by two or three a week. I would be willing to pay some money for a really good password manager with tight Gnome integration. I&amp;rsquo;d love something keyboard-driven, that I can switch my focus to, type a few characters to search for the account I need to use, hit TAB to highlight the password, copy with CTRL-C, dismiss with ESC, and be on my way.&lt;/p&gt;
+
+&lt;p&gt;The default Gnome 3 interface is too gray and colorless. Active and inactive windows look the same. It&amp;rsquo;s too uniform. I wish the color theme were slightly more imaginative. And the window titlebars are too thick &amp;ndash; it uses too much space. I think all of these things are fixable, but I don&amp;rsquo;t see an easy way to change the visual theme from the preferences dialog. I think I need to install some add-on to do this.&lt;/p&gt;
+
+&lt;p&gt;That brings up another minor wish: the system and user preferences don&amp;rsquo;t seem complete. There isn&amp;rsquo;t enough control in the control panel, so to speak. If you search the Web for tweaks, you see a lot of gconf-editor command-line one-liners. This isn&amp;rsquo;t good for most users; most people need a graphical utility that groups configuration settings together nicely for them. I assume that this is just because it&amp;rsquo;s new, and a lot of the most popular tweaks and add-ons will find their way into the next Gnome 3 release as native, built-in preferences dialogs.&lt;/p&gt;
+
+&lt;p&gt;In summary, I really like Gnome 3 and thank the Gnome team very much for creating it. I hope that many of the hiccups I&amp;rsquo;ve seen so far are just early-adopter syndrome, and it&amp;rsquo;ll get more complete and well-rounded in future releases. I probably need better and more configurable IRC functionality if I&amp;rsquo;m going to switch to using the built-in messaging/chat functionality, and I definitely need a better password manager in general. I might also need a taskbar or something similar to help me switch between running applications and windows when I&amp;rsquo;m using my mouse to control my computer. But all of this is early impressions, and I&amp;rsquo;m trying to learn to be a more skilful Gnome user, so I&amp;rsquo;ll see how that goes.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Switching Presentation Display in OpenOffice.org Impress</title>
+      <link>http://www.xaprb.com/blog/2011/04/10/switching-presentation-display-in-openoffice-org-impress/</link>
+      <pubDate>Sun, 10 Apr 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/04/10/switching-presentation-display-in-openoffice-org-impress/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;ve used OpenOffice.org Impress to run a slideshow with your laptop plugged into an external monitor or projector, you&amp;rsquo;ve probably noticed that it prefers to switch the primary and secondary display, showing you the slideshow while it shows your audience the notes and preview of your next slide! This is exactly the reverse of what you want, which is to show your audience the slideshow and let you see notes, the countdown timer, and so on.&lt;/p&gt;
+
+&lt;p&gt;This is annoying, but it&amp;rsquo;s easy to fix. You&amp;rsquo;ll need to plug your computer into your external monitor, though. It turns out that this setting is embedded in the slideshow itself &amp;ndash; it is not a preference in OpenOffice.org &amp;ndash; and it is only activated when multiple monitors are detected. Go to the Slide Show/Settings menu&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.xaprb.com/media/2011/04/slide-show-menu.png&#34; alt=&#34;&#34; title=&#34;slide-show-menu&#34; width=&#34;459&#34; height=&#34;238&#34; class=&#34;alignnone size-full wp-image-2273&#34; /&gt;
+&amp;hellip; and at the bottom of the dialog, under Multiple Displays, choose the correct display for the slideshow to appear on. I don&amp;rsquo;t have my laptop plugged into an external display, so the choice is grayed out for me:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://www.xaprb.com/media/2011/04/slide-show-settings1.png&#34; alt=&#34;&#34; title=&#34;slide-show-settings&#34; width=&#34;485&#34; height=&#34;412&#34; class=&#34;alignnone size-full wp-image-2275&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Switching from Ubuntu to Fedora, and Thunderbird to Claws Mail</title>
+      <link>http://www.xaprb.com/blog/2010/01/05/switching-from-ubuntu-to-fedora-and-thunderbird-to-claws-mail/</link>
+      <pubDate>Tue, 05 Jan 2010 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2010/01/05/switching-from-ubuntu-to-fedora-and-thunderbird-to-claws-mail/</guid>
+      <description>&lt;p&gt;This weekend I backed up all my data, repartitioned my hard drive, and re-installed. I needed to do this because the only thing I had on the laptop was Ubuntu, and sadly, the reality is sometimes my clients use things that require me to use Windows (and sometimes a virtual machine won&amp;rsquo;t solve that). So now I&amp;rsquo;m dual-booting Windows. I think the last time I did that was sometime before 2001, so I&amp;rsquo;ve regressed 9 years.&lt;/p&gt;
+
+&lt;p&gt;I took this opportunity to switch from Ubuntu to Fedora. Why? They both released new versions almost at the same time, and I grabbed the live CDs and noticed that Fedora just worked better &amp;ndash; better support for dual monitors, for example. And some things about Ubuntu have always irked me, such as &amp;ldquo;sorry, can&amp;rsquo;t play WAV file, that&amp;rsquo;s a proprietary codec, you must install some big package of proprietary codecs.&amp;rdquo; WHAT? When did a codec become necessary to play a PCM file? Codec stands for &amp;ldquo;code/decode&amp;rdquo; and that doesn&amp;rsquo;t make sense for PCM. Anyway, these are small things, but sometimes they add up. I did not do a default install of Fedora. I don&amp;rsquo;t trust ext4, and ext3 works fine for me, so I stayed with that. I also disabled SELinux right away &amp;ndash; no thanks, *shudder*.&lt;/p&gt;
+
+&lt;p&gt;The much bigger switch was ditching Thunderbird in favor of &lt;a href=&#34;http://www.claws-mail.org/&#34;&gt;Claws&lt;/a&gt;. I last used Claws back in&amp;hellip; 2003, maybe? It was called Sylpheed Claws then, and was GTK1 or so. Now it&amp;rsquo;s much nicer looking. Anyway, Fedora installed Thunderbird 3, and after giving that a small test drive I decided that my long-standing love/hate relationship with Thunderbird was due for a change. I just need a mail client that can open a yes/no dialog in less than 1.5 seconds &amp;ndash; is that too much to ask? I&amp;rsquo;m much happier with Claws. I use email a lot, probably something like 350 emails per day, and I&amp;rsquo;ve already found Claws more capable than Thunderbird in every way but one: I can&amp;rsquo;t quite figure out how to get the functionality I got from Thunderbird&amp;rsquo;s quicktext extension. Everything else is amazing &amp;ndash; I don&amp;rsquo;t need extensions, everything&amp;rsquo;s built in by default. I use filters extensively, and the filtering and searching in Claws is much nicer than in Thunderbird. There are a handful of other things.&lt;/p&gt;
+
+&lt;p&gt;One notable thing is an archiving feature. I like to move emails to a folder after I&amp;rsquo;m done with them. I had sort of a hack in Thunderbird. The key combination Ctrl+Shift+M moves the selected message(s) to the same folder used for the last move operation. This worked acceptably well, until I moved a message elsewhere and forgot that my &amp;ldquo;archive&amp;rdquo; key combo no longer sent my messages to the archive. In Claws, I set up a custom action and attached it to the Y key, and voila I have real archiving functionality (without pressing 3 keys, too). I also remapped keys so it&amp;rsquo;s more vim-like. Gmail is the client I use for my personal accounts, so now I have consistent keystroke commands between both emails and my favorite text editor.&lt;/p&gt;
+
+&lt;p&gt;Another notable thing is that when I send an email, the sending process happens in the background. This is so much nicer. In Thunderbird, I&amp;rsquo;d Ctrl-Enter and then have to alt-tab my way past the sending dialog and the compose window, back to the main window to keep working; in Claws, I press Ctrl+Enter to send, and I&amp;rsquo;m immediately back at the main window. This might seem silly, but it&amp;rsquo;s actually a big deal. It helps me process email quite a bit faster.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to make Thunderbird download new IMAP messages</title>
+      <link>http://www.xaprb.com/blog/2009/05/26/how-to-make-thunderbird-download-new-imap-messages/</link>
+      <pubDate>Tue, 26 May 2009 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2009/05/26/how-to-make-thunderbird-download-new-imap-messages/</guid>
+      <description>&lt;p&gt;One of the minor things I&amp;rsquo;ve noticed when I use Thunderbird on my IMAP accounts is that it doesn&amp;rsquo;t download IMAP messages until I click on them. Then I have to wait until I can see the message. I have heard that this is supposed to be fixed in Thunderbird 3, and I tried it but a lot of the extensions I need aren&amp;rsquo;t compatible with it.&lt;/p&gt;
+
+&lt;p&gt;Today I finally tried to search and find out more about the problem. Turns out I&amp;rsquo;m not alone &amp;ndash; others have noticed that the setting to download message bodies for offline use doesn&amp;rsquo;t do what it&amp;rsquo;s supposed to.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, there&amp;rsquo;s an extension for this. It&amp;rsquo;s called &lt;a href=&#34;https://addons.mozilla.org/en-US/thunderbird/addon/1396&#34;&gt;Sync On Arrival&lt;/a&gt;. So far, it&amp;rsquo;s working like a charm. The only thing I had to do was edit the install.rdf to increase the version number. It&amp;rsquo;s compatible with Thunderbird 2, even though it says it&amp;rsquo;s not.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Edit&lt;/strong&gt;: see the comments for a way to do this with configuration alone, rather than an extension.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Who needs better email search for Thunderbird?</title>
+      <link>http://www.xaprb.com/blog/2009/01/29/who-needs-better-email-search-for-thunderbird/</link>
+      <pubDate>Thu, 29 Jan 2009 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2009/01/29/who-needs-better-email-search-for-thunderbird/</guid>
+      <description>&lt;p&gt;Thunderbird&amp;rsquo;s email search isn&amp;rsquo;t that great by today&amp;rsquo;s standards. If I type &amp;ldquo;red dog&amp;rdquo; into the search bar it doesn&amp;rsquo;t even tokenize and search for the words separately &amp;ndash; it&amp;rsquo;s a substring match so &amp;ldquo;my dog is red&amp;rdquo; isn&amp;rsquo;t found. And it&amp;rsquo;s slow.&lt;/p&gt;
+
+&lt;p&gt;What about embedding &amp;ldquo;real&amp;rdquo; fulltext search into it? Sphinx perhaps?&lt;/p&gt;
+
+&lt;p&gt;Just a thought.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 8.10 rocks my Inspiron 1501</title>
+      <link>http://www.xaprb.com/blog/2008/11/01/ubuntu-810-rocks-my-inspiron-1501/</link>
+      <pubDate>Sat, 01 Nov 2008 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2008/11/01/ubuntu-810-rocks-my-inspiron-1501/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m really really happy about &lt;a href=&#34;http://www.ubuntu.com/&#34;&gt;Ubuntu 8.10&lt;/a&gt; because it lets me stop kicking myself so much for buying a Dell Inspiron 1501. This little laptop was the el-cheapo option for me, found via &lt;a href=&#34;http://www.dealnews.com/&#34;&gt;dealnews.com&lt;/a&gt;. I was going to buy the virtually identical one that came with Ubuntu installed, but then Dell offered a deal on the 1501, which had Windows Vista, and I caved in to the allure of saving about $200.&lt;/p&gt;
+
+&lt;p&gt;Of course I promptly discovered that the two most important differences between the models involved hardware for which no good Free Software drivers existed: the video card and the wireless card. The Inspiron 1501 has a &amp;ldquo;ATI Technologies Inc RS482 [Radeon Xpress 200M]&amp;rdquo; and a &amp;ldquo;Broadcom Corporation BCM4311 802.11b/g WLAN (rev 01)&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;I use dual monitors; it&amp;rsquo;s pretty much a necessity for me. And I just couldn&amp;rsquo;t get the radeon driver to work right with them. I spent a lot of time trying. I ended up going to the ATI driver, which is proprietary; it had its own issues with mouse pointer corruption and the lot, which eventually were fixed, but it still disabled suspend/resume, and plus it&amp;rsquo;s non-Free. My colleagues know this irked me &amp;ndash; they just heard me griping about it a few days ago.&lt;/p&gt;
+
+&lt;p&gt;But now, praise be, the radeon driver works with my dual monitors! And the drag-and-drop point-and-click configuration interface works, too! I&amp;rsquo;ve got a 1680&amp;#215;1024 external monitor, positioned above my 1024&amp;#215;800 laptop display, and I have never so much as peeked at /etc/X11/xorg.conf. Thanks to all the people who worked so hard on this! (It didn&amp;rsquo;t work flawlessly until I rebooted, but who&amp;rsquo;s complaining.) Suspend/resume now work great!&lt;/p&gt;
+
+&lt;p&gt;I haven&amp;rsquo;t gotten the wireless card working yet; the bw43-cutter package seems to have disappeared. But I&amp;rsquo;m actually hoping that I won&amp;rsquo;t need proprietary drivers for this, too.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to swap Caps-lock and Esc keys in Ubuntu</title>
+      <link>http://www.xaprb.com/blog/2008/10/22/how-to-swap-caps-lock-and-esc-keys-in-ubuntu/</link>
+      <pubDate>Wed, 22 Oct 2008 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2008/10/22/how-to-swap-caps-lock-and-esc-keys-in-ubuntu/</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s a productivity tip that has saved me countless work while typing. Swap your Caps-lock and Escape keys. If you&amp;rsquo;re like most people, you use Caps-lock virtually never, and Escape quite a lot. Especially if you&amp;rsquo;re a programmer who happens to use &lt;a href=&#34;http://www.vim.org/&#34;&gt;the best text editor, Vim&lt;/a&gt;. Read on to learn how to do this.&lt;/p&gt;
+
+&lt;p&gt;An easy way to do it on Ubuntu with Gnome: step one, create a .xmodmaprc file. You can run the following command to create the file and put the correct contents into it:&lt;/p&gt;
+
+&lt;pre&gt;echo &amp;gt; ~/.xmodmaprc &#39;! Swap caps lock and escape
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock&#39;&lt;/pre&gt;
+
+&lt;p&gt;Step two is to make this run every time you log in. Open up System-Preferences-Settings. Click the Add button to add a new entry to the additional startup programs list. In the &amp;ldquo;name&amp;rdquo; box, enter &amp;ldquo;xmodmap&amp;rdquo; or something else descriptive. In the Command box, enter &amp;ldquo;/usr/bin/xmodmap /home/[user]/.xmodmaprc&amp;rdquo;, where [user] is your username.&lt;/p&gt;
+
+&lt;p&gt;And now get used to being able to hit Escape without reaching for it. If you like this, you might also be interested in using the &lt;a href=&#34;http://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard&#34;&gt;Dvorak&lt;/a&gt; keyboard &amp;ndash; I can type on either Dvorak or QWERTY, but Dvorak has saved me from something approaching total paralysis of the hands, so it&amp;rsquo;s worth checking into also.&lt;/p&gt;
+
+&lt;p&gt;As your reward for reading this far,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Q: what&amp;rsquo;s the integral of 1/cabin?&lt;/p&gt;
+
+&lt;p&gt;A1: Natural Log Cabin&lt;/p&gt;
+
+&lt;p&gt;A2: Houseboat (Natural Log Cabin + C)&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Favorite USB wireless card for Ubuntu?</title>
+      <link>http://www.xaprb.com/blog/2007/11/28/favorite-usb-wireless-card-for-ubuntu/</link>
+      <pubDate>Wed, 28 Nov 2007 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2007/11/28/favorite-usb-wireless-card-for-ubuntu/</guid>
+      <description>&lt;p&gt;Dear LazyWeb,&lt;/p&gt;
+
+&lt;p&gt;Do you have a favorite USB wifi network card for a laptop running Ubuntu?&lt;/p&gt;
+
+&lt;p&gt;Sincerely, Xaprb&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

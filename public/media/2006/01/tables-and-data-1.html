@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Table Formatting Demo</title>
+<link type="text/css" rel="stylesheet" href="demo-style.css" />
+<style type="text/css">
+td.dt-number {
+    text-align: right;
+}
+
+#table3 td.dst-USD:before {
+    content: "$";
+}
+
+#table4 td.dst-currency[abbr^="-"] {
+    color:red;
+}
+
+#table4 td.dst-USD:before {
+    content: "$";
+}
+
+/* Set up two rules which will be overridden.  This would not be necessary if CSS3's
+   selectors had negation operators, such as "abbr attribute does NOT end with..." */
+
+/* Add .00 to all currency values by default.*/
+#table4 td.dst-currency:after {
+    content: ".00";
+}
+
+/* Override the .00 on currency values that have a decimal point.*/
+#table4 td.dst-currency[abbr*="."]:after {
+    content: "";
+}
+
+/**/
+#table4 td.dst-currency[abbr$="."]:after {
+    content: "00";
+}
+
+/* Regular expressions would be nice here, yes?*/
+#table4 td.dst-currency[abbr$=".0"]:after,
+#table4 td.dst-currency[abbr$=".1"]:after,
+#table4 td.dst-currency[abbr$=".2"]:after,
+#table4 td.dst-currency[abbr$=".3"]:after,
+#table4 td.dst-currency[abbr$=".4"]:after,
+#table4 td.dst-currency[abbr$=".5"]:after,
+#table4 td.dst-currency[abbr$=".6"]:after,
+#table4 td.dst-currency[abbr$=".7"]:after,
+#table4 td.dst-currency[abbr$=".8"]:after,
+#table4 td.dst-currency[abbr$=".9"]:after
+{
+    content: "0";
+}
+</style>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+_uacct = "UA-101883-1";
+urchinTracker();
+</script>
+</head>
+<body>
+
+<h1>Table Formatting Demo</h1>
+
+<p>This is the default table:</p>
+
+<table id="table1" class="cleanHeaders elbowroom">
+    <caption>Weekly Sales Stats</caption>
+    <thead>
+    <tr><th scope="col">Date</th><th scope="col">Net Sales</th></tr>
+    </thead>
+    <tbody>
+    <tr><td>2005-01-01</td><td>581</td></tr>
+    <tr><td>2005-01-02</td><td>557.23</td></tr>
+    <tr><td>2005-01-03</td><td>532.1</td></tr>
+    <tr><td>2005-01-04</td><td>20.</td></tr>
+    <tr><td>2005-01-05</td><td>-82.58</td></tr>
+    </tbody>
+</table>
+
+<p>I'll add classes to define the data types, as specified in the article: <code>dt-datetime dst-date</code> for the first column, <code>dt-number dst-currency dst-USD</code> for the second.</p>
+
+<table id="table2" class="cleanHeaders elbowroom">
+    <caption>Weekly Sales Stats</caption>
+    <thead>
+    <tr><th scope="col">Date</th><th scope="col">Net Sales</th></tr>
+    </thead>
+    <tbody>
+    <tr><td class="dt-datetime dst-date">2005-01-01</td><td class="dt-number dst-currency dst-USD">581</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-02</td><td class="dt-number dst-currency dst-USD">557.23</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-03</td><td class="dt-number dst-currency dst-USD">532.1</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-04</td><td class="dt-number dst-currency dst-USD">20.</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-05</td><td class="dt-number dst-currency dst-USD">-82.58</td></tr>
+    </tbody>
+</table>
+
+<p>Now I'll allow not-universally-supported (though been-around-forever) CSS2 to apply.  Same data, same classes on the cells, different display:</p>
+
+<table id="table3" class="cleanHeaders elbowroom">
+    <caption>Weekly Sales Stats</caption>
+    <thead>
+    <tr><th scope="col">Date</th><th scope="col">Net Sales</th></tr>
+    </thead>
+    <tbody>
+    <tr><td class="dt-datetime dst-date">2005-01-01</td><td class="dt-number dst-currency dst-USD">581</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-02</td><td class="dt-number dst-currency dst-USD">557.23</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-03</td><td class="dt-number dst-currency dst-USD">532.1</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-04</td><td class="dt-number dst-currency dst-USD">20.</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-05</td><td class="dt-number dst-currency dst-USD">-82.58</td></tr>
+    </tbody>
+</table>
+
+<p>That example works unless you are on a Really Lame Browser such as Internet Explorer 6.  The following example only works (and even then there are no guarantees) if you're on a very forward-looking browser, such as Safari, Konqueror, or Firefox (in reverse alphabetical order).  To enable this, I've added the <code>TD</code>'s value to the <code>abbr</code> attribute, but otherwise the table is the same as the preceding one, and only the CSS is different:</p>
+
+<table id="table4" class="cleanHeaders elbowroom">
+    <caption>Weekly Sales Stats</caption>
+    <thead>
+    <tr><th scope="col">Date</th><th scope="col">Net Sales</th></tr>
+    </thead>
+    <tbody>
+    <tr><td class="dt-datetime dst-date">2005-01-01</td><td abbr="581" class="dt-number dst-currency dst-USD">581</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-02</td><td abbr="557.23" class="dt-number dst-currency dst-USD">557.23</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-03</td><td abbr="532.1" class="dt-number dst-currency dst-USD">532.1</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-04</td><td abbr="20." class="dt-number dst-currency dst-USD">20.</td></tr>
+    <tr><td class="dt-datetime dst-date">2005-01-05</td><td abbr="-82.58" class="dt-number dst-currency dst-USD">-82.58</td></tr>
+    </tbody>
+</table>
+
+<p>Even though Opera is a Good Browser in my book, it doesn't support the CSS3 selectors yet as of version 8.51.  If you're on Opera or a non-Good Browser, here's a screenshot of what you are missing:</p>
+
+<p style="text-align:center"><img src="css3-data-table.png" width="177" height="144" alt="Screenshot of what table ought to look like" /></p>
+
+<p>As a side note, a gotcha with this technique is that the formatting is based on the value in the <code>abbr</code> attribute, <strong>not</strong> what the browser displays.  This is so easy to forget!  I changed one of the values and forgot to change its <code>abbr</code> to match, and it took me forever to catch my mistake.</p>
+
+</body>
+</html>

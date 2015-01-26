@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Music on Xaprb </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.xaprb.com/categories/music/index.xml/</link>
+    
+    
+    
+    <updated>Sat, 18 Jan 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>How to Tune A Guitar (Or Any Instrument)</title>
+      <link>http://www.xaprb.com/blog/2014/01/18/how-to-tune-guitar/</link>
+      <pubDate>Sat, 18 Jan 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/01/18/how-to-tune-guitar/</guid>
+      <description>
+
+&lt;p&gt;Do you know how to tune a guitar? I mean, do you &lt;em&gt;really&lt;/em&gt; know how to tune a
+guitar?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/guitar-tuning.jpg&#34; alt=&#34;Guitar Closeup&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve met very few people who do. Most people pick some notes, crank the tuners,
+play some chords, and endlessly fidget back and forth until they either get
+something that doesn&amp;rsquo;t sound awful to their ears, or they give up. I can&amp;rsquo;t
+recall ever seeing a professional musician look like a tuning pro on stage,
+either. This really ought to be embarrassing to someone who makes music for a
+career.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a secret to tuning an instrument. Very few people seem to know it. It&amp;rsquo;s
+surprisingly simple, it isn&amp;rsquo;t at all what you might expect, and it makes it easy
+and quick to tune an instrument &lt;em&gt;accurately&lt;/em&gt; without guesswork. However, even
+though it&amp;rsquo;s simple and logical, it is difficult and subtle at first, and
+requires training your ear. This is a neurological, physical, and mental process
+that takes some time and practice. It does &lt;em&gt;not&lt;/em&gt; require &amp;ldquo;perfect pitch,&amp;rdquo;
+however.&lt;/p&gt;
+
+&lt;p&gt;In this blog post I&amp;rsquo;ll explain how it works. There&amp;rsquo;s a surprising amount of
+depth to it, which appeals to the nerd in me. If you&amp;rsquo;re looking for &amp;ldquo;the short
+version,&amp;rdquo; you won&amp;rsquo;t find it here, because I find the math, physics, and theory
+of tuning to be fascinating, and I want to share that and not just the quick
+how-to.&lt;/p&gt;
+
+&lt;p&gt;If you practice and train yourself to hear in the correct way, with a little time you&amp;rsquo;ll be able to tune a guitar by just striking the open strings, without using harmonics or frets. You&amp;rsquo;ll be able to do this quickly, and the result will be a guitar that sounds truly active, alive, energetic, amazing &amp;mdash; much better results than you&amp;rsquo;ll get with a digital tuner. As a bonus, you&amp;rsquo;ll impress all of your friends.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;My Personal History With Tuning&lt;/h3&gt;
+
+&lt;p&gt;When I was a child my mother hired a piano tuner who practiced the &amp;ldquo;lost art&amp;rdquo; of
+tuning entirely by ear. His name was &lt;a href=&#34;http://www.genealogybuff.com/va/state/webbbs_config.pl/read/298&#34;&gt;Lee Flory&lt;/a&gt;. He was quite a character;
+he&amp;rsquo;d tuned for famous concert pianists all over the world, toured with many of
+them, and had endless stories to tell about his involvement with all sorts of
+musicians in many genres, including bluegrass and country/western greats. My
+mother loved the way the piano sounded when he tuned it. It sang. It was alive.
+It was joyous.&lt;/p&gt;
+
+&lt;p&gt;For whatever reason, Lee took an interest in me, and not only tolerated but
+encouraged my fascination with tuning. I didn&amp;rsquo;t think about it at the time, but
+I&amp;rsquo;m pretty sure he scheduled his visits differently to our house. I think he
+allowed extra time so that he could spend an hour or more explaining everything
+to me, playing notes, coaching me to hear subtleties.&lt;/p&gt;
+
+&lt;p&gt;And thus my love affair with the math, physics, and practice of tuning began.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Beats&lt;/h3&gt;
+
+&lt;p&gt;The first great secret is that tuning isn&amp;rsquo;t about listening to the pitch of
+notes. While tuning, you don&amp;rsquo;t try to judge whether a note is too high or too
+low. You listen to something called &lt;em&gt;beats&lt;/em&gt; instead.&lt;/p&gt;
+
+&lt;p&gt;Beats are fluctuations in volume created by two notes that are almost the same
+frequency.&lt;/p&gt;
+
+&lt;p&gt;When notes are not quite the same frequency, they&amp;rsquo;ll reinforce each other when
+the peaks occur together, and cancel each other out when the peaks are
+misaligned. Here&amp;rsquo;s a diagram of two sine waves of slightly different
+frequencies, and the sum of the two (in red).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/beats.png&#34; alt=&#34;Beats&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Your ear will not hear two distinct notes if they&amp;rsquo;re close together. It&amp;rsquo;ll hear
+the sum.&lt;/p&gt;
+
+&lt;p&gt;Notice how the summed wave (the red wave) fluctuates in magnitude.
+To the human ear, this sounds like a note going &amp;ldquo;wow, wow, wow, wow.&amp;rdquo; The frequency of this fluctuation is the difference between the frequencies of the notes.&lt;/p&gt;
+
+&lt;p&gt;This is the foundation of all tuning by ear that isn&amp;rsquo;t based on guesswork.&lt;/p&gt;
+
+&lt;p&gt;Before you go on, tune two strings close together on your guitar or other
+instrument, and listen until you can hear it. Or, just fret one string so it
+plays the same note as an open string, and strike them together. Bend the string
+you&amp;rsquo;ve fretted, a little less, a little more. Listen until you hear the beats.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/bending.jpg&#34; alt=&#34;Bending String&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;The Math of Pitch&lt;/h3&gt;
+
+&lt;p&gt;Musical notes have mathematical relationships to one another. The exact
+relationships depend on the tuning. There are many tunings, but in this article
+I&amp;rsquo;ll focus on the tuning used for nearly all music in modern Western cultures:
+the &lt;a href=&#34;http://en.wikipedia.org/wiki/Equal_temperament&#34;&gt;12-tone equal temperament&lt;/a&gt; tuning, said to be developed by Bach (this is
+&lt;a href=&#34;http://www.larips.com&#34;&gt;contested&lt;/a&gt;, though).&lt;/p&gt;
+
+&lt;p&gt;In this tuning, the octave is the fundamental interval of pitch. Notes double in
+frequency as they rise an octave, and the ratio of frequencies between each
+adjacent pair of notes is constant. Since there are twelve half-steps in an
+octave, the frequency increase from one note to the next is the twelfth root of
+2, or about 1.059463094359293.&lt;/p&gt;
+
+&lt;p&gt;Staying with Western music, where we define the A above middle C to have the
+frequency of 440Hz, the scale from A220 to A440 is as follows:&lt;/p&gt;
+
+&lt;pre&gt;
+Note     Frequency
+=======  =========
+A220     220.0000
+A-sharp  233.0819
+B        246.9417
+C        261.6256
+C-sharp  277.1826
+D        293.6648
+D-sharp  311.1270
+E        329.6276
+F        349.2282
+F-sharp  369.9944
+G        391.9954
+G-sharp  415.3047
+A440     440.0000
+&lt;/pre&gt;
+
+&lt;p&gt;We&amp;rsquo;ll refer back to this later.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;The Math Of Intervals&lt;/h3&gt;
+
+&lt;p&gt;If you&amp;rsquo;ve ever sung in harmony or played a chord, you&amp;rsquo;ve used intervals.
+Intervals are named for the relative distance between two notes: a minor third,
+a fifth, and so on.  These are a little confusing, because they sound like
+fractions. They&amp;rsquo;re not. A fifth doesn&amp;rsquo;t mean that one note is five times the
+frequency of another. A fifth means that if you start on the first note and
+count upwards five notes on a major scale, you&amp;rsquo;ll reach the second note in the
+interval. Here&amp;rsquo;s the C scale, with the intervals between the lowest C and the
+given note listed at the right:&lt;/p&gt;
+
+&lt;pre&gt;
+Note  Name  Interval from C
+====  ====  ===============
+C     Do    Unison
+D     Re    Major 2nd
+E     Mi    Major 3rd
+F     Fa    4th (sometimes called Perfect 4th)
+G     So    5th (a.k.a. Perfect 5th)
+A     La    Major 6th
+B     Ti    Major 7th
+C     Do    Octave (8th)
+&lt;/pre&gt;
+
+&lt;p&gt;On the guitar, adjacent strings form intervals of fourths, except for the
+interval between the G and B strings, which is a major third.&lt;/p&gt;
+
+&lt;p&gt;Some intervals sound &amp;ldquo;good,&amp;rdquo; &amp;ldquo;pure,&amp;rdquo; or &amp;ldquo;harmonious.&amp;rdquo; A major chord, for example, is
+composed of the root (first note), major third, fifth, and octave. The chord
+sounds good because the intervals between the notes sound good. There&amp;rsquo;s a
+variety of intervals at play: between the third and fifth is a minor third,
+between the fifth and octave is a fourth, and so on.&lt;/p&gt;
+
+&lt;p&gt;It turns out that the intervals that sound the most pure and harmonious are the ones whose
+frequencies have the simplest relationships. In order of increasing complexity,
+we have:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Unison: two notes of the same frequency.&lt;/li&gt;
+&lt;li&gt;Octave: the higher note is double the frequency.&lt;/li&gt;
+&lt;li&gt;Fifth: the higher note is 3/2s the frequency.&lt;/li&gt;
+&lt;li&gt;Fourth: the higher note is 4/3rds the frequency.&lt;/li&gt;
+&lt;li&gt;Third: the higher note is 5/4ths the frequency.&lt;/li&gt;
+&lt;li&gt;Further intervals (minor thirds, sixths, etc) have various relationships, but
+the pattern of N/(N-1) doesn&amp;rsquo;t hold beyond the third.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These relationships are important for tuning, but beyond here it gets
+significantly more complex. This is where things are most interesting!&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;Overtones and Intervals&lt;/h3&gt;
+
+&lt;p&gt;As a guitar player, you no doubt know about &amp;ldquo;harmonics,&amp;rdquo; also called overtones.
+You produce a harmonic by touching a string gently at a specific place (above
+the 5th, 7th, or 12th fret, for example) and plucking the string. The note that
+results sounds pure, and is higher pitched than the open string.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/harmonic.jpg&#34; alt=&#34;Harmonics&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Strings vibrate at a base frequency, but these harmonics (they&amp;rsquo;re actually
+partials, but I&amp;rsquo;ll cover that later) are always present. In fact, much of the
+sound energy of a stringed instrument is in overtones, not in the fundamental
+frequency. When you &amp;ldquo;play a harmonic&amp;rdquo; you&amp;rsquo;re really just damping out most of the
+frequencies and putting more energy into simpler multiples of the fundamental
+frequency.&lt;/p&gt;
+
+&lt;p&gt;Overtones are basically multiples of the fundamental frequency. The octave, for
+example, is twice the frequency of the open string. Touching the string at the
+12th fret is touching it at its halfway point. This essentially divides the
+string into two strings of half the length. The frequency of the note is
+inversely dependent on the string&amp;rsquo;s length, so half the length makes a note
+that&amp;rsquo;s twice the frequency. The seventh fret is at 1/3rd the length of the
+string, so the note is three times the frequency; the 5th fret is 1/4th the
+length, so you hear a note two octaves higher, and so on.&lt;/p&gt;
+
+&lt;p&gt;The overtones give the instrument its characteristic sound. How many of them
+there are, their frequencies, their volumes, and their attack and decay
+determines how the instrument sounds. There are usually many overtones, all
+mixing together into what you usually think of as a single note.&lt;/p&gt;
+
+&lt;p&gt;Tuning depends on overtones, because you can tune an interval by listening to
+the beats in its overtones.&lt;/p&gt;
+
+&lt;p&gt;Take a fifth, for example. Recall from before that the second note in the fifth
+is &lt;sup&gt;3&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt; the frequency of the first. Let&amp;rsquo;s use A220 as an example; a fifth up from
+A220 is E330.  E330 times two is E660, and A220 times three is E660 also. So by
+listening to the first overtone of the E, and the second overtone of the A, you
+can &amp;ldquo;hear a fifth.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;re not really hearing the fifth, of course; you&amp;rsquo;re really hearing the beats
+in the overtones of the two notes.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;Practice Hearing Intervals&lt;/h3&gt;
+
+&lt;p&gt;Practice hearing the overtones in intervals.  Pick up your guitar and de-tune the lowest E string down
+to a D. Practice hearing its overtones. Pluck a harmonic at the 12th string and
+strike your open D string; listen to the beats between the notes. Now play both
+strings open, with no harmonics, at the same time. Listen again to the
+overtones, and practice hearing the beats between them. De-tune slightly if you
+need to, to make the &amp;ldquo;wow, wow, wow, wow&amp;rdquo; effect easier to notice.&lt;/p&gt;
+
+&lt;p&gt;Take a break; don&amp;rsquo;t overdo it. Your ear will probably fatigue quickly and you&amp;rsquo;ll
+be unable to hear the overtones, especially as you experiment more with complex
+intervals. In the beginning, you should not be surprised if you can focus on
+these overtones for only a few minutes before it gets hard to pick them out and
+things sound jumbled together. Rest for a few hours. I would not suggest doing
+this more than a couple of times a day initially.&lt;/p&gt;
+
+&lt;p&gt;The fatigue is real, by the way. As I mentioned previously, being able to
+hear beats and ignore the richness of the sound to pick out weak overtones is
+a complex physical, mental, and neurological skill &amp;mdash; and there
+are probably other factors too. I&amp;rsquo;d be interested in seeing brain scans of an
+accomplished tuner at work. Lee Flory was not young, and he told me that his
+audiologist said his hearing had not decayed with age. This surprised the
+doctor, because he spent his life listening to loud sounds. Lee attributed this
+to daily training of his hearing, and told me that the ear is like any other
+part of the body: it can be exercised. According to Lee, if he took even a
+single day&amp;rsquo;s break from tuning, his ear lost some of its acuity.&lt;/p&gt;
+
+&lt;p&gt;Back to the topic: When you&amp;rsquo;re ready, pluck a harmonic on the lowest D string
+(formerly the E string) at the 7th fret, and the A string at the 12th fret, and
+listen to the beats between them. Again, practice hearing the same overtones
+(ignoring the base notes) when you strike both open strings at the same time.&lt;/p&gt;
+
+&lt;p&gt;When you&amp;rsquo;ve heard this, you can move on to a 4th. You can strike the harmonic at
+the 5th fret of the A string and th 7th fret of the D string, for example, and
+listen to the beats; then practice hearing the same frequencies by just
+strumming those two open strings together.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/4542297929_49286da35a.jpg&#34; alt=&#34;Soundhole&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;As you do all of these exercises, try your best to ignore pitch (highness or lowness)
+of the notes, and listen only to the fluctuations in volume. In reality you&amp;rsquo;ll be conscious of both pitch and beats, but this practice will help develop your tuning ear.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_6&#34;&gt;Imperfect Intervals and Counting Beats&lt;/h3&gt;
+
+&lt;p&gt;You may have noticed that intervals in the equal-tempered 12-tone tuning don&amp;rsquo;t
+have exactly the simple relationships I listed before. If you look at the table
+of frequencies above, for example, you&amp;rsquo;ll see that in steps of the 12th root of
+2, E has a frequency of 329.6276Hz, not 330Hz.&lt;/p&gt;
+
+&lt;p&gt;Oh no! Was it all a lie? Without these relationships, does tuning fall apart?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/8087829115_b2da0e4435.jpg&#34; alt=&#34;Nautilus&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Not really. In the equal-tempered tuning, in fact, &lt;strong&gt;there is only one perfect
+interval: the octave&lt;/strong&gt;. All other intervals are imperfect, or &amp;ldquo;tempered.&amp;rdquo;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The 5th is a little &amp;ldquo;narrow&amp;rdquo; &amp;ndash; the higher note in the interval is slightly
+flat&lt;/li&gt;
+&lt;li&gt;The 4th is a little &amp;ldquo;wide&amp;rdquo; &amp;ndash; the higher note is sharp&lt;/li&gt;
+&lt;li&gt;The major 3rd is even wider than the 4th&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other intervals are wide or narrow, just depending on where their frequencies fall
+on the equal-tempered tuning. (In practice, you will rarely or never tune
+intervals other than octaves, 5ths, 4ths, and 3rds.)&lt;/p&gt;
+
+&lt;p&gt;As the pitch of the interval rises, so does the frequency of the beats. The 4th
+between A110 and the D above it will beat half as fast as the 4th an octave
+higher.&lt;/p&gt;
+
+&lt;p&gt;What this means is that not only do you need to hear beats, but you need to
+&lt;em&gt;count&lt;/em&gt; them. Counting is done in beats per second. It sounds insanely hard at
+first (how the heck can you count 7.75 beats a second!?) but it will
+come with practice.&lt;/p&gt;
+
+&lt;p&gt;You will need to know how many beats wide or narrow a given interval will be.
+You can calculate it easily enough, and I&amp;rsquo;ll show examples later.&lt;/p&gt;
+
+&lt;p&gt;After a while of tuning a given instrument, you&amp;rsquo;ll just memorize how many beats
+to count for specific intervals, because as you&amp;rsquo;ll see, there&amp;rsquo;s a system for
+tuning any instrument. You generally don&amp;rsquo;t need to have every arbitrary
+interval memorized. You will use only a handful of intervals and you&amp;rsquo;ll learn
+their beats.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_7&#34;&gt;Tuning The Guitar&lt;/h3&gt;
+
+&lt;p&gt;With all that theory behind us, we can move on to a tuning system for the guitar.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s list the strings, their frequencies, and some of their overtones.&lt;/p&gt;
+
+&lt;pre&gt;
+String  Freq    Overtone_2  Overtone_3  Overtone_4  Overtone_5
+======  ======  ======      ======      =======     =======
+E       82.41   164.81      247.22      329.63      412.03
+A       110.00  220.00      330.00      440.00      550.00
+D       146.83  293.66      440.50      587.33      734.16
+G       196.00  392.00      587.99      783.99      979.99
+B       246.94  493.88      740.82      987.77      1234.71
+E       329.63  659.26      988.88      1318.51     1648.14
+&lt;/pre&gt;
+
+&lt;p&gt;Because the open strings of the guitar form 4ths and one 3rd, you can tune the guitar&amp;rsquo;s strings open, without any frets, using just those intervals. There&amp;rsquo;s also a double octave from the lowest E to the highest E, but you don&amp;rsquo;t strictly need to use that except as a check after you&amp;rsquo;re done.&lt;/p&gt;
+
+&lt;p&gt;For convenience, here&amp;rsquo;s the same table with only the overtones we&amp;rsquo;ll use.&lt;/p&gt;
+
+&lt;pre&gt;
+String  Freq    Overtone_2  Overtone_3  Overtone_4  Overtone_5
+======  ======  ==========  ==========  ==========  ==========
+E       82.41               247.22      329.63 
+A       110.00              330.00      440.00
+D       146.83              440.50      587.33      734.16
+G       196.00              587.99                  979.99
+B       246.94              740.82      987.77
+E       329.63              988.88      
+&lt;/pre&gt;
+
+&lt;h4 id=&#34;toc_8&#34;&gt;Tuning the A String&lt;/h4&gt;
+
+&lt;p&gt;The first thing to do is tune one of the strings to a reference pitch. After that, you&amp;rsquo;ll tune all of the other strings relative to this first one. On the guitar, the most convenient reference pitch is A440, because the open A string is two octaves below at 110Hz.&lt;/p&gt;
+
+&lt;p&gt;You&amp;rsquo;ll need a good-quality &lt;a href=&#34;http://www.amazon.com/Wittner-Tuning-Fork-In-A-440/dp/B001T21J80/?tag=xaprb-20&#34;&gt;A440 tuning fork&lt;/a&gt;. I prefer a Wittner for guitar tuning; it&amp;rsquo;s a good-quality German brand that is compact, so it fits in your guitar case&amp;rsquo;s pocket, and has a small notch behind the ball at the end of the stem, so it&amp;rsquo;s easy to hold in your teeth if you prefer that.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/wittner-tuning-fork.jpg&#34; alt=&#34;Wittner A440 Tuning Fork&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Strike the tuning fork lightly with your fingernail, or tap it gently against your knee. Don&amp;rsquo;t bang it against anything hard or squeeze the tines, or you might damage it and change its pitch. You can hold the tuning fork against the guitar&amp;rsquo;s soundboard, or let it rest lightly between your teeth so the sound travels through your skull to your ears, and strike the open A string. Tune the A string until the beats disappear completely. Now put away the tuning fork and continue. You won&amp;rsquo;t adjust the A string after this.&lt;/p&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t have a tuning fork, you can use any other reference pitch, such as the A on a piano, or a digitally produced A440.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_9&#34;&gt;Tuning the Low E String&lt;/h4&gt;
+
+&lt;p&gt;Strike the open low E and A strings together, and tune the E string. Listen to the beating of the overtones at the frequency of the E two octaves higher. If you have trouble hearing it, silence all the strings, then pluck a harmonic on the E string at the 5th fret. Keep that tone in your memory and then sound the two strings together. It&amp;rsquo;s important to play the notes &lt;em&gt;together, open, simultaneously&lt;/em&gt; so that you don&amp;rsquo;t get confused by pitches. Remember, you&amp;rsquo;re trying to ignore pitch completely, and get your ear to isolate the sound of the overtone, ignoring everything but its beating.&lt;/p&gt;
+
+&lt;p&gt;When correctly tuned, the A string&amp;rsquo;s overtone will be at 330Hz and the E string&amp;rsquo;s will be at 329.63Hz, so the interval is &lt;strong&gt;1/3rd of a beat per second wide&lt;/strong&gt;. That is, you can tune the E string until the beats disappear, and then &lt;strong&gt;flatten the low E string very slightly&lt;/strong&gt; until you hear one beat every three seconds. The result will be a very slow &amp;ldquo;wwwoooooowww, wwwwoooooowww&amp;rdquo; beating.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_10&#34;&gt;Tuning the D String&lt;/h4&gt;
+
+&lt;p&gt;Now that the low E and A strings are tuned, strike the open A and D strings together. You&amp;rsquo;re listening for beats in the high A440 overtone. The A string&amp;rsquo;s overtone will be at 440Hz, and the D string&amp;rsquo;s will be at 440.50Hz, so the interval should be &lt;strong&gt;&lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt; beat wide.&lt;/strong&gt; Tune the D string until the beats disappear, then &lt;strong&gt;sharpen the D string slightly&lt;/strong&gt; until you hear one beat every 2 seconds.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_11&#34;&gt;Tuning the G String&lt;/h4&gt;
+
+&lt;p&gt;Continue by striking the open D and G strings, and listen for the high D overtone&amp;rsquo;s beating. Again, if you have trouble &amp;ldquo;finding the note&amp;rdquo; with your ear, silence everything and strike the D string&amp;rsquo;s harmonic at the 5th fret. You&amp;rsquo;re listening for a high D overtone, two octaves higher than the open D string. The overtones will be at 587.33Hz and 587.99Hz, so the interval needs to be &lt;strong&gt;2/3rds of a beat wide.&lt;/strong&gt; Counting two beats every three seconds is a little harder than the other intervals we&amp;rsquo;ve used thus far, but it will come with practice. In the beginning, feel free to just give it your best wild guess. As we&amp;rsquo;ll discuss a little later, striving for perfection is futile anyway.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_12&#34;&gt;Tuning the B String&lt;/h4&gt;
+
+&lt;p&gt;Strike the open G and B strings. The interval between them is a major 3rd, so this one is trickier to hear. A major 3rd&amp;rsquo;s frequency ratio is approximately 5/4ths, so you&amp;rsquo;re listening for the 5th overtone of the G string and the 4th overtone of the B string. Because these are higher overtones, they&amp;rsquo;re not as loud as the ones you&amp;rsquo;ve been using thus far, and it&amp;rsquo;s harder to hear.&lt;/p&gt;
+
+&lt;p&gt;To isolate the note you need to hear, mute all the strings and then pluck a harmonic on the B string at the 5th fret. The overtone is a B two octaves higher. Search around on the G string near the 4th fret and you&amp;rsquo;ll find the same note.&lt;/p&gt;
+
+&lt;p&gt;The overtones are 979.99Hz and 987.77Hz, so the interval is &lt;strong&gt;seven and three-quarters beats wide.&lt;/strong&gt; This will be tough to count at first, so just aim for something about 8 beats and call it good enough. With time you&amp;rsquo;ll be able to actually count this, but it will be very helpful at first to use some rules of thumb. For example, you can compare the rhythm of the beating to the syllables in the word &amp;ldquo;mississippi&amp;rdquo; spoken twice per second, which is probably about as fast as you can say it back-to-back without pause.&lt;/p&gt;
+
+&lt;p&gt;Tune the B string until the beats disappear, then &lt;strong&gt;sharpen it 8 beats, more or less&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_13&#34;&gt;Tuning the High E String&lt;/h4&gt;
+
+&lt;p&gt;You&amp;rsquo;re almost done! Strike the open B and E strings, and listen for the same overtone you just used to tune the G and B strings: a high B. The frequencies are 987.77Hz and 988.88Hz, so the interval is &lt;strong&gt;1.1 beats wide.&lt;/strong&gt; Sharpen the E string until the high B note beats a little more than once a second.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_14&#34;&gt;Testing The Results&lt;/h4&gt;
+
+&lt;p&gt;Run a couple of quick checks to see whether you got things right. First, check your high E against your low E. They are two octaves apart, so listen to the beating of the high E string. It should be very slow or nonexistent. If there&amp;rsquo;s a little beating, don&amp;rsquo;t worry about it. You&amp;rsquo;ll get better with time, and it&amp;rsquo;ll never be perfect anyway, for reasons we&amp;rsquo;ll discuss later.&lt;/p&gt;
+
+&lt;p&gt;You can also check the low E against the open B string, and listen for beating at the B note, which is the 3rd overtone of the E string. The B should be very slightly narrow (flat) &amp;mdash; theoretically, you should hear about 1/4th of a beat.&lt;/p&gt;
+
+&lt;p&gt;Also theoretically, you could tune the high B and E strings against the low open E using the same overtones. However, due to imperfections in strings and the slowness of the beating, this is usually much harder to do. As a result, you&amp;rsquo;ll end up with high strings that don&amp;rsquo;t sound good together. A general rule of thumb is that it&amp;rsquo;s easier to hear out-of-tune-ness in notes that are a) closer in pitch and b) higher pitched, so you should generally &amp;ldquo;tune locally&amp;rdquo; rather than &amp;ldquo;tuning at a distance.&amp;rdquo; If you don&amp;rsquo;t get the high strings tuned well together, you&amp;rsquo;ll get really ugly-sounding intervals such as the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the 5th between your open G string and the D on the 3rd fret of the B string&lt;/li&gt;
+&lt;li&gt;the 5th between the A on the second fret of the G string and the open high E string&lt;/li&gt;
+&lt;li&gt;the octave between your open G string and the G on the 3rd fret of the high E string&lt;/li&gt;
+&lt;li&gt;the octave between your open D string and the D on the 3rd fret of the B string&lt;/li&gt;
+&lt;li&gt;the 5th between the E on the second fret of the D string and the open B string&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If those intervals are messed up, things will sound badly discordant. Remember that the 5ths &lt;em&gt;should&lt;/em&gt; be slightly narrow, not perfect. But the octaves should be perfect, or very nearly so.&lt;/p&gt;
+
+&lt;p&gt;Play a few quick chords to test the results, too. An E Major, G major, and B minor are favorites of mine. They have combinations of open and fretted notes that helps make it obvious if anything&amp;rsquo;s a little skewed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/31859506_7e481da3e7.jpg&#34; alt=&#34;Chord&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_15&#34;&gt;You&amp;rsquo;re Done!&lt;/h4&gt;
+
+&lt;p&gt;With time, you&amp;rsquo;ll be able to run through this tuning system very quickly, and you&amp;rsquo;ll end up with a guitar that sounds joyously alive in all keys, no matter what chord you play. No more fussing with &amp;ldquo;this chord sounds good, but that one is awful!&amp;rdquo; No more trial and error. No more guessing which string is out of tune when something sounds bad. No more game of &amp;ldquo;tuning whack-a-mole.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;To summarize:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Tune the A string with a tuning fork.&lt;/li&gt;
+&lt;li&gt;Tune the low E string &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; of a beat wide relative to the A.&lt;/li&gt;
+&lt;li&gt;Tune the D string &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;2&lt;/sub&gt; of a beat wide relative to the A.&lt;/li&gt;
+&lt;li&gt;Tune the G string &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; of a beat wide relative to the D.&lt;/li&gt;
+&lt;li&gt;Tune the B string 7 &lt;sup&gt;3&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4&lt;/sub&gt; beats wide relative to the G.&lt;/li&gt;
+&lt;li&gt;Tune the high E string just over 1 beat wide relative to the B.&lt;/li&gt;
+&lt;li&gt;Cross-check the low and high E strings, and play a few chords.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This can be done in a few seconds per string.&lt;/p&gt;
+
+&lt;p&gt;If you compare your results to what you&amp;rsquo;ll get from a digital tuner, you&amp;rsquo;ll find
+that with practice, your ear is &lt;em&gt;much&lt;/em&gt; better. It&amp;rsquo;s very hard to tune within a
+Hz or so with a digital tuner, in part because the indicators are hard to read.
+What you&amp;rsquo;ll get with a digital tuner is most strings are pretty close to their
+correct frequency. This is a lot better than the ad-hoc tuning by
+trial-and-error you might have been accustomed to doing, because that method
+results in some intervals being tuned to sound good but others badly discordant.
+The usual scenario I see is someone&amp;rsquo;s B string is in good shape, but the G and
+the E are out of tune. The guitar player then tunes the B string relative to the
+out-of-tune E and G, and then everything sounds awful. This is because the
+guitarist had no frame of reference for understanding which strings were out of
+tune in which directions.&lt;/p&gt;
+
+&lt;p&gt;But when you tune by listening to beats, and get good at it, you&amp;rsquo;ll be able to
+tune strings to within a fraction of a cycle per second of what they should be.
+Your results will absolutely be better than a digital tuner.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t mean to dismiss digital tuners. They&amp;rsquo;re very useful when you&amp;rsquo;re in a
+noisy place, or when you&amp;rsquo;re tuning things like electric guitars, which have
+distortion that buries overtones in noise. But if you learn to tune by
+hearing beats, you&amp;rsquo;ll be the better for it, and you&amp;rsquo;ll never regret it, I
+promise. By the way, if you have an Android smartphone, I&amp;rsquo;ve had pretty good
+results with the gStrings app.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/tune-o-phone.jpg&#34; alt=&#34;Tune-o-phone&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_16&#34;&gt;Advanced Magic&lt;/h4&gt;
+
+&lt;p&gt;If you do the math on higher overtones, you&amp;rsquo;ll notice a few other interesting intervals between open strings. As your ear sharpens, you&amp;rsquo;ll be able to hear these, and use them to cross-check various combinations of strings. This can be useful because as you get better at hearing overtones and beats, you&amp;rsquo;ll probably start to become a bit of a perfectionist, and you won&amp;rsquo;t be happy unless particular intervals (such as the 5ths and octaves mentioned just above) sound good. Here they are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Open A String to Open B String.&lt;/strong&gt; The 9th overtone of the open A string is a high B note at 990Hz, and the 4th overtone of the open B is a high B at 987.77HZ. If you can hear this high note, you should hear it beating just over twice per second. The interval between the A and B strings is a minor 7th, which should be slightly narrow. Thus, if you tune the B until the beating disappears, you should then flatten it two beats.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open D String to Open E String.&lt;/strong&gt; This is also a minor 7th interval. You&amp;rsquo;re listening for a very high E note, at 1321.5Hz on the D string, and 1318.5 on the E string, which is 3 beats narrow.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open D String to Open B String.&lt;/strong&gt; The 5th overtone of the D string is similar to the 3rd overtone of the B string. This interval is about 6 and &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt; beats wide. This is a bit hard to hear at first, but you&amp;rsquo;re listening for a high F-sharp.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_17&#34;&gt;Systems for Tuning Arbitrary Instruments&lt;/h3&gt;
+
+&lt;p&gt;The guitar is a fairly simple instrument to tune, because it has only 6 strings,
+and 4ths are an easy interval to tune. The inclusion of a major 3rd makes it a
+little harder, but not much.&lt;/p&gt;
+
+&lt;p&gt;It is more complicated, and requires more practice, to tune instruments with
+more strings. The most general approach is to choose an octave, and to tune all the
+notes within it. Then you extend the tuning up and down the range as needed.
+For example, to tune the piano you first tune all the notes within a C-to-C
+octave (piano tuners typically use a large middle-C tuning fork).&lt;/p&gt;
+
+&lt;p&gt;Once you have your first octave tuned, the rest is simple. Each
+note is tuned to the octave below it or above it. But getting that first octave
+is a bit tricky.&lt;/p&gt;
+
+&lt;p&gt;There are two very common systems of tuning: fourths and fifths, and thirds and
+fifths. As you may know, the cycle of fifths will cycle you through every note
+in the 12-note scale. You can cycle through the notes in various ways, however.&lt;/p&gt;
+
+&lt;p&gt;The system of thirds and fifths proceeds from middle C up a fifth to G, down a
+third to E-flat, up a fifth to B-flat, and so on.  The system of fourths and
+fifths goes from C up a fifth to G, down a fourth to D, and so on.&lt;/p&gt;
+
+&lt;p&gt;All you need to do is calculate the beats in the various intervals and be able
+to count them. The piano tuners I&amp;rsquo;ve known prefer thirds and fifths because if
+there are imperfections in the thirds, especially if they&amp;rsquo;re not as wide as they
+should be, it sounds truly awful. Lively-sounding thirds are important; fourths
+and fifths are nearly perfect, and should sound quite pure, but a third is a
+complex interval with a lot of different things going on. Fourths and fifths
+also beat slowly enough that it&amp;rsquo;s easy to misjudge and get an error that
+accumulates as you go through the 12 notes. Checking the tuning with thirds
+helps avoid this.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_18&#34;&gt;Tuning a Hammered Dulcimer&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;ve built several many-stringed instruments, including a couple of hammered
+dulcimers. My first was a home woodworking project with some two-by-four lumber,
+based on plans from a book by Phillip Mason I found at the library and decided
+to pick up on a whim. For a homebuilt instrument, it sounded great, and building
+an instrument like this is something I highly recommend.&lt;/p&gt;
+
+&lt;p&gt;Later I designed and built a second one, pictured below. Pardon the dust!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/dulcimer.jpg&#34; alt=&#34;Dulcimer&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Tuning this dulcimer takes a while. I start with an octave on the bass course.
+Dulcimers can have many different tunings; this
+one follows the typical tuning of traditional dulcimers, which is essentially a
+set of changing keys that cycle backwards by fifths as you climb the scale.
+Starting at G, for example, you have a C major scale up to the next G, centered
+around middle C. But the next B is B-flat instead of B-natural, so there&amp;rsquo;s an F
+major scale overlapping with the top of the C major, and so on:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;G A B C D E F G A B-flat C D...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s easy to tune this instrument in fourths and fifths because of the way its
+scales are laid out. If I do that, however, I find that I have ugly-sounding
+thirds more often than not. So I&amp;rsquo;ll tune by combinations of fifths, fourths, and
+thirds:&lt;/p&gt;
+
+&lt;pre&gt;
+G A B C D E F G A B-flat C D...
+^-------------^                 (up an octave)
+      ^-------^                 (down a fifth)
+      ^---^                     (up a third)
+  ^-------^                     (down a fifth)
+&lt;/pre&gt;
+
+&lt;p&gt;And so on. In addition to using thirds where I can (G-B, C-E), I&amp;rsquo;ll check my
+fifths and fourths against each other. If you do the math, you&amp;rsquo;ll notice that
+the fourth from G to C is exactly as wide as the fifth from C to G again is
+narrow. (This is a general rule of fourths and fifths. Another rule is that the
+fourth at the top of the octave beats twice as fast as the fifth at the bottom;
+so G-D beats half as fast as D-G.)&lt;/p&gt;
+
+&lt;p&gt;When I&amp;rsquo;m done with this reference octave, I&amp;rsquo;ll extend it up the entire bass
+course, adjusting for B-flat by tuning it relative to F, and checking any new
+thirds that I encounter as I climb the scale. And then I&amp;rsquo;ll extend that over to
+the right-hand side of the treble course. I do not use the left-hand (high) side
+of the treble course to tune, because its notes are inaccurate depending on the
+placement of the bridge.&lt;/p&gt;
+
+&lt;p&gt;With a little math (spreadsheets are nice), and some practice, you can find a
+quick way to tune almost any instrument, along with cross-checks to help prevent
+skew as you go.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_19&#34;&gt;Tuning a Harp&lt;/h3&gt;
+
+&lt;p&gt;Another instrument I built (this time with my grandfather) is a simplified
+replica of the &lt;a href=&#34;http://en.wikipedia.org/wiki/Queen_Mary_Harp&#34;&gt;Scottish wire-strung Queen Mary harp&lt;/a&gt;. This historical
+instrument might have been designed for some golden and silver strings,
+according to &lt;a href=&#34;http://www.annheymann.com/gold.htm&#34;&gt;Ann Heyman&amp;rsquo;s research&lt;/a&gt;. In any case, it is quite difficult to
+tune with bronze or brass strings.  It is &amp;ldquo;low-headed&amp;rdquo; and would need a much
+higher head to work well with bronze or brass.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/harp.jpg&#34; alt=&#34;Harp&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Tuning this harp is quite similar to the hammered dulcimer, although it is in a
+single key, so there&amp;rsquo;s no need to adjust to key changes as you climb the scale.
+A simple reference octave is all you need, and then it&amp;rsquo;s just a matter of
+extending it. I have never tuned a concert harp, but I imagine it&amp;rsquo;s more
+involved.&lt;/p&gt;
+
+&lt;p&gt;Tangent: I first discovered the wire-strung harp in 1988, when I heard Patrick
+Ball&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/Celtic-Harp-Vol-Turlough-OCarolan/dp/B0000007SD/?tag=xaprb-20&#34;&gt;first volume&lt;/a&gt; of &lt;a href=&#34;http://en.wikipedia.org/wiki/Turlough_O&#39;Carolan&#34;&gt;Turlough O&amp;rsquo;Carolan&amp;rsquo;s music&lt;/a&gt;. If you have not
+listened to these recordings, do yourself a favor and at least preview them on
+Amazon. All these years later, I still listen to Patrick Ball&amp;rsquo;s music often.
+His newest recording, &lt;a href=&#34;http://www.amazon.com/Wood-Morois-Patrick-Ball/dp/B004FA20T0/?tag=xaprb-20&#34;&gt;The Wood of Morois&lt;/a&gt;, is just stunning.
+I corresponded with Patrick while planning to build my harp, and he put me in
+touch with master harpmaker &lt;a href=&#34;http://www.witcherharps.com/&#34;&gt;Jay Witcher&lt;/a&gt;, and his own role model, Ann
+Heymann, who was responsible for reinventing the lost techniques of playing
+wire-strung harps. Her recordings are a little hard to find in music stores, but
+are worth it. You can buy them from her websites
+&lt;a href=&#34;http://www.clairseach.com/&#34;&gt;http://www.clairseach.com/&lt;/a&gt;, &lt;a href=&#34;http://www.annheymann.com/&#34;&gt;http://www.annheymann.com/&lt;/a&gt;, and
+&lt;a href=&#34;http://www.harpofgold.net/&#34;&gt;http://www.harpofgold.net/&lt;/a&gt;. If you&amp;rsquo;re interested in learning to play wire-strung
+harp, her book is one of the main written sources.
+There are a variety of magazines covering the harp renaissance in the latter
+part of the 20th century, and they contain much valuable additional material.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_20&#34;&gt;Beyond Tuning Theory: The Real World&lt;/h3&gt;
+
+&lt;p&gt;Although simple math can compute the theoretically correct frequencies of notes
+and their overtones, and thus the beats of various intervals, in practice a
+number of factors make things more complicated and interesting. In fact, the
+math up until now has been of the &amp;ldquo;frictionless plane&amp;rdquo; variety. For those who
+are interested, I&amp;rsquo;ll dig deeper into these nuances.&lt;/p&gt;
+
+&lt;p&gt;The nuances and deviations from perfect theory are the main reasons why a) it&amp;rsquo;s
+impossible to tune anything perfectly and b) an instrument that&amp;rsquo;s tuned
+skillfully by ear sounds glorious, whereas an instrument tuned digitally can
+sound lifeless.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_21&#34;&gt;Harmonics, Overtones, and Partials&lt;/h4&gt;
+
+&lt;p&gt;I was careful to use the term &amp;ldquo;overtone&amp;rdquo; most of the time previously. In theory,
+a string vibrates at its fundamental frequency, and then it has harmonic overtones at
+twice that frequency, three times, and so on.&lt;/p&gt;
+
+&lt;p&gt;However, that&amp;rsquo;s not what happens in practice, because theory only applies to
+strings that have no stiffness. The stiffness of the string causes its overtones
+to vibrate at slightly higher frequencies than you&amp;rsquo;d expect. For this reason,
+these overtones aren&amp;rsquo;t true harmonics. This is called inharmonicity, and
+inharmonic overtones are called &lt;em&gt;partials&lt;/em&gt; to distinguish them from the purely
+harmonic overtones of an instrument like a flute, which doesn&amp;rsquo;t exhibit the same
+effect.&lt;/p&gt;
+
+&lt;p&gt;You might think that this inharmonicity is a bad thing, but it&amp;rsquo;s not.
+Common tones with a great deal of inharmonicity are bells (which often have so much inharmonicity that you can hear the pitches of their partials are too high) and various types of chimes. I keep a little &amp;ldquo;zenergy&amp;rdquo; chime near my morning meditation table because its bright tones focus my attention. I haven&amp;rsquo;t analyzed its spectrum, but because it is made with thick bars of aluminum, I&amp;rsquo;m willing to bet that it has partials that are wildly inharmonic. Yet it sounds pure and clear.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Woodstock-Percussion-ZENERGY3-Zenergy-Instrument/dp/B0000775FZ/?tag=xaprb-20&#34;&gt;&lt;img src=&#34;/media/2014/01/zenergy.jpg&#34; alt=&#34;Woodstock Percussion ZENERGY3 Zenergy Chime&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Much of the richness and liveliness of a string&amp;rsquo;s sound is precisely because of the
+&amp;ldquo;stretched&amp;rdquo; overtones. Many people compare Patrick Ball&amp;rsquo;s brass-strung wire harp to the sound of bells, and say it&amp;rsquo;s &amp;ldquo;pure.&amp;rdquo; It may sound pure, but pure-sounding is not simple-sounding. Its tones are complex and highly inharmonic, which is why it sounds like a bell.&lt;/p&gt;
+
+&lt;p&gt;In fact, if you digitally alter a piano&amp;rsquo;s overtones to correct the stretching, you get something that sounds like an organ, not a piano. This is one of the reasons that pianos tuned with digital tuners often sound like something scraped from the bottom of a pond.&lt;/p&gt;
+
+&lt;p&gt;Some digital tuners claim to compensate for inharmonicity, but in reality each instrument and its strings are unique and will be inharmonic in different ways.&lt;/p&gt;
+
+&lt;p&gt;Some practical consequences when tuning by listening to beats:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t listen to higher partials while tuning. When tuning an octave, for example, you should ignore the beating of partials 2 octaves up. This is actually quite difficult to do and requires a well-developed ear. The reason is that higher partials will beat even when the octave is perfect, and they beat more rapidly and more obviously than the octave. Tuning a perfect octave requires the ability to hear very subtle, very gradual beats while blocking out distractions. This is also why I said not to worry if your low E string and high E string beat slightly. When tuned as well as possible, there will probably be a little bit of beating.&lt;/li&gt;
+&lt;li&gt;You might need to ignore higher partials in other intervals as well.&lt;/li&gt;
+&lt;li&gt;You might need to adjust your tuning for stretching caused by inharmonicity. In practice, for example, most guitars need to be tuned to slightly faster beats than you&amp;rsquo;d expect from pure theory.&lt;/li&gt;
+&lt;li&gt;Cross-checking your results with more complex intervals (especially thirds) can help balance the stretching better, and make a more pleasing-sounding tuning.&lt;/li&gt;
+&lt;li&gt;You might find that when using the &amp;ldquo;advanced tricks&amp;rdquo; I mentioned for the guitar, the open intervals such as minor 7ths will beat at different rates than you&amp;rsquo;d predict mathematically. However, once you are comfortable tuning your guitar so it sounds good, you&amp;rsquo;ll learn how fast those intervals should beat and it&amp;rsquo;ll be a great cross-reference for you.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;toc_22&#34;&gt;Sympathetic and False Beats&lt;/h4&gt;
+
+&lt;p&gt;It&amp;rsquo;s often very helpful to mute strings while you&amp;rsquo;re tuning other strings. The reason is that the strings you&amp;rsquo;re tuning will set up sympathetic vibrations in other strings that have similar overtones, and this can distract you.&lt;/p&gt;
+
+&lt;p&gt;When tuning the guitar, this generally isn&amp;rsquo;t much of a problem. However, be careful that when you tune the low E and A strings you don&amp;rsquo;t get distracted by vibrations from the high E string.&lt;/p&gt;
+
+&lt;p&gt;When tuning other instruments such as a hammered dulcimer or harp, &lt;a href=&#34;http://www.amazon.com/Rubber-Mutes-Piano-Tuning-Assortment/dp/B006RE74WA/?tag=xaprb-20&#34;&gt;small felt or rubber wedges&lt;/a&gt; (with wire handles if possible) are invaluable. If you don&amp;rsquo;t have these, you can use small loops of cloth.&lt;/p&gt;
+
+&lt;p&gt;In addition to distraction from sympathetic vibrations, strings can beat alone, when no other note is sounding. This is called a false beat. It&amp;rsquo;s usually caused by a flaw in the string itself, such as an imperfection in the wire or a spot of rust. This is a more difficult problem, because you can&amp;rsquo;t just make it go away. Instead, you will often have to nudge the tuning around a little here, a little there, to make it sound the best you can overall, given that there will be spurious beats no matter what. False beats will challenge your ear greatly, too.&lt;/p&gt;
+
+&lt;p&gt;In a guitar, false beats might signal that it&amp;rsquo;s time for a new set of strings. In a piano or other instrument, strings can be expensive to replace, and new strings take a while to settle in, so it&amp;rsquo;s often better to just leave it alone.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_23&#34;&gt;Imperfect Frets, Strings, Bridges and Nuts&lt;/h4&gt;
+
+&lt;p&gt;I&amp;rsquo;ve never played a guitar with perfect frets. The reality is that every note you fret will be slightly out of tune, and one goal of tuning is to avoid any particular combination of bad intervals that sounds particularly horrible.&lt;/p&gt;
+
+&lt;p&gt;This is why it&amp;rsquo;s helpful to play at least a few chords after tuning. If you tune a particular instrument often you&amp;rsquo;ll learn the slight adjustments needed to make things sound as good as possible. On my main guitar, for example, the B string needs to be slightly sharp so that a D sounds better.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s not only the frets, but the nut (the zeroth fret) and the bridge (under the right hand) that matter. Sometimes the neck needs to be adjusted as well. A competent guitar repairman should be able to adjust the action if needed.&lt;/p&gt;
+
+&lt;p&gt;Finally, the weight and manufacture of the strings makes a difference. My main guitar and its frets and bridge sound better and more accurate with medium-weight Martin bronze-wound strings than other strings I&amp;rsquo;ve tried. As your ear improves, you&amp;rsquo;ll notice subtleties like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/2516054483_876aa398c5.jpg&#34; alt=&#34;Fretting&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_24&#34;&gt;New Strings&lt;/h4&gt;
+
+&lt;p&gt;New strings (or wires) will take some time to stretch and settle in so they stay in tune. You can shorten this time by playing vigorously and stretching the strings, bending them gently. Be careful, however, not to be rough with the strings. If you kink them or strain them past their elastic point, you&amp;rsquo;ll end up with strings that have false beats, exaggerated inharmonicity, or different densities along some lengths of the string, which will make it seem like your frets are wrong in strange ways.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_25&#34;&gt;The Instrument Flexes and Changes&lt;/h4&gt;
+
+&lt;p&gt;If an instrument is especially out of tune, the first strings you tune will become slightly out of tune as you change the tension on the rest of the instrument. The best remedy I can offer for this is to do a quick approximate tuning without caring much about accuracy. Follow this up with a second, more careful tuning.&lt;/p&gt;
+
+&lt;p&gt;This was especially a problem with my first hammered dulcimer, and is very noticeable with my harp, which flexes and changes a lot as it is tuned. My second hammered dulcimer has a &lt;sup&gt;3&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4&lt;/sub&gt; inch birch plywood back and internal reinforcements, so it&amp;rsquo;s very stable. On the downside, it&amp;rsquo;s heavy!&lt;/p&gt;
+
+&lt;p&gt;Temperature and humidity play a large role, too. All of the materials in an instrument respond in different ways to changes in temperature and humidity. If you have a piano, you&amp;rsquo;re well advised to keep it in a climate-controlled room. If you&amp;rsquo;re a serious pianist you already know much more than I do about this topic.&lt;/p&gt;
+
+&lt;h4 id=&#34;toc_26&#34;&gt;Friction and Torque in Tuning Pin and Bridges&lt;/h4&gt;
+
+&lt;p&gt;For guitarists, it&amp;rsquo;s important to make sure that your nut (the zeroth fret) doesn&amp;rsquo;t pinch the string and cause it to move in jerks and starts, or to have extra tension built up between the nut and the tuning peg itself. If this happens, you can rub a pencil in the groove where the string rides. The graphite in the pencil is a natural lubricant that can help avoid this problem.&lt;/p&gt;
+
+&lt;p&gt;Of course, you should also make sure that your tuning pegs and their machinery are smooth and well lubricated. If there&amp;rsquo;s excessive slop due to wear-and-tear or cheap machinery, that will be an endless source of frustration for you.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/8193104904_2c29a6b372.jpg&#34; alt=&#34;Tuning Pegs&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;On instruments such as pianos, hammered dulcimers, and harps, it&amp;rsquo;s important to know how to &amp;ldquo;set&amp;rdquo; the tuning pin. While tuning the string upwards, you&amp;rsquo;ll create torque on the pin, twisting it in the hole. The wood fibers holding it in place will also be braced in a position that can &amp;ldquo;flip&amp;rdquo; downwards. If you just leave the pin like this, it will soon wiggle itself back to its normal state, and even beyond that due to the tension the wire places on the pin. As a result, you need to practice tuning the note slightly higher than needed, and then de-tuning it, knocking it down to the desired pitch with a light jerk and leaving it in a state of equilibrium.&lt;/p&gt;
+
+&lt;p&gt;This technique is also useful in guitars and other stringed instruments, but each type of tuning machine has its own particularities. The main point to remember is that if you don&amp;rsquo;t leave things in a state of equilibrium and stability, they&amp;rsquo;ll find one soon enough, de-tuning the instrument in the process.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_27&#34;&gt;References and Further Reading&lt;/h3&gt;
+
+&lt;p&gt;I tried to find the book from which I studied tuning as a child, but I can&amp;rsquo;t anymore. I thought it was an old Dover edition. The Dover book on tuning that I can find is not the one I remember.&lt;/p&gt;
+
+&lt;p&gt;You can find a little bit of information at various places online. One site with interesting information is &lt;a href=&#34;http://historicaltuning.com/&#34;&gt;Historical Tuning of Keyboard Instruments&lt;/a&gt; by Robert Chuckrow. I looked around on Wikipedia but didn&amp;rsquo;t find much of use. Please suggest further resources in the comments.&lt;/p&gt;
+
+&lt;p&gt;In this post I discussed the equally-tempered tuning, but there are many others. The study of them and their math, and the cultures and musical histories related to them, is fascinating. Next time you hear bagpipes, or a non-Western instrument, pay attention to the tuning. Is it tempered? Are there perfect intervals other than the octave? Which ones?&lt;/p&gt;
+
+&lt;p&gt;Listening to windchimes is another interesting exercise. Are the chimes harmonic or do they have inharmonicity? What scales and tunings do they use? What are the effects? &lt;a href=&#34;http://www.amazon.com/Woodstock-Magical-Mystery-55-Inch-Odyssey/dp/B00BD8EM48/?tag=xaprb-20&#34;&gt;Woodstock&lt;/a&gt; chimes use many unique scales and tunings. Many of their chimes combine notes in complex ways that result in no beating between some or all of the tones. &lt;a href=&#34;http://www.amazon.com/Music-Sphere-Pentatonic-Chime-PB/dp/B0007QS6YO/?tag=xaprb-20&#34;&gt;Music of the Spheres&lt;/a&gt; also makes stunning chimes in a variety of &lt;a href=&#34;https://musicofspheres.com/products/music_chart.php&#34;&gt;scales and tunings&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As I mentioned, spreadsheets can be very helpful in computing the relationships between various notes and their overtones. I&amp;rsquo;ve made a small &lt;a href=&#34;https://docs.google.com/spreadsheet/ccc?key=0AqLZaBImC-JLdFp0RnNpY2JPcWlPdnNQXzkyQ2hyb1E&amp;amp;usp=sharing&#34;&gt;online spreadsheet&lt;/a&gt; that contains some of the computations I used to produce this blog post.&lt;/p&gt;
+
+&lt;p&gt;Let me know if you suggest any other references or related books, music, or links.&lt;/p&gt;
+
+&lt;p&gt;Enjoy your beautifully tuned guitar or other instrument, and most of all, enjoy
+the process of learning to tune and listen! I hope it enriches your appreciation
+and pleasure in listening to music.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/8075445_c8b558d3a8.jpg&#34; alt=&#34;Guitar Soundhole&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Suggested links from various sources:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://demonstrations.wolfram.com/TheVibratingString/&#34;&gt;http://demonstrations.wolfram.com/TheVibratingString/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.truetemperament.com/&#34;&gt;http://www.truetemperament.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;(PDF) &lt;a href=&#34;http://www.daddariostrings.com/Resources/JDCDAD/images/tension_chart.pdf&#34;&gt;Everything You Ever Wanted to Know About String Tension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.sksmithmusic.com/virtual_classroom/string_choice.html&#34;&gt;http://www.sksmithmusic.com/virtual_classroom/string_choice.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_28&#34;&gt;Picture Credits&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/angelocesare/249168890/&#34;&gt;http://www.flickr.com/photos/angelocesare/249168890/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/locomosquito/5540678403/&#34;&gt;http://www.flickr.com/photos/locomosquito/5540678403/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/cobalt/7788898528/&#34;&gt;http://www.flickr.com/photos/cobalt/7788898528/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/doug88888/4542297929/&#34;&gt;http://www.flickr.com/photos/doug88888/4542297929/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/spindlewest/8087829115/&#34;&gt;http://www.flickr.com/photos/spindlewest/8087829115/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/toniblay/31859506/&#34;&gt;http://www.flickr.com/photos/toniblay/31859506/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/heandfi/2516054483/&#34;&gt;http://www.flickr.com/photos/heandfi/2516054483/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/rayseinefotos/8193104904/&#34;&gt;http://www.flickr.com/photos/rayseinefotos/8193104904/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.flickr.com/photos/keela84/8075445/&#34;&gt;http://www.flickr.com/photos/keela84/8075445/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A review of Bose, Sony, and Sennheiser noise-cancelling headphones</title>
+      <link>http://www.xaprb.com/blog/2014/01/16/bose-sennheiser-sony-noise-cancelling-headphones/</link>
+      <pubDate>Thu, 16 Jan 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/01/16/bose-sennheiser-sony-noise-cancelling-headphones/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve used active noise-cancelling headphones for over ten years now, and have owned several pairs of Bose, one of Sony, and most recently a pair of Sennheiser headphones. The Sennheisers are my favorites. I thought I&amp;rsquo;d write down why I&amp;rsquo;ve gone through so many sets of cans and what I like and dislike about them.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;&lt;a href=&#34;http://www.amazon.com/Bose-QuietComfort-Acoustic-Cancelling-Headphones/dp/B0054JJ0QW/?tag=xaprb-20&#34;&gt;Bose QuietComfort 15 Acoustic Noise Cancelling Headphones&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/bose-quiet-comfort.png&#34; alt=&#34;Bose QuietComfort 15 Acoustic Noise Cancelling Headphones&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m sure you&amp;rsquo;re familiar with &lt;a href=&#34;http://www.amazon.com/Bose-QuietComfort-Acoustic-Cancelling-Headphones/dp/B0054JJ0QW/?tag=xaprb-20&#34;&gt;Bose QuietComfort&lt;/a&gt; headphones. They&amp;rsquo;re the iconic &amp;ldquo;best-in-class&amp;rdquo; noise-cancelling headphones, the ones you see everywhere. Yet, after owning several pairs (beginning with Quiet Comfort II in 2003), I decided I&amp;rsquo;m not happy with them and won&amp;rsquo;t buy them anymore. Why not?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They&amp;rsquo;re not very good quality. I&amp;rsquo;ve worn out two pairs and opted to sell the third pair that Bose sent me as a replacement. Various problems occurred, including torn speakers that buzzed and grated. I just got tired of sending them back to Bose for servicing.&lt;/li&gt;
+&lt;li&gt;They&amp;rsquo;re more expensive than I think they&amp;rsquo;re worth, especially given the cheap components used.&lt;/li&gt;
+&lt;li&gt;They don&amp;rsquo;t sound bad &amp;ndash; but to my ears they still have the classic Bose fairy-dust processing, which sounds rich and pleasant at first but then fatigues me.&lt;/li&gt;
+&lt;li&gt;They produce a sensation of suction on the eardrums that becomes uncomfortable over long periods of time.&lt;/li&gt;
+&lt;li&gt;They can&amp;rsquo;t be used in non-cancelling mode. In other words, if the battery is dead, they&amp;rsquo;re unusable.&lt;/li&gt;
+&lt;li&gt;On a purely personal note, I think Bose crosses the line into greed and jealousy. I know this in part because I used to work at Crutchfield, and saw quite a bit of interactions with Bose. As an individual &amp;ndash; well, try selling a pair of these on eBay, and you&amp;rsquo;ll see what I mean. I had to jump through all kinds of hoops after my first listing was cancelled for using a stock photo that eBay themselves suggested and provided in the listing wizard. &lt;a href=&#34;http://cgi3.ebay.com/ws/eBayISAPI.dll?ViewUserPage&amp;amp;userid=Bosetracker&#34;&gt;Here&lt;/a&gt; is the information the take-down notice directed me to.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On the plus side, the fit is very comfortable physically, they cancel noise very well, and they&amp;rsquo;re smaller than some other noise-cancelling headphones. Also on the plus side, every time I&amp;rsquo;ve sent a pair in for servicing, Bose has just charged me $100 and sent me a new pair.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;&lt;a href=&#34;http://www.amazon.com/Sony-Canceling-Stereo-Headphones-MDR-NC200D/dp/B005LA53BK/?tag=xaprb-20&#34;&gt;Sony MDR-NC200D&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/sony-mdr-nc200d.png&#34; alt=&#34;Sony MDR-NC200D&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;When I sent my last pair of Bose in for servicing, they replaced them with a factory-sealed pair of new ones in the box, and I decided to sell them on eBay and buy a set of &lt;a href=&#34;http://www.amazon.com/Sony-Canceling-Stereo-Headphones-MDR-NC200D/dp/B005LA53BK/?tag=xaprb-20&#34;&gt;Sony MDR-NC200D&lt;/a&gt; headphones, which were about $100 less money than new Bose headphones at the time. I read online reviews and thought it was worth a try.&lt;/p&gt;
+
+&lt;p&gt;First, the good points. The Sonys are more compact even than the Bose, although as I recall they&amp;rsquo;re a little heavier. And the noise cancellation works quite well. The passive noise blocking (muffling) is in itself quite good. You can just put them on without even turning on the switch, and block a lot of ambient noise. The sound quality is also quite good, although there is a slight hiss when noise cancellation is enabled. Active cancellation is good, but not as good as the Bose.&lt;/p&gt;
+
+&lt;p&gt;However, it wasn&amp;rsquo;t long before I realized I couldn&amp;rsquo;t keep them. The Sonys sit on the ear, and don&amp;rsquo;t enclose the ear and sit against the skull as the Bose do. They&amp;rsquo;re on-the-ear, not over-the-ear. Although this doesn&amp;rsquo;t feel bad at first, in about 20 minutes it starts to hurt. After half an hour it&amp;rsquo;s genuinely painful. This may not be your experience, but my ears just start to hurt after being pressed against my head for a little while.&lt;/p&gt;
+
+&lt;p&gt;I had to sell the Sonys on eBay too. My last stop was the Sennheisers.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;&lt;a href=&#34;http://www.amazon.com/Sennheiser-PXC-450-Noise-Canceling-Headphones/dp/B000R2PC2M/?tag=xaprb-20&#34;&gt;Sennheiser PXC 450 NoiseGard Active Noise-Canceling Headphones&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/01/sennheiser-pxc-450.png&#34; alt=&#34;Sennheiser PXC 450 NoiseGard Active Noise-Canceling Headphones&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://www.amazon.com/Sennheiser-PXC-450-Noise-Canceling-Headphones/dp/B000R2PC2M/?tag=xaprb-20&#34;&gt;Sennheiser PXC 450&lt;/a&gt; headphones are midway in price between the Bose and the Sony: a little less expensive than the Bose. I&amp;rsquo;ve had them a week or so and I&amp;rsquo;m very happy with them so far.&lt;/p&gt;
+
+&lt;p&gt;This is not the first pair of Sennheisers I&amp;rsquo;ve owned. I&amp;rsquo;ve had a pair of open-air higher-end Sennheisers for over a decade. I absolutely love them, so you can consider me a Sennheiser snob to some extent.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m pleased to report that the PXC 450s are Sennheisers through and through. They have amazing sound, and the big cups fit comfortably around my ears. They are a little heavier than my other Sennheisers, but still a pleasure to wear.&lt;/p&gt;
+
+&lt;p&gt;The nice thing is that not only does noise cancellation work very well (on par with Bose&amp;rsquo;s, I&amp;rsquo;d say), but there is no sensation of being underwater with pressure or suction on the eardrums. Turn on the noise cancellation switch and the noise just vanishes, but there&amp;rsquo;s no strange feeling as a result. Also, these headphones can work in passive mode, with noise cancellation off, and don&amp;rsquo;t need a battery to work.&lt;/p&gt;
+
+&lt;p&gt;On the downside, if you want to travel with them, they&amp;rsquo;re a little bigger than the Bose. However I&amp;rsquo;ve travelled with the Bose headphones several times and honestly I find even them too large to be convenient. I don&amp;rsquo;t use noise-cancelling headphones for travel, as a result.&lt;/p&gt;
+
+&lt;p&gt;Another slight downside is that the earcups aren&amp;rsquo;t completely &amp;ldquo;empty&amp;rdquo; inside. There are some caged-over protrusions with the machinery inside. Depending on the shape of your ears, these might brush your ears if you move your head. I find that if I don&amp;rsquo;t place the headphones in the right spot on my head, they do touch my ears every now and then.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;After owning several pairs of top-rated noise-cancelling headphones, I think the Sennheisers are the clear winners in price, quality, comfort, and sound. Your mileage may vary.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to digitize records with Ubuntu, a USB Turntable and Audacity</title>
+      <link>http://www.xaprb.com/blog/2008/08/30/how-to-digitize-records-with-ubuntu-a-usb-turntable-and-audacity/</link>
+      <pubDate>Sat, 30 Aug 2008 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2008/08/30/how-to-digitize-records-with-ubuntu-a-usb-turntable-and-audacity/</guid>
+      <description>&lt;p&gt;I&#39;ve been digitizing my LP collection recently and thought I&#39;d share a quick howto, since I haven&#39;t seen a good complete tutorial on the whole process online.  Hopefully this will show up on Google and people can find it.&lt;/p&gt;
+
+&lt;h3&gt;It takes time&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/gp/product/B001B9SH4U?ie=UTF8&amp;#038;tag=xaprb-20&amp;#038;linkCode=as2&amp;#038;camp=1789&amp;#038;creative=9325&amp;#038;creativeASIN=B001B9SH4U&#34; style=&#34;float:right&#34;&gt;&lt;img src=&#39;http://www.xaprb.com/media/2008/08/ion_lp_to_cd.jpg&#39; alt=&#39;Ion LP to CD converter&#39; /&gt;&lt;/a&gt;Before I begin, I want to make a few comments about the process overall.  I&#39;ve borrowed the turntable I&#39;m using (actually borrowed two, from different people) and read a lot on the Internet about this.  It strikes me that most people posting on the forums underestimate how much time it takes to convert LPs to digital form.  Sometimes there is no way to just replace the LP with a CD, but I&#39;ve decided to do so in many cases.  I suppose another alternative is to get a system that&#39;s more automated, such as the one I&#39;ve linked at the right.  Maybe that helps take some of the tedious time-consuming steps out of it.  But I haven&#39;t tried it.  I think it&#39;s worth it for some of my LPs that are not available on CD, or that cost upwards of $50 on CD.&lt;/p&gt;
+
+&lt;p&gt;I also read on the internet about someone who played their LPs at 45RPM and then pitch-shifted them back to normal speed.  This person reported there was no audible difference between doing this and recording the music at 33.3RPM.  I listened to the files they&#39;d posted and I have to say I thought the difference was as plain as day.  Perhaps they were not listening over decent-quality speakers or headphones.  But the 45RPM file sounded utterly &lt;em&gt;horrible&lt;/em&gt; to me.  I don&#39;t think this is a good technique at all.&lt;/p&gt;
+
+&lt;p&gt;In short, I doubt it can be sped up.  Just count on it taking time.&lt;/p&gt;
+
+&lt;h3&gt;Set up the equipment&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/gp/product/B000PZQPP4?ie=UTF8&amp;#038;tag=xaprb-20&amp;#038;link_code=as3&amp;#038;camp=211189&amp;#038;creative=373489&amp;#038;creativeASIN=B000PZQPP4&#34; style=&#34;float:right&#34;&gt;&lt;img src=&#39;http://www.xaprb.com/media/2008/08/ion_usb_turntable.jpg&#39; alt=&#39;Ion USB Turntable&#39; /&gt;&lt;/a&gt;Aside from your computer, you really need nothing else than a USB turntable.  The most popular ones seem to be those made by Ion, aka Numark.  I&#39;ve pasted an Amazon product link to the right for one of the ones I am currently using.  The other I&#39;m using is a slightly different model from the same company.&lt;/p&gt;
+
+&lt;p&gt;There are other ways -- you don&#39;t have to use a USB turntable.  You can use a higher-quality turntable and put the input into your sound card, and so on and so on.  But this is how I&#39;m doing it.&lt;/p&gt;
+
+&lt;p&gt;When I plugged the turntable into my USB port, I saw the following in dmesg:&lt;/p&gt;
+
+&lt;pre&gt;[ 2813.605274] usb 4-1: new full speed USB device using ohci_hcd and address 2
+[ 2813.694013] usb 4-1: configuration #1 chosen from 1 choice
+[ 2813.697148] input: Burr-Brown from TI USB Audio CODEC  as /devices/pci0000:00/0000:00:13.3/usb4/4-1/4-1:1.3/input/input13
+[ 2813.721924] input,hidraw3: USB HID v1.00 Device [Burr-Brown from TI USB Audio CODEC ] on usb-0000:00:13.3-1
+[ 2813.901813] usbcore: registered new interface driver snd-usb-audio&lt;/pre&gt;
+
+&lt;p&gt;And that was it.  No further ado, no drivers required.  You may recognize the name &lt;a href=&#34;http://en.wikipedia.org/wiki/Burr-Brown_Corporation&#34;&gt;Burr-Brown&lt;/a&gt;.  They make a lot of analog-to-digital (and vice versa) converters.&lt;/p&gt;
+
+&lt;p&gt;The next step is to get some recording software.  I used &lt;a href=&#34;http://www.audacityteam.org/&#34;&gt;Audacity&lt;/a&gt; for recording the LPs.&lt;/p&gt;
+
+&lt;pre&gt;sudo apt-get install audacity&lt;/pre&gt;
+
+&lt;p&gt;This installed libflac++6 also.  I configured Audacity by selecting Edit-Preferences, and in &#34;Recording&#34; selected the &#34;ALSA: USB Audio CODEC: USB Audio (hw:1,0)&#34; input.  On my computer I had trouble enabling playthrough (a feature that lets you listen to what you&#39;re recording).  So I left that unchecked.&lt;/p&gt;
+
+&lt;h3&gt;Record the LP&lt;/h3&gt;
+
+&lt;p&gt;Actually recording the LP is straightforward.  Just start Audacity recording, then start the turntable and lower the needle.  I&#39;m not going to tell you about cleaning the LP and all that... you probably know it already.&lt;/p&gt;
+
+&lt;p&gt;Once you have recorded some music, you probably want to chop it up into individual songs and export them as MP3, OGG, or FLAC.  (I&#39;m loving FLAC.  &lt;a href=&#34;http://www.xaprb.com/blog/2008/08/02/how-i-hacked-the-hp-media-vault-to-support-ogg-and-flac-files/&#34;&gt;My HP Media Vault streams FLAC&lt;/a&gt; to me via iTunes or Rhythmbox just fine.)  I experimented with a variety of ways to do that.  I settled on the following method.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Record the first side, then press Stop and flip the LP over.  Press Record again and record the other side.  I do this because when I export the songs, Audacity embeds the song number in the song&#39;s meta-data, and if I record one side at a time I get two sets of songs which begin at track number 1, which is a hassle.  Each side will be recorded in a separate track in Audacity.&lt;/li&gt;
+&lt;li&gt;Trim the silence (and the noise of the needle dropping, etc) from the start and end of each side&#39;s music.  You can just highlight it with your mouse and press Delete.&lt;/li&gt;
+&lt;li&gt;Find the start of each song.  (Hint: you can use the Home and End keys to move the cursor all the way to the start and end of the whole recording.)  Put the cursor where you want in the track by clicking into the track.  You can use the arrow keys to move it to the left and right for fine adjustments, and zooming in and out is helpful too of course.&lt;/li&gt;
+&lt;li&gt;Label the start of each song by pressing Ctrl-B and typing the song&#39;s name.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a style=&#34;float:right&#34; href=&#39;http://www.xaprb.com/media/2008/08/audacity_vinyl_digital.png&#39; title=&#39;Audacity after recording both sides and labelling songs&#39;&gt;&lt;img src=&#39;http://www.xaprb.com/media/2008/08/audacity_vinyl_digital.thumbnail.png&#39; alt=&#39;Audacity after recording both sides and labelling songs&#39; /&gt;&lt;/a&gt; When you&#39;re done, the result should look like the image on the right.  Now you&#39;re ready to export the files.  &lt;/p&gt;
+
+&lt;p&gt;Use File-Export Multiple to do this.  Choose the type of files you want to create and adjust the settings if you wish.  To make sure each labeled song becomes its own file, select the option to split the file based on labels, and name the files using the label/track name.&lt;/p&gt;
+
+&lt;p&gt;During the export process you&#39;ll also get the chance to edit the recording&#39;s meta-data, such as the artist and album name.  This is fine, but the dialog box to do this is touchy -- if you press Enter it will assume you&#39;re done and just start exporting files even if you&#39;re not ready.  If you cancel the export and restart, it won&#39;t show the meta-data dialog box again, but you can get to it via File &amp;#8211; Open Metadata Editor.  I got into the habit of editing the meta-data that way to begin with so I didn&#39;t have to fuss with the dialog later.&lt;/p&gt;
+
+&lt;p&gt;Audacity names the files after the tracks, but it doesn&#39;t have any flexibility about file naming.  So you can&#39;t tell it to place the song number at the beginning of the filenames, for example; and thus the files won&#39;t sort in the right order when you view them in your file browser.  I just use &lt;a href=&#34;http://easytag.sourceforge.net/&#34;&gt;easyTAG&lt;/a&gt; to quickly fix the track names after the export is done.  I also use it to insert the year meta-data, since Audacity doesn&#39;t seem to do this in a way other programs understand.  There are a few settings you might want to tweak with easyTAG too; I disabled the auto-scan at startup and a few others to make it behave the way I wanted.&lt;/p&gt;
+
+&lt;p&gt;I found easyTAG a little confusing so I have uploaded a screenshot of it with labeled steps.  Once I&#39;ve selected the directory containing my files, I press the button to select all the files, then the green scan button; that pops up the scanner dialog.  On this dialog (this took me a long time to figure out!) I press the green scan button once again; then I press the Save button on the main toolbar once again and it applies the changes I made (renaming, filling in the album year, etc).  (To fill in the album year, select all the files and fill in the year, then press the small dot to the right of the year to apply the change to all selected files.)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#39;http://www.xaprb.com/media/2008/08/easytag.png&#39; title=&#39;How to rename files and fix meta-data with easytag&#39;&gt;&lt;img src=&#39;http://www.xaprb.com/media/2008/08/easytag.thumbnail.png&#39; alt=&#39;How to rename files and fix meta-data with easytag&#39; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And that&#39;s about all.  I had a few incidents with Audacity where I tried to play tracks from one recording while another window was recording, but the good thing is it recovers from crashes beautifully; I didn&#39;t lose any recordings.&lt;/p&gt;
+
+&lt;h3&gt;Audio quality&lt;/h3&gt;
+
+&lt;p&gt;&lt;a style=&#34;float:right&#34; href=&#34;http://www.amazon.com/gp/product/B0001FTVE0?ie=UTF8&amp;#038;tag=xaprb-20&amp;#038;link_code=as3&amp;#038;camp=211189&amp;#038;creative=373489&amp;#038;creativeASIN=B0001FTVE0&#34;&gt;&lt;img src=&#39;http://www.xaprb.com/media/2008/08/sennheiser_595.jpg&#39; alt=&#39;Sennheiser 595&#39; /&gt;&lt;/a&gt;The audio quality sounds pretty good to me, by most counts.  I mean, there&#39;s the inevitable record noise and some clicks (a lot of my records are things like old Mike Oldfield albums and early Tangerine Dream, Jeff Beck, and the like).  But even though there are ways to remove this noise, I&#39;d rather have all the noise and all the music, than some of the noise and only some of the music.  I&#39;m not listening to the noise, I&#39;m listening to the music.  I have a beautiful pair of Sennheiser HD 590s (linked the 595s at right -- the 590s are discontinued, but they&#39;re the nicest headphones I&#39;ve ever owned; very bright, but easy to drive from a portable music player (no dedicated amp needed) and extremely light and comfortable) and it really sounds good.  You can probably guess that I&#39;m not saving the files as crummy low-bit-rate MP3 files.&lt;/p&gt;
+
+&lt;p&gt;The USB turntables I&#39;m using aren&#39;t audiophile-quality.  There is some wow and flutter.  It&#39;s acceptable to me.  If you think you&#39;ll be bothered, use higher-end equipment.  Personally, I don&#39;t go down this path, because for me it&#39;s a road with no end.  I know people who spend many thousands (or tens of thousands) of dollars on each piece of their system: pre-amps, turntables, tone arms, cartridges and needles.  (Got a $6000 needle anyone?)  I don&#39;t see myself ever spending the price of a small house on audio equipment; I&#39;d rather put the money into buying more music, rather than more equipment.  But if you&#39;re that kind of person, you probably aren&#39;t reading this article anyway.&lt;/p&gt;
+
+&lt;h3&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;Converting LPs into digital form the way I&#39;ve shown is fairly time-consuming and tedious.  You have to record the LP; then trim out the unwanted parts of the recording; then find the start of each song and type in the song name; then the artist and album information.  I multitask while I&#39;m doing other things, but I still notice the amount of time I&#39;m spending on it.  Hopefully this article helps you cut some of the repetitive work out yourself, or decide whether you want to get into this before you buy the equipment.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

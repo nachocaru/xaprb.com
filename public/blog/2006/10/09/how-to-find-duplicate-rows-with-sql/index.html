@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to find duplicate rows with SQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to find duplicate rows with SQL</h1>
+  <span class="post-date">Mon, Oct 9, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>This article shows how to find duplicated rows in a database table. This is a very common beginner question. The basic technique is straightforward. I&rsquo;ll also show some variations, such as how to find &ldquo;duplicates in two columns&rdquo; (a recent question on the #mysql IRC channel).</p>
+
+<h3 id="toc_0">How to find duplicated rows</h3>
+
+<p>The first step is to define what exactly makes a row a duplicate of another row. Most of the time this is easy: they have the same value in some column. I&rsquo;ll take this as a working definition for this article, but you may need to alter the queries below if your notion of &ldquo;duplicate&rdquo; is more complicated.</p>
+
+<p>For this article, I&rsquo;ll use this sample data:</p>
+
+<pre>create table test(id int not null primary key, day date not null);
+
+insert into test(id, day) values(1, '2006-10-08');
+insert into test(id, day) values(2, '2006-10-08');
+insert into test(id, day) values(3, '2006-10-09');
+
+select * from test;
++----+------------+
+| id | day        |
++----+------------+
+|  1 | 2006-10-08 |
+|  2 | 2006-10-08 |
+|  3 | 2006-10-09 |
++----+------------+</pre>
+
+<p>The first two rows have the same value in the <code>day</code> column, so if I consider those to be duplicates, here&rsquo;s a query to find them. The query uses a <code>GROUP BY</code> clause to put all the rows with the same <code>day</code> value into one &ldquo;group&rdquo; and then count the size of the group:</p>
+
+<pre>select day, count(*) from test GROUP BY day;
++------------+----------+
+| day        | count(*) |
++------------+----------+
+| 2006-10-08 |        2 |
+| 2006-10-09 |        1 |
++------------+----------+</pre>
+
+<p>The duplicated rows have a count greater than one. If you only want to see rows that are duplicated, you need to use a <code>HAVING</code> clause (not a <code>WHERE</code> clause), like this:</p>
+
+<pre>select day, count(*) from test group by day HAVING count(*) &gt; 1;
++------------+----------+
+| day        | count(*) |
++------------+----------+
+| 2006-10-08 |        2 |
++------------+----------+</pre>
+
+<p>This is the basic technique: group by the column that contains duplicates, and show only those groups having more than one row.</p>
+
+<h3 id="toc_1">Why can&rsquo;t you use a <code>WHERE</code> clause?</h3>
+
+<p>A <code>WHERE</code> clause filters the rows <em>before</em> they are grouped together. A <code>HAVING</code> clause filters them <em>after</em> grouping. That&rsquo;s why you can&rsquo;t use a <code>WHERE</code> clause in the above query.</p>
+
+<h3 id="toc_2">How to delete duplicate rows</h3>
+
+<p>A related question is how to delete the &lsquo;duplicate&rsquo; rows once you find them. A common task when cleaning up bad data is to delete all but one of the duplicates, so you can put proper indexes and primary keys on the table, and prevent duplicates from getting into the table again.</p>
+
+<p>Again, the first thing to do is make sure your definition is clear. Exactly which row do you want to keep? The &lsquo;first&rsquo; one? The one with the largest value of some column? For this article, I&rsquo;ll assume you want to keep the &lsquo;first&rsquo; row &ndash; the one with the smallest value of the <code>id</code> column. That means you want to delete every other row.</p>
+
+<p>Probably the easiest way to do this is with a temporary table. Especially in MySQL, there are some restrictions about selecting from a table and updating it in the same query. You can get around these, as I explain in my article <a href="http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/">How to select from an update target in MySQL</a>, but I&rsquo;ll just avoid these complications and use a temporary table.</p>
+
+<p>The exact definition of the task is to <strong>delete every row that has a duplicate, except the row with the minimal value of <code>id</code> for that group</strong>. So you need to find not only the rows where there&rsquo;s more than one in the group, you also need to find <strong>the row you want to keep</strong>. You can do that with the <code>MIN()</code> function. Here are some queries to create the temporary table and find the data you need to do the <code>DELETE</code>:</p>
+
+<pre>create temporary table to_delete (day date not null, min_id int not null);
+
+insert into to_delete(day, min_id)
+   select day, MIN(id) from test group by day having count(*) &gt; 1;
+
+select * from to_delete;
++------------+--------+
+| day        | min_id |
++------------+--------+
+| 2006-10-08 |      1 |
++------------+--------+</pre>
+
+<p>Now that you have this data, you can proceed to delete the &lsquo;bad&rsquo; rows. There are many ways to do this, and some are better than others (see my <a href="http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/">article about many-to-one problems in SQL</a>), but again I&rsquo;ll avoid the finer points and just show you a standard syntax that ought to work in any RDBMS that supports subqueries:</p>
+
+<pre>delete from test
+   where exists(
+      select * from to_delete
+      where to_delete.day = test.day and to_delete.min_id &lt;&gt; test.id
+   )</pre>
+
+<p>If your RDBMS does not support subqueries, or if it&rsquo;s more efficient, you may wish to do a multi-table delete. The syntax for this varies between systems, so you need to consult your system&rsquo;s documentation. You may also need to do all of this in a transaction to avoid other users changing the data while you&rsquo;re working, if that&rsquo;s a concern.</p>
+
+<h3 id="toc_3">How to find duplicates in multiple columns</h3>
+
+<p>Someone recently asked a question similar to this on the #mysql IRC channel:</p>
+
+<blockquote>
+<p>I have a table with columns <code>b</code> and <code>c</code> that links two other tables <code>b</code> and <code>c</code>, and I want to find all rows that have duplicates in either <code>b</code> or <code>c</code>.</p>
+</blockquote>
+
+<p>It was difficult to understand exactly what this meant, but after some conversation I grasped it: the person wanted to be able to put unique indexes on columns <code>b</code> and <code>c</code> separately.</p>
+
+<p>It&rsquo;s pretty easy to find rows with duplicate values in one or the other column, as I showed you above: just group by that column and count the group size. And it&rsquo;s easy to find entire rows that are exact duplicates of other rows: just group by as many columns as you need. But it&rsquo;s harder to identify rows that have either a duplicated <code>b</code> value or a duplicated <code>c</code> value. Take the following sample table, which is roughly what the person described:</p>
+
+<pre>create table a_b_c(
+   a int not null primary key auto_increment,
+   b int,
+   c int
+);
+
+insert into a_b_c(b,c) values (1, 1);
+insert into a_b_c(b,c) values (1, 2);
+insert into a_b_c(b,c) values (1, 3);
+insert into a_b_c(b,c) values (2, 1);
+insert into a_b_c(b,c) values (2, 2);
+insert into a_b_c(b,c) values (2, 3);
+insert into a_b_c(b,c) values (3, 1);
+insert into a_b_c(b,c) values (3, 2);
+insert into a_b_c(b,c) values (3, 3);</pre>
+
+<p>Now, you can easily see there are some &lsquo;duplicate&rsquo; rows in this table, but no two rows actually have the same tuple <code>{b, c}</code>. That&rsquo;s why this is a bit more difficult to solve.</p>
+
+<h3 id="toc_4">Queries that don&rsquo;t work</h3>
+
+<p>If you group by two columns together, you&rsquo;ll get various results depending on how you group and count. This is where the IRC user was getting stumped. Sometimes queries would find some duplicates but not others. Here are some of the things this person tried:</p>
+
+<pre>select b, c, count(*) from a_b_c
+group by b, c
+having count(distinct b &gt; 1)
+   or count(distinct c &gt; 1);</pre>
+
+<p>This query returns every row in the table, with a <code>COUNT(*)</code> of 1, which seems to be wrong behavior, but it&rsquo;s actually not. Why? Because the <code>&gt; 1</code> is inside the <code>COUNT()</code>. It&rsquo;s pretty easy to miss, but this query is actually the same as</p>
+
+<pre>select b, c, count(*) from a_b_c
+group by b, c
+having count(1)
+   or count(1);</pre>
+
+<p>Why? Because <code>(b &gt; 1)</code> is a boolean expression. That&rsquo;s not what you want at all. You want</p>
+
+<pre>select b, c, count(*) from a_b_c
+group by b, c
+having count(distinct b) &gt; 1
+   or count(distinct c) &gt; 1;</pre>
+
+<p>This returns zero rows, of course, because there are no duplicate <code>{b, c}</code> tuples. The person tried many other combinations of <code>HAVING</code> clauses and ORs and ANDs, grouping by one column and counting the other, and so forth:</p>
+
+<pre>select b, count(*) from a_b_c group by b having count(distinct c) &gt; 1;
++------+----------+
+| b    | count(*) |
++------+----------+
+|    1 |        3 |
+|    2 |        3 |
+|    3 |        3 |
++------+----------+</pre>
+
+<p>Nothing found all the duplicates, though. What I think made it most frustrating is that it partially worked, making the person think it was almost the right query&hellip; perhaps just another variation would get it&hellip;</p>
+
+<p>In fact, it&rsquo;s <strong>impossible</strong> to do with this type of simple <code>GROUP BY</code> query. Why is this? It&rsquo;s because when you group by one column, you distribute like values of the <em>other</em> column across multiple groups. You can see this visually by ordering by those columns, which is what grouping does. First, order by column <code>b</code> and see how they are grouped:</p>
+
+<table class="collapsed borders">
+  <tr>
+    <th>
+      a
+    </th>
+    
+    <th>
+      b
+    </th>
+    
+    <th>
+      c
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      7
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      8
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      9
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      3
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      10
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      11
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      12
+    </td>
+    
+    <td>
+      2
+    </td>
+    
+    <td>
+      3
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      13
+    </td>
+    
+    <td>
+      3
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      14
+    </td>
+    
+    <td>
+      3
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      15
+    </td>
+    
+    <td>
+      3
+    </td>
+    
+    <td>
+      3
+    </td>
+  </tr>
+</table>
+
+<p>When you order (group) by column <code>b</code>, the duplicate values in column <code>c</code> are distributed into different groups, so you can&rsquo;t count them with <code>COUNT(DISTINCT c)</code> as the person was trying to do. Aggregate functions such as <code>COUNT()</code> only operate within a group, and have no access to rows that are placed in other groups. Similarly, when you order by <code>c</code>, the duplicate values in column <code>b</code> are distributed into different groups. It is not possible to make this query do what&rsquo;s desired.</p>
+
+<h3 id="toc_5">Some correct solutions</h3>
+
+<p>Probably the simplest solution is to <em>find the duplicates for each column separately</em> and <code>UNION</code> them together, like this:</p>
+
+<pre>select b as value, count(*) as cnt, 'b' as what_col
+ from a_b_c group by b having count(*) &gt; 1
+ union
+ select c as value, count(*) as cnt, 'c' as what_col
+ from a_b_c group by c having count(*) &gt; 1;
++-------+-----+----------+
+| value | cnt | what_col |
++-------+-----+----------+
+|     1 |   3 | b        |
+|     2 |   3 | b        |
+|     3 |   3 | b        |
+|     1 |   3 | c        |
+|     2 |   3 | c        |
+|     3 |   3 | c        |
++-------+-----+----------+</pre>
+
+<p>The <code>what_col</code> column in the output indicates what column the duplicate value was found in. Another approach is to use subqueries:</p>
+
+<pre>select a, b, c from a_b_c
+ where b in (select b from a_b_c group by b having count(*) &gt; 1)
+    or c in (select c from a_b_c group by c having count(*) &gt; 1);
++----+------+------+
+| a  | b    | c    |
++----+------+------+
+|  7 |    1 |    1 |
+|  8 |    1 |    2 |
+|  9 |    1 |    3 |
+| 10 |    2 |    1 |
+| 11 |    2 |    2 |
+| 12 |    2 |    3 |
+| 13 |    3 |    1 |
+| 14 |    3 |    2 |
+| 15 |    3 |    3 |
++----+------+------+</pre>
+
+<p>This is probably much less efficient than the <code>UNION</code> approach, and will show every duplicated row, not just the values that are duplicated. Still another approach is to do self-joins against grouped subqueries in the <code>FROM</code> clause. This is more complicated to write correctly, but might be necessary for some complex data, or for efficiency:</p>
+
+<pre>select a, a_b_c.b, a_b_c.c
+from a_b_c
+   left outer join (
+      select b from a_b_c group by b having count(*) &gt; 1
+   ) as b on a_b_c.b = b.b
+   left outer join (
+      select c from a_b_c group by c having count(*) &gt; 1
+   ) as c on a_b_c.c = c.c
+where b.b is not null or c.c is not null</pre>
+
+<p>Any of these queries will do, and I&rsquo;m sure there are other ways too. If you can use <code>UNION</code>, it&rsquo;s probably the easiest.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

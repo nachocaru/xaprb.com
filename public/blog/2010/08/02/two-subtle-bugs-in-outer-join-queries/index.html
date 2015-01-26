@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Two subtle bugs in OUTER JOIN queries &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Two subtle bugs in OUTER JOIN queries</h1>
+  <span class="post-date">Mon, Aug 2, 2010 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      
+
+<p>OUTER JOIN queries in SQL are susceptible to two very subtle bugs that I&rsquo;ve observed a number of times in the real world. Daniel and I have been hammering out ways to automatically detect queries that suffer from these bugs, in <a href="http://www.maatkit.org/doc/mk-query-advisor.html">a relatively new Maatkit tool called mk-query-advisor</a>. It&rsquo;s part of our series of advisor tools for MySQL. I wrote <a href="http://www.xaprb.com/blog/2010/03/16/try-mk-query-advisor-a-new-maatkit-tool/">a blog post about it</a> a while ago. Automated analysis of bad query patterns is a good thing to write tools to do, because catching buggy queries is hard work if you do it manually.</p>
+
+<p>Let&rsquo;s dive right in and analyze these subtle bugs. Warning: if you don&rsquo;t understand how SQL handles NULL, you&rsquo;re not going to understand the following. Many people have a hard time with NULL, which is why these bugs are so hard to understand and avoid. This is one reason why SQL is a hard language to use properly.</p>
+
+<h3 id="toc_0">Bug 1: a column could be NULL for two reasons, and you can&rsquo;t distinguish them</h3>
+
+<p>If the outer table in your query contains NULL-able columns, and you place a WHERE clause to filter out all but those rows, you&rsquo;re going to get bugs because a non-matching row in the outer table will be all-NULL. Here&rsquo;s an example. Let&rsquo;s start with a plain outer join query:</p>
+
+<pre>
+select * from L left join R on l_id = r_id;
++------+------+---------+
+| l_id | r_id | r_other |
++------+------+---------+
+|    1 |    1 |       5 | 
+|    2 |    2 |    NULL | 
+|    3 | NULL |    NULL | 
++------+------+---------+
+</pre>
+
+<p>Here we see that one row in the outer table is missing, and one row (the middle row) has a NULL r_other column. Now, let&rsquo;s add a WHERE clause:</p>
+
+<pre>
+select * from L left join R on l_id = r_id where r_other is null;
++------+------+---------+
+| l_id | r_id | r_other |
++------+------+---------+
+|    2 |    2 |    NULL | 
+|    3 | NULL |    NULL | 
++------+------+---------+
+</pre>
+
+<p>This query is buggy, because the two rows are returned for completely different reasons, and you can&rsquo;t be sure which is which. IS NULL clauses can safely be placed on the columns used in the JOIN clause, but not on other columns in the outer table that might be NULL.</p>
+
+<h3 id="toc_1">Bug 2: an OUTER JOIN is converted to INNER</h3>
+
+<p>If you place a non-null-safe comparison operator on any column in the outer table that isn&rsquo;t part of the JOIN clause, you implicitly disable the outer-ness of the query and convert it to an INNER JOIN. Here&rsquo;s an example:</p>
+
+<pre>
+select * from L left join R on l_id = r_id where r_other > 1;
++------+------+---------+
+| l_id | r_id | r_other |
++------+------+---------+
+|    1 |    1 |       5 | 
++------+------+---------+
+</pre>
+
+<p>The left-outer-ness of the above query is what causes the third row to be output in the first query I showed you above. The greater-than operator in this example automatically makes the left-ness impossible, because anytime there&rsquo;s a row in the inner table that has no match in the outer table, it&rsquo;ll be filled in with NULLs, and those NULLs will be eliminated by the operator. So the effect is that only matching rows will ever be output.</p>
+
+<p>If you want to ponder variations and subtleties of the above, you can read more discussion on <a href="http://code.google.com/p/maatkit/issues/detail?id=950">the issue report where we&rsquo;re hammering out the details</a> of automatically detecting and warning about these sneaky errors.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

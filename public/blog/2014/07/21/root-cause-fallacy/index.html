@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> The Root Cause Fallacy &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>The Root Cause Fallacy</h1>
+  <span class="post-date">Mon, Jul 21, 2014 in
+		
+		<a href="/categories/Operations" class="btn btn-primary">Operations</a>
+		
+  </span>
+      <p>Wouldn&rsquo;t you like to find the root cause of that downtime incident? Many people
+would. But experience has taught me that there is no such thing as a single root
+cause. Instead, there&rsquo;s a chain of interrelated causes, each of which is
+necessary but none of which is sufficient to cause the overall problem.</p>
+
+<p>I am often reminded of an outage years ago. It was &ldquo;caused&rdquo; by a failed disk.
+But the disk was in a RAID5 array, and another disk in that array had failed
+some time previously. Backups had also failed some time previously, so there
+were no backups. Health checks didn&rsquo;t notify anyone of the degraded disk array,
+due to a misconfigured alerting system. Alerting and backups failed because the
+person in charge of operations was not performing his duties.  The operations
+person was still in the driver&rsquo;s seat because of management dysfunction.</p>
+
+<p>If you really want to get to the root cause of a problem, you need to use the
+Five Whys approach. I rarely do that because I already know where it ends. The
+CEO or equivalent is always the problem. It&rsquo;s turtles all the way down (or up).
+Saying that the CEO is ultimately responsible is true but useless. The CEO is
+ultimately responsible for <em>everything</em>.</p>
+
+<p><img src="/media/2014/07/turtles.jpg" alt="Turtles" />
+</p>
+
+<p>That&rsquo;s why the search for a root cause is usually a witch-hunt in disguise, trying
+to find someone or something to blame. If you think there is really a single
+cause, you eventually must identify a single person. If you stop short of that,
+everyone knows the process was a farce. But blaming a person is also a farce.
+Everyone knows that someone&rsquo;s being thrown under the bus and that wasn&rsquo;t the
+real problem.</p>
+
+<p>There are several solutions to this dilemma. One is to stop looking for a
+<em>single</em> root cause, and instead identify the <em>system</em> of conditions or
+dysfunctions that jointly caused the observed problem. This allows something
+constructive to come out of the postmortem, instead of inexorably bringing
+pressure to bear on a well-meaning person who will then be sacrificed to appease
+the false gods of reductionist blame-gaming.</p>
+
+<p>Another is to change the culture and own failures as opportunities. Navigating
+this can be tricky. I&rsquo;ve heard from more than one person who was fired from a
+workforce with a supposedly &ldquo;blameless culture&rdquo; policy after tripping over a
+booby-trap. I haven&rsquo;t attended one yet, but I&rsquo;ve heard that Dave Zwieback&rsquo;s
+postmortem workshops are excellent.</p>
+
+<p>More and more people I speak to are either doubtful or outright reject
+root-cause analysis these days. That&rsquo;s a good thing. I used to be pressured for
+root-cause analysis years ago, and there was always an airtight and unspoken
+assumption that <em>of course</em> such a thing exists and is the right way to handle
+the aftermath of an incident. I&rsquo;m happy the times are changing. These days, even
+some companies have stopped saying their tools or products can find root causes.
+Maybe this trend will allow us to replace the manifest failures of root-cause
+analysis with something more helpful.</p>
+
+<p><a href="https://www.flickr.com/photos/animaltourism/5096371069/">Pic Credit</a></p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

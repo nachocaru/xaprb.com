@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> MySQL Conference and Expo 2007, Day 2 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>MySQL Conference and Expo 2007, Day 2</h1>
+  <span class="post-date">Wed, Apr 25, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p><a href="http://www.mysqlconf.com/"><img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" /></a>
+In my second day at the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo 2007</a>, I attended keynotes, several sessions, and three BoF (Birds of a Feather) sessions. This article is about these sessions. Again, I&rsquo;ll focus on the Big Ideas and let you read other people&rsquo;s blog posts for the small details.</p>
+
+<h3 id="toc_0">Keynotes</h3>
+
+<p>There were three keynotes this morning. Two I won&rsquo;t comment on, but I want to mention the third because it was mostly about the One Laptop Per Child project. I was glad to hear about it instead of what sounded like it was going to be a Red Hat pitch.</p>
+
+<h3 id="toc_1"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10631">Building Scalable OLAP Applications with Mondrian and MySQL</a></h3>
+
+<p>This session introduced the <a href="http://mondrian.pentaho.org/">Mondrian</a> component of the Pentaho business intelligence suite. Mondrian connects to a SQL backend and <strong>converts the flat SQL view of the data into a navigable hierarchical view</strong>. The point is to <strong>make OLAP scalable on top of MySQL</strong>. As such, it touched on tactics for tuning both MySQL and Mondrian &ndash; especially aggregation, caching, and cache control in Mondrian. Also on the agenda were near-real-time OLAP (aka &ldquo;active data warehousing&rdquo;), and how to cache and invalidate in that scenario. There&rsquo;s a high cost for doing this, but there can be great benefits as well.</p>
+
+<h3 id="toc_2"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12204">Technology at Digg.com</a></h3>
+
+<p>This session featured <a href="http://digg.com/">Digg&rsquo;s</a> lead developer and lead DBA discussing <strong>how Digg built their systems</strong> (as opposed to many other sessions, which tell you how you ought to do things). The major components are</p>
+
+<ul>
+<li>a cluster of web servers</li>
+<li>a memcached farm caching chunks (not whole pages) of content with write-through and some nimble dancing to handle stale data after losing and regaining a server</li>
+<li>MySQL replication with data partitioning and separation for scale-out, with separation into farms by function (search, data warehousing, atomic data)</li>
+</ul>
+
+<p>There was another debate from audience members about what the words &ldquo;shard&rdquo; and &ldquo;partition&rdquo; mean. Someone in the audience even told the Digg people the correct definition of the terms, which did not match what the developers were talking about. *sigh*</p>
+
+<p>Interestingly, it seems Digg is in the lucky position of being able to scale with replication for reads extremely well, since their load is about 98% reads. They also only have about 30GB of data. I assumed it would be in the terabytes.</p>
+
+<h3 id="toc_3"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13740">InnoDB Performance Potential in High-end Environments</a></h3>
+
+<p>This talk was the most technical I&rsquo;ve been to so far. Yasufumi Kinoshita dove deep into InnoDB to analyze <strong>points of contention in many-CPU machines under various workloads</strong>. His results are impressive; before his changes, InnoDB did not scale beyond four or sometimes even two CPUs, and could even perform dramatically worse on more CPUs than on fewer! After he identified the points of contention, scaling looked quite good up to at least 8 CPUs, with no indication of other problems caused as side effects. Though there&rsquo;s still work to do and apparently much debugging needs to be done, this is hugely important for MySQL and InnoDB. I&rsquo;m glad there are people who can do this kind of work. I couldn&rsquo;t begin to; the speaker even wrote certain parts of the fixes in assembly.</p>
+
+<h3 id="toc_4"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10908">MySQL Server Settings Tuning</a></h3>
+
+<p>This session by <a href="http://www.mysqlperformanceblog.com/">Peter Zaitsev</a> focused on learning <strong>what to configure in MySQL server, and knowing how to find out if they need to be tuned</strong>. Topics included memory allocation, how to fight swapping, and a guided tour of the server status variables.</p>
+
+<h3 id="toc_5"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10418">Falcon Transactions</a></h3>
+
+<p>MySQL&rsquo;s own Jim and Ann Starkey discussed concurrency control in the still-in-beta Falcon storage engine. They talked about all kinds of database systems, the official standards, and other storage engines, not just Falcon (even PostgreSQL came up). Topics included transaction isolation levels, problems and challenges with those, and how InnoDB&rsquo;s repeatable read really isn&rsquo;t. In fact, they are trying to decide what to name that level of transaction isolation. Jim calls it &ldquo;benchmark mode,&rdquo; because even though it&rsquo;s not really standard, it is extremely practical and does very well on benchmarks. It sounds like Falcon will provide a means to emulate InnoDB&rsquo;s behavior for compatibility if for no other reason.</p>
+
+<p>This talk&rsquo;s Big Idea was <strong>Falcon is both like and unlike other storage engines.</strong></p>
+
+<p>This made me think of Guy Kawasaki&rsquo;s keynote from this morning. Who knows what people will use and abuse Falcon for? I&rsquo;m glad MySQL and the Starkeys are doing what they believe is right, even though a lot of people (including me, frankly) don&rsquo;t really understand what and why they are doing. My impression is that Falcon is so different from what people are used to that most of us do not &ldquo;get it,&rdquo; and probably will not for a long time. Someone will, though. And when they do, and learn how to make it sing and dance in ways nothing else can do, it&rsquo;ll make a lot of people<sup>*</sup> mad for not seeing it themselves sooner. Especially when it makes someone really successful.</p>
+
+<ul>
+<li>People in Redmond, I&rsquo;m guessing.</li>
+</ul>
+
+<h3 id="toc_6"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13866">Professional Cat Herding</a></h3>
+
+<p>I dropped in on the end of this session briefly. One community member suggested MySQL should use <a href="http://openid.net/">OpenID</a> for authentication. Bravo! It&rsquo;s a capital idea. Another suggestion brought up the fact that MySQL uses BitKeeper for source control. I voiced my regret that MySQL, a company that believes in and promotes software freedom, has fallen into the trap of using non-Free software themselves. It&rsquo;s sad to see them handcuffed in such a way. Who else remembers when the use of BitKeeper burned the Linux kernel developers? I know Richard Stallman does, because he&rsquo;d been predicting that fiasco for many years by the time it finally happened. To choose non-Free software is to choose to be a victim.</p>
+
+<h3 id="toc_7"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10633">Exploiting MySQL 5.1 for Advanced Business Intelligence Applications</a></h3>
+
+<p>Pentaho&rsquo;s Matt Casters spoke on <strong>how to extract data from many disparate sources and store it in a Pentaho data warehouse</strong>, and <strong>how to use Pentaho and MySQL 5.1&#8242;s advanced features to make OLAP queries fast</strong> (there are two Big Ideas because the talk was double-length). The first part of the talk focused a lot on Spoon, a user interface for telling Pentaho what to do with data (not how). Next he spoke on MySQL 5.1&#8242;s table partitions, followed by data partitioning across databases or servers. The idea here is to retrieve and process data in parallel for greater speed.</p>
+
+<p>Have you been reading Matt&rsquo;s blog? Do you remember his understated post on <a href="http://www.ibridge.be/?p=42">processing a large volume of data in parallel with near-linear scalability</a>? I&rsquo;ve been eagerly reading his articles for a while and it was great to hear him speak and see him demo these things.</p>
+
+<p>The techniques he showed are great, but may result in CPU bottlenecks on the server that does the processing, because you can easily get enough data from a bunch of servers in parallel to peg the CPU. The next level of parallelization is the Carte server, which runs on remote machines and is basically grid computing for business intelligence. He gave a demo of this, which looks great. (Hmmm, I wonder if I could get seti@home to run BI for me? Yeah&hellip;.) Matt finished up with a demo and overview of the Pentaho product overall.</p>
+
+<h3 id="toc_8">Birds of a Feather Sessions</h3>
+
+<p>This evening I went to three BoF sessions: the first on DBD::mysql, the next as a fly on the wall at Paul McCullagh&rsquo;s streaming blob server BoF, and finally to learn more about <a href="http://jan.kneschke.de/projects/mysql/mysql-proxy">MySQL Proxy</a>, which I&rsquo;ve been excited about ever since I read about it a few weeks ago.</p>
+
+<h3 id="toc_9">Next</h3>
+
+<p>Today&rsquo;s expert session was a wash because the session and the official lunch were in different places, and people couldn&rsquo;t bring their lunch to the meeting room. It might come together better tomorrow, it might not.</p>
+
+<p>Of course, I&rsquo;ll still be doing the two official sessions tomorrow and Thursday.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

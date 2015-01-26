@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Ubuntu 8.10 rocks my Inspiron 1501 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Ubuntu 8.10 rocks my Inspiron 1501</h1>
+  <span class="post-date">Sat, Nov 1, 2008 in
+		
+		<a href="/categories/Desktop" class="btn btn-primary">Desktop</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      <p>I&rsquo;m really really happy about <a href="http://www.ubuntu.com/">Ubuntu 8.10</a> because it lets me stop kicking myself so much for buying a Dell Inspiron 1501. This little laptop was the el-cheapo option for me, found via <a href="http://www.dealnews.com/">dealnews.com</a>. I was going to buy the virtually identical one that came with Ubuntu installed, but then Dell offered a deal on the 1501, which had Windows Vista, and I caved in to the allure of saving about $200.</p>
+
+<p>Of course I promptly discovered that the two most important differences between the models involved hardware for which no good Free Software drivers existed: the video card and the wireless card. The Inspiron 1501 has a &ldquo;ATI Technologies Inc RS482 [Radeon Xpress 200M]&rdquo; and a &ldquo;Broadcom Corporation BCM4311 802.11b/g WLAN (rev 01)&rdquo;.</p>
+
+<p>I use dual monitors; it&rsquo;s pretty much a necessity for me. And I just couldn&rsquo;t get the radeon driver to work right with them. I spent a lot of time trying. I ended up going to the ATI driver, which is proprietary; it had its own issues with mouse pointer corruption and the lot, which eventually were fixed, but it still disabled suspend/resume, and plus it&rsquo;s non-Free. My colleagues know this irked me &ndash; they just heard me griping about it a few days ago.</p>
+
+<p>But now, praise be, the radeon driver works with my dual monitors! And the drag-and-drop point-and-click configuration interface works, too! I&rsquo;ve got a 1680&#215;1024 external monitor, positioned above my 1024&#215;800 laptop display, and I have never so much as peeked at /etc/X11/xorg.conf. Thanks to all the people who worked so hard on this! (It didn&rsquo;t work flawlessly until I rebooted, but who&rsquo;s complaining.) Suspend/resume now work great!</p>
+
+<p>I haven&rsquo;t gotten the wireless card working yet; the bw43-cutter package seems to have disappeared. But I&rsquo;m actually hoping that I won&rsquo;t need proprietary drivers for this, too.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

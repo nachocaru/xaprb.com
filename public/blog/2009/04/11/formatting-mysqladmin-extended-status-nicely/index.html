@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Formatting mysqladmin extended-status nicely &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Formatting mysqladmin extended-status nicely</h1>
+  <span class="post-date">Sat, Apr 11, 2009 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>I always say that the ultimate MySQL tuning script is an expert human. To that end, I generally try to build tools that help a human be more productive with the raw information from MySQL. One of the things <a href="http://www.mysqlperformanceblog.com/2008/11/24/how-percona-does-a-mysql-performance-audit/">we look at during a performance audit</a> is the MySQL status counters. It&rsquo;s useful to look at a) absolute values and b) several incremental snapshots. I&rsquo;ve written a small shell script called &ldquo;mext&rdquo; that can make this a little easier.</p>
+
+<p>It looks like this:</p>
+
+<pre>baron@kanga:~$ mext -- mysqladmin ext -ri1 -c3
+Aborted_clients                               1      0      0
+Aborted_connects                              0      0      0
+Binlog_cache_disk_use                         0      0      0
+Binlog_cache_use                              0      0      0
+Bytes_received                             1167     35     35
+Bytes_sent                                38926   6337   6337
+....
+</pre>
+
+<p>This isn&rsquo;t an original idea. Ryan Lowe made a Perl version of this first. I used his version for a while, but after working on a few machines that didn&rsquo;t have the necessary Perl libraries (maybe one of them didn&rsquo;t even have Perl, I forget) I decided to do it in shell.</p>
+
+<p>There&rsquo;s an added feature. It&rsquo;ll do incremental/differential/relative output for you. The mysqladmin that ships with MySQL 5.1 has a <a href="http://bugs.mysql.com/bug.php?id=40395">bug that stops it from iterating with -r</a>. So the script I wrote can accept a -r option, which can then be left off the arguments to mysqladmin:</p>
+
+<pre>baron@kanga:~$ mext -r -- mysqladmin ext -i1 -c3
+</pre>
+
+<p>It&rsquo;s kind of a generic tool that you could use with other things besides mysqladmin, but it&rsquo;s also kind of tweaked for that purpose. You can <a href="http://www.xaprb.com/mext">get mext here</a>.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Four types of database abstraction layers &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Four types of database abstraction layers</h1>
+  <span class="post-date">Sun, Aug 13, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>Quite a few people have chimed in on a recent discussion about PHP, MySQL, database abstraction layers, and performance. I think enough viewpoints have been covered that I don&rsquo;t need to comment, but one question I don&rsquo;t see answered is &ldquo;what are the qualities of a good SQL abstraction layer?&rdquo; I think it&rsquo;s a very interesting &ndash; and complicated &ndash; question. As it turns out, the term has several meanings, and I think it&rsquo;s important to understand them.</p>
+
+<p>I started drafting this article in February, but put it aside until the recent spate of articles prompted me to finish it. Here are links to some of those articles:</p>
+
+<ul>
+<li><a href="http://www-128.ibm.com/developerworks/opensource/library/os-php-dbmistake">Five common PHP database problems</a>, the IBM developerWorks article that started it all.</li>
+<li><a href="http://mysqldump.azundris.com/archives/57-Annotations-to-Five-Common-PHP-database-problems.html">Kristian&rsquo;s response</a></li>
+<li><a href="http://www.mysqlperformanceblog.com/2006/08/11/database-problems-in-mysqlphp-applications/">Peter&rsquo;s response to Kristian&rsquo;s response</a></li>
+<li><a href="http://doughboy.wordpress.com/2006/08/11/mysqlphp-problems/">Brian Moon&rsquo;s thoughts </a></li>
+</ul>
+
+<p>This issue has been discussed before, too. For example,</p>
+
+<ul>
+<li>Jeremy Zawodny&rsquo;s take: <a href="http://jeremy.zawodny.comhttp://www.xaprb.com/blog/archives/002194.html">Database Abstraction Layers Must Die!</a> (posted over two years ago)</li>
+<li>A <a href="http://www.sitepoint.com/forums/showpost.php?p=498687">rant on templating systems that goes off into &ldquo;database abstraction layers&rdquo;</a>, from 2001</li>
+</ul>
+
+<p>That explains why I&rsquo;m not going to jump into the fray with my thoughts on the developerWorks article; everything I&rsquo;d say has been said before. I just want to see if I can clarify what people mean by &ldquo;database abstraction layer,&rdquo; and lay out some ways to think about what&rsquo;s good and bad in such a system.</p>
+
+<h3 id="toc_0">Types of abstraction layers</h3>
+
+<p>People sometimes say &ldquo;SQL abstraction layer&rdquo; or &ldquo;database interface&rdquo; fairly loosely, assuming everyone knows what they mean. Not so &ndash; I&rsquo;ve seen at least four distinct meanings in common usage:</p>
+
+<ol>
+<li>A software library to <em>connect to a database server</em> and issue queries, fetch results etc.</li>
+<li>A software library to <em>present a common API to different database servers</em>.</li>
+<li>A software library to <em>automatically generate portable SQL queries</em>.</li>
+<li>A software library to <em>map Object-Oriented Programming to a relational database</em> (Object-Relational Mapping, or ORM)</li>
+</ol>
+
+<p>Most libraries will also provide related functionality such as escaping quotes for preventing SQL injection attacks, getting server status, controlling transactions, and so forth.</p>
+
+<p>Each type of interface usually builds upon the types that precede it in my numbering scheme. Each type has different goals, which you have to understand before you can decide what criteria to use when measuring goodness or badness.</p>
+
+<h3 id="toc_1">Type 1: Libraries that provide access to a database</h3>
+
+<p>Libraries that connect to specific database software, issue queries, and return results are generally written at a fairly low level, and their interfaces usually map directly to the specific server software they&rsquo;re written for. For example, the <a href="http://www.php.net/manual/en/ref.mysql.php">PHP <code>mysql_</code> functions</a> are clearly just hooks into the MySQL drivers &ndash; without any real abstraction as a high-level programmer would think of it.</p>
+
+<p>Type 1 software doesn&rsquo;t really have a goal, except enabling access from the programming language to the database.</p>
+
+<h3 id="toc_2">Type 2: Libraries that present a common interface to different server software</h3>
+
+<p>Type 2 software does much the same as Type 1, but it abstracts away the guts of Type 1 software so every database system can be accessed with the same functions. This is what Jeremy means when he says</p>
+
+<blockquote cite="http://jeremy.zawodny.comhttp://www.xaprb.com/blog/archives/002194.html">
+  <p>
+    I use a revolutionary new programming technique. Instead of littering my code with those calls, I put my core data access layer into a library&#8211;a separate piece of reusable code that I can include in various parts of my application and... reuse!
+  </p>
+</blockquote>
+
+<p>Perl&rsquo;s <a href="http://dbi.perl.org/">DBI</a> is a good example of Type 2 software. What is DBI, and what are its goals? From the homepage:</p>
+
+<blockquote cite="http://dbi.perl.org/">
+  <p>
+    The DBI is the standard database interface module for Perl. It defines a set of methods, variables and conventions that provide a consistent database interface independent of the actual database being used.
+  </p>
+</blockquote>
+
+<p>In other words, you don&rsquo;t have to look at documentation to know &ldquo;what function fetches a row from my results if I&rsquo;m connected to Firebird instead of MySQL?&rdquo; You learn DBI, and that&rsquo;s it. PHP&rsquo;s <a href="http://www.php.net/pdo">PDO</a> is similar too. I think this is what Jeremy means when he talks about a &ldquo;Neutral API,&rdquo; though his article doesn&rsquo;t really make that very clear.</p>
+
+<p>Type 2 software&rsquo;s goal is presenting your code a common API for different database systems.</p>
+
+<h3 id="toc_3">Type 3: Libraries that write portable SQL</h3>
+
+<p>The third type of software tries to abstract away the differences in SQL dialect between different database systems. For example, in some databases, you insert a row by the following SQL:</p>
+
+<pre>insert into table(col, col, col) values (val, val, val)</pre>
+
+<p>In others, you may do this:</p>
+
+<pre>insert into table set col = val, col = val, col = val</pre>
+
+<p>Type 3 software wants to help you avoid writing SQL so you can express in your code what you want the SQL to do, and let the abstraction layer sort out how to tell the database server to do it. This is typically accomplished with a non-SQL interface, such as in PHP&rsquo;s <a href="http://pear.php.net/manual/en/package.database.mdb2.php">PEAR::MDB2</a> package. From the documentation:</p>
+
+<blockquote cite="http://pear.php.net/manual/en/package.database.mdb2.intro.php">
+  <p>
+    It provides a common API for all support RDBMS. The main difference to most other database abstraction packages is that <strong>MDB2 goes much further to ensure portability</strong>. Among other things MDB2 features:
+  </p>
+  
+  <ul>
+    <li>
+      An <strong>OO-style query API</strong>
+    </li>
+  </ul>
+</blockquote>
+
+<p>The emphasis is mine. Type 3 software writes the queries for you behind the scenes. You don&rsquo;t write SQL. Programmers who advocate Type 3 software consider this a Good Thing, because they believe portable SQL will prevent vendor lock-in:</p>
+
+<blockquote cite="http://www.sitepoint.com/forums/showpost.php?p=498687">
+  <p>
+    ... and when they decide to use another DBMS instead of MySQL (and they undoubtedly will at some point), the conversion will be painless.
+  </p>
+</blockquote>
+
+<p>Again, Type 2 hides API differences, but Type 3 goes further and hides SQL differences as well.</p>
+
+<p>Type 3 software&rsquo;s goal is complete SQL portability between all supported systems.</p>
+
+<h3 id="toc_4">Type 4: Object-relational mapping software</h3>
+
+<p>The fourth type of software maps database objects to code objects. This is called ORM (Object-Relational Mapping). The typical mapping is that a database table is a class in an object-oriented language, and a row in the table is an instance of the class. Again in Perl, <a href="http://search.cpan.org/dist/Class-DBI/lib/Class/DBI.pm">Class::DBI</a> is an example of this. The paradigm of having one object per row in the table breaks out of the relational model where operations are performed on sets, not individual rows, but it can be handy for some uses.</p>
+
+<p>Type 4 software writes the SQL for CRUD operations for you behind the scenes, so in that sense it is similar to Type 3 software. It also relies on Type 2 facilities so you can treat a row as an object everywhere, whether it&rsquo;s in Oracle or SQL Server.</p>
+
+<p>Type 4 software&rsquo;s goal is to enable treating database rows as objects in your code.</p>
+
+<h3 id="toc_5">What makes a good database abstraction layer?</h3>
+
+<p>I&rsquo;ve shown there are at least four completely different types of &ldquo;database abstraction layer,&rdquo; and they have very different goals. It makes sense that &ldquo;goodness&rdquo; should be measured by different criteria as well, right? In fact, I think there should be some criteria in common, and some will be different.</p>
+
+<p>The common criteria should be &ndash; at a minimum &ndash; speed/efficiency, correctness, good documentation, and platform portability (by which I mean, the system should compile and run on various hardware and operating system platforms).</p>
+
+<p>Beyond that, each type will have different criteria:</p>
+
+<ol>
+<li>Type 1&#8242;s criteria should be just the basics I named above.</li>
+<li>Type 2&#8242;s criteria should be an interface that presents an adequate set of functionality for every database server, in a way that is &ldquo;intuitive&rdquo; or &ldquo;elegant,&rdquo; whatever that means in the given language. It should be a thin wrapper around Type 1 software. It also needs to allow invoking database-specific operations. In other words, common functionality ought to be presented in a common form, but database-specific operations should never be taken away from the programmer.</li>
+<li>Type 3&#8242;s criteria should be that the auto-generated code is truly portable among databases, and it should result in writing much less code in your application. It, like Type 2, should also allow the programmer to invoke database-specific operations when needed. Since it is designed as a high-level abstraction away from the underlying SQL, it should also be &ldquo;elegant.&rdquo;</li>
+<li>Type 4 software should hide the fact that an object is really a row in the database. The SQL it generates to hide this should be completely database-independent. Since it, like Type 3, is a convenience for the programmer, it ought to be very &ldquo;elegant,&rdquo; and should provide <strong>lots</strong> of conveniences, such as knowing when a column is a foreign key and allowing navigation between a row and its related rows in the foreign key table in an object-oriented fashion.</li>
+</ol>
+
+<h3 id="toc_6">My opinions</h3>
+
+<p>Without getting into the discussions I mentioned above, I definitely have some opinions on what&rsquo;s good and bad about various database access software.</p>
+
+<p>First, I think Type 1 software is too low-level for most application code, as others have said. The only reason I&rsquo;d use it is if I really wanted raw access to a specific database, and couldn&rsquo;t accept any performance overhead. In every circumstance I can think of, it would be much better from a cost, coding and maintenance standpoint to call some Type 2 software and let it re-dispatch the call (remember, I&rsquo;m assuming the Type 2 software should be a very thin wrapper around Type 1).</p>
+
+<p>Regarding Type 2 software, some of the systems I&rsquo;ve seen are definitely better than others. For example, I don&rsquo;t really care for Perl&rsquo;s DBI. I know that&rsquo;s heresy, but I think it could have done a much better job separating some concepts out. DBI basically treats the SQL world as a collection of two types of things: connections and statements. It has no separate concept of a result set, for example. In my opinion, that makes it pretty hard to remember what you get when you invoke an operation, and where you ought to be fetching rows from. It just doesn&rsquo;t make sense to me to fetch rows from a statement after executing it. Executing a statement should return a result, and I should fetch rows from the result, not the statement. I think DBI is awkward to use, and that&rsquo;s after I&rsquo;ve been programming with it for seven years! I <em>still</em> have to look up the documentation to figure out what I need to do, after all this time.</p>
+
+<p>In fact, I think the best-designed system I&rsquo;ve seen is the Microsoft .NET <code>System.Data</code> class library. In this library, every concept is represented separately. For example, you open a <code>Connection</code>, create a <code>Command</code> object, and when you execute the <code>Command</code>, you get back an appropriate object to do further work. For example, <code>Command.ExecuteReader()</code> returns an object from which you can fetch rows. I&rsquo;m not a fan of Microsoft, as you probably know, but I find this design highly intuitive.</p>
+
+<p>I generally dislike Type 3 software, and I think anyone who&rsquo;s ever written serious applications that require real performance from a database system will probably agree, for fairly obvious reasons. For one thing, platform-independent SQL is a myth. Easy and/or painless conversion between different database systems is, too. It does not exist in the real world. And I don&rsquo;t agree with those who assert it&rsquo;s a common requirement, or that it would be a good thing. I think porting from one system to another is generally rare, and trying to write &ldquo;portable&rdquo; systems when there&rsquo;s no clear need is going to cause nothing but problems. <a href="http://c2.com/xp/YouArentGonnaNeedIt.html">YAGNI</a>.</p>
+
+<p>I also dislike PHP&rsquo;s PEAR libraries. For example, in PEAR::DB and PEAR::MDB2, you never know what type of object you&rsquo;re going to get back from an operation! I said above a Type 3 SQL abstraction layer should be &ldquo;elegant&rdquo; and should result in writing less code. The PEAR error-handling paradigm is not elegant. Just one example: every action has to be followed by an <code>if</code> statement to check for an error. <em>That&rsquo;s what error handling is for.</em> You shouldn&rsquo;t have to write <code>if</code> statements &ndash; the software should <em>throw an error when there&rsquo;s an error!</em> In my opinion, using these libraries results in ugly, complex code. And remember this: error-handling code is a huge risk anyway, because it&rsquo;s so hard to test adequately. Anything that makes error-handling harder to do well is to be avoided.</p>
+
+<p>So I dislike Type 3 software; I&rsquo;m also not very excited by Type 4, though I don&rsquo;t have such a strong aversion to it. It can be handy at times, but it can also promote a variety of truly bad practices (as <a href="http://sheeri.com/archives/99">Sheeri Kritzer wrote recently, over-using surrogate keys can be one such bad practice</a>), and sometimes betrays a programmer&rsquo;s partial or complete lack of understanding of relational systems &ndash; or worse yet, unwillingness or inability to think. I&rsquo;ve been drafting an article on ORM for six months, so I&rsquo;ll save my full rant for now, but ORM systems usually betray a shallow understanding of Object-Oriented Programming, too.</p>
+
+<h3 id="toc_7">Summary</h3>
+
+<p>This has been a longish article, but that&rsquo;s because these are complicated issues. I hope I&rsquo;ve teased things into some sort of order that helps you understand how methods of database access differ, and how database access software differs accordingly. I&rsquo;ve laid out my taxonomy of such methods, from raw access to Object-Relational Mapping systems, stated the goal of each type of system, and defined what I think are useful criteria to measure how good such a system is. Finally, I told you why I prefer Type 2 systems for most uses.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

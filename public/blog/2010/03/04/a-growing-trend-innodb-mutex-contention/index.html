@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A growing trend: InnoDB mutex contention &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A growing trend: InnoDB mutex contention</h1>
+  <span class="post-date">Thu, Mar 4, 2010 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>I&rsquo;ve been noticing an undeniable trend in my consulting engagements in the last year or so, and when I vocalized this today, heads nodded all around me. Everyone sees a growth in the number of cases where otherwise well-optimized systems are artificially limited by InnoDB contention problems.</p>
+
+<p>A year ago, I simply wasn&rsquo;t seeing the need for analysis of GDB backtraces en masse. These days, I&rsquo;m writing custom tools to gather and analyze backtraces. A year ago, I simply looked at the SEMAPHORE section of SHOW INNODB STATUS. These days I&rsquo;m writing custom tools to aggregate and reformat that data so I can interpret it more easily. And I&rsquo;m actually seeing cases of this type of problem multiple times every week. I remember the first time I ran into a server that was literally optimized to the limit, but struggling under the load. It was something new for me, not that long ago. Oh, I&rsquo;d seen it before, plenty, but was always able to point out where something could be improved without changing InnoDB itself. Now it&rsquo;s commonplace: schemas are fine &ndash; check. Queries are all well-indexed &ndash; check. Everything else &ndash; check. InnoDB is bottlenecked and absolutely nothing can be improved &ndash; check.</p>
+
+<p>Part of the difference is the rapidly improving hardware. It&rsquo;s getting hard to buy a server with fewer than 8 or even 16 cores, and 16GB of RAM feels like something I&rsquo;d install in a wristwatch. But I also suspect that if I&rsquo;d been characterizing the workload of servers over time in a way that was easy to compare, I&rsquo;d see a clear trend towards bigger data and more queries per second. We&rsquo;re just pushing MySQL + InnoDB harder today than we ever have before.</p>
+
+<p>What can be done? Well, InnoDB needs to be improved, that&rsquo;s all. Oracle, Percona, Google, Facebook and others are working on it, and in many cases these efforts have yielded dramatic results. But there is still much room for improvement.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

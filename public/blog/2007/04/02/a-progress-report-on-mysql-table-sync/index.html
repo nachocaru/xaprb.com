@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A progress report on MySQL Table Sync &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A progress report on MySQL Table Sync</h1>
+  <span class="post-date">Mon, Apr 2, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>I wrote an article late last week about <a href="http://www.xaprb.com/blog/2007/03/30/comparison-of-table-sync-algorithms/">benchmark results for the two table-synchronization algorithms</a> I&rsquo;ve been implementing for the <a href="http://code.google.com/p/maatkit">MySQL Table Sync</a> tool. I&rsquo;ve spent some time developing a test suite for the tool, and learned some really interesting things about the general problem of synchronizing tables.</p>
+
+<h3 id="toc_0">Progress on MySQL Table Sync</h3>
+
+<p>My test suite caught some great bugs, but not as many as I&rsquo;d expected, which is a great feeling. I haven&rsquo;t yet packaged the fixes up and released them to Sourceforge, by the way, so my earlier comment &ndash; &ldquo;I consider this tool unsuitable for production use&rdquo; &ndash; still holds. (You can grab the code from Subversion if you wish).</p>
+
+<p>The biggest bug was an error in my log-base-two arithmetic in the bottom-up sync algorithm. It&rsquo;s the kind of thing that stares me in the face and I don&rsquo;t see it until I have a nice test suite. I also found that I was doing drilldowns in the wrong order in the top-down algorithm.</p>
+
+<p>I&rsquo;ve added some features and documentation, too. This tool is getting pretty complex, and I want to give good guidance on how to use it.</p>
+
+<h3 id="toc_1">A tough problem</h3>
+
+<p>I discovered there are lots of subtleties to finding and resolving differences between tables, which the literature had not prepared me for (probably because previous efforts weren&rsquo;t trying to cover all the cases I am). One interesting problem I found was comparing tables with characters Perl doesn&rsquo;t sort the same way as MySQL.</p>
+
+<p>This is an issue because the tool does not fetch both tables into memory and examine them there. That would be a disaster on large data sets. Instead, it uses a merge algorithm to work with just one row at a time from each table. It basically gets a forward-only cursor into the tables. Working with one row at a time is not how I&rsquo;m used to dealing with relational data, so I had to think creatively and ask for help.</p>
+
+<p>The solution &ndash; and I think this is the only way to do this &ndash; is to ask MySQL to compare character data when I&rsquo;m not confident Perl will sort it the same way MySQL will. The <code>STRCMP()</code> function, along with careful use of charsets and collations, is the key. This adds a small bit of extra network traffic in some cases, but I was able to optimize this to only do calls to MySQL when really needed. The number of extra calls should be very small for normal cases.</p>
+
+<p>The tool will now (as of the latest trunk code) work very well on every test case I&rsquo;ve been able to generate. This is not completely solved for earlier versions of MySQL, and I still have a TODO or three in the code, but I have generated thousands of random tables, filled them with random data, messed with the data in random ways, and run the sync tool against them &ndash; and it syncs them every time.</p>
+
+<h3 id="toc_2">Another interesting problem</h3>
+
+<p>There are cases where there is literally no way to update rows whose non-primary key columns have changed. Consider the following example:</p>
+
+<pre>create table test1(
+  a int not null primary key,
+  b int not null, unique key(b)
+);
+insert into test1(a,b) values(1,1),(2,2);
+
+create table test2 like test1;
+insert into test2(a,b) values(1,2),(2,1);
+
+select * from test1;
++---+---+
+| a | b |
++---+---+
+| 1 | 1 | 
+| 2 | 2 | 
++---+---+
+
+select * from test2;
++---+---+
+| a | b |
++---+---+
+| 1 | 2 | 
+| 2 | 1 | 
++---+---+</pre>
+
+<p>Notice that column <code>b</code> has a unique key on it. Now let&rsquo;s run the sync tool against these two tables, and ask it to print out the queries it would issue to sync the tables:</p>
+
+<pre>$ mysql-table-sync -1 test1 test2 -p
+UPDATE `test2` SET `b`='1' WHERE `a` = '1';
+UPDATE `test2` SET `b`='2' WHERE `a` = '2';</pre>
+
+<p>It found that the two rows have the same primary key in each table, so of course they must be the same row &ndash; it&rsquo;s just that their <code>b</code> value has changed. The rows must therefore be updated, right? Let&rsquo;s try again and tell it to execute the queries to sync the table this time:</p>
+
+<pre>$ mysql-table-sync -1 test1 test2 -x
+DBD::mysql::db do failed: Duplicate entry '1' for key 2 at mysql-table-sync line 1028.</pre>
+
+<p>This table cannot be synced with straightforward <code>UPDATE</code> statements. I see three ways to do it:</p>
+
+<ol>
+<li>update one row to another value, fix the second row, then fix the first row again.</li>
+<li>delete one row and update the other, then re-insert the first.</li>
+<li>delete both rows and then re-insert the correct data.</li>
+</ol>
+
+<p>The third technique is the only feasible one to do programmatically. I&rsquo;ve added such a feature to the tool, and it will now handle these two tables correctly:</p>
+
+<pre>$ mysql-table-sync test1 test2 -p --deleteinsert
+DELETE FROM `test2` WHERE `a` = '1';
+DELETE FROM `test2` WHERE `a` = '2';
+INSERT INTO `test2`(`a`,`b`) VALUES('1','1');
+INSERT INTO `test2`(`a`,`b`) VALUES('2','2');</pre>
+
+<p>The neat thing is, it only required a couple lines of code to change. That&rsquo;s always a good feeling.</p>
+
+<h3 id="toc_3">General MySQL Toolkit news</h3>
+
+<p>There is much more to do. If you want to help, it would be great to have a volunteer webmaster for the project, among other things.</p>
+
+<p>In other unrelated news, I noticed this project has been in Sourceforge&rsquo;s top 1000 for a while now, hovering in the 800 and 900 range. I&rsquo;m kind of surprised &ndash; Sourceforge has hundreds of thousands of projects. I expect this is somewhat inflated by the fact that I have so far not released the tools in one package, so the download numbers may be a bit higher than they&rsquo;d otherwise be.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

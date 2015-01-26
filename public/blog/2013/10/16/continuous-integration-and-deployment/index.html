@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Continuous integration and deployment &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Continuous integration and deployment</h1>
+  <span class="post-date">Wed, Oct 16, 2013 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>I&rsquo;ve been talking to some smart people about deployment. First a little background. One of my colleagues was working on a project that ultimately didn&rsquo;t bear fruit. It was a system for continuous delivery, and involved reacting to <code>git push</code> by building and shipping to production. But it felt as if the problem shouldn&rsquo;t be separated from provisioning, and from setting up a development environment, and so these things got folded in, and the effort became a boil-the-ocean project that had to be set aside.</p>
+
+<p>During this process I came to appreciate my colleague&rsquo;s point of view on topics such as how software should be deployed and how it should be designed to run in its environment. A lot of this is encapsulated in <a href="http://12factor.net/">The Twelve Factors</a>. In fact, I actually created and deployed to a Heroku app, and experienced firsthand why people love Heroku.</p>
+
+<p>At Velocity this week, we&rsquo;re talking a lot about resilience, operations, and so on. Introducing change is often one of the things that exposes failure modes in our products, and this fragility is probably more likely to show up during deployments than almost any other time. But there&rsquo;s not a lot of discussion at Velocity about deployment &ndash; that vital part of the engineering process where we take code from development and mutate our production environment to include it.</p>
+
+<p>I started asking some people about this, because I need to resume the deployment effort at my own company. A few people gave me pointers to prior art to look at, but some other people told me it&rsquo;s not a solved problem for them either. I&rsquo;ll include some of that information in this post.</p>
+
+<p>But first I want to write my current thoughts about this subject, to get it on record and to stimulate more conversation. Later I&rsquo;ll follow up after I&rsquo;ve learned more.</p>
+
+<p>It&rsquo;s a little difficult for me to organize my thoughts coherently, so I&rsquo;ll just drop a list on you:</p>
+
+<ul>
+<li>I want continuous deployment because if it&rsquo;s not a part of the culture at the company, we&rsquo;ll engineer ourselves into a corner away from it and it&rsquo;ll get more and more difficult to ship code rapidly later. Tools are vital; rules can&rsquo;t overcome the natural reluctance (or just lack of incentive) to push code to production. I also want continuous deployment for a few reasons that might be obvious to readers. First, small, incremental changes are a lot less risky. Second, it is a positive feedback cycle. Third, code that&rsquo;s written but not serving customers is inventory that I&rsquo;ve paid for but not benefited from (and neither are customers). The cost of this inventory is very real; this is a philosophy expressed well in Eli Goldratt&rsquo;s book <em>The Goal</em>.</li>
+<li>Code should be deployed when it&rsquo;s merged to master/HEAD and all tests passed. It&rsquo;s a good question whether it should be deployed completely automatically, or whether it&rsquo;s good to let people batch together some changes. I favor the latter. We might not want to deploy every typo fixed. We don&rsquo;t want the batches to accumulate, though, or deployment gets really scary and risky. Visibility into whose changes, and what they are, is important for this scenario. Approval by all involved is also important.</li>
+<li>I don&rsquo;t want to build all of this infrastructure myself. I want to use external providers as much as possible. I prefer to buy or rent rather than build, because I won&rsquo;t do the job as well, and it&rsquo;s not my core business. I don&rsquo;t want to engage in &ldquo;undifferentiated heavy lifting,&rdquo; to quote someone smart at Netflix.</li>
+<li>However, there&rsquo;s a tension here. External providers must be a convenience, not in the critical path. If one or more external providers is down, that can&rsquo;t be a hard block on a deployment. The last thing I want is to have downtime I can&rsquo;t fix because someone else has downtime too. As an example, I want to continue to use Github and CircleCI, but I don&rsquo;t want to make them SPOFs. But if I have an alternate, less-used deployment route, that&rsquo;s also a problem; there should only be one deployment system, or the fallback will fail when I need it. I think the solution is to make Github and CircleCI trigger deployment, but only as one possible source of triggers.</li>
+<li>Deploying binaries with restarts is very different from source code deployments, and there are other types of deployments that need to be considered as well. Deployment to stateless resources (a web server) is a lot simpler and less risky than deploying to something that is stateful, or affects something stateful such as a database server. There&rsquo;s also the matter of migrations. From my experience with lots of large companies, migrations are simplistic and I&rsquo;ve never seen them scale beyond toy applications. But taking them out-of-band means the system is not completely self-documenting, and may not be runnable unless some change or other requirement is satisfied, which can only be performed and verified by a human. These are concerns I don&rsquo;t know how to resolve.</li>
+<li>Although it&rsquo;s tempting to put manifests (Procfile) and include provisioning (and even scaling) in the deployment process, I think it&rsquo;s better to put a strong barrier between those. Otherwise we&rsquo;ll end up with a hairball that can&rsquo;t be dealt with separately. System provisioning and configuration to prepare an environment to be deployed into is not part of deployment. Similarly, there needs to be some thought about a service directory to register and mutate the state of the overall system, such as taking apps in and out of proxies and load balancers before, during, and after deployments. That might need to be part of deployment, or the provisioning, or both.</li>
+<li>Most of the services I&rsquo;ve seen for deployment want to imagine that the world is all on Heroku, where a deployment is a <code>git push</code>. Unfortunately, as nice as that is, it isn&rsquo;t going to work. The other thing many of them offer is &ldquo;we&rsquo;ll run your Capistrano jobs&rdquo; &ndash; but that&rsquo;s also not workable, because allowing external hands to poke into our systems is not an option. Agent-based deployment is preferable. I have good experience with this, even with self-upgrading agents. There are some companies (Distelli) that do something reasonable here.</li>
+</ul>
+
+<p>Thoughts from other people I talked to include:</p>
+
+<blockquote>
+<p>We think about this basically all the time at [company]. The difficulty is that organizations build their own because there&rsquo;s a likely corollary to Conway&rsquo;s Law here: deployment and development infrastructure are context sensitive, so therefore organization sensitive.</p>
+</blockquote>
+
+<p>And Jez Humble offered this:</p>
+
+<blockquote>
+<p>I wrote a <a href="http://www.amazon.com/dp/0321601912" target="_blank">book</a> on the topic, plus I <a href="http://continuousdelivery.com/" target="_blank">blog</a> and <a href="http://continuousdelivery.com/talks/" target="_blank">speak</a> about it a bunch.</p>
+
+<p>You also want to check out Michael Nygard&rsquo;s <a href="http://www.amazon.com/dp/0978739213/" target="_blank">Release It!</a> and his <a href="http://www.youtube.com/watch?v=Luskg9ES9qI" target="_blank">stuff</a>, which is extremely awesome</p>
+
+<p>There are some <a href="http://continuousdelivery.com/2013/05/videos-from-the-continuous-delivery-track-at-qcon-sf-2012/" target="_blank">talks</a> from the continuous delivery tracks at various conferences (including from <a href="http://www.youtube.com/watch?v=JR-ccCTmMKY" target="_blank">Etsy</a>)</p>
+
+<p>I&rsquo;m running a conference which talks about continuous delivery, lean UX, devops and related stuff: <a href="http://flowcon.org/flowcon-sanfran-2013/schedule/index.jsp" target="_blank"><a href="http://flowcon.org/flowcon-sanfran-2013/schedule/index.jsp">http://flowcon.org/flowcon-sanfran-2013/schedule/index.jsp</a></a></blockquote></p>
+</blockquote>
+
+<p>I look forward to your thoughts and links to further study. Thanks!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

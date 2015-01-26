@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A PHP implementation of the XML DOM &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A PHP implementation of the XML DOM</h1>
+  <span class="post-date">Tue, Oct 31, 2006 in
+		
+		<a href="/categories/Web" class="btn btn-primary">Web</a>
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      
+
+<p>Several years ago I wrote a pure PHP library for manipulating <a href="http://www.w3.org/XML/">XML</a> documents with the Document Object Model (<a href="http://www.w3.org/DOM/">DOM</a>) in <a href="http://www.php.net/">PHP</a> 4, without external libraries such as libxml. This is often useful on shared hosting providers, where you can&rsquo;t get C extensions installed. The library uses <a href="http://php.net/xml">PHP4&#8242;s built-in SAX </a>functions, which are enabled by default. Today I&rsquo;m re-releasing this library under the LGPL (EDIT: later re-released under MIT). You can find it <a href="https://github.com/xaprb/dom4php">here</a></p>
+
+<h3 id="toc_0">Introduction</h3>
+
+<p>It&rsquo;s not too hard to build a DOM implementation on top of SAX. In fact, many DOM libraries actually use this technique. You just need to know the <a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html">DOM core specification</a> really well, and understand SAX really well. Everything else is easy, haha. The truth is, I don&rsquo;t know how well I knew the spec back then, and I&rsquo;ve no time to check right now, so you&rsquo;ll have to let me know.</p>
+
+<p>Since I wrote this years ago, before I was enamored of unit testing, I don&rsquo;t know how good it is. I&rsquo;ve used it for several years in production systems without ever looking at the actual code again &ndash; I just use it and take for granted that it works. I may or may not have time to actually write tests for it (probably not, sorry). Maybe you can help me with that. It shouldn&rsquo;t be hard, but I just don&rsquo;t have the time for it.</p>
+
+<p>If you do want to hack the source, I encourage you to be ready to use a debugger. Getting references right is the tricky part. There are <em>lots</em> of references to be built and manipulated in a structure as complex as the DOM, and handling references correctly in PHP 4 is anything but easy for most people.</p>
+
+<h3 id="toc_1">Documentation</h3>
+
+<p>I never wrote much documentation for this library, but I might attempt to remedy that at some point (I probably don&rsquo;t have time though &ndash; sorry). In the meantime, here&rsquo;s a synopsis to get you started:</p>
+
+<pre>&lt;?php
+
+# Create a parser and parse a simple document.
+include_once("XmlParser.php");
+$parser   = new XmlParser($encoding = 'ISO-8859-1'); # encoding is optional
+$document = $parser-&gt;parse('&lt;p class="test"&gt;&lt;strong&gt;this is a document&lt;/strong&gt;&lt;/p&gt;');
+
+# Add a text node.
+$text =& $document-&gt;createTextNode('foozle');
+$document-&gt;childNodes[0]-&gt;appendChild($text);
+
+# Navigate around the document a bit, starting at the new node we just added.
+$strong =& $text-&gt;previousSibling;
+echo "The content of the node is '" . $strong-&gt;childNodes[0]-&gt;data . "'\n";
+
+# Serialize the XML document to a string.  Do NOT use print_r() as the cyclic
+# data structures will cause problems.  Instead, create an instance of the
+# XmlSerializer class.
+include_once("XmlSerializer.php");
+$serializer = new XmlSerializer("XML");
+echo $serializer-&gt;serializeNode($document);
+echo "\n";
+
+?&gt;</pre>
+
+<p>The real documentation is the <a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html">DOM core specification</a>, as I said. The object you get back from calling <code>parse()</code> is a <code>Document</code>, and you just use the DOM as normal after that.</p>
+
+<h3 id="toc_2">Differences from the DOM spec</h3>
+
+<p>The DOM spec is pretty heavy-weight, and coding something like this in pure PHP isn&rsquo;t as efficient as using a C library. I made a couple of compromises for simplicity, performance, and convenience. The result should be a nearly complete DOM implementation, with much less code and overhead than it would take to follow the spec exactly. Here are the differences from the official specification:</p>
+
+<ol>
+<li>ID attributes (refer to the XML spec if you don&rsquo;t know what that means) are assumed to be named &ldquo;id&rdquo; and are kept in a lookup table with the document. This makes sure you can&rsquo;t duplicate an ID, and provides fast access to any element by ID. If you need to change the name from &ldquo;id&rdquo; to something else, you can do that.</li>
+<li>Attributes aren&rsquo;t object-ified. Instead, attributes are stored as a lighter-weight associative array with each <code>Node</code>. You can set and retrieve attributes with object methods, but they aren&rsquo;t objects themselves.</li>
+<li><code>Node</code> contains some convenience methods not found in the official spec. These are, for example, <code>getElementsByAttributeValue()</code>. Most of them are only used internally, but a few are meant for external use too.</li>
+<li>Many of the interfaces in the official spec aren&rsquo;t really necessary for an 80% solution, including <code>DOMImplementation</code> and <code>NamedNodeMap</code>. I omit those.</li>
+<li>No support for namespaces or namespace methods (e.g. <code>createAttributeNS</code>)</li>
+</ol>
+
+<p>There may be other differences too, but I can&rsquo;t think of them right now. Write into the comments if you see anything I missed. By the way, if you need some of the missing pieces such as <code>NamedNodeMap</code>, I can provide skeleton classes for you; I originally coded them, but then deleted them.</p>
+
+<h3 id="toc_3">License</h3>
+
+<p>I&rsquo;m releasing this under the <a href="http://www.gnu.org/copyleft/lgpl.html">GNU LGPL</a>. At one time I had licensed it under the normal GPL, but <a href="http://www.xaprb.com/blog/2006/06/19/xaprb-scripts-relicensed/">this isn&rsquo;t appropriate for a library</a>, so I&rsquo;m re-licensing it. EDIT: re-re-licensed under MIT. See <a href="https://github.com/xaprb/dom4php">https://github.com/xaprb/dom4php</a>.</p>
+
+<h3 id="toc_4">Feedback welcome, and thanks for all the fish</h3>
+
+<p>Please do leave feedback in the comments. Since I wrote this years ago and haven&rsquo;t really thought about it since then, I have no idea how good it is &ndash; I can only say I haven&rsquo;t run into any bugs in a while. Maybe I haven&rsquo;t implemented some things I should have, or maybe there are braindead things I&rsquo;ve done, who knows. Regardless, I hope you find it helpful.</p>
+
+<p>See you next time!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Would you trust a more advanced MySQL optimizer? &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Would you trust a more advanced MySQL optimizer?</h1>
+  <span class="post-date">Wed, Apr 21, 2010 in
+		
+		<a href="/categories/Commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>Much has been made of certain limitations of MySQL&rsquo;s query optimizer (&ldquo;planner&rdquo;). Subqueries, lack of sort-merge joins, and so on. This is not MySQL-bashing and no one should be offended. Some people have worked to make things better, and that code is in branches that were intended for future releases. But if that work were available right now, would you trust it?</p>
+
+<p>This question is important because the optimizer is complex and full of compromises and black magic. Even minor changes occasionally have weird edge cases that cause a regression in some workload. Are major changes trustworthy?</p>
+
+<p>I&rsquo;ll give a specific example. In version 5.0, MySQL gained the ability to use more than one index for a query. This is called index_merge in EXPLAIN, and sometimes people think it&rsquo;s the best thing ever. In practice, I can say two general things about queries that use an index_merge plan:</p>
+
+<ol>
+<li>If the optimizer chooses an index_merge, it is a fair guess that there are no good indexes for the query, and it&rsquo;s making the best of a bad situation.</li>
+<li>The optimizer has no way to model the cost of an index_merge operation, and sometimes underestimates the cost so badly that even a full table scan can be faster. Such queries are often much faster when rewritten, for example, as a UNION. (This was the workaround in pre-5.0 anyway.)</li>
+</ol>
+
+<p>As a result, queries that use index_merge can usually be flagged as &ldquo;bad queries&rdquo; without much further thought. Queries that really benefit from index_merge are relatively rare edge cases. A &ldquo;more advanced&rdquo; optimizer tactic turns out, by and large, to be a heuristic for when you need to rewrite your queries to a simpler form that MySQL 4.1 could optimize well.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A comment on comments &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A comment on comments</h1>
+  <span class="post-date">Wed, Sep 28, 2005 in
+		
+		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+      <p>Comments are one of the most abused programming techniques. I know I&rsquo;m not the first to say this, but it bears repeating. There are hundreds of ways to misuse comments, and very few ways to use them correctly. In this article I&rsquo;ll pick on just one way to misuse them: fustian pontificating.</p>
+
+<p>Albert Einstein said something like &ldquo;things should be made as simple as possible, but no simpler&rdquo; (it&rsquo;s unclear what he actually said, so I&rsquo;m paraphrasing). Einstein&rsquo;s greatest genius, in fact, was his ability to help ordinary people understand the esoterica of relativity &ndash; a subject most physicists would have had trouble explaining to other physicists. Yet he wrote with such simplicity and clarity that I know people who were able to read his work at age ten and grok the essential ideas. This is the mark of true genius: making specialized things accessible to non-specialists.</p>
+
+<p>In &ldquo;Walden,&rdquo; Thoreau advised: <em>simplify, simplify, simplify.</em> Emerson is supposed to have responded, &ldquo;I think one &lsquo;simplify&rsquo; would have sufficed.&rdquo;</p>
+
+<p>In that light, let us examine one of the worst comments I have ever seen in code:</p>
+
+<pre>/*
+ * Delayhover effectively creates a phase-shifted version of sfhover
+ * that runs parallel with it.  The CSS listens for any of the hover
+ * options: :hover, .sfhover, and .delayhover.  There are multiple
+ * checkpoints in the code to prevent asynchronous modification of the
+ * same objects, or at least provide recovery (If a menu gets left open
+ * somehow, a mouseover-mouseout will probably fix it - I've never
+ * seen this, though).
+ * code reference: T__ M_____.
+ */</pre>
+
+<p>This comment is in a Javascript file that implements drop-down navigation menus on a website. The code is only 170 lines long, and does nothing resembling the comment very much; it simply opens and closes the drop-down menus. It doesn&rsquo;t even add delays to the menus. The comments are completely wrong, and to add insult to injury, they scared T.M.&rsquo;s managers. After this fellow worked on our website, my manager was so afraid of it that he thought we would never be able to replace the man, and I had to literally calm him down in a meeting and explain that in fact, someone in our company <em>could</em> maintain the code, that we did <em>not</em> need to hire an outside consultant, and T.M. was <em>not</em> a &ldquo;Javascript Ninja.&rdquo; Nice going T.M.</p>
+
+<p>I was tasked with implementing delays on the drop-down menus, and in about 90 minutes I not only did that, but I took the code down to 84 lines. T.M. had worked on this for I don&rsquo;t know how many weeks &ndash; unsuccessfully. It&rsquo;s easy to see why: he didn&rsquo;t understand what the code was doing.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

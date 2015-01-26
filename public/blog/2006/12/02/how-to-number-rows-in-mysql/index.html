@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to number rows in MySQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to number rows in MySQL</h1>
+  <span class="post-date">Sat, Dec 2, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>I wrote before about a generic, cross-platform way to simulate the SQL <code>ROW_NUMBER()</code> function in any RDBMS. There is a much more efficient way to do this on MySQL with user variables.</p>
+
+<h3 id="toc_0">Background</h3>
+
+<p>Please see my previous article on <a href="http://www.xaprb.com/blog/2005/09/27/simulating-the-sql-row_number-function/">how to simulate the <code>ROW_NUMBER()</code></a> function for the background. I&rsquo;ll use the same table structure and data in this article.</p>
+
+<p>Unfortunately, that&rsquo;s a quadratic algorithm, so it&rsquo;s not something I&rsquo;d do much (though I once did it over small sets of data in SQL Server 2000 at a jobsite).</p>
+
+<h3 id="toc_1">A more efficient method</h3>
+
+<p>In MySQL you can simultaneously assign to and read from <a href="http://dev.mysql.com/doc/refman/5.0/en/user-variables.html">user variables</a> in a SELECT statement. This allows the following method of numbering rows:</p>
+
+<pre>set @type = '';
+set @num  = 1;
+
+select
+   type,
+   variety,
+   @num := if(@type = type, @num + 1, 1) as row_number,
+   @type := type as dummy
+from fruits;
+
++--------+------------+------------+--------+
+| type   | variety    | row_number | dummy  |
++--------+------------+------------+--------+
+| apple  | fuji       |          1 | apple  | 
+| apple  | gala       |          2 | apple  | 
+| apple  | limbertwig |          3 | apple  | 
+| cherry | bing       |          1 | cherry | 
+| cherry | chelan     |          2 | cherry | 
+| orange | navel      |          1 | orange | 
+| orange | valencia   |          2 | orange | 
+| pear   | bartlett   |          1 | pear   | 
+| pear   | bradford   |          2 | pear   | 
++--------+------------+------------+--------+</pre>
+
+<p>How does that work? I&rsquo;m restarting the row number each time the <code>type</code> column changes, by keeping track of the value it had in the last row. And I&rsquo;m simultaneously incrementing and selecting the row number in each row.</p>
+
+<p>The spurious <code>dummy</code> column has to be there, but if your version of MySQL supports it, you can use a subquery in the <code>FROM</code> clause to eliminate columns you don&rsquo;t want in the results.</p>
+
+<h3 id="toc_2">Efficiency</h3>
+
+<p>All I&rsquo;m doing is maintaining a bit of extra memory and performing a few small comparisons and assignments for each row, so this technique is very efficient.</p>
+
+<h3 id="toc_3">Playing with fire</h3>
+
+<p>You can refer to the generated <code>row_number</code> column in a <code>HAVING</code> or <code>GROUP BY</code> clause, but don&rsquo;t burn your fingers. This technique is very much like playing with fire. The result of assigning to a variable and using it in the same statement (in the <code>HAVING</code>, for example) depends on the query plan the server chooses, the phase of the moon, and probably other things too. Before you use this technique, you should read and understand the <a href="http://dev.mysql.com/doc/refman/5.0/en/user-variables.html">section on user-defined variables in the MySQL Manual</a>, and decide whether it&rsquo;s safe for your query.</p>
+
+<p>Now that you&rsquo;ve read that section of the manual, particularly the part about the aliased expression, you should understand why the following query might be a safer paradigm when using the result in the <code>HAVING</code> clause, even though it produces another dummy column:</p>
+
+<pre>set @type = '';
+set @num  = 1;
+
+select
+   type,
+   variety,
+   @num := if(@type = type, @num + 1, 1) as dummy_1,
+   @type := type as dummy_2,
+   @num as row_number
+from fruits
+group by type, variety
+having row_number = 1;
+
++--------+----------+---------+---------+------------+
+| type   | variety  | dummy_1 | dummy_2 | row_number |
++--------+----------+---------+---------+------------+
+| apple  | fuji     |       1 | apple   | 1          | 
+| cherry | bing     |       1 | cherry  | 1          | 
+| orange | navel    |       1 | orange  | 1          | 
+| pear   | bartlett |       1 | pear    | 1          | 
++--------+----------+---------+---------+------------+</pre>
+
+<p>(If I&rsquo;m wrong about that, somebody please correct me).</p>
+
+<p>A safer technique is to use a subquery in the <code>FROM</code> clause. This will cause the results to be materialized in a temporary table behind the scenes. It might be less efficient for some uses, though:</p>
+
+<pre>select type, variety
+from (
+   select
+      type,
+      variety,
+      @num := if(@type = type, @num + 1, 1) as row_number,
+      @type := type as dummy
+   from fruits
+) as x
+where row_number = 1;
+
++--------+----------+
+| type   | variety  |
++--------+----------+
+| apple  | fuji     | 
+| cherry | bing     | 
+| orange | navel    | 
+| pear   | bartlett | 
++--------+----------+</pre>
+
+<h3 id="toc_4">Conclusion</h3>
+
+<p>This is an efficient, flexible way to generate and use row numbers in MySQL. I&rsquo;ll leave it to you to find uses for it for right now, but I&rsquo;m going to show you at least one application for this in an upcoming article.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

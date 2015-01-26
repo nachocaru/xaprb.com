@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to add paragraph spacing in Google Docs &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to add paragraph spacing in Google Docs</h1>
+  <span class="post-date">Sun, Jun 21, 2009 in
+		
+		<a href="/categories/Web" class="btn btn-primary">Web</a>
+		
+  </span>
+      <p>I&rsquo;m using <a href="http://docs.google.com/">Google Docs</a> for a project I&rsquo;m working on right now, and I ran into a problem with spacing. There appears to be no way to get spacing between paragraphs. You can control spacing between lines, but that&rsquo;s not the same thing. Actually, it&rsquo;s quite easy. You just have to know how Google Docs works.</p>
+
+<p>The root problem is that it&rsquo;s not creating paragraphs when you press the [Enter] key. It&rsquo;s just adding a <br> tag. If you get it to create paragraphs, you can edit the document&rsquo;s CSS and fix the problem easily.</p>
+
+<p>The trick to this is to explicitly format the text with the <strong>Normal Paragraph Text</strong> style. This is <strong>not</strong> the same as no formatting. The easiest way to do this is to press Ctrl+0 while your cursor is in the paragraph you want to format. After you do this, pressing [Enter] will actually do what you want &ndash; it will create a new paragraph.</p>
+
+<p>Now that you&rsquo;ve done that, you can add the following CSS with the <strong>Edit/Edit CSS</strong> menu:</p>
+
+<pre>p {
+  margin: 1em 0 1em 0;
+}
+</pre>
+
+<p>You should now see the desired spacing between paragraphs.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

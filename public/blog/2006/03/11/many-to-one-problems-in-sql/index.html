@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to avoid many-to-one problems in SQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to avoid many-to-one problems in SQL</h1>
+  <span class="post-date">Sat, Mar 11, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>It&rsquo;s been a while since I&rsquo;ve posted an abstract, theoretical article on a fine point of SQL. Today I want to bring your attention to two ways in which an RDBMS can allow you to do something that has no well-defined result. These involve queries where several values are eligible, but only one is chosen &ndash; and chosen in an undefined manner. I&rsquo;ll show you the two blunders, tell you when they might occur, and explain how to avoid them.</p>
+
+<h3 id="toc_0">Selecting an un-grouped column in a grouped query</h3>
+
+<p>As far as I know, this bad behavior only applies to MySQL. As the manual explains, MySQL &ldquo;<a href="http://dev.mysql.com/doc/refman/5.0/en/group-by-hidden-fields.html?ff=nopfpls">extends the use of <code>GROUP BY</code></a>&rdquo; to allow selecting columns that do not appear in the <code>GROUP BY</code> clause. What does this mean? Well, suppose I have the following data:<sup><a href="http://dev.mysql.com/doc/refman/5.0/en/group-by-hidden-fields.html?ff=nopfpls">1</a></sup></p>
+
+<table class="borders collapsed">
+  <caption>Fruits</caption> <tr>
+    <th>
+      Fruit
+    </th>
+    
+    <th>
+      Price
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+    
+    <td>
+      5.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+    
+    <td>
+      5.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+    
+    <td>
+      6.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+    
+    <td>
+      4.00
+    </td>
+  </tr>
+</table>
+
+<p>MySQL lets me write the following query against the data:</p>
+
+<pre>select Fruit, Price, count(*) as c
+from Fruits
+group by Fruit;</pre>
+
+<p>The results will look like this:</p>
+
+<table class="borders collapsed">
+  <tr>
+    <th>
+      Fruit
+    </th>
+    
+    <th>
+      Price
+    </th>
+    
+    <th>
+      c
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+    
+    <td>
+      5.00
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+    
+    <td>
+      6.00
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+</table>
+
+<p>Here&rsquo;s the problem: the query groups the tuples (rows) into two groups, one group containing two Apples and one with two Oranges. <strong>I can&rsquo;t logically get &ldquo;the price&rdquo; from two tuples in a group, because there is no one &ldquo;the&rdquo; price</strong>. In the formal mathematics upon which SQL is based, this query is nonsense. MySQL&rsquo;s documentation admits as much, and tells me not to do this unless all the tuples in the group have the same value in that column &ndash; or I&rsquo;ll risk getting unpredictable behavior. In my example, it&rsquo;s pretty easy to see MySQL chooses the value from the &ldquo;first&rdquo; tuple in the group (a funny notion, given that there is no first tuple because <em>sets are theoretically unordered</em>).</p>
+
+<p>This is a bad behavior introduced solely for the sake of optimization, and the documentation admits that. Grouping requires sorting, which requires comparing values, so grouping literally by as few columns as possible &ndash; even when the logical grouping may be by more columns &ndash; is an (ill-gotten) efficiency gain.</p>
+
+<p>As with any other non-standard technique, the benefit is offset by lack of portability. Plus, it might cause evil glares from colleagues ;-).</p>
+
+<p>To avoid this problem on MySQL, use standard SQL (sorry for stating the obvious). To make my query standard SQL, I&rsquo;d either have to use an aggregate function on that column, such as <code>SUM</code>, <code>MIN</code>, <code>AVG</code>, <code>MAX</code> or similar &ndash; or, I could add the column to the <code>GROUP BY</code> clause, which would separate the results into more groups and change the output. In other words, every column must either be in the grouping clause or an aggregate function.</p>
+
+<p>Some platforms, such as SQL Server 2000, will not allow the query. MySQL can be made to throw an error too, if <code>ONLY_FULL_GROUP_BY</code> mode is enabled.</p>
+
+<p>It&rsquo;s important to group the query by the <em>data</em>, not by the expressions used to transform the data. Programmers who don&rsquo;t really understand what&rsquo;s going on sometimes just change the code to make the errors stop, often making an even worse mess out of the query. Watch out for this. Here&rsquo;s a good article on <a href="http://weblogs.sqlteam.com/jeffs/archive/2005/12/14/8546.aspx">how to group queries properly</a>.</p>
+
+<h3 id="toc_1">Updates from a join</h3>
+
+<p>Unlike the first gotcha above, this one can happen systems other than MySQL. The issue is an <code>UPDATE</code> in a join with a <code>FROM</code>, where tuples from the base table being updated appear multiple times. Here is a query:</p>
+
+<pre>update t1
+   inner join t2 on t1.id = t2.id
+set t1.col1 = t2.col1;
+
+/* Equivalent syntax for SQL Server 2000
+update t1
+   set t1.col1 = t2.col1
+   from t1 inner join t2 on t1.id = t2.id
+*/</pre>
+
+<p>If you&rsquo;re used to seeing it, it may look like there&rsquo;s nothing wrong with that query<sup><a href="http://weblogs.sqlteam.com/jeffs/archive/2005/12/14/8546.aspx">2</a></sup>. Suppose, though, that my data looks like this:</p>
+
+<table class="borders collapsed">
+  <caption>FruitPrices</caption> <tr>
+    <th>
+      Fruit
+    </th>
+    
+    <th>
+      Price
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+    
+    <td>
+      NULL
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+    
+    <td>
+      NULL
+    </td>
+  </tr>
+</table>
+
+<p>(Ignore for a moment that this table has pretty much the same data as the Fruits table&hellip;)</p>
+
+<p>I&rsquo;ll re-write the query to show how I might unwittingly update a FruitPrices tuple from multiple Fruits tuples:</p>
+
+<pre>update FruitPrices as fp
+   inner join Fruits as f on f.Fruit = fp.Fruit
+set fp.Price = f.Price;</pre>
+
+<p>What does this statement actually do? Well, logically it first <a href="http://www.xaprb.com/blog/2005/10/03/understanding-sql-joins/">joins the base tables together</a>:</p>
+
+<table class="borders collapsed">
+  <caption>FruitPrices and Fruits</caption> <tr>
+    <th>
+      Fruit
+    </th>
+    
+    <th>
+      Price
+    </th>
+    
+    <th>
+      Fruit
+    </th>
+    
+    <th>
+      Price
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+    
+    <td>
+      NULL
+    </td>
+    
+    <td>
+      Apples
+    </td>
+    
+    <td>
+      5.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Apples
+    </td>
+    
+    <td>
+      NULL
+    </td>
+    
+    <td>
+      Apples
+    </td>
+    
+    <td>
+      5.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+    
+    <td>
+      NULL
+    </td>
+    
+    <td>
+      Oranges
+    </td>
+    
+    <td>
+      6.00
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Oranges
+    </td>
+    
+    <td>
+      NULL
+    </td>
+    
+    <td>
+      Oranges
+    </td>
+    
+    <td>
+      4.00
+    </td>
+  </tr>
+</table>
+
+<p>Next it updates each <code>Price</code> value in the left-hand side from the column on the right-hand side. But wait, the value appears twice &ndash; that means logically, Apples are being assigned $5.00 twice, and Oranges are being assigned both $4.00 and $6.00 prices. Danger, Will Robinson! Which one wins? As it turns out, in MySQL again the &ldquo;first&rdquo; value wins. Not in SQL Server 2000, though &ndash; the &ldquo;last&rdquo; one wins on that platform, if memory serves. It doesn&rsquo;t really matter the particulars of which value wins; it would be more legitimate if the database server threw an error, in my opinion.</p>
+
+<p>I can think of a few ways to avoid this situation.</p>
+
+<h4 id="toc_2">Method 1: Avoid non-standard syntax</h4>
+
+<p>Neither syntax above is standard, and neither makes any sense from a true relational standpoint, which is why they have undefined, vendor-specific behavior. A standard <code>UPDATE</code> statement does <strong>not</strong> have a <code>FROM</code> clause. Joe Celko has written extensively about this:</p>
+
+<blockquote cite="http://groups.google.com/group/microsoft.public.sqlserver.programming/browse_thread/thread/c7bff2f93c2a90e0/e9cb0f92a9361619%23e9cb0f92a9361619?sa=X&#038;oi=groupsr&#038;start=1&#038;num=3">
+  <p>
+    The correct syntax for a searched update statement is
+  </p>
+  
+  <pre>&lt;update statement&gt; ::=
+  UPDATE &lt;table name&gt;
+     SET &lt;set clause list&gt;
+  [WHERE &lt;search condition&gt;]
+
+&lt;set clause list&gt; ::=
+  &lt;set clause&gt; [{ , &lt;set clause&gt; }...]
+
+&lt;set clause&gt; ::= &lt;object column&gt; = &lt;update source&gt;
+
+&lt;update source&gt; ::= &lt;value expression&gt; | NULL | DEFAULT
+
+&lt;object column&gt; ::= &lt;column name&gt;</pre>
+  
+  <p>
+    The <code>UPDATE</code> clause simply gives the name of the base table or updatable view to be changed.
+  </p>
+</blockquote>
+
+<p>That&rsquo;s not terribly enlightening to most people, especially those not used to reading BNF! Let me try to correct the query:</p>
+
+<pre>update FruitPrices as fp
+   set fp.Price =  (
+      select f.Price from Fruits as f
+      where f.Fruit = fp.Fruit);
+ERROR 1242 (21000): Subquery returns more than 1 row</pre>
+
+<p>Oops! It looks like MySQL is now complaining about me trying to update a single value from a whole set of values! Very good. This shows me that my query is wrong, instead of silently doing something bad. Here&rsquo;s a query that works:</p>
+
+<pre>update FruitPrices as fp
+   set fp.Price =  (
+      select max(f.Price) from Fruits as f
+      where f.Fruit = fp.Fruit);</pre>
+
+<h4 id="toc_3">Method 2: Join one-to-one</h4>
+
+<p>The second way, if you must use non-standard, mathematically invalid syntaxes, is to make sure the join is based on indexes and primary keys in such a way that the many-to-one problem doesn&rsquo;t happen. For example, if the columns used in the join criterion are the primary key in the right-hand base table, it&rsquo;s safe.</p>
+
+<h4 id="toc_4">Method 3: Group the right-hand side</h4>
+
+<p>The last is to follow the advice of the article linked above and group the right-hand table appropriately. This is effectively the same thing as my second suggestion.</p>
+
+<p><sup><a href="http://dev.mysql.com/doc/refman/5.0/en/group-by-hidden-fields.html?ff=nopfpls">1</a></sup> You can create the tables I&rsquo;m using with the following scripts:</p>
+
+<pre>create table Fruits(
+   Fruit varchar(50),
+   Price decimal(3,2));
+
+create table FruitPrices(
+   Fruit varchar(50) not null primary key,
+   Price decimal(3,2));
+
+insert into Fruits values 
+   ("Apples", 5.00),
+   ("Apples", 5.00),
+   ("Oranges", 6),
+   ("Oranges", 4);
+
+insert into FruitPrices(Fruit)
+   values("Apples"), ("Oranges");</pre>
+
+<h3 id="toc_5">What&rsquo;s really wrong with these queries?</h3>
+
+<p>The relational model, which SQL doesn&rsquo;t follow exactly, is all about functions in the mathematical sense. Recall a function is just a mapping from the domain to the range, and one input value from the domain must produce exactly one output in the range. A given input value may not map to two output values. This is why a lot of functions can&rsquo;t be turned around backwards and still be functions. For example, <code>sin(0)</code> is 0, but so is <code>sin(2*pi)</code>, and <code>sin</code> is a function; but the inverse isn&rsquo;t a function. If you turn <code>sin</code> around and try to put 0 into the back end, what do you get out? You get 0, and 2*pi, and &hellip; infinitely many other values.</p>
+
+<p>The incorrect statements I&rsquo;ve shown above make no sense because they&rsquo;re trying to shove data into a function backwards, and there can be more than one result on the output. I&rsquo;ve shown how RDBMSs often just pick one of the outputs, and it&rsquo;s fine to know that&rsquo;s going to happen, but it&rsquo;s also important to know what is really going on.</p>
+
+<p>This really does matter. Two days ago at work, my boss brought up a situation where a production query on our main database server had created a bad situation because of updates in a join. Bogus!</p>
+
+<p><sup><a href="http://weblogs.sqlteam.com/jeffs/archive/2005/12/14/8546.aspx">2</a></sup> If you&rsquo;re not familiar with either of these syntaxes, I feel your pain. I wasn&rsquo;t either until I got out of database-theory classes. These syntaxes are confusing because they are meaningless, not because you are inexperienced. And every DB vendor implements them differently, yet another reason to avoid them.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to find next and previous records in SQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to find next and previous records in SQL</h1>
+  <span class="post-date">Fri, Apr 28, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>In this article I&rsquo;ll show you how to find the &ldquo;next&rdquo; and &ldquo;previous&rdquo; records (define these terms any way you like) in a set of records. My solution uses no subqueries or unions, so it works on old versions of MySQL, and returns both the next and the previous records in a single efficient query.</p>
+
+<h3 id="toc_0">Motivation</h3>
+
+<p>I&rsquo;m working on a project right now that requires me to use MySQL 3.23, because that&rsquo;s what the production server uses. This means I&rsquo;m digging out my old hacks and neat tricks to get around such limitations as the lack of subqueries. One of the really great things about this is that it makes me think hard about queries instead of just reaching for the familiar ways of doing things.</p>
+
+<p>One of the pages displays a record in a series. I want a link to the next and previous in the series, if they exist. I want to do it in one query. I want my query to return the data, all the data, and nothing but the data.</p>
+
+<p>My data&rsquo;s primary key is a foreign key to another table, and a sequence number. Suppose it&rsquo;s log entries, as in my post about <a href="http://www.xaprb.com/blog/2006/04/20/sequences-and-surrogate-keys-in-generic-sql/">surrogate keys</a>. Here&rsquo;s my test suite (I&rsquo;m omitting the <code>message</code> column):</p>
+
+<table class="borders collapsed">
+  <tr>
+    <th>
+      t1
+    </th>
+    
+    <th>
+      seq
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      5
+    </td>
+    
+    <td>
+      98
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      5
+    </td>
+    
+    <td>
+      99
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      5
+    </td>
+    
+    <td>
+      100
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      5
+    </td>
+    
+    <td>
+      101
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      5
+    </td>
+    
+    <td>
+      105
+    </td>
+  </tr>
+</table>
+
+<h3 id="toc_1">Stuff that doesn&rsquo;t work</h3>
+
+<p>It&rsquo;s easy to do this in two queries. Given entry <code>5:100</code>, I can write one query that finds the next entry, if it exists:</p>
+
+<pre>select min(seq) from t1log where t1=5 and seq &gt; 100;</pre>
+
+<p>I can do the same thing for the previous entry. But I can&rsquo;t write both &ldquo;min-where-greater&rdquo; and &ldquo;max-where-less&rdquo; into one <code>WHERE</code> clause without subqueries or unions. I could get around that with <a href="http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/">mutex tables</a>, but there&rsquo;s got to be a better way.</p>
+
+<h3 id="toc_2">First try</h3>
+
+<p>If I sort the entries by how far away they are from the current entry, I can select the closest two.</p>
+
+<pre>select 
+    case when seq &gt; 100 then 'next' else 'prev' end as 'direction',
+    seq
+from t1log
+where t1 = 5
+    and seq &lt;&gt; 100
+order by abs(100 - seq), seq
+limit 2;</pre>
+
+<p>There are two problems with this query. If the magic number is the last entry, it&rsquo;ll select the <em>two</em> previous records. And a gap in the sequence will make it select the wrong values too. Try it with 100, 101, and 105, and you&rsquo;ll see what I mean. Sometimes it works, sometimes not.</p>
+
+<h3 id="toc_3">One right way</h3>
+
+<p>If I can partition my data into two groups, those greater than and those less than, and select the minimum from the greater-than and maximum from the less-than, then I can do what I wished I could do above. Here I&rsquo;ll use the <code>SIGN</code> function for brevity, but a <code>CASE</code> statement would work too:</p>
+
+<pre>select
+    case when sign(seq - 100) &gt; 0 then 'next' else 'prev' end as dir,
+    case when sign(seq - 100) &gt; 0 then min(seq) else max(seq) end as seq
+from t1log
+where t1 = 5
+    and seq &lt;&gt; 100
+group by sign(seq - 100)
+order by sign(seq - 100)</pre>
+
+<p>The trick is to find the right query to partition the data. That will depend on the meaning of &ldquo;next&rdquo; and &ldquo;previous&rdquo; in the specific application. In this case, partitioning by integer greater-than and less-than is easy.</p>
+
+<p>MySQL likes this query, too. It uses the index well, so it&rsquo;s nice and efficient. You can <code>EXPLAIN</code> the query to see how it does it &ndash; basically, it can constrain its search to a range of values in the primary key itself, since it doesn&rsquo;t need any data other than the key (no bookmark lookups needed). It would be even more efficient to do it with a <code>UNION</code>, but that&rsquo;s not available in MySQL 3.23.</p>
+
+<p>So there you have it, another solution in search of a problem. I hope you enjoyed it. There are probably other ways to do it, but this is at least one way that works.</p>
+
+<h3 id="toc_4">Update 2006-09-26</h3>
+
+<p>I noticed a bug with MySQL 3.23: though it makes no sense at all, I have to rewrite the query with another <code>then</code> clause instead of <code>else</code>, like this:</p>
+
+<pre>select
+    case when sign(seq - 100) &gt; 0 then 'next' else 'prev' end as dir,
+    case when sign(seq - 100) &gt; 0 then min(seq)
+        <strong>when sign(seq - 100) &lt; 0 then</strong> max(seq) end as seq
+from t1log
+where t1 = 5
+    and seq &lt;&gt; 100
+group by sign(seq - 100)
+order by sign(seq - 100)</pre>
+
+<p>If I don&rsquo;t do this, the &ldquo;prev&rdquo; <code>seq</code> value is NULL. For some reason, the &ldquo;prev&rdquo; <code>dir</code> value is not null in the same query. Very odd, no?</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

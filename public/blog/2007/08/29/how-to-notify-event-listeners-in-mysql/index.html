@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to notify event listeners in MySQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to notify event listeners in MySQL</h1>
+  <span class="post-date">Wed, Aug 29, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>A high-performance application that has producers and consumers of some resource, such as a queue of messages, needs an efficient way to notify the consumers when the producer has inserted into the queue. Polling the queue for changes is not a good option. MySQL&rsquo;s <code>GET_LOCK()</code> and <code>RELEASE_LOCK()</code> functions can provide both mutual exclusivity and notifications.</p>
+
+<p>This post was prompted by a message to the MySQL general emailing list some time ago, but I&rsquo;m finally getting around to actually testing the theoretical solution I mentioned then (I can never just think my way through anything that involves locking and waiting&hellip; I have to test it).</p>
+
+<p>Here&rsquo;s the set-up:</p>
+
+<pre>create table test.messages (
+   id int not null auto_increment primary key,
+   message varchar(50) not null
+);</pre>
+
+<h3 id="toc_0">The producer</h3>
+
+<p>The producer&rsquo;s job is to insert rows into the table. In pseudo-code,</p>
+
+<pre>while (true ) {
+   get_lock();
+   // time passes...
+   query("insert into messages(message) values ('hi')");
+   release_lock();
+}</pre>
+
+<p>Releasing the lock immediately after inserting will &ldquo;wake up&rdquo; the consumer, which must be blocked, waiting for the lock. Locking again as soon as possible will make the producer wait until the consumer is done processing, then the consumer will wait again.</p>
+
+<h3 id="toc_1">The consumer</h3>
+
+<p>Since the consumer is waiting for the lock, that means it has tried to exclusively lock the same resource the producer has locked. Once the producer releases it, the consumer can go ahead and process the rows just inserted. In pseudo-code:</p>
+
+<pre>$last_row = 0;
+while ( true ) {
+   get_lock();
+   $rows = query("SELECT * FROM messages WHERE id &gt; $last_row");
+   for each $row ( $rows ) {
+      // Process
+      $last_row = $row[id];
+   }
+   release_lock();
+}
+</pre>
+
+<h3 id="toc_2">Locking</h3>
+
+<p>The actual locking implementation always makes the details more complicated.</p>
+
+<p>Both the producer and the consumer will have to get an exclusive lock on the queue table, or something that represents the queue table. The immediately obvious solution is <code>LOCK TABLES</code>. This doesn&rsquo;t work well for most situations.</p>
+
+<p>Why not? Since the producer and/or the consumer might need to access data in more than one table, they&rsquo;ll have to lock all the tables they need. This will block other parts of the system from functioning, assuming there&rsquo;s more than just a queue in the database. Other queries might then need to use <code>LOCK TABLES</code> too, and this just has a way of spreading out of control until the entire database becomes serial, mutual-exclusive access. This is terrible for any serious application.</p>
+
+<p>Fortunately, MySQL has application locks, implemented with <a href="http://dev.mysql.com/doc/refman/5.0/en/miscellaneous-functions.html">GET_LOCK() and RELEASE_LOCK()</a>. They&rsquo;re advisory, so you can ignore them if you want, but they are handy for things like this, where the producer and consumer just need to lock the same thing. They&rsquo;re also relatively cheap. You&rsquo;re really just locking a string, which you can pick. I&rsquo;ll use the name of the table.</p>
+
+<p>Here&rsquo;s the code:</p>
+
+<pre>// Producer:
+$timeout = 1000000;
+while (true) {
+   query("SELECT GET_LOCK('messages', $timeout)");
+   // time passes...
+   query("insert into messages(message) values ('hi')");
+   query("SELECT RELEASE_LOCK('messages')");
+}
+
+// Consumer:
+$last_row = 0;
+while ( true ) {
+   query("SELECT GET_LOCK('messages', $timeout)");
+   $rows = query("SELECT * FROM messages WHERE id &gt; $last_row");
+   for each $row ( $rows ) {
+      // Process
+      $last_row = $row[id];
+   }
+   query("SELECT RELEASE_LOCK('messages')");
+}
+</pre>
+
+<p>This works because the producer and consumer are really notifying <em>each other</em> &ndash; it&rsquo;s not one-way, it&rsquo;s symmetric. Inside MySQL, there&rsquo;s a queue of threads waiting for locks. As soon as one releases the lock, the other gets it, and immediately goes back onto the queue waiting for it again.</p>
+
+<h3 id="toc_3">Complications</h3>
+
+<p>There&rsquo;s more to it than this. <code>GET_LOCK()</code> has a timeout, which can&rsquo;t be infinite. If the timeout expires, the function returns, but doesn&rsquo;t grant the lock. Some other errors could also cause this to happen. The producer and consumer have to be prepared to recognize when the lock isn&rsquo;t granted, and retry. The return value of <code>GET_LOCK()</code> signifies whether the lock was really granted. Also, either the producer or consumer could die, and then there&rsquo;d be no wait for the lock at all. The consumer can tell that this happened by noticing there&rsquo;s no work to do. The producer can&rsquo;t really tell unless it queries the database. But the producer is likely waiting for something (another lock, user input&hellip;) where the code says &ldquo;time passes.&rdquo; So this shouldn&rsquo;t really be a problem.</p>
+
+<p>Another limitation is the possibility of the consumer starting first and locking out the producer. If it doesn&rsquo;t release the lock and try to re-lock periodically, the producer will never be able to get a lock. If it does, there&rsquo;s still another problem. The consumer should sleep so as not to spin-wait for the presence of a producer. If the producer produces a row while the consumer is sleeping, and then doesn&rsquo;t produce and release again for a very long time, the consumer will not find out about the row the producer inserted. It will have to wait for the next message the producer inserts. The solution is to make sure the consumer keeps the lock while it sleeps.</p>
+
+<p>All of these issues are solvable with special-case startup code, but I&rsquo;m sure you can work out something that meets your needs. I don&rsquo;t want to make this article more complicated, because this will all be application-dependent.</p>
+
+<h3 id="toc_4">Sample application</h3>
+
+<p>Here is a Perl script that implements a producer and consumer on a MySQL table called <code>test.messages</code>. To run it, give a <code>--mode</code> argument of &lsquo;p&rsquo; or &lsquo;c&rsquo;. Be sure you create the table (see above) first:</p>
+
+<ul>
+<li><a href="https://gist.github.com/xaprb/8494656">producer_consumer.txt</a></li>
+</ul>
+
+<p>Start two instances, one in producer mode, one in consumer mode, and watch the consumer print out messages as you enter them into the producer. Fun!</p>
+
+<h3 id="toc_5">More options</h3>
+
+<p>If you do need to poll, there are still some steps you can take to make it more efficient. I wrote about <a href="http://www.xaprb.com/blog/2006/05/04/how-to-make-a-program-choose-an-optimal-polling-interval/">efficient polling with exponential or Fibonacci wait</a> a while ago. This technique has worked well for me in many applications.</p>
+
+<p>You can also poll on something small and efficient, instead of polling a potentially big messages table. Make another table in which the producer inserts a single row, or flips a single row from zero to one, and the consumer resets it. Polling on a small resource is much more efficient than a big resource. You can use this technique together with transactions to coordinate the work of many producers and consumers, even when you don&rsquo;t have explicit methods of locking (for example, if your database server doesn&rsquo;t support it).</p>
+
+<p>Finally, if you need a fixed-size FIFO queue or &ldquo;round-robin table,&rdquo; try the suggestions in my article on <a href="http://www.xaprb.com/blog/2007/01/11/how-to-implement-a-queue-in-sql/">how to create a queue in SQL</a>.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

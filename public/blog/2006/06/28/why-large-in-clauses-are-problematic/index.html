@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Why large IN clauses are problematic &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Why large IN clauses are problematic</h1>
+  <span class="post-date">Wed, Jun 28, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>I&rsquo;ve seen a lot of SQL code that uses an <code>IN</code> clause as a place to put a variable number of parameters, allowing the query to be more flexible. There are several downsides to this technique. This article discusses those downsides and explains how to avoid them.</p>
+
+<h3 id="toc_0">Introduction</h3>
+
+<p>I work in a Perl shop at the moment. We use two SQL utility modules from CPAN extensively: <code>Class::DBI</code> (which I&rsquo;ll discuss in another article) and <code>Ima::DBI</code>. <code>Ima::DBI</code> allows us to keep our SQL layer in one place and helps abstract away a lot of the drudgery of connecting, preparing, and executing.</p>
+
+<p>Just for the record, I&rsquo;m not a <em>huge</em> fan of it for a variety of reasons, but I won&rsquo;t go into that; it&rsquo;s a bit off-topic.</p>
+
+<p><code>Ima::DBI</code> allows defining sql statements as subroutines, like this:</p>
+
+<pre>__PACKAGE__-&gt;set_sql('foo', 'select * from foo', 'conn');
+# elsewhere:
+$statements-&gt;sql_foo-&gt;execute();</pre>
+
+<p>That&rsquo;s code for &ldquo;create a subroutine named <code>sql_foo</code>, which will execute the <code>SELECT</code> against a connection named <code>conn</code>&rdquo;. Later, the code executes that subroutine.</p>
+
+<p>There&rsquo;s a lot more that can be done with this. <code>?</code> placeholders can go in the SQL definition, like so:</p>
+
+<pre>...'select * from foo where bar = ?'...
+# elsewhere:
+$statements-&gt;sql_foo-&gt;execute(5);</pre>
+
+<p>That&rsquo;s standard DBI prepared-statement syntax for inserting a &lsquo;5&#8242; where the question mark is, but look at this:</p>
+
+<pre>'select * from foo where bar in (%s)</pre>
+
+<p>That&rsquo;s a string substitution parameter, <code>sprintf</code> style, which gets used at runtime to alter the statement before executing it, like so:</p>
+
+<pre>$sth = $statements-&gt;sql_foo("?, ?, ?");
+$sth-&gt;execute(5, 6, 7);</pre>
+
+<p>This last usage results in the statement</p>
+
+<pre>select * from foo where bar in (5, 6, 7)</pre>
+
+<p>It&rsquo;s very easy to slip into this coding style when working with lists of things. For example, a program that accepts a list of account numbers on the command line. The traffic data roll-up system I&rsquo;ve mentioned works this way; we run the roll-up program with a list of client IDs.</p>
+
+<p>I&rsquo;m using Perl as an example in this article, but I&rsquo;ve seen this type of coding in many languages. This usage is problematic, and that&rsquo;s what I want to talk about in this article.</p>
+
+<h3 id="toc_1">Problem 1: Performance</h3>
+
+<p>The first problem with a large <code>IN</code> clause is performance. <code>IN</code> is equivalent to <code>OR</code>. For example, <code>bar in(5, 6, 7)</code> is the same as <code>bar=5 or bar=6 or bar=7</code>. That might not seem like a performance problem, but a bunch of <code>OR</code> clauses are much harder for the server to optimize than other methods of limiting results. Because an <code>OR</code> clause can have 1 to infinity parts, no single optimization strategy can always apply, and analyzing the clauses to find out which strategy would be best is probably not realistically possible. Therefore, every RDBMS I know of just evaluates each comparison until it finds a true result. That can be much less efficient than, say, a join, which might be able to use an index.</p>
+
+<p>One solution to this is to move the <code>IN</code> clause to the <code>FROM</code> clause. It may be counter-intuitive, but giving the query a &lsquo;table&rsquo; to act as a filter can be much more efficient, depending on the platform. Here&rsquo;s the above query, re-written:</p>
+
+<pre>select * from foo
+   inner join (
+      select 5 as bar
+      union all select 6
+      union all select 7
+   ) as x on foo.bar = x.bar</pre>
+
+<p>One example where this worked well on MySQL is explained in a recent e-mail from my coworker:</p>
+
+<blockquote>
+<p>&hellip; that was a good tip on replacing &lsquo;in&rsquo; clauses with joins to subqueries in the from clause. The queries in reporting were totally hitting a wall, so I took the query as shown in mytop, moved the subquery from the where to the from, and it went from 1M 56seconds to 20 seconds.</p>
+</blockquote>
+
+<p>I wouldn&rsquo;t say a factor-of-six improvement is revolutionary, but every little bit helps, especially when the query is executed a lot. Your mileage may vary. I know some situations where the improvement is dramatic.</p>
+
+<h3 id="toc_2">Problem 2: Maintenance and debugging</h3>
+
+<p>Performance may or may not be a real problem, but maintainability definitely is. It&rsquo;s really hard to debug or understand what queries are doing when the query text isn&rsquo;t written until runtime (With <code>Ima::DBI</code>, it&rsquo;s even harder because the subroutines get written as closures, which the debugger can&rsquo;t step into). The code to work with these types of queries also gets really ugly. This is onerous:</p>
+
+<pre>@params = $something_from_arguments;
+$placeholders = join(',', '?' x scalar(@params));
+$sth = $statements-&gt;sql_foo1($placeholders);
+$sth-&gt;execute(@params);
+# ... do that 15 times</pre>
+
+<p>And when I see the query being executed at runtime, with 250 question marks and 250 variables to take their places, I really want to pull my hair out. Debugging statements don&rsquo;t help. I rewrote one such application that had obviously been hard to debug, because it printed debugging output all over the place, ostensibly to help the programmer ensure the correct number of question marks was being created to accept the correct number of variables (there were other parameters to the query besides the <code>IN</code> clause, making it even more complex).</p>
+
+<p>There&rsquo;s an easy solution to this: start the set of queries by storing all those numbers in a temporary table, and join against the temporary table wherever needed to filter the results. I re-wrote the rollup program with this style of programming and eliminated a lot of code, leaving both the program and the queries much clearer and easier to debug.</p>
+
+<h3 id="toc_3">Summary</h3>
+
+<p>Large <code>IN</code> clauses are an easy tool in the toolbag, but they don&rsquo;t scale well, from both a performance and maintainability point of view. I recommend transforming them into a join to a temporary table, which can be filled with the data that would have gone into the <code>IN</code> clause to begin with. Once the temporary table is populated with a known set of data, queries are easy to write and understand.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

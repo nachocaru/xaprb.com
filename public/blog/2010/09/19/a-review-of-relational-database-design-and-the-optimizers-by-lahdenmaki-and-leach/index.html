@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> A review of Relational Database Design and the Optimizers by Lahdenmaki and Leach &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>A review of Relational Database Design and the Optimizers by Lahdenmaki and Leach</h1>
+  <span class="post-date">Sun, Sep 19, 2010 in
+		
+		<a href="/categories/Reviews" class="btn btn-primary">Reviews</a>
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p><a href="http://www.amazon.com/Relational-Database-Index-Design-Optimizers/dp/0471719994/?tag=xaprb-20">Relational Database Index Design and the Optimizers</a>. By Tapio Lahdenmaki and Mike Leach, Wiley 2005.</p>
+
+<p>I picked this book up on the advice of an Oracle expert, and after one of my colleagues had read it and mentioned it to me. The focus is on how to design indexes that will produce the best performance for various types of queries. It goes into quite a bit of detail on how databases execute specific types of queries, including sort-merge joins and multiple index access, and develops a generic cost model that can be used to produce a quick upper-bound estimate (QUBE) for the execution time of a query. The book focuses on DB2, Oracle, and SQL Server, but applies equally well to MySQL and PostgreSQL.<sup>&dagger;</sup> I learned a lot from this book, and will add it to my list of essential books.</p>
+
+<p>There are too many myths and rules of thumb about index design. This book debunks them pretty thoroughly. It walks the reader through the process of understanding what a database does to execute a query, and how much that costs; and then what a database does to execute a data modification, and how much that costs. Given this knowledge, you can answer questions such as &ldquo;what is the ideal index for each of these two queries?&rdquo; and &ldquo;should the queries have separate indexes, or is it better to find a compromise that will be good for both of them?&rdquo; and even &ldquo;how much slower will the compromise be for each query?&rdquo; In many cases, the results are non-obvious, and often don&rsquo;t agree with the rules of thumb you might have been taught. Generally, the book concludes, we should use indexes much more than we often do, and we should not hold irrational fears about the cost of maintaining indexes.</p>
+
+<p>After reading this book, you&rsquo;ll understand what makes an index good or bad for a query (a three-star ranking system), what makes a query possible or impossible to index ideally, the quick upper-bound estimate of execution time, the Basic Question, finding the cheapest adequate index, difficult predicates, index slices, and a host of other valuable concepts. In addition, there&rsquo;s an entire chapter on a method for finding queries that are not well indexed. Some of the methods in this book are things I already had notes to implement in Maatkit tools, but others are new to me. The method of finding promising culprits is something I learned in this book, and I think it&rsquo;s very valuable for a tool such as mk-query-digest with the Percona enhancements to the slow query log.</p>
+
+<p>There are a few things I&rsquo;ll point out so it doesn&rsquo;t seem like an unqualified endorsement. One, the book is not as easy to read as it could be. The editors should have removed 99% of the places where the authors italicized or otherwise emphasized words; there&rsquo;s a lot of emphasis on relatively unimportant or random words. Barely a sentence is free of italics. Second, the book was written in 2005 and today&rsquo;s machines have much more memory. (This generally makes the book&rsquo;s points more valid, not less valid.) Finally, the cost model is based on spinning disks, and the QUBE method needs slightly different parameters to work correctly on solid-state storage, or indeed even many modern SANs. However, that&rsquo;s not a big deal &ndash; just measure your storage system&rsquo;s performance, plug in the correct random versus sequential access time, and the model is still valid.</p>
+
+<p><sup>&dagger;</sup> Note that although PostgreSQL does not yet support index-only queries, which is a major focus of the book, the various cost models apply equally well. One must simply account for the cost of the table access, and not assume that the index is the only thing that&rsquo;s touched by the query. In general, you&rsquo;re going to need to know the internals of your database server to apply this book&rsquo;s wisdom.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

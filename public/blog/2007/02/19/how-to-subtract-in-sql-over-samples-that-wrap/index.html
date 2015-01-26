@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> How to subtract in SQL over samples that wrap &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>How to subtract in SQL over samples that wrap</h1>
+  <span class="post-date">Mon, Feb 19, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>This article explains how to do subtraction in SQL over samples that wrap back to zero when they exceed a boundary.</p>
+
+<p>A reader wrote in with a question about how to find how much traffic has passed through a network interface. The reader has a script that samples the interface&rsquo;s statistics and stores them in a database. The statistics wrap back around when they exceed the maximum size of an integer, so it&rsquo;s not a strictly increasing sequence. The question, paraphrased, is &ldquo;how can I find out how much traffic has gone through the interface in any given time period?&rdquo;</p>
+
+<p>A key assumption is that the counter never wraps back to zero more than once between samples. If it does, all hope is lost.</p>
+
+<h3 id="toc_0">Setup</h3>
+
+<p>To simplify the math, pretend the counter wraps at 1,000 and you have the following table:</p>
+
+<pre>create table samples(
+   num int not null auto_increment primary key,
+   bytes int not null
+);
+
+insert into samples(bytes) values
+   (100), (900),
+   (230), (700), (982),
+   (163), (600);
+
+select * from samples;
++-----+-------+
+| num | bytes |
++-----+-------+
+|   1 |   100 | 
+|   2 |   900 | 
+|   3 |   230 | 
+|   4 |   700 | 
+|   5 |   982 | 
+|   6 |   163 | 
+|   7 |   600 | 
++-----+-------+</pre>
+
+<h3 id="toc_1">How much traffic?</h3>
+
+<p>A manual calculation is easier than it looks, and solving this by hand is the key to solving it in SQL. You don&rsquo;t have to do a bunch of nasty math, like subtracting 982 from 163 (that&rsquo;s already too hard for me). You just have to notice where the counter wraps. You can find these places by seeing where the number decreases from one sample to the next. In the example, the counter wraps twice: from 900 to 230, and from 982 to 163. Here&rsquo;s the data, graphed with wraps &ldquo;unrolled.&rdquo;</p>
+
+<p><img src="/media/2007/02/samples-that-wrap.png" width="450" height="400" alt="Graph of sample data" /></p>
+
+<p>There are several ways to proceed from here. One way is to calculate the traffic as 1,000 times the number of wraps. Then you just do a little math to &ldquo;clean up the edges:&rdquo; subtract the first number in the sequence, and then add the last number. This gives (2 * 1000) &#8211; 100 + 600, which is 2500.</p>
+
+<p>Another approach is to go row by row, summing the differences from the previous row and the last row. When the counter wraps, you add 1000 before taking the difference. This math gives the same answer. This is a lot harder to do by hand.</p>
+
+<p>Either technique works given an arbitrary start and end point in the sequence. Now let&rsquo;s see how to do these in SQL.</p>
+
+<h3 id="toc_2">Problem: find the &ldquo;previous&rdquo; row</h3>
+
+<p>While these methods seem easy to humans, they resist many relational solutions because of the notion of &ldquo;previous row.&rdquo; SQL is set-oriented, and doesn&rsquo;t do iterative row-by-row data manipulation. If you try to do this by grouping each strictly increasing set of data together and using aggregate functions like <code>SUM</code>, you&rsquo;ll have trouble. You need the values from the &ldquo;previous set&rdquo; to do that, and that doesn&rsquo;t work like you might want it to.</p>
+
+<p>However, it&rsquo;s not that hard to get the current and last row matched up side-by-side so you can operate upon them within the context of a single row:</p>
+
+<pre>select cur.num, cur.bytes, prev.bytes as prev_bytes
+from samples as cur
+   left outer join samples as prev on cur.num = prev.num + 1;
++-----+-------+------------+
+| num | bytes | prev_bytes |
++-----+-------+------------+
+|   1 |   100 |       NULL | 
+|   2 |   900 |        100 | 
+|   3 |   230 |        900 | 
+|   4 |   700 |        230 | 
+|   5 |   982 |        700 | 
+|   6 |   163 |        982 | 
+|   7 |   600 |        163 | 
++-----+-------+------------+</pre>
+
+<p>Once you think of &ldquo;previous&rdquo; in SQL terms, it becomes easy. Armed with this tool, we are ready to take on the queries.</p>
+
+<h3 id="toc_3">Technique 1: count wraps and clean up the edges</h3>
+
+<p>Now that we&rsquo;ve figured out how to find the &ldquo;previous row,&rdquo; how can we express the &ldquo;count wraps and clean up edges&rdquo; algorithm in SQL? Brace yourself:</p>
+
+<pre>select 1000 * sum(t1.wraps) - t2.start + o.bytes as total
+from samples as o
+   inner join (
+      select cur.num, count(prev.num) as wraps
+      from samples as cur
+         left outer join samples as prev on cur.num = prev.num + 1
+            and cur.bytes &lt; prev.bytes
+      group by cur.num
+   ) as t1 on t1.num &lt;= o.num
+   cross join (
+      select bytes as start from samples order by num limit 1
+   ) as t2
+where o.num = 7
+group by o.num</pre>
+
+<p>Anything I say about that query will probably make it harder to understand, so I&rsquo;ll just count on you reading it carefully. It may help to remove some of it so you can see the intermediate results:</p>
+
+<pre>select sum(t1.wraps) as wraps, t2.start, o.bytes
+from samples as o
+   inner join (
+      select cur.num, count(prev.num) as wraps
+      from samples as cur
+         left outer join samples as prev on cur.num = prev.num + 1
+            and cur.bytes &lt; prev.bytes
+      group by cur.num
+   ) as t1 on t1.num &lt;= o.num
+   cross join (
+      select bytes as start from samples order by num limit 1
+   ) as t2
+group by o.num;
++-------+-------+-------+
+| wraps | start | bytes |
++-------+-------+-------+
+|     0 |   100 |   100 | 
+|     0 |   100 |   900 | 
+|     1 |   100 |   230 | 
+|     1 |   100 |   700 | 
+|     1 |   100 |   982 | 
+|     2 |   100 |   163 | 
+|     2 |   100 |   600 | 
++-------+-------+-------+</pre>
+
+<p>You can also write it as a correlated subquery, instead of a subquery in the <code>FROM</code> clause:</p>
+
+<pre>select 1000 * (
+      select count(*) from samples as cur
+         inner join samples as prev on cur.num = prev.num + 1
+            and cur.bytes &lt; prev.bytes
+      where cur.num &lt;= samples.num
+   )
+   - (select bytes from samples order by num limit 1)
+   + samples.bytes as total
+from samples
+where num = 7</pre>
+
+<p>Both queries need <code>WHERE</code> clauses in multiple places to make them behave if you want anything other than the full range of data summed up. For example, if you want to sum over rows 3 through 6, the first query becomes</p>
+
+<pre>select 1000 * sum(t1.wraps) - t2.start + o.bytes as total
+from samples as o
+   inner join (
+      select cur.num, count(prev.num) as wraps
+      from samples as cur
+         left outer join samples as prev on cur.num = prev.num + 1
+            and cur.bytes &lt; prev.bytes
+      where cur.num &gt; 3
+      group by cur.num
+   ) as t1 on t1.num &lt;= o.num
+   cross join (
+      select bytes as start from samples where num &gt;= 3 order by num limit 1
+   ) as t2
+where o.num = 6
+group by o.num</pre>
+
+<p>The problem with both queries is the <code>&lt;=</code> predicate, which turns them into O(n<sup>2</sup>) algorithms. They&rsquo;re essentially a cross-join. Plus, they&rsquo;re hard to understand. It turns out that the simplest method by hand is complicated in SQL.</p>
+
+<h3 id="toc_4">Method 2: Adjust when there&rsquo;s a wrap</h3>
+
+<p>The second method I showed above is more complex for humans, but it&rsquo;s actually simpler to do in SQL:</p>
+
+<pre>select sum(
+   if (cur.bytes &gt;= prev.bytes,
+      cur.bytes - prev.bytes,
+      cur.bytes - prev.bytes + 1000)) as total
+from samples as cur
+   inner join samples as prev on cur.num = prev.num + 1
+-- optional WHERE clause for choosing start/end:
+-- where cur.num &gt; 3 and cur.num &lt;= 6</pre>
+
+<p>A slightly more compact way to write this is</p>
+
+<pre>select sum(
+   cur.bytes - prev.bytes + if(cur.bytes &gt;= prev.bytes, 0, 1000)) as total
+from samples as cur
+   inner join samples as prev on cur.num = prev.num + 1
+-- where cur.num &gt; 3 and cur.num &lt;= 6</pre>
+
+<p>This query is both simpler and more efficient than the first method I showed. If your platform doesn&rsquo;t support <code>IF()</code>, use a <code>CASE</code> statement.</p>
+
+<h3 id="toc_5">Method 3: do it with user-variables in MySQL</h3>
+
+<p>It&rsquo;s possible to do even better than the simple join technique on MySQL. Using some MySQL-specific tricks, you can make this query a once-through, low-cost algorithm, much the way you might do it by hand or in a programming language that supports iteration. If you want to know how this works, and why the query has to be written in such a contorted way, read my article on <a href="http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/">advanced user-variable techniques in MySQL</a>.</p>
+
+<pre>set @last_bytes := null;
+
+select sum(greatest(
+      if(bytes &gt;= @last_bytes,
+         bytes - @last_bytes,
+         coalesce(bytes + 1000 - @last_bytes, 0)),
+      least(0, @last_bytes := bytes)
+   )) as bytes
+from samples order by num;</pre>
+
+<p>This is a bit trickier to write than some of the other user-variable examples I&rsquo;ve shown, because you can&rsquo;t use <code>@last_bytes is null</code> in any <code>IF()</code> or <code>CASE</code> statement. If you do, the query optimizer will look at <code>@last_bytes</code> at compile time, see that the statement can be optimized out and replaced with a constant, and your query will not work as you expect it to.</p>
+
+<h3 id="toc_6">Summary</h3>
+
+<p>In this article I&rsquo;ve shown you three methods to do SQL math on a counter that wraps around to zero when it reaches a limit. I showed them to you in order of increasing efficiency, but the second method is both the simplest and the most platform-independent (and probably the most sane).</p>
+
+<p>Can you think of any other ways to do this, or any other uses for these kinds of techniques? Write into the comments!</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

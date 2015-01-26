@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> The average age of metrics being trended &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>The average age of metrics being trended</h1>
+  <span class="post-date">Tue, Oct 30, 2012 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      <p>Last night I wrote about <a href="http://www.xaprb.com/blog/2012/10/29/trending-data-with-a-moving-average/" title="trending data with a moving average">trending data with a moving average</a>, and then after I went to bed, I realized I made a mistake on the chart I showed. I calculated &alpha; for the exponentially weighted moving average so that the average age of metrics approaches 60 samples as time approaches infinity, and I plotted that on the same chart with a 60-sample simple moving average.</p>
+
+<p>I&rsquo;ve made this mistake several times before. The mistake is that the average age of the metrics in the 60-sample simple moving average is 30, not 60.</p>
+
+<p>Here&rsquo;s what the chart looks like if I change the exponential moving average to a 30-second average age:</p>
+
+<p><a href="http://www.xaprb.com/media/2012/10/moving-averages-2.png"><img src="http://www.xaprb.com/media/2012/10/moving-averages-2-300x61.png" alt="" title="moving-averages-2" width="300" height="61" class="aligncenter size-medium wp-image-2934" /></a>
+If you compare this with yesterday&rsquo;s chart, you&rsquo;ll see that today&rsquo;s red line tracks the trend in the sampled data points more responsively than yesterday&rsquo;s:</p>
+
+<p><a href="http://www.xaprb.com/media/2012/10/moving-averages.png"><img src="http://www.xaprb.com/media/2012/10/moving-averages-300x60.png" alt="" title="moving-averages" width="300" height="60" class="aligncenter size-medium wp-image-2927" /></a>
+This illustrates that although the average age of the data is the same in the simple moving average and the exponential moving average, the exponential moving average places much more weight on recent data points. Again, the sampled data here is from a MySQL server (it&rsquo;s queries per second in one-second intervals.)</p>
+
+<p>By the way, Unix load averages are computed similarly, and the labeling is similarly (slightly) misleading. The averages are said to be 1-minute, 5-minute, and 15-minute averages of load, but they aren&rsquo;t really. The average age of the samples of load works out to 1, 5, and 15 minutes over the long run, but that&rsquo;s not the same thing as an average of the load over the last N minutes, because the samples aren&rsquo;t weighted equally. As I wrote this, I thought &ldquo;didn&rsquo;t I write a blog post about that?&rdquo; but I see it&rsquo;s just a draft from several years ago, and I never completed it. If I get a chance, I&rsquo;ll try to do that soon.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

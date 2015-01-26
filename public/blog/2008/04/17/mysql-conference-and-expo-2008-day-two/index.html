@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> MySQL Conference and Expo 2008, Day Two &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>MySQL Conference and Expo 2008, Day Two</h1>
+  <span class="post-date">Thu, Apr 17, 2008 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>Day two of the conference was a little disappointing, as far as sessions went. There were several time blocks where I simply wasn&rsquo;t interested in any of the sessions. Instead, I went to the expo hall and tried to pry straight answers out of sly salespeople. Here&rsquo;s what I attended.</p>
+
+<h3 id="toc_0">Paying It Forward: Harnessing the MySQL Contributory Resources</h3>
+
+<p>This was a talk focused on how MySQL has made it possible for community members to contribute to MySQL. There was quite a bit of talk about IRC channels, mailing lists, and the like. However, the talk gave short shrift to how MySQL plans to become truly open source (in terms of its development model, not its license). I think there was basically nothing to talk about there. I had a good conversation about some of my concerns with the speaker and some others from MySQL right afterwards.</p>
+
+<p>There was basically nobody there &ndash; I didn&rsquo;t count, but I&rsquo;d say maybe 10 or 12 people. I think this is a telling sign.</p>
+
+<h3 id="toc_1">Architecture of Maria: A New Storage Engine with a Transactional Design</h3>
+
+<p>I was interested in this talk because I&rsquo;m interested in the tension between Falcon and Maria (and between Falcon and everything, for that matter) but I left and went to the expo hall again after a bit. The talk was good but I&rsquo;d already seen and/or read it, and the question-and-answer component wasn&rsquo;t enough to keep me there.</p>
+
+<h3 id="toc_2">The MySQL Query Cache</h3>
+
+<p>This was the second session I gave at the conference, and again it was standing-room-only, with nearly 300 attendees according to the person who was watching the door. The questions were frequent and added a lot to the discussion. Slides will be on the conference website when they post them.</p>
+
+<h3 id="toc_3">Grazr: Lessons Learned Building a Web 2.0 Application Using MySQL</h3>
+
+<p>I was keenly interested in this talk because a) I am a big fan of Patrick Galbraith&rsquo;s work with many different projects, and b) I had heard a lot about <a href="http://www.grazr.com/">Grazr</a> but didn&rsquo;t know much about it. However, I missed most of the talk. About ten minutes into it, I got a call I couldn&rsquo;t refuse: my wife!</p>
+
+<p>However, I did sneak back into the room for the last bit too. And I gave Grazr a try. Unfortunately, I got really confused by it; I tried a bunch of different ways to import my Google Reader&rsquo;s OPML. I got that to work, but then I couldn&rsquo;t figure out how to read the feeds in the OPML via Grazr. Then I think I figured that out (I&rsquo;m not sure) but it didn&rsquo;t strike me as a very handy way to read my feeds. I&rsquo;ll try taking another look at it later if I get time. (I&rsquo;m all ears if there&rsquo;s a better way to read feeds).</p>
+
+<h3 id="toc_4">Extending MySQL</h3>
+
+<p>This one was mostly for fun. I knew a lot about UDFs already (I&rsquo;ve created some) and I knew about the pluggable storage engine API. But I didn&rsquo;t know about pluggable event daemons. Holy cow, what a great way to shoot yourself (or your server) in the foot! All the power of an atomic bomb, with all the safety of SPF 5 sunblock in a nuclear attack. Or something like that. But darn, it sure is nifty. Brian is a great speaker too &ndash; very lively.</p>
+
+<p>You know, there&rsquo;s another way to extend MySQL that most people don&rsquo;t seem to know about, which Brian didn&rsquo;t mention. That is procedures (not stored procedures). They are sort of like a post-filter for a result set, and like UDFs they&rsquo;ve been around forever. I have never heard of anyone writing their own, but there&rsquo;s an example in the server itself: <a href="http://dev.mysql.com/doc/refman/4.1/en/procedure-analyse.html">PROCEDURE ANALYSE</a>.</p>
+
+<h3 id="toc_5">Expo hall</h3>
+
+<p>I went to the expo hall to meet and greet many of the companies that Percona (my employer) is already working with (doing independent benchmarks, performance verification, analysis etc) or will be in the future. I also wanted to grill some of the vendors on their technology. Usually I find them very cagey; they claim X times faster this-or-that, but won&rsquo;t tell you how, and won&rsquo;t tell you what their systems don&rsquo;t do well. I don&rsquo;t understand why they take this approach; you can&rsquo;t hide your system&rsquo;s strong and weak spots. There is no security through obscurity, and shrewd independent observers are going to get to the bottom of it with or without your permission.</p>
+
+<p>So, for instance, I was talking with <a href="http://www.tokutek.com/">Tokutek,</a> who claimed to be a drop-in replacement for InnoDB with 200x better performance and apparently no downsides. However, on closer questioning, I did get him to admit that the system has table-level locking. Thus it won&rsquo;t give any concurrency, so saying it&rsquo;s a drop-in InnoDB replacement is questionable. And the comparison against InnoDB seemed contrived to create a worst-case situation with bad tuning and a workload so it would perform terribly. An honest comparison tunes both systems to their highest performance and measures them; you can&rsquo;t tune one system as badly as possible and compare it to the other&rsquo;s best-case performance. I pressed on further and asked about range scans in some specific cases (they claim they&rsquo;re great at range queries, and equal to InnoDB on everything else). At last they admitted they can&rsquo;t perform well on some very common queries such as real-life queries InnoDB performs very well on for me. They said these are &ldquo;point queries&rdquo; but that&rsquo;s not true; you can design indexes to support many different ways to range-query a table in InnoDB and get great performance. So it sounds to me like Tokutek&rsquo;s storage format is extremely narrowly focused, and there is indeed a trade-off. I will be interested to see how their technology develops, though. It&rsquo;s not done yet.</p>
+
+<h3 id="toc_6">In general</h3>
+
+<p>There are a lot of Maatkit t-shirts walking around, which makes me happy. If I&rsquo;d printed 200 of them, I probably could have given them all away. I was wearing a <a href="http://www.postgresql.org/">PostgreSQL</a> t-shirt myself. Proudly, I might add. I&rsquo;m not the only person here who&rsquo;s interested in PostgreSQL. This morning I met a person from EnterpriseDB.</p>
+
+<p>Yesterday was a bit slow in terms of interesting sessions, but there was a lot going on in the hallways, the expo hall, the meetings over lunch, and so on.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

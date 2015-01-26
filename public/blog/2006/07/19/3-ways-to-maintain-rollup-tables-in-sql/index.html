@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> 3 ways to maintain rollup tables in SQL &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>3 ways to maintain rollup tables in SQL</h1>
+  <span class="post-date">Wed, Jul 19, 2006 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+      
+
+<p>At both my current and previous employer I&rsquo;ve been involved in designing and maintaining aggregate, or &ldquo;rollup&rdquo; tables for advertising traffic data. I have learned several methods of propagating changes from the atomic data through to its aggregations. This article discusses these methods, how to implement them, and their pros and cons.</p>
+
+<p>As an example of data that gets rolled up to aggregate tables, I&rsquo;ll use my current employer&rsquo;s data structures (more or less). The main table looks something like this:</p>
+
+<pre>create table ad_day (
+   ad int not null,
+   day date not null,
+   impressions int not null,
+   clicks int not null,
+   cost_cents int not null,
+   avg_pos decimal(3, 1) not null,
+   primary key (day, ad)
+) engine = InnoDB;</pre>
+
+<p>As an aside, notice the table is called <code>ad_day</code>, which is the way people generally want to say it &ndash; &ldquo;rolled up by ad by day&rdquo; &ndash; but the primary key is (<code>day, ad</code>) &ndash; the reverse of the way people say it. When I joined the company, it was indexed (<code>ad, day</code>), which generally doesn&rsquo;t help most queries, which want to look at data in a date range. Actually, it had a surrogate key, so there wasn&rsquo;t even a good clustered index! I&rsquo;ve written a lot about this in the past, and the woes it caused us. You might find those articles interesting if you&rsquo;re considering designing some large tables.</p>
+
+<h3 id="toc_0">The challenge</h3>
+
+<p>The <code>ad_day</code> table is rolled up along two dimensions: by time (<code>ad_week</code>, <code>ad_month</code>, <code>ad_year</code>) and by coarser levels of our schema hierarchy. For example, an <code>ad</code> belongs to an <code>account</code>, which is the intersection of a <code>search_engine</code> and a <code>client</code>, so we have tables rolling the data up along those lines (<code>account_day</code>, <code>client_day</code>, <code>search_engine_day</code>).</p>
+
+<p>Fortunately, that&rsquo;s as far as it goes &ndash; we either roll up by one dimension or the other, but not both, though I&rsquo;ve never seen a case where someone didn&rsquo;t want more and more. It&rsquo;s the old multiple-hierarchy problem &ndash; as soon as you &ldquo;slice&rdquo; things one way, you want to slice it another way too. I&rsquo;ll have a lot more to say in future articles about the evils of &ldquo;slicing&rdquo; and &ldquo;rolling up.&rdquo;</p>
+
+<p>The challenge with this set of tables is to make sure the rollup tables are always accurate with respect to the atomic <code>ad_day</code> table. As soon as any data changes in that table, the rollup tables need to be changed to agree with it. There are three types of changes to deal with: inserts, deletes, and updates. Each of them can have very different requirements, depending on the schema of the rollup tables. For instance, an insert into <code>ad_day</code> may require an insert into <code>client_day</code>, or may only require an update. And, depending on the data requirements, this may all need to be transactional to prevent inconsistent data. Ideally, it would be transactional if for no other reason than to ensure an aborted change doesn&rsquo;t leave things out of sync, but in large tables that may be very costly.</p>
+
+<h3 id="toc_1">Orphan rows</h3>
+
+<p>One thing to keep in mind when rolling up tables like this is orphan rows. Deletes in the atomic table may leave rows dangling in the rollups unless you&rsquo;re careful to delete them. For example, if I delete all ads for a client in the <code>ad_day</code> table, then run a naive rollup query like so:</p>
+
+<pre>insert/update into client_day (client, day, ...)
+   select client, day, sum(clicks)...
+   from ad_day...</pre>
+
+<p>That query will correctly sum the rows in the <code>ad_day</code> table, but it won&rsquo;t touch the rows left over in the <code>client_day</code> table. These rows are orphans. This is important to keep in mind when desiging a rollup system.</p>
+
+<h3 id="toc_2">Method one: triggers</h3>
+
+<p>This is one place where I&rsquo;d actually be in favor of using triggers to automatically propagate the changes through to the rollup tables. The <code>ad_day</code> table will need a trigger for each event (<code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>), and if there are intermediate-level rollups, they will too. As an example, if the <code>client_day</code> table is rolled up from <code>account_day</code> rather than <code>ad_day</code> directly, <code>account_day</code> will need triggers too. Orphans can be handled without too much trouble with this scheme.</p>
+
+<p>An alternative to triggers is a stored procedure that does the same thing. At my previous employer we inserted or updated only one row at a time in the <code>ad_day</code> table, using a stored procedure.</p>
+
+<p>Whether it&rsquo;s via triggers or stored procedures, the logic can get a bit hairy. Correctly updating a rollup table may require a lot of math. For example, keeping the <code>avg_pos</code> column straight during an update is tedious. <code>avg_pos</code> is the average position of the ad over all its &ldquo;impressions&rdquo; (every time the ad is displayed is an &ldquo;impression&rdquo;), so updating it requires calculating deltas from current values, then applying those deltas to the correct row in the rollup, which probably contains the weighted average of a bunch of ads or over a bunch of days, so the delta has to be given the correct weight in the rollup. I won&rsquo;t reproduce the math here. It&rsquo;s not hard, but it is tedious and easy to get wrong.</p>
+
+<p>Another problem with triggers, if they handle one row at a time as they do with MySQL, is that one change may indicate a row in the rollup is no longer needed and should be deleted, then the next change may indicate that row should be brought back. To avoid this delete-insert-delete-insert vicious cycle, all-zero rows should probably just be left for later cleanup. Of course, if your platform supports setwise operations on the affected data, as in Microsoft SQL Server, you should handle it as a set, not a row at a time, and this isn&rsquo;t an issue. Thus, depending on how triggers are implemented on your platform, you will need to handle orphan rows differently.</p>
+
+<p>The benefit to the trigger approach is that the changes flow through the system with no further ado. As long as nothing else changes the rollup tables, they should stay in perfect lockstep with the atomic table.</p>
+
+<h3 id="toc_3">Method two: empty and re-fill</h3>
+
+<p>Another approach, if it makes sense for the data, is to delete a range of the data and re-calculate it from scratch. In the example I&rsquo;ve given, this does make sense. We typically keep up-to-date on traffic data, unless something breaks, so we&rsquo;re generally fetching yesterday&rsquo;s traffic data and inserting it into the table. This means we&rsquo;re working at the end of the table, and each time we do a batch, we can remember the earliest date affected, then empty and re-fill from that date forward.</p>
+
+<p>Benefits of this approach are that the math is a lot simpler. There is no math to handle updates and deletes, just inserts. There&rsquo;s also no hidden black magic going on behind the scenes (I&rsquo;m referring to triggers, which scare some people because they do things invisibly). And finally, orphan rows are taken care of; the table is emptied before it&rsquo;s filled, so there&rsquo;s no chance orphan rows will hang around.</p>
+
+<p>There&rsquo;s a cost, though: a lot of inserting and deleting. That&rsquo;s kind of hard on the database, depending on the platform. For example, we&rsquo;re using MySQL and the InnoDB storage engine. It would probably be cheaper to use MyISAM, which keeps deleted rows in a linked list for later re-use, but that has its drawbacks too. In any case, this isn&rsquo;t the method we use, because of all the deletes and inserts.</p>
+
+<h3 id="toc_4">Method three: zero and re-calculate</h3>
+
+<p>An alternative to the second method, which we use at my current employer, is to zero out the atomic table from the start date forward, and then <code>REPLACE</code> with new data and use <code>REPLACE</code> to roll it up to the aggregate tables. On other systems, you can use an equivalent method &ndash; <code>MERGE</code> in Oracle, <code>UPDATE</code>/<code>INSERT</code> in Microsoft Sql Server. See my article on <a href="http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/">flexible inserts and updates for more details</a>.</p>
+
+<p>This method has two main advantages. One, it&rsquo;s not that costly to <code>UPDATE</code> a row in place. It&rsquo;s much cheaper to flip some bits to zero than to delete an entire row. Two, the changes will automatically propagate to rollup tables &ndash; even those not zeroed out &ndash; as you run the rollup, taking care of orphan rows. They will still be in the table, but they&rsquo;ll just a bunch of zeroes if they truly are orphaned. If they&rsquo;re not truly orphaned, they&rsquo;ll have the right values &ndash; and all-zero rows won&rsquo;t contribute anything to any further dependent rollups, if your rollup system uses rollup tables as the source for other rollup tables.</p>
+
+<p>The major drawback to this system is all-zero rows.</p>
+
+<h3 id="toc_5">How to clean up all-zero rows</h3>
+
+<p>If your chosen method leaves all-zero rows lying around, you&rsquo;ll want to take care of that. Rows filled with zeroes just make the table larger. Fortunately, this isn&rsquo;t a terrible problem. It should be easy to write a <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">nibbler to purge the junk rows</a>, which ought to be very low-impact on the server.</p>
+
+<h3 id="toc_6">Summary</h3>
+
+<p>I&rsquo;ve discussed three methods to keep rollup tables in sync with the authoritative data, from which they&rsquo;re rolled up. I&rsquo;ve used several methods, and each has advantages and disadvantages. What do you think? Are there other options?</p>
+
+<p>If you found this article useful, <a href="http://www.xaprb.com/index.xml">subscribe via feeds or e-mail</a> to be notified when my upcoming articles are published.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

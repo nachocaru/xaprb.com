@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> What&#39;s the best way to choose graph colors? &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>What&#39;s the best way to choose graph colors?</h1>
+  <span class="post-date">Sat, Mar 22, 2008 in
+		
+		<a href="/categories/Web" class="btn btn-primary">Web</a>
+		
+  </span>
+      <p>I have an issue I hope someone can help me with.  I am generating <a href="http://oss.oetiker.ch/rrdtool/">RRDtool</a> graphs (for <a href="http://www.cacti.org/">Cacti</a> monitoring templates for MySQL, which I'll release soon) that have up to 11 different metrics on them.  With that many lines or areas on a graph, it becomes very hard to pick colors that are easy to see and easy to distinguish from each other.  What's a good way to choose such colors?  Is there a way to do it automatically -- is there a formal method that will produce good results?</p>
+
+<p>I know some color theory and I have read about how you can distinguish colors from each other (hue, value etc).  But I am unsure the best way to choose this many colors.  Trying by hand produces garish results or graphs that are just hard to read.</p>
+
+<p>My first <a href="/media/2008/03/color-chooser.html">attempt to solve this with a program</a> was to simply create a list of every possible completely saturated color in a 32-bit space -- essentially, the "pure" colors around the rim of the color wheel -- and divide it into the desired number of evenly spaced intervals.  This produces pure colors, which is not ideal.  They are hard to look at.  Did I mention garish?</p>
+
+<p>I can shuffle the order so that they're not adjacent, but that only helps avoid a "rainbow effect" if I'm stacking areas of color on top of each other, like in the following image:</p>
+
+<p><a href='http://www.xaprb.com/media/2008/03/mysql_command_counters.png' title='MySQL Command Counters'><img src='http://www.xaprb.com/media/2008/03/mysql_command_counters.thumbnail.png' alt='MySQL Command Counters' /></a></p>
+
+<p>Ugh, rainbows (I chose those by hand, not with my program).  Lines on a white background might be placed in any order, so shuffling doesn't help with those graphs.</p>
+
+<p>I modified my little script to let me vary the saturation and value.  My thinking was that lines on a white background really shouldn't be full-value, and when I'm drawing areas instead of lines, I should de-saturate them so they become more pleasing pastels.  This doesn't really help as much as I might have hoped for, either.  Colors around 80% saturation and 60% value look pretty good, but they're still ugly colors.  And I can't get over five colors without them starting to run together again.  Here's an example with only four colors that's already hard to look at:</p>
+
+<p><a href='http://www.xaprb.com/media/2008/03/innodb_io.png' title='InnoDB I/O Activity'><img src='http://www.xaprb.com/media/2008/03/innodb_io.thumbnail.png' alt='InnoDB I/O Activity' /></a></p>
+
+<p>Part of the problem, I'm currently thinking, is that I'm varying only one dimension.  I could be varying the saturation as well as the hue, for example.  But that might be another rabbit hole that will waste more time.</p>
+
+<p>Right now I'm thinking that I should ask for help, instead of continuing to work on this myself.  So, any ideas are welcome!</p>
+
+<p>By the way, beautiful colors would be nice... a lot of the colors I choose by hand are very pretty and I'm sure my impartial, evenly-distributing script will never choose them in a million years.  Also, it's actually a good thing when graphs each have their own color scheme (as long as it's attractive) because it becomes easier to identify graphs without having to read the title.  Just some extra food for thought.</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

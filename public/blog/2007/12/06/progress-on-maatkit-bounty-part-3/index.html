@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Progress on Maatkit bounty, part 3 &middot; Xaprb </title>
+
+  
+  <link rel="stylesheet" href="http://www.xaprb.com/css/poole.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/syntax.css">
+  <link rel="stylesheet" href="http://www.xaprb.com/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Xaprb" />
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Xaprb</h1>
+      <p class="lead">
+		Stay Curious!
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+        <li><a href="http://www.xaprb.com/about/"> About </a></li>
+      
+        <li><a href="http://www.xaprb.com/essential-books/"> Essential Books </a></li>
+      
+        <li><a href="http://www.xaprb.com/rx-toolkit/"> Regex Toolkit </a></li>
+      
+    </ul>
+
+	 <p>
+	 &copy; Baron Schwartz.
+	 Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>, <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	 <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a href="/index.xml">RSS Feed</a></p>
+						            
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Progress on Maatkit bounty, part 3</h1>
+  <span class="post-date">Thu, Dec 6, 2007 in
+		
+		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+      <p>This is the last day I&rsquo;m taking off work to hack on mk-table-sync, and I thought it was time for (yet another) progress report. Here&rsquo;s what I have done so far:</p>
+
+<ul>
+<li>All the code, except for a tiny bit of &ldquo;glue&rdquo; and &ldquo;setup&rdquo; code, is in modules.</li>
+<li>Lots more tests for the modules.</li>
+<li>A new sync algorithm (I still haven&rsquo;t rewritten the top-down and bottom-up, which are designed for network efficiency more than MySQL efficiency, and are very complicated). This algorithm is called &ldquo;Chunk&rdquo; and is based on the chunking module I&rsquo;m re-using from two of the other tools. This allows syncing the table a bit at a time to avoid locking it so much.</li>
+<li>The tool chooses its own parameters, including choosing the sync algorithm automatically by examining indexes.</li>
+<li>Proper exit codes, as well as several other smaller issues requested via bug reports.</li>
+<li>The tool now syncs entire servers. That is, you don&rsquo;t have to specify a table. It&rsquo;ll find all the tables and just sync them.</li>
+<li>The tool can sync many servers. You give it five servers, it will treat the first as the source, and sync every table in the source to each of the four remaining servers in turn.</li>
+<li>It can work via replication. It can discover a master&rsquo;s slaves via SHOW SLAVE HOSTS and sync each slave to the master. You can also point it at a slave and it&rsquo;ll discover the master, connect to it, and sync the slave to the master.</li>
+<li>It integrates with mk-table-checksum&rsquo;s results. If you&rsquo;ve given the &#8211;replicate option to mk-table-checksum, the slave&rsquo;s results are stored in a table. It can read that table and sync anything marked as different. This can be combined with sync-to-master and auto-discover-slaves functionality.</li>
+<li>Lots of other bugs and problems are gone simply because I&rsquo;m using the modules I wrote for other tools. This includes issues with table parsing, identifier quoting, etc etc. As an aside, I have to roll my own for almost everything, because I can&rsquo;t rely on things like DBI&rsquo;s <code>quote_identifier()</code> function &ndash; it does not work in earlier versions, which are amazingly common in the real world.</li>
+</ul>
+
+<p>Whew! So what isn&rsquo;t done yet?</p>
+
+<ul>
+<li>Bi-directional syncing.</li>
+<li>The Nibble sync algorithm. It will be preferred over Chunk and can be used in more cases.</li>
+<li>Documentation.</li>
+<li>Full support for wide characters. (This is non-trivial in Perl. I need to research it. A partial solution might not be hard, but I&rsquo;m worried about the versions included in, for example, RHEL 3, which is very widely used.)</li>
+<li>Updating other tools to work right with the changes to shared code.</li>
+<li>Locking and transaction code. The tool will ultimately use FOR UPDATE/LOCK IN SHARE MODE automatically on InnoDB tables instead of locking them, for example.</li>
+</ul>
+
+<p>Here&rsquo;s a sample of what it can do, using a replication sandbox I set up with Giuseppe&rsquo;s <a href="http://sourceforge.net/projects/mysql-sandbox">MySQL Sandbox</a>. The sandbox contains a copy of the Sakila sample database. I&rsquo;ll just mangle a few films on the slaves:</p>
+
+<pre>baron@kanga:~$ cd rsandbox_5_0_45/
+baron@kanga:~/rsandbox_5_0_45$ ./s1
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.0.45-log MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+slave1 [localhost] {msandbox} ((none)) &gt; update sakila.film set title='academy dinosaur2' limit 12;
+Query OK, 12 rows affected, 12 warnings (0.07 sec)
+Rows matched: 12  Changed: 12  Warnings: 0
+
+slave1 [localhost] {msandbox} ((none)) &gt; Bye
+baron@kanga:~/rsandbox_5_0_45$ ./s2
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.0.45-log MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+slave2 [localhost] {msandbox} ((none)) &gt; update sakila.film set title='academy dinosaur2' limit 1;
+Query OK, 1 row affected, 1 warning (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+slave2 [localhost] {msandbox} ((none)) &gt; Bye</pre>
+
+<p>OK, now I&rsquo;ve messed up the first 12 films on one slave, and the first 1 on another. I could just go ahead and sync them right away, but first I&rsquo;ll do a table checksum to demonstrate that functionality:</p>
+
+<pre>baron@kanga:~/rsandbox_5_0_45$ mk-table-checksum --replicate=test.checksum --port=16045 127.0.0.1 -q
+</pre>
+
+<p>And now I&rsquo;ll tell the sync tool to go fix the differences the checksum revealed:</p>
+
+<pre>baron@kanga:~/rsandbox_5_0_45$ mk-table-sync  --replicate=test.checksum h=127.0.0.1,P=16045 -vx
+# Syncing P=16046,h=127.0.0.1
+# DELETE INSERT UPDATE ALGORITHM DATABASE.TABLE
+#      0      0     12 Chunk     sakila.film
+#      0      0      0 Chunk     sakila.film_text
+# Syncing P=16047,h=127.0.0.1
+# DELETE INSERT UPDATE ALGORITHM DATABASE.TABLE
+#      0      0      0 Chunk     sakila.film
+#      0      0      0 Chunk     sakila.film_text
+baron@kanga:~/rsandbox_5_0_45$ 
+</pre>
+
+<p>Pretty easy, huh? Take a look at the output: the first thing it did was fix the 12 films I changed. <code>sakila.film</code> has a trigger that updates <code>sakila.film_text</code>, so that table got changed too. The checksum tool caught this difference, but the differences were gone by the time the sync tool examined them, again due to the trigger. On the second slave, no differences were found at all, because the changes to the first slave were made on the master, automatically fixing the second slave. (This won&rsquo;t always be the case, but it worked in this example).</p>
+
+<p>While I&rsquo;d love to continue building the perfect beast, I&rsquo;m going to have to call it quits around noon today and start cleaning up, writing the documentation, and getting ready to release the code. I&rsquo;m not sure how much I&rsquo;ll finish in that time.</p>
+
+<p>By the way, anyone who wants to is welcome to get the code from the <a href="http://code.google.com/p/maatkit/">Maatkit</a> SVN repository! I never make a big deal out of that because I generally assume people want to run released code, but SVN is there if you want it&hellip;</p>
+
+		                        <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'xaprb';
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+</div>
+
+  </body>
+</html>

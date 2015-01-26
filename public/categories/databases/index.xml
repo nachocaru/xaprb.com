@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Databases on Xaprb </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://www.xaprb.com/categories/databases/index.xml/</link>
+    
+    
+    
+    <updated>Mon, 08 Dec 2014 00:00:00 UTC</updated>
+    
+    <item>
+      <title>If Eventual Consistency Seems Hard, Wait Till You Try MVCC</title>
+      <link>http://www.xaprb.com/blog/2014/12/08/eventual-consistency-simpler-than-mvcc/</link>
+      <pubDate>Mon, 08 Dec 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/12/08/eventual-consistency-simpler-than-mvcc/</guid>
+      <description>
+
+&lt;p&gt;This should sound familiar:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;One of the great lies about NoSQL databases is that they&amp;rsquo;re simple. Simplicity
+done wrong makes things a lot harder and more complicated to develop and
+operate. Programmers and operations staff end up reimplementing (badly) things
+the database should do.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Nobody argued this line of reasoning more vigorously than when trying to defend
+relational databases, especially during the darkest years (ca.  2009-2010), when
+NoSQL still meant &lt;strong&gt;NO SQL DAMMIT&lt;/strong&gt;, all sorts of NoSQL databases were sprouting,
+and most of them were massively overhyped.&lt;/p&gt;
+
+&lt;p&gt;But as valid as those arguments against NoSQL&amp;rsquo;s &amp;ldquo;false economy&amp;rdquo; simplicity
+were and are, the arguments against relational databases&amp;rsquo; complexity hold true,
+too.&lt;/p&gt;
+
+&lt;p&gt;The truth is that no database is really simple. Databases have a lot of
+functionality and behaviors&amp;mdash;even the &amp;ldquo;simple&amp;rdquo; databases do&amp;mdash;and require
+deep knowledge to use well when reliability, correctness, and performance are
+important.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Eventual Consistency is Hard&lt;/h3&gt;
+
+&lt;p&gt;Eventual consistency is hard to work with because developers bear extra burden.
+I suppose the &lt;a href=&#34;http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf&#34;&gt;Dynamo
+paper&lt;/a&gt; is
+the best source to cite:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Dynamo targets the design space of an “always writeable” data store&amp;hellip;
+This requirement forces us to push the complexity of conflict resolution to
+the reads in order to ensure that writes are never rejected&amp;hellip; The next design
+choice is who performs the process of conflict resolution. This can be done by
+the data store or the application. If conflict resolution is done by the data
+store, its choices are rather limited&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;One can trivially quote this out of context and argue that a bunch of
+database logic ends up being reimplemented in the application at read time,
+everywhere a read occurs. Indeed, sometimes this extreme does occur. Some use
+cases might actually need to check and reconcile conflicting updates with every
+single read.&lt;/p&gt;
+
+&lt;p&gt;You can find lots of other examples of this type of complexity in similar
+systems, such as the &lt;a href=&#34;http://docs.basho.com/riak/latest/dev/using/conflict-resolution/&#34;&gt;Riak
+documentation&lt;/a&gt;,
+which has lofty-sounding phrases like &amp;ldquo;causal context&amp;rdquo; and &amp;ldquo;dotted version
+vectors.&amp;rdquo; It does sound like one would need a PhD to use such a system, doesn&amp;rsquo;t
+it?&lt;/p&gt;
+
+&lt;p&gt;When challenged in this way, many NoSQL advocates would respond that tradeoffs
+are necessary in distributed systems, and perhaps bring up the CAP Theorem,
+&lt;a href=&#34;http://aphyr.com/tags/jepsen&#34;&gt;Jepsen&lt;/a&gt; and so forth.  These kinds of topics are
+similar to Schroedinger&amp;rsquo;s Cat, or double-slit experiments, or whatnot.
+Relatively ignorant people like me bring these up around the pool table and
+argue about them to try to sound smart, without knowing much about them.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/12/schroedingers-cat.jpg&#34; alt=&#34;schroedinger&#39;s cat&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Distributed systems are hard!  There&amp;rsquo;s no denying that. But is there a better
+way?&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;How Simple Are Relational Systems Anyway?&lt;/h3&gt;
+
+&lt;p&gt;All this distributed systems theory and eventual consistency and so on&amp;hellip; it&amp;rsquo;s
+enough to make you long for the simplicity of a good old relational database,
+isn&amp;rsquo;t it? &amp;ldquo;Everyone knows&amp;rdquo; that servers are massively powerful these days. Your
+favorite relational database of choice is claimed to be capable of scaling
+vertically to all but the most incredibly large-scale applications. So why not
+just do that, and keep it simple?&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s talk about that word, simplicity.&lt;/p&gt;
+
+&lt;p&gt;Simplicity in relational systems is only achieved when there&amp;rsquo;s no concurrency.
+Add in concurrency, and all the complexity of distributed systems comes home to
+roost, because distributed and concurrent are fundamentally about solving some
+of the same problems. In fact, unless you&amp;rsquo;re running a single-writer,
+single-reader database on a single-core server&amp;mdash;and maybe not even then, I&amp;rsquo;m
+not sure&amp;mdash;you actually have a distributed system inside your server.
+Everything&amp;rsquo;s distributed.&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;Sorry, I&amp;#39;m not impressed with serializable isolation via a single writer mutex.&lt;/p&gt;&amp;mdash; Preetam Jinka (@PreetamJinka) &lt;a href=&#34;//twitter.com/PreetamJinka/status/537313622410952704&#34;&gt;November 25, 2014&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Concurrent operation isn&amp;rsquo;t a nice-to-have in most systems, it&amp;rsquo;s a given.
+The way many relational systems handle concurrency is with this nifty little
+thing called Multi-Version Concurrency Control (MVCC). It&amp;rsquo;s way simpler than
+eventual consistency. (Sarcasm alert!)&lt;/p&gt;
+
+&lt;p&gt;It works a little like this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;There are four standard transaction isolation levels, each with their own
+kinds of constraints and tradeoffs. Each defines which kinds of bad,
+inconsistent behaviors aren&amp;rsquo;t allowed to happen.&lt;/li&gt;
+&lt;li&gt;In REPEATABLE READ, the isolation level that a lot of people consider ideal,
+you get &amp;ldquo;read snapshots&amp;rdquo; that let you see an unchanging view of the database over
+time. Even as it&amp;rsquo;s changing underneath you! This is implemented by keeping
+old row versions until they are no longer needed.&lt;/li&gt;
+&lt;li&gt;Other isolation levels, such as READ COMMITTED, are &amp;ldquo;bad.&amp;rdquo; Because they don&amp;rsquo;t
+protect you, the developer, from the complexity of the underlying
+implementation. And they don&amp;rsquo;t allow you a true ACID experience.&lt;sup&gt;1&lt;/sup&gt; A true ACID
+experience is about Atomicity, Consistency, Isolation, and
+Durability.&lt;/li&gt;
+&lt;li&gt;Back to REPEATABLE READ, the only isolation level that is approved by the
+Holy See. It&amp;rsquo;s really simple. Everything appears just like you are the only
+user in the system. As a developer, you can just work with the database
+logically as you&amp;rsquo;re supposed to, and you don&amp;rsquo;t have to think about other
+transactions happening concurrently.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Clearly, this is much better than eventually consistent databases, right?&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;The Rabbit-Hole That Is MVCC&lt;/h3&gt;
+
+&lt;p&gt;Unfortunately, the relational databases and their MVCCs are far from such a
+utopia. The reality is that MVCC is way more complex than I&amp;rsquo;ve described.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/12/alice-down-the-rabbit-hole.jpg&#34; alt=&#34;alice-down-the-rabbit-hole&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;MVCC and the ACID properties are intertwined in very complex ways. The first
+problem comes from the ACID properties themselves.  These four properties are
+almost universally misunderstood. It&amp;rsquo;s almost as bad as the CAP theorem. I have
+to look up the definitions myself every single time. And then I always
+wind up asking myself, &amp;ldquo;what&amp;rsquo;s the difference between Consistency and
+Isolation again?&amp;rdquo; Because the definitions seem like each one is halfway about the
+other, and there&amp;rsquo;s no consistent way to think about them in isolation from each
+other.&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, isolation levels. Every database implements them differently. There&amp;rsquo;s a
+lot of disagreement about the right way to implement each of the isolation
+levels, and this must have been an issue when the standards were written,
+because the standards leave a lot unspecified. Most databases are pretty
+opinionated, by contrast. Here&amp;rsquo;s what
+&lt;a href=&#34;http://www.postgresql.org/docs/9.3/static/transaction-iso.html&#34;&gt;PostgreSQL says&lt;/a&gt; (emphasis mine):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The reason that PostgreSQL only provides three isolation levels is that this
+is &lt;em&gt;the only sensible way&lt;/em&gt;&lt;sup&gt;3&lt;/sup&gt; to map the standard isolation levels to the
+multiversion concurrency control architecture.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And MySQL, &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.6/en/set-transaction.html&#34;&gt;via InnoDB&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;InnoDB supports each of the transaction isolation levels described here using
+different locking strategies. You can enforce a high degree of consistency
+with the default REPEATABLE READ level, for operations on crucial data where
+ACID compliance is important. Or you can relax the consistency rules with READ
+COMMITTED or even READ UNCOMMITTED, in situations such as bulk reporting where
+precise consistency and repeatable results are less important than minimizing
+the amount of overhead for locking. SERIALIZABLE enforces even stricter rules
+than REPEATABLE READ, and is used mainly in specialized situations, such as
+with XA transactions and for troubleshooting issues with concurrency and
+deadlocks.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;At a glance, it sounds like MySQL/InnoDB asserts that all four levels can be
+sensibly implemented, in contradiction to PostgreSQL&amp;rsquo;s documentation. We&amp;rsquo;ll dig
+into this more later. For the moment it&amp;rsquo;s enough to note that InnoDB&amp;rsquo;s MVCC behavior
+is more similar to Oracle&amp;rsquo;s than it is to PostgreSQL&amp;rsquo;s, but still, the docs say
+things like &amp;ldquo;A somewhat Oracle-like isolation level with respect to consistent
+(nonlocking) reads.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;From experience I know that Microsoft SQL Server&amp;rsquo;s locking and multiversion
+concurrency model is different yet again. So there&amp;rsquo;s at least four different
+implementations with very different behaviors&amp;mdash;and we haven&amp;rsquo;t even gotten to
+other databases. For example, Jim Starkey&amp;rsquo;s failed Falcon storage engine
+for MySQL was going to use &amp;ldquo;pure MVCC&amp;rdquo; in contradistinction to InnoDB&amp;rsquo;s &amp;ldquo;mixed
+MVCC,&amp;rdquo; whatever that means. Falcon, naturally, also had &amp;ldquo;quirks&amp;rdquo; in its MVCC
+implementation.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s dig into a few of these implementations a bit and see what&amp;rsquo;s really the
+situation.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;InnoDB&amp;rsquo;s MVCC&lt;/h3&gt;
+
+&lt;p&gt;InnoDB&amp;rsquo;s MVCC works, at a high level, by keeping old row versions as long as
+they&amp;rsquo;re needed to be able to recreate a consistent snapshot of the past as the
+transaction originally saw it, and locking any rows that are modified.&lt;/p&gt;
+
+&lt;p&gt;There are at least four different scenarios to explore (one for each isolation
+level), and more in various edge cases. Quirks, let&amp;rsquo;s call them.&lt;/p&gt;
+
+&lt;p&gt;The most obvious case we should look at is REPEATABLE READ, the default. It&amp;rsquo;s
+designed to let you select a set of rows and then repeatedly see the same rows
+on every subsequent select, as long as you keep your transaction open. As the
+docs say,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;All consistent reads within the same transaction read the snapshot established
+by the first read.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sounds elegant and beautiful. But it turns ugly really, really fast.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;For locking reads (SELECT with FOR UPDATE or LOCK IN SHARE MODE), UPDATE, and
+DELETE statements, locking depends on whether the statement uses a unique
+index with a unique search condition, or a range-type search condition. For a
+unique index with a unique search condition, InnoDB locks only the index
+record found, not the gap before it. For other search conditions, InnoDB locks
+the index range scanned, using gap locks or next-key locks to block insertions
+by other sessions into the gaps covered by the range.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;What the hell just happened?&lt;/p&gt;
+
+&lt;p&gt;The abstraction just
+&lt;a href=&#34;http://www.joelonsoftware.com/articles/LeakyAbstractions.html&#34;&gt;leaked&lt;/a&gt;, that&amp;rsquo;s
+what.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/12/spiral-watch.jpg&#34; alt=&#34;Spiral Watch&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The problem is due to several logical necessities and implementation details.
+It&amp;rsquo;s not solely one or the other. The MVCC model is trying to balance a bunch of
+things going on concurrently, and there are logical contradictions that can&amp;rsquo;t go
+away, no matter how sophisticated the implementation. There are going to be edge
+cases that have to be handled with special exceptions in the behavior. And the
+implementation details leak through, inevitably. That&amp;rsquo;s what you are seeing above.&lt;/p&gt;
+
+&lt;p&gt;One of the logical necessities, for example, is that you can only modify the
+latest version of a row (eventually, at least). If you try to update an old version (the version
+contained in your consistent snapshot), you&amp;rsquo;re going to get into trouble. There
+can (eventually) be only one truth, and conflicting versions of the data aren&amp;rsquo;t allowed to be
+presented to a user as they are in eventual consistency. For this reason,
+various kinds of operations cause you to confront hard questions, such as:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Should the implementation disallow updating rows for which the snapshot has
+an out-of-date version, i.e. its version of reality has diverged from the
+latest version?&lt;/li&gt;
+&lt;li&gt;What is the latest version? Is it the latest committed version, the latest
+uncommitted version? What does &amp;ldquo;latest&amp;rdquo; mean? Is it &amp;ldquo;most recently updated by
+clock time&amp;rdquo; or is it &amp;ldquo;update by the transaction with the highest sequence
+number?&amp;rdquo; Does this vary between isolation levels?&lt;/li&gt;
+&lt;li&gt;If the implementation allows updating rows that are out-of-date (supposing
+the previous points have been resolved), what happens? Do you &amp;ldquo;leak&amp;rdquo; out of
+your isolation level, hence breaking consistency within your transaction? Do
+you fail the transaction? Or do you allow updating an old version, but then
+fail at commit time?&lt;/li&gt;
+&lt;li&gt;What happens if a transaction fails, and how does it fail / how is this
+presented to the user? (InnoDB used to deadlock and roll back the whole
+transaction; later it was changed to roll back just the failed statement).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Fundamentally you are going to run into problems such as these. And they have to
+be resolved, with various levels of confusion and complexity.&lt;/p&gt;
+
+&lt;p&gt;I should also note that InnoDB actually tries to go above and beyond the SQL
+standard. The standard allows phantom reads in REPEATABLE READ, but InnoDB uses next-key
+locking and gap locking to avoid this and bring REPEATABLE READ closer to
+SERIALIZABLE without the obnoxious locking implied by SERIALIZABLE. PostgreSQL
+does the same thing.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve barely scratched the surface of the complexities of how InnoDB handles
+transactions, locking, isolation levels, and MVCC. I am not kidding. There is a
+large amount of documentation about it in the official manual, much of which
+requires serious study to understand. And beyond that, there is a lot that&amp;rsquo;s not
+officially documented. For example, here&amp;rsquo;s a &lt;a href=&#34;//blogs.oracle.com/mysqlinnodb/entry/mysql_5_5_innodb_change&#34;&gt;blog post from one of the InnoDB
+authors&lt;/a&gt;
+that explains how various performance optimizations impact index operations.
+This might seem unrelated, but every access InnoDB makes to data has to interact
+with the MVCC rules it implements. And this all has implications for locking,
+deadlocks, and so on. Locking in itself is a complex topic in InnoDB. The list goes
+on.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;How It Works In PostgreSQL&lt;/h3&gt;
+
+&lt;p&gt;Sensibly, apparently ;-) Well, seriously, I have a lot less experience with
+PostgreSQL. But from the above it&amp;rsquo;s quite clear that the PostgreSQL
+documentation writers could find lots of support for a claim that attempting to
+implement all four standard isolation levels, at least in the way that InnoDB
+does, is not sensible.&lt;/p&gt;
+
+&lt;p&gt;The PostgreSQL documentation, unlike the MySQL documentation, is largely limited
+to a &lt;a href=&#34;http://www.postgresql.org/docs/9.3/static/transaction-iso.html&#34;&gt;single
+page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;Read cursor isolation docs for Oracle, PG, InnoDB. PG docs are clear, others probably not. Tech writing is hard.&lt;/p&gt;&amp;mdash; markcallaghan (@markcallaghan) &lt;a href=&#34;//twitter.com/markcallaghan/status/528335458221449217&#34;&gt;October 31, 2014&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;First of all, PostgreSQL uses READ COMMITTED by default. This means that if you
+SELECT some rows within a transaction, then wait while another transaction
+modifies them and commits, then SELECT them again, you&amp;rsquo;ll see the changes.
+Whether this is OK is for you to decide. It&amp;rsquo;s worth noting that a lot of people
+run MySQL/InnoDB the same way, and there are lots of bugs and special behaviors
+that end up making other isolation levels unusable for various reasons when
+various features are used in MySQL.&lt;/p&gt;
+
+&lt;p&gt;I think Mark Callaghan&amp;rsquo;s tweet, embedded above, is largely true. But even the
+PostgreSQL docs, as clear as they are, have some things that are hard to parse.
+Does the first part of this excerpt contradict the second part? (Emphasis mine):&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;a SELECT query (without a FOR UPDATE/SHARE clause) sees only data committed
+before the query began; it &lt;em&gt;never sees either uncommitted data or changes
+committed during query execution by concurrent transactions&lt;/em&gt;. In effect, a
+SELECT query sees a snapshot of the database as of the instant the query
+begins to run. However, SELECT does see the effects of previous updates
+executed within its own transaction, even though they are not yet committed.
+Also note that &lt;em&gt;two successive SELECT commands can see different data, even
+though they are within a single transaction, if other transactions commit
+changes during execution of the first SELECT.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Even PostgreSQL&amp;rsquo;s apparently less complicated MVCC implementation has thorny
+questions such as those. On more careful reading, the meaning becomes clear (and
+I don&amp;rsquo;t see how to improve it, by the way). The issue remains: these are subtle
+topics that inherently require close attention to detail.&lt;/p&gt;
+
+&lt;p&gt;One of the most elegantly put points in this documentation page is the remark
+that &amp;ldquo;Consistent use of Serializable transactions can simplify development.&amp;rdquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;It&amp;rsquo;s Not Just MySQL And PostgreSQL&lt;/h3&gt;
+
+&lt;p&gt;Many other systems implement some type of MVCC. All of them, as per the name,
+rely on multiple versions of records/rows, and deal with the various conflicts
+between these multiple versions in various ways. Some more complex, some less.
+The behavior the developer sees is &lt;a href=&#34;http://www.xaprb.com/blog/2013/12/28/immutability-mvcc-and-garbage-collection/&#34;&gt;heavily influenced by the underlying
+implementation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;And developers have to deal with this. If you&amp;rsquo;re going to use one of these
+systems competently, you must know the intricacies. I saw this again and
+again while consulting with MySQL users. Many developers, including myself, have
+written applications that fall afoul of the MVCC implementation and rules. The
+results?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Performance problems.&lt;/li&gt;
+&lt;li&gt;Availability problems.&lt;/li&gt;
+&lt;li&gt;Deadlocks and other errors.&lt;/li&gt;
+&lt;li&gt;Bugs. Horrible, subtle bugs in the way the app uses the database.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The only systems I&amp;rsquo;m aware of that can avoid these problems are those that use
+strategies such as single-writer designs. These, contrary to what their
+proponents will say about them, generally do not scale well at all. Many a
+MyISAM has been reinvented by database developers who don&amp;rsquo;t understand why
+MyISAM doesn&amp;rsquo;t scale.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_6&#34;&gt;Back To Eventual Consistency&lt;/h3&gt;
+
+&lt;p&gt;In contrast with that nightmare of complexity, I&amp;rsquo;m not so sure eventual
+consistency is really all that hard for developers to deal with. The developers
+will &lt;em&gt;always&lt;/em&gt; need to be aware of the exact behavior of the implementation
+they&amp;rsquo;re writing against, relational or not. I&amp;rsquo;ve studied quite a few eventually
+consistent databases (although I&amp;rsquo;ll admit I&amp;rsquo;ve spent most of my career elbows
+deep in InnoDB) and it seems hard to believe Cassandra or Riak is really more
+complex to develop against than InnoDB, for the use cases that they serve well.&lt;/p&gt;
+
+&lt;p&gt;Eventually consistent is easy to ridicule, though. Here&amp;rsquo;s one of my favorites:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;Eventually consistent &lt;a href=&#34;//twitter.com/hashtag/FiveWordTechHorrors?src=hash&#34;&gt;#FiveWordTechHorrors&lt;/a&gt;&lt;/p&gt;&amp;mdash; Stewart Smith (@stewartsmith) &lt;a href=&#34;//twitter.com/stewartsmith/status/410651205615230976&#34;&gt;December 11, 2013&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;(If you don&amp;rsquo;t get the joke, just wait a while. It&amp;rsquo;ll come to you.)&lt;/p&gt;
+
+&lt;p&gt;Can we have the best of all worlds? Can we have transactional behavior with
+strong ACID properties, high concurrency, etc, etc? Some claim that we can.
+&lt;a href=&#34;//foundationdb.com/&#34;&gt;FoundationDB&lt;/a&gt;, for example, &lt;a href=&#34;//foundationdb.com/acid-claims&#34;&gt;asserts&lt;/a&gt; that
+it&amp;rsquo;s possible and that their implementation is fully serializable, calling other
+isolation levels weak, i.e.  not true I-as-in-ACID. I haven&amp;rsquo;t yet used
+FoundationDB so I can&amp;rsquo;t comment, though I have always been impressed with what
+I&amp;rsquo;ve read from them.&lt;/p&gt;
+
+&lt;p&gt;But since I am not ready to assert that there&amp;rsquo;s a distributed system I know to
+be better and simpler than eventually consistent datastores, and since I
+certainly know that InnoDB&amp;rsquo;s MVCC implementation is full of complexities, for
+right now I am probably in the same position most of my readers are: the two
+viable choices seem to be single-node MVCC and multi-node eventual consistency.
+And I don&amp;rsquo;t think MVCC is the simpler paradigm of the two.&lt;/p&gt;
+
+&lt;p&gt;Notes:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;If you don&amp;rsquo;t &lt;a href=&#34;//twitter.com/xaprb&#34;&gt;tweet&lt;/a&gt; me puns and acid-cat meme pictures about this paragraph, I shall be disappointed in you.&lt;/li&gt;
+&lt;li&gt;Pun intended.&lt;/li&gt;
+&lt;li&gt;Also note that PostgreSQL used to provide only &lt;em&gt;two&lt;/em&gt; isolation
+levels, and the documentation used to make the same comment about it being
+the only sensible thing to do. It&amp;rsquo;s not quite clear to me whether this is
+meant to imply that it&amp;rsquo;s the only sensible way to implement MVCC, or the only
+sensible way to implement PostgreSQL&amp;rsquo;s MVCC.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Pic credits:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.writerightwords.com/down-the-rabbit-hole/&#34;&gt;Alice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.flickr.com/photos/t_zero/7762560470/&#34;&gt;Schroedinger&amp;rsquo;s Cat&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.flickr.com/photos/stuartncook/4613088809/&#34;&gt;Spiral Watch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time-Series Database Requirements</title>
+      <link>http://www.xaprb.com/blog/2014/06/08/time-series-database-requirements/</link>
+      <pubDate>Sun, 08 Jun 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/06/08/time-series-database-requirements/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve had conversations about time-series databases with many people over the last couple of years. I &lt;a href=&#34;http://www.xaprb.com/blog/2014/03/02/time-series-databases-influxdb/&#34;&gt;wrote previously&lt;/a&gt; about some of the open-source technologies that people commonly use for time-series storage.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/06/timeseries.jpg&#34; alt=&#34;Time Series&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Because I have my own ideas about what constitutes a good time-series database, and because a few people have asked me to describe my requirements, I have decided to publish my thoughts here. All opinions that follow are my own, and as you read you should mentally add &amp;ldquo;in my opinion&amp;rdquo; to every sentence.&lt;/p&gt;
+
+&lt;p&gt;For the record, I currently have an efficient time-series database that is working well. It is &lt;a href=&#34;https://vividcortex.com//blog/2014/04/30/why-mysql/&#34;&gt;built on MySQL&lt;/a&gt;. This is a high bar for a replacement to jump over.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Definition of Data Type&lt;/h3&gt;
+
+&lt;p&gt;For my purposes, time-series can be defined as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A series is identified by a source name or ID (for example: host ID) and a metric name or ID.&lt;/li&gt;
+&lt;li&gt;A series consists of a sequence of {timestamp, value} measurements ordered by timestamp, where the timestamp is probably a high-precision Unix timestamp and the value is a floating-point number.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Workload Characteristics&lt;/h3&gt;
+
+&lt;p&gt;Time-series data is not general-purpose and has specific patterns in its workload. A time-series database should be optimized for the following.&lt;/p&gt;
+
+&lt;p&gt;For writes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Write-mostly is the norm; perhaps 95% to 99% of operations are writes, sometimes higher.&lt;/li&gt;
+&lt;li&gt;Writes are almost always sequential appends; they almost always arrive in time order. There is a caveat to this.&lt;/li&gt;
+&lt;li&gt;Writes to the distant past are rare. Most measurements are written within a few seconds or minutes after being observed, in the worst case.&lt;/li&gt;
+&lt;li&gt;Updates are rare.&lt;/li&gt;
+&lt;li&gt;Deletes are in bulk, beginning at the start of history and proceeding in contiguous blocks. Deletes of individual measurements or deletes from random locations in history are rare. Efficient bulk deletes are important; as close to zero cost as possible. Non-bulk deletes need not be optimal.&lt;/li&gt;
+&lt;li&gt;Due to the above, an immutable storage format is potentially a good thing. As a further consequence of immutable storage, a predefined or fixed schema may be a problem long-term.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For reads, the following usually holds:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Data is much larger than memory and rarely read, so caching typically doesn&amp;rsquo;t work well; systems are often IO-bound.&lt;/li&gt;
+&lt;li&gt;Reads are typically logically sequential per-series, ascending or descending.&lt;/li&gt;
+&lt;li&gt;Concurrent reads and reads of multiple series at once are reasonably common.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The caveat to &amp;ldquo;writes arrive in sequential order&amp;rdquo; is that measurements typically arrive ordered by {timestamp, series_id}, but reads are typically done in {series_id, timestamp} order. Reads need to be fast, even though they are rare. There are generally two approaches to dealing with this. The first is to write efficiently, so the data isn&amp;rsquo;t read-optimized per-series on disk, and deploy massive amounts of compute power in parallel for reads, scanning through all the data linearly. The second is to pay a penalty on writes, so the data is tightly packed by series and optimized for sequential reads of a series.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;Performance and Scaling Characteristics&lt;/h3&gt;
+
+&lt;p&gt;A time-series database should be:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Distributed by design &amp;mdash; no bolt-on clustering or sharding. Automatic data distribution, automatic query distribution. Fault-tolerant and highly available, with built-in replication and automatic failover. I think by this point we should all understand what it means for a database to be natively distributed. There are several good examples of databases that do it sensibly, and little of this should need to be novel.&lt;/li&gt;
+&lt;li&gt;Send the query to the data, don&amp;rsquo;t bring the data to the query. This is a restatement of &amp;ldquo;automatic query distribution.&amp;rdquo; Queries may touch many gigabytes or terabytes of data, so moving it across the network is not scalable.&lt;/li&gt;
+&lt;li&gt;Efficient per-node so it is capable of running at large scale without requiring thousands of servers.&lt;/li&gt;
+&lt;li&gt;Able to take advantage of powerful hardware: PCIe flash storage, lots of RAM, many CPU cores. This rules out single-writer systems.&lt;/li&gt;
+&lt;li&gt;Fast and consistent. No spikes or stalls; no checkpoint freezes; no compaction lock-ups.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;Operational Requirements&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I do not specifically need ACID, but I need the database to quickly recover to a consistent state after events like a power failure. For my purposes, time-series data is not subject to the same durability constraints as financial data.&lt;/li&gt;
+&lt;li&gt;Non-blocking backups are a must. Incremental backups are a very good thing.&lt;/li&gt;
+&lt;li&gt;It needs to be possible to scale the cluster up or down without downtime or locking.&lt;/li&gt;
+&lt;li&gt;Compressed storage. Time-series data is big, but highly compressible.&lt;/li&gt;
+&lt;li&gt;The database should be well instrumented.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;Language and/or API Design&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;ve spoken to many people who have built large-scale time-series databases for big companies. Most of them have told me that the lack of a high-level way to access and query the database was the long-term millstone around their neck.&lt;/p&gt;
+
+&lt;p&gt;I would be happy with something that looks like SQL, as InfluxDB&amp;rsquo;s query language does. Crucially, it needs to avoid a few of the legacy limitations of SQL. The way I think about it is that SQL tables are fixed-width and grow downwards by adding rows. A natural outcome of that is that each column in SQL statements is known in advance and explicitly named, and expressions naturally work within a single row or in aggregates over groups of rows, but cannot span rows otherwise without doing a JOIN.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/06/theater.jpg&#34; alt=&#34;Theater&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;However, in time-series databases, rows are series identified by the &amp;ldquo;primary key.&amp;rdquo; Rows grow sideways as new measurements are added, tables grow downwards as new series are added, and columns are timestamps. Thus, tables are sparse matrices. Expressions must operate in aggregates over rectangular sections of the sparse matrix, not just rows or columns, and the language must permit a GROUP BY functionality in both directions. You could say that both rows and columns must be addressable by keys instead of by literal identifiers, and ideally by pattern matching in addition to strict equality and ranges.&lt;/p&gt;
+
+&lt;p&gt;Ideally, the language and database should support &lt;em&gt;server-side processing&lt;/em&gt; of at least the following, and probably much more:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Expressions such as arithmetic and string operations.&lt;/li&gt;
+&lt;li&gt;Aggregate functions.&lt;/li&gt;
+&lt;li&gt;Resampling into time resolutions different from the storage resolution.&lt;/li&gt;
+&lt;li&gt;Expressions and operators that refer to different series, e.g. to sum series, or divide one by another, and to combine such expressions, e.g. to sum up all series whose identifiers match a pattern, then divide the result by the sum of another group of series.&lt;/li&gt;
+&lt;li&gt;Ordering, ranking, and limiting.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Another way to say the above is that the language and database should be designed for analytics, not just for drawing strip charts. Many open-source time-series databases such as RRDTool are far too tightly coupled with their expected use case, and this is a serious limitation.&lt;/p&gt;
+
+&lt;p&gt;There should be an efficient binary protocol that supports bulk inserts.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;Non-Requirements&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;d like a database that does one thing well. I do not think I need any of the following, and I regard them as neutral, or in some cases even as drawbacks:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Access control &amp;mdash; authentication and authorization.&lt;/li&gt;
+&lt;li&gt;Ability to visualize data, draw graphs, etc.&lt;/li&gt;
+&lt;li&gt;Support for multiple measurements at the same timestamp. The measurement&amp;rsquo;s primary key is &lt;code&gt;series,timestamp&lt;/code&gt; and it does not make sense to allow multiple values with the same timestamp.&lt;/li&gt;
+&lt;li&gt;Multi-dimensionality. Multiple dimensions for a series can be stored as multiple series, and multiple series can be combined in expressions with the query language I specified, so the atom of &amp;ldquo;series&amp;rdquo; already provides for the use case of multi-dimensionality.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Tagging&amp;rdquo; measurements or series with additional ad-hoc key-value pairs.&lt;/li&gt;
+&lt;li&gt;Joins from time-series data to relational data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_6&#34;&gt;Bonus and Additional Features&lt;/h3&gt;
+
+&lt;p&gt;The preceding sections describe a good general-purpose time-series database, from my point of view. Nice-to-have features might include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Support for retention policies.&lt;/li&gt;
+&lt;li&gt;Support for storing data in multiple resolutions (materialized views) and selecting the appropriate resolution to access for a given request.&lt;/li&gt;
+&lt;li&gt;Support for maintaining downsampled data in coarser resolutions, automatically building these materialized views as high-resolution data arrives (automatic rollup).&lt;/li&gt;
+&lt;li&gt;Support for query priorities or admission control to prevent starvation and DOS from large queries.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For my particular uses, I also need support for:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Many series per server in my cluster, far more than practical limits on the number of files in a directory for example.&lt;/li&gt;
+&lt;li&gt;Although some series are long-lived, many are not. Many are sparse, with measurements only once in a long while. Series are dynamic and are not predefined; new series may appear at any moment. Due to this requirement, I need efficient support for discovering which series exist during any given time range.&lt;/li&gt;
+&lt;li&gt;Multi-tenancy at the physical level. This is partially by demand; some customers want to know that their data is separate from other customers&amp;rsquo; data. It is partially pragmatic, to support features such as separate retention policies per customer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;toc_7&#34;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;The future of &amp;ldquo;big data&amp;rdquo; is mostly time-series. Someone who creates a good time-series database for
+such use cases will probably do quite well. I&amp;rsquo;m sure my requirements aren&amp;rsquo;t the
+most general-purpose or complete, but I hope it&amp;rsquo;s useful to share anyway.&lt;/p&gt;
+
+&lt;p&gt;Pic credits:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.flickr.com/photos/hugovk/6798051186/&#34;&gt;Seasons&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.flickr.com/photos/sprengben/4976954312/&#34;&gt;Theater&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Can MySQL be a 12-factor service?</title>
+      <link>http://www.xaprb.com/blog/2014/05/10/can-mysql-be-12factor-service/</link>
+      <pubDate>Sat, 10 May 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/05/10/can-mysql-be-12factor-service/</guid>
+      <description>&lt;p&gt;A while ago I &lt;a href=&#34;http://www.xaprb.com/blog/2012/04/24/the-mysql-init-script-mess/&#34;&gt;wrote&lt;/a&gt; about some of the things that can make MySQL unreliable or hard to operate. Some time after that, in a completely unrelated topic, someone made me aware of a set of principles called &lt;a href=&#34;http://12factor.net&#34;&gt;12-factor&lt;/a&gt; that I believe originated from experiences building Heroku.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/05/dodecahedron.jpg&#34; alt=&#34;Dodecahedron&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s been over a year, and I&amp;rsquo;ve come to increasingly agree with the 12-factor principles. I guess I&amp;rsquo;m extremely late to the party, but making applications behave in 12-factor-compliant ways has solved a lot of problems for me.&lt;/p&gt;
+
+&lt;p&gt;This experience has repeatedly reminded me of one of the applications that continues to cause a lot of the kinds of pain that the 12-factor principles have solved for me: MySQL.&lt;/p&gt;
+
+&lt;p&gt;Example: configuration files. I initially thought MySQL&amp;rsquo;s technique of multiple configuration files that serve as defaults, overrides to the defaults, and eventually are overridden by the commandline options was a good thing. In fact, you can blame me for that pattern being imitated in Percona Toolkit, if you want to blame anyone for it.&lt;/p&gt;
+
+&lt;p&gt;But then I started to see the problems with it. Quick question: how easy is it to set up multiple MySQL instances on the same server, in your opinion? Had any problems with that? Any unexpected things ever happen to you?&lt;/p&gt;
+
+&lt;p&gt;12-factor solves many of the types of problems I&amp;rsquo;ve had with that. For example, I once needed multiple instances of an API server on a single operating system host. This was very difficult because of conflicts with configuration files and init scripts, which I&amp;rsquo;d created by copying the way MySQL does things. Moving the configuration into the environment variables solved most of those problems and helped solve others.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t necessarily expect anyone to understand this unless they&amp;rsquo;ve had first-hand experience with it. After all, I didn&amp;rsquo;t until I got that experience myself. I know a lot of people believe fully in the results of following 12-factor principles, so I won&amp;rsquo;t spend time trying to explain it here.&lt;/p&gt;
+
+&lt;p&gt;Thought experiment: how hard would it be to make MySQL accept all of its configuration as environment variables? I think it would be feasible to make a wrapper that reads the environment variables and exec&amp;rsquo;s &lt;code&gt;mysqld&lt;/code&gt; with the resulting options. But if MySQL could be configured via environment variables directly, that&amp;rsquo;d be even nicer. (I can&amp;rsquo;t think of an environment variable it respects at the moment, other than &lt;code&gt;TZ&lt;/code&gt;.)&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t propose blindly following 12-factor principles. They are most applicable to stateless or little-state applications, such as API servers or web applications. They are harder to use with attachable stateful resources, such as a database server. But even a system like MySQL could sometimes be improved, with regards to operational characteristics, by following 12-factor principles.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/sanchtv/4192677571&#34;&gt;Pic&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Go MySQL Drivers</title>
+      <link>http://www.xaprb.com/blog/2014/04/29/golang-mysql-drivers/</link>
+      <pubDate>Tue, 29 Apr 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/04/29/golang-mysql-drivers/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;re interested in Google&amp;rsquo;s Go programming language, perhaps you aren&amp;rsquo;t
+sure what drivers to use for MySQL. The good news is there are &lt;em&gt;excellent&lt;/em&gt;
+drivers for MySQL.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/04/dolphin.jpg&#34; alt=&#34;Dolphin&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;There are several opensource ones on GitHub and elsewhere,
+but the driver I recommend is
+&lt;a href=&#34;https://github.com/go-sql-driver/mysql/&#34;&gt;https://github.com/go-sql-driver/mysql/&lt;/a&gt;.
+Why?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It is pure Go, not a wrapper around a C library, and is liberally licensed.&lt;/li&gt;
+&lt;li&gt;It is high performance. A lot of work has gone into making it avoid
+allocations and consume minimal CPU.&lt;/li&gt;
+&lt;li&gt;It is an excellent example of idiomatic Go in action. The authors understand
+how the &lt;code&gt;database/sql&lt;/code&gt; package is supposed to be used. Some drivers aren&amp;rsquo;t
+written to this standard and are clumsy or don&amp;rsquo;t take advantage of
+&lt;code&gt;database/sql&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is the driver we use at VividCortex in production. We have had no issues
+with this driver at all. Credit for that should go to three people who&amp;rsquo;ve put a
+large amount of work into it: Julien Schmidt, Arne Hormann, and Brad
+Fitzpatrick. There are more, but those are the key contributors in my opinion.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re curious how to write idiomatic Go code when accessing a database
+through the &lt;code&gt;database/sql&lt;/code&gt; package with this driver, I recommend
+&lt;a href=&#34;http://go-database-sql.org/&#34;&gt;http://go-database-sql.org/&lt;/a&gt;, which has benefited
+greatly from the same contributors, as well as a variety of community members
+and experts at VividCortex.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/chrismatos/8125817490/&#34;&gt;Photo Credit&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>JOIN Versus Key-Value Stores</title>
+      <link>http://www.xaprb.com/blog/2014/04/28/join-versus-key-value-stores/</link>
+      <pubDate>Mon, 28 Apr 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/04/28/join-versus-key-value-stores/</guid>
+      <description>&lt;p&gt;I was listening to a conversation recently and heard an experienced engineer express an interesting point of view on joins and key-value databases. I don&amp;rsquo;t entirely agree with it. Here&amp;rsquo;s why.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/04/loc.jpg&#34; alt=&#34;Library Of Congress&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;First, the opinion. If I may paraphrase, the discussion was something like this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;With experience in building distributed systems, one learns to avoid JOIN.&lt;/li&gt;
+&lt;li&gt;Therefore, much of the work of JOIN is done in the application instead of the database.&lt;/li&gt;
+&lt;li&gt;Access to the database is usually reduced to simple primary-key lookups.&lt;/li&gt;
+&lt;li&gt;Therefore, a key-value store is as good a choice as a relational database.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;m simplifying, because the speaker actually suggested that MySQL makes a really good database for primary-key lookups as well.&lt;/p&gt;
+
+&lt;p&gt;The place I would differ slightly is on the last bullet point.  It really depends on which key-value store you choose. The subtlety I&amp;rsquo;d suggest to consider is whether you&amp;rsquo;d like a simple key-value store that can do only simple key-value set/get operations, or whether you want something that also provides more functionality if needed. I would argue that for most use cases, there is at least occasional need for something more sophisticated, and often there&amp;rsquo;s a frequent need.&lt;/p&gt;
+
+&lt;p&gt;The more &amp;ldquo;sophisticated&amp;rdquo; uses I&amp;rsquo;m talking about would include things such as evaluating expressions against the data, or performing operations such as &lt;code&gt;GROUP BY&lt;/code&gt;. Both of these are orthogonal to use of &lt;code&gt;JOIN&lt;/code&gt;. Consider how many times you&amp;rsquo;ve done something like the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SELECT DISTINCT status FROM posts;
+
+SELECT author, COUNT(*), SUM(IF(status=&#39;draft&#39;), 1, 0) FROM posts
+GROUP BY author
+ORDER BY COUNT(*) DESC LIMIT 50;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Answering such ad-hoc (or routine) questions about your data can be a lot of work if you don&amp;rsquo;t have an expressive query language. It can also be very performance-intensive, requiring you to fetch potentially enormous amounts of data out of the database to be processed in-app.&lt;/p&gt;
+
+&lt;p&gt;This doesn&amp;rsquo;t have to imply that you need a relational database. Most key-value stores provide some useful functionality. Many provide at least map-reduce to operate on sets of keys. Many treat the value as a non-opaque data structure and allow you to write arbitrary functions to operate on it in some fashion, even if it&amp;rsquo;s not as terse as SQL.&lt;/p&gt;
+
+&lt;p&gt;Some key-value databases seem to provide a little more functionality than they really do. For example, Cassandra&amp;rsquo;s CQL can lead developers to think the power of a limited form of SQL is available to them. Although they may know perfectly well that CQL is essentially a human-friendly way of specifying a set of keys, the syntactical similarity to SQL can lull smart people into acting as if they are working with a more expressive language. This could cause you to write an application as though it&amp;rsquo;ll be easy to do things that, when you later need to do them and can&amp;rsquo;t with CQL alone, make you kick yourself a little bit.&lt;/p&gt;
+
+&lt;p&gt;Of course, the way you&amp;rsquo;d want to support such a use case in a database like Cassandra is ideally to anticipate it and to store denormalized data that can answer the question quickly. Although this may seem limiting to a relational database user, it is really equivalent to creating an index, in terms of the need for foresight. Clearly, one can think of lots of ad-hoc queries against large relational tables that will not be feasible without indexes to support them. You need to do some planning either way.&lt;/p&gt;
+
+&lt;p&gt;To sum up: A big advantage (or foot-gun) of a relational database is that ad-hoc queries with complex expressions can be evaluated directly against the data, without moving it across the network. This is possible in some key-value stores, naturally, but not all. So I don&amp;rsquo;t think it&amp;rsquo;s as simple as &amp;ldquo;if you don&amp;rsquo;t need joins, you aren&amp;rsquo;t doing anything a key-value database can&amp;rsquo;t do too.&amp;rdquo; (That is, again, a paraphrase.)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/glynlowe/8494249683/&#34;&gt;Picture Credit&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ultima Online and the History of Sharding</title>
+      <link>http://www.xaprb.com/blog/2014/04/21/ultima-online-sharding/</link>
+      <pubDate>Mon, 21 Apr 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/04/21/ultima-online-sharding/</guid>
+      <description>&lt;p&gt;Have you heard of &lt;em&gt;sharding&lt;/em&gt; a database? Of course you have. Do you know where
+the term comes from? Someone asked me this at a cocktail party recently. I gave
+it my best shot.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;The earliest I remember was Google engineers using it to describe the
+architecture of some things,&amp;rdquo; I said. &amp;ldquo;That would have been about 2006.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Nope. Much earlier than that,&amp;rdquo; said my new friend.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/04/ultima.jpg&#34; alt=&#34;ultima&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I pondered. &amp;ldquo;Well, I guess there was the famous LiveJournal architecture
+article about MySQL. That was, I dunno, 2003?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;The person then told me the following history. I can neither
+confirm nor deny it; what do you know about it?&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Years ago there was a game called &lt;em&gt;Ultima Online&lt;/em&gt;. It&amp;hellip;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I broke in. &amp;ldquo;Hey! In 1995 my brother and I were staff members at a Boy Scout
+Camp, and one of the other staff members had a game called Ultima Underworld on
+his PC. It was addictive. Any relationship?&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Yes, it was a predecessor to Ultima Online.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Oh,&amp;rdquo; I said. &amp;ldquo;Well, that&amp;rsquo;s basically the last game I&amp;rsquo;ve ever played.
+But please go on.&amp;rdquo;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Ultima Online was early in the Internet age &amp;ndash; late nineties, I think. They
+knew they were going to have a lot more traffic than they could handle with
+one server, no matter how big it was. The only solution that presented itself
+was to run lots of small instances of the game. But that would impact the game
+play itself. What to do?&lt;/p&gt;
+
+&lt;p&gt;The answer was to work it into the storyline of the game itself. The world in
+the game was said to have been broken into shards. Not the database &amp;ndash; the
+world itself. That was part and parcel of the game. Some gemstone had been
+broken into shards and reality was broken along with it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;True? False? It&amp;rsquo;s easy to verify that the storyline is true, but is this how we
+ended up with &amp;ldquo;sharding&amp;rdquo; in the database world, especially in MySQL?&lt;/p&gt;
+
+&lt;p&gt;Note: I&amp;rsquo;m paraphrasing the conversation from the cocktail party. My memory isn&amp;rsquo;t
+that good.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Slides From Percona Live</title>
+      <link>http://www.xaprb.com/blog/2014/04/13/slides-from-percona-live/</link>
+      <pubDate>Sun, 13 Apr 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/04/13/slides-from-percona-live/</guid>
+      <description>&lt;p&gt;Embedded below are slides for the two talks I gave at Percona Live. The first one is titled &lt;a href=&#34;https://www.percona.com/live/mysql-conference-2014/sessions/knowing-unknowable-query-metrics&#34;&gt;knowing the unknowable&lt;/a&gt;. It illustrates the special regression technique we developed at VividCortex for computing the amount of CPU, IO, or other resources a query uses within MySQL.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://app.box.com/embed_widget/uq5eyck1vhoc/s/2k90axu9na6rbu1y8uw6?view=list&amp;sort=name&amp;direction=ASC&amp;theme=blue&#34; width=&#34;720&#34; height=&#34;484&#34; frameborder=&#34;0&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The second one is on &lt;a href=&#34;https://www.percona.com/live/mysql-conference-2014/sessions/developing-mysql-applications-go&#34;&gt;building MySQL database applications with Go&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://app.box.com/embed_widget/67pmb7eyuct3/s/jx5lncbvngf6j5v5uovr?view=list&amp;sort=name&amp;direction=ASC&amp;theme=blue&#34; width=&#34;720&#34; height=&#34;600&#34; frameborder=&#34;0&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Replication Sync Checking Algorithms</title>
+      <link>http://www.xaprb.com/blog/2014/04/12/replication-sync-algorithms/</link>
+      <pubDate>Sat, 12 Apr 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/04/12/replication-sync-algorithms/</guid>
+      <description>&lt;p&gt;I was interested to see the announcement of a &lt;a href=&#34;http://utilsmysql.blogspot.com/2014/04/new-mysql-utility-replication.html&#34;&gt;MySQL replication synchronization
+checker utility&lt;/a&gt; from Oracle recently. Readers may know that I spent years
+working on this problem. The tool is now known as pt-table-checksum in Percona
+Toolkit, but the original work started in 2006. I would say that I personally
+have spent at least 6 months working on that; adding up all the other Percona
+Toolkit developers, there might be several man-years of work invested. (I&amp;rsquo;m
+not with Percona anymore.)&lt;/p&gt;
+
+&lt;p&gt;The pt-table-checksum tool has been reinvented about three times as I and others
+learned more about the difficult and subtle problems involved. But if
+it were still a project I worked on, I&amp;rsquo;d still not be happy with it. It causes
+too much load on servers and does needless work. Solving that problem is
+difficult in the general case, but I think it&amp;rsquo;s worth doing. A replica simply
+can&amp;rsquo;t be trusted otherwise.&lt;/p&gt;
+
+&lt;p&gt;What would I suggest instead? I&amp;rsquo;d like a tool that runs continually and operates
+a lot more like so-called &amp;ldquo;read repair&amp;rdquo; in some of the modern distributed
+eventually consistent databases.  The details of those algorithms aren&amp;rsquo;t
+necessary to cover here, but it will suffice to point out that if there&amp;rsquo;s going
+to be data drift between a primary and a replica, it&amp;rsquo;s probably not necessary to
+check every row in every table.  Some data is unchanging and does not need to be
+checked exhaustively again and again. Other data, which is being changed, is
+likely to go out of sync in ways that you can catch probabilistically with very
+good likelihood of catching problems soon after they happen &lt;em&gt;if you are checking
+constantly&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In other words, checking individual bits of data at random, adding barely
+noticeable load to the server, and operating continually, will almost certainly
+catch problems pretty soon, especially if you focus on the data that&amp;rsquo;s most
+likely to change. (Someone smarter than I can probably do the calculations and
+prove or disprove my assertion. I have no plans to implement this myself, so
+it&amp;rsquo;s not something I want to spend time on.)&lt;/p&gt;
+
+&lt;p&gt;So this brings up the question, what &amp;ldquo;sophisticated synchronization algorithm&amp;rdquo;
+does the mysqlrplsync utility use? The &lt;a href=&#34;http://dev.mysql.com/doc/mysql-utilities/1.4/en/mysqlrplsync.html&#34;&gt;documentation&lt;/a&gt; doesn&amp;rsquo;t explain as far as I
+can see, and the source code is not immediately obvious to me. Can someone
+explain it in words?  This is well worth doing, in my opinion. I personally
+would never run such a tool unless I knew what it would actually do to my
+servers.&lt;/p&gt;
+
+&lt;p&gt;As a historical note, when I wrote what would eventually become pt-table-sync, I
+started out with &lt;a href=&#34;http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/&#34;&gt;a comparison and synchronization algorithm&lt;/a&gt; that mimicked and
+tried to improve upon prior art. I quickly found serious, show-stopping problems
+with that approach, and had to invent some things that I believe are fairly
+novel, but have reasonably nice properties. As a result, I&amp;rsquo;m pretty comfortable
+with pt-table-sync, but it certainly could be improved. However, if I&amp;rsquo;m not
+mistaken, the mysqldbcompare utility that&amp;rsquo;s part of the MySQL Utilities script
+toolkit uses the algorithm that I rejected because of its impact on the servers
+and its potential to cause serious problems. If mysqlrplsync uses the same
+algorithm, I would be wary of recommending it.&lt;/p&gt;
+
+&lt;p&gt;For more on the performance and other characteristics of the algorithms that I
+tried and tested (and implemented) in various incarnations of what&amp;rsquo;s now Percona
+Toolkit, please see the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.xaprb.com/blog/2007/03/30/comparison-of-table-sync-algorithms/&#34;&gt;http://www.xaprb.com/blog/2007/03/30/comparison-of-table-sync-algorithms/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/&#34;&gt;http://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Percona Live Recap</title>
+      <link>http://www.xaprb.com/blog/2014/04/11/percona-live-recap/</link>
+      <pubDate>Fri, 11 Apr 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/04/11/percona-live-recap/</guid>
+      <description>&lt;p&gt;I had a great time at Percona Live. I think this was the best MySQL
+conference I&amp;rsquo;ve ever been to.  (The food was excellent too. The fastest way to a
+man&amp;rsquo;s heart is through his stomach.)&lt;/p&gt;
+
+&lt;p&gt;The talks I attended were very good. Jay Janssen&amp;rsquo;s tutorial on Percona XtraDB
+Cluster was impressive. I can&amp;rsquo;t imagine how much time he must have spent
+preparing for that.&lt;/p&gt;
+
+&lt;p&gt;I was very happy that Oracle, MariaDB, and WebScaleSQL had a strong presence,
+too. There were also a lot of one-degree-of-separation talks on topics like
+Hadoop and so forth. I attended a talk by Google on how their F1 database works.
+The biggest surprise in that talk? F1 is more expensive for them to operate than
+MySQL. I expected that anything they built in-house would surely be more cost
+effective, but I was wrong.&lt;/p&gt;
+
+&lt;p&gt;The community awards and lightning talks were fun as always. My co-founder Kyle
+Redinger was scheduled to do a non-technical lightning talk about how to squat
+properly. (He&amp;rsquo;s a hardcore CrossFitter, gym owner, and coach.) He ended up
+having a conflict, so Tim Chadwick from Dyn took over, and I played Vanna White.
+And I mean &lt;em&gt;white&lt;/em&gt;, as in White Gym Socks Clearly Visible On Skinny Legs. What
+good is a lightning talk if you don&amp;rsquo;t look goofy?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/04/squat.jpg&#34; alt=&#34;squat&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The expo hall was great for us (VividCortex). I was so busy at the booth
+that I didn&amp;rsquo;t spend a lot of time visiting other booths. We certainly got
+our money&amp;rsquo;s worth from having this booth, and have already decided to commit
+early for next year&amp;rsquo;s event.&lt;/p&gt;
+
+&lt;p&gt;Speaking of VividCortex, you may know that we launched our product during the
+conference. The actual launch was at DEMO Enterprise, a launch event, but the
+two events overlapped somewhat. Now that we&amp;rsquo;ve launched, our closed beta is
+ended, and you can sign up for a free trial at &lt;a href=&#34;https://vividcortex.com&#34;&gt;https://vividcortex.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was great to see so many old friends at the conference. I wish I&amp;rsquo;d been able
+to spend more time with more people, as I always wish every single year.
+Many of the old traditions carry on; and we create new ones. Next year, join me
+and Kyle for a Tech WOD (workout of the day) at a local Crossfit. It&amp;rsquo;s a great
+way to start the day off right at 6:30am after a late night of drinking!&lt;/p&gt;
+
+&lt;p&gt;Pic credit to &lt;a href=&#34;https://twitter.com/lefred/status/451911813244788736&#34;&gt;LeFred&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Time-Series Databases and InfluxDB</title>
+      <link>http://www.xaprb.com/blog/2014/03/02/time-series-databases-influxdb/</link>
+      <pubDate>Sun, 02 Mar 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/03/02/time-series-databases-influxdb/</guid>
+      <description>
+
+&lt;p&gt;Time-series databases are of particular interest to me these days. Not only is
+&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; working with large-scale time-series
+data, but it&amp;rsquo;s a growing trend in the technology world in general. What&amp;rsquo;s
+perhaps most surprising is the dearth of native time-series databases, either
+commercial or opensource.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/03/alice.jpg&#34; alt=&#34;No Time to Say Hello&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;The World is Time-Series&lt;/h3&gt;
+
+&lt;p&gt;The data we gather is increasingly timestamped and dealt with in time-series
+ways. For the last 10 years, I&amp;rsquo;ve worked with &amp;ldquo;roll-up&amp;rdquo; or &amp;ldquo;summary&amp;rdquo; tables
+almost constantly. I built, and saw others build, the same types of solutions
+over and over. For example, I probably consulted with over a dozen companies who
+do search-engine marketing and advertising. Cost tables are a given, and there&amp;rsquo;s
+usually cost-per-ad-per-day and half a dozen other summary tables. In my case I
+saw these things in the MySQL context, but you can pick your technology and
+someone&amp;rsquo;s trying to do time-series tasks on top of it.&lt;/p&gt;
+
+&lt;p&gt;One of the problems you see in these situations is very limited flexibility. For
+example, you can&amp;rsquo;t run ad-hoc queries. You can only run queries that are
+supported by your precomputed, predesigned summary tables.&lt;/p&gt;
+
+&lt;p&gt;Relational databases offer SQL, which is worlds better than key-value or other
+low-level ways to access and manipulate large amounts of data in declarative
+ways. But SQL&amp;rsquo;s expressive power is very limited in the time-series domain.  I
+think of the problem this way: relational tables grow &amp;ldquo;downwards&amp;rdquo; by adding
+rows, and SQL is reasonably expressive for that. But time-series data is
+different; a mental model of it is that rows are series identified by a primary
+key, and they grow sideways, with the &amp;ldquo;wide rows&amp;rdquo; model being the most natural
+fit. SQL can&amp;rsquo;t help here.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;What&amp;rsquo;s Commonly Done&lt;/h3&gt;
+
+&lt;p&gt;Most of my experience has been in relational databases. As mentioned, these are
+a poor choice because of SQL, but a row-oriented model also doesn&amp;rsquo;t lend itself
+well to time-series data. You end up building something that looks suspiciously
+like an EAV (entity-attribute-value) model. It&amp;rsquo;s either horribly inefficient,
+with tons of repeated data, or it&amp;rsquo;s a little more efficient but even more
+difficult to query. In the MySQL world, some people have reported evaluating
+&lt;a href=&#34;http://www.tokutek.com/products/tokudb-for-mysql/&#34;&gt;TokuDB&lt;/a&gt;, &lt;a href=&#34;http://infinidb.co/&#34;&gt;InfiniDB&lt;/a&gt;, and others as replacements for stock MySQL and InnoDB. I have
+evaluated these too and didn&amp;rsquo;t find them to be feasible. Perhaps better in some
+ways, but not good enough to solve the problem.&lt;/p&gt;
+
+&lt;p&gt;The SQL standard contains a time-series extension. I looked through it
+a bit but wasn&amp;rsquo;t impressed. It&amp;rsquo;s also unimplemented. Vertica does offer some
+&lt;a href=&#34;https://my.vertica.com/docs/CE/6.0.1/HTML/index.htm#13389.htm&#34;&gt;time-series extensions in their VSQL language&lt;/a&gt; but it&amp;rsquo;s essentially &amp;ldquo;a table is a
+series&amp;rdquo; and I need to be able to express series as keys, not object names. I
+also need to deal with arbitrarily large numbers of series &amp;ndash; millions,
+currently.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;Native&amp;rdquo; time-series databases do exist, but I&amp;rsquo;m not happy with what&amp;rsquo;s out
+there. Older ones include RRD, Graphite&amp;rsquo;s store (whisper), and similar. These
+are very low-level and typically come with a lot of limitations. They don&amp;rsquo;t
+support things like joins, for example, where a time-series datasource might be
+enriched with data from a dictionary or other related data.&lt;/p&gt;
+
+&lt;p&gt;The size of time-series data we want to work with today is also a big problem
+(literally). Single-node databases have only a limited amount to offer us.
+Anything more than a toy application needs a distributed database. RRD files are
+not a good foundation for building this type of system.&lt;/p&gt;
+
+&lt;p&gt;More recently, people have tried to build time-series databases on top of
+distributed NoSQL databases. Popular choices include HBase and Cassandra.
+Examples include &lt;a href=&#34;http://opentsdb.net/&#34;&gt;OpenTSDB&lt;/a&gt;, &lt;a href=&#34;http://code.google.com/p/kairosdb/&#34;&gt;KairosDB&lt;/a&gt;, and &lt;a href=&#34;http://www.acunu.com/&#34;&gt;Acunu&lt;/a&gt;. &lt;a href=&#34;https://tempo-db.com/&#34;&gt;TempoDB&lt;/a&gt; is one commercial example.&lt;/p&gt;
+
+&lt;p&gt;This might be workable for some, but not for most people. Most people I&amp;rsquo;ve
+talked to agree that HBase is not something they enjoy working with. The
+consensus seems to be that it&amp;rsquo;s great at ingesting large amounts of data, but
+very hard to get good read performance. And many people have told me you need
+someone with a lot of knowledge of its source code to run it well.&lt;/p&gt;
+
+&lt;p&gt;Cassandra seems to be much easier to run, but is very low-level (e.g. it does
+not have an expressive query language; you end up writing a query planner and
+executor into your application). I am certain that for my needs, Cassandra would
+be highly inefficient due to the need to suck all the data out of the database
+instead of pushing queries into it where they can run close to the data.&lt;/p&gt;
+
+&lt;p&gt;I have no production experience with either of these.&lt;/p&gt;
+
+&lt;p&gt;Another option is to look at NoSQL databases that are extensible enough to be
+used as the foundation for a time-series database. Ones that seem interesting to
+me are FoundationDB, Aerospike, and Hyperdex. I know Aerospike offers a limited
+form of distributed querying through a map-reduce paradigm, using a Lua
+interpreter that&amp;rsquo;s embedded in the database. From what I understand, one would
+ship a Lua script to the database as sort of a distributed stored procedure
+call. This might be worth further inspection if that is a route you want to go.
+FoundationDB offers &amp;ldquo;layers,&amp;rdquo; but I am not sure that is as good a paradigm for
+really pushing the computation to the data. I don&amp;rsquo;t know enough about Hyperdex
+yet. What seems useful to me about the databases mentioned in this paragraph is
+that they offer things like true transactions and ordered key-value lookups,
+which are requirements in my opinion; building a more sophisticated system on
+top of low-level key-value operations really is a rat-hole if there isn&amp;rsquo;t
+ordering and transactional consistency.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;Time-Series Databases Under The Radar&lt;/h3&gt;
+
+&lt;p&gt;Several databases are time-series but seem to fly &amp;ldquo;under the radar&amp;rdquo; in that they
+don&amp;rsquo;t market their time-series capabilities well.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://druid.io/&#34;&gt;Druid&lt;/a&gt; is one; it is time-series by nature. It doesn&amp;rsquo;t have an expressive query
+language &lt;em&gt;per se&lt;/em&gt;, but it&amp;rsquo;s not too hard to create the JSON that expresses its
+queries. This is relatively friendly for machines to work with, too.&lt;/p&gt;
+
+&lt;p&gt;Two others that I don&amp;rsquo;t know much about are the &lt;a href=&#34;http://skydb.io/&#34;&gt;Sky behavioral database&lt;/a&gt; and
+&lt;a href=&#34;http://scidb.org/&#34;&gt;SciDB&lt;/a&gt;. The latter has a strange &amp;ldquo;feel&amp;rdquo; to me, sort of like the R language &amp;ndash; it
+feels like it was built by people who don&amp;rsquo;t know how a database should feel,
+just as R was apparently designed by people who aren&amp;rsquo;t programmers.&lt;/p&gt;
+
+&lt;p&gt;It is also possible that &lt;a href=&#34;http://blinkdb.org/&#34;&gt;BlinkDB&lt;/a&gt; understands a time dimension, but I do
+not know yet.&lt;/p&gt;
+
+&lt;p&gt;Commercial databases that have some notions of time-series include (from what I
+know) SAP HANA and New Relic&amp;rsquo;s Rubicon. I don&amp;rsquo;t know much about details.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;Native Time-Series Databases&lt;/h3&gt;
+
+&lt;p&gt;I started a secret mailing list last year after talking with dozens of people
+who had a lot of expertise in the above areas. For example, I talked with people
+who&amp;rsquo;d written custom in-house time-series databases that operate at very large
+scale. I thought that maybe I could agitate for someone to start up a database
+company with a chance at solving some of the problems with existing ones.&lt;/p&gt;
+
+&lt;p&gt;The biggest problem they all told me about was not technical at all. Sure &amp;ndash;
+there are problems with the volume of data, flexibility of storage format,
+ability to scale horizontally across many machines and remain extremely highly
+available and performant. But those are not the biggest problem.&lt;/p&gt;
+
+&lt;p&gt;The biggest problem is the query language. Without a query language, a company
+must hire and keep on-staff a &lt;em&gt;developer&lt;/em&gt; who can help express problems to the
+database. Time after time people told me that they ended up with giant databases
+and needed to run lots of ad-hoc queries or generate reports from them. Once a
+time-series database becomes the system of record for important information, it
+needs to be queried for everything from invoicing to analytics to
+troubleshooting. In practice, larger companies end up with at least two fulltime
+developers who write applications to produce answers from the database. These
+are answers that the business/marketing/ops/whoever should be able to get
+themselves by just running queries. As time passes, this is both a huge cost and
+a bottleneck.&lt;/p&gt;
+
+&lt;p&gt;A native time-series database needs a native time-series query language.&lt;/p&gt;
+
+&lt;p&gt;What about SQL again? What if you use windowing functions and CTEs, for example?
+It gets you part of the way there, but it&amp;rsquo;s extremely awkward; the syntax is
+at right angles to the intent.&lt;/p&gt;
+
+&lt;p&gt;About the time I was trying to make trouble on this mailing list, and jostle
+someone into founding a startup, I bumped into one.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;Paul Dix and InfluxDB&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://influxdb.org/&#34;&gt;InfluxDB&lt;/a&gt; is perhaps the best and most credible approach to the problem I&amp;rsquo;ve seen
+thus far. It is natively time-series. It has a time-series query language that
+looks a lot like SQL. This is a really big deal; millions of people know SQL and
+can apply large parts of their existing skillset to a dialect of SQL that
+expresses time-series concepts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/03/influxdb.png&#34; alt=&#34;InfluxDB&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;The query language also has special features that will likely make it possible
+to work with large numbers of series fluidly. By that, I mean a query that wants
+to operate over a million series doesn&amp;rsquo;t have to mention them all by name.
+Pattern matching on series names is an important part of this.&lt;/p&gt;
+
+&lt;p&gt;InfluxDB is also a distributed database, so it isn&amp;rsquo;t a single-node idea that
+tries to bolt on clustering later.&lt;/p&gt;
+
+&lt;p&gt;It uses LevelDB as its underlying storage, which I have some doubts about.
+I&amp;rsquo;m not sure LevelDB is really suited for time-series data. Unique characteristics of
+time-series data include write-append-mostly, rare updates, sequential
+reads, and occasional bulk deletes. The datastore needs to be optimized for all
+of these, and LevelDB may not be up to the task. Fortunately, InfluxDB has a
+pluggable storage model.&lt;/p&gt;
+
+&lt;p&gt;InfluxDB is young, but it&amp;rsquo;s a promising start. If you&amp;rsquo;re interested in learning
+more, I am (through VividCortex) arranging for Paul Dix to visit Charlottesville
+on March 25th to talk about it. The talk is open to the public and free.
+Register &lt;a href=&#34;http://www.eventbrite.com/e/paul-dix-building-influxdb-an-open-source-time-series-database-company-tickets-10708279753&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/brandoncwarren/4236278556/&#34;&gt;Picture credits&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL falls with the decline of PHP</title>
+      <link>http://www.xaprb.com/blog/2014/02/26/mysql-fall-decline-php/</link>
+      <pubDate>Wed, 26 Feb 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/02/26/mysql-fall-decline-php/</guid>
+      <description>&lt;p&gt;Sometimes people&amp;rsquo;s perspective can be so interesting. I mean this with
+absolutely no irony. Josh Berkus wrote recently in a post about upcoming &lt;a href=&#34;http://www.databasesoup.com/2014/02/why-hstore2jsonb-is-most-important.html&#34;&gt;JSON
+improvements in PostgreSQL 9.4&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;MySQL largely rose on the success of PHP, and it fell as PHP became
+marginalized.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is an aside in the blog post, off-topic. But it&amp;rsquo;s
+interesting to discuss because it reveals the completely different things people
+see when they look at something. It&amp;rsquo;s like the proverbial story about the blind
+men describing an elephant. We have such a variety of perceptions.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2014/02/kaleidoscope.jpg&#34; alt=&#34;Elephant&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This post, by the way, is not yet another flame war about MySQL versus
+PostgreSQL. To the contrary, it is very important for MySQL users and
+community members to understand that there are other communities who do not
+share the same assumptions, values, and beliefs at all. In my experience, many
+arguments about things like MySQL versus PostgreSQL result from people (or
+groups of people) holding such differences but being unaware of them, and
+therefore misinterpreting words and actions from a group who doesn&amp;rsquo;t share the
+same worldview, believing them to be dishonest, irrational, or hostile.&lt;/p&gt;
+
+&lt;p&gt;Looking at Josh&amp;rsquo;s statements again, we can see two assertions that are just
+calmly stated as though everyone knows these things, they&amp;rsquo;re true, it&amp;rsquo;s stating
+the obvious:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MySQL rose on the success of PHP.&lt;/li&gt;
+&lt;li&gt;MySQL is falling / has fallen from that success.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been Josh Berkus&amp;rsquo;s roommate. I consider him a friend and I am not
+antagonizing him. But who among the readers on Planet MySQL would agree with
+those statements? In the MySQL world, we would hold these completely different
+&amp;ldquo;truths&amp;rdquo; to be self-evident instead:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MySQL rose on the success of Web 2.0, backlash against Oracle, and the
+cheapness of commodity x86 hardware. It was a classic disruptive innovation.
+It won because there wasn&amp;rsquo;t another relatively simple, cheap database server
+with built-in replication.&lt;/li&gt;
+&lt;li&gt;MySQL has not fallen; in fact its adoption has moved into enterprise and
+accelerated.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(Heads are nodding, I&amp;rsquo;m sure.) Which worldview is right?&lt;/p&gt;
+
+&lt;p&gt;Probably both are. From the MySQL point of view, many people see things as I
+described. But if you&amp;rsquo;re in the PostgreSQL world, you&amp;rsquo;ve seen an
+explosion in popularity. Many of the new users tell you they&amp;rsquo;ve come from Oracle
+or other proprietary databases, so regardless of what those MySQL folks believe,
+obviously it is PostgreSQL that&amp;rsquo;s winning in the enterprise. Besides, clearly
+MySQL must be on its way out, because you hear stories every week from another
+company who&amp;rsquo;s switched from MySQL to PostgreSQL for a variety of reasons:
+superior technology, getting away from Oracle, avoiding restrictive licensing.&lt;/p&gt;
+
+&lt;p&gt;But we don&amp;rsquo;t see things that way in the MySQL community, do we?&lt;/p&gt;
+
+&lt;p&gt;I won&amp;rsquo;t claim to be the single most enlightened person about these two
+communities, but I&amp;rsquo;ve spent a lot of time in both. Funnily, at times PostgreSQL
+folks were convinced I was crossing the aisle. My point is I get kaleidoscope
+vision sometimes from seeing both perspectives.&lt;/p&gt;
+
+&lt;p&gt;Someone smarter than me can probably search through &lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_cognitive_biases&#34;&gt;Wikipedia&amp;rsquo;s list of
+biases&lt;/a&gt; and maybe point out which of them is at play here.&lt;/p&gt;
+
+&lt;p&gt;What do I believe? I think we all have so much more in common than we&amp;rsquo;re aware
+of. I think we encounter substantially the same problems, solve them with
+the same solutions, and experience both success and failure in similar ways. I
+think we can learn much more from each other than we&amp;rsquo;d guess. And I think many
+of our beliefs about each other are simultaneously right and wrong &amp;ndash; the truth
+is much more nuanced and depends a lot more on perspective than on facts.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/haniamir/1455076844/&#34;&gt;Photo credit&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bloom Filters Made Easy</title>
+      <link>http://www.xaprb.com/blog/2014/02/11/bloom-filters/</link>
+      <pubDate>Tue, 11 Feb 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/02/11/bloom-filters/</guid>
+      <description>&lt;p&gt;I mentioned Bloom Filters in my talk today at &lt;a href=&#34;http://strataconf.com/strata2014/public/schedule/speaker/142&#34;&gt;Strata&lt;/a&gt;. Afterwards, someone
+told me it was the first time he&amp;rsquo;d heard of Bloom Filters, so I thought I&amp;rsquo;d
+write a little explanation of what they are, what they do, and how they work.&lt;/p&gt;
+
+&lt;p&gt;But then I found that &lt;a href=&#34;http://www.jasondavies.com/bloomfilter/&#34;&gt;Jason Davies already wrote a great article&lt;/a&gt; about
+it. Play with his live demo. I was able to get a false positive through luck in
+a few keystrokes: add alice, bob, and carol to the filter, then test the filter
+for candiceaklda.&lt;/p&gt;
+
+&lt;p&gt;Why would you use a Bloom filter instead of, say&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Searching the data for the value? Searching the data directly is too slow,
+especially if there&amp;rsquo;s a lot of data.&lt;/li&gt;
+&lt;li&gt;An index? Indexes are more efficient than searching the whole dataset, but
+still too costly. Indexes are designed to minimize the number of times some
+data needs to be fetched into memory, but in high-performance applications,
+especially over huge datasets, that&amp;rsquo;s still bad. It typically represents
+random-access to disk, which is catastrophically slow and doesn&amp;rsquo;t scale.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL, SQL, NoSQL, Open Source And Beyond: a Google Tech Talk</title>
+      <link>http://www.xaprb.com/blog/2014/02/05/mysql-nosql-open-source-google-tech-talk/</link>
+      <pubDate>Wed, 05 Feb 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/02/05/mysql-nosql-open-source-google-tech-talk/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve been invited to give a Tech Talk at Google next Thursday, February 13th,
+from 11:00 to 12:30 Pacific time. Unfortunately the talk won&amp;rsquo;t be streamed live,
+nor is it open to the general public, but it will be recorded and hosted on
+&lt;a href=&#34;http://www.youtube.com/user/GoogleTechTalks&#34;&gt;YouTube&lt;/a&gt; afterwards. I&amp;rsquo;ve also been told that a small number of individuals might
+be allowed to attend from outside Google. If you would like me to try to get a
+guest pass for you, please tweet that to &lt;a href=&#34;https://twitter.com/xaprb&#34;&gt;@xaprb&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The topic is, roughly, databases. Officially,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;h3 id=&#34;toc_0&#34;&gt;MySQL, SQL, NoSQL, and Open Source in 2014 and Beyond&lt;/h3&gt;
+
+&lt;p&gt;Predictions are hard to get right, especially when they involve the future.
+Rather than predict the future, I&amp;rsquo;ll explain how I view the relational and
+NoSQL database worlds today, especially the MySQL product and community, but
+including open-source and proprietary data management technologies about which
+I know enough to get in trouble. I&amp;rsquo;ll explain how my self-image as a
+practitioner and contributor has changed, especially as I&amp;rsquo;ve moved from
+consulting (where I tell people what they should do) into being a company
+founder (where I sometimes wish someone would tell me what to do). As for the
+future, I&amp;rsquo;ll express my preferences for specific outcomes, and try to be
+careful what I wish for.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I am excited and a bit nervous. A Google Tech Talk! Wow! Thanks for inviting me,
+Google!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: Slides are embedded below.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://app.box.com/embed_widget/ko7s90gvgiix/s/0d578lmrl6xm487z4ska?view=list&amp;sort=name&amp;direction=ASC&amp;theme=blue&#34; width=&#34;640&#34; height=&#34;420&#34; frameborder=&#34;0&#34; allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen&gt;&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A simple rule for sane timestamps in MySQL</title>
+      <link>http://www.xaprb.com/blog/2014/01/30/timestamps-in-mysql/</link>
+      <pubDate>Thu, 30 Jan 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/01/30/timestamps-in-mysql/</guid>
+      <description>&lt;p&gt;Do you store date or time values in MySQL?&lt;/p&gt;
+
+&lt;p&gt;Would you like to know how to avoid many possible types of pain,
+most of which you cannot even begin to imagine until you
+experience them in really fun ways?&lt;/p&gt;
+
+&lt;p&gt;Then this blog post is for you. Here is a complete set of rules for how you can
+avoid aforementioned pain:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;All date and time columns shall be &lt;code&gt;INT UNSIGNED NOT NULL&lt;/code&gt;, and shall store
+a Unix timestamp in UTC.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Enjoy all the spare time you&amp;rsquo;ll have to do actually useful things as a result.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Speaking at Percona Live</title>
+      <link>http://www.xaprb.com/blog/2014/01/23/speaking-at-percona-live/</link>
+      <pubDate>Thu, 23 Jan 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2014/01/23/speaking-at-percona-live/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m excited to be speaking at the &lt;a href=&#34;https://www.percona.com/live/mysql-conference-2014/users/baron-schwartz-1&#34;&gt;Percona Live MySQL Conference&lt;/a&gt; again this
+year. I&amp;rsquo;ll present two sessions: &lt;a href=&#34;https://www.percona.com/live/mysql-conference-2014/sessions/developing-mysql-applications-go&#34;&gt;Developing MySQL Applications with Go&lt;/a&gt; and
+&lt;a href=&#34;https://www.percona.com/live/mysql-conference-2014/sessions/knowing-unknowable-query-metrics&#34;&gt;Knowing the Unknowable: Per-Query Metrics&lt;/a&gt;. The first is a walk-through of
+everything I&amp;rsquo;ve learned over the last 18 months writing large-scale MySQL-backed
+applications with Google&amp;rsquo;s Go language. The second is about using statistical
+techniques to find out things you can&amp;rsquo;t even measure, such as how much CPU a
+query really causes MySQL to use. There are great reasons that this is both
+desirable to know, and impossible to do directly in the server itself.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m also looking forward to the conference overall. Take a few minutes and
+browse the selection of talks. As usual, it&amp;rsquo;s a fantastic program; the speakers
+are really the top experts from the MySQL world. The conference committee and
+Percona have done a great job again this year! See you in Santa Clara.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
