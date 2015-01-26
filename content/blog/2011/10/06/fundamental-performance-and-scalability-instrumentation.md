@@ -12,6 +12,12 @@ This post is a followup to some promises I made at Postgres Open.
 
 Instrumentation can be a lot of work to add to a server, and it can add overhead to the server too. The bits of instrumentation I'll advocate in this post are few and trivial, but disproportionately powerful.
 
+> Note: [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
+
 If all server software shipped with these metrics as the basic starting point, it would change the world forever:
 
 1.  Time elapsed, in high resolution (preferably microseconds; milliseconds is okay; one-second is mostly useless). When I ask for this counter, it simply tells me either the time of day, or the server's uptime, or something like that. It can be used to determine the boundaries of an observation interval, defined by two measurements. It needs to be consistent with the other metrics that I'll explain next.

@@ -3,6 +3,7 @@ title: Secure, easy Cacti graphing without SNMP
 date: "2009-04-25"
 url: /blog/2009/04/25/secure-easy-cacti-graphing-without-snmp/
 categories:
+  - Monitoring
   - Databases
 ---
 [Cacti][1] is a great tool for collecting information about systems and graphing it. However, it likes to use SNMP, and SNMP is often not desirable. Instead, I often see the need for a method that is:
@@ -12,6 +13,12 @@ categories:
 *   As little installation or modification on the monitoring system as possible.
 
 Over the last several years, I've slowly created more and more software to create Cacti graphs via standard POSIX command-line utilities over SSH with key-pair authentication. (I've also created similar software for Nagios, but that's another matter.) The major problem with the work I've done is that it's totally un-publicized.
+
+> [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production and I consider it far superior to Cacti. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 The system works by passing command-line arguments to a local PHP script like any other Cacti script. This script then executes a remote SSH command, such as `ssh somehost uptime` and extracts statistics from the result.
 

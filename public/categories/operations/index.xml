@@ -498,6 +498,14 @@ done
       <guid>http://www.xaprb.com/blog/2011/01/22/version-1-1-8-of-better-cacti-templates-released/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve released version 1.1.8 of the &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/&#34;&gt;Better Cacti Templates&lt;/a&gt; project. This release includes a bunch of bug fixes and several important new graphs. There are &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/MySQLTemplates#MySQL_Query_Response_Time_%28Microseconds%29&#34;&gt;graphs&lt;/a&gt; for the new &lt;a href=&#34;http://www.percona.com/docs/wiki/percona-server:features:response_time_distribution&#34;&gt;response-time statistics exposed in Percona Server&lt;/a&gt;, and a new set of graphs for &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/MongoDBTemplates&#34;&gt;MongoDB&lt;/a&gt;.&lt;/p&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production and I consider it far superior to Cacti. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;There are &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/UpgradingTemplates&#34;&gt;upgrade instructions&lt;/a&gt; on the project wiki for this and all releases. There is also a comprehensive tutorial on &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/wiki/CreatingGraphs&#34;&gt;how to create your own graphs and templates&lt;/a&gt; with this project. Use the &lt;a href=&#34;http://code.google.com/p/mysql-cacti-templates/issues/list&#34;&gt;project issue tracker&lt;/a&gt; (&lt;strong&gt;not the comments on this post!&lt;/strong&gt;) to view and report issues, and use the &lt;a href=&#34;http://groups.google.com/group/better-cacti-templates&#34;&gt;project mailing list&lt;/a&gt; to discuss the templates and scripts.&lt;/p&gt;
 
 &lt;p&gt;The full changelog follows.&lt;/p&gt;

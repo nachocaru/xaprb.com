@@ -61,12 +61,22 @@
 		
 		<a href="/categories/Programming" class="btn btn-primary">Programming</a>
 		
+		<a href="/categories/Monitoring" class="btn btn-primary">Monitoring</a>
+		
   </span>
       
 
 <p>This article introduces six methods and 12 tools for monitoring system load, performance and related information on GNU/Linux and similar systems. I&rsquo;ve seen many articles that mention one or two of these tools, but none that discusses and compares all the ones I find useful.</p>
 
-<h3 id="toc_0">Gkrellm</h3>
+<h3 id="toc_0">VividCortex</h3>
+
+<p><a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+
+<h3 id="toc_1">Gkrellm</h3>
 
 <p>Gkrellm is the choice of the &ldquo;g33k&rdquo; types. It&rsquo;s a graphical program that monitors all sorts of statistics and displays them as numbers and charts. You can see examples of it in use on nearly every <a href="http://www.gentoo.org/main/en/shots.xml">GNU/Linux screenshot</a> website. It is very flexible and capable, and can monitor useful as well as ridiculous things via plugins. It can monitor the status of a remote system, since it&rsquo;s a client/server system.</p>
 
@@ -78,7 +88,7 @@
 <li>it&rsquo;s graphical, needs to run as a daemon, and isn&rsquo;t installed by default, so it&rsquo;s not optimal for monitoring a server</li>
 </ol>
 
-<h3 id="toc_1">&ldquo;Task Manager&rdquo; clones</h3>
+<h3 id="toc_2">&ldquo;Task Manager&rdquo; clones</h3>
 
 <p><code>gnome-system-monitor</code> is a graphical program installed as part of the base Gnome system. It is somewhat similar to the Task Manager in Microsoft Windows. It isn&rsquo;t very full-featured, with only three tabs (Processes, Resources, Devices). The Devices tab just shows devices, Resources shows the history of CPU, memory, swap and network usage, and the Processes tab shows the processes. The Processes tab is the only one that really lets the user &ldquo;do&rdquo; anything, such as killing or re-nicing processes, or showing their memory maps.</p>
 
@@ -86,7 +96,7 @@
 
 <p>I know there&rsquo;s a similar tool on KDE systems, but I don&rsquo;t have one handy to examine at the moment.</p>
 
-<h3 id="toc_2">vmstat and related tools</h3>
+<h3 id="toc_3">vmstat and related tools</h3>
 
 <p><code>vmstat</code> is part of the base installation on most GNU/Linux systems. By default, it displays information about virtual memory, CPU usage, I/O, processes, and swap, and can print information about disks and more. It runs in a console. I find the command <code>vmstat -n 5</code> very helpful for printing a running status display in a tabular format.</p>
 
@@ -96,7 +106,7 @@
 
 <p>All of these tools are very flexible and customizable. The user can choose what information to see and what format to see it in. These tools are not usually installed by default, except for <code>vmstat</code>.</p>
 
-<h3 id="toc_3">top</h3>
+<h3 id="toc_4">top</h3>
 
 <p><code>top</code> is the classic tool for monitoring any UNIX-like system. It runs in a terminal and refreshes at intervals, displaying a list of processes in a tabular format. Each column is something like virtual memory size, processor usage, and so forth. It is highly customizable and has some interactive features, such as re-nicing or killing processes. Since it&rsquo;s the most widely known of the tools in this article, I won&rsquo;t go into much detail, other than to say there&rsquo;s a lot to know about it &ndash; read the man page.</p>
 
@@ -106,7 +116,7 @@
 
 <p>On a somwhat-related note, <a href="http://jeremy.zawodny.com/mysql/mytop/">mytop</a> is a handy monitor for MySQL servers. Take a look at <a href="http://jeremy.zawodny.comhttp://www.xaprb.com/blog/">Jeremy Zawodny&rsquo;s website</a> while you&rsquo;re there. He is a smart cookie.</p>
 
-<h3 id="toc_4">tload</h3>
+<h3 id="toc_5">tload</h3>
 
 <p><code>tload</code> runs in a terminal and displays a text-only &ldquo;graph&rdquo; of current system load averages, garnered from <code>/proc/loadavg</code>. It is part of the base installation on most GNU/Linux systems. I find it extremely useful for watching a system&rsquo;s performance over SSH, often within a <a href="http://www.gnu.org/software/screen/">GNU Screen</a> session.</p>
 
@@ -121,13 +131,13 @@
 
 <p><code>Documentation/filesystems/proc.txt</code> says loadavg is &ldquo;Load average of last 1, 5 &#038; 15 minutes,&rdquo; but not how it&rsquo;s calculated. Poking around in <code>source/fs/proc/proc_misc.c</code> and <code>kernel/timer.c</code> reveals the origin of the numbers: the number of running and uninterruptible processes (see <a href="http://lxr.linux.no/source/kernel/timer.c#L832">http://lxr.linux.no/source/kernel/timer.c#L832</a>).</p>
 
-<h3 id="toc_5">watch</h3>
+<h3 id="toc_6">watch</h3>
 
 <p><code>watch</code> isn&rsquo;t really a load-monitoring tool, but it&rsquo;s beastly handy because it takes any command as input and monitors the result of running that command. For example, if I wanted to monitor when the &ldquo;foozle&rdquo; program is executing, I could run</p>
 
 <pre>watch --interval=5 "ps aux | grep foozle | grep -v xaprb"</pre>
 
-<h3 id="toc_6">Summary</h3>
+<h3 id="toc_7">Summary</h3>
 
 <p>I&rsquo;ve given an overview of lots of tools above. Each has its use. I&rsquo;m not a big fan of graphical tools, and they&rsquo;re not very practical for monitoring servers anyway. Therefore, I lean towards running <code>tload</code> over SSH to monitor systems, and use <code>vmstat</code>, <code>iostat</code> and friends to troubleshoot specific problems.</p>
 

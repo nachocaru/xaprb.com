@@ -3,10 +3,17 @@ title: MySQL Cacti templates 1.0.0 released
 date: "2008-06-01"
 url: /blog/2008/06/01/mysql-cacti-templates-100-released/
 categories:
+  - Monitoring
   - Databases
   - Operations
 ---
 I just uploaded the 1.0.0 release of my [MySQL templates for Cacti][1]. Now there's an actual download under the Downloads tab. I solved a number of issues in this release. The changelog:
+
+> [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production and I consider it far superior to Cacti. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 <pre>2008-06-01: version 1.0.0
 

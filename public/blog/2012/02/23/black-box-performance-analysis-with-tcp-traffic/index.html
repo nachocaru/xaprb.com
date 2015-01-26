@@ -68,6 +68,15 @@
   </span>
       <p>This is a cross-post from the <a href="http://www.mysqlperformanceblog.com/2012/02/23/black-box-mysql-performance-analysis-with-tcp-traffic/">MySQL Performance Blog</a>. I thought it would be interesting to users of PostgreSQL, Redis, Memcached, and $system-of-interest as well.</p>
 
+<blockquote>
+<p><a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production. It does TCP network
+traffic analysis. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
+
 <p>For about the past year I&rsquo;ve been formulating a series of tools and practices that can provide deep insight into system performance simply by looking at TCP packet headers, and when they arrive and depart from a system. This works for MySQL as well as a lot of other types of systems, because it doesn&rsquo;t require any of the contents of the packet. Thus, it works without knowledge of what the server and client are conversing about. Packet headers contain only information that&rsquo;s usually regarded as non-sensitive (IP address, port, TCP flags, etc), so it&rsquo;s also very easy to get access to this data even in highly secure environments.</p>
 
 <p>I&rsquo;ve finally written up a paper that shows some of my techniques for detecting problems in a system, which can be an easy way to answer questions such as &ldquo;is there something we should look into more deeply?&rdquo; without launching a full-blown analysis project first. It&rsquo;s available from the white paper section of our website: <a href="http://www.percona.com/about-us/mysql-white-paper/mysql-performance-analysis-with-percona-toolkit-and-tcp-ip-network-traffic/">MySQL Performance Analysis with Percona Toolkit and TCP/IP Network Traffic</a></p>

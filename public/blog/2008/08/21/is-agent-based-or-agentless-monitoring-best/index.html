@@ -59,12 +59,22 @@
   <h1>Is agent-based or agentless monitoring best?</h1>
   <span class="post-date">Thu, Aug 21, 2008 in
 		
+		<a href="/categories/Monitoring" class="btn btn-primary">Monitoring</a>
+		
 		<a href="/categories/Operations" class="btn btn-primary">Operations</a>
 		
   </span>
       
 
 <p>Rob Young has posted a few blog entries lately on the MySQL Enterprise monitoring software. His latest post claims that agent-based monitoring is equivalent to extensibility (<a href="http://theopenproductmanager.blogspot.com/2008/08/mysql-enterprise-monitor-agent.html">MySQL Enterprise Monitor: Agent = Extensibility</a>).</p>
+
+<blockquote>
+<p>Note: <a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
 
 <p>I think this is conflating two completely distinct properties of a monitoring solution. <a href="http://www.cacti.net/">Cacti</a> is extremely extensible, with a plugin-based architecture and templates and all kinds of other goodies; yet it is not agent-based (actually it lets you choose &ndash; now that&rsquo;s extensibility). <a href="http://code.google.com/p/innotop/">innotop</a> is not agent-based, and it&rsquo;s extremely extensible too. Basically everything inside innotop is a lookup table of anonymous subroutines and data structures that you can tweak pretty much infinitely with plugins and configuration files that get merged into the running code dynamically. Extensibility is completely orthogonal to whether the architecture is agent-based. What about WordPress? It&rsquo;s ridiculously extensible and it has nothing to do with agents.</p>
 

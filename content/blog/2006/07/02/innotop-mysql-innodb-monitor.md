@@ -5,9 +5,16 @@ url: /blog/2006/07/02/innotop-mysql-innodb-monitor/
 categories:
   - Databases
   - Open Source
+  - Monitoring
 ---
 
 MySQL and InnoDB expose lots of information about their internals, but it's hard to gather it all into one place and make sense of it.  I've written a tool to do that, and you are free to download and use it.  This article introduces innotop, a powerful text-mode MySQL and InnoDB monitoring tool.  It has lots of features, is  fast and configurable, and it's easy to use.
+
+> Note: [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 Note: I'm now making it a priority to make innotop very stable and robust.  If innotop crashes, please help me fix it.  Please read this article about how to submit a bug report for innotop.  Thanks so much for helping me build a comprehensive test suite!
 

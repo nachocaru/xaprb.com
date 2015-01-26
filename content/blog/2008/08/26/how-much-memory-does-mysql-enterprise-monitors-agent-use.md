@@ -3,10 +3,18 @@ title: "How much memory does MySQL Enterprise Monitor's agent use?"
 date: "2008-08-26"
 url: /blog/2008/08/26/how-much-memory-does-mysql-enterprise-monitors-agent-use/
 categories:
+  - Monitoring
   - Databases
   - Open Source
 ---
 After last week's post on [agents versus agentless monitoring systems][1], I got a lot of email. One, from a customer whose name I am not permitted to mention, sent me the following action shot (posted with permission):
+
+> Note: [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
+
 
 ![MySQL Enterprise Monitor Memory Usage][2]
 

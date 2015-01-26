@@ -3,9 +3,16 @@ title: Is agent-based or agentless monitoring best?
 date: "2008-08-21"
 url: /blog/2008/08/21/is-agent-based-or-agentless-monitoring-best/
 categories:
+  - Monitoring
   - Operations
 ---
 Rob Young has posted a few blog entries lately on the MySQL Enterprise monitoring software. His latest post claims that agent-based monitoring is equivalent to extensibility ([MySQL Enterprise Monitor: Agent = Extensibility][1]).
+
+> Note: [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 I think this is conflating two completely distinct properties of a monitoring solution. [Cacti][2] is extremely extensible, with a plugin-based architecture and templates and all kinds of other goodies; yet it is not agent-based (actually it lets you choose -- now that's extensibility). [innotop][3] is not agent-based, and it's extremely extensible too. Basically everything inside innotop is a lookup table of anonymous subroutines and data structures that you can tweak pretty much infinitely with plugins and configuration files that get merged into the running code dynamically. Extensibility is completely orthogonal to whether the architecture is agent-based. What about WordPress? It's ridiculously extensible and it has nothing to do with agents.
 

@@ -21,3 +21,10 @@ I enjoyed this book a lot and recommend it to everyone who uses PostgreSQL or My
 The rest of the book is much more focused on PostgreSQL. There are chapters on memory use, server configuration, maintenance (with a good survey of how PostgreSQL handles things like MVCC), benchmarking, indexing, query optimization, statistics, monitoring and trending, pooling, caching, replication, partitioning, proxies, and finally an extensive laundry list of common problems and how to solve them.
 
 It was a pleasure to read -- the quality and clarity of the writing is very good. Greg is an excellent writer and obviously put a lot of work into this book.
+
+> Note: [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
+

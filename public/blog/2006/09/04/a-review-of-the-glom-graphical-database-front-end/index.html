@@ -66,6 +66,14 @@
 
 <p><a href="http://www.glom.org/">Glom</a> is an interesting graphical database front-end I&rsquo;ve been meaning to try out for some time. Someone asked about graphical database front-ends on the #mysql IRC channel recently, and that prompted me to install Glom and learn how to use it. My overall impressions? It lands squarely in the middle of its target audience&rsquo;s needs, but still has a quirk here and there. With a bit of polish it will be a fine product, and it&rsquo;s already a winner over Microsoft Access and Filemaker, two similar programs with which you might be familiar. In this article I&rsquo;ll walk through installing and configuring Glom, a simple database design, a quick peek under the hood, an archaeologist&rsquo;s experiences using it, and give my opinions about Glom in detail.</p>
 
+<blockquote>
+<p>Note: <a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
+
 <h3 id="toc_0">Introduction to Glom</h3>
 
 <p>Glom is a <a href="http://www.gtk.org/">GTK+</a> front-end to <a href="http://www.postgresql.org/">PostgreSQL</a>, advanced open-source relational database software that is used widely for mission-critical business applications. Having a powerful relational back-end means it is built on serious technology, with all the advantages that gives. The choice of front-end technology gives it a very nice cross-platform graphical interface that runs natively on the <a href="http://www.gnome.org/">Gnome</a> desktop, and can run on Microsoft Windows and other platforms (though I don&rsquo;t think Glom itself has been ported to anything besides GNU/Linux).</p>

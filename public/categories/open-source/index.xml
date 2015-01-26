@@ -278,6 +278,15 @@ $ ./innotop
       <guid>http://www.xaprb.com/blog/2012/02/23/black-box-performance-analysis-with-tcp-traffic/</guid>
       <description>&lt;p&gt;This is a cross-post from the &lt;a href=&#34;http://www.mysqlperformanceblog.com/2012/02/23/black-box-mysql-performance-analysis-with-tcp-traffic/&#34;&gt;MySQL Performance Blog&lt;/a&gt;. I thought it would be interesting to users of PostgreSQL, Redis, Memcached, and $system-of-interest as well.&lt;/p&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production. It does TCP network
+traffic analysis. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;For about the past year I&amp;rsquo;ve been formulating a series of tools and practices that can provide deep insight into system performance simply by looking at TCP packet headers, and when they arrive and depart from a system. This works for MySQL as well as a lot of other types of systems, because it doesn&amp;rsquo;t require any of the contents of the packet. Thus, it works without knowledge of what the server and client are conversing about. Packet headers contain only information that&amp;rsquo;s usually regarded as non-sensitive (IP address, port, TCP flags, etc), so it&amp;rsquo;s also very easy to get access to this data even in highly secure environments.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve finally written up a paper that shows some of my techniques for detecting problems in a system, which can be an easy way to answer questions such as &amp;ldquo;is there something we should look into more deeply?&amp;rdquo; without launching a full-blown analysis project first. It&amp;rsquo;s available from the white paper section of our website: &lt;a href=&#34;http://www.percona.com/about-us/mysql-white-paper/mysql-performance-analysis-with-percona-toolkit-and-tcp-ip-network-traffic/&#34;&gt;MySQL Performance Analysis with Percona Toolkit and TCP/IP Network Traffic&lt;/a&gt;&lt;/p&gt;

@@ -141,21 +141,18 @@ Most systems I model aren&amp;rsquo;t like that. I don&amp;rsquo;t do my modelin
       <guid>http://www.xaprb.com/blog/2012/02/23/black-box-performance-analysis-with-tcp-traffic/</guid>
       <description>&lt;p&gt;This is a cross-post from the &lt;a href=&#34;http://www.mysqlperformanceblog.com/2012/02/23/black-box-mysql-performance-analysis-with-tcp-traffic/&#34;&gt;MySQL Performance Blog&lt;/a&gt;. I thought it would be interesting to users of PostgreSQL, Redis, Memcached, and $system-of-interest as well.&lt;/p&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production. It does TCP network
+traffic analysis. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;For about the past year I&amp;rsquo;ve been formulating a series of tools and practices that can provide deep insight into system performance simply by looking at TCP packet headers, and when they arrive and depart from a system. This works for MySQL as well as a lot of other types of systems, because it doesn&amp;rsquo;t require any of the contents of the packet. Thus, it works without knowledge of what the server and client are conversing about. Packet headers contain only information that&amp;rsquo;s usually regarded as non-sensitive (IP address, port, TCP flags, etc), so it&amp;rsquo;s also very easy to get access to this data even in highly secure environments.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve finally written up a paper that shows some of my techniques for detecting problems in a system, which can be an easy way to answer questions such as &amp;ldquo;is there something we should look into more deeply?&amp;rdquo; without launching a full-blown analysis project first. It&amp;rsquo;s available from the white paper section of our website: &lt;a href=&#34;http://www.percona.com/about-us/mysql-white-paper/mysql-performance-analysis-with-percona-toolkit-and-tcp-ip-network-traffic/&#34;&gt;MySQL Performance Analysis with Percona Toolkit and TCP/IP Network Traffic&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Surge 2011 slides, recap</title>
-      <link>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</link>
-      <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</guid>
-      <description>&lt;p&gt;This year&amp;rsquo;s &lt;a href=&#34;http://omniti.com/surge/2011/&#34;&gt;Surge&lt;/a&gt; conference was a great sophomore event to follow up last year&amp;rsquo;s inaugural conference. A lot of very smart people were there, and the hallway track was great.&lt;/p&gt;
-
-&lt;p&gt;I presented on three things: a lightning talk about causes of MySQL downtime; I chaired a panel on Big Data and the Cloud; and I showed how to derive scalability and performance metrics from TCP traffic. I&amp;rsquo;ve sent my slides to the Surge organizers, and I understand that they will be posting them as well as integrating them into the video of my session. In the meanwhile you can download my slides from &lt;a href=&#34;http://www.percona.com/about-us/presentations/&#34;&gt;Percona&amp;rsquo;s presentations page&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -168,6 +165,14 @@ Most systems I model aren&amp;rsquo;t like that. I don&amp;rsquo;t do my modelin
       <description>&lt;p&gt;This post is a followup to some promises I made at Postgres Open.&lt;/p&gt;
 
 &lt;p&gt;Instrumentation can be a lot of work to add to a server, and it can add overhead to the server too. The bits of instrumentation I&amp;rsquo;ll advocate in this post are few and trivial, but disproportionately powerful.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: &lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;If all server software shipped with these metrics as the basic starting point, it would change the world forever:&lt;/p&gt;
 
@@ -224,6 +229,18 @@ function run_query() {
 &lt;p&gt;Dr. Ronstrom&amp;rsquo;s post discusses the mechanics of the phenomenon, and speculates (I&amp;rsquo;m not sure it&amp;rsquo;s conclusive) that it is from a combination of partitioning and better use of CPU caches. Now someone needs to do the math to figure out how to include this factor into the equation.&lt;/p&gt;
 
 &lt;p&gt;The good thing about the Universal Scalability Law is how simple and applicable it is for many systems. It&amp;rsquo;s nice that this economy-of-scale factor seems to be unusual and the simpler model remains easy to apply for a large variety of tasks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Surge 2011 slides, recap</title>
+      <link>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</link>
+      <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</guid>
+      <description>&lt;p&gt;This year&amp;rsquo;s &lt;a href=&#34;http://omniti.com/surge/2011/&#34;&gt;Surge&lt;/a&gt; conference was a great sophomore event to follow up last year&amp;rsquo;s inaugural conference. A lot of very smart people were there, and the hallway track was great.&lt;/p&gt;
+
+&lt;p&gt;I presented on three things: a lightning talk about causes of MySQL downtime; I chaired a panel on Big Data and the Cloud; and I showed how to derive scalability and performance metrics from TCP traffic. I&amp;rsquo;ve sent my slides to the Surge organizers, and I understand that they will be posting them as well as integrating them into the video of my session. In the meanwhile you can download my slides from &lt;a href=&#34;http://www.percona.com/about-us/presentations/&#34;&gt;Percona&amp;rsquo;s presentations page&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

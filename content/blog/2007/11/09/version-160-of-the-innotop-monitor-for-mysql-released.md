@@ -3,11 +3,18 @@ title: Version 1.6.0 of the innotop monitor for MySQL released
 date: "2007-11-09"
 url: /blog/2007/11/09/version-160-of-the-innotop-monitor-for-mysql-released/
 categories:
+  - Monitoring
   - Databases
   - Open Source
 ---
 
 The 1.5.2 release of innotop contained two bugs, one very minor. The other was a crash because of the new functionality that aggregates results across many connections. I fixed them and released version 1.6.0, which I consider stable and ready for everyone to use. (My version naming convention for innotop is that even-numbered minor versions are for production use; odd-numbered, such as 1.5.2, are the development branch. That's why I release them under the innotop-devel package).
+
+> Note: [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 What's ahead for innotop 1.8? Here's my current road map, some of which is already done:
 

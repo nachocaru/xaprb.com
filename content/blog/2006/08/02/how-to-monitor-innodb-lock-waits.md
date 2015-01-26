@@ -3,9 +3,17 @@ title: How to monitor InnoDB lock waits
 date: "2006-08-02"
 url: /blog/2006/08/02/how-to-monitor-innodb-lock-waits/
 categories:
+  - Monitoring
   - Databases
 ---
 This is one in a series of articles on how to use the [innotop][1] MySQL and InnoDB monitor. In this article I show how `innotop` can display locks that are causing a transaction to wait.
+
+> Note: [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
+
 
 First, the background. The output of `SHOW ENGINE INNODB STATUS`'s transaction section prints InnoDB transactions, including information about the locks they're waiting for, if any:
 

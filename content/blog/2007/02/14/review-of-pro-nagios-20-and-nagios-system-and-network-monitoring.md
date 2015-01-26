@@ -3,9 +3,16 @@ title: Review of Pro Nagios 2.0 and Nagios System and Network Monitoring
 date: "2007-02-14"
 url: /blog/2007/02/14/review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/
 categories:
+  - Monitoring
   - Reviews
 ---
 Last week I read two books on Nagios. I found one easy to use and the other difficult.
+
+> Note: [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 ### The books
 

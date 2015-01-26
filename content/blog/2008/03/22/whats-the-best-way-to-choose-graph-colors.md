@@ -3,9 +3,15 @@ title: "What's the best way to choose graph colors?"
 date: "2008-03-22"
 url: /blog/2008/03/22/whats-the-best-way-to-choose-graph-colors/
 categories:
-  - Web
+  - Monitoring
 ---
 <p>I have an issue I hope someone can help me with.  I am generating <a href="http://oss.oetiker.ch/rrdtool/">RRDtool</a> graphs (for <a href="http://www.cacti.org/">Cacti</a> monitoring templates for MySQL, which I'll release soon) that have up to 11 different metrics on them.  With that many lines or areas on a graph, it becomes very hard to pick colors that are easy to see and easy to distinguish from each other.  What's a good way to choose such colors?  Is there a way to do it automatically -- is there a formal method that will produce good results?</p>
+
+> Note: [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 <p>I know some color theory and I have read about how you can distinguish colors from each other (hue, value etc).  But I am unsure the best way to choose this many colors.  Trying by hand produces garish results or graphs that are just hard to read.</p>
 

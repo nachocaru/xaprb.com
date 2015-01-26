@@ -59,6 +59,8 @@
   <h1>A better way to build Cacti templates</h1>
   <span class="post-date">Tue, May 25, 2010 in
 		
+		<a href="/categories/Monitoring" class="btn btn-primary">Monitoring</a>
+		
 		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
 		
 		<a href="/categories/Open-Source" class="btn btn-primary">Open Source</a>
@@ -67,6 +69,14 @@
 		
   </span>
       <p>The traditional way to build Cacti templates is through the Cacti web interface. This is an <em>enormous</em> amount of work, and the result is generally not very consistent or good quality. The process is too error-prone. You can export the templates as XML, but they tend to have problems such as version incompatibilities with other Cacti installations, and it&rsquo;s hard to adapt them for user preferences such as different graph image sizes and polling intervals.</p>
+
+<blockquote>
+<p><a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production and I consider it far superior to Cacti. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
 
 <p>The way I build Cacti templates is exactly the opposite. I create a data structure in a file, which looks like many configuration file syntaxes you&rsquo;ve probably worked with. It represents the graphs, templates, scripts, and so on. From this, a tool generates the XML template file, which is a universal template definition, and is a breeze to import into Cacti. It is completely consistent and has zero cruft in it. This process prevents errors, and the results are perfect every time. (There&rsquo;s a test suite, by the way.)</p>
 

@@ -3,10 +3,17 @@ title: Improved Cacti monitoring templates for MySQL
 date: "2008-04-27"
 url: /blog/2008/04/27/improved-cacti-monitoring-templates-for-mysql/
 categories:
+  - Monitoring
   - Databases
 ---
 
 As promised, I've created some improved software for monitoring MySQL via [Cacti][1]. I began using the [de facto MySQL Cacti templates][2] a while ago, but found some things I needed to improve about them. As time passed, I rewrote everything from scratch. The resulting templates are much improved.
+
+> [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production and I consider it far superior to Cacti. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 You can grab the templates by browsing the source repository on the project's homepage.
 

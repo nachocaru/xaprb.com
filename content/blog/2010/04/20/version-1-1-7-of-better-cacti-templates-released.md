@@ -3,11 +3,18 @@ title: Version 1.1.7 of Better Cacti Templates released
 date: "2010-04-20"
 url: /blog/2010/04/20/version-1-1-7-of-better-cacti-templates-released/
 categories:
+  - Monitoring
   - Databases
   - Operations
   - Programming
 ---
 I've released version 1.1.7 of the [Better Cacti Templates][1] project. This release includes a bunch of bug fixes, some new graphs for MySQL, and two new sets of graphs, for Redis graphing and for JMX graphing.
+
+> [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production and I consider it far superior to Cacti. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 There are [upgrade instructions][2] on the project wiki for this and all releases. There is also a comprehensive tutorial on [how to create your own graphs and templates][3] with this project. Use the [project issue tracker][4] to view and report issues, and use the [project mailing list][5] to discuss the templates and scripts.
 

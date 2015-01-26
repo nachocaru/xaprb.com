@@ -3,9 +3,16 @@ title: A tip when upgrading mysql-cacti-templates
 date: "2009-10-15"
 url: /blog/2009/10/15/a-tip-when-upgrading-mysql-cacti-templates/
 categories:
+  - Monitoring
   - Databases
 ---
 A client recently asked me to fix some Cacti graphs that had broken after upgrading [the Cacti templates I wrote for MySQL][1]. The symptoms were weird; I'm not sure I understand fully what happened, but some of the graphs were OK and some had only part of the data they were supposed to. Some graphs would have one data element as usual, and others would be nan (not a number).
+
+> [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production and I consider it far superior to Cacti. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 After turning on the debug logs, I found that the script was returning the data correctly -- it was not a script problem. But after Cacti got the data from the script, it wasn't associating it correctly with the RRD archives. Here's a log message:
 

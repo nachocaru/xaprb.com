@@ -3,11 +3,18 @@ title: A Review of Cacti Network Monitoring by Kundu and Lavlu
 date: "2010-01-09"
 url: /blog/2010/01/09/review-cacti-network-monitoring-kundu-lavlu/
 categories:
+  - Monitoring
   - Operations
   - Reviews
 ---
 
 <a href="http://www.amazon.com/Cacti-Network-Monitoring-Ibrahim-Lavlu/dp/1847195962?tag=xaprb-20"><img src="http://www.xaprb.com/media/2010/01/cacti-network-monitoring.jpg" alt="Cacti Network Monitoring" title="Cacti Network Monitoring" width="240" height="240" class="size-full wp-image-1531" /></a>
+
+> [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production and I consider it far superior to Cacti. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 [Cacti 0.8 Network Monitoring][1], Dinangkur Kundu and S. M. Ibrahim Lavlu, Packt, 2009. Page count: 110 pages.
 

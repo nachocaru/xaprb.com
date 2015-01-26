@@ -51,6 +51,15 @@
       <guid>http://www.xaprb.com/blog/2012/02/15/get-a-free-copy-of-high-performance-mysql-3rd-edition/</guid>
       <description>&lt;p&gt;Want a free copy of &lt;a href=&#34;http://www.amazon.com/High-Performance-MySQL-Optimization-Replication/dp/1449314287/?tag=xaprb-20&#34;&gt;High Performance MySQL, Third Edition&lt;/a&gt;? If you &lt;a href=&#34;http://perconalive-mysql-conference-expo-2012.eventbrite.com/&#34;&gt;register&lt;/a&gt; before the early-bird pricing expires for the &lt;a href=&#34;http://www.percona.com/live/mysql-conference-2012/&#34;&gt;MySQL Conference in April&lt;/a&gt;, and use the discount code PL-Book, you&amp;rsquo;ll get to take a free copy home from the conference!&lt;/p&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production. It does TCP network
+traffic analysis. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;And now, a status update: I&amp;rsquo;m currently proofing the QC2 (quality control #2) revision of the book; after this, the book goes to manufacturing. The PDF is now 820 pages, which is a lot of work to proofread. You can imagine how much more in-depth we&amp;rsquo;ve been able to go with so many more pages.&lt;/p&gt;
 
 &lt;p&gt;The &lt;a href=&#34;http://www.highperfmysql.com/sample-chapter/&#34;&gt;free sample&lt;/a&gt; online is Chapter 8, on optimizing MySQL configuration. Liz van Dijk just &lt;a href=&#34;https://twitter.com/#!/lizztheblizz/status/169805049403424768&#34;&gt;tweeted&lt;/a&gt; this about it:&lt;/p&gt;

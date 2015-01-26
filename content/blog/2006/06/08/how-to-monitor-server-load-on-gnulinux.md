@@ -4,8 +4,17 @@ date: "2006-06-08"
 url: /blog/2006/06/08/how-to-monitor-server-load-on-gnulinux/
 categories:
   - Programming
+  - Monitoring
 ---
 This article introduces six methods and 12 tools for monitoring system load, performance and related information on GNU/Linux and similar systems. I've seen many articles that mention one or two of these tools, but none that discusses and compares all the ones I find useful.
+
+### VividCortex
+
+[VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+your servers are doing in production. VividCortex offers [MySQL performance
+monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+performance management](https://vividcortex.com/monitoring/postgres/) among many
+other features.
 
 ### Gkrellm
 

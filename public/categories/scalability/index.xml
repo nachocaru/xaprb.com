@@ -120,6 +120,15 @@ Most systems I model aren&amp;rsquo;t like that. I don&amp;rsquo;t do my modelin
       <guid>http://www.xaprb.com/blog/2012/03/07/scalability-performance-capacity-planning-and-usl-at-hotsos-symposium/</guid>
       <description>&lt;p&gt;I presented at this year&amp;rsquo;s [Hotsos Symposium][1]. I am searching for a claim to specialness, and I think it may be that I am the first Hotsos presenter who&amp;rsquo;s specifically focused on MySQL. True? I don&amp;rsquo;t know, but I&amp;rsquo;ll run with it for now.&lt;/p&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production. It does TCP network
+traffic analysis. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;My topic was on extracting black-box performance metrics from TCP packet headers and timestamps and finding hidden performance problems in the system, without any knowledge of what the client and server are talking to each other about. I then extended the same data to performance and scalability modeling, which you can use for purposes such as forecasting, capacity planning, and bottleneck analysis.&lt;/p&gt;
 
 &lt;p&gt;This technique works on MySQL because its TCP protocol is half-duplex, and it&amp;rsquo;ll work for any system with a half-duplex protocol. Does it work on Oracle Database? I am not sure, and no one else I&amp;rsquo;ve spoken to yet has been certain either. I can probably find out with a little research into the Oracle Database protocol.&lt;/p&gt;
@@ -141,6 +150,14 @@ Most systems I model aren&amp;rsquo;t like that. I don&amp;rsquo;t do my modelin
       <description>&lt;p&gt;This post is a followup to some promises I made at Postgres Open.&lt;/p&gt;
 
 &lt;p&gt;Instrumentation can be a lot of work to add to a server, and it can add overhead to the server too. The bits of instrumentation I&amp;rsquo;ll advocate in this post are few and trivial, but disproportionately powerful.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: &lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;If all server software shipped with these metrics as the basic starting point, it would change the world forever:&lt;/p&gt;
 

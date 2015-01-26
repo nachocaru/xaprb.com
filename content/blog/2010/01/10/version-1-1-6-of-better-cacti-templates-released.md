@@ -3,11 +3,18 @@ title: Version 1.1.6 of Better Cacti Templates released
 date: "2010-01-10"
 url: /blog/2010/01/10/version-1-1-6-of-better-cacti-templates-released/
 categories:
+  - Monitoring
   - Databases
   - Operations
   - Programming
 ---
 I've released version 1.1.6 of the [Better Cacti Templates][1] project. This release includes a bunch of bug fixes (but not all of them!) and two new sets of graphs. One set is for disk I/O on GNU/Linux, and the other is a new set of templates for OpenVZ. I'm looking for feedback on both of those. This release also has a bunch of code-level features: much better test coverage (hooray!), and a refactored ss\_get\_by_ssh.php that makes it much easier to create new graphs and templates. The SSH-based templates also take advantage of the same caching as the MySQL templates, which makes them a lot more efficient.
+
+> [VividCortex](https://vividcortex.com/) is the startup I founded in 2012. It's the easiest way to monitor what
+> your servers are doing in production and I consider it far superior to Cacti. VividCortex offers [MySQL performance
+> monitoring](https://vividcortex.com/monitoring/mysql/) and [PostgreSQL
+> performance management](https://vividcortex.com/monitoring/postgres/) among many
+> other features.
 
 There are [upgrade instructions][2] on the project wiki for this and all releases. There is also a comprehensive tutorial on [how to create your own graphs and templates][3] with this project. Use the [project issue tracker][4] to view and report issues, and use the [project mailing list][5] to discuss the templates and scripts.
 

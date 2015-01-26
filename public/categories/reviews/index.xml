@@ -658,6 +658,14 @@ the business&amp;rsquo;s goal.  Simplified, it is basically identifying bottlene
 &lt;p&gt;The rest of the book is much more focused on PostgreSQL. There are chapters on memory use, server configuration, maintenance (with a good survey of how PostgreSQL handles things like MVCC), benchmarking, indexing, query optimization, statistics, monitoring and trending, pooling, caching, replication, partitioning, proxies, and finally an extensive laundry list of common problems and how to solve them.&lt;/p&gt;
 
 &lt;p&gt;It was a pleasure to read &amp;ndash; the quality and clarity of the writing is very good. Greg is an excellent writer and obviously put a lot of work into this book.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Note: &lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; is the startup I founded in 2012. It&amp;rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers &lt;a href=&#34;https://vividcortex.com/monitoring/mysql/&#34;&gt;MySQL performance
+monitoring&lt;/a&gt; and &lt;a href=&#34;https://vividcortex.com/monitoring/postgres/&#34;&gt;PostgreSQL
+performance management&lt;/a&gt; among many
+other features.&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     
