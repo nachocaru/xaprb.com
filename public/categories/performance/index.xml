@@ -217,6 +217,18 @@ function run_query() {
     </item>
     
     <item>
+      <title>Surge 2011 slides, recap</title>
+      <link>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</link>
+      <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</guid>
+      <description>&lt;p&gt;This year&amp;rsquo;s &lt;a href=&#34;http://omniti.com/surge/2011/&#34;&gt;Surge&lt;/a&gt; conference was a great sophomore event to follow up last year&amp;rsquo;s inaugural conference. A lot of very smart people were there, and the hallway track was great.&lt;/p&gt;
+
+&lt;p&gt;I presented on three things: a lightning talk about causes of MySQL downtime; I chaired a panel on Big Data and the Cloud; and I showed how to derive scalability and performance metrics from TCP traffic. I&amp;rsquo;ve sent my slides to the Surge organizers, and I understand that they will be posting them as well as integrating them into the video of my session. In the meanwhile you can download my slides from &lt;a href=&#34;http://www.percona.com/about-us/presentations/&#34;&gt;Percona&amp;rsquo;s presentations page&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>When systems scale better than linearly</title>
       <link>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</link>
       <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
@@ -229,18 +241,6 @@ function run_query() {
 &lt;p&gt;Dr. Ronstrom&amp;rsquo;s post discusses the mechanics of the phenomenon, and speculates (I&amp;rsquo;m not sure it&amp;rsquo;s conclusive) that it is from a combination of partitioning and better use of CPU caches. Now someone needs to do the math to figure out how to include this factor into the equation.&lt;/p&gt;
 
 &lt;p&gt;The good thing about the Universal Scalability Law is how simple and applicable it is for many systems. It&amp;rsquo;s nice that this economy-of-scale factor seems to be unusual and the simpler model remains easy to apply for a large variety of tasks.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Surge 2011 slides, recap</title>
-      <link>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</link>
-      <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</guid>
-      <description>&lt;p&gt;This year&amp;rsquo;s &lt;a href=&#34;http://omniti.com/surge/2011/&#34;&gt;Surge&lt;/a&gt; conference was a great sophomore event to follow up last year&amp;rsquo;s inaugural conference. A lot of very smart people were there, and the hallway track was great.&lt;/p&gt;
-
-&lt;p&gt;I presented on three things: a lightning talk about causes of MySQL downtime; I chaired a panel on Big Data and the Cloud; and I showed how to derive scalability and performance metrics from TCP traffic. I&amp;rsquo;ve sent my slides to the Surge organizers, and I understand that they will be posting them as well as integrating them into the video of my session. In the meanwhile you can download my slides from &lt;a href=&#34;http://www.percona.com/about-us/presentations/&#34;&gt;Percona&amp;rsquo;s presentations page&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

@@ -279,20 +279,6 @@ anything wrong, please!&lt;/p&gt;
     </item>
     
     <item>
-      <title>Speaking at Percona University Sept 12th</title>
-      <link>http://www.xaprb.com/blog/2013/08/18/speaking-at-percona-university-sept-12th/</link>
-      <pubDate>Sun, 18 Aug 2013 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2013/08/18/speaking-at-percona-university-sept-12th/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ll be joining Percona for a free day of MySQL education and insight at their upcoming &lt;a href=&#34;http://www.percona.com/news-and-events/percona-university/washington-dc&#34;&gt;Percona University Washington DC event on September 12th&lt;/a&gt;. My topic is accessing MySQL from Google&amp;rsquo;s Go programming language. I&amp;rsquo;ve learned a lot about this over the past year or so, and hopefully I can help you get a quick-start.&lt;/p&gt;
-
-&lt;p&gt;If you&amp;rsquo;re not familiar with Go, it&amp;rsquo;s the darling of the Hacker News crowd these days. Anything with &amp;ldquo;Go&amp;rdquo; in its title gets to the front page for at least a little while! Go is a great systems programming language. It&amp;rsquo;s safe to say I&amp;rsquo;ve fallen in love with it, and it&amp;rsquo;s now my favorite programming language of all those I&amp;rsquo;ve used over my entire career. I chose it because it&amp;rsquo;s ideally suited for VividCortex&amp;rsquo;s agent programs (zero dependencies, compiled, lightweight, high performance, robust, makes concurrency easy and safe), and we&amp;rsquo;re using it for our API servers and backend processing jobs for many of the same reasons.&lt;/p&gt;
-
-&lt;p&gt;There&amp;rsquo;s a lot of great content at these free Percona University events. If you&amp;rsquo;re not near Washington DC, you should sign up for Percona&amp;rsquo;s &lt;a href=&#34;http://www.percona.com/subscribe&#34;&gt;conferences and training newsletter&lt;/a&gt; so you find out about the next one near you.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Speaking at Strata NYC: Making Big Data Small</title>
       <link>http://www.xaprb.com/blog/2013/08/18/speaking-at-strata-nyc-making-big-data-small/</link>
       <pubDate>Sun, 18 Aug 2013 00:00:00 UTC</pubDate>
@@ -321,6 +307,20 @@ anything wrong, please!&lt;/p&gt;
 &lt;p&gt;That worldview or philosophy is a valuable thing to keep in your pocket when you&amp;rsquo;re working with large amounts of data, and that&amp;rsquo;s the topic of my Strata Conference / Hadoop World NYC 2013 talk.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/dwysiu/4985831624/&#34;&gt;(photo credit)&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Speaking at Percona University Sept 12th</title>
+      <link>http://www.xaprb.com/blog/2013/08/18/speaking-at-percona-university-sept-12th/</link>
+      <pubDate>Sun, 18 Aug 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2013/08/18/speaking-at-percona-university-sept-12th/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ll be joining Percona for a free day of MySQL education and insight at their upcoming &lt;a href=&#34;http://www.percona.com/news-and-events/percona-university/washington-dc&#34;&gt;Percona University Washington DC event on September 12th&lt;/a&gt;. My topic is accessing MySQL from Google&amp;rsquo;s Go programming language. I&amp;rsquo;ve learned a lot about this over the past year or so, and hopefully I can help you get a quick-start.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re not familiar with Go, it&amp;rsquo;s the darling of the Hacker News crowd these days. Anything with &amp;ldquo;Go&amp;rdquo; in its title gets to the front page for at least a little while! Go is a great systems programming language. It&amp;rsquo;s safe to say I&amp;rsquo;ve fallen in love with it, and it&amp;rsquo;s now my favorite programming language of all those I&amp;rsquo;ve used over my entire career. I chose it because it&amp;rsquo;s ideally suited for VividCortex&amp;rsquo;s agent programs (zero dependencies, compiled, lightweight, high performance, robust, makes concurrency easy and safe), and we&amp;rsquo;re using it for our API servers and backend processing jobs for many of the same reasons.&lt;/p&gt;
+
+&lt;p&gt;There&amp;rsquo;s a lot of great content at these free Percona University events. If you&amp;rsquo;re not near Washington DC, you should sign up for Percona&amp;rsquo;s &lt;a href=&#34;http://www.percona.com/subscribe&#34;&gt;conferences and training newsletter&lt;/a&gt; so you find out about the next one near you.&lt;/p&gt;
 </description>
     </item>
     
