@@ -7,6 +7,13 @@ categories:
 ---
 When people discuss query optimization on MySQL, or say a query doesn't perform well, they usually mention execution time. Execution time is important, but it's not the only metric to use (or even the best). There are many other ways to measure the work a query requires. This article explains how to really profile a query -- what to measure, how to do it as accurately as possible, and what it means.
 
+> Note: I wrote this article in 2006, when I didn't have a clear understanding
+> of even simple concepts such as *what performance really is*. Since then I
+> have learned a lot from wise people such as Cary Millsap. In 2012 I founded
+> [VividCortex, the best database performance optimization and database monitoring platform](https://vividcortex.com/)
+> to chase away the kind of ignorance I display in the article below. Enjoy this
+> trip down memory lane.
+
 This is the first article in a series. In upcoming articles I'll demonstrate some hands-on profiling with concrete examples, and give you a tool to automate the job.
 
 ### Why profile queries?

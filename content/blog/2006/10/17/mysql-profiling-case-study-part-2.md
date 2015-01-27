@@ -7,6 +7,13 @@ categories:
 ---
 This is the third in a series of articles on profiling queries in MySQL (the second of two demonstrations of profiling techniques, but the third article overall). In this article I'll present the same example as in the [second article][1], but use a different approach to show details I didn't include.
 
+> Note: I wrote this article in 2006, when I didn't have a clear understanding
+> of even simple concepts such as *what performance really is*. Since then I
+> have learned a lot from wise people such as Cary Millsap. In 2012 I founded
+> [VividCortex, the best database performance optimization and database monitoring platform](https://vividcortex.com/)
+> to chase away the kind of ignorance I display in the article below. Enjoy this
+> trip down memory lane.
+
 An astute reader's comment reinforced my vague unease at my second article. In hindsight, I see I got distracted trying to choose an interesting example that's not too hard to present in one article, yet has enough depth to usefully demonstrate the technique. It's harder than I thought it would be. In real life I've learned from dozens of cases, and cramming everything into one example is probably not possible. In any case, I'm going to approach the same query from a different angle in this article, so you get a more complete picture.
 
 ### Method and results

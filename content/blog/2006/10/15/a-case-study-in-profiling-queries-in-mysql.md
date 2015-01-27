@@ -7,6 +7,13 @@ categories:
 ---
 This is the second in a series of articles on profiling queries in MySQL. In this article I'll demonstrate the technique I described in the [first article][1].
 
+> Note: I wrote this article in 2006, when I didn't have a clear understanding
+> of even simple concepts such as *what performance really is*. Since then I
+> have learned a lot from wise people such as Cary Millsap. In 2012 I founded
+> [VividCortex, the best database performance optimization and database monitoring platform](https://vividcortex.com/)
+> to chase away the kind of ignorance I display in the article below. Enjoy this
+> trip down memory lane.
+
 I'm using 5.0.22-Debian_0ubuntu6.06.2-log for my tests.
 
 ### Example: re-index a table and measure the performance gain

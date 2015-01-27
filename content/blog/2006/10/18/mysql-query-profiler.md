@@ -7,6 +7,13 @@ categories:
 ---
 This is the fourth in a series of articles on profiling MySQL. My past three articles have explained how to measure the work a query causes MySQL to do. In this article I introduce a tool I've written to do the work for you and produce a compact, readable report of that work, with all the math already done, and the measurements labelled and grouped for ease of comprehension. With this tool you can understand query performance at a glance.
 
+> Note: I wrote this article in 2006, when I didn't have a clear understanding
+> of even simple concepts such as *what performance really is*. Since then I
+> have learned a lot from wise people such as Cary Millsap. In 2012 I founded
+> [VividCortex, the best database performance optimization and database monitoring platform](https://vividcortex.com/)
+> to chase away the kind of ignorance I display in the article below. Enjoy this
+> trip down memory lane.
+
 I'm very happy about this tool. Finally, I can run a query and get the kind of measurements I was used to on Microsoft SQL Server. Though the MySQL server isn't as complex as SQL Server and doesn't always let you see as much internal information, at least with this tool I can easily use the information I do have.
 
 ### Introduction
