@@ -64,7 +64,7 @@
   </span>
       
 
-<p>In an earlier article I discussed how to <a href="http://www.xaprb.com/blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/">find missing members in a sequence with SQL</a>. In this article I&rsquo;ll do the reverse: demonstrate how to find the start and end point of each contiguous range.</p>
+<p>In an earlier article I discussed how to <a href="/blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/">find missing members in a sequence with SQL</a>. In this article I&rsquo;ll do the reverse: demonstrate how to find the start and end point of each contiguous range.</p>
 
 <h3 id="toc_0">Motivation</h3>
 
@@ -130,7 +130,7 @@
 
 <p>The end of a range is almost the reverse: it has no &ldquo;next&rdquo; but might have a &ldquo;previous.&rdquo; Additionally, it should be the smallest such number that&rsquo;s greater than or equal to the start. The &ldquo;or equal to&rdquo; is again necessary to include ranges that are just one number.</p>
 
-<p>Each of these queries is fairly simple by itself, using <a href="http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion joins</a>. Here&rsquo;s one that will find the start of every range:</p>
+<p>Each of these queries is fairly simple by itself, using <a href="/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion joins</a>. Here&rsquo;s one that will find the start of every range:</p>
 
 <pre>select l.id
 from sequence as l

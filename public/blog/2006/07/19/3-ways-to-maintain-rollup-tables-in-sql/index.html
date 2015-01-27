@@ -120,7 +120,7 @@
 
 <h3 id="toc_4">Method three: zero and re-calculate</h3>
 
-<p>An alternative to the second method, which we use at my current employer, is to zero out the atomic table from the start date forward, and then <code>REPLACE</code> with new data and use <code>REPLACE</code> to roll it up to the aggregate tables. On other systems, you can use an equivalent method &ndash; <code>MERGE</code> in Oracle, <code>UPDATE</code>/<code>INSERT</code> in Microsoft Sql Server. See my article on <a href="http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/">flexible inserts and updates for more details</a>.</p>
+<p>An alternative to the second method, which we use at my current employer, is to zero out the atomic table from the start date forward, and then <code>REPLACE</code> with new data and use <code>REPLACE</code> to roll it up to the aggregate tables. On other systems, you can use an equivalent method &ndash; <code>MERGE</code> in Oracle, <code>UPDATE</code>/<code>INSERT</code> in Microsoft Sql Server. See my article on <a href="/blog/2006/02/21/flexible-insert-and-update-in-mysql/">flexible inserts and updates for more details</a>.</p>
 
 <p>This method has two main advantages. One, it&rsquo;s not that costly to <code>UPDATE</code> a row in place. It&rsquo;s much cheaper to flip some bits to zero than to delete an entire row. Two, the changes will automatically propagate to rollup tables &ndash; even those not zeroed out &ndash; as you run the rollup, taking care of orphan rows. They will still be in the table, but they&rsquo;ll just a bunch of zeroes if they truly are orphaned. If they&rsquo;re not truly orphaned, they&rsquo;ll have the right values &ndash; and all-zero rows won&rsquo;t contribute anything to any further dependent rollups, if your rollup system uses rollup tables as the source for other rollup tables.</p>
 
@@ -128,7 +128,7 @@
 
 <h3 id="toc_5">How to clean up all-zero rows</h3>
 
-<p>If your chosen method leaves all-zero rows lying around, you&rsquo;ll want to take care of that. Rows filled with zeroes just make the table larger. Fortunately, this isn&rsquo;t a terrible problem. It should be easy to write a <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">nibbler to purge the junk rows</a>, which ought to be very low-impact on the server.</p>
+<p>If your chosen method leaves all-zero rows lying around, you&rsquo;ll want to take care of that. Rows filled with zeroes just make the table larger. Fortunately, this isn&rsquo;t a terrible problem. It should be easy to write a <a href="/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">nibbler to purge the junk rows</a>, which ought to be very low-impact on the server.</p>
 
 <h3 id="toc_6">Summary</h3>
 

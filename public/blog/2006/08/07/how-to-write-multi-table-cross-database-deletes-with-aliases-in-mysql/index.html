@@ -62,9 +62,9 @@
 		<a href="/categories/Databases" class="btn btn-primary">Databases</a>
 		
   </span>
-      <p>In an earlier article I explored the finer points of <a href="http://www.xaprb.com/blog/2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/">multi-table, cross-database deletes in MySQL</a>, but I didn&rsquo;t get it quite right. This article explains the subtleties I&rsquo;ve discovered since then. This is more complex than the MySQL manual documents.</p>
+      <p>In an earlier article I explored the finer points of <a href="/blog/2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/">multi-table, cross-database deletes in MySQL</a>, but I didn&rsquo;t get it quite right. This article explains the subtleties I&rsquo;ve discovered since then. This is more complex than the MySQL manual documents.</p>
 
-<p>In the earlier article, I <a href="http://www.xaprb.com/blog/2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/">wrote</a></p>
+<p>In the earlier article, I <a href="/blog/2006/05/12/why-multi-table-cross-database-deletes-fail-in-mysql/">wrote</a></p>
 
 <blockquote>
 <p>The solution is not to alias the tables. It&rsquo;s less convenient, but it&rsquo;s the only thing to do sometimes.</p>
@@ -85,7 +85,7 @@ ERROR 1109 (42S02): Unknown table 'apples' in MULTI DELETE</pre>
 
 <pre>delete db1.apples a</pre>
 
-<p>&hellip; but see my <a href="http://www.xaprb.com/blog/2006/04/26/sql-coding-standards/">SQL coding standards</a> for why I always include the optional but should-be-mandatory <code>AS</code> keyword.</p>
+<p>&hellip; but see my <a href="/blog/2006/04/26/sql-coding-standards/">SQL coding standards</a> for why I always include the optional but should-be-mandatory <code>AS</code> keyword.</p>
 
 <p>With these requirements met, you can use aliases in the rest of the (possibly complex) query, which is much nicer than writing out fully qualified names everywhere.</p>
 

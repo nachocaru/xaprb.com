@@ -100,14 +100,14 @@
 
 <h3 id="toc_2">How to fix this</h3>
 
-<p>The solution is really easy, of course. Just name the inserts. But it goes beyond that; it helps to have a <a href="http://www.xaprb.com/blog/2006/04/26/sql-coding-standards/">coding standard</a> and a review process when code is released.</p>
+<p>The solution is really easy, of course. Just name the inserts. But it goes beyond that; it helps to have a <a href="/blog/2006/04/26/sql-coding-standards/">coding standard</a> and a review process when code is released.</p>
 
 <p>Sometimes I&rsquo;ve seen people get confused about the distinction between naming the target columns and naming the select columns. For example, sometimes people think this is equivalent to naming the target columns:</p>
 
 <pre>insert into apples
    select 5 as price, ...</pre>
 
-<p>The above syntax does <em>not</em> put 5 into the <code>price</code> column. The source columns can be named anything; it&rsquo;s just a name, and it doesn&rsquo;t influence where the data goes. In fact, giving anonymous columns in the source a name is completely superfluous. Even if you&rsquo;re in the habit of doing it as &ldquo;documentation&rdquo; of where the source should go, it&rsquo;s a bad idea, simply because it can become wrong when someone changes the query. It&rsquo;s like <a href="http://www.xaprb.com/blog/2005/12/10/tell-me-why-not-what/">a comment that repeats what the code already says</a>: it&rsquo;s redundant, and therefore a liability.</p>
+<p>The above syntax does <em>not</em> put 5 into the <code>price</code> column. The source columns can be named anything; it&rsquo;s just a name, and it doesn&rsquo;t influence where the data goes. In fact, giving anonymous columns in the source a name is completely superfluous. Even if you&rsquo;re in the habit of doing it as &ldquo;documentation&rdquo; of where the source should go, it&rsquo;s a bad idea, simply because it can become wrong when someone changes the query. It&rsquo;s like <a href="/blog/2005/12/10/tell-me-why-not-what/">a comment that repeats what the code already says</a>: it&rsquo;s redundant, and therefore a liability.</p>
 
 		                        <hr>
                         <h2>Comments</h2>

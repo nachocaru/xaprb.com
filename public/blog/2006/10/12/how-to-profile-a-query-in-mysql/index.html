@@ -66,6 +66,15 @@
 
 <p>When people discuss query optimization on MySQL, or say a query doesn&rsquo;t perform well, they usually mention execution time. Execution time is important, but it&rsquo;s not the only metric to use (or even the best). There are many other ways to measure the work a query requires. This article explains how to really profile a query &ndash; what to measure, how to do it as accurately as possible, and what it means.</p>
 
+<blockquote>
+<p>Note: I wrote this article in 2006, when I didn&rsquo;t have a clear understanding
+of even simple concepts such as <em>what performance really is</em>. Since then I
+have learned a lot from wise people such as Cary Millsap. In 2012 I founded
+<a href="https://vividcortex.com/">VividCortex, the best database performance optimization and database monitoring platform</a>
+to chase away the kind of ignorance I display in the article below. Enjoy this
+trip down memory lane.</p>
+</blockquote>
+
 <p>This is the first article in a series. In upcoming articles I&rsquo;ll demonstrate some hands-on profiling with concrete examples, and give you a tool to automate the job.</p>
 
 <h3 id="toc_0">Why profile queries?</h3>
@@ -74,7 +83,7 @@
 
 <p>Absolutely, unless you only run that query once in a while. Your queries will probably follow the <sup>90</sup>&frasl;<sub>10</sub> rule. 90% of your work will be caused by 10% of the queries. You need to optimize whatever causes most of the work, and in my experience, it&rsquo;s often sub-millisecond queries being run thousands or millions of times. Optimize queries that are expensive because they run all the time, <em>and</em> those that are expensive because they cause a lot of work. You can&rsquo;t just do one and really reduce the overall load on your server.</p>
 
-<p>Here&rsquo;s an example from my work: We currently have many <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">archiving and purging jobs</a> running nightly, pruning tables with thousands or millions of tiny queries. I recently profiled one job&rsquo;s query and found it was using indexes badly. I rewrote the query, and instead of taking dozens of seconds per thousand rows, it now takes one or two, plus it causes a lot less disk activity. Each individual query, according to the <code>mysql</code> command-line client, takes 0.00 seconds before and after optimization &ndash; so if I didn&rsquo;t profile that query, I wouldn&rsquo;t have an effective way to optimize it, except watching it run for a while (which, by the way, does not count as profiling).</p>
+<p>Here&rsquo;s an example from my work: We currently have many <a href="/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">archiving and purging jobs</a> running nightly, pruning tables with thousands or millions of tiny queries. I recently profiled one job&rsquo;s query and found it was using indexes badly. I rewrote the query, and instead of taking dozens of seconds per thousand rows, it now takes one or two, plus it causes a lot less disk activity. Each individual query, according to the <code>mysql</code> command-line client, takes 0.00 seconds before and after optimization &ndash; so if I didn&rsquo;t profile that query, I wouldn&rsquo;t have an effective way to optimize it, except watching it run for a while (which, by the way, does not count as profiling).</p>
 
 <p>You need to profile your queries so you know how they really perform.</p>
 

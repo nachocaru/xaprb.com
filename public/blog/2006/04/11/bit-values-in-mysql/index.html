@@ -126,7 +126,7 @@ mysql> select * from test;
 
 <p>Given the problems I&rsquo;ve mentioned, I recommend avoiding it entirely. It provides nothing that&rsquo;s not already possible with standard numeric types and adds a lot of confusion.</p>
 
-<p>The only reason I personally would consider using this data type in MySQL is to document the actual usage of the values in it, as described in an earlier article on <a href="http://www.xaprb.com/blog/2006/02/07/how-to-choose-sql-column-types/">choosing column types</a>. Unfortunately, I think it&rsquo;s counterintuitive enough that I wouldn&rsquo;t even choose to use it there, because I think a <code>BIT</code> column intuitively sounds like it ought to store a single bit.</p>
+<p>The only reason I personally would consider using this data type in MySQL is to document the actual usage of the values in it, as described in an earlier article on <a href="/blog/2006/02/07/how-to-choose-sql-column-types/">choosing column types</a>. Unfortunately, I think it&rsquo;s counterintuitive enough that I wouldn&rsquo;t even choose to use it there, because I think a <code>BIT</code> column intuitively sounds like it ought to store a single bit.</p>
 
 <h3 id="toc_5">Differences from Microsoft SQL Server</h3>
 
@@ -142,7 +142,7 @@ mysql> select * from test;
 
 <p>Bitmask columns are also not index-friendly, so querying against them isn&rsquo;t optimal. Of course, any column with only two values is useless to an index anyway, so this is no worse, performance-wise, than storing the yes/no values in columns by themselves. Since there&rsquo;s less data to examine, it can actually be more efficient.</p>
 
-<p>Finally, there can be some <a href="http://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/">subtleties about bitwise arithmetic</a>, such as issues relating to signed and unsigned numbers.</p>
+<p>Finally, there can be some <a href="/blog/2005/09/28/bitwise-arithmetic/">subtleties about bitwise arithmetic</a>, such as issues relating to signed and unsigned numbers.</p>
 
 <p>The bottom line is, I think bitmask columns should be used sparingly, and only when the nature of the data and computations really makes them the obvious choice.</p>
 

@@ -70,7 +70,7 @@
 
 <p>Everyone knows version control is indespensable. I put everything into version control &ndash; even my <a href="http://www.gnucash.org/">GnuCash</a> file is in version control. So is my poetry (you&rsquo;re in luck: this is a technical blog, so I won&rsquo;t post any of it). And definitely all my code, right?</p>
 
-<p>Well, no. Like many people, some little snippets of code escape my notice. I don&rsquo;t think of it as something that has to be in version control. This is really dangerous. The most recent time I noticed some code eluding my version control fanaticism was in the comments on <a href="http://www.xaprb.com/blog/2006/06/19/xaprb-scripts-relicensed/">my post on re-licensing my JavaScript snippets</a>. I realized that I&rsquo;d developed these scripts at odd times, over SSH connections to servers I didn&rsquo;t own, e-mailing myself the latest versions to save it&hellip; but never putting it in version control. I felt dumb.</p>
+<p>Well, no. Like many people, some little snippets of code escape my notice. I don&rsquo;t think of it as something that has to be in version control. This is really dangerous. The most recent time I noticed some code eluding my version control fanaticism was in the comments on <a href="/blog/2006/06/19/xaprb-scripts-relicensed/">my post on re-licensing my JavaScript snippets</a>. I realized that I&rsquo;d developed these scripts at odd times, over SSH connections to servers I didn&rsquo;t own, e-mailing myself the latest versions to save it&hellip; but never putting it in version control. I felt dumb.</p>
 
 <p>Feeling dumb is one thing, but suddenly discovering that you&rsquo;ve overlooked some critical code <em>and you can&rsquo;t recover it from backups</em> in the middle of the night is another. Software engineers I&rsquo;ve known, myself included, have a habit of thinking about certain work products as code, and others as less important and not deserving of version control. For example, maybe certain things go through a defined release process, and others don&rsquo;t, and you think of the release-able things as code that needs to be in version control.</p>
 
@@ -84,7 +84,7 @@
 
 <h3 id="toc_2">Database schema</h3>
 
-<p>Something went wrong during the release. It&rsquo;s midnight, and a stored procedure is trying to insert into a table, but there&rsquo;s a database error: it&rsquo;s trying to insert too many columns. One of your developers made the mistake of doing a <a href="http://www.xaprb.com/blog/2006/07/07/what-is-a-sql-blind-insert/">blind insert</a>. And you don&rsquo;t know what the database used to look like, because you don&rsquo;t have your database schema under version control.</p>
+<p>Something went wrong during the release. It&rsquo;s midnight, and a stored procedure is trying to insert into a table, but there&rsquo;s a database error: it&rsquo;s trying to insert too many columns. One of your developers made the mistake of doing a <a href="/blog/2006/07/07/what-is-a-sql-blind-insert/">blind insert</a>. And you don&rsquo;t know what the database used to look like, because you don&rsquo;t have your database schema under version control.</p>
 
 <p>It&rsquo;s really easy to fix this. Just create a nightly scheduled task that scripts out the entire database schema and commits any changes. I did this at my new employer and it has proven very helpful even when there are no problems; it gives everyone visibility into what is changing, and it even helps us find what refers to a given database entity, because the schema is all in searchable text files.</p>
 

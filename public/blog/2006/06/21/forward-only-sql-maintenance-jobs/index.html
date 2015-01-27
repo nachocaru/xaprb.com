@@ -64,7 +64,7 @@
   </span>
       
 
-<p>I&rsquo;ve recently written about techniques for <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">archiving, purging</a>, and <a href="http://www.xaprb.com/blog/2006/06/14/how-to-re-index-a-large-database-table/">re-indexing</a> huge database tables. These techniques exploit both data structure and usage patterns. In this article I&rsquo;ll develop that theme further, and explain how to write more efficient non-backtracking maintenance jobs when the update and insertion patterns permit.</p>
+<p>I&rsquo;ve recently written about techniques for <a href="/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">archiving, purging</a>, and <a href="/blog/2006/06/14/how-to-re-index-a-large-database-table/">re-indexing</a> huge database tables. These techniques exploit both data structure and usage patterns. In this article I&rsquo;ll develop that theme further, and explain how to write more efficient non-backtracking maintenance jobs when the update and insertion patterns permit.</p>
 
 <h3 id="toc_0">Motivation</h3>
 
@@ -87,7 +87,7 @@
 
 <h3 id="toc_1">The solution</h3>
 
-<p>My first thought was to write a <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">nibbler</a> to do the job one row at a time. This would avoid concurrency issues, but it would take many hours. I had some other thoughts too, such as gathering the eligible rows into a temporary table, then nibbling from that, but none of this seemed right.</p>
+<p>My first thought was to write a <a href="/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">nibbler</a> to do the job one row at a time. This would avoid concurrency issues, but it would take many hours. I had some other thoughts too, such as gathering the eligible rows into a temporary table, then nibbling from that, but none of this seemed right.</p>
 
 <p>For one thing, not all the matching rows needed to be updated. In fact, as I thought about it more, and asked the people who knew, I realized this table is just like our cost rollup tables: only rarely do we need to reach way back and update a lot of rows. We usually just need to update the new rows that have been inserted every day. Sometimes the second table in the join is updated and everything needs to be re-examined, but that&rsquo;s very rare.</p>
 
@@ -129,7 +129,7 @@ insert into last_processed_row(job, last_row)
 
 <p>That&rsquo;s mostly true, but what if there is no such row in the bookmark table? In that case, there&rsquo;d be zero rows in the subquery. Using an aggregate function like <code>MIN()</code> or <code>MAX()</code> will always return a value, &ldquo;propping open&rdquo; the subquery to make sure it doesn&rsquo;t &ldquo;collapse&rdquo; to zero rows. If there are zero rows, the result is <code>NULL</code>, so <code>COALESCE()</code> makes sure zero rows equates to a value of zero.</p>
 
-<p>Finally, the last query uses some non-standard MySQL features to insert a row into the bookmark table if it doesn&rsquo;t exist, and update to the most recent value if it does exist. I do <em>not</em> use <code>REPLACE</code> because it may decrease the value, and I want the value to be monotonically increasing &ndash; the point of this algorithm is to avoid backtracking. You can read more about these and other magical &ldquo;do many things at once&rdquo; queries in my article on <a href="http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/">flexible inserts and updates in MySQL</a>.</p>
+<p>Finally, the last query uses some non-standard MySQL features to insert a row into the bookmark table if it doesn&rsquo;t exist, and update to the most recent value if it does exist. I do <em>not</em> use <code>REPLACE</code> because it may decrease the value, and I want the value to be monotonically increasing &ndash; the point of this algorithm is to avoid backtracking. You can read more about these and other magical &ldquo;do many things at once&rdquo; queries in my article on <a href="/blog/2006/02/21/flexible-insert-and-update-in-mysql/">flexible inserts and updates in MySQL</a>.</p>
 
 <h3 id="toc_2">Results</h3>
 

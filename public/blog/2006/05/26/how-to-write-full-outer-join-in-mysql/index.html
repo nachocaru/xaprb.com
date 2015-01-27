@@ -355,7 +355,7 @@ select * from apples as a
 
 <h3 id="toc_2">Method 2: <code>UNION ALL</code> and an exclusion join</h3>
 
-<p>One way to make <code>UNION</code> include only the duplicates I want is to use an <a href="http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion join</a> to eliminate anything from the second result that is already included in the first, like this:</p>
+<p>One way to make <code>UNION</code> include only the duplicates I want is to use an <a href="/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion join</a> to eliminate anything from the second result that is already included in the first, like this:</p>
 
 <pre>select * from apples as a
    left outer join oranges as o on a.price = o.price
@@ -370,7 +370,7 @@ where a.price is null;</pre>
 
 <p>There&rsquo;s a case where <code>UNION</code> won&rsquo;t work: older versions of MySQL don&rsquo;t support it. All is not lost, though.</p>
 
-<p>I&rsquo;ve written several articles explaining how to start with a set of mutually exclusive numbers (which I informally call a &ldquo;<a href="http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/">mutex table</a>&rdquo;), then use the mutual exclusivity of the numbers to join things together in interesting ways. This lets me simulate subqueries and unions on earlier versions of MySQL, for example. This approach seems like it might work well here, too. For the following queries I&rsquo;ll assume my mutex table has the values 0 and 1. Here&rsquo;s a baseline mutex query for these two tables:</p>
+<p>I&rsquo;ve written several articles explaining how to start with a set of mutually exclusive numbers (which I informally call a &ldquo;<a href="/blog/2005/09/22/mutex-tables-in-sql/">mutex table</a>&rdquo;), then use the mutual exclusivity of the numbers to join things together in interesting ways. This lets me simulate subqueries and unions on earlier versions of MySQL, for example. This approach seems like it might work well here, too. For the following queries I&rsquo;ll assume my mutex table has the values 0 and 1. Here&rsquo;s a baseline mutex query for these two tables:</p>
 
 <pre>select * from mutex
     left outer join apples as a on i = 0

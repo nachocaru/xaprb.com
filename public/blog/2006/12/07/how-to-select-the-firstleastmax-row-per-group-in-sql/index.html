@@ -66,7 +66,7 @@
 
 <p>Here are some common SQL problems, all of which have related solutions: how do I find the most recent log entry for each program? How do I find the most popular item from each category? How do I find the top score for each player? In general, these types of &ldquo;select the extreme from each group&rdquo; queries can be solved with the same techniques. I&rsquo;ll explain how to do that in this article, including the harder problem of selecting the top N entries, not just the top 1.</p>
 
-<p>This topic is related to numbering rows, which I just wrote about (see my articles about <a href="http://www.xaprb.com/blog/2006/12/02/how-to-number-rows-in-mysql/">MySQL-specific</a> and <a href="http://www.xaprb.com/blog/2005/09/27/simulating-the-sql-row_number-function/">generic techniques</a> to assign a number to each row in a group). Therefore I&rsquo;ll use nearly the same table and data as I used in those articles, with the addition of a <code>price</code> column:</p>
+<p>This topic is related to numbering rows, which I just wrote about (see my articles about <a href="/blog/2006/12/02/how-to-number-rows-in-mysql/">MySQL-specific</a> and <a href="/blog/2005/09/27/simulating-the-sql-row_number-function/">generic techniques</a> to assign a number to each row in a group). Therefore I&rsquo;ll use nearly the same table and data as I used in those articles, with the addition of a <code>price</code> column:</p>
 
 <pre>+--------+------------+-------+
 | type   | variety    | price |
@@ -199,7 +199,7 @@ union all
 
 <h3 id="toc_3">Do it with user variables on MySQL</h3>
 
-<p>The <code>UNION</code> trick is an especially good idea when the results are a small fraction of the rows in the table and there is an index that can be used for sorting the rows. Another linear-time technique, which might be a good option in cases where you are selecting most of the rows from the table anyway, is user variables. This is MySQL-specific. Please refer to my previous post on <a href="http://www.xaprb.com/blog/2006/12/02/how-to-number-rows-in-mysql/">how to number rows in MySQL</a> for the gory details of why this works:</p>
+<p>The <code>UNION</code> trick is an especially good idea when the results are a small fraction of the rows in the table and there is an index that can be used for sorting the rows. Another linear-time technique, which might be a good option in cases where you are selecting most of the rows from the table anyway, is user variables. This is MySQL-specific. Please refer to my previous post on <a href="/blog/2006/12/02/how-to-number-rows-in-mysql/">how to number rows in MySQL</a> for the gory details of why this works:</p>
 
 <pre>set @num := 0, @type := '';
 
@@ -290,7 +290,7 @@ having row_number &lt;= 2;</pre>
 | pear   | bradford |  6.05 |          2 | pear   | 
 +--------+----------+-------+------------+--------+</pre>
 
-<p>Ah, now we&rsquo;re cooking! It did what I wanted, without a filesort or temporary table. Another way to do this, by the way, is to take <code>variety</code> out of the <code>GROUP BY</code> so it uses the index on its own. Because this selects a <a href="http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/">non-grouped column from a grouped query</a>, this only works if you are running with <a href="http://dev.mysql.com/doc/refman/5.0/en/server-sql-mode.html"><code>ONLY_FULL_GROUP_BY</code> mode turned off</a>, which I hope you are not doing without good reason.</p>
+<p>Ah, now we&rsquo;re cooking! It did what I wanted, without a filesort or temporary table. Another way to do this, by the way, is to take <code>variety</code> out of the <code>GROUP BY</code> so it uses the index on its own. Because this selects a <a href="/blog/2006/03/11/many-to-one-problems-in-sql/">non-grouped column from a grouped query</a>, this only works if you are running with <a href="http://dev.mysql.com/doc/refman/5.0/en/server-sql-mode.html"><code>ONLY_FULL_GROUP_BY</code> mode turned off</a>, which I hope you are not doing without good reason.</p>
 
 <h3 id="toc_5">Other methods</h3>
 

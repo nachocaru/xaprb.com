@@ -66,6 +66,15 @@
 
 <p>This is the fourth in a series of articles on profiling MySQL. My past three articles have explained how to measure the work a query causes MySQL to do. In this article I introduce a tool I&rsquo;ve written to do the work for you and produce a compact, readable report of that work, with all the math already done, and the measurements labelled and grouped for ease of comprehension. With this tool you can understand query performance at a glance.</p>
 
+<blockquote>
+<p>Note: I wrote this article in 2006, when I didn&rsquo;t have a clear understanding
+of even simple concepts such as <em>what performance really is</em>. Since then I
+have learned a lot from wise people such as Cary Millsap. In 2012 I founded
+<a href="https://vividcortex.com/">VividCortex, the best database performance optimization and database monitoring platform</a>
+to chase away the kind of ignorance I display in the article below. Enjoy this
+trip down memory lane.</p>
+</blockquote>
+
 <p>I&rsquo;m very happy about this tool. Finally, I can run a query and get the kind of measurements I was used to on Microsoft SQL Server. Though the MySQL server isn&rsquo;t as complex as SQL Server and doesn&rsquo;t always let you see as much internal information, at least with this tool I can easily use the information I do have.</p>
 
 <h3 id="toc_0">Introduction</h3>
@@ -73,9 +82,9 @@
 <p>I demonstrated techniques to measure and understand MySQL query performance in my three most recent articles:</p>
 
 <ul>
-<li><a href="http://www.xaprb.com/blog/2006/10/12/how-to-profile-a-query-in-mysql/">How to profile a query in MySQL</a></li>
-<li><a href="http://www.xaprb.com/blog/2006/10/15/a-case-study-in-profiling-queries-in-mysql/">A case study in profiling queries in MySQL</a></li>
-<li><a href="http://www.xaprb.com/blog/2006/10/17/mysql-profiling-case-study-part-2/">MySQL profiling case study, part 2</a></li>
+<li><a href="/blog/2006/10/12/how-to-profile-a-query-in-mysql/">How to profile a query in MySQL</a></li>
+<li><a href="/blog/2006/10/15/a-case-study-in-profiling-queries-in-mysql/">A case study in profiling queries in MySQL</a></li>
+<li><a href="/blog/2006/10/17/mysql-profiling-case-study-part-2/">MySQL profiling case study, part 2</a></li>
 </ul>
 
 <p>If you&rsquo;ve read those articles, this article will make sense to you. If not, it might help to go read them now.</p>

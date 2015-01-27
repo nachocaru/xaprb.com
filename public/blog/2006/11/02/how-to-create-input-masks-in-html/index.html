@@ -103,7 +103,7 @@
 
 <p>An example mask, then, has two parts: the format, which says which places can accept user input, and the type, which says what type of character can go in those places. We&rsquo;ll see how to actually do this later.</p>
 
-<p>The third problem is to unobtrusively attach the masking functionality to input fields, with gracefully degrading behavior if the browser doesn&rsquo;t support it, and without adding a lot of markup to your forms to specify the mask format and type. This is easy, using the principles I laid out in an earlier article on <a href="http://www.xaprb.com/blog/2006/01/02/tables-and-data-part-1/">using classes to specify data types</a>. This technique is 100% appropriate because classes aren&rsquo;t just hooks for CSS, they&rsquo;re general-purpose processing information. This lets you easily specify a) which inputs get masks, and b) which type of mask they get.</p>
+<p>The third problem is to unobtrusively attach the masking functionality to input fields, with gracefully degrading behavior if the browser doesn&rsquo;t support it, and without adding a lot of markup to your forms to specify the mask format and type. This is easy, using the principles I laid out in an earlier article on <a href="/blog/2006/01/02/tables-and-data-part-1/">using classes to specify data types</a>. This technique is 100% appropriate because classes aren&rsquo;t just hooks for CSS, they&rsquo;re general-purpose processing information. This lets you easily specify a) which inputs get masks, and b) which type of mask they get.</p>
 
 <h3 id="toc_2">How it works</h3>
 
@@ -130,7 +130,7 @@
 
 <h3 id="toc_4">Limitations</h3>
 
-<p>Since this is really just a hack on top of existing HTML form inputs, there are some things that will never work quite as well as a natively designed widget (the same is true for my <a href="http://www.xaprb.com/blog/2005/09/29/javascript-combo-box/">JavaScript Combo Box</a> widget). Here are some of the limitations:</p>
+<p>Since this is really just a hack on top of existing HTML form inputs, there are some things that will never work quite as well as a natively designed widget (the same is true for my <a href="/blog/2005/09/29/javascript-combo-box/">JavaScript Combo Box</a> widget). Here are some of the limitations:</p>
 
 <ul>
 <li>No unicode or international characters (this might be easy to fix).</li>

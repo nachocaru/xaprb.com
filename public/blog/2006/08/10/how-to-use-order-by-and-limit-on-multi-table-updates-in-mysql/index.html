@@ -96,7 +96,7 @@
   </p>
 </blockquote>
 
-<p>However, a <a href="http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/">standard searched <code>UPDATE</code> statement</a> with a subquery doesn&rsquo;t count as a multi-table update, so you can do it like this:</p>
+<p>However, a <a href="/blog/2006/03/11/many-to-one-problems-in-sql/">standard searched <code>UPDATE</code> statement</a> with a subquery doesn&rsquo;t count as a multi-table update, so you can do it like this:</p>
 
 <pre>-- @process_id is actually passed in as a parameter
 -- set @process_id = 17603;
@@ -107,13 +107,13 @@ update work_to_do
    order by priority desc
    limit 10</pre>
 
-<p>There&rsquo;s only one problem: performance sucks. You are probably aware that <code>IN()</code> subqueries are converted by the <code>in_optimizer</code> to correlated subqueries, <a href="http://www.xaprb.com/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/">sometimes with severe performance penalties</a>.</p>
+<p>There&rsquo;s only one problem: performance sucks. You are probably aware that <code>IN()</code> subqueries are converted by the <code>in_optimizer</code> to correlated subqueries, <a href="/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/">sometimes with severe performance penalties</a>.</p>
 
 <p>I created the tables on my home computer, and ran the above query with 5,000 rows in <code>work_to_do</code>. With 50 rows in <code>eligible_client</code> the query completes in a 0.13 seconds, but with 5,000 the correlated subquery becomes a real performance problem; it takes 9.8 seconds, which is very slow for this machine. It means this may be an O(n^2) algorithm.</p>
 
 <h3 id="toc_2">The query after optimizing</h3>
 
-<p>To eliminate the badly optimized subquery, you need to rewrite the subquery as a join, but how can you do that and retain the <code>LIMIT</code> and <code>ORDER BY</code>? One way is to find the rows to be updated in a subquery in the <code>FROM</code> clause, so the <code>LIMIT</code> and <code>ORDER BY</code> can be nested inside the subquery. In this way <code>work_to_do</code> is joined against the ten highest-priority unclaimed rows of itself. Normally <a href="http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/">you can&rsquo;t self-join the update target</a> in a multi-table <code>UPDATE</code>, but since it&rsquo;s within a subquery in the <code>FROM</code> clause, it works in this case.
+<p>To eliminate the badly optimized subquery, you need to rewrite the subquery as a join, but how can you do that and retain the <code>LIMIT</code> and <code>ORDER BY</code>? One way is to find the rows to be updated in a subquery in the <code>FROM</code> clause, so the <code>LIMIT</code> and <code>ORDER BY</code> can be nested inside the subquery. In this way <code>work_to_do</code> is joined against the ten highest-priority unclaimed rows of itself. Normally <a href="/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/">you can&rsquo;t self-join the update target</a> in a multi-table <code>UPDATE</code>, but since it&rsquo;s within a subquery in the <code>FROM</code> clause, it works in this case.
 <pre>update work_to_do as target
    inner join (
       select w. client, work_unit
@@ -128,7 +128,7 @@ update work_to_do
 
 <p>Now the query runs in 0.04 seconds. That&rsquo;s a factor of 250 speedup, and it&rsquo;s even several times faster than the un-optimized query when there were only 50 rows in the <code>eligible_client</code> table.</p>
 
-<p>There is one downside: the rows are not locked in primary key order. This may help explain the occasional deadlock we get on this table (see <a href="http://www.xaprb.com/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/">my article about a &ldquo;little-known&rdquo; way to cause a deadlock</a>). Do you have any suggestions for how to work around this?</p>
+<p>There is one downside: the rows are not locked in primary key order. This may help explain the occasional deadlock we get on this table (see <a href="/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/">my article about a &ldquo;little-known&rdquo; way to cause a deadlock</a>). Do you have any suggestions for how to work around this?</p>
 
 <h3 id="toc_3">Summary</h3>
 

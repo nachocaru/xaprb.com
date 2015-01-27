@@ -134,7 +134,7 @@ from test as a
 
 <p>In this example, you can see the command-line client&rsquo;s display is a little off due to the wacky character. Sometimes, though, it&rsquo;s not so simple. I&rsquo;ve stared at data in the command-line client and been unable to figure out what is wrong. In my example the two values look the same, so why aren&rsquo;t they comparing equal? The answer is they&rsquo;re not equal, but the terminal can&rsquo;t display the funky characters.</p>
 
-<p>There are a couple of ways to essentially do an <code>od</code> within MySQL. One is to join against the <a href="http://www.xaprb.com/blog/2005/12/07/the-integers-table/">integers table</a>:</p>
+<p>There are a couple of ways to essentially do an <code>od</code> within MySQL. One is to join against the <a href="/blog/2005/12/07/the-integers-table/">integers table</a>:</p>
 
 <pre>select
    lpad(substring(col1, i, 1), i, " ") as char_i,

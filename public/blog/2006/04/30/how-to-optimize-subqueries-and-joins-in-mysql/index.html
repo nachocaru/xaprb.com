@@ -64,11 +64,11 @@
   </span>
       
 
-<p>I have written before about using joins instead of subqueries, especially for <code>NOT IN</code> queries, which can usually be rewritten as <a href="http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion joins</a> &ndash; sometimes with huge efficiency gains. In this article I&rsquo;ll look more closely at the performance characteristics of a few queries I&rsquo;ve optimized in MySQL 5.0.3. I&rsquo;ll also show you some tricks you can use to get MySQL to optimize queries better when you know it&rsquo;s being inefficient.</p>
+<p>I have written before about using joins instead of subqueries, especially for <code>NOT IN</code> queries, which can usually be rewritten as <a href="/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion joins</a> &ndash; sometimes with huge efficiency gains. In this article I&rsquo;ll look more closely at the performance characteristics of a few queries I&rsquo;ve optimized in MySQL 5.0.3. I&rsquo;ll also show you some tricks you can use to get MySQL to optimize queries better when you know it&rsquo;s being inefficient.</p>
 
 <h3 id="toc_0">Updates in a join</h3>
 
-<p>I wrote recently about the theoretical problems caused by <code>UPDATE</code> statements with <code>FROM</code> clauses (<a href="http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/">Many-to-one problems in SQL</a>). This particular query shows the performance difference between a &ldquo;correct&rdquo; query and a &ldquo;bad, nonstandard&rdquo; query I wrote recently at work.</p>
+<p>I wrote recently about the theoretical problems caused by <code>UPDATE</code> statements with <code>FROM</code> clauses (<a href="/blog/2006/03/11/many-to-one-problems-in-sql/">Many-to-one problems in SQL</a>). This particular query shows the performance difference between a &ldquo;correct&rdquo; query and a &ldquo;bad, nonstandard&rdquo; query I wrote recently at work.</p>
 
 <p>The application for this query is to update a table with aggregated clicks per day from a table of click-tracking data for online advertising. I have pre-populated the <code>aggregate</code> table, with one row per ad per day, over the time period I&rsquo;m interested in. I have a table called <code>tracking</code> that holds non-aggregated click data. Here are the simplified table structures:</p>
 
@@ -92,7 +92,7 @@ create table tracking (
 
 <p>For this article, I populated my tables with some pseudo-random data. First, I filled my <code>aggregate</code> table with some ads and days over which I want to work. I want to aggregate ads 1 through 50 over the time period 2005-01-01 through 2005-01-10, so that&rsquo;s 500 rows in the <code>aggregate</code> table. The <code>tracking</code> table is moderately large. I filled it with dates from 2003-04-07 to 2006-01-01 (1,000 days) for ads 1 through 1000, with one row for each click type. That&rsquo;s a total of three million rows. The clicks are random numbers between 1 and 100.</p>
 
-<p>Given a <a href="http://www.xaprb.com/blog/2005/12/07/the-integers-table/">numbers table</a> with at least 1,000 rows, here are scripts to populate the tables. The second query will probably take a while to run, and will create a medium-sized chunk of data, so don&rsquo;t think something is wrong when it keeps on grinding (15 minutes isn&rsquo;t unreasonable). By the way, it&rsquo;s not a good idea to run these queries on a production server!</p>
+<p>Given a <a href="/blog/2005/12/07/the-integers-table/">numbers table</a> with at least 1,000 rows, here are scripts to populate the tables. The second query will probably take a while to run, and will create a medium-sized chunk of data, so don&rsquo;t think something is wrong when it keeps on grinding (15 minutes isn&rsquo;t unreasonable). By the way, it&rsquo;s not a good idea to run these queries on a production server!</p>
 
 <pre>insert into aggregate(day, ad)        
     select date_add('2006-01-01', interval a.i - 1 day), b.i
@@ -215,7 +215,7 @@ having count(*) &gt; 2000;</pre>
 
 <p>In my specific data, there are 10 rows in the results, and the query finishes in a couple of seconds. <code>EXPLAIN</code> shows good index usage; it&rsquo;s not a bad query at all, considering the table size. The query plan is to just run through ranges on some indexes and count the entries. So far, so good.</p>
 
-<p>Now suppose I wanted to grab all columns from <code>subcategory</code>. I could join the results of the above query as a subquery, or select <code>MAX</code> or some such (since I know the values will be <a href="http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/">unique over the grouping set</a>), but I could also do the following, right?</p>
+<p>Now suppose I wanted to grab all columns from <code>subcategory</code>. I could join the results of the above query as a subquery, or select <code>MAX</code> or some such (since I know the values will be <a href="/blog/2006/03/11/many-to-one-problems-in-sql/">unique over the grouping set</a>), but I could also do the following, right?</p>
 
 <pre>select * from subcategory
 where id in (
@@ -291,7 +291,7 @@ where &lt;in_optimizer&gt;(
 
 <p>The query in the preceding section suffers because MySQL executes it from the outside in as a correlated subquery, instead of from the inside out without correlation. It&rsquo;s possible to get MySQL to execute the inner query first, materialized as a temporary table, and avoid the huge performance penalty.</p>
 
-<p>MySQL materializes subqueries in the <code>FROM</code> clause (commonly, and somewhat misleadingly, known as <a href="http://www.xaprb.com/blog/2005/09/26/sql-subqueries-and-derived-tables/">derived tables</a>). This means MySQL executes the inner query first and saves the results in a temporary table, then uses it in the rest of the table. This is exactly the behavior I wanted to happen when I wrote that query! Here&rsquo;s the modified query:</p>
+<p>MySQL materializes subqueries in the <code>FROM</code> clause (commonly, and somewhat misleadingly, known as <a href="/blog/2005/09/26/sql-subqueries-and-derived-tables/">derived tables</a>). This means MySQL executes the inner query first and saves the results in a temporary table, then uses it in the rest of the table. This is exactly the behavior I wanted to happen when I wrote that query! Here&rsquo;s the modified query:</p>
 
 <pre>select * from subcategory
 where id in (

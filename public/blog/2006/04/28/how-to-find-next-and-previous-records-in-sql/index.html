@@ -72,7 +72,7 @@
 
 <p>One of the pages displays a record in a series. I want a link to the next and previous in the series, if they exist. I want to do it in one query. I want my query to return the data, all the data, and nothing but the data.</p>
 
-<p>My data&rsquo;s primary key is a foreign key to another table, and a sequence number. Suppose it&rsquo;s log entries, as in my post about <a href="http://www.xaprb.com/blog/2006/04/20/sequences-and-surrogate-keys-in-generic-sql/">surrogate keys</a>. Here&rsquo;s my test suite (I&rsquo;m omitting the <code>message</code> column):</p>
+<p>My data&rsquo;s primary key is a foreign key to another table, and a sequence number. Suppose it&rsquo;s log entries, as in my post about <a href="/blog/2006/04/20/sequences-and-surrogate-keys-in-generic-sql/">surrogate keys</a>. Here&rsquo;s my test suite (I&rsquo;m omitting the <code>message</code> column):</p>
 
 <table class="borders collapsed">
   <tr>
@@ -142,7 +142,7 @@
 
 <pre>select min(seq) from t1log where t1=5 and seq &gt; 100;</pre>
 
-<p>I can do the same thing for the previous entry. But I can&rsquo;t write both &ldquo;min-where-greater&rdquo; and &ldquo;max-where-less&rdquo; into one <code>WHERE</code> clause without subqueries or unions. I could get around that with <a href="http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/">mutex tables</a>, but there&rsquo;s got to be a better way.</p>
+<p>I can do the same thing for the previous entry. But I can&rsquo;t write both &ldquo;min-where-greater&rdquo; and &ldquo;max-where-less&rdquo; into one <code>WHERE</code> clause without subqueries or unions. I could get around that with <a href="/blog/2005/09/22/mutex-tables-in-sql/">mutex tables</a>, but there&rsquo;s got to be a better way.</p>
 
 <h3 id="toc_2">First try</h3>
 

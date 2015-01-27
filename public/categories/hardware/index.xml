@@ -1046,7 +1046,7 @@ real    24m59.155s
 user    18m3.664s
 sys     6m27.860s&lt;/pre&gt;
 
-&lt;p&gt;Needless to say, there are no &lt;a href=&#34;http://www.xaprb.com/blog/2006/01/23/firefox-or-opera-on-slow-hardware/&#34;&gt;problems running Firefox&lt;/a&gt; on this machine.&lt;/p&gt;
+&lt;p&gt;Needless to say, there are no &lt;a href=&#34;/blog/2006/01/23/firefox-or-opera-on-slow-hardware/&#34;&gt;problems running Firefox&lt;/a&gt; on this machine.&lt;/p&gt;
 </description>
     </item>
     
@@ -1079,14 +1079,14 @@ sys     6m27.860s&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;I like it OK&lt;/li&gt;
 &lt;li&gt;it&amp;rsquo;s fast(er)&lt;/li&gt;
-&lt;li&gt;it has reasonably good privacy controls (a &lt;a href=&#34;http://www.xaprb.com/blog/2005/11/06/protect-your-privacy-online/&#34;&gt;cookie whitelist&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;it has reasonably good privacy controls (a &lt;a href=&#34;/blog/2005/11/06/protect-your-privacy-online/&#34;&gt;cookie whitelist&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;And the cons:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;it&amp;rsquo;s not extensible like Firefox&lt;/li&gt;
-&lt;li&gt;there&amp;rsquo;s no &lt;a href=&#34;http://www.xaprb.com/blog/2005/10/26/adblock-patterns/&#34;&gt;adblocking&lt;/a&gt; capability (you can block ads with stylesheets, but it doesn&amp;rsquo;t prevent the content from ever being loaded, which is really important for privacy in my opinion)&lt;/li&gt;
+&lt;li&gt;there&amp;rsquo;s no &lt;a href=&#34;/blog/2005/10/26/adblock-patterns/&#34;&gt;adblocking&lt;/a&gt; capability (you can block ads with stylesheets, but it doesn&amp;rsquo;t prevent the content from ever being loaded, which is really important for privacy in my opinion)&lt;/li&gt;
 &lt;li&gt;there are limited JavaScript tools&lt;/li&gt;
 &lt;li&gt;overall I want my features &amp;ndash; I want &lt;a href=&#34;http://karmatics.com/aardvark/&#34;&gt;Aardvark&lt;/a&gt;, I want &lt;a href=&#34;http://www.hacksrus.com/~ginda/venkman/&#34;&gt;Venkman&lt;/a&gt;, I want the &lt;a href=&#34;http://chrispederick.com/work/webdeveloper/&#34;&gt;Web Developer Toolbar&lt;/a&gt;, I want &lt;a href=&#34;http://adblock.mozdev.org/&#34;&gt;AdBlock&lt;/a&gt;. I feel starved for features.&lt;/li&gt;
 &lt;li&gt;it&amp;rsquo;s not Free Software. I balk at the feeling of betraying my ideals.&lt;/li&gt;

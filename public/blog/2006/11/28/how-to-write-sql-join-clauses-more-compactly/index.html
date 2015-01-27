@@ -84,7 +84,7 @@ from apples as tbl1
    inner join grapes as tbl3 on tbl3.col3 = tbl2.col3
    inner join peaches as tbl4 on tbl3.col3 = tbl2.col3</pre>
 
-<p>The statement is valid and will execute, but it won&rsquo;t give the results you probably wanted (tbl4&#8242;s join clause doesn&rsquo;t refer to any columns from tbl4). The bug is even harder to find if the statement isn&rsquo;t <a href="http://www.xaprb.com/blog/2006/04/26/sql-coding-standards/">neatly indented and consistently organized</a>. That statement is better written with <code>USING</code> clauses:</p>
+<p>The statement is valid and will execute, but it won&rsquo;t give the results you probably wanted (tbl4&#8242;s join clause doesn&rsquo;t refer to any columns from tbl4). The bug is even harder to find if the statement isn&rsquo;t <a href="/blog/2006/04/26/sql-coding-standards/">neatly indented and consistently organized</a>. That statement is better written with <code>USING</code> clauses:</p>
 
 <pre>select tbl1.col1, tbl2.col2, tbl3.col2, tbl4.col1
 from apples as tbl1
@@ -98,7 +98,7 @@ from apples as tbl1
 
 <p>In my opinion, use it if it makes your life easier. Programming is hard &ndash; use whatever your tools give you to ease the burden.</p>
 
-<p>One more note: there&rsquo;s also a <code>NATURAL JOIN</code> syntax that automatically discovers columns with the same names in both tables and matches them in the join. I don&rsquo;t use this in programs, because if someone adds more columns to one of the tables involved in such a join, the join criteria will silently change. I think <a href="http://www.xaprb.com/blog/2006/04/26/sql-coding-standards/">join criteria should always be explicit</a>, for the same reason <a href="http://www.xaprb.com/blog/2006/07/07/what-is-a-sql-blind-insert/">I avoid blind inserts</a>. However, this syntax can be convenient for writing one-off queries at the command line.</p>
+<p>One more note: there&rsquo;s also a <code>NATURAL JOIN</code> syntax that automatically discovers columns with the same names in both tables and matches them in the join. I don&rsquo;t use this in programs, because if someone adds more columns to one of the tables involved in such a join, the join criteria will silently change. I think <a href="/blog/2006/04/26/sql-coding-standards/">join criteria should always be explicit</a>, for the same reason <a href="/blog/2006/07/07/what-is-a-sql-blind-insert/">I avoid blind inserts</a>. However, this syntax can be convenient for writing one-off queries at the command line.</p>
 
 		                        <hr>
                         <h2>Comments</h2>

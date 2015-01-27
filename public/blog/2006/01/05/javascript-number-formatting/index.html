@@ -62,7 +62,7 @@
 		<a href="/categories/Web" class="btn btn-primary">Web</a>
 		
   </span>
-      <p>This article continues my series on parsing and formatting data with JavaScript, this time with numeric data. I don&rsquo;t need to do number <em>parsing</em>, but <em>formatting</em> is very useful. The technique is similar to my <a href="http://www.xaprb.com/blog/2005/12/12/javascript-closures-for-runtime-efficiency/">date formatting</a> code &ndash; code that writes code (for raw speed), using custom format specifier strings (for flexibility and ease of use). The result is number formatting functionality that is highly efficient, flexible, and easy to use.</p>
+      <p>This article continues my series on parsing and formatting data with JavaScript, this time with numeric data. I don&rsquo;t need to do number <em>parsing</em>, but <em>formatting</em> is very useful. The technique is similar to my <a href="/blog/2005/12/12/javascript-closures-for-runtime-efficiency/">date formatting</a> code &ndash; code that writes code (for raw speed), using custom format specifier strings (for flexibility and ease of use). The result is number formatting functionality that is highly efficient, flexible, and easy to use.</p>
 
 <p>First, the idea: you have a number, you want it formatted a certain way. Here&rsquo;s how:</p>
 
@@ -76,7 +76,7 @@ var bignum = 12831242485472;
 alert(bignum.numberFormat("0,0,, million");
 // result: "12,831,243 million"</pre>
 
-<p>My custom date formatting code used PHP&rsquo;s date-formatting syntax because it&rsquo;s much less context-sensitive and (I think) more useful than Microsoft&rsquo;s, but my number-formatting syntax is similar to Microsoft&rsquo;s because it&rsquo;s much more widely used and I don&rsquo;t see an existing, better alternative. Rather than documenting it separately, I&rsquo;ll just point you to the (<a href="http://www.xaprb.com/blog/2005/12/30/excel-calc-number-formatting/">poor quality</a>) Microsoft documentation for the <a href="http://msdn.microsoft.com/library/en-us/cpguide/html/cpconcustomnumericformatstrings.asp">.NET Custom Numeric Format Strings</a> functionality, and list the differences from my implementation:</p>
+<p>My custom date formatting code used PHP&rsquo;s date-formatting syntax because it&rsquo;s much less context-sensitive and (I think) more useful than Microsoft&rsquo;s, but my number-formatting syntax is similar to Microsoft&rsquo;s because it&rsquo;s much more widely used and I don&rsquo;t see an existing, better alternative. Rather than documenting it separately, I&rsquo;ll just point you to the (<a href="/blog/2005/12/30/excel-calc-number-formatting/">poor quality</a>) Microsoft documentation for the <a href="http://msdn.microsoft.com/library/en-us/cpguide/html/cpconcustomnumericformatstrings.asp">.NET Custom Numeric Format Strings</a> functionality, and list the differences from my implementation:</p>
 
 <ul>
 <li><p>Rounding works differently in multi-section format strings. In .NET with a two-section string,

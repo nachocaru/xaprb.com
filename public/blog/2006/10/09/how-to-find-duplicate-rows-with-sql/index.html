@@ -118,7 +118,7 @@ select * from test;
 
 <p>Again, the first thing to do is make sure your definition is clear. Exactly which row do you want to keep? The &lsquo;first&rsquo; one? The one with the largest value of some column? For this article, I&rsquo;ll assume you want to keep the &lsquo;first&rsquo; row &ndash; the one with the smallest value of the <code>id</code> column. That means you want to delete every other row.</p>
 
-<p>Probably the easiest way to do this is with a temporary table. Especially in MySQL, there are some restrictions about selecting from a table and updating it in the same query. You can get around these, as I explain in my article <a href="http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/">How to select from an update target in MySQL</a>, but I&rsquo;ll just avoid these complications and use a temporary table.</p>
+<p>Probably the easiest way to do this is with a temporary table. Especially in MySQL, there are some restrictions about selecting from a table and updating it in the same query. You can get around these, as I explain in my article <a href="/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/">How to select from an update target in MySQL</a>, but I&rsquo;ll just avoid these complications and use a temporary table.</p>
 
 <p>The exact definition of the task is to <strong>delete every row that has a duplicate, except the row with the minimal value of <code>id</code> for that group</strong>. So you need to find not only the rows where there&rsquo;s more than one in the group, you also need to find <strong>the row you want to keep</strong>. You can do that with the <code>MIN()</code> function. Here are some queries to create the temporary table and find the data you need to do the <code>DELETE</code>:</p>
 
@@ -134,7 +134,7 @@ select * from to_delete;
 | 2006-10-08 |      1 |
 +------------+--------+</pre>
 
-<p>Now that you have this data, you can proceed to delete the &lsquo;bad&rsquo; rows. There are many ways to do this, and some are better than others (see my <a href="http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/">article about many-to-one problems in SQL</a>), but again I&rsquo;ll avoid the finer points and just show you a standard syntax that ought to work in any RDBMS that supports subqueries:</p>
+<p>Now that you have this data, you can proceed to delete the &lsquo;bad&rsquo; rows. There are many ways to do this, and some are better than others (see my <a href="/blog/2006/03/11/many-to-one-problems-in-sql/">article about many-to-one problems in SQL</a>), but again I&rsquo;ll avoid the finer points and just show you a standard syntax that ought to work in any RDBMS that supports subqueries:</p>
 
 <pre>delete from test
    where exists(

@@ -64,13 +64,22 @@
   </span>
       
 
-<p>This is the second in a series of articles on profiling queries in MySQL. In this article I&rsquo;ll demonstrate the technique I described in the <a href="http://www.xaprb.com/blog/2006/10/12/how-to-profile-a-query-in-mysql/">first article</a>.</p>
+<p>This is the second in a series of articles on profiling queries in MySQL. In this article I&rsquo;ll demonstrate the technique I described in the <a href="/blog/2006/10/12/how-to-profile-a-query-in-mysql/">first article</a>.</p>
+
+<blockquote>
+<p>Note: I wrote this article in 2006, when I didn&rsquo;t have a clear understanding
+of even simple concepts such as <em>what performance really is</em>. Since then I
+have learned a lot from wise people such as Cary Millsap. In 2012 I founded
+<a href="https://vividcortex.com/">VividCortex, the best database performance optimization and database monitoring platform</a>
+to chase away the kind of ignorance I display in the article below. Enjoy this
+trip down memory lane.</p>
+</blockquote>
 
 <p>I&rsquo;m using 5.0.22-Debian_0ubuntu6.06.2-log for my tests.</p>
 
 <h3 id="toc_0">Example: re-index a table and measure the performance gain</h3>
 
-<p>I started with the following table, and an <code>INSERT</code> statement to populate it with a million rows of data. Aside from the fact that this data is all evenly distributed, this table and data are similar to some tables my coworkers and I redesigned earlier this year (see my article on <a href="http://www.xaprb.com/blog/2006/06/14/how-to-re-index-a-large-database-table/">how to re-index a large database table</a>).</p>
+<p>I started with the following table, and an <code>INSERT</code> statement to populate it with a million rows of data. Aside from the fact that this data is all evenly distributed, this table and data are similar to some tables my coworkers and I redesigned earlier this year (see my article on <a href="/blog/2006/06/14/how-to-re-index-a-large-database-table/">how to re-index a large database table</a>).</p>
 
 <pre>CREATE TABLE `tracking` (
   `id` int(11) NOT NULL auto_increment,

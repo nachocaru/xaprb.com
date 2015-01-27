@@ -64,7 +64,7 @@
   </span>
       
 
-<p>I wrote an article a while back about <a href="http://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/">how to order updates in MySQL so you don&rsquo;t violate a unique index</a>. I said I&rsquo;d write another article on how to swap numbers in a sequence with a unique index. This is that article, but I&rsquo;m going to make it a little more generic: how to reverse a (possibly ordered) sequence.</p>
+<p>I wrote an article a while back about <a href="/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/">how to order updates in MySQL so you don&rsquo;t violate a unique index</a>. I said I&rsquo;d write another article on how to swap numbers in a sequence with a unique index. This is that article, but I&rsquo;m going to make it a little more generic: how to reverse a (possibly ordered) sequence.</p>
 
 <p>I&rsquo;ve been thinking about this for a while, wondering if there&rsquo;s a way I can do it in-place in one statement (I like to pile challenge upon difficulty). I&rsquo;ve thought of a number of techniques, some using one statement, some using more, some that won&rsquo;t work on MySQL, some that will.</p>
 
@@ -95,13 +95,13 @@ insert into t(i) values (1), (2), (3), (4), (5);</pre>
 select @max := max(i) from t;
 update t set i = @min + @max - i;</pre>
 
-<p>Now you get the <a href="http://www.xaprb.com/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/">unique index violation</a>: &ldquo;ERROR 1062 (23000): Duplicate entry &lsquo;5&#8242; for key 1.&rdquo; There&rsquo;s just no way around this in MySQL. You must turn to more devious methods!</p>
+<p>Now you get the <a href="/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/">unique index violation</a>: &ldquo;ERROR 1062 (23000): Duplicate entry &lsquo;5&#8242; for key 1.&rdquo; There&rsquo;s just no way around this in MySQL. You must turn to more devious methods!</p>
 
 <h3 id="toc_1">Method 2: bitwise XOR</h3>
 
 <p>Ah, here&rsquo;s a solution in search of a problem! Let&rsquo;s see, bitwise <code>XOR</code> is really cool, what can you use it for today?</p>
 
-<p>Well, you can use it to swap some numbers, for starters. As you may know, <a href="http://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/">you can <code>XOR</code> two numbers together three times and they will magically trade places</a>. It&rsquo;s a great way to swap numbers without using a temporary variable for extra storage, though that&rsquo;s really of dubious value here. In any case, it&rsquo;s a fun exercise to write in one statement. Can you do it more simply than the following?</p>
+<p>Well, you can use it to swap some numbers, for starters. As you may know, <a href="/blog/2005/09/28/bitwise-arithmetic/">you can <code>XOR</code> two numbers together three times and they will magically trade places</a>. It&rsquo;s a great way to swap numbers without using a temporary variable for extra storage, though that&rsquo;s really of dubious value here. In any case, it&rsquo;s a fun exercise to write in one statement. Can you do it more simply than the following?</p>
 
 <pre>select pk, ((i ^ (@min + @max - i)) ^ ((i ^ (@min + @max - i)) ^ (@min + @max - i))) from t;</pre>
 

@@ -147,7 +147,7 @@ MySQL thread id 23731, query id 194861117 elpaso 192.168.0.31 robot</pre>
 
 <p>Again, there&rsquo;s some information here, but not a lot. If you issue a query and it hangs and waits for a lock, knowing what lock it&rsquo;s waiting for isn&rsquo;t really helpful. And knowing some other transaction holds a lock isn&rsquo;t <em>always</em> helpful either.</p>
 
-<p>It can be useful sometimes though, and that&rsquo;s better than nothing. If you only see two transactions with locks, you know the one that&rsquo;s <strong>not</strong> waiting for a lock is probably the one that holds them. Notice something scary in the information above? Transaction &ldquo;0 93789771&#8243;, on connection 23731, has been active for&hellip; eight and a half hours! Whoa. It&rsquo;s time to <a href="http://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/">find out what owns that connection</a> and possibly kill it.</p>
+<p>It can be useful sometimes though, and that&rsquo;s better than nothing. If you only see two transactions with locks, you know the one that&rsquo;s <strong>not</strong> waiting for a lock is probably the one that holds them. Notice something scary in the information above? Transaction &ldquo;0 93789771&#8243;, on connection 23731, has been active for&hellip; eight and a half hours! Whoa. It&rsquo;s time to <a href="/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/">find out what owns that connection</a> and possibly kill it.</p>
 
 <p>The take-away here is, if you&rsquo;re getting blocked on an InnoDB table, and you&rsquo;re lucky enough to see only one other transaction with locks, it&rsquo;s probably the one blocking you.</p>
 
@@ -161,7 +161,7 @@ MySQL thread id 23731, query id 194861117 elpaso 192.168.0.31 robot</pre>
 
 <p>Who, indeed? The text I included above is a pain to read, and it&rsquo;s not even representative of what you&rsquo;ll really be looking at. For one thing, you might have to scan through 40 or more transactions to find the ones you care about, and then there&rsquo;s all the other information in the output, some of which can be voluminous (such as deadlocks). What a hassle!</p>
 
-<p>Fortunately, there&rsquo;s a tool to do that for you: <code>&lt;a href=&quot;http://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/&quot;&gt;innotop&lt;/a&gt;</code>. This tool formats the output neatly and gives you filtering options to display only transactions with locks (or just sort them to the top of the display). Here&rsquo;s how you can do that:</p>
+<p>Fortunately, there&rsquo;s a tool to do that for you: <code>&lt;a href=&quot;/blog/2006/07/02/innotop-mysql-innodb-monitor/&quot;&gt;innotop&lt;/a&gt;</code>. This tool formats the output neatly and gives you filtering options to display only transactions with locks (or just sort them to the top of the display). Here&rsquo;s how you can do that:</p>
 
 <p>Start innotop and use the &ldquo;T&rdquo; key to enter InnoDB Transaction mode, if it&rsquo;s not already in that mode. You will see a list of transactions. Next, make the &ldquo;Locks,&rdquo; &ldquo;Tbl Used,&rdquo; and &ldquo;Tbl Lck&rdquo; columns visible. Press the &ldquo;c&rdquo; key to activate the &ldquo;choose columns&rdquo; dialog:</p>
 

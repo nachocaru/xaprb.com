@@ -118,7 +118,7 @@ select * from test.innodb_deadlock_maker for update;
 -- Connection 0
 insert into test.innodb_deadlock_maker values(0);</pre>
 
-<p>This trick works because of the same principle I explained in a <a href="http://www.xaprb.com/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/">previous article on deadlocks</a>. The statements are asymmetrical, so it&rsquo;s not the method I use for innotop, but I think it&rsquo;s a minimal deadlock. I can&rsquo;t think of a way to prove it formally, but I don&rsquo;t think you can do it in less than three statements.</p>
+<p>This trick works because of the same principle I explained in a <a href="/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/">previous article on deadlocks</a>. The statements are asymmetrical, so it&rsquo;s not the method I use for innotop, but I think it&rsquo;s a minimal deadlock. I can&rsquo;t think of a way to prove it formally, but I don&rsquo;t think you can do it in less than three statements.</p>
 
 <h3 id="toc_3">Summary</h3>
 

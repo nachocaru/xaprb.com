@@ -112,7 +112,7 @@ insert into t1 select * from t2;</pre>
 
 <p>The first statement deletes the first row from t2; the second inserts the remaining two. The disadvantage of this approach is that it&rsquo;s not transactional, since the tables are MyISAM and there are two statements. This may not be an issue if nothing else is altering either table at the same time. Another disadvantage is that I just deleted some data I might want in subsequent queries.</p></li>
 
-<li><p>Use an <a href="http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion join</a>. This query should work on any RDBMS that supports <code>LEFT OUTER JOIN</code>:</p>
+<li><p>Use an <a href="/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion join</a>. This query should work on any RDBMS that supports <code>LEFT OUTER JOIN</code>:</p>
 
 <pre>insert into t1 (a, b, c)
 select l.d, l.e, l.f
@@ -233,7 +233,7 @@ ERROR 1052 (23000): Column 'b' in field list is ambiguous</pre></li>
 
 <p>If this article was useful to you, you should <a href="http://www.xaprb.com/index.xml">subscribe</a> to stay current with my upcoming articles. It&rsquo;s free and convenient.</p>
 
-<p><strong>Edit 2006-02-26</strong> I forgot to cross-reference <a href="http://www.xaprb.com/blog/2005/09/25/insert-if-not-exists-queries-in-mysql/">INSERT IF NOT EXISTS queries in MySQL</a>, a related post where I explain some variations on a particular scenario &ndash; for example, where there is no unique index on the column you want to avoid duplicating, or you want to allow only <em>n</em> duplicates.</p>
+<p><strong>Edit 2006-02-26</strong> I forgot to cross-reference <a href="/blog/2005/09/25/insert-if-not-exists-queries-in-mysql/">INSERT IF NOT EXISTS queries in MySQL</a>, a related post where I explain some variations on a particular scenario &ndash; for example, where there is no unique index on the column you want to avoid duplicating, or you want to allow only <em>n</em> duplicates.</p>
 
 		                        <hr>
                         <h2>Comments</h2>
