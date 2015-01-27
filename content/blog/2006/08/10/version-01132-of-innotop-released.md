@@ -26,4 +26,4 @@ I've gotten some good feedback from some of you -- keep that coming! Not only do
 The next thing I want to work on is some features to really analyze the information, instead of just dumping it all to the screen and letting you try to make sense of it. I'm planning to build some heuristics that will make suggestions like "your query cache isn't very effective," "you have a lot of table locks waited," or so on. Again, if you have suggestions, let me know.
 
  [1]: http://www.xaprb.com/innotop/
- [2]: http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/
+ [2]: /blog/2006/08/02/what-to-do-when-innotop-crashes/

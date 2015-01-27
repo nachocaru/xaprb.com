@@ -750,5 +750,5 @@ Thanks for the feedback, and keep those comments coming! I'm by no means the exp
 
 In the meantime, you can [subscribe via e-mail or feeds][2] to be notified when I do.
 
- [1]: http://www.xaprb.com/blog/2006/10/15/a-case-study-in-profiling-queries-in-mysql/
+ [1]: /blog/2006/10/15/a-case-study-in-profiling-queries-in-mysql/
  [2]: http://www.xaprb.com/index.xml

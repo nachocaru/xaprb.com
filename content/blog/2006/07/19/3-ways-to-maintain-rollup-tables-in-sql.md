@@ -77,6 +77,6 @@ I've discussed three methods to keep rollup tables in sync with the authoritativ
 
 If you found this article useful, [subscribe via feeds or e-mail][3] to be notified when my upcoming articles are published.
 
- [1]: http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/
- [2]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+ [1]: /blog/2006/02/21/flexible-insert-and-update-in-mysql/
+ [2]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
  [3]: http://www.xaprb.com/index.xml

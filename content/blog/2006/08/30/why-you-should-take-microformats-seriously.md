@@ -113,11 +113,11 @@ There's no need to be pessimistic about microformats. Sure, not everything is fo
 
  [1]: http://microformats.org
  [2]: http://microformats.org/wiki/hcard-parsing
- [3]: http://www.xaprb.com/blog/2006/05/14/javascript-date-formatting-benchmarks/
+ [3]: /blog/2006/05/14/javascript-date-formatting-benchmarks/
  [4]: http://www.w3.org/TR/soap/
  [5]: http://www.tbray.org/ongoing/When/200x/2004/09/18/WS-Oppo
  [6]: http://microformats.org/wiki/hcard
- [7]: http://ylocalblog.comhttp://www.xaprb.com/blog/2006/06/21/we-now-support-microformats/
+ [7]: http://ylocalblog.com/blog/2006/06/21/we-now-support-microformats/
  [8]: http://smackman.com/2006/06/01/an-old-idea/
  [9]: http://cr.yp.to/djbdns/ipv6mess.html
  [10]: http://www.tei-c.org/

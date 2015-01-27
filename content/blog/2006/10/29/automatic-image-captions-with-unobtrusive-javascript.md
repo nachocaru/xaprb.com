@@ -134,7 +134,7 @@ If you haven't done much reading on [unobtrusive JavaScript][8], you really shou
 
 I hope this article has helped you break out of a common web design rut and snazzy up your documents without adding un-semantic markup bloat. If you thought this was good, let me know! If you want to suggest some improvement, let me know that too!
 
- [1]: http://www.xaprb.com/blog/2006/08/30/why-you-should-take-microformats-seriously/
+ [1]: /blog/2006/08/30/why-you-should-take-microformats-seriously/
  [2]: http://www.sxc.hu/
  [3]: http://www.xaprb.com/media/2006/10/automatic-image-captions-before.html
  [4]: http://www.scottandrew.com/weblog/articles/cbs-events

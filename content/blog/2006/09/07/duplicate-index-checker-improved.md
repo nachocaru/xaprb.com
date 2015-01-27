@@ -9,4 +9,4 @@ I've just improved the [MySQL duplicate index checker][1] I whipped together a f
 
 You can download it from the original article. Let me know if there's anything I can do to improve it.
 
- [1]: http://www.xaprb.com/blog/2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/
+ [1]: /blog/2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/

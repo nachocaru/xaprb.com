@@ -141,7 +141,7 @@ If you have any comments, please leave them below. I'm especially interested in 
 
 **Update** Peter has a very good article, which demonstrates some real profiling measurements, on [optimizing loose index scans with `UNION`][10]. Well worth a read.
 
- [1]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+ [1]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
  [2]: http://dev.mysql.com/doc/refman/5.0/en/explain.html
  [3]: http://dev.mysql.com/doc/refman/5.0/en/show-status.html
  [4]: http://hackmysql.com/mysqlreport/

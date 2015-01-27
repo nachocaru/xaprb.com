@@ -250,8 +250,8 @@ All I did was wrap the subquery in another subquery. MySQL thinks there's a depe
 
 This optimization can be used in a number of ways, for example to prevent MySQL from complaining about a subquery selecting data from a table being modified elsewhere in the query. Unfortunately, it doesn't work to get around the restriction about temporary tables only appearing once in a query.
 
- [1]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/
- [2]: http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/
- [3]: http://www.xaprb.com/blog/2005/12/07/the-integers-table/
+ [1]: /blog/2005/09/23/how-to-write-a-sql-exclusion-join/
+ [2]: /blog/2006/03/11/many-to-one-problems-in-sql/
+ [3]: /blog/2005/12/07/the-integers-table/
  [4]: http://dev.mysql.com/doc/refman/5.0/en/subquery-restrictions.html
- [5]: http://www.xaprb.com/blog/2005/09/26/sql-subqueries-and-derived-tables/
+ [5]: /blog/2005/09/26/sql-subqueries-and-derived-tables/

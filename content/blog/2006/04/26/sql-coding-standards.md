@@ -201,7 +201,7 @@ A lot of my opinions on coding standards are informed by great books like [Perl 
 Other programming languages have great tools to help maintain consistent coding style (such as `perltidy` or `indent`), but I can't find the equivalent in SQL. There is one [online SQL formatter][5], but I don't think it does a very good job. If I'm faced with catastrophically ugly code, I suppose it's a place to start, but I wouldn't use it to enforce a coding standard.
 
  [1]: http://rpbouman.blogspot.com/2005/08/yet-another-way-to-model-hierarchies.html
- [2]: http://www.xaprb.com/blog/2006/07/09/so-you-think-your-code-is-in-version-control/
+ [2]: /blog/2006/07/09/so-you-think-your-code-is-in-version-control/
  [3]: http://weblogs.sqlteam.com/jeffs/archive/2005/12/14/8546.aspx
  [4]: http://www.oreilly.com/catalog/perlbp/
  [5]: http://www.wangz.net/cgi-bin/pp/gsqlparser/sqlpp/sqlformat.tpl

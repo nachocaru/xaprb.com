@@ -166,7 +166,7 @@ If this article was useful to you, you should [subscribe][3] to stay current wit
 
 **Edit 2006-02-26** I forgot to cross-reference [INSERT IF NOT EXISTS queries in MySQL][4], a related post where I explain some variations on a particular scenario -- for example, where there is no unique index on the column you want to avoid duplicating, or you want to allow only *n* duplicates.
 
- [1]: http://www.xaprb.com/blog/2005/09/23/how-to-write-a-sql-exclusion-join/
+ [1]: /blog/2005/09/23/how-to-write-a-sql-exclusion-join/
  [2]: http://dev.mysql.com/doc/
  [3]: http://www.xaprb.com/index.xml
- [4]: http://www.xaprb.com/blog/2005/09/25/insert-if-not-exists-queries-in-mysql/
+ [4]: /blog/2005/09/25/insert-if-not-exists-queries-in-mysql/

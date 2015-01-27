@@ -39,4 +39,4 @@ In the time since I first wrote this program I've realized the benefits of using
 
 At the end of the day, these little scripts and queries are about having more than one way to do things. I hope you find them useful.
 
- [1]: http://www.xaprb.com/blog/2006/03/12/gnucash-to-mysql-export-script/
+ [1]: /blog/2006/03/12/gnucash-to-mysql-export-script/

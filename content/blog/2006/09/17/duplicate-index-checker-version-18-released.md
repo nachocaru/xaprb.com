@@ -32,5 +32,5 @@ They aren't duplicates, but they'll canonicalize to the same thing and my tool w
 
 You can download it from the original article, as always.
 
- [1]: http://www.xaprb.com/blog/2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/
+ [1]: /blog/2006/08/28/how-to-find-duplicate-and-redundant-indexes-in-mysql/
  [2]: http://c2.com/cgi/wiki?ThreeStrikesAndYouAutomate

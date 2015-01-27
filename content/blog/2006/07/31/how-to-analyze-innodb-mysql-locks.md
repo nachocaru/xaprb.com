@@ -102,7 +102,7 @@ In fact, if you're in a transaction, `LOCK TABLES` seems to "kick you out" of th
 
 Who, indeed? The text I included above is a pain to read, and it's not even representative of what you'll really be looking at. For one thing, you might have to scan through 40 or more transactions to find the ones you care about, and then there's all the other information in the output, some of which can be voluminous (such as deadlocks). What a hassle!
 
-Fortunately, there's a tool to do that for you: `<a href="http://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/">innotop</a>`. This tool formats the output neatly and gives you filtering options to display only transactions with locks (or just sort them to the top of the display). Here's how you can do that:
+Fortunately, there's a tool to do that for you: `<a href="/blog/2006/07/02/innotop-mysql-innodb-monitor/">innotop</a>`. This tool formats the output neatly and gives you filtering options to display only transactions with locks (or just sort them to the top of the display). Here's how you can do that:
 
 Start innotop and use the "T" key to enter InnoDB Transaction mode, if it's not already in that mode. You will see a list of transactions. Next, make the "Locks," "Tbl Used," and "Tbl Lck" columns visible. Press the "c" key to activate the "choose columns" dialog:
 
@@ -130,7 +130,7 @@ Isn't that easier than digging through the output of `SHOW ENGINE INNODB STATUS`
 Though I've searched the Internet, searched the source code and the MySQL manual, I haven't been able to find any other ways to get information on current locks in MySQL. But I'd be delighted if you prove me wrong! If you have anything to add, please comment.
 
  [1]: http://www.xaprb.com/innotop/
- [2]: http://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/
+ [2]: /blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/
  [3]: http://www.xaprb.com/innotop/innotop-choose-columns.png
  [4]: http://www.xaprb.com/innotop/innotop-default-T-display.png
  [5]: http://www.xaprb.com/innotop/innotop-choose-sort-column.png

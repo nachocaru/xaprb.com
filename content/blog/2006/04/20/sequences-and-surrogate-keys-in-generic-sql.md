@@ -117,4 +117,4 @@ If I want to enter a log record on another record in `t1`, the sequence will sta
 MySQL actually allows an `AUTO_INCREMENT` value to serve as a sequence for certain table types (MyISAM and BDB). To do tihs, just make the column the last column in a multi-column primary key. I'm not aware of any other RDBMS that does this.
 
 
- [1]: http://www.xaprb.com/blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/
+ [1]: /blog/2005/12/06/find-missing-numbers-in-a-sequence-with-sql/

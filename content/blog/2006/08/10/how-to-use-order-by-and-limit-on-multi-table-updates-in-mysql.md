@@ -77,8 +77,8 @@ In this article I've shown you how to use subqueries to work around limitations 
 
 If this article was useful to you, [subscribe via e-mail or feeds][5] to receive future articles conveniently and free.
 
- [1]: http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/
- [2]: http://www.xaprb.com/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
- [3]: http://www.xaprb.com/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
- [4]: http://www.xaprb.com/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/
+ [1]: /blog/2006/03/11/many-to-one-problems-in-sql/
+ [2]: /blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
+ [3]: /blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/
+ [4]: /blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/
  [5]: http://www.xaprb.com/index.xml

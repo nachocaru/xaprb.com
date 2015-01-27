@@ -94,5 +94,5 @@ order by name;</pre>
  [3]: http://www.postgresql.org
  [4]: http://www.gtk.org
  [5]: http://expat.sourceforge.net
- [6]: http://www.xaprb.com/blog/2006/03/08/decimal-math-in-mysql/
+ [6]: /blog/2006/03/08/decimal-math-in-mysql/
 

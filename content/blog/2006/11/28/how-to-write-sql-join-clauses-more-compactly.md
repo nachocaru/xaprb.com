@@ -43,6 +43,6 @@ In my opinion, use it if it makes your life easier. Programming is hard -- use w
 
 One more note: there's also a `NATURAL JOIN` syntax that automatically discovers columns with the same names in both tables and matches them in the join. I don't use this in programs, because if someone adds more columns to one of the tables involved in such a join, the join criteria will silently change. I think [join criteria should always be explicit][1], for the same reason [I avoid blind inserts][3]. However, this syntax can be convenient for writing one-off queries at the command line.
 
- [1]: http://www.xaprb.com/blog/2006/04/26/sql-coding-standards/
+ [1]: /blog/2006/04/26/sql-coding-standards/
  [2]: http://dev.mysql.com/doc/refman/4.1/en/join.html
- [3]: http://www.xaprb.com/blog/2006/07/07/what-is-a-sql-blind-insert/
+ [3]: /blog/2006/07/07/what-is-a-sql-blind-insert/

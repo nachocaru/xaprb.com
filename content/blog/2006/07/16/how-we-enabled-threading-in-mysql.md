@@ -14,5 +14,5 @@ Another clue was running `vmstat` and looking at the number of context switches 
 The key ended up being NPTL. As I discussed in my article on [Gentoo and NPTL][2], apparently certain software won't multi-thread, even when it has linuxthreads available. I'm not pretending to know a lot about compiling MySQL, but we did try multiple ways to get it to use threads, and it wasn't until we figured out NPTL wasn't built into glibc that we made any progress. After re-building glibc and restarting the the mysql daemon, it came back up with just one process, but multiple threads. Success! Now our master server uses less CPU, leaving more available for queries.
 
 
- [1]: http://www.xaprb.com/blog/2006/06/08/how-to-monitor-server-load-on-gnulinux/
- [2]: http://www.xaprb.com/blog/2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/
+ [1]: /blog/2006/06/08/how-to-monitor-server-load-on-gnulinux/
+ [2]: /blog/2006/07/12/how-to-switch-from-linuxthreads-to-nptl-on-gentoo/

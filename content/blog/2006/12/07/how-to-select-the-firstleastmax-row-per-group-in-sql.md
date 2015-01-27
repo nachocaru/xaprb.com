@@ -243,11 +243,11 @@ Well, that's it. I've shown you several ways of solving the common "get the extr
 
 I hope you've enjoyed and profited from this discussion. If you did, maybe you'd like to [subscribe][7] for convenient notification of future articles. Happy coding!
 
- [1]: http://www.xaprb.com/blog/2006/12/02/how-to-number-rows-in-mysql/
- [2]: http://www.xaprb.com/blog/2005/09/27/simulating-the-sql-row_number-function/
+ [1]: /blog/2006/12/02/how-to-number-rows-in-mysql/
+ [2]: /blog/2005/09/27/simulating-the-sql-row_number-function/
  [3]: http://www.mysqlperformanceblog.com/2006/08/10/using-union-to-implement-loose-index-scan-to-mysql/
  [4]: http://dev.mysql.com/doc/refman/5.0/en/user-variables.html
- [5]: http://www.xaprb.com/blog/2006/03/11/many-to-one-problems-in-sql/
+ [5]: /blog/2006/03/11/many-to-one-problems-in-sql/
  [6]: http://dev.mysql.com/doc/refman/5.0/en/server-sql-mode.html
  [7]: http://www.xaprb.com/index.xml
 

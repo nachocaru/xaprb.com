@@ -78,7 +78,7 @@ My new query, which I feel very confident about, is
 
 I think you can agree there's no ambiguity there! Everything is explicitly `DATE` types from start to finish.
 
- [1]: http://www.xaprb.com/blog/2006/06/12/benchmarks-for-date-operations-in-mysql/
+ [1]: /blog/2006/06/12/benchmarks-for-date-operations-in-mysql/
  [2]: http://sheeri.com/archives/120
  [3]: http://dev.mysql.com/doc/refman/5.0/en/type-conversion.html
- [4]: http://www.xaprb.com/blog/2005/12/04/sql-server-2000-date-and-time-puzzler/
+ [4]: /blog/2005/12/04/sql-server-2000-date-and-time-puzzler/

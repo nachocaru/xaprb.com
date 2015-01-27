@@ -17,4 +17,4 @@ I've discussed them in great detail in my article on [flexible insert and update
 
 There are other methods too, such as `INSERT IGNORE`, but these are the three most important.
 
- [1]: http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/
+ [1]: /blog/2006/02/21/flexible-insert-and-update-in-mysql/

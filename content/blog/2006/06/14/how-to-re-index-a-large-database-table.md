@@ -104,7 +104,7 @@ This strategy helped in another key area. One table wasn't fully archived, and i
 
 Most importantly, our database is under control, and we can just do routine maintenance from now on. There are still some large tables to purge and/or archive and re-index, but they aren't the core tables the business depends on. Our new client isn't going to crush the database server.
 
- [1]: http://www.xaprb.com/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
- [2]: http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
- [3]: http://www.xaprb.com/blog/2006/05/10/when-to-avoid-and-when-to-use-surrogate-keys-in-innodb-tables/
+ [1]: /blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/
+ [2]: /blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/
+ [3]: /blog/2006/05/10/when-to-avoid-and-when-to-use-surrogate-keys-in-innodb-tables/
 

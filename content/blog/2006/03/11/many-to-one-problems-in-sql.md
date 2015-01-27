@@ -363,4 +363,4 @@ This really does matter. Two days ago at work, my boss brought up a situation wh
 
  [1]: http://dev.mysql.com/doc/refman/5.0/en/group-by-hidden-fields.html?ff=nopfpls
  [2]: http://weblogs.sqlteam.com/jeffs/archive/2005/12/14/8546.aspx
- [3]: http://www.xaprb.com/blog/2005/10/03/understanding-sql-joins/
+ [3]: /blog/2005/10/03/understanding-sql-joins/

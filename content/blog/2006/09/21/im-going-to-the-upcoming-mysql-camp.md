@@ -12,4 +12,4 @@ I don't have a very good feel for what people use [innotop][2] for, for example;
 Any other thoughts? Write them into the comments! And as the topic for #mysql says, go or be destroyed! I'm really looking forward to meeting many of you for the first time. I hope to see you there.
 
  [1]: http://mysqlcamp.org/
- [2]: http://www.xaprb.com/blog/2006/07/02/innotop-mysql-innodb-monitor/
+ [2]: /blog/2006/07/02/innotop-mysql-innodb-monitor/

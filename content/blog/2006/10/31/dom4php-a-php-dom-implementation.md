@@ -76,5 +76,5 @@ See you next time!
  [4]: http://php.net/xml
  [5]: http://www.w3.org/TR/DOM-Level-2-Core/core.html
  [6]: http://www.gnu.org/copyleft/lgpl.html
- [7]: http://www.xaprb.com/blog/2006/06/19/xaprb-scripts-relicensed/
+ [7]: /blog/2006/06/19/xaprb-scripts-relicensed/
 

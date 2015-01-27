@@ -35,7 +35,7 @@ I probably would not have solved this on my own. The way to select and unselect 
 
 I conclude both Excel and OpenOffice.org both have some room for improvement. I'm sure that comes as no surprise! The good news is, OpenOffice.org is a community-driven effort, with an open bug-tracking system and active forums -- not to mention it's [Free Software][6]. You know who I'm backing... take 'em to the mat!
 
- [1]: http://www.xaprb.com/blog/2005/12/30/excel-calc-number-formatting/
+ [1]: /blog/2005/12/30/excel-calc-number-formatting/
  [2]: http://www.bmsltd.ie/MVP/MVPPage.asp
  [3]: http://www.appspro.com/Utilities/ChartLabeler.htm
  [4]: http://www.openoffice.org

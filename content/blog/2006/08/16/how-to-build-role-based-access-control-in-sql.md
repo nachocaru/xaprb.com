@@ -249,10 +249,10 @@ Finally, the next article will explain how to build truly role-based access cont
 
  [1]: http://en.wikipedia.org/wiki/Access_control_lists
  [2]: http://en.wikipedia.org/wiki/Role-Based_Access_Control
- [3]: http://www.xaprb.com/blog/2005/12/15/css-good-practice-separate-layout-and-presentation/
+ [3]: /blog/2005/12/15/css-good-practice-separate-layout-and-presentation/
  [4]: http://manual.cakephp.org/chapter/acl
  [5]: http://phpgacl.sourceforge.net/
  [6]: http://en.wikipedia.org/wiki/Document_Object_Model
  [7]: http://en.wikipedia.org/wiki/Simple_API_for_XML
  [8]: http://www.freebsd.org/cgi/man.cgi?query=ls
- [9]: http://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/
+ [9]: /blog/2005/09/28/bitwise-arithmetic/
