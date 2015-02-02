@@ -557,34 +557,6 @@ other features.&lt;/p&gt;
     </item>
     
     <item>
-      <title>How I keep track of notes</title>
-      <link>http://www.xaprb.com/blog/2010/07/03/how-i-keep-track-of-notes/</link>
-      <pubDate>Sat, 03 Jul 2010 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2010/07/03/how-i-keep-track-of-notes/</guid>
-      <description>&lt;p&gt;This is the follow-up to my post on &lt;a href=&#34;http://www.xaprb.com/blog/2010/06/30/how-i-keep-track-of-tasks/&#34;&gt;how I keep track of tasks&lt;/a&gt;. It&amp;rsquo;s important for me to have a good system for keeping notes and other files organized. The problem usually turns out to be that I want them organized several different ways simultaneously: by date, by project, by person, by subject. Alas, if I keep them in files on a hard drive, I can only choose one such organizing strategy, because filesystems are a single hierarchy.&lt;/p&gt;
-
-&lt;p&gt;I choose to organize by date, simply because most of the time I need access to notes and files about things I&amp;rsquo;m working on now or recently. If I need to find files by project or subject, there&amp;rsquo;s a search feature in my file browser, and it works really well! So date-organization is good enough for me.&lt;/p&gt;
-
-&lt;p&gt;Inside my home directory, I have a directory per year, and inside that, a directory per month. If I write a note today, it goes into the $HOME/etc/&lt;sup&gt;2010&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;/03/ directory. The filename starts with today&amp;rsquo;s date. That&amp;rsquo;s the simple organizing principle behind my note system. It also lets me eventually move things off my computer into permanent storage, so I don&amp;rsquo;t have to keep backing things up forever and carrying around infinite amounts of data. I keep the last couple of years; if I need access to notes or projects from 2006, I can go pull a hard drive off the shelf and pop it into my &lt;a href=&#34;http://www.amazon.com/Vantec-NexStar-NST-D200SU-2-5-Inch-3-5-Inch/dp/B001QFNDXE/?tag=xaprb-20&#34;&gt;hard drive dock&lt;/a&gt; (buy one of those, and you&amp;rsquo;ll never get ripped off again by external drives with their own enclosures and power supplies).&lt;/p&gt;
-
-&lt;p&gt;I still need a quick way to create files and place them there, or move them there after I create them. For creating files, I use Vim. There is nothing better than a plain-text editor for me. My Vim settings are such that if I begin a line with a hyphen, Vim keeps nice indentation for me, making it easy to take notes in bulleted lists with proper indentation. If you&amp;rsquo;re on a call with me and you hear typing, I&amp;rsquo;m probably taking notes into Vim.&lt;/p&gt;
-
-&lt;p&gt;But it&amp;rsquo;s a pain to type out the full path to the file including the year, month, and date. So I created some helper scripts and put them into my $PATH. The most important are &amp;rsquo;t&amp;rsquo; and &amp;lsquo;c&amp;rsquo;. &amp;rsquo;t&amp;rsquo; simply uses Vim to edit a file. (It also creates any required directories, based on today&amp;rsquo;s date.) So if I am on a call with Joe, I just type &amp;rsquo;t joe&amp;rsquo; into a terminal, and I&amp;rsquo;m editing /home/baron/etc/&lt;sup&gt;2010&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;/03-joe.txt.&lt;/p&gt;
-
-&lt;p&gt;The &amp;lsquo;c&amp;rsquo; tool cats the file&amp;rsquo;s contents. If I type &amp;lsquo;c joe&amp;rsquo;, it executes &amp;lsquo;cat /home/baron/etc/&lt;sup&gt;2010&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;/03-joe.txt&amp;rsquo;. This makes it easy to grep, copy and paste, and so on.&lt;/p&gt;
-
-&lt;p&gt;There are a few more tools: the &amp;rsquo;m&amp;rsquo; tool moves any file into the date-based hierarchy, so if I save a PDF of an order-confirmation page, for example, I can then &amp;rsquo;m&amp;rsquo; it and it goes into its proper place. And I have a few tools to list files I created today, yesterday, this week, and this month.&lt;/p&gt;
-
-&lt;p&gt;I have a very important convention: when I&amp;rsquo;m taking notes and something becomes my responsibility to follow up on, I type TODO in the notes. After the call ends, I can grep for TODO in the file and quickly transfer the item into the task system I described in the post linked from above. This is how I can be confident that I&amp;rsquo;m not forgetting anything I&amp;rsquo;m supposed to do: I take notes and write it out as it happens, and then review the notes afterwards.&lt;/p&gt;
-
-&lt;p&gt;All told, this system kind of feels too simple to be a system. Everyone else seems to use complicated online gizmos named after groceries, or whizbang apps created by 37Signals, but I&amp;rsquo;ve found none of them to meet my needs, and just went back to basics. Basic is good. Basic works. Basic lets me concentrate on what I&amp;rsquo;m doing.&lt;/p&gt;
-
-&lt;p&gt;As I said in my previous post, part of this is based on the &lt;a href=&#34;http://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0142000280?tag=xaprb-20&#34;&gt;GTD&lt;/a&gt; book, which I read through a couple of times (with a year in between) and picked the parts that made sense to me. I think it&amp;rsquo;s a useful book to read, if you&amp;rsquo;re having trouble organizing yourself. I would just caution against spending all your energy getting organized &amp;ndash; leave a little energy for actually doing your work!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>A review of Web Operations by John Allspaw and Jesse Robbins</title>
       <link>http://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/</link>
       <pubDate>Sat, 03 Jul 2010 00:00:00 UTC</pubDate>
@@ -614,6 +586,34 @@ other features.&lt;/p&gt;
 &lt;p&gt;What wasn&amp;rsquo;t so good? I didn&amp;rsquo;t get a lot of value out of John&amp;rsquo;s interview with Heather Champ, on community management and web operations. I did not think the interview format worked well in a book full of essays. But that might just be me. Also, a couple of places in two or three chapters felt a bit rant-ish without a lot of clear actionable advice; I think readers won&amp;rsquo;t get so much out of this.&lt;/p&gt;
 
 &lt;p&gt;Overall, though, this is a great book, badly needed, on a topic that is simply not yet recognized for its true importance. As Theo writes, we&amp;rsquo;re seeing the emergence of web operations as a very large profession; it&amp;rsquo;s one whose definition is not yet formalized or agreed-upon, but that&amp;rsquo;ll change. It&amp;rsquo;s too important not to. Jesse&amp;rsquo;s introduction repeats this sentiment: the world now relies on the web, and so the world relies also on the engineers who make it run. Web operations is work that matters.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I keep track of notes</title>
+      <link>http://www.xaprb.com/blog/2010/07/03/how-i-keep-track-of-notes/</link>
+      <pubDate>Sat, 03 Jul 2010 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2010/07/03/how-i-keep-track-of-notes/</guid>
+      <description>&lt;p&gt;This is the follow-up to my post on &lt;a href=&#34;http://www.xaprb.com/blog/2010/06/30/how-i-keep-track-of-tasks/&#34;&gt;how I keep track of tasks&lt;/a&gt;. It&amp;rsquo;s important for me to have a good system for keeping notes and other files organized. The problem usually turns out to be that I want them organized several different ways simultaneously: by date, by project, by person, by subject. Alas, if I keep them in files on a hard drive, I can only choose one such organizing strategy, because filesystems are a single hierarchy.&lt;/p&gt;
+
+&lt;p&gt;I choose to organize by date, simply because most of the time I need access to notes and files about things I&amp;rsquo;m working on now or recently. If I need to find files by project or subject, there&amp;rsquo;s a search feature in my file browser, and it works really well! So date-organization is good enough for me.&lt;/p&gt;
+
+&lt;p&gt;Inside my home directory, I have a directory per year, and inside that, a directory per month. If I write a note today, it goes into the $HOME/etc/&lt;sup&gt;2010&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;/03/ directory. The filename starts with today&amp;rsquo;s date. That&amp;rsquo;s the simple organizing principle behind my note system. It also lets me eventually move things off my computer into permanent storage, so I don&amp;rsquo;t have to keep backing things up forever and carrying around infinite amounts of data. I keep the last couple of years; if I need access to notes or projects from 2006, I can go pull a hard drive off the shelf and pop it into my &lt;a href=&#34;http://www.amazon.com/Vantec-NexStar-NST-D200SU-2-5-Inch-3-5-Inch/dp/B001QFNDXE/?tag=xaprb-20&#34;&gt;hard drive dock&lt;/a&gt; (buy one of those, and you&amp;rsquo;ll never get ripped off again by external drives with their own enclosures and power supplies).&lt;/p&gt;
+
+&lt;p&gt;I still need a quick way to create files and place them there, or move them there after I create them. For creating files, I use Vim. There is nothing better than a plain-text editor for me. My Vim settings are such that if I begin a line with a hyphen, Vim keeps nice indentation for me, making it easy to take notes in bulleted lists with proper indentation. If you&amp;rsquo;re on a call with me and you hear typing, I&amp;rsquo;m probably taking notes into Vim.&lt;/p&gt;
+
+&lt;p&gt;But it&amp;rsquo;s a pain to type out the full path to the file including the year, month, and date. So I created some helper scripts and put them into my $PATH. The most important are &amp;rsquo;t&amp;rsquo; and &amp;lsquo;c&amp;rsquo;. &amp;rsquo;t&amp;rsquo; simply uses Vim to edit a file. (It also creates any required directories, based on today&amp;rsquo;s date.) So if I am on a call with Joe, I just type &amp;rsquo;t joe&amp;rsquo; into a terminal, and I&amp;rsquo;m editing /home/baron/etc/&lt;sup&gt;2010&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;/03-joe.txt.&lt;/p&gt;
+
+&lt;p&gt;The &amp;lsquo;c&amp;rsquo; tool cats the file&amp;rsquo;s contents. If I type &amp;lsquo;c joe&amp;rsquo;, it executes &amp;lsquo;cat /home/baron/etc/&lt;sup&gt;2010&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;/03-joe.txt&amp;rsquo;. This makes it easy to grep, copy and paste, and so on.&lt;/p&gt;
+
+&lt;p&gt;There are a few more tools: the &amp;rsquo;m&amp;rsquo; tool moves any file into the date-based hierarchy, so if I save a PDF of an order-confirmation page, for example, I can then &amp;rsquo;m&amp;rsquo; it and it goes into its proper place. And I have a few tools to list files I created today, yesterday, this week, and this month.&lt;/p&gt;
+
+&lt;p&gt;I have a very important convention: when I&amp;rsquo;m taking notes and something becomes my responsibility to follow up on, I type TODO in the notes. After the call ends, I can grep for TODO in the file and quickly transfer the item into the task system I described in the post linked from above. This is how I can be confident that I&amp;rsquo;m not forgetting anything I&amp;rsquo;m supposed to do: I take notes and write it out as it happens, and then review the notes afterwards.&lt;/p&gt;
+
+&lt;p&gt;All told, this system kind of feels too simple to be a system. Everyone else seems to use complicated online gizmos named after groceries, or whizbang apps created by 37Signals, but I&amp;rsquo;ve found none of them to meet my needs, and just went back to basics. Basic is good. Basic works. Basic lets me concentrate on what I&amp;rsquo;m doing.&lt;/p&gt;
+
+&lt;p&gt;As I said in my previous post, part of this is based on the &lt;a href=&#34;http://www.amazon.com/Getting-Things-Done-Stress-Free-Productivity/dp/0142000280?tag=xaprb-20&#34;&gt;GTD&lt;/a&gt; book, which I read through a couple of times (with a year in between) and picked the parts that made sense to me. I think it&amp;rsquo;s a useful book to read, if you&amp;rsquo;re having trouble organizing yourself. I would just caution against spending all your energy getting organized &amp;ndash; leave a little energy for actually doing your work!&lt;/p&gt;
 </description>
     </item>
     

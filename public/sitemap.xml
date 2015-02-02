@@ -413,12 +413,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2013/04/29/what-tokudb-might-mean-for-mongodb/</loc>
+    <loc>http://www.xaprb.com/blog/2013/04/29/the-difference-between-concurrency-and-parallelism/</loc>
     <lastmod>2013-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2013/04/29/the-difference-between-concurrency-and-parallelism/</loc>
+    <loc>http://www.xaprb.com/blog/2013/04/29/what-tokudb-might-mean-for-mongodb/</loc>
     <lastmod>2013-04-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -473,12 +473,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2013/03/14/the-right-way-to-do-social/</loc>
+    <loc>http://www.xaprb.com/blog/2013/03/14/crash-injection-for-writing-resilient-software/</loc>
     <lastmod>2013-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2013/03/14/crash-injection-for-writing-resilient-software/</loc>
+    <loc>http://www.xaprb.com/blog/2013/03/14/the-right-way-to-do-social/</loc>
     <lastmod>2013-03-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -543,12 +543,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2013/01/28/deleting-millions-of-rows-in-small-chunks-with-common_schema/</loc>
+    <loc>http://www.xaprb.com/blog/2013/01/28/how-scalable-is-riak/</loc>
     <lastmod>2013-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2013/01/28/how-scalable-is-riak/</loc>
+    <loc>http://www.xaprb.com/blog/2013/01/28/deleting-millions-of-rows-in-small-chunks-with-common_schema/</loc>
     <lastmod>2013-01-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -653,12 +653,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2012/10/30/the-average-age-of-metrics-being-trended/</loc>
+    <loc>http://www.xaprb.com/blog/2012/10/30/status-versus-configuration-variables/</loc>
     <lastmod>2012-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2012/10/30/status-versus-configuration-variables/</loc>
+    <loc>http://www.xaprb.com/blog/2012/10/30/the-average-age-of-metrics-being-trended/</loc>
     <lastmod>2012-10-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -793,12 +793,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2012/08/28/debugging-metadata-locking-in-mysql-5-5/</loc>
+    <loc>http://www.xaprb.com/blog/2012/08/28/mysql-kill-could-be-so-much-more-exciting/</loc>
     <lastmod>2012-08-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2012/08/28/mysql-kill-could-be-so-much-more-exciting/</loc>
+    <loc>http://www.xaprb.com/blog/2012/08/28/debugging-metadata-locking-in-mysql-5-5/</loc>
     <lastmod>2012-08-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -943,12 +943,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2012/03/23/speaking-at-rubynation-2012/</loc>
+    <loc>http://www.xaprb.com/blog/2012/03/23/why-you-need-to-understand-your-working-set-size/</loc>
     <lastmod>2012-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2012/03/23/why-you-need-to-understand-your-working-set-size/</loc>
+    <loc>http://www.xaprb.com/blog/2012/03/23/speaking-at-rubynation-2012/</loc>
     <lastmod>2012-03-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -998,22 +998,22 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2012/03/07/percona-is-hiring/</loc>
-    <lastmod>2012-03-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2012/03/07/making-mysql-comfortable-for-oracle-dbas/</loc>
     <lastmod>2012-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2012/03/02/mysql-high-availability-comparison-service-versus-data/</loc>
-    <lastmod>2012-03-02T00:00:00+00:00</lastmod>
+    <loc>http://www.xaprb.com/blog/2012/03/07/percona-is-hiring/</loc>
+    <lastmod>2012-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2012/03/02/dont-wait-to-book-your-percona-live-hotel/</loc>
+    <lastmod>2012-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2012/03/02/mysql-high-availability-comparison-service-versus-data/</loc>
     <lastmod>2012-03-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -1148,12 +1148,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2011/10/19/what-i-want-to-see-at-percona-live/</loc>
+    <loc>http://www.xaprb.com/blog/2011/10/19/blackhole-tables-and-auto-increment-keys/</loc>
     <lastmod>2011-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2011/10/19/blackhole-tables-and-auto-increment-keys/</loc>
+    <loc>http://www.xaprb.com/blog/2011/10/19/what-i-want-to-see-at-percona-live/</loc>
     <lastmod>2011-10-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -1163,12 +1163,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2011/10/12/features-id-like-to-see-in-innodb/</loc>
+    <loc>http://www.xaprb.com/blog/2011/10/12/progress-on-high-performance-mysql-3rd-edition/</loc>
     <lastmod>2011-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2011/10/12/progress-on-high-performance-mysql-3rd-edition/</loc>
+    <loc>http://www.xaprb.com/blog/2011/10/12/features-id-like-to-see-in-innodb/</loc>
     <lastmod>2011-10-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -1283,12 +1283,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2011/07/06/im-speaking-at-surge-2011/</loc>
+    <loc>http://www.xaprb.com/blog/2011/07/06/planned-change-in-maatkit-aspersa-development/</loc>
     <lastmod>2011-07-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2011/07/06/planned-change-in-maatkit-aspersa-development/</loc>
+    <loc>http://www.xaprb.com/blog/2011/07/06/im-speaking-at-surge-2011/</loc>
     <lastmod>2011-07-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -1303,12 +1303,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2011/06/11/vim-the-ultimate-command-line-password-manager/</loc>
+    <loc>http://www.xaprb.com/blog/2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/</loc>
     <lastmod>2011-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/</loc>
+    <loc>http://www.xaprb.com/blog/2011/06/11/vim-the-ultimate-command-line-password-manager/</loc>
     <lastmod>2011-06-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -1598,17 +1598,17 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/11/02/getting-ready-for-a-new-innotop-release/</loc>
-    <lastmod>2010-11-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2010/11/02/products-that-scale-linearly-to-hundreds-of-servers/</loc>
     <lastmod>2010-11-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2010/11/02/mysql-conference-cfp-extended/</loc>
+    <lastmod>2010-11-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2010/11/02/getting-ready-for-a-new-innotop-release/</loc>
     <lastmod>2010-11-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -1658,12 +1658,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/09/29/oreilly-mysql-2011-conference-cfp-is-open/</loc>
+    <loc>http://www.xaprb.com/blog/2010/09/29/postgres-folks-consider-the-2011-mysql-conference/</loc>
     <lastmod>2010-09-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/09/29/postgres-folks-consider-the-2011-mysql-conference/</loc>
+    <loc>http://www.xaprb.com/blog/2010/09/29/oreilly-mysql-2011-conference-cfp-is-open/</loc>
     <lastmod>2010-09-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -1678,12 +1678,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/</loc>
+    <loc>http://www.xaprb.com/blog/2010/09/19/how-lock-tables-interacts-with-the-mysql-slow-query-log/</loc>
     <lastmod>2010-09-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/09/19/how-lock-tables-interacts-with-the-mysql-slow-query-log/</loc>
+    <loc>http://www.xaprb.com/blog/2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/</loc>
     <lastmod>2010-09-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -1763,22 +1763,22 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/</loc>
-    <lastmod>2010-07-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2010/07/03/how-i-keep-track-of-notes/</loc>
     <lastmod>2010-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/07/02/the-new-hotness-in-open-core-innodb/</loc>
-    <lastmod>2010-07-02T00:00:00+00:00</lastmod>
+    <loc>http://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/</loc>
+    <lastmod>2010-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2010/07/02/is-maatkit-notable-enough-for-wikipedia-now/</loc>
+    <lastmod>2010-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2010/07/02/the-new-hotness-in-open-core-innodb/</loc>
     <lastmod>2010-07-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -1823,12 +1823,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/05/25/dirty-pages-fast-shutdown-and-write-combining/</loc>
+    <loc>http://www.xaprb.com/blog/2010/05/25/a-better-way-to-build-cacti-templates/</loc>
     <lastmod>2010-05-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/05/25/a-better-way-to-build-cacti-templates/</loc>
+    <loc>http://www.xaprb.com/blog/2010/05/25/dirty-pages-fast-shutdown-and-write-combining/</loc>
     <lastmod>2010-05-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -1858,12 +1858,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/05/12/optimal-performance-out-of-the-box/</loc>
+    <loc>http://www.xaprb.com/blog/2010/05/12/tis-a-gift-to-be-simple/</loc>
     <lastmod>2010-05-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/05/12/tis-a-gift-to-be-simple/</loc>
+    <loc>http://www.xaprb.com/blog/2010/05/12/optimal-performance-out-of-the-box/</loc>
     <lastmod>2010-05-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -1883,22 +1883,22 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/</loc>
-    <lastmod>2010-05-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2010/05/07/wishing-i-could-be-at-odtug/</loc>
     <lastmod>2010-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/05/06/my-new-mailing-list-policy/</loc>
-    <lastmod>2010-05-06T00:00:00+00:00</lastmod>
+    <loc>http://www.xaprb.com/blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/</loc>
+    <lastmod>2010-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2010/05/06/maatkit-learns-how-to-map-reduce/</loc>
+    <lastmod>2010-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2010/05/06/my-new-mailing-list-policy/</loc>
     <lastmod>2010-05-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -1923,12 +1923,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/04/21/whats-different-about-xtradb/</loc>
+    <loc>http://www.xaprb.com/blog/2010/04/21/would-you-trust-a-more-advanced-mysql-optimizer/</loc>
     <lastmod>2010-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/04/21/would-you-trust-a-more-advanced-mysql-optimizer/</loc>
+    <loc>http://www.xaprb.com/blog/2010/04/21/whats-different-about-xtradb/</loc>
     <lastmod>2010-04-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -1938,12 +1938,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/04/20/version-1-1-7-of-better-cacti-templates-released/</loc>
+    <loc>http://www.xaprb.com/blog/2010/04/20/breaking-news-show-innodb-status-ported-to-xml/</loc>
     <lastmod>2010-04-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/04/20/breaking-news-show-innodb-status-ported-to-xml/</loc>
+    <loc>http://www.xaprb.com/blog/2010/04/20/version-1-1-7-of-better-cacti-templates-released/</loc>
     <lastmod>2010-04-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -2033,17 +2033,17 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2010/02/20/learn-about-mk-query-digest-at-pgeast-2010/</loc>
-    <lastmod>2010-02-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2010/02/20/ill-be-speaking-at-the-oreilly-mysql-conference-2010/</loc>
     <lastmod>2010-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2010/02/20/mk-query-digest-now-supports-postgres-logs/</loc>
+    <lastmod>2010-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2010/02/20/learn-about-mk-query-digest-at-pgeast-2010/</loc>
     <lastmod>2010-02-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -2233,12 +2233,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/10/24/version-1-1-3-of-improved-cacti-graphs-for-mysql-released/</loc>
+    <loc>http://www.xaprb.com/blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/</loc>
     <lastmod>2009-10-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/</loc>
+    <loc>http://www.xaprb.com/blog/2009/10/24/version-1-1-3-of-improved-cacti-graphs-for-mysql-released/</loc>
     <lastmod>2009-10-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -2328,12 +2328,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/08/30/failure-scenarios-and-solutions-in-master-master-replication/</loc>
+    <loc>http://www.xaprb.com/blog/2009/08/30/a-script-snippet-for-aggregating-gdb-backtraces/</loc>
     <lastmod>2009-08-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/08/30/a-script-snippet-for-aggregating-gdb-backtraces/</loc>
+    <loc>http://www.xaprb.com/blog/2009/08/30/failure-scenarios-and-solutions-in-master-master-replication/</loc>
     <lastmod>2009-08-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -2433,12 +2433,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/06/21/how-to-add-paragraph-spacing-in-google-docs/</loc>
+    <loc>http://www.xaprb.com/blog/2009/06/21/recap-of-southeast-linux-fest-2009/</loc>
     <lastmod>2009-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/06/21/recap-of-southeast-linux-fest-2009/</loc>
+    <loc>http://www.xaprb.com/blog/2009/06/21/how-to-add-paragraph-spacing-in-google-docs/</loc>
     <lastmod>2009-06-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -2458,17 +2458,17 @@
   </url>
   
   <url>
+    <loc>http://www.xaprb.com/blog/2009/06/07/extended-covering-indexes/</loc>
+    <lastmod>2009-06-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.xaprb.com/blog/2009/06/07/an-ongoing-thread-of-blogs-on-mysql-performance/</loc>
     <lastmod>2009-06-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2009/06/07/the-cache-oblivious-algorithms-inside-tokuteks-tokudb/</loc>
-    <lastmod>2009-06-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xaprb.com/blog/2009/06/07/extended-covering-indexes/</loc>
     <lastmod>2009-06-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -2563,12 +2563,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/04/25/thank-you-for-the-mysql-54-community-release/</loc>
+    <loc>http://www.xaprb.com/blog/2009/04/25/selenas-thoughts-on-a-hackers-cooperative/</loc>
     <lastmod>2009-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/04/25/selenas-thoughts-on-a-hackers-cooperative/</loc>
+    <loc>http://www.xaprb.com/blog/2009/04/25/thank-you-for-the-mysql-54-community-release/</loc>
     <lastmod>2009-04-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -2583,17 +2583,17 @@
   </url>
   
   <url>
+    <loc>http://www.xaprb.com/blog/2009/04/17/sessions-of-interest-at-the-percona-performance-conference/</loc>
+    <lastmod>2009-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.xaprb.com/blog/2009/04/17/mysql-replication-breaks-single-threaded-limitation/</loc>
     <lastmod>2009-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2009/04/17/learn-about-maatkit-at-the-mysql-conference/</loc>
-    <lastmod>2009-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xaprb.com/blog/2009/04/17/sessions-of-interest-at-the-percona-performance-conference/</loc>
     <lastmod>2009-04-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -2608,12 +2608,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/04/11/sessions-of-interest-at-mysql-conference-and-expo-2009/</loc>
+    <loc>http://www.xaprb.com/blog/2009/04/11/formatting-mysqladmin-extended-status-nicely/</loc>
     <lastmod>2009-04-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/04/11/formatting-mysqladmin-extended-status-nicely/</loc>
+    <loc>http://www.xaprb.com/blog/2009/04/11/sessions-of-interest-at-mysql-conference-and-expo-2009/</loc>
     <lastmod>2009-04-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -2643,12 +2643,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/03/31/my-favorite-wiki-is-dokuwiki/</loc>
+    <loc>http://www.xaprb.com/blog/2009/03/31/maatkit-version-3329-released/</loc>
     <lastmod>2009-03-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/03/31/maatkit-version-3329-released/</loc>
+    <loc>http://www.xaprb.com/blog/2009/03/31/my-favorite-wiki-is-dokuwiki/</loc>
     <lastmod>2009-03-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -2683,12 +2683,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/03/08/making-maatkit-more-open-source-one-step-at-a-time/</loc>
+    <loc>http://www.xaprb.com/blog/2009/03/08/looking-back-at-the-mysql-news-from-last-year/</loc>
     <lastmod>2009-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/03/08/looking-back-at-the-mysql-news-from-last-year/</loc>
+    <loc>http://www.xaprb.com/blog/2009/03/08/making-maatkit-more-open-source-one-step-at-a-time/</loc>
     <lastmod>2009-03-08T00:00:00+00:00</lastmod>
   </url>
   
@@ -2723,17 +2723,17 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/02/21/an-invitation-to-postgresql-community-members/</loc>
-    <lastmod>2009-02-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2009/02/21/review-of-scalable-internet-architectures-by-theo-schlossnagle/</loc>
     <lastmod>2009-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/02/19/migrating-us-government-applications-from-oracle-to-mysql/</loc>
+    <loc>http://www.xaprb.com/blog/2009/02/21/an-invitation-to-postgresql-community-members/</loc>
+    <lastmod>2009-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2009/02/19/measuring-the-popularity-of-the-percona-mysql-build/</loc>
     <lastmod>2009-02-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -2743,12 +2743,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/02/19/strangest-datetime-format-ever/</loc>
+    <loc>http://www.xaprb.com/blog/2009/02/19/migrating-us-government-applications-from-oracle-to-mysql/</loc>
     <lastmod>2009-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2009/02/19/measuring-the-popularity-of-the-percona-mysql-build/</loc>
+    <loc>http://www.xaprb.com/blog/2009/02/19/strangest-datetime-format-ever/</loc>
     <lastmod>2009-02-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -2828,17 +2828,17 @@
   </url>
   
   <url>
+    <loc>http://www.xaprb.com/blog/2009/01/13/iopp-a-tool-to-print-io-operations-per-process/</loc>
+    <lastmod>2009-01-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.xaprb.com/blog/2009/01/13/what-is-the-scalable-replacement-for-innodb/</loc>
     <lastmod>2009-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2009/01/13/where-do-you-use-maatkit-in-real-life/</loc>
-    <lastmod>2009-01-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xaprb.com/blog/2009/01/13/iopp-a-tool-to-print-io-operations-per-process/</loc>
     <lastmod>2009-01-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -2978,12 +2978,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/10/16/the-unexpected-consequences-of-selinux/</loc>
+    <loc>http://www.xaprb.com/blog/2008/10/16/join-opensql-camp-on-facebook/</loc>
     <lastmod>2008-10-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/10/16/join-opensql-camp-on-facebook/</loc>
+    <loc>http://www.xaprb.com/blog/2008/10/16/the-unexpected-consequences-of-selinux/</loc>
     <lastmod>2008-10-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -2993,12 +2993,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/10/11/how-to-change-the-default-database-in-mysql/</loc>
+    <loc>http://www.xaprb.com/blog/2008/10/11/three-steps-to-stopping-blog-comment-spam/</loc>
     <lastmod>2008-10-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/10/11/three-steps-to-stopping-blog-comment-spam/</loc>
+    <loc>http://www.xaprb.com/blog/2008/10/11/how-to-change-the-default-database-in-mysql/</loc>
     <lastmod>2008-10-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -3018,12 +3018,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/10/04/how-to-check-mysql-replication-integrity-continually/</loc>
+    <loc>http://www.xaprb.com/blog/2008/10/04/update-on-high-performance-mysql-2nd-edition/</loc>
     <lastmod>2008-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/10/04/update-on-high-performance-mysql-2nd-edition/</loc>
+    <loc>http://www.xaprb.com/blog/2008/10/04/how-to-check-mysql-replication-integrity-continually/</loc>
     <lastmod>2008-10-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -3058,22 +3058,22 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/08/26/announcing-opensql-camp-2008/</loc>
-    <lastmod>2008-08-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2008/08/26/how-much-memory-does-mysql-enterprise-monitors-agent-use/</loc>
     <lastmod>2008-08-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/08/21/drizzle-stops-the-rain/</loc>
-    <lastmod>2008-08-21T00:00:00+00:00</lastmod>
+    <loc>http://www.xaprb.com/blog/2008/08/26/announcing-opensql-camp-2008/</loc>
+    <lastmod>2008-08-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2008/08/21/is-agent-based-or-agentless-monitoring-best/</loc>
+    <lastmod>2008-08-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2008/08/21/drizzle-stops-the-rain/</loc>
     <lastmod>2008-08-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -3098,12 +3098,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/08/12/maatkit-version-2152-released/</loc>
+    <loc>http://www.xaprb.com/blog/2008/08/12/anyone-want-to-help-build-rpms-of-maatkit/</loc>
     <lastmod>2008-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/08/12/anyone-want-to-help-build-rpms-of-maatkit/</loc>
+    <loc>http://www.xaprb.com/blog/2008/08/12/maatkit-version-2152-released/</loc>
     <lastmod>2008-08-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -3123,12 +3123,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/08/02/high-performance-mysql-2nd-edition-gets-revised-and-translated/</loc>
+    <loc>http://www.xaprb.com/blog/2008/08/02/how-i-hacked-the-hp-media-vault-to-support-ogg-and-flac-files/</loc>
     <lastmod>2008-08-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/08/02/how-i-hacked-the-hp-media-vault-to-support-ogg-and-flac-files/</loc>
+    <loc>http://www.xaprb.com/blog/2008/08/02/high-performance-mysql-2nd-edition-gets-revised-and-translated/</loc>
     <lastmod>2008-08-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -3138,12 +3138,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/07/28/what-is-linkedins-main-database-server/</loc>
+    <loc>http://www.xaprb.com/blog/2008/07/28/mysql-manual-gets-improved-searching/</loc>
     <lastmod>2008-07-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/07/28/mysql-manual-gets-improved-searching/</loc>
+    <loc>http://www.xaprb.com/blog/2008/07/28/what-is-linkedins-main-database-server/</loc>
     <lastmod>2008-07-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -3173,12 +3173,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/06/28/what-if-you-find-errors-in-high-performance-mysql/</loc>
+    <loc>http://www.xaprb.com/blog/2008/06/28/mysql-challenge-limit-rows-accessed-not-rows-returned/</loc>
     <lastmod>2008-06-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/06/28/mysql-challenge-limit-rows-accessed-not-rows-returned/</loc>
+    <loc>http://www.xaprb.com/blog/2008/06/28/what-if-you-find-errors-in-high-performance-mysql/</loc>
     <lastmod>2008-06-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -3248,12 +3248,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/05/21/i-moved-this-blog-to-pairlite-with-zero-downtime-and-it-was-easy/</loc>
+    <loc>http://www.xaprb.com/blog/2008/05/21/get-maatkit-fast-command-line/</loc>
     <lastmod>2008-05-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/05/21/get-maatkit-fast-command-line/</loc>
+    <loc>http://www.xaprb.com/blog/2008/05/21/i-moved-this-blog-to-pairlite-with-zero-downtime-and-it-was-easy/</loc>
     <lastmod>2008-05-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -3278,18 +3278,13 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/05/04/summary-of-becamp-2008/</loc>
-    <lastmod>2008-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2008/05/04/you-have-the-right-to-see-code-samples-in-an-interview/</loc>
     <lastmod>2008-05-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/05/02/news-flash-mysql-51-has-zero-bugs/</loc>
-    <lastmod>2008-05-02T00:00:00+00:00</lastmod>
+    <loc>http://www.xaprb.com/blog/2008/05/04/summary-of-becamp-2008/</loc>
+    <lastmod>2008-05-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -3299,6 +3294,11 @@
   
   <url>
     <loc>http://www.xaprb.com/blog/2008/05/02/pre-order-high-performance-mysql-second-edition/</loc>
+    <lastmod>2008-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2008/05/02/news-flash-mysql-51-has-zero-bugs/</loc>
     <lastmod>2008-05-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -3318,12 +3318,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/04/19/mysql-conference-and-expo-2008-day-three/</loc>
+    <loc>http://www.xaprb.com/blog/2008/04/19/spring-2008-issue-of-mysql-magazine/</loc>
     <lastmod>2008-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/04/19/spring-2008-issue-of-mysql-magazine/</loc>
+    <loc>http://www.xaprb.com/blog/2008/04/19/mysql-conference-and-expo-2008-day-three/</loc>
     <lastmod>2008-04-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -3333,12 +3333,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/04/16/get-a-free-sample-chapter-of-high-performance-mysql-second-edition/</loc>
+    <loc>http://www.xaprb.com/blog/2008/04/16/mysql-conference-and-expo-2008-day-one/</loc>
     <lastmod>2008-04-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/04/16/mysql-conference-and-expo-2008-day-one/</loc>
+    <loc>http://www.xaprb.com/blog/2008/04/16/get-a-free-sample-chapter-of-high-performance-mysql-second-edition/</loc>
     <lastmod>2008-04-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -3353,12 +3353,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/04/14/maatkit-t-shirts-are-here/</loc>
+    <loc>http://www.xaprb.com/blog/2008/04/14/kickfire-relational-algebra-in-a-chip/</loc>
     <lastmod>2008-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2008/04/14/kickfire-relational-algebra-in-a-chip/</loc>
+    <loc>http://www.xaprb.com/blog/2008/04/14/maatkit-t-shirts-are-here/</loc>
     <lastmod>2008-04-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -3378,17 +3378,17 @@
   </url>
   
   <url>
+    <loc>http://www.xaprb.com/blog/2008/04/01/review-of-perl-best-practices/</loc>
+    <lastmod>2008-04-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.xaprb.com/blog/2008/04/01/postgresql-conference-east-2008/</loc>
     <lastmod>2008-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2008/04/01/what-is-your-favorite-database-design-book/</loc>
-    <lastmod>2008-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xaprb.com/blog/2008/04/01/review-of-perl-best-practices/</loc>
     <lastmod>2008-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3538,17 +3538,17 @@
   </url>
   
   <url>
+    <loc>http://www.xaprb.com/blog/2007/12/06/progress-on-maatkit-bounty-part-4/</loc>
+    <lastmod>2007-12-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.xaprb.com/blog/2007/12/06/things-i-love-about-perl/</loc>
     <lastmod>2007-12-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2007/12/06/progress-on-maatkit-bounty-part-3/</loc>
-    <lastmod>2007-12-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xaprb.com/blog/2007/12/06/progress-on-maatkit-bounty-part-4/</loc>
     <lastmod>2007-12-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -3638,12 +3638,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/11/05/mysql-archiver-can-now-archive-each-row-to-a-different-table/</loc>
+    <loc>http://www.xaprb.com/blog/2007/11/05/growth-limits-of-open-source-vis-a-vis-mysql-toolkit/</loc>
     <lastmod>2007-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/11/05/growth-limits-of-open-source-vis-a-vis-mysql-toolkit/</loc>
+    <loc>http://www.xaprb.com/blog/2007/11/05/mysql-archiver-can-now-archive-each-row-to-a-different-table/</loc>
     <lastmod>2007-11-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -3693,12 +3693,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/10/10/proposed-bounty-on-mysql-table-sync-features/</loc>
+    <loc>http://www.xaprb.com/blog/2007/10/10/mysql-toolkit-version-1030-released/</loc>
     <lastmod>2007-10-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/10/10/mysql-toolkit-version-1030-released/</loc>
+    <loc>http://www.xaprb.com/blog/2007/10/10/proposed-bounty-on-mysql-table-sync-features/</loc>
     <lastmod>2007-10-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -3743,12 +3743,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/09/30/how-to-measure-mysql-slave-lag-accurately/</loc>
+    <loc>http://www.xaprb.com/blog/2007/09/30/introducing-mysql-parallel-dump/</loc>
     <lastmod>2007-09-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/09/30/introducing-mysql-parallel-dump/</loc>
+    <loc>http://www.xaprb.com/blog/2007/09/30/how-to-measure-mysql-slave-lag-accurately/</loc>
     <lastmod>2007-09-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -3763,12 +3763,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/09/18/how-to-debug-innodb-lock-waits/</loc>
+    <loc>http://www.xaprb.com/blog/2007/09/18/version-152-of-the-innotop-mysql-monitor-released/</loc>
     <lastmod>2007-09-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/09/18/version-152-of-the-innotop-mysql-monitor-released/</loc>
+    <loc>http://www.xaprb.com/blog/2007/09/18/how-to-debug-innodb-lock-waits/</loc>
     <lastmod>2007-09-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -3813,17 +3813,17 @@
   </url>
   
   <url>
+    <loc>http://www.xaprb.com/blog/2007/08/24/google-test-automation-conference-day-1/</loc>
+    <lastmod>2007-08-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.xaprb.com/blog/2007/08/24/mysql-camp-2007/</loc>
     <lastmod>2007-08-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2007/08/24/mysql-toolkit-version-815-released/</loc>
-    <lastmod>2007-08-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xaprb.com/blog/2007/08/24/google-test-automation-conference-day-1/</loc>
     <lastmod>2007-08-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -3893,12 +3893,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/07/10/mysql-table-checksum-119-released/</loc>
+    <loc>http://www.xaprb.com/blog/2007/07/10/what-ive-been-doing-lately/</loc>
     <lastmod>2007-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/07/10/what-ive-been-doing-lately/</loc>
+    <loc>http://www.xaprb.com/blog/2007/07/10/mysql-table-checksum-119-released/</loc>
     <lastmod>2007-07-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -3988,12 +3988,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/05/17/mysql-table-sync-093-released/</loc>
+    <loc>http://www.xaprb.com/blog/2007/05/17/two-perl-documentation-time-savers/</loc>
     <lastmod>2007-05-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/05/17/two-perl-documentation-time-savers/</loc>
+    <loc>http://www.xaprb.com/blog/2007/05/17/mysql-table-sync-093-released/</loc>
     <lastmod>2007-05-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -4078,12 +4078,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/</loc>
+    <loc>http://www.xaprb.com/blog/2007/04/05/is-mysql-ready-for-the-enterprise/</loc>
     <lastmod>2007-04-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/04/05/is-mysql-ready-for-the-enterprise/</loc>
+    <loc>http://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/</loc>
     <lastmod>2007-04-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -4143,22 +4143,22 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/03/05/mysql-table-checksum-bug-fix/</loc>
-    <lastmod>2007-03-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/</loc>
     <lastmod>2007-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2007/03/03/new-support-options-for-innotop/</loc>
-    <lastmod>2007-03-03T00:00:00+00:00</lastmod>
+    <loc>http://www.xaprb.com/blog/2007/03/05/mysql-table-checksum-bug-fix/</loc>
+    <lastmod>2007-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2007/03/03/innotop-140-released/</loc>
+    <lastmod>2007-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2007/03/03/new-support-options-for-innotop/</loc>
     <lastmod>2007-03-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -4528,12 +4528,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2006/08/02/how-to-monitor-innodb-lock-waits/</loc>
+    <loc>http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/</loc>
     <lastmod>2006-08-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2006/08/02/what-to-do-when-innotop-crashes/</loc>
+    <loc>http://www.xaprb.com/blog/2006/08/02/how-to-monitor-innodb-lock-waits/</loc>
     <lastmod>2006-08-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -4563,12 +4563,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2006/07/23/innotop-version-01106-released/</loc>
+    <loc>http://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/</loc>
     <lastmod>2006-07-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/</loc>
+    <loc>http://www.xaprb.com/blog/2006/07/23/innotop-version-01106-released/</loc>
     <lastmod>2006-07-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -4968,12 +4968,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/12/23/rowcount-and-identity/</loc>
+    <loc>http://www.xaprb.com/blog/2005/12/23/future-reserved-words/</loc>
     <lastmod>2005-12-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/12/23/future-reserved-words/</loc>
+    <loc>http://www.xaprb.com/blog/2005/12/23/rowcount-and-identity/</loc>
     <lastmod>2005-12-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -4983,22 +4983,22 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/12/15/css-good-practice-separate-layout-and-presentation/</loc>
-    <lastmod>2005-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2005/12/15/more-ways-to-use-udfs-instead-of-openxml/</loc>
     <lastmod>2005-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/12/12/everyone-is-wrong-sometimes/</loc>
-    <lastmod>2005-12-12T00:00:00+00:00</lastmod>
+    <loc>http://www.xaprb.com/blog/2005/12/15/css-good-practice-separate-layout-and-presentation/</loc>
+    <lastmod>2005-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/blog/2005/12/12/javascript-closures-for-runtime-efficiency/</loc>
+    <lastmod>2005-12-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2005/12/12/everyone-is-wrong-sometimes/</loc>
     <lastmod>2005-12-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -5028,18 +5028,13 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/12/04/sql-server-2000-date-and-time-puzzler/</loc>
-    <lastmod>2005-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2005/12/04/l-l-beans-privacy-policy/</loc>
     <lastmod>2005-12-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/12/01/copyright-privacy-terms/</loc>
-    <lastmod>2005-12-01T00:00:00+00:00</lastmod>
+    <loc>http://www.xaprb.com/blog/2005/12/04/sql-server-2000-date-and-time-puzzler/</loc>
+    <lastmod>2005-12-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -5049,6 +5044,11 @@
   
   <url>
     <loc>http://www.xaprb.com/blog/2005/12/01/about-xaprb/</loc>
+    <lastmod>2005-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2005/12/01/copyright-privacy-terms/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5108,12 +5108,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/11/03/captchas-are-a-terrible-thing/</loc>
+    <loc>http://www.xaprb.com/blog/2005/11/03/insecure-default-order-of-access-to-resources/</loc>
     <lastmod>2005-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/11/03/insecure-default-order-of-access-to-resources/</loc>
+    <loc>http://www.xaprb.com/blog/2005/11/03/captchas-are-a-terrible-thing/</loc>
     <lastmod>2005-11-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -5128,12 +5128,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/10/21/read-the-clipboard-from-javascript/</loc>
+    <loc>http://www.xaprb.com/blog/2005/10/21/quotes-around-xml-attribute-values/</loc>
     <lastmod>2005-10-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/10/21/quotes-around-xml-attribute-values/</loc>
+    <loc>http://www.xaprb.com/blog/2005/10/21/read-the-clipboard-from-javascript/</loc>
     <lastmod>2005-10-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -5158,12 +5158,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/10/03/understanding-sql-joins/</loc>
+    <loc>http://www.xaprb.com/blog/2005/10/03/prelinking-mozilla-firefox-bin/</loc>
     <lastmod>2005-10-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/10/03/prelinking-mozilla-firefox-bin/</loc>
+    <loc>http://www.xaprb.com/blog/2005/10/03/understanding-sql-joins/</loc>
     <lastmod>2005-10-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -5178,16 +5178,6 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/</loc>
-    <lastmod>2005-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xaprb.com/blog/2005/09/28/singular-vs-plural-table-names/</loc>
-    <lastmod>2005-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.xaprb.com/blog/2005/09/28/simulating-the-group-concat-function/</loc>
     <lastmod>2005-09-28T00:00:00+00:00</lastmod>
   </url>
@@ -5199,6 +5189,16 @@
   
   <url>
     <loc>http://www.xaprb.com/blog/2005/09/28/grouping-data-with-catch-all-ranks/</loc>
+    <lastmod>2005-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2005/09/28/singular-vs-plural-table-names/</loc>
+    <lastmod>2005-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.xaprb.com/blog/2005/09/28/bitwise-arithmetic/</loc>
     <lastmod>2005-09-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -5233,12 +5233,12 @@
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/</loc>
+    <loc>http://www.xaprb.com/blog/2005/09/22/interactive-directory-merging/</loc>
     <lastmod>2005-09-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.xaprb.com/blog/2005/09/22/interactive-directory-merging/</loc>
+    <loc>http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/</loc>
     <lastmod>2005-09-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -5248,17 +5248,17 @@
   </url>
   
   <url>
+    <loc>http://www.xaprb.com/essential-books/</loc>
+    <lastmod>2005-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.xaprb.com/rx-toolkit/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.xaprb.com/about/</loc>
-    <lastmod>2005-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.xaprb.com/essential-books/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
   </url>
   
