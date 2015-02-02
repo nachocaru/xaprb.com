@@ -127,6 +127,7 @@ All of this is easily preventable. Given that one or more of your devices will s
 * http://twofactorauth.org
 * [How PayPal and GoDaddy exposed someone to account theft][8]
 * [Good advice on common password misconceptions](https://www.qwertycards.com/strong_passwords.html)
+* [Storing SSH Keys on a USB Drive for 2-Factor Auth](http://tammersaleh.com/posts/building-an-encrypted-usb-drive-for-your-ssh-keys-in-os-x/)
 
 ### Things that don't help
 
