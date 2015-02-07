@@ -312,6 +312,27 @@ google.com##SPAN[id*=&#34;gbgs&#34;]&lt;/pre&gt;
     </item>
     
     <item>
+      <title>Wikipedia&#39;s concensus: Linux is an operating system</title>
+      <link>http://www.xaprb.com/blog/2009/07/01/wikipedias-concensus-linux-is-an-operating-system/</link>
+      <pubDate>Wed, 01 Jul 2009 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2009/07/01/wikipedias-concensus-linux-is-an-operating-system/</guid>
+      <description>&lt;p&gt;My brother sent me these thoughts, slightly edited:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Recently I looked at the [Wikipedia] Linux page. To my surprise it&amp;rsquo;s not about the kernel Linux, it&amp;rsquo;s about the &amp;ldquo;OS&amp;rdquo;. I looked at discussion and it appears that by general consensus the term Linux applies to the unix like operating system, and so it is correct for Wikipedia to follow that consensus. So, instead of providing information, they are deliberately misleading folks&amp;hellip; Often what the majority does is wrong because the majority of people are not the experts. By definition, the experts are a minority.
+You&amp;rsquo;d expect a higher standard from Wikipedia, wouldn&amp;rsquo;t you? Wouldn&amp;rsquo;t you? Aw, come on, surely you don&amp;rsquo;t mean to imply that Wikipedia is a place where things become true because most people say so, do you?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Consensus, when used in this way, is nothing other than mind-rot for the masses, group-think at its worst. There is a valid use of the word when it applies to decision-making. But this isn&amp;rsquo;t about decision-making, it&amp;rsquo;s about out-voting or out-discussing.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s interesting to me is that I heard a radio interview with Wikipedia&amp;rsquo;s founder Jimmy Wales, and he was extremely careful to say GNU/Linux when discussing the operating system that runs the website.&lt;/p&gt;
+
+&lt;p&gt;Saying that Linux is an operating system has not, does not, and never will make it true any more than saying that a steering wheel is a car makes it so.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>How to add a wiki homepage, sidebar, and TOC in Google Code</title>
       <link>http://www.xaprb.com/blog/2009/07/01/how-to-add-a-wiki-homepage-sidebar-and-toc-in-google-code/</link>
       <pubDate>Wed, 01 Jul 2009 00:00:00 UTC</pubDate>
@@ -346,27 +367,6 @@ google.com##SPAN[id*=&#34;gbgs&#34;]&lt;/pre&gt;
 &lt;p&gt;If you want, you can use a different homepage and sidebar, but I&amp;rsquo;ve found that it works well for me to use the same page for both. It&amp;rsquo;s a preference, that&amp;rsquo;s all.&lt;/p&gt;
 
 &lt;p&gt;There&amp;rsquo;s one more trick I&amp;rsquo;d like to share: you can add the text &lt;code&gt;&amp;lt;wiki:toc /&amp;gt;&lt;/code&gt; at the top of any page to create a small table of contents for that page. There are ways to customize it &amp;ndash; check the documentation for more options.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Wikipedia&#39;s concensus: Linux is an operating system</title>
-      <link>http://www.xaprb.com/blog/2009/07/01/wikipedias-concensus-linux-is-an-operating-system/</link>
-      <pubDate>Wed, 01 Jul 2009 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2009/07/01/wikipedias-concensus-linux-is-an-operating-system/</guid>
-      <description>&lt;p&gt;My brother sent me these thoughts, slightly edited:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Recently I looked at the [Wikipedia] Linux page. To my surprise it&amp;rsquo;s not about the kernel Linux, it&amp;rsquo;s about the &amp;ldquo;OS&amp;rdquo;. I looked at discussion and it appears that by general consensus the term Linux applies to the unix like operating system, and so it is correct for Wikipedia to follow that consensus. So, instead of providing information, they are deliberately misleading folks&amp;hellip; Often what the majority does is wrong because the majority of people are not the experts. By definition, the experts are a minority.
-You&amp;rsquo;d expect a higher standard from Wikipedia, wouldn&amp;rsquo;t you? Wouldn&amp;rsquo;t you? Aw, come on, surely you don&amp;rsquo;t mean to imply that Wikipedia is a place where things become true because most people say so, do you?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Consensus, when used in this way, is nothing other than mind-rot for the masses, group-think at its worst. There is a valid use of the word when it applies to decision-making. But this isn&amp;rsquo;t about decision-making, it&amp;rsquo;s about out-voting or out-discussing.&lt;/p&gt;
-
-&lt;p&gt;What&amp;rsquo;s interesting to me is that I heard a radio interview with Wikipedia&amp;rsquo;s founder Jimmy Wales, and he was extremely careful to say GNU/Linux when discussing the operating system that runs the website.&lt;/p&gt;
-
-&lt;p&gt;Saying that Linux is an operating system has not, does not, and never will make it true any more than saying that a steering wheel is a car makes it so.&lt;/p&gt;
 </description>
     </item>
     

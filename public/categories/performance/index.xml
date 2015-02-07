@@ -169,6 +169,22 @@ other features.&lt;/p&gt;
     </item>
     
     <item>
+      <title>When systems scale better than linearly</title>
+      <link>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</link>
+      <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been seeing a few occasions where &lt;a href=&#34;http://www.perfdynamics.com/&#34;&gt;Neil J. Gunther&amp;rsquo;s&lt;/a&gt; Universal Scalability Law doesn&amp;rsquo;t seem to model all of the important factors in a system as it scales. Models are only models, and they&amp;rsquo;re not the whole truth, so they never match reality perfectly. But there appear to be a small number of cases where systems can actually scale a bit better than linearly over a portion of the domain, due to what I&amp;rsquo;ve been calling an &amp;ldquo;economy of scale.&amp;rdquo; I believe that the Universal Scalability Law might need a third factor (seriality, coherency, and the new factor, economy of scale). I don&amp;rsquo;t think that the results I&amp;rsquo;m seeing can be modeled adequately with only two parameters.&lt;/p&gt;
+
+&lt;p&gt;Here are two publicly available cases that appear to demonstrate this phenomenon: Robert Haas&amp;rsquo;s recent blog post on PostgreSQL, titled &lt;a href=&#34;http://rhaas.blogspot.com/2011/09/scalability-in-graphical-form-analyzed.html&#34;&gt;Scalability, in Graphical Form, Analyzed&lt;/a&gt; and Mikael Ronstrom&amp;rsquo;s post from May on MySQL (NDB) Cluster, titled &lt;a href=&#34;http://mikaelronstrom.blogspot.com/2011/05/better-than-linear-scaling-is-possible.html&#34;&gt;Better than Linear Scaling is Possible&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dr. Ronstrom&amp;rsquo;s post discusses the mechanics of the phenomenon, and speculates (I&amp;rsquo;m not sure it&amp;rsquo;s conclusive) that it is from a combination of partitioning and better use of CPU caches. Now someone needs to do the math to figure out how to include this factor into the equation.&lt;/p&gt;
+
+&lt;p&gt;The good thing about the Universal Scalability Law is how simple and applicable it is for many systems. It&amp;rsquo;s nice that this economy-of-scale factor seems to be unusual and the simpler model remains easy to apply for a large variety of tasks.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Fundamental performance and scalability instrumentation</title>
       <link>http://www.xaprb.com/blog/2011/10/06/fundamental-performance-and-scalability-instrumentation/</link>
       <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
@@ -225,22 +241,6 @@ function run_query() {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;I may have missed something there; I&amp;rsquo;m writing this off the cuff. If I&amp;rsquo;ve messed up, let me know and I&amp;rsquo;ll fix it. In any case, these metrics can be used to derive all sorts of powerful things through applications of Little&amp;rsquo;s Law and queueing theory, as well as providing the inputs to the Universal Scalability Law. They should be reported by simply reading from the variables marked as &amp;ldquo;global&amp;rdquo; above, to provide a consistent view of the metrics.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>When systems scale better than linearly</title>
-      <link>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</link>
-      <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been seeing a few occasions where &lt;a href=&#34;http://www.perfdynamics.com/&#34;&gt;Neil J. Gunther&amp;rsquo;s&lt;/a&gt; Universal Scalability Law doesn&amp;rsquo;t seem to model all of the important factors in a system as it scales. Models are only models, and they&amp;rsquo;re not the whole truth, so they never match reality perfectly. But there appear to be a small number of cases where systems can actually scale a bit better than linearly over a portion of the domain, due to what I&amp;rsquo;ve been calling an &amp;ldquo;economy of scale.&amp;rdquo; I believe that the Universal Scalability Law might need a third factor (seriality, coherency, and the new factor, economy of scale). I don&amp;rsquo;t think that the results I&amp;rsquo;m seeing can be modeled adequately with only two parameters.&lt;/p&gt;
-
-&lt;p&gt;Here are two publicly available cases that appear to demonstrate this phenomenon: Robert Haas&amp;rsquo;s recent blog post on PostgreSQL, titled &lt;a href=&#34;http://rhaas.blogspot.com/2011/09/scalability-in-graphical-form-analyzed.html&#34;&gt;Scalability, in Graphical Form, Analyzed&lt;/a&gt; and Mikael Ronstrom&amp;rsquo;s post from May on MySQL (NDB) Cluster, titled &lt;a href=&#34;http://mikaelronstrom.blogspot.com/2011/05/better-than-linear-scaling-is-possible.html&#34;&gt;Better than Linear Scaling is Possible&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Dr. Ronstrom&amp;rsquo;s post discusses the mechanics of the phenomenon, and speculates (I&amp;rsquo;m not sure it&amp;rsquo;s conclusive) that it is from a combination of partitioning and better use of CPU caches. Now someone needs to do the math to figure out how to include this factor into the equation.&lt;/p&gt;
-
-&lt;p&gt;The good thing about the Universal Scalability Law is how simple and applicable it is for many systems. It&amp;rsquo;s nice that this economy-of-scale factor seems to be unusual and the simpler model remains easy to apply for a large variety of tasks.&lt;/p&gt;
 </description>
     </item>
     
