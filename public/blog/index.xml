@@ -10,11 +10,140 @@
     <updated>Sat, 07 Feb 2015 00:00:00 UTC</updated>
     
     <item>
-      <title>The DevOps Identity Crisis</title>
-      <link>http://www.xaprb.com/blog/2015/02/07/the-devops-identity-crisis/</link>
+      <title>Making High Performance MySQL&#39;s New Website</title>
+      <link>http://www.xaprb.com/blog/2015/02/07/creating-high-performance-mysql-new-website/</link>
       <pubDate>Sat, 07 Feb 2015 00:00:00 UTC</pubDate>
       
-      <guid>http://www.xaprb.com/blog/2015/02/07/the-devops-identity-crisis/</guid>
+      <guid>http://www.xaprb.com/blog/2015/02/07/creating-high-performance-mysql-new-website/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;/media/2015/02/hpm-cover-perspective.png&#34; alt=&#34;HPM Cover&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I recently updated the &lt;a href=&#34;http://www.highperfmysql.com&#34;&gt;High Performance MySQL&lt;/a&gt;
+website to modernize it. I am impressed at how easy it is these days to get a
+great little brochure site hosted. It used to be a lot more work. I used a
+variety of tools and services to do this and decided to share this for people
+who are interested. Hopefully you&amp;rsquo;ll add comments and point me towards more
+tools and tips to make these things even easier for me in the future!&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Before&lt;/h3&gt;
+
+&lt;p&gt;The website used to be a WordPress blog. This used to be my go-to solution for
+everything. It used to be the easiest way to whip together something quickly and
+put it online.&lt;/p&gt;
+
+&lt;p&gt;But WordPress sites have a bunch of problems.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They need a database. Database down, website down.&lt;/li&gt;
+&lt;li&gt;They need care and feeding. WordPress is a major hack target and you have to
+update it or you&amp;rsquo;re going to end up serving malware and ads without knowing
+it. You also have to update the plugins and themes. It&amp;rsquo;s just a lot of hassle.&lt;/li&gt;
+&lt;li&gt;They&amp;rsquo;re not high performance, primarily because of the dynamic content.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I just can&amp;rsquo;t make time to babysit sites like this anymore.
+As a result I&amp;rsquo;ve been moving everything to good old static sites again.
+Static sites used to be a lot of work too. Not anymore.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Static Site Generators&lt;/h3&gt;
+
+&lt;p&gt;Static site generators like &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; are a whole new world
+of writing ease. Write Markdown, run the generator, get a static site fully
+rendered. It&amp;rsquo;s great. Jekyll, though, still has some annoyances. It requires a
+lot of dependencies (my nemesis is &lt;code&gt;bundle install&lt;/code&gt;&amp;hellip; I hate how often that
+breaks and takes a long time to work around for whatever version of Ruby gems
+and dependencies and compilers and stuff are involved) and Jekyll itself isn&amp;rsquo;t
+really a site, it&amp;rsquo;s just the scaffolding for a site.&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; for this site because of the amount and
+complexity of content on it. Hugo is nicer than Jekyll in my opinion, much
+better actually. But for a site like High Performance MySQL, a one-page brochure
+is really what&amp;rsquo;s needed. For that, a simple static &lt;code&gt;index.html&lt;/code&gt; is better. No
+need for a site generator.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;Bootstrap and Bootstrap Themes&lt;/h3&gt;
+
+&lt;p&gt;Probably the biggest part of making a site these days is creating a good design
+that will look good on everything from a desktop browser to an old iPhone.
+&lt;a href=&#34;http://getbootstrap.com/&#34;&gt;Twitter Bootstrap&lt;/a&gt; provides a foundation for doing a
+lot of that. It&amp;rsquo;s an amazing advancement over the bad old days.&lt;/p&gt;
+
+&lt;p&gt;Combine that with thousands of freely available designs/themes based on
+Bootstrap, and you have lots of great options for a brochure site. For this
+site, I chose the
+&lt;a href=&#34;http://www.blacktie.co/2013/10/pratt-app-landing-page/&#34;&gt;Pratt&lt;/a&gt; theme from
+&lt;a href=&#34;http://www.blacktie.co/about/&#34;&gt;BlackTie&lt;/a&gt;. Thanks, Carlos! If you need a custom
+theme, Carlos does freelance work too.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2015/02/pratt-copia.png&#34; alt=&#34;Pratt&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;Hosting On GitHub Pages&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;d say &amp;ldquo;GitHub Pages is the best-kept secret&amp;rdquo;, but it&amp;rsquo;s not really a secret
+anymore among the people likely to be reading this blog. If you&amp;rsquo;re not familiar
+with GitHub Pages, you should really look into it. It&amp;rsquo;s easily the best way to
+host small sites these days. Anything that doesn&amp;rsquo;t need to be highly dynamic,
+and doesn&amp;rsquo;t need HTTPS access, is a great fit. Even things like blogs that need
+commenting functionality can work great this way. What you get is free, &lt;em&gt;fast&lt;/em&gt;
+hosting with a built-in CDN, and everything&amp;rsquo;s taken care of for you. You can use
+Gist to host your source code examples and snippets nicely. And
+maintaining and publishing the site just couldn&amp;rsquo;t be much easier, since GitHub
+hosts the source code, issues, and so on for free as well. &lt;a href=&#34;https://pages.github.com/&#34;&gt;Learn more about
+GitHub pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;A Spash of Panache&lt;/h3&gt;
+
+&lt;p&gt;The cover image you saw at the top of this post adds a dash of visual flair. If
+you produce any content and want it to be more attractive and desirable, such as
+ebooks or tutorials, an eye-catching cover image makes all the difference. If
+you have a flat image of the cover, though, how do you turn it into something
+more visually appealing? How do you do this?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2015/02/hpm-rendering.png&#34; alt=&#34;HPM Rendered&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I have access to Photoshop, and I found a great set of ready-made Photoshop
+actions to do this. The site is called &lt;a href=&#34;http://www.psdcovers.com/&#34;&gt;PSD Covers&lt;/a&gt;
+and it contains an action that&amp;rsquo;s ready to use for practically any kind of cover
+you can dream up. One caveat, it didn&amp;rsquo;t initially work well for me due to a bug
+in Photoshop CC 2014, but the
+&lt;a href=&#34;http://www.psdcovers.com/photoshop-cc-2014-1-0-canvas-dpi-bug/&#34;&gt;workaround&lt;/a&gt; is
+easy. I used the &lt;a href=&#34;http://www.psdcovers.com/softcover019/&#34;&gt;Softcover Handbook&lt;/a&gt;
+action. Thanks very much to Simon Lord for sharing this great set of resources
+freely.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;Making The Image Smaller&lt;/h3&gt;
+
+&lt;p&gt;Whenever I use an image like the above of the book cover, I tend to run it
+through &lt;a href=&#34;http://tinypng.com/&#34;&gt;TinyPNG&lt;/a&gt;. I often reduce images to just 10% or 20%
+of their original size with this great resource. This makes it a lot more
+feasible to include high-resolution versions of such images so they&amp;rsquo;ll look
+really sharp on devices with very high-resolution screens, like a
+Retina or better Apple device, or even my own favorite Android tablet, the &lt;a href=&#34;http://www.xaprb.com/blog/2015/01/19/install-cyanogenmod-nook-hdplus/&#34;&gt;B&amp;amp;N
+Nook
+HD+&lt;/a&gt;.
+If you have a JPEG image, there&amp;rsquo;s a &lt;a href=&#34;https://tinyjpg.com/&#34;&gt;TinyJPEG&lt;/a&gt; site too.
+The resulting hi-res images look great and download fast.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_6&#34;&gt;Writing The Content&lt;/h3&gt;
+
+&lt;p&gt;This is the easy and fun part for me, because I like to write. In this case, I
+mostly just copy-pasted the content off the old Wordpress site, and then
+massaged it a bit. I did discard all of the old blog posts that used to exist on
+that site, but I don&amp;rsquo;t think anyone cares. It never should have been a &amp;ldquo;blog&amp;rdquo; to
+begin with; a single-page brochureware site is all that&amp;rsquo;s necessary.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The DevOps Identity Crisis</title>
+      <link>http://www.xaprb.com/blog/2015/02/07/devops-identity-crisis/</link>
+      <pubDate>Sat, 07 Feb 2015 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2015/02/07/devops-identity-crisis/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Why DevOps needs a manifesto after all, but may never get one.&lt;/strong&gt;&lt;/p&gt;
@@ -1661,50 +1790,6 @@ the backup drive.&lt;/p&gt;
 &lt;p&gt;If you want to add this to your Google Calendar, here&amp;rsquo;s a &lt;a target=&#34;_blank&#34; href=&#34;https://www.google.com/calendar/event?action=TEMPLATE&amp;tmeid=djBmbGRuM2RhZm5rMjBwazc4Yml2b2RjOTAgYmFyb25Adml2aWRjb3J0ZXguY29t&amp;tmsrc=baron%40vividcortex.com&#34;&gt;link to an event&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.flickr.com/photos/villamon/4468869725/&#34;&gt;Pic Credit&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Unfixable Code</title>
-      <link>http://www.xaprb.com/blog/2014/06/21/unfixable-code/</link>
-      <pubDate>Sat, 21 Jun 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2014/06/21/unfixable-code/</guid>
-      <description>&lt;p&gt;Over the years I&amp;rsquo;ve come to believe something that I&amp;rsquo;m not sure others will
-agree with. I would like to hear your point of view on it.&lt;/p&gt;
-
-&lt;p&gt;I posit that some code can become literally unfixable. Programmers can paint
-themselves into a corner with the code and it becomes impossible to get out
-again.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/media/2014/06/humpty.jpg&#34; alt=&#34;humpty&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;The scenario arises when a specific set of conditions exists:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the code is difficult to work with for some reason &amp;mdash; inherent complexity, badly written code, whatever&lt;/li&gt;
-&lt;li&gt;the code is not tested and is not written to be testable&lt;/li&gt;
-&lt;li&gt;bugs are high-stakes, so changes are extremely risky&lt;/li&gt;
-&lt;li&gt;the code needs to be changed for some reason (it&amp;rsquo;s buggy or doesn&amp;rsquo;t fulfill its requirements)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This situation is a deadlock. I can&amp;rsquo;t leave the code as it is, because it
-has bugs that are causing problems that need to be fixed. I can&amp;rsquo;t change the
-code, or I&amp;rsquo;ll cause bugs that may be truly serious in a variety of ways. I can&amp;rsquo;t
-test the code, because it&amp;rsquo;s untestable the way it&amp;rsquo;s written. I can&amp;rsquo;t refactor it
-to be testable for the same reasons I can&amp;rsquo;t just change it in the first place.&lt;/p&gt;
-
-&lt;p&gt;I have encountered such code many times in my career. I&amp;rsquo;ve also met people who
-say they can fix any code with enough work. I haven&amp;rsquo;t seen that happen. The only
-solution I&amp;rsquo;ve seen is a complete replacement, rewriting from scratch.&lt;/p&gt;
-
-&lt;p&gt;What do you think?&lt;/p&gt;
-
-&lt;p&gt;PS: I remember seeing claims that if more than a small amount (10% or so, as I
-recall?) of a program&amp;rsquo;s code needs to be modified, a rewrite from scratch will
-be a better outcome in less time. If you can find any sources for that claim,
-please leave them in the comments.&lt;/p&gt;
 </description>
     </item>
     

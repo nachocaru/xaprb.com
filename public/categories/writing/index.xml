@@ -7,7 +7,136 @@
     
     
     
-    <updated>Wed, 05 Sep 2012 00:00:00 UTC</updated>
+    <updated>Sat, 07 Feb 2015 00:00:00 UTC</updated>
+    
+    <item>
+      <title>Making High Performance MySQL&#39;s New Website</title>
+      <link>http://www.xaprb.com/blog/2015/02/07/creating-high-performance-mysql-new-website/</link>
+      <pubDate>Sat, 07 Feb 2015 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2015/02/07/creating-high-performance-mysql-new-website/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;/media/2015/02/hpm-cover-perspective.png&#34; alt=&#34;HPM Cover&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I recently updated the &lt;a href=&#34;http://www.highperfmysql.com&#34;&gt;High Performance MySQL&lt;/a&gt;
+website to modernize it. I am impressed at how easy it is these days to get a
+great little brochure site hosted. It used to be a lot more work. I used a
+variety of tools and services to do this and decided to share this for people
+who are interested. Hopefully you&amp;rsquo;ll add comments and point me towards more
+tools and tips to make these things even easier for me in the future!&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;Before&lt;/h3&gt;
+
+&lt;p&gt;The website used to be a WordPress blog. This used to be my go-to solution for
+everything. It used to be the easiest way to whip together something quickly and
+put it online.&lt;/p&gt;
+
+&lt;p&gt;But WordPress sites have a bunch of problems.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;They need a database. Database down, website down.&lt;/li&gt;
+&lt;li&gt;They need care and feeding. WordPress is a major hack target and you have to
+update it or you&amp;rsquo;re going to end up serving malware and ads without knowing
+it. You also have to update the plugins and themes. It&amp;rsquo;s just a lot of hassle.&lt;/li&gt;
+&lt;li&gt;They&amp;rsquo;re not high performance, primarily because of the dynamic content.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I just can&amp;rsquo;t make time to babysit sites like this anymore.
+As a result I&amp;rsquo;ve been moving everything to good old static sites again.
+Static sites used to be a lot of work too. Not anymore.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Static Site Generators&lt;/h3&gt;
+
+&lt;p&gt;Static site generators like &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; are a whole new world
+of writing ease. Write Markdown, run the generator, get a static site fully
+rendered. It&amp;rsquo;s great. Jekyll, though, still has some annoyances. It requires a
+lot of dependencies (my nemesis is &lt;code&gt;bundle install&lt;/code&gt;&amp;hellip; I hate how often that
+breaks and takes a long time to work around for whatever version of Ruby gems
+and dependencies and compilers and stuff are involved) and Jekyll itself isn&amp;rsquo;t
+really a site, it&amp;rsquo;s just the scaffolding for a site.&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; for this site because of the amount and
+complexity of content on it. Hugo is nicer than Jekyll in my opinion, much
+better actually. But for a site like High Performance MySQL, a one-page brochure
+is really what&amp;rsquo;s needed. For that, a simple static &lt;code&gt;index.html&lt;/code&gt; is better. No
+need for a site generator.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;Bootstrap and Bootstrap Themes&lt;/h3&gt;
+
+&lt;p&gt;Probably the biggest part of making a site these days is creating a good design
+that will look good on everything from a desktop browser to an old iPhone.
+&lt;a href=&#34;http://getbootstrap.com/&#34;&gt;Twitter Bootstrap&lt;/a&gt; provides a foundation for doing a
+lot of that. It&amp;rsquo;s an amazing advancement over the bad old days.&lt;/p&gt;
+
+&lt;p&gt;Combine that with thousands of freely available designs/themes based on
+Bootstrap, and you have lots of great options for a brochure site. For this
+site, I chose the
+&lt;a href=&#34;http://www.blacktie.co/2013/10/pratt-app-landing-page/&#34;&gt;Pratt&lt;/a&gt; theme from
+&lt;a href=&#34;http://www.blacktie.co/about/&#34;&gt;BlackTie&lt;/a&gt;. Thanks, Carlos! If you need a custom
+theme, Carlos does freelance work too.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2015/02/pratt-copia.png&#34; alt=&#34;Pratt&#34; /&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;Hosting On GitHub Pages&lt;/h3&gt;
+
+&lt;p&gt;I&amp;rsquo;d say &amp;ldquo;GitHub Pages is the best-kept secret&amp;rdquo;, but it&amp;rsquo;s not really a secret
+anymore among the people likely to be reading this blog. If you&amp;rsquo;re not familiar
+with GitHub Pages, you should really look into it. It&amp;rsquo;s easily the best way to
+host small sites these days. Anything that doesn&amp;rsquo;t need to be highly dynamic,
+and doesn&amp;rsquo;t need HTTPS access, is a great fit. Even things like blogs that need
+commenting functionality can work great this way. What you get is free, &lt;em&gt;fast&lt;/em&gt;
+hosting with a built-in CDN, and everything&amp;rsquo;s taken care of for you. You can use
+Gist to host your source code examples and snippets nicely. And
+maintaining and publishing the site just couldn&amp;rsquo;t be much easier, since GitHub
+hosts the source code, issues, and so on for free as well. &lt;a href=&#34;https://pages.github.com/&#34;&gt;Learn more about
+GitHub pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;A Spash of Panache&lt;/h3&gt;
+
+&lt;p&gt;The cover image you saw at the top of this post adds a dash of visual flair. If
+you produce any content and want it to be more attractive and desirable, such as
+ebooks or tutorials, an eye-catching cover image makes all the difference. If
+you have a flat image of the cover, though, how do you turn it into something
+more visually appealing? How do you do this?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2015/02/hpm-rendering.png&#34; alt=&#34;HPM Rendered&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I have access to Photoshop, and I found a great set of ready-made Photoshop
+actions to do this. The site is called &lt;a href=&#34;http://www.psdcovers.com/&#34;&gt;PSD Covers&lt;/a&gt;
+and it contains an action that&amp;rsquo;s ready to use for practically any kind of cover
+you can dream up. One caveat, it didn&amp;rsquo;t initially work well for me due to a bug
+in Photoshop CC 2014, but the
+&lt;a href=&#34;http://www.psdcovers.com/photoshop-cc-2014-1-0-canvas-dpi-bug/&#34;&gt;workaround&lt;/a&gt; is
+easy. I used the &lt;a href=&#34;http://www.psdcovers.com/softcover019/&#34;&gt;Softcover Handbook&lt;/a&gt;
+action. Thanks very much to Simon Lord for sharing this great set of resources
+freely.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_5&#34;&gt;Making The Image Smaller&lt;/h3&gt;
+
+&lt;p&gt;Whenever I use an image like the above of the book cover, I tend to run it
+through &lt;a href=&#34;http://tinypng.com/&#34;&gt;TinyPNG&lt;/a&gt;. I often reduce images to just 10% or 20%
+of their original size with this great resource. This makes it a lot more
+feasible to include high-resolution versions of such images so they&amp;rsquo;ll look
+really sharp on devices with very high-resolution screens, like a
+Retina or better Apple device, or even my own favorite Android tablet, the &lt;a href=&#34;http://www.xaprb.com/blog/2015/01/19/install-cyanogenmod-nook-hdplus/&#34;&gt;B&amp;amp;N
+Nook
+HD+&lt;/a&gt;.
+If you have a JPEG image, there&amp;rsquo;s a &lt;a href=&#34;https://tinyjpg.com/&#34;&gt;TinyJPEG&lt;/a&gt; site too.
+The resulting hi-res images look great and download fast.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_6&#34;&gt;Writing The Content&lt;/h3&gt;
+
+&lt;p&gt;This is the easy and fun part for me, because I like to write. In this case, I
+mostly just copy-pasted the content off the old Wordpress site, and then
+massaged it a bit. I did discard all of the old blog posts that used to exist on
+that site, but I don&amp;rsquo;t think anyone cares. It never should have been a &amp;ldquo;blog&amp;rdquo; to
+begin with; a single-page brochureware site is all that&amp;rsquo;s necessary.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>What&#39;s your opinion of High Performance MySQL?</title>
@@ -307,362 +436,6 @@ These phrases usually show a place where the writing is confused and redundant. 
 
 &lt;p&gt;&lt;img src=&#34;http://www.xaprb.com/media/2008/06/hpmysql_carbon.jpg&#34; alt=&#34;High Performance MySQL is here!&#34; /&gt;
 &lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>What is it like to write a technical book?</title>
-      <link>http://www.xaprb.com/blog/2008/06/15/what-is-it-like-to-write-a-technical-book/</link>
-      <pubDate>Sun, 15 Jun 2008 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2008/06/15/what-is-it-like-to-write-a-technical-book/</guid>
-      <description>&lt;p style=&#34;background:silver; border:1px solid black&#34;&gt;Update, almost a year later: Take this with a grain of salt.  I wrote it after an incredible marathon of staying up most of the night for months on end.  My take on it now that I have some distance from the project is -- I&#39;d definitely work with Andy Oram and O&#39;Reilly again, and I&#39;d be able to make the process a lot easier for myself the second time.&lt;/p&gt;
-
-&lt;p&gt;As you probably know, I recently finished &lt;a href=&#34;http://www.highperfmysql.com/&#34;&gt;writing a book&lt;/a&gt; with a few co-authors.  I kept notes along the way and wanted to describe the process for those who are thinking about writing a book, too.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: see &lt;a href=&#34;http://www.xaprb.com/blog/2008/06/23/what-its-like-to-write-a-technical-book-continued/&#34;&gt;the followup post for more of the story&lt;/a&gt;, including my editor&#39;s responses.&lt;/p&gt;
-
-&lt;p&gt;I think it&#39;s important to be objective; my purpose here is to help prospective authors get a feeling of what it&#39;s like, and it&#39;s not all good (but I&#39;d encourage people to do it anyway). Hopefully I won&#39;t come off as sounding peeved at anyone or like I&#39;m trying to put people down. I&#39;ll have a lot to say about what went right and wrong, and how it helped and hindered the process.&lt;/p&gt;
-
-&lt;p&gt;Please excuse the rambling nature of this post.  I&#39;d love to write it well, but there is a lot to say and it&#39;s a lot of work to write a long post in an organized fashion.&lt;/p&gt;
-
-&lt;h3&gt;In the beginning&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.percona.com/&#34;&gt;Peter Zaitsev&lt;/a&gt; contacted me about a year ago and asked if I&#39;d like to help write the book.  In the earliest stages, the idea was that I&#39;d write a couple of appendices and help transform Peter and Vadim&#39;s writing into book-quality material; I was to be sort of like a glorified technical editor.  At the time I didn&#39;t know who, but I knew there would be a fourth author.&lt;/p&gt;
-
-&lt;p&gt;When Peter contacted me, I asked about the schedule, the outline, and what was complete so far.  At that point, there was an outline in pretty basic form -- just chapters and headings, with a sentence or two to explain the outline in a couple of places.  The outline followed the first edition&#39;s outline to some extent, and the chapters on benchmarking, profiling, indexing, and query optimization were partially written.&lt;/p&gt;
-
-&lt;p&gt;The schedule was actually being slipped already, because the book was supposed to go to tech review in June of 2007.  The proposal was to revise the schedule so that everything would go to tech review by October of 2007.  I don&#39;t know when Peter started on the book, actually; Andy Oram had spent years trying to get authors for the second edition, and I think Peter had started quite some time before I came on board.  He had then added Vadim and Arjen later, but it was clear that it wasn&#39;t going to meet the original schedule no matter what.&lt;/p&gt;
-
-&lt;p&gt;I asked the editor to send me the contract, and took a look at it.  It was pretty vague.  Responsibilities and steps to completion were not specified.  I asked a friend of mine who&#39;d written a book for &lt;a href=&#34;http://apress.com/&#34;&gt;Apress&lt;/a&gt; to review it for me.  I asked him what the process was like.  He described a process that had been exactly specified; his contract had specified what he was responsible for and exactly what steps were involved in publishing the book, who would perform each step, and when they had to happen.  If he didn&#39;t get his chapters done, he was not responsible for his co-author&#39;s.  O&#39;Reilly&#39;s contract, on the other hand, was really vague.  I mulled over it, decided the proposed schedule was amusing, and decided to go ahead with the book anyway, bad contract or no.&lt;/p&gt;
-
-&lt;p&gt;I did negotiate to be a full author, rather than just being mentioned in the credits as originally proposed by the O&#39;Reilly team, who thought I wouldn&#39;t really be doing much work.  And I decided that to make this work, it was going to take a lot of time.  I spoke to my boss at the &lt;a href=&#34;http://www.rimmkaufman.com/&#34;&gt;Rimm-Kaufman Group&lt;/a&gt;, and he was completely supportive of me taking time off work.  I went back to O&#39;Reilly and asked for more advances on royalties to cover me working half-time, and that was approved.  I signed the contract and started working.  Actually, I may have started working first.&lt;/p&gt;
-
-&lt;p&gt;The tech publishing industry may work many ways, and I&#39;m no expert on it, but the most surprising thing to me was that in the tech world, you generally don&#39;t write a book and then go look for a publisher who&#39;ll print it.  It works the other way around.  Generally, they do market research, decide they need a book on a topic, and go looking for people who are competent to write it.  Especially for a second edition when the first edition&#39;s authors aren&#39;t interested in being involved, I imagine this must be a challenge.&lt;/p&gt;
-
-&lt;h3&gt;The process&lt;/h3&gt;
-
-&lt;p&gt;The process of getting a book to print isn&#39;t as simple as just writing it and sending it away.  We drafted material, sent it to the editor, passed it around amongst ourselves, re-drafted, re-edited, ad nauseum.  And then it went to tech review, and we got back revisions and comments; then more revising and editing; more writing, and on and on it went.  Ultimately everything passes final editorial approval and &#34;goes to production.&#34;  If you thought that was the end of the work, ha ha, it was nowhere close to being over.  There was a production copyeditor, then a production editor, a professional artist, proofreading, quality control, more proofreading, indexing, final quality control, revisions, and finally it went to press.  Each of these steps was a lot of work for me.&lt;/p&gt;
-
-&lt;h3&gt;Collaboration and tools&lt;/h3&gt;
-
-&lt;p&gt;We were geographically distributed pretty widely, from California to London, Ukraine, Virginia, and Australia.  Collaboration was probably what you&#39;d expect: we never met face to face, though we did send a lot of email and we had weekly VOIP conference calls (at 6:30 AM my time, late late night Arjen&#39;s time).  We used a Subversion repository O&#39;Reilly set up for us to store the chapters, figures, etc.  And we used &lt;a href=&#34;http://www.openoffice.org/&#34;&gt;OpenOffice.org&lt;/a&gt; to write the chapters.  This was fine with me; I was afraid when I started that it would be in Word.  I don&#39;t like word processors of any type, but I was happier with OO.org than Microsoft Word.&lt;/p&gt;
-
-&lt;p&gt;Using Subversion with binary files wasn&#39;t ideal.  By default Subversion doesn&#39;t lock files for editing, so it was possible for us to edit the same file at the same time, and OO.org&#39;s files are binary, so they&#39;re not merge-able.  We set the svn:needs-lock property on the files so only one person could edit at a time.  While that seems like a problem, there was enough work to do that I don&#39;t think we ended up waiting for other people to release locks more than once or twice.  Each chapter was in a separate file.  We had a few files of meta-data indicating completion, TODO items, and so on.  Here&#39;s a sample from our Status file:&lt;/p&gt;
-
-&lt;pre&gt;4 Schema Optimization and indexing (ch04-Schema_Optimization.odt)
-
-   * Baron has written nearly everything.
-   * Baron is waiting for feedback on one section.
-   * Baron moved redundant material to other chapters.
-   * Peter has reviewed and commented.
-   * Baron reviewed Peter&#39;s comments and revised.
-   * Baron reviewed for EXPLAIN appendix.
-   * Sent to TR Jan 2nd.
-   * Baron rewrote completely.
-   * Baron reviewed for grammar and readability.
-   * Peter reviewed again.
-   * Baron reviewed Peter&#39;s comments and revised.
-   * Baron revised as per Sheeri.
-   * Baron revised as per Igor.
-   * Andy edited again.
-   * Baron revised.
-&lt;/pre&gt;
-
-&lt;p&gt;That&#39;s the final state of the file; as we went, we had sub-sections in this text file indicating next steps, who needed to do what, and so on.  Predictably, at various points each section would be changed to say something like &#34;final draft complete&#34; when in hindsight it was probably about 25% complete.&lt;/p&gt;
-
-&lt;p&gt;Back to the tools: in fact you can actually compare and merge files from within OO.org, but it&#39;s a crude way to do it.  OO.org was annoying in several ways; it has a lot of bugs that got in the way.  Some were simple, like the way the find-and-replace dialog doesn&#39;t remember that you want to use regular expressions from search to search.  Others were more serious, and crashed the program upon applying style definitions, for example.  O&#39;Reilly has a template, which has macros that help you format things with the styles they want so they&#39;ll be able to convert the files to their own formats later.  These were kind of clunky, and OO.org didn&#39;t work so well with them in many cases.  I did learn some ways to use them better; eventually I found various toolbars and dialog windows in Writer, and got them to mostly behave the way I wanted so I could write as I wished.  But there were still a lot of annoying things, like the inability to have an outline view.  I&#39;m not sure that OO.org can&#39;t do outlines one way or another, but O&#39;Reilly&#39;s custom styles weren&#39;t recognized as outline-able heading levels.&lt;/p&gt;
-
-&lt;p&gt;When Andy edited files, he initially put comments in them using the Comment feature.  This didn&#39;t work well.  OO.org&#39;s commenting and reviewing features, at least in that version, were hideous.  Finding comments in the text was really hard -- there seemed to be no relationship between the comment order and the order they appear in the text.  And once I found them, I couldn&#39;t actually read them, because the interface doesn&#39;t even line-wrap them, so you can see only a couple of words at a time.  So I quickly convinced Andy to put his comments in the text instead.  He turned on Track Changes, which works pretty well, and I just had to review and accept them.&lt;/p&gt;
-
-&lt;p&gt;At the beginning, I had in mind that I would be revising and editing, not writing new material.  So I also began by enabling Track Changes.  But this made the program really sloooooow, and I found that I was a) writing much more than editing, and b) when editing, I was basically rewriting.  So I just turned it off.  There were a few times I worried that I was losing the original meaning, but asking other authors to review my changes was too slow.  The other authors had so much work to do that ultimately we were only able to get Peter to write the initial outline, review what I wrote from it, and in some cases review again.  I had to face up to the reality of this and come up with another plan: snip out the relevant bits that really, really needed to be reviewed and put them into emails, which are much less work for other authors to browse through and respond, but caused more work for me.&lt;/p&gt;
-
-&lt;p&gt;There are some other things that really cut into my productivity: you can&#39;t split panes and see/edit two parts of the document at once; and so on and so on.  I&#39;d insert figures and they&#39;d disappear after someone else opened and saved the file.  Ultimately I just coped.  Getting the job done was most important.&lt;/p&gt;
-
-&lt;h3&gt;Revising, rewriting, and starting from scratch&lt;/h3&gt;
-
-&lt;p&gt;The book was a second edition.  As such, technically we were revising and updating the first edition.&lt;/p&gt;
-
-&lt;p&gt;In reality we didn&#39;t keep much of the first edition -- just a bit of text and most of the outline and overall structure.  I want to be careful how I say this, because I don&#39;t want to criticize the first edition, but obviously our job was to make it better.  I&#39;ve heard people say they loved the first edition, and people say they thought it was not in-depth enough.  (For those people hopefully the second edition will satisfy.)&lt;/p&gt;
-
-&lt;p&gt;I actually found that except for the outline, I preferred not to refer to the first edition&#39;s material if possible.  It is much more work to rewrite than to write from scratch, unless the changes are going to be really minimal.  In a few places, we thought the changes should be really cosmetic; those almost always ended up being a lot of work.  Oops!&lt;/p&gt;
-
-&lt;p&gt;The original idea was that Peter and Vadim would try to write the material, and then I&#39;d rewrite/edit (and in some cases it would be Arjen instead of me), and Peter would review, and Andy would edit, and we&#39;d go around and around until it was done.  I quickly realized that this would not work.  Rewriting is far more work than just writing from a detailed outline.  I timed it a few times, and found that it takes about 4 times as long to rewrite and tweak text than it takes to get the paragraphs onto the page.&lt;/p&gt;
-
-&lt;p&gt;Prospective authors, take note of this point!  &lt;strong&gt;The &#34;final tweaking&#34; is vastly more work than the initial, satisfying process of getting the words down&lt;/strong&gt;.  You can cut your work down by about 75% if you keep working on more and more detailed outlines, long past the point you think you ought to start &#34;writing.&#34;  That&#39;s my experience anyway.&lt;/p&gt;
-
-&lt;p&gt;After some thought, I decided that it&#39;s because rewriting is sort of like reverse engineering and then re-compiling.  Let&#39;s take this for an example:&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;Good performance depends on both an optimal schema and optimal indexing.  Optimizing server settings can improve performance from a few percent to several times, but optimizing a poorly designed or badly indexed schema can improve performance several orders of magnitude. &lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;This paragraph is not very clear, but it&#39;s not very unclear, either.  What&#39;s to be done to fix it?  Well, let&#39;s see... you have to find what&#39;s good and bad about it.  What&#39;s confusing?  I think &#34;from a few percent to several times&#34; is pretty unclear.  What are we trying to say here?  Zoom out: what is the point of the whole paragraph?  I&#39;d say the main points in this paragraph are a) you need both optimal schema and indexing; b) settings can give a little improvement, but schema can give a lot.  Now we&#39;ll try to figure out how to say that succinctly, and what to leave in and what to leave out.  What eventually went to print was this:&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;
-Optimizing a poorly designed or badly indexed schema can improve performance by
-orders of magnitude. If you require high performance, you must design your schema
-and indexes for the specific queries you will run.&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;Pretty different, huh?  There were probably 4 to 6 revisions in between.  Here&#39;s another before/after:&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;Generosity can be Unwise&lt;/p&gt;
-&lt;p&gt;A common mistake is assuming that since space consumption for short strings is the same for VARCHAR(10) and VARCHAR(200), you can simply set the maximum length to some higher value. In fact this has a severe performance penalty, because strings are often internally allocated as a fixed size object.  Thus VARCHAR(200) will use much more space in memory, especially for sorting or operations which use in-memory temporary tables. The same thing happens with filesorts that use on-disk temporary tables.  The best strategy is to allocate the space you really need. &lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;... and after:&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;                             Generosity Can Be Unwise&lt;/p&gt;
-&lt;p&gt;Storing the value &#39;hello&#39; requires the same amount of space in a VARCHAR(5) and a
-VARCHAR(200) column. Is there any advantage to using the shorter column?&lt;/p&gt;
-&lt;p&gt;As it turns out, there is a big advantage. The larger column can use much more memory, because MySQL often allocates fixed-size chunks of memory to hold values internally. This is especially bad for sorting or operations that use in-memory temporary
-tables. The same thing happens with filesorts that use on-disk temporary tables.
-The best strategy is to allocate only as much space as you really need.&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;This process takes an amazing amount of time, and though you may think it&#39;s an editor&#39;s job, in my experience writing this book, this was mostly my job, not the editor&#39;s.  If I hadn&#39;t done it, either a) the editor would have and I&#39;d have had to do a ton of work reviewing the edits (this is no small task) or b) the book would have been lower quality.&lt;/p&gt;
-
-&lt;p&gt;As a result, we quickly scrapped the idea that Peter and Vadim would write a first draft and I&#39;d take it from there.  The several chapters that had already been written in this fashion were a mind-boggling amount of work to do, and I had to come back to them again and again.  Instead, I asked Peter to write detailed bullet-point outlines and fragments of thoughts.  This was much easier to write from.  Essentially, I was asking him to iteratively fill in an outline for me, which I now believe is a much better way to write this type of complex hierarchical material.  (I do not believe it&#39;s a good way to write a complex narrative, though; this is not a one-size-fits-all approach).&lt;/p&gt;
-
-&lt;p&gt;I can&#39;t find a sample of the rough outline anymore, but I think you get the idea.&lt;/p&gt;
-
-&lt;p&gt;Another thing that caused extra work was when the outline wasn&#39;t sufficiently detailed to start with.  For example, we initially lumped the chapters on replication, scaling, high availability and so on together.  It looked reasonable, but that&#39;s because we hadn&#39;t outlined in enough detail.  After beginning to flesh it out, it was clear this would be a monster chapter, and we split it apart -- more work.  We also removed the &#34;Back to Basics&#34; chapter from the first edition, and ended up removing or moving a lot of material that was in the wrong place or was duplicated.  All of this was more and more work.&lt;/p&gt;
-
-&lt;p&gt;I would say that avoiding the temptation to write, and outlining in fanatical detail, is a very high-value activity for writing a book that&#39;s hierarchically organized like this.  Do not write prose.  The moment you start writing sentences, you begin structuring your thoughts in ways that create complex relationships between words, sentences, and paragraphs.  Teasing this apart and putting it back together is brutally hard sometimes.  There were times when I stared at something and just knew it was terrible but could not for the life of me figure out how to say it differently.  I had tunnel vision because I was locked into what was already there.&lt;/p&gt;
-
-&lt;p&gt;Quite often we wrote about things in some way that seemed to make sense, but then discovered that a few paragraphs or pages needed to be swapped.  The order in which we wrote things initially made the text flow a certain way that didn&#39;t make sense after physically moving it. Cleaning this up was really hard.  I&#39;d advise prospective authors to plan for a lot of re-jiggering in the outline, so &lt;strong&gt;outline in much more detail than you think you have to&lt;/strong&gt;.  It&#39;s a lot less work to rearrange part of a chapter when it&#39;s in outline form.&lt;/p&gt;
-
-&lt;p&gt;At some point, when you get a large amount of text written, it&#39;s hard to keep track of what&#39;s where.  I found myself thinking &#34;I&#39;ve written about this somewhere&#34; and searching for it, but was unable to find it.  Later, I&#39;d be editing another chapter and I&#39;d see what I was looking for, but then I couldn&#39;t remember where the other place was anymore.  Sometimes I&#39;d used different words in the two places, so finding one by searching on the keywords in the other was impossible.  We had a lot of duplicate material in some places, and this was just really hard to deal with.  Part of this is because the book is hierarchically organized, and the old single-hierarchy problem started to bite us.  Things belong in multiple places, but they can only go in one place.  A good example is the server settings and status variables.  Should we discuss them in the server tuning chapter, or in the place where we show you how to interpret the status variables?  They belong in both places, and eventually we ended up with some overlap.  Dealing with this is a lot of work.  I don&#39;t know how to mitigate this, other than with a good outline view -- something lacking in OO.org.&lt;/p&gt;
-
-&lt;h3&gt;Research&lt;/h3&gt;
-
-&lt;p&gt;A lot of what we wrote about required deep research.  Some of the time it was enough to go look at the MySQL manual (which is not always correct, so everything has to be verified), but just as often we had to go read source code or contact a program&#39;s author.  And occasionally, we had to run lengthy tests or benchmarks.&lt;/p&gt;
-
-&lt;p&gt;What I learned from this is that research can take forever.  You&#39;re either trying to understand something, or you&#39;re waiting on some poor programmer who has thousands of emails in his inbox.&lt;/p&gt;
-
-&lt;p&gt;Here&#39;s an example: what does avgrq-sz really mean in iostat?  The man page is confusing.  It says &#34;The average size (in sectors) of the requests that were issued to the device.&#34; To find out what this really meant, I had to read the iostat source, kernel source, and kernel documentation.  That took a long time.  Then I confirmed my findings with iostat&#39;s author.&lt;/p&gt;
-
-&lt;p&gt;We did a lot of research into MySQL&#39;s advanced features, such as stored procedures, the query cache, etc.  And a lot -- a lot! -- into InnoDB. We especially wanted to learn how these features interact with each other.  For example, how does InnoDB interact with the query cache?  That&#39;s not documented at all.  Each thing took a long time.&lt;/p&gt;
-
-&lt;p&gt;We also did a lot of benchmarking.  Benchmarking is time-consuming, too.&lt;/p&gt;
-
-&lt;p&gt;Plan for research to take much more time than you think it should.  Jay Pipes told me to plan for about a half-page a day, and I think that might be about right when you have to research much of the material on any given page.&lt;/p&gt;
-
-&lt;h3&gt;Writing clearly&lt;/h3&gt;
-
-&lt;p&gt;Working with the editor was an educational experience.  I knew I had weak spots in my writing (and I still do) but I didn&#39;t know what they were.  I was determined that this book should be clear and easy to understand.  This is hard when you have a really deep, complex book -- but it&#39;s even more important then.&lt;/p&gt;
-
-&lt;p&gt;As a result, I created a set of heuristics to help me find places where something needed attention.  It wasn&#39;t a perfect process, but it helped a lot.  Then I made a text file with regular expression patterns, and searched for matches.  When I found them, I thought about what to do with them.&lt;/p&gt;
-
-&lt;p&gt;Here&#39;s an example: the word &#34;only&#34;.  I have a habit of using it badly, and I didn&#39;t know that.  But I learned, because I watched what Andy corrected, and noticed the pattern.  I added the word &#34;only&#34; to my text file of regexps.  Here&#39;s an example of how I use it badly:&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;Things belong in multiple places, but they can only go in one place.&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;(Hmmm, that&#39;s a sentence I wrote in this blog post!)  Here&#39;s what it should say:&lt;/p&gt;
-
-&lt;blockquote&gt;&lt;p&gt;Things belong in multiple places, but they can go in only one place.&lt;/p&gt;&lt;/blockquote&gt;
-
-&lt;p&gt;Ultimately, my file of regular expressions looked like this:&lt;/p&gt;
-
-&lt;pre&gt;Passive voice:
-
-(were|was|is|are|has been|be)( [a-zA-Z]+)? [a-zA-Z]+ed\&gt;
-
-Repeated words:
-
-\&amp;lt;([a-zA-Z]+) +\1\&amp;gt;
-
-Confusing possessives:
-
-the ([a-zA-Z]+) of the
-
-Things to look out for:
-
-while|since|\&amp;lt;using|in order|of course|whether|allow|ensure|only|as (we|you)|without saying|obviously|clearly|needless|again,
-
-Finding pseudo-cross-references:
-
-((Figure|Table) [0-9])|TODO|XREF|MARK_
-
-An awkward phrase that showed up a lot:
-
-\&amp;lt;by [a-zA-Z]+ing\&amp;gt;&lt;/pre&gt;
-
-&lt;p&gt;These expressions helped me catch constructions such as &#34;the tail of the dog,&#34; which can be shortened to &#34;the dog&#39;s tail.&#34;  Or something I noticed a lot from existing content: &#34;By using mysqldump, you can dump data&#34; becomes &#34;You can dump data with mysqldump.&#34;  (The last line in the file catches that one.)  I tried to make my sentences say, as plainly as possible, &#34;who does what to what.&#34;  If you can&#39;t answer that question about a sentence, it&#39;s not clear in my opinion.  I tried to use shorter words when possible: &#34;allow&#34; can often be &#34;let,&#34; and as a bonus it usually turns a phrase into a single word: &#34;This setting allows you to ...&#34; becomes &#34;This setting lets you....&#34;&lt;/p&gt;
-
-&lt;p&gt;Phrases like &#34;of course&#34; usually alert me that I&#39;m being sloppy.  &#34;Of course&#34; really means &#34;this is obvious, but I&#39;m stating it anyway.&#34;  So why write it, then?  However, far more often &#34;of course&#34; is a proxy for &#34;I believe this, but I don&#39;t know why and it feels hard to explain, so I&#39;m going to just imply that it&#39;s obvious and you shouldn&#39;t have to ask me to explain it.&#34;  A lot of other phrases in my list are just mental bad habits I get into -- such as &#34;in order to,&#34; which can usually be shortened to &#34;to.&#34;&lt;/p&gt;
-
-&lt;p&gt;My father taught me that I use &#34;that&#34; too much.  &#34;She said that the pie was good&#34; becomes &#34;She said the pie was good.&#34;  Sometimes I take this too far.  For example, &#34;My father taught me I use &#39;that&#39; too much&#34; is overkill; it needs an extra &#34;that&#34; to flow well.  The editor put quite a few &#34;that&#34;s back into the text.&lt;/p&gt;
-
-&lt;p&gt;Passive voice is an absolute killer -- it confuses the reader, even if s/he doesn&#39;t notice, and makes it much harder to comprehend and retain what you&#39;re reading.  Here&#39;s an example I found with my regular expression: &#34;For some organizations this problem is solved using a combination of&#34; becomes &#34;Some organizations solve this problem with a combination of.&#34;  Sentence clarity is made worse by few things more than when passive voice is used by the author.  (You&#39;re supposed to laugh.)&lt;/p&gt;
-
-&lt;p&gt;No matter how good you think your writing is, prepare to put your ego aside.  An editor will always find ways to make it better.&lt;/p&gt;
-
-&lt;p&gt;After applying my heuristics to help me find the weakest spots, I thought I could do better.  I&#39;m a Perl programmer, right?  Right.  So I grabbed a few modules from CPAN, wrote a little process to extract the text from the files and clean it up, and ran sentence analysis on the files.  I used several standard metrics of readability to analyze individual sentences and whole paragraphs: Fog, Flesch, and Flesch-Kincaid.  But these were not good enough, and the hyphenation algorithms were not good enough to measure the number of syllables accurately.  So I turned to the ultimate system for hyphenating the English language: TeX.  It has rules to hyphenate extremely accurately, with all sorts of special cases.  (&#34;The-rapists who pre-ached on wee-knights&#34; is a classic example of bad hyphenation.)  I broke sentences into syllables with a custom process to hook Perl into TeX&#39;s hyphenation routines through another CPAN module, and ranked sentences and paragraphs by the number of syllables.  Then I combined all of these metrics and created a report on which parts were the worst.  I looked at the top 30 phrases that scored badly, and found a lot of problems.&lt;/p&gt;
-
-&lt;p&gt;This was a valuable exercise; it helped me get a fresh look at the text I&#39;d been staring at for months, and really did help me find the bad spots in the text.  But it wasn&#39;t enough, ultimately.  More on this in the next section.&lt;/p&gt;
-
-&lt;h3&gt;From concept to completion&lt;/h3&gt;
-
-&lt;p&gt;The high-level process to get a chapter to tech review looked like this:&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;Outline&lt;/li&gt;
-    &lt;li&gt;Re-outline&lt;/li&gt;
-    &lt;li&gt;Fill in the outline&lt;/li&gt;
-    &lt;li&gt;Initial editing&lt;/li&gt;
-    &lt;li&gt;Send to other authors for review&lt;/li&gt;
-    &lt;li&gt;Revise&lt;/li&gt;
-    &lt;li&gt;Send to the editor&lt;/li&gt;
-    &lt;li&gt;Revise&lt;/li&gt;
-    &lt;li&gt;Repeat, repeat, repeat...&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That&#39;s roughly what it takes to get something ready for tech review.  Each chapter went to the editor or assistant editor about three times, and back to Peter at least once or twice.  Peter&#39;s revisions were exhaustive (and exhausting) and sometimes a lot of work to figure out what to do with.  He also added a lot of depth in many cases, which required rewriting and re-outlining.  (Remember my advice about outlining to an insane level of detail before beginning to write...?).  All of these steps also took a lot of time, because it was a lot of work for Peter, too.  He was also doing a lot of onsite consulting, moving his whole family to the USA, and keeping Percona going at the same time.  I honestly have no idea how he did it.&lt;/p&gt;
-
-&lt;p&gt;At the &#34;end&#34; of this process, the chapters were reasonably feature-complete, but with large sections marked TODO because they were waiting on one of the authors, an &#34;external network call&#34; to Heikki or someone, or a benchmark.  Still, things have to go to the tech reviewers at some point.  From then on, the process was&lt;/p&gt;
-
-&lt;ul&gt;    &lt;li&gt;Send to tech review&lt;/li&gt;
-    &lt;li&gt;Keep working&lt;/li&gt;
-    &lt;li&gt;Get back comments&lt;/li&gt;
-    &lt;li&gt;Revise, wait, wait, wait&lt;/li&gt;
-    &lt;li&gt;Get back comments from another reviewer, revise again, repeat till done&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Everyone has busy lives, and we didn&#39;t get the first chapters to tech review until the holidays -- the worst time to ask people to do it.  And there was so much to do that I could not possibly wait for all the reviews to come back before beginning to revise.  As a result, I&#39;d get back comments from Sheeri, and I&#39;d have to try to reconcile them against the edits I&#39;d made in response to Roland, and then Pascal&#39;s comments would come in and I&#39;d be up at 2AM thinking &#34;why is he telling me this!  I&#39;ve fixed that already!&#34;  This response was a function of how tired I was and how long I was working on this book, not how I really felt about Pascal.&lt;/p&gt;
-
-&lt;p&gt;We also didn&#39;t make it clear to the reviewers that they were supposed to be reviewing, not editing.  I&#39;d try not to make this mistake again.  Some of the reviewers spent a lot of time editing grammar and style.  Unfortunately, this was wasted effort -- the material was nowhere near good enough quality to be editing for style and grammar (and the style is up to the author and editor, not tech reviewers).  It&#39;s also impossible to actually accept people&#39;s changes to the files -- there&#39;s no way to merge 5 tech reviewer&#39;s changes together, so I only opened the reviewed files separately and looked back and forth between them and my working copy.  The edits added a lot more things I had to look through; this is just the wrong stage to do anything but very high-level editing (at the level of overall organization, for example).  The tech review stage is simply to check for factual errors or things that are technically ambiguous or questionable.  As you&#39;ll see, the editing stage was to come much later.&lt;/p&gt;
-
-&lt;p&gt;After the tech review and many more iterations of editing and revisions, the chapters were deemed ready for production. There is no way to prepare for how much work it takes to get to this stage.  Well, maybe it&#39;s a function of starting with relatively low-fidelity material (the raw content from Peter and Vadim, I mean -- not from the first edition -- some of the material was sort of like a hex dump combined with snippets from blog posts, post-filtered through an obfuscator).  Anyway, the most bizarre thing kept happening: I&#39;d mark a chapter as ready for production in the Status meta-file, and then I&#39;d go back and look at it and find all sorts of TODO notes that were not fixed.  I swear, I thought I fixed them all.  And many of them were a very large amount of work.  And I&#39;d have to admit to myself that the chapter was nowhere close to being done, and go back to work on it.&lt;/p&gt;
-
-&lt;p&gt;Finally,  though, they all got done.  And we bundled them up and sent them off to production.  And for the 99th time, I told everyone the book was done.  And I was not even close to being right.&lt;/p&gt;
-
-&lt;p&gt;At this point, for the first time, I thought I kind of had an idea of what to expect.  I knew there was a production editor, and then it would go to a team who&#39;d transform it into some typesetting program, and ultimately to a printing press.  But still, no one really told me, even though I asked.  Anyway, hindsight is 20/20, so here&#39;s what happened:&lt;/p&gt;
-
-&lt;ul&gt;    &lt;li&gt;Production editor&lt;/li&gt;
-    &lt;li&gt;Revision&lt;/li&gt;
-    &lt;li&gt;Back to production editor&lt;/li&gt;
-    &lt;li&gt;Revision&lt;/li&gt;
-    &lt;li&gt;To the rest of the production team&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The production editor was going to just check for spelling and grammar, right?  I think someone told me that.  Instead, she went through the book in such incredible detail I couldn&#39;t believe it.  And she proposed major changes to just about every paragraph in the whole book.  She made so many changes that it took me at least a day, sometimes two or three, to review each chapter.  That&#39;s weeks of work I never saw coming -- every weekend, every night, all the time -- just like when I was writing.  And these were necessary changes.  She found every little ambiguous phrase, every contradiction between parts of the book, missing curly braces in code samples, paragraphs that belonged in other chapters, sentences that needed to be moved, commas in the wrong place, and much more.   She was an absolute editing machine.  Here&#39;s an example:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#39;http://www.xaprb.com/media/2008/06/production_editing.png&#39; title=&#39;Production editing&#39;&gt;&lt;img src=&#39;http://www.xaprb.com/media/2008/06/production_editing.thumbnail.png&#39; alt=&#39;Production editing&#39; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Remember, this is &lt;em&gt;after&lt;/em&gt; the editor and the assistant editor have had about five passes through the material.   I really didn&#39;t expect this much revision at this point; I thought it was going to be just fixing commas and quotes in the wrong place.&lt;/p&gt;
-
-&lt;p&gt;She went through the entire book in that kind of detail -- that is not a particularly heavily edited section, it&#39;s representative.  It was good that she did, but this was way more work than I thought I would still need to do at this stage.&lt;/p&gt;
-
-&lt;p&gt;This was made worse by the fact that the production editing process was done in Microsoft Word.  I don&#39;t have or use Word.  That would have been OK, but as I already mentioned, OO.org&#39;s markup and review capabilities are pretty limited.  The editor used markup comments extensively to clarify a lot of questions she had.  These are precisely OO.org&#39;s weakest point.  So I ended up using my wife&#39;s laptop, which has Word on it, to review the files.  This refreshed my memory on how buggy Word is -- I would say even buggier than OO.org.  Word crashed I can&#39;t tell you how many times, and the display and formatting issues were just ridiculous.  Sometimes entire pages were lost or scrambled.  I&#39;d see the middle of a paragraph at the end of one page, scroll to the beginning of the next page, and see some content that belonged much later in the book.  I&#39;d click something to insert a note or edit a change, and it would freak out and put my cursor at the very top of the file; or just plain crash.  This process was much slower than it should have been.  I stand by my assertion that a word processing program is a terrible tool for writing a book.&lt;/p&gt;
-
-&lt;p&gt;But eventually, I got through it.  And then, after that, I was really done.  Right?  Eh... no.  At this point I got an actual schedule of the remaining steps.&lt;/p&gt;
-
-&lt;ul&gt;
-    &lt;li&gt;Copyedit&lt;/li&gt;
-    &lt;li&gt;Copyedit review&lt;/li&gt;
-    &lt;li&gt;Enter Copyedits&lt;/li&gt;
-    &lt;li&gt;Conversion&lt;/li&gt;
-    &lt;li&gt;Source check&lt;/li&gt;
-    &lt;li&gt;Launch&lt;/li&gt;
-    &lt;li&gt;QC1/Proofread&lt;/li&gt;
-    &lt;li&gt;Indexing&lt;/li&gt;
-    &lt;li&gt;Input QC1 edits/Pagebreaking&lt;/li&gt;
-    &lt;li&gt;Back cover copy due to Production/Design&lt;/li&gt;
-    &lt;li&gt;QC2&lt;/li&gt;
-    &lt;li&gt;Input QC2 edits&lt;/li&gt;
-    &lt;li&gt;Index review&lt;/li&gt;
-    &lt;li&gt;Page estimate complete&lt;/li&gt;
-    &lt;li&gt;Final index complete&lt;/li&gt;
-    &lt;li&gt;Cover to printer&lt;/li&gt;
-    &lt;li&gt;OTD QC&lt;/li&gt;
-    &lt;li&gt;Book to printer&lt;/li&gt;
-    &lt;li&gt;Bound-book date&lt;/li&gt;
-    &lt;li&gt;In-stock date&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Not all of this was my job, but I had to be involved in a lot of it, and that happened within a few weeks.  Would you like to guess how many of these steps required me to do a lot of work?&lt;/p&gt;
-
-&lt;p&gt;Hint: I was sitting at my brother&#39;s college graduation reviewing the index to try not to slip the schedule again.  And I spent my weekends and evenings proofreading and making sure everything converted to the final page layout correctly.&lt;/p&gt;
-
-&lt;p&gt;Something else came in here.  The illustration artist didn&#39;t start to draw the figures until after the production copyedit and QC mentioned in the list above.  What that essentially meant is that unlike the text, the figures didn&#39;t get 10 or 15 rounds of revisions, comments, and reworking.  It was very much last-minute.  Fortunately, the artist was able to pull some really impressive work out of thin air.  Unfortunately, it meant one or two of the figures are not really that great -- at least by my standards -- even though they were really professionally drawn.  I mean, the content of the figures, not how they&#39;re drawn.  I&#39;d like some of the figures to present the concepts more clearly.  I tried to use figures to show what text could not describe well; one or two of the figures could be better.  Alas.&lt;/p&gt;
-
-&lt;h3&gt;Scheduling and project management&lt;/h3&gt;
-
-&lt;p&gt;The schedule was never defined from the start, except for the unreachable goal of going to tech review in October.  Here&#39;s where I get a little unflattering.  I don&#39;t have any hard feelings, but I want to write about what went wrong.&lt;/p&gt;
-
-&lt;p&gt;I frequently asked people at O&#39;Reilly to help me understand what would be involved in writing this book.  (This is why I&#39;m writing this for you now -- in case no one will tell you, either).  It was as if they had never helped anyone write a book and had no idea themselves what it entailed.  As a result, I had no way to know what was realistic, and of course the schedule was a death march.  The deadlines slipped, and slipped and slipped.  To November, then December, then February -- and ultimately far beyond.  Each time the editor told me he thought we were on track to make the schedule.  Remember, I didn&#39;t know whether to believe this or not.  The amount of work involved shocked me time after time -- I thought I saw the light at the end of the tunnel and then discovered it was much farther away than I thought.&lt;/p&gt;
-
-&lt;p&gt;In all fairness, I think everyone was shocked, including the editor.  He had no idea the outline he saw was so rough (but he could have put more work into it and found out!).  As we got into it, the amount of information that needed to go into each little bullet point expanded from a paragraph to a page to a section.  The initial contract called for 384 pages; the book is over 700 pages (and we actually omitted quite a bit of stuff so we could finish the book).  In contrast, the first book was 236 pages I think.  We didn&#39;t know it was going to get this big.&lt;/p&gt;
-
-&lt;p&gt;Still, there was really a lot of room for improvement.  For example, I asked the editor to send the figures from chapter 2 to the artist in February.  And asked, and asked.  And it never happened, and ended up being a last minute job.  I asked, and asked, and asked for a counter-signed contract.  I finally got one about six months later, after asking maybe a dozen or 15 times.  Advances were late, too.  There were several instances of what looked like lack of project management from O&#39;Reilly&#39;s side.  It seemed to me that the editor was heavily over-committed.  I tried to make up for it and do it myself, but you have to know what&#39;s involved in the project before you can manage.&lt;/p&gt;
-
-&lt;p&gt;On December 20th, the editor said &#34;I want this book in production in early February.&#34;  On January 10th, &#34;We should then be able to go to production late this month.&#34;  On January 17th, &#34;We might not be able to get the book to the MySQL conference. I
-pointed out that this is not a time of heavy work in production, but we&#39;re cutting it very close. But don&#39;t feel bad if the book doesn&#39;t come to the conference: it will be at Velocity which is directly related,  and at OSCon.&#34;&lt;/p&gt;
-
-&lt;p&gt;That was a complete surprise.  In the space of 7 days, the story turned around completely.  Then a few weeks later, we got an email that said O&#39;Reilly were getting a bunch of titles into production that they didn&#39;t anticipate, and wouldn&#39;t be able to fit ours in until much later.  Seriously, how can you not anticipate titles coming to production, when they&#39;ve been in progress for months or years?  That led me to believe that &lt;strong&gt;none&lt;/strong&gt; of their titles had good project management.&lt;/p&gt;
-
-&lt;p&gt;Let me be clear: the publisher is not why the book didn&#39;t come out sooner.  A book is like a baby: it&#39;s done when it&#39;s done, and not before.  What I&#39;m pointing out here is that at no point in the process did I have an idea how far from completion we were, despite a lot of effort to find out.&lt;/p&gt;
-
-&lt;p&gt;There were times when I told the editor basic things, like the page count so far, and he seemed completely surprised even though I kept a file with a table of chapters and page count, and sent email constantly about it.  Even in March I was getting emails that said &#34;Because the page count is a little higher than we originally anticipated...&#34; and then &#34;You&#39;re right about page count! The copy-editor says the Word files come to 600 without preface, index, foreword, etc.&#34;  I don&#39;t know where all my emails were going -- it seemed like everything I told them went into /dev/null.  Their lack of knowledge about the book&#39;s status was not due to my lack of telling them.&lt;/p&gt;
-
-&lt;p&gt;Another thing that was frustrating was the process of choosing technical reviewers.  It was never clear whose responsibility this really was.  I thought (and still believe) it was the publisher&#39;s.  I asked about finding people pretty early on, but my question just kind of fell on the floor.  So I asked again, and again; I proposed a list of people; I asked the editor to contact them; I contacted them myself; nobody would decide which of the people were actually the ones we wanted to use; I finally made a decision and said &#34;OK, these people X Y and Z are the ones I want.&#34;  And then I waited, and after a bit asked about progress, and back came the reply &#34;maybe we should talk about who we should ask to be technical reviewers.&#34;  Pretty frustrating, but ultimately we did get chapters ready, so we had to send them to the reviewers.&lt;/p&gt;
-
-&lt;p&gt;And then the publisher sent the chapters off to the list of technical reviewers, but had apparently not really asked them if they would/could do the work.  One of them was upset, and wrote me to ask what was going on because he actually couldn&#39;t do it; he was too busy.  I ended up having to apologize to some of my friends because someone else didn&#39;t seem to have paid attention.  I&#39;ve talked to other authors and they said their publisher had the technical reviewers lined up before the project even started, and they never had to think about it.  That was not the experience I had.&lt;/p&gt;
-
-&lt;p&gt;Back to the schedule: ultimately my attitude was that it takes the time it takes, and any predictions I got from O&#39;Reilly were just guesses.  But it would have been nice to have had more guidance about what I was getting myself into.  That&#39;s what a publisher&#39;s experience and wisdom is for, right?&lt;/p&gt;
-
-&lt;h3&gt;How much time did it take?&lt;/h3&gt;
-
-&lt;p&gt;I used &lt;a href=&#34;http://www.toggl.com/&#34;&gt;Toggl&lt;/a&gt; to keep track of the time I spent on the book.  I&#39;d say I captured about 3/4 of the time I actually spent on it.  I tracked things by chapter.  I recorded just under 800 hours of work on the book; so make it at least 1000 hours to account for the time I didn&#39;t track correctly.  That&#39;s roughly equivalent to 6 months working on it full-time.  Here&#39;s a quick breakdown of the hours I actually recorded for each task/chapter:&lt;/p&gt;
-
-&lt;pre&gt;01     27.83
-02  42.75
-03  84.28
-04  55.33
-05  69.42
-06  56.33
-07  36.67
-08  67.4
-09  48
-10  11.47
-11  64.22
-12  15.18
-13  30.07
-14  17.15
-A   0.97
-B   11.8
-C   11.67
-D   5
-general     143.22&lt;/pre&gt;
-
-&lt;p&gt;I did spend several months at half-time work on my regular job, so theoretically working at least 20 hours a week (but probably more like 50) on the book.  Otherwise, all of this time was spent on evenings and weekends.&lt;/p&gt;
-
-&lt;p&gt;It takes a lot of time, there&#39;s no escaping it.&lt;/p&gt;
-
-&lt;p&gt;A lot of things surprised me in this book.  For example, cross-references.  I tried and tried, but could not find a way to do them automatically.  Within a chapter, sure; but not between chapters.  (Did I ever mention that I wished I were writing in LaTeX?)  So this meant that I had to do a little system of putting a magic XREF word in the text, like this: &#34;See Chapter 10 for more on this topic. (XREF: application optimization).&#34;  Ultimately, nothing was automatically numbered or referenced; every cross-reference, figure, and table had to be checked manually.  And we re-numbered the chapters at some point, so it all had to be done again.  This was a lot of unnecessary work, but I didn&#39;t see a way around it; it was too late to fix it.&lt;/p&gt;
-
-&lt;p&gt;If you&#39;re thinking about writing a book, I&#39;d suggest you spend some time visualizing how much time it&#39;s really going to take.  You can use my hours-per-page ratio as a rough guide if you wish, but realize that a) I&#39;m not the only author, so this book was a lot more than just 1000 hours of work and b) I may be a faster writer than you are.  Unless you&#39;ve written a book before, don&#39;t try to estimate on your gut feeling.  A 200-page book will take a lot more than twice as much as a 100-page.  There&#39;s a non-linear relationship between pages and work, and pages that are going into print are going to take a lot more work than your senior thesis or dissertation, believe me.  Anyway, however it works for you, try to get a sense of the hours it&#39;ll need.  Now mentally visualize where you&#39;re going to get those hours from.  Really, how much time do you think you can spend in evenings and weekends?  You still have to do all the ordinary things like paying bills and washing dishes, too.&lt;/p&gt;
-
-&lt;p&gt;Do you have a quiet place completely free from interruptions where you can work?  Don&#39;t be surprised if you lose 15 or 30 minutes of flow every time you&#39;re interrupted.  That seems like a lot, but if you&#39;re keeping a lot of stuff in your mental workspace, and someone calls or pops in to ask if you can help them with something, you might find yourself becoming extremely irritable and impatient -- I do anyway -- and that feeling itself is as much of a productivity killer as the interruption.  Know thyself, as they say.  Ultimately, I think your psychological makeup is a lot of what determines how fast you can write.&lt;/p&gt;
-
-&lt;h3&gt;So why did I do it?&lt;/h3&gt;
-
-&lt;p&gt;After all this work, I often joke, this book will probably make me &lt;em&gt;hundreds&lt;/em&gt; of dollars.  I recently did some more rough calculations and found that it might pay back my royalty advances more quickly than I thought, but I&#39;m still not going to make nearly enough money from royalties to make the time worthwhile, financially.  I think if you look at the time I spent, I am working for less than minimum wage.  However, it&#39;s not about getting rich or getting onto the New York Times best-seller list.&lt;/p&gt;
-
-&lt;p&gt;For me, this book was a chance to do something I love -- writing -- and share/teach what I know, which I think is a good thing to do.  It also got my foot in the door as an author, so to speak; if I want to write in the future, I&#39;ll know what it&#39;s about and I&#39;ll hopefully be able to make the process better for myself and negotiate more strongly in my favor.  It builds my personal brand, and may help drive some business to my consulting practice.  This is all theory, of course; the better the book sells, the more likely it is that these good things will come to pass.&lt;/p&gt;
-
-&lt;p&gt;These days, since I&#39;m in high demand as a consultant, I also see the book as a way to help people help themselves.  There&#39;s way too much work to do, but people who buy and read the book will be able to get thousands of dollars&#39; worth of advice for very little money.  In other words, it offers an alternative to people who have time but not money.  That lets me concentrate on helping the people who have money but not time.&lt;/p&gt;
-
-&lt;h3&gt;Conclusions&lt;/h3&gt;
-
-&lt;p&gt;This was a long, hard project that really opened my eyes to a lot of things.  I wasn&#39;t clueless about what I was getting into, but I still had unrealistic expectations. There were a lot of learning experiences I would not have predicted, many in the area of other people not conforming to my silly ideas of what they &#34;ought&#34; to do.  The process was rewarding, and I would do it again; but not right away.  The people who really took it on the chin were the ones I deprived of quality time, like my wife, family, and rock-climbing friends.  And my boss and co-workers.&lt;/p&gt;
-
-&lt;p&gt;The other major thing I wasn&#39;t prepared for was how much time it took.  Enough said.&lt;/p&gt;
-
-&lt;p&gt;If I write another book in the future, I think I&#39;ll be pretty well prepared for the process, and I&#39;ll try to make sure it&#39;s on my terms so I can be as productive as possible (e.g. no writing a book with a word processor).  I think this is reasonable because the author is doing the vast majority of the work, so the process should really favor the author.  Finally, I&#39;ll make sure responsibilities and schedules are clearly and appropriately laid out.  Not everything can be scheduled exactly, but at least I&#39;ll know what steps are involved, who is going to do them and when as much as possible (many steps can be scheduled relative to the completion of ambiguously scheduled things, such as &#34;after the tech review revisions are committed, the editor will commit the edited result within 14 days&#34;), and it&#39;ll be on paper with a signature at the bottom.&lt;/p&gt;
-
-&lt;p&gt;For those who are thinking about writing a book, I&#39;d encourage you to do it.  I hope my thoughts are helpful to you and that your book turns out well.&lt;/p&gt;
-
-&lt;h3&gt;Postscript&lt;/h3&gt;
-
-&lt;p&gt;As it turns out, the book wasn&#39;t done when it was done.  What remains?  Errata, proofreading the printed copy so it can be tweaked in time for a second printing, and a lot of work to promote it.&lt;/p&gt;
 </description>
     </item>
     

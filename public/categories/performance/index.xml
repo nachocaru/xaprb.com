@@ -157,18 +157,14 @@ other features.&lt;/p&gt;
     </item>
     
     <item>
-      <title>When systems scale better than linearly</title>
-      <link>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</link>
+      <title>Surge 2011 slides, recap</title>
+      <link>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</link>
       <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
       
-      <guid>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been seeing a few occasions where &lt;a href=&#34;http://www.perfdynamics.com/&#34;&gt;Neil J. Gunther&amp;rsquo;s&lt;/a&gt; Universal Scalability Law doesn&amp;rsquo;t seem to model all of the important factors in a system as it scales. Models are only models, and they&amp;rsquo;re not the whole truth, so they never match reality perfectly. But there appear to be a small number of cases where systems can actually scale a bit better than linearly over a portion of the domain, due to what I&amp;rsquo;ve been calling an &amp;ldquo;economy of scale.&amp;rdquo; I believe that the Universal Scalability Law might need a third factor (seriality, coherency, and the new factor, economy of scale). I don&amp;rsquo;t think that the results I&amp;rsquo;m seeing can be modeled adequately with only two parameters.&lt;/p&gt;
+      <guid>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</guid>
+      <description>&lt;p&gt;This year&amp;rsquo;s &lt;a href=&#34;http://omniti.com/surge/2011/&#34;&gt;Surge&lt;/a&gt; conference was a great sophomore event to follow up last year&amp;rsquo;s inaugural conference. A lot of very smart people were there, and the hallway track was great.&lt;/p&gt;
 
-&lt;p&gt;Here are two publicly available cases that appear to demonstrate this phenomenon: Robert Haas&amp;rsquo;s recent blog post on PostgreSQL, titled &lt;a href=&#34;http://rhaas.blogspot.com/2011/09/scalability-in-graphical-form-analyzed.html&#34;&gt;Scalability, in Graphical Form, Analyzed&lt;/a&gt; and Mikael Ronstrom&amp;rsquo;s post from May on MySQL (NDB) Cluster, titled &lt;a href=&#34;http://mikaelronstrom.blogspot.com/2011/05/better-than-linear-scaling-is-possible.html&#34;&gt;Better than Linear Scaling is Possible&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Dr. Ronstrom&amp;rsquo;s post discusses the mechanics of the phenomenon, and speculates (I&amp;rsquo;m not sure it&amp;rsquo;s conclusive) that it is from a combination of partitioning and better use of CPU caches. Now someone needs to do the math to figure out how to include this factor into the equation.&lt;/p&gt;
-
-&lt;p&gt;The good thing about the Universal Scalability Law is how simple and applicable it is for many systems. It&amp;rsquo;s nice that this economy-of-scale factor seems to be unusual and the simpler model remains easy to apply for a large variety of tasks.&lt;/p&gt;
+&lt;p&gt;I presented on three things: a lightning talk about causes of MySQL downtime; I chaired a panel on Big Data and the Cloud; and I showed how to derive scalability and performance metrics from TCP traffic. I&amp;rsquo;ve sent my slides to the Surge organizers, and I understand that they will be posting them as well as integrating them into the video of my session. In the meanwhile you can download my slides from &lt;a href=&#34;http://www.percona.com/about-us/presentations/&#34;&gt;Percona&amp;rsquo;s presentations page&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -233,14 +229,18 @@ function run_query() {
     </item>
     
     <item>
-      <title>Surge 2011 slides, recap</title>
-      <link>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</link>
+      <title>When systems scale better than linearly</title>
+      <link>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</link>
       <pubDate>Thu, 06 Oct 2011 00:00:00 UTC</pubDate>
       
-      <guid>http://www.xaprb.com/blog/2011/10/06/surge-2011-slides-recap/</guid>
-      <description>&lt;p&gt;This year&amp;rsquo;s &lt;a href=&#34;http://omniti.com/surge/2011/&#34;&gt;Surge&lt;/a&gt; conference was a great sophomore event to follow up last year&amp;rsquo;s inaugural conference. A lot of very smart people were there, and the hallway track was great.&lt;/p&gt;
+      <guid>http://www.xaprb.com/blog/2011/10/06/when-systems-scale-better-than-linearly/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been seeing a few occasions where &lt;a href=&#34;http://www.perfdynamics.com/&#34;&gt;Neil J. Gunther&amp;rsquo;s&lt;/a&gt; Universal Scalability Law doesn&amp;rsquo;t seem to model all of the important factors in a system as it scales. Models are only models, and they&amp;rsquo;re not the whole truth, so they never match reality perfectly. But there appear to be a small number of cases where systems can actually scale a bit better than linearly over a portion of the domain, due to what I&amp;rsquo;ve been calling an &amp;ldquo;economy of scale.&amp;rdquo; I believe that the Universal Scalability Law might need a third factor (seriality, coherency, and the new factor, economy of scale). I don&amp;rsquo;t think that the results I&amp;rsquo;m seeing can be modeled adequately with only two parameters.&lt;/p&gt;
 
-&lt;p&gt;I presented on three things: a lightning talk about causes of MySQL downtime; I chaired a panel on Big Data and the Cloud; and I showed how to derive scalability and performance metrics from TCP traffic. I&amp;rsquo;ve sent my slides to the Surge organizers, and I understand that they will be posting them as well as integrating them into the video of my session. In the meanwhile you can download my slides from &lt;a href=&#34;http://www.percona.com/about-us/presentations/&#34;&gt;Percona&amp;rsquo;s presentations page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Here are two publicly available cases that appear to demonstrate this phenomenon: Robert Haas&amp;rsquo;s recent blog post on PostgreSQL, titled &lt;a href=&#34;http://rhaas.blogspot.com/2011/09/scalability-in-graphical-form-analyzed.html&#34;&gt;Scalability, in Graphical Form, Analyzed&lt;/a&gt; and Mikael Ronstrom&amp;rsquo;s post from May on MySQL (NDB) Cluster, titled &lt;a href=&#34;http://mikaelronstrom.blogspot.com/2011/05/better-than-linear-scaling-is-possible.html&#34;&gt;Better than Linear Scaling is Possible&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dr. Ronstrom&amp;rsquo;s post discusses the mechanics of the phenomenon, and speculates (I&amp;rsquo;m not sure it&amp;rsquo;s conclusive) that it is from a combination of partitioning and better use of CPU caches. Now someone needs to do the math to figure out how to include this factor into the equation.&lt;/p&gt;
+
+&lt;p&gt;The good thing about the Universal Scalability Law is how simple and applicable it is for many systems. It&amp;rsquo;s nice that this economy-of-scale factor seems to be unusual and the simpler model remains easy to apply for a large variety of tasks.&lt;/p&gt;
 </description>
     </item>
     
