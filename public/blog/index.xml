@@ -7,7 +7,111 @@
     
     
     
-    <updated>Sat, 24 Jan 2015 00:00:00 UTC</updated>
+    <updated>Sat, 07 Feb 2015 00:00:00 UTC</updated>
+    
+    <item>
+      <title>The DevOps Identity Crisis</title>
+      <link>http://www.xaprb.com/blog/2015/02/07/the-devops-identity-crisis/</link>
+      <pubDate>Sat, 07 Feb 2015 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2015/02/07/the-devops-identity-crisis/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Why DevOps needs a manifesto after all, but may never get one.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2015/02/rplusl_brain.jpg&#34; alt=&#34;brain&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This article originally appeared on &lt;a href=&#34;http://radar.oreilly.com/2015/01/the-devops-identity-crisis.html&#34;&gt;O&amp;rsquo;Reilly Radar&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;DevOps is everywhere! The growth and mindshare of the movement is remarkable. But if you care deeply about DevOps, you might agree with me when I say that although its moment has “arrived,” DevOps is in serious trouble. The movement is fragmented and weakly defined, and is being usurped by those who care more about short-term opportunities than the long-term viability of DevOps.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;They are the ninety-nine percent, and nobody cares&lt;/h3&gt;
+
+&lt;p&gt;How bad could it be? Travel back in time. It is mid-November 2011, and Occupy Wall Street is occupying the headlines. One of the major reasons is that the protestors are targeting shipping ports on the West Coast, causing shutdowns and even violence. As things are getting out of hand, parts of the movement start condemning these actions as counter-productive, hurting the 99% instead of the intended 1%. Spokespeople for the movement are quoted in the media as saying the instigators “don’t represent the movement.”&lt;/p&gt;
+
+&lt;p&gt;Why did the Occupy movement become a footnote in history so fast? There were several reasons: there was no cohesive agreement on its identity, values, goals, and mission; in an effort to be unlike “them,” the OWS proponents avoided anything that looked like centralized leadership; and it seemed to be entirely negative, advocating nothing to replace what it wanted to remove.&lt;/p&gt;
+
+&lt;p&gt;I believe a similar thing is happening to DevOps right now, for many of the same reasons. Let’s talk about some of these problems.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Messaging and positioning&lt;/h3&gt;
+
+&lt;p&gt;Messaging and positioning are vital when you’re trying to promote something, because without them, nobody will understand what you’re doing, why, and why they should care. DevOps has a messaging and positioning problem, and it hurts the movement. Positioning a product or service can be done several ways, but a standard one that’s worked well for me on several occasions is filling in the blanks of the following template:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For&lt;/strong&gt; (target customer)&lt;br&gt;
+&lt;strong&gt;Who&lt;/strong&gt; (statement of need or opportunity)&lt;br&gt;
+&lt;strong&gt;The&lt;/strong&gt; (product) is a (product category)&lt;br&gt;
+&lt;strong&gt;That&lt;/strong&gt; (statement of benefit or compelling reason to buy)&lt;br&gt;
+&lt;strong&gt;Unlike&lt;/strong&gt; (primary competitive alternative)&lt;br&gt;
+&lt;strong&gt;It is&lt;/strong&gt; (statement of differentiation)&lt;/p&gt;
+
+&lt;p&gt;This is not a statement of facts, it’s a statement of how you want a target audience to perceive you. You can probably fill in the template quickly for any number of products, trends, and audiences: the iPad, texting, Breaking Bad, Spotify. Now try replacing the parenthesized phrases for DevOps. If you are like me, you’ll find it difficult, especially when you get to the last line.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;pullquote-full&#34;&gt;DevOps can be forgotten as quickly as it arose&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;What’s unique about DevOps?&lt;/h3&gt;
+
+&lt;p&gt;The last line of the positioning statement is about differentiation, and it’s foundational. Messaging and positioning isn’t enough. You also need something unique and compelling to message and position — something others can’t say.&lt;/p&gt;
+
+&lt;p&gt;What does DevOps offer that’s unique? This is likely to be a real struggle, no matter what you think of DevOps.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Breaking down silos? Read some of Patrick Lencioni’s books.&lt;/li&gt;
+&lt;li&gt;Continuous learning, creating learning organizations? Pick up a copy of Peter Senge’s &lt;em&gt;The Fifth Discipline&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Aligning IT with business objectives? This is covered by a lot of management gurus, like Peter Drucker.&lt;/li&gt;
+&lt;li&gt;Reducing variability in processes? Read &lt;em&gt;The Goal&lt;/em&gt;, or learn about Six Sigma.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And on and on it goes. This is a vitally important question: is DevOps just old wine in a new skin? What, exactly, does it advance over previous practices? I am unable to find anything in anyone’s definition of DevOps that isn’t a restatement of an established idea or practice. I think this is a serious challenge. It means that DevOps can be forgotten as quickly as it arose — perhaps replaced by another movement that’s similar but has stronger messaging, positioning, and unique value propositions.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;The echo chambers&lt;/h3&gt;
+
+&lt;p&gt;For a movement that talks about breaking down silos, DevOps can be pretty cliquey.&lt;/p&gt;
+
+&lt;p&gt;If you’re selling a “DevOps tool,” for example, there’s a passionate community of people who object that DevOps isn’t tools, isn’t purchasable, isn’t something you can take off the shelf and unwrap. Of course, there are companies who are looking for just that, others who are selling it to them, and the results are quite good by some accounts. But sometimes people seem unwilling to listen to DevOps success stories when they disagree with how DevOps is presented in the story.&lt;/p&gt;
+
+&lt;p&gt;Similarly, those who say that enterprises need to do DevOps differently from smaller organizations might be trying to sell an exclusive “enterprise” flavor of DevOps. This is an old trick for management consultants — brand your process/framework/methodology. Boy, does this get some hackles up fast! But why should it? It’s just using messaging and positioning to create a unique value proposition, or the perception of one — something the objectors have not succeeded in doing themselves.&lt;/p&gt;
+
+&lt;p&gt;Of course, those who care most are often those with the most at stake. For example, if DevOps is defined as “developers understanding and caring about the impact of their code in production,” it isn’t surprising that the people who are responsible for production systems are happy with the outcome, and sometimes the developers are not as interested. It makes a difference for the sysadmin’s life, but not necessarily for the developer’s. When a sysadmin rails against a developer’s “wrong” ideas about DevOps, therefore, it can be a turn-off. Likewise, a very senior person with lots of experience in formal practices can get irritated when they’re criticized by a younger person who’s never even heard of those disciplines.&lt;/p&gt;
+
+&lt;p&gt;My experience is that this all adds up to create echo chambers — groups of people who insist on particular meanings for DevOps, and get strident when others hold different views.&lt;/p&gt;
+
+&lt;p&gt;I can understand why people fear the reversal of a cultural shift that’s benefited them. But I think it’s important to understand that the rise of factions was predictable and unavoidable, due to the lack of definition and agreement about what that change was in the first place, and why it was a good thing. This might be a good thing, because it might show how to solve these problems.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;Where to go from here&lt;/h3&gt;
+
+&lt;p&gt;Hopefully I’ve convinced you there’s a problem. Nobody agrees on what DevOps means — except within its echo chambers. The name is vague. The tenets are unoriginal. There’s no cohesive leadership or central personality who can address these problems, so it’s a free-for-all, with companies and individuals using it in obviously self-serving ways. That’s why I say DevOps has an identity crisis.&lt;/p&gt;
+
+&lt;p&gt;I’d suggest that, as contrary to DevOps as this might sound, we really need messaging and positioning that we can stand behind. And then we need to be public about it. As one of the characters in the popular DevOps book The Phoenix Project said, “messiahs are good, but scripture is better.” This means that some people need to assert themselves: “We are the ones who created DevOps, our definition is authoritative, and we’ve signed our names to the manifesto. If you want it to be something else, call it by a different name.”&lt;/p&gt;
+
+&lt;p&gt;The problem, though, is that DevOps’s only manifesto is “no manifestos.” But nature abhors a vacuum, and without a manifesto, everyone’s going to supply their own. This is clearly what has happened: the Four Pillars, the Three Ways, and so on. There are literally dozens of definitions of DevOps, depending on whom you ask. In The Phoenix Project, there are even references to The DevOps Cookbook, a definition in the form of a book that doesn’t exist!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;pullquote-full&#34;&gt;What can it hurt to create at least a simple website that we all agree represents the core of the DevOps philosophy?&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Is it time to rethink the “no manifestos” mandate? What can it hurt to create at least a simple website that we all agree represents the core of the DevOps philosophy? Something worthy of being the first reference from the Wikipedia article, in place of the hodgepodge of bits and pieces referenced there today? You have to start somewhere.&lt;/p&gt;
+
+&lt;p&gt;For my part, although I have expressed some concerns and reservations here, I enjoy the conversations and company of people who are interested in DevOps of many flavors. I try to adhere to the philosophy of “take what you like and leave the rest.” This works for me, but I do wish for a more tangible wheel to which I can put my shoulder. I hope that this article is a step toward that in some way, and I look forward to many more conversations online, in-person, and at events such as &lt;a href=&#34;http://www.devopsdays.org/&#34;&gt;DevOpsDays&lt;/a&gt;, &lt;a href=&#34;http://velocityconf.com/&#34;&gt;Velocity&lt;/a&gt;, and O’Reilly’s upcoming &lt;a href=&#34;http://softwarearchitecturecon.com/sa2015&#34;&gt;Software Architecture Conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Many thanks to various people at O’Reilly, Dave Zwieback, Nathen Harvey, Bridget Kromhout, Mandi Walls, and Anna Navatsyk for helping with this article directly, and numerous others for helping indirectly.&lt;/p&gt;
+
+&lt;p&gt;Photo credit: &lt;a href=&#34;http://www.flickr.com/photos/opensourceway/4639590640/in/photostream/&#34;&gt;Cropped R + L illustration CC BY-SA 2.0 Libby Levi for opensource.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;style type=&#34;text/css&#34;&gt;
+.pullquote-full {
+    display: block;
+    width: 95%;
+    margin: 30px auto;
+    font-size: 160%;
+    color: #333;
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.3;
+    padding: 0px;
+}
+&lt;/style&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Ultimate Bargain Coffee Kit</title>
@@ -1601,89 +1705,6 @@ solution I&amp;rsquo;ve seen is a complete replacement, rewriting from scratch.&
 recall?) of a program&amp;rsquo;s code needs to be modified, a rewrite from scratch will
 be a better outcome in less time. If you can find any sources for that claim,
 please leave them in the comments.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Two of My Favorite Conferences: Velocity and Surge</title>
-      <link>http://www.xaprb.com/blog/2014/06/18/my-favorite-conferences-velocity-surge/</link>
-      <pubDate>Wed, 18 Jun 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2014/06/18/my-favorite-conferences-velocity-surge/</guid>
-      <description>
-
-&lt;p&gt;Two of my favorite conferences are coming up. One&amp;rsquo;s just next week, and
-another&amp;rsquo;s in the fall.&lt;/p&gt;
-
-&lt;h3 id=&#34;toc_0&#34;&gt;Velocity&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.kqzyfj.com/click-7094008-11742203&#34;&gt;Velocity&lt;/a&gt; is such a great event.
-I wanted to go for years, and when I finally did it was honestly one of the
-highlights of my professional career. I still don&amp;rsquo;t know what I did get get
-invited to speak that first year. It was a golden horseshoe falling out of the
-sky and landing right in front of me.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/media/2014/06/velocity.png&#34; alt=&#34;Velocity&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s not the talks (though those are great). It&amp;rsquo;s the people. The people
-at Velocity are the people I want to spend my career with, the people thinking
-about the same types of problems I am, the people trying to work on similar
-solutions. They&amp;rsquo;re building companies, they&amp;rsquo;re making open source, they&amp;rsquo;re
-customers, they&amp;rsquo;re consultants, they&amp;rsquo;re just passionate practitioners. It&amp;rsquo;s just
-amazing what happens when this kind of group gets together.&lt;/p&gt;
-
-&lt;p&gt;And yeah, it&amp;rsquo;s partially because I&amp;rsquo;m a loyal O&amp;rsquo;Reilly fan. I admit it: I love
-O&amp;rsquo;Reilly, I truly do. It&amp;rsquo;s a remarkable group of people that has inspired me for
-more than a decade, and I owe a lot of who I am to O&amp;rsquo;Reilly.&lt;/p&gt;
-
-&lt;p&gt;Velocity starts next Tuesday in Santa Clara. If you don&amp;rsquo;t go to that one,
-there&amp;rsquo;s several other incarnations in New York, Barcelona, and Beijing at
-different times of the year. I&amp;rsquo;ll be in Santa Clara next week, in the
-&lt;a href=&#34;https://vividcortex.com/&#34;&gt;VividCortex&lt;/a&gt; booth. Come say hi if you&amp;rsquo;re there.&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s an affiliate link that has a 20% discount code embedded in it:
-&lt;a href=&#34;http://www.kqzyfj.com/click-7094008-11742203&#34;&gt;Velocity AFF20&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;toc_1&#34;&gt;Surge&lt;/h3&gt;
-
-&lt;p&gt;I&amp;rsquo;ve often said that &lt;a href=&#34;http://surge.omniti.com/&#34;&gt;Surge&lt;/a&gt; is Velocity without the grandiosity and with more
-emphasis on hardcore software and systems engineering &amp;mdash; and a much smaller
-price tag.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/media/2014/06/surge.png&#34; alt=&#34;Surge&#34; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been at every Surge event since the beginning, and I would not miss it.
-It&amp;rsquo;s that good. I can say all the same things about Surge as I can about
-Velocity, except it&amp;rsquo;s a lot easier and less expensive to get to, and it&amp;rsquo;s a lot
-easier to decide to attend the talks there. At Velocity sometimes I feel lost
-because the event is so big, and I end up not really attending many
-presentations, and just hanging out in the hallway track. Not so at Surge.
-Bonus: talks are always recorded and online, so you can go find out for yourself
-how good they are.&lt;/p&gt;
-
-&lt;p&gt;The climate at Surge is also quite different in terms of the topics. Velocity is
-ostensibly about the Web: backend, frontend, browser, and mobile are front and
-center. As a result, you can certainly find yourself in an unfamiliar clique, if
-you&amp;rsquo;re, say, a database administrator at a lunch table full of people who want to
-argue about how much hardware acceleration will save battery life in a mobile
-browser. Whether that bothers you or not is up to you, but I&amp;rsquo;ve found that Surge
-is birds of my feather for sure. It&amp;rsquo;s all about people who build what runs the
-Internet (not necessarily what you use to engage with the Internet).&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m pretty loyal to the folks behind Surge, too. For one thing, a lot of them
-are the same people who make Velocity awesome. For another, many of them have
-helped me tremendously in my career and in founding VividCortex.&lt;/p&gt;
-
-&lt;p&gt;Surge is in early-bird pricing right now. Having run conferences before, I know
-why early-bird pricing exists. If you think you&amp;rsquo;ll attend, do yourself and them
-a favor and sign up at a discount now. Here, click &lt;a href=&#34;http://surge.omniti.com/2014&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;toc_2&#34;&gt;Conclusions&lt;/h3&gt;
-
-&lt;p&gt;There are no conclusions. Conferences are good. I love Velocity. I love Surge.
-Go. Learn a lot. Share a lot. Make the world a better place.&lt;/p&gt;
 </description>
     </item>
     

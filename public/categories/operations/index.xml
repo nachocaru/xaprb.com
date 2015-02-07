@@ -7,7 +7,111 @@
     
     
     
-    <updated>Sat, 29 Nov 2014 00:00:00 UTC</updated>
+    <updated>Sat, 07 Feb 2015 00:00:00 UTC</updated>
+    
+    <item>
+      <title>The DevOps Identity Crisis</title>
+      <link>http://www.xaprb.com/blog/2015/02/07/the-devops-identity-crisis/</link>
+      <pubDate>Sat, 07 Feb 2015 00:00:00 UTC</pubDate>
+      
+      <guid>http://www.xaprb.com/blog/2015/02/07/the-devops-identity-crisis/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Why DevOps needs a manifesto after all, but may never get one.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/media/2015/02/rplusl_brain.jpg&#34; alt=&#34;brain&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This article originally appeared on &lt;a href=&#34;http://radar.oreilly.com/2015/01/the-devops-identity-crisis.html&#34;&gt;O&amp;rsquo;Reilly Radar&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;DevOps is everywhere! The growth and mindshare of the movement is remarkable. But if you care deeply about DevOps, you might agree with me when I say that although its moment has “arrived,” DevOps is in serious trouble. The movement is fragmented and weakly defined, and is being usurped by those who care more about short-term opportunities than the long-term viability of DevOps.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_0&#34;&gt;They are the ninety-nine percent, and nobody cares&lt;/h3&gt;
+
+&lt;p&gt;How bad could it be? Travel back in time. It is mid-November 2011, and Occupy Wall Street is occupying the headlines. One of the major reasons is that the protestors are targeting shipping ports on the West Coast, causing shutdowns and even violence. As things are getting out of hand, parts of the movement start condemning these actions as counter-productive, hurting the 99% instead of the intended 1%. Spokespeople for the movement are quoted in the media as saying the instigators “don’t represent the movement.”&lt;/p&gt;
+
+&lt;p&gt;Why did the Occupy movement become a footnote in history so fast? There were several reasons: there was no cohesive agreement on its identity, values, goals, and mission; in an effort to be unlike “them,” the OWS proponents avoided anything that looked like centralized leadership; and it seemed to be entirely negative, advocating nothing to replace what it wanted to remove.&lt;/p&gt;
+
+&lt;p&gt;I believe a similar thing is happening to DevOps right now, for many of the same reasons. Let’s talk about some of these problems.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_1&#34;&gt;Messaging and positioning&lt;/h3&gt;
+
+&lt;p&gt;Messaging and positioning are vital when you’re trying to promote something, because without them, nobody will understand what you’re doing, why, and why they should care. DevOps has a messaging and positioning problem, and it hurts the movement. Positioning a product or service can be done several ways, but a standard one that’s worked well for me on several occasions is filling in the blanks of the following template:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For&lt;/strong&gt; (target customer)&lt;br&gt;
+&lt;strong&gt;Who&lt;/strong&gt; (statement of need or opportunity)&lt;br&gt;
+&lt;strong&gt;The&lt;/strong&gt; (product) is a (product category)&lt;br&gt;
+&lt;strong&gt;That&lt;/strong&gt; (statement of benefit or compelling reason to buy)&lt;br&gt;
+&lt;strong&gt;Unlike&lt;/strong&gt; (primary competitive alternative)&lt;br&gt;
+&lt;strong&gt;It is&lt;/strong&gt; (statement of differentiation)&lt;/p&gt;
+
+&lt;p&gt;This is not a statement of facts, it’s a statement of how you want a target audience to perceive you. You can probably fill in the template quickly for any number of products, trends, and audiences: the iPad, texting, Breaking Bad, Spotify. Now try replacing the parenthesized phrases for DevOps. If you are like me, you’ll find it difficult, especially when you get to the last line.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;pullquote-full&#34;&gt;DevOps can be forgotten as quickly as it arose&lt;/span&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_2&#34;&gt;What’s unique about DevOps?&lt;/h3&gt;
+
+&lt;p&gt;The last line of the positioning statement is about differentiation, and it’s foundational. Messaging and positioning isn’t enough. You also need something unique and compelling to message and position — something others can’t say.&lt;/p&gt;
+
+&lt;p&gt;What does DevOps offer that’s unique? This is likely to be a real struggle, no matter what you think of DevOps.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Breaking down silos? Read some of Patrick Lencioni’s books.&lt;/li&gt;
+&lt;li&gt;Continuous learning, creating learning organizations? Pick up a copy of Peter Senge’s &lt;em&gt;The Fifth Discipline&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Aligning IT with business objectives? This is covered by a lot of management gurus, like Peter Drucker.&lt;/li&gt;
+&lt;li&gt;Reducing variability in processes? Read &lt;em&gt;The Goal&lt;/em&gt;, or learn about Six Sigma.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And on and on it goes. This is a vitally important question: is DevOps just old wine in a new skin? What, exactly, does it advance over previous practices? I am unable to find anything in anyone’s definition of DevOps that isn’t a restatement of an established idea or practice. I think this is a serious challenge. It means that DevOps can be forgotten as quickly as it arose — perhaps replaced by another movement that’s similar but has stronger messaging, positioning, and unique value propositions.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_3&#34;&gt;The echo chambers&lt;/h3&gt;
+
+&lt;p&gt;For a movement that talks about breaking down silos, DevOps can be pretty cliquey.&lt;/p&gt;
+
+&lt;p&gt;If you’re selling a “DevOps tool,” for example, there’s a passionate community of people who object that DevOps isn’t tools, isn’t purchasable, isn’t something you can take off the shelf and unwrap. Of course, there are companies who are looking for just that, others who are selling it to them, and the results are quite good by some accounts. But sometimes people seem unwilling to listen to DevOps success stories when they disagree with how DevOps is presented in the story.&lt;/p&gt;
+
+&lt;p&gt;Similarly, those who say that enterprises need to do DevOps differently from smaller organizations might be trying to sell an exclusive “enterprise” flavor of DevOps. This is an old trick for management consultants — brand your process/framework/methodology. Boy, does this get some hackles up fast! But why should it? It’s just using messaging and positioning to create a unique value proposition, or the perception of one — something the objectors have not succeeded in doing themselves.&lt;/p&gt;
+
+&lt;p&gt;Of course, those who care most are often those with the most at stake. For example, if DevOps is defined as “developers understanding and caring about the impact of their code in production,” it isn’t surprising that the people who are responsible for production systems are happy with the outcome, and sometimes the developers are not as interested. It makes a difference for the sysadmin’s life, but not necessarily for the developer’s. When a sysadmin rails against a developer’s “wrong” ideas about DevOps, therefore, it can be a turn-off. Likewise, a very senior person with lots of experience in formal practices can get irritated when they’re criticized by a younger person who’s never even heard of those disciplines.&lt;/p&gt;
+
+&lt;p&gt;My experience is that this all adds up to create echo chambers — groups of people who insist on particular meanings for DevOps, and get strident when others hold different views.&lt;/p&gt;
+
+&lt;p&gt;I can understand why people fear the reversal of a cultural shift that’s benefited them. But I think it’s important to understand that the rise of factions was predictable and unavoidable, due to the lack of definition and agreement about what that change was in the first place, and why it was a good thing. This might be a good thing, because it might show how to solve these problems.&lt;/p&gt;
+
+&lt;h3 id=&#34;toc_4&#34;&gt;Where to go from here&lt;/h3&gt;
+
+&lt;p&gt;Hopefully I’ve convinced you there’s a problem. Nobody agrees on what DevOps means — except within its echo chambers. The name is vague. The tenets are unoriginal. There’s no cohesive leadership or central personality who can address these problems, so it’s a free-for-all, with companies and individuals using it in obviously self-serving ways. That’s why I say DevOps has an identity crisis.&lt;/p&gt;
+
+&lt;p&gt;I’d suggest that, as contrary to DevOps as this might sound, we really need messaging and positioning that we can stand behind. And then we need to be public about it. As one of the characters in the popular DevOps book The Phoenix Project said, “messiahs are good, but scripture is better.” This means that some people need to assert themselves: “We are the ones who created DevOps, our definition is authoritative, and we’ve signed our names to the manifesto. If you want it to be something else, call it by a different name.”&lt;/p&gt;
+
+&lt;p&gt;The problem, though, is that DevOps’s only manifesto is “no manifestos.” But nature abhors a vacuum, and without a manifesto, everyone’s going to supply their own. This is clearly what has happened: the Four Pillars, the Three Ways, and so on. There are literally dozens of definitions of DevOps, depending on whom you ask. In The Phoenix Project, there are even references to The DevOps Cookbook, a definition in the form of a book that doesn’t exist!&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&#34;pullquote-full&#34;&gt;What can it hurt to create at least a simple website that we all agree represents the core of the DevOps philosophy?&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Is it time to rethink the “no manifestos” mandate? What can it hurt to create at least a simple website that we all agree represents the core of the DevOps philosophy? Something worthy of being the first reference from the Wikipedia article, in place of the hodgepodge of bits and pieces referenced there today? You have to start somewhere.&lt;/p&gt;
+
+&lt;p&gt;For my part, although I have expressed some concerns and reservations here, I enjoy the conversations and company of people who are interested in DevOps of many flavors. I try to adhere to the philosophy of “take what you like and leave the rest.” This works for me, but I do wish for a more tangible wheel to which I can put my shoulder. I hope that this article is a step toward that in some way, and I look forward to many more conversations online, in-person, and at events such as &lt;a href=&#34;http://www.devopsdays.org/&#34;&gt;DevOpsDays&lt;/a&gt;, &lt;a href=&#34;http://velocityconf.com/&#34;&gt;Velocity&lt;/a&gt;, and O’Reilly’s upcoming &lt;a href=&#34;http://softwarearchitecturecon.com/sa2015&#34;&gt;Software Architecture Conference&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Many thanks to various people at O’Reilly, Dave Zwieback, Nathen Harvey, Bridget Kromhout, Mandi Walls, and Anna Navatsyk for helping with this article directly, and numerous others for helping indirectly.&lt;/p&gt;
+
+&lt;p&gt;Photo credit: &lt;a href=&#34;http://www.flickr.com/photos/opensourceway/4639590640/in/photostream/&#34;&gt;Cropped R + L illustration CC BY-SA 2.0 Libby Levi for opensource.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;style type=&#34;text/css&#34;&gt;
+.pullquote-full {
+    display: block;
+    width: 95%;
+    margin: 30px auto;
+    font-size: 160%;
+    color: #333;
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.3;
+    padding: 0px;
+}
+&lt;/style&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Why Deployment Freezes Don&#39;t Prevent Outages</title>
@@ -553,39 +657,6 @@ other features.&lt;/p&gt;
 
 &lt;p&gt;The average service time (in milliseconds) for I/O requests that were issued to the device. Warning! Do not trust this field any more. This field will be removed in a future sysstat version.&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A review of Web Operations by John Allspaw and Jesse Robbins</title>
-      <link>http://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/</link>
-      <pubDate>Sat, 03 Jul 2010 00:00:00 UTC</pubDate>
-      
-      <guid>http://www.xaprb.com/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/</guid>
-      <description>&lt;div id=&#34;attachment_1864&#34; class=&#34;wp-caption alignleft&#34; style=&#34;width: 190px&#34;&gt;
-  &lt;a href=&#34;http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20&#34;&gt;&lt;img src=&#34;http://www.xaprb.com/media/2010/05/web_operations.gif&#34; alt=&#34;Web Operations&#34; title=&#34;Web Operations&#34; width=&#34;180&#34; height=&#34;236&#34; class=&#34;size-full wp-image-1864&#34; /&gt;&lt;/a&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
-    Web Operations
-  &lt;/p&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Web-Operations-Keeping-Data-Time/dp/1449377440?tag=xaprb-20&#34;&gt;Web Operations&lt;/a&gt;. By John Allspaw and Jesse Robbins, O&amp;rsquo;Reilly 2010, with a chapter by myself. (Here&amp;rsquo;s &lt;a href=&#34;http://oreilly.com/catalog/0636920000136&#34;&gt;a link to the publisher&amp;rsquo;s site&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;I wrote a chapter for this book, and it&amp;rsquo;s now on shelves in bookstores near you. I got my dead-tree copy today and read everyone else&amp;rsquo;s contributions to it. It&amp;rsquo;s a good book. A group effort such as this one is necessarily going to have some differences in style and even overlapping content, but overall it works very well. It includes chapters from some really smart people, some of whom I was not previously familiar with. John and Jesse obviously have good connections. A lot of the folks are from Flickr.&lt;/p&gt;
-
-&lt;p&gt;Here are the highlights in my opinion.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Theo Schlossnagle, who has a place on my list of &lt;a href=&#34;http://www.xaprb.com/blog/essential-books/&#34;&gt;essential books&lt;/a&gt;, opens things with an overview of what web operations really is, and why it&amp;rsquo;s hard. Don&amp;rsquo;t skip this. Theo&amp;rsquo;s introduction is concise and thoughtful.&lt;/li&gt;
-&lt;li&gt;Eric Ries discusses the benefits of continuous deployment. He is right on the money. Right out of college I spent 3 years as a developer at a company with very little engineering discipline, and then left for another company built by a small ace team practicing extreme programming. Eric nails the benefits of continuous deployment &amp;ndash; he really gets it. I hadn&amp;rsquo;t heard of Eric before, but now I&amp;rsquo;ve subscribed to &lt;a href=&#34;http://www.startuplessonslearned.com/&#34;&gt;his blog&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;John Allspaw (whose book on capacity planning is also on my list of essentials) and Richard Cook discuss how complex systems fail. This chapter appeared in part as a &lt;a href=&#34;http://www.kitchensoap.com/2009/11/12/how-complex-systems-fail-a-webops-perspective/&#34;&gt;whitepaper and blog post on John&amp;rsquo;s blog&lt;/a&gt;, and is expanded in this book. I have spent a lot of time examining failures for clients, and as VP of Consulting, also a lot of time examining Percona&amp;rsquo;s own mistakes. I fully agree with the conclusions in this chapter. A few key points: there is never a single root cause; our desire to find one blinds us and keeps us from learning; &lt;em&gt;true&lt;/em&gt; failures are inherently unpredictable and happen only when a series of things fails; avoiding failure requires experience with failure. This echoes another book I&amp;rsquo;ve read recently, &lt;a href=&#34;http://www.amazon.com/Black-Swan-Impact-Highly-Improbable/dp/1400063515?tag=xaprb-20&#34;&gt;The Black Swan&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://brian.moonspot.net/&#34;&gt;Brian Moon&amp;rsquo;s&lt;/a&gt; chapter on unexpected traffic spikes. If you get a chance to hear Brian speak, take it. He&amp;rsquo;s an engaging guy with interesting and relevant stories to tell. Stories are always a better experience than bullet points.&lt;/li&gt;
-&lt;li&gt;Jake Loomis&amp;rsquo;s chapter on postmortems. My own research into prevention of emergencies agrees almost perfectly with his list of things to do on page 225. Read this chapter carefully! Now, knowing how to put this into action is hard &amp;ndash; very hard &amp;ndash; but at least you&amp;rsquo;ll have a place to start. The worst compliment I ever got after fixing a system that&amp;rsquo;d run out of hard drive space (due to utter lack of basic monitoring) was that I&amp;rsquo;d &amp;ldquo;saved the day.&amp;rdquo; Baloney. Postmortems can be a great way to learn your infrastructure&amp;rsquo;s weaknesses and prevent emergencies in the future. I&amp;rsquo;m fully confident that this particular client will again deploy new servers without adding them into Nagios, and the results will be predictable.&lt;/li&gt;
-&lt;li&gt;Naturally, my chapter about choosing a relational database architecture for web applications (skewed towards MySQL). There is a chapter on NoSQL databases by Eric Florenzano as well, but it is more introductionary-level.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;What wasn&amp;rsquo;t so good? I didn&amp;rsquo;t get a lot of value out of John&amp;rsquo;s interview with Heather Champ, on community management and web operations. I did not think the interview format worked well in a book full of essays. But that might just be me. Also, a couple of places in two or three chapters felt a bit rant-ish without a lot of clear actionable advice; I think readers won&amp;rsquo;t get so much out of this.&lt;/p&gt;
-
-&lt;p&gt;Overall, though, this is a great book, badly needed, on a topic that is simply not yet recognized for its true importance. As Theo writes, we&amp;rsquo;re seeing the emergence of web operations as a very large profession; it&amp;rsquo;s one whose definition is not yet formalized or agreed-upon, but that&amp;rsquo;ll change. It&amp;rsquo;s too important not to. Jesse&amp;rsquo;s introduction repeats this sentiment: the world now relies on the web, and so the world relies also on the engineers who make it run. Web operations is work that matters.&lt;/p&gt;
 </description>
     </item>
     
