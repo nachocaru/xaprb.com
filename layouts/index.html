@@ -1,0 +1,14 @@
+{{ partial "default_head.html" . }}
+
+<div class="posts">
+  {{ range first .Site.Params.RecentLimit .Data.Pages }}
+      <div class="post">
+        <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+        <span class="post-date">{{ .Date.Format .Site.Params.DateForm }}</span>
+        {{ .Summary }}
+		  <p style="text-align:right"><a href="{{ .Permalink }}"> &raquo; Continue Reading (about {{ .FuzzyWordCount }} words)</a></p>
+      </div>
+  {{ end }}
+</div>
+
+{{ partial "default_foot.html" . }}

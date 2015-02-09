@@ -1,12 +1,14 @@
-title: "Xaprb"
 params:
-    author: "Baron Schwartz"
-    subtitle: "Stay Curious!"
-    description: "Stay Curious"
-    ga_account: "0xdeadbeef"
-    twitter: "@xaprb"
-    domain: "xaprb.com"
+   author: "Baron Schwartz"
+   Tagline: "Stay Curious!"
+   Title: "Xaprb"
+   ga_account: "0xdeadbeef"
+   domain: "xaprb.com"
+   DateForm: "Mon, Jan 2, 2006"
+   RecentLimit: 20
+   DisqusUser: "xaprb"
+   BaseUrl: 'http://www.xaprb.com/'
+   LanyonOptions: "layout-reverse sidebar-overlay"
 Taxonomies:
-    category: "categories"
-baseurl: 'http://www.xaprb.com/'
+   category: "categories"
 ---

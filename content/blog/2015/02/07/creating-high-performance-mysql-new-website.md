@@ -80,7 +80,7 @@ maintaining and publishing the site just couldn't be much easier, since GitHub
 hosts the source code, issues, and so on for free as well. [Learn more about
 GitHub pages](https://pages.github.com/).
 
-### A Spash of Panache
+### A Splash of Panache
 
 The cover image you saw at the top of this post adds a dash of visual flair. If
 you produce any content and want it to be more attractive and desirable, such as
@@ -109,7 +109,7 @@ feasible to include high-resolution versions of such images so they'll look
 really sharp on devices with very high-resolution screens, like a 
 Retina or better Apple device, or even my own favorite Android tablet, the [B&N
 Nook
-HD+](http://www.xaprb.com/blog/2015/01/19/install-cyanogenmod-nook-hdplus/).
+HD+](/blog/2015/01/19/install-cyanogenmod-nook-hdplus/).
 If you have a JPEG image, there's a [TinyJPEG](https://tinyjpg.com/) site too.
 The resulting hi-res images look great and download fast.
 
