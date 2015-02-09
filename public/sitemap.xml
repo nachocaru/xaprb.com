@@ -253,12 +253,12 @@
   </url>
   
   <url>
-    <loc>/blog/2013/12/07/st-sales-engineers-say/</loc>
+    <loc>/blog/2013/12/07/props-to-the-mysql-community-team/</loc>
     <lastmod>2013-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2013/12/07/props-to-the-mysql-community-team/</loc>
+    <loc>/blog/2013/12/07/st-sales-engineers-say/</loc>
     <lastmod>2013-12-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -423,12 +423,12 @@
   </url>
   
   <url>
-    <loc>/blog/2013/04/29/what-tokudb-might-mean-for-mongodb/</loc>
+    <loc>/blog/2013/04/29/the-difference-between-concurrency-and-parallelism/</loc>
     <lastmod>2013-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2013/04/29/the-difference-between-concurrency-and-parallelism/</loc>
+    <loc>/blog/2013/04/29/what-tokudb-might-mean-for-mongodb/</loc>
     <lastmod>2013-04-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -493,12 +493,12 @@
   </url>
   
   <url>
-    <loc>/blog/2013/03/12/adaptive-fault-detection-food-fight/</loc>
+    <loc>/blog/2013/03/12/playing-matchmaker-for-job-seekers-and-recruiters/</loc>
     <lastmod>2013-03-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2013/03/12/playing-matchmaker-for-job-seekers-and-recruiters/</loc>
+    <loc>/blog/2013/03/12/adaptive-fault-detection-food-fight/</loc>
     <lastmod>2013-03-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -553,12 +553,12 @@
   </url>
   
   <url>
-    <loc>/blog/2013/01/28/deleting-millions-of-rows-in-small-chunks-with-common_schema/</loc>
+    <loc>/blog/2013/01/28/how-scalable-is-riak/</loc>
     <lastmod>2013-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2013/01/28/how-scalable-is-riak/</loc>
+    <loc>/blog/2013/01/28/deleting-millions-of-rows-in-small-chunks-with-common_schema/</loc>
     <lastmod>2013-01-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -663,12 +663,12 @@
   </url>
   
   <url>
-    <loc>/blog/2012/10/30/the-average-age-of-metrics-being-trended/</loc>
+    <loc>/blog/2012/10/30/status-versus-configuration-variables/</loc>
     <lastmod>2012-10-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2012/10/30/status-versus-configuration-variables/</loc>
+    <loc>/blog/2012/10/30/the-average-age-of-metrics-being-trended/</loc>
     <lastmod>2012-10-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -708,12 +708,12 @@
   </url>
   
   <url>
-    <loc>/blog/2012/10/08/changes-to-innodb-autoextend-coming-in-mysql-5-6/</loc>
+    <loc>/blog/2012/10/08/be-bold-but-not-too-bold/</loc>
     <lastmod>2012-10-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2012/10/08/be-bold-but-not-too-bold/</loc>
+    <loc>/blog/2012/10/08/changes-to-innodb-autoextend-coming-in-mysql-5-6/</loc>
     <lastmod>2012-10-08T00:00:00+00:00</lastmod>
   </url>
   
@@ -738,12 +738,12 @@
   </url>
   
   <url>
-    <loc>/blog/2012/09/18/my-first-sharded-mysql-application-5-years-later/</loc>
+    <loc>/blog/2012/09/18/dump-and-reload-innodb-buffer-pool-in-mysql-5-6/</loc>
     <lastmod>2012-09-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2012/09/18/dump-and-reload-innodb-buffer-pool-in-mysql-5-6/</loc>
+    <loc>/blog/2012/09/18/my-first-sharded-mysql-application-5-years-later/</loc>
     <lastmod>2012-09-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -768,12 +768,12 @@
   </url>
   
   <url>
-    <loc>/blog/2012/09/07/measuring-free-space-in-innodbs-global-tablespace/</loc>
+    <loc>/blog/2012/09/07/announcing-innotop-1-9-0/</loc>
     <lastmod>2012-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2012/09/07/announcing-innotop-1-9-0/</loc>
+    <loc>/blog/2012/09/07/measuring-free-space-in-innodbs-global-tablespace/</loc>
     <lastmod>2012-09-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -953,12 +953,12 @@
   </url>
   
   <url>
-    <loc>/blog/2012/03/23/why-you-need-to-understand-your-working-set-size/</loc>
+    <loc>/blog/2012/03/23/speaking-at-rubynation-2012/</loc>
     <lastmod>2012-03-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2012/03/23/speaking-at-rubynation-2012/</loc>
+    <loc>/blog/2012/03/23/why-you-need-to-understand-your-working-set-size/</loc>
     <lastmod>2012-03-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -973,12 +973,12 @@
   </url>
   
   <url>
-    <loc>/blog/2012/03/14/room-discounts-about-to-expire-for-mysql-conference/</loc>
+    <loc>/blog/2012/03/14/speaking-at-the-shenandoah-ruby-users-group/</loc>
     <lastmod>2012-03-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2012/03/14/speaking-at-the-shenandoah-ruby-users-group/</loc>
+    <loc>/blog/2012/03/14/room-discounts-about-to-expire-for-mysql-conference/</loc>
     <lastmod>2012-03-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -998,12 +998,12 @@
   </url>
   
   <url>
-    <loc>/blog/2012/03/07/scalability-performance-capacity-planning-and-usl-at-hotsos-symposium/</loc>
+    <loc>/blog/2012/03/07/making-mysql-comfortable-for-oracle-dbas/</loc>
     <lastmod>2012-03-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2012/03/07/making-mysql-comfortable-for-oracle-dbas/</loc>
+    <loc>/blog/2012/03/07/scalability-performance-capacity-planning-and-usl-at-hotsos-symposium/</loc>
     <lastmod>2012-03-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -1018,12 +1018,12 @@
   </url>
   
   <url>
-    <loc>/blog/2012/03/02/mysql-high-availability-comparison-service-versus-data/</loc>
+    <loc>/blog/2012/03/02/dont-wait-to-book-your-percona-live-hotel/</loc>
     <lastmod>2012-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2012/03/02/dont-wait-to-book-your-percona-live-hotel/</loc>
+    <loc>/blog/2012/03/02/mysql-high-availability-comparison-service-versus-data/</loc>
     <lastmod>2012-03-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -1043,12 +1043,12 @@
   </url>
   
   <url>
-    <loc>/blog/2012/02/16/what-sets-oreilly-apart-attention-to-detail/</loc>
+    <loc>/blog/2012/02/16/ive-been-interviewed-in-the-nocoug-journal/</loc>
     <lastmod>2012-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2012/02/16/ive-been-interviewed-in-the-nocoug-journal/</loc>
+    <loc>/blog/2012/02/16/what-sets-oreilly-apart-attention-to-detail/</loc>
     <lastmod>2012-02-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -1158,12 +1158,12 @@
   </url>
   
   <url>
-    <loc>/blog/2011/10/19/what-i-want-to-see-at-percona-live/</loc>
+    <loc>/blog/2011/10/19/blackhole-tables-and-auto-increment-keys/</loc>
     <lastmod>2011-10-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2011/10/19/blackhole-tables-and-auto-increment-keys/</loc>
+    <loc>/blog/2011/10/19/what-i-want-to-see-at-percona-live/</loc>
     <lastmod>2011-10-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -1173,12 +1173,12 @@
   </url>
   
   <url>
-    <loc>/blog/2011/10/12/progress-on-high-performance-mysql-3rd-edition/</loc>
+    <loc>/blog/2011/10/12/features-id-like-to-see-in-innodb/</loc>
     <lastmod>2011-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2011/10/12/features-id-like-to-see-in-innodb/</loc>
+    <loc>/blog/2011/10/12/progress-on-high-performance-mysql-3rd-edition/</loc>
     <lastmod>2011-10-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -1188,17 +1188,17 @@
   </url>
   
   <url>
-    <loc>/blog/2011/10/06/surge-2011-slides-recap/</loc>
-    <lastmod>2011-10-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2011/10/06/fundamental-performance-and-scalability-instrumentation/</loc>
     <lastmod>2011-10-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2011/10/06/when-systems-scale-better-than-linearly/</loc>
+    <lastmod>2011-10-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2011/10/06/surge-2011-slides-recap/</loc>
     <lastmod>2011-10-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -1258,12 +1258,12 @@
   </url>
   
   <url>
-    <loc>/blog/2011/08/13/speaking-at-oracle-open-world/</loc>
+    <loc>/blog/2011/08/13/book-your-surge-hotel-now/</loc>
     <lastmod>2011-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2011/08/13/book-your-surge-hotel-now/</loc>
+    <loc>/blog/2011/08/13/speaking-at-oracle-open-world/</loc>
     <lastmod>2011-08-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -1293,12 +1293,12 @@
   </url>
   
   <url>
-    <loc>/blog/2011/07/06/im-speaking-at-surge-2011/</loc>
+    <loc>/blog/2011/07/06/planned-change-in-maatkit-aspersa-development/</loc>
     <lastmod>2011-07-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2011/07/06/planned-change-in-maatkit-aspersa-development/</loc>
+    <loc>/blog/2011/07/06/im-speaking-at-surge-2011/</loc>
     <lastmod>2011-07-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -1313,12 +1313,12 @@
   </url>
   
   <url>
-    <loc>/blog/2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/</loc>
+    <loc>/blog/2011/06/11/vim-the-ultimate-command-line-password-manager/</loc>
     <lastmod>2011-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2011/06/11/vim-the-ultimate-command-line-password-manager/</loc>
+    <loc>/blog/2011/06/11/a-review-of-sql-antipatterns-by-bill-karwin/</loc>
     <lastmod>2011-06-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -1363,22 +1363,22 @@
   </url>
   
   <url>
-    <loc>/blog/2011/05/15/what-kind-of-high-availability-do-you-need/</loc>
-    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2011/05/15/disk-latency-versus-filesystem-latency/</loc>
     <lastmod>2011-05-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2011/05/10/whats-a-good-benchmark/</loc>
-    <lastmod>2011-05-10T00:00:00+00:00</lastmod>
+    <loc>/blog/2011/05/15/what-kind-of-high-availability-do-you-need/</loc>
+    <lastmod>2011-05-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2011/05/10/new-maatkit-tool-mk-table-usage/</loc>
+    <lastmod>2011-05-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2011/05/10/whats-a-good-benchmark/</loc>
     <lastmod>2011-05-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -1513,12 +1513,12 @@
   </url>
   
   <url>
-    <loc>/blog/2011/01/29/my-sessions-at-the-oreilly-mysql-conference-2011/</loc>
+    <loc>/blog/2011/01/29/how-innodb-performs-a-checkpoint/</loc>
     <lastmod>2011-01-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2011/01/29/how-innodb-performs-a-checkpoint/</loc>
+    <loc>/blog/2011/01/29/my-sessions-at-the-oreilly-mysql-conference-2011/</loc>
     <lastmod>2011-01-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -1608,7 +1608,7 @@
   </url>
   
   <url>
-    <loc>/blog/2010/11/02/products-that-scale-linearly-to-hundreds-of-servers/</loc>
+    <loc>/blog/2010/11/02/mysql-conference-cfp-extended/</loc>
     <lastmod>2010-11-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -1618,7 +1618,7 @@
   </url>
   
   <url>
-    <loc>/blog/2010/11/02/mysql-conference-cfp-extended/</loc>
+    <loc>/blog/2010/11/02/products-that-scale-linearly-to-hundreds-of-servers/</loc>
     <lastmod>2010-11-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -1688,12 +1688,12 @@
   </url>
   
   <url>
-    <loc>/blog/2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/</loc>
+    <loc>/blog/2010/09/19/how-lock-tables-interacts-with-the-mysql-slow-query-log/</loc>
     <lastmod>2010-09-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2010/09/19/how-lock-tables-interacts-with-the-mysql-slow-query-log/</loc>
+    <loc>/blog/2010/09/19/a-review-of-relational-database-design-and-the-optimizers-by-lahdenmaki-and-leach/</loc>
     <lastmod>2010-09-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -1723,12 +1723,12 @@
   </url>
   
   <url>
-    <loc>/blog/2010/08/23/what-are-your-favorite-mysql-bug-reports/</loc>
+    <loc>/blog/2010/08/23/free-webinar-on-mysql-performance-this-thursday/</loc>
     <lastmod>2010-08-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2010/08/23/free-webinar-on-mysql-performance-this-thursday/</loc>
+    <loc>/blog/2010/08/23/what-are-your-favorite-mysql-bug-reports/</loc>
     <lastmod>2010-08-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -1773,12 +1773,12 @@
   </url>
   
   <url>
-    <loc>/blog/2010/07/03/how-i-keep-track-of-notes/</loc>
+    <loc>/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/</loc>
     <lastmod>2010-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2010/07/03/a-review-of-web-operations-by-john-allspaw-and-jesse-robbins/</loc>
+    <loc>/blog/2010/07/03/how-i-keep-track-of-notes/</loc>
     <lastmod>2010-07-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -1833,12 +1833,12 @@
   </url>
   
   <url>
-    <loc>/blog/2010/05/25/dirty-pages-fast-shutdown-and-write-combining/</loc>
+    <loc>/blog/2010/05/25/a-better-way-to-build-cacti-templates/</loc>
     <lastmod>2010-05-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2010/05/25/a-better-way-to-build-cacti-templates/</loc>
+    <loc>/blog/2010/05/25/dirty-pages-fast-shutdown-and-write-combining/</loc>
     <lastmod>2010-05-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -1878,12 +1878,12 @@
   </url>
   
   <url>
-    <loc>/blog/2010/05/10/new-maatkit-tool-to-compute-index-usage/</loc>
+    <loc>/blog/2010/05/10/the-manager-programmer-face-off-over-nosql/</loc>
     <lastmod>2010-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2010/05/10/the-manager-programmer-face-off-over-nosql/</loc>
+    <loc>/blog/2010/05/10/new-maatkit-tool-to-compute-index-usage/</loc>
     <lastmod>2010-05-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -1893,12 +1893,12 @@
   </url>
   
   <url>
-    <loc>/blog/2010/05/07/wishing-i-could-be-at-odtug/</loc>
+    <loc>/blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/</loc>
     <lastmod>2010-05-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2010/05/07/using-aspersa-to-capture-diagnostic-data/</loc>
+    <loc>/blog/2010/05/07/wishing-i-could-be-at-odtug/</loc>
     <lastmod>2010-05-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -1933,17 +1933,17 @@
   </url>
   
   <url>
-    <loc>/blog/2010/04/21/whats-different-about-xtradb/</loc>
-    <lastmod>2010-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2010/04/21/aspersa-a-new-opensource-toolkit/</loc>
     <lastmod>2010-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2010/04/21/would-you-trust-a-more-advanced-mysql-optimizer/</loc>
+    <lastmod>2010-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2010/04/21/whats-different-about-xtradb/</loc>
     <lastmod>2010-04-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -2033,12 +2033,12 @@
   </url>
   
   <url>
-    <loc>/blog/2010/02/22/cary-millsap-thinking-clearly-about-performance/</loc>
+    <loc>/blog/2010/02/22/charset-support-in-mysql-is-really-not-all-that-complex/</loc>
     <lastmod>2010-02-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2010/02/22/charset-support-in-mysql-is-really-not-all-that-complex/</loc>
+    <loc>/blog/2010/02/22/cary-millsap-thinking-clearly-about-performance/</loc>
     <lastmod>2010-02-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -2233,22 +2233,22 @@
   </url>
   
   <url>
-    <loc>/blog/2009/10/25/what-do-the-innodb-insert-buffer-statistics-mean/</loc>
-    <lastmod>2009-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2009/10/25/version-1-1-4-of-improved-cacti-templates-released/</loc>
     <lastmod>2009-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2009/10/24/version-1-1-3-of-improved-cacti-graphs-for-mysql-released/</loc>
-    <lastmod>2009-10-24T00:00:00+00:00</lastmod>
+    <loc>/blog/2009/10/25/what-do-the-innodb-insert-buffer-statistics-mean/</loc>
+    <lastmod>2009-10-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2009/10/24/a-review-of-the-art-of-capacity-planning-by-john-allspaw/</loc>
+    <lastmod>2009-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2009/10/24/version-1-1-3-of-improved-cacti-graphs-for-mysql-released/</loc>
     <lastmod>2009-10-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -2338,12 +2338,12 @@
   </url>
   
   <url>
-    <loc>/blog/2009/08/30/a-script-snippet-for-aggregating-gdb-backtraces/</loc>
+    <loc>/blog/2009/08/30/failure-scenarios-and-solutions-in-master-master-replication/</loc>
     <lastmod>2009-08-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2009/08/30/failure-scenarios-and-solutions-in-master-master-replication/</loc>
+    <loc>/blog/2009/08/30/a-script-snippet-for-aggregating-gdb-backtraces/</loc>
     <lastmod>2009-08-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -2443,12 +2443,12 @@
   </url>
   
   <url>
-    <loc>/blog/2009/06/21/recap-of-southeast-linux-fest-2009/</loc>
+    <loc>/blog/2009/06/21/how-to-add-paragraph-spacing-in-google-docs/</loc>
     <lastmod>2009-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2009/06/21/how-to-add-paragraph-spacing-in-google-docs/</loc>
+    <loc>/blog/2009/06/21/recap-of-southeast-linux-fest-2009/</loc>
     <lastmod>2009-06-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -2468,12 +2468,12 @@
   </url>
   
   <url>
-    <loc>/blog/2009/06/07/the-cache-oblivious-algorithms-inside-tokuteks-tokudb/</loc>
+    <loc>/blog/2009/06/07/an-ongoing-thread-of-blogs-on-mysql-performance/</loc>
     <lastmod>2009-06-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2009/06/07/an-ongoing-thread-of-blogs-on-mysql-performance/</loc>
+    <loc>/blog/2009/06/07/the-cache-oblivious-algorithms-inside-tokuteks-tokudb/</loc>
     <lastmod>2009-06-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -2558,12 +2558,7 @@
   </url>
   
   <url>
-    <loc>/blog/2009/04/25/secure-easy-cacti-graphing-without-snmp/</loc>
-    <lastmod>2009-04-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/2009/04/25/thank-you-for-the-mysql-54-community-release/</loc>
+    <loc>/blog/2009/04/25/presentation-uploaded-for-maatkit-talk-at-mysql-conference/</loc>
     <lastmod>2009-04-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -2573,12 +2568,17 @@
   </url>
   
   <url>
+    <loc>/blog/2009/04/25/thank-you-for-the-mysql-54-community-release/</loc>
+    <lastmod>2009-04-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/2009/04/25/selenas-thoughts-on-a-hackers-cooperative/</loc>
     <lastmod>2009-04-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2009/04/25/presentation-uploaded-for-maatkit-talk-at-mysql-conference/</loc>
+    <loc>/blog/2009/04/25/secure-easy-cacti-graphing-without-snmp/</loc>
     <lastmod>2009-04-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -2693,12 +2693,12 @@
   </url>
   
   <url>
-    <loc>/blog/2009/03/08/making-maatkit-more-open-source-one-step-at-a-time/</loc>
+    <loc>/blog/2009/03/08/looking-back-at-the-mysql-news-from-last-year/</loc>
     <lastmod>2009-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2009/03/08/looking-back-at-the-mysql-news-from-last-year/</loc>
+    <loc>/blog/2009/03/08/making-maatkit-more-open-source-one-step-at-a-time/</loc>
     <lastmod>2009-03-08T00:00:00+00:00</lastmod>
   </url>
   
@@ -2753,12 +2753,12 @@
   </url>
   
   <url>
-    <loc>/blog/2009/02/19/measuring-the-popularity-of-the-percona-mysql-build/</loc>
+    <loc>/blog/2009/02/19/strangest-datetime-format-ever/</loc>
     <lastmod>2009-02-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2009/02/19/strangest-datetime-format-ever/</loc>
+    <loc>/blog/2009/02/19/measuring-the-popularity-of-the-percona-mysql-build/</loc>
     <lastmod>2009-02-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -2798,12 +2798,12 @@
   </url>
   
   <url>
-    <loc>/blog/2009/02/06/percona-performance-conference-on-digg/</loc>
+    <loc>/blog/2009/02/06/towards-more-diversity-of-speakers-at-mysql-conference-and-expo/</loc>
     <lastmod>2009-02-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2009/02/06/towards-more-diversity-of-speakers-at-mysql-conference-and-expo/</loc>
+    <loc>/blog/2009/02/06/percona-performance-conference-on-digg/</loc>
     <lastmod>2009-02-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -2838,12 +2838,12 @@
   </url>
   
   <url>
-    <loc>/blog/2009/01/13/iopp-a-tool-to-print-io-operations-per-process/</loc>
+    <loc>/blog/2009/01/13/where-do-you-use-maatkit-in-real-life/</loc>
     <lastmod>2009-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2009/01/13/where-do-you-use-maatkit-in-real-life/</loc>
+    <loc>/blog/2009/01/13/iopp-a-tool-to-print-io-operations-per-process/</loc>
     <lastmod>2009-01-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -3003,18 +3003,13 @@
   </url>
   
   <url>
-    <loc>/blog/2008/10/11/how-to-change-the-default-database-in-mysql/</loc>
-    <lastmod>2008-10-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2008/10/11/three-steps-to-stopping-blog-comment-spam/</loc>
     <lastmod>2008-10-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/10/09/would-tufte-approve-of-mixing-units-on-a-graph/</loc>
-    <lastmod>2008-10-09T00:00:00+00:00</lastmod>
+    <loc>/blog/2008/10/11/how-to-change-the-default-database-in-mysql/</loc>
+    <lastmod>2008-10-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -3023,7 +3018,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/10/04/update-on-high-performance-mysql-2nd-edition/</loc>
+    <loc>/blog/2008/10/09/would-tufte-approve-of-mixing-units-on-a-graph/</loc>
+    <lastmod>2008-10-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2008/10/04/opensql-camp-badges-are-ready/</loc>
     <lastmod>2008-10-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -3033,12 +3033,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/10/04/opensql-camp-badges-are-ready/</loc>
+    <loc>/blog/2008/10/04/javascript-formatting-and-parsing-functions-now-on-google-code/</loc>
     <lastmod>2008-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/10/04/javascript-formatting-and-parsing-functions-now-on-google-code/</loc>
+    <loc>/blog/2008/10/04/update-on-high-performance-mysql-2nd-edition/</loc>
     <lastmod>2008-10-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -3068,12 +3068,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/08/26/how-much-memory-does-mysql-enterprise-monitors-agent-use/</loc>
+    <loc>/blog/2008/08/26/announcing-opensql-camp-2008/</loc>
     <lastmod>2008-08-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/08/26/announcing-opensql-camp-2008/</loc>
+    <loc>/blog/2008/08/26/how-much-memory-does-mysql-enterprise-monitors-agent-use/</loc>
     <lastmod>2008-08-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -3088,12 +3088,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/08/19/microsoft-gets-their-way-with-so-called-xml-standard/</loc>
+    <loc>/blog/2008/08/19/how-to-unit-test-code-that-interacts-with-a-database/</loc>
     <lastmod>2008-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/08/19/how-to-unit-test-code-that-interacts-with-a-database/</loc>
+    <loc>/blog/2008/08/19/microsoft-gets-their-way-with-so-called-xml-standard/</loc>
     <lastmod>2008-08-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -3108,12 +3108,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/08/12/maatkit-version-2152-released/</loc>
+    <loc>/blog/2008/08/12/anyone-want-to-help-build-rpms-of-maatkit/</loc>
     <lastmod>2008-08-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/08/12/anyone-want-to-help-build-rpms-of-maatkit/</loc>
+    <loc>/blog/2008/08/12/maatkit-version-2152-released/</loc>
     <lastmod>2008-08-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -3133,12 +3133,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/08/02/how-i-hacked-the-hp-media-vault-to-support-ogg-and-flac-files/</loc>
+    <loc>/blog/2008/08/02/high-performance-mysql-2nd-edition-gets-revised-and-translated/</loc>
     <lastmod>2008-08-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/08/02/high-performance-mysql-2nd-edition-gets-revised-and-translated/</loc>
+    <loc>/blog/2008/08/02/how-i-hacked-the-hp-media-vault-to-support-ogg-and-flac-files/</loc>
     <lastmod>2008-08-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -3148,12 +3148,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/07/28/what-is-linkedins-main-database-server/</loc>
+    <loc>/blog/2008/07/28/mysql-manual-gets-improved-searching/</loc>
     <lastmod>2008-07-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/07/28/mysql-manual-gets-improved-searching/</loc>
+    <loc>/blog/2008/07/28/what-is-linkedins-main-database-server/</loc>
     <lastmod>2008-07-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -3173,22 +3173,22 @@
   </url>
   
   <url>
-    <loc>/blog/2008/07/15/sphinx-098-is-released/</loc>
-    <lastmod>2008-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2008/07/15/high-performance-mysql-is-going-to-press-again/</loc>
     <lastmod>2008-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/06/28/mysql-challenge-limit-rows-accessed-not-rows-returned/</loc>
-    <lastmod>2008-06-28T00:00:00+00:00</lastmod>
+    <loc>/blog/2008/07/15/sphinx-098-is-released/</loc>
+    <lastmod>2008-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2008/06/28/what-if-you-find-errors-in-high-performance-mysql/</loc>
+    <lastmod>2008-06-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2008/06/28/mysql-challenge-limit-rows-accessed-not-rows-returned/</loc>
     <lastmod>2008-06-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -3258,12 +3258,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/05/21/i-moved-this-blog-to-pairlite-with-zero-downtime-and-it-was-easy/</loc>
+    <loc>/blog/2008/05/21/get-maatkit-fast-command-line/</loc>
     <lastmod>2008-05-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/05/21/get-maatkit-fast-command-line/</loc>
+    <loc>/blog/2008/05/21/i-moved-this-blog-to-pairlite-with-zero-downtime-and-it-was-easy/</loc>
     <lastmod>2008-05-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -3288,22 +3288,22 @@
   </url>
   
   <url>
-    <loc>/blog/2008/05/04/summary-of-becamp-2008/</loc>
-    <lastmod>2008-05-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2008/05/04/you-have-the-right-to-see-code-samples-in-an-interview/</loc>
     <lastmod>2008-05-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/05/02/come-to-becamp-2008/</loc>
-    <lastmod>2008-05-02T00:00:00+00:00</lastmod>
+    <loc>/blog/2008/05/04/summary-of-becamp-2008/</loc>
+    <lastmod>2008-05-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2008/05/02/news-flash-mysql-51-has-zero-bugs/</loc>
+    <lastmod>2008-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2008/05/02/come-to-becamp-2008/</loc>
     <lastmod>2008-05-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -3363,12 +3363,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/04/14/maatkit-t-shirts-are-here/</loc>
+    <loc>/blog/2008/04/14/kickfire-relational-algebra-in-a-chip/</loc>
     <lastmod>2008-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/04/14/kickfire-relational-algebra-in-a-chip/</loc>
+    <loc>/blog/2008/04/14/maatkit-t-shirts-are-here/</loc>
     <lastmod>2008-04-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -3388,12 +3388,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/04/01/postgresql-conference-east-2008/</loc>
+    <loc>/blog/2008/04/01/review-of-perl-best-practices/</loc>
     <lastmod>2008-04-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/04/01/review-of-perl-best-practices/</loc>
+    <loc>/blog/2008/04/01/postgresql-conference-east-2008/</loc>
     <lastmod>2008-04-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -3483,12 +3483,12 @@
   </url>
   
   <url>
-    <loc>/blog/2008/01/13/speed-up-your-mysql-replication-slaves/</loc>
+    <loc>/blog/2008/01/13/how-pre-fetching-relay-logs-speeds-up-mysql-replication-slaves/</loc>
     <lastmod>2008-01-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2008/01/13/how-pre-fetching-relay-logs-speeds-up-mysql-replication-slaves/</loc>
+    <loc>/blog/2008/01/13/speed-up-your-mysql-replication-slaves/</loc>
     <lastmod>2008-01-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -3548,7 +3548,7 @@
   </url>
   
   <url>
-    <loc>/blog/2007/12/06/progress-on-maatkit-bounty-part-4/</loc>
+    <loc>/blog/2007/12/06/progress-on-maatkit-bounty-part-3/</loc>
     <lastmod>2007-12-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -3558,7 +3558,7 @@
   </url>
   
   <url>
-    <loc>/blog/2007/12/06/progress-on-maatkit-bounty-part-3/</loc>
+    <loc>/blog/2007/12/06/progress-on-maatkit-bounty-part-4/</loc>
     <lastmod>2007-12-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -3573,12 +3573,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/11/29/progress-on-high-performance-mysql-second-edition/</loc>
+    <loc>/blog/2007/11/29/maatkit-bounty-begins-tomorrow/</loc>
     <lastmod>2007-11-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/11/29/maatkit-bounty-begins-tomorrow/</loc>
+    <loc>/blog/2007/11/29/progress-on-high-performance-mysql-second-edition/</loc>
     <lastmod>2007-11-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -3588,12 +3588,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/11/26/maatkit-version-1314-released/</loc>
+    <loc>/blog/2007/11/26/four-companies-to-sponsor-maatkit-development/</loc>
     <lastmod>2007-11-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/11/26/four-companies-to-sponsor-maatkit-development/</loc>
+    <loc>/blog/2007/11/26/maatkit-version-1314-released/</loc>
     <lastmod>2007-11-26T00:00:00+00:00</lastmod>
   </url>
   
@@ -3648,12 +3648,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/11/05/growth-limits-of-open-source-vis-a-vis-mysql-toolkit/</loc>
+    <loc>/blog/2007/11/05/mysql-archiver-can-now-archive-each-row-to-a-different-table/</loc>
     <lastmod>2007-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/11/05/mysql-archiver-can-now-archive-each-row-to-a-different-table/</loc>
+    <loc>/blog/2007/11/05/growth-limits-of-open-source-vis-a-vis-mysql-toolkit/</loc>
     <lastmod>2007-11-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -3718,12 +3718,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/10/05/mysql-toolkit-version-1011-released/</loc>
+    <loc>/blog/2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/</loc>
     <lastmod>2007-10-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/10/05/how-to-get-your-session-accepted-to-mysql-conference-2008/</loc>
+    <loc>/blog/2007/10/05/mysql-toolkit-version-1011-released/</loc>
     <lastmod>2007-10-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -3733,12 +3733,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/10/03/how-to-check-and-optimize-mysql-tables-in-parallel/</loc>
+    <loc>/blog/2007/10/03/mysql-toolkit-version-989-released/</loc>
     <lastmod>2007-10-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/10/03/mysql-toolkit-version-989-released/</loc>
+    <loc>/blog/2007/10/03/how-to-check-and-optimize-mysql-tables-in-parallel/</loc>
     <lastmod>2007-10-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -3773,12 +3773,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/09/18/how-to-debug-innodb-lock-waits/</loc>
+    <loc>/blog/2007/09/18/version-152-of-the-innotop-mysql-monitor-released/</loc>
     <lastmod>2007-09-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/09/18/version-152-of-the-innotop-mysql-monitor-released/</loc>
+    <loc>/blog/2007/09/18/how-to-debug-innodb-lock-waits/</loc>
     <lastmod>2007-09-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -3823,12 +3823,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/08/24/mysql-toolkit-version-815-released/</loc>
+    <loc>/blog/2007/08/24/mysql-camp-2007/</loc>
     <lastmod>2007-08-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/08/24/mysql-camp-2007/</loc>
+    <loc>/blog/2007/08/24/mysql-toolkit-version-815-released/</loc>
     <lastmod>2007-08-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -3893,22 +3893,22 @@
   </url>
   
   <url>
-    <loc>/blog/2007/07/15/innotop-version-143-released/</loc>
-    <lastmod>2007-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2007/07/15/javascript-number-formatting-library-v13-released/</loc>
     <lastmod>2007-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/07/10/mysql-table-checksum-119-released/</loc>
-    <lastmod>2007-07-10T00:00:00+00:00</lastmod>
+    <loc>/blog/2007/07/15/innotop-version-143-released/</loc>
+    <lastmod>2007-07-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2007/07/10/what-ive-been-doing-lately/</loc>
+    <lastmod>2007-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2007/07/10/mysql-table-checksum-119-released/</loc>
     <lastmod>2007-07-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -3923,12 +3923,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/06/19/why-i-write-free-software/</loc>
+    <loc>/blog/2007/06/19/javascript-number-formatting-library-updated/</loc>
     <lastmod>2007-06-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/06/19/javascript-number-formatting-library-updated/</loc>
+    <loc>/blog/2007/06/19/why-i-write-free-software/</loc>
     <lastmod>2007-06-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -4088,12 +4088,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/</loc>
+    <loc>/blog/2007/04/05/is-mysql-ready-for-the-enterprise/</loc>
     <lastmod>2007-04-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/04/05/is-mysql-ready-for-the-enterprise/</loc>
+    <loc>/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/</loc>
     <lastmod>2007-04-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -4143,18 +4143,13 @@
   </url>
   
   <url>
-    <loc>/blog/2007/03/08/what-to-do-when-mysql-says-skip-innodb-is-defined/</loc>
-    <lastmod>2007-03-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2007/03/08/introducing-mysql-deadlock-logger/</loc>
     <lastmod>2007-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/</loc>
-    <lastmod>2007-03-05T00:00:00+00:00</lastmod>
+    <loc>/blog/2007/03/08/what-to-do-when-mysql-says-skip-innodb-is-defined/</loc>
+    <lastmod>2007-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -4163,12 +4158,17 @@
   </url>
   
   <url>
-    <loc>/blog/2007/03/03/new-support-options-for-innotop/</loc>
-    <lastmod>2007-03-03T00:00:00+00:00</lastmod>
+    <loc>/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/</loc>
+    <lastmod>2007-03-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2007/03/03/innotop-140-released/</loc>
+    <lastmod>2007-03-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2007/03/03/new-support-options-for-innotop/</loc>
     <lastmod>2007-03-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -4178,12 +4178,12 @@
   </url>
   
   <url>
-    <loc>/blog/2007/03/01/mysql-query-profiler-100-released/</loc>
+    <loc>/blog/2007/03/01/introducing-mysql-duplicate-key-checker/</loc>
     <lastmod>2007-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2007/03/01/introducing-mysql-duplicate-key-checker/</loc>
+    <loc>/blog/2007/03/01/mysql-query-profiler-100-released/</loc>
     <lastmod>2007-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -4508,12 +4508,12 @@
   </url>
   
   <url>
-    <loc>/blog/2006/08/10/how-to-use-order-by-and-limit-on-multi-table-updates-in-mysql/</loc>
+    <loc>/blog/2006/08/10/version-01132-of-innotop-released/</loc>
     <lastmod>2006-08-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2006/08/10/version-01132-of-innotop-released/</loc>
+    <loc>/blog/2006/08/10/how-to-use-order-by-and-limit-on-multi-table-updates-in-mysql/</loc>
     <lastmod>2006-08-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -4538,12 +4538,12 @@
   </url>
   
   <url>
-    <loc>/blog/2006/08/02/how-to-monitor-innodb-lock-waits/</loc>
+    <loc>/blog/2006/08/02/what-to-do-when-innotop-crashes/</loc>
     <lastmod>2006-08-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2006/08/02/what-to-do-when-innotop-crashes/</loc>
+    <loc>/blog/2006/08/02/how-to-monitor-innodb-lock-waits/</loc>
     <lastmod>2006-08-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -4573,12 +4573,12 @@
   </url>
   
   <url>
-    <loc>/blog/2006/07/23/innotop-version-01106-released/</loc>
+    <loc>/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/</loc>
     <lastmod>2006-07-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2006/07/23/how-to-track-what-owns-a-mysql-connection/</loc>
+    <loc>/blog/2006/07/23/innotop-version-01106-released/</loc>
     <lastmod>2006-07-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -5038,22 +5038,22 @@
   </url>
   
   <url>
-    <loc>/blog/2005/12/04/sql-server-2000-date-and-time-puzzler/</loc>
-    <lastmod>2005-12-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2005/12/04/l-l-beans-privacy-policy/</loc>
     <lastmod>2005-12-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2005/12/01/about-xaprb/</loc>
-    <lastmod>2005-12-01T00:00:00+00:00</lastmod>
+    <loc>/blog/2005/12/04/sql-server-2000-date-and-time-puzzler/</loc>
+    <lastmod>2005-12-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2005/12/01/copyright-privacy-terms/</loc>
+    <lastmod>2005-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2005/12/01/about-xaprb/</loc>
     <lastmod>2005-12-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -5118,12 +5118,12 @@
   </url>
   
   <url>
-    <loc>/blog/2005/11/03/insecure-default-order-of-access-to-resources/</loc>
+    <loc>/blog/2005/11/03/captchas-are-a-terrible-thing/</loc>
     <lastmod>2005-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2005/11/03/captchas-are-a-terrible-thing/</loc>
+    <loc>/blog/2005/11/03/insecure-default-order-of-access-to-resources/</loc>
     <lastmod>2005-11-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -5168,12 +5168,12 @@
   </url>
   
   <url>
-    <loc>/blog/2005/10/03/prelinking-mozilla-firefox-bin/</loc>
+    <loc>/blog/2005/10/03/understanding-sql-joins/</loc>
     <lastmod>2005-10-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/2005/10/03/understanding-sql-joins/</loc>
+    <loc>/blog/2005/10/03/prelinking-mozilla-firefox-bin/</loc>
     <lastmod>2005-10-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -5188,17 +5188,7 @@
   </url>
   
   <url>
-    <loc>/blog/2005/09/28/a-comment-on-comments/</loc>
-    <lastmod>2005-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2005/09/28/grouping-data-with-catch-all-ranks/</loc>
-    <lastmod>2005-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/2005/09/28/bitwise-arithmetic/</loc>
     <lastmod>2005-09-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -5213,12 +5203,22 @@
   </url>
   
   <url>
-    <loc>/blog/2005/09/27/simulating-the-sql-row_number-function/</loc>
-    <lastmod>2005-09-27T00:00:00+00:00</lastmod>
+    <loc>/blog/2005/09/28/a-comment-on-comments/</loc>
+    <lastmod>2005-09-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2005/09/28/bitwise-arithmetic/</loc>
+    <lastmod>2005-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/2005/09/27/less-is-more/</loc>
+    <lastmod>2005-09-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/2005/09/27/simulating-the-sql-row_number-function/</loc>
     <lastmod>2005-09-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -5238,11 +5238,6 @@
   </url>
   
   <url>
-    <loc>/blog/2005/09/22/interactive-directory-merging/</loc>
-    <lastmod>2005-09-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/blog/2005/09/22/mutex-tables-in-sql/</loc>
     <lastmod>2005-09-22T00:00:00+00:00</lastmod>
   </url>
@@ -5253,17 +5248,22 @@
   </url>
   
   <url>
+    <loc>/blog/2005/09/22/interactive-directory-merging/</loc>
+    <lastmod>2005-09-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/2005/09/21/subselects-in-mysql/</loc>
     <lastmod>2005-09-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/essential-books/</loc>
+    <loc>/rx-toolkit/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/rx-toolkit/</loc>
+    <loc>/essential-books/</loc>
     <lastmod>2005-01-01T00:00:00+00:00</lastmod>
   </url>
   
