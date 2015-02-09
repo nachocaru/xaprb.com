@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      An alternative to canonical URIs &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">An alternative to canonical URIs</h1>
+  <span class="post-date">Fri, Jun 2, 2006 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+  </span>
+  <p>There&rsquo;s been much discussion about canonicalizing URIs for search engines and other purposes. Here&rsquo;s a possibility: instead of specifying the exact canonical URI for a page, just indicate which parts of it are important.</p>
+
+<p>The issue usually comes up with regards to product pages in e-commerce, for example. Many e-commerce sites use query strings to specify the product to display. This is not a problem, because search engines like Google usually pay attention to several query string parameters. The problem comes when the e-commerce site starts adding other query string parameters onto the URI for session identifiers, tracking codes, navigational aids, and so forth. These are all important for site functionality, but seldom have much to do with the real content of the page. Search engine spiders don&rsquo;t like lots and lots of parameters, so they may only pay attention to the first few, causing problems for the e-commerce site.</p>
+
+<p>That&rsquo;s where URI canonicalization strategies come into play. The usual strategy is to detect when a spider is requesting the page, and redirect it to the canonical version of the page, with only the relevant parameters in exactly the right order. This can require a lot of programming.</p>
+
+<p>How about a META tag instead?</p>
+
+<pre>&lt;meta name="significant-query-params" content="itemno categoryno" /&gt;</pre>
+
+<p>Of course, search engines would have to agree upon this as a standard, but it seems reasonable to me. The search spider would then compare any query parameters to the significant ones, and ignore the page if it&rsquo;s already in the search cache.</p>
+
+<p>I know it&rsquo;s more complex than this. I&rsquo;m sure there are lots of issues that would make it harder for search engines to implement this scheme, and I can think of some right away (repeated parameters with different values, issues with how the cache is really structured, etc). I&rsquo;m just tossing it out there for someone to mull upon it, if anyone wants to.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

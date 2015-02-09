@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      ASP.NET&#39;s Profile DB schema &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">ASP.NET&#39;s Profile DB schema</h1>
+  <span class="post-date">Sun, Jan 8, 2006 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>ASP.NET has built-in functionality to store profile information about a user. The DB table schema has several design trade-offs that make it somewhat inflexible for certain uses.</p>
+
+<p>ASP.NET will write a custom class, given the properties you want, such as name and birthdate. It will also take care of hooking the plumbing up in the database (there is a little script to create the profile tables in the database). It then stores and retrieves the data on subsequent requests. The feature can handle both text and binary data, but for simplicity&rsquo;s sake, I&rsquo;ll just ignore the binary. Since the profile could contain arbitrary information, the table has to be designed to accommodate any type of data &ndash; essentially name/value pairs. Here&rsquo;s the table schema:</p>
+
+<pre>CREATE TABLE dbo.aspnet_Profile (
+    UserId uniqueidentifier NOT NULL PRIMARY KEY CLUSTERED,
+    PropertyNames ntext NOT NULL,
+    PropertyValuesString ntext NOT NULL,
+    PropertyValuesBinary image NOT NULL,
+    LastUpdatedDate datetime NOT NULL
+)</pre>
+
+<p>Hmmm, that&rsquo;s an interesting schema. How do you store name/value pairs in that? I&rsquo;d expect to see a <code>UserID</code> column and a <code>Name</code> column, with the primary key on <code>UserID</code> and <code>Name</code>, but it looks like they must be storing the data another way. For one thing, there can&rsquo;t be multiple rows per user &ndash; all the values have to be in one row. I could see someone arguing that&rsquo;s a good idea, because it would keep the data all on one page &ndash; but the columns are <code>ntext</code> and <code>image</code> so they&rsquo;re not stored in-page anyway. That results in a compact table, with a small clustered index to seek for the user&rsquo;s row, but then the DB has to seek to other pages and find the data stored in those three columns. So how is the data stored?</p>
+
+<pre>select top 1 UserId, PropertyNames, PropertyValuesString from aspnet_Profile;</pre>
+
+<p>Results:</p>
+
+<table class="borders collapsed compact">
+  <tr>
+    <th>
+      UserId
+    </th>
+    
+    <th>
+      PropertyNames
+    </th>
+    
+    <th>
+      PropertyValuesString
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      017D...[snip]...
+    </td>
+    
+    <td>
+      User.LName:S:0:5:User.FName:S:5:4:
+    </td>
+    
+    <td>
+      SmithJohn
+    </td>
+  </tr></table> 
+  
+
+<p><p>
+    Yuck! So the object just dehydrates itself in a similar fashion as PHP&rsquo;s <a href="http://www.php.net/manual/en/function.serialize.php"><code>serialize</code></a> and re-writes the entire row whenever it saves itself into the database (I&rsquo;m guessing it re-writes the entire row; perhaps it&rsquo;s smart enough to know that the binary data doesn&rsquo;t need to be re-written if only the text has changed, though the design doesn&rsquo;t instill much confidence about that). This is a very bad design. The table isn&rsquo;t even first normal form. There is also no decent way to use this data except through the Profile objects. I can&rsquo;t grab the data and query it for reports or whatnot. And finally, those ubiquitous Microsoft <code>uniqueidentifier</code> 128-bit surrogate keys are rearing their ugly heads.
+  </p></p>
+
+<p><p>
+    I&rsquo;m surprised and nonplussed. After all the gazillions of dollars that went into ASP.NET 2.0&hellip; I&rsquo;ll give them some credit and say &ldquo;it&rsquo;s good that they found a way to store the data in the table without customizing the table schema based on the desired profile properties,&rdquo; but this design is barely a step up from that. This schema is missing all the obvious benefits of normalization.
+  </p></p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

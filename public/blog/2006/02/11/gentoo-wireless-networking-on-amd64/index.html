@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to set up Gentoo wireless networking on AMD64 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to set up Gentoo wireless networking on AMD64</h1>
+  <span class="post-date">Sat, Feb 11, 2006 in
+		
+		<a href="/categories/hardware" class="btn btn-primary">Hardware</a>
+		
+		<a href="/categories/desktop" class="btn btn-primary">Desktop</a>
+		
+  </span>
+  <p>This is a quick note on wireless networking on Gentoo GNU/Linux with a dual-core AMD 64-bit processor. It&rsquo;s not hard to do, but the choices for hardware are more limited.</p>
+
+<p>First, installing Gentoo is just as easy as a standard installation. There is a separate installation document for it. All I needed to do was follow the instructions. I&rsquo;m not expert with Gentoo, but I&rsquo;ve installed it a half-dozen times or so since 2002&hellip; if it&rsquo;s not easy for you, wait 4 years and try again ;-)</p>
+
+<p>Here&rsquo;s my hardware:</p>
+
+<ul>
+<li>ECS KV2 Extreme Socket 939 VIA K8T800 Pro ATX AMD Motherboard</li>
+<li>ASUS V9520-X/TD/64 Geforce FX5200 64MB DDR AGP 4X/8X Low Profile Video Card</li>
+<li>Sunbeam PSU-CGMI450-US-SV ATX 450W Silver Tri Mirrored X-Plug Modular Power Supply</li>
+<li>VANTEC Clear 18&#8243; ATA <sup>66</sup>&frasl;<sub>100</sub>/133 IDE Round Cable, 2-Connector Model CBL-100IDE18-CS</li>
+<li>AMD Athlon 64 3700+ San Diego 1GHz FSB Socket 939 Processor Model ADA3700BNBOX (<em>dual core, 2.2GHz</em>)</li>
+<li>Patriot Signature 2GB (2 x 1GB) 184-Pin DDR SDRAM DDR 400 (PC 3200) Unbuffered System Memory Model PSD2G400KH</li>
+<li>Western Digital Raptor WD360GD 36.7GB 10,000 RPM Serial ATA150 Hard Drive</li>
+<li>Seagate Barracuda 7200.8 ST3250823AS 250GB 7200 RPM Serial ATA150 Hard Drive</li>
+<li>2 Pioneer Beige IDE DVD Burners, Model DVR-110 D</li>
+<li>COOLER MASTER Centurion 5 CAC-T05-UW Black Aluminum Bezel, SECC Chassis ATX Mid Tower Computer Case</li>
+</ul>
+
+<p>I bought it all from NewEgg for about $900 and paid my brother&rsquo;s friend for his time helping me choose the hardware and install it (actually, that was my brother&rsquo;s friend&rsquo;s brother). If you want similar help, by the way, send me an email and I&rsquo;ll hook you up with him. I&rsquo;d have been lost without his guidance.</p>
+
+<p>As you can see, I forgot a network card! Oops! So I went to a local store and bought something that looked pretty standard. I looked online for it first, but I should have spent more time figuring out compatibility, because as I found out, it&rsquo;s not guaranteed on AMD64.</p>
+
+<p>I bought a Linksys WRT54G, which has an RT2500 chipset. For those who don&rsquo;t know, it is the chipset &ndash; the guts of the card &ndash; which really matters. Most cards have a chipset that may be found in any number of other cards, all of which use the same driver. And manufacturers often change the chipset, sometimes to something totally different, which may be completely unsupported and nothing at all like the original (from a device driver point of view). I thought this chipset was going to be a breeze because the manufacturer has open-sourced the drivers (thank you!). Unfortunately, I found out it&rsquo;s not supported on more exotic platforms, including mine.</p>
+
+<p>I searched around on the <a href="http://forums.gentoo.org">Gentoo forums</a>, and found a lot of weird stories of things working sometimes and not working other times; and I even had the bizarre experience of the card working for me, for just a few minutes. But there are two things in the way of full support: a) 64-bit processor and b) two of them (dual core). The RT2500 chip can be coaxed to work, apparently completely sporadically, in non-SMP mode. In other words, if you build your kernel <em>without SMP support</em> so it only uses one of the two cores, sometimes the drivers will compile. And, when that happens, sometimes the hardware will work and sometimes not. I paid too much for this machine to use half of my processor, so that wasn&rsquo;t good enough for me even if I could have gotten it to work reliably without SMP.</p>
+
+<p>After some banging of the head against the wall, I returned the card and got one with an Atheros chipset. The card is a D-Link DWL-G510, hardware version B1, firmware version 2.11. Again, you may buy exactly the same card and find a different chip in it, so there are no guarantees. But there is no problem getting the card to work if it has the Atheros chipset.</p>
+
+<p>I built the 2.6.15-gentoo-r4 kernel with SMP support and built in the encryption routines used by the card:</p>
+
+<pre>Processor type and features ---&gt;
+    [*] Symmetric multi-processing support
+
+Cryptographic options ---&gt; (I enabled them all)</pre>
+
+<p>then did <code>emerge madwifi-driver</code> (version 0.1443.20060207) and followed the instructions for setting up the <code>ath0</code> interface via <code>udev</code> (version 079-r1). These are well documented at many websites, including the Gentoo forums, but the output of <code>emerge</code> is really all you need. I didn&rsquo;t need to create the interface via a command as the instructions say; I was able to just let <code>udev</code> create it at boot.</p>
+
+<p>Then all I needed to do was <code>modprobe ath_pci</code> and the interface appeared! Of course this module can be added to <code>/etc/modules.autoload.d/kernel-2.6</code>. Finally, I configured the network&rsquo;s settings for my access point.</p>
+
+<p>After this bump in the road, it&rsquo;s been smooth sailing. The network works great &ndash; better than my DSL, that&rsquo;s for sure. And I have to say, this machine absolutely flies. It probably has a lot to do with the large L1 cache (and everything else for that matter). Look at this:</p>
+
+<pre>tigger ~ # time emerge xorg-x11
+[snip...]
+real    24m59.155s
+user    18m3.664s
+sys     6m27.860s</pre>
+
+<p>Needless to say, there are no <a href="/blog/2006/01/23/firefox-or-opera-on-slow-hardware/">problems running Firefox</a> on this machine.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

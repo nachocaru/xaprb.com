@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Debugging metadata locking in MySQL 5.5 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Debugging metadata locking in MySQL 5.5</h1>
+  <span class="post-date">Tue, Aug 28, 2012 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>MySQL 5.1 added a long-needed feature: INFORMATION_SCHEMA tables for inspecting locks held and waited-for inside of InnoDB. With this addition, it became possible to <a href="http://dev.mysql.com/doc/innodb-plugin/1.0/en/innodb-information-schema-examples.html">figure out who is blocking whom</a>.</p>
+
+<p>MySQL 5.5 changed a lot more things inside the server. One of the new features is improved <a href="http://dev.mysql.com/doc/refman/5.5/en/metadata-locking.html">metadata locking</a>. This solves a lot of inconsistencies and bugs that were previously possible. The output of <code>SHOW PROCESSLIST</code> is also changed; instead of the venerable <code>Locked</code> status, there are more fine-grained status indicators such as <code>Waiting for table metadata lock</code>.
+Unfortunately, the additional locking is not possible for the DBA to inspect. Where InnoDB&rsquo;s storage-engine-level locking used to be opaque and was then made transparent, now server-level locking is a mystery, and in my experience much more likely to become a problem than it used to be. (The server now does a lot more locking of things it previously neglected to lock.)</p>
+
+<p>I have recently run into a number of circumstances where metadata locking prevents users from doing any work. The locking is not inside InnoDB, so the INFORMATION_SCHEMA tables show nothing at all. I tried using <code>mysqladmin debug</code> and looking at the contents of the server&rsquo;s error log, but the table in question was shown as unused in the output there. I tried examining each of the other connections to the server, but was unable to find any connection that I believed could have touched the table and locked it. The lock wait was ongoing for a long time, and no other transaction had been started previous to that, so it did not seem that a long-running transaction could have touched the table and was keeping a metadata lock open.</p>
+
+<p>It feels like a bug in metadata locking to me, but I will need to dig in more deeply the next time I see it happen. Unfortunately, it&rsquo;s unlikely that I&rsquo;ll be able to create a reproducible test case, because there&rsquo;s no way to actually see what is happening. I hope that a future version of MySQL will include a more comprehensive set of tables for inspecting locks, requests, and waits at all layers of the server.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

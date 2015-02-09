@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      JOIN Versus Key-Value Stores &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">JOIN Versus Key-Value Stores</h1>
+  <span class="post-date">Mon, Apr 28, 2014 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I was listening to a conversation recently and heard an experienced engineer express an interesting point of view on joins and key-value databases. I don&rsquo;t entirely agree with it. Here&rsquo;s why.</p>
+
+<p><img src="/media/2014/04/loc.jpg" alt="Library Of Congress" />
+</p>
+
+<p>First, the opinion. If I may paraphrase, the discussion was something like this:</p>
+
+<ul>
+<li>With experience in building distributed systems, one learns to avoid JOIN.</li>
+<li>Therefore, much of the work of JOIN is done in the application instead of the database.</li>
+<li>Access to the database is usually reduced to simple primary-key lookups.</li>
+<li>Therefore, a key-value store is as good a choice as a relational database.</li>
+</ul>
+
+<p>I&rsquo;m simplifying, because the speaker actually suggested that MySQL makes a really good database for primary-key lookups as well.</p>
+
+<p>The place I would differ slightly is on the last bullet point.  It really depends on which key-value store you choose. The subtlety I&rsquo;d suggest to consider is whether you&rsquo;d like a simple key-value store that can do only simple key-value set/get operations, or whether you want something that also provides more functionality if needed. I would argue that for most use cases, there is at least occasional need for something more sophisticated, and often there&rsquo;s a frequent need.</p>
+
+<p>The more &ldquo;sophisticated&rdquo; uses I&rsquo;m talking about would include things such as evaluating expressions against the data, or performing operations such as <code>GROUP BY</code>. Both of these are orthogonal to use of <code>JOIN</code>. Consider how many times you&rsquo;ve done something like the following:</p>
+
+<pre><code>SELECT DISTINCT status FROM posts;
+
+SELECT author, COUNT(*), SUM(IF(status='draft'), 1, 0) FROM posts
+GROUP BY author
+ORDER BY COUNT(*) DESC LIMIT 50;
+</code></pre>
+
+<p>Answering such ad-hoc (or routine) questions about your data can be a lot of work if you don&rsquo;t have an expressive query language. It can also be very performance-intensive, requiring you to fetch potentially enormous amounts of data out of the database to be processed in-app.</p>
+
+<p>This doesn&rsquo;t have to imply that you need a relational database. Most key-value stores provide some useful functionality. Many provide at least map-reduce to operate on sets of keys. Many treat the value as a non-opaque data structure and allow you to write arbitrary functions to operate on it in some fashion, even if it&rsquo;s not as terse as SQL.</p>
+
+<p>Some key-value databases seem to provide a little more functionality than they really do. For example, Cassandra&rsquo;s CQL can lead developers to think the power of a limited form of SQL is available to them. Although they may know perfectly well that CQL is essentially a human-friendly way of specifying a set of keys, the syntactical similarity to SQL can lull smart people into acting as if they are working with a more expressive language. This could cause you to write an application as though it&rsquo;ll be easy to do things that, when you later need to do them and can&rsquo;t with CQL alone, make you kick yourself a little bit.</p>
+
+<p>Of course, the way you&rsquo;d want to support such a use case in a database like Cassandra is ideally to anticipate it and to store denormalized data that can answer the question quickly. Although this may seem limiting to a relational database user, it is really equivalent to creating an index, in terms of the need for foresight. Clearly, one can think of lots of ad-hoc queries against large relational tables that will not be feasible without indexes to support them. You need to do some planning either way.</p>
+
+<p>To sum up: A big advantage (or foot-gun) of a relational database is that ad-hoc queries with complex expressions can be evaluated directly against the data, without moving it across the network. This is possible in some key-value stores, naturally, but not all. So I don&rsquo;t think it&rsquo;s as simple as &ldquo;if you don&rsquo;t need joins, you aren&rsquo;t doing anything a key-value database can&rsquo;t do too.&rdquo; (That is, again, a paraphrase.)</p>
+
+<p><a href="https://www.flickr.com/photos/glynlowe/8494249683/">Picture Credit</a></p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

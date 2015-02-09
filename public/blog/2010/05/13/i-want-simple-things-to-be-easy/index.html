@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      I want simple things to be easy &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">I want simple things to be easy</h1>
+  <span class="post-date">Thu, May 13, 2010 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I like to write tools that make hard things easy, when possible. By and large, MySQL is easy and simple. But some simple things are too hard with MySQL. I want to change that, at least for the things that matter the most to me, and which I think I know how to fix.</p>
+
+<p>I will probably write a lot about this. I have already written a number of <del datetime="2010-05-13T13:10:55+00:00">rants</del> blog posts about the lack of instrumentation in MySQL, and that is where I&rsquo;ll probably continue to put most of my energy.</p>
+
+<p>To begin with, imagine this simple scenario. You are a remote DBA. Your client says &ldquo;New Relic is showing periods of slow response time from the database.&rdquo; You connect to MySQL at the command line and try to troubleshoot. How do you catch the problem in action, from within the database itself? The following are no good:</p>
+
+<ul>
+<li>It doesn&rsquo;t count to see the problem two minutes later by observing the application tier, as New Relic does. That&rsquo;s too late, and it&rsquo;s not from within the database.</li>
+<li>It&rsquo;s also not good enough to catch just after the slow queries finish executing, which you can get from the slow query log if you have a realtime log analyzer running; that is a) also after the fact, and b) again not possible from within the database itself.</li>
+<li>Watching TCP traffic or using a proxy is similarly off limits.</li>
+</ul>
+
+<p>This is a database, a complex piece of software &ndash; comparable to an operating system in some respects. It should be possible to know that response time is spiking <em>while the slow queries are executing slowly, before they even finish and return their results to the application</em>. This is a simple question that should be easy to answer.</p>
+
+<p>It&rsquo;s not currently possible inside MySQL, because MySQL doesn&rsquo;t tell you how much time queries spend executing. It&rsquo;s that simple. Fortunately the fix is equally simple: measure how long queries spend executing.</p>
+
+<p>We can look at the lowly iostat (or /proc/diskstats in Linux) for an example of how this is possible to solve. We need a counter that shows the sum of execution time, including currently executing queries. I saw that the <a href="http://www.facebook.com/note.php?note_id=390420710932">Facebook patch</a> adds counters similar to this. Search for &ldquo;Query timing&rdquo; on that page. I want something slightly more complex, <a href="http://www.xaprb.com/blog/2010/01/09/how-linux-iostat-computes-its-results/">the way Linux&rsquo;s IO counters work, because they add memory</a>. Simple is really beautiful; a counter that has memory is an amazing thing, and you can apply Little&rsquo;s Law to derive a surprising amount of information from it.</p>
+
+<p>I might change my opinion about some of the more complex things that are being added to MySQL; much smarter people have, and I&rsquo;m probably a hold-out because I&rsquo;m not that smart. But I still see the need for simple combinations of counters and timers for essential metrics, which do not need complex queries or tools to use. I have a few more things on my wishlist, which I&rsquo;ll write about later.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

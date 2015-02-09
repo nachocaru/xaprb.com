@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      GnuCash to MySQL export script &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">GnuCash to MySQL export script</h1>
+  <span class="post-date">Sun, Mar 12, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>It&rsquo;s tax season, and this year I decided to export my GnuCash data into a MySQL database for analysis. This article is about that process, including source code for the export script and a couple of simple queries.</p>
+
+<p>The source code is available <a href="https://github.com/xaprb/gnucash2mysql">on GitHub</a>.</p>
+
+<h3 id="toc_0">The script</h3>
+
+<p><a href="http://www.gnucash.org">GnuCash</a> is a powerful double-entry accounting system for managing personal and/or business finances. I&rsquo;ve used it since about 2002, and find it adequate for my needs. However, the reporting is widely acknowledged to be one of its weakest points. Reporting is implemented in the <a href="http://www.swiss.ai.mit.edu/projects/scheme/">Scheme programming language</a>, and if the included reports aren&rsquo;t enough, most people probably won&rsquo;t be able to write their own. Personally, I find it much easier (for certain reports) to write SQL queries instead. With that in mind, I set out to write a little script that will insert my GnuCash data into a MySQL database.</p>
+
+<p>It&rsquo;s actually a fairly simple task; the GnuCash developers chose XML as the file format, so the data is easily accessible from other programs. I decided to export only the account structure and transactions, leaving alone the business features such as customers and invoices.</p>
+
+<p>Before I started, though, I spent some time investigating the built-in PostgreSQL backend. The default data format is XML, but the GnuCash developers also have support for storing the data in a <a href="http://www.postgresql.org">PostgreSQL</a> database. Unfortunately, I couldn&rsquo;t get it to work. At least in version 1.8.11, it seems to be broken. In fact, the GnuCash website and developer mailing lists indicate this is a low priority for right now, as they are working towards a new version which uses an updated graphical toolkit (<a href="http://www.gtk.org">GTK+</a>). Apparently the source is high-quality, but a bit out of date since the developers plan to revisit that once the new version is ready.</p>
+
+<p>Satisfied that I&rsquo;m not reinventing the wheel, I went ahead with a script to export the data myself. Since the XML format is really straightforward, I decided to do the simplest thing I could get to work. Perl seemed like a good choice. I am familiar with <a href="http://expat.sourceforge.net">expat</a>, and Perl has an expat module, so that was also a natural choice for the XML parsing. The basic idea is to push the data through the script like drinking from a firehose, and when it detects certain things &ndash; the start of an element, some character data, the end of an element &ndash; call a function to handle the data. Depending on what the data is (what element I&rsquo;m currently examining, etc) I either store it for later reference, or push it into the database. I also automated creating the necessary table structure in the database.</p>
+
+<p>Access to a MySQL database is required. The script uses tables called account, transaction and split. The DDL used to create the tables is at the end of the Perl script file. I used InnoDB tables so I&rsquo;d have transaction support.</p>
+
+<p>The script requires these Perl modules: DBI, Term::ProgressBar, and XML::Parser::Expat. You can run it with the <code>--help</code> option to see how to run it.</p>
+
+<h3 id="toc_1">The queries</h3>
+
+<p>These queries assume precision decimal math. Versions of MySQL less than 5.0 use imprecise math. I wrote an article on <a href="/blog/2006/03/08/decimal-math-in-mysql/">MySQL and decimal math</a>. If you have any issues with these queries, it may help to consult that article.</p>
+
+<p>This query finds all unbalanced non-equity transactions by summing the splits:</p>
+
+<pre>select
+    s.amount,
+    a.name,
+    t.description,
+    t.posted
+from account as a
+    inner join (
+        select transaction, sum(amount) as amount, max(account) as account
+        from split
+        group by transaction
+        having sum(amount) &lt;&gt; 0
+    ) as s on s.account = a.id
+    inner join transaction as t on t.id = s.transaction
+where a.type &lt;&gt; 'EQUITY'</pre>
+
+<p>This query sums all expenses for 2005 by month and account:</p>
+
+<pre>select date_format(posted, '%Y-%m') as month, name, sum(amount) as amount
+from transaction as t
+    inner join split as s on s.transaction = t.id
+    inner join (
+        select id, name from account
+            where type='EXPENSE'
+    ) as a on a.id = s.account
+where year(posted) = 2005
+group by date_format(posted, '%Y-%m'), name
+order by date_format(posted, '%Y-%m'), name;</pre>
+
+<p>This query finds average monthly expenditures by account since January 2005:</p>
+
+<pre>select @num_months := count(distinct date_format(posted, '%Y-%m'))
+    from transaction
+    where posted &gt;= '2005-01-01';
+
+select cast(sum(amount) / @num_months as decimal(8,2)) as 'Average monthly amount',
+    concat(coalesce(grandparent_name, ''),
+        if(grandparent_name is null, '', ' &gt; '),
+        coalesce(parent_name, ''),
+        if(parent_name is null, '', ' &gt; '),
+        name) as name
+from (
+    select date_format(posted, '%Y-%m') as month,
+        a.name,
+        aa.name as parent_name,
+        aaa.name as grandparent_name,
+        sum(amount) as amount
+    from transaction as t
+        inner join split as s on s.transaction = t.id
+        inner join (
+            select id, name, parent from account
+            where type='EXPENSE'
+        ) as a on a.id = s.account
+        left outer join account as aa on aa.id = a.parent
+        left outer join account as aaa on aaa.id = aa.parent
+    where posted &gt;= '2005-01-01'
+    group by date_format(posted, '%Y-%m'), a.name
+) as x
+group by name
+order by name;</pre>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Get Maatkit fast from the command line &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Get Maatkit fast from the command line</h1>
+  <span class="post-date">Wed, May 21, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>I have been using Maatkit in a different way since I joined <a href="http://www.percona.com/">Percona</a> as a consultant. When I&rsquo;m working on a system now, it&rsquo;s a new, unfamiliar system &ndash; not one where I have already installed my favorite programs. And that means I want to grab my favorite productivity tools fast.</p>
+
+<p>I intentionally wrote the <a href="http://www.maatkit.org">Maatkit</a> tools so they don&rsquo;t need to be &ldquo;installed.&rdquo; You just run them, that&rsquo;s all. But I never made them easy to download.</p>
+
+<p>I fixed that. Now, at the command line, you can just run this:</p>
+
+<pre>wget http://www.maatkit.org/get/mk-table-sync</pre>
+
+<p>Now it&rsquo;s ready to run. Behind the scenes are some Apache mod_rewrite rules, a Perl script or two, and Subversion. When you do this, you&rsquo;re getting the latest code from Subversion&rsquo;s trunk.[1][2] (I like to run on the bleeding edge. Releases are for people who want to install stuff.)</p>
+
+<p>Because there&rsquo;s some Perl magic behind it, I made it even easier &ndash; it does pattern-matching on partial names and Does The Right Thing:</p>
+
+<pre>baron@kanga:~$ wget http://www.maatkit.org/get/sync
+--21:38:50--  http://www.maatkit.org/get/sync
+           =&gt; `sync'
+Resolving www.maatkit.org... 64.130.10.15
+Connecting to www.maatkit.org|64.130.10.15|:80... connected.
+HTTP request sent, awaiting response... 302 Moved
+Location: http://www.maatkit.org/get/mk-table-sync [following]
+--21:38:50--  http://www.maatkit.org/get/mk-table-sync
+           =&gt; `mk-table-sync'
+Connecting to www.maatkit.org|64.130.10.15|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-perl]
+
+    [      &lt;=&gt;                            ] 163,259      136.51K/s             
+
+21:38:51 (136.13 KB/s) - `mk-table-sync' saved [163259]</pre>
+
+<p>The redirection is there because otherwise wget will save the file under the name &lsquo;sync&rsquo; instead of &lsquo;mk-table-sync&rsquo;.</p>
+
+<p>And if you&rsquo;ve forgotten which tools exist, you can just click on over to <a href="http://www.maatkit.org/get/">http://www.maatkit.org/get/</a> and see.</p>
+
+<p>A quick poll: instead of getting the latest trunk, should this give you the code from the last release? I can do that, if you want.</p>
+
+<p><a href="http://www.percona.com/">1</a> OK, it&rsquo;s only refreshed every hour. So you&rsquo;re getting code that&rsquo;s up to an hour old.</p>
+
+<p><a href="http://www.maatkit.org">2</a> <strong>update:</strong> now /get/foo gets the latest release, and /trunk/foo gets the latest trunk code.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

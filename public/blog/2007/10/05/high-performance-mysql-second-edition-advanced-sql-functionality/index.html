@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      High Performance MySQL, Second Edition: Advanced SQL Functionality &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">High Performance MySQL, Second Edition: Advanced SQL Functionality</h1>
+  <span class="post-date">Fri, Oct 5, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Work continues apace on <a href="http://www.xaprb.com/blog/2007/08/30/coming-soon-high-performance-mysql-second-edition/">High Performance MySQL, Second Edition</a> (the link leads to the chapter outline). I&rsquo;m working now on Chapter 6, Advanced SQL Functionality, and thought I&rsquo;d solicit input on it. Are there things you&rsquo;d like to see us cover? Do you have any favorite techniques you&rsquo;d like to see us include? Feel free to leave feedback in the comments. The chapter is already significantly done, with 26 pages written, but the ink&rsquo;s not on paper yet, so there&rsquo;s still time to correct omissions!</p>
+
+<p>I should note that there are separate chapters on architecture, schema and indexing design, application optimization, query optimization, etc. We&rsquo;re trying to focus this chapter on &ldquo;advanced features&rdquo; and how to get high performance out of them. Also, the outline is still subject to change: there&rsquo;s so much material that it&rsquo;s hard to decide the best place to put something, and exactly what is an &ldquo;advanced feature&rdquo; might be open to interpretation, or we might feel something is better placed elsewhere. That said, please throw your ideas at us and we&rsquo;ll worry about the details for you. Here&rsquo;s the outline of this chapter, as of three minutes ago:</p>
+
+<pre>[Intro]
+The MySQL Query Cache
+  Operational Detail and Caveats
+  Optimizations
+  Alternatives
+Prepared Statements and Multiple Query Execution
+  Client-side Prepared Statements
+  Client-side Prepared Statements
+  Optimization of the Execution Plan
+  Server-side Prepared Statements
+  Prepared Statements in Stored Procedures
+  Prepared Statement Caveats
+Cursors
+  Client-side Cursors
+Stored Procedures
+  Pros and Cons
+  Recommendation
+  Example
+User Defined Functions
+Events
+Views
+  Updatable Views
+  Limitations of Updatable Views
+  Security
+  Performance
+Triggers
+Working with Multi-byte Character Sets
+Full-Text Search
+  Full-Text Search Queries
+  Changes in MySQL 5.1
+  Full-Text Trade-Offs and Workarounds
+  Full-Text Tuning and Optimization
+Foreign Key Constraints
+Merge Tables and Partitioning
+  Merge Tables
+    Merge Table Performance Limitations
+    Merge Table Strengths
+  Partitioned Tables
+    Optimizing Queries Against Partitioned Tables
+    Maintaining Partitioned Tables
+Distributed Transactions (XA)</pre>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

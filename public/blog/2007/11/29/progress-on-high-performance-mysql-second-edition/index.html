@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Progress on High Performance MySQL, Second Edition &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Progress on High Performance MySQL, Second Edition</h1>
+  <span class="post-date">Thu, Nov 29, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>It&rsquo;s been a while since I said anything about the progress on the book. That doesn&rsquo;t mean we are not still working on it, though.</p>
+
+<p>As <a href="http://www.mysqlperformanceblog.com/2007/11/12/how-we-work-on-high-performance-mysql-second-edition/">Peter wrote a while ago</a>, he is basically wearing the hat of a very advanced technical reviewer at this point. We&rsquo;ve finished writing all the chapters from his detailed outlines. He has worked through about half the chapters, and I&rsquo;m continuing to spend my evenings and weekends and holidays (yes, nearly all my free time &ndash; just ask my wife!) writing some new material (an appendix on <code>EXPLAIN</code>, for example), finishing unfinished things marked with TODO in the text, and revising chapters after Peter reviews them. Vadim is working on benchmarks. For example, he just finished some benchmarks for something I profiled with <code>SHOW STATUS</code>. I thought that would be good enough to assert something about the performance. Sure enough, <code>SHOW STATUS</code> says it does less work, but Vadim&rsquo;s benchmarks show it&rsquo;s slower :-) This is why we check each other&rsquo;s work!</p>
+
+<p>The core chapters on MySQL performance &ndash; beginning with Benchmarking and Profiling, and continuing through Optimizing Server Settings &ndash; are the ones Andy Oram, our editor, thinks we should put the most effort into, and I agree. We will probably circle back and go through another review/edit cycle before we release them for technical review. Some of the other chapters, such as Replication, are already out for technical review.</p>
+
+<p>Despite the fact that all of the chapters and appendixes are theoretically a &ldquo;first draft,&rdquo; as of several weeks ago, there is still a lot of work to do. Depending on the chapter, it takes me a solid weekend to revise a chapter after Peter reviews it. Each little thing anyone points out (does MySQL version X really do Y by default?) requires some research, testing, benchmarks, or even reading the source code.</p>
+
+<p>Some miscellanea:</p>
+
+<ul>
+<li>The production staff replied to my inquiry to the editor to say that yes, we will be able to have references that point to a specific page number. This was a big relief to me. It requires extra work, but makes the book so much more valuable as a reference work in my opinion. To see why, look at the top of page 151 in the first section, which just refers to chapters and sections by their titles: &ldquo;See&hellip; the &ldquo;Tools&rdquo; section&hellip;&rdquo; Now try to find the &ldquo;Tools&rdquo; section. If it took you a while&hellip; well, the first time I did it, I missed it, and thought it might mean the Tools <em>Chapter</em>. The second edition will say &ldquo;The X section on page Y&rdquo; or similar. (Okay, I&rsquo;ll shut up about this now &ndash; everyone has to have a <a href="http://www.xaprb.com/blog/2007/02/14/review-of-pro-nagios-20-and-nagios-system-and-network-monitoring/">pet peeve</a>, eh?)</li>
+<li>We are currently at 425 pages in OpenOffice.org Writer, which by my calculations puts us around 470 pages in print. As I said before, I think we&rsquo;ll break 500 pages by the time we finish the rest of the missing material.</li>
+<li><a href="http://shodan.ru/">Andrew Aksyonoff</a> has contributed an appendix on the <a href="http://www.sphinxsearch.com/">Sphinx full-text search system</a>. If you don&rsquo;t know anything about it, check it out. It&rsquo;s an amazing piece of software that does a lot more than just full-text search.</li>
+</ul>
+
+<p>Well, I&rsquo;ve run out of my allotted thirty minutes of blogging! Back to the salt mines! Just kidding&hellip; I&rsquo;m actually off to the climbing gym soon to get my mind off it.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

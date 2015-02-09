@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL Query Profiler &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Query Profiler</h1>
+  <span class="post-date">Wed, Oct 18, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>This is the fourth in a series of articles on profiling MySQL. My past three articles have explained how to measure the work a query causes MySQL to do. In this article I introduce a tool I&rsquo;ve written to do the work for you and produce a compact, readable report of that work, with all the math already done, and the measurements labelled and grouped for ease of comprehension. With this tool you can understand query performance at a glance.</p>
+
+<blockquote>
+<p>Note: I wrote this article in 2006, when I didn&rsquo;t have a clear understanding
+of even simple concepts such as <em>what performance really is</em>. Since then I
+have learned a lot from wise people such as Cary Millsap. In 2012 I founded
+<a href="https://vividcortex.com/">VividCortex, the best database performance optimization and database monitoring platform</a>
+to chase away the kind of ignorance I display in the article below. Enjoy this
+trip down memory lane.</p>
+</blockquote>
+
+<p>I&rsquo;m very happy about this tool. Finally, I can run a query and get the kind of measurements I was used to on Microsoft SQL Server. Though the MySQL server isn&rsquo;t as complex as SQL Server and doesn&rsquo;t always let you see as much internal information, at least with this tool I can easily use the information I do have.</p>
+
+<h3 id="toc_0">Introduction</h3>
+
+<p>I demonstrated techniques to measure and understand MySQL query performance in my three most recent articles:</p>
+
+<ul>
+<li><a href="/blog/2006/10/12/how-to-profile-a-query-in-mysql/">How to profile a query in MySQL</a></li>
+<li><a href="/blog/2006/10/15/a-case-study-in-profiling-queries-in-mysql/">A case study in profiling queries in MySQL</a></li>
+<li><a href="/blog/2006/10/17/mysql-profiling-case-study-part-2/">MySQL profiling case study, part 2</a></li>
+</ul>
+
+<p>If you&rsquo;ve read those articles, this article will make sense to you. If not, it might help to go read them now.</p>
+
+<p>For the last several months I&rsquo;ve been working on a tool to automate the work I showed you in those articles. Done by hand, it&rsquo;s a tedious job, and I&rsquo;d just as soon take execution time as the best indicator of a query&rsquo;s performance. But with a tool to do it automatically, it&rsquo;s easy to measure much more data.</p>
+
+<p>MySQL Query Profiler is just such a tool. It&rsquo;s written in Perl and has minimal dependencies (in fact, it has minimal code, too). It reads queries from a file you give it, executes each one, and measures the results. Then it formats it nicely one of two ways: as human-readable reports with logical grouping and labels, or as tab-separated values to be fed to a spreadsheet, <code>awk</code> or other processing tools.</p>
+
+<p>There are lots of options to control the output. You can get a summary view of the entire batch, view each query&rsquo;s statistics separately, view only some queries separately, and ask for more or less verbose output. You can turn on and off certain behaviors, such as disabling the query cache or flushing tables.</p>
+
+<h3 id="toc_1">Other profiling tools</h3>
+
+<p>Dmitri Mikhailov posted a tool on MySQL Forge to watch queries as they fly by on the wire: <a href="http://forge.mysql.com/snippets/view.php?id=15">A Poor Man&rsquo;s Query Profiler</a>. This is a different meaning of the word &ldquo;profile.&rdquo; This tool analyzes which queries are run on the server. My tool measures the performance characteristics of a query or batch of queries. Both are important needs.</p>
+
+<p><a href="http://jcole.us/">Jeremy Cole</a> of <a href="http://www.provenscaling.com/">Proven Scaling</a> recently announced a <a href="http://lists.mysql.com/internals/33768"><code>SHOW PROFILE</code> patch to the MySQL source</a> that will allow detailed profiling of query execution. This is a wonderful addition to MySQL&rsquo;s instrumentation. I don&rsquo;t know when this will be part of standard MySQL distributions.</p>
+
+<p>I know of no other tools to provide this functionality. If you do, please post a comment.</p>
+
+<h3 id="toc_2">Acknowledgements</h3>
+
+<p>I was heavily inspired by <a href="http://hackmysql.com/mysqlreport/">mysqlreport</a>, a great tool for understanding MySQL status at a glance. If I hadn&rsquo;t seen mysqlreport, I doubt I&rsquo;d have known how to present query profiling data comprehensibly. Plus, I might not have learned about Perl formats, which are really nifty. Thanks.</p>
+
+<h3 id="toc_3">Conclusion</h3>
+
+<p>This brings to a close my series on profiling queries in MySQL. I hope you&rsquo;ve found it useful, and I hope my profiling tool is helpful to you. Please let me know how I can improve it for you, or if there&rsquo;s anything else I can do.</p>
+
+<p>If this was useful to you, you should consider <a href="http://www.xaprb.com/index.xml">subscribing to my articles via feeds or e-mail</a>.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

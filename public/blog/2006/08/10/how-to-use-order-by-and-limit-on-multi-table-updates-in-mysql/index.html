@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to use ORDER BY and LIMIT on multi-table updates in MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to use ORDER BY and LIMIT on multi-table updates in MySQL</h1>
+  <span class="post-date">Thu, Aug 10, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>One of my colleagues recently redesigned a system for scheduling work, and needed to write a multiple-table <code>UPDATE</code> with <code>ORDER BY</code> and <code>LIMIT</code>, neither of which is supported for multiple-table UPDATE in MySQL. This article explains how to do it anyway, and shows how to rewrite a first attempt for hundreds of times better performance.</p>
+
+<h3 id="toc_0">Introduction</h3>
+
+<p>Without revealing too much about my employer&rsquo;s internal systems, I want to give a little bit of context. First, we have a table that holds work to be done:</p>
+
+<pre>create table work_to_do (
+   client int not null,
+   work_unit int not null,
+   priority float not null,
+   processor int not null default 0,
+   primary key(client, work_unit),
+   key(priority),
+   key(processor, priority)
+) engine=InnoDB;</pre>
+
+<p>Each row in this table represents a job for a client. The actual work is defined elsewhere, as rows in another table that can be looked up from <code>work_unit</code>. When there&rsquo;s some work to be done, the row is inserted with <code>processor</code> = 0 and <code>priority</code> set to some number calculated by another process. The idea is to do the highest-priority jobs first.</p>
+
+<p>We have a program that may have multiple running instances, each of which looks at the table and tries to claim a set of work for itself, to be handled by no other process. In order to do this, each process tries to update some rows so <code>processor</code> is its UNIX process ID. Once <code>processor</code> is non-zero, the row is reserved for that process to do.</p>
+
+<p>There&rsquo;s another table that defines which clients are eligible for processing, whether they&rsquo;re in the <code>work_to_do</code> table or not.</p>
+
+<h3 id="toc_1">The first attempt</h3>
+
+<p>The query to claim a set of rows for a process needs to update the ten highest-priority unclaimed rows for eligible clients. Since it needs to access more than one table, and needs to order and limit the results, at first it seems you can&rsquo;t do this query at all, because <code>ORDER BY</code> and <code>LIMIT</code> aren&rsquo;t allowed for multi-table updates:</p>
+
+<blockquote cite="http://dev.mysql.com/doc/refman/5.0/en/update.html">
+  <p>
+    For the multiple-table syntax, UPDATE updates rows in each table named in table_references that satisfy the conditions. In this case, ORDER BY and LIMIT cannot be used.
+  </p>
+</blockquote>
+
+<p>However, a <a href="/blog/2006/03/11/many-to-one-problems-in-sql/">standard searched <code>UPDATE</code> statement</a> with a subquery doesn&rsquo;t count as a multi-table update, so you can do it like this:</p>
+
+<pre>-- @process_id is actually passed in as a parameter
+-- set @process_id = 17603;
+update work_to_do
+   set processor = @process_id
+   where processor = 0
+      and client in (select client from eligible_client)
+   order by priority desc
+   limit 10</pre>
+
+<p>There&rsquo;s only one problem: performance sucks. You are probably aware that <code>IN()</code> subqueries are converted by the <code>in_optimizer</code> to correlated subqueries, <a href="/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/">sometimes with severe performance penalties</a>.</p>
+
+<p>I created the tables on my home computer, and ran the above query with 5,000 rows in <code>work_to_do</code>. With 50 rows in <code>eligible_client</code> the query completes in a 0.13 seconds, but with 5,000 the correlated subquery becomes a real performance problem; it takes 9.8 seconds, which is very slow for this machine. It means this may be an O(n^2) algorithm.</p>
+
+<h3 id="toc_2">The query after optimizing</h3>
+
+<p>To eliminate the badly optimized subquery, you need to rewrite the subquery as a join, but how can you do that and retain the <code>LIMIT</code> and <code>ORDER BY</code>? One way is to find the rows to be updated in a subquery in the <code>FROM</code> clause, so the <code>LIMIT</code> and <code>ORDER BY</code> can be nested inside the subquery. In this way <code>work_to_do</code> is joined against the ten highest-priority unclaimed rows of itself. Normally <a href="/blog/2006/06/23/how-to-select-from-an-update-target-in-mysql/">you can&rsquo;t self-join the update target</a> in a multi-table <code>UPDATE</code>, but since it&rsquo;s within a subquery in the <code>FROM</code> clause, it works in this case.
+<pre>update work_to_do as target
+   inner join (
+      select w. client, work_unit
+      from work_to_do as w
+         inner join eligible_client as e on e.client = w.client
+      where processor = 0
+      order by priority desc
+      limit 10
+   ) as source on source.client = target.client
+      and source.work_unit = target.work_unit
+   set processor = @process_id;</pre></p>
+
+<p>Now the query runs in 0.04 seconds. That&rsquo;s a factor of 250 speedup, and it&rsquo;s even several times faster than the un-optimized query when there were only 50 rows in the <code>eligible_client</code> table.</p>
+
+<p>There is one downside: the rows are not locked in primary key order. This may help explain the occasional deadlock we get on this table (see <a href="/blog/2006/08/03/a-little-known-way-to-cause-a-database-deadlock/">my article about a &ldquo;little-known&rdquo; way to cause a deadlock</a>). Do you have any suggestions for how to work around this?</p>
+
+<h3 id="toc_3">Summary</h3>
+
+<p>In this article I&rsquo;ve shown you how to use subqueries to work around limitations on multi-table <code>UPDATE</code> statements, and then I demonstrated how an alternate way to rewrite the query performs about 250 times better on a small data set than the obvious solution.</p>
+
+<p>If this article was useful to you, <a href="http://www.xaprb.com/index.xml">subscribe via e-mail or feeds</a> to receive future articles conveniently and free.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

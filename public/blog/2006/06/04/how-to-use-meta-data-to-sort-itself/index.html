@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to use meta-data to sort itself &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to use meta-data to sort itself</h1>
+  <span class="post-date">Sun, Jun 4, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>I&rsquo;m a big fan of meta-data stored in the database. I love having a table that records arbitrary data about data. In fact, such a table can even be used to store meta-data about itself. In this article I&rsquo;ll explain how to use meta-data to define a sort order for both itself and the data to which it&rsquo;s related.</p>
+
+<p>I&rsquo;ve mentioned an online cemetery database several times. One of the great things about this project is it doesn&rsquo;t need custom-designed interfaces for every view on the data; the interfaces can be automatically generated. This was simple until the customer wanted the fields to be ordered a certain way. Since the interfaces are automatically generated from the meta-data, I hadn&rsquo;t built that feature in.</p>
+
+<p>After bit of thought, I found a way to do it easily.</p>
+
+<h3 id="toc_0">The setup</h3>
+
+<p>Here&rsquo;s the table schema for the meta-data:</p>
+
+<pre>create table meta (
+   t varchar(50) not null, -- table
+   c varchar(50) not null, -- column
+   name varchar(50) not null,
+   value varchar(50) not null,
+   primary key(t, c, name)
+)</pre>
+
+<h3 id="toc_1">Defining a sort order</h3>
+
+<p>I knew I wanted entries in this table to define a sort order. For the <code>marker</code> table, for instance, I&rsquo;d need entries that looked like this:</p>
+
+<table class="borders collapsed">
+  <tr>
+    <th scope="col">
+      t
+    </th>
+    
+    <th scope="col">
+      c
+    </th>
+    
+    <th scope="col">
+      name
+    </th>
+    
+    <th scope="col">
+      value
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      marker
+    </td>
+    
+    <td>
+      width
+    </td>
+    
+    <td>
+      sort
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      marker
+    </td>
+    
+    <td>
+      height
+    </td>
+    
+    <td>
+      sort
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="4">
+      ... etc ...
+    </td>
+  </tr>
+</table>
+
+<p>That data would sort the marker&rsquo;s width first, followed by the height, and so forth.</p>
+
+<p>So far, so good. The only complicating factor was the customer wanted certain fields first, others all the way at the end, and the rest she didn&rsquo;t care about. To ease maintenance, I decided to leave the columns in the middle to fall where they may, so I needed my sorting technique to work correctly when sort order isn&rsquo;t specified.</p>
+
+<p>I decided no table is likely to have more than a couple dozen columns, so I built in a &ldquo;default&rdquo; sort value of 50, and allowed pulling fields to the front with low numbers, or pushing them to the end with high numbers (up to 99). The resulting data looks like this:</p>
+
+<table class="borders collapsed">
+  <tr>
+    <th scope="col">
+      t
+    </th>
+    
+    <th scope="col">
+      c
+    </th>
+    
+    <th scope="col">
+      name
+    </th>
+    
+    <th scope="col">
+      value
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      marker
+    </td>
+    
+    <td>
+      width
+    </td>
+    
+    <td>
+      sort
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      marker
+    </td>
+    
+    <td>
+      height
+    </td>
+    
+    <td>
+      sort
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      marker
+    </td>
+    
+    <td>
+      notes
+    </td>
+    
+    <td>
+      sort
+    </td>
+    
+    <td>
+      98
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      marker
+    </td>
+    
+    <td>
+      misc
+    </td>
+    
+    <td>
+      sort
+    </td>
+    
+    <td>
+      99
+    </td>
+  </tr>
+</table>
+
+<h3 id="toc_2">Getting the data</h3>
+
+<p>I wanted my interface-building query to retrieve all meta-data about the desired table, already sorted in the defined order (I don&rsquo;t like to sort things in code; that&rsquo;s what databases are for). The query to fetch the meta-data <em>without</em> the ordering is pretty simple:</p>
+
+<pre>select m.*
+from meta as m
+where m.t = 'marker'</pre>
+
+<p>To add the ordering, I have to join the meta table to the &ldquo;sort&rdquo; subset of itself. To make sure all the meta-data is included in the results even if it has no defined sort order, I use a left join. Since there&rsquo;s a left join, the &ldquo;default&rdquo; sort position of 50 is implemented with a <code>COALESCE</code>, and to make string data sort as though it&rsquo;s numeric, I left-padded everything with zeroes to a width of 2 characters:</p>
+
+<pre>select m.*
+from meta as m
+    left outer join meta as s on m.t = s.t
+        and m.c = s.c
+        and s.name = 'sort'
+where m.t = 'marker'
+order by lpad(coalesce(s.value, "50"), 2, "0")</pre>
+
+<p><em>Et voila</em>, meta-data that sorts itself.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

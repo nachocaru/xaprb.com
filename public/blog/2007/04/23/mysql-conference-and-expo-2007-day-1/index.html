@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL Conference and Expo 2007, Day 1 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Conference and Expo 2007, Day 1</h1>
+  <span class="post-date">Mon, Apr 23, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p><a href="http://www.mysqlconf.com/"><img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" /></a>
+In my first day at the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo 2007</a>, I attended the <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10893">Scaling and High Availability Architectures</a> tutorial in the morning, and <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12080">Real-world MySQL Performance Tuning</a> in the afternoon. This is a brief article on each session&rsquo;s Big Ideas, and a short blurb about the conference overall so far.</p>
+
+<p>I&rsquo;ll also be involved in at least three sessions at the conference, and I describe them.</p>
+
+<p>If you&rsquo;re interested in short overviews of the sessions I attend, keep watching for my articles. I will give you each session&rsquo;s major ideas instead of writing stream-of-thought notes. You can look at the presenter&rsquo;s slides for more.</p>
+
+<h3 id="toc_0">The conference overall</h3>
+
+<p>This conference is well-organized and friendly. Attire is casual; most people are wearing jeans and t-shirts, or khakis and three-button shirts. I found lunch basic but good &ndash; catered food, with tables set up in a grassy area in the beautiful California sunshine; nicely dressed tables. I had a nice salad with vinaigrette and crumbled bleu cheese, penne with a sun-dried tomato sauce, red potato salad, and bread.</p>
+
+<p>Pretty much everyone seems to be here. I don&rsquo;t want to drop names, so I&rsquo;ll just leave it at that (though I cannot avoid mentioning that I&rsquo;m rooming with Alexey Kovyrin, who has just released an update to the <a href="http:/http://www.xaprb.com/blog.kovyrin.net/2007/04/23/master-master-replication-example-using-mmm/">MySQL Master-Master Replication tool</a>). It is such a pleasure to meet the people I&rsquo;ve been emailing with; people from all over the world, who use MySQL for all different kinds of things. I also met some people I&rsquo;ve met at previous events, and whom I consider friends now. Here&rsquo;s to all of my friends, new and old!</p>
+
+<p>The downside is I miss my wife and Carbon, our loving Rhodesian Ridgeback dog. But I know he will Guard The House&reg; even while I&rsquo;m gone.</p>
+
+<h3 id="toc_1">Scaling and High Availability Architectures</h3>
+
+<p>This tutorial featured Jeremy Cole and Eric Bergen of <a href="http://www.provenscaling.com/">Proven Scaling LLC</a>. You probably know them for their generous help giving people rides and passes to various parts of various events, and for contributing patches for things we all need.</p>
+
+<p>Jeremy did most of the talking. The talk was organized roughly into identifying what scaling and high availability are (they&rsquo;re not the same thing), what problems typically present at various stages of an application&rsquo;s lifecycle, and some strategies to use and avoid. It promoted <strong>application partitioning for scaling, and master-master replication for high availability</strong>. All in all a very good discussion of the pros and cons of many concepts, both big and small.</p>
+
+<p>This tutorial was mostly pretty high-level, but frequently got down to specifics.</p>
+
+<p>One of the things I noticed the most from the audience&rsquo;s questions was how differently many people understand the concept &ldquo;partitioning.&rdquo; There were at least three working definitions I heard, and they are not at all the same thing. I think one of the primary obstacles to teaching the principles this talk covered is conveying accurately what it means to partition. The definitions I heard were</p>
+
+<ul>
+<li>Dividing data into partitions (aka &ldquo;shards&rdquo;) and locating each on one of some number of servers.</li>
+<li>Dividing a large table into smaller tables on the same server.</li>
+<li>Using the partitioned tables available in MySQL 5.1.</li>
+</ul>
+
+<p>I also heard people talking about partitioning by date, which I usually associate with archiving.</p>
+
+<p>In the context of the talk, partitioning data means dividing it by something like user ID and locating each partition on one of some number of servers. This is key to horizontal scaling.</p>
+
+<h3 id="toc_2">Real-world MySQL Performance Tuning</h3>
+
+<p>This session featured <a href="http://develooper.com/">Ask BjÃ¸rn Hansen</a> for the first half and MySQL&rsquo;s own <a href="http://www.jpipes.com/">Jay Pipes</a> for the second half. The two halves were quite different; it was not one tutorial, but two.</p>
+
+<p>Ask Hansen&rsquo;s talk was <strong>a broad overview of how to scale web applications</strong>, from start to finish. It included not only a lot of advice on MySQL, but also suggestions not related to MySQL, such as application-level caching, proxies, failover, etc. He covered a huge amount of material; his slides are interesting and varied, with nice illustrations. He often gave high-level advice, such as &ldquo;cache aggressively,&rdquo; but at least as often devoted entire slides to a low-level topic.</p>
+
+<p>Jay&rsquo;s talk covered much less ground. He focused on <strong>specific performance optimizations</strong> for MySQL. The topics included indexes, how to know when and how indexes are used, query plans, and server tuning. The slides showed a lot of code examples and the results of various query strategies and indexing changes.</p>
+
+<h3 id="toc_3">Next</h3>
+
+<p>You can catch me, with Mark Callaghan and Peter Zaitsev, tomorrow at lunchtime at an <a href="http:/http://www.xaprb.com/blog.cheyer.biz/2007/04/23/meet-the-experts-at-mysql-uc/">experts&rsquo; session on migrating MySQL from 4.0 to 5.0</a> (organized by <a href="http://www.solidtech.com/en/products/relationaldatabasemanagementsoftware/sdbformysql.asp">solidDB</a>). On Wednesday I&rsquo;ll be part of a lightning session <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12911">Lightning Rounds with Top MySQL Community Contributors</a>.</p>
+
+<p>On Thursday I will be giving a session myself, on <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213">how to use the innotop MySQL and InnoDB monitor</a>. I designed this session to show you how to go beyond the surface with innotop; my design strategy with innotop is that you should be able to start it and see something useful immediately without the advanced features even being visible, but there&rsquo;s a tremendous amount of power lurking in it.</p>
+
+<p>I hope to meet you if you&rsquo;re here, whether at one of my sessions or just in the hallways. Till then, be well and enjoy the conference!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

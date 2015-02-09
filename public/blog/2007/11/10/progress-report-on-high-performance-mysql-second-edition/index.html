@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Progress report on High Performance MySQL, Second Edition &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Progress report on High Performance MySQL, Second Edition</h1>
+  <span class="post-date">Sat, Nov 10, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>It&rsquo;s been a while since I&rsquo;ve written about progress on the book. I actually stopped working on it as much at the beginning of the month, because on October 31st I managed to finish a first draft of the last big chapter (Scaling and High Availability)! Now I&rsquo;m back to full-time work at my employer, and I&rsquo;m working on the book in the evenings and weekends only.</p>
+
+<p>This doesn&rsquo;t mean the book is close to being done, though. The editor is sending out some chapters for technical review, and there&rsquo;s still a lot more writing and revising to be done.</p>
+
+<p>Last weekend I revised the Security chapter from the first edition, which I think will be the only chapter that we&rsquo;ll just revise and update, rather than completely rewriting (well, maybe the Architecture chapter could be considered a revision instead of a rewrite, but it&rsquo;s a stretch; we changed it a lot). I removed a lot of the material that repeated the MySQL manual, and added a lot of information and best practices on grants, new privileges and objects in MySQL 5, common tasks, common mistakes, and so on. The chapter ended up being nearly as long, even though I stripped out all the code listings and so on from the first edition (in fact, I reduced the first edition&rsquo;s material to a few paragraphs).</p>
+
+<p>Beyond that, though, there are little details to finish out in many of the chapters. Examples that need to be finished, figures that need to be re-drawn, material that doesn&rsquo;t quite fit and needs to be re-arranged or even moved to another chapter; it&rsquo;s a lot of work. Peter Zaitsev has been reviewing some of the core chapters on query and schema optimization etc, and I&rsquo;m revising them in response to his comments. That&rsquo;s what I spent today doing.</p>
+
+<p>I think the biggest chunks of work that remain are going to be making chapters 3, 4, 5, 6 and 7 (benchmarking, profiling, schema, indexing, query optimization, advanced features, and server tuning) flow together well. The challenge here is how to organize the vast amount of material so it reads well, without too many forward references, and still be useful as a reference work. The detail we&rsquo;ve gone into is incredible. It makes it very hard to find the single best place to mention each little bit of wisdom, because all of this material is completely inter-related. It&rsquo;s tough to flatten the graph of knowledge into a one-dimensional narrative.</p>
+
+<p>It&rsquo;s not just these chapters that have a lot of inter-related material, of course. It&rsquo;s hard to talk about tuning the server settings (chapter 7) without bringing the OS and hardware (chapter 8) into it, and whenever you do this you also need to think about measuring and monitoring status information (chapter 14). Of course, you need to do that for benchmarking and profiling, too (chapter 3). I&rsquo;m sure you see the dilemma!</p>
+
+<p>The good news is, if we succeed in doing this well, you will find the book enormously useful. Stay tuned!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

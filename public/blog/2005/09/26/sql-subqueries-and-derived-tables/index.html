@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The difference between subqueries and derived tables in SQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">The difference between subqueries and derived tables in SQL</h1>
+  <span class="post-date">Mon, Sep 26, 2005 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>Many people are confused by SQL terminology, particularly by subqueries and derived tables, and use the terms incorrectly. In fact the official terminology is defined very specifically. It is a good idea to use the right language. Not only does it foster clear understanding, but among people who know the difference, it helps create a good impression of competence and attention to detail.</p>
+
+<p>The official standard defines a derived table as follows:<sup>[1]</sup></p>
+
+<blockquote>
+<h2 id="toc_0">4.3 Tables</h2>
+
+<p>A table has an ordered collection of one or more columns and an unordered collection of zero or more rows. Each column has a name and a data type. Each row has, for each column, exactly one value in the data type of that column. SQL-data consists entirely of table variables, called base tables. An operation that references zero or more base tables and returns a table is called a query. The result of a query is called a derived table.</p>
+</blockquote>
+
+<p>Here is the actual production from the SQL grammar:</p>
+
+<blockquote>
+<pre>&lt;derived table&gt; ::= &lt;table subquery&gt;</pre>
+</blockquote>
+
+<p>This makes it clear that &ldquo;derived table&rdquo; is a much more general term than is commonly used by many, especially those familiar with Microsoft SQL Server. Those folks typically mean a subquery in the FROM clause. The real meaning is &ldquo;the result of a table subquery.&rdquo;</p>
+
+<p>There are actually three types of subquery: scalar, row, and table. Here is the subquery definition:</p>
+
+<blockquote>
+<h2 id="toc_1">7.15 <subquery></h2>
+
+<h3 id="toc_2">Function</h3>
+
+<p>Specify a scalar value, a row, or a table derived from a <query expression>.</p>
+
+<h3 id="toc_3">Format</h3>
+
+<pre>&lt;scalar subquery&gt; ::= &lt;subquery&gt;
+&lt;row subquery&gt; ::= &lt;subquery&gt;
+&lt;table subquery&gt; ::= &lt;subquery&gt;
+&lt;subquery&gt; ::= &lt;left paren&gt; &lt;query expression&gt; &lt;right paren&gt;</pre>
+</blockquote>
+
+<p>There are other common terms for various types of subqueries. Most people use different terms depending on how subqueries are used. For example, a subquery with <em>outer references</em> is often called a <em>correlated subquery</em>. Here is an example:</p>
+
+<pre>select emp.Name, emp.Dept, emp.Salary
+from employees as emp
+where Salary > (
+    select avg(Salary)
+    from employees as inn
+    where inn.Dept = emp.Dept);</pre>
+
+<p>Notice the distinction between a derived table and a base table. A base table is the actual named database table, whereas a derived table is the result of any table subquery. Some people also use the term <em>anonymous view</em> to denote a derived table, especially one in the FROM clause.</p>
+
+<p>When someone from the Microsoft SQL Server world speaks of derived tables, it is likely s/he is speaking of a subquery in the FROM clause. Just remember, a derived table is defined much more broadly, and this is a specific use of the term.</p>
+
+<hr />
+
+<p class="footnote">
+  [1] I do not have a copy of the final SQL-2003 standard, because it is not free and I am not rich. I do have access to a very late draft of the standard.
+</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

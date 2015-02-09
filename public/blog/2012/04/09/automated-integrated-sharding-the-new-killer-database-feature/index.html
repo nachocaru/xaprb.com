@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Automated, integrated sharding: the new killer database feature &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Automated, integrated sharding: the new killer database feature</h1>
+  <span class="post-date">Mon, Apr 9, 2012 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>MySQL became wildly successful in part because it had built-in, simple replication. Sure, it had lots of interesting failure scenarios and was not great at first &mdash; it is much better these days &mdash; but it was nevertheless successful because there was a single, out-of-the-box, not-very-complex way to do replication. I have opined many times before that this was one of the killer features missing from PostgreSQL. I think that can large explain why MySQL became more popular more quickly.</p>
+
+<p>The new killer feature is automatic sharding, in my opinion. If you&rsquo;re not accustomed to the word, &ldquo;sharding&rdquo; means partitioning of a large dataset across many servers.</p>
+
+<p>It is easy to poke fun at <a href="http://www.mongodb.org/">MongoDB&rsquo;s</a> current limitations, but for all that, it has a story to tell about sharding. There is One Right Way To Do It in MongoDB, and it&rsquo;s a part of the product.</p>
+
+<p>I don&rsquo;t see sharding being added into the core of MySQL itself, but there are some very interesting efforts headed towards MySQL. There are at least the following companies providing sharding via a proxy or middleware solution, with a lot of other features also available in some products:</p>
+
+<ul>
+<li><a href="http://www.scalebase.com/">Scalebase</a></li>
+<li><a href="http://www.scalearc.com/">ScaleArc</a></li>
+<li><a href="http://www.dbshards.com/">dbShards</a></li>
+<li><a href="http://www.parelastic.com/">ParElastic</a></li>
+</ul>
+
+<p>In addition, there are community-based efforts, such as <a href="http://code.google.com/p/shard-query/">Shard-Query</a> and the <a href="http://spiderformysql.com/">Spider</a> storage engine. And there&rsquo;s <a href="http://mysql.com/products/cluster/">MySQL (NDB) Cluster</a>, and commercial rip-out-and-plug-in replacements for MySQL such as <a href="http://www.clustrix.com/">Clustrix</a>.</p>
+
+<p>Am I missing any? I probably am. You can see and talk to many of these companies at this week&rsquo;s <a href="http://www.percona.com/live/mysql-conference-2012/">MySQL conference</a>, by the way.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

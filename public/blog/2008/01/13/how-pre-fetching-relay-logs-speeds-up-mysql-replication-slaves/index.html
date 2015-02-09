@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How pre-fetching relay logs speeds up MySQL replication slaves &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How pre-fetching relay logs speeds up MySQL replication slaves</h1>
+  <span class="post-date">Sun, Jan 13, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I dashed off a hasty post about <a href="http://www.xaprb.com/blog/2008/01/13/speed-up-your-mysql-replication-slaves/">speeding up replication slaves</a>, and gave no references or explanation. That&rsquo;s what happens when I write quickly! This post explains what the heck I was talking about.</p>
+
+<p>I first heard Paul Tuckfield talk at the first MySQL Camp, in November 2006. He mentioned that he speeds up MySQL replication by &ldquo;pre-fetching relay logs&rdquo; on the slave. Actually, I think he used the term &ldquo;pipelining&rdquo; at that point. Next Spring, he mentioned the same thing in his <a href="http://technocation.org/content/2007-mysql-user-conference-and-expo-presentations-and-videos">keynote address at the 2007 MySQL Conference &#038; Expo</a>. You can download audio and video of his talk from that link. He mentions this approach pretty late in the talk, almost at the end. I&rsquo;ve been meaning to try duplicating his idea since the first time I heard him talk.</p>
+
+<p>The basic idea is to help overcome replication&rsquo;s single-threadedness. Under the right conditions, the slave&rsquo;s SQL thread can become I/O-bound, even though the slave server has lots of unused I/O capacity. As a result, it spends a lot of time just waiting for the disk to return some data, and becomes much slower than it has to be.</p>
+
+<p>Paul&rsquo;s solution to this problem is to read the statements from the relay log, just a little bit ahead of the SQL thread&rsquo;s position, convert them into SELECT queries, and execute them on the slave. This causes MySQL to request some of the data from the disk in advance. Then when the slave&rsquo;s SQL thread wants to update that data, it&rsquo;s already in memory, and things can potentially go much faster.</p>
+
+<p>How much faster is open to debate. I think Paul sees about 3-4 times faster, but please don&rsquo;t quote me on that. <a href="http://mysqldatabaseadministration.blogspot.com/2007/05/pre-fetch-binlogs-to-speed-up-mysql.html">Farhan Mashraqui also uses this hack and gets some speedup as well</a>.</p>
+
+<p>The problem is, it won&rsquo;t automatically work for everyone. In theory, it can potentially help if the following are true:</p>
+
+<ul>
+<li>Your data is much bigger than memory.</li>
+<li>You use a storage engine with row-level locking, like InnoDB.</li>
+<li>Your workload is mostly small (single-row is good), widely scattered, random UPDATE and DELETE statements. (INSERT is less likely to benefit, because the relevant indexes are likely to be &ldquo;hot&rdquo; already).</li>
+<li>The slave&rsquo;s SQL thread is I/O-bound, but the slave has lots of spare I/O capacity. In other words, lots of disk spindles.</li>
+</ul>
+
+<p>My slaves don&rsquo;t do this kind of work. They do a lot of big multi-table updates and summary queries. There is very little to gain from pre-fetching the indexes and data for these statements, because whatever big query the SQL thread is running is likely to just flush the pre-fetched pages out of memory again before they&rsquo;re needed. I tried anyway, and sure enough, it didn&rsquo;t work.</p>
+
+<p>The other problem is, it&rsquo;s hard to write a generically useful program to do this kind of pre-fetching. It&rsquo;s not too hard to write something specific to your workload, as Farhan did. But getting it to work right in general requires a lot of smarts, such as figuring out how far ahead of the slave SQL thread to stay, which queries not to try to pre-execute, and so on. I wrote an implementation of it that&rsquo;s generic and has some intelligence built in. If you&rsquo;re interested in it, see my previous post (linked at the top of this post).</p>
+
+<p>If you&rsquo;re thinking about writing something like this yourself, be prepared: it could be a lot of work. I can see how it would be simpler on some workloads, but on mine it was far from simple. I did some silly things, like running out of disk space because of temp files for LOAD DATA INFILE statements. Fortunately, that was just one of my benchmark machines.</p>
+
+<p>If conditions aren&rsquo;t right, it could really screw you. For example, if your slave has only a single disk, or if you use MyISAM on the slave, you&rsquo;ll probably just cause problems for yourself. You need to know your hardware and your workload really well. That&rsquo;s why Paul didn&rsquo;t release his code, and I&rsquo;ve hesitated for the same reason.</p>
+
+<p>There&rsquo;s more information about this in the upcoming High Performance MySQL, 2nd Edition, which I&rsquo;m helping to write. We also have a lot more information about how to understand your hardware and workload. There&rsquo;s no way I can fit it all into this post, and I don&rsquo;t want to try. Even if I weren&rsquo;t working like a mad dog on the book and had time to put it here, I can&rsquo;t give away all the book&rsquo;s goodies, can I? :-)</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

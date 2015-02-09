@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to find duplicate and redundant indexes in MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to find duplicate and redundant indexes in MySQL</h1>
+  <span class="post-date">Mon, Aug 28, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Peter Zaitsev over at the excellent <a href="http://www.mysqlperformanceblog.com/">MySQL Performance Blog</a> recently wrote an article on <a href="http://www.mysqlperformanceblog.com/2006/08/17/duplicate-indexes-and-redundant-indexes/">duplicated and redundant indexes</a> &ndash; any indexes which cover exactly the same columns as another index, or cover a leftmost prefix of another index. While there are subtleties, such as FULLTEXT indexes not being the same as non-FULLTEXT, for the most part this is sufficient criteria to raise possible duplicates to a DBA&rsquo;s attention. I opened my big mouth in the comments and said I could write a quick Perl script to discover possible offenders in just a few lines of code. Once I did that, I had to do it and give you the script. Here it is.</p>
+
+<p>The reason this is really easy to do in Perl is that the output of <code>SHOW CREATE TABLE</code> lists each index with its columns in order, in an easy-to-parse way, and therefore all one needs to do is compare the string that defines each index with each other index to find duplication and redundancy. Note: you just need to compare the string definition! You don&rsquo;t need to actually parse out the columns and do any advanced computer science on them. And a quick regular expression to anchor each index definition to the beginning of the one to which you&rsquo;re comparing it will satisfy the &ldquo;leftmost prefix&rdquo; requirement.</p>
+
+<p>Why use <code>SHOW CREATE TABLE</code>&rsquo;s output? Why not query <code>SHOW INDEXES FROM ____</code> and use that instead? Well, first of all it&rsquo;s way faster, as I also said in the comments on Peter&rsquo;s blog. When I do something like this I like it to be zippy. <code>SHOW INDEXES</code> can take a long time, as it has to calculate stats on the indexes. Plus, even if I did use <code>SHOW INDEXES</code>, or query the <code>INFORMATION_SCHEMA</code> tables (also slow) I&rsquo;d then have a result set of individual columns, which frankly I&rsquo;d just concatenate together and do a string comparison on.</p>
+
+<p>OK, on to my &ldquo;advanced, patented algorithm.&rdquo; Here&rsquo;s a sample <code>SHOW CREATE</code> statement (I&rsquo;m using a table from my recent article on role-based access control for an example):</p>
+
+<pre>mysql &gt; show create table t_privilege\G
+*************************** 1. row ***************************
+       Table: t_privilege
+Create Table: CREATE TABLE `t_privilege` (
+  `c_role` varchar(30) NOT NULL default 'other',
+  `c_who` int(11) NOT NULL default '0',
+  `c_action` varchar(100) NOT NULL,
+  `c_type` varchar(30) NOT NULL default '',
+  `c_related_table` varchar(100) NOT NULL default '',
+  `c_related_uid` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`c_role`,`c_who`,`c_action`,`c_type`,`c_related_table`,`c_related_uid`),
+  KEY `c_role` (`c_role`,`c_who`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</pre>
+
+<p>You&rsquo;ll notice I added a key on <code>(c_role, c_who)</code> which is a leftmost prefix of the primary key. In general, indexes always appear in this output as <code>KEY (column names)</code>, with a possible <code>PRIMARY</code> or <code>UNIQUE</code> in front (update: it should not have FOREIGN in front, because that&rsquo;s not an index). That&rsquo;s pretty easy to parse with a regular expression, and grab <strong>just the columns</strong>. A global match captures every index into an array. Then it&rsquo;s just a matter of looping through the array and comparing. Here is the code:</p>
+
+<pre>foreach my $table ( @tables ) {
+   my $ddl = $dbh-&gt;selectall_arrayref("show create table $table")
+      ->[0]->[1];
+
+   my @indexes = $ddl =~ m/(?&lt;!FOREIGN) KEY .*?\((.*?)\)[^\)]*$/mg;
+
+   my $has_dupes = 0;
+   foreach my $i ( 0..$#indexes ) {
+      my $index = $indexes[$i];
+      foreach my $j ( 0..$#indexes ) {
+         next if $i == $j;
+         my $other_index = $indexes[$j];
+         if ( $index =~ m/^$other_index/ ) {
+            print "Table $table has possible duplicate indexes:\n",
+               "\t$index\n\t$other_index\n";
+            $has_dupes = 1;
+         }
+      }
+   }
+
+   if ( $has_dupes ) {
+      print "Here is the CREATE TABLE statement:\n$ddl\n\n";
+   }
+}</pre>
+
+<p>I literally wrote that in five minutes, so it may not catch everything, but it caught the duplicate I defined above:</p>
+
+<pre>Table t_privilege has possible duplicate indexes:
+        `c_role`,`c_who`,`c_action`,`c_type`,`c_related_table`,`c_related_uid`
+        `c_role`,`c_who`
+Here is the CREATE TABLE statement:
+CREATE TABLE `t_privilege` (
+  `c_role` varchar(30) NOT NULL default 'other',
+  `c_who` int(11) NOT NULL default '0',
+  `c_action` varchar(100) NOT NULL,
+  `c_type` varchar(30) NOT NULL default '',
+  `c_related_table` varchar(100) NOT NULL default '',
+  `c_related_uid` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`c_role`,`c_who`,`c_action`,`c_type`,`c_related_table`,`c_related_uid`),
+  KEY `c_role` (`c_role`,`c_who`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</pre>
+
+<p>As I said in my comments on Peter&rsquo;s blog, I don&rsquo;t really need to have something generate statements that can correct the problem for me, or anything like that. It&rsquo;s nice, but it&rsquo;s not essential. First of all, I&rsquo;d never just trust a tool to go &ldquo;fix&rdquo; my tables for me. I&rsquo;d want it to tell me where it found potential problems. Then I&rsquo;d go inspect and alter the table by myself if I want to.</p>
+
+<p>With my program, I don&rsquo;t really have to &ldquo;go inspect the table,&rdquo; since it&rsquo;s kind enough to print out the <code>SHOW CREATE</code> statement for me :-) Its output has everything I need to make a good decision about the table, unless it&rsquo;s someone else&rsquo;s table which I don&rsquo;t understand well.</p>
+
+<p>I wrapped the above Perl code into a script you can run from the command-line with familiar command-line arguments (plus it reads from your .my.cnf file to get defaults). You can download it and have fun with it. Execute <code>perldoc duplicate-index-checker</code> for all the gory details, or just use the <code>--help</code> command-line argument. Let me know if you want me to tweak it &ndash; I&rsquo;m happy to. If you find a scenario it doesn&rsquo;t work for, please put the <code>SHOW CREATE</code> statement in your comment.</p>
+
+<p>One thing I also want to make it do, but it&rsquo;s past my bedtime so I won&rsquo;t do it tonight, is report duplicate foreign keys. I sometimes find this (actually I found a lot of them at my current employer). Maybe later this week.</p>
+
+<p>For those who want more features, or don&rsquo;t like Perl, check out a nice (and far more mature) Java implementation of a similar tool: <a href="http://mysql-index-analyzer.blogspot.com/">MySQL Index Analyzer</a>.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

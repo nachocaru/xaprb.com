@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Firefox vs. Opera on slow hardware &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Firefox vs. Opera on slow hardware</h1>
+  <span class="post-date">Mon, Jan 23, 2006 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+		<a href="/categories/hardware" class="btn btn-primary">Hardware</a>
+		
+  </span>
+  
+
+<p>My main computer is a medieval laptop running <a href="http://www.ubuntulinux.org">Ubuntu</a> GNU/Linux. I used to run Gentoo but tried Ubuntu on a lark, and haven&rsquo;t been motivated enough to change back to Gentoo (or even decide whether I want to, since Ubuntu works fine too). There is one problem, though: <a href="http://www.mozilla.com/firefox/">Firefox</a> is running more slowly with each release. What to do?</p>
+
+<h3 id="toc_0">The background</h3>
+
+<p>I&rsquo;ve been running Firefox since way back when the project got started. When it was Phoenix 0.4, I was on board. I was buying t-shirts, displaying buttons and logos on my websites, and telling my friends. At 0.5 or so, my brother got hooked too. I was there for the name changes, to Firebird and then Firefox. I&rsquo;ve submitted, discussed, and voted for bugs and patches. I&rsquo;ve donated to the Mozilla project. In short, I feel attached to this piece of software. For me, Firefox is not just a good web browser. It represents freedom, adherence to standards, respect for privacy, cooperation, and so much more.</p>
+
+<p>Most of all, Firefox demonstrates to the world that you don&rsquo;t have to sell your soul to Them. I love <a href="http://www.fsf.org/">Free Software</a> as a philosophy. I love the ethics. It speaks clearly to me of That Which Is Right. I&rsquo;m serious about that. I have a lot of problems with non-Free software, and I really see it as the root of or enabler to many of our current evils (loss of privacy, rootkits, credit card thefts, election fraud). But all through my career with computing, anytime I run into someone who says &ldquo;screw the ethics, show me practical reasons why I should stop using Excel or SQL Server or IE&rdquo; I&rsquo;ve come up against a wall: for every reason I can give, someone else&rsquo;s marketing department has created a counter-argument. Just to name one example, Microsoft has commissioned lots of studies &ldquo;showing&rdquo; the equality or superiority of their products (they call it getting the &ldquo;facts&rdquo;). On the other hand, there are tons of studies and benchmarks and whitepapers showing the opposite, too &ndash; measurably higher code quality, fewer security incidents, lower total cost of ownership, and on and on. If you&rsquo;re not an expert, you don&rsquo;t know who to believe. It&rsquo;s my word against theirs, and statistics are worse than lies.</p>
+
+<p>I view Firefox as the tipping point. Finally, we who believe don&rsquo;t have to sway people with words alone. It&rsquo;s blatantly obvious to many people at this point that Microsoft&rsquo;s offering is categorically inferior <em>in ways that matter to everyone</em>. Since Firefox has caught hold, I no longer try to convince people. They ask me when they see my t-shirt, and I just say &ldquo;you might consider giving it a try. Read their website and see if you think it&rsquo;s worth looking into.&rdquo; Things just seem to progress after that. A week later they tell me they&rsquo;re really excited about it, too. That&rsquo;s when I try to let them know it&rsquo;s part of a much larger picture; I tell them about the GNU project, about the ethics and philosophy behind it all. I try to give a bit of context. I hope the snowball picks up speed &ndash; I&rsquo;m trying to push it faster.</p>
+
+<h3 id="toc_1">Practical concerns</h3>
+
+<p>As time goes on my old, slow hardware has a harder and harder time with newer software (whose features I love and don&rsquo;t want to live without). It&rsquo;s gotten to the point that my laptop doesn&rsquo;t feel responsive when browing the web. I&rsquo;m not griping about little things &ndash; I&rsquo;m talking about the browser being unresponsive for many seconds while a new tab opens or something. I want to keep this old tanker around, though. First of all, it works just fine. There&rsquo;s nothing wrong with it &ndash; as long as I&rsquo;m running <a href="http://www.xfce.org/">XFCE</a> or <a href="http://fluxbox.sourceforge.net/">Fluxbox</a> (or <a href="http://www.nongnu.org/ratpoison/">ratpoison</a>, better yet!) and lynx. Second, it is also proof that Linux can run just fine on old hardware &ndash; hell, Windows 98 had a hard time on this thing, so it&rsquo;s pretty amazing to see it boot up in less time than XP takes to boot on my spankin&rsquo; new laptop from work. (For those who don&rsquo;t know &ndash; every version of the Linux kernel gets <em>faster</em>, not slower like Windows). It&rsquo;s just this new breed of software that&rsquo;s getting harder and harder to run on it. Finally, I detest the &ldquo;consumer&rdquo; culture that says &ldquo;stuff&rdquo; is OK to make and throw into landfills when it becomes boring. I don&rsquo;t want to contribute to that any more than I have to. I want to run this thing until it melts into an unrecognizable blob.</p>
+
+<p>Enter <a href="http://www.opera.com">Opera</a>. I&rsquo;ve also been a longtime fan of Opera. I bought a license for an early version on Windows, back in the bad old days when I used Windows. I have always liked Opera&rsquo;s support for standards, small size and speed. I&rsquo;ve had my share of gripes, but overall, it&rsquo;s not all that bad to use. And there is one critical thing that makes it attractive on this old laptop: it&rsquo;s much faster than Firefox. You folks with processors that go faster than 10 mph might not appreciate this fact, but use it on my old laptop and you will definitely see the difference. Opera 8.51 is fast and lightweight enough to browse the web in a reasonably usable way on my machine.</p>
+
+<p>Here is my list of Opera pros:</p>
+
+<ul>
+<li>I like it OK</li>
+<li>it&rsquo;s fast(er)</li>
+<li>it has reasonably good privacy controls (a <a href="/blog/2005/11/06/protect-your-privacy-online/">cookie whitelist</a>)</li>
+</ul>
+
+<p>And the cons:</p>
+
+<ul>
+<li>it&rsquo;s not extensible like Firefox</li>
+<li>there&rsquo;s no <a href="/blog/2005/10/26/adblock-patterns/">adblocking</a> capability (you can block ads with stylesheets, but it doesn&rsquo;t prevent the content from ever being loaded, which is really important for privacy in my opinion)</li>
+<li>there are limited JavaScript tools</li>
+<li>overall I want my features &ndash; I want <a href="http://karmatics.com/aardvark/">Aardvark</a>, I want <a href="http://www.hacksrus.com/~ginda/venkman/">Venkman</a>, I want the <a href="http://chrispederick.com/work/webdeveloper/">Web Developer Toolbar</a>, I want <a href="http://adblock.mozdev.org/">AdBlock</a>. I feel starved for features.</li>
+<li>it&rsquo;s not Free Software. I balk at the feeling of betraying my ideals.</li>
+</ul>
+
+<h3 id="toc_2">Solutions (or not) and fun</h3>
+
+<p>I feel conflicted. I&rsquo;m thinking I might just need to bite the bullet. I might use this laptop for a file and print server, to run LAMP as a development box, and so forth. It might be time for me to build myself another computer for use as a desktop machine. After all, I&rsquo;ve gotten about 7 years out of this laptop, so if I build a decent desktop machine, maybe it&rsquo;ll be good for 10 more or so.</p>
+
+<p>There&rsquo;s more. My fianc&eacute;e has a schmancy new dual-core Mac G5, which according to her can do &ldquo;eighteen billion billion&rdquo; of something or other. I&rsquo;m not sure she knows what that means, but she told me I can quote her:</p>
+
+<blockquote>
+<p>I only need to know three words: Eighteen. Billion. Billion. Are you going to quote me on your blog? Quote me where?</p>
+</blockquote>
+
+<p>Hmmm, that sounds like a challenge. I might need to spend a little extra money and get the biggest and baddest now. And you thought I was all Mr. EgoDontMatter, did you?</p>
+
+<p>She tells me jealousy is a horrible thing, and I can touch her computer if I&rsquo;m feeling envious. When I bring up how often it crashes and forces her to reboot (how is it that a computer with eighteen billion billion somethings can&rsquo;t run a few programs without crashing?) she says</p>
+
+<blockquote>
+<p>It only crashes when you&rsquo;re around. I&rsquo;ve had 20 years of using a Mac and it never used to crash. Now you&rsquo;re around, and it&rsquo;s crashing.</p>
+</blockquote>
+
+<p>For the record, I never did anything to her computer to cause crashes. I did show her once how, since it&rsquo;s built on UNIX, you can use <code>killall</code> to kill programs when the point-and-click interface&rsquo;s command to &ldquo;forcibly kill&rdquo; something gets laughed down by the offending app. Remember, Real Men Don&rsquo;t Click.</p>
+
+<p>I will leave you with another quote from my younger brother, who recently built a computer himself. He&rsquo;s talking about my computer, after my fianc&eacute;e looked online to see &ldquo;how many bits her computer has&rdquo;:</p>
+
+<blockquote>
+<p>His computer probably only has twelve bits.</p>
+</blockquote>
+
+<p>I suppose, whether it&rsquo;s Opera or Firefox, the most important thing is to keep it fun. Next to Freedom, of course.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

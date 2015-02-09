@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      All measurements are wrong &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">All measurements are wrong</h1>
+  <span class="post-date">Sat, Oct 2, 2010 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  <p>I had the privilege to meet <a href="http://www.perfdynamics.com/">Neil Gunther</a> and listen to him speak this week at <a href="http://omniti.com/surge/2010">Surge</a>. During his talk, he brought up the point that all measurements are wrong by definition. I thought I knew what he meant, but I was stuck with tunnel vision about floating-point precision and such. I had it all wrong. The real answer is obvious and simple.</p>
+
+<p>The point is that the process of measuring, and therefore the answer that comes out of the measurement process, is imprecise. And further, that we need to treat a measurement as a measurement, not as the true value of whatever it is we tried to measure. So although we may say &ldquo;the CPU was 70% utilized,&rdquo; we should really be thinking &ldquo;the measurements of CPU busy-time totaled 70% of the measurements of elapsed-time.&rdquo; There&rsquo;s more, but I won&rsquo;t repeat his whole talk. You might enjoy <a href="http://www.xaprb.com/blog/2010/07/06/a-review-of-guerrilla-capacity-planning-by-neil-gunther/">his book</a>.</p>
+
+<p>Neil mentioned that this way of thinking isn&rsquo;t foreign &ndash; we learn it in physical sciences. Indeed, I immediately remembered all my chemistry and physics labs, and mechanical engineering classes, and&hellip;. But that&rsquo;s a whole education away now. Somehow between then and now, I educated myself to think that computers manipulate numbers, and the numbers are somehow mathematically pure.</p>
+
+<p>When computers store and retrieve numbers, that&rsquo;s often <em>imprecise</em>, and that <em>is</em> continually present in my mind &ndash; but that&rsquo;s a whole different matter.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

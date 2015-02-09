@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL Table Sync 0.9.2 released &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Table Sync 0.9.2 released</h1>
+  <span class="post-date">Thu, Apr 12, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>MySQL Table Sync 0.9.2 is a bug-fix release. Since the last release users have reported several bugs. I am still postponing new features until after the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo</a>, because I am focusing on <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213">the innotop session</a> I&rsquo;ll be presenting at the conference.</p>
+
+<p>I have also created a new mailing list on <a href="http://code.google.com/p/maatkit">sourceforge</a> for discussing all things MySQL Toolkit. Thanks to a user for suggesting the mailing list &ndash; I needed a nudge.</p>
+
+<p>What&rsquo;s new in version 0.9.2?</p>
+
+<ul>
+<li>Documentation (added OPTIONS section to perldoc).</li>
+<li>Bug fix: get a row at a time from the server by default. I didn&rsquo;t notice that the default behavior for the DBD driver is to fetch the entire result set into memory! This is a terrible idea on really large tables. This fix causes MySQL Table Sync to fetch a single row at a time from the server, so it never uses much memory and runs faster now.</li>
+<li>Bug fix: when the user specifies &#8211;columns, ignore other columns. You can sync common columns in otherwise different tables now, and you can compare and sync only specified columns.</li>
+<li>Bug fix: make sure fetch handle is active before trying to fetch a row. This isn&rsquo;t an issue in my development environment, but apparently some versions of Perl (?) or DBI (?) or DBD (?) have different behavior when the end of the resultset is hit. This fix makes more versions of whatever-is-the-problem happy.</li>
+</ul>
+
+<p>More goodies will be forthcoming after the conference and whatever I end up doing to innotop in the next few weeks. There are many un-implemented or partially implemented features, and I intend to fix that.</p>
+
+<h3 id="toc_0">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

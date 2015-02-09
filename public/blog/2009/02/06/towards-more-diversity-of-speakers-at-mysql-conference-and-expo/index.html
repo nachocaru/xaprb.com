@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Towards more diversity of speakers at MySQL Conference and Expo &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Towards more diversity of speakers at MySQL Conference and Expo</h1>
+  <span class="post-date">Fri, Feb 6, 2009 in
+		
+		<a href="/categories/commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/conferences" class="btn btn-primary">Conferences</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>We (Percona) just <a href="http://www.mysqlperformanceblog.com/2009/02/05/announcing-percona-performance-conference-2009-on-april-22-23/">announced our Percona Performance Conference</a>, and I wanted to tell you a little more about what we hope to accomplish with this conference. Let me show you some simple math that anyone can do.</p>
+
+<p>There&rsquo;s a handy iCal download of the conference schedule on the conference website. iCal is a plain text format that is easy to parse with a scripting language. I downloaded this year&rsquo;s and last year&rsquo;s schedules, and aggregated the number of times each company and speaker is listed as presenting a session. Here&rsquo;s the <a href="http://www.xaprb.com/media/2009/02/icspl.txt">Perl script I used to do the calculations</a>; and here&rsquo;s the result of running the script.</p>
+
+<pre>baron@kanga:~$ perl ics.pl Desktop/*.ics
+Desktop/2008.ics
+    Number of speakers:              166
+    Number of companies:             106
+    Number of times Sun/MySQL speak: 73
+    Number of times others speak:    131
+Desktop/2009.ics
+    Number of speakers:              124
+    Number of companies:             58
+    Number of times Sun/MySQL speak: 85
+    Number of times others speak:    76
+</pre>
+
+<p>This year&rsquo;s conference so far boasts only half the diversity of last year&rsquo;s in terms of companies represented, and only three-quarters the diversity of speakers. Companies other than Sun/MySQL speak only six-tenths as many times as they did last year. But Sun/MySQL&rsquo;s speakers take the lectern for 12 more sessions than they did last year. Last year, Sun/MySQL&rsquo;s employees spoke only about half as often as employees of other companies; this year Sun/MySQL dominates the roster.</p>
+
+<p>It should be plain that the conference attendees could benefit from a greater diversity of independent experts this year. In fact, I am not the only person who has noticed. Many others, including prominent community members and companies with many employees who&rsquo;d like to attend, have said unhappy words about it to me. One of the motivations for arranging the <a href="http://conferences.percona.com/">Percona Performance Conference</a> was that users, customers, and community members clearly had a very important set of needs that were not being met. The Percona Performance Conference is explicitly designed to meet those needs. Increasing diversity is just one of the goals. (There are other needs, and we&rsquo;ve tried to meet those too, but that&rsquo;s another post.)</p>
+
+<p>We at Percona think the Percona Performance Conference will add value for everyone, <em>including paying attendees of the MySQL Conference and Expo</em>. I&rsquo;ve heard numerous comments that lead me to believe the Percona Performance Conference will <em>actually increase attendance at the MySQL conference</em>, which should put more cash in Sun&rsquo;s coffers, and some of that will hopefully cycle back to support MySQL. This is one way we&rsquo;re <a href="http://www.theopenforce.com/2008/04/two-markets-in.html">supporting the virtuous circle extolled by MySQL executives</a>.</p>
+
+<p><a href="http://news.cnet.com/8301-13505_3-10130185-16.html">MySQL&rsquo;s leaders believe in radical transparency</a>, and I applaud them for that. Transparency comes not only from interviews with the media, however; it also comes from observers who analyze available information and draw conclusions. For every person who talks, emails, <a href="http://twitter.com/joped/statuses/1159220807">Twitters</a>, chats or <a href="http://dba-mysql.blogspot.com/2009/02/missing-speakers-in-mysql-conference.html">blogs</a> about this year&rsquo;s conference, many others have noticed, remained silent, and just made other plans. We hope some of those people will reconsider and come visit MySQL and Percona in Santa Clara this April. You&rsquo;ll see more diversity than you were expecting. I only regret that the announcement came so late; I know many of you have missed your window of opportunity to afford the travel to this event, or have made other plans.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

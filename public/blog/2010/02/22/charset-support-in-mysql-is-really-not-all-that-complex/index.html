@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Charset support in MySQL is really not all that complex &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Charset support in MySQL is really not all that complex</h1>
+  <span class="post-date">Mon, Feb 22, 2010 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>The headline is flame-bait, don&rsquo;t take it. I just wanted to point something out about character sets and collations in MySQL.</p>
+
+<p>To the uninitiated, it may seem overwhelming. Everything has a character set! Everything has a collation! And they act weirdly! The server has one. The database has one (oh, and it changes magically as I USE different databases.) Every table has one, and columns too. Is that all? NO! My connection has one! Kill me now!</p>
+
+<p>Relax. In truth, only <em>one kind of thing</em> actually has a charset/collation. That is <em>values</em>. And values are stored in columns. <em>The only thing that really has a charset/collation is a column</em>.[1]</p>
+
+<p>What about all the rest of those things &ndash; connection, database, server, table? Those are just defaults, which determine what charset/collation a value gets if it isn&rsquo;t overridden. So if the table&rsquo;s default charset is utf8, and you add a column without saying what it should be &ndash; why, it&rsquo;ll be utf8. If the database&rsquo;s default is latin1 and you add a table without saying what its default should be, it&rsquo;ll be latin1.</p>
+
+<p>[1] It&rsquo;s not quite true. Literal values in SQL statements are values too, as are @user_variables. But if your connection&rsquo;s charset is latin1 and you say <code>SELECT &quot;xaprb&quot;</code>, without an explicit <em>introducer</em>, you&rsquo;re really saying <code>SELECT _latin1 &quot;xaprb&quot;</code>. Again, the only thing that really <em>has</em> a charset/collation is a value. Other things are just defaults.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

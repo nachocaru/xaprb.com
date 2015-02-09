@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      New Maatkit tool to compute index usage &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">New Maatkit tool to compute index usage</h1>
+  <span class="post-date">Mon, May 10, 2010 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  <p>In a couple of recent consulting cases, I needed a tool to analyze how a log of queries accesses indexes and tables in the database, specifically, to find out which indexes are not used. I initially hacked together something similar to <a href="http://hackmysql.com/mysqlidxchk">Daniel Nichter&rsquo;s mysqlidxchk</a>, but using the framework provided by Maatkit, which gave me a pretty good start right out of the box. This was useful in the very tight time constraints I was under, but was not a complete solution. Alas, I could not use anything like <a href="http://www.mysqlperformanceblog.com/2009/01/15/dropping-unused-indexes/">Percona&rsquo;s enhancements for finding unused indexes</a>.</p>
+
+<p>So, in response to another consultant&rsquo;s customer request (and sponsorship &ndash; thank you!) I spent more time actually writing a real tool in the Maatkit style, with full tests and all the rest of the usual goodies. The resulting tool finds all indexes in a server, EXPLAINs the log of queries against the server, and reports which indexes were never selected by EXPLAIN.</p>
+
+<p>Such a tool invites many interesting questions beyond &ldquo;which indexes are not used.&rdquo; Here are a few samples:</p>
+
+<ul>
+<li>Which queries have several possible execution plans?</li>
+<li>Which indexes are chosen instead of other indexes?</li>
+<li>Which queries have many variations? Only one variation?</li>
+<li>Which indexes are considered as alternates for other indexes?</li>
+</ul>
+
+<p>I plan to add functionality for these kinds of questions in the future. But for right now, there&rsquo;s a start on this tool in <a href="http://maatkit.googlecode.com/svn/trunk/mk-index-usage/">Subversion trunk</a>, under mk-index-usage. I am interested in feedback on it; what doesn&rsquo;t it handle correctly? What else could it do for you? Please post your questions and suggestions to the Maatkit mailing list, or report an issue on the Maatkit project&rsquo;s issue tracker.</p>
+
+<p>It&rsquo;s kind of nice to be writing a single-purpose tool again. Many of the Maatkit tools are extremely complex at this point, some with more than 50 command-line options. This one doesn&rsquo;t have any options at all, besides the standard ones to connect to a MySQL server.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

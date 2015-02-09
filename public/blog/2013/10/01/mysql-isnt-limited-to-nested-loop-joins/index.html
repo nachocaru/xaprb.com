@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL isn&#39;t limited to nested-loop joins &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL isn&#39;t limited to nested-loop joins</h1>
+  <span class="post-date">Tue, Oct 1, 2013 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I have followed the &ldquo;Use the Index, Luke!&rdquo; blog for a while. Today Marcus <a href="http://use-the-index-luke.comhttp://www.xaprb.com/blog/2013-10-01/mysql-is-to-sql-like-mongodb-to-nosql">wrote</a> that (I&rsquo;ll paraphrase) MongoDB disgraces NoSQL the same way that MySQL disgraces SQL. I agree with a lot of this, actually, although I&rsquo;m not sure I&rsquo;d put it so strongly. People often like products for good reasons, and to think that legions of developers are stupid or ill-educated is suspect, in my opinion.</p>
+
+<p>But that wasn&rsquo;t what I meant to write about. I wanted to point out something about the blog post that&rsquo;s a little outdated. He wrote, and this time I&rsquo;ll quote, &ldquo;MySQL is rather poor at joining because is only supports nested loops joins. Most other SQL database implement the hash join and sort/merge join algorithms too.&rdquo;</p>
+
+<p>It&rsquo;s no longer true that MySQL doesn&rsquo;t support these, and hasn&rsquo;t been for a while, depending on which version of MySQL you look at. What&rsquo;s slightly unfortunate, in my opinion, is that MySQL doesn&rsquo;t call out in the documentation that they&rsquo;re actually implemented. MySQL documentation talks about Multi-Range Read, Block Nested-Loop, and Batched Key Access join &ldquo;optimizations.&rdquo;</p>
+
+<p>Functionally, these are closely related to combinations of hash and sort-merge join algorithms, and really represent mixtures of features from them combined in different ways, depending on the exact query. Most &ldquo;sophisticated&rdquo; RDBMSs also implement a lot of subtle variations &ndash; edge-case optimizations are really worthwhile. It is rarely as cut-and-dried as pure hash-join or sort-merge join. And in the end, there is always &ndash; always &ndash; iteration over rows to match them up, regardless of the data structure used, regardless of the RDBMS. MySQL happens to call these variations &ldquo;nested loop join optimizations&rdquo; and similar phrases, but that&rsquo;s what they are in other RDBMSs too.</p>
+
+<p>MySQL does very well on many types of joins for which sort-merge and hash-join algorithms are designed. See, for example, <a href="http://www.mysqlperformanceblog.com/2012/03/21/multi-range-read-mrr-in-mysql-5-6-and-mariadb-5-5/">this blog post</a> and <a href="http://www.mysqlperformanceblog.com/2012/03/12/index-condition-pushdown-in-mysql-5-6-and-mariadb-5-5-and-its-performance-impact/">this one</a> and also <a href="http://www.mysqlperformanceblog.com/2012/05/31/a-case-for-mariadbs-hash-joins/">this one on MariaDB&rsquo;s further optimizations</a>.</p>
+
+<p>I think the MySQL documentation could help a little by calling things names that normal users understand. The names we see in the documentation are really reflective of how the optimizer internals gurus think about the algorithms, in my opinion. I think the names describe the implementation, not the end result. I&rsquo;d suggest phrasing it differently for general consumption by the DBA public. Perhaps something like &ldquo;sort-merge join implemented with a _____ algorithm.&rdquo; Or perhaps &ndash; and I will admit I don&rsquo;t keep the details fresh in my mind so I&rsquo;m not the one to ask for the right answer &ndash; perhaps the algorithms MySQL uses really aren&rsquo;t as related or comparable as I think they are, and a different type of explanation is in order. But I bet a lot of DBAs from SQL Server and Oracle Database backgrounds would find it helpful to have an explanation in familiar terms. (This concludes my free and probably unwanted advice to the MySQL docs team!)</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

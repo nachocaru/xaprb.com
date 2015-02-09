@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How Percona Toolkit divides tables into chunks &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How Percona Toolkit divides tables into chunks</h1>
+  <span class="post-date">Sun, May 6, 2012 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>The tools we&rsquo;ve redesigned in Percona Toolkit recently have moved away from a legacy technique for operating on small numbers of rows at a time, towards a more reliable and predictable method. We call the old version &ldquo;chunking&rdquo; and the new version &ldquo;nibbling.&rdquo; Many other MySQL tools I&rsquo;ve seen either operate on entire tables, or use the &ldquo;chunking&rdquo; technique and are exposed to the problems it creates. I&rsquo;ll compare the two briefly to explain the differences.</p>
+
+<p>Chunking attempts to divide a table into ranges of rows of a desired size, such as 1000 rows. It does this by examining the minimum and maximum value of the primary key (or other suitable index), estimating the number of rows in the table, and dividing one by the other to create a list of boundary values. Suppose that the minimum value is 1 and the maximum is 1000000, and there are an estimated 100000 rows in the table. The chunk boundaries will fall on intervals of 10000. We can operate on 1-10000, 10001-20000, and so on.</p>
+
+<p>This has a number of problems that might not be obvious at first. It practically requires a numeric, single-column index<a href="http://www.xaprb.com/blog/2007/06/15/archive-strategies-for-oltp-servers-part-3/" title="Archive strategies for OLTP servers, Part 3">1</a>. It can (and does, in practice) create oversized chunks when values are sparse in some places and packed tightly in others. It leads to a lot of code complexity and bugs when the table&rsquo;s data changes (especially if new rows are inserted) as the tool works. It has edge cases related to special values such as 0, NULL, the date &lsquo;0000-00-00&#8242;, the beginning of the table, and the end of the table. In short, through years of experience we found that it simply doesn&rsquo;t work well enough. It works in 95% of cases, but not all that well, and in a small fraction of cases it causes serious problems, such as a massively oversized chunk that interferes with other processes on the server. If you&rsquo;d like more details on these types of problems, there is a lot of information in old bug reports.</p>
+
+<p>The new &ldquo;nibbling&rdquo; technique we are using is actually not new at all. It is something I learned before I was even involved in MySQL very much. The context is in some old blog posts I wrote about <a href="http://www.xaprb.com/blog/2007/06/15/archive-strategies-for-oltp-servers-part-3/" title="Archive strategies for OLTP servers, Part 3">archiving and purging</a>. The idea is to fetch a row and use that as the lower bound of the first chunk (or &ldquo;nibble&rdquo; &ndash; we use the terms pretty interchangeably) of rows. Then use a SELECT with a LIMIT to find the upper boundary of the nibble, as well as the lower bound of the next nibble. After processing the nibble, repeat the steps with the lower bound of the next nibble. The disadvantage of this process is that there is quite a bit of code complexity when you get multi-column indexes, with NULL-able columns adding a whole new twist to the game. However, this is long since solved, and we have a reliable and well-tested library of routines for dealing with this. In return we get predictable behavior on practically any table with an index, even if it isn&rsquo;t a unique index. The only remaining edge case is when a non-unique index contains a range of identical values that is larger than the desired chunk size, but that is easily detected and handled in application-specific ways.</p>
+
+<p>The result of the work we&rsquo;ve been doing recently, replacing &ldquo;chunking&rdquo; with &ldquo;nibbling&rdquo; in pt-table-checksum and pt-online-schema-change, is reliable and safe nibbling behavior. This has the further benefit of allowing us to do much more sophisticated techniques, such as dynamically varying the size of each chunk of rows in response to changing conditions such as server load or varying row size and complexity. Our recent tools are designed to target a predictable query time for each nibble, rather than a specific number of rows. I am happy to report that, in extensive real-world usage, they are able to stay extremely close to the target time even as conditions vary dramatically.</p>
+
+<p><a href="http://www.xaprb.com/blog/2007/06/15/archive-strategies-for-oltp-servers-part-3/" title="Archive strategies for OLTP servers, Part 3">1</a> Although in theory you can operate on the first column in a multi-column index, real-world experience shows that the first column in such indexes tends to have low cardinality, thus creating enormous chunks. And although it is possible to treat date, timestamp, and some other types as numeric, in practice it is very difficult. What number corresponds to 0000-00-00? Our attempts to create algorithms that would work on non-numeric types such as character-based columns were tremendously difficult and the results were discouraging; again, in the real world it doesn&rsquo;t work well.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

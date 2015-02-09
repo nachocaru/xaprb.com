@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to analyze statistics from SQL Query Analyzer &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to analyze statistics from SQL Query Analyzer</h1>
+  <span class="post-date">Wed, Nov 30, 2005 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>Microsoft SQL Query Analyzer prints out statistics as text, and it can be tough to wade through it all. Here is an <code>awk</code> script for quickly analyzing those statistics.</p>
+
+<h3 id="toc_0">Analyzing the stats</h3>
+
+<p>First, remember you can use SQL Server Profiler to measure your query&rsquo;s performance. Profiler is a very powerful tool, and everyone writing queries should be familiar with it.</p>
+
+<p>For one-off queries, though, it may be faster to simply turn on the desired statistics and run the query, then grab the output and analyze it directly. Here is one quick way to analyze the output caused by <code>set statistics io on</code> and <code>set statistics time on</code>: use <code>awk</code>!</p>
+
+<p>Here is a simple <code>awk</code> program. Save it to a file named <code>sql-stats.awk</code>:</p>
+
+<pre>/CPU time/ {
+    cpu += $4
+    elapsed += $9
+}
+/Scan count/ {
+    scans += substr($5, 1, index($5, ",") - 1)
+    reads += substr($8, 1, index($8, ",") - 1)
+    physi += substr($11, 1, index($11, ",") - 1)
+    ahead += substr($14, 1, index($14, ".") - 1)
+}
+END {
+    printf("Scans:            %7d\n", scans);
+    printf("Logical reads:    %7d\n", reads);
+    printf("Physical reads:   %7d\n", physi);
+    printf("Read-ahead reads: %7d\n", ahead);
+    printf("CPU time:         %7d ms\n", cpu);
+    printf("Elapsed time:     %7d ms\n", elapsed);
+}</pre>
+
+<p>Now follow these steps to sum the statistics for easy consumption:</p>
+
+<ul>
+<li>get <a href="http://cm.bell-labs.com/cm/cs/who/bwk/awk95.exe">awk</a>, if you don&rsquo;t have it</li>
+<li>turn on the desired statistics</li>
+<li>execute your query</li>
+<li>switch from the results tab to the messages tab, and copy the messages to the clipboard</li>
+<li>paste the messages into a text file called <code>stats.txt</code></li>
+<li>execute <code>awk</code> against the file as follows:</li>
+</ul>
+
+<pre>C:> awk -f sql-stats.awk stats.txt</pre>
+
+<p>The results should look something like this:</p>
+
+<pre>Scans:               1110
+Logical reads:     531208
+Physical reads:       187
+Read-ahead reads:  131895
+CPU time:          146922 ms
+Elapsed time:      200718 ms</pre>
+
+<h3 id="toc_1">Watch out for query caches!</h3>
+
+<p>Remember, for unbiased results, you need to initialize your caches to a known state before comparing queries:</p>
+
+<pre>dbcc freeproccache
+dbcc dropcleanbuffers</pre>
+
+<p>Please share if you have other ideas. You could get as fancy as you want with awk, but this solves my common need.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      An opportunity to participate in MySQL research &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">An opportunity to participate in MySQL research</h1>
+  <span class="post-date">Tue, Dec 6, 2011 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I&rsquo;m researching algorithms for automatic fault detection in MySQL (see <a href="http://www.xaprb.com/blog/2011/12/01/automatically-detecting-abnormal-behavior-in-mysql/" title="Automatically detecting abnormal behavior in MySQL">my previous post</a> for context). I need real-world data samples to test the algorithm. Can you help by sending me a bit of data from your production server?</p>
+
+<p>The end goal is an open-source tool that will be a standard part of a typical MySQL installation. The problem I&rsquo;m trying to solve for all MySQL users is this: something went wrong, what was it? Most of the time there&rsquo;s no way to answer that; you have to set up a set of tools and hope you capture enough information to diagnose the problem next time. We need a tool that just runs all the time even when you don&rsquo;t think anything is going to go wrong.</p>
+
+<p>You can help build this tool. I need samples from a wide variety of healthy and sick servers, both heavily and lightly loaded. I need samples that are between a few hours and a week or so long. Here is a script that will gather what I need:</p>
+
+<pre>$ mysqladmin ext -i1 | awk '
+    /Queries/{q=$4-qp;qp=$4}
+    /Threads_connected/{tc=$4}
+    /Threads_running/{print q, tc, $4}'</pre>
+
+<p>The output should look something like this:</p>
+
+<pre>2147483647   136     7
+  798   136     7
+  767   134     9
+  828   134     7
+  683   134     7
+  784   135     7
+  614   134     7
+  108   134    24
+  187   134    31
+  179   134    28
+ 1179   134     7
+ 1151   134     7
+ 1240   135     7
+ 1000   135     7</pre>
+
+<p>Please save this output to a file, and contact me at moc.brpax@norab (reversed) if you would like to offer a dataset for us to test on. If you need any help setting up the data collection, you can use the same email. I&rsquo;d also appreciate if you&rsquo;d help spread the word about this via Twitter or other means. Thanks very much!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

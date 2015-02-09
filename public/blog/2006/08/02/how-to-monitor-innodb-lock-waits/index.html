@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to monitor InnoDB lock waits &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to monitor InnoDB lock waits</h1>
+  <span class="post-date">Wed, Aug 2, 2006 in
+		
+		<a href="/categories/monitoring" class="btn btn-primary">Monitoring</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>This is one in a series of articles on how to use the <a href="http://www.xaprb.com/innotop/">innotop</a> MySQL and InnoDB monitor. In this article I show how <code>innotop</code> can display locks that are causing a transaction to wait.</p>
+
+<blockquote>
+<p>Note: <a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
+
+<p>First, the background. The output of <code>SHOW ENGINE INNODB STATUS</code>&rsquo;s transaction section prints InnoDB transactions, including information about the locks they&rsquo;re waiting for, if any:</p>
+
+<pre>---TRANSACTION 0 93789797, ACTIVE 20 sec, process no 9537, OS thread id 38900535
+9 starting index read
+mysql tables in use 1, locked 1
+LOCK WAIT 2 lock struct(s), heap size 320
+MySQL thread id 23733, query id 194861215 worker 192.168.0.31 xaprb Updating
+update test.test set a = 1 where a = 2
+------- TRX HAS BEEN WAITING 20 SEC FOR THIS LOCK TO BE GRANTED:
+RECORD LOCKS space id 0 page no 299998 n bits 200 index `PRIMARY` of table `test/test` trx id 0 93789797 lock_mode X locks rec but not gap waiting
+Record lock, heap no 77 PHYSICAL RECORD: n_fields 15; compact format; info bits 0
+[... a bunch of record dump information omitted here ...]</pre>
+
+<p>The important information there is the line beginning RECORD LOCKS. It, together with the line above it, tells what the transaction is waiting for, and for how long.</p>
+
+<p><code>innotop</code> parses this information and formats it for easier comprehension. It&rsquo;s possible to see which transactions are waiting by using the &ldquo;T&rdquo; key to enter InnoDB Transaction mode, and filtering or sorting away all transactions whose &ldquo;lock_wait_time&rdquo; is zero. You&rsquo;d use a similar set of steps as I described in my <a href="/blog/2006/07/31/how-to-analyze-innodb-mysql-locks/">previous article on finding who locks a table</a>.</p>
+
+<p>While this technique will show you which transactions are waiting, it won&rsquo;t show you what they&rsquo;re waiting for. If you have a high-concurrency environment, or if you just have a lot of table or index scans, you might see lots of transactions waiting for locks. Maybe you have a bunch of things being locked for a long time, in many different tables and indexes (not likely, or your server would probably be totally crippled). Or, more likely, there are just a few log-jams causing many transactions to wait. This could be due to bad database architecture, not a fast enough machine, badly written queries, or many other factors. You should be suspicious of badly written queries and badly designed tables first, unless you already know that&rsquo;s not the problem. That&rsquo;s why you need to know what everything is blocked on, and then examine the queries that use it.</p>
+
+<p>For that reason, I created a separate display mode for <code>innotop</code> (new in version 0.1.128), specifically to show information about lock waits. You enter that mode with the &ldquo;W&rdquo; key, and it looks like the following screenshot (click through for a larger image):</p>
+
+<p><a href="http://www.xaprb.com/innotop/innotop-lock-wait-mode.png"><img src="/innotop/thumb-innotop-lock-wait-mode.png" alt="innotop screenshot" width="200" height="139" /></a></p>
+
+<p>By default it&rsquo;s a pretty terse display, for the reasons I mentioned above. It doesn&rsquo;t show a lot of information about the transactions; just the connection ID and some information about what it&rsquo;s waiting for. If you want to see what the connection is doing, you can toggle back to &ldquo;T&rdquo; or &ldquo;Q&rdquo; mode and get more details, including running <code>EXPLAIN</code> on the query (more about that in future articles). There is also more information that&rsquo;s hidden by default. You can press &ldquo;c&rdquo; to choose the columns you want to view.</p>
+
+<p>This is one method to identify the resources that are most often locked, but as always, I&rsquo;m curious to hear other ideas.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

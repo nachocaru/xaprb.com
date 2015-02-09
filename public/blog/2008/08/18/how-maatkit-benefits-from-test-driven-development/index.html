@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How Maatkit benefits from test-driven development &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How Maatkit benefits from test-driven development</h1>
+  <span class="post-date">Mon, Aug 18, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  <p>Over in <a href="http://www.maatkit.org/">Maatkit</a>-land, <a href="http://hackmysql.com/">Daniel Nichter</a> and I practice <a href="http://en.wikipedia.org/wiki/Test-driven_development">test-first programming, AKA test-driven development</a>. That is, we write tests for each new feature or to catch regressions on each bug we fix. And &ndash; this is crucial &ndash; we write the tests <em>before</em> we write the code.* The tests should initially fail, which is a validation that the new code actually works and the tests actually verify this. If we don&rsquo;t first write a failing testcase, then our code lacks a very important guarantee: &ldquo;if you break this code, then the test case will tell you so.&rdquo; (A test that doesn&rsquo;t fail when the code fails isn&rsquo;t worth writing.)</p>
+
+<p>Most of the time when I do this, I write a test, it fails because I haven&rsquo;t written any code yet, and I then go do some kind of clean-room coding. Then I run the test and it&rsquo;s busted, and I have to go back to the code and figure out why, and after a few more tries I get it working. And then it feels great. (That&rsquo;s the other thing about test-first coding. It&rsquo;s really satisfying, like cooking the perfect dinner, arranging the plates beautifully and then eating.)</p>
+
+<p>This time I wanted to write a pure-Perl implementation of CRC32, and embed it in mk-table-checksum. We try really hard never to rely on external modules, even modules that ought to be distributed with Perl itself. That keeps Maatkit as portable as possible and makes sure there is no installation hell. You can generally just get and run the Maatkit tools with no installation. So I referred to an existing CRC32 implementation, in <a href="http://search.cpan.org/~fays/Digest-Crc32-0.01/Crc32.pm">Digest::Crc32</a>. I wrote a test by referring to the value I got from MySQL&rsquo;s built-in CRC32:</p>
+
+<pre>mysql> select crc32('hello world');
++----------------------+
+| crc32('hello world') |
++----------------------+
+|            222957957 | 
++----------------------+
+1 row in set (0.00 sec)
+</pre>
+
+<p>Here&rsquo;s the test:</p>
+
+<pre>is($c-&gt;crc32('hello world'), 222957957, 'CRC32 of hello world');</pre>
+
+<p>CRC32 is CRC32, so my code better agree with a working implementation. And then I wrote the code, which is a refactoring of the math in the module I linked to above. And then I ran the test, and it Just Passed with no further ado. w00t! This is pretty much a historic first for me! I thought at first that I&rsquo;d screwed something up with the test, but I checked again. This is like getting a hole-in-one for me :-) So I just thought I&rsquo;d share it with you. It feels <strong>awesome</strong>.</p>
+
+<p>If you&rsquo;re not doing test-first coding, you ought to give it a try. If you are conscientious about writing tests first, your code will always be easy to test. If you don&rsquo;t, you write untestable code. Then it&rsquo;s tough or impossible to ever get tests on it, and you spend the rest of your life wasting time on stupid bugs and slow, fearful development, never knowing what else you are breaking with your &ldquo;fixes.&rdquo;</p>
+
+<p>Test-driven development is one reason <a href="http://www.rimmkaufman.com/">The Rimm-Kaufman Group&rsquo;s</a> in-house bidding system blows away their competition. (RKG is my previous employer.) The comprehensive unit-test suite lets you know right away if you&rsquo;ve broken something. That keeps the code clean and makes it possible to be extremely productive. I remember once when one of my co-workers there implemented a major feature in a very short time. It was also incredibly helpful when sharding the databases (anyone ever done this without a test suite? Would you like to share about how much of your systems broke during sharding? It was almost a non-event at RKG). The people I worked with before I joined RKG looked at me like an alien when I tried to explain that this was possible.</p>
+
+<p>If you&rsquo;re thinking that your code is not &ldquo;that kind of code,&rdquo; that &ldquo;only certain kinds of code lend themselves to unit tests,&rdquo; then stop. I&rsquo;ve heard this before, and you&rsquo;re wrong. It&rsquo;s only &ldquo;untestable&rdquo; because you didn&rsquo;t write tests first. Write tests first, and your code &ndash; all of it! &ndash; will be &ldquo;that kind of code&rdquo; that is testable. It&rsquo;s hard. No one says it&rsquo;s not; good programming is much harder than sloppy programming. But it&rsquo;s well worth it.</p>
+
+<p>Converting untested, untestable code into tested code is not so much fun, though. And in my experience you&rsquo;ll rarely be rewarded for it, and your coworkers will not appreciate you raising the bar for them. Maybe you need a new job. I hear RKG is hiring. Did I mention that their codebase is built from the ground up on unit tests?</p>
+
+<ul>
+<li>OK, we&rsquo;re not perfectly disciplined about this, but we&rsquo;re pretty good about it.</li>
+</ul>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

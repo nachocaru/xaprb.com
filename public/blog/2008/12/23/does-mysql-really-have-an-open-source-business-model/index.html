@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Does MySQL really have an open-source business model? &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Does MySQL really have an open-source business model?</h1>
+  <span class="post-date">Tue, Dec 23, 2008 in
+		
+		<a href="/categories/commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I&rsquo;ve been thinking about the business of what&rsquo;s variously come to be called commercial open-source and enterprise open-source. I&rsquo;m interested in the gestalt &ndash; the product, development processes, marketing, licensing and so on.</p>
+
+<p>MySQL has tried many different ways to earn money. These include dual licensing, support subscriptions, a knowledgebase, consulting, an <a href="http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/">Enterprise/Community split</a>, <a href="http://developers.slashdot.org/developers/08/05/06/2125235.shtml">trying to make parts of the server closed-source</a>, <a href="http://dev.mysql.com/workbench/?p=13">making tools in a split community/premium version</a>, <a href="http://www.xaprb.com/blog/2008/11/20/an-alternative-to-the-mysql-query-analyzer/">building functionality externally in closed-source software</a> where they can charge for it, and most recently creating <a href="http:/http://www.xaprb.com/blogs.mysql.com/kaj/2008/12/01/mysql-51-release-schedule/">three tiers of functionality for the MySQL 5.1 server</a>. And these are only the highlights &ndash; MySQL has courageously tried a lot of different models, far more than the blogosphere regularly acknowledges.</p>
+
+<p>But are any of them really open-source business models? I have posited before that <a href="http://www.xaprb.com/blog/2008/05/14/mysql-free-software-but-not-open-source/">the MySQL server is not really open-source</a>. I&rsquo;ve come to believe that the MySQL business model is not an open-source one, either. I think all of these different approaches are steps towards a more closed-source business model.</p>
+
+<p>Why is this happening? I believe that the sales department is the strongest influence in this direction. I&rsquo;ve formed this opinion over the last couple of years, in part through many conversations with people on both the inside and outside of MySQL. And more recently, as a Percona employee I have been able to talk with many people who have negotiated with the MySQL sales team and then opted not to buy from them. They sometimes volunteer information on what it&rsquo;s like and why they&rsquo;ve come to talk to Percona instead.</p>
+
+<p>I&rsquo;ve also heard from insiders that the familiar sales tactics don&rsquo;t work for MySQL. I believe this is because they rely on ways to gain leverage in the sales negotiations (e.g. lock-in, bundling, upselling, withholding). Many of these levers find no fulcrum in truly open-source software. The story is that the sales team came back to the rest of the company and said <em>you have to give us something we can sell. This isn&rsquo;t working</em>.</p>
+
+<p>As I see it, the changes in MySQL&rsquo;s business models over the last few years have produced a self-reinforcing cycle, something like this:</p>
+
+<ol>
+<li>Experienced customers who understand the merits of open-source software recognize that MySQL has trended towards closed-source and isn&rsquo;t really offering a compelling open-source value. They don&rsquo;t buy, and&hellip;</li>
+<li>&hellip; MySQL trends further towards closed-source and tries to sell that; as a result, customers new to open-source software are not educated about its true value.</li>
+</ol>
+
+<p>So instead of making MySQL more open-source and evangelizing that, MySQL might have left themselves few options other than to fall back to closed-source models. And that virtually requires closed-source products to sell. You can call it &ldquo;feature differentiation,&rdquo; or &ldquo;value add,&rdquo; or even &ldquo;crippleware&rdquo; (and Monty Widenius himself has done that) &ndash; the fact is it&rsquo;s not open-source MySQL is trying to sell. Their offerings that are closest to being open-source are not for sale.</p>
+
+<p>At the sales level, it appears to be working. I&rsquo;ve heard that many more people are buying than before. I don&rsquo;t doubt that. This fact is touted as proof that MySQL is successfully building an open-source software business, and the pundits love to applaud it, even <a href="http://news.cnet.com/8301-13505_3-10122963-16.html">urging MySQL to take a harder line</a>. I suppose they don&rsquo;t see the irony of saying that the <a href="http://weblog.infoworld.com/openresource/archives/2008/12/the_cost_of_dev.html">open-source business model is perfected by becoming closed-source</a>.</p>
+
+<p>I don&rsquo;t identify with this stance. I would prefer to see the open-source philosophy spread from the company to the customers and community, rather than allowing the customers and sales people to drive closed-source values back through the gate.</p>
+
+<p>Unfortunately, I don&rsquo;t think MySQL will not do an about-face, because the market for real open-source simply isn&rsquo;t as big as MySQL wants. If your goal is to make money first and foremost,<sup><a href="http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/">1</a></sup> instead of creating value for customers, you can do that better with closed-source software. And I think that as a result, MySQL might be working against itself, because open-source and Free Software are fundamentally about creating value for the users. If the users and the customers are the same people, there&rsquo;s a conflict of interest: the software wants to create value, but the business wants to create revenue.</p>
+
+<p>The good news is that MySQL is Free Software, so it does not simply live inside of MySQL or Sun. Free Software is a meritocracy; there&rsquo;s equal opportunity for all of us, and in that sense Sun/MySQL are offered the same chance as the rest of us to serve this community. No one is in a position of ownership or control (remember, Sun purchased <em>MySQL the company</em>, not <em>MySQL the database</em>). We are all called to be stewards. I believe that if Sun/MySQL accept this role, MySQL the database and MySQL the company will prosper together; if not, MySQL the database will find a new home. The business of MySQL is associated with MySQL the database through freedom and choice, not bound through force.</p>
+
+<p>I believe that a closed-source business model around MySQL will ultimately lose momentum, and those who work to set MySQL free will earn the community&rsquo;s trust and support. I realize that I&rsquo;m contradicting all the experienced people who really know a lot about business, and I&rsquo;m happy to let the passing of time correct me if I&rsquo;m wrong.
+These are interesting times. None of this is without precedent, yet there is so much we don&rsquo;t know. I think it&rsquo;s fine to keep trying different approaches and see what works. I&rsquo;ve chosen my position based on my principles and beliefs, and I&rsquo;ve tried to align myself with what I see as the Tao of Free Software, if you will. I&rsquo;ll be continuing to observe and participate, and re-evaluate my position if necessary.</p>
+
+<p><sup><a href="http://www.xaprb.com/blog/2007/08/12/what-would-make-me-buy-mysql-enterprise/">1</a></sup>For the record, I have no problem with a company whose goal is first and foremost to make money.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

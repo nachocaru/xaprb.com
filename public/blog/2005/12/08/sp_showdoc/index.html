@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to use extended properties as documentation with sp_showdoc &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to use extended properties as documentation with sp_showdoc</h1>
+  <span class="post-date">Thu, Dec 8, 2005 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>My current employer has created a policy for documenting database tables. When tables are created or modified, we are required to add extended properties to the tables and columns. SQL Server 2000&#8242;s extended properties are name/value pairs, which can be attached to most objects. There are a few different ways to view them:</p>
+
+<ul>
+<li>as the &ldquo;Description&rdquo; field in the &ldquo;Design Table&rdquo; dialog in Visual Studio</li>
+<li>by right-clicking on an object in the Object Browser in Query Analyzer</li>
+<li>with system stored procedures and built-in functions such as <code>fn_listextendedproperty</code></li>
+</ul>
+
+<p>None of these is convenient or safe when browsing around the databases. Given all the hassles and risks, I decided to write my own system stored procedure to display the documentation. It should be created in <code>master</code>, so it can be called as though it exists in every database. It returns one row for the table&rsquo;s documentation, followed by one row for each column&rsquo;s documentation. Here&rsquo;s the code:</p>
+
+<pre>create procedure sp_showdoc
+    @tablename sysname
+as
+
+if object_id(@tablename) is null
+begin
+    raiserror('Object ''%s'' does not exist.', 12, 1, @tablename)
+    return
+end
+
+select cast('Table' as varchar(10)) as type, @tablename as name, prop.value as 'documentation'
+    from (
+            select object_id(@tablename) as objname
+        ) as x
+    left outer join dbo.sysproperties as prop(nolock) on prop.id = x.objname
+        and prop.type = 3
+        and prop.name = 'MS_Description'
+union all select cast('Column' as varchar(10)) as type, col.name, prop.value
+    from dbo.syscolumns as col(nolock)
+    left outer join dbo.sysproperties as prop(nolock) on prop.id = col.id
+        and prop.smallid = col.colid
+        and prop.type = 4
+        and prop.name = 'MS_Description'
+    where col.id = object_id(@tablename)</pre>
+
+<p>I&rsquo;m accessing the <code>sysproperties</code> table directly because it&rsquo;s simpler than creating a wrapper around <code>fn_listextendedproperty</code>. There are other tweaks that could be made depending on the usage &ndash; for example, return the table and column documentation in separate recordsets.</p>
+
+<h3 id="toc_0">Other ways to make a database self-documenting</h3>
+
+<p>I think adding arbitrary name/value pairs to objects by inserting them into a single table is a great idea. Even before I worked in SQL Server, I used to create similar tables in MySQL to document relationships between tables. The documentation was machine-readable, so my code could simulate foreign keys, cascading updates and deletes, navigate between related records in different tables, and so forth. Obviously such meta-data can be very powerful.</p>
+
+<p>Nearly three years ago now at my current employer (long before the current standard was even proposed) I volunteered some time to write several ASPs that could be used to browse databases, view and edit documentation, view the text of objects with entries in <code>syscomments</code> (such as stored procedures and triggers), and navigate between related structures. My primary motivation was to capture the knowledge I was getting from the DBAs as I picked their brains &ndash; a standard occurrence for new hires. At that time there was no documentation at all, and even then we had dozens of major database servers running hundreds of large databases, each with piles and piles of tables &ndash; and if I wanted to know what some data meant, I had to go ask one of just a couple of people (one of whom has now left the company). Many of our databases contain data related to other databases, but since it&rsquo;s impossible to create foreign keys between databases, the relations can&rsquo;t be expressed in the schema itself. Naming conventions help a little, but many of the tables are from years ago, before naming conventions. We also love to store values in a single integer column as bit fields, and the bit fields can&rsquo;t be foreign keyed even within the same database &ndash; though there are lookup tables where I can find out what the bits mean.</p>
+
+<p>I used just a few extended properties to attach &ldquo;fake foreign keys&rdquo; and &ldquo;links&rdquo; to objects, and the ASP parsed it all out and magically made the entire structure navigable and easily updatable in a browser window. The interface presented the documentation properties right next to the actual object&rsquo;s schema and other information. It was visually nice and took very few clicks to navigate. I think such a system is pretty much ideal for documenting a database. If I don&rsquo;t have extended properties, I can create my own name/value pair table; it&rsquo;s trivial to do and takes hardly any code, even in ASP.</p>
+
+<p>These are just some thoughts for those curious souls out there looking for ways to document databases. In my opinion, there&rsquo;s just no beating meta-data that&rsquo;s attached to whatever I&rsquo;m trying to document. I try to make the documentation live as close as possible to the objects I&rsquo;m documenting, and then create tools to present a nice interface to people who want to use and update the documentation. If it&rsquo;s code, generate the documentation directly from the code (documentation comments and type information); if it&rsquo;s data, create a table of meta-data and generate it from there; if it&rsquo;s XML, annotate the schemas and get it from there.</p>
+
+<p>I think it&rsquo;s important to avoid creating <a href="http://swigartconsulting.blogs.com/tech_blender/2005/07/the_undocumente.html">undocumentation</a>, however &ndash; vast amounts of meaningless, obvious, redundant meta-data where no real documentation actually exists. It&rsquo;s worse than no documentation. It might seem cool at first, but I have seen it sour people and kill what might have been a good thing. In my experience, people will get irritated with one bad method of doing a Good Thing, think it&rsquo;s the Thing that&rsquo;s bad, and never give it a second chance after that.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

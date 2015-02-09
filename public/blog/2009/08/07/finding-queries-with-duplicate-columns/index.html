@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Finding queries with duplicate columns &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Finding queries with duplicate columns</h1>
+  <span class="post-date">Fri, Aug 7, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>A while ago I wrote about a <a href="http://code.google.com/p/maatkit/wiki/mk_upgrade">tool to help make upgrades safer</a>. Since then, we have gotten several people to help sponsor development on this tool, and a few of our customers are using it to help find problems before they upgrade their systems.</p>
+
+<p>I can&rsquo;t think of a single one of the Maatkit tools that didn&rsquo;t grow out of the need for deeper insight into some part of the system. This tool is no exception. And as always, these tools are like flashlights. When you crouch down near the floor, and shine your flashlight under the refrigerator, you should expect to find a few things that make you cringe.</p>
+
+<p>The other day, one of our customers was using this tool and we started getting an error. The error was caused by the part of the tool that verifies that result sets are the same. Our thought on how to do this was to checksum the results of a query. You can read the specification of exactly how we plan to do this if you want, but I&rsquo;ll just give you the short version here: use a subquery. But some queries cannot be put into a subquery without causing errors.</p>
+
+<p>Here&rsquo;s an example:</p>
+
+<pre><code>mysql&gt; select a, a from t;
++------+------+
+| a    | a    |
++------+------+
+|    1 |    1 | 
++------+------+
+</code></pre>
+
+<p>If you wrap this query into a subquery, you will get an error:</p>
+
+<pre><code>mysql&gt; select * from (select a, a from t) as a;
+ERROR 1060 (42S21): Duplicate column name 'a'
+</code></pre>
+
+<p>Of course the problem is that the innermost query is actually invalid in a relational sense. Once again, it comes back to the fact that <a href="http://www.xaprb.com/blog/2009/03/29/a-review-of-sql-and-relational-theory-by-c-j-date/">SQL doesn&rsquo;t keep you from doing things that make no sense</a>.</p>
+
+<p>The exact query that we were seeing on our client was a little bit more subtle, but it&rsquo;s still a fairly common pattern that I have seen in the real world:</p>
+
+<pre><code>select a.*, [other stuff], a.column1 from ...
+</code></pre>
+
+<p>This type of query should be catchable by <a href="http://www.maatkit.org/doc/mk-query-advisor.html">mk-query-audit</a>, when we write it. Oooh &ndash; another flashlight to find hairy things with wobbly eyes under your fridge!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

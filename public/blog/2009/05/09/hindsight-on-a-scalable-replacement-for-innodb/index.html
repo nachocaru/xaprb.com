@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Hindsight on a scalable replacement for InnoDB &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Hindsight on a scalable replacement for InnoDB</h1>
+  <span class="post-date">Sat, May 9, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>A while ago I posted about a <a href="http://www.xaprb.com/blog/2009/01/13/what-is-the-scalable-replacement-for-innodb/">comment a Sun performance engineer made about a scalable replacement for InnoDB</a>. At the time, I did not believe it referred to Falcon. In hindsight, it seems even clearer that <a href="http://dimitrik.free.fr/db_STRESS_MySQL_540_and_others_Apr2009.html">the Sun performance experts were already working hard on InnoDB itself</a>.</p>
+
+<p>Sun&rsquo;s engineers have shown that they can produce great results when they really take the problems seriously. And I&rsquo;m sure that InnoDB&rsquo;s performance has untapped potential we don&rsquo;t see right now. However, it does not follow that their work on InnoDB is what was meant by a scalable replacement for InnoDB. Or does it?</p>
+
+<p>General-purpose MVCC transactional storage engines with row-level locking, whatever their performance and scaling characteristics in edge cases, fall into a category together. A person assembling a MySQL server for general-purpose use might choose a different storage engine for various uses &ndash; MyISAM here, Memory there&hellip; and use &ldquo;one of those transactional engines&rdquo; for the bulk of the work. PBXT, InnoDB, Falcon &ndash; I don&rsquo;t see a justification for running more than one of those side by side. The operational costs alone (backups, training the users, etc) would be too high. It is also not at all clear that MySQL itself is ready for multiple transactional storage engines working together (e.g. cross-engine transactions) in the real world.</p>
+
+<p>So what&rsquo;s left for Falcon? I think they are <a href="http://carotid.blogspot.com/2009_04_01_archive.html#8499683187188909543">asking themselves the same question</a> (brilliant gallows humor, by the way). I think Falcon&rsquo;s ideas and techniques are very interesting, but a storage engine &ndash; especially one with such lofty goals &ndash; is always a show-me undertaking that will require years to mature and prove itself even after the code is &ldquo;ready.&rdquo; With or without the Oracle acquisition, this question has loomed for years: where&rsquo;s the justification for Falcon politically, functionally, economically? A third party engine such as PBXT, with eyes on replication at the storage engine level and other add-on functionality, has always seemed more likely to really add value than a straight-up InnoDB replacement.</p>
+
+<p>But from my point of view, the biggest win in the short term would still be to drive InnoDB development forward at a consistent and accelerating pace to meet the needs of users and the advances in hardware. Of course, that&rsquo;s what XtraDB set out to do, and I think the XtraDB project has helped snap InnoDB out of their Percheron-like plod towards improvement. This is nothing but good; when it comes to competition among storage engines, no one should be resting on their laurels. I also see that <a href="http:/http://www.xaprb.com/blogs.sun.com/dlutz/entry/concurrent_commit_revisited">Sun&rsquo;s team has more good things in the works</a>, which is great. I&rsquo;d love for InnoDB to stop being a work horse and start being a quarter horse. We need it to be both scalable <em>and</em> high-performance.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

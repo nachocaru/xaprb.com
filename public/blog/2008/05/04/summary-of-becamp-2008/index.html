@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Summary of beCamp 2008 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Summary of beCamp 2008</h1>
+  <span class="post-date">Sun, May 4, 2008 in
+		
+		<a href="/categories/conferences" class="btn btn-primary">Conferences</a>
+		
+  </span>
+  
+
+<p>Yesterday I went to <a href="http://barcamp.org/beCamp2008">beCamp 2008</a> along with four roomfuls of other people interested in technology (perhaps close to 100 people total). The conference was a lot of fun. Not everything went as planned, but that was as planned. This was an <a href="http://martinfowler.com/bliki/OpenSpace.html">Open Spaces conference</a> and I thought it worked very well. From an email <a href="http://www.opensourceconnections.com/">Eric Pugh</a> sent:</p>
+
+<blockquote>
+<p>Basically it all boils down to:</p>
+
+<p>Open Space is the Law of Two Feet: if anyone finds themselves in a place where they are neither learning nor contributing they should move to somewhere more productive. And from the law flow four principles:</p>
+
+<ul>
+<li>Whoever comes are the right people</li>
+<li>Whatever happens is the only thing that could have</li>
+<li>Whenever it starts is the right time</li>
+<li>When it&rsquo;s over, it&rsquo;s over</li>
+</ul>
+</blockquote>
+
+<h3 id="toc_0">From Hadoop to Bang-Splat</h3>
+
+<p>I used the law of two feet a time or two. In fact, the first session I wanted to go to, which was about <a href="http://hadoop.apache.org/core/">Hadoop</a> and <a href="http://labs.google.com/papers/mapreduce.html">MapReduce</a>, had no knowledgeable attendees. Someone overslept. OK, that&rsquo;s the way it goes: move along.</p>
+
+<p>From there I went to a session about Unix command-line productivity. Most of the sessions I saw were traditional in that they had one person standing up talking and many people sitting and listening, but not all. This one had several clever command-line gurus mentioning their favorite power tips.</p>
+
+<p>I learned about bang-splat and bang-dollar. The bangs have always gotten me in Bash: I avoid them because I&rsquo;ve never felt like reading the Bash man page section on them. (Am I too lazy, or not lazy enough?) So it was great to hear some people say &ldquo;bang-splat and bang-dollar are great&rdquo; and then explain them. That was easy for me, and now I know how they can be useful to me.</p>
+
+<p>This problem-first type of tip is great for me: tell me the problem, then how to solve it, rather than telling me what the solution is and leaving me guessing what kinds of problems I can solve with it. (The Bash man page is solution-first).</p>
+
+<p>In case you&rsquo;re wondering, bang-splat substitutes the arguments to the last command, and bang-dollar substitutes the last argument of the last command. So, instead of this:</p>
+
+<pre>$ touch file1 file2 file3
+$ rm file1 file2 file3</pre>
+
+<p>I can do this:</p>
+
+<pre>$ touch file1 file2 file3
+$ rm !*</pre>
+
+<p>There were lots of other nice tips too.</p>
+
+<h3 id="toc_1">MySQL Performance</h3>
+
+<p>I ended up doing a talk on MySQL performance basics. I had no idea what the audience was looking for, so I winged it. I did make some slides, but most of the talk isn&rsquo;t on the slides. You can get the slides from <a href="http://www.percona.com/presentations.html">Percona&rsquo;s slide page</a>. It seemed to be useful to the folks attending, who had a wide variety of experience and knowledge about MySQL.</p>
+
+<h3 id="toc_2">Cloud Computing</h3>
+
+<p>This session began with a demo of how to create an entire application stack in a few minutes with <a href="http://www.cohesiveft.com/">Cohesive Flexible Technologies</a>. Someone else then demoed a similar thing using <a href="http://www.rightscale.com/">RightScale</a>. <a href="http://www.rpath.com/">rPath</a>&rsquo;s <a href="http:/http://www.xaprb.com/blogs.conary.com/index.php/juphoff">Jeff Uphoff</a> was also in the room, but we didn&rsquo;t get to see a demo of that. During this session the talk turned to various topics including a little bit of the topics I wanted to hear about in the Hadoop session.</p>
+
+<h3 id="toc_3">Lunch</h3>
+
+<p>Lunch was catered Indian food provided by the <a href="http://www.rimmkaufman.com/">Rimm-Kaufman Group</a>. Yum.</p>
+
+<h3 id="toc_4">Large Scale Storage</h3>
+
+<p>This session was sort of a round-table. The two people who talked the most were <a href="http://www.cv.nrao.edu/~jmalone/">Josh Malone</a> from the <a href="http://www.nrao.edu/">National Radio Astronomy Observatory</a> and the <a href="http://www.loc.gov/">Library of Congress</a>, both of whom have a lot of storage needs they are unsure how to meet. Some people from UVA&rsquo;s library were there as well, but I didn&rsquo;t ask what they were working on.</p>
+
+<p>This reminded me a lot of a <a href="http://en.oreilly.com/mysql2008/public/schedule/detail/1865">recent keynote Jacek Becla gave at another conference</a>. He&rsquo;s with the Stanford Linear Accelerator Center, who are going to be generating a lotta data pretty soon.</p>
+
+<h3 id="toc_5">High Availability Linux</h3>
+
+<p>This one started off with more from Josh Malone, who demoed <a href="http://www.nagios.org/">Nagios</a> briefly and then talked about his storage and backup systems. He uses <a href="http://backuppc.sourceforge.net/">BackupPC</a>, which sounds pretty neat and very smart. We then talked about some of the things he&rsquo;s looking into doing, with audience suggestions to look into shared storage or <a href="http://www.drbd.org/">DRBD</a>. We also looked at <a href="http://www.ultramonkey.org/">UltraMonkey</a> briefly &ndash; it looks like it&rsquo;s stagnating, though. And the <a href="http://linux-ha.org/">Linux HA</a> project.</p>
+
+<h3 id="toc_6">Google App Engine</h3>
+
+<p>Finally, someone showed us a <a href="http://gi89.appspot.com/">calculator application they&rsquo;d built on Google App Engine</a>, including the code and talking about the data model somewhat. It looks like a neat idea, but the lock-in worries me, a sentiment that was voiced by many others in the room.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to use Linux&#39;s CONFIG_IKCONFIG_PROC feature &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to use Linux&#39;s CONFIG_IKCONFIG_PROC feature</h1>
+  <span class="post-date">Tue, May 23, 2006 in
+		
+		<a href="/categories/desktop" class="btn btn-primary">Desktop</a>
+		
+  </span>
+  
+
+<p>This article gives an overview of the Linux kernel&rsquo;s <code>CONFIG_IKCONFIG_PROC</code> feature, which stores in the kernel the config file used to build it.</p>
+
+<h3 id="toc_0">What it is</h3>
+
+<p>Linux can store a gzip-compressed kernel configuration file in the kernel itself, and make it available when the kernel is booted. This is very useful for determining how the kernel was configured when it was built. It makes it possible to re-create a kernel without having the configuration saved separately, makes it easier to debug problems with a kernel, and so forth.</p>
+
+<h3 id="toc_1">How to enable this feature</h3>
+
+<p>There are two steps to making the kernel config available in the kernel when the system is booted. First, select the option to store the configuration file; second, select the option to make it available as the file <code>/proc/config.gz</code>.
+When using the menuconfig system to edit a kernel configuration file, say yes to
+<pre>File systems  &mdash;&gt;
+   Pseudo filesystems  &mdash;&gt;
+   [*] /proc file system support</pre></p>
+
+<p>That enables the <code>/proc</code> virtual filesystem; read the help file for more on that. Then enable the following:</p>
+
+<pre>General setup  ---&gt;
+   [*] Kernel .config support
+   [*]   Enable access to .config through /proc/config.gz</pre>
+
+<p>When editing the file by hand, say Y to <code>CONFIG_PROC_FS</code>, <code>CONFIG_IKCONFIG</code>, and <code>CONFIG_IKCONFIG_PROC</code>.</p>
+
+<h3 id="toc_2">How to use it</h3>
+
+<p>If I have a working kernel but lost the config file I used to build it, I can boot the kernel and uncompress <code>/proc/config.gz</code>:</p>
+
+<pre>zcat /proc/config.gz &gt; somefile</pre>
+
+<p>One place I&rsquo;ve found this helpful is when building a kernel on a system I don&rsquo;t know well. I can boot a live CD, for example the Gentoo live CD, and steal its configuration as a starting point. This doesn&rsquo;t always work perfectly, but it&rsquo;s easier than starting from scratch, in my opinion.</p>
+
+<p>By the way, in this and all articles on this blog, I draw a distinction between Linux and the operating system. Linux is a kernel, not an operating system. GNU utilities constitute the rest of the operating system, which is why I use the term GNU/Linux when referring to the operating system as a whole.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

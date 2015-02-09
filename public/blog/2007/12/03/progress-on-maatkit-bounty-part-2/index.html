@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Progress on Maatkit bounty, part 2 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Progress on Maatkit bounty, part 2</h1>
+  <span class="post-date">Mon, Dec 3, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>Ironically, the <a href="http://www.xaprb.com/blog/2007/11/30/progress-on-maatkit-bounty/">Stream</a> algorithm I wrote as the simplest possible syncing algorithm does what the <a href="http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/">much more efficient algorithm I wrote some time ago</a> can&rsquo;t do: sync a table without a primary key, as long as there are no duplicate rows. In fact, it&rsquo;s so dumb, it will happily sync any table, even if there are no indexes.</p>
+
+<p>The flash of inspiration I had on Friday has turned out to be good insight. It immediately showed me how I can re-use a lot of the hard work I&rsquo;ve already done for other tools. Chunking and nibbling are the names I&rsquo;ve given to two algorithms I&rsquo;ve developed for processing tables a little at a time. Chunking looks for a suitable index and generates an array of <code>WHERE</code> clauses that will divide the table into pieces of approximately a given size (number of rows or number of bytes). I use this on mk-table-checksum and mk-parallel-dump. It requires an indexed column I can treat as a number one way or another. That includes temporal values.</p>
+
+<p>Nibbling is related. It&rsquo;s an efficient way to do something like LIMIT X, Y without scanning through the first X rows. It also requires a suitable index, but the code I wrote to make it work with mk-archiver is really generous about what &ldquo;suitable&rdquo; means. It&rsquo;ll basically work with any index. It selects some rows with LIMIT Y and uses the last-fetched row to start the next select.</p>
+
+<p>Both algorithms will adapt well to finding and resolving differences in rows, a chunk at a time. The general procedure is to create the <code>WHERE</code> clauses that define boundaries around the chunk of rows, then checksum the whole chunk. The result is a tiny little hash value. If this differs between the source and destination tables, the next step is to checksum the rows individually and fetch their primary or unique key columns. This uses a little more network bandwidth, but it&rsquo;s still not bad unless the key (or the chunk) is huge. Any rows whose checksums differ can then be fetched by the key and synced.</p>
+
+<p>The more complex algorithms, which were in the original table-sync tool, will come later. They can be potentially much more efficient in terms of network traffic, but they have drawbacks too, such as the granularity of locking. The mk-table-sync tool will soon be able to choose the best algorithm that causes the least locking and just do it without any fuss. For example, if it sees a nice primary key it can use for chunking, and it sees that the table is InnoDB, it&rsquo;ll just chunk and use <code>SELECT FOR UPDATE</code>. Voila, no table locks, and not much of the table will be locked at a time (it&rsquo;ll commit between chunks).</p>
+
+<p>Right now I&rsquo;ve gotten a simple interface for code that finds differences in rows, a plugin-like interface for implementing each of the algorithms uniformly, an interface for resolving differences, and a few other things. I&rsquo;m about to embark on the Chunk algorithm for syncing.</p>
+
+<p>I don&rsquo;t think most people will consider this a big deal, but don&rsquo;t expect the final product to correctly sync tables without a primary key and with duplicate rows. Comparing tables with duplicates is absolutely meaningless. If you can&rsquo;t write a <code>WHERE</code> clause that uniquely identifies a row, you&rsquo;re done.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

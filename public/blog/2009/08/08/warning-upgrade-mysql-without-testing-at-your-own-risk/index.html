@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Warning: upgrade MySQL without testing at your own risk &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Warning: upgrade MySQL without testing at your own risk</h1>
+  <span class="post-date">Sat, Aug 8, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>Do you test your application systematically when you upgrade or reconfigure your database server? You should! Here&rsquo;s a real (anonymized) story of what happens if you don&rsquo;t.</p>
+
+<blockquote>
+<p>When we upgraded to 5.0.62 (from 5.0.27 and 5.0.45), our code broke for queries like this:</p>
+
+<p><code>SELECT SUM(amt) FROM daily_amt
+WHERE day = FROM_UNIXTIME(1222889772);</code></p>
+
+<p>The problem here was a <a href="http://bugs.mysql.com/bug.php?id=27590">wrong DATE/DATETIME comparison</a> and other bug fixes in MySQL 5.0.62; it was stricter in enforcing the comparison.</p>
+
+<p>This resulted in an outage and revenue loss to the company.</p>
+</blockquote>
+
+<p>Daniel and I (mostly Daniel) continue to improve <a href="http://code.google.com/p/maatkit/wiki/mk_upgrade">mk-upgrade</a> to make it easy and inexpensive to find these kinds of scenarios <em>before</em> they bite you. Don&rsquo;t get caught with your pants down &ndash; next time you make <em>any</em> major change to your database server (upgrade, configuration change, switching to InnoDB&hellip;) follow at least this bare-minimum process:</p>
+
+<ul>
+<li>collect all queries run against the server for a sufficient time</li>
+<li>get a snapshot of your data</li>
+<li>use mk-upgrade to validate correctness and performance</li>
+<li><a href="http://code.google.com/p/maatkit/issues/list">submit bug reports</a> &ndash; this is a non-trivial tool, and we need your feedback</li>
+</ul>
+
+<p>If you need help with any of the above, I know <a href="http://www.percona.com/services/mysql-database-server-upgrade.html">someone</a> who can help.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

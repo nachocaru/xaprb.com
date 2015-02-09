@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A clarification on mk-slave-prefetch &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A clarification on mk-slave-prefetch</h1>
+  <span class="post-date">Sun, Aug 21, 2011 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>It seems to be a popular misconception that mk-slave-prefetch is designed to keep a MySQL replica server &ldquo;warm&rdquo; and ready to serve production traffic in case the master is demoted or fails. <strong>This is not what mk-slave-prefetch does</strong>. It&rsquo;s related, and easy to confuse, but its purpose is different.</p>
+
+<p>The mk-slave-prefetch tool is designed to try to execute a read-only approximation of the write workload that the replica is about to have to perform. It is meant to do this just a little bit before the replication thread (which can only be true if replication is lagging), so that when the replica replays writes to execute replication, it doesn&rsquo;t have to wait for disk I/O.</p>
+
+<p>Keeping caches warmed up for production traffic requires that the <em>read</em> workload, which does not flow through relay logs, is executed on the server. If you point mk-slave-prefetch at a server, you&rsquo;re just double-executing the <em>write</em> workload in a read-only fashion.</p>
+
+<p>Perhaps an example will clarify. Suppose that a master database has a bunch of writes to WritableTable, and lots and lots of reads to ReadableTable. On the replica, the only queries in the relay log will be on WritableTable. And what will mk-slave-prefetch be doing? Executing SELECT queries against WritableTable. No traffic on ReadableTable at all. If you switch to use the replica as the primary server, ReadableTable&rsquo;s data won&rsquo;t be in the caches.</p>
+
+<p>To actually warm up the replica, you need to replay the queries against the ReadableTable. You can only find those by looking at the master. You can read its query logs, or watch its processlist, or capture TCP traffic, or any other method of capturing read traffic. There is a feature built into mk-query-digest to help you capture and replay these against the replica: <a href="http://www.maatkit.org/doc/mk-query-digest.html#execute">&#8211;execute</a>.</p>
+
+<p>A parting note: mk-slave-prefetch is an extremely niche tool that generally doesn&rsquo;t help replicas keep up with their masters. Only in very special cases is the hardware, data, and workload suitable for what it does.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

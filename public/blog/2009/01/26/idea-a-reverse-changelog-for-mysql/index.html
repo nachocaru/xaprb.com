@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Idea: a reverse changelog for MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Idea: a reverse changelog for MySQL</h1>
+  <span class="post-date">Mon, Jan 26, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Most software changelogs list what&rsquo;s changed and what bugs are fixed during each upgrade. But when you&rsquo;re evaluating an upgrade, what you&rsquo;re typically concerned about is slightly different &ndash; it&rsquo;s a combination of what&rsquo;s changed and what might have broken. The fixed bugs aren&rsquo;t as important for most people, who are either using a workaround or aren&rsquo;t using the software. What people ask is &ldquo;what do I have to change in my application, and/or make sure I&rsquo;m not going to run afoul of, in order to use this new version?&rdquo;</p>
+
+<p>One of the interesting things about this is that you don&rsquo;t know until sometime in the future, and it&rsquo;s never a finished process. So as you look back from each new version, you have more information about the older versions. You see bugs that were fixed, and weren&rsquo;t known when an older version was released, but which affected that version. So a &ldquo;<sup>20</sup>&frasl;<sub>20</sub> hindsight changelog&rdquo; is going to be an evolving thing.</p>
+
+<p>Such a changelog might say something like &ldquo;when upgrading to 5.0.45, watch out for <a href="http://bugs.mysql.com/bug.php?id=30287">broken tmpdir handling</a>; upgrade to at least 5.0.48 to avoid this bug.&rdquo; Yes, this is necessarily a pessimistic look at the server, but people who are responsible for mission-critical server deployments are typically pretty conservative, and the good ones focus actively on identifying and managing risks. So it&rsquo;s a good kind of pessimism.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

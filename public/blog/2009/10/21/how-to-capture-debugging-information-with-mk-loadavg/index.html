@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to capture debugging information with mk-loadavg &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to capture debugging information with mk-loadavg</h1>
+  <span class="post-date">Wed, Oct 21, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  <p><a href="http://www.maatkit.org/">Maatkit&rsquo;s</a> <a href="http://www.maatkit.org/doc/mk-loadavg.html"><code>mk-loadavg</code></a> tool is a helpful way to gather information about infrequent conditions on your database server (or any other server, really). We wrote it at Percona to help with those repeated cases of things like &ldquo;every two weeks, my database stops processing queries for 30 seconds, but it&rsquo;s not locked up and during this time there is nothing happening.&rdquo; That&rsquo;s pretty much impossible to catch in action, and these conditions can take months to resolve without the aid of good tools.</p>
+
+<p>In this blog post I&rsquo;ll illustrate a very simple usage of <code>mk-loadavg</code> to help in solving a much smaller problem: find out what is happening on the database server during periods of CPU spikes that happen every so often.</p>
+
+<p>First, set everything up.</p>
+
+<ol>
+<li>Start a screen session: <code>screen -S loadmonitoring</code>. If you don&rsquo;t have screen, you can run mk-loadavg as a daemon, but it&rsquo;s much better to use screen in my opinion.</li>
+<li>Get <code>mk-loadavg</code>. For purposes of this blog post, I&rsquo;m going to get the latest trunk code, because I know a bug or two has been fixed since the last release. <code>wget http://www.maatkit.org/trunk/mk-loadavg</code></li>
+<li>Create a directory to hold the collected information in files. <code>mkdir collected</code></li>
+</ol>
+
+<p>Next let&rsquo;s set up a script that <code>mk-loadavg</code> can use to gather some information when it detects a high CPU condition. Save the contents of this script as &ldquo;collect-stats.sh&rdquo;. The script will gather about 30 seconds worth of statistics. It uses a simple sentinel file <code>/tmp/gatherinfo</code> to prevent multiple occurrences from gathering statistics at the same time. (This is intentionally simple for demo purposes.)</p>
+
+<pre>
+#!/bin/bash
+
+if [ -f /tmp/gatherinfo ]; then exit 0; fi
+touch /tmp/gatherinfo
+d=`date +%F-%T`
+echo "gathering info for $d"
+ps -eaf >> collected/$d-ps 2>&1 &
+top -bn1 > collected/$d-top 2>&1 &
+mysql -e 'show innodb status\G show full processlist\G' >> collected/$d-innodbstatus 2>&1 &
+vmstat 1 30 >collected/$d-vmstat 2>&1 &
+iostat -dx 1 30 >collected/$d-iostat 2>&1 &
+mysqladmin ext -i1 -c30 > collected/$d-mysqladmin 2>&1 &
+sleep 30
+ps -eaf >> collected/$d-ps 2>&1 &
+mysql -e 'show innodb status\G show full processlist\G' >> collected/$d-innodbstatus 2>&1 &
+rm /tmp/gatherinfo
+</pre>
+
+<p>Now make the script executable: <code>chmod +x collect-stats.sh</code>. At this point we&rsquo;re ready to start working. Let&rsquo;s fire the stats-collection script when the system&rsquo;s user CPU goes above 40%.<cod></p>
+
+<p><pre>perl mk-loadavg &ndash;watch &ldquo;Server:vmstat:us:&gt;:40&rdquo; &ndash;interval 1 &ndash;execute collect-stats.sh
+</pre></code></p>
+
+<p>If the CPU goes over 40%, you&rsquo;ll get a bunch of files in the <code>collected</code> directory, with helpful information to diagnose the problem. This example usage is pretty similar to a real-life one I set up recently. It enabled me to take a methodical approach to the problem:
+1.  From the <code>top</code> output I was able to identify that MySQL was causing the spike.
+2.  I then looked at the <code>SHOW STATUS</code> output to see what the database server was doing, using <a href="http://www.xaprb.com/blog/2009/10/13/using-mext-to-format-saved-mysqladmin-output-nicely/">mext</a> as a helper.
+3.  From <code>Select_full_scan</code> and <code>Handler_read_rnd_next</code> I isolated table scans as a problem.
+4.  From the saved <code>SHOW PROCESSLIST</code> I found problem queries and optimized them.</p>
+
+<p>You would be right if you said there are much better tools for finding problem queries &ndash; but remember two things: 1) sometimes clients ask for the lightweight, short-term solution that can be set up in about 5 minutes and checked the next day; and 2) when it is unclear that queries are the problem, setting up only a query monitor is stabbing in the dark and will not get results.</p>
+
+<p>In addition to watching <code>vmstat</code> to measure system CPU usage, <code>mk-loadavg</code> can watch many other things, such as the MySQL server&rsquo;s <code>SHOW PROCESSLIST</code>, parsing values from <code>SHOW INNODB STATUS</code>, and so on.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

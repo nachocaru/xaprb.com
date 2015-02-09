@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      50 things to know before migrating Oracle to MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">50 things to know before migrating Oracle to MySQL</h1>
+  <span class="post-date">Fri, Mar 13, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>A while back I was at a seminar on migrating database applications to MySQL. A lot of the attendees were Oracle users. Based on their questions, comments and conversations during lunch, I made the following list of things Oracle users need to know about migrating to MySQL. Most of these are &ldquo;gotchas&rdquo; that would be contraindications or require some thought about a workaround.</p>
+
+<p>Note: <em>this is not meant to be MySQL-bashing.</em> Some of these limitations are going to be fixed in future versions of MySQL, but they generally apply to current GA version 5.1. Some things are possible to achieve by choosing one particular way to use the server, at the exclusion of other things (e.g. Cluster rules out foreign keys, spatial data types rules out transactions). I am posting this list at the request of some Oracle DBAs who asked me to produce it for them.</p>
+
+<ol>
+<li>Subqueries are poorly optimized.</li>
+<li>Complex queries are a weak point.</li>
+<li>The query executioner (aka query optimizer / planner) is less sophisticated.</li>
+<li>Performance tuning and metrics capabilities are limited.</li>
+<li>There is limited ability to audit.</li>
+<li>Security is unsophisticated, even crude. There are no groups or roles, no ability to deny a privilege (you can only grant privileges). A user who logs in with the same username and password from different network addresses may be treated as a completely separate user. There is no built-in encryption comparable to Oracle.</li>
+<li>Authentication is built-in. There is no LDAP, Active Directory, or other external authentication capability.</li>
+<li>Clustering is not what you think it is.</li>
+<li>Stored procedures and triggers are limited.</li>
+<li><del datetime="2010-07-28T17:36:15+00:00">Vertical scalability is poor.</del> No longer true; with Percona XtraDB or MySQL 5.5 (unreleased) you get excellent scalability</li>
+<li>There is zero MPP support.</li>
+<li>SMP is supported, but <del datetime="2010-07-28T17:36:15+00:00">MySQL doesn&rsquo;t scale well to more than 4 or 8 cores/CPUs</del>. No longer true; with Percona XtraDB or MySQL 5.5 (unreleased) you get excellent scalability</li>
+<li>There is no fractional-second storage type for times, dates, or intervals.</li>
+<li>The language used to write stored procedures, triggers, scheduled events, and stored functions is very limited.</li>
+<li>There is no roll-back recovery. There is only roll-forward recovery.</li>
+<li>There is no support for snapshots.</li>
+<li>There is no support for database links. There is something called the Federated storage engine that acts as a relay by passing queries along to a table on a remote server, but it is crude and buggy.</li>
+<li>Data integrity checking is very weak, and even basic integrity constraints cannot always be enforced.</li>
+<li>There are very few optimizer hints to tune query execution plans.</li>
+<li>There is only one type of join plan: nested-loop. There are no sort-merge joins or hash joins.</li>
+<li>Most queries can use only a single index per table; some multi-index query plans exist in certain cases, but the cost is usually underestimated by the query optimizer, and they are often slower than a table scan.</li>
+<li>There are no bitmap indexes. Each storage engine supports different types of indexes. Most engines support B-Tree indexes.</li>
+<li>There are fewer and less sophisticated tools for administration.</li>
+<li>There is no IDE and debugger that approaches the level of sophistication you may be accustomed to. You&rsquo;ll probably be writing your stored procedures in a text editor and debugging them by adding statements that insert rows into a table called debug_log.</li>
+<li>Each table can have a different storage backend (&ldquo;storage engine&rdquo;).</li>
+<li>Each storage engine can have widely varying behavior, features, and properties.</li>
+<li>Foreign keys are not supported in most storage engines.</li>
+<li>The default storage engine is non-transactional and corrupts easily.</li>
+<li>Oracle owns InnoDB, the most advanced and popular storage engine.</li>
+<li>Certain types of execution plans are only supported in some storage engines. Certain types of COUNT() queries execute instantly in some storage engines and slowly in others.</li>
+<li>Execution plans are not cached globally, only per-connection.</li>
+<li>Full-text search is limited and only available for non-transactional storage backends. Ditto for GIS/spatial types and queries.</li>
+<li>There are no resource controls. A completely unprivileged user can effortlessly run the server out of memory and crash it, or use up all CPU resources.</li>
+<li>There are no integrated or add-on business intelligence, OLAP cube, etc packages.</li>
+<li>There is nothing analogous to Grid Control.</li>
+<li>There is nothing even remotely like RAC. If you are asking &ldquo;How do I build RAC with MySQL,&rdquo; you are asking the wrong question.</li>
+<li>There are no user-defined types or domains.</li>
+<li>The number of joins per query is limited to 61.</li>
+<li>MySQL supports a smaller subset of SQL syntax. There are no recursive queries, common table expressions, or windowing functions. There are a few extensions to SQL that are somewhat analogous to MERGE and similar features, but are very simplistic in comparison.</li>
+<li>There are no functional columns (e.g. a column whose value is calculated as an expression).</li>
+<li>You cannot create an index on an expression, you can only index columns.</li>
+<li>There are no materialized views.</li>
+<li>The statistics vary between storage engines and regardless of the storage engine, are limited to simple cardinality and rows-in-a-range. In other words, statistics on data distribution are limited. There is not much control over updating of statistics.</li>
+<li>There is no built-in promotion or failover mechanism.</li>
+<li>Replication is asynchronous and has many limitations and edge cases. For example, it is single-threaded, so a powerful slave can find it hard to replicate fast enough to keep up with a less powerful master.</li>
+<li>Cluster is not what you think it is. Maybe I already said that, but it bears repeating.</li>
+<li>The data dictionary (INFORMATION_SCHEMA) is limited and very slow (it can easily crash a busy server).</li>
+<li>There is no online ALTER TABLE.</li>
+<li>There are no sequences.</li>
+<li>DDL such as ALTER TABLE or CREATE TABLE is non-transactional. It commits open transactions and cannot be rolled back or crash-recovered. Schema is stored in the filesystem independently of the storage engine.</li>
+</ol>
+
+<p>I hope this is helpful.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

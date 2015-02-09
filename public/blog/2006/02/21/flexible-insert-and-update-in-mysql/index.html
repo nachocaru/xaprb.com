@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to write flexible INSERT and UPDATE statements in MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to write flexible INSERT and UPDATE statements in MySQL</h1>
+  <span class="post-date">Tue, Feb 21, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>MySQL provides several variations on <code>INSERT</code> and <code>UPDATE</code> to allow inserting and updating exactly the desired data. These features provide a lot of power and flexibility, making MySQL significantly more capable than it otherwise might be. In this article I&rsquo;ll give an overview of each feature, help you understand how to choose among them, and point out some things to watch out for.</p>
+
+<h3 id="toc_0">Setup</h3>
+
+<p>I am using MySQL 4.1.15 to create my examples. I assume MyISAM tables without support for transactions, with the following sample data:</p>
+
+<pre>create table t1 (
+    a int not null primary key,
+    b int not null,
+    c int not null
+) type=MyISAM;
+
+create table t2 (
+    d int not null primary key,
+    e int not null,
+    f int not null
+) type=MyISAM;
+
+insert into t1 (a, b, c) values
+    (1, 2, 3),
+    (2, 4, 6),
+    (3, 6, 9);
+
+insert into t2 (d, e, f) values
+    (1, 1, 1),
+    (4, 4, 4),
+    (5, 5, 5);</pre>
+
+<h3 id="toc_1">Overview</h3>
+
+<p>Suppose I wish to insert the data from <code>t2</code> into <code>t1</code>. This data would violate the primary key (a row exists where column <code>a</code> is 1) so the insert will fail: <code>ERROR 1062 (23000): Duplicate entry '1' for key 1</code>. Recall that in MySQL, a primary key is simply a unique index named PRIMARY. Any data that violates any unique index will cause the same problem.</p>
+
+<p>This situation occurs frequently. For example, I might export some data to a spreadsheet, send it to a client, and the client might update or add some data and return the spreadsheet to me. That&rsquo;s a terrible way to update data, but for various reasons, I&rsquo;m sure many readers have found themselves in a similar situation. It happens a lot when I&rsquo;m working with a client who has multiple versions of data in different spreadsheets, and I&rsquo;m tasked with tidying it all up, standardizing formatting and importing it into a relational database. I have to start with one spreadsheet, then insert and/or update the differences from the others.</p>
+
+<p>What I want to do is either insert only the new rows, or insert the new rows and update the changed rows (depending on the scenario). There are several ways to accomplish both tasks.</p>
+
+<h3 id="toc_2">Inserting only new rows</h3>
+
+<p>If I want to insert only the rows that will not violate the unique index, I can:</p>
+
+<ul>
+<li><p>Delete duplicate rows from <code>t2</code> and insert everything that remains:</p>
+
+<pre>delete t2 from t2 inner join t1 on a = d;
+insert into t1 select * from t2;</pre>
+
+<p>The first statement deletes the first row from t2; the second inserts the remaining two. The disadvantage of this approach is that it&rsquo;s not transactional, since the tables are MyISAM and there are two statements. This may not be an issue if nothing else is altering either table at the same time. Another disadvantage is that I just deleted some data I might want in subsequent queries.</p></li>
+
+<li><p>Use an <a href="/blog/2005/09/23/how-to-write-a-sql-exclusion-join/">exclusion join</a>. This query should work on any RDBMS that supports <code>LEFT OUTER JOIN</code>:</p>
+
+<pre>insert into t1 (a, b, c)
+select l.d, l.e, l.f
+from t2 as l
+    left outer join t1 as r on l.d = r.a
+where r.a is null;</pre>
+
+<p>The downside to this method may be lower efficiency, depending on the data and how complex the join needs to be. The join is done up front, which can be a lot of work on large datasets, especially when only a few duplicate rows might exist.</p></li>
+
+<li><p>Use <code>INSERT IGNORE</code> to ignore the duplicate rows:</p>
+
+<pre>insert ignore into t1 select * from t2;</pre>
+
+<p>The duplicate rows are ignored. Note that <em>MySQL does not do a generic &ldquo;duplicate-check&rdquo; to see if the rows contain duplicate values</em> when determining if a row is a duplicate and should be ignored. It only ignores rows that violate a unique index. If I have no unique index on a column, <code>IGNORE</code> has no effect.</p>
+
+<p>When using <code>IGNORE</code>, MySQL prints information about duplicates:</p>
+
+<pre>Query OK, 2 rows affected (0.02 sec)
+Records: 3  Duplicates: 1  Warnings: 0</pre>
+
+<p>This method is probably the fastest of all, especially if very few duplicate keys exist in <code>t2</code>. MySQL simply tries to insert every row and keeps going when one fails. The disadvantage is that <code>IGNORE</code> is a proprietary, non-standard extension.</p></li>
+</ul>
+
+<h3 id="toc_3">Inserting new rows and updating existing rows</h3>
+
+<p>Now suppose I want to insert new rows <em>and</em> update existing rows. Again, there are several ways to do it, in one or two steps:</p>
+
+<ul>
+<li><p>Use standard SQL in a two-step process to insert new rows and update existing rows. The following is one way to do it, but it&rsquo;s not the best way:</p>
+
+<pre>insert into t1 (a, b, c)
+select l.d, l.e, l.f
+from t2 as l
+    left outer join t1 as r on l.d = r.a
+where r.a is null;
+update t1 as l
+    inner join t2 as r on l.a = r.d
+    set l.b = r.e, l.c = r.f;</pre>
+
+<p>The benefit to this approach is standards compliance. This should work on a wide variety of database platforms.</p>
+
+<p>The downside is poor efficiency. Imagine the datasets are huge and there are only a few duplicate rows. The first statement inserts the (huge number of) new rows by joining the two huge datasets together. The next statement joins them together again, except this time the join is even bigger because of all the new rows in <code>t1</code>! And worse yet, it updates the rows that just got inserted, which is certainly not needed. It is far better to do the update first, which should only affect a few rows, then insert the new rows:</p>
+
+<pre>update t1 as l
+inner join t2 as r on l.a = r.d
+set l.b = r.e, l.c = r.f;
+insert into t1 (a, b, c)
+    select l.d, l.e, l.f
+    from t2 as l
+        left outer join t1 as r on l.d = r.a
+    where r.a is null;</pre>
+
+<p>This is far more efficient, but it still might be very bad. It could lock the tables for a long time with large datasets, and like all two-step processes, it is not transactional.</p></li>
+
+<li><p>Use non-standard MySQL extensions to make the two-step process more efficient. MySQL allows multiple-table updates, which can be used to mark which rows are duplicates during the <code>UPDATE</code>, eliminating the need for an exclusion join in the <code>INSERT</code>. To accomplish this, <code>t2</code> needs a new column to record its &ldquo;status,&rdquo; which I will call <code>done</code>.</p>
+
+<pre>alter table t2 add done tinyint null;
+update t1
+inner join t2 on t1.a = t2.d
+set t1.b = t2.e,
+    t1.c = t2.f,
+    t2.done = 1;
+insert into t1 (a, b, c)
+select d, e, f from t2
+where done is null;</pre>
+
+<p>This can be significantly more efficient on the large datasets I&rsquo;ve been imagining. The downside to this approach is non-portability to other database platforms.</p></li>
+
+<li><p>Use MySQL&rsquo;s non-standard <code>ON DUPLICATE KEY UPDATE</code> extension to accomplish the insert and update in a single step. As with the non-standard <code>INSERT IGNORE</code> above, this is probably the fastest method:</p>
+
+<pre>insert into t1(a, b, c)
+select d, e, f from t2
+on duplicate key update b = e, c = f;</pre>
+
+<p>There are other ways to write this statement, for example using the <code>VALUES</code> function, which can help simplify complex queries by referring to the value which would have been inserted into the given column:</p>
+
+<pre>insert into t1(a, b, c)
+select d, e, f from t2
+on duplicate key update b = values(b), c = values(c);</pre>
+
+<p>The disadvantage to this approach is lack of portability, of course. Inserting and updating in a single statement is highly non-standard.</p></li>
+</ul>
+
+<h3 id="toc_4">Complexities, incompatibilities, and bugs</h3>
+
+<p>If the queries above look like perfect solutions, don&rsquo;t be fooled. I chose my data and table structures to demonstrate successful scenarios. There are many ways things can fail or be confusing:</p>
+
+<ul>
+<li>Some versions of MySQL simply don&rsquo;t support the features I discussed above. Check the <a href="http://dev.mysql.com/doc/">MySQL documentation</a> for details about which features are available on any given version.</li>
+<li>Some versions of MySQL have bugs that involve the above types of queries. For example, version 4.1.7 doesn&rsquo;t like queries of the form <code>INSERT... SELECT... ON DUPLICATE KEY UPDATE</code> at all. It will complain about a syntax error. It allows inserting literal values, but not the results of a <code>SELECT</code> statement. In these buggy versions, the MySQL features may be available but not usable.</li>
+
+<li><p>Some versions of MySQL get confused by the <code>VALUES</code> syntax I demonstrated above. If your source and destination tables have similar column names, you may have this problem. For example, in MySQL 5.0.15-log with tables that have the same column names,</p>
+
+<pre>insert into t1 (a, b, c)
+select a, b, c
+from t2
+on duplicate key update b = values(b);
+ERROR 1052 (23000): Column 'b' in field list is ambiguous</pre></li>
+
+<li><p>Multi-table updates can be tricky if there is ambiguity in column names. Using an alias, such as &lsquo;r&rsquo; for &lsquo;right&rsquo; and &lsquo;l&rsquo; for &lsquo;left&rsquo; as I did above, can help.</p></li>
+
+<li><p>MySQL reports values for the number of rows affected. When an operation affects rows in multiple tables, or when a duplicate row causes an update to existing values, the rows-affected statistics change in odd ways. The MySQL manual explains how this works, so I don&rsquo;t want to go into it; I just want to point out that you should expect odd values.</p></li>
+
+<li><p>The above techniques all assume <code>t2</code> contains no duplicate values of <code>d</code>, which is enforced in my examples by the primary key on that column. If this is not the case, it becomes significantly more difficult to write the queries. It may be best to clean up <code>t2</code> and create a primary key on the appropriate column(s), to avoid these problems.</p></li>
+
+<li><p>I have caused crashes and binary log corruption in MySQL 4.1.7 with a combination of temporary tables, subqueries, and <code>ON DUPLICATE KEY UPDATE</code>. I think this is a bug with this specific version, but I suggest testing everything on a <strong>non-production</strong> database server, even if it seems harmless. The statements that caused crashes for me seemed very innocuous.</p></li>
+</ul>
+
+<h3 id="toc_5">Choosing a technique</h3>
+
+<p>Which method to use largely depends on requirements. If the software must support multiple database backends or versions, perhaps the generic, standard queries are the best bet. If performance is the goal and the queries don&rsquo;t need to be portable, I see no reason not to use the solution that performs best. If the software must support multiple database backends <em>and</em> performance is critical, there&rsquo;s probably no way to avoid writing different queries for each supported backend.</p>
+
+<p>I belive fully portable or &ldquo;platform-independent&rdquo; SQL is mostly a myth. Writing generic &ldquo;standard&rdquo; SQL to the lowest common denominator almost certainly results in under-utilizing the RDBMS&rsquo;s abilities. Getting the most from my software is more important than dreaming of &ldquo;platform-independent&rdquo; queries.</p>
+
+<h3 id="toc_6">Summary</h3>
+
+<p>Sometimes a proprietary extension to standards provides something unavailable by any other means. In this article I have discussed several ways to use such non-standard extensions in MySQL for performance and convenience. Divergence from standards is a double-edged sword. Not only does it potentially make code non-portable, it can encourage mediocrity by teaching bad habits instead of teaching people the &ldquo;right&rdquo; way to do things. For example, updating multiple tables in a single statement, or inserting and updating at the same time, are definitely strange and ugly things to do. As in life, the most important thing is to find a good balance and determine which criteria really matter.</p>
+
+<p>If this article was useful to you, you should <a href="http://www.xaprb.com/index.xml">subscribe</a> to stay current with my upcoming articles. It&rsquo;s free and convenient.</p>
+
+<p><strong>Edit 2006-02-26</strong> I forgot to cross-reference <a href="/blog/2005/09/25/insert-if-not-exists-queries-in-mysql/">INSERT IF NOT EXISTS queries in MySQL</a>, a related post where I explain some variations on a particular scenario &ndash; for example, where there is no unique index on the column you want to avoid duplicating, or you want to allow only <em>n</em> duplicates.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

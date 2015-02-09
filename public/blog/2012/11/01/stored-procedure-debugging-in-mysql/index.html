@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Stored procedure debugging in MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Stored procedure debugging in MySQL</h1>
+  <span class="post-date">Thu, Nov 1, 2012 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I was just skimming through the latest &ldquo;Meet the Experts&rdquo; podcast from Oracle, whose topic is <a href="http://sqlhjalp.blogspot.com/2012/11/debugging-stored-routines-in-mysql.html">debugging stored routines in MySQL</a>. The tl;dr (tl;dl?) version is if you&rsquo;re working with Windows and .NET, you can install a Visual Studio plugin that lets you debug stored routines in the server via the .NET connection libraries. That&rsquo;s pretty nice, for those who are using that platform. The podcast is only a few minutes, so if you&rsquo;re interested, by all means listen to it, or take a look at the <a href="http://dev.mysql.com/doc/refman/5.5/en/connector-net-visual-studio-debugger.html">documentation</a>.</p>
+
+<p>The ideal way to debug stored routines would be an API in the server, but that doesn&rsquo;t exist. Nevertheless, I remembered having seen some sort-of implementations of debugging at times in the past. My memory was that they used some workarounds to inject debugging code into the routines, using some things like special tables to communicate the values of variables and so on. I searched my quick-snippets file and did a brief web search, and turned up a lot more options than I remembered! In addition to the feature explained in the Oracle podcast, these products also offer stored procedure debugging of one type or another:</p>
+
+<ul>
+<li><a href="http://www.upscene.com/products.hopper.index.php">Hopper</a> (<a href="http://www.upscene.com/products/hopper/demos/hopper_mysql_beta1.htm">beta demo</a>)</li>
+<li><a href="http://marketplace.eclipse.org/content/illatis-stepin-debugger-mysql-procedures">The Illatis Stepin</a> plugin for Eclipse</li>
+<li><a href="http://mydebugger.com/">MyDebugger</a></li>
+<li><a href="http://www.devart.com/dbforge/mysql/studio/demostutorials/debugging.html#debugging">Devart dbForge</a></li>
+<li>And, if you want to do it yourself, here&rsquo;s a pretty thorough walk-through from <a href="http://www.bluegecko.net/mysql/debugging-stored-procedures/">BlueGecko</a></li>
+</ul>
+
+<p>I haven&rsquo;t used any of the above, and I&rsquo;m not endorsing them, but I thought it might be helpful to have a list in one place. Did I miss any? Please add more information in the comments.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

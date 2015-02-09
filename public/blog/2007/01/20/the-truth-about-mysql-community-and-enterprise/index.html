@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The truth about MySQL Community and Enterprise &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">The truth about MySQL Community and Enterprise</h1>
+  <span class="post-date">Sat, Jan 20, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>Late in 2006 MySQL decided to move to a split distribution model, Community and Enterprise. A lot has (apparently) changed since then, yet nothing has really changed since then. These things remain true:</p>
+
+<ul>
+<li>MySQL is freely available in both source and binary form &ndash; free as in freedom, and free as in beer.</li>
+<li>The MySQL community continues to get every single bug fix for free.</li>
+<li>The only real change the MySQL community sees is less frequent <em>official binary builds</em>. If you want the bleeding-edge code for which there is no official binary build, you can build it yourself.</li>
+</ul>
+
+<p>What is unclear about that?</p>
+
+<h3 id="toc_0">The background</h3>
+
+<p>Some time before they officially announced this decision, one of the MySQL folks kindly gave me a call about the upcoming change. I was quite honored to get such a call &ndash; it communicated respect and genuine care for the community and for me as an individual (I am not a paying Enterprise customer). And I have to say, rarely have I been approached about a change like this with such an open mind and humility. Normally I&rsquo;m accustomed to companies making decisions and just announcing them. The employee who called me, who shall remain nameless, simply told me about the internal discussions and asked for my feedback.</p>
+
+<p>It took several minutes on the phone for me to get a sense of what they were proposing. Finally I gave my opinions, which I&rsquo;m trying now to recall:</p>
+
+<ul>
+<li>I never like when anyone puts the word &ldquo;enterprise&rdquo; in their product. It is marketing speak. But I don&rsquo;t care, let them name it what they like.</li>
+<li>I thought the decision would partially be a false economy because even though they&rsquo;d save on the overhead of building binaries, I thought forking the codebase would be more work.</li>
+<li>I thought the decision would confuse people.</li>
+<li>I thought there would be an inevitable public slaying on Slashdot.</li>
+<li>I thought people would gripe a bit about not getting Community builds, but quickly figure out the changes and settle back to work.</li>
+<li>Finally, I thought the MySQL user community would be very supportive and understanding, since they get a great product for free.</li>
+</ul>
+
+<p>The person who called me agreed in many ways, and as it turns out I was right on some points. But on the last two points I was dead wrong. Judging by public comment, a lot of people (mostly people who make off-topic comments on other people&rsquo;s blog posts) are just not taking the time to read, think, and understand what&rsquo;s changed. There are still people spreading misinformation all over the place.</p>
+
+<p>And I now slightly regret my decision not to comment on the changes. Though this is a technically focused blog, it&rsquo;s also very important for me to promote Free-As-In-Freedom Software through its pages, and I let that chance pass. MySQL was kind enough to solicit my feedback in advance, and I didn&rsquo;t return the favor by helping people understand exactly what was changing.</p>
+
+<p>Having met many of the MySQL employees in person at MySQL Camp, including the lead developers and founders, I have developed a personal loyalty to them as well as the company and product. I hope this gets straightened out soon.</p>
+
+<p>And I want to take a chance to ask the MySQL employees to stop apologizing for being unclear. You were clear. It is not your fault some idiots jumped to conclusions and spread misinformation. It is incumbent upon every individual to assure he or she is speaking truthfully, by going to the source and taking a few minutes to get the facts straight. A lot of people didn&rsquo;t do that, and it is not your fault. You can&rsquo;t take responsibility for people who can&rsquo;t be bothered to think.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

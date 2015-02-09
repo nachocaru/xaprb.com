@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL&#39;s FEDERATED storage engine: Part 1 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL&#39;s FEDERATED storage engine: Part 1</h1>
+  <span class="post-date">Mon, Jan 29, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p><a href="http://dev.mysql.com/doc/refman/5.0/en/federated-storage-engine.html">MySQL&rsquo;s <code>FEDERATED</code> storage engine</a> is a fascinating example of the flexibility gained by abstracting the storage engine layer away from the rest of the server. <code>FEDERATED</code> tables allow you to access a table on another server as though it exists on the local server. However, the manual doesn&rsquo;t say much about how it really works, MySQL&rsquo;s only developer article about it is <a href="http://dev.mysql.com/tech-resources/articles/mysql-federated-storage.html">vague and unrealistic</a>, and there are more questions than answers on the net about the engine&rsquo;s features and behavior. This series of articles will help you understand the engine and its uses. This first article demonstrates its behavior with a series of experimental queries.</p>
+
+<p>At the end of this article, you will have a clear picture of how the storage engine accesses data on the remote server. In the next article I give a <a href="http://www.xaprb.com/blog/2007/01/31/mysqls-federated-storage-engine-part-2/">summary of the <code>FEDERATED</code> engine&rsquo;s strengths and weaknesses</a>, and what it&rsquo;s most useful for.</p>
+
+<p>Note: Recently I seem to be accidentally writing about some similar topics as Giuseppe Maxia! Maybe we were separated at birth? I wrote this series before noticing that Giuseppe has written the <a href="http://www.oreillynet.com/pub/a/databases/2006/08/10/mysql-federated-tables.html">MySQL Federated Tables Missing Manual</a>. We cover a lot of different material, so you should read his article, too.</p>
+
+<h3 id="toc_0">Setup</h3>
+
+<p>The remote server I&rsquo;m using is 5.0.27 on Windows; the local server is 5.0.24a on Ubuntu. On the remote server, I created the following table:</p>
+
+<pre>create table fed_remote(
+   i int not null primary key,
+   j int not null
+);
+insert into fed_remote(i, j)
+   values(1, 4), (2, 5), (3, 6);</pre>
+
+<h3 id="toc_1">Creating the federated tables on the local server</h3>
+
+<p>According the the manual, the local table has to be created exactly the same as the remote table. However, this turns out not to be quite true. Indexes don&rsquo;t need to match. <code>NULL</code>ability doesn&rsquo;t need to match. Data types don&rsquo;t need to match. Umm&hellip; column order doesn&rsquo;t need to match! Wait a second, you don&rsquo;t even have to have the same columns &ndash; and you can mis-name the columns! You can even create a local table with one column <em>based on a remote table with two columns</em>. For that matter, you can give the local table three columns, and when you <code>SELECT</code> from the table, the columns which have no data on the remote server simply get filled in with default values!</p>
+
+<p>As I experimented with different options to the <code>CREATE TABLE</code>, I began to suspect that the columns are strictly positional. For example, if I create a table with only the <code>j</code> column and then select the data from it, I get the data from the <code>i</code> column on the remote server.</p>
+
+<p>I think it&rsquo;s safe to say the rules are a little unclear at this point. You should probably not rely on any of what I just wrote remaining true forever. I&rsquo;d probably see something different if I tried this on the latest development code, too.</p>
+
+<p>Here&rsquo;s what happens when you create a federated table. To get this data, I enabled the general query log on the remote machine. By the way, I omit the usual status messages about rows affected and so forth, as they mimic exactly what you get from any other storage engine:</p>
+
+<pre>-- Local:
+
+CREATE TABLE fed_local (
+  i int(11) NOT NULL,
+  j int(11) NOT NULL,
+  PRIMARY KEY  (i)
+) ENGINE=FEDERATED
+ CONNECTION='mysql://user:pass@192.168.1.2/test/fed_remote';
+
+-- Remote:
+
+8 Connect     user@tigger.holmes on test
+8 Query       SELECT *  FROM `fed_remote` WHERE  1=0
+8 Quit</pre>
+
+<p>You can see that the statement opened a connection and then closed it on the remote server. This doesn&rsquo;t happen for every query against the table, just for the <code>CREATE</code>. A small clarification to the manual: the remote table must exist before <em>creating</em> the local table, not before <em>accessing</em> it.</p>
+
+<h3 id="toc_2">Connections to the remote server</h3>
+
+<p>As you see above, when I issued the <code>CREATE TABLE</code>, the local server made a normal client connection to the remote server, which issued a query apparently just to check that the table exists and the user has permission to access it.</p>
+
+<p>After this, the first access to the table opens a new connection, which stays open forever and services future requests. This is just a normal client connection, which shows up in the process list. If you kill it on the remote server and then issue another query on the local server, you get &ldquo;ERROR 1030 (HY000): Got error 1 from storage engine.&rdquo; If you then issue another query, the connection is re-established.</p>
+
+<p>More connections will be opened in some cases, as you&rsquo;ll see below.</p>
+
+<p>Connections are standard client connections, which means they are subject to normal rules about inactivity timeouts and other options on the remote server.</p>
+
+<h3 id="toc_3">How data is fetched from the remote server</h3>
+
+<p>According to the manual, the storage engine opens a client connection to the remote server and then does <code>SELECT * FROM tbl_name</code> on the remote server. This might make you think the storage engine fetches the entire contents of the data and caches it locally, but that&rsquo;s not the case, as you&rsquo;ll see below. The data is fetched a row at a time, and all columns are included every time, whether they are all needed or not. This is a missed optimization in my opinion. It transfers unnecessary data and defeats covering indexes, for one thing. However, I assume it&rsquo;s done because the local copy of the fetched row has to be re-constituted into an entire row in memory.</p>
+
+<p>Perhaps it&rsquo;d be more efficient to fetch only the needed columns, then populate the missing columns with <code>NULL</code>s. I haven&rsquo;t looked at the code, so don&rsquo;t give my opinion too much weight!</p>
+
+<h3 id="toc_4">Some simple queries</h3>
+
+<p>Let&rsquo;s look at a query or two:</p>
+
+<pre>-- Local:
+
+select * from fed_local;
+
+-- Remote:
+
+9 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+9 Query       SELECT `i`, `j` FROM `fed_remote`</pre>
+
+<p>The first thing that always happens on the remote server is a <code>SHOW TABLE STATUS</code>. In fact, for short queries, this seems to show up in the processlist for longer than the query itself. Otherwise this query holds no surprises.</p>
+
+<pre>-- Local:
+
+select i from fed_local;
+
+-- Remote:
+
+9 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+9 Query       SELECT `i`, `j` FROM `fed_remote`</pre>
+
+<p>As I said already, every column is always fetched from the remote server, whether it&rsquo;s needed or not.</p>
+
+<pre>-- Local:
+
+select i from fed_local where i = 1;
+
+-- Remote:
+
+9 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+9 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)</pre>
+
+<p>Nothing surprising here, so I&rsquo;ll try something more complicated:</p>
+
+<pre>-- Local:
+
+select i from fed_local where i = (select min(i) from fed_local);
+
+-- Remote:
+
+18 Connect     user@tigger.holmes on test
+ 9 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+18 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+18 Query       SELECT `i`, `j` FROM `fed_remote`
+ 9 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)</pre>
+
+<p>Very interesting! It opened a new connection, scanned the whole table, and then plugged the value 1 into the <code>WHERE</code> clause. I&rsquo;m not terribly surprised by the table scan (obviously the aggregate query can&rsquo;t be pushed through as-is, since the row that results isn&rsquo;t in the local table&rsquo;s row format and therefore isn&rsquo;t compatible with the handler), but I&rsquo;m surprised by the new connection. I suppose if it opens the table more than once in a query, it has to create a new connection. Does it re-use that newly opened connection? It turns out it does; if I re-issue the query, connections 9 and 18 are used again (Brian Aker wrote about <a href="http://krow.livejournal.com/362079.html">connection caching for the <code>FEDERATED</code> engine</a>, if you want to know how it works).</p>
+
+<p>Here&rsquo;s a nasty cross join, which I guess will open the table three times:</p>
+
+<pre>-- Local:
+
+select * from fed_local as f0, fed_local as f1, fed_local as f2;
+
+-- Remote:
+
+19 Connect     user@tigger.holmes on test
+18 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+ 9 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+19 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+18 Query       SELECT `i`, `j` FROM `fed_remote`
+ 9 Query       SELECT `i`, `j` FROM `fed_remote`
+19 Query       SELECT `i`, `j` FROM `fed_remote`</pre>
+
+<p>I guessed right. I&rsquo;ll leave this for a moment and discuss some other things I found out.</p>
+
+<h3 id="toc_5">Remote data is not cached at all</h3>
+
+<p>Rows retrieved from the remote storage don&rsquo;t seem to be cached even for an instant. For example, if you issue a join against a remote table where the local table contains repeated data, the matching rows will be fetched over and over again from the remote table. One consequence is that if something updates the remote table while this is happening, you will see an inconsistent view of it, even within a single query.</p>
+
+<p>Here&rsquo;s an example:</p>
+
+<pre>-- Local:
+
+create table local_nums(i int);
+insert into local_nums(i)
+   values(1), (2), (1);
+
+select fed_local.* from local_nums
+   inner join fed_local using(i);
+
+-- Remote:
+
+SHOW TABLE STATUS LIKE 'fed_remote'
+SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)
+SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 2)
+SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)</pre>
+
+<p>This is a bit surprising. However, if I inserted <code>(1), (1), (2)</code> into the table, there&rsquo;s one less call to the remote server:</p>
+
+<pre>-- Local:
+
+create table local_nums(i int);
+insert into local_nums(i)
+   values(1), (1), (2);
+
+select fed_local.* from local_nums
+   inner join fed_local using(i);
+
+-- Remote:
+
+SHOW TABLE STATUS LIKE 'fed_remote'
+SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)
+SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 2)</pre>
+
+<p>I don&rsquo;t know what to say about this, except it strikes me as non-optimal. I think either transforming the remote query into a <code>WHERE... IN()</code>, or putting the returned rows into a hashtable to avoid repeated queries to the remote server, might be better. As it stands, not caching the returned data even for the duration of a single query is both inefficient and a little scary.</p>
+
+<h3 id="toc_6">What about IN() queries?</h3>
+
+<p>This exercise prompted me to see how <code>IN()</code> and similar queries are performed. This is kind of interesting:</p>
+
+<pre>-- Local:
+
+select * from fed_local where i in(1, 2);
+
+-- Remote:
+
+19 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+19 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  ( (`i` = 1) ) AND ( (`i` &lt;= 1) )
+19 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  ( (`i` = 2) ) AND ( (`i` &lt;= 2) )</pre>
+
+<p>That&rsquo;s a little weird. There&rsquo;s nothing incorrect about it, but the <code>WHERE</code> clause is sort of strange.</p>
+
+<p>The fact that it uses two queries is a bit more bothersome. I would think the <code>WHERE</code> clause could be pushed through to the remote server un-altered, as long as certain criteria are met (e.g. no references to other tables). As it turns out, <code>WHERE</code> clauses aren&rsquo;t handled optimally. You&rsquo;ll see this more clearly in some later examples.</p>
+
+<p>What about a <code>BETWEEN</code> query?</p>
+
+<pre>-- Local:
+
+select * from fed_local where i between 1 and 3;
+
+-- Remote:
+
+19 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+19 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  ( (`i` >= 1) ) AND ( (`i` &lt;= 3) )</pre>
+
+<p>I don&rsquo;t really understand why that query&rsquo;s <code>WHERE</code> clause made it through okay, but the <code>IN()</code> query got split into two. I suppose it has to do with the optimizer rewriting the <code>IN()</code> list on the local machine.</p>
+
+<p>Do <code>LIMIT</code> clauses get sent to the remote server?</p>
+
+<pre>-- Local:
+
+select * from fed_local limit 1;
+
+-- Remote:
+
+19 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+19 Query       SELECT `i`, `j` FROM `fed_remote`</pre>
+
+<p>No, they do not. Rows are limited on the local server after retrieving everything across the network. That&rsquo;s not very efficient.</p>
+
+<h3 id="toc_7">Indexes</h3>
+
+<p>How are indexes used? Are index statistics available to the optimizer for making decisions about the best query plan? It turns out they aren&rsquo;t, but the query optimizer on the local machine tries to optimize the query anyway. Index definitions, but not index statistics, seem to be available to the optimizer on the local machine.</p>
+
+<p>Let&rsquo;s see this in action. First, I&rsquo;ll demonstrate that dropping an index on the local table makes the query behave differently. To drop the index, I have to drop and re-create the federated table, because there&rsquo;s no support for <code>ALTER TABLE</code> on federated tables:</p>
+
+<pre>-- Local:
+
+drop table fed_local;
+
+CREATE TABLE fed_local (
+  i int(11) NOT NULL,
+  j int(11) NOT NULL
+) ENGINE=FEDERATED
+ CONNECTION='mysql://user:pass@192.168.1.2/test/fed_remote';
+
+select * from fed_local where i = 1;
+
+-- Remote:
+
+20 Connect     user@tigger.holmes on test
+20 Query       SELECT *  FROM `fed_remote` WHERE  1=0
+20 Quit       
+21 Connect     user@tigger.holmes on test
+21 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+21 Query       SELECT `i`, `j` FROM `fed_remote`</pre>
+
+<p>Why didn&rsquo;t the <code>WHERE</code> clause get pushed through to the remote server? Apparently the query optimizer thinks it should strip the <code>WHERE</code> clause if the column isn&rsquo;t indexed. As it happens, the remote table still has an index on that column, so in fact a table scan isn&rsquo;t needed on the remote server. Even if it were, it would be much better to scan and eliminate rows on the remote server than to send them all over the network and then eliminate them. I&rsquo;m sure it&rsquo;s just a matter of time before this is addressed, if it isn&rsquo;t already.</p>
+
+<p>This brings up a related point: what happens when I <code>EXPLAIN</code> a query?</p>
+
+<pre>-- Local:
+
+explain select * from fed_local where i = 5\G
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: fed_local
+         type: ALL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: 3
+        Extra: Using where
+
+-- Remote:
+
+21 Query       SHOW TABLE STATUS LIKE 'fed_remote'</pre>
+
+<p>Interesting &ndash; from the local index definitions (or lack thereof), it decided nothing better than a table scan is possible, and didn&rsquo;t do anything on the remote server but check for table existence. (Notice that I used <code>i = 5</code>, which will return no rows). If I re-add the primary key as it exists on the remote server, it&rsquo;s a little different:</p>
+
+<pre>-- Local:
+
+explain select * from fed_local where i = 5\G
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: NULL
+         type: NULL
+possible_keys: NULL
+          key: NULL
+      key_len: NULL
+          ref: NULL
+         rows: NULL
+        Extra: Impossible WHERE noticed after reading const tables
+
+-- Remote:
+
+23 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+23 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 5)</pre>
+
+<p>You might think, from looking at the result, that it has index statistics, but then you see it actually issues the query you&rsquo;re trying to <code>EXPLAIN</code> on the remote server.</p>
+
+<p>Notice what&rsquo;s happening: you might think you&rsquo;re just asking for a query plan, but in reality it&rsquo;s executing the query on the remote server. Warning! Don&rsquo;t <code>EXPLAIN</code> queries on federated tables; they get executed! Fortunately there&rsquo;s no <code>EXPLAIN DELETE</code>. That would be bad.</p>
+
+<h3 id="toc_8">Subqueries</h3>
+
+<p>Because I can&rsquo;t resist harping on this, here&rsquo;s another demonstration of how column subqueries in the <code>IN()</code> clause are badly optimized on MySQL:</p>
+
+<pre>-- Local:
+
+select * from fed_local where i in(select i from local_nums);
+
+-- Remote:
+
+23 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+23 Query       SELECT `i`, `j` FROM `fed_remote`
+
+-- Local:
+
+select * from local_nums where i in (select i from fed_local);
+
+Remote:
+
+23 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+23 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)
+23 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 2)
+23 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  (`i` = 1)</pre>
+
+<p>Moral of the story, as ever: use joins, not subqueries, for this type of query.</p>
+
+<h3 id="toc_9">What about writing to the remote table?</h3>
+
+<p>Let&rsquo;s see what happens with some queries that write data to the remote table:</p>
+
+<pre>-- Local:
+
+insert into fed_local(i, j) values(4, 7);
+
+-- Remote:
+
+26 Query       INSERT INTO `fed_remote` (i, j) VALUES  (4, 7)</pre>
+
+<p>The rows show up okay on the remote system; the insert was fine. The interesting thing here is the insert was a single query on the remote system. No call to <code>SHOW TABLE STATUS</code> first. I&rsquo;m curious about duplicate keys; how are they handled?</p>
+
+<pre>-- Local:
+
+insert into fed_local(i, j) values(4, 7);
+ERROR 1296 (HY000): Got error 10000
+   'Error on remote system: 1062: Duplicate entry
+   '4' for key 1' from FEDERATED
+
+-- Remote:
+
+26 Query       INSERT INTO `fed_remote` (i, j) VALUES  (4, 7)</pre>
+
+<p>A reasonable error, though perhaps something could be done about the proliferation of error messages and codes there. What about inserting multiple rows?</p>
+
+<pre>-- Local:
+
+insert into fed_local(i, j) values(5, 7), (6, 7);
+Query OK, 2 rows affected (0.11 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+-- Remote:
+
+26 Query       INSERT INTO `fed_remote` (i, j) VALUES  (5, 7)
+26 Query       INSERT INTO `fed_remote` (i, j) VALUES  (6, 7)</pre>
+
+<p>So the storage engine actually made one call per row. The manual mentions that this will happen; there is no speedup from making bulk inserts. What happens when I omit a column in the INSERT?</p>
+
+<pre>-- Local:
+
+insert into fed_local(i) values(8);
+ERROR 1296 (HY000): Got error 10000 'Error on remote system: 1364: Field 'j' doesn't have a default value' from FEDERATED
+
+-- Remote:
+
+26 Query       INSERT INTO `fed_remote` (i) VALUES  (8)</pre>
+
+<p>The storage engine deferred error checking to the remote server, which feels inconsistent to me, since it doesn&rsquo;t defer index checking. I also find it odd that columns can be omitted from such a query, yet the engine always <em>reads</em> all columns even when not all columns are specified for a <code>SELECT</code>.</p>
+
+<h3 id="toc_10">Deletes</h3>
+
+<p>Here&rsquo;s what happens when you delete rows:</p>
+
+<pre>-- Local:
+
+delete from fed_local limit 1;
+
+-- Remote:
+
+29 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+29 Query       SELECT `i`, `j` FROM `fed_remote`
+29 Query       DELETE  FROM `fed_remote` WHERE i = 1 AND j = 4 LIMIT 1</pre>
+
+<p>It reads before it deletes. What happens when you delete by primary key?</p>
+
+<pre>-- Local:
+
+delete from fed_local where i = 2;
+
+-- Remote:
+
+29 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+29 Query       SELECT `i`, `j` FROM `fed_remote` WHERE  ( (`i` = 2) ) AND ( (`i` &lt;= 2) )
+29 Query       DELETE  FROM `fed_remote` WHERE i = 2 AND j = 5 LIMIT 1</pre>
+
+<p>In fact it always seems to read first and then put a LIMIT clause on the DELETE. What happens when you delete multiple rows? There are three rows where j = 7 in the table.</p>
+
+<pre>-- Local:
+
+delete from fed_local where j = 7;
+
+-- Remote:
+
+29 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+29 Query       SELECT `i`, `j` FROM `fed_remote`
+29 Query       DELETE  FROM `fed_remote` WHERE i = 4 AND j = 7 LIMIT 1
+29 Query       DELETE  FROM `fed_remote` WHERE i = 5 AND j = 7 LIMIT 1
+29 Query       DELETE  FROM `fed_remote` WHERE i = 6 AND j = 7 LIMIT 1</pre>
+
+<p>It looks like <code>DELETE</code> isn&rsquo;t very efficient with more than one row.</p>
+
+<h3 id="toc_11">Updates</h3>
+
+<p>Updates work about the same as deletes: it reads the rows and then issues <code>UPDATE</code> statements for each, one at a time, with all columns included:</p>
+
+<pre>-- Local:
+
+update fed_local set j = 5;
+
+-- Remote:
+
+29 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+29 Query       SELECT `i`, `j` FROM `fed_remote`
+29 Query       UPDATE `fed_remote` SET i = 3, j = 5 WHERE i = 3 AND j = 6
+29 Query       UPDATE `fed_remote` SET i = 7, j = 5 WHERE i = 7 AND j = 8
+29 Query       UPDATE `fed_remote` SET i = 8, j = 5 WHERE i = 8 AND j = 8
+29 Query       UPDATE `fed_remote` SET i = 9, j = 5 WHERE i = 9 AND j = 8
+29 Query       UPDATE `fed_remote` SET i = 10, j = 5 WHERE i = 10 AND j = 8</pre>
+
+<p>No real surprises there; I&rsquo;m getting accustomed to that. I was sort of expecting to see a <code>LIMIT</code> on each query, though.</p>
+
+<p>There&rsquo;s a special case for <code>UPDATE</code>s, though: <code>TIMESTAMP</code> columns. What happens to them &ndash; do they auto-update to <code>CURRENT_TIMESTAMP</code> as expected? To find out, I added the column on the remote table, then dropped and re-created the local table with the new column definition added. The <code>UPDATE</code> statement sets them to their present value, so they don&rsquo;t auto-update:</p>
+
+<pre>-- Local:
+
+update fed_local set j = 5;
+
+-- Remote:
+
+35 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+35 Query       SELECT `i`, `j`, `ts` FROM `fed_remote`
+35 Query       UPDATE `fed_remote` SET i = 3, j = 5, ts = '2007-01-26 22:18:52' WHERE i = 3 AND j = 6 AND ts = '2007-01-26 22:18:52'
+35 Query       UPDATE `fed_remote` SET i = 7, j = 5, ts = '2007-01-26 22:18:52' WHERE i = 7 AND j = 6 AND ts = '2007-01-26 22:18:52'
+35 Query       UPDATE `fed_remote` SET i = 8, j = 5, ts = '2007-01-26 22:18:52' WHERE i = 8 AND j = 6 AND ts = '2007-01-26 22:18:52'
+35 Query       UPDATE `fed_remote` SET i = 9, j = 5, ts = '2007-01-26 22:18:52' WHERE i = 9 AND j = 6 AND ts = '2007-01-26 22:18:52'
+35 Query       UPDATE `fed_remote` SET i = 10, j = 5, ts = '2007-01-26 22:18:52' WHERE i = 10 AND j = 6 AND ts = '2007-01-26 22:18:52'</pre>
+
+<p>So no, <code>TIMESTAMP</code> columns will not behave as you might expect. They act just like normal columns. The auto-update magic doesn&rsquo;t work.</p>
+
+<h3 id="toc_12">REPLACE and cousins</h3>
+
+<p>Next I tried to see how some of the more advanced variations of the basic commands work.</p>
+
+<pre>-- Local:
+
+replace into fed_local(i, j) values(3, 4);
+ERROR 1296 (HY000): Got error 10000 'Error on remote system: 1062: Duplicate entry '3' for key 1' from FEDERATED
+
+-- Remote:
+
+41 Query       INSERT INTO `fed_remote` (i, j) VALUES  (3, 4)</pre>
+
+<p>Not so good! <code>INSERT IGNORE</code> and <code>INSERT.. ON DUPLICATE KEY UPDATE</code> give the same error. Apparently these variations aren&rsquo;t implemented at all.</p>
+
+<h3 id="toc_13">Auto-increment columns</h3>
+
+<p>I mentioned that the <code>mysql</code> client prints out the normal information about rows affected and so on. If I make the primary key <code>AUTO_INCREMENT</code> on the remote server, will I have access to <code>LAST_INSERT_ID()</code> information after an <code>INSERT</code> just as though the table were local, too? To answer this question I logged into the remote server and changed the table definition, then inserted:</p>
+
+<pre>-- Local:
+
+insert into fed_local(j) values(8);
+Query OK, 1 row affected, 1 warning (0.03 sec)
+
++---------+------+----------------------------------------+
+| Level   | Code | Message                                |
++---------+------+----------------------------------------+
+| Warning | 1364 | Field 'i' doesn't have a default value |
++---------+------+----------------------------------------+
+
+-- Remote:
+
+26 Query       INSERT INTO `fed_remote` (j) VALUES  (8)
+
+-- Local:
+
+select last_insert_id();
++------------------+
+| last_insert_id() |
++------------------+
+|                0 |
++------------------+</pre>
+
+<p>So I didn&rsquo;t get a value there. I didn&rsquo;t really expect to, but I want to see if that warning is just caused by the local table not knowing the remote table&rsquo;s column is <code>AUTO_INCREMENT</code>, and I also wonder whether this has anything to do with <code>LAST_INSERT_ID()</code>. To satisfy my curiosity, I dropped and re-created the local table with the <code>AUTO_INCREMENT</code> attribute on that column, then repeated the experiment.</p>
+
+<p>Not surprisingly, the warning went away, but this time I was very surprised to see that <code>LAST_INSERT_ID()</code> worked!</p>
+
+<pre>-- Local:
+
+-- drop and recreate with auto_increment primary key
+insert into fed_local(j) values(1);
+select last_insert_id();
++------------------+
+| last_insert_id() |
++------------------+
+|                8 |
++------------------+
+1 row in set (0.00 sec)</pre>
+
+<p>I didn&rsquo;t expect that at all. Once more it shows that the behavior varies depending on what I told the local server about the remote table in the <code>CREATE TABLE</code> statement, not what the remote table&rsquo;s definition actually is.</p>
+
+<h3 id="toc_14">Tables with too many columns</h3>
+
+<p>I mentioned earlier that if you define the local table with more columns than the remote, it&rsquo;ll work anyway:</p>
+
+<pre>-- Local:
+
+CREATE TABLE fed_local (
+  i int(11) NOT NULL,
+  j int(11) NOT NULL,
+  k int(11) NOT NULL,
+  PRIMARY KEY  (i)
+) ENGINE=FEDERATED
+ CONNECTION='mysql://user:pass@192.168.1.2/test/fed_remote';
+
+select * from fed_local2;
++---+---+---+
+| i | j | k |
++---+---+---+
+| 1 | 4 | 0 |
+... omitted ...
+| 8 | 8 | 0 |
++---+---+---+
+
+insert into fed_local2(j) values(8);
+Query OK, 1 row affected, 1 warning (0.40 sec)
+
+show warnings;
++---------+------+----------------------------------------+
+| Level   | Code | Message                                |
++---------+------+----------------------------------------+
+| Warning | 1364 | Field 'k' doesn't have a default value |
++---------+------+----------------------------------------+
+
+-- Remote:
+
+30 Connect     user@tigger.holmes on test
+30 Query       SELECT *  FROM `fed_remote` WHERE  1=0
+30 Quit       
+31 Connect     user@tigger.holmes on test
+31 Query       SHOW TABLE STATUS LIKE 'fed_remote'
+31 Query       SELECT `i`, `j` FROM `fed_remote`
+31 Query       INSERT INTO `fed_remote` (j) VALUES  (8)</pre>
+
+<p>The extra columns don&rsquo;t cause errors, strangely. They just don&rsquo;t get sent over the client connection. However, if I try to insert or update a column that doesn&rsquo;t exist on the remote table, it will throw an error.</p>
+
+<h3 id="toc_15">Privileges</h3>
+
+<p>As far as I can tell, all privileges are defined in terms of the user used for the <code>CONNECTION</code> clause of the <code>CREATE TABLE</code> statement. You might think this is stating the obvious, but who knows. If <code>LAST_INSERT_ID()</code> works but <code>TIMESTAMP</code> columns don&rsquo;t auto-update, who knows.</p>
+
+<p><code>SHOW FULL COLUMNS</code> shows privileges on the local copy of the table, and doesn&rsquo;t ask the remote server what privileges the user has there.</p>
+
+<h3 id="toc_16">Miscellaneous</h3>
+
+<p>Some miscellaneous commands I tried, which all do a <code>SHOW TABLE STATUS</code> on the remote server:</p>
+
+<pre>-- Local:
+
+SHOW TABLE STATUS LIKE 'fed_local';
+SHOW INDEX FROM 'fed_local';
+DESC fed_local;
+SHOW FULL COLUMNS FROM fed_local;
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA;</pre>
+
+<h3 id="toc_17">Summary</h3>
+
+<p>In this article I&rsquo;ve demonstrated a series of queries against a <code>FEDERATED</code> table in MySQL. I&rsquo;ve tried fairly standard queries for all four major types of queries (<code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>), and explored the behavior of some special-case queries, like updating <code>TIMESTAMP</code> columns.</p>
+
+<p>As I ran these queries and observed the results, patterns began to emerge. These reveal how the storage engine works. In the next article in this series, I&rsquo;ll summarize the lessons I learned, and give my opinions on the engine&rsquo;s strengths and weaknesses. This will help interested readers decide whether the <code>FEDERATED</code> storage engine makes sense for a specific use case.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

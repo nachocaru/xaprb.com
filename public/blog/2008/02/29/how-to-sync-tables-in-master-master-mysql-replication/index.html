@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to sync tables in master-master MySQL replication &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to sync tables in master-master MySQL replication</h1>
+  <span class="post-date">Fri, Feb 29, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Suppose you have a master-master replication setup, and you know one of the tables has the wrong data. How do you re-sync it with the other server?</p>
+
+<p><strong>Warning: don&rsquo;t just use any tool for this job</strong>! You may destroy your good copy of the data.</p>
+
+<p>If your table is large, you&rsquo;ll probably want to use a tool that can smartly find the differences in a very large dataset, and fix only the rows that need to be fixed. There are several tools that are either able to do this, or claim to be able to do this. However, most of them are not replication-aware, and are likely to either <strong>break replication or destroy data</strong>.</p>
+
+<p>To see why this is, let&rsquo;s look at a typical scenario. You have server1 and server2 set up as co-masters. On server1, your copy of sakila.film has correct data. On server2, somehow you are missing a row in that table. A hypothetical sync tool will compare the two copies of the data and find the missing row, then insert it on server2. This INSERT statement will flow through replication to server1, where it will cause a duplicate key error and stop replication.</p>
+
+<p>You can probably think of many other scenarios with lots of bad side effects, so I won&rsquo;t list any more. I&rsquo;ll leave it at this: when you are synchronizing data on a slave (even if it is also a master), you must not change data on the slave. Changing data on the slave can cause so much trouble in so many different ways! The correct way to do this is to make the changes on the master, and let them flow through replication to the slave.</p>
+
+<p>As far as I know, there is only one tool that is capable of doing this. It is mk-table-sync, which is part of <a href="http://code.google.com/p/maatkit/">Maatkit</a>. However, even this tool will let you point the gun at your foot and pull the trigger, if you don&rsquo;t use it correctly.</p>
+
+<p>The correct way to sync a master-master setup with mk-table-sync is with the <code>--synctomaster</code> option, which tells it to make changes on the master:</p>
+
+<pre>mk-table-sync --synctomaster h=server2,D=sakila,t=film</pre>
+
+<p>Notice that I&rsquo;m connecting to the slave, but instructing it to make changes on the master. (Yes, it is able to find the master by inspecting the slave).</p>
+
+<p>If you do the following, you&rsquo;ll probably cause problems:</p>
+
+<pre>mk-table-sync h=server1,D=sakila,t=film h=server2</pre>
+
+<p>I&rsquo;ve just updated the documentation to point out the subtleties with master-master replication. However, you should always keep in mind: it&rsquo;s not just master-master replication. <em>Any</em> replication configuration is best synchronized by making the changes on the master, and you should <em>always</em> avoid changing data on a slave &ndash; even to &ldquo;fix&rdquo; the slave. I might also add a feature to mk-table-sync to warn you when it detects that you are trying to change data on a slave.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

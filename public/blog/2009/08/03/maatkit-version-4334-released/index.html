@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Maatkit version 4334 released &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Maatkit version 4334 released</h1>
+  <span class="post-date">Mon, Aug 3, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  <p><a href="http://code.google.com/p/maatkit/downloads/list">Maatkit version 4334 is ready for download</a>. I see that I missed posting a release announcement about last month&rsquo;s release of Maatkit. I&rsquo;ll try to cover the important bits about the last two releases here. Daniel has been posting the release announcements to the mailing list recently, so I&rsquo;ll do a bit of copy and paste of what he said too.</p>
+
+<p>We&rsquo;ve released two new tools. These are mk-upgrade and mk-log-player. These are not actually new scripts, but we only just added them to the releases. mk-upgrade is the tool that I&rsquo;ve been blogging and writing about recently. We got several people to sponsor the development on it, and some of our clients are using it to mitigate the risk of an upgrade or other change to their production environments. mk-log-player is also an old tool that has actually been around for something like a year, and was used by one of our clients who makes a high-performance appliance. The intention of the tool is to apply a realistic production load to a system in a predictable fashion.</p>
+
+<p>As always, mk-query-digest is one of the tools that we apply the most work to. There are several new features in this release, including the ability to parse binary logs, the ability to optimize memcached traffic, and a ton of work on parsing TCP dumps.</p>
+
+<p>We also realized that when we added configuration files to all the tools, we failed to test on Windows. Naturally, any time you don&rsquo;t test something, that means that you have broken it. And indeed, all the tools immediately failed to run on Windows, but none of us use them on Windows, so we didn&rsquo;t notice it until much later. We have fixed that.</p>
+
+<p>At the last minute this month we also added a section to the documentation in each tool, which explains the risks of using that tool. These are power tools for power users, but I still felt that it was appropriate to disclose all the risks involved with using the tool.</p>
+
+<p>Now on to last month&rsquo;s release.</p>
+
+<p>Last month the big news was that we finished all the cleanup of commandline options that we had been doing for several months previously. A lot of the tools changed in ways that were not backwards compatible as a result of this. However, we have a documented command line convention, and going forward all of the tools will be very consistent and easy to understand. Maatkit users voted for this on the mailing list, so we felt pretty good about making this incompatible change.</p>
+
+<p>I&rsquo;m not going to duplicate the change logs as I usually do in these blog posts. I think I&rsquo;ll leave that for the mailing list announcements. At some point, we are also going to try to get the change logs online on maatkit.org.</p>
+
+<p>Here are links to the two threads on the mailing list that explain the exact changes:</p>
+
+<ul>
+<li><a href="http://groups.google.com/group/maatkit-discuss/t/5dfc2e5b16b657b3">http://groups.google.com/group/maatkit-discuss/t/5dfc2e5b16b657b3</a></li>
+<li><a href="http://groups.google.com/group/maatkit-discuss/t/2825a80522d3aad3">http://groups.google.com/group/maatkit-discuss/t/2825a80522d3aad3</a></li>
+</ul>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

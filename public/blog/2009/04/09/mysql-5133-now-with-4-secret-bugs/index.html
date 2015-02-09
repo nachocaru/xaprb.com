@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL 5.1.33, now with 4 secret bugs &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL 5.1.33, now with 4 secret bugs</h1>
+  <span class="post-date">Thu, Apr 9, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  
+
+<p>Some unsettling things happened in MySQL in the past week or so.</p>
+
+<h3 id="toc_0">New storage engine not mentioned in the changelog</h3>
+
+<p>There&rsquo;s a bit of a storm brewing over at the MySQL Performance Blog, where <a href="http://www.mysqlperformanceblog.com/2009/04/06/mysql-and-ibm/">Vadim reports discovering a new storage engine</a> added without mention in the <a href="http://dev.mysql.com/doc/refman/5.1/en/news-5-1-33.html">5.1.33 changelog</a>. This is in defiance of the policy of not making changes in a production release. And it certainly belongs in the changelog &ndash; but there is no sign that anyone will remedy this problem.</p>
+
+<p>Arjen Lentz, who is ex-MySQL and was Employee #25, <a href="http://bugs.mysql.com/44172">reported a bug on the licensing of this storage engine</a>. To my eyes, the engine&rsquo;s license does not look right to include in a GPL database. Arjen agrees.</p>
+
+<p>But the bug report he entered is now marked secret. This is a great way to draw attention to it. Now I&rsquo;m wondering: does this have something to do with the <a href="http:/http://www.xaprb.com/blogs.mysql.com/kaj/2008/12/01/mysql-51-release-schedule/">MySQL 5.1 community/enterprise split that was announced last year</a> but hasn&rsquo;t been implemented yet? Maybe they&rsquo;re going to unwrap something at the conference this year, <a href="http://jcole.ushttp://www.xaprb.com/blog/archives/2008/04/14/just-announced-mysql-to-launch-new-features-only-in-mysql-enterprise/">like they did last year</a>? I hope not. That was unpleasant and should not be repeated.</p>
+
+<h3 id="toc_1">Three private bug reports in the changelog</h3>
+
+<p>I noticed one private bug report in the 5.1.33 changelog itself. I wrote to the author of the 5.1.33 release announcement about it 3 days ago, but have received no response.</p>
+
+<p>So after seeing that Arjen&rsquo;s report was private, I just clicked through all the bugs mentioned in the 5.1.33 changelog and found two more that I&rsquo;m barred from viewing. Here are all three:</p>
+
+<pre>* The MD5 algorithm now uses the Xfree implementation.
+   (Bug#42434: <a href="http://bugs.mysql.com/42434">http://bugs.mysql.com/42434</a>)
+ * Use of USE INDEX hints could cause EXPLAIN EXTENDED to crash.
+   (Bug#43354: <a href="http://bugs.mysql.com/43354">http://bugs.mysql.com/43354</a>)
+ * MySQL 5.1 crashed with index merge algorithm and merge tables.
+   A query in the MyISAM merge table caused a crash if the index
+   merge algorithm was being used.
+   (Bug#40675: <a href="http://bugs.mysql.com/40675">http://bugs.mysql.com/40675</a>)
+</pre>
+
+<p>What reason can there be to make those private? I would like to encourage MySQL to discontinue this practice except when vitally necessary to protect client data. In my opinion, when someone submits a private bug to a software project that wants to be open-source, there should be a strong push-back. Private client data can go into a private comment; the whole bug report doesn&rsquo;t have to be sealed off. Consider the harm caused by private bug reports: it&rsquo;s now much harder for me to see what changeset fixed the bug. I can&rsquo;t see any of the discussion about it. I can&rsquo;t make any decisions about whether it affects me or clients.</p>
+
+<p>I am concerned about the lack of openness and transparency in all of these issues, and others have told me that they are too.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

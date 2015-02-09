@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A review of O&#39;Reilly&#39;s SQL Hacks &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A review of O&#39;Reilly&#39;s SQL Hacks</h1>
+  <span class="post-date">Tue, Jan 2, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>I recently read O&rsquo;Reilly&rsquo;s <a href="http://www.oreilly.com/catalog/sqlhks/">SQL Hacks</a>, by Andrew Cumming and Gordon Russell. It&rsquo;s an interesting and rewarding mixture of tips and tricks for novice to expert users.</p>
+
+<h3 id="toc_0">Overview</h3>
+
+<p>The book consists of 100 hacks, organized into 12 chapters whose topics and level roughly progress from complete novice to advanced. There are 366 pages of real content. The index is good; for example, on the topic of dates, which is one of the main things I use references for, it has dozens of entries, many pointing to the same entries but worded in a different way, which can be very helpful for such a topic.</p>
+
+<p>I give it 3 out of 5 stars because there&rsquo;s some really good content, but there&rsquo;s also some that shouldn&rsquo;t have made it past technical reviewers, and it could have been better organized and more carefully edited.</p>
+
+<p>If you approach the book as the authoritative source of expertise on how to solve every problem, you&rsquo;ll be disappointed (and if you don&rsquo;t know any better, you might be misled into some very bad solutions to particular problems). If you approach it as the opinions and suggestions of several people, who have things to teach you but are by no means the last word on any given subject, you may get a lot out of it. I did.</p>
+
+<p>Incidentally, many of the hacks appear on this and other websites, but that shouldn&rsquo;t stop you from getting a copy.</p>
+
+<h3 id="toc_1">There&rsquo;s some really good content</h3>
+
+<p>Some of the hacks are great. For example, Hack #24, &ldquo;Multiply Across a Result Set,&rdquo; shows you how to make up for the lack of a built-in <code>PRODUCT()</code> aggregate function with <code>EXP(SUM(LN(col)))</code>. It&rsquo;s simple, but I never thought of it, and now I have it tucked away for easy reference when I need it. That&rsquo;s worth something &ndash; I won&rsquo;t know how much until I need it.</p>
+
+<p>There are also some great hacks about date math, which is always a bear. Having the complex math to find the second Tuesday of the month, or the last Thursday, easily at hand is great.</p>
+
+<p>These and other gems make the book worth both reading through once and owning permanently. It was worth it for me to read once for the great ideas it gave me, like #24, and so I&rsquo;ll know whether it contains a solution to something I&rsquo;m working on. It&rsquo;s worth owning permanently because I want to have it at hand for quick reference when I&rsquo;m solving problems that are tough to memorize, and don&rsquo;t want to derive the solutions from first principles. Date math falls into that category.</p>
+
+<h3 id="toc_2">Reviewers were asleep at the wheel</h3>
+
+<p><strong>Update: I assumed too much below; perhaps the technical reviewers did raise concerns but were not listened to, or something else might have happened. I won&rsquo;t change what I wrote, so you can see my thoughts as I originally wrote them, but I want to say I&rsquo;ve thought better of it now.</strong></p>
+
+<p>Some of the hacks miss obvious good solutions and propose bad ones instead. Take #16, &ldquo;Search for a String Across Columns.&rdquo; The hack is introduced with the question &ldquo;does anyone have yellow anywhere in their room?&rdquo; Then it advocates bludgeoning this query to death with the following blunt instrument:</p>
+
+<pre>select name from bedroom
+where concat(floorcolor, ceilingcolor, wallcolor) like '%yellow%'</pre>
+
+<p>That really makes me cringe. There are many ways to do that better, most obviously:</p>
+
+<pre>select name from bedroom
+where 'yellow' in(floorcolor, ceilingcolor, wallcolor);</pre>
+
+<p>The query isn&rsquo;t written to return results where someone&rsquo;s room has &lsquo;yellow-orange&rsquo; or some other partial string matching. It explicitly states that concatenating, and then using a pattern matching operator, is better because it helps you avoid errors in typing. I disagree with this cost-benefit analysis; it&rsquo;s an ugly kludge that will completely defeat indexing on any system I know of (the book mentions that it &ldquo;will not usually employ an index,&rdquo; which is an understatement).</p>
+
+<p>It also won&rsquo;t work right, because it smashes values together and loses the boundaries between them, which they go on to solve (in most but not all cases, but they don&rsquo;t say that) with an uglier version of the same thing, instead of writing the query right.</p>
+
+<p>This trick shows up again in Hack #88, which is also better solved with standard SQL. I wrote an admonition <em>not</em> to use these techniques in my employer&rsquo;s copy of the book. Where were the technical reviewers on these? These techniques are a DBA&rsquo;s nightmare, and any reviewer decently familiar with SQL should have cried foul and presented the better ways to solve the problems.</p>
+
+<p>There are some syntactic issues, too. The book shows you how to run each of the examples on several different RDBMSs, which is good, but sometimes incompatibilities they mention don&rsquo;t really exist. For example, <code>CREATE TABLE SELECT</code> in MySQL can also accept an optional <code>AS</code>, so it can be compatible with other systems, but the authors don&rsquo;t say that. You also don&rsquo;t need to prefix literal dates with <code>DATE</code> in MySQL and SQL Server, so some of the date examples could be rewritten to run without change on more systems.</p>
+
+<p>Sometimes standard good practices fall by the wayside. For example, Hack #24 uses the <code>!=</code> operator, which isn&rsquo;t standard SQL.</p>
+
+<h3 id="toc_3">Better editing would increase its usefulness</h3>
+
+<p>The book isn&rsquo;t very clearly organized. Sometimes topics are hidden inside other topics. For example, if you want to know how to reduce the precision of numbers and dates, you wouldn&rsquo;t look for it inside a hack titled &ldquo;Break it Down By Range,&rdquo; which is about grouping data into buckets. Similarly, if I want to find out how to get the top row from each group, I&rsquo;m not going to look in Hack #88, &ldquo;Test Two Values from a Subquery.&rdquo;</p>
+
+<p>There&rsquo;s also some repeated material. That same hack repeats Hack #83, &ldquo;Find the Top n in Each Group.&rdquo; Perhaps it&rsquo;s just for the sake of having a realistic example to illustrate the hack. If that&rsquo;s the case, I&rsquo;d change my criticism to &ldquo;some of the examples are about something other than the hack and distract from its purpose.&rdquo;</p>
+
+<p>There&rsquo;s too much variability in the style of the SQL examples. There is no consistent coding style, which is an even better idea in a book than in real code. Query results are sometimes shown as fancy MSWord-style tables and sometimes as MySQL-style textual bars and dashes.</p>
+
+<p>Finally, many of the best hacks aren&rsquo;t really by the listed authors, but by Rudy Limeback. But his contributions aren&rsquo;t edited for style and consistency, so they feel very out of place, as though they were just copied and pasted out of an email. This is fairly jarring to read. (The astute reader will have noticed that I like even technical books to be a delight to read; perhaps you won&rsquo;t have the same neuroses as I).</p>
+
+<h3 id="toc_4">Summary</h3>
+
+<p>Don&rsquo;t take my criticism too strongly; the book is worth reading and then keeping, as I said. I learned a lot from it and it&rsquo;s among the more valuable books on SQL I have read. In fact, given that most books on SQL are just regurgitations of freely available manuals, it&rsquo;s a standout.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

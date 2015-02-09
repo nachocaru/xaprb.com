@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to write SQL JOIN clauses more compactly &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to write SQL JOIN clauses more compactly</h1>
+  <span class="post-date">Tue, Nov 28, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Here&rsquo;s a way to write join clauses so they are more compact, more readable, and less confusing.</p>
+
+<p>Standard SQL:2003 defines a <code>USING</code> clause that can serve the same function as the <code>ON</code> clause in the familiar <code>JOIN</code> syntax. For example, the following join</p>
+
+<pre>select a.col1, b.col2
+from a
+   inner join b on a.col3 = b.col3</pre>
+
+<p>May be written as follows:</p>
+
+<pre>select a.col1, b.col2
+from a
+   inner join b <strong>using(col3)</strong></pre>
+
+<p>That may not look like much of an improvement, but it is a big help in larger joins where many tables have columns with the same names. In these cases, not only is it tedious to write out every pair of columns that must match in the join, you often have to refer to the tables with aliases too. And it&rsquo;s tough to read such a join and understand it, or debug it. For example, what&rsquo;s wrong with this join?</p>
+
+<pre>select tbl1.col1, tbl2.col2, tbl3.col2, tbl4.col1
+from apples as tbl1
+   inner join oranges as tbl2 on tbl1.col3 = tbl2.col3
+   inner join grapes as tbl3 on tbl3.col3 = tbl2.col3
+   inner join peaches as tbl4 on tbl3.col3 = tbl2.col3</pre>
+
+<p>The statement is valid and will execute, but it won&rsquo;t give the results you probably wanted (tbl4&#8242;s join clause doesn&rsquo;t refer to any columns from tbl4). The bug is even harder to find if the statement isn&rsquo;t <a href="/blog/2006/04/26/sql-coding-standards/">neatly indented and consistently organized</a>. That statement is better written with <code>USING</code> clauses:</p>
+
+<pre>select tbl1.col1, tbl2.col2, tbl3.col2, tbl4.col1
+from apples as tbl1
+   inner join oranges as tbl2 <strong>using(col3)</strong>
+   inner join grapes as tbl3 <strong>using(col3)</strong>
+   inner join peaches as tbl4 <strong>using(col3)</strong></pre>
+
+<p><code>USING</code> matches the specified columns from each table, eliminating the need to write them out twice explicitly with aliases. In MySQL 5, you can see how the statement gets rewritten by the optimizer with <code>EXPLAIN EXTENDED</code> followed by <code>SHOW WARNINGS</code>. The result shows that it gets rewritten as an old-style join with the column-matching done in the <code>WHERE</code> clause.</p>
+
+<p><code>USING</code> isn&rsquo;t a drop-in replacement for the <code>ON</code> clause in normal join syntax. There are some differences, especially on different platforms (and in MySQL&rsquo;s case, even differences between versions of the product &ndash; see <a href="http://dev.mysql.com/doc/refman/4.1/en/join.html">MySQL JOIN Syntax</a>). This probably makes relational purists hot under the collar. Of course, everything about SQL makes relational purists mad, because SQL isn&rsquo;t relational, and database products are even less relational than the SQL standard&hellip; oh well.</p>
+
+<p>In my opinion, use it if it makes your life easier. Programming is hard &ndash; use whatever your tools give you to ease the burden.</p>
+
+<p>One more note: there&rsquo;s also a <code>NATURAL JOIN</code> syntax that automatically discovers columns with the same names in both tables and matches them in the join. I don&rsquo;t use this in programs, because if someone adds more columns to one of the tables involved in such a join, the join criteria will silently change. I think <a href="/blog/2006/04/26/sql-coding-standards/">join criteria should always be explicit</a>, for the same reason <a href="/blog/2006/07/07/what-is-a-sql-blind-insert/">I avoid blind inserts</a>. However, this syntax can be convenient for writing one-off queries at the command line.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

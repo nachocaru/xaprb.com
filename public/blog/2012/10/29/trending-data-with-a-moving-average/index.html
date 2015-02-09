@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Trending data with a moving average &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Trending data with a moving average</h1>
+  <span class="post-date">Mon, Oct 29, 2012 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>In my recent talk at Surge and Percona Live about adaptive fault detection (<a href="http://www.xaprb.com/blog/2012/10/02/adaptive-fault-detection-in-mysql-servers/">slides</a>), I claimed that hardcoded thresholds for alerting about error conditions are usually best to avoid in favor of dynamic or adaptive thresholds. (I actually went much further than that and said that it&rsquo;s possible to detect faults with great confidence in many systems like MySQL, without setting any thresholds at all.)</p>
+
+<p>In this post I want to explain a little more about the moving averages I used for determining &ldquo;normal&rdquo; behavior in the examples I gave. There are two obvious candidates for moving averages: straightforward moving averages and exponentially weighted moving averages.</p>
+
+<p>A straightforward moving average just computes the average (mean) over the last N samples of data. In my case, I used 60 samples. This requires keeping an array of the previous N samples and updating the average for every sample.</p>
+
+<p>An exponential moving average doesn&rsquo;t require keeping samples. The average is a single number and you have a so-called &ldquo;smoothing factor&rdquo; &alpha;. For every new sample, you multiply the old average by 1-&alpha; and then add it to the new sample times &alpha;: <code>avg := (1-alpha)*avg + alpha*sample</code>.</p>
+
+<p>Both techniques have their drawbacks. Both require a warm-up period, for example. Obviously, in the case of a 60-sample moving window, you require 60 samples before you can begin. The exponential moving average can be primed from the mean of the first 10 samples, in my experience. Both techniques also lag the trend in the samples to some extent. When there&rsquo;s a dramatic change in the pattern, they take a while to &ldquo;catch up.&rdquo;</p>
+
+<p>Here&rsquo;s a plot of some real data and the two techniques. Click through to see a larger image. The blue line is the sampled data, the red line is an exponential moving average with an average 60-second &ldquo;memory,&rdquo; and the yellow line is a 60-second moving average.</p>
+
+<p><a href="http://www.xaprb.com/media/2012/10/moving-averages.png"><img src="http://www.xaprb.com/media/2012/10/moving-averages-300x60.png" alt="" title="moving-averages" width="300" height="60" class="aligncenter size-medium wp-image-2927" /></a>
+Notice how the red line tends to course-correct more quickly and stay more true to the current behavior of the blue line. This is one advantage of the exponential moving average &ndash; if that is what you desire.</p>
+
+<p>It isn&rsquo;t obvious in this data, but the simple moving average has another disadvantage. Suppose there is a spike of very high values in the sampled data for a few seconds. For the next 60 seconds, this spike is going to be within the window, inflating the moving average. When it is discarded from the window, it causes the moving average to drop suddenly. I have found this to be problematic in several cases. It&rsquo;s especially obvious when you&rsquo;re calculating the standard deviation of the samples (or other sensitive statistics) over the moving window.</p>
+
+<p>The exponential moving average doesn&rsquo;t have that problem because that spike never moves &ldquo;out of the window.&rdquo; Its influence is there forever &ndash; but as time passes, it gradually becomes smaller, in a smooth fashion. So you don&rsquo;t get abrupt spikes in the current average based on what happened 60 seconds ago.</p>
+
+<p>This is just scratching the surface of the techniques I&rsquo;ve explored on a large set of days to weeks of data from tens of thousands of real servers. As I get time, I&rsquo;ll try to write more about it in the future.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

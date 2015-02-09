@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Thoughts on the new PERFORMANCE_SCHEMA in MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Thoughts on the new PERFORMANCE_SCHEMA in MySQL</h1>
+  <span class="post-date">Sun, Feb 8, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p><a href="http:/http://www.xaprb.com/blogs.mysql.com/peterg/2009/02/05/mysql-performance-schema/">Peter Gulutzan</a> and <a href="http://www.markleith.co.uk/?p=112">Mark Leith</a> have both written about <a href="http://forge.mysql.com/worklog/task.php?id=2360">the new PERFORMANCE_SCHEMA in MySQL</a>. I&rsquo;ve read through the worklog, or most of it &ndash; there were some spots where Firefox seemed to start overlaying parts with other parts, quite weird. But anyway I&rsquo;ve read as much as I can.</p>
+
+<p>Obviously many people have been putting a ton of thought into this for years, and I can&rsquo;t pretend to judge their work in a single sitting. But I have opinions nevertheless.</p>
+
+<p>If the implementation turns out to be as good as the initial swing at it looks, this is a great development. This is the way things should be done &ndash; this is, finally, the level of detail of instrumentation other databases have. There&rsquo;s a lot of complexity; it is a <em>large</em> worklog and I can&rsquo;t say whether it&rsquo;s complete or something is put in the wrong place or will turn out to be not quite what&rsquo;s needed; that&rsquo;s where I stop trying to form an opinion. But overall, this is just a great development.</p>
+
+<p>A few questions and comments, though.</p>
+
+<ul>
+<li>Why has this not been public? You put four years of work into this without any community input? What a shame.</li>
+<li>Mark says &ldquo;There&rsquo;s no stats for InnoDB yet, though I can&rsquo;t see that lasting for long.&rdquo; I can. Why don&rsquo;t you see InnoDB being slow to add support for it?</li>
+<li>What version is this intended for? 6.x is kind of vague after four years of work.</li>
+<li>Information by itself is no use unless you can act on it. I predict that a lot of neglected bug reports will get revisited if this information can be brought to bear on it. I also predict that if implemented fully, this will show people where the hot spots in their server are; and yet they&rsquo;ll be unable to fix them.</li>
+</ul>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Maatkit version 3119 released &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Maatkit version 3119 released</h1>
+  <span class="post-date">Sun, Mar 1, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  <p>Your monthly cup of <a href="http://www.maatkit.org/">Maatkit</a> is brewed and ready to drink. You can <a href="http://code.google.com/p/maatkit/">download it from the Google Code project</a>.</p>
+
+<p>New this month: a bunch of usability and feature enhancements for mk-query-digest, much improved duplicate key checking with mk-duplicate-key-checker, and important bug fixes for mk-parallel-dump and mk-parallel-restore, as well as the usual minor fixes and upgrades.</p>
+
+<p>The full list of changes follows.</p>
+
+<pre>Changelog for mk-duplicate-key-checker:
+
+2009-03-01: version 1.2.1
+
+   * Enabled --clustered by default.
+   * Some special cases with unique/primary keys weren't handled (issue 9).
+   * Improved duplicate key finding (issue 269).
+
+Changelog for mk-parallel-dump:
+
+2009-03-01: version 1.0.13
+
+   * --chunksize did not work properly with --csv (issue 275).
+
+Changelog for mk-parallel-restore:
+
+2009-03-01: version 1.0.12
+
+   * Changed --nobinlog to --binlog 0|1 (default 1).
+   * --nobinlog did not work (issue issue 57, issue 264).
+   * Added --decompress option for portability (issue 274).
+
+Changelog for mk-query-digest:
+
+2009-03-01: version 0.9.3
+
+   * Added --createreview option to create the --review table (issue 266).
+   * Database wasn't printed in SHOW CREATE TABLE/SHOW TABLE STATUS (issue 290).
+   * "--report tables" will now print "SHOW CREATE..." etc (issue 287).
+   * Some long queries were not shortened (issue 292).
+   * INSERT/ON DUPLICATE KEY UPDATE caused extra tables to be found (issue 291).
+   * Changed the --truncateinsert option to --shorten (issue 292).
+   * Added --explain to print the EXPLAIN in the report (issue 199).
+   * Added 'bytes' property to log events (issue 247).
+   * Some INSERT/REPLACE queries were not truncated (issue 216).
+   * INSERT/REPLACE were needlessly converted for EXPLAIN (issue 283).
+   * SELECTs starting with a comment were converted for EXPLAIN (issue 252).
+   * Added informational text to show why items are reported on (issue 282).
+   * IN() lists were parsed as table names (issue 277).
+   * The parser crashed on some logs from Windows servers (issue 267).
+   * Added the ability to parse embedded attributes (issue 177).
+   * Log entries without a Time property crashed --review (issue 263).
+   * All-zero timestamps displayed in unwanted places (issue 202).
+
+Changelog for mk-table-sync:
+
+2009-03-01: version 1.0.13
+
+   * Added --explainhosts option (issue 293).
+   * Throw an error when trying to use D= to restrict syncing to one database.
+   * Checking tables for triggers caused a crash (issue 262).
+   * Database or table names with spaces caused a crash (issue 262).
+</pre>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

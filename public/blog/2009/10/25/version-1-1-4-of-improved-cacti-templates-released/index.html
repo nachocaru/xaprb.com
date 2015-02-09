@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Version 1.1.4 of improved Cacti templates released &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Version 1.1.4 of improved Cacti templates released</h1>
+  <span class="post-date">Sun, Oct 25, 2009 in
+		
+		<a href="/categories/monitoring" class="btn btn-primary">Monitoring</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/operations" class="btn btn-primary">Operations</a>
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  <p>I&rsquo;ve released version 1.1.4 of my <a href="http://code.google.com/p/mysql-cacti-templates/">improved Cacti templates</a>. Unlike the prior release, which was solely bug fixes, this one includes new graphs in the MySQL template. Some of the graphs are of data that&rsquo;s exposed in standard MySQL versions, but some of it is available only in <a href="http://www.percona.com/percona-lab.html">Percona&rsquo;s high-performance builds of the MySQL database server</a>. If you don&rsquo;t have a Percona build, those graphs will just contain nothing, but there is no detrimental effect.</p>
+
+<blockquote>
+<p><a href="https://vividcortex.com/">VividCortex</a> is the startup I founded in 2012. It&rsquo;s the easiest way to monitor what
+your servers are doing in production and I consider it far superior to Cacti. VividCortex offers <a href="https://vividcortex.com/monitoring/mysql/">MySQL performance
+monitoring</a> and <a href="https://vividcortex.com/monitoring/postgres/">PostgreSQL
+performance management</a> among many
+other features.</p>
+</blockquote>
+
+<p>This template release is fully backwards compatible with the previous release. The upgrade process is to copy the new PHP file into place and import the new template file. You can then add the new graphs to your hosts.</p>
+
+<p>I&rsquo;ve also taken the opportunity to address many of the other open issues. Most of these were minor, such as a debug log to help troubleshoot. Some are big improvements, such as no longer using GET_LOCK() in MySQL to arbitrate access to the cache file. A list of open issues can always be found at <a href="http://code.google.com/p/mysql-cacti-templates/issues/list">http://code.google.com/p/mysql-cacti-templates/issues/list</a>.</p>
+
+<p>To ease the process of future upgrades, I&rsquo;ve also added in a gratuitous GPRINT definition, which is unused and merely records the installed version of the template (both the template version, and the version of the PHP file against which it was generated).</p>
+
+<p>The full changelog follows.</p>
+
+<pre>
+2009-10-25: version 1.1.4
+
+        * Changed SSH options so host keys are accepted automatically (issue 68).
+        * Parsing of the pending_ibuf_aio_reads property was broken.
+        * Parsing of the pending_aio_log_ios property was broken.
+        * Parsing of the pending_aio_sync_ios property was broken.
+        * Added a debugging log for ss_get_mysql_stats.php (issue 54).
+        * Added the --lint_check option to make-template.pl (issue 80).
+        * Removed the use of GET_LOCK() and changed to flock() instead (issue 78).
+        * The template and script version is now recorded in a GPRINT (issue 79).
+        * Restored unflushed_log, which was accidentally deleted in 1.1.3.
+        * Added the InnoDB Internal Hash Memory Usage graph (issue 75).
+        * Added the InnoDB Checkpoint Age graph (issue 73).
+        * Added the InnoDB Insert Buffer Usage graph (issue 74).
+        * Added the InnoDB Active/Locked Transactions graph.
+        * Added the InnoDB Memory Allocation graph.
+        * Added the InnoDB Adaptive Hash Index graph.
+        * Added the InnoDB Tables In Use graph (issue 32).
+        * Added the InnoDB Current Lock Waits graph.
+        * Added the InnoDB Lock Structures graph (issue 32).
+</pre>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A fun use of SUBSTRING_INDEX and friends in MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A fun use of SUBSTRING_INDEX and friends in MySQL</h1>
+  <span class="post-date">Tue, Sep 15, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I used to develop with MySQL, and those were the golden days. These days I don&rsquo;t write queries so much. But yesterday I needed to answer this question: are there any issues in our issue-tracking system that meet the following criteria?</p>
+
+<ul>
+<li>The last two or more emails are from the customer</li>
+<li>These emails were separated by at least two hours (i.e. it wasn&rsquo;t a single train of thought)</li>
+</ul>
+
+<p>I could do it with all kinds of correlated subqueries and so on &ndash; but maybe I could also just do it without them, no? Can this be done with plain old JOINS and GROUP BY? I&rsquo;m sure you know the answer.</p>
+
+<p>Here&rsquo;s my approach: group emails by issue, and concatenate the dates they were sent in reverse order. If an email was sent from Percona to the customer, replace the date with a magical OUTBOUND constant. The result might look like this: &ldquo;2009-09-11 13:17:34,OUTBOUND,&hellip;&ldquo;. I&rsquo;ll change this to create a good sample string, which I&rsquo;ll use from now on:</p>
+
+<pre>set @email_dates := '2009-09-11 13:17:34,2009-09-11 12:26:17,2009-09-11 12:10:34,OUTBOUND,2009-09-11 12:02:47';</pre>
+
+<p>Now I&rsquo;m sure you can see the task ahead: a bunch of position calculations, nasty substrings, and so on. But MySQL has some really handy functions that make it easier to work with these kinds of string manipulations, and that&rsquo;s what I want to write about.</p>
+
+<p>The first question to answer is how long the string of consecutive inbound emails was. We can use the <code>FIND_IN_SET</code> function for this:</p>
+
+<pre>SELECT FIND_IN_SET('OUTBOUND', @email_dates) -1 AS inbound;
++---------+
+| inbound |
++---------+
+|       3 | 
++---------+
+</pre>
+
+<p>So the last 3 emails were inbound. But what if there were no emails, or if they were all inbound? The function will return -1 then. I could do some special-case logic to count the number of emails by counting the number of commas in the string, but that&rsquo;s actually the hard way. I&rsquo;m already using GROUP BY to concatenate the dates into a string, so it&rsquo;s easier to just use COUNT(*). I&rsquo;m working on a small part of the problem with a user variable, but if I put it back into the GROUP BY, the logic would be something like this:</p>
+
+<pre>LEAST(COUNT(*), GREATEST(0, FIND_IN_SET(.....)))</pre>
+
+<p>I&rsquo;ll handle that later, and keep working with the contents of the variable for now. Next I&rsquo;ll extract the first and last dates from that range. The first date is easy:</p>
+
+<pre>SELECT SUBSTRING_INDEX(@email_dates, ',', 1) AS most_recent_email;
++---------------------+
+| most_recent_email   |
++---------------------+
+| 2009-09-11 13:17:34 | 
++---------------------+
+</pre>
+
+<p>Now to get the Nth, which usually involves a bunch of <code>SUBSTRING</code>, <code>REVERSE</code>, etc. But <code>SUBSTRING_INDEX</code> makes it easier: I&rsquo;ll get the substring up to the Nth index, and then get the last substring from that. I&rsquo;ll keep the code simple here by substituting the <code>FIND_IN_SET</code> expression with <code>@nth</code> below:</p>
+
+<pre>SELECT SUBSTRING_INDEX(
+   SUBSTRING_INDEX(@email_dates, ',', @nth), ',', -1) AS oldest_email;
++---------------------+
+| oldest_email        |
++---------------------+
+| 2009-09-11 12:10:34 | 
++---------------------+
+</pre>
+
+<p>Now it&rsquo;s a simple matter of using date and time math functions to compute the elapsed time between the first and last email in the consecutive incoming range. The full query looks like this (slightly altered, and using a subquery in the FROM clause, for this post):</p>
+
+<pre>SELECT
+   email_count,
+   CONCAT('Last ', 
+      LEAST(email_count, GREATEST(0, FIND_IN_SET('OUTBOUND', email_dates) -1)),
+      ' emails are inbound, with a ',
+      TIMESTAMPDIFF(HOUR,
+         SUBSTRING_INDEX(SUBSTRING_INDEX(email_dates, ',',
+            LEAST(email_count,
+               GREATEST(0, FIND_IN_SET('OUTBOUND', email_dates) -1))), ',', - 1),
+         SUBSTRING_INDEX(email_dates, ',', 1)),
+      ' hour spread'  
+   ) AS emails_spread
+FROM (
+   SELECT COUNT(*) AS email_count,
+   GROUP_CONCAT(IF(email_from LIKE '%@percona.com%', 'OUTBOUND', email_date)
+      ORDER BY email_date DESC) AS email_dates
+   FROM issue_emails
+   GROUP BY issue_id
+) AS e
++-------------+---------------------------------------------------+
+| email_count | emails_spread                                     |
++-------------+---------------------------------------------------+
+|         179 | Last 2 emails are inbound, with a 4 hour spread   | 
+</pre>
+
+<p>The golden days of SQL coding live again!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

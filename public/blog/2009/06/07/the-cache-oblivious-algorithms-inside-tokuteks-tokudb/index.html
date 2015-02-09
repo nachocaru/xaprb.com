@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The cache-oblivious algorithms inside Tokutek&#39;s TokuDB &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">The cache-oblivious algorithms inside Tokutek&#39;s TokuDB</h1>
+  <span class="post-date">Sun, Jun 7, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p><a href="http://www.tokutek.com/">Tokutek</a> have said they are working towards explaining their indexing algorithms. I spoke to some of the Tokutek people over the last 14 months or so about this, although I didn&rsquo;t really start to pay attention until the beginning of the year. While Vadim, Peter and I were writing <a href="http://www.mysqlperformanceblog.com/2009/04/28/detailed-review-of-tokutek-storage-engine/">our blog post on TokuDB</a>, I asked them to provide scholarly references, and they did, but warned me it would be dense reading, in part because it&rsquo;s so academic. Mark Callaghan also told me he had gotten them to walk him through the math behind their indexing algorithm and found it hard.</p>
+
+<p>Here&rsquo;s a blog post with <a href="http://tokutek.com/category/tokuview/publications_related_to_fractal_tree_indexing/">links to the research behind their work</a>. I&rsquo;m happy to say that after working through one of the papers at a superficial level, I agree &ndash; it&rsquo;s pretty dense, though I think the concepts can be made understandable to mortals. It took me an hour and a half, but I didn&rsquo;t take the time to convince myself of the validity of the proofs; that would probably take a long time. Moreover, I think these papers only describe parts of the foundation, not the actual implementation. I look forward to the layman&rsquo;s version, which I&rsquo;m sure will be more accessible to Bears of Very Small Brain like myself.</p>
+
+<p>Disclaimer: I work for Percona, and Percona was paid to do some benchmarking and analysis for Tokutek. However, I am not paid to say this: I think TokuDB is one of the more interesting technologies I&rsquo;ve seen in a while. By that, I mean it&rsquo;s actually something new, a real advancement in applied computer science. Not just the same old B-Trees with a different twist of lemon.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

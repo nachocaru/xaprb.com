@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      More progress on High Performance MySQL, Second Edition &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">More progress on High Performance MySQL, Second Edition</h1>
+  <span class="post-date">Sat, Jan 12, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Whew! I just finished a marathon of revisions. It&rsquo;s been a while since I posted about our progress, so here&rsquo;s an update for the curious readers.</p>
+
+<p>I just finished revising the last two major chapters that <a href="http://www.mysqlperformanceblog.com/">Peter Zaitsev</a> hasn&rsquo;t yet reviewed. Peter has been essentially going through the chapters like a very thorough technical reviewer. He makes corrections, points out where things aren&rsquo;t clear or need examples, and adds more material.</p>
+
+<p>By &ldquo;finished revising,&rdquo; I mean finished expanding the outline into a full chapter. We&rsquo;re still working at the level of &ldquo;this chapter is mostly there, but we might decide to revise it more.&rdquo; We will most certainly do so in many cases. There are some chunks of material that I&rsquo;ve marked TODO to put into other chapters, for example. We&rsquo;re not at the level of a final draft with any chapter except the chapter on MySQL&rsquo;s architecture, but we&rsquo;re getting close with the others now.</p>
+
+<p>Most of the chapters are in tech review now, and we&rsquo;ve gotten a few of them back. The comments from the reviewers have been very helpful. We expanded the Replication chapter quite a bit after tech review. (And then Peter reviewed it and we expanded it even more). When the tech reviewers return comments on the other chapters, we&rsquo;ll revise some more.</p>
+
+<p>We&rsquo;re up to 529 pages in OpenOffice.org now. At my calculated ratio of 1 page = 1.1 pages in print, that&rsquo;s about 582 pages in print. And that&rsquo;s not counting the Replication chapter, which doesn&rsquo;t have all of its illustrations yet. I predicted we&rsquo;d break 500 pages; we might get close to 600. These are very, very densely written, too. No offense to the first edition, but the tone is quite different; much less light-hearted banter, much more compressed information. Peter is a walking encyclopedia, and never seems to run out of details we really ought to include because they&rsquo;re important (and they are).</p>
+
+<p>We may, or may not, go to production in the next few weeks. Regardless, I think we&rsquo;re still on track to have the book on shelves by the <a href="http://www.mysqlconf.com/">MySQL Conference &#038; Expo</a> in April. Look for me there. I&rsquo;ll be easy to find: I&rsquo;ll be the tall guy with a permanent silly grin. (You&rsquo;d grin too if you finished writing a book that&rsquo;s been this much work!)</p>
+
+<p>I&rsquo;ve posted rough outlines for many of the other chapters. The two Peter and I just finished working on are the Scaling/HA/Load-Balancing/Failover chapter, and the Application-Level Optimization chapter. The Scaling/HA chapter is pretty long and very involved, and goes into a lot of detail on scaling in particular, especially horizontal scaling via sharding. (We use &ldquo;sharding&rdquo; because it&rsquo;s less confusing than calling it &ldquo;partitioning,&rdquo; which already means too many different things in databases).</p>
+
+<p>The Application-Level Optimization chapter is a little shorter. It&rsquo;s mostly about caching strategies, how to make a web server run well, and so on. These aren&rsquo;t what the book focuses on directly, but you can either help or hurt the database server a lot with your application design. Our goal here is to help people avoid the common mistakes.</p>
+
+<p>For the curious, here&rsquo;s the current outline for these two chapters:</p>
+
+<pre>Scaling and High Availability
+  Terminology
+  Scaling MySQL
+    Planning for Scalability
+    Buying Time Before Scaling
+    Scaling Up
+    Scaling Out
+      Functional Partitioning
+      Data Sharding
+      Choosing a Partitioning Key
+        Multiple Partitioning Keys
+      Querying Across Shards
+      Allocating Data, Shards, and Nodes
+        Arranging Shards on Nodes
+      Fixed Allocation
+      Dynamic Allocation
+        Mixing Dynamic and Fixed Allocation
+      Explicit Allocation
+      Sidebar: Re-Balancing Shards
+      Tools for Sharding
+    Scaling Back
+      Keeping Active Data Separate
+    Scaling by Clustering
+      Clustering
+      Federation
+  Load Balancing
+    Connecting Directly
+      Splitting Reads and Writes in Replication
+      Changing Application Configuration
+      Changing DNS Names
+      Moving IP Addresses
+    Introducing a Middleman
+      MySQL Proxy
+      Load Balancers
+    Load Balancing Algorithms
+      Adding and Removing Servers in the Pool
+    Load Balancing with a Master and Multiple Slaves
+  High Availability
+    Planning for High Availability
+    Adding Redundancy
+      Shared-Storage Architectures
+      Replicated-Disk Architectures
+      Synchronous MySQL Replication
+    Failover and Failback
+      Promoting a Slave or Switching Roles
+      Virtual IP Addresses or IP Takeover
+      MySQL Master-Master Replication Manager
+      Middleman Solutions
+      Handling Failover in the Application
+</pre>
+
+<p>And here&rsquo;s the outline for the Application-Level Optimization chapter:</p>
+
+<pre>Application-Level Optimization
+  Application Performance Overview
+    Find the Source of the Problem
+    Look for Common Problems
+  Web Server Issues
+    Finding the Optimal Concurrency
+  Caching
+    Sidebar: Caching Doesn't Always Help
+    Caching Below the Application
+    Application-Level Caching
+    Cache Control Policies
+    Cache Object Hierarchies
+    Pre-Generating Content
+  Extending MySQL
+  Alternatives to MySQL</pre>
+
+<p>The thing that makes me the happiest right now is that we&rsquo;re clearly going to make it. For a while, there was just so much work left to do that it was impossible to estimate how much. (Ask my wife: I was wrong many times when she asked how long it would take me to finish a chapter). I also didn&rsquo;t know how much revision would be necessary, which is very scary; revising takes about four times as long as writing a first draft, by my reckoning. At this point, the remaining work is much smaller, and much easier to estimate. And now I no longer flip-flop daily between &ldquo;I think we can, I think we can&rdquo; and &ldquo;please don&rsquo;t ask, because I don&rsquo;t know and I want a vacation.&rdquo;</p>
+
+<p>Subversion shows me that Peter has the Security chapter locked right now. This one is not a huge one, and <a href="http://openquery.com.au/">Arjen Lentz</a> has already reviewed it as well, so I don&rsquo;t expect it to be a huge amount of work to revise. After that, it&rsquo;s minor chapters and appendices. (We might actually convert the chapters on Server Status and Tools into appendices, since they got cannibalized when we realized their material fit better elsewhere. They also don&rsquo;t have a very chapter-ish feel; they feel more like appendices). We&rsquo;ve added a few more appendices, including one on EXPLAIN and one on debugging server and storage-engine locking problems. These are all great reference material.</p>
+
+<p>See you at the conference in April!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

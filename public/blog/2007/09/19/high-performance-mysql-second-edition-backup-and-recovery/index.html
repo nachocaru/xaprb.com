@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      High Performance MySQL, Second Edition: Backup and Recovery &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">High Performance MySQL, Second Edition: Backup and Recovery</h1>
+  <span class="post-date">Wed, Sep 19, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Progress on High Performance MySQL, Second Edition is coming along nicely. You have probably noticed the lack of epic multi-part articles on this blog lately &ndash; that&rsquo;s because I&rsquo;m spending most of my spare time on the book. At this point, we have significant work done on some of the hardest chapters, like Schema Optimization and Query Optimization. I&rsquo;ve been deep in the guts of those hard optimization chapters for a while now, so I decided to venture into lighter territory: Backup and Recovery, which is one of the few chapters we planned to &ldquo;revise and expand&rdquo; from the first edition, rather than completely writing from scratch.</p>
+
+<p>Since we decided to take that approach, I began by following the outline from the first edition, and figured I&rsquo;d re-read the first edition&rsquo;s chapter and re-outline, then add more material as appropriate. To my surprise, I found this chapter in the first edition is one of the most cursory (I don&rsquo;t mean to criticize too much &ndash; you&rsquo;ll see where I&rsquo;m going with this in a second). It&rsquo;s quite short and doesn&rsquo;t really discuss recovery at all, despite the chapter title. There&rsquo;s one sub-section titled &ldquo;Recovery,&rdquo; but it&rsquo;s only a few paragraphs, and mostly discusses <em>dumping</em>, not recovery! [<strong>Edit</strong>: whoops, I see each subsection in the &ldquo;Tools and Techniques&rdquo; has a few words about how to restore backups created with that specific tool. But there&rsquo;s still not much general advice about how to restore backups.]</p>
+
+<p>The chapter devotes a lot of space to code listings and such, and not enough on how to do high-performance backups in a high-performance application, in my opinion. I quickly decided it needs to be <em>significantly</em> expanded, not just updated, and I scrapped the original text and became more liberal with the outline. I&rsquo;m referring to the first edition as I write, but I&rsquo;m not keeping any of the text. Chalk it up to perfectionism.</p>
+
+<p>The outline, as I have it so far, is as follows. If you compare it to the first edition, you&rsquo;ll see I&rsquo;ve rearranged it quite a bit:</p>
+
+<pre>1  Why Backups?
+   (very brief, even more so than the first edition)
+2 Considerations and Tradeoffs
+   2.1 How Much Can You Afford to Lose?
+   2.2 Online or Offline?
+   2.3 Dump or Raw Backup?
+   2.4 Onsite or Offsite?
+   2.5 What to Back Up
+   2.6 Storage Engines and Consistency
+   2.7 Replication
+3 Restoring from a Backup
+   3.1 Copying Files Across the Network
+   3.2 Starting MySQL
+   3.3 Point-In-Time Recovery
+4 Tools and Techniques
+   4.1 mysqldump
+   4.2 mysqlhotcopy
+   4.3 Zmanda Recovery Manager
+   4.4 InnoDB Hot Backup
+   4.5 Offline Backups
+   4.6 Filesystem Snapshots
+   4.7 MySQL Global Hot Backup
+   4.8 Automating and Scripting Backups
+5 Rolling Your Own Backup Script</pre>
+
+<p>At this point, I have written sections 1, 2 and 3, which are about 11 pages in OpenOffice.org (compare to 6 pages on paper in the first edition). I&rsquo;m sure this will only grow as other things occur to me. The outline of section 4 is completely open to change, and section 5 might not even happen; if you can script, you can script. Otherwise, you might want to use one of the tools listed in section 4. All in all, I&rsquo;d say we&rsquo;re looking at about 25 to 30 pages, just based on what&rsquo;s in my head and not yet written down.</p>
+
+<p>Now, to come to my point: what would be helpful to you? Are there any challenges you&rsquo;d like me to cover, such as how you back up a data warehouse with terabytes of data? (I&rsquo;ve already done that, in What To Back Up, but feel free to ask anyway.) Are there challenges <em>you</em> have had to solve, which you think would be very helpful to others? This chapter is largely open to suggestion at this point. If you tell me/us what you&rsquo;d like to see, this is your opportunity to get at least four experts to solve your problems in-depth.</p>
+
+<p>The usual disclaimers apply: no guarantees, this is all open to change, this is top-secret pre-production material anyway and you never saw this web page. What is the first rule of Fight Club, again?</p>
+
+<p>I&rsquo;m looking forward to your feedback.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Seldom-used HTML form elements &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Seldom-used HTML form elements</h1>
+  <span class="post-date">Mon, Nov 7, 2005 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+  </span>
+  
+
+<p>Some of the neatest parts of standard HTML are the least-used. Forms in particular can become much more usable and accessible when marked up correctly with a few standard HTML elements. These are LABEL (and the related CSS <code>outline</code> property), OPTGROUP, LEGEND, and FIELDSET.</p>
+
+<p>Before I launch into this article, I challenge you to read the <a href="http://www.w3.org/TR/html4/index/elements.html">list of HTML 4 elements</a> and ask yourself how many of these you use regularly. If you are like most web designers (including myself), you may over-use familiar elements and attributes, and perhaps not even realize some of the elements exist. The good news is, now is a great time to start using HTML&rsquo;s capabilities more fully, because even though you may not know about or use them, browsers support them very well, and have for years.</p>
+
+<h3 id="toc_0">LABEL elements make forms act more like traditional GUI apps</h3>
+
+<p>LABEL elements work in concert with a form input. You already know what they are, because they are used in almost all user interfaces in traditional GUI software. The label &ldquo;targets&rdquo; an input by ID. For example, if a website has a login form like so,</p>
+
+<pre>&lt;form action="login.cgi"&gt;
+&lt;input type="text" name="username" id="username" /&gt;
+Username
+&lt;/form&gt;</pre>
+
+<p>You might surround <code>Username</code> with a LABEL, thusly:</p>
+
+<pre>&lt;form action="login.cgi"&gt;
+&lt;input type="text" name="username" id="username" /&gt;
+&lt;label for="username"&gt;Username&lt;/label&gt;
+&lt;/form&gt;
+</pre>
+
+<p>The browser will then activate the username field when the user selects the LABEL. LABELs are particularly useful for accessibility, but they make forms more usable, too. Consider how you are accustomed to interacting with a list of radio buttons, each with text beside it. In a typical GUI application, the radio button is NOT used to select which option is the active one. Instead, it merely serves as a visual indicator of which option the user chose. Most users (you can verify this for yourself) will select the text, not the radio button, because they know it is &ldquo;clickable.&rdquo; Many users will also try clicking on the text in web pages, before they realize they have to click on the radio button itself. Even users who are used to surfing the web will first automatically try clicking on the text, then click on the button! Providing LABELs makes the text &ldquo;clickable&rdquo; and meets the user&rsquo;s expectations. It also makes the form easier to use, because it is not necessary to use the mouse as carefully; there is more clickable area.</p>
+
+<p>Here is a sample form, for your testing pleasure:</p>
+
+<p>A word about styling: Internet Explorer styles labels with a dashed button when the input is selected (In IE, HTML form elements are actually rendered by the underlying OS, not the browser). Firefox does not. CSS2 does provide for styling, which should allow the designer to mark up labels so they look and feel as expected across all browsers. The <code>outline</code> property is meant for this, but unfortunately does not have broad and consistent browser support yet. However, it&rsquo;s easy to add styles to hint that the label is attached to the input. For instance, adding a background color, making the cursor into a &ldquo;hand,&rdquo; and so forth can all help.</p>
+
+<h3 id="toc_1">OPTGROUP creates a menu of logically grouped choices</h3>
+
+<p>The OPTGROUP element groups OPTIONs in a SELECT menu. You have doubtless seen SELECT menus (perhaps even written some yourself!) like the following:</p>
+
+<p>This typically comes with some server-side or client-side code to make sure the user selects one of the &ldquo;real&rdquo; entries, not one of the &ldquo;headings.&rdquo; This is exactly the problem OPTGROUP was designed to accomplish. Here is the form rewritten with standard, plain vanilla HTML (nothing fancy here! Netscape 4 can even handle this!):</p>
+
+<h3 id="toc_2">FIELDSET and LEGEND create logical groupings of inputs</h3>
+
+<p>Just as OPTGROUP groups related values together, FIELDSET groups related form inputs together. Again, this should be familiar from GUI applications. Preferences dialogs are one common place where you see this metaphor all the time. Here is a quick example:</p>
+
+<p>I think this example should speak pretty clearly for itself.</p>
+
+<h3 id="toc_3">Summary</h3>
+
+<p>Good old HTML 4: it&rsquo;s more than half a decade old now. In terms of the Internet, that&rsquo;s a lifetime. It&rsquo;s good to be familiar with its full capabilities, and more importantly, to know when to use or not to use a particular HTML element.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

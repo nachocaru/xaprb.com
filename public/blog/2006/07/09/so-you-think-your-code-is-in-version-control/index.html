@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      So you think your code is in version control? &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">So you think your code is in version control?</h1>
+  <span class="post-date">Sun, Jul 9, 2006 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  
+
+<p>&ldquo;My code is all in version control,&rdquo; Joe said proudly. &ldquo;Everything is versioned. I&rsquo;ll never lose any work.&rdquo; But then he lost some &ldquo;other&rdquo; code he didn&rsquo;t realize was critical. This article is about how to find and safeguard all the hidden code you don&rsquo;t know your business relies on.</p>
+
+<h3 id="toc_0">Introduction</h3>
+
+<p>Everyone knows version control is indespensable. I put everything into version control &ndash; even my <a href="http://www.gnucash.org/">GnuCash</a> file is in version control. So is my poetry (you&rsquo;re in luck: this is a technical blog, so I won&rsquo;t post any of it). And definitely all my code, right?</p>
+
+<p>Well, no. Like many people, some little snippets of code escape my notice. I don&rsquo;t think of it as something that has to be in version control. This is really dangerous. The most recent time I noticed some code eluding my version control fanaticism was in the comments on <a href="/blog/2006/06/19/xaprb-scripts-relicensed/">my post on re-licensing my JavaScript snippets</a>. I realized that I&rsquo;d developed these scripts at odd times, over SSH connections to servers I didn&rsquo;t own, e-mailing myself the latest versions to save it&hellip; but never putting it in version control. I felt dumb.</p>
+
+<p>Feeling dumb is one thing, but suddenly discovering that you&rsquo;ve overlooked some critical code <em>and you can&rsquo;t recover it from backups</em> in the middle of the night is another. Software engineers I&rsquo;ve known, myself included, have a habit of thinking about certain work products as code, and others as less important and not deserving of version control. For example, maybe certain things go through a defined release process, and others don&rsquo;t, and you think of the release-able things as code that needs to be in version control.</p>
+
+<p>You need to become conscious of those hidden distinctions, and put everything into version control, because it will bite you if you don&rsquo;t. This article isn&rsquo;t about the benefits of version control, or how to use it. It&rsquo;s about helping you realize the things you&rsquo;ve forgotten, so you can stop overlooking them.</p>
+
+<p>Here&rsquo;s a list of things I version. It&rsquo;s not necessarily an exhaustive list; the point is to get your creative juices flowing, and come up with your own list.</p>
+
+<h3 id="toc_1">User-related information</h3>
+
+<p>If you&rsquo;re not versioning users, passwords, public keys, groups, and privileges, you&rsquo;re not versioning the full state of your software system. Your system depends on the right users having the right privileges to do the things that have to happen. It can get very complex in a system of any size. If you install a system, then spend weeks tweaking it to have the right users and privileges, but then lose those, you may have lost weeks of work. Likewise, if you install on a test system and then have to deploy to production systems, you should not have to go through it all again if you&rsquo;ve versioned it.</p>
+
+<h3 id="toc_2">Database schema</h3>
+
+<p>Something went wrong during the release. It&rsquo;s midnight, and a stored procedure is trying to insert into a table, but there&rsquo;s a database error: it&rsquo;s trying to insert too many columns. One of your developers made the mistake of doing a <a href="/blog/2006/07/07/what-is-a-sql-blind-insert/">blind insert</a>. And you don&rsquo;t know what the database used to look like, because you don&rsquo;t have your database schema under version control.</p>
+
+<p>It&rsquo;s really easy to fix this. Just create a nightly scheduled task that scripts out the entire database schema and commits any changes. I did this at my new employer and it has proven very helpful even when there are no problems; it gives everyone visibility into what is changing, and it even helps us find what refers to a given database entity, because the schema is all in searchable text files.</p>
+
+<h3 id="toc_3">Initialization scripts</h3>
+
+<p>Imagine this: you built a great database schema for a system that integrates with an e-commerce or business-to-business system. It serves as the persistence layer for a set of services that talk remotely to web services on the other end. Your code is all in version control, and so is the schema. But you populated those tables with definitions of the partner&rsquo;s constants, and someone deleted them. Now you don&rsquo;t have the constants, and you don&rsquo;t have the script to populate the tables with the initial set of data.</p>
+
+<p>Such initialization scripts should always go into version control. Anything that has to do with getting the system into a defined state so it&rsquo;ll function definitely needs to be versioned. You should be able to start with an empty database, run your schema script, run your initialization script, and be ready to roll. Even if there&rsquo;s no data loss, this is essential for smooth integration and deployment.</p>
+
+<h3 id="toc_4">Other database code</h3>
+
+<p>Stored procedures, user-defined functions, and triggers should also be in version control. In the Microsoft world, stored procedures can be put into Visual SourceSafe fairly easily, but triggers and functions can&rsquo;t, at least not when I quit working in the Microsoft world about six months ago. They can still be scripted to file, and put into version control that way, as opposed to integration with SourceSafe through an IDE, though.</p>
+
+<p>In the non-Microsoft world, of course I script these things out to files and put them into version control.</p>
+
+<h3 id="toc_5">Scheduled tasks</h3>
+
+<p>Crontabs and other OS-specific scheduled tasks are also code. I don&rsquo;t know about Windows Scheduled Tasks, but crontabs are very easy to put into version control, along with a script to install them from version control, with the ability to detect if they&rsquo;ve been changed outside version control and complain.</p>
+
+<p>One great benefit to this is knowing what programs are used. You can search for any references to programs if your scheduled tasks are in version control.</p>
+
+<h3 id="toc_6">Configuration files</h3>
+
+<p>In UNIX systems, the entire <code>/etc</code> directory is a good candidate for version control. Sometimes operating systems even have built-in versioning methods, which is great. For example, on Gentoo GNU/Linux, using <code>dispatch-conf</code> with the option to integrate RCS is a good idea (as opposed to using <code>etc-update</code>, which doesn&rsquo;t keep deltas between past versions).</p>
+
+<p>In the non-UNIX world, you can find all configuration files and add them to version control with a really minimal amount of extra work, considering how much work it could save you. In Windows, I think it&rsquo;s a great idea to script out either the entire registry, or selected parts of it.</p>
+
+<h3 id="toc_7">Your backups</h3>
+
+<p>That&rsquo;s right, all your data in your regular backups can be versioned! Look into <code>rdiff-backup</code> for a great example of a tool that does this. A side benefit of storing deltas is the much smaller disk space requirement. Storing <em>all</em> backups like this might be a bit extreme of course, but sometimes it&rsquo;s a viable option. One place I actually do this is on my home systems. I use rdiff-backup to back up my entire <code>/etc</code> and <code>/home</code> directories. Boy, has that saved my neck a few times!</p>
+
+<h3 id="toc_8">Other things</h3>
+
+<p>Here are some other things that might need to be in version control:</p>
+
+<ol>
+<li>one-off shell scripts and environmental settings (supposing they&rsquo;re in <code>/usr/local/bin</code>, you can put them somewhere else that&rsquo;s under version control, and make symbolic links to them)</li>
+<li>your documentation and specifications (including your wiki)</li>
+<li>your template and scratchpad files</li>
+<li>lists of software and versions installed from other sources, such as CPAN</li>
+</ol>
+
+<h3 id="toc_9">Summary</h3>
+
+<p>You may think I&rsquo;m a fanatic to insist on versioning everything, and you&rsquo;d be right &ndash; but my fanaticism has saved me, and sometimes my employers, a lot of trouble. I think everything ought to be under version control, but it&rsquo;s so easy to overlook something. I hope this article has helped you make a list of critical code you&rsquo;re not putting into source control.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

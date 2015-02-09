@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Can MySQL be a 12-factor service? &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Can MySQL be a 12-factor service?</h1>
+  <span class="post-date">Sat, May 10, 2014 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>A while ago I <a href="http://www.xaprb.com/blog/2012/04/24/the-mysql-init-script-mess/">wrote</a> about some of the things that can make MySQL unreliable or hard to operate. Some time after that, in a completely unrelated topic, someone made me aware of a set of principles called <a href="http://12factor.net">12-factor</a> that I believe originated from experiences building Heroku.</p>
+
+<p><img src="/media/2014/05/dodecahedron.jpg" alt="Dodecahedron" />
+</p>
+
+<p>That&rsquo;s been over a year, and I&rsquo;ve come to increasingly agree with the 12-factor principles. I guess I&rsquo;m extremely late to the party, but making applications behave in 12-factor-compliant ways has solved a lot of problems for me.</p>
+
+<p>This experience has repeatedly reminded me of one of the applications that continues to cause a lot of the kinds of pain that the 12-factor principles have solved for me: MySQL.</p>
+
+<p>Example: configuration files. I initially thought MySQL&rsquo;s technique of multiple configuration files that serve as defaults, overrides to the defaults, and eventually are overridden by the commandline options was a good thing. In fact, you can blame me for that pattern being imitated in Percona Toolkit, if you want to blame anyone for it.</p>
+
+<p>But then I started to see the problems with it. Quick question: how easy is it to set up multiple MySQL instances on the same server, in your opinion? Had any problems with that? Any unexpected things ever happen to you?</p>
+
+<p>12-factor solves many of the types of problems I&rsquo;ve had with that. For example, I once needed multiple instances of an API server on a single operating system host. This was very difficult because of conflicts with configuration files and init scripts, which I&rsquo;d created by copying the way MySQL does things. Moving the configuration into the environment variables solved most of those problems and helped solve others.</p>
+
+<p>I don&rsquo;t necessarily expect anyone to understand this unless they&rsquo;ve had first-hand experience with it. After all, I didn&rsquo;t until I got that experience myself. I know a lot of people believe fully in the results of following 12-factor principles, so I won&rsquo;t spend time trying to explain it here.</p>
+
+<p>Thought experiment: how hard would it be to make MySQL accept all of its configuration as environment variables? I think it would be feasible to make a wrapper that reads the environment variables and exec&rsquo;s <code>mysqld</code> with the resulting options. But if MySQL could be configured via environment variables directly, that&rsquo;d be even nicer. (I can&rsquo;t think of an environment variable it respects at the moment, other than <code>TZ</code>.)</p>
+
+<p>I don&rsquo;t propose blindly following 12-factor principles. They are most applicable to stateless or little-state applications, such as API servers or web applications. They are harder to use with attachable stateful resources, such as a database server. But even a system like MySQL could sometimes be improved, with regards to operational characteristics, by following 12-factor principles.</p>
+
+<p><a href="https://www.flickr.com/photos/sanchtv/4192677571">Pic</a></p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

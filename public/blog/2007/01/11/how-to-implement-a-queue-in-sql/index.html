@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to implement a queue in SQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to implement a queue in SQL</h1>
+  <span class="post-date">Thu, Jan 11, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>This article explains how to create a fixed-size FIFO (first-in, first-out) queue in SQL, where rows added after a threshold will cause the oldest row to be deleted. There are several ways to do this, but <code>MERGE</code> on Oracle and DB2, and MySQL&rsquo;s non-standard extensions to SQL, make an elegant solution easy.</p>
+
+<p><strong>Update</strong> a PostgreSQL blogger pointed out the <a href="http://people.planetpostgresql.org/greg/index.php?/archives/89-Implementing-a-queue-in-SQL-Postgres-version.html">obvious method</a> I missed: triggers! There&rsquo;s also a really neat PG-specific feature that allows it to work even more elegantly on that platform. Well worth a read. I sometimes wish I worked at a PostgreSQL shop so I could have time to learn as much about it as I&rsquo;ve learned about MySQL.</p>
+
+<h3 id="toc_0">Method one: do it with a single query in MySQL</h3>
+
+<p>Since I&rsquo;m most familiar with MySQL, I&rsquo;ll explain it in detail for MySQL. I&rsquo;m sure a competent Oracle or DB2 developer can translate it to those platforms.</p>
+
+<p>It is not possible to simultaneously <code>INSERT</code> and <code>DELETE</code> in standard SQL. However, in MySQL it is possible to simultaneously <code>INSERT</code> and <code>UPDATE</code>, with the <code>ON DUPLICATE KEY UPDATE</code> syntax. Another way to do it is with <code>REPLACE</code>, which actually works as a <code>DELETE</code> and <code>INSERT</code>. I&rsquo;ve written about these before (<a href="http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/">flexible <code>INSERT</code> and <code>UPDATE</code> statements in MySQL</a> &ndash; one of my most popular articles). You may not like them because they&rsquo;re non-standard, but they&rsquo;re available. I believe in using what my tools give me.</p>
+
+<p>For these queries to work, you need to let inserts proceed as normal until the limit (say, 5) is reached. After that, new inserts need to create a unique index violation, and then the two-things-at-once functionality of the statement kicks in.</p>
+
+<p>There are probably many ways to do this, but for this article, I&rsquo;m going to imagine the table as a fixed-size, fixed-order queue. Once the list is full, new inserts &ldquo;wrap around&rdquo; and begin again at the bottom, travelling up through the rows one at a time. Each new insert then over-writes an existing row until it reaches the top and wraps around again.</p>
+
+<p>For simplicity&rsquo;s sake, I&rsquo;m also going to imagine that nothing ever deletes any rows from this table. That way there&rsquo;ll be no gaps in the sequence I&rsquo;ll use to make the wrap-around work.</p>
+
+<p>Here&rsquo;s the table definition:</p>
+
+<pre>CREATE TABLE q (
+   id int NOT NULL,
+   modulo int NOT NULL,
+   fruit varchar(10) NOT NULL,
+   PRIMARY KEY(id),
+   UNIQUE KEY(modulo)
+)</pre>
+
+<p>This table has two unique keys: one to serve as a monotonically increasing &ldquo;row number,&rdquo; and one to cause the wrap-around effect to work. The only real data is the <code>fruit</code> column. Here&rsquo;s a query to insert &ldquo;apples&rdquo; into the queue:</p>
+
+<pre>insert into q(id, modulo, fruit)
+   select
+      (coalesce(max(id), -1) + 1),
+      (coalesce(max(id), -1) + 1) mod 5,
+      'apples'
+   from q
+      on duplicate key update
+         id    = values(id),
+         fruit = values(fruit)</pre>
+
+<p>Here&rsquo;s what the query does: it finds the maximum value of <code>id</code> in the table, which ought to be efficient since it&rsquo;s indexed. If there are no rows, the result will be <code>NULL</code>, which <code>COALESCE()</code> converts into -1. Then it adds one to that value, which will become the next largest value in the <code>id</code> sequence. What I&rsquo;m really doing here is rolling my own <code>AUTO_INCREMENT</code>, with a slight twist: the sequence starts at zero, not one.</p>
+
+<p>The sequence needs to start at zero to make the modulo arithmetic easy to understand and work with. At the same time I&rsquo;m inserting that value into <code>id</code>, I&rsquo;m also dividing it by the desired size of the table, and inserting the remainder into the <code>modulo</code> column. When the table gets &ldquo;full,&rdquo; that column will already contain the calculated value, and there&rsquo;ll be a unique index violation. Then the <code>ON DUPLICATE KEY UPDATE</code> clause will fire and update the existing row instead of inserting a new one.</p>
+
+<p>Here&rsquo;s what the table contains after the above insert:</p>
+
+<pre>select * from q;
++----+--------+--------+
+| id | modulo | fruit  |
++----+--------+--------+
+|  0 |      0 | apples |
++----+--------+--------+</pre>
+
+<p>Let me now insert four more rows for oranges, peaches, cherries and pears, so the queue is full:</p>
+
+<pre>insert into q(id, modulo, fruit)
+   select
+      (coalesce(max(id), -1) + 1),
+      (coalesce(max(id), -1) + 1) mod 5,
+      'oranges'
+   from q
+      on duplicate key update
+         id    = values(id),
+         fruit = values(fruit);
+
+insert into q(id, modulo, fruit)
+   select
+      (coalesce(max(id), -1) + 1),
+      (coalesce(max(id), -1) + 1) mod 5,
+      'peaches'
+   from q
+      on duplicate key update
+         id    = values(id),
+         fruit = values(fruit);
+
+insert into q(id, modulo, fruit)
+   select
+      (coalesce(max(id), -1) + 1),
+      (coalesce(max(id), -1) + 1) mod 5,
+      'cherries'
+   from q
+      on duplicate key update
+         id    = values(id),
+         fruit = values(fruit);
+
+insert into q(id, modulo, fruit)
+   select
+      (coalesce(max(id), -1) + 1),
+      (coalesce(max(id), -1) + 1) mod 5,
+      'pears'
+   from q
+      on duplicate key update
+         id    = values(id),
+         fruit = values(fruit);</pre>
+
+<p>Each row I inserted caused MySQL to print the following back to the command prompt:</p>
+
+<pre>Query OK, 1 row affected (0.05 sec)
+Records: 1  Duplicates: 0  Warnings: 0</pre>
+
+<p>And now, the contents of the table:</p>
+
+<pre>select * from q;
++----+--------+----------+
+| id | modulo | fruit    |
++----+--------+----------+
+|  0 |      0 | apples   |
+|  1 |      1 | oranges  |
+|  2 |      2 | peaches  |
+|  3 |      3 | cherries |
+|  4 |      4 | pears    |
++----+--------+----------+</pre>
+
+<p>Now I&rsquo;ll insert another row for bananas:</p>
+
+<pre>insert into q(id, modulo, fruit)
+   select
+      (coalesce(max(id), -1) + 1),
+      (coalesce(max(id), -1) + 1) mod 5,
+      'bananas'
+   from q
+      on duplicate key update
+         id    = values(id),
+         fruit = values(fruit);</pre>
+
+<p>That query should have wrapped around to the beginning of the queue and triggered the unique index violation. As a result, MySQL should have overwritten the &lsquo;apples&rsquo; row. In fact, the messages at the command prompt indicate something did happen:</p>
+
+<pre>Query OK, 2 rows affected (0.03 sec)
+Records: 1  Duplicates: 1  Warnings: 0</pre>
+
+<p>Two rows were &ldquo;affected&rdquo; because of the duplicate key (you can read the MySQL manual for more on what &ldquo;rows affected&rdquo; really means). And there was indeed a duplicate row. Here&rsquo;s what&rsquo;s in the table now:</p>
+
+<pre>select * from q order by modulo;
++----+--------+----------+
+| id | modulo | fruit    |
++----+--------+----------+
+|  5 |      0 | bananas  |
+|  1 |      1 | oranges  |
+|  2 |      2 | peaches  |
+|  3 |      3 | cherries |
+|  4 |      4 | pears    |
++----+--------+----------+</pre>
+
+<p>Notice I ordered that query by <code>modulo</code> to show the entries in the same order as before. The &ldquo;oldest&rdquo; row, which is at the &ldquo;front&rdquo; of the queue, is now the one with the smallest value of <code>id</code>, so to see them &ldquo;in queue order,&rdquo; you can order by <code>id</code>:</p>
+
+<pre>select * from q order by id;
++----+--------+----------+
+| id | modulo | fruit    |
++----+--------+----------+
+|  1 |      1 | oranges  |
+|  2 |      2 | peaches  |
+|  3 |      3 | cherries |
+|  4 |      4 | pears    |
+|  5 |      0 | bananas  |
++----+--------+----------+</pre>
+
+<h3 id="toc_1">Method two: use <code>REPLACE</code> on MySQL</h3>
+
+<p>If it&rsquo;s easier to write your query this way, or you need support on older versions of MySQL, you can use <code>REPLACE</code> instead of <code>INSERT... ON DUPLICATE KEY UPDATE</code>. Here&rsquo;s an example:</p>
+
+<pre>replace into q(id, modulo, fruit)
+   select
+      (coalesce(max(id), -1) + 1),
+      (coalesce(max(id), -1) + 1) mod 5,
+      'bananas'
+   from q;</pre>
+
+<p>The query <em>may</em> be more or less efficient, depending on your MySQL version, the storage engine you chose, and so forth. If I were doing this in production, I&rsquo;d test it.</p>
+
+<h3 id="toc_2">Methods three and four: on other platforms</h3>
+
+<p>Another option, which will allow the same easy single-query solution, is to use <code>MERGE</code> on Oracle and DB2. <code>MERGE</code>, <code>REPLACE</code> and friends are what we database folks call <a href="http://www.xaprb.com/blog/2006/06/17/3-ways-to-write-upsert-and-merge-queries-in-mysql/">upsert queries</a>, because they insert or update. If this functionality is available on other platforms, let me know. It looks like it&rsquo;s still on the TODO list for PostgreSQL, and I&rsquo;m fairly certain it&rsquo;s not in SQL Server 2005. Perhaps a future release of one of these products will offer it.</p>
+
+<p>Till then, I think the best option on these platforms would be a transaction with a couple statements to check the table and either insert or update (or delete and then insert, depending on how you want to do it). This fourth method can be made completely portable across platforms, if that&rsquo;s important for your use case.</p>
+
+<h3 id="toc_3">Things to think about</h3>
+
+<p>If you implement a system like this, consider the edge cases. Are you ever going to delete rows from the queue? If so, does that mess with the desired behavior of new inserts? Are there any ways you can get a hole in the sequence? If so, what happens &ndash; do you get too few rows in the queue, overwrite something other than the oldest row, or something else? If you need to &ldquo;process&rdquo; items in the queue, maybe you can just mark them as processed rather than deleting them.</p>
+
+<p>What if you want to insert multiple rows at once? If you need to go that route on MySQL, my past articles might help. You could use <a href="http://www.xaprb.com/blog/2006/12/15/advanced-mysql-user-variable-techniques/">advanced user variable techniques</a> to <a href="http://www.xaprb.com/blog/2006/12/02/how-to-number-rows-in-mysql/">number several rows at once</a>. I also talked about related techniques in <a href="http://www.xaprb.com/blog/2005/09/25/insert-if-not-exists-queries-in-mysql/">how to write <code>INSERT IF NOT EXISTS</code> queries</a>.</p>
+
+<h3 id="toc_4">Conclusion</h3>
+
+<p>In this article I showed you several ways to let a table grow to a fixed size, after which new rows replace old rows. I haven&rsquo;t personally used this in production; this article grew out of a reader&rsquo;s question (thanks for the stimulating topic!). If this article helped you, you should consider <a href="http://www.xaprb.com/index.xml">subscribing</a> for future updates via email or feeds. It&rsquo;s free and convenient.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

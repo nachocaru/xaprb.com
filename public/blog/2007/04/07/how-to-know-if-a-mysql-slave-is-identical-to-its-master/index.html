@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to know if a MySQL slave is identical to its master &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to know if a MySQL slave is identical to its master</h1>
+  <span class="post-date">Sat, Apr 7, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>A <a href="http://onlinesolutionsmysql.blogspot.com/2007/03/questions-and-answers-during-first.html">frequently asked question about MySQL replication</a> is &ldquo;how do I know whether my slave is identical to the master?&rdquo; Until recently there hasn&rsquo;t been a good way to know, but now you can compare all the data in your master to the data in the slaves and get a reliable yes-or-no answer. And you can do this online, efficiently, across many servers simultaneously. Read on to find out how.</p>
+
+<h3 id="toc_0">Checksum your data</h3>
+
+<p>The best way I know to find out whether two servers are the same is to compare every table, and the best way I know to do that is to <a href="http://www.xaprb.com/blog/2007/01/25/how-to-calculate-table-checksums-in-mysql/">checksum every table</a>. If the checksums match, it&rsquo;s a pretty strong guarantee the tables are identical, and checksums are only a few dozen bytes of network traffic no matter how large the tables are. There are built-in checksums for MyISAM, but you can use cryptographic hash functions for other storage engines. <a href="http://code.google.com/p/maatkit">MySQL Table Checksum</a> makes this process simple and efficient with fast, parallel checksums across many servers at once.</p>
+
+<h3 id="toc_1">Get a consistent read</h3>
+
+<p>For a strong guarantee of consistency, you need to checksum your tables at the same point in the replication sequence. One way to do this is to lock the table on the master and wait on the slaves until they reach the master&rsquo;s position, checksum everything, and then unlock on the master.</p>
+
+<p>This can be expensive in terms of blocking updates on that table on the master, so I prefer to take a low-fidelity checksum to begin with, and then come back and re-examine any tables that look suspicious.</p>
+
+<h3 id="toc_2">Putting it all together</h3>
+
+<p>Here&rsquo;s how I verify all my slaves are in sync with the master:</p>
+
+<ol>
+<li>Do a low-impact, fast checksum across all the slaves, measuring slave lag but not locking or waiting for the master. Most tables are probably not being updated during this process, so even if I don&rsquo;t measure them at the same position in the binlog, they&rsquo;re probably still identical.</li>
+<li>From this list of tables I eliminate ones that checked out okay, and special-case tables I don&rsquo;t want to be identical on the slave.</li>
+<li>I re-checksum the remaining list and see if they&rsquo;re truly different. This time I force them to be at the same point in the binlog.</li>
+</ol>
+
+<p>MySQL Table Checksum makes this very easy. Here&rsquo;s how:</p>
+
+<pre># Take a fast initial checksum and save to a file
+$ mysql-table-checksum --slavelag master slave1 slave2 \
+   | tee checksums
+
+# See which tables are different
+$ mysql-checksum-filter --master master checksums
+
+# Run again on the bad table(s), this time forcing
+# slaves to checksum at the same binlog position
+$ mysql-table-checksum --databases db1 --tables tbl1,tbl2 \
+  --wait 600 master slave1 slave2 | tee bad_checksums</pre>
+
+<h3 id="toc_3">I found differences. What now?</h3>
+
+<p>The traditional advice is &ldquo;you have to re-initialize your slaves with a fresh snapshot of data from the master.&rdquo; That&rsquo;s expensive, and <strong>you might not have to do it</strong>. I wrote <a href="http://code.google.com/p/maatkit">MySQL Table Sync</a> to do fast, network-efficient, consistent data comparision and syncing <em>over replication</em>. It&rsquo;s explicitly designed to bring tables back into sync on slaves.</p>
+
+<h3 id="toc_4">Should I check even if there are no replication errors?</h3>
+
+<p>When there&rsquo;s no noticeable error, most people assume the slave has the same data as the master. That sounds reasonable, but it turns out to be a bad assumption. In practice, I have replication running rock-solid, and the slaves still drift out of sync. You&rsquo;ll never know unless you measure, of course.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

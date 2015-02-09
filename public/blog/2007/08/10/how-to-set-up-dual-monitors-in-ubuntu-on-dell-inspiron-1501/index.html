@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to set up dual monitors in Ubuntu on Dell Inspiron 1501 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to set up dual monitors in Ubuntu on Dell Inspiron 1501</h1>
+  <span class="post-date">Fri, Aug 10, 2007 in
+		
+		<a href="/categories/desktop" class="btn btn-primary">Desktop</a>
+		
+  </span>
+  <p>It took me about five minutes to get dual monitors working on my Dell Inspiron 1501 under Ubuntu 7.04. Here&rsquo;s how I did it.</p>
+
+<ol>
+<li>I tried the xorg driver, which had been working fine on just the laptop display, but it wouldn&rsquo;t work; I could get either the external display or the internal display to show, but not both. If you get it working, post a comment and let me know.</li>
+<li>I enabled the proprietary driver via Ubuntu&rsquo;s Restricted Drivers Manager.</li>
+<li>I read the <a href="http://gentoo-wiki.com/HOWTO_Dual_Monitors">Gentoo Wiki page on dual monitors</a>.</li>
+<li>As root, I ran<br />
+<code>aticonfig --initial=dual-head --screen-layout=above -v</code></li>
+<li>I rebooted.</li>
+</ol>
+
+<p>At the moment, I&rsquo;m typing into Firefox on the laptop monitor. My Dell 1800FP monitor is perched right above it; it&rsquo;s the same width in pixels, and almost the same physical width. I have no windows open on that monitor, but I do have a <a href="http://www.deviantart.com/deviation/55040068/">nice background image</a>! XFCE configures the backgrounds for each display separately.</p>
+
+<p>I&rsquo;ve been using this setup for about a week now. It&rsquo;s not flawless, but the flaws don&rsquo;t get in my way much. Here are the problems I&rsquo;ve noticed:</p>
+
+<ol>
+<li>The driver is proprietary. Okay, this is a major flaw.</li>
+<li>The driver doesn&rsquo;t work perfectly. Occasionally a weird defect in the screen image appears and won&rsquo;t go away until X is restarted. It looks like a bar code and usually shows up near the bottom right of one of the monitors, often right over the clock in my system tray.</li>
+<li>If I log out of XFCE, my system hangs and I have to use the Alt-PrntScrn keys to shut it down and restart it.</li>
+<li>When I start my laptop, only the display on my laptop shows anything (perhaps the login screen isn&rsquo;t dual-monitor capable). As soon as I log in, both monitors become active. While this is happening, my mouse randomly jumps between the top-left corner of the two monitors.</li>
+
+<li><p>The two monitors are running two different X displays. I&rsquo;m not crystal-clear on how this should normally work, but I get the idea Xinerama isn&rsquo;t the same as this and should work better (I don&rsquo;t know if I can set up Xinerama with the proprietary driver, but I don&rsquo;t think so). This has a variety of side effects:</p>
+
+<ol>
+<li>Windows I open on one display can&rsquo;t be moved to the other (oddly, I can drag and drop between displays, which I didn&rsquo;t expect).</li>
+<li>I can&rsquo;t alt-tab to the other display.
+
+<ul>
+<li>When I click on a link in Thunderbird, if Firefox is running on the other display, it says Firefox is already running but not responding, and refuses to open the link. I can&rsquo;t get Firefox running on both displays at once.</li>
+<li>My XFCE panel on the laptop display doesn&rsquo;t show windows on the other display. I tried creating a panel for that display too (XFCE recognizes that there are two displays and lets me place the panel on either one), but I couldn&rsquo;t place it at the bottom of the display. When I chose to place it at the bottom, it seemed to place itself 768 pixels from the top (the external monitor is 1280&#215;1024, but the laptop display is 1280&#215;768). So I placed it at the top of the display, added a taskbar applet to it, and voila I had what I wanted &ndash; but when I rebooted, the panel showed up on the laptop display again.</ol></li>
+</ul></li>
+</ol>
+
+<p>Otherwise I haven&rsquo;t noticed any troubles. Anyone who has suggestions on these issues, feel free to post a comment!</p></li>
+</ol>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      innotop 1.3.5 released &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">innotop 1.3.5 released</h1>
+  <span class="post-date">Sat, Feb 3, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  
+
+<p>innotop 1.3.5 is the latest release of the <a href="http://code.google.com/p/innotop">increasingly popular MySQL and InnoDB monitor</a>. I recommend everyone upgrade to this release. Aside from incomplete documentation, it&rsquo;s close to a stable 1.4 release (I&rsquo;m counting on you to find the bugs!). There are many significant new features since version 1.3, which make it more powerful and easier to use. Here&rsquo;s what&rsquo;s new:</p>
+
+<ul>
+<li>Support for colorizing rows. Default color rules are included for Q, T and M modes; it&rsquo;s easy to write your own. Color rules are really simple. You don&rsquo;t have to hack the source to customize colors!</li>
+<li>Support for multi-column sorting so you can make sense of the output from many servers at once. The default sort rules will group things together sensibly, but of course you can customize them easily.</li>
+<li>A more powerful, simpler syntax for doing awk-like calculations on column values. No need to know Perl. More about this in a future blog post.</li>
+<li>Improvements to constrain column widths so the display is more stable and easier to watch. Headers are compacted by default in some modes so you can fit more on the screen.</li>
+<li>A smoother config file upgrade from 1.x.</li>
+<li>D mode (InnoDB deadlocks) is cleaned up and can handle multiple servers at once.</li>
+<li>Lots of bug fixes.</li>
+<li>Much better configuration-editing tools.</li>
+</ul>
+
+<p>Many of the improvements are in default configuration settings, and the upgrade <strong>will not upgrade</strong> your configuration settings. So if you want (for example) the new default multi-column sorts, you will have to tweak your config file, or just delete those lines from the file and let innotop fill in the new defaults for you.</p>
+
+<h3 id="toc_0">Acknowledgements</h3>
+
+<p>Many thanks to Sebastien Estienne, Christian Hammers, and many others for suggesting improvements, finding bugs, helping with packaging, helping me learn how to use version control software better, and especially for all the compliments and positive feedback!</p>
+
+<h3 id="toc_1">The future</h3>
+
+<p>Lots of features are planned. You can always read the ROADMAP file to find out what&rsquo;s coming next. And if you want something sooner, please ask. A user told me he likes mytop&rsquo;s color display for easy readability, so I added color rules sooner than I&rsquo;d planned. Let me know what&rsquo;s important to you.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

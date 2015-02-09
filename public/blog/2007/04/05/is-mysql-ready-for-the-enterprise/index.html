@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Three updated tools in MySQL Toolkit &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Three updated tools in MySQL Toolkit</h1>
+  <span class="post-date">Thu, Apr 5, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  
+
+<p>I&rsquo;ve just released three updates to tools in <a href="http://code.google.com/p/maatkit">MySQL Toolkit</a>. The updated programs are MySQL Query Profiler (major new features and helper script), MySQL Table Sync (bug fixes, documentation, features), and MySQL Table Checksum (minor sanity check enhancement).</p>
+
+<h3 id="toc_0">MySQL Query Profiler 1.1.0</h3>
+
+<p>I&rsquo;ve added the ability to profile more data, including an educated guess at the number of filesorts.</p>
+
+<p>The tool can now profile external programs. There are several ways you can do this:</p>
+
+<ol>
+<li>Run the tool. It takes a status snapshot, then pauses while you run whatever external query or program you want to profile. Then it takes another snapshot and reports on what happened.</li>
+<li>Run the tool and pipe commands into it via standard input. It executes them, taking status snapshots after every one.</li>
+<li>Run the tool and give it a file of commands to execute and profile. These are shell commands, not SQL queries.</li>
+</ol>
+
+<p>I also enhanced the command-line behavior so it acts just like you&rsquo;d expect any pipe-and-filter program to work. You can shove input into its STDIN, give it multiple files to read and profile, give it the &#8211; file so it reads from STDIN, and so on. The normal UNIX-ish behavior.</p>
+
+<p>I also wrote a helper script that can extract and line up bits of the output so you can compare profiling results side-by-side. This is a major usability boost in my opinion. Say you want to profile your application&rsquo;s queries individually, but there are a thousand of them and you only want to see every tenth one. That&rsquo;s now easy to do, and they&rsquo;re lined up so you can just look across the rows and see the differences.</p>
+
+<h3 id="toc_1">MySQL Table Sync 0.9.1</h3>
+
+<p>This release fixes a bunch of bugs with arithmetic and so forth. It also adds new features, like the ability to do the sync in a single transaction so it can be rolled back. There&rsquo;s more documentation too.</p>
+
+<p>I&rsquo;ve written a test suite that generates random data, copies it to another table, randomly screws it up, and then fixes it. This helped me catch the bugs. I haven&rsquo;t seen it fail in a long time now.</p>
+
+<p>However &ndash; caveat emptor. I am still leery of saying this is production-ready yet. For one thing, it&rsquo;s not feature-complete!</p>
+
+<h3 id="toc_2">MySQL Table Checksum 1.0.4</h3>
+
+<p>There&rsquo;s a bit of new documentation on the checksum algorithm in this release, but the important thing is a sanity check that makes sure all the servers you&rsquo;re running the checksum on have the same behavior for some of the crucial checksum code. MySQL changed some behavior that will make checksums different before and after version 4.0.14. MySQL Table Checksum now sanity-checks for this.</p>
+
+<h3 id="toc_3">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

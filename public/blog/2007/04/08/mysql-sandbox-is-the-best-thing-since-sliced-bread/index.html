@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL Sandbox is the best thing since sliced bread &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Sandbox is the best thing since sliced bread</h1>
+  <span class="post-date">Sun, Apr 8, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I&rsquo;ve been preparing for my <a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213">innotop session</a> at the <a href="http://www.mysqlconf.com/">upcoming MySQL conference</a>, and enlisted <a href="http://sourceforge.net/projects/mysql-sandbox">Giuseppe Maxia&rsquo;s MySQL Sandbox</a> to help me get a bunch of MySQL servers, from 3.23.58 to 5.2.3, running on one machine. It was super-easy and has helped me find some bugs in <a href="http://code.google.com/p/innotop">innotop</a>. I should have done this a long time ago.</p>
+
+<p>To get started, I just read through Giuseppe&rsquo;s Sandbox article on O&rsquo;Reilly Databases Blog. After reading this, I downloaded the scripts and a bunch of binary distributions of MySQL (I&rsquo;m using Ubuntu). I took the &ldquo;how to make it easy&rdquo; advice and unpacked them all in /opt/mysql:</p>
+
+<pre>baron@wabbit:~ $ ls /opt/mysql
+3.23.58  4.0.27  4.1.0  4.1.22  5.1.15  5.2.3</pre>
+
+<p>After that, all I had to do was change to the sandbox directory and say <code>./express_install.pl &lt;version&gt;</code> for each version, and it set everything up for me. Boy, was that easy! Before I did this, I had spent a couple hours reading through the manual&rsquo;s instructions on how to get many servers on one machine &ndash; this was much faster and easier.</p>
+
+<p>The next step for me was setting up some of the servers as slaves of others. I needed to modify the config files to set the server-id, and to make them listen to TCP connections, but that was trivial.</p>
+
+<p>Then I pointed innotop at all of them and started finding bugs in innotop (and a few in MySQL&rsquo;s documentation too). Who knew <a href="http://bugs.mysql.com/bug.php?id=27706">SHOW OPEN TABLES behaved so differently in 3.23.58</a>? It was high time I did this; I actually feel a little silly for putting it off so long.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

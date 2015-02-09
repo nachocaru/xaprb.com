@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      innotop 1.4.2 released &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">innotop 1.4.2 released</h1>
+  <span class="post-date">Thu, May 3, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  
+
+<p>This release of the innotop MySQL and InnoDB monitor is a major upgrade in terms of functionality, code quality, and interface consistency. It is the result of me working for over a month to get innotop into shape for the recent MySQL Conference and Expo. Here&rsquo;s a summary of the changes:</p>
+
+<h3 id="toc_0">Major changes</h3>
+
+<ul>
+<li>Quick-filters to easily filter any column in any display</li>
+<li>Compatibility with MySQL 3.23 through 6.0</li>
+<li>Improved error handling when a server is down, permissions denied, etc</li>
+<li>Use additional SHOW INNODB STATUS information in 5.1.x</li>
+<li>Make all modes use tables consistently, so they can all be edited, filtered, colored and sorted consistently</li>
+<li>Combine V, G and S modes into S mode, with v, g, and s hot-keys</li>
+<li>Let DBD driver read MySQL option files; permit connections without user/pass/etc</li>
+<li>Compile SQL-like expressions into Perl subroutines; eliminate need to know Perl</li>
+<li>Do not save all config data to config file, only save user&rsquo;s customizations</li>
+<li>Rewritten and improved command-line option handling</li>
+<li>Added &#8211;count, &#8211;delay, and other command-line options to support run-and-exit operation</li>
+<li>Improve built-in variable sets</li>
+<li>Improve help screen with three-part balanced-column layout</li>
+<li>Simplify table-editor and improve hotkey support</li>
+<li>Require Perl to have high-resolution time support (Time::HiRes)</li>
+<li>Help the user choose a query to analyze or kill</li>
+<li>Enable EXPLAIN, show-full-query in T mode just like Q mode</li>
+
+<li><p>Let data-extraction access current, previous and incremental data sets all at once </ul></p>
+
+<h3 id="toc_1">Minor changes</h3></li>
+
+<li><p>Column stabilizing for Q mode</p></li>
+
+<li><p>New color rules for T, Q, W modes</p></li>
+
+<li><p>Apply slave I/O filter to Q mode</p></li>
+
+<li><p>Improve detection of server version and other meta-data</p></li>
+
+<li><p>Make connection timeout a config variable</p></li>
+
+<li><p>Improve cross-version-compatible SQL syntax</p></li>
+
+<li><p>Get some information from the DBD driver instead of asking MySQL for it</p></li>
+
+<li><p>Improved error messages</p></li>
+
+<li><p>Improve server group creation/editing</p></li>
+
+<li><p>Improve connection/thread killing</p></li>
+
+<li><p>Fix broken key bindings and restore previously mapped hot-keys for choosing columns</p></li>
+
+<li><p>Some documentation updates (but not nearly enough)</p></li>
+
+<li><p>Allow the user to specify graphing char in S mode (formerly G mode)</p></li>
+
+<li><p>Allow easy switching between variable sets in S mode</p></li>
+
+<li><p>Bind &lsquo;n&rsquo; key globally to choose the &lsquo;next&rsquo; server connection</p></li>
+
+<li><p>Bind &lsquo;%&rsquo; key globally to filter displayed tables</p></li>
+
+<li><p>Allow aligning columns on the decimal place for easy readability</p></li>
+
+<li><p>Add hide_hdr config variable to hide column headers in tables</p></li>
+
+<li><p>Add a feature to smartly run PURGE MASTER LOGS in Replication mode</p></li>
+
+<li><p>Enable debug mode as a globally configurable variable</p></li>
+
+<li><p>Improve error messages when an expression or filter doesn&rsquo;t compile or has a run-time error; die on error when debug is enabled</p></li>
+
+<li><p>Allow user-configurable delays after executing SQL (to let the server settle down before taking another measurement)</p></li>
+
+<li><p>Add an expression to show how long until a transaction is finished</p></li>
+
+<li><p>Add skip_innodb as a global config variable</p></li>
+
+<li><p>Add &lsquo;%&rsquo; after percentages to help disambiguate (user-configurable)</p></li>
+
+<li><p>Add column to M mode to help see how fast slave is catching up to master</p>
+
+<h3 id="toc_2">Bug fixes</h3></li>
+
+<li><p>T and W modes had wrong value for wait_status column</p></li>
+
+<li><p>Error tracking on connections didn&rsquo;t reset when the connection recovered</p></li>
+
+<li><p>wait_timeout on connections couldn&rsquo;t be set before MySQL 4.0.3</p></li>
+
+<li><p>There was a crash on 3.23 when wiping deadlocks</p></li>
+
+<li><p>Lettercase changes in some result sets (SHOW MASTER/SLAVE STATUS) between MySQL versions crashed innotop</p></li>
+
+<li><p>Inactive connections crashed innotop upon access to DBD driver</p></li>
+
+<li><p>set_precision did not respect user defaults for number of digits</p></li>
+
+<li><p>&#8211;inc command-line option could not be negated</p></li>
+
+<li><p>InnoDB status parsing was not always parsing all needed information</p></li>
+
+<li><p>S mode (formerly G mode) could crash trying to divide non-numeric data</p></li>
+
+<li><p>M table didn&rsquo;t show Slave_open_temp_tables variable; incorrect lettercase</p></li>
+
+<li><p>DBD drivers with broken AutoCommit would crash innotop</p></li>
+
+<li><p>Some key bindings had incorrect labels</p></li>
+
+<li><p>Some config-file loading routines could load data for things that didn&rsquo;t exist</p></li>
+
+<li><p>Headers printed too often in S mode</p></li>
+
+<li><p>High-resolution time was not used even when the user had it</p></li>
+
+<li><p>Non-interactive mode printed blank lines sometimes</p></li>
+
+<li><p>Q-mode header and statusbar showed different QPS numbers</p></li>
+
+<li><p>Formulas for key-cache and query-cache hit ratios were wrong</p></li>
+
+<li><p>Mac OS &ldquo;Darwin&rdquo; machines were mis-identified as Microsoft Windows</p></li>
+
+<li><p>Some multiplications crashed when given undefined input</p></li>
+
+<li><p>The commify transformation did not check its input and could crash</p></li>
+
+<li><p>Specifying an invalid mode on the command line or config file could crash innotop</p>
+
+<h3 id="toc_3">What&rsquo;s next</h3></li>
+</ul>
+
+<p>In a word: documentation.</p>
+
+<p>But that&rsquo;s not all. Take a look at the roadmap for the project, and you find such features as mutex monitoring, the ability to monitor a file instead of connecting to a MySQL server, and much more. Some of this functionality is already done, but it&rsquo;s not mature enough to release (feel free to use the latest trunk source, which is what I use every day; it usually works just fine).</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

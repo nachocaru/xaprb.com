@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      JavaScript date chooser &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">JavaScript date chooser</h1>
+  <span class="post-date">Thu, Sep 29, 2005 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+  </span>
+  
+
+<p style="border:solid red 1px; background:yellow">
+  If you have questions or comments or bugs report, or a change to make, be sure to use the project's new homepage: <a href="http://code.google.com/p/flexible-js-formatting/">Flexible JS Formatting Libraries</a>
+</p>
+
+<p>I wrote this date chooser because the ones I could find on the Internet were crummy, too complicated, or not free. The point is to make form entry more usable and help the user enter valid data (of course, you still need to validate your input when processing). I also wanted to code to be compact and fast, and not require a bunch of ugly code injected into the web page.</p>
+
+<p>I made a <a href="http://www.xaprb.com/media/2005/09/javascript-date-chooser-demo.html">demo</a> so you can see it in action.</p>
+
+<p>This code uses some code from my <a href="http://www.xaprb.com/blog/2005/12/20/javascript-date-parsing/">article about date formatting and parsing via dynamic code generation</a>, to implement a date-formatting syntax similar to <a href="http://www.php.net/manual/en/function.date.php">PHP&rsquo;s <code>date</code> function</a>.</p>
+
+<p>The script depends upon <a href="http://www.xaprb.com/media/2005/09/date-functions.js">date-functions.js</a>, <a href="http://www.xaprb.com/media/2005/09/datechooser.js">datechooser.js</a>, <a href="http://www.xaprb.com/media/2005/09/select-free.css">select-free.css</a>, and <a href="http://www.xaprb.com/media/2005/09/datechooser.css">datechooser.css</a>.</p>
+
+<h3 id="toc_0">How to use it</h3>
+
+<p>To create a date-chooser on your HTML document, follow these steps:</p>
+
+<ol>
+<li>Include the CSS and JavaScript files in the <code>head</code> of your document.</li>
+<li>Wrap <code>select-free.css</code> in a conditional comment for IE, as in the demo.</li>
+<li>Create a form, a <code>div</code> to hold the date chooser, a form field to hold the results, and an image to trigger showing and hiding the chooser, as below.</li>
+</ol>
+
+<p>Here&rsquo;s some sample code:</p>
+
+<pre>&lt;input id="dob" name="dob" size="10" maxlength="10" type="text"/&gt;&lt;img src="/files/calendar.gif" onclick="showChooser(this, 'dob', 'chooserSpan', 1950, 2010, 'Y-m-d', false);"/&gt;
+&lt;div id="chooserSpan" class="dateChooser select-free" style="display: none; visibility: hidden; width: 160px;"&gt;
+&lt;/div&gt;</pre>
+
+<p>This code causes the date chooser to be shown with a date range of 1950 to 2010, with the date formatted in ISO-8601 date format.</p>
+
+<h3 id="toc_1">Updates</h3>
+
+<p>On May 26 2006, I decided I could no longer procrastinate and integrated many of the helpful suggestions from the comments into the code. Thanks to all who wrote in comments suggesting improvements, and a big thanks to <a href="http://www.hatwhite.com/">Jared</a> for integrating a bunch of code for me and sending me a comment about it. Changes include a fix for the IE problem of <code>select</code> fields showing through, no conflicts with the <a href="http://prototype.conio.net/">Prototype</a> library, and a cleaner show/hide behavior.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

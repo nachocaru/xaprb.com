@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      What should a DBA do? &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">What should a DBA do?</h1>
+  <span class="post-date">Mon, Sep 3, 2012 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I was thinking recently about what a DBA does, and decided to blog about what I think a DBA could/should do. Most DBAs I know are mired in day-to-day firefighting and time-consuming tedium. This forces them to operate in reactive mode (because they don&rsquo;t have enough time to &ldquo;get caught up&rdquo;), and keeps them from more valuable things they <em>could</em> be doing. Here&rsquo;s my short and incomplete list:</p>
+
+<ul>
+<li>Working with the developers (programmers) to help architect upcoming projects. If the DBA leaves design to the developers, then suboptimal designs might be found after the fact. This often happens after deploying to production, where the design impacts the business. Without early input, the DBA also has no chance to assess and prepare for future needs.</li>
+<li>Teaching developers how to work with the database. Many developers struggle to understand databases and SQL, and are unable to fully optimize the queries they write. They also unwittingly write programs with security flaws that could give attackers access to the entire database. Education is a big part of prevention.</li>
+<li>Capacity planning and management. If the DBA doesn&rsquo;t have enough time to do routine work, he can&rsquo;t prepare for the future. He needs to ensure that the servers are going to be fast enough and have enough storage space for what&rsquo;s next.</li>
+<li>Planning and executing upgrades. It&rsquo;s very important to stay up-to-date, but if you upgrade carelessly, you may hit serious problems. Upgrades take a lot of time and attention, and if you don&rsquo;t have that, the business is at risk whether you upgrade or not.</li>
+<li>Business continuity planning and fire drills. Backups are only a small part of the overall BCP process. It takes a lot of time and thought, and it&rsquo;s never finished.</li>
+</ul>
+
+<p>A DBA who&rsquo;s overworked on tedious tasks gets tunnel vision. He can&rsquo;t think strategically, he can&rsquo;t protect the business from risk. Critically, he can&rsquo;t help the business make the most of other investments, such as the developers. A DBA who&rsquo;s freed from those things is a resource and an enabler, a critical asset for strategic and tactical planning on upcoming changes to systems, and a risk reducer &ndash; able to stop a lot of problems before they get worse, or even before they start.</p>
+
+<p>Some of this is about tools. DBAs with good tools can manage at least an order of magnitude more servers than one with poor/no tools. I know some DBAs who manage hundreds of servers and treat it as unremarkable. They usually have excellent tools to help them, whether self-developed or gotten elsewhere.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

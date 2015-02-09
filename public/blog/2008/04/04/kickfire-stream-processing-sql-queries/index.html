@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Kickfire: stream-processing SQL queries &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Kickfire: stream-processing SQL queries</h1>
+  <span class="post-date">Fri, Apr 4, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>Some of you have noticed <a href="http://www.kickfire.com/">Kickfire</a>, a new sponsor at this year&rsquo;s <a href="http://www.mysqlconf.com/">MySQL Conference and Expo</a>. Like <a href="http://www.paragon-cs.com/wordpress/?p=132">Keith Murphy</a>, I have been involved with them for a while now. This article explains the basics of how their technology is different from the current state of the art in complex queries on large amounts of data.</p>
+
+<p>Kickfire is developing a MySQL appliance that combines a pluggable storage engine (for MySQL 5.1) with a new kind of chip. On the surface, the storage engine is not that revolutionary: it is a column-store engine with data compression and some other techniques to reduce disk I/O, which is kind of par for the course in data warehousing today. The chip is the really exciting part of the technology.</p>
+
+<p>The simplest description of their chip is that it runs SQL natively.</p>
+
+<p>OK, but now you need to do something: <em>get &ldquo;SQL chip&rdquo; out of your mind</em>. It doesn&rsquo;t work the way you think it does, and your pre-conceived ideas may prevent you from understanding how different this really is. (Everyone says their technology is a paradigm shift, so I expect you to be numb to this phrase.)</p>
+
+<p>I can&rsquo;t explain all of the technology in this post, partially because of NDA, but I want to prepare you for when you do hear the details. If you&rsquo;re like me, you&rsquo;ll miss a lot of stuff because you have tunnel vision, and then you&rsquo;ll say &ldquo;wait, I get it now! Can you please repeat everything you&rsquo;ve been saying for the last hour so I can think about it all over again?&rdquo;</p>
+
+<h3 id="toc_0">An important note</h3>
+
+<p><strong>Very important:</strong> I have not seen this technology, tasted it, smelled it, or benchmarked it. This information is based on discussions with their engineering and other staff. I will not pretend to know anything I don&rsquo;t. I will be spending two days in the lab with the engineers next week, and then I will be able to write in greater detail with more confidence.</p>
+
+<h3 id="toc_1">How your computer currently works</h3>
+
+<p>To understand how Kickfire&rsquo;s chip works, you need to understand something you probably take for granted: how most chips work. Most computers today use the same architecture they always have: there&rsquo;s data that is held in the CPU, and data that is not. The CPU has registers, which hold a miniscule bit of data &#8211; the data it is currently working with. When the CPU processes an instruction that asks for some more data it doesn&rsquo;t have, the CPU has to go fetch it. In the meantime, the instruction can&rsquo;t complete.</p>
+
+<p>As you might imagine, this is not terribly efficient. Fetching data that&rsquo;s not in the CPU can take hundreds of CPU cycles (or more). To work around this, computer architects have developed a hierarchy of caches: the on-chip cache, the main memory, and the hard drive, to name a few. The caches make it faster to get data when it&rsquo;s not already on hand. And modern chips have a pipeline, too. The pipeline looks at the instructions as they flow towards the CPU, tries to predict which data they&rsquo;re going to need, then pre-fetches it.</p>
+
+<p>In the best case, this works okay. Not always &ndash; for example, the Pentium 4 has a very long pipeline, so the cost of a wrong branch prediction is very high. Another case is when you simply need a lot of data, such as tens of gigabytes. Suppose for your 10GB operation, you&rsquo;re only going to look at each byte once (a common occurrence in data warehousing queries). This renders your caches useless, because caches work on the principle that you&rsquo;re likely to look at recently accessed data again soon.</p>
+
+<p>In these cases, the speed of the computation is constrained by the <a href="http://en.wikipedia.org/wiki/Von\_Neumann\_architecture">Von Neumann bottleneck</a>: the inefficient fetch-compute-wait cycle of constantly going to the memory (or disk) for more data, a teeny bit at a time. Remember, even in-memory data is very slow compared to data that&rsquo;s in the registers. Having a lot of fast memory is not a <strong>solution</strong> to the Von Neumann bottleneck. It&rsquo;s a <strong>workaround</strong> to reduce the cost.</p>
+
+<h3 id="toc_2">Kickfire&rsquo;s architecture</h3>
+
+<p>Kickfire is designed to work well where today&rsquo;s general-purpose computing architectures run queries slowly because they&rsquo;re sitting on their thumbs much of the time. Think data warehousing: complex queries with lots of data.</p>
+
+<p>What is the industry&rsquo;s answer to this? So-called massively parallel processing, or MPP. Current MPP data-warehousing solutions are special-purpose database software that runs queries on dozens or hundreds of CPUs, which occupy a lot of storage space and require lots of power, hardware, and cooling. &ldquo;If you throw enough Von Neumann machines at the problem simultaneously, they can answer your questions faster,&rdquo; or so the thinking goes. In other words, the current state of the art is to arrange conventional computers in new ways.</p>
+
+<p>Kickfire takes the opposite approach: <em>stream processing</em>. This is a fundamentally different computing architecture. Stream processing is to Von Neumann machines as LISP is to C.</p>
+
+<p>For those of you who aren&rsquo;t LISP programmers, here&rsquo;s another analogy: In stream processing, you take a bunch of data and you shove it through the chip without stopping. Rather than the chip asking for data from the storage subsystem as needed, the data actually gets pushed at the chip. That is, it&rsquo;s push-processing instead of the conventional pull-processing.</p>
+
+<p>Conventional processing is like trying to fill your bathtub from the sink with a paper cup. Stream processing is like putting your tub under the sink and opening the drain.</p>
+
+<p>I&rsquo;m taking some liberties here, to illustrate the differences. As I said, I haven&rsquo;t seen the wiring diagrams of the Kickfire chip. But hopefully you get the concept.</p>
+
+<p>This is not a new idea. If you&rsquo;ve worked with modern graphics cards, you&rsquo;ve seen this in action. Programming languages like <a href="http://en.wikipedia.org/wiki/Cg\_%28programming\_language%29">Cg</a> express the stream-processing concepts elegantly. If you&rsquo;ve ever been in a classroom full of C++ programmers trying to learn Cg, you&rsquo;ve seen how hard it is to grasp this different approach. Essentially, graphics programming on one of these chips is a series of transformations, not a series of instructions. You input some vertexes at one end of the processor, and you tell the chip to do some matrix multiplies and so on. Out pops the result at the other end.</p>
+
+<p>If this doesn&rsquo;t sound much different from instructions&hellip; well, meditate on it. It&rsquo;s like an assembly line, but nobody leaves their station along the conveyor belt. In a traditional CPU, the &ldquo;person&rdquo; at the conveyor <em>constantly</em> leaves to go get the materials he needs.</p>
+
+<p>Kickfire runs in commodity hardware, and it is just one or two servers, not racks full. Like many other systems designed for large amounts of data, it uses a column data store. Unlike many other systems, it uses an industry standard interconnect and a custom pluggable MySQL storage engine.</p>
+
+<h3 id="toc_3">What took so long?</h3>
+
+<p>Stream processing is the obvious way to run SQL queries. Some readers may never have thought about it this way, but my guess is that a lot of you already think of SQL in a stream-processing way, even though you might know that computers today really implement it in conventional ways. I have always tried to think of it this way, and I <a href="http://www.xaprb.com/blog/2005/10/03/understanding-sql-joins/">always try to explain SQL as a stream</a>, too.</p>
+
+<p>So when I was on a call with the Kickfire engineers and it finally sunk in, I felt really silly. Why didn&rsquo;t I think of that? It&rsquo;s so obvious.</p>
+
+<p>But then again, most breakthroughs are really obvious in hindsight.</p>
+
+<h3 id="toc_4">Performance</h3>
+
+<p>I have seen initial benchmark results, but I&rsquo;m under NDA about them. I can&rsquo;t say any more yet. And I haven&rsquo;t run any benchmarks myself yet, nor have I had access to the hardware. So this is all theoretical until I get my hands on the system. Caveat emptor, your mileage may vary, etc etc.</p>
+
+<p>One thing I&rsquo;m interested in is how well the system performs for general-purpose queries. When you take it away from complex queries on lots of data, does it still have an advantage? I&rsquo;ll be trying to get an answer to that question next week.</p>
+
+<h3 id="toc_5">About Kickfire</h3>
+
+<p>They are still in stealth mode and my NDA prevents me from being able to tell you a lot or answer all your questions yet. But someday they will no longer be in stealth mode, and you&rsquo;ll find out everything you want to then.</p>
+
+<p>Hint: they are going to be giving a <a href="http://en.oreilly.com/mysql2008/public/schedule/detail/3286">keynote address</a> on their technology, but there&rsquo;s not much detail in the description. Come to the keynote and find out.</p>
+
+<h3 id="toc_6">Why am I writing this?</h3>
+
+<p>Well, they promised me chocolate&hellip;</p>
+
+<p>Seriously: I do have an agenda, but there are actually several motivations here. The first is that they initially contacted me because of my involvement with the MySQL community. Of course they&rsquo;re hoping to gain publicity through me, but they also wanted to let the community have some input. I&rsquo;ve been sort of a secret liason for you, representing your interests to Kickfire. I&rsquo;ve advocated pretty strongly for certain things I&rsquo;ll go into in a later post.</p>
+
+<p>The other reason I&rsquo;m working with them is that I&rsquo;m excited about their technology, even though I don&rsquo;t have hard evidence about their claims and benchmarks yet. If what they&rsquo;re saying is true, their product will be very good for the environment. It will let people save a lot of energy (power, cooling, the need to build data centers) and it will help avoid the need to build a bunch of servers. Computers are extremely toxic to manufacture.</p>
+
+<p>I&rsquo;m also interested in seeing them succeed because I anticipate that even if this product isn&rsquo;t what it claims to be, they&rsquo;ll prove the concept and there will be a competitive rush into this space. That is guaranteed to produce a lot of changes in how people build computers, probably in more areas than just data warehousing. So I&rsquo;m happy that they&rsquo;re starting this, because others will finish it whether they do or not. And that&rsquo;s good news for the environment, too.</p>
+
+<p>Stay tuned. More details are forthcoming.</p>
+
+<p>PS: if you have questions you&rsquo;d like me to look into while I&rsquo;m onsite with the engineers, feel free to post them in the comments. But I probably can&rsquo;t answer them yet.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

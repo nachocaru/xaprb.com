@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL Table Checksum 1.1.0 released &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Table Checksum 1.1.0 released</h1>
+  <span class="post-date">Sat, May 5, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>MySQL Table Checksum 1.1.0 adds many improvements, but the most important is a new way to ensure slaves have the same data as their master. Instead of checksumming the slave and the master, it can now insert the checksum results directly on the master via an INSERT.. SELECT statement. This statement will replicate to the slave, where a simple query can find tables that differ from the master. This makes a consistent, lock-free checksum trivially easy.</p>
+
+<p>There are also many other feature improvements and bug fixes, compatibility with MySQL 3.23.2 through 6.0-alpha, and I&rsquo;ve finally gotten the documentation finished to my satisfaction. Plus I wrote a test suite.</p>
+
+<h3 id="toc_0">The new checksum method</h3>
+
+<p>While I was at last week&rsquo;s conference, Martin Friebe and I went to supper and he suggested doing checksums via INSERT.. SELECT to avoid all the hassles with locking, waiting for slaves to catch up, and so on. This method guarantees checksums are taken at the same point in replication on the master and slave, and requires no locking or waiting. It&rsquo;s a much better way to verify your slaves are in sync with the master.</p>
+
+<p>The technique is implemented in two ways: with a variable accumulator (a modified version of the original checksum queries I wrote about in previous articles), and with a BIT_XOR checksum similar to the checksum queries used by <a href="http://code.google.com/p/maatkit">MySQL Table Sync</a>. Each method has strengths and weaknesses.</p>
+
+<p>It&rsquo;s now practical &ndash; nay, easy &ndash; to run MySQL Table Checksum from a cron job, and just as easy to check whether a slave is out of sync with the master. First, you create a table to hold the checksums:</p>
+
+<pre>CREATE TABLE test.checksum (
+     db         char(64)     NOT NULL,
+     tbl        char(64)     NOT NULL,
+     this_crc   char(40)     NOT NULL,
+     this_cnt   int unsigned NOT NULL,
+     master_crc char(40)         NULL,
+     master_cnt int unsigned     NULL,
+     ts         timestamp    NOT NULL,
+     PRIMARY KEY (db,tbl)
+  );</pre>
+
+<p>Then you run MySQL Table Checksum:</p>
+
+<pre>mysql-table-checksum --replicate=test.checksum master-hostname</pre>
+
+<p>When it&rsquo;s all done, you check the slave:</p>
+
+<pre>SELECT db, tbl, this_cnt-master_cnt AS cnt_diff,
+     this_crc &lt;&gt; master_crc AS crc_diff
+FROM checksum
+WHERE master_cnt &lt;&gt; this_cnt OR master_crc &lt;&gt; this_crc;</pre>
+
+<p>That&rsquo;s it! Is that easy to throw into Nagios, or what?</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

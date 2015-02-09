@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to reverse a sequence in SQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to reverse a sequence in SQL</h1>
+  <span class="post-date">Tue, Aug 15, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>I wrote an article a while back about <a href="/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/">how to order updates in MySQL so you don&rsquo;t violate a unique index</a>. I said I&rsquo;d write another article on how to swap numbers in a sequence with a unique index. This is that article, but I&rsquo;m going to make it a little more generic: how to reverse a (possibly ordered) sequence.</p>
+
+<p>I&rsquo;ve been thinking about this for a while, wondering if there&rsquo;s a way I can do it in-place in one statement (I like to pile challenge upon difficulty). I&rsquo;ve thought of a number of techniques, some using one statement, some using more, some that won&rsquo;t work on MySQL, some that will.</p>
+
+<p>This article assumes a sequence of non-negative numbers in the following table:</p>
+
+<pre>create table t (
+   pk int not null auto_increment primary key,
+   i int not null,
+   unique key(i)
+);
+insert into t(i) values (1), (2), (3), (4), (5);</pre>
+
+<p>The <code>pk</code> column is so there&rsquo;s something to compare the original ordering against, and I will not use it in any query other than to show the original order. I don&rsquo;t assume the sequence is composed of adjacent numbers &ndash; there could be gaps, and they don&rsquo;t have to be strictly increasing.</p>
+
+<h3 id="toc_0">Method 1: in-place, one statement</h3>
+
+<p>The most straightforward way to reverse a sequence is to do it in-place, in one statement, with a little subtraction. First, here&rsquo;s a SELECT statement to reverse the sequence:</p>
+
+<pre>select pk, (select min(i) from t) + (select max(i) from t) - i from t;</pre>
+
+<p>Given that statement, you can write an <code>UPDATE</code> statement based on it:</p>
+
+<pre>update t set i = (select min(i) from t) + (select max(i) from t) - i;</pre>
+
+<p>That is valid SQL, and will work on other RDBMSs, but for a number of reasons it won&rsquo;t work in MySQL. The first problem is &ldquo;ERROR 1093 (HY000): You can&rsquo;t specify target table &rsquo;t&rsquo; for update in FROM clause.&rdquo; You can solve this with variables:</p>
+
+<pre>select @min := min(i) from t;
+select @max := max(i) from t;
+update t set i = @min + @max - i;</pre>
+
+<p>Now you get the <a href="/blog/2006/06/16/how-to-avoid-unique-index-violations-on-updates-in-mysql/">unique index violation</a>: &ldquo;ERROR 1062 (23000): Duplicate entry &lsquo;5&#8242; for key 1.&rdquo; There&rsquo;s just no way around this in MySQL. You must turn to more devious methods!</p>
+
+<h3 id="toc_1">Method 2: bitwise XOR</h3>
+
+<p>Ah, here&rsquo;s a solution in search of a problem! Let&rsquo;s see, bitwise <code>XOR</code> is really cool, what can you use it for today?</p>
+
+<p>Well, you can use it to swap some numbers, for starters. As you may know, <a href="/blog/2005/09/28/bitwise-arithmetic/">you can <code>XOR</code> two numbers together three times and they will magically trade places</a>. It&rsquo;s a great way to swap numbers without using a temporary variable for extra storage, though that&rsquo;s really of dubious value here. In any case, it&rsquo;s a fun exercise to write in one statement. Can you do it more simply than the following?</p>
+
+<pre>select pk, ((i ^ (@min + @max - i)) ^ ((i ^ (@min + @max - i)) ^ (@min + @max - i))) from t;</pre>
+
+<p>Unfortunately, once you&rsquo;ve proven you can use <code>XOR</code> to reverse the sequence, the problem of assigning it back to <code>t</code> is still the same; you can&rsquo;t do that in MySQL without violating unique indexes.</p>
+
+<h3 id="toc_2">Method 3: mirror, delete and shift</h3>
+
+<p>Another method is to copy the sequence back into the table, with an offset so the unique index isn&rsquo;t violated, then delete the original sequence and shift the copy back into its place (or some variation of this scheme). This will work as long as the column&rsquo;s data type has enough room to store the copy. In this case, the sequence is non-negative, so negative numbers are a good place to hold the copy.
+<pre>insert into t(i) select -i from t;
+delete from t where i between @min and @max;
+update t set i = @max + 1 + i;</pre></p>
+
+<p>This is the first method I&rsquo;ve shown that will work on MySQL. Other variations on this method include copying the rows off to a temporary table. Regardless, the basic thing that makes this work on MySQL is deleting the entire original sequence before trying to put anything back in its place. If you don&rsquo;t do that, the index will be violated.</p>
+
+<h3 id="toc_3">Other methods</h3>
+
+<p>Besides variations on method 3, there are some other creative things you could do:</p>
+
+<ul>
+<li>Add another column, reverse the sequence into that column, then delete the original column and rename the new.</li>
+<li>Use the <code>XOR</code> technique on only half the table at once: <code>XOR</code> the bottom half against the top, the top against the bottom, and the bottom against the top again. This doesn&rsquo;t work if there&rsquo;s a unique index, as in the example I give.</li>
+<li>Use an <code>ORDER BY</code> clause to reverse the numbers. For my examples shown here, this is the obvious solution, but it doesn&rsquo;t work if the numbers aren&rsquo;t in increasing order.</li>
+<li>Allow <code>NULL</code>s in the column, then instead of deleting in method 3, just set to <code>NULL</code> temporarily.</li>
+</ul>
+
+<h3 id="toc_4">Summary</h3>
+
+<p>I just showed you a bunch of different ways to reverse a sequence in SQL, something that may or may not be useful. I&rsquo;ve been amusing myself for months trying to find fund and different ways to solve this problem. I&rsquo;m interested in any ideas you have too.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

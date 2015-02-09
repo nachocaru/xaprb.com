@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to use foreign key cascades in MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to use foreign key cascades in MySQL</h1>
+  <span class="post-date">Fri, Apr 7, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>A friend of mine recently asked me to show him how to enable cascading deletes between tables in MySQL. Cascading updates and deletes can be turned on between tables related with foreign keys in many RDBMSs. Though they can be convenient for some purposes, they can have unexpected side effects, and can be very confusing and dangerous at times. In this article I&rsquo;ll discuss some of the ways cascades can do invisible things, and show you one place they can be very handy too.</p>
+
+<p>MySQL, like most systems, has a syntax for defining <a href="http://dev.mysql.com/doc/refman/5.0/en/innodb-foreign-key-constraints.html">foreign keys</a>, (but only for InnoDB tables) both when creating tables and later. One of the options for a foreign key is how updates and deletes should cascade to related records in other tables.</p>
+
+<p>Cascades can have a variety of actions, such as deleting or updating related records, setting them to NULL, or causing the statement to fail. &ldquo;Turning cascades on&rdquo; is a bit of a misnomer &ndash; cascades are always present when foreign keys are defined, it&rsquo;s just that sometimes they do nothing.</p>
+
+<h3 id="toc_0">Gotchas</h3>
+
+<p>When they do have an action, cascades can do unexpected things. Here are some examples for what can happen when foreign keys are defined with <code>ON DELETE CASCADE</code>, probably the most common usage:</p>
+
+<ul>
+<li>If orders are foreign keyed to a payment type and the payment type is deleted, all the orders are too. Oops!</li>
+<li>If records in a table are foreign keyed to other records in the same table &ndash; a very common scenario in cases where a hierarchy is stored in a single table, such as in my <a href="/blog/2006/03/12/gnucash-to-mysql-export-script/">GnuCash to MySQL export script</a> &ndash; and a parent record is deleted, all the child records are deleted, too. The count of deleted rows, however, is not reported as might be expected. Rows that are deleted because of cascades are not included in the row count. For example, I have 124 rows in the account table and delete them in a single <code>delete from account</code> statement, but MySQL only reports 42 rows affected. Similarly, if I delete everything from the transaction table, which has 628 rows, I only see 628 rows affected, even though the entire split table gets emptied too. This is because MySQL processes rows one at a time, cascading as necessary before moving to the next row.</li>
+</ul>
+
+<p>Because of these behind-the-scenes effects, I have never permanently enabled cascading updates or deletes in any of my real work (GnuCash scripts aren&rsquo;t real work). I consider them too dangerous. I&rsquo;m not saying I never will, I&rsquo;m just saying I haven&rsquo;t needed to yet. I think triggers are dangerous, too. They are like cascades in that they cause an unseen, not-directly-initiated action.</p>
+
+<h3 id="toc_1">When they&rsquo;re handy</h3>
+
+<p>Sometimes a single value appears all through the database in many different tables, for example, a status value. Once at my previous employer I faced this situation. There were two choices: a) delete all the foreign keys, update all the tables and re-create the foreign keys, or b) turn on cascades, make an update in one place and then turn them off again. The first option was simply not feasible. Not only were there dozens of tables and relationships to consider, new data was constantly coming into the system, so it would have to be taken offline for a time &ndash; not desirable at all. I also would have needed to hold a transaction open the entire time, locking all the tables ahead of time to make sure nothing else tried to access them and cause a deadlock. The second option was much better.</p>
+
+<p>In this case cascading updates saved me a huge amount of time and effort. I turned on cascading updates (behind the scenes, this involves deleting and re-creating the foreign keys, but that is easy to script out and do in a transaction), updated, then turned the cascades off again.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

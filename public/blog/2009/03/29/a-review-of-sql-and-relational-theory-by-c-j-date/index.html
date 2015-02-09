@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A review of SQL and Relational Theory by C. J. Date &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A review of SQL and Relational Theory by C. J. Date</h1>
+  <span class="post-date">Sun, Mar 29, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+		<a href="/categories/reviews" class="btn btn-primary">Reviews</a>
+		
+  </span>
+  <div class="wp-caption alignleft" style="width: 190px">
+  <a href="http://www.amazon.com/SQL-Relational-Theory-Write-Accurate/dp/0596523068?tag=xaprb-20"><img alt="SQL and Relational Theory" src="http://oreilly.com/catalog/covers/9780596523060_cat.gif" title="SQL and Relational Theory" width="180" height="236" /></a><p class="wp-caption-text">
+    SQL and Relational Theory
+  </p>
+</div>
+
+<p><a href="http://www.amazon.com/SQL-Relational-Theory-Write-Accurate/dp/0596523068?tag=xaprb-20">SQL and Relational Theory</a> <em>How to Write Accurate SQL Code</em> by C. J. Date, O&rsquo;Reilly 2009. Page count: 266 pages of &ldquo;real&rdquo; text, plus hefty appendixes. (Here&rsquo;s a link to the publisher&rsquo;s site: <a href="http://oreilly.com/catalog/9780596523060/index.html">SQL and Relational Theory <em>How to Write Accurate SQL Code</em></a>).</p>
+
+<p><strong>This is a very important book for anyone involved with databases</strong>. Before I say why, I need to apologize to Mr. Date. I tech-reviewed part of the book and did not care for it. I am afraid I was quite a curmudgeon in my review comments. So, Mr. Date, if you&rsquo;re reading this &ndash; I want to say I enjoyed the book very much after all.</p>
+
+<p>Back to the topic. This book is a follow-on and replacement to <em>Database in Depth: Relational Theory for Practitioners</em>, which I also own along with some of Mr. Date&rsquo;s earlier books. However, I found it a much more profitable read than <em>Database in Depth</em>. Mr. Date&rsquo;s writing is still recognizably his, with lots of digressions, notes, asides, and footnotes. But something&rsquo;s different. It is much more direct and readable, and I think readers will find it practical and applicable to their real-world problems. (This is Mr. Date&rsquo;s expressed hope.)</p>
+
+<p>I had a lot of moments while reading the book where I thought <em>yes! He&rsquo;s said it so clearly! It always bugs me to see those mistakes, and finally here&rsquo;s a book that can teach people how not to make them</em>.</p>
+
+<p>The book will help the student develop understanding of the relational model, and learn how SQL diverges from the relational model. As the book says, to the extent that SQL is correct and useful, it&rsquo;s largely because it adheres to the relational model; in the places where it takes a side trip, there be dragons. It&rsquo;s universal in every discipline, but I believe Mr. Date is the only authority I&rsquo;ve read who says this about SQL: learn the rules, and when you know them, you know when and why it&rsquo;s safe to break them. Otherwise you&rsquo;re a ship without a rudder and compass.</p>
+
+<p>The general format is this: learn the theory of some topic; learn about a relational approach; learn how that maps onto SQL; and learn some rules of thumb for staying away from the dangers caused by SQL&rsquo;s approach. Here are some of the recommendations, which he has highlighted in bold for easy reference at the appropriate places in the book:</p>
+
+<ul>
+<li>Since the phrase &ldquo;null value&rdquo; is a contradiction in terms, don&rsquo;t use it; always say just &ldquo;null&rdquo; instead.</li>
+<li>Never write SQL code that relies on ordinal positioning.</li>
+<li>Never lie to the system by defining as a key some column combination that you know isn&rsquo;t irreducible.</li>
+</ul>
+
+<p>Anyone who&rsquo;s tried to explain NULL to a beginner to SQL, or explain the difference between a key and an index, or fixed a system that broke because it relied on blind inserts and the table definition changed, will see the value of these recommendations. There&rsquo;s one such recommendation every few pages. This book is packed with them, and every one is well justified and rigorously explained.</p>
+
+<p>That&rsquo;s not all. Mr. Date teaches the connection between logic and the relational model. Let me tell my own story here for a moment. I didn&rsquo;t know anything about databases (except a course on relational theory, which I was unable to connect to the &ldquo;real world&rdquo; at all) until after I&rsquo;d left university with a degree in Computer Science. And then I learned SQL, and then sometime later, I put two and two together: all those discrete math courses, all those proofs, all those predicates and propositions, and so on &ndash; it was the foundation for the <em>sensible</em> part of relational databases. So eventually it all did come together in my head, and I got a huge kick out of that. Now I cheer whenever I see <a href="http://en.oreilly.com/mysql2008/public/schedule/detail/794">someone teaching people to think logically</a> about databases.</p>
+
+<p>So I was definitely cheering as I read things like <em>Types are sets of things we can talk about; relations are (true) statements we can make about those things</em>. And then there&rsquo;s a whole chapter on how to write questions you&rsquo;d like to ask of a database, transform those into logical expressions, and then transform those in turn into <em>SQL that is correct and will give the right answer</em>.</p>
+
+<p>I don&rsquo;t expect this book will work for everyone; some people will not have the foundation in either SQL or logic they need to understand it, and so it will be a steep learning curve unless they&rsquo;re willing to go study some other things as needed. And I think there is room for different approaches to teaching this subject, depending on the reader&rsquo;s mental orientation (visual, logical, etc). But for those who like the formal logic-based approach, and/or are willing to invest some effort into really understanding, I think the payoffs will be great.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

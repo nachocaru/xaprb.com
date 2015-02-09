@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      New in mk-query-digest: variance-to-mean ratio &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">New in mk-query-digest: variance-to-mean ratio</h1>
+  <span class="post-date">Tue, Jan 11, 2011 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>This isn&rsquo;t actually new &ndash; it has been out for a few releases. The <a href="http://www.maatkit.org/doc/mk-query-digest.html">mk-query-digest</a> tool from Maatkit now outputs information about each class of queries&rsquo; variance-to-mean ratio. The new output goes in a couple of places, including perhaps most usefully the &ldquo;profile&rdquo; report. Here&rsquo;s an example from a real MySQL system:</p>
+
+<pre># Profile
+# Rank Query ID           Response time    Calls R/Call Apdx V/M   Item
+# ==== ================== ================ ===== ====== ==== ===== =======
+#    1 0xBFCF8E3F293F6466 11256.3618 68.1% 78069 0.1442 1.00  0.21 SELECT [redacted]
+#    2 0x620B8CAB2B1C76EC  2029.4730 12.3% 14415 0.1408 1.00  0.21 SELECT [redacted]
+#    3 0xB90978440CC11CC7  1345.3445  8.1%  3520 0.3822 1.00  0.00 SHOW STATUS
+#    4 0xCB73D6B5B031B4CF  1341.6432  8.1%  3509 0.3823 1.00  0.00 SHOW STATUS
+# MISC 0xMISC               560.7556  3.4% 23930 0.0234   NS   0.0 &lt;17 ITEMS&gt;
+</pre>
+
+<p>The variance-to-mean ratio is placed in the V/M column. It is the ratio of the query response time&rsquo;s variance to the mean, for that class of queries. It also appears in the detailed output for the queries in the rest of the report.</p>
+
+<p>What is this useful for? It is a dimensionless number that shows how variable a query&rsquo;s response time is. The dimensionless number is better than a number such as the standard deviation of response time, because it places fast and slow queries on equal footing; when looking at standard deviation, you really need to compare it to typical execution time to see if there&rsquo;s a problem. (A fast query that varies by a tenth of a second is highly variable. A query that usually runs hours and varies only by a tenth of a second is unbelievably consistent.)</p>
+
+<p>A query with a highly variable response time is interesting not only because it is providing unpredictable performance, but because it often means that the query is either a perpetrator or victim of bad interactions with other queries, and possibly that it accesses a larger working set of data than fits in the server&rsquo;s caches, so it makes unpredictable random disk accesses. That&rsquo;s a fancy way of saying that this query might have a high potential for improvement.</p>
+
+<p>To see what I mean, let&rsquo;s look at the detailed report for one of the queries whose V/M ratio was 0.21:</p>
+
+<pre># Query 1: 24.28 QPS, 3.50x concurrency, ID 0xBFCF8E3F293F6466 at byte 5590079
+# This item is included in the report because it matches --limit.
+# Scores: Apdex = 1.00 [1.0], V/M = 0.21
+# Query_time sparkline: | _^_.^_ |
+# Time range: 2008-09-13 21:51:55 to 22:45:30
+# Attribute    pct   total     min     max     avg     95%  stddev  median
+# ============ === ======= ======= ======= ======= ======= ======= =======
+# Count         63   78069
+# Exec time     68  11256s    37us      1s   144ms   501ms   175ms    68ms
+# Lock time     85    134s       0   650ms     2ms   176us    20ms    57us
+# Rows sent      8  70.18k       0       1    0.92    0.99    0.27    0.99
+# Rows examine   8  70.84k       0       3    0.93    0.99    0.28    0.99
+# Query size    84  10.43M     135     141  140.13  136.99    0.10  136.99
+# Query_time distribution
+#   1us
+#  10us  #
+# 100us  ####################################################
+#   1ms  ###
+#  10ms  ################
+# 100ms  ################################################################
+#    1s  #
+#  10s+
+SELECT ... FROM ... WHERE (col1 = 87041469) AND (col2 = 1138714082) LIMIT 1\G
+</pre>
+
+<p>You can see from the Query_time distribution that this query often executes in the hundreds of microseconds, but also frequently in the hundreds of milliseconds. I redacted some details to protect client data, but this query is a primary-key lookup on an extremely large table. I&rsquo;ll hazard a guess here: when the data is in memory, it runs in hundreds of microseconds; and when it has to hid the disk, it takes tens to hundreds of milliseconds.</p>
+
+<p>More of the math and theory behind this useful metric of query response time variability is available from <a href="http://method-r.com/downloads/doc_details/39-an-industrial-engineers-approach-to-managing-oracle-databases-robyn-sands">Robyn Sands&rsquo; article via Method R corporation</a>. Thanks to Cary Millsap, who directed my attention to the V/M ratio in the first place.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Archive strategies for OLTP servers, Part 1 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Archive strategies for OLTP servers, Part 1</h1>
+  <span class="post-date">Wed, Jun 13, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>In May 2005, I wrote a widely-referenced article about <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">how to efficiently archive and/or purge data from online transaction processing (OLTP) database servers</a>. That article focused on how to write efficient archiving SQL. In this article I&rsquo;ll discuss archiving strategy, not tactics. OLTP servers tend to have complex schemas, which makes it important and sometimes difficult to design a good archiving strategy.</p>
+
+<h3 id="toc_0">The 50,000-foot view</h3>
+
+<p>Archiving is actually a very large topic! My goal is to at least mention many of the things to consider, and go into some of them in detail. Here&rsquo;s what I&rsquo;ll cover in this and upcoming articles:</p>
+
+<ul>
+<li>Goals of archiving</li>
+<li>Where to store the archived data</li>
+<li>How to choose which rows are archivable</li>
+<li>How to deal with complex data relationships and dependencies</li>
+<li>How to actually archive the data</li>
+<li>Un-archiving strategy</li>
+</ul>
+
+<h3 id="toc_1">Archiving: why do it?</h3>
+
+<p>Archiving is about scaling. There are several different views on how to scale systems with MySQL in particular, and any given system in general. Opinions vary on the best way for any given usage, but popular strategies are&lt;ul</p>
+
+<ul>
+<li>Buy bigger, more expensive, faster hardware (vertical scaling)</li>
+<li>Split data into logical partitions or shards, and distribute these among many machines (horizontal scaling)</li>
+<li>Use federated views, clusters, or other distributed technologies that pretend there&rsquo;s one server, but underneath there are actually many (federation)</ul>
+Each strategy has its place, but each focuses on <strong>how to handle the same or more data</strong> while providing redundancy or high availability, improved performance, and so on. Sometimes the elephant in the room is the obvious but easy to overlook strategy of <strong>don&rsquo;t scale up or out, scale back</strong>. This may not be possible, but when it is, it&rsquo;s often preferable.</li>
+</ul>
+
+<p>How do you know if you can do this? Just ask whether you need all the data. Most of the time you don&rsquo;t. Think about how true this is throughout computing as a whole. Caching is everywhere in computing, and it works precisely because you don&rsquo;t need all the data, or at least you don&rsquo;t need all of it all the time. Most data has some spatial or temporal hot spots, and often there&rsquo;s a pretty large chunk of it that&rsquo;s never accessed at all. If you don&rsquo;t need all the data all the time, you might be able to move some of it away to bigger, cheaper, slower storage. That&rsquo;s archiving.</p>
+
+<p>If you can scale back rather than up or out, you may be able to keep your OLTP servers lean and fast without changing anything. This can easily buy you an order of magnitude. It&rsquo;s generally not easy to do that; if you want to get an order of magnitude with other strategies, you may need ten times as many servers so each has an order of magnitude less data. Scaling up tends to be even more expensive; the price-to-performance ratio climbs very sharply as you get into big-iron machines. You also need to consider the cost of rack space, cooling, power, maintenance and so forth.</p>
+
+<h3 id="toc_2">When people are a roadblock</h3>
+
+<p>I think it&rsquo;s important to resist building a system that will always provide all the data that ever existed, just in case you need it. If you&rsquo;re worried you might need the data someday, keep it on DVD, but you don&rsquo;t need to keep it on your OLTP servers. And don&rsquo;t compare yourself to Amazon or Google. You probably have limited resources, and though it may be good bragging rights, trying to engineer something massive is likely bad for your business. Sometimes people want to build unreasonable systems because they have something to prove, or they have <a href="http://en.wikipedia.org/wiki/The_Mythical_Man-Month">second-system syndrome</a>. Know your limits as an individual, and if you&rsquo;re a manager, take a moment to assess whether your engineers are advocating for more than is good for the company.</p>
+
+<h3 id="toc_3">Gather requirements for the archive</h3>
+
+<p>If you&rsquo;ve identified that you can archive some of your data, I think the next important step is to figure out what you require of the stored data. I&rsquo;ve worked in a place where the only requirement was legal; we needed to be able to retrieve the data only if we got audited or had to go to court. By contrast, my current employer needs infrequent access to archived data for long-term analysis, but it needs to be queryable live and quickly.</p>
+
+<p>You need to balance convenience, speed, space, expense, durability, legal, and other requirements you identify. Chances are there&rsquo;s a fairly obvious solution for you:</p>
+
+<ul>
+<li>If you never need the data again, you can simply purge it.</li>
+<li>If you only need it for legal requirements, you can archive it to a file, then burn the files to CDs and put them in a safe deposit box.</li>
+<li>If you need it for infrequent queries that can be slow, you can archive to a table, then burn the table to CD. When you need to get it back, you can mount the CD and get your server to read the table right from CD. One thing to beware, though: future server versions aren&rsquo;t guaranteed to read old table formats!</li>
+<li>If you need it for frequent or fast querying, you might build a data warehouse, or you may be able to simply move the data to &ldquo;adjacent&rdquo; tables on the same server.</li>
+</ul>
+
+<p>Any of these ideas could be mixed and matched. Let me give some examples of what I&rsquo;ve done in real life.</p>
+
+<p>At one company using SQL Server, we archived data to a beefy OLAP (online analytical processing) server via replication. I&rsquo;ll go through the exact strategy in an upcoming article, but basically we replicated the data to the OLAP server into a spot reserved for in-transit data. From there it went into the long-term storage tables transactionally, and analytics applications read from views that gave a union over the in-transit and the long-term storage.</p>
+
+<p>At my current employer using MySQL, we archive transactional InnoDB tables to adjacent tables on the same server, which use a different storage engine and sometimes fewer indexes. At the same time we archive to files, which we periodically burn to CD and put in safe storage. This would have worked well even if we&rsquo;d used the InnoDB storage engine for the archive tables, simply because the OLTP tables would have been smaller, but archiving to another storage engine has the added benefits of getting it out of the InnoDB tablespace and giving more compact storage.</p>
+
+<h3 id="toc_4">Conclusion</h3>
+
+<p>In this article I surveyed the preliminaries of archiving: motivations to archive and requirements of the archived data. While some of these decisions will actually depend on things I&rsquo;ll write about in upcoming articles, it&rsquo;s good to have several options in mind before you evaluate specific strategies.</p>
+
+<p>In the next article I&rsquo;ll discuss how to select which data is archivable, and how to deal with the complexities of OLTP schemas during the archiving process.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

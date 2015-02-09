@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to find un-indexed queries in MySQL, without using the log &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to find un-indexed queries in MySQL, without using the log</h1>
+  <span class="post-date">Tue, Aug 18, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>You probably know that it&rsquo;s possible to set configuration variables to <a href="http://dev.mysql.com/doc/en/server-options.html#option_mysqld_log-queries-not-using-indexes">log queries that don&rsquo;t use indexes to the slow query log</a> in MySQL. This is a good way to find tables that might need indexes.</p>
+
+<p>But what if the slow query log isn&rsquo;t enabled and you are using (or consulting on) MySQL 5.0 or earlier, where it can&rsquo;t be enabled on the fly unless you&rsquo;re using a patched server such as <a href="http://www.percona.com/mysql/">Percona&rsquo;s enhanced builds</a>? You can still capture these queries.</p>
+
+<p>The key is knowing what it really means for a query to &ldquo;not use an index.&rdquo; There are two conditions that trigger this &ndash; not using an index at all, or not using a &ldquo;good&rdquo; index. Both of these set a bit. If either bit is set, the query is captured by the filter and logged. Both of these bits also set a corresponding bit in the protocol, so the TCP response to the client actually says &ldquo;here comes the result of your query, and by the way it didn&rsquo;t use an index.&rdquo; This is very useful information.</p>
+
+<p>I&rsquo;m sure you can see where this is going. Let&rsquo;s use tcpdump to capture queries, consume the output with <a href="http://www.maatkit.org/doc/mk-query-digest.html">mk-query-digest</a>, and filter out all but ones that don&rsquo;t use an index or use no good index:</p>
+
+<pre>$ sudo tcpdump -i lo port 3306 -s 65535  -x -n -q -tttt \
+  | mk-query-digest --type tcpdump \
+  --filter '($event->{No_index_used} eq "Yes" || $event->{No_good_index_used} eq "Yes")'</pre>
+
+<p>If I run a few full table scans now, and then cancel mk-query-digest, I&rsquo;ll get output like the following (abbreviated for clarity):</p>
+
+<pre>#              pct   total     min     max     avg     95%  stddev  median
+# Count        100       8
+# Exec time    100     5ms   511us   857us   604us   839us   106us   582us
+# 100% (8)    No_index_used
+select * from t\G
+</pre>
+
+<p>You can see I ran the query 8 times and each time it reported back that it didn&rsquo;t use an index. This is a dead-easy way to find queries that might not have an index available!</p>
+
+<p>Want to print out tables from those queries? You can do that too. Just add <code>--group-by tables --report-format profile</code> to the command above, and instead of grouping queries together by the query text, it&rsquo;ll group them by the tables they mention. Then the report will contain one item per table and you&rsquo;ll just see a summary at the end, like so:</p>
+
+<pre># Rank Query ID           Response time    Calls   R/Call     Item
+# ==== ================== ================ ======= ========== ====
+#    1 0x                     0.0037 100.0%       8   0.000467 test.t
+</pre>
+
+<p>Aha, looks like <code>test.t</code> is the problem table!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

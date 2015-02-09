@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to unit-test code that interacts with a database &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to unit-test code that interacts with a database</h1>
+  <span class="post-date">Tue, Aug 19, 2008 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>I got some interesting comments on my previous article about <a href="http://www.xaprb.com/blog/2008/08/18/how-maatkit-benefits-from-test-driven-development/">unit testing Maatkit</a>, including echoes of my own conversion to the unit-testing religion. One of the objections I&rsquo;ve heard a lot about unit-testing is how it&rsquo;s impossible to test code that talks to a database. &ldquo;It&rsquo;s too hard,&rdquo; they say. &ldquo;Oh, it&rsquo;s easy to test a module that calculates a square root, but a database? Way too much work!&rdquo;</p>
+
+<p><strong>Note:</strong> As commenters have pointed out, I&rsquo;m not necessarily using &ldquo;unit&rdquo; in the agreed-upon way here. Everything I say can be applied to ultra-pure unit testing too, but I go beyond that. I will hold fast to my assertions about mocking though *grin*</p>
+
+<h3 id="toc_0">Is it really impossible or even hard?</h3>
+
+<p>I disagree. In one of my previous articles I said <a href="http://www.rimmkaufman.com/rkgblog/">The Rimm-Kaufman Group</a>, my previous employer, has a comprehensive unit-test suite. When I say comprehensive I mean it: database interaction is fully tested, too. I know because I was heavily involved in building it. Even extremely complex things like big reports that are generated from lots of data are tested. And believe me, sharding the databases would have been much harder without complete code coverage. It&rsquo;s really not that complicated to unit-test against a database, and it&rsquo;s so worth it. Here are some hints about how you can do this.</p>
+
+<p>There are many ways to do it, but I&rsquo;ll just describe the basics of the system I helped build. There are several moving parts to the test suite (&rdquo;<a href="http://c2.com/cgi/wiki?SmokeTest">smoke</a>&rdquo;), but one of them sets a magical environment variable. And then, all code that connects to a database server magically gets back a different database connection from the create_me_a_connection() function. This is because there is a database connection abstraction library that respects the environment variable. It&rsquo;s really pretty simple for the most part; instead of doing DBI-&gt;connect(&hellip;) you just call this function, which is a thin wrapper that hands back a connection object.</p>
+
+<p>This wrapper is itself unit-tested thoroughly, too. This ensures that when some code is being run from a test, it cannot (I mean cannot!) connect to a production database, and vice versa. There are some conventions about production and test servers that make sure the abstraction library can tell for sure. If there&rsquo;s any confusion, of course, it will die in a non-recoverable way. Safety first.</p>
+
+<h3 id="toc_1">Building a good development environment</h3>
+
+<p>Just as each developer has their own copy of the code from version control, each developer has their own private database server running on the dev machine. There are some simple conventions that make this possible: Unix user ID plus a constant for the port number, etc. It&rsquo;s really quite easy. The private database server is a slightly modified version of <a href="https://launchpad.net/mysql-sandbox">Giuseppe Maxia&rsquo;s MySQL Sandbox tool</a>. It can be torn down and set up afresh as desired. It is wiped clean and re-filled at the start of every test, with a small, tightly focused dataset carefully chosen to represent the conditions the code is supposed to work with. (Each test has its own dataset).</p>
+
+<p>If this sounds like a system that can&rsquo;t work on a large scale, well, it does. That&rsquo;s the secret sauce that I won&rsquo;t reveal in this post. (It&rsquo;s my past employer after all, and I can&rsquo;t go revealing everything about them can I?) You just have to be smart about it. When a database is central to your business, you either figure out how to get this right, or you pay the consequences in lost time and poor code quality.</p>
+
+<p>I and the other developers there (another secret: it&rsquo;s a small team; <a href="http://www.craigslist.org/">small teams build great things</a>) built several quick utilities to help develop unit tests against a database. There are utilities to get a minimal necessary dataset for testing and dump it into a file that can be loaded by the test. There are utilities that can migrate schemas and update the tests to match the schema changes. And so on, and so on. This is possible because of careful planning for testability, and really smart things like super-consistent and sensible naming conventions for database objects. (Ruby On Rails owes a lot of its success to simple things like this, too. Conventions are really powerful.) Maybe I&rsquo;ll write about the database naming conventions some other time &ndash; I have to credit Alan Rimm-Kaufman a lot for designing those conventions. It was a stroke of genius.</p>
+
+<h3 id="toc_2">Things to avoid</h3>
+
+<p>There are several things I <em>do not</em> recommend doing when you unit-test code that talks to a database. I&rsquo;ll just mention a couple:</p>
+
+<ul>
+<li>Don&rsquo;t <a href="http://c2.com/cgi/wiki?MockObject">mock</a> anything! In general I think mocking is the devil. Most of the mock objects I&rsquo;ve ever seen reflected a propensity to <a href="http://www.xaprb.com/blog/2006/05/16/how-to-refactor-without-rewriting-unit-tests/">test an implementation instead of a behavior</a>, which is also the devil. Write all your code to test a test instance of something real, and do not mock up a database to test against. It is a rabbit-hole that you will not emerge from easily.</li>
+<li>Never let a test connect to a production database. Never, ever. Worlds of hurt will follow. Not only are you risking your production data, but what about the risk to your code? You&rsquo;re testing against things that will almost certainly change and break your tests; and you&rsquo;re possibly polluting your live data with testing data and/or changing live data from the tests.</li>
+<li>I also recommend developing unit tests for your current database functionality if you&rsquo;re thinking about changing it much. <a href="http://dev.mysql.com/doc/en/server-sql-mode.html">Don&rsquo;t like MySQL&rsquo;s lax error handling? Plan to set the SQL_MODE to something stricter?</a> Dive into that database abstraction library and make your tests run in strict mode first by setting SQL_MODE on every new connection that&rsquo;s created when running inside a test; fix all the breakage in the test suite; feel sure that your code isn&rsquo;t going to break in production. That was easy!</li>
+</ul>
+
+<h3 id="toc_3">Summary</h3>
+
+<p>Once your creative juices get flowing, you&rsquo;ll see tons of places your unit test suite can help you out.</p>
+
+<p>If you&rsquo;re in the Oracle or SQL Server world, or any other world where you can&rsquo;t just set up and discard database instances at will due to licensing problems, you&rsquo;re going to have to be a little more inventive. But you can still do it. (Don&rsquo;t you wish you&rsquo;d chosen <a href="http://www.fsf.org/">Freedom</a>?) And unit tests are just as beneficial for apps based on Oracle as they are for MySQL.</p>
+
+<p>Have fun! Go forth and test some more!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

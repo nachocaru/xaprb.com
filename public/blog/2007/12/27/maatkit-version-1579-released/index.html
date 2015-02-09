@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Maatkit version 1579 released &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Maatkit version 1579 released</h1>
+  <span class="post-date">Thu, Dec 27, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>This release contains bug fixes and new features. The biggest new feature, in my opinion, is a new sync algorithm for mk-table-sync. Now you can sync any table with an index more efficiently than previously. This is the return of the speed I promised earlier. (Though I haven&rsquo;t yet benchmarked it; I am very short on time these days. Your benchmarks and other contributions are welcome).</p>
+
+<p>I&rsquo;m finally feeling like the table sync tool is getting in good shape!</p>
+
+<p>Let me know what you think, and of course, if you have questions or bug reports, please use the Sourceforge forums, bug tracker, etc so others can benefit too.</p>
+
+<pre>Changelog for mk-heartbeat:
+
+2007-12-27: version 1.0.5
+
+   * Added --stop, --sentinel, and --quiet options.
+   * Added --replace option.
+
+Changelog for mk-parallel-dump:
+
+2007-12-27: version 1.0.3
+
+   * Views with functions caused a crash (bug #1850998, MySQL bug #29408).
+   * --ignoreengine was ignored (bug #1851461).
+
+Changelog for mk-table-checksum:
+
+2007-12-27: version 1.1.23
+
+   * Updated documentation about version compatibility.
+   * Updated documentation for --replcheck.
+
+Changelog for mk-table-sync:
+
+2007-12-27: version 1.0.2
+
+   * Syncing via replication did not use REPLACE on the master.
+   * --transaction disabled waiting for a slave to catch up.
+   * Allow one DSN without --replicate, as long as --synctomaster is given.
+   * Added the Nibble sync algorithm.
+   * MASTER_POS_WAIT() failed when the server was not a master (bug #1855480).
+   * DBD::mysql died after 'commands out of sync' error (bug #1856046).</pre>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

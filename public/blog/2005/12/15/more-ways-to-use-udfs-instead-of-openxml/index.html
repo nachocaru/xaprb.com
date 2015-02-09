@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      More alternatives to openxml &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">More alternatives to openxml</h1>
+  <span class="post-date">Thu, Dec 15, 2005 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Following up on my <a href="http://www.xaprb.com/blog/2005/11/15/use-microsoft-sql-servers-openxml-sparingly/">earlier post</a>, here are some alternate usage scenarios for the UDF I wrote to avoid <code>openxml</code> in SQL Server 2000.</p>
+
+<p>The most obvious variation is to create different versions to return various data types, such as <code>INTEGER</code> or <code>DATETIME</code> or whatnot. I started to do this, but then realized it&rsquo;s silly. If I duplicate the code for every datatype, what have I accomplished besides duplicating code? The input is <code>VARCHAR</code>, so it&rsquo;s getting implicitly converted at some point no matter what. It&rsquo;s better for me to let the end user do the conversion, and not duplicate any code.</p>
+
+<p>My next thought was a function to split apart name-value pairs, such as <code>width=100 height=200 color=blue</code>. Such a function should return three columns: <code>name</code>, <code>value</code> and <code>ident</code>. Again, once I wrote the code, I felt silly. There are at least two fine ways to do it without a new function. One is to pass the names in one input and the values in another. The other is to use two delimiters and just use <code>SUBSTRING</code> to split them apart. In either case, it&rsquo;s pretty simple; the UDF is doing the looping, and the rest can be done with standard SQL. Here are two ways to do this:</p>
+
+<pre>declare @Names varchar(8000),
+    @Values varchar(8000),
+    @NameValues varchar(8000),
+    @Delim1 char(1),
+    @Delim2 char(1)
+select @Names = 'width height color',
+    @Values = '100 200 blue',
+    @NameValues = 'width=100 height=200 color=blue',
+    @Delim1 = ' ',
+    @Delim2 = '='
+
+select l.word as name, r.word as value, l.ident
+from dbo.fn_SplitWords(@Names, @Delim1) as l
+    inner join dbo.fn_SplitWords(@Values, @Delim1) as r
+        on l.ident = r.ident
+
+select 
+    substring(word, 1, charindex(@Delim2, word) - 1) as name,
+    substring(word,
+        charindex(@Delim2, word) + 1,
+        len(word) - charindex(@Delim2, word)) as value,
+    ident
+from dbo.fn_SplitWords(@NameValues, @Delim1)
+where charindex(@Delim2, word) &gt; 0</pre>
+
+<p>Both queries yield the same results:</p>
+
+<table class="borders collapsed">
+  <caption>Results</caption> <tr>
+    <th>
+      name
+    </th>
+    
+    <th>
+      value
+    </th>
+    
+    <th>
+      ident
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      width
+    </td>
+    
+    <td>
+      100
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      height
+    </td>
+    
+    <td>
+      200
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      color
+    </td>
+    
+    <td>
+      blue
+    </td>
+    
+    <td>
+      3
+    </td>
+  </tr>
+</table>
+
+<p>These methods both have a shortcoming: it&rsquo;s not possible to pass missing or zero-length values for a given name. Here is a query that does:</p>
+
+<pre>declare @NameValues varchar(8000),
+    @Delim1 char(1),
+    @Delim2 char(1)
+select @NameValues = 'width=100 height=200 color=blue weight= length',
+    @Delim1 = ' ',
+    @Delim2 = '='
+
+select 
+    case when charindex(@Delim2, word) &gt; 0
+        then substring(word, 1, charindex(@Delim2, word) - 1)
+        else word end
+    as name,
+    case when charindex(@Delim2, word) &gt; 0
+        then substring(word,
+        charindex(@Delim2, word) + 1,
+        len(word) - charindex(@Delim2, word)) end
+    as value,
+    ident
+from dbo.fn_SplitWords(@NameValues, @Delim1)</pre>
+
+<table class="borders collapsed">
+  <caption>Results</caption> <tr>
+    <th>
+      name
+    </th>
+    
+    <th>
+      value
+    </th>
+    
+    <th>
+      ident
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      width
+    </td>
+    
+    <td>
+      100
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      height
+    </td>
+    
+    <td>
+      200
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      color
+    </td>
+    
+    <td>
+      blue
+    </td>
+    
+    <td>
+      3
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      weight
+    </td>
+    
+    <td>
+    </td>
+    
+    <td>
+      4
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      length
+    </td>
+    
+    <td>
+      NULL
+    </td>
+    
+    <td>
+      5
+    </td>
+  </tr>
+</table>
+
+<p>From first to last, each of these queries is more flexible and complex than the preceding one. Therefore I prefer them in that order.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

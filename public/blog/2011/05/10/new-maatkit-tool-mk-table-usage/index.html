@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      New Maatkit tool: mk-table-usage &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">New Maatkit tool: mk-table-usage</h1>
+  <span class="post-date">Tue, May 10, 2011 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>This month&rsquo;s <a href="http://www.maatkit.org/">Maatkit</a> release includes a new tool that&rsquo;s kind of an old tool at the same time. We wrote it a couple years ago for a client who has a very large set of tables and many queries and developers, and wants the database&rsquo;s schema and queries to self-document for data-flow analysis purposes. At the time, it was called mk-table-access and was rather limited &ndash; just a few lines of code wrapped around some existing modules, with an output format that wasn&rsquo;t generic enough to be broadly useful. Thus we didn&rsquo;t release it with Maatkit. We recently changed the name to mk-table-usage (to match mk-index-usage), included it in the Maatkit suite of tools, and enhanced the functionality a lot.</p>
+
+<p>What&rsquo;s this tool good for? Well, imagine that you&rsquo;re a big MySQL user and you hire a new developer. Now you need to bring the new person up to speed with your environment. Or, you want to understand where the data in some table actually comes from. Or, you want to drop a column, but you&rsquo;re not sure where that data is used and what other code will be affected. Or you want to find all SQL statements that modify a table. Wouldn&rsquo;t it be nice to have a graph of all your tables and the data flows between them? With this tool you can parse the flow of data in SQL statements, in terms of Table-From &rarr; Table-To, and print the results, annotated by the statement&rsquo;s fingerprint.</p>
+
+<p>The client who sponsored the development of this tool is using it as an auditing mechanism, for some of the purposes I just mentioned, and also to help enforce their SQL coding standards. It can be used for a lot more than that, though. I haven&rsquo;t done this yet, but it should be easy to write some quick 5-line script to transform it into graphviz format and produce graphs from it, or import into a table that represents edges and run queries against it, and so on. (The client is doing some of those things, but they aren&rsquo;t asking me to help, so I&rsquo;m taking their word for it that the output format they chose is easily amenable to these tasks.)</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

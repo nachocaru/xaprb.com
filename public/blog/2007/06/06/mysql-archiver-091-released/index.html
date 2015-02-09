@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL Archiver 0.9.1 released &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Archiver 0.9.1 released</h1>
+  <span class="post-date">Wed, Jun 6, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>MySQL Archiver is the implementation of the <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">efficient forward-only archiving and purging strategies</a> I wrote about more than a year ago. It nibbles rows from a table, then inserts them into another table and/or writes them to a file. The object is to do this without interfering with critical online transaction-processing (OLTP) queries.</p>
+
+<p>Several people have asked me to release this code, which I originally wrote for my employer. As it turns out, the delay has been fruitful. I learned a lot more about query optimization during this time, found bugs with my original approach, and got exposure to different archiving needs and techniques. As a result, this tool runs something like four to ten times faster than the code I wrote last year.</p>
+
+<p>I decided to write and release it now because my employer has grown to the point we need to archive more data, faster, more flexibly. Instead of just open-sourcing the code I wrote last year, I have rewritten it from the ground up. We are using exactly the same code, and hope to benefit from community feedback and improvements.</p>
+
+<p>I think the result is a good tool that does a lot of work for you:</p>
+
+<ul>
+<li>It automatically writes efficient queries by inspecting table structures and indexes.</li>
+<li>It handles transactions, lock timeouts and deadlocks.</li>
+<li>It writes archived data to a file in the same format <code>LOAD DATA INFILE</code> uses by default.</li>
+</ul>
+
+<p>It has a lot of options and functionality, so I won&rsquo;t go into it too much here. I also have several ideas I want to implement in the future, but I want to see what the community thinks of what I&rsquo;ve done so far before I work on it too much more.</p>
+
+<p>Despite the improvements, the basic approach remains the same: it finds the first row(s), and then on subsequent queries, it continues from where it left off, rather than scanning the whole table from the start. This makes it efficient to archive in small &ldquo;nibbles,&rdquo; which avoids contention with OLTP queries.</p>
+
+<p>I&rsquo;ve put almost 30 extra-curricular hours into this recently. Most of the time has gone into making sure every different type of archiving job my employer needs to run can be generated as efficiently as possible with a minimum of fuss, such as a simple command-line option or two. I&rsquo;m eager to hear what you think of it, whether it meets your needs, and how it can be improved. And I&rsquo;m glad I&rsquo;ve finally gotten it done after all this time!</p>
+
+<h3 id="toc_0">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL falls with the decline of PHP &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL falls with the decline of PHP</h1>
+  <span class="post-date">Wed, Feb 26, 2014 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Sometimes people&rsquo;s perspective can be so interesting. I mean this with
+absolutely no irony. Josh Berkus wrote recently in a post about upcoming <a href="http://www.databasesoup.com/2014/02/why-hstore2jsonb-is-most-important.html">JSON
+improvements in PostgreSQL 9.4</a>:</p>
+
+<blockquote>
+<p>MySQL largely rose on the success of PHP, and it fell as PHP became
+marginalized.</p>
+</blockquote>
+
+<p>This is an aside in the blog post, off-topic. But it&rsquo;s
+interesting to discuss because it reveals the completely different things people
+see when they look at something. It&rsquo;s like the proverbial story about the blind
+men describing an elephant. We have such a variety of perceptions.</p>
+
+<p><img src="/media/2014/02/kaleidoscope.jpg" alt="Elephant" />
+</p>
+
+<p>This post, by the way, is not yet another flame war about MySQL versus
+PostgreSQL. To the contrary, it is very important for MySQL users and
+community members to understand that there are other communities who do not
+share the same assumptions, values, and beliefs at all. In my experience, many
+arguments about things like MySQL versus PostgreSQL result from people (or
+groups of people) holding such differences but being unaware of them, and
+therefore misinterpreting words and actions from a group who doesn&rsquo;t share the
+same worldview, believing them to be dishonest, irrational, or hostile.</p>
+
+<p>Looking at Josh&rsquo;s statements again, we can see two assertions that are just
+calmly stated as though everyone knows these things, they&rsquo;re true, it&rsquo;s stating
+the obvious:</p>
+
+<ul>
+<li>MySQL rose on the success of PHP.</li>
+<li>MySQL is falling / has fallen from that success.</li>
+</ul>
+
+<p>I&rsquo;ve been Josh Berkus&rsquo;s roommate. I consider him a friend and I am not
+antagonizing him. But who among the readers on Planet MySQL would agree with
+those statements? In the MySQL world, we would hold these completely different
+&ldquo;truths&rdquo; to be self-evident instead:</p>
+
+<ul>
+<li>MySQL rose on the success of Web 2.0, backlash against Oracle, and the
+cheapness of commodity x86 hardware. It was a classic disruptive innovation.
+It won because there wasn&rsquo;t another relatively simple, cheap database server
+with built-in replication.</li>
+<li>MySQL has not fallen; in fact its adoption has moved into enterprise and
+accelerated.</li>
+</ul>
+
+<p>(Heads are nodding, I&rsquo;m sure.) Which worldview is right?</p>
+
+<p>Probably both are. From the MySQL point of view, many people see things as I
+described. But if you&rsquo;re in the PostgreSQL world, you&rsquo;ve seen an
+explosion in popularity. Many of the new users tell you they&rsquo;ve come from Oracle
+or other proprietary databases, so regardless of what those MySQL folks believe,
+obviously it is PostgreSQL that&rsquo;s winning in the enterprise. Besides, clearly
+MySQL must be on its way out, because you hear stories every week from another
+company who&rsquo;s switched from MySQL to PostgreSQL for a variety of reasons:
+superior technology, getting away from Oracle, avoiding restrictive licensing.</p>
+
+<p>But we don&rsquo;t see things that way in the MySQL community, do we?</p>
+
+<p>I won&rsquo;t claim to be the single most enlightened person about these two
+communities, but I&rsquo;ve spent a lot of time in both. Funnily, at times PostgreSQL
+folks were convinced I was crossing the aisle. My point is I get kaleidoscope
+vision sometimes from seeing both perspectives.</p>
+
+<p>Someone smarter than me can probably search through <a href="http://en.wikipedia.org/wiki/List_of_cognitive_biases">Wikipedia&rsquo;s list of
+biases</a> and maybe point out which of them is at play here.</p>
+
+<p>What do I believe? I think we all have so much more in common than we&rsquo;re aware
+of. I think we encounter substantially the same problems, solve them with
+the same solutions, and experience both success and failure in similar ways. I
+think we can learn much more from each other than we&rsquo;d guess. And I think many
+of our beliefs about each other are simultaneously right and wrong &ndash; the truth
+is much more nuanced and depends a lot more on perspective than on facts.</p>
+
+<p><a href="http://www.flickr.com/photos/haniamir/1455076844/">Photo credit</a></p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

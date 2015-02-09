@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      What TokuDB might mean for MongoDB &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">What TokuDB might mean for MongoDB</h1>
+  <span class="post-date">Mon, Apr 29, 2013 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Last week <a href="http://www.tokutek.com/">Tokutek</a> <a href="http://www.tokutek.com/2013/04/announcing-tokudb-v7-open-source-and-more/">announced</a> that they&rsquo;re open-sourcing their TokuDB storage engine for MySQL. If you&rsquo;re not familiar with TokuDB, it&rsquo;s an ACID-compliant storage engine with a high-performance index technology known as fractal tree indexing. Fractal trees have a number of nice characteristics, but perhaps the most interesting is that they deliver consistently high performance under varying conditions, such as when data grows much larger than memory or is updated frequently. B-tree indexes tend to get fragmented over time, and exhibit a performance cliff when data doesn&rsquo;t fit in memory anymore.</p>
+
+<p>The MySQL community is excited about having access to TokuDB&rsquo;s source code, and rightly so. TokuDB is, broadly speaking, aimed at the same category of use cases as Oracle&rsquo;s InnoDB, which has been MySQL&rsquo;s leading storage engine for a long time.</p>
+
+<p>MySQL&rsquo;s market size is large for an opensource product (roughly $500M to $1B USD, depending on who you talk to), and in a big pond, a stone causes wide ripples. I think the most significant implications, though, are for MongoDB. Tokutek has published a series of <a href="http://www.tokutek.com/tag/mongodb/">benchmarks of MongoDB performance with TokuDB</a> as the storage engine instead of MongoDB&rsquo;s default storage engine. The results are compelling.</p>
+
+<p>I think TokuDB will rapidly become the storage engine of choice for MongoDB, and could catapult MongoDB into the lead in the NoSQL database arena. This would have profound implications for opensource databases of all flavors, not just NoSQL databases.</p>
+
+<p>It&rsquo;s worth revisiting a bit of ancient history for some context.</p>
+
+<p>Way back in the olden days, MySQL&rsquo;s main storage engine was MyISAM. MyISAM is non-transactional and has table-level locking, meaning that a write (update, insert, delete, or similar) blocked all concurrent access to the table. This is okay for some uses, and can even be very good in special cases, but in the general case it is a disaster. MyISAM introduced some special workarounds for common cases (such as permitting nonblocking inserts to occur at the end of the table), but in the end, you can&rsquo;t fix table-level locking. A mixed workload needs storage that&rsquo;s designed for high read and write concurrency without blocking.</p>
+
+<p>MyISAM had other problems, such as lacking transactions, being prone to data corruption, and long repair times after a crash.</p>
+
+<p>As a result, MySQL as a whole was only interesting to a minority of users. For demanding applications it was little more than a curiosity.</p>
+
+<p>Then came InnoDB. InnoDB introduced ACID transactions, automatic crash recovery, and most importantly, row-based locking and MVCC, which allowed highly concurrent access to rows, so readers and writers don&rsquo;t block each other. InnoDB was the magic that made MySQL a credible choice for a wide range of use cases.</p>
+
+<p>Most of the interesting chapters in MySQL&rsquo;s history have involved InnoDB in one way or another. To list some highlights: Oracle bought InnoDB&rsquo;s creator Innobase Oy, MySQL scrambled to find a replacement (Maria, Falcon, PBXT), Sun&rsquo;s decision to acquire MySQL was said to be influenced by Falcon, Percona created XtraDB, and Oracle acquired Sun. Things are settling down now, but it&rsquo;s easy to forget how much of a soap opera the MySQL world has lived through because of InnoDB not being owned by MySQL.</p>
+
+<p>And in the middle of all this came NoSQL databases. In the past half-dozen years, more databases have been invented, popularized, and forgotten than I care to think about. In many cases, though, these databases were criticized as ignoring or reinventing (badly) decades of learning in relational database technology, and even computer science in general. I know I&rsquo;ve looked at my share of face-palm code.</p>
+
+<p>Databases, by and large, depend on reliable, high-performance storage and retrieval subsystems more than anything else. Many of the NoSQL databases have interesting ideas built on top of bad, bad, bad storage code.</p>
+
+<p>MongoDB is a case in point. MongoDB reinvented some of the worst parts of MySQL all over again. Storage was initially little more than mmap over a file. I think Mark Callaghan put it best in 2009, when he said &ldquo;Reinventing MyISAM is not a feature.&rdquo; MongoDB&rsquo;s storage at that time really was MyISAM-like. It&rsquo;s improved somewhat since then, but it hasn&rsquo;t had the wholesale rip-and-replace improvement that I think is needed. Not only that, but MongoDB as a whole is still (predictably) built around the limitations of the underlying storage, with coarse-grained locking.</p>
+
+<p>But MongoDB, like MySQL, has been relevant in spite of these shortcomings. Form your own opinion about why this is, but from my point of view there are two main reasons:</p>
+
+<ul>
+<li>MongoDB was born in an era when the popular databases were frustratingly slow and clunky to work with, and innovation was stalled due to the political drama surrounding them.</li>
+<li>MongoDB simply feels nice to developers. If you&rsquo;re not a developer, this is a little hard to explain, but it just feels good, like your favorite pair of jeans. Like a hug from a good friend. Like a hammock and a summer day. The difference between an SQL database and MongoDB for many developers is like the difference between an iPod and a cheap knockoff MP3 player. I could go on and on.</li>
+</ul>
+
+<p>It&rsquo;s difficult to overstate the importance of this, because it means that MongoDB may well become an enterprise database, despite what bad opinions you may have about it now. Why is this? It&rsquo;s because developers are king in the modern IT enterprise. Developers determine what technologies get adopted in IT. CTOs like to think the decisions come from the top down, but I&rsquo;ve seen it work the other way time and time again. Developers start to use something that frustrates them less than the alternatives, and a groundswell begins that&rsquo;s impossible to stop. Someday the CTO discovers that the question of whether to use technology X was decided by a junior developer long ago and deployed to production, and now it&rsquo;s too late.</p>
+
+<p>I&rsquo;ve done it myself. At Crutchfield I hijacked the company-wide policy that migration from legacy VB6 to .NET would proceed along the lines of a transition to VB.NET. I was fighting through awful code day in and day out, and I knew that a more restrictive language would prevent a lot of bad practices. So I wrote several major systems in C# without asking permission. It&rsquo;s a lot easier to get forgiveness than permission. Then I showed off what I&rsquo;d done. When I left Crutchfield, the IT department had chosen C#, not VB.NET, as its language of the future (even though there were, and probably still are, major VB.NET applications).</p>
+
+<p>Similarly, at Crutchfield I was provided a 15-inch CRT monitor to work on. This was 2003, you understand. Even at that time, it was awful. How can you expect a developer to work on a flickering, small monitor? I bought my own large-screen LCD and put it in my cubicle. Management ordered me to remove it because it was causing a flood of &ldquo;hey, how did Baron get a nice monitor?&rdquo; questions, but the camel already had a nose under the tent. I took my monitor home, but not too long after that we all started to get nicer monitors. I brought my own nice chair to work, too. All told I probably forced Crutchfield to spend thousands of dollars upgrading equipment. You have to be careful about headstrong kids like me &ndash; don&rsquo;t turn your backs on us for a moment.</p>
+
+<p>This story illustrates why MongoDB is likely to become a major database: because developers enjoy working with it. It feels pleasant and elegant. Remember, most technology decisions are based on how people feel, not on facts. We&rsquo;re not rational beings, so don&rsquo;t expect the best solution to win. Expect people to choose what makes them happy.</p>
+
+<p>And with the availability of TokuDB, MongoDB is lovable by a lot more people. With reliable storage and transactions, uncool kids can like it too.</p>
+
+<p>It goes further than just the storage engine. The kernel of MongoDB has code that needs to be fixed, such as the coarse-grained locking code. Tokutek basically forked MongoDB in order to insert TokuDB into it. They had to, in order to get all that locking out of the way and allow MongoDB to shine with TokuDB on the backend.</p>
+
+<p>I&rsquo;m not sure exactly how this will play out &ndash; will Tokutek start offering a competitive product? Will there be opensource community-based forks of MongoDB that integrate TokuDB? Will 10gen do the engineering to offer TokuDB as a backend? Will 10gen and Tokutek partner to do the engineering and provide support? Will 10gen acquire Tokutek? Will a large company acquire both? You decide.</p>
+
+<p>But I believe that a few things are inevitable, and don&rsquo;t require a crystal ball to guess.</p>
+
+<p>Anyone who cares about MongoDB is going to be using TokuDB as their storage backend within a matter of months. It&rsquo;s happened before &ndash; look at what happened to MySQL and InnoDB. Look at Riak; people dropped Bitcask like a hot potato when LevelDB storage arrived (although it hasn&rsquo;t been a perfect solution).</p>
+
+<p>Just to be clear, I do not think that MongoDB&rsquo;s parallels with MySQL&rsquo;s history must inevitably repeat in all aspects of the story. The world of databases today (big data, cloud, mobile) is not in the same situation it was when MySQL was creeping into general awareness (web, gaming, social, general lack of good alternatives to commercial databases), and the reasons people use MongoDB now are different from the reasons people chose MySQL back in the day. Still, there&rsquo;s a good chance that MySQL&rsquo;s past can teach us about MongoDB&rsquo;s future, and for some use cases, MongoDB deployments will soon accelerate rapidly. I expect a larger commercial ecosystem to emerge, too; right now the MongoDB market is worth tens of millions, and I&rsquo;d guess in a few years we&rsquo;ll look back and see a sharp inflection point in 2013 and 2014. TokuDB could help propel MongoDB&rsquo;s market size into hundreds of millions of dollars, which is a position occupied uniquely by MySQL today in the opensource database world.</p>
+
+<p><a href="http://www.youtube.com/watch?v=2UFc1pr2yUU">It&rsquo;s getting real</a> in the MongoDB world &ndash; this is going to be interesting to watch.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

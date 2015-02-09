@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to install and maintain multiple WordPress blogs easily &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to install and maintain multiple WordPress blogs easily</h1>
+  <span class="post-date">Tue, Mar 11, 2008 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+  </span>
+  
+
+<p>My wife has a site that needs two WordPress blog installations. The URLs differ by a subdirectory name. Both blogs need to be (URL-wise) subdirectories of <a href="http://www.xaprb.com/blog/">http://www.xaprb.com/blog/</a>. They need to be completely independent of each other, yet use the same custom theme. And there used to be just a single blog, which was <em>not</em> in a subdirectory; its permalinks must not break. (It has nice URLs with the date and title in them, not post ID-style URLs). And because I&rsquo;m the husband, I get to maintain it, so tack &ldquo;easy to maintain&rdquo; onto the requirements (it must be easy to upgrade WP in both blogs, for example). In this article I&rsquo;ll show you how I did it with a single .htaccess file, a single copy of WordPress, two MySQL databases, and a single configuration file.</p>
+
+<h3 id="toc_0">Fixing URLs</h3>
+
+<p>As I mentioned, there used to be a blog at <a href="http://www.xaprb.com/blog/">http://www.xaprb.com/blog/</a> which must not break. Suppose this blog was about dogs and my wife has recently started blogging about cats. She wants two completely independent blogs: <a href="http://www.xaprb.com/blog/dogs/">http://www.xaprb.com/blog/dogs/</a> and <a href="http://www.xaprb.com/blog/cats/">http://www.xaprb.com/blog/cats/</a>. Now the old permalinks structure, e.g. <a href="http://www.xaprb.com/blog/2006/03/01/dogs-are-great/">http://www.xaprb.com/blog/2006/03/01/dogs-are-great/</a>, must redirect to <a href="http://www.xaprb.com/blog/**dogs/**2006/03/01/dogs-are-great/">http://www.xaprb.com/blog/**dogs/**2006/03/01/dogs-are-great/</a>. How to do this?</p>
+
+<p>I&rsquo;m not a mod_rewrite wizard, but I figured there must be a way. And indeed there is: if an incoming URL doesn&rsquo;t contain dogs or cats, it can be rewritten and redirected to the new URL. Here&rsquo;s the code, which goes in <a href="http://www.xaprb.com/blog/.htaccess:">http://www.xaprb.com/blog/.htaccess:</a></p>
+
+<pre>RewriteBase http://www.xaprb.com/blog/
+RewriteCond %{REQUEST_URI} !dogs|cats
+RewriteRule ^(.*)$ http://www.furryfriends.orghttp://www.xaprb.com/blog/dogs/$1 [R]
+</pre>
+
+<p>(By the way, the furryfriends thing is just an example, not the real site name).</p>
+
+<p>So far, so good. That works just fine: when I access a URL without dogs or cats in it, it redirects me. But I need to do more: I need rewrite rules to match the date-and-title permalinks both blogs will use. I accomplish that like so:</p>
+
+<pre>RewriteCond %{REQUEST_URI} dogs|cats
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (dogs|cats) http://www.xaprb.com/blog/$1/index.php [L]
+</pre>
+
+<p>This is basically the same thing WordPress usually does, but I&rsquo;ve made it tolerate either dogs or cats and figure out which installation should get the request. The .htaccess file lives in <a href="http://www.xaprb.com/blog/">http://www.xaprb.com/blog/</a>, not inside /dogs/ or /cats/ where it would be hard to maintain (it would get wiped out with upgrades). I can see different ways of doing this, but this is the way I chose. So here&rsquo;s the whole file:</p>
+
+<pre>&lt;IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Anything to the old address (e.g. http://www.xaprb.com/blog/foo/bar) goes to the new address
+# (e.g. http://www.xaprb.com/blog/dogs/foo/bar)
+RewriteBase http://www.xaprb.com/blog/
+RewriteCond %{REQUEST_URI} !dogs|cats
+RewriteRule ^(.*)$ http://www.furryfriends.orghttp://www.xaprb.com/blog/dogs/$1 [R]
+
+# If that fired, then we didn't reach this code.  If we did, then this rule
+# should do what a normal WP rule does.
+RewriteCond %{REQUEST_URI} dogs|cats
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (dogs|cats) http://www.xaprb.com/blog/$1/index.php [L]
+&lt;/IfModule>
+</pre>
+
+<p>Are there any better ways of doing this? I&rsquo;m curious. Leave a comment if you know of one.</p>
+
+<h3 id="toc_1">Fixing the maintenance headache</h3>
+
+<p>Installing two copies of WordPress, then customizing both is a pain. And it makes upgrades harder, too. I&rsquo;d have to upgrade them both, fiddle with plugins (some of them are customized, too) etc etc. Even backups would be more complicated. It would be all too easy to screw up and delete some data. There are just so many ways this is a bad idea.</p>
+
+<p>It occurred to me that I could use a single copy and turn the dogs/ and cats/ subdirectories in the filesystem into symbolic links. (Windows users, you can stop reading now: this won&rsquo;t work for you).</p>
+
+<p>To make the blogs, the WordPress installation, and the custom blog theme all independent of each other, I created the following filesystem hierarchy:</p>
+
+<pre>blog/
+   wordpress/
+      2.3.2/
+         [The usual WP files are here]
+      wp_content/
+         plugins/
+         uploads/
+         themes/
+            my_custom_theme/
+</pre>
+
+<p>What I&rsquo;ve done is separate the custom bits &ndash; the parts that don&rsquo;t ship with WordPress &ndash; away from the files I want to upgrade when I upgrade WordPress. How will this work, though?</p>
+
+<p>I&rsquo;ll make symbolic links from the dogs/ and cats/ directories to the currently installed version of WordPress. So, from the root directory of the website, I type the following at the command line:</p>
+
+<pre>$ ln -s wordpress/2.3.2/ dogs
+$ ln -s wordpress/2.3.2/ cats
+$ cd wordpress/2.3.2/
+$ rm -rf wp-content/
+$ ln -s ../wp-content wp-content
+</pre>
+
+<p>The directory hierarchy now looks like this:
+<pre>blog/
+   cats/ -&gt; wordpress/
+   dogs/ -&gt; wordpress/
+   wordpress/
+      2.3.2/
+         [The usual WP files are here]
+         wp-content/ -&gt; ../wp-content
+      wp_content/
+         plugins/
+         uploads/
+         themes/
+            my_custom_theme/
+</pre></p>
+
+<p>This is looking pretty good! There&rsquo;s only one minor detail missing: because both blogs are running literally the same code via the magic of symlinks, each blog is trying to access the same database tables. I need to customize the WordPress configuration file, too. I&rsquo;ll just give each installation a different table name prefix in wp-config.php:
+<pre>$table<em>prefix  = strpos($_SERVER[&lsquo;REQUEST_URI&rsquo;], &lsquo;blog/cats/&rsquo;) ? &lsquo;wp_cats</em>&rsquo; : &lsquo;wp_dogs&rsquo;;
+</pre></p>
+
+<p>And voila, it works perfectly now. I accessed the two URLs, ran through the installation procedure twice, and have two completely independent blogs running the same code in the same database.</p>
+
+<h3 id="toc_2">The upgrade procedure</h3>
+
+<p>So, this is all a little complicated, right? What if I&rsquo;ve forgotten how I did it when I upgrade next time, or what if someone else does it instead of me? I wrote myself a little README file to fix this. Here&rsquo;s what it says:</p>
+
+<pre>This is how to upgrade Lynn's blog.
+
+The two blogs are actually using shared files, which are symlinked to make
+it so there is only one copy of files.  You can't change the files in one
+without changing them in the other.
+
+The wp-content subdirectory is symlinked.
+
+The wp-config file is customized so it will work in either blog:
+
+$table_prefix  = strpos($_SERVER['REQUEST_URI'], 'blog/cats/') ? 'wp_cats_' : 'wp_dogs';
+
+To upgrade, 
+
+ 1. Download the latest version and unpack it inside wordpress/ as 2.3.2/
+    or whatever version it is.
+ 2. Then go into that directory.
+ 3. Remove the wp-content/ directory completely.
+ 4. Then symlink it like this: ln -s ../wp-content wp-content
+ 5. Now re-customize wp-config.php
+ 6. Go back to the blog/ directory.  rm dogs cats
+ 7. ln -s wordpress/2.3.2/ dogs
+ 8. ln -s wordpress/2.3.2/ cats
+</pre>
+
+<p>It&rsquo;s still a manual process, but it should take me all of thirty seconds. I&rsquo;m okay with that. As long as I remember there&rsquo;s a README file, that is!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Crash injection for writing resilient software &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Crash injection for writing resilient software</h1>
+  <span class="post-date">Thu, Mar 14, 2013 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I am currently finishing some features to make a program highly resilient to occasional crashing bugs. A particular function was found to crash on queries of the form <code>WHERE x IN(NULL)</code>, and that crashed the entire program. Now we have a framework for intelligently recovering from arbitrary crashes. I will write more on this in the future, because I think it&rsquo;s a very interesting thing to share.</p>
+
+<p>In this episode, I want to focus on a related topic: how do you test a program that is supposed to be resilient to bugs you can&rsquo;t predict? Many new problems are caused by writing <a href="http://www.xaprb.com/blog/2011/05/04/whats-wrong-with-mmm/" title="What’s wrong with MMM?">clever code that is supposed to detect, avoid, or recover from problems</a>, even known problems. Unknown problems are even riskier.</p>
+
+<p>The approach that has given me a great deal of confidence in the &ldquo;resilience framework&rdquo; is to write a &ldquo;crash injection framework.&rdquo; (If it&rsquo;s not a framework, it can&rsquo;t be any good, right?) Crash injection can be activated at runtime to cause crashes in arbitrary source code locations. A fairly simple analysis of the source code showed me some places I&rsquo;m particularly interested in crashing to see how the program reacts.</p>
+
+<p>In the first iteration, it turned out that I hadn&rsquo;t actually solved the problem, even though I was sure I had. (I had already discovered previous mistakes, so this was actually about the 3rd time through, and I was sure I&rsquo;d found all the bits I&rsquo;d previously missed.) My crash injection framework allowed me to quickly dispel the notion that my program was resilient to the kinds of bugs we&rsquo;d already found.</p>
+
+<p>The fix was simple, but the lesson was well learned. I don&rsquo;t remember doing this before, but I&rsquo;ve studied and admired other pieces of software that are built to be resilient. For example, CouchDB has a <a href="http://en.wikipedia.org/wiki/Crash-only_software">crash-only</a> design. If you&rsquo;re not familiar with that phrase, it&rsquo;s well worth reading more about that. Stewart Smith has also written software that helps reveal wrong assumptions, such as <a href="http://flamingspork.com/projects/libeatmydata/">libeatmydata</a>, and I think he also wrote something that randomly broke <code>malloc()</code>, but I can&rsquo;t find that easily. Assumptions like &ldquo;allocating memory will always succeed&rdquo; are great places to end up with horrible bugs.</p>
+
+<p>In the MySQL world, it would be great if we had more crash-injection testing of InnoDB as well. If you agree, you might consider subscribing to <a href="http://bugs.mysql.com/bug.php">http://bugs.mysql.com/bug.php</a> to keep up to date with effort on that front.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

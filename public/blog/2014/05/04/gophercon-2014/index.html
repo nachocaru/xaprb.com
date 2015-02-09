@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      GopherCon 2014 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">GopherCon 2014</h1>
+  <span class="post-date">Sun, May 4, 2014 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  <p>I spoke at <a href="http://gophercon.com/">Gophercon</a> last week in Denver, and it was one of the best
+conferences I&rsquo;ve attended. I can&rsquo;t remember learning so much and meeting so many
+great people in years. I have page after page of notes in my notebook, many of
+which I&rsquo;ve yet to follow up on. The conference prompted a burst of learning and
+a flurry of creativity for me, as well as a huge list of things to study
+further.</p>
+
+<p><img src="/media/2014/05/gophercon.png" alt="Gophercon" />
+</p>
+
+<p>In no particular order, here are some of the many highlights for me:</p>
+
+<ul>
+<li>Meeting some of the Go team. Most of the people I&rsquo;ve been interacting with or
+following online were there, although I didn&rsquo;t get to meet all of them in
+person.</li>
+<li>Meeting many of the super-smart people whose code, blogs, and emails have
+taught me so much over the last couple of years.</li>
+<li>Learning a lot about Go&rsquo;s internals and design. For example, although it seems
+obvious in hindsight, I had never really thought about the <code>select</code> statement
+as the heart of Go&rsquo;s concurrency model &ndash; but it is. Everything else in Go
+seems to get the attention (channels, goroutines, etc), and is copied in
+various languages, but <code>select</code> is really the crowning jewels and is unique as
+far as I know.</li>
+<li>The talks. I haven&rsquo;t listened to talks so intently for many years. I was able
+to attend all but two. Fortunately those were recorded and will be online
+soon. The speakers were so good that I truthfully started to get an insecurity
+complex about my own presentation. I could just list all of the talks, and I
+don&rsquo;t want to pick favorites, but if you must watch only a couple &ndash;
+watch <a href="http://talks.golang.org/2014/hellogophers.slide">Rob Pike</a>, <a href="http://talks.golang.org/2014/go4gophers.slide">Andrew Gerrand</a>, John Graham, Kelsey Hightower, Ben
+Johnson, Peter Bourgon, Alan Shreve, Richard Crowley, oh dear that&rsquo;s more than
+a few. If you use or are curious about Go, you <em>must</em> watch the first two.
+The slides are good to read, but you are missing 80% of the talk if that&rsquo;s all
+you make time for.</li>
+</ul>
+
+<p>I was going to write a pretty long retrospective about Gophercon, but another
+amazing Gopher <a href="http://influxdb.org/blog/2014/04/30/java-is-the-cobol-of-my-generation-and-go-is-its-successor.html">already did that</a> (update: <a href="http://blog.joshsoftware.com/2014/05/05/my-experience-at-the-awesome-first-ever-gophercon-2014/">another one</a>).  I encourage you to read it, as it will
+give you a good sense of the conference and Go, and how they fit together.</p>
+
+<p>I&rsquo;ll leave you with some pithy quotes that summarize the depth of the content
+and quality of the hallway track at this conference:</p>
+
+<ul>
+<li>&ldquo;I will now boot this virtual machine from my slideshow.&rdquo; - Kelsey Hightower.  Note: this is not a joke; he PXE-booted the box using a server program that was running from his slideshow, which was written in Go and ran a Go PXE server. A few minutes later he booted another virtual machine from the first machine that booted from his slideshow.</li>
+<li>&ldquo;It&rsquo;s turtles all the way down and Handler all the way up.&rdquo; - Richard Crowley, on building HTTP API services by composition using the <code>net/http</code> libraries.</li>
+<li>&ldquo;Interfaces separate data from behavior. Classes conflate the two.&rdquo; - Andrew Gerrand, on the difference between programming with composition versus inheritance.</li>
+<li>&ldquo;Go is profoundly different.&rdquo; - Rob Pike, addressing the common misconception that Go is little more than an elegant version of C</li>
+<li>&ldquo;Go has generics. They are called interfaces.&rdquo; - Rob Pike, not speaking in jest</li>
+<li>&ldquo;The only decison no one has second-guessed is writing this in Go.&rdquo; - Josh Bleecher Snyder</li>
+</ul>
+
+<p>Finally, if you would like to write Go professionally, <a href="https://vividcortex.com/">VividCortex</a> is
+hiring!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

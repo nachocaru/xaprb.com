@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Seeing things from the user&#39;s point of view &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Seeing things from the user&#39;s point of view</h1>
+  <span class="post-date">Mon, Mar 4, 2013 in
+		
+		<a href="/categories/commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>I was discussing how to avoid surprising users and someone pointed out that what seems intuitive and rational to one person is often complete insanity for others. The mental gap between a developer and a user can often be a chasm far too wide to cross. Of all the bug reports I&rsquo;ve filed against MySQL, <a href="http://bugs.mysql.com/bug.php?id=44833">here</a> is my all-time favorite:</p>
+
+<blockquote>
+<p><code>select * from t where a &gt;= 1.0order by a;</code></p>
+
+<p>Does not cause an error. I believe it should, because there should be a whitespace before ORDER BY.</p>
+</blockquote>
+
+<p>Similar syntax errors such as &ldquo;<code>select 1e0from dual</code>&rdquo; were also accepted as valid SQL. Much soul-searching later, the official reply from MySQL&rsquo;s development team:</p>
+
+<blockquote>
+<p>The server behaves properly here:<br />
+- &ldquo;1&#8243; alone can not be an identifier, because it&rsquo;s followed by a &ldquo;.&rdquo;<br />
+- therefore, the lexer parses &ldquo;1&#8243; as the beginning of a number, and ends up with &ldquo;1.0&#8243; as one token.<br />
+The next token will be &ldquo;order&rdquo;, a keyword.</p>
+
+<p>There is nothing special to document here either. What was reported is not a bug in the server, and is not a documentation bug.</p>
+</blockquote>
+
+<p>What just happened here? It&rsquo;s fairly simple. Never attribute to malice that which can be adequately explained by tunnel vision. The developer decided that the SQL isn&rsquo;t a syntax error because the lexer is designed to parse it. If the developer were able to stand in a user&rsquo;s shoes for a moment, this answer would be obviously absurd. But when you live deep in the dungeons of a large codebase, you lose the ability (despite your best intentions) to see a normal user&rsquo;s point of view.</p>
+
+<p>For this reason I often doubt my own judgment. I&rsquo;m ignorant of my ignorance. It&rsquo;s a very &ldquo;meta&rdquo; problem. I have to rely on others to give me a sanity check.</p>
+
+<p>I suggest, as a topic of discussion, that the willingness and ability to accept others&rsquo; judgment over one&rsquo;s own is an essential characteristic of good leadership. I also suggest that knowing when this is appropriate is another attribute a good leader must have. Both of these are very difficult in my experience.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

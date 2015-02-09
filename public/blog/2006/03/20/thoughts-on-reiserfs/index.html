@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Thoughts on ReiserFS &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Thoughts on ReiserFS</h1>
+  <span class="post-date">Mon, Mar 20, 2006 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  <p>I recently watched a <a href="http://video.google.com/videoplay?docid=6866770590245111825">video of Hans Reiser&rsquo;s presentation on ReiserFS</a>, a journalling filesystem. It piqued my curiosity, so I visited the <a href="http://www.namesys.com/">ReiserFS website</a> to read more about the filesystem. I ended up un-learning some things I thought I knew, and had some thoughts to share on ReiserFS in general.</p>
+
+<ul>
+<li>The Reiser team believes <a href="http://www.namesys.com/v4/v4.html#civil_right">equal access to source code is a civil right</a>. I agree.</li>
+<li>I&rsquo;ve been using version 3 for a long time. As far as I&rsquo;m concerned, it&rsquo;s been the best choice for a journalling filesystem since it was created. I&rsquo;ve never lost any data whatsoever from a ReiserFS filesystem (though if my hard drive ever truly failed, the filesystem wouldn&rsquo;t matter). Version 4 is out of the oven now (ok, so I&rsquo;m a few years behind&hellip;), and it looks absolutely amazing. I think I will upgrade going forward.</li>
+<li>The performance enhancements in version 4 are stunning. Consider this: for the first time in history, a compressed filesystem is faster than an uncompressed one. What does that mean? It means the real bottleneck is reading/writing the data on the disk, and the compression and decompression is so fast that it&rsquo;s less expensive to do a bunch of computation and transfer less data, than to do less computation and transfer more data. That is remarkable.</li>
+<li>ReiserFS is faster, scales better, and is more space-efficient than any other filesystem, according to the benchmarks on their website.</li>
+</ul>
+
+<p>ReiserFS has a lot of implications not only for ordinary file-storage, but for special purpose systems too. It&rsquo;ll be interesting to see what the next few years bring.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Is MySQL 5.1 really a better 5.0? &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Is MySQL 5.1 really a better 5.0?</h1>
+  <span class="post-date">Thu, Dec 11, 2008 in
+		
+		<a href="/categories/commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>With all the furor over MySQL 5.1 GA, its release schedule, its quality, etc etc I think a fundamental claim is being left un-examined. Lots of people are saying that if you leave out the new features in 5.1 and look only at the features that existed in 5.0, it&rsquo;s better quality.</p>
+
+<p>The implication is that the process of building 5.1 looked like this: rip out nasty code and fix it all up, so there&rsquo;s a brand new architecture free of code debt. Adjust existing features to use this new, high-quality, sensible server architecture. Add new features.</p>
+
+<p>Is this accurate?</p>
+
+<p>Time will tell, and I have not yet seen enough of 5.1 in real-world production environments. As Peter says, <a href="http://www.mysqlperformanceblog.com/2008/12/10/mysql-51-went-to-ga-was-it-a-good-move/">it&rsquo;s not how many bugs there are &ndash; it&rsquo;s how many bugs affect you</a>. In my line of work, we see bugs that only show up if you&rsquo;re, for example, running a server with hundreds of thousands of tables. Or similar edge cases. I see a lot of routine things, too, but my point is that I am somewhat reserving my opinion about 5.1&#8242;s quality of existing features. As an example of what I mean, there were some bugs with 5.1 not using indexes correctly &ndash; a serious regression from 5.0. These have been fixed. Will there be others that haven&rsquo;t been found yet? Probably.</p>
+
+<p>Here is my gut feeling about a few existing features: triggers were always a hack and remain a hack. The memory allocation algorithms of the query cache are suboptimal, and that hasn&rsquo;t changed fundamentally. Geospatial functions are largely unusable, and that hasn&rsquo;t improved. The <a href="http://bugs.mysql.com/bug.php?id=32665">silly behavior of correlated subqueries</a> has probably been MySQL&rsquo;s number one slap-me-in-the-forehead misfeature since it was introduced in 4.x, and that isn&rsquo;t fixed (it will be in 6.0, but that&rsquo;s a whole other topic). Failsafe replication is code rot that was partially implemented and then abandoned in 4.x, causes bugs, and they haven&rsquo;t even removed the code (<a href="http://bugs.mysql.com/bug.php?id=11923">read the bug report!</a>). UNION still uses a temporary table, whether it&rsquo;s required or not. LOAD DATA FROM MASTER never worked to begin with, and it&rsquo;s still there &ndash; it causes problems and should be ripped out. The Federated engine is probably best left alone. <a href="http://bugs.mysql.com/bug.php?id=13669">Group commit is <em>still</em> broken for InnoDB</a> when binary logging and XA transactions are enabled. (This was broken during 5.0&#8242;s release, is a serious regression since 4.1, and is definitely a server architecture problem. So much for the beautiful new server architecture in 5.1?)</p>
+
+<p>Don&rsquo;t get me wrong. I&rsquo;m not trying to bash 5.1&#8242;s quality. I&rsquo;m just taking issue with this unchallenged assertion that everything that wasn&rsquo;t introduced in 5.1 is rock solid, performs better, and works beautifully now. I don&rsquo;t know for sure; I suspect it is partially true and partially false, but time will tell.</p>
+
+<p>I will say this: I&rsquo;m generally happier with the quality and stability of 5.0 in the last little while, say since 5.0.6x. If you don&rsquo;t need 5.1&#8242;s new features, why break something that works?</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      My unorthodox CAPTCHA blocked thousands of spam comments every week &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">My unorthodox CAPTCHA blocked thousands of spam comments every week</h1>
+  <span class="post-date">Mon, May 28, 2007 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+  </span>
+  
+
+<p>I wrote a custom image-less CAPTCHA for my blog a while ago. I didn&rsquo;t write it as a plugin, so I lost it when I upgraded WordPress a couple weeks ago. Not having this protection was an eye-opening experience, and vindicated what I asserted in my original posts: a naive question-and-answer system is <em>highly</em> effective at stopping spammers, probably as effective as scrambled images. Read on for the details.</p>
+
+<p>In my <a href="http://www.xaprb.com/blog/2006/01/28/captchas-done-better/">original article</a>, I hypothesized that CAPTCHAs with scrambled images just make it hard for real people to use websites, and probably don&rsquo;t provide any additional protection over less obnoxious methods. I thought there was probably a sweet spot at which humans don&rsquo;t find the system intrusive, and yet it&rsquo;s just a tiny bit too hard for most spammers to bother cracking it. After all, comment spammers are mostly targeting wide-open WordPress installations. Why work hard at the small fraction that resist comment spam when there are so many easy targets?</p>
+
+<p>(Actually, knowing what I know about search engine optimization, I&rsquo;d go after the hard-to-get ones myself if I wanted quality links, but the comment spam I get is clearly about quantity, not even an attempt to look like quality).</p>
+
+<h3 id="toc_0">How much spam do I get?</h3>
+
+<p>My little system of multiple-choice questions such as &ldquo;which of the following is blue? a) sky b) grass &hellip;&rdquo; seemed to cut out the vast majority of comment spam, but I never quite knew how much until I took it away and replaced it with a default installation of WordPress 2.1. In the old system, I had to delete a comment or two a day from the moderation queue. Wanna guess how much spam I built up in a week with nothing but Akismet in the new installation? From Sunday night May 13th to the next Sunday night, I got over 1,800 spam comments.</p>
+
+<h3 id="toc_1">What about Akismet?</h3>
+
+<p>&ldquo;Ah,&rdquo; you say, &ldquo;but that&rsquo;s really no problem. You say you had <a href="http://akismet.com/">Akismet</a> installed; it should catch most of them.&rdquo; Yes, but it also catches valid comments, which I value highly and don&rsquo;t want to throw away. I had to pore through the spam queue and find them. If you&rsquo;ve ever tried that with 1,800 comments in the spam bucket &ndash; holy cow, that&rsquo;s all but impossible. I had to log into my MySQL database at the command line and start nuking them with <code>LIKE</code> patterns just to get it down to something manageable. Even a couple dozen spam comments a day <em>in the spam queue</em> would push me over the edge. If I had to deal with thousands in the spam bucket, and dozens that weren&rsquo;t caught by Akismet, I&rsquo;d turn off comments.</p>
+
+<p>I needed a challenge question just to stop the hemorrhaging. Instead of writing my own this time, I decided to try using a pre-built plugin. I chose the popular &ldquo;<a href="http://www.herod.net/dypm/">did you pass math?</a>&rdquo; plugin. It is, like most WordPress plugins, not perfect &ndash; but it&rsquo;s good enough. I&rsquo;m down to about 15 spam comments a day in the moderation queue now. With Akismet helping, that becomes quite manageable.</p>
+
+<p>Notice &ndash; and this surprised me &ndash; the &ldquo;did you pass math&rdquo; plugin lets through more spam than my custom solution. I&rsquo;d bet dollars to donuts that&rsquo;s because it&rsquo;s both popular and not customized per-blog. My system was unique, so it makes sense that it worked better.</p>
+
+<h3 id="toc_2">So much for the naysayers</h3>
+
+<p>There&rsquo;s a lot of &ldquo;wisdom&rdquo; floating around the web (some of it in the comments on my earlier posts, showing me how easy it would be to bypass my custom solution ) that says CAPTCHAs don&rsquo;t work at all, and you should just use Bayesian filters and the like. I never believed it. Now I have proof. Was my system easy to break? Absolutely, and that&rsquo;s why it wasn&rsquo;t a hassle for real people to use. Did it work great despite its flaws? You bet.</p>
+
+<p>I may re-write my solution as a plug-in at some point, if I get time. Till then, good enough is good enough, just as it always has been.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

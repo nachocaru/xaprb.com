@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to find data distributions with SQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to find data distributions with SQL</h1>
+  <span class="post-date">Sat, Jun 10, 2006 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>In an earlier article I wrote about <a href="/blog/2005/09/28/grouping-data-with-catch-all-ranks/">grouping data into ranks with a catch-all bucket</a>. In this article I&rsquo;ll show you how to group the data into variable-sized buckets any way you please.</p>
+
+<p>This query came up when a business partner asked me to send over the distribution of some hierarchical data. It&rsquo;s the same category/subcategory/item data as in my article about <a href="/blog/2006/04/30/how-to-optimize-subqueries-and-joins-in-mysql/">optimizing joins and subqueries</a>. The partner wanted to know, broadly speaking, &ldquo;how many subcategories have very small and very large numbers of items&rdquo;.</p>
+
+<p>I could have done a simple query:</p>
+
+<pre>select category, count(*) as num
+from item group by category</pre>
+
+<p>That would have resulted in one row for every category, which would have been thousands of rows &ndash; not very useful for answering the question. I needed just a few rows, showing how many subcategories are large and how many are small. I started by filling a temporary table with my desired size ranges:</p>
+
+<pre>create temporary table ranges (
+   s int not null, -- start of range
+   e int not null  -- end of range
+);
+
+insert into ranges (s, e) values
+   (1, 1),
+   (2, 10),
+   (11, 50),
+   (51, 100),
+   (101, 200),
+   (201, 500),
+   (501, 1000),
+   (1000, 9999);</pre>
+
+<p>Then I grouped the data by subcategory, joined it against the ranges by size, and grouped again by range, counting and summing the sizes of each of the subcategories to get totals. In the query below, I analyze the distribution of items in category 14:</p>
+
+<pre>set @category := 14;
+
+select concat(s, '-', e) as range, sum(num) as total, count(*) as num
+from ranges
+inner join (
+   select s.id, count(*) as num
+   from subcategory as s
+      inner join item as i on i.subcategory = s.id
+   where s.category = @category
+   group by s.id
+) as x on x.num between ranges.s and ranges.e
+group by ranges.s, ranges.e</pre>
+
+<p>The results look roughly like this:</p>
+
+<table class="borders collapsed">
+  <caption>Distribution</caption> <tr>
+    <th>
+      range
+    </th>
+    
+    <th>
+      total
+    </th>
+    
+    <th>
+      num
+    </th>
+  </tr>
+  
+  <tr>
+    <td>
+      1-1
+    </td>
+    
+    <td>
+      10038
+    </td>
+    
+    <td>
+      10038
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      2-10
+    </td>
+    
+    <td>
+      4032
+    </td>
+    
+    <td>
+      1012
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      11-50
+    </td>
+    
+    <td>
+      300
+    </td>
+    
+    <td>
+      123
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      51-100
+    </td>
+    
+    <td>
+      72
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      1000-9999
+    </td>
+    
+    <td>
+      3040
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+</table>
+
+<p>The distribution is clearly biased towards single-item categories, with the occasional huge category. Part of the goal was to rewrite our grouping algorithm to chunk things together in groups of 20 to 80 (depending on a variety of complex factors I won&rsquo;t explain here). This query helped us get a realistic picture before and after the algorithm change.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

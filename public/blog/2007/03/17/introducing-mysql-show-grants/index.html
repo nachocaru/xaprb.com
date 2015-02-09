@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Introducing MySQL Toolkit&#39;s Show Grants tool &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Introducing MySQL Toolkit&#39;s Show Grants tool</h1>
+  <span class="post-date">Sat, Mar 17, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  
+
+<p>MySQL Toolkit&rsquo;s Show Grants tool makes it easy to extract grants from a MySQL server in canonical form. You can use it to replicate grants between servers, diff grants, and avoid spurious changesets in version control systems. It&rsquo;s part of the <a href="http://code.google.com/p/maatkit">Maatkit</a> project on Google Code.</p>
+
+<p>It&rsquo;s a fairly simple tool that connects to a MySQL server, issues <code>SHOW GRANTS</code>, and prints the results. By default it prints grants for every user, but you can specify users to show and users to ignore.</p>
+
+<h3 id="toc_0">Why a tool for such a simple task?</h3>
+
+<p>It&rsquo;s not as simple as it sounds. By default the output you get from running <code>SHOW GRANTS</code> is not canonicalized. The default output for the same grants is different on different servers, and in fact even on the same server if you wait and try again later! This means you can&rsquo;t <code>diff</code> or visually inspect grants easily. It also means you&rsquo;ll get spurious changesets if you&rsquo;re <a href="http://www.xaprb.com/blog/2006/07/09/so-you-think-your-code-is-in-version-control/">automatically saving grants into version control</a>.</p>
+
+<p>This tool canonicalizes the grants in three ways:</p>
+
+<ul>
+<li>If there are multiple rows of output, they&rsquo;re sorted.</li>
+<li>If there&rsquo;s a row that contains the <code>IDENTIFIED BY</code> clause, which defines the user&rsquo;s password, it comes first.</li>
+<li>Grants are sorted within the rows, so <code>GRANT SELECT, INSERT...</code> becomes <code>GRANT INSERT, SELECT...</code></li>
+</ul>
+
+<p>Besides canonicalizing grants, it&rsquo;s a more convenient way to extract grants from one server and insert them on another. The output is semicolon-terminated so you can pipe it right into <code>mysql</code> and execute the grant statements.</p>
+
+<h3 id="toc_1">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>. Other tools in the toolkit include a table checksummer and a duplicate key checker.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

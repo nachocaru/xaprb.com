@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Introducing MySQL Table Maintainer &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Introducing MySQL Table Maintainer</h1>
+  <span class="post-date">Sun, Mar 25, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>MySQL Table Maintainer is a new utility to help you run table maintenance commands (ANALYZE, CHECK, OPTIMIZE, REPAIR) on your MySQL tables. It&rsquo;s part of the MySQL toolkit.</p>
+
+<h3 id="toc_0">Overview</h3>
+
+<p>This tool is designed to help you run maintenance commands on your MySQL tables. There is a MySQL-provided tool (<a href="http://dev.mysql.com/doc/refman/5.0/en/myisamchk.html">myisamchk</a>) that fills some of the same purposes, but there are important advantages to doing it with SQL commands instead. Unlike using myisamchk, you don&rsquo;t have to ensure this tool has exclusive access to the tables! Plus, MySQL Table Maintainer gives you lots of options, such as the ability to</p>
+
+<ul>
+<li>Check first, then repair if anything is wrong</li>
+<li>Check tables before optimizing them, and skip if they have problems</li>
+<li>Do tables based on storage engine, size, age, time since last checking/optimizing etc&hellip; am I missing anything?</li>
+<li>Compact repeated output, and add table status information to help you understand what&rsquo;s happening</li>
+<li>Prevent or allow the statements to go into the binlog so they get executed on slave servers</li>
+<li>Do (or don&rsquo;t do) views as well</li>
+</ul>
+
+<p>Here&rsquo;s sample output:</p>
+
+<pre>$ mysql-table-maintainer -ac
+DATABASE TABLE                   ENGINE    SIZE   ROWS OP       TYPE     CNT TIME MSG
+test     __cmp006arz0EZC992_d__0 InnoDB   32.0k  94.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_d__0 InnoDB   32.0k  94.0  check    status     1    0 OK
+test     __cmp006arz0EZC992_d__1 InnoDB   32.0k  16.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_d__1 InnoDB   32.0k  16.0  check    status     1    0 OK
+test     __cmp006arz0EZC992_d__2 InnoDB   32.0k   1.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_d__2 InnoDB   32.0k   1.0  check    status     1    0 OK
+test     __cmp006arz0EZC992_d__3 InnoDB   32.0k   4.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_d__3 InnoDB   32.0k   4.0  check    status     1    0 OK
+test     __cmp006arz0EZC992_d__4 InnoDB   32.0k   1.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_d__4 InnoDB   32.0k   1.0  check    status     1    0 OK
+test     __cmp006arz0EZC992_s__0 InnoDB   32.0k  94.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_s__0 InnoDB   32.0k  94.0  check    status     1    0 OK
+test     __cmp006arz0EZC992_s__1 InnoDB   32.0k  16.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_s__1 InnoDB   32.0k  16.0  check    status     1    1 OK
+test     __cmp006arz0EZC992_s__2 InnoDB   32.0k   1.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_s__2 InnoDB   32.0k   1.0  check    status     1    0 OK
+test     __cmp006arz0EZC992_s__3 InnoDB   32.0k   4.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_s__3 InnoDB   32.0k   4.0  check    status     1    0 OK
+test     __cmp006arz0EZC992_s__4 InnoDB   32.0k   1.0  analyze  status     1    0 OK
+test     __cmp006arz0EZC992_s__4 InnoDB   32.0k   1.0  check    status     1    0 OK
+test     bighist                 InnoDB   66.1M 490.4k analyze  status     1    0 OK
+test     bighist                 InnoDB   66.1M 490.4k check    status     1   14 OK
+test     deadlocks               InnoDB   16.0k   2.0  analyze  status     1    0 OK
+test     deadlocks               InnoDB   16.0k   2.0  check    status     1    0 OK
+test     foo                     MyISAM    0.0    0.0  analyze  status     1    0 Table is already up to date
+test     foo                     MyISAM    0.0    0.0  check    status     1    0 OK
+test     smallhist2              InnoDB   32.0k  89.0  analyze  status     1    0 OK
+test     smallhist2              InnoDB   32.0k  89.0  check    status     1    0 OK</pre>
+
+<h3 id="toc_1">How this is different from myisamchk</h3>
+
+<p>This tool is different from myisamchk, and is therefore needed (I hate writing tools that have already been written!) because it does the job online, without taking your server offline or locking tables. You have to be careful with myisamchk. From the manual:</p>
+
+<blockquote cite="http://dev.mysql.com/doc/refman/5.0/en/myisamchk.html">
+  <p>
+    <strong>Important</strong>
+  </p>
+  
+  <p>
+    You must ensure that no other program is using the tables while you are running myisamchk. The most effective means of doing so is to shut down the MySQL server while running myisamchk, or to lock all tables that myisamchk is being used on... However, the easiest way to avoid this problem is to use CHECK TABLE instead of myisamchk to check tables.
+  </p>
+</blockquote>
+
+<p>There are also implications for fulltext indexes and so on. Of course there are times when you need to use myisamchk, especially when you are repairing corrupted tables, but this tool will probably be more convenient for many users.</p>
+
+<h3 id="toc_2">It sure is handy</h3>
+
+<p>I wrote this tool because one of my employer&rsquo;s replicated InnoDB clusters was looking a little fragmented, probably because of archiving. It took a couple evenings to write the tool, but yesterday I connected to the office and ran it with the &#8211;checkoptimize option. We got great results. As I suspected, the tables were fragmented, and the heavily archived tables shrunk by 25% or more. As a bonus, we now have a lot more free space in that InnoDB tablespace.</p>
+
+<h3 id="toc_3">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>. Other tools in the toolkit include a table checksummer and a duplicate key checker.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL Conference and Expo 2007, Day 4 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Conference and Expo 2007, Day 4</h1>
+  <span class="post-date">Fri, Apr 27, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p><a href="http://www.mysqlconf.com/"><img style="float:right; margin-left: 15px" src="http://conferences.oreillynet.com/images/mysqluc2007/banners/speakers/120x240.jpg" width="120" height="240" alt="Speaker at MySQLConf 2007" /></a>
+In my fourth day at the <a href="http://www.mysqlconf.com/">MySQL Conference and Expo 2007</a>, I attended several great sessions, starting with my own.</p>
+
+<p>If you&rsquo;re wondering why this is a day late, it&rsquo;s because the conference ended in the late afternoon, and they almost immediately &ndash; within a half-hour or so &#8211; removed the free wireless Internet access in the hotel. That was uncool.</p>
+
+<h3 id="toc_0">Keynotes etc</h3>
+
+<p>I skipped the opening keynotes to polish off last-minute changes to innotop and my presentation. I was sort of interested in the keynotes, but by this time I had begun to understand that the keynotes are often as much about sponsorship as about disseminating great ideas. I didn&rsquo;t see Eben Moglen on the schedule again.</p>
+
+<p>Here&rsquo;s the lunch menu:</p>
+
+<ul>
+<li>Sun-dried tomato and onion salad with Balsamic reduction</li>
+<li>Napa cheese board with marinated rosemary and garlic</li>
+<li>Seasonal vegetables</li>
+<li>Roasted vegetable salad</li>
+<li>Herb buttered tomatoes</li>
+<li>Scented olives and crusty bread</li>
+<li>A wedge of spinach quiche Florentine</li>
+<li>Garlic rubbed rosemary breast of chicken</li>
+<li>Pacific salmon filet with roasted tomato sause [sic]</li>
+</ul>
+
+<p>Lunch was served atop a premium heavy white cotton table dressing resting on a circular quadri-pedal planar table. The center dressing was a cluster of upright wheat grass nestled on a sparkling porcelain platter, garnished with&hellip;</p>
+
+<p>&hellip; two small ripe-looking plastic pears.</p>
+
+<p>Seriously.</p>
+
+<h3 id="toc_1"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/13213">The innotop workshop</a></h3>
+
+<p>This was my own session. Pre-show entertainment was provided via the sound system by my iRiver. It was Mark Knopfler&rsquo;s album Shangri-La.</p>
+
+<p>I stepped through a little history and an overview of <a href="http://code.google.com/p/innotop">innotop</a>&rsquo;s features, then went into more advanced functions, demonstrating its SQL-like ability to compile expressions into subroutines and let you easily write formulas to monitor whatever you want. I showed how to sort, filter, colorize and otherwise customize any display. There are many features I didn&rsquo;t get into because they&rsquo;re either too geeky or not fully baked yet, but I did show how to add and delete columns from tables.</p>
+
+<p>In the second part of the hour I demonstrated some more advanced things you can do, such as watching InnoDB&rsquo;s undo log entry count to see how much work your transactions have done. If you know how many rows a transaction will affect, this is a good way to see how close to completion it is.</p>
+
+<p>I had only one slight problem as I discovered a bug in the quick-filters functionality I promised to write and demo. This is what live demos are for, no?</p>
+
+<p>There were quite a few people in the room, but it wasn&rsquo;t packed (packed would have been upwards of 100 I think; I maybe had 50 or so). But, it&rsquo;s quality not quantity, right? Quality is when Heikki Tuuri himself (the man who created InnoDB) attends. He taught me a few things I didn&rsquo;t know, too.</p>
+
+<p>The best part of the session was the feedback and suggestions I got.</p>
+
+<p>I also spent a few moments at the end of the talk to mention <a href="http://code.google.com/p/maatkit">MySQL Table Checksum and MySQL Table Sync</a>, which can be useful for efficiently detecting and repairing when a slave server is out of sync with its master. As far as I know I&rsquo;m the only person who&rsquo;s written good tools for this purpose.</p>
+
+<p>The new version of innotop will be in theaters near you as release 1.4.2 in a few days.</p>
+
+<p>Incidentally, I got to meet Rohit Nadhani from <a href="http://www.webyog.com/en/">webyog</a>, who wrote the <a href="http://www.xaprb.com/blog/2007/04/05/mysql-table-sync-vs-sqlyog-job-agent/">SQLYog Job Agent I benchmarked against MySQL Table Sync</a> recently. I saw a demo of their new monitoring tool, MONyog. It looks really impressive, but I will try it out some more and let you know. A well-known MySQL user asked in my session if there could be any chance of innotop becoming an interactive web application. The answer is no. But take a look at MONyog.</p>
+
+<p>Rohit said they plan to integrate some of the data from SHOW INNODB STATUS in future releases. He looked terrified and said &ldquo;oh, no!&rdquo; when I told him I had to read the InnoDB source code to figure out some of the SHOW INNODB STATUS parsing. To anyone who wants to parse it &ndash; my advice is &ldquo;rip off my Perl code. It&rsquo;s GPL and I have an enormous test suite.&rdquo; This will save you a huge amount of work.</p>
+
+<p>On a related topic, I got a chance to ask the NitroEDB developers the license on the NitroEDB storage engine for MySQL. The answer was how much it cost, which is A Lot. &ldquo;Price isn&rsquo;t license,&rdquo; I pointed out. &ldquo;What about GPLing it?&rdquo; The answer to that was &ldquo;It&rsquo;s millions of lines of Modula-2. If you think you can do anything with that, we&rsquo;ll GPL it.&rdquo;</p>
+
+<p>It&rsquo;s a shame I didn&rsquo;t get this remark on the record. It doesn&rsquo;t matter what the language is, Free is Free. Heck, I&rsquo;m in the middle of a textbook on compiler design right now, so I&rsquo;ve been reading a lot of Modula-2 lately. Give it to me in Elbonian, I don&rsquo;t care. Interestingly, for about $200 you can apparently get the source code from the Department of Defense up to a certain point. I&rsquo;m sure that would at least enable learning about some of the indexing algorithms.</p>
+
+<p>I didn&rsquo;t have a ready response at the time, so I cracked a joke about converting it into Perl and left for the next session.</p>
+
+<h3 id="toc_2"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/12448">What Happens After You&rsquo;re Scalable: Capacity Planning for LAMP</a></h3>
+
+<p>This session was very good. It was by a Flickr engineer, and focused on how to plan for capacity. I would say the Big Idea here was <strong>don&rsquo;t try to calculate demand, just measure and extrapolate.</strong> Another might be <strong>don&rsquo;t fall into the trap of tweaking another few percent of performance,</strong> just take what you have as a given and make sure you can scale effortlessly.</p>
+
+<p>I&rsquo;m sorry I didn&rsquo;t take extensive notes on this one. I would say the slides are well worth reading through, though.</p>
+
+<h3 id="toc_3"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10764">InnoDB Performance Optimization</a></h3>
+
+<p>This session was presented by Heikki Tuuri and Peter Zaitsev, two pretty much undisputed experts on InnoDB. The big idea in this talk was to <strong>learn how InnoDB really works so you can use it smartly</strong>. Peter did most of the talking and Heikki occasionally picked up the microphone to add a comment. It was informative, but also quite entertaining.</p>
+
+<p>Here are a few of the topics Peter and Heikki covered:</p>
+
+<ul>
+<li>Application design is the biggest factor in InnoDB performance.</li>
+<li>Use transactions, but use them smartly.</li>
+<li>Don&rsquo;t use LOCK TABLES with InnoDB.</li>
+<li>Use clustered indexes to your advantage. Understand how secondary indexes work as a consequence, and understand how clustered indexes interact with locking and isolation levels.</li>
+<li>Know how updates, the hash index, and the query cache interact with InnoDB.</li>
+<li>Understand automatic clustering keys and how keys might be promoted to clustered status.</li>
+<li>Learn about row versions and purging, and how they interact with the READ COMMITTED isolation level.</li>
+</ul>
+
+<p>Heikki quote of the week: when Peter said &ldquo;SELECT FOR UPDATE cannot use a covering index because it must access the primary key to place locks,&rdquo; Heikki said &ldquo;this is self-evident,&rdquo; which made my day.</p>
+
+<p>By the way, one interesting thing I learned from Heikki is how to pronounce InnoDB. He says &ldquo;in-no-db&rdquo; not &ldquo;eye-no-db&rdquo; or &ldquo;ee-no-db.&rdquo;</p>
+
+<p>I only stayed for the first part of this session, because I wanted to catch the Data Warehousing talk running at the same time.</p>
+
+<h3 id="toc_4"><a href="http://www.mysqlconf.com/cs/mysqluc2007/view/e_sess/10857">High Performance Data Warehousing with MySQL: Tricks and Tips from the Field</a></h3>
+
+<p>Brian Miezejevski (it&rsquo;s spelled just like it sounds, if you&rsquo;re Polish) gave this talk. The focus was on <strong>how to use MySQL to build very large data warehouses that you can query, backup and maintain efficiently.</strong> Brian has a lot of experience in this area, including working with data warehouses over a dozen terabytes in size.</p>
+
+<p>The main practice he espoused was <strong>partition, partition, partition.</strong> When you get into large data volumes, everything you do needs to be done a partition at a time; it is not practical to do <em>any</em> kind of operation on tables with hundreds of millions of rows, so you have to split them up somehow. Load, backup, archive and purge a partition at a time.</p>
+
+<p>Partitioning can be done many different ways, but the primary way in production-ready versions of MySQL is to use MyISAM tables and group them together into a single table with the MERGE storage engine. Compressed MyISAM tables can help if you have free CPU; if you are CPU-bound, compressed tables are slower of course.</p>
+
+<p>Another technique is simply to use many tables and access them via UNION queries or views. Of course upcoming releases have genuine partitioned tables, which will be even better.</p>
+
+<p>Brian talked for a few minutes about real-time data warehousing where you need to continuously streaming data into very large tables. It is impractical to do this with MyISAM if you have to do any UPDATE or DELETE queries at all (concurrent INSERT queries can run as long as they are appending to the table). For high concurrency, you need to use InnoDB. I asked about the possibility of making all partitions MyISAM under MERGE except for the &ldquo;live&rdquo; partition and then creating a UNION ALL view over them. Brian said he hadn&rsquo;t tried it but it sounded like a good idea to him. He came back to this later and said he&rsquo;d probably load by time slice in this fashion, then alter the &ldquo;live&rdquo; table to MyISAM and put it into the MERGE periodically.</p>
+
+<p>The data warehousing Holy Grail is to use all hash joins for joining fact and dimension tables, but MySQL doesn&rsquo;t (yet) support hash joins. However, you can simulate it with MEMORY tables, which have HASH indexes. You have to do some tricks like keeping a disk (MyISAM) and memory table updated together, and loading the memory tables automatically on server start, but apparently this is a really good technique. Your joins then take the general form</p>
+
+<pre>SELECT ..
+FROM (
+   SELECT [MyISAM tables]
+) INNER JOIN [MEMORY tables]
+GROUP ...</pre>
+
+<p>The effect is similar to a hash join.</p>
+
+<p>Brian spoke for a few minutes about NitroEDB (amazing indexing and aggregate performance) and InfoBright (extremely high compression) for data warehousing. But of MySQL&rsquo;s own storage engines, the preferred solution is still MyISAM.</p>
+
+<p>Other topics included how to back up really large data sets and how to build aggregates with ON DUPLICATE KEY UPDATE. Brian also mentioned the critical tuning parameters for large data sets and talked about the need to monitor slow queries and certain server status values to understand when performance changes so you have some advance warning when you hit some kind of performance ceiling.</p>
+
+<h3 id="toc_5">Closing Keynote</h3>
+
+<p>The closing keynote was by one of the engineers who created <a href="http://pipes.yahoo.com">Yahoo! Pipes</a>, which in my opinion is the beginning of the semantic Web&rsquo;s promise becoming reality. It&rsquo;s built on MySQL and Perl among other things, of course. The demo was pretty neat, but the neater thing yet is you can go do it yourself just as easily.</p>
+
+<p>I had an elevator conversation with someone afterwards about a Pipes storage engine for MySQL. As cool as Pipes is, MySQL&rsquo;s storage engine architecture is no less cool. It just might take a little more imagination to see it.</p>
+
+<h3 id="toc_6">Next</h3>
+
+<p>I too have some cool things in the works, including a whole new way to ensure slave servers stay in sync. I need to recover from my sleep deficit, snuggle with my wife and dog, and then I&rsquo;ll get back to you.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

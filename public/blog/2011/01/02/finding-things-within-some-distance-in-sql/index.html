@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Finding things within some distance in SQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Finding things within some distance in SQL</h1>
+  <span class="post-date">Sun, Jan 2, 2011 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>One of the query optimization scenarios I&rsquo;ve seen a lot over the years is finding something within some distance from a point. For example, finding people within some distance of yourself, apartments in a radius from a postal code, and so on.</p>
+
+<p>These queries usually use the great-circle formula. That might be because Google finds lots of pages claiming that this is the right way to do a radius search. &ldquo;The earth is not flat!&rdquo;, they all say. That&rsquo;s true, but it doesn&rsquo;t mean that the great-circle formula is a good approach. It&rsquo;s usually a really bad approach, in fact. It&rsquo;s needlessly precise for most things, not precise enough for others, and it&rsquo;s an expensive query to execute; all the trig functions tend to eat a bunch of CPU, and make it impossible to use ordinary indexes. This is true for all of the databases I&rsquo;ve used &ndash; MySQL, Postgres, and SQL Server.</p>
+
+<p>The great-circle formula is needlessly precise for a few reasons:</p>
+
+<ol>
+<li>Within the radiuses I&rsquo;ve usually seen, the earth <strong>is</strong> flat, or close enough that it doesn&rsquo;t make a difference. Looking for an apartment within 25 miles of downtown? The error introduced by pretending that the earth is flat on such a small scale doesn&rsquo;t matter. The Pythagorean theorem would work just as well.</li>
+<li>&ldquo;Downtown&rdquo; is not a point, it&rsquo;s an area. Nobody is going to argue if you return search results that vary by a few miles, or even more.</li>
+<li>Nobody drives in a straight line from downtown to their apartment. People usually search within a physical radius as a proxy for &ldquo;find me something conveniently close.&rdquo; They don&rsquo;t really expect the miles as-the-crow-flies to be a good proxy &ndash; it&rsquo;s just one they&rsquo;re used to. In reality, that apartment just across the river might be too far away from work, because you&rsquo;d have to drive a long way to get to a bridge. (Unless you want to swim to the office every day, that is.)</li>
+</ol>
+
+<p>In cases where you really do need precision, there&rsquo;s a reasonable chance that the great-circle formula still isn&rsquo;t right for you, because not only is the earth not flat, the earth isn&rsquo;t a sphere either.</p>
+
+<p>What&rsquo;s the optimization I usually suggest? It&rsquo;s usually perfectly acceptable to just return results within a square centered on the point of interest. In most cases, the results will be just as satisfactory to the users. The remainder are usually very special cases.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

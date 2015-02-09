@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to update a GCC profile on Gentoo &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to update a GCC profile on Gentoo</h1>
+  <span class="post-date">Wed, Jun 7, 2006 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  
+
+<p>Multiple versions of GCC can be installed side-by-side in a Gentoo GNU/Linux system. This article is a quick overview of GCC profiles and how to manage them.</p>
+
+<h3 id="toc_0">Slots in Gentoo</h3>
+
+<p>Gentoo allows installing multiple versions of packages side-by-side in different &ldquo;slots.&rdquo; This avoids dependency problems. For example, it&rsquo;s possible to run programs that require different versions of libraries, because they can all coexist happily (the lack of this feature on Microsoft Windows is known as DLL hell).</p>
+
+<p>Often an upgraded package will install in a new slot, rather than replacing the previous version. Sometimes the old version will continue to be the system default, even though there&rsquo;s a newer version available. GCC is such a package.</p>
+
+<h3 id="toc_1">GCC profiles</h3>
+
+<p>GCC, and certain other packages such as MySQL, require the system administrator to explicitly select which version should be used. With MySQL and some other packages, the <code>eselect</code> tool selects the version, but selecting a version for GCC is more complex. Not only is there a version to select, but a &ldquo;profile.&rdquo; The profile is a set of behaviors and optimizations. The <code>gcc-config</code> tool selects a GCC profile, which is sourced from <code>/etc/profile</code>.</p>
+
+<h3 id="toc_2">How to select a profile</h3>
+
+<p>On my workstation at work, I became root, then ran the following command to view available profiles:</p>
+
+<pre># gcc-config -l
+ [1] i686-pc-linux-gnu-3.3.6 *
+ [2] i686-pc-linux-gnu-3.3.6-hardened
+ [3] i686-pc-linux-gnu-3.3.6-hardenednopie
+ [4] i686-pc-linux-gnu-3.3.6-hardenednopiessp
+ [5] i686-pc-linux-gnu-3.3.6-hardenednossp
+ [6] i686-pc-linux-gnu-3.4.6
+ [7] i686-pc-linux-gnu-3.4.6-hardened
+ [8] i686-pc-linux-gnu-3.4.6-hardenednopie
+ [9] i686-pc-linux-gnu-3.4.6-hardenednopiessp
+ [10] i686-pc-linux-gnu-3.4.6-hardenednossp</pre>
+
+<p>My current profile was <code>i686-pc-linux-gnu-3.3.6</code>, as indicated by the asterisk after that entry (<code>gcc-config -c</code> also prints this information). To choose a newer profile, I ran</p>
+
+<pre># gcc-config i686-pc-linux-gnu-3.4.6
+ * Switching native-compiler to i686-pc-linux-gnu-3.4.6 ...
+>>> Regenerating /etc/ld.so.cache...                                                                [ ok ]
+ * If you intend to use the gcc from the new profile in an already
+ * running shell, please remember to do:
+
+ *   # source /etc/profile</pre>
+
+<p>As you can see, it switched me to the new profile, and advised me to update my environment variables if I wanted to use the new profile in my existing shell.</p>
+
+<p><strong>Update</strong> That&rsquo;s not all; you need to do a bunch more work to make sure your system is stable and sane. Fortunately, Gentoo has a good document about this: <a href="http://www.gentoo.org/doc/en/gcc-upgrading.xml">Gentoo GCC Upgrade Guide</a>. If I&rsquo;d known about that document, I wouldn&rsquo;t have written this article.</p>
+
+<p><strong>Update</strong> Wow, this is a major pain. The suggested way to do this basically involves re-compiling your entire system twice. That is not acceptable, especially if something fails to compile (as it seems to do fairly often, judging by other people&rsquo;s experiences). This is my major gripe with Gentoo&rsquo;s way of compiling from source. Actually, I have lots of gripes with that, but I&rsquo;m still in love with Gentoo anyway.</p>
+
+<p>Regardless, I&rsquo;m going to try this <a href="http://forums.gentoo.org/viewtopic-t-494331.html">guide on recompiling each package only once</a> and see how it goes.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

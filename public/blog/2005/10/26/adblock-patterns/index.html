@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to block ads effectively with AdBlock regular expressions &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to block ads effectively with AdBlock regular expressions</h1>
+  <span class="post-date">Wed, Oct 26, 2005 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+  </span>
+  <p>One of the greatest things about Firefox is the ability to customize the browser with extensions. By far my favorite extension is <a href="http://adblock.mozdev.org/">Adblock</a>. It allows you to specify arbitrary regular expression patterns to block your browser from fetching and displaying content. The regular expression syntax is standard JavaScript syntax, based on Perl 5.</p>
+
+<p>Blocking content is a delicate dance. It&rsquo;s very easy to block too much, so the patterns need to be fairly specific. The following patterns will match almost any content I don&rsquo;t want to see on the Internet, and rarely block something I do want to see. Note that these are regular expressions.</p>
+
+<ul>
+<li><del datetime="2005-12-22T17:24:23+00:00">.swf</del></li>
+<li>\bads\b</li>
+<li>2o7</li>
+<li>a1.yimg</li>
+<li>adbrite</li>
+<li>adclick</li>
+<li>adfarm</li>
+<li>adrevolver</li>
+<li>adserver</li>
+<li>adtech</li>
+<li>advert</li>
+<li>atdmt</li>
+<li>atwola</li>
+<li>banner</li>
+<li>bizrate</li>
+<li>blogads</li>
+<li>bluestreak</li>
+<li>burstnet</li>
+<li>casalemedia</li>
+<li>coremetrics</li>
+<li>doubleclick</li>
+<li>falkag</li>
+<li>fastclick</li>
+<li>feedstermedia</li>
+<li>googlesyndication</li>
+<li>hitbox</li>
+<li>httpads</li>
+<li>imiclk</li>
+<li>intellitxt</li>
+<li>js.overture</li>
+<li>kanoodle</li>
+<li>kontera</li>
+<li>mediaplex</li>
+<li>nextag</li>
+<li>pointroll</li>
+<li>qksrv</li>
+<li>rightmedia</li>
+<li>speedera</li>
+<li>statcounter</li>
+<li>tribalfusion</li>
+<li>webtrends</li>
+</ul>
+
+<p>To use it, join the entire list with <kbd>|</kbd> and start and end it with <kbd>/</kbd>. The following is everything together as a single regular expression. This is my one and only Adblock filter:</p>
+
+<pre>/\bads\b|2o7|a1\.yimg|adbrite|adclick|adfarm|adrevolver|adserver|adtech|advert|atdmt|atwola|banner|bizrate|blogads|bluestreak|burstnet|casalemedia|coremetrics|doubleclick|falkag|fastclick|feedstermedia|googlesyndication|hitbox|httpads|imiclk|intellitxt|js\.overture|kanoodle|kontera|mediaplex|nextag|pointroll|qksrv|rightmedia|speedera|statcounter|tribalfusion|webtrends/</pre>
+
+<p>If you&rsquo;re familiar with regular expressions, you will have realized some of the entries can be combined into one with grouping. Without taking this to extremes, here is the shorter version:</p>
+
+<pre>/\bads\b|2o7|a1\.yimg|ad(brite|click|farm|revolver|server|tech|vert)|at(dmt|wola)|banner|bizrate|blogads|bluestreak|burstnet|casalemedia|coremetrics|(double|fast)click|falkag|(feedster|right)media|googlesyndication|hitbox|httpads|imiclk|intellitxt|js\.overture|kanoodle|kontera|mediaplex|nextag|pointroll|qksrv|speedera|statcounter|tribalfusion|webtrends/</pre>
+
+<p>I don&rsquo;t block <code>swf</code> because the <a href="http://flashblock.mozdev.org/">flashblock</a> extension blocks Flash more conveniently than AdBlock, in my opinion.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

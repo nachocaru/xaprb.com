@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Can we afford big data, or do we need smart data? &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Can we afford big data, or do we need smart data?</h1>
+  <span class="post-date">Thu, Nov 15, 2012 in
+		
+		<a href="/categories/commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>With the Big Data craze that&rsquo;s sweeping the world of technology right now, I often ask myself whether we&rsquo;re deficit-spending, so to speak, with our data consumption habits. I&rsquo;ve seen repeated examples of being unwilling to get rid of data, even though it&rsquo;s unused and nobody can think of a future use for it. At the same time, much Big Data processing I&rsquo;ve seen is brute-force and costly: hitting a not-very-valuable nut with a giant, expensive sledgehammer. I think the combination of these two problems represents a giant opportunity, and I&rsquo;m going to call the solution Smart Data for lack of a better word.</p>
+
+<p>What&rsquo;s the problem, in 25 words or less? I think it&rsquo;s that we&rsquo;re collecting a lot of data <em>simply because we can</em>. Not because we know of any good use for it, but just because it&rsquo;s there.</p>
+
+<p>What is the real cost of all of this data? I think we all know we&rsquo;re well behind the curve in making use of it. A huge industry is springing up to try to catch up to that. It&rsquo;s not a cheap industry, by and large, and I am not sure how much costs can come down. I think that we&rsquo;re going to get steamrolled by this. Organizations will own a lot of data, they&rsquo;ll need software and support organizations and staff to work with it, and they&rsquo;ll need a lot of hardware and power to store it and compute with it. By the time the problem becomes serious and they start to backpedal, there&rsquo;ll be a lot of political and psychological resistance. The costs of this resistance could be high: businesses could grow more slowly or fail, there will certainly be an environmental impact, there might be problems with security and privacy, and so forth.</p>
+
+<p>That&rsquo;s why I believe that if we had a crystal ball, we&rsquo;d find that we don&rsquo;t always need or want Big Data. We need and want what I&rsquo;m going to call Smart Data.</p>
+
+<p>I think most Big Data is utter garbage, collected in the hope that it might be useful, but then unused because no one can figure out whether it&rsquo;s useful. I think that much of it is inherently meaningless and useless, whether we can prove it or not.</p>
+
+<p>Smart Data is a recognition of this. I see it as a set of practices that I believe we need to build around the lifecycle of Big Data. Smart Data is what you get when Big Data is no longer exciting &ldquo;just because.&rdquo; The Smart Data lifecycle will vary, but might look like this:</p>
+
+<ol>
+<li>Capture and record everything, and don&rsquo;t delete any of it.</li>
+<li>Wait for a little while until the data is ready for analysis &ndash; say, several cycles of seasonality.</li>
+<li>Analyze the data and determine which portions of it are meaningful, and what meaningful metrics can be distilled from it.</li>
+<li>Aggregate, compress, distill, extract, and otherwise winnow down the Big Data until the meaning and knowledge remains. In most cases I believe this will constitute a tiny fraction of the original dataset.</li>
+<li>Discard the original dataset, or place it into offline storage if you must.</li>
+<li>Stop retaining the whole incoming data stream. I see a variety of options here &ndash; short-term retention, upfront winnowing, realtime streaming analysis and immediate discarding, and so on.</li>
+<li>Repeat. If you have a new question that you think the original data can answer, but the distilled data can&rsquo;t answer, then either go to your archives and pull it out, or if you&rsquo;ve discarded it, start again at step 1 for a while and accumulate enough data to answer the question.</li>
+</ol>
+
+<p>Here&rsquo;s a diagram that expresses some of these ideas.</p>
+
+<div id="attachment_2961" class="wp-caption aligncenter" style="width: 310px">
+  <img src="http://www.xaprb.com/media/2012/11/smart-data-lifecycle-300x268.png" alt="" title="smart-data-lifecycle" width="300" height="268" class="size-medium wp-image-2961" /><p class="wp-caption-text">
+    Smart Data Lifecycle
+  </p>
+</div>
+
+<p>I believe that there&rsquo;s an opportunity to keep the most valuable data and throw away the rest, because I&rsquo;ve been able to do that in my own work. Much of the research I&rsquo;ve done into MySQL performance, for example, is based on ignoring the huge stream of irrelevant data, and focusing on the signal buried in the noise. My work on extracting performance and scalability metrics from TCP traffic is an example, as is my more recent adaptive fault detection work. I&rsquo;ve seen alternative implementations of similar ideas that require enormous amounts of data and very expensive computation, yet don&rsquo;t appear to provide any better results than my cheap-and-easy algorithms that operate efficiently on small amounts of data. I believe this approach represents a competitive advantage for businesses in particular.</p>
+
+<p>What do you think? Are we drowning in data and we don&rsquo;t know it yet, or am I overreacting to a problem that doesn&rsquo;t exist?</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

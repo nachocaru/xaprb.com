@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to flatten hierarchies with awk &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to flatten hierarchies with awk</h1>
+  <span class="post-date">Sat, Mar 4, 2006 in
+		
+		<a href="/categories/programming" class="btn btn-primary">Programming</a>
+		
+  </span>
+  
+
+<p>Suppose you have a spreadsheet with columns of product category names and numbers. The product hierarchy has two levels, indicated by writing top-level categories without numbers. How do you flatten the hierarchy quickly for insertion into a relational database? My solution is <code>awk</code>. In this article I&rsquo;ll show you some sample data, demonstrate how to process and reformat it with <code>awk</code>, and explain how to avoid some basic pitfalls.</p>
+
+<h3 id="toc_0">Sample data</h3>
+
+<p>Here is the sample data in the spreadsheet, with header columns removed:</p>
+
+<table class="borders collapsed">
+  <tr>
+    <td>
+      Books
+    </td>
+    
+    <td>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Novels
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Biographies
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Self-Help
+    </td>
+    
+    <td>
+      3
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Music
+    </td>
+    
+    <td>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Rock
+    </td>
+    
+    <td>
+      4
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Jazz
+    </td>
+    
+    <td>
+      5
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Classical
+    </td>
+    
+    <td>
+      6
+    </td>
+  </tr>
+</table>
+
+<p>The top-level entries have no identity themselves; it is not possible to place a product into a top-level category. Since I want to insert the categories into a database for an application to use, I don&rsquo;t want these entries at all. I want to flatten everything out, separating the levels with <code>&gt;</code>. Here is my desired result:</p>
+
+<table class="borders collapsed">
+  <tr>
+    <td>
+      Books > Novels
+    </td>
+    
+    <td>
+      1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Books > Biographies
+    </td>
+    
+    <td>
+      2
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Books > Self-Help
+    </td>
+    
+    <td>
+      3
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Music > Rock
+    </td>
+    
+    <td>
+      4
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Music > Jazz
+    </td>
+    
+    <td>
+      5
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Music > Classical
+    </td>
+    
+    <td>
+      6
+    </td>
+  </tr>
+</table>
+
+<p>I could do this any number of ways, but since it lends itself well to line-by-line processing, I elected to use <code>awk</code>. Perl would have worked just as well.</p>
+
+<h3 id="toc_1">Flattening the categories</h3>
+
+<p>The basic idea is to examine each line and see if it has a category number. If it doesn&rsquo;t, it&rsquo;s a parent category, and I save its name to a variable. If it does, it&rsquo;s a child category, and I print out the (saved) parent&rsquo;s name, the angle bracket, and its own name, followed by the category number. Here&rsquo;s some code to do that:</p>
+
+<pre>/\t$/ {
+    current = $1 " > ";
+}
+
+/\t.+$/ {
+    printf("%s %s\t%d\n", current, $1, $2);
+}</pre>
+
+<p>The first block matches anything with a tab at the end of the line, and saves the value of the first column to the variable <code>current</code>. The second block prints out <code>current</code>, the first column, and the second column. I saved it to <code>transform.awk</code> and invoked it like so:</p>
+
+<pre>awk -f transform.awk original.csv</pre>
+
+<p>Since the CSV file&rsquo;s fields are surrounded by double quotes, I piped the result through <code>sed</code> to nuke them:</p>
+
+<pre>awk -f transform.awk original.csv | sed -e 's/"//g'</pre>
+
+<h3 id="toc_2">More ideas</h3>
+
+<p>I can use this general idea in a number of ways. Unfortunately, the original CSV format is slightly hare-brained, so this doesn&rsquo;t generalize to hierarchies deeper than two levels. One file I transformed did have several levels of hierarchy. The top-level categories were bolded, intermediate were not, and &ldquo;leaf nodes&rdquo; had a number. As an Excel spreadsheet, the bolding is fine. Once it&rsquo;s saved to a CSV file, the bolding disappears. I tried the following script to get me partway there:</p>
+
+<pre>/\t$/ {
+        level = level + 1;
+        if (level == 1) {
+                level1 = $1;
+                current = $1 " > ";
+        }
+        if (level == 2) {
+                level2 = $1;
+                current = level1 " > " $1 " > ";
+        }
+}
+
+/\t.+$/ {
+        level = 0;
+        printf("%s %s\t%d\n", current, $1, $2);
+}</pre>
+
+<p>That&rsquo;s fine as far as it goes, but it&rsquo;s not a complete solution. A quick Vim macro solved the rest of the problem for me. If automating is harder than doing it with a macro, and I won&rsquo;t be doing it a lot, I&rsquo;ll just use a macro. If I do it often, I&rsquo;ll automate (<a href="http://c2.com/cgi/wiki?ThreeStrikesAndYouAutomate">three strikes and you automate</a>!).</p>
+
+<h3 id="toc_3">Pitfalls</h3>
+
+<ul>
+<li>Watch out for <code>awk</code> printing lines that don&rsquo;t have a number. If it&rsquo;s expecting two columns and thinks the second column should be a number, it&rsquo;ll print a zero. That&rsquo;s why the second code block doesn&rsquo;t just print every line.</li>
+<li>Beware spurious spaces: <code>printf(&quot;%s %s \t %d\n&quot;, current, $1, $2);</code> will cause every number to have leading, and every category name to have trailing spaces.</li>
+</ul>
+
+<h3 id="toc_4">Summary</h3>
+
+<p>I hope this gives you some ideas on using <code>awk</code> for processing files line-by-line. It is built specifically for the job; when you have a file that needs this type of processing, there&rsquo;s no better tool. For a quick one-off job when you don&rsquo;t need complex logic saved in a file, you can easily write an <code>awk</code> program right on the command line. For example, to find all non-top-level categories and swap the category and id:</p>
+
+<pre>$ awk '/\t.+$/{print $2 "\t" $1}' original.csv
+1       Novels
+2       Biographies
+3       Self-Help
+4       Rock
+5       Jazz
+6       Classical</pre>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

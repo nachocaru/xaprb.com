@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The manager-programmer face-off over NoSQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">The manager-programmer face-off over NoSQL</h1>
+  <span class="post-date">Mon, May 10, 2010 in
+		
+		<a href="/categories/commentary" class="btn btn-primary">Commentary</a>
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>A lot of conversations with a few different people I respect (no links, sorry) have coalesced some thoughts about these newly popular &ldquo;non-relational&rdquo; datastores. I wanted to point out an aspect I&rsquo;m not sure is very clear in the hot-topic department. This is about what happens when managers learn that their developers or operations team have installed some new technology in their systems without them knowing it.</p>
+
+<p>Lest anyone think that this happens only in a poorly-managed company, I can attest that it happens everywhere, all the time. Remember Marten Mickos&rsquo;s favorite story about salespeople asking prospects if they used MySQL, the managers saying absolutely not, and the developers contradicting them?</p>
+
+<p>The moment of discovery is unpleasant for the manager, but everything leading up to it was a joy for the programmer. He decided that he&rsquo;s annoyed with the MySQL database. SQL is hard anyway &ndash; it is such a pain to write queries like &ldquo;find the most recent article in each category.&rdquo; Besides, things are already slowing down, and it&rsquo;s obvious that this system is doomed unless someone takes action. Management is stuck in the mud and unwilling to hear about anything; they are so conservative! The programmer works late one night, or over the weekend, and gets Paprika (imaginary NoSQL database, I call dibs on the name) working. The site&rsquo;s logs are now in Paprika. It&rsquo;s harmless: just a proof of concept. It will be good to show the managers that this is a better way to do things, without actually risking any real functionality on the system.</p>
+
+<p>The manager now finds out about it, and is seriously stressed. Developers, estimate how much stress you think this could cause for your manager, and then multiply by about ten. This is the kind of thing that can ruin your manager&rsquo;s sleep, put stress on his marriage and family, and make him end up wanting to quit or fire you.</p>
+
+<p>How can something so joyful for the developer &ndash; productivity at last &ndash; be so opposed to the needs of the management and business? Let&rsquo;s see what the programmer thinks is good about this new technology:</p>
+
+<ul>
+<li>I finally got to learn something cool! I keep reading on makemysitescale.com how all the cool kids are solving their problems, but if I don&rsquo;t rebel, I&rsquo;ll never get to use any of these techniques and technologies!</li>
+<li>I get to do something new! Yay! My ordinary life is so boring!</li>
+<li>I get to put this on my resume!</li>
+<li>I get to be the only one in the company who knows about this. I get to strut a bit during lunch break! I can talk casually about it, like it&rsquo;s no big deal. They&rsquo;ll all envy me even more.</li>
+<li>This is excellent job security for me!</li>
+</ul>
+
+<p>Which of these things don&rsquo;t make the manager stressed out? If you&rsquo;re a manager, you&rsquo;re looking at a nightmare. Think about it the manager&rsquo;s point of view:</p>
+
+<ul>
+<li>This system is impossible to hire for. There are about a billionth the number of people on the job market who know Paprika, as those who know some SQL.</li>
+<li>Most people&rsquo;s skills and experience will not transfer to this system at all. I can&rsquo;t train anyone how to use this.</li>
+<li>Commercial support and consulting are either nonexistent or very limited.</li>
+<li>Documentation is inaccurate and scanty. Every Google result is talking about something that doesn&rsquo;t exist in the newest releases, because this thing has changed every three months for the last year.</li>
+<li>I don&rsquo;t know where this project/product is going in the future. The project&rsquo;s developers seem excited about the openness of the roadmap &ndash; I do not share their enthusiasm.</li>
+<li>I can&rsquo;t figure out how to write a query against this. How do I data-mine my logs? I&rsquo;ve got to find someone who knows how to write a map-reduce function in Prolog or some wacky thing like that. There is no graphical interface, and I can&rsquo;t plug my Business Objects or Crystal Reports into it.</li>
+<li>I can&rsquo;t monitor this system. I can&rsquo;t measure what it is doing. There are little or no tools for managing it. I don&rsquo;t know about its performance characteristics, and no one else does either; we can&rsquo;t capacity plan. How do we do backups and restores? Under what cases can it crash or corrupt its data, and what do we do then? My operations team is crippled.</li>
+<li>I have a rogue developer who thinks he&rsquo;s got job security because of this, and he&rsquo;s obviously interested in building his resume. He&rsquo;d better be, if he knows what&rsquo;s good for him, but I can&rsquo;t fire him until I fix this mess. All I can do is hope he stays until I do.</li>
+</ul>
+
+<p>What a disaster from management&rsquo;s point of view! I recently heard about a case pretty similar to this, except that unfortunately the hot-shot coder did leave the company for a cooler job, and management was twisting in the wind with a system they could not support.</p>
+
+<p>If I were hiring a team of developers, I think I&rsquo;d interview them with the question &ldquo;how cool is Paprika?&rdquo; and mark them down for too-enthusiastic answers.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

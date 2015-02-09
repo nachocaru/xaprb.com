@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How Linux iostat computes its results &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How Linux iostat computes its results</h1>
+  <span class="post-date">Sat, Jan 9, 2010 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/operations" class="btn btn-primary">Operations</a>
+		
+  </span>
+  <p><code>iostat</code> is one of the most important tools for measuring disk performance, which of course is very relevant for database administrators, whether your chosen database is Postgres, MySQL, Oracle, or anything else that runs on GNU/Linux. Have you ever wondered where statistics like await (average wait for the request to complete) come from? If you look at the disk statistics the <a href="http://www.mjmwired.net/kernel/Documentation/iostats.txt">Linux kernel makes available through files such as /proc/diskstats</a>, you won&rsquo;t see await there. How does iostat compute await? For that matter, how does it compute the average queue size, service time, and utilization? This blog post will show you how that&rsquo;s computed.</p>
+
+<p>First, let&rsquo;s look at the fields in /proc/diskstats. The order and location varies between kernels, but the following applies to 2.6 kernels. For reads and writes, the file contains the number of operations, number of operations merged because they were adjacent, number of sectors, and number of milliseconds spent. Those are available separately for reads and writes, although iostat groups them together in some cases. Additionally, you can find the number of operations in progress, total number of milliseconds during which I/Os were in progress, and the weighted number of milliseconds spent doing I/Os. Those are not available separately for reads and writes.</p>
+
+<p>The last one is very important. The field showing the number of operations in progress is transient &ndash; it shows you the instantaneous value, and this &ldquo;memoryless&rdquo; property means you can&rsquo;t use it to infer the number of I/O operations that are in progress on average. But the last field has memory, because it is defined as follows:</p>
+
+<blockquote>
+<p>Field 11 &ndash; weighted # of milliseconds spent doing I/Os This field is incremented at each I/O start, I/O completion, I/O merge, or read of these stats by the number of I/Os in progress (field 9) times the number of milliseconds spent doing I/O since the last update of this field. This can provide an easy measure of both I/O completion time and the backlog that may be accumulating.</p>
+</blockquote>
+
+<p>So the field indicates the total number of milliseconds that all requests have been in progress. If two requests have been waiting 100ms, then 200ms is added to the field. And thus it records what happened over the duration of the sampling interval, not just what&rsquo;s happening at the instant you look at the file. We&rsquo;ll come back to that later.</p>
+
+<p>Now, given two samples of I/O statistics and the time elapsed between them, we can easily compute everything iostat outputs in -dx mode. I&rsquo;ll take them slightly out of order to reflect how the computations are done internally.</p>
+
+<ul>
+<li>rrqm/s is merely the incremental merges divided by the number of seconds elapsed.</li>
+<li>wrqm/s is similarly simple, and r/s, w/s, rsec/s, and wsec/s are too.</li>
+<li>avgrq-sz is the number of sectors divided by the number of I/O operations.</li>
+<li>avgqu-sz is computed from the last field in the file &ndash; the one that has &ldquo;memory&rdquo; &ndash; divided by the milliseconds elapsed. Hence the units cancel out and you just get the average number of operations in progress during the time period. The name (short for &ldquo;average queue size&rdquo;) is a little bit ambiguous. This value doesn&rsquo;t show how many operations were queued but not yet being serviced &ndash; it shows how many were <em>either</em> in the queue waiting, <em>or</em> being serviced. The exact wording of the kernel documentation is &ldquo;&hellip;as requests are given to appropriate struct request_queue and decremented as they finish.&rdquo;</li>
+<li>%util is the total time spent doing I/Os, divided by the sampling interval. This tells you how much of the time the device was busy, but it doesn&rsquo;t really tell you whether it&rsquo;s reaching its limit of throughput, because the device could be backed by many disks and hence capable of multiple I/O operations simultaneously.</li>
+<li>await is the total time for all I/O operations summed, divided by the number of I/O operations completed.</li>
+<li>svctm is the most complex to derive. It is the utilization divided by the throughput. You saw utilization above; the throughput is the number of I/O operations in the time interval.</li>
+</ul>
+
+<p>Although the computations and their results seem both simple and cryptic, it turns out that you can derive a lot of information from the relationship between these various numbers. This is one of those tools where a few lines of code have a surprising amount of meaning, which is left for the reader to understand. I&rsquo;ll get more into that in the future.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

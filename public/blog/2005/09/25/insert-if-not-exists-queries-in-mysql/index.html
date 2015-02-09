@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to write INSERT IF NOT EXISTS queries in standard  SQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to write INSERT IF NOT EXISTS queries in standard  SQL</h1>
+  <span class="post-date">Sun, Sep 25, 2005 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>If necessary, INSERT IF NOT EXISTS queries can be written in a single atomic statement, eliminating the need for a transaction, and without violating standards. In this article I&rsquo;ll explain several ways to write such queries in a platform-independent way.</p>
+
+<h3 id="toc_0">Motivation</h3>
+
+<p>Suppose a table of urls has a unique index on the url:</p>
+
+<pre>create table urls(url varchar(200) primary key);</pre>
+
+<p>Now suppose I want to insert a row in a single statement, without using a transaction, and I only want the row to get inserted if the url isn&rsquo;t already in the table. I don&rsquo;t want any warnings or errors. I just want to issue a normal <code>INSERT</code> statement and know the url is now in the table.</p>
+
+<p>Standard SQL provides no means of doing this. There&rsquo;s no syntax like this:</p>
+
+<pre>insert if not exists into url(url) values(...)</pre>
+
+<p>In Microsoft SQL Server, I can use an <code>IF</code> statement:</p>
+
+<pre>if not exists (select * from url where url = ...)
+   insert into url...</pre>
+
+<p>This has to be wrapped in a transaction to avoid a race condition, though. Otherwise someone might insert a row between the time I check the table and when I insert the row. I want to do this in a single statement, without a transaction.</p>
+
+<h3 id="toc_1">Several solutions</h3>
+
+<p>One solution is to use a <a href="http://www.xaprb.com/blog/2005/09/22/mutex-tables-in-sql/">mutex table</a>:</p>
+
+<pre>insert into urls(url)
+select 'http://www.xaprb.com/blog/'
+from mutex
+    left outer join urls
+        on urls.url = 'http://www.xaprb.com/blog/'
+where mutex.i = 1 and urls.url is null;</pre>
+
+<p>There are more flexible variations on this technique. Suppose there is no unique index on the url column. If desired, it is possible to insert several values in a single statement by changing the <code>WHERE</code> clause:</p>
+
+<pre>insert into urls(url)
+select 'http://www.xaprb.com/blog/'
+from mutex
+    left outer join urls
+        on urls.url = 'http://www.xaprb.com/blog/'
+where mutex.i &lt; 5 and urls.url is null;</pre>
+
+<p>Now suppose the requirements specify up to three duplicate entries in the table, and each insert should add a single row. It is possible to insert a row at a time while enforcing the requirement with the following query:</p>
+
+<pre>insert into urls(url)
+select 'http://www.xaprb.com/blog/'
+from mutex
+    left outer join urls
+        on urls.url = 'http://www.xaprb.com/blog/'
+where mutex.i = 1
+group by urls.url
+having count(*) &lt; 3;</pre>
+
+<p>This query shows the input to the <code>INSERT</code> statement:</p>
+
+<pre>select 'http://www.xaprb.com/blog/', count(*)
+from mutex
+    left outer join urls
+        on urls.url = 'http://www.xaprb.com/blog/'
+where mutex.i = 1
+group by urls.url;</pre>
+
+<p>If this article was useful to you, you should <a href="http://www.xaprb.com/index.xml">subscribe</a> to stay current with my upcoming articles. It&rsquo;s free and convenient.</p>
+
+<p><strong>Edit 2006-02-26</strong> See also my article on using this and other techniques to do <a href="http://www.xaprb.com/blog/2006/02/21/flexible-insert-and-update-in-mysql/">flexible INSERT and UPDATE statements in MySQL</a>.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

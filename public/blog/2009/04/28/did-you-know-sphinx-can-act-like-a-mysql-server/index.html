@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Did you know Sphinx can act like a MySQL server? &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Did you know Sphinx can act like a MySQL server?</h1>
+  <span class="post-date">Tue, Apr 28, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p><a href="http://www.mysqlperformanceblog.com/2009/04/19/talking-mysql-to-sphinx/">Peter wrote about this recently</a>, but I don&rsquo;t know if it was really clear what was going on.</p>
+
+<p><strong>Point One:</strong> <a href="http://www.sphinxsearch.com/">Sphinx</a> can be contacted by the MySQL protocol. Not &ldquo;as a MySQL storage engine.&rdquo; Not &ldquo;from MySQL.&rdquo; <em>It understands the MySQL protocol itself</em>. So from the protocol point of view, <strong>the Sphinx search daemon can look just like a MySQL server</strong>.</p>
+
+<p><strong>Point Two:</strong> Sphinx understands a SQL-like query language. Don&rsquo;t be fooled. You&rsquo;re not writing SQL. It just looks like you are.</p>
+
+<p><strong>Point Three:</strong> Because of point One and point Two, <em>you can use the mysql command-line client program to talk directly to Sphinx</em>, with absolutely no MySQL server anywhere in sight. This also means you can connect to Sphinx from your application and query it, exactly like connecting to a MySQL server and querying it.</p>
+
+<p>Go take a look at Peter&rsquo;s blog post. He&rsquo;s not writing MySQL queries. He&rsquo;s writing queries to Sphinx.</p>
+
+<p>Now think about how cool this is &ndash; how easy this is to integrate with your code that already communicates with MySQL. Is there any other external full-text search system that masquerades as a MySQL server? I don&rsquo;t know of one.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

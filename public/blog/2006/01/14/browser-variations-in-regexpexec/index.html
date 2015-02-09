@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Browser variations in RegExp.exec() &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Browser variations in RegExp.exec()</h1>
+  <span class="post-date">Sat, Jan 14, 2006 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+  </span>
+  
+
+<p>IE6, Firefox 1.5 and Opera 8.5 handle regular expressions slightly differently. I analyzed them and learned some interesting things about the browsers. For this article, I&rsquo;m using <code>abcde</code> as the input, and <code>/abc|d(e)/g</code> as the regular expression. The expression should match twice, and the second match should capture the letter &ldquo;e&rdquo; because it&rsquo;s in a capturing subexpression.</p>
+
+<h3 id="toc_0">Properties of match results</h3>
+
+<p>Calling <code>RegExp.prototype.exec()</code> with a global regular expression returns an Array object with some extra properties. IE and Opera don&rsquo;t quite agree with <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMA-262</a> &ndash; they add extra properties and don&rsquo;t create properties that should exist (Firefox gets it right).</p>
+
+<p>In case you don&rsquo;t know the ins and outs of JavaScript regexes, there is a subtlety about capturing subexpressions and global regular expressions. <code>exec</code> actually only looks for one match even though the expression is global, but sets the index at which the match happened. If I call it again, it keeps looking from where it left off, so I can loop through the successive matches. Each time the result is an array containing the current match, plus the captures and information about where the match occurred. As usual, index 0 of the array contains the text of the entire match, index 1 contains the first captured subexpression, and so on.</p>
+
+<p>Here&rsquo;s what I get when I call <code>/abc|d(e)/g.exec(&quot;abcde&quot;)</code> twice in a row on the browsers in question:</p>
+
+<table class="borders collapsed" style="width:100%">
+  <tr>
+    <td>
+    </td>
+    
+    <th scope="col" style="width: 20%">
+      Property
+    </th>
+    
+    <th scope="col" style="width: 20%">
+      Value
+    </th>
+    
+    <th scope="col" style="width: 20%">
+      Property
+    </th>
+    
+    <th scope="col" style="width: 20%">
+      Value
+    </th>
+  </tr>
+  
+  <tr>
+    <th scope="col" style="width: 20%">
+      Browser
+    </th>
+    
+    <th scope="col" colspan="2">
+      Result 1
+    </th>
+    
+    <th scope="col" colspan="2">
+      Result 2
+    </th></thead> 
+    
+    <tr>
+      <th scope="row" rowspan="4">
+        Firefox
+      </th>
+      
+      <td>
+      </td>
+      
+      <td>
+        abc
+      </td>
+      
+      <td>
+      </td>
+      
+      <td>
+        de
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        1
+      </td>
+      
+      <td>
+        undefined
+      </td>
+      
+      <td>
+        1
+      </td>
+      
+      <td>
+        e
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        index
+      </td>
+      
+      <td>
+      </td>
+      
+      <td>
+        index
+      </td>
+      
+      <td>
+        3
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        input
+      </td>
+      
+      <td>
+        abcde
+      </td>
+      
+      <td>
+        input
+      </td>
+      
+      <td>
+        abcde
+      </td>
+    </tr>
+    
+    <tr>
+      <th scope="row" rowspan="5">
+        IE
+      </th>
+      
+      <td>
+        input
+      </td>
+      
+      <td>
+        abcde
+      </td>
+      
+      <td>
+        input
+      </td>
+      
+      <td>
+        abcde
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        index
+      </td>
+      
+      <td>
+      </td>
+      
+      <td>
+        index
+      </td>
+      
+      <td>
+        3
+      </td>
+    </tr>
+    
+    <td>
+      lastIndex
+    </td>
+    
+    <td>
+      3
+    </td>
+    
+    <td>
+      lastIndex
+    </td>
+    
+    <td>
+      5
+    </td></tr> 
+    
+    <td>
+    </td>
+    
+    <td>
+      abc
+    </td>
+    
+    <td>
+    </td>
+    
+    <td>
+      de
+    </td></tr> 
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+    </td>
+    
+    <td>
+      1
+    </td>
+    
+    <td>
+      e
+    </td></tr> 
+    
+    <tr>
+      <th scope="row" rowspan="4">
+        Opera
+      </th>
+      
+      <td>
+      </td>
+      
+      <td>
+        abc
+      </td>
+      
+      <td>
+      </td>
+      
+      <td>
+        de
+      </td>
+    </tr>
+    
+    <tr>
+      <td colspan="2">
+      </td>
+      
+      <td>
+        1
+      </td>
+      
+      <td>
+        e
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        index
+      </td>
+      
+      <td>
+      </td>
+      
+      <td>
+        index
+      </td>
+      
+      <td>
+        3
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        input
+      </td>
+      
+      <td>
+        abcde
+      </td>
+      
+      <td>
+        input
+      </td>
+      
+      <td>
+        abcde
+      </td>
+    </tr></table> 
+    
+
+<p>I got the results with a <code>for/in</code> loop, like so:</p>
+
+<pre>var re = /abc|d(e)/g;
+var result = re.exec("abcde");
+for (var prop in result) {
+    ...</pre>
+    
+
+<p>Here are the differences:</p>
+
+<ul>
+<li>Opera doesn&rsquo;t enumerate over the first captured subexpression in the first result. In Firefox, it exists without a value (has the special value <code>undefined</code>), and in IE it exists <strong>with a value</strong> &ndash; the empty string.</li>
+<li>IE adds the proprietary <code>lastIndex</code> property to the result.</li>
+</ul>
+
+<h3 id="toc_1">Subexpressions</h3>
+
+<p>I said Opera <em>doesn&rsquo;t enumerate over</em> the property named &ldquo;1&#8243; in the first result. According to the spec, the property named &ldquo;1&#8243; should still exist. Opera knows the property should exist, as I proved by examining the <code>length</code> property. Its value is 2 in all browsers, which is correct as specified by section 15.10.6.2 of the <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">spec</a>:</p>
+
+<p>Performs a regular expression match of <em>string</em> against the regular expression and returns an Array object containing the results of the match, or <strong>null</strong> if the string did not match&hellip;  Let <em>n</em> be the length of <em>r</em>&rsquo;s <em>captures</em> array. (This is the same value as 15.10.2.1&#8242;s <em>NCapturingParens</em>.)</p>
+
+<p>So, the length of the array <em>should</em> be 2 even in the first match, because the length of the array depends <strong>only</strong> on the number of capturing subexpressions in the pattern &ndash; so the browsers are doing the right thing.</p>
+
+<p>If the property exists, Opera should enumerate it in the <code>for/in</code> loop. The spec is clear about what properties are enumerable (section 15.2.4.7), and it never says such a property should get the <code>dontEnum</code> attribute, so I think Opera&rsquo;s behavior is incorrect. In fact, I&rsquo;m pretty sure Opera is actually never creating the property. I ran some tests with an Array and set one of the properties to <code>undefined</code>. Opera still enumerates it, so it&rsquo;s not as though Opera doesn&rsquo;t enumerate properties that have no value. I think Opera is setting <code>length</code> to 2, but never creating properties for capturing subexpressions that don&rsquo;t participate in the match. Technically this does not violate the spec&rsquo;s instructions on an Array&rsquo;s <code>length</code> property, but it is suspicious.</p>
+
+<p>The moral of the story is you shouldn&rsquo;t use a <code>for/in</code> loop when iterating through subexpressions. Just iterate from 0 through <code>length</code> minus one.</p>
+
+<p>I take exception to IE giving the capture a value. The subexpression doesn&rsquo;t capture anything and doesn&rsquo;t participate in the match, so it should not have a value &ndash; not even the empty string or <code>null</code>. I suppose this one is up for debate, but that&rsquo;s my personal opinion.</p>
+
+<h3 id="toc_2">IE&rsquo;s <code>lastIndex</code> property</h3>
+
+<p>Technically, this property shouldn&rsquo;t be there; it should be a property of the global <code>RegExp</code> object in ECMA-262, or the regex itself in later versions of JavaScript (I have no idea why you&rsquo;d make it a property of a global object; that seems like it would cause all sorts of stupid bugs, so I think the way IE does it is probably a lot smarter than the spec).</p>
+
+<h3 id="toc_3">Other stuff</h3>
+
+<p>I spent a lot of time messing with the various browsers to see if I could find obscure bugs enumerating properties that don&rsquo;t exist, setting a value and then unsetting it on subsequent calls, and so forth. The good news is I didn&rsquo;t find any more bugs (though they could still exist!), and I found that the quasi-bugs discussed above are really trivial.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

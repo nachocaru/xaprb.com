@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Archive strategies for OLTP servers, Part 3 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Archive strategies for OLTP servers, Part 3</h1>
+  <span class="post-date">Fri, Jun 15, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>In the first two articles in this series, I discussed archiving basics, relationships and dependencies, and specific archiving techniques for online transaction processing (OLTP) database servers. This article covers how to move the data from the OLTP source to the archive destination, what the archive destination might look like, and how to un-archive data. If you can un-archive easily and reliably, a whole new world of possibilities opens up.</p>
+
+<p>For your reference, here are links to <a href="http://www.xaprb.com/blog/2007/06/14/archive-strategies-for-oltp-servers-part-2/">part 2</a> and <a href="http://www.xaprb.com/blog/2007/06/13/archive-strategies-for-oltp-servers-part-1/">part 1</a>, and the original article on <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">efficient SQL queries for archiving</a>, which is the basis for this whole series.</p>
+
+<h3 id="toc_0">How to move the data</h3>
+
+<p>At some point you have to actually take the data from the source and put it into the archive. This is a three-step process:</p>
+
+<ol>
+<li>Find archivable rows</li>
+<li>Insert them into the archive</li>
+<li>Delete them from the source</li>
+</ol>
+
+<p>I wrote an article on <a href="http://www.xaprb.com/blog/2006/05/02/how-to-write-efficient-archiving-and-purging-jobs-in-sql/">how to find archivable rows efficiently</a>, so I won&rsquo;t go into it more here. Inserting and deleting are usually straightforward, but there are subtleties and tricks that can lead to nifty solutions.</p>
+
+<h4 id="toc_1">Transactions</h4>
+
+<p>The most important question about actually moving the data is how to do it safely, with or without transactions. Even if the source and archive are on different servers, you can do distributed transactions, either in your application logic or with a two-phase commit supported by your database product. For most purposes, I&rsquo;ve found it just as reliable and more efficient to handle the transaction in your application logic.</p>
+
+<p>For many of the reasons mentioned in the second article in this series, I would recommend relaxing the consistency requirements between source and archive, so you can keep the archived data out of the source&rsquo;s transaction. You can do this safely by performing the operations in the order I listed above: insert, delete, commit the insert, then commit the delete. If you are archiving to a file at the same time, you can also write to the file before the insert.</p>
+
+<p>Your archive might also be non-transactional. If you&rsquo;re using MySQL, you should think about using a faster non-transactional engine that stores the data more compactly, such as MyISAM, for the archived data.</p>
+
+<h4 id="toc_2">Use replication to unload the OLTP server</h4>
+
+<p>One of the most effective ways to archive an OLTP server without impacting it too much is to do the hard work of finding and inserting on a slave server, then performing the delete on the master and letting it flow through replication. Here&rsquo;s an example from a past employer: we replicated the order table to a &ldquo;transfer&rdquo; database on the data warehouse server. A job on the data warehouse server looked for orders that had completed and shipped, and thus could be archived. It copied these in a transaction to the long-term storage, then deleted on the OLTP server. This delete flowed through replication back to the data warehouse, and removed the rows from the transfer database.</p>
+
+<h3 id="toc_3">The archive server</h3>
+
+<p>I&rsquo;ve already mentioned some ways you might design the archive server, but there are a few other things I want to cover briefly. The first is what happens when you don&rsquo;t use a different server at all, and just archive to adjacent tables on the OLTP server. This can be a fine way to do things. As long as the data isn&rsquo;t used, it&rsquo;s just taking up space on disk. However, it might make backups more difficult.</p>
+
+<p>If you use a different server to hold the archived data, you should probably consider some kind of partitioning scheme. If your server doesn&rsquo;t support partitioned tables natively, you might want to archive into a different table every so often, building views over all the tables to present them as a single logical table. There are some important advantages to this, especially if you eventually want to purge really old data. It is much easier to drop an entire table when it ages out than to delete rows from a huge table.</p>
+
+<p>This gets into the topic of how to build a large data warehouse, so I&rsquo;ll just leave it at this: if you forsee the archived data getting large, start planning for it now.</p>
+
+<h3 id="toc_4">Duplicated data</h3>
+
+<p>Unless you use distributed transactions or some clever way to guarantee atomicity, there&rsquo;s a chance you&rsquo;ll insert to your archive but fail to delete from the source. Now you have duplicate data. How will you handle this?</p>
+
+<p>First, decide if you can tolerate the situation. (I told you we hadn&rsquo;t seen the last of the consistency requirements!) I suggest you take it as a given, if at all possible. Design your archiving jobs so they can tolerate existing data in case they get terminated uncleanly or otherwise have errors. If they try to insert rows that exist, you should probably overwrite the existing rows with new ones, which might have changed on the OLTP server. Make sure you don&rsquo;t lose data from this, one way or another.</p>
+
+<p>If you are archiving summary tables, you might need to be careful. A row that&rsquo;s built incrementally on the OLTP system might need to be re-aggregated, instead of replaced, if it already exists in the archive.</p>
+
+<p>Duplicated data makes some queries hard to get consistent. For instance, a view that takes the union of archived and un-archived data will tell a lie if a row exists in both places. You need to factor this in when deciding how to do the archiving. Duplicates can also happen during un-archiving.</p>
+
+<h3 id="toc_5">Un-archiving</h3>
+
+<p>Why would you ever want to un-archive?</p>
+
+<p>Here are some reasons you might benefit from being able to un-archive easily:</p>
+
+<ul>
+<li>You treat all the data as equally important, but some of it as more likely to be accessed</li>
+<li>You know there&rsquo;s unused data but it&rsquo;ll be inefficient to figure out which rows</li>
+<li>You can&rsquo;t get an exact answer on whether rows are archivable</li>
+</ul>
+
+<p>Think of it this way: the ability to un-archive lowers the risk of archiving the wrong data, and allows you to archive things you might otherwise be unable to touch. It takes away or mitigates the downside.</p>
+
+<p>This goes back to my analogy of archiving as flushing from a cache. You probably don&rsquo;t treat databases as a multi-tier cache, and that&rsquo;s a good thing. If the data isn&rsquo;t where you expect, your applications would need to look elsewhere and retrieve it. Unless you write a wrapper around your database access layer that handles it automatically, this is probably infeasible.</p>
+
+<p>However, you can still use the concept of retrieving missing data under certain circumstances. Does the following sound workable?</p>
+
+<ol>
+<li>Make most applications tolerate missing data and just do what they can with the data they have</li>
+<li>Identify points of entry where incoming data is a signal to un-archive something</li>
+<li>Hook an un-archiving system into the points of entry</li>
+<li>Archive freely and let un-archiving bring back anything it needs to</li>
+</ol>
+
+<p>Here&rsquo;s a concrete example from the advertising system I mentioned previously. This system archives ads eagerly; if they don&rsquo;t have any traffic in a while, it moves them away. There are limited points of entry for ad-related data: traffic data, and a record of a sale that is attributed to an ad. The systems that load this incoming data can simply check whether all referenced ads exist, and if not, attempt to un-archive any missing ones. This happens as part of the routine checks for bad incoming data. This approach is fairly new for us, and might have some kinks we haven&rsquo;t yet discovered, but there is virtually no downside. The data isn&rsquo;t gone, it&rsquo;s just elsewhere. Now we can archive data we couldn&rsquo;t before, because it was too hard to get a definite &ldquo;yes, this can be archived&rdquo; answer. (It&rsquo;s often easy to get a &ldquo;no,&rdquo; but hard to get a &ldquo;yes.&rdquo;)</p>
+
+<p>Un-archiving is non-trivial. In fact, depending on your schema, you might need to be more careful about consistency requirements than you are with your archiving strategy. However, if you&rsquo;re archiving correctly, un-archives should be few and far between, so you can afford a more expensive process.</p>
+
+<p>In many ways, your options for un-archiving strategies might be similar to archiving strategies. In the systems I&rsquo;ve worked on, we take the depth-first-search, dependencies-first, all-one-chunk approach I think is too inefficient to use for archiving.</p>
+
+<p>If your archive is non-transactional, be careful to commit the insert into the OLTP system before you delete from the archive. Otherwise your delete will be permanent, but your insert might be rolled back, and the data is lost.</p>
+
+<h3 id="toc_6">You don&rsquo;t have to un-archive</h3>
+
+<p>If you don&rsquo;t want to build an un-archiving system, you can build your applications to look in the archive for data they need and can&rsquo;t find in the OLTP system. If you do this seldom enough, it might work fine. One order-history system I know of does this to find orders that aren&rsquo;t in the OLTP server.</p>
+
+<h3 id="toc_7">Archiving miscellany</h3>
+
+<p>To round out this series, here is a collection of notes and references I didn&rsquo;t want to mix in along the way, but I think belong here somewhere.</p>
+
+<p>First, if you&rsquo;re using MySQL, I&rsquo;ve written tools that can handle much of the work I&rsquo;ve described here. The first is <a href="http://code.google.com/p/maatkit/">MySQL Archiver</a>, which can find and move archivable data very efficiently. It is full-featured and should handle most needs as-is, but it&rsquo;s also extensible, so you can plug your own code in to handle complex archivability checks, dependency-first archiving, and so forth. Another of my tools, MySQL Find, can monitor and create historical records of table sizes, so you can get a sense of which tables are largest and/or growing the fastest (this is a one-liner that can go into your daily crontab). If you are archiving from InnoDB tables, you might want to record deadlocks with MySQL Deadlock Logger, for obvious reasons.</p>
+
+<p>All these tools are part of the <a href="http://code.google.com/p/maatkit/">MySQL Toolkit</a>, which is Free Software. Another useful tool is <a href="http://code.google.com/p/innotop/">innotop</a>, a real-time interactive MySQL and InnoDB monitor I&rsquo;ve written.</p>
+
+<p>A couple more notes on MySQL: the choice of storage engines makes <a href="http://www.mysql.com/">MySQL</a> especially attractive for single-server archiving solutions, in my opinion. It&rsquo;s quite practical to run your intense OLTP workload on InnoDB tables (or another transactional storage engine, such as Paul McCullagh&rsquo;s <a href="http://www.primebase.com/xt/">PBXT</a>) and store the archive tables side-by-side in MyISAM or ARCHIVE tables. If you&rsquo;re using MySQL 5.1, you also get partitioned tables; if you&rsquo;re not that bleeding-edge, you might consider the strategy I suggested at the recent <a href="http://www.xaprb.com/blog/tags/mysqluc07">MySQL Conference and Expo</a>: archive to a small InnoDB table for high concurrency, then regularly convert it to MyISAM and place it into a MERGE collection, with a view that unions the InnoDB and MERGE tables (<a href="http://sheeri.net/archives/204">Sheeri Critzer blogged about this also</a>, though I&rsquo;m not sure how many people are actually doing it).</p>
+
+<p>I don&rsquo;t really like triggers and foreign key magic, so I relegated this suggestion to here: you can use triggers and/or foreign key constraints with <code>ON UPDATE</code> actions to help with archiving and purging. I don&rsquo;t like these approaches because I think they&rsquo;re hidden, dangerous code. In Microsoft SQL Server I usually used stored procedures to archive, but in MySQL these days I use MySQL Archiver (linked above).</p>
+
+<p>MySQL&rsquo;s Edwin DeSouza wrote me to bring my attention to some of Craig Mullins&rsquo; <a href="http://www.dbazine.comhttp://www.xaprb.com/blogshttp://www.xaprb.com/blog-cm/craigmullinshttp://www.xaprb.com/blogentry.2007-05-05.0882314926">recent articles about archiving</a>. Craig&rsquo;s insight is valuable if you&rsquo;re researching archiving.</p>
+
+<p>I think that&rsquo;s it for the miscellany.</p>
+
+<h3 id="toc_8">Conclusion</h3>
+
+<p>This series has covered what I believe to be the full scope of archiving strategies, from requirements to specific techniques you can use to archive and un-archive data from your OLTP systems. As a reminder, the larger context here is to offer <strong>scaling back</strong> as an alternative to the usual scale-up-or-scale-out dichotomy. There are always more options than you think! Archiving can be difficult and complex, but the potential gains for some types of data can be large, especially compared to some of the more frequently-discussed scaling tactics. Like other solutions, it doesn&rsquo;t work for all situations, but if you forsee a huge amount of data coming at you, you should consider archiving along with other scaling techniques.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

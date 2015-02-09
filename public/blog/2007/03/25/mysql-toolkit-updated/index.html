@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      MySQL Toolkit updated &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">MySQL Toolkit updated</h1>
+  <span class="post-date">Sun, Mar 25, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  
+
+<p>I&rsquo;ve just released updates to all the tools in the MySQL Toolkit. The biggest change I made to most packages is using DBD to read MySQL&rsquo;s option files, though some packages got more significant updates.</p>
+
+<h3 id="toc_0">Overview</h3>
+
+<p>I discovered some features I didn&rsquo;t know the Perl MySQL driver had &ndash; features to read MySQL&rsquo;s option files, mostly, though there are some other nice features I use occasionally (but which are very relevant to <a href="http://code.google.com/p/innotop">innotop</a>). Getting the driver to read the option files instead of doing it myself has many benefits. It does a better job than I do, provides more options, works like MySQL users will expect it to, and perhaps most importantly isn&rsquo;t my problem if it&rsquo;s broken *grin* I love not maintaining code.</p>
+
+<p>I also changed how I was handling command-line options. I&rsquo;m new to this, but I think I&rsquo;ve got a good system going now. I did change some options on a couple of the tools, so check your scripts if you upgrade. (I&rsquo;d rather do it right than remain backwards compatible with a bad system).</p>
+
+<p>The most important changes I made are to the MySQL Show Grants tool and the MySQL Table Sync tool. I fixed some fairly major bugs in each tool.</p>
+
+<p>One feature I had inconsistently implemented is prompting for passwords. I removed it completely rather than do it in patches. I&rsquo;m not convinced prompting is a good way to do it. Log on to the #mysql IRC channel and wait a bit, and you&rsquo;ll see someone who doesn&rsquo;t understand how MySQL&rsquo;s own tools handle passwords at the command line.</p>
+
+<h3 id="toc_1">Details</h3>
+
+<p>Here are detailed changes on each of the packages.</p>
+
+<h4 id="toc_2">mysql-deadlock-logger version 1.0.0</h4>
+
+<ul>
+<li>Rewrite the GetOpt::Long code and rely on DBD to read MySQL option files.</li>
+</ul>
+
+<h4 id="toc_3">mysql-duplicate-key-checker 1.0.2</h4>
+
+<ul>
+<li>Rewrite the GetOpt::Long code and rely on DBD to read MySQL option files.</li>
+<li>Error handling if there aren&rsquo;t permissions to run SHOW CREATE TABLE on a view.</li>
+<li>Documentation copy/paste error.</li>
+</ul>
+
+<h4 id="toc_4">mysql-query-profiler 1.0.2</h4>
+
+<ul>
+<li>Rewrite the GetOpt::Long code and rely on DBD to read MySQL option files.</li>
+<li>Documentation.</li>
+</ul>
+
+<h4 id="toc_5">mysql-show-grants 1.0.0</h4>
+
+<ul>
+<li>Rewrite the GetOpt::Long code and rely on DBD to read MySQL option files.</li>
+<li>Fix the &#8211;revoke and &#8211;separate options so revokes are not separate unless specified. Add REVOKE GRANT OPTION when the user has it.</li>
+</ul>
+
+<h4 id="toc_6">mysql-table-checksum 1.0.3</h4>
+
+<ul>
+<li>Rewrite the GetOpt::Long code and rely on DBD to read MySQL option files.</li>
+<li>Make the exit code behave as expected.</li>
+<li>Handle errors from tables that have gone away or can&rsquo;t be read.</li>
+<li>Change command-line option names.</li>
+</ul>
+
+<h4 id="toc_7">mysql-table-sync 0.9.0</h4>
+
+<p>I continue to be very conservative about this tool. It&rsquo;s complicated and I haven&rsquo;t a) written a test suite yet b) tested it in production enough. Plus I don&rsquo;t use half its features in production. That may be an argument for removing them, but they are ideally suited for some scenarios, and I don&rsquo;t want to be too focused on only filling my own needs!</p>
+
+<ul>
+<li>Rewrite the GetOpt::Long code and rely on DBD to read MySQL option files.</li>
+<li>Change some parsing of DSNs.</li>
+<li>Handle UPDATE statements correctly in handle_data_change.</li>
+<li>Handle some special cases in locking for consistency.</li>
+</ul>
+
+<h3 id="toc_8">The future</h3>
+
+<p>I have either started or found the need for half a dozen more tools, and there are some improvements I still want to make to the existing ones too, but it will need to wait a bit. I have to work on some things for my wife, and then innotop is next because I&rsquo;m going to demo some currently nonexistent features at the upcoming <a href="http://www.mysqlconf.com">MySQL Conference</a>. There&rsquo;s nothing like a deadline to motivate me!</p>
+
+<h3 id="toc_9">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

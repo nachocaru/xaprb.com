@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      An alternative to the MySQL Query Analyzer &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">An alternative to the MySQL Query Analyzer</h1>
+  <span class="post-date">Thu, Nov 20, 2008 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  
+
+<p>MySQL just released their new <a href="http://www.mysql.com/trials/enterprise">MySQL Query Analyzer</a> (link to a trial), and recently wrote up <a href="http://dev.mysql.com/tech-resources/interviews/interview_mark_matthews.html">an interview with Mark Matthews about it</a>. If you haven&rsquo;t read that article, go ahead and do it. I have not used this software, but I fully believe its functionality is quite nice.</p>
+
+<p>But there is at least one alternative, which has been available for a long time. That is the <a href="http://www.percona.com/percona-lab.html">Percona patch-set</a>, plus analysis tools such as <a href="http://hackmysql.com/mysqlsla">mysqlsla</a> or <a href="http://www.maatkit.org/">Maatkit&rsquo;s query analysis tools</a>. This is a compelling alternative, if you can live without a point-and-click interface.</p>
+
+<p>Percona&rsquo;s patches put the metrics-gathering where it should be: in the server. That&rsquo;s why Percona&rsquo;s builds are able to measure a lot of statistics that a Proxy-based solution can&rsquo;t capture. This information is not possible to get outside of the server. For example, you cannot use the MySQL Query Analyzer to measure the I/O caused by a query. Externally to the server, about all you can do is time queries and measure their size. Percona&rsquo;s patches have no such limitations; they measure and expose an ever-richening set of meta-data about queries.</p>
+
+<p>Guessing is not enough. You need to be able to measure what your queries are doing. The MySQL Query Analyzer&rsquo;s way to know which queries cause I/O usage is to &ldquo;&hellip;graph I/O usage on the system as a whole, and when you see a spike in I/O you can see what queries were running at the time.&rdquo; So you&rsquo;re essentially reduced to lining up graphs, picking time intervals, running EXPLAIN and guessing. If you use Percona&rsquo;s patches, you can measure directly which queries cause I/O.</p>
+
+<p>The article claims that &ldquo;&hellip;With MySQL Query Analyzer we are watching from the sideline and capturing things that the MySQL server does not give you,&rdquo; but the irony is that since Proxy-based solutions are outside the MySQL server, they actually can&rsquo;t measure things the server already exposes internally. While would be possible to do so by running SHOW STATUS after each query, ask <a href="http://mysqlha.blogspot.com/">Mark Callaghan</a> what he thinks of that idea.</p>
+
+<p>If you&rsquo;ve ever administered Microsoft SQL Server, you know what kind of insight you can get into a running server. Other databases have similar functionality. MySQL has decided not to build metrics into the server, and is now trying to build it outside the server &ndash; an effort that&rsquo;s ultimately doomed to failure because the information is only available inside.</p>
+
+<p>Let&rsquo;s see a feature comparison. I&rsquo;ve chosen features that were promoted in the tech article linked above, plus key features I know are in the Percona patches:</p>
+
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th>Percona patches&nbsp;&nbsp;</th>
+<th>MySQL Query Analyzer</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Has a point-and-click interface</td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Freely available</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>License</td>
+<td>Free (GPL)</td>
+<td>Proprietary</td>
+</tr>
+
+<tr>
+<td>Integrated into the server</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Requires a separate server</td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Requires an agent on monitored servers</td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Requires MySQL proxy with extra scripts loaded</td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Relays queries through a single-threaded proxy</td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Requires changing where your application connects<sup>[<a href="#footnote1">1</a>]</sup></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Captures total execution time of all queries</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Measures query execution time in microseconds</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Permits sampling of only a fraction of sessions</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Abstracts queries into similar forms</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Aggregates similar queries together</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Aggregates across multiple servers</td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Automatically generates EXPLAIN plans</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Filters by query type (SELECT, UPDATE, etc)</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Calculates statistical metrics (min, max, 95th percentile etc)</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query execution time</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query execution count</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query row counts</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query update counts</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query result set sizes</td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query table lock waits</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query InnoDB lock waits</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query InnoDB read operations</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query InnoDB write operations</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query InnoDB I/O wait</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query InnoDB queue waits</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query InnoDB pages touched</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query filesorts caused</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query temp tables caused</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query temp tables on disk</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query table usage</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query index usage</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query query cache hits</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query full scans</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query full joins</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures per-query sort merge passes</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures queries executed by slave SQL thread<sup>[<a href="#footnote2">2</a>]</sup></td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Measures slave SQL thread utilization</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Provides per-database stats</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Provides per-table stats<sup>[<a href="#footnote3">3</a>]</sup></td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Provides per-index stats</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Provides per-user stats</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" checked="1" /></td>
+</tr>
+
+<tr>
+<td>Is deployed and tested in large social network sites</td>
+<td><input type="checkbox" checked="1" /></td>
+<td>?</td>
+</tr>
+
+<tr>
+<td>Is demonstrated stable by years of real-world testing</td>
+<td><input type="checkbox" checked="1" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+
+<tr>
+<td>Requires understanding MySQL source code</td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>Stay tuned. More is coming.</p>
+
+<h3 id="toc_0">Footnotes</h3>
+
+<p id="footnote1">
+  [1] From the article: "You basically have to redirect your application to connect to the Proxy port."
+</p>
+
+<p id="footnote2">
+  [2] The slave SQL thread's utilization is the amount of time it stays busy. This is different from measuring the queries the slave SQL thread executes. The Percona patches can do both; MySQL Query Analyzer does neither, since replication doesn't go through a proxy. Both are extremely useful in <a href="http://www.mysqlperformanceblog.com/2008/10/08/three-ways-to-know-when-a-mysql-slave-is-about-to-start-lagging/">predicting and measuring a replication slave's workload</a>.
+</p>
+
+<p id="footnote3">
+  [3] Aggregating queries and then filtering by table isn't the same thing as measuring how many Handler operations are performed against the table. The Percona patches include SHOW TABLE_STATISTICS, SHOW INDEX_STATISTICS, and SHOW USER_STATISTICS, which are functionality ported from Google's patches. These let you know exactly how much work is done. This is what I call per-object statistics.
+</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

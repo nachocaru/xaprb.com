@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A review of SecoBackup Amazon S3 backups for MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A review of SecoBackup Amazon S3 backups for MySQL</h1>
+  <span class="post-date">Sat, Mar 7, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+  </span>
+  <p>After I wrote about <a href="http://www.mysqlperformanceblog.com/2009/03/03/10-things-you-need-to-know-about-backup-solutions-for-mysql/">things you need to know about MySQL backups</a>, a customer contacted me and asked me what I know about <a href="http://www.secobackup.com/">SecoBackup</a> for MySQL. I see it has a very low cost and Percona has Amazon accounts for testing purposes, so I quickly downloaded s3sql_2.2.0.1-2.01_i386.deb, installed it, configured it, and gave it a whirl.</p>
+
+<p>Since I just want to see what it does to take a backup, I started up a sandbox running from /tmp/12345 and configured it to backup msandbox:msandbox@127.0.0.1 (I shut down my main mysqld on my laptop to make sure it can&rsquo;t connect to the default instance).</p>
+
+<p>Then I configured a backup set and tried to take a backup. Right away I saw it isn&rsquo;t full featured enough. It doesn&rsquo;t let you specify a port to connect to. This is fixable. They just have to add better support for all the command-line parameters like port, SSL, socket, etc. It is not enough to specify host, username and password. But it gives me a funny feeling about their level of experience with production MySQL servers.</p>
+
+<p>And so I expected to see it using mysqldump. I tried a backup, and indeed I saw it&rsquo;s using mysqldump. It could not connect to port 12345, which is where I set up my sandbox. I see no way to make it do that. I tried changing the port to the default 3306 and tried again, but it still doesn&rsquo;t manage to connect to it to take a backup.</p>
+
+<p>In any case, mysqldump might be a fine way to take a backup, for some people, but I need to see what command-line parameters it&rsquo;s using before I can determine. So I hacked around for a while, got it to take a backup of my default instance, and eventually found out how to get the parameters it used to dump the data. Here are the parameters:</p>
+
+<pre>
+--opt --extended-insert --single-transaction --default-character-set=utf8 --create-options
+</pre>
+
+<p>I also turned on the log to my mysql instance and examined it afterwards to find out more about what this software really does to the database. I didn&rsquo;t see anything unusual.</p>
+
+<p>So having done that, how does SecoBackup stack up against my list of ten things to know?</p>
+
+<ol>
+<li>Does the backup require shutting down MySQL? If not, what is the impact on the running server? Blocking, I/O load, cache pollution, etc? <strong>Answer: It uses mysqldump, so you can use it online, but you&rsquo;ll get all the usual stuff: cache pollution, extra load on the server, and so on. For large databases, mysqldump is unusable, so it won&rsquo;t work for them.</strong></li>
+<li>What technique is used for the backup? Is it mysqldump or a custom product that does something similar? Is it a filesystem copy? <strong>Answer: mysqldump.</strong></li>
+<li>Does the backup system understand that <em>you cannot back up InnoDB by simply copying its files</em>? <strong>Answer: It doesn&rsquo;t do file copies.</strong></li>
+<li>Does the backup use FLUSH TABLES, LOCK TABLES, or FLUSH TABLES WITH READ LOCK? These all interrupt processing. <strong>Answer: None of the above.</strong></li>
+<li>What other effects are there on MySQL? I&rsquo;ve seen systems that do a RESET MASTER, which immediately breaks replication. Are there any FLUSH commands at all, like FLUSH LOGS? <strong>Answer: None of the above.</strong></li>
+<li>How does the system guarantee that you can perform point-in-time recovery? <strong>Answer: It does not. It doesn&rsquo;t capture the binary log positions.</strong></li>
+<li>How does the system guarantee consistency with the binary log, InnoDB logs, and replication? <strong>Answer: It does not. It doesn&rsquo;t capture the binary log positions.</strong></li>
+<li>Can you use the system to set up new MySQL replication slaves? How? <strong>Answer: No. It does not capture the master log positions.</strong></li>
+<li>Does the system verify that the backup is restorable, e.g. does it run InnoDB recovery before declaring success? <strong>Answer: It does not verify backups.</strong></li>
+<li>Does anyone stand behind it with support, and guarantee working, recoverable backups? How strong is the legal guarantee of this and how much insurance do they have? <strong>Answer: I&rsquo;ll skip this question.</strong></li>
+</ol>
+
+<p>And then there&rsquo;s the other question someone asked in the comments on the original article: how long does it take to restore the backup? The answer is, for big databases it&rsquo;s going to take A Very Long Time. This is another reason why mysqldump is unusable for backing up large databases.</p>
+
+<p>Overall I&rsquo;m not all that impressed with the quality of the software; I crashed it a number of times trying to set things up and take backups, and it does sort of naive things like print output without a trailing linebreak so the terminal gets messed up. But whether it&rsquo;s a good choice really depends, I think, on your data. (Naturally.) It seems like it&rsquo;s pretty convenient, but even if they fixed the problems and added &ndash;master-data to the mysqldump options, it would absolutely not work for a lot of the systems I work on. Even if you could back up some of those servers with mysqldump, it would take way too long to restore.</p>
+
+<p>But here is the most important thing: It is neither Open Source nor Free Software, and I had to download it and try it out to find out that it uses mysqldump rather than some other technique. Nowhere on their website does SecoBackup mention that they take backups via mysqldump. That&rsquo;s basic information that I would like to see right up front. Any backup system should disclose how it works.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

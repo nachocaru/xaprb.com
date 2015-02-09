@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to use CSS to go beyond separation of content and presentation &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to use CSS to go beyond separation of content and presentation</h1>
+  <span class="post-date">Thu, Dec 15, 2005 in
+		
+		<a href="/categories/web" class="btn btn-primary">Web</a>
+		
+  </span>
+  
+
+<p>One of CSS&rsquo;s loftiest goals was to help separate content and presentation on the Web<sup>1</sup>. It has succeeded to some degree, bringing great benefits in terms of maintainability, usability, and accessibility.</p>
+
+<h3 id="toc_0">Think at a higher level</h3>
+
+<p>There is much noise about content and presentation, but it&rsquo;s not the only beneficial separation. In fact, pick any dimensions you wish, and I think you can benefit by distinguishing among them <em>at least to some degree</em>: content, presentation, structure, behavior, and so forth.</p>
+
+<p>One reason separation is good that it actually lets me factor out repetition and shared aspects, and deal with them just once. In this sense, I&rsquo;m not just separating things in one place, I&rsquo;m bringing them together in another. Aspect-Oriented Programming is a great example from the programming world. However, it is technique, rather than technology, that is important. CSS doesn&rsquo;t guarantee the separation &ndash; it&rsquo;s how I use it that matters.</p>
+
+<p>With this in mind, I am currently ruminating the following: I think it&rsquo;s a Good Thing to separate layout and presentation <em>within CSS</em>. Again, these are just dimensions within one technology; I think making the proper distinction between the two is just a good practice.</p>
+
+<h3 id="toc_1">Definitions</h3>
+
+<p>First let me define the terms as I use them in this article:</p>
+
+<p>Layout Styles
+:   dictate how the elements of the page are arranged: where is the navigation, is the content a fixed-width column that&rsquo;s centered on the page, and so forth. Layout markup is usually about setting some properties of elements that hold the &ldquo;real content&rdquo; of the page.</p>
+
+<p>Presentational Styles
+:   specify how the &ldquo;real content&rdquo; appears: font size, colors, borders, link hover effects and so forth.</p>
+
+<h3 id="toc_2">What this means on a real website</h3>
+
+<p>In terms of a typical website that uses CSS for both purposes (layout and presentation), many elements on the page will have both types of styles. Global navigation, for example, will almost certainly have some positioning styles attached to a container, and often will have hover effects on links too. What if I want to change how the page is laid out, but not be distracted by all the font sizes on headers, margins on the lists, and so forth? I&rsquo;ve done this myself and found it difficult to sort through an entire stylesheet, ignoring the presentation haystack to find the layout needle. Since then I&rsquo;ve tried to keep the two separate, either by just using comments to mark separate sections within the one file, or by using two files. <code>@include</code> is great for this &ndash; the presentation stylesheet can include the layout stylesheet at the beginning. It helps a lot.</p>
+
+<p>I don&rsquo;t consider myself an expert on this. Not much attention has been paid to good practices when writing stylesheets. Everyone&rsquo;s writing about standards, browsers, and so forth. For some reason, good writing practices don&rsquo;t seem to be sexy (yet), and maybe that&rsquo;s why everyone is eager to write about other things. I think this may have a lot to do with who&rsquo;s writing CSS. In many cases, it&rsquo;s not programmers, so as a programmer, I often find people&rsquo;s stylesheets to be big freakin&rsquo; messes. In traditional programming, much effort has gone into studying what makes code maintainable, easily verifiable, and so forth. Similar work doesn&rsquo;t seem to exist for CSS (though I personally feel the same principles apply). There&rsquo;s not much, if any, guidance about style when writing CSS. How to indent, naming guidelines, and order of properties come to my mind when I think of this. Again, I don&rsquo;t think I have anything more to offer than other people, but I&rsquo;m thinking about it. Maybe at some point I&rsquo;ll put some time into it and produce my own code standards for CSS. I&rsquo;m sure others will start doing so as well, especially as CSS becomes more widely used and some people start getting stuck with bad code. When people get fed up with it, they&rsquo;ll do something about it :-)</p>
+
+<h3 id="toc_3">Perfection is an illusion</h3>
+
+<p>As a side note, I would like to say complete separation of content and presentation (or anything else) is not possible in many cases, despite some people&rsquo;s <a href="http://www.alistapart.com/articles/separationdilemma/">insistence to the contrary</a>. It&rsquo;s a myth. A lot of this is because any given feature often belongs in several domains, so imposing a strict hierarchy rarely works (the realization that hierarchical taxonomies are flawed is exactly where all the &ldquo;tagging&rdquo; in Web 2.0 is coming from). I wrote my thesis on visual and informational representations of music and I&rsquo;ve found it&rsquo;s rarely clear-cut, be it music or text. My experience with music made me take a fresh look at HTML, and I was amazed at how my perspective changed. There&rsquo;s much to be gained from an 80% solution, though, so fire away!</p>
+
+<hr />
+
+<p><a href="http://www.alistapart.com/articles/separationdilemma/">1</a> People say this many different ways, such as &ldquo;structure and presentation&rdquo; and so forth. My memory says &ldquo;content and presentation&rdquo; was the first such phrase to be bandied about, and the terminology has changed over the last 6-8 years.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A review of MySQL Administrator&#39;s Bible &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">A review of MySQL Administrator&#39;s Bible</h1>
+  <span class="post-date">Tue, Jun 30, 2009 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/reviews" class="btn btn-primary">Reviews</a>
+		
+  </span>
+  <div id="attachment_1145" class="wp-caption alignleft" style="width: 250px">
+  <a href="http://www.amazon.com/MySQL-Administrators-Bible-Wiley/dp/0470416912?tag=xaprb-20"><img src="http://www.xaprb.com/media/2009/06/mysql-administrators-bible-240x300.jpg" alt="MySQL Administrator&#039;s Bible" title="MySQL Administrator&#039;s Bible" width="240" height="300" class="size-medium wp-image-1145" /></a><p class="wp-caption-text">
+    MySQL Administrator's Bible
+  </p>
+</div>
+
+<p><a href="http://www.amazon.com/MySQL-Administrators-Bible-Wiley/dp/0470416912?tag=xaprb-20">MySQL Administrator&rsquo;s Bible</a> by Sheeri K. Cabral and Keith Murphy, 2009. Page count: 800+ pages. (Here&rsquo;s a <a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0470416912.html">link to the publisher&rsquo;s site</a>.)</p>
+
+<p>This book is a comprehensive reference guide to MySQL that&rsquo;s accessible to beginning DBAs or DBAs familiar with another database. It has enough detail to be a useful companion throughout a DBA&rsquo;s career. It also covers many related technologies, such as memcached, at a moderate-but-useful level of detail. This isn&rsquo;t exactly a how-to book, and it isn&rsquo;t exactly a reference manual; it&rsquo;s more of a blend of the two.</p>
+
+<p>The audience will depend on personal preferences. Some of the reference material is the type of thing I would look up with command-line <code>--help</code> options or the MySQL manual. But there are times when the reference aspect of the book is uniquely valuable. For example, the online documentation tends to list things alphabetically; the book might break them down into groups by function. An example is the <code>sql_mode</code> parameters, which it groups into categories like &ldquo;Getting rid of silent failures, silent conversions, and silently allowing invalid data.&rdquo;</p>
+
+<p>The non-reference aspect of the book has a lot of examples of how to do things, such as how to set up replication over SSL. This is exactly what I&rsquo;d look for in a book. Otherwise, you&rsquo;re reduced to reading documentation (inefficient, mind-numbing) or trusting the information you find online, which is generally not something I do.</p>
+
+<p>Speaking of trusting information, I was happy to see very few typos or errors. Occasionally I caught a minor slip. For example, when discussing the limited memory a 32-bit mysqld can use because it runs in a single process, there&rsquo;s a typo that mis-states this architectural feature as &ldquo;mysqld is currently single-threaded,&rdquo; which is not quite the same thing. Overall, you can rely on the information you&rsquo;ll read in this book.</p>
+
+<p>The book is divided into four parts: first steps, developing with MySQL, core administration, and a set of chapters and appendixes grouped under extending your skills. I think this organization works well. You can read the full Table Of Contents at the publisher&rsquo;s site linked above.</p>
+
+<p>Coverage is for MySQL 5.1 and 6.0. As we know, 5.1 was GA&rsquo;ed and 6.0 has been killed and replaced by a new release policy. This gives a slightly odd feeling to some passages, which speak about 5.1 in the past tense and 6.0 in the present tense! As far as I know, however, this book contains the most complete coverage of MySQL 5.1 in print. The only other similar book I&rsquo;ve read that covers 5.1 is <em><a href="http://tinyurl.com/highperfmysql">High Performance MySQL 2nd Edition</a></em> &ndash; and that one is a bit light on details because there wasn&rsquo;t a lot of production knowledge of 5.1 yet (I&rsquo;m the lead author of <em>HPM2e</em>, by the way).</p>
+
+<p>Speaking of which, I think that <em>MySQL Administrator&rsquo;s Bible</em> is a very good complement to <em>High Performance MySQL, 2nd Edition</em>. The former is useful to people who have varying levels of knowledge, while the latter assumes a lot of experience and doesn&rsquo;t cover introductory material much. And the books have different topics, of course. So if you&rsquo;re new to databases, or if you&rsquo;re new to MySQL, you might do well to start with Sheeri&rsquo;s book, then continue or supplement your education with ours.</p>
+
+<p>All in all, this is a book that&rsquo;s well worth buying if you&rsquo;re going to administer a serious MySQL installation. I tip my hat to Sheeri &ndash; I don&rsquo;t know how she did it. It&rsquo;s a huge project and she pulled through the last (and by far most difficult) part of it by herself.</p>
+
+<p><em>Disclosure: I tried to be a tech reviewer for this book, but I was over-committed and had to back out after a while.</em></p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

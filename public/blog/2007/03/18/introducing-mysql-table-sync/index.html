@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Introducing MySQL Table Sync &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Introducing MySQL Table Sync</h1>
+  <span class="post-date">Sun, Mar 18, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  
+
+<p>MySQL Table Sync efficiently finds and resolves data (not structural) differences between two MySQL tables, which may be on different servers. It offers two search algorithms to find the rows that differ, and several methods to bring the destination table into sync with the source.</p>
+
+<p>It&rsquo;s based on my earlier discussion on <a href="http://www.xaprb.com/blog/2007/03/05/an-algorithm-to-find-and-resolve-data-differences-between-mysql-tables/">how to find and resolve data differences between MySQL tables</a> and is part of the <a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> project.</p>
+
+<p>Acknowledgments are due before anything else: thanks to <a href="http://www.sysadminmag.com/articles/2004/0408/">Giuseppe Maxia, who laid the foundation several years ago</a> (and <a href="http://www.perlmonks.org/?node_id=381053">released code for download too</a>). Thanks to Fabien Coelho, who extended this work into <a href="http://www.coelho.net/pg_comparator/">pg_comparator</a> and wrote a very detailed analysis of the technique (see also <a href="http://cri.ensmp.fr/classement/doc/A-375.pdf">&ldquo;Remote Comparison of Database Tables&rdquo;</a>). Fabien kindly answered some questions I had over the last weeks.</p>
+
+<h3 id="toc_0">Efficient search for differences</h3>
+
+<p>I implemented both the top-down algorithm I proposed in my earlier post, and the bottom-up search algorithm developed by Maxia and Coelho.</p>
+
+<p>The top-down search is my original work, and I implemented it nearly as proposed, except I converted it to breadth-first instead of depth-first search for technical reasons (there are also some practical advantages to breadth-first search). I also haven&rsquo;t implemented all the grouping strategies I proposed. Only simple groupings on columns are implemented.</p>
+
+<p>I reworked the bottom-up algorithm to add running counts, indexed modulus columns, and some other efficiency, correctness and optimization changes. However, it is about 80% based on Coelho&rsquo;s algorithm, and I consulted the <code>pg_comparator</code> source code frequently while writing it.</p>
+
+<p>Both algorithms are good for certain cases and poor for others.</p>
+
+<h3 id="toc_1">Methods to resolve the differences</h3>
+
+<p>I implemented a variety of options to resolve the differences between the tables, including one that relies on replication, which is ideally suited for re-syncing slaves that have drifted without having to re-initialize them completely. There are also many options to control locking, waiting for the slave to catch up to the master, and so on. This part of the tool is not terribly difficult or complex, but it&rsquo;s something no one has quite done before to my knowledge.</p>
+
+<p>Work on this remains, however.</p>
+
+<h3 id="toc_2">The tool&rsquo;s present and future</h3>
+
+<p>The documentation is incomplete as of yet, and there are some things I still want to implement, but I wanted to get it out (release early, release often). I have used the tool in lots of tests, and have not found anything incorrect yet, but that doesn&rsquo;t mean there are no bugs. I have also used it &ndash; cautiously &ndash; in production. I re-synced a table that had drifted out of sync on a slave.</p>
+
+<p>If you want to try it, I encourage you to run it in <code>--print</code> mode to begin with, and examine carefully the queries it emits. Its output is valid SQL, so you can actually execute the output to sync the destination table.</p>
+
+<p>I&rsquo;m sure there will be many changes to functionality, behavior and output in the future.</p>
+
+<p>I really hope you&rsquo;ll try it and let me know what you think.</p>
+
+<h3 id="toc_3">About MySQL Toolkit</h3>
+
+<p><a href="http://code.google.com/p/maatkit">MySQL Toolkit</a> is a set of essential tools for MySQL users, developers and administrators. The project&rsquo;s goal is to make high-quality command-line tools that follow the UNIX philosophy of doing one thing and doing it well. They are designed for scriptability and ease of processing with standard command-line utilities such as <code>awk</code> and <code>sed</code>. Other tools in the toolkit include a table checksummer and a duplicate key checker.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

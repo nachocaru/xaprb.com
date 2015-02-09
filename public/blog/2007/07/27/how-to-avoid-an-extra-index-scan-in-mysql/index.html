@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      How to avoid an extra index scan in MySQL &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">How to avoid an extra index scan in MySQL</h1>
+  <span class="post-date">Fri, Jul 27, 2007 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>Is your MySQL server doing an extra index scan on queries that need to check a key for matches or NULL? It&rsquo;s easy for this to happen accidentally, but it&rsquo;s also easy to fix, especially in MySQL 5.0 and up. Here&rsquo;s how.</p>
+
+<p>If you read the <a href="http://dev.mysql.com/doc/refman/5.0/en/explain.html">manual page for EXPLAIN</a>, you&rsquo;ll see the ref_or_null &ldquo;join type&rdquo; (I think &ldquo;access type&rdquo; is really a better term) mentioned. If you see this in EXPLAIN, it means MySQL has to search the index for matches, then search again for NULLs. If there are no NULLs in that column, and MySQL knew that, it could avoid the extra search.</p>
+
+<p>You might see this in subqueries or when you use elaborate JOIN clauses, or even when you use a simple WHERE clause. For example, here&rsquo;s a query that will do a ref_or_null access plan on the <a href="http://dev.mysql.com/doc/">Sakila sample database</a>:</p>
+
+<pre>explain select * from sakila.film
+where original_language_id = 3 or original_language_id is null\G
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: film
+         type: ref_or_null
+possible_keys: idx_fk_original_language_id
+          key: idx_fk_original_language_id
+      key_len: 2
+          ref: const
+         rows: 476
+        Extra: Using where</pre>
+
+<p>Why does this happen? Simple: the indexed column is defined as NULLable. Here&rsquo;s a query you can use to find all such columns:</p>
+
+<pre>select c.table_schema, c.table_name, c.column_name
+from information_schema.columns as c
+   inner join information_schema.key_column_usage using(table_schema, table_name, column_name)
+where c.table_schema = 'sakila' and c.is_nullable = 'yes';
++--------------+------------+----------------------+
+| table_schema | table_name | column_name          |
++--------------+------------+----------------------+
+| sakila       | film       | original_language_id | 
+| sakila       | payment    | rental_id            | 
++--------------+------------+----------------------+</pre>
+
+<p>If the column shouldn&rsquo;t be allowed to be NULL, make sure you specify that in the column&rsquo;s options! In fact, the original_language_id column probably <em>should</em> be defined as NULLable, but I commonly see columns defined as NULLable when they shouldn&rsquo;t be. The performance penalty isn&rsquo;t the end of the world, but it&rsquo;s still worth fixing.</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

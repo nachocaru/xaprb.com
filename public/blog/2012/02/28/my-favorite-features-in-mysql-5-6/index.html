@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      My favorite features in MySQL 5.6 &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">My favorite features in MySQL 5.6</h1>
+  <span class="post-date">Tue, Feb 28, 2012 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+  </span>
+  <p>MySQL 5.6 is going to have a lot of <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-nutshell.html">improvements</a>. I want to mention a few things I think are uniquely valuable for a large set of typical MySQL users.</p>
+
+<p>The first is <a href="http://dev.mysql.com/doc/refman/5.6/en/index-condition-pushdown-optimization.html">index condition pushdown</a>. If you&rsquo;ve read High Performance MySQL, you saw a lengthy &ldquo;indexing case study&rdquo; in the chapter on indexing. It&rsquo;s many pages of if-this-then-that kinds of things: you have to include this column in the index, but then in that order, but only for this query because for this other query you need these other indexes with columns in these orders, and this index can be suitable for these queries if you combine some other things, and it just goes on and on. Why? Largely because of something that we call the left-prefix rule. It imposes a lot of limitations, and you end up juggling indexes, queries, and table design. And you sometimes need techniques such as <a href="http://www.mysqlperformanceblog.com/2007/04/06/using-delayed-join-to-optimize-count-and-limit-queries/">delayed joins</a> to avoid doing work on data that will ultimately be filtered out anyway.</p>
+
+<p>MySQL 5.6 improves this situation a lot. Indexes become much more useful and the optimizer is able to use them in many more scenarios. MySQL 5.6 is going to make these catch-22 indexing scenarios much less painful. (Index condition pushdown isn&rsquo;t 100% unique to MySQL 5.6, but the magic requires both optimizer and storage engine changes, and no other version of MySQL currently has both.)</p>
+
+<p>The second thing I&rsquo;m looking forward to is making <a href="http://dev.mysql.com/doc/refman/5.6/en/limit-optimization.html">ORDER BY with LIMIT</a> cheaper. It&rsquo;s fair to say that &ldquo;everyone knows&rdquo; that when EXPLAIN shows &ldquo;Using temporary; using filesort&rdquo; for such queries, you have a bad query plan. MySQL generates the whole result set, sorts it, and throws away most of the rows. Queries such as these are extremely common for paginated displays, leaderboards, and so on. They can easily build into a serious problem for the server, including storms of high-concurrency queries all fighting for resources, using a lot of disk and memory. MySQL 5.6 uses a fixed-size buffer to hold the top N rows, discarding the unwanted ones as it goes &ndash; much more efficient.</p>
+
+<p>Why do I think these two optimizations, out of the <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-nutshell.html">many</a> that are implemented in MySQL 5.6, are so important? It&rsquo;s because MySQL is still largely the database of web users, and web users &ndash; especially those who are not top-level experts in query optimization &ndash; commonly write queries that MySQL struggles to execute well in exactly these two areas. Take any off-the-shelf software, such as WordPress or Drupal, and you&rsquo;re going to get queries that don&rsquo;t perform well on MySQL today. Write any web application in some framework, add a couple of common UI elements such as the top items or a search interface, and again you&rsquo;re going to have problems. I look forward to being able to say &ldquo;this is fixed in the new version.&rdquo;</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+

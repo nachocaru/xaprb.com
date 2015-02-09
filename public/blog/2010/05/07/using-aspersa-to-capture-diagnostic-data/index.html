@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Using Aspersa to capture diagnostic data &middot; Xaprb
+    
+  </title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
+</head>
+
+
+  <body class="layout-reverse sidebar-overlay">
+
+    
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+	  <p>Xaprb &middot; Stay Curious!</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+    <a class="sidebar-nav-item" href="/blog/">Posts</a>
+    
+        <a class="sidebar-nav-item" href="/about/">About</a>
+    
+        <a class="sidebar-nav-item" href="/essential-books/">Essential Books</a>
+    
+        <a class="sidebar-nav-item" href="/rx-toolkit/">Regex Toolkit</a>
+    
+  </nav>
+
+  <div class="sidebar-item">
+	  <p>&copy; 2015 Baron Schwartz.
+	  Contact: moc.brpax@norab, <a href="https://twitter.com/xaprb">Twitter</a>,
+	  <a href="https://linkedin.com/in/xaprb">LinkedIn</a>.
+	      <br>Powered by <a href="http://hugo.spf13.com">Hugo</a>. <a
+				href="/index.xml">RSS Feed</a></p>
+  </div>
+</div>
+
+
+    
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Xaprb</a>
+            <small>Stay Curious!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+
+
+<div class="post">
+  <h1 class="post-title">Using Aspersa to capture diagnostic data</h1>
+  <span class="post-date">Fri, May 7, 2010 in
+		
+		<a href="/categories/databases" class="btn btn-primary">Databases</a>
+		
+		<a href="/categories/open-source" class="btn btn-primary">Open Source</a>
+		
+		<a href="/categories/operations" class="btn btn-primary">Operations</a>
+		
+  </span>
+  <p>I frequently encounter MySQL servers with intermittent problems that don&rsquo;t happen when I&rsquo;m watching the server. Gathering good diagnostic data when the problem happens is a must. <a href="http://code.google.com/p/aspersa">Aspersa</a> includes two utilities to make this easier.</p>
+
+<p>The first is called &lsquo;stalk&rsquo;. It would be called &lsquo;watch&rsquo; but that&rsquo;s already a name of a standard Unix utility. It simply watches for a condition to happen and fires off the second utility.</p>
+
+<p>This second utility does most of the work. It is called &lsquo;collect&rsquo; and by default, it gathers stats on a number of things for 30 seconds. It names these statistics according to the time it was started, and places them into a directory for analysis.</p>
+
+<p>Here&rsquo;s a sample of how to use the tools. In summary: get them and make them executable, then configure them; then start a screen session and run the &lsquo;stalk&rsquo; utility as root. Go do something else and come back later to check! A code sample follows.</p>
+
+<p><pre>
+$ wget <a href="http://aspersa.googlecode.com/svn/trunk/stalk">http://aspersa.googlecode.com/svn/trunk/stalk</a>
+$ wget <a href="http://aspersa.googlecode.com/svn/trunk/collect">http://aspersa.googlecode.com/svn/trunk/collect</a>
+$ chmod +x stalk collect
+$ mkdir -p ~/bin
+$ mv stalk collect ~/bin
+$ vim ~/bin/stalk # Configure it
+$ screen -S stalking.the.server
+$ sudo ~/bin/stalk
+</pre>
+`
+Inside the &lsquo;stalk&rsquo; tool, you&rsquo;ll see a few things you can configure. By default, it tries to connect to mysqld via mysqladmin and see how many threads are connected to the server. If this increases over 100 (a sample number you should almost certainly change), or if it can&rsquo;t connect to mysqld, then it fires off the &lsquo;collect&rsquo; tool, or whatever else you configure it to execute.</p>
+
+<p>The &lsquo;collect&rsquo; tool, by default, captures a variety of things including disk usage, cpu usage, internal status from mysqld, and even oprofile (which it saves using the standard oprofile save feature; you must use opreport to get your report later). There is also a commented-out section to run GDB if you want stack traces. This is not enabled by default because that&rsquo;ll freeze mysqld briefly. Usually this is OK if mysqld is already unresponsive during the problem!</p>
+
+                          <hr>
+                        <h2>Comments</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+										  dsq.src = '//xaprb.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  </body>
+</html>
+
