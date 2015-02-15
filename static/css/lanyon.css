@@ -118,16 +118,6 @@ img {
   letter-spacing: 0;
 }
 
-@media (max-width: 48rem) {
-  .masthead-title {
-    text-align: center;
-  }
-  .masthead-title small {
-    display: none;
-  }
-}
-
-
 /*
  * Sidebar
  *
